@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0
 // 	protoc        v3.15.7
-// source: github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto
+// source: github.com/metaprov/modelaapi/services/modeldsystem/v1/modeldsystem.proto
 
 package v1
 
@@ -44,7 +44,7 @@ type ListModeldSystemsRequest struct {
 func (x *ListModeldSystemsRequest) Reset() {
 	*x = ListModeldSystemsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[0]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *ListModeldSystemsRequest) String() string {
 func (*ListModeldSystemsRequest) ProtoMessage() {}
 
 func (x *ListModeldSystemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[0]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *ListModeldSystemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModeldSystemsRequest.ProtoReflect.Descriptor instead.
 func (*ListModeldSystemsRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{0}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *ListModeldSystemsRequest) GetNamespace() string {
@@ -98,7 +98,7 @@ type ListModeldSystemsResponse struct {
 func (x *ListModeldSystemsResponse) Reset() {
 	*x = ListModeldSystemsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[1]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -111,7 +111,7 @@ func (x *ListModeldSystemsResponse) String() string {
 func (*ListModeldSystemsResponse) ProtoMessage() {}
 
 func (x *ListModeldSystemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[1]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -124,7 +124,7 @@ func (x *ListModeldSystemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListModeldSystemsResponse.ProtoReflect.Descriptor instead.
 func (*ListModeldSystemsResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{1}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ListModeldSystemsResponse) GetItems() *v1alpha1.ModeldSystemList {
@@ -143,7 +143,7 @@ type ModeldSystemResponse struct {
 func (x *ModeldSystemResponse) Reset() {
 	*x = ModeldSystemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[2]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *ModeldSystemResponse) String() string {
 func (*ModeldSystemResponse) ProtoMessage() {}
 
 func (x *ModeldSystemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[2]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *ModeldSystemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModeldSystemResponse.ProtoReflect.Descriptor instead.
 func (*ModeldSystemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{2}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{2}
 }
 
 type CreateModeldSystemRequest struct {
@@ -184,7 +184,7 @@ type CreateModeldSystemRequest struct {
 func (x *CreateModeldSystemRequest) Reset() {
 	*x = CreateModeldSystemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[3]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -197,7 +197,7 @@ func (x *CreateModeldSystemRequest) String() string {
 func (*CreateModeldSystemRequest) ProtoMessage() {}
 
 func (x *CreateModeldSystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[3]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -210,7 +210,7 @@ func (x *CreateModeldSystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModeldSystemRequest.ProtoReflect.Descriptor instead.
 func (*CreateModeldSystemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{3}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CreateModeldSystemRequest) GetItem() *v1alpha1.ModeldSystem {
@@ -236,7 +236,7 @@ type CreateModeldSystemResponse struct {
 func (x *CreateModeldSystemResponse) Reset() {
 	*x = CreateModeldSystemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[4]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -249,7 +249,7 @@ func (x *CreateModeldSystemResponse) String() string {
 func (*CreateModeldSystemResponse) ProtoMessage() {}
 
 func (x *CreateModeldSystemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[4]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -262,7 +262,7 @@ func (x *CreateModeldSystemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateModeldSystemResponse.ProtoReflect.Descriptor instead.
 func (*CreateModeldSystemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{4}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{4}
 }
 
 type UpdateModeldSystemRequest struct {
@@ -276,7 +276,7 @@ type UpdateModeldSystemRequest struct {
 func (x *UpdateModeldSystemRequest) Reset() {
 	*x = UpdateModeldSystemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[5]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -289,7 +289,7 @@ func (x *UpdateModeldSystemRequest) String() string {
 func (*UpdateModeldSystemRequest) ProtoMessage() {}
 
 func (x *UpdateModeldSystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[5]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *UpdateModeldSystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModeldSystemRequest.ProtoReflect.Descriptor instead.
 func (*UpdateModeldSystemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{5}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *UpdateModeldSystemRequest) GetItem() *v1alpha1.ModeldSystem {
@@ -321,7 +321,7 @@ type UpdateModeldSystemResponse struct {
 func (x *UpdateModeldSystemResponse) Reset() {
 	*x = UpdateModeldSystemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[6]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -334,7 +334,7 @@ func (x *UpdateModeldSystemResponse) String() string {
 func (*UpdateModeldSystemResponse) ProtoMessage() {}
 
 func (x *UpdateModeldSystemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[6]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +347,7 @@ func (x *UpdateModeldSystemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateModeldSystemResponse.ProtoReflect.Descriptor instead.
 func (*UpdateModeldSystemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{6}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{6}
 }
 
 type GetModeldSystemRequest struct {
@@ -362,7 +362,7 @@ type GetModeldSystemRequest struct {
 func (x *GetModeldSystemRequest) Reset() {
 	*x = GetModeldSystemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[7]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetModeldSystemRequest) String() string {
 func (*GetModeldSystemRequest) ProtoMessage() {}
 
 func (x *GetModeldSystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[7]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetModeldSystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModeldSystemRequest.ProtoReflect.Descriptor instead.
 func (*GetModeldSystemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{7}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetModeldSystemRequest) GetNamespace() string {
@@ -417,7 +417,7 @@ type GetModeldSystemResponse struct {
 func (x *GetModeldSystemResponse) Reset() {
 	*x = GetModeldSystemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[8]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *GetModeldSystemResponse) String() string {
 func (*GetModeldSystemResponse) ProtoMessage() {}
 
 func (x *GetModeldSystemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[8]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *GetModeldSystemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModeldSystemResponse.ProtoReflect.Descriptor instead.
 func (*GetModeldSystemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{8}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetModeldSystemResponse) GetItem() *v1alpha1.ModeldSystem {
@@ -472,7 +472,7 @@ type GetModeldSystemNamespacesRequest struct {
 func (x *GetModeldSystemNamespacesRequest) Reset() {
 	*x = GetModeldSystemNamespacesRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[9]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -485,7 +485,7 @@ func (x *GetModeldSystemNamespacesRequest) String() string {
 func (*GetModeldSystemNamespacesRequest) ProtoMessage() {}
 
 func (x *GetModeldSystemNamespacesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[9]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -498,7 +498,7 @@ func (x *GetModeldSystemNamespacesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetModeldSystemNamespacesRequest.ProtoReflect.Descriptor instead.
 func (*GetModeldSystemNamespacesRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{9}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetModeldSystemNamespacesRequest) GetNamespace() string {
@@ -526,7 +526,7 @@ type GetModeldSystemNamespacesResponse struct {
 func (x *GetModeldSystemNamespacesResponse) Reset() {
 	*x = GetModeldSystemNamespacesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[10]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -539,7 +539,7 @@ func (x *GetModeldSystemNamespacesResponse) String() string {
 func (*GetModeldSystemNamespacesResponse) ProtoMessage() {}
 
 func (x *GetModeldSystemNamespacesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[10]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -552,7 +552,7 @@ func (x *GetModeldSystemNamespacesResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetModeldSystemNamespacesResponse.ProtoReflect.Descriptor instead.
 func (*GetModeldSystemNamespacesResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{10}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *GetModeldSystemNamespacesResponse) GetNamespaces() []*v1.NamespaceInfo {
@@ -574,7 +574,7 @@ type DeleteModeldSystemRequest struct {
 func (x *DeleteModeldSystemRequest) Reset() {
 	*x = DeleteModeldSystemRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[11]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -587,7 +587,7 @@ func (x *DeleteModeldSystemRequest) String() string {
 func (*DeleteModeldSystemRequest) ProtoMessage() {}
 
 func (x *DeleteModeldSystemRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[11]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -600,7 +600,7 @@ func (x *DeleteModeldSystemRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModeldSystemRequest.ProtoReflect.Descriptor instead.
 func (*DeleteModeldSystemRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{11}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *DeleteModeldSystemRequest) GetNamespace() string {
@@ -626,7 +626,7 @@ type DeleteModeldSystemResponse struct {
 func (x *DeleteModeldSystemResponse) Reset() {
 	*x = DeleteModeldSystemResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[12]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -639,7 +639,7 @@ func (x *DeleteModeldSystemResponse) String() string {
 func (*DeleteModeldSystemResponse) ProtoMessage() {}
 
 func (x *DeleteModeldSystemResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[12]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -652,7 +652,7 @@ func (x *DeleteModeldSystemResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteModeldSystemResponse.ProtoReflect.Descriptor instead.
 func (*DeleteModeldSystemResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{12}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{12}
 }
 
 type ModeldSystemCreateResponse struct {
@@ -664,7 +664,7 @@ type ModeldSystemCreateResponse struct {
 func (x *ModeldSystemCreateResponse) Reset() {
 	*x = ModeldSystemCreateResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[13]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -677,7 +677,7 @@ func (x *ModeldSystemCreateResponse) String() string {
 func (*ModeldSystemCreateResponse) ProtoMessage() {}
 
 func (x *ModeldSystemCreateResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[13]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -690,7 +690,7 @@ func (x *ModeldSystemCreateResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModeldSystemCreateResponse.ProtoReflect.Descriptor instead.
 func (*ModeldSystemCreateResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{13}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{13}
 }
 
 type LogoutResponse struct {
@@ -702,7 +702,7 @@ type LogoutResponse struct {
 func (x *LogoutResponse) Reset() {
 	*x = LogoutResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -715,7 +715,7 @@ func (x *LogoutResponse) String() string {
 func (*LogoutResponse) ProtoMessage() {}
 
 func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -728,7 +728,7 @@ func (x *LogoutResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LogoutResponse.ProtoReflect.Descriptor instead.
 func (*LogoutResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{14}
 }
 
 type ResetPasswordResponse struct {
@@ -740,7 +740,7 @@ type ResetPasswordResponse struct {
 func (x *ResetPasswordResponse) Reset() {
 	*x = ResetPasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -753,7 +753,7 @@ func (x *ResetPasswordResponse) String() string {
 func (*ResetPasswordResponse) ProtoMessage() {}
 
 func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -766,7 +766,7 @@ func (x *ResetPasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordResponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{15}
 }
 
 type ModeldSystemLoginRequest struct {
@@ -782,7 +782,7 @@ type ModeldSystemLoginRequest struct {
 func (x *ModeldSystemLoginRequest) Reset() {
 	*x = ModeldSystemLoginRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[16]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -795,7 +795,7 @@ func (x *ModeldSystemLoginRequest) String() string {
 func (*ModeldSystemLoginRequest) ProtoMessage() {}
 
 func (x *ModeldSystemLoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[16]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -808,7 +808,7 @@ func (x *ModeldSystemLoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModeldSystemLoginRequest.ProtoReflect.Descriptor instead.
 func (*ModeldSystemLoginRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{16}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ModeldSystemLoginRequest) GetNamespace() string {
@@ -843,7 +843,7 @@ type ModeldSystemLoginResponse struct {
 func (x *ModeldSystemLoginResponse) Reset() {
 	*x = ModeldSystemLoginResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[17]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -856,7 +856,7 @@ func (x *ModeldSystemLoginResponse) String() string {
 func (*ModeldSystemLoginResponse) ProtoMessage() {}
 
 func (x *ModeldSystemLoginResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[17]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +869,7 @@ func (x *ModeldSystemLoginResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModeldSystemLoginResponse.ProtoReflect.Descriptor instead.
 func (*ModeldSystemLoginResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{17}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *ModeldSystemLoginResponse) GetToken() string {
@@ -891,7 +891,7 @@ type ModeldSystemGetByNameRequest struct {
 func (x *ModeldSystemGetByNameRequest) Reset() {
 	*x = ModeldSystemGetByNameRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[18]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -904,7 +904,7 @@ func (x *ModeldSystemGetByNameRequest) String() string {
 func (*ModeldSystemGetByNameRequest) ProtoMessage() {}
 
 func (x *ModeldSystemGetByNameRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[18]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -917,7 +917,7 @@ func (x *ModeldSystemGetByNameRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModeldSystemGetByNameRequest.ProtoReflect.Descriptor instead.
 func (*ModeldSystemGetByNameRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{18}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *ModeldSystemGetByNameRequest) GetNamespace() string {
@@ -945,7 +945,7 @@ type ModeldSystemLogoutRequest struct {
 func (x *ModeldSystemLogoutRequest) Reset() {
 	*x = ModeldSystemLogoutRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[19]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -958,7 +958,7 @@ func (x *ModeldSystemLogoutRequest) String() string {
 func (*ModeldSystemLogoutRequest) ProtoMessage() {}
 
 func (x *ModeldSystemLogoutRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[19]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -971,7 +971,7 @@ func (x *ModeldSystemLogoutRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ModeldSystemLogoutRequest.ProtoReflect.Descriptor instead.
 func (*ModeldSystemLogoutRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{19}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *ModeldSystemLogoutRequest) GetToken() string {
@@ -996,7 +996,7 @@ type ChangePasswordRequest struct {
 func (x *ChangePasswordRequest) Reset() {
 	*x = ChangePasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[20]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1009,7 +1009,7 @@ func (x *ChangePasswordRequest) String() string {
 func (*ChangePasswordRequest) ProtoMessage() {}
 
 func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[20]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1022,7 +1022,7 @@ func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordRequest.ProtoReflect.Descriptor instead.
 func (*ChangePasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{20}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ChangePasswordRequest) GetNamespace() string {
@@ -1069,7 +1069,7 @@ type ChangePasswordResponse struct {
 func (x *ChangePasswordResponse) Reset() {
 	*x = ChangePasswordResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[21]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1082,7 +1082,7 @@ func (x *ChangePasswordResponse) String() string {
 func (*ChangePasswordResponse) ProtoMessage() {}
 
 func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[21]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1095,7 +1095,7 @@ func (x *ChangePasswordResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChangePasswordResponse.ProtoReflect.Descriptor instead.
 func (*ChangePasswordResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{21}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{21}
 }
 
 type ResetPasswordRequest struct {
@@ -1112,7 +1112,7 @@ type ResetPasswordRequest struct {
 func (x *ResetPasswordRequest) Reset() {
 	*x = ResetPasswordRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[22]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1125,7 +1125,7 @@ func (x *ResetPasswordRequest) String() string {
 func (*ResetPasswordRequest) ProtoMessage() {}
 
 func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[22]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1138,7 +1138,7 @@ func (x *ResetPasswordRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordRequest.ProtoReflect.Descriptor instead.
 func (*ResetPasswordRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{22}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *ResetPasswordRequest) GetNamespace() string {
@@ -1178,7 +1178,7 @@ type ResetPasswordReponse struct {
 func (x *ResetPasswordReponse) Reset() {
 	*x = ResetPasswordReponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[23]
+		mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1191,7 +1191,7 @@ func (x *ResetPasswordReponse) String() string {
 func (*ResetPasswordReponse) ProtoMessage() {}
 
 func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[23]
+	mi := &file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1204,29 +1204,29 @@ func (x *ResetPasswordReponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetPasswordReponse.ProtoReflect.Descriptor instead.
 func (*ResetPasswordReponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP(), []int{23}
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP(), []int{23}
 }
 
-var File_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto protoreflect.FileDescriptor
+var File_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto protoreflect.FileDescriptor
 
-var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDesc = []byte{
+var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDesc = []byte{
 	0x0a, 0x49, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f,
+	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2f,
 	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73,
 	0x79, 0x73, 0x74, 0x65, 0x6d, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73,
 	0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x36, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
 	0x2e, 0x76, 0x31, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f,
 	0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x1a, 0x45, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65,
-	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69,
+	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69,
 	0x2f, 0x70, 0x6b, 0x67, 0x2f, 0x61, 0x70, 0x69, 0x73, 0x2f, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2f,
 	0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2f, 0x67, 0x65, 0x6e, 0x65, 0x72, 0x61, 0x74,
 	0x65, 0x64, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
 	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f,
-	0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
+	0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73,
 	0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0xe9, 0x01, 0x0a, 0x18, 0x4c, 0x69, 0x73, 0x74,
 	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71,
@@ -1234,7 +1234,7 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61,
 	0x63, 0x65, 0x12, 0x74, 0x0a, 0x06, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x18, 0x02, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x5c, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61,
+	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
 	0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74,
 	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71,
@@ -1247,7 +1247,7 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x12, 0x5d, 0x0a, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x47, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74,
-	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e,
+	0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e,
 	0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76,
 	0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x05, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x22,
@@ -1256,7 +1256,7 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x57, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x43, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61,
 	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
 	0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65,
 	0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x1a,
@@ -1267,7 +1267,7 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x57, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x43, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
+	0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61,
 	0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66,
 	0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65,
 	0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x22, 0x1c,
@@ -1281,7 +1281,7 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x57, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x43, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61,
+	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72,
 	0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x4d, 0x6f, 0x64, 0x65, 0x6c,
 	0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x12, 0x12, 0x0a,
@@ -1296,7 +1296,7 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x70, 0x61, 0x63, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5f, 0x0a,
 	0x0a, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28,
 	0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
-	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
+	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70,
 	0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x6d, 0x6f,
 	0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x4e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x49, 0x6e,
 	0x66, 0x6f, 0x52, 0x0a, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x73, 0x22, 0x4d,
@@ -1354,12 +1354,12 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x76, 0x69, 0x63, 0x65, 0x12, 0xd3, 0x01, 0x0a, 0x11, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64,
 	0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x50, 0x2e, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
+	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
 	0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d,
 	0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x51, 0x2e, 0x67,
 	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
-	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
+	0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74,
 	0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64,
 	0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
@@ -1367,13 +1367,13 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x73, 0x12, 0xe4, 0x01, 0x0a, 0x12, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65,
 	0x6d, 0x12, 0x51, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
-	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70,
+	0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70,
 	0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
 	0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74,
 	0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x1a, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
 	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f,
+	0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f,
 	0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72,
 	0x65, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x27, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x21,
@@ -1382,12 +1382,12 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x6d, 0x12, 0xe0, 0x01, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53,
 	0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x4e, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
+	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47,
 	0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x4f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
+	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47,
 	0x65, 0x74, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x2c, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x26, 0x12, 0x24,
@@ -1396,12 +1396,12 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x61, 0x6d, 0x65, 0x7d, 0x12, 0xa4, 0x02, 0x0a, 0x12, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0x51, 0x2e, 0x67, 0x69,
 	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
-	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76,
+	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76,
 	0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65,
 	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c,
 	0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x52,
 	0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61,
-	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73,
+	0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79,
 	0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x4d, 0x6f,
 	0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
@@ -1414,13 +1414,13 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x12, 0xed, 0x01, 0x0a, 0x12,
 	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74,
 	0x65, 0x6d, 0x12, 0x51, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
-	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61,
+	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
 	0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65,
 	0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
 	0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65,
-	0x6c, 0x64, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
+	0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74, 0x65, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x44,
 	0x65, 0x6c, 0x65, 0x74, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x53, 0x79, 0x73, 0x74, 0x65,
 	0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x30, 0x82, 0xd3, 0xe4, 0x93, 0x02,
@@ -1428,71 +1428,71 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0x63, 0x65, 0x7d, 0x2f, 0x76, 0x31, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73,
 	0x74, 0x65, 0x6d, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x42, 0x38, 0x5a, 0x36, 0x67,
 	0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72,
-	0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72,
+	0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x64, 0x73, 0x79, 0x73, 0x74,
 	0x65, 0x6d, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescOnce sync.Once
-	file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescData = file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDesc
+	file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescOnce sync.Once
+	file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescData = file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDesc
 )
 
-func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescGZIP() []byte {
-	file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescOnce.Do(func() {
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescData)
+func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescGZIP() []byte {
+	file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescOnce.Do(func() {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescData)
 	})
-	return file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDescData
+	return file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDescData
 }
 
-var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
-var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_goTypes = []interface{}{
-	(*ListModeldSystemsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest
-	(*ListModeldSystemsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsResponse
-	(*ModeldSystemResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemResponse
-	(*CreateModeldSystemRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest
-	(*CreateModeldSystemResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemResponse
-	(*UpdateModeldSystemRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemRequest
-	(*UpdateModeldSystemResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemResponse
-	(*GetModeldSystemRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemRequest
-	(*GetModeldSystemResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse
-	(*GetModeldSystemNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesRequest
-	(*GetModeldSystemNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesResponse
-	(*DeleteModeldSystemRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemRequest
-	(*DeleteModeldSystemResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemResponse
-	(*ModeldSystemCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemCreateResponse
-	(*LogoutResponse)(nil),                    // 14: github.com.metaprov.modelaapi.services.modelasystem.v1.LogoutResponse
-	(*ResetPasswordResponse)(nil),             // 15: github.com.metaprov.modelaapi.services.modelasystem.v1.ResetPasswordResponse
-	(*ModeldSystemLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginRequest
-	(*ModeldSystemLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLoginResponse
-	(*ModeldSystemGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemGetByNameRequest
-	(*ModeldSystemLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemLogoutRequest
-	(*ChangePasswordRequest)(nil),             // 20: github.com.metaprov.modelaapi.services.modelasystem.v1.ChangePasswordRequest
-	(*ChangePasswordResponse)(nil),            // 21: github.com.metaprov.modelaapi.services.modelasystem.v1.ChangePasswordResponse
-	(*ResetPasswordRequest)(nil),              // 22: github.com.metaprov.modelaapi.services.modelasystem.v1.ResetPasswordRequest
-	(*ResetPasswordReponse)(nil),              // 23: github.com.metaprov.modelaapi.services.modelasystem.v1.ResetPasswordReponse
-	nil,                                       // 24: github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.LabelsEntry
+var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
+var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_goTypes = []interface{}{
+	(*ListModeldSystemsRequest)(nil),          // 0: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest
+	(*ListModeldSystemsResponse)(nil),         // 1: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsResponse
+	(*ModeldSystemResponse)(nil),              // 2: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemResponse
+	(*CreateModeldSystemRequest)(nil),         // 3: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemRequest
+	(*CreateModeldSystemResponse)(nil),        // 4: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemResponse
+	(*UpdateModeldSystemRequest)(nil),         // 5: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemRequest
+	(*UpdateModeldSystemResponse)(nil),        // 6: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemResponse
+	(*GetModeldSystemRequest)(nil),            // 7: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemRequest
+	(*GetModeldSystemResponse)(nil),           // 8: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemResponse
+	(*GetModeldSystemNamespacesRequest)(nil),  // 9: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemNamespacesRequest
+	(*GetModeldSystemNamespacesResponse)(nil), // 10: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemNamespacesResponse
+	(*DeleteModeldSystemRequest)(nil),         // 11: github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemRequest
+	(*DeleteModeldSystemResponse)(nil),        // 12: github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemResponse
+	(*ModeldSystemCreateResponse)(nil),        // 13: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemCreateResponse
+	(*LogoutResponse)(nil),                    // 14: github.com.metaprov.modelaapi.services.modeldsystem.v1.LogoutResponse
+	(*ResetPasswordResponse)(nil),             // 15: github.com.metaprov.modelaapi.services.modeldsystem.v1.ResetPasswordResponse
+	(*ModeldSystemLoginRequest)(nil),          // 16: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemLoginRequest
+	(*ModeldSystemLoginResponse)(nil),         // 17: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemLoginResponse
+	(*ModeldSystemGetByNameRequest)(nil),      // 18: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemGetByNameRequest
+	(*ModeldSystemLogoutRequest)(nil),         // 19: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemLogoutRequest
+	(*ChangePasswordRequest)(nil),             // 20: github.com.metaprov.modelaapi.services.modeldsystem.v1.ChangePasswordRequest
+	(*ChangePasswordResponse)(nil),            // 21: github.com.metaprov.modelaapi.services.modeldsystem.v1.ChangePasswordResponse
+	(*ResetPasswordRequest)(nil),              // 22: github.com.metaprov.modelaapi.services.modeldsystem.v1.ResetPasswordRequest
+	(*ResetPasswordReponse)(nil),              // 23: github.com.metaprov.modelaapi.services.modeldsystem.v1.ResetPasswordReponse
+	nil,                                       // 24: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest.LabelsEntry
 	(*v1alpha1.ModeldSystemList)(nil),         // 25: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList
 	(*v1alpha1.ModeldSystem)(nil),             // 26: github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
 	(*v1.NamespaceInfo)(nil),                  // 27: github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
 }
-var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_depIdxs = []int32{
-	24, // 0: github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest.LabelsEntry
-	25, // 1: github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList
-	26, // 2: github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
-	26, // 3: github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
-	26, // 4: github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
-	27, // 5: github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
-	0,  // 6: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.ListModeldSystems:input_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsRequest
-	3,  // 7: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.CreateModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemRequest
-	7,  // 8: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.GetModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemRequest
-	5,  // 9: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.UpdateModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemRequest
-	11, // 10: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.DeleteModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemRequest
-	1,  // 11: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.ListModeldSystems:output_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.ListModeldSystemsResponse
-	4,  // 12: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.CreateModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModeldSystemResponse
-	8,  // 13: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.GetModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.GetModeldSystemResponse
-	6,  // 14: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.UpdateModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModeldSystemResponse
-	12, // 15: github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService.DeleteModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModeldSystemResponse
+var file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_depIdxs = []int32{
+	24, // 0: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest.LabelsEntry
+	25, // 1: github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList
+	26, // 2: github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
+	26, // 3: github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
+	26, // 4: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem
+	27, // 5: github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemNamespacesResponse.namespaces:type_name -> github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo
+	0,  // 6: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.ListModeldSystems:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsRequest
+	3,  // 7: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.CreateModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemRequest
+	7,  // 8: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.GetModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemRequest
+	5,  // 9: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.UpdateModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemRequest
+	11, // 10: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.DeleteModeldSystem:input_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemRequest
+	1,  // 11: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.ListModeldSystems:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.ListModeldSystemsResponse
+	4,  // 12: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.CreateModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.CreateModeldSystemResponse
+	8,  // 13: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.GetModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.GetModeldSystemResponse
+	6,  // 14: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.UpdateModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.UpdateModeldSystemResponse
+	12, // 15: github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService.DeleteModeldSystem:output_type -> github.com.metaprov.modelaapi.services.modeldsystem.v1.DeleteModeldSystemResponse
 	11, // [11:16] is the sub-list for method output_type
 	6,  // [6:11] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1500,13 +1500,13 @@ var file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pro
 	0,  // [0:6] is the sub-list for field type_name
 }
 
-func init() { file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_init() }
-func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_init() {
-	if File_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto != nil {
+func init() { file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_init() }
+func file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_init() {
+	if File_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModeldSystemsRequest); i {
 			case 0:
 				return &v.state
@@ -1518,7 +1518,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListModeldSystemsResponse); i {
 			case 0:
 				return &v.state
@@ -1530,7 +1530,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModeldSystemResponse); i {
 			case 0:
 				return &v.state
@@ -1542,7 +1542,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModeldSystemRequest); i {
 			case 0:
 				return &v.state
@@ -1554,7 +1554,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateModeldSystemResponse); i {
 			case 0:
 				return &v.state
@@ -1566,7 +1566,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModeldSystemRequest); i {
 			case 0:
 				return &v.state
@@ -1578,7 +1578,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateModeldSystemResponse); i {
 			case 0:
 				return &v.state
@@ -1590,7 +1590,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModeldSystemRequest); i {
 			case 0:
 				return &v.state
@@ -1602,7 +1602,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModeldSystemResponse); i {
 			case 0:
 				return &v.state
@@ -1614,7 +1614,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModeldSystemNamespacesRequest); i {
 			case 0:
 				return &v.state
@@ -1626,7 +1626,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetModeldSystemNamespacesResponse); i {
 			case 0:
 				return &v.state
@@ -1638,7 +1638,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModeldSystemRequest); i {
 			case 0:
 				return &v.state
@@ -1650,7 +1650,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteModeldSystemResponse); i {
 			case 0:
 				return &v.state
@@ -1662,7 +1662,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModeldSystemCreateResponse); i {
 			case 0:
 				return &v.state
@@ -1674,7 +1674,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LogoutResponse); i {
 			case 0:
 				return &v.state
@@ -1686,7 +1686,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1698,7 +1698,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModeldSystemLoginRequest); i {
 			case 0:
 				return &v.state
@@ -1710,7 +1710,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModeldSystemLoginResponse); i {
 			case 0:
 				return &v.state
@@ -1722,7 +1722,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModeldSystemGetByNameRequest); i {
 			case 0:
 				return &v.state
@@ -1734,7 +1734,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ModeldSystemLogoutRequest); i {
 			case 0:
 				return &v.state
@@ -1746,7 +1746,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1758,7 +1758,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ChangePasswordResponse); i {
 			case 0:
 				return &v.state
@@ -1770,7 +1770,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordRequest); i {
 			case 0:
 				return &v.state
@@ -1782,7 +1782,7 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ResetPasswordReponse); i {
 			case 0:
 				return &v.state
@@ -1799,20 +1799,20 @@ func file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pr
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDesc,
+			RawDescriptor: file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_goTypes,
-		DependencyIndexes: file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_depIdxs,
-		MessageInfos:      file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_msgTypes,
+		GoTypes:           file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_goTypes,
+		DependencyIndexes: file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_depIdxs,
+		MessageInfos:      file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_msgTypes,
 	}.Build()
-	File_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto = out.File
-	file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_rawDesc = nil
-	file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_goTypes = nil
-	file_github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_proto_depIdxs = nil
+	File_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto = out.File
+	file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_rawDesc = nil
+	file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_goTypes = nil
+	file_github_com_metaprov_modelaapi_services_modeldsystem_v1_modeldsystem_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -1834,53 +1834,53 @@ type ModeldSystemServiceClient interface {
 	DeleteModeldSystem(ctx context.Context, in *DeleteModeldSystemRequest, opts ...grpc.CallOption) (*DeleteModeldSystemResponse, error)
 }
 
-type modelaSystemServiceClient struct {
+type modeldSystemServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
 func NewModeldSystemServiceClient(cc grpc.ClientConnInterface) ModeldSystemServiceClient {
-	return &modelaSystemServiceClient{cc}
+	return &modeldSystemServiceClient{cc}
 }
 
-func (c *modelaSystemServiceClient) ListModeldSystems(ctx context.Context, in *ListModeldSystemsRequest, opts ...grpc.CallOption) (*ListModeldSystemsResponse, error) {
+func (c *modeldSystemServiceClient) ListModeldSystems(ctx context.Context, in *ListModeldSystemsRequest, opts ...grpc.CallOption) (*ListModeldSystemsResponse, error) {
 	out := new(ListModeldSystemsResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/ListModeldSystems", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelaSystemServiceClient) CreateModeldSystem(ctx context.Context, in *CreateModeldSystemRequest, opts ...grpc.CallOption) (*CreateModeldSystemResponse, error) {
+func (c *modeldSystemServiceClient) CreateModeldSystem(ctx context.Context, in *CreateModeldSystemRequest, opts ...grpc.CallOption) (*CreateModeldSystemResponse, error) {
 	out := new(CreateModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/CreateModeldSystem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelaSystemServiceClient) GetModeldSystem(ctx context.Context, in *GetModeldSystemRequest, opts ...grpc.CallOption) (*GetModeldSystemResponse, error) {
+func (c *modeldSystemServiceClient) GetModeldSystem(ctx context.Context, in *GetModeldSystemRequest, opts ...grpc.CallOption) (*GetModeldSystemResponse, error) {
 	out := new(GetModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/GetModeldSystem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelaSystemServiceClient) UpdateModeldSystem(ctx context.Context, in *UpdateModeldSystemRequest, opts ...grpc.CallOption) (*UpdateModeldSystemResponse, error) {
+func (c *modeldSystemServiceClient) UpdateModeldSystem(ctx context.Context, in *UpdateModeldSystemRequest, opts ...grpc.CallOption) (*UpdateModeldSystemResponse, error) {
 	out := new(UpdateModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/UpdateModeldSystem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *modelaSystemServiceClient) DeleteModeldSystem(ctx context.Context, in *DeleteModeldSystemRequest, opts ...grpc.CallOption) (*DeleteModeldSystemResponse, error) {
+func (c *modeldSystemServiceClient) DeleteModeldSystem(ctx context.Context, in *DeleteModeldSystemRequest, opts ...grpc.CallOption) (*DeleteModeldSystemResponse, error) {
 	out := new(DeleteModeldSystemResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/DeleteModeldSystem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1930,7 +1930,7 @@ func _ModeldSystemService_ListModeldSystems_Handler(srv interface{}, ctx context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/ListModeldSystems",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/ListModeldSystems",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModeldSystemServiceServer).ListModeldSystems(ctx, req.(*ListModeldSystemsRequest))
@@ -1948,7 +1948,7 @@ func _ModeldSystemService_CreateModeldSystem_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/CreateModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/CreateModeldSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModeldSystemServiceServer).CreateModeldSystem(ctx, req.(*CreateModeldSystemRequest))
@@ -1966,7 +1966,7 @@ func _ModeldSystemService_GetModeldSystem_Handler(srv interface{}, ctx context.C
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/GetModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/GetModeldSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModeldSystemServiceServer).GetModeldSystem(ctx, req.(*GetModeldSystemRequest))
@@ -1984,7 +1984,7 @@ func _ModeldSystemService_UpdateModeldSystem_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/UpdateModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/UpdateModeldSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModeldSystemServiceServer).UpdateModeldSystem(ctx, req.(*UpdateModeldSystemRequest))
@@ -2002,7 +2002,7 @@ func _ModeldSystemService_DeleteModeldSystem_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService/DeleteModeldSystem",
+		FullMethod: "/github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService/DeleteModeldSystem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ModeldSystemServiceServer).DeleteModeldSystem(ctx, req.(*DeleteModeldSystemRequest))
@@ -2011,7 +2011,7 @@ func _ModeldSystemService_DeleteModeldSystem_Handler(srv interface{}, ctx contex
 }
 
 var _ModeldSystemService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "github.com.metaprov.modelaapi.services.modelasystem.v1.ModeldSystemService",
+	ServiceName: "github.com.metaprov.modelaapi.services.modeldsystem.v1.ModeldSystemService",
 	HandlerType: (*ModeldSystemServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -2036,5 +2036,5 @@ var _ModeldSystemService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto",
+	Metadata: "github.com/metaprov/modelaapi/services/modeldsystem/v1/modeldsystem.proto",
 }

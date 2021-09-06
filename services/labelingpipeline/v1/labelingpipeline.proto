@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/labelingpipeline/v1";
-package github.com.metaprov.modeldapi.services.labelingpipeline.v1;
+option go_package = "github.com/metaprov/modelaapi/services/labelingpipeline/v1";
+package github.com.metaprov.modelaapi.services.labelingpipeline.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListLabelingPipelineRequest {
     string namespace = 1;
@@ -12,11 +12,11 @@ message ListLabelingPipelineRequest {
 }
 
 message ListLabelingPipelineResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineList items = 1;
 }
 
 message CreateLabelingPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
 }
 
 message CreateLabelingPipelineResponse {
@@ -24,7 +24,7 @@ message CreateLabelingPipelineResponse {
 }
 
 message UpdateLabelingPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
 }
 
 message UpdateLabelingPipelineResponse {
@@ -38,7 +38,7 @@ message GetLabelingPipelineRequest {
 
 
 message GetLabelingPipelineResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
     string yaml = 2;
 }
 

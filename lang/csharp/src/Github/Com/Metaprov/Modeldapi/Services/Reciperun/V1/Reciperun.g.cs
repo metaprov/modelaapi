@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Reciperun.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/reciperun/v1/reciperun.proto</summary>
   public static partial class ReciperunReflection {
@@ -73,18 +73,18 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             "IgBCNVozZ2l0aHViLmNvbS9tZXRhcHJvdi9tb2RlbGRhcGkvc2VydmljZXMv",
             "cmVjaXBlcnVuL3YxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ListRecipeRunsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ListRecipeRunsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ListRecipeRunsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ListRecipeRunsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.CreateRecipeRunRequest), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.CreateRecipeRunRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.CreateRecipeRunResponse), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.CreateRecipeRunResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.UpdateRecipeRunRequest), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.UpdateRecipeRunRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.UpdateRecipeRunResponse), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.UpdateRecipeRunResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.GetRecipeRunRequest), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.GetRecipeRunRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.GetRecipeRunResponse), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.GetRecipeRunResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.DeleteRecipeRunRequest), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.DeleteRecipeRunRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.DeleteRecipeRunResponse), global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.DeleteRecipeRunResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ListRecipeRunsRequest), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ListRecipeRunsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ListRecipeRunsResponse), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ListRecipeRunsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.CreateRecipeRunRequest), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.CreateRecipeRunRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.CreateRecipeRunResponse), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.CreateRecipeRunResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.UpdateRecipeRunRequest), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.UpdateRecipeRunRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.UpdateRecipeRunResponse), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.UpdateRecipeRunResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.GetRecipeRunRequest), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.GetRecipeRunRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.GetRecipeRunResponse), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.GetRecipeRunResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.DeleteRecipeRunRequest), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.DeleteRecipeRunRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.DeleteRecipeRunResponse), global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.DeleteRecipeRunResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -103,7 +103,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -300,7 +300,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -328,9 +328,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList items_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList Items {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -416,7 +416,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList();
+          Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -436,7 +436,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList();
             }
             input.ReadMessage(Items);
             break;
@@ -457,7 +457,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList();
             }
             input.ReadMessage(Items);
             break;
@@ -481,7 +481,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -509,9 +509,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun Item {
       get { return item_; }
       set {
         item_ = value;
@@ -597,7 +597,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
         }
         Item.MergeFrom(other.Item);
       }
@@ -617,7 +617,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
             }
             input.ReadMessage(Item);
             break;
@@ -638,7 +638,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
             }
             input.ReadMessage(Item);
             break;
@@ -662,7 +662,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -798,7 +798,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -826,9 +826,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun Item {
       get { return item_; }
       set {
         item_ = value;
@@ -914,7 +914,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
         }
         Item.MergeFrom(other.Item);
       }
@@ -934,7 +934,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
             }
             input.ReadMessage(Item);
             break;
@@ -955,7 +955,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
             }
             input.ReadMessage(Item);
             break;
@@ -979,7 +979,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1115,7 +1115,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1323,7 +1323,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1352,9 +1352,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1464,7 +1464,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1487,7 +1487,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
             }
             input.ReadMessage(Item);
             break;
@@ -1512,7 +1512,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun();
             }
             input.ReadMessage(Item);
             break;
@@ -1540,7 +1540,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1748,7 +1748,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Reciperun.V1.ReciperunReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

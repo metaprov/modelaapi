@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/datapipelinerun/v1";
-package github.com.metaprov.modeldapi.services.datapipelinerun.v1;
+option go_package = "github.com/metaprov/modelaapi/services/datapipelinerun/v1";
+package github.com.metaprov.modelaapi.services.datapipelinerun.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListDataPipelineRunRequest {
     string namespace = 1;
@@ -12,18 +12,18 @@ message ListDataPipelineRunRequest {
 }
 
 message ListDataPipelineRunResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunList items = 1;
 }
 
 message CreateDataPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;    
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;    
 }
 
 message CreateDataPipelineRunResponse {
 }
 
 message UpdateDataPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
 }
 
 message UpdateDataPipelineRunResponse {
@@ -36,7 +36,7 @@ message GetDataPipelineRunRequest {
 
 
 message GetDataPipelineRunResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
     string yaml = 2;
 }
 

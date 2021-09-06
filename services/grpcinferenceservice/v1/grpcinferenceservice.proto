@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package github.com.metaprov.modeldapi.services.grpcinferenceservice.v1;
+package github.com.metaprov.modelaapi.services.grpcinferenceservice.v1;
 
 // Copyright 2020 kubeflow.org.
 //
@@ -24,7 +24,7 @@ import "google/protobuf/struct.proto";
 option csharp_namespace = "Modeld.Client.Autogen.Grpc.v1";
 option java_outer_classname = "GrpcInferenceService";
 option java_package = "io.modeld.grpcinferenceservice.v1";
-option go_package = "github.com/metaprov/modeldapi/services/grpcinferenceservice/v1";
+option go_package = "github.com/metaprov/modelaapi/services/grpcinferenceservice/v1";
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
   info: {

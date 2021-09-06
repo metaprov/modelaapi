@@ -15,12 +15,12 @@ PATH="${PROJECT_ROOT}/dist:${PATH}"
 
 
 PACKAGES=(
-    github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1
-    github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1
-    github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1
-    github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1
-    github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1
-    github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1
+    github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1
+    github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1
+    github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1
+    github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1
+    github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1
+    github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1
     )
 
 APIMACHINERY_PKGS=(

@@ -1,0 +1,503 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.0
+  creationTimestamp: null
+  name: datasets.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    - all
+    kind: Dataset
+    listKind: DatasetList
+    plural: datasets
+    shortNames:
+    - dset
+    singular: dataset
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.phase
+      name: Status
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .spec.datasourceName
+      name: Data Source
+      type: string
+    - jsonPath: .spec.type
+      name: Type
+      type: string
+    - jsonPath: .status.statistics.rows
+      name: Rows
+      type: integer
+    - jsonPath: .status.statistics.cols
+      name: Columns
+      type: integer
+    - jsonPath: .status.statistics.fileSize
+      name: Size
+      type: integer
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Dataset represents a single batch of data
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DatasetSpec defines the desired state of a dataset
+            properties:
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline of a job for this
+                  dataset.
+                format: int64
+                type: integer
+              datasourceName:
+                default: ""
+                description: DataSourceName is the name of the data source which created
+                  this dataset. For example flat file
+                maxLength: 63
+                type: string
+              description:
+                default: ""
+                description: User provided description
+                maxLength: 512
+                type: string
+              labeled:
+                default: true
+                description: Labeled indicates if this dataset is labeled or not.
+                type: boolean
+              location:
+                description: Folder of the actual data resides.
+                properties:
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: ConnectionName is the name of the connection to access
+                      the database
+                    type: string
+                  database:
+                    default: ""
+                    description: Database , the database.
+                    type: string
+                  path:
+                    default: ""
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                  sql:
+                    default: ""
+                    description: SQL statement, in case we choose the view type
+                    type: string
+                  table:
+                    default: ""
+                    description: Sql or table or topic name.
+                    type: string
+                  topic:
+                    default: ""
+                    description: Topic is the name of the topic in case of streaming
+                    type: string
+                  type:
+                    default: object
+                    description: data location type is the type of the data location
+                    type: string
+                type: object
+              origin:
+                description: Define the data location. The operator will copy the
+                  data from this location into the live location. The datafiles are
+                  initially uploaded to this location.
+                properties:
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: ConnectionName is the name of the connection to access
+                      the database
+                    type: string
+                  database:
+                    default: ""
+                    description: Database , the database.
+                    type: string
+                  path:
+                    default: ""
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                  sql:
+                    default: ""
+                    description: SQL statement, in case we choose the view type
+                    type: string
+                  table:
+                    default: ""
+                    description: Sql or table or topic name.
+                    type: string
+                  topic:
+                    default: ""
+                    description: Topic is the name of the topic in case of streaming
+                    type: string
+                  type:
+                    default: object
+                    description: data location type is the type of the data location
+                    type: string
+                type: object
+              owner:
+                default: no-one
+                description: The account name of the owner of this dataset
+                type: string
+              reported:
+                default: true
+                description: If true, a dataset report should be generated for this
+                  dataset.
+                type: boolean
+              sample:
+                description: Sample spec defines how many rows to use for analysis
+                properties:
+                  column:
+                    default: ""
+                    description: Column is used for stratified sampling.
+                    type: string
+                  enabled:
+                    default: false
+                    description: Enabled specify if the sample is enabled
+                    type: boolean
+                  filter:
+                    default: ""
+                    description: Filter formula. Valid only if the sample is a filter.
+                    type: string
+                  percent:
+                    default: 100
+                    description: Pct is the percent of rows to use for analysis.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  rows:
+                    default: 500
+                    description: Rows is the number of rows. Default is 500
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  type:
+                    default: random
+                    description: Type is the sampling type Default is random
+                    enum:
+                    - header
+                    - random
+                    - filter
+                    - anomaly
+                    - stratified
+                    type: string
+                type: object
+              snapshotted:
+                default: false
+                description: If true, we should take a snapshot of the databases in
+                  order to create a dataset
+                type: boolean
+              syntactic:
+                default: false
+                description: Syntactic indicates if we want to generate this dataset
+                  based on the data source
+                type: boolean
+              syntacticRows:
+                default: 0
+                description: If syntactic is true, indicates how many rows to generate
+                format: int32
+                type: integer
+              type:
+                default: tabular
+                description: DatasetType is the type of dataset
+                enum:
+                - tabular
+                - image
+                - text
+                - video
+                - audio
+                type: string
+              validate:
+                default: true
+                description: If true, we should validate the dataset
+                type: boolean
+              versionName:
+                default: ""
+                description: VersionName is the data product version of the dataset
+                maxLength: 63
+                type: string
+              workloadClassName:
+                default: nano-cpu-250m-mem-256mi
+                description: A reference to the workload class this is used to analyze
+                  the workload
+                type: string
+            type: object
+          status:
+            description: DatasetStatus defines the observed state of Dataset
+            properties:
+              conditions:
+                items:
+                  description: DatasetCondition describes the state of a dataset at
+                    a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Condition on the dataset
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              imbalanced:
+                description: Based on the actual data, treat this dataset as imbalanced.
+                type: boolean
+              lastError:
+                default: ""
+                description: Last error
+                type: string
+              lastStudyTime:
+                description: Last time a study was done on the dataset.
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: The phase of the dataset processing
+                type: string
+              profileUri:
+                description: A reference to the visualization uri which were produce
+                  during processing
+                type: string
+              progress:
+                default: 0
+                description: Processing progress
+                format: int32
+                type: integer
+              reportName:
+                description: Reference to the report object that was generated for
+                  the dataset
+                type: string
+              reportUri:
+                description: ReportURI is the uri of dataset report
+                type: string
+              sigs:
+                description: Sha256 sig of the files
+                properties:
+                  data:
+                    description: Data to the full data file (e.g. csv file).
+                    type: string
+                  labels:
+                    description: The location of the labels file (If exist)
+                    type: string
+                  test:
+                    description: the location of the training data, if different from
+                      the data.
+                    type: string
+                  train:
+                    description: path to the training set
+                    type: string
+                  validation:
+                    description: Pointer to the validation
+                    type: string
+                required:
+                - data
+                - test
+                - train
+                - validation
+                type: object
+              statistics:
+                description: Statistics for the dataset. The statistics contain information
+                  about each column.
+                properties:
+                  cols:
+                    description: number of columns, used mainly to show the columns
+                      in the kubectl
+                    format: int32
+                    type: integer
+                  columns:
+                    description: Columns contain the collection of statistics for
+                      each attribute
+                    items:
+                      description: Hold the statistical parameters about a single
+                        attribute
+                      properties:
+                        completeness:
+                          description: Completeness is the ratio between non null
+                            to null
+                          type: number
+                        distinc:
+                          format: int32
+                          type: integer
+                        distinctValueCount:
+                          description: The ratio between distinct count to total count
+                          type: number
+                        highCorr:
+                          description: This column has high correlation with another
+                            feature and should be dropped. The value is set during
+                            the profile process.
+                          type: boolean
+                        highCred:
+                          description: This column has high cardinality and should
+                            use high cred encoder The value is set during the profile
+                            process.
+                          type: boolean
+                        ignored:
+                          description: Should this column be ignored, as specified
+                            by the user. This value is derived from the schema
+                          type: boolean
+                        importance:
+                          description: The feature importance
+                          type: number
+                        indexOfPeculiarity:
+                          description: Used for text attributes
+                          type: number
+                        invalid:
+                          description: The number of invalid values
+                          format: int32
+                          type: integer
+                        kurtosis:
+                          description: Kurtosis is the standard deviation value of
+                            the attribute
+                          type: number
+                        max:
+                          description: Max is the maximum value of the attribute
+                          type: number
+                        mean:
+                          description: Mean is the mean value of the attribute
+                          type: number
+                        min:
+                          description: Min is the minimum value of the attribute
+                          type: number
+                        missing:
+                          description: The number of missing values
+                          format: int32
+                          type: integer
+                        mostFreqValuesRatio:
+                          description: The ratio between most freq value to total
+                          type: number
+                        name:
+                          description: FileName is the name of the column
+                          type: string
+                        nullable:
+                          description: Is this column is nullable. This value is derived
+                            from the schema.
+                          type: boolean
+                        p25:
+                          description: Pct25 is the 25 precent point
+                          type: number
+                        p50:
+                          description: Pct50 is the median
+                          type: number
+                        p75:
+                          description: Pct75 is the 75% point
+                          type: number
+                        skew:
+                          description: Mark that this column is skewed and would require
+                            a power transform If skewness is less than -1 or greater
+                            than 1, the distribution is highly skewed. If skewness
+                            is between -1 and -0.5 or between 0.5 and 1, the distribution
+                            is moderately skewed. If skewness is between -0.5 and
+                            0.5, the distribution is approximately symmetric
+                          type: boolean
+                        skewness:
+                          description: Skewness is the standard deviation value of
+                            the attribute
+                          type: number
+                        stddev:
+                          description: StdDev is the standard deviation value of the
+                            attribute
+                          type: number
+                        target:
+                          description: Is this the target attribute, the value is
+                            derived from the schema
+                          type: boolean
+                        zeros:
+                          description: Zeros is the numbers of zeros in the feature
+                          type: number
+                      type: object
+                    type: array
+                  fileSize:
+                    description: file size in bytes
+                    format: int32
+                    type: integer
+                  rows:
+                    description: number of rows in the dataset
+                    format: int32
+                    type: integer
+                type: object
+              validationResults:
+                description: List of data problems, as reported by the validation
+                  process
+                items:
+                  properties:
+                    column:
+                      type: string
+                    error:
+                      type: string
+                    passed:
+                      type: boolean
+                    type:
+                      type: string
+                  required:
+                  - column
+                  - error
+                  - passed
+                  - type
+                  type: object
+                type: array
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

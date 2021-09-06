@@ -323,6 +323,8 @@ github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182aff
 github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369/go.mod h1:BSXmuO+STAnVfrANrmjBb36TMTDstsz7MSK+HVaYKv4=
 github.com/metaprov/modelaapi v0.4.648 h1:zl1Wgt0/Dgw2ERXi2ofU1QaTM1pfT4xEFkptHtVI7/U=
 github.com/metaprov/modelaapi v0.4.648/go.mod h1:m3Sjyd/4/nXYAocwrC2DaXlQO6TO4kDy789FrMfjDpc=
+github.com/metaprov/modelaapi v0.4.648 h1:zl1Wgt0/Dgw2ERXi2ofU1QaTM1pfT4xEFkptHtVI7/U=
+github.com/metaprov/modelaapi v0.4.648/go.mod h1:m3Sjyd/4/nXYAocwrC2DaXlQO6TO4kDy789FrMfjDpc=
 github.com/miekg/dns v1.0.14/go.mod h1:W1PPwlIAgtquWBMBEV9nkV9Cazfe8ScdGz/Lj7v3Nrg=
 github.com/mitchellh/cli v1.0.0/go.mod h1:hNIlj7HEI86fIcpObd7a0FcrxTWetlwJDGcceTlRvqc=
 github.com/mitchellh/go-homedir v1.0.0/go.mod h1:SfyaCUpYCn1Vlf4IUYiD9fPX4A5wJrkLzIz1N1q0pr0=

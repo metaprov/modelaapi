@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Trainerd.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto</summary>
   public static partial class TrainerdReflection {
@@ -168,18 +168,18 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             "blJlc3BvbnNlIgBCNFoyZ2l0aHViLmNvbS9tZXRhcHJvdi9tb2RlbGRhcGkv",
             "c2VydmljZXMvdHJhaW5lcmQvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainRequest), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainRequest.Parser, new[]{ "Product", "Version", "Bucket", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainResponse), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainResponse.Parser, new[]{ "Result", "WeightsCloudUri", "ManifestCloudUri", "LogsCloudUri", "LabelEncoder" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TestRequest), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TestRequest.Parser, new[]{ "Product", "Version", "Bucket", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TestResponse), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TestResponse.Parser, new[]{ "TrainResult", "TestResult", "ModelWeightsCloudUri", "ModelManifestCloudUri", "ModelLogsCloudUri", "PreWeightsCloudUri", "PreManifestCloudUri", "PreLogsCloudUri", "LabelEncoder", "MisclassUri" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainEnsembleRequest), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainEnsembleRequest.Parser, new[]{ "Product", "Version", "Bucket", "Base", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TestEnsembleRequest), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TestEnsembleRequest.Parser, new[]{ "Product", "Version", "Bucket", "Base", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ForecastRequest), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ForecastRequest.Parser, new[]{ "Product", "Version", "Bucket", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ForecastResponse), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ForecastResponse.Parser, new[]{ "ForecastCloudUri" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ShutdownRequest), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ShutdownRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ShutdownResponse), global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.ShutdownResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainRequest), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainRequest.Parser, new[]{ "Product", "Version", "Bucket", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainResponse), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainResponse.Parser, new[]{ "Result", "WeightsCloudUri", "ManifestCloudUri", "LogsCloudUri", "LabelEncoder" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TestRequest), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TestRequest.Parser, new[]{ "Product", "Version", "Bucket", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TestResponse), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TestResponse.Parser, new[]{ "TrainResult", "TestResult", "ModelWeightsCloudUri", "ModelManifestCloudUri", "ModelLogsCloudUri", "PreWeightsCloudUri", "PreManifestCloudUri", "PreLogsCloudUri", "LabelEncoder", "MisclassUri" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainEnsembleRequest), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainEnsembleRequest.Parser, new[]{ "Product", "Version", "Bucket", "Base", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TestEnsembleRequest), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TestEnsembleRequest.Parser, new[]{ "Product", "Version", "Bucket", "Base", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ForecastRequest), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ForecastRequest.Parser, new[]{ "Product", "Version", "Bucket", "Model", "Study", "Datasource", "Dataset", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ForecastResponse), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ForecastResponse.Parser, new[]{ "ForecastCloudUri" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ShutdownRequest), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ShutdownRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ShutdownResponse), global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.ShutdownResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -198,7 +198,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -234,9 +234,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "product" field.</summary>
     public const int ProductFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
       get { return product_; }
       set {
         product_ = value;
@@ -245,9 +245,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
       get { return version_; }
       set {
         version_ = value;
@@ -256,9 +256,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -267,9 +267,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "model" field.</summary>
     public const int ModelFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model model_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model model_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model Model {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model Model {
       get { return model_; }
       set {
         model_ = value;
@@ -278,9 +278,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "study" field.</summary>
     public const int StudyFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study study_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study study_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study Study {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study Study {
       get { return study_; }
       set {
         study_ = value;
@@ -289,9 +289,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "datasource" field.</summary>
     public const int DatasourceFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
       get { return datasource_; }
       set {
         datasource_ = value;
@@ -300,9 +300,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "dataset" field.</summary>
     public const int DatasetFieldNumber = 8;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
       get { return dataset_; }
       set {
         dataset_ = value;
@@ -311,9 +311,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 9;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -505,49 +505,49 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
       }
       if (other.product_ != null) {
         if (product_ == null) {
-          Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+          Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
         }
         Product.MergeFrom(other.Product);
       }
       if (other.version_ != null) {
         if (version_ == null) {
-          Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Version.MergeFrom(other.Version);
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       if (other.model_ != null) {
         if (model_ == null) {
-          Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+          Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
         }
         Model.MergeFrom(other.Model);
       }
       if (other.study_ != null) {
         if (study_ == null) {
-          Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+          Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
         }
         Study.MergeFrom(other.Study);
       }
       if (other.datasource_ != null) {
         if (datasource_ == null) {
-          Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+          Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
         }
         Datasource.MergeFrom(other.Datasource);
       }
       if (other.dataset_ != null) {
         if (dataset_ == null) {
-          Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Dataset.MergeFrom(other.Dataset);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -568,56 +568,56 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 42: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 50: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 58: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 66: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 74: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -642,56 +642,56 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 42: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 50: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 58: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 66: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 74: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -719,7 +719,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -751,11 +751,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "result" field.</summary>
     public const int ResultFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> _repeated_result_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> result_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> _repeated_result_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> result_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> Result {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> Result {
       get { return result_; }
     }
 
@@ -1036,7 +1036,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1072,9 +1072,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "product" field.</summary>
     public const int ProductFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
       get { return product_; }
       set {
         product_ = value;
@@ -1083,9 +1083,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
       get { return version_; }
       set {
         version_ = value;
@@ -1094,9 +1094,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -1105,9 +1105,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "model" field.</summary>
     public const int ModelFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model model_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model model_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model Model {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model Model {
       get { return model_; }
       set {
         model_ = value;
@@ -1116,9 +1116,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "study" field.</summary>
     public const int StudyFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study study_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study study_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study Study {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study Study {
       get { return study_; }
       set {
         study_ = value;
@@ -1127,9 +1127,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "datasource" field.</summary>
     public const int DatasourceFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
       get { return datasource_; }
       set {
         datasource_ = value;
@@ -1138,9 +1138,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "dataset" field.</summary>
     public const int DatasetFieldNumber = 8;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
       get { return dataset_; }
       set {
         dataset_ = value;
@@ -1149,9 +1149,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 9;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -1343,49 +1343,49 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
       }
       if (other.product_ != null) {
         if (product_ == null) {
-          Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+          Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
         }
         Product.MergeFrom(other.Product);
       }
       if (other.version_ != null) {
         if (version_ == null) {
-          Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Version.MergeFrom(other.Version);
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       if (other.model_ != null) {
         if (model_ == null) {
-          Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+          Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
         }
         Model.MergeFrom(other.Model);
       }
       if (other.study_ != null) {
         if (study_ == null) {
-          Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+          Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
         }
         Study.MergeFrom(other.Study);
       }
       if (other.datasource_ != null) {
         if (datasource_ == null) {
-          Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+          Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
         }
         Datasource.MergeFrom(other.Datasource);
       }
       if (other.dataset_ != null) {
         if (dataset_ == null) {
-          Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Dataset.MergeFrom(other.Dataset);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -1406,56 +1406,56 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 42: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 50: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 58: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 66: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 74: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1480,56 +1480,56 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 42: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 50: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 58: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 66: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 74: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1557,7 +1557,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1594,27 +1594,27 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "train_result" field.</summary>
     public const int TrainResultFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> _repeated_trainResult_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> trainResult_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> _repeated_trainResult_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> trainResult_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement>();
     /// <summary>
     /// measurements on the training set
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> TrainResult {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> TrainResult {
       get { return trainResult_; }
     }
 
     /// <summary>Field number for the "test_result" field.</summary>
     public const int TestResultFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> _repeated_testResult_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> testResult_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> _repeated_testResult_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> testResult_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement>();
     /// <summary>
     /// measurements on the testing set
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Measurement> TestResult {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Measurement> TestResult {
       get { return testResult_; }
     }
 
@@ -2064,7 +2064,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2101,9 +2101,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "product" field.</summary>
     public const int ProductFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
       get { return product_; }
       set {
         product_ = value;
@@ -2112,9 +2112,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
       get { return version_; }
       set {
         version_ = value;
@@ -2123,9 +2123,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -2134,22 +2134,22 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "base" field.</summary>
     public const int BaseFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model> _repeated_base_codec
-        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model> base_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model> _repeated_base_codec
+        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model> base_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model>();
     /// <summary>
     /// the spec for the base models
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model> Base {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model> Base {
       get { return base_; }
     }
 
     /// <summary>Field number for the "model" field.</summary>
     public const int ModelFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model model_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model model_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model Model {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model Model {
       get { return model_; }
       set {
         model_ = value;
@@ -2158,9 +2158,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "study" field.</summary>
     public const int StudyFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study study_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study study_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study Study {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study Study {
       get { return study_; }
       set {
         study_ = value;
@@ -2169,9 +2169,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "datasource" field.</summary>
     public const int DatasourceFieldNumber = 8;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
       get { return datasource_; }
       set {
         datasource_ = value;
@@ -2180,9 +2180,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "dataset" field.</summary>
     public const int DatasetFieldNumber = 9;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
       get { return dataset_; }
       set {
         dataset_ = value;
@@ -2191,9 +2191,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 10;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -2390,50 +2390,50 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
       }
       if (other.product_ != null) {
         if (product_ == null) {
-          Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+          Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
         }
         Product.MergeFrom(other.Product);
       }
       if (other.version_ != null) {
         if (version_ == null) {
-          Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Version.MergeFrom(other.Version);
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       base_.Add(other.base_);
       if (other.model_ != null) {
         if (model_ == null) {
-          Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+          Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
         }
         Model.MergeFrom(other.Model);
       }
       if (other.study_ != null) {
         if (study_ == null) {
-          Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+          Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
         }
         Study.MergeFrom(other.Study);
       }
       if (other.datasource_ != null) {
         if (datasource_ == null) {
-          Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+          Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
         }
         Datasource.MergeFrom(other.Datasource);
       }
       if (other.dataset_ != null) {
         if (dataset_ == null) {
-          Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Dataset.MergeFrom(other.Dataset);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -2454,21 +2454,21 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
@@ -2479,35 +2479,35 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
           }
           case 50: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 58: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 66: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 74: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 82: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -2532,21 +2532,21 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
@@ -2557,35 +2557,35 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
           }
           case 50: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 58: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 66: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 74: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 82: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -2613,7 +2613,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2650,9 +2650,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "product" field.</summary>
     public const int ProductFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
       get { return product_; }
       set {
         product_ = value;
@@ -2661,9 +2661,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
       get { return version_; }
       set {
         version_ = value;
@@ -2672,9 +2672,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -2683,22 +2683,22 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "base" field.</summary>
     public const int BaseFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model> _repeated_base_codec
-        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model> base_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model> _repeated_base_codec
+        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model> base_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model>();
     /// <summary>
     /// the spec for the base models
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model> Base {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model> Base {
       get { return base_; }
     }
 
     /// <summary>Field number for the "model" field.</summary>
     public const int ModelFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model model_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model model_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model Model {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model Model {
       get { return model_; }
       set {
         model_ = value;
@@ -2707,9 +2707,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "study" field.</summary>
     public const int StudyFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study study_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study study_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study Study {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study Study {
       get { return study_; }
       set {
         study_ = value;
@@ -2718,9 +2718,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "datasource" field.</summary>
     public const int DatasourceFieldNumber = 8;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
       get { return datasource_; }
       set {
         datasource_ = value;
@@ -2729,9 +2729,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "dataset" field.</summary>
     public const int DatasetFieldNumber = 9;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
       get { return dataset_; }
       set {
         dataset_ = value;
@@ -2740,9 +2740,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 10;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -2939,50 +2939,50 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
       }
       if (other.product_ != null) {
         if (product_ == null) {
-          Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+          Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
         }
         Product.MergeFrom(other.Product);
       }
       if (other.version_ != null) {
         if (version_ == null) {
-          Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Version.MergeFrom(other.Version);
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       base_.Add(other.base_);
       if (other.model_ != null) {
         if (model_ == null) {
-          Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+          Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
         }
         Model.MergeFrom(other.Model);
       }
       if (other.study_ != null) {
         if (study_ == null) {
-          Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+          Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
         }
         Study.MergeFrom(other.Study);
       }
       if (other.datasource_ != null) {
         if (datasource_ == null) {
-          Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+          Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
         }
         Datasource.MergeFrom(other.Datasource);
       }
       if (other.dataset_ != null) {
         if (dataset_ == null) {
-          Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Dataset.MergeFrom(other.Dataset);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -3003,21 +3003,21 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
@@ -3028,35 +3028,35 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
           }
           case 50: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 58: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 66: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 74: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 82: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -3081,21 +3081,21 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
@@ -3106,35 +3106,35 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
           }
           case 50: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 58: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 66: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 74: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 82: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -3162,7 +3162,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3198,9 +3198,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "product" field.</summary>
     public const int ProductFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct product_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct Product {
       get { return product_; }
       set {
         product_ = value;
@@ -3209,9 +3209,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "version" field.</summary>
     public const int VersionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion version_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Version {
       get { return version_; }
       set {
         version_ = value;
@@ -3220,9 +3220,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -3231,9 +3231,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "model" field.</summary>
     public const int ModelFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model model_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model model_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model Model {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model Model {
       get { return model_; }
       set {
         model_ = value;
@@ -3242,9 +3242,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "study" field.</summary>
     public const int StudyFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study study_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study study_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study Study {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study Study {
       get { return study_; }
       set {
         study_ = value;
@@ -3253,9 +3253,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "datasource" field.</summary>
     public const int DatasourceFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource datasource_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource Datasource {
       get { return datasource_; }
       set {
         datasource_ = value;
@@ -3264,9 +3264,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "dataset" field.</summary>
     public const int DatasetFieldNumber = 8;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
       get { return dataset_; }
       set {
         dataset_ = value;
@@ -3275,9 +3275,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 9;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -3469,49 +3469,49 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
       }
       if (other.product_ != null) {
         if (product_ == null) {
-          Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+          Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
         }
         Product.MergeFrom(other.Product);
       }
       if (other.version_ != null) {
         if (version_ == null) {
-          Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Version.MergeFrom(other.Version);
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       if (other.model_ != null) {
         if (model_ == null) {
-          Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+          Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
         }
         Model.MergeFrom(other.Model);
       }
       if (other.study_ != null) {
         if (study_ == null) {
-          Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+          Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
         }
         Study.MergeFrom(other.Study);
       }
       if (other.datasource_ != null) {
         if (datasource_ == null) {
-          Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+          Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
         }
         Datasource.MergeFrom(other.Datasource);
       }
       if (other.dataset_ != null) {
         if (dataset_ == null) {
-          Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Dataset.MergeFrom(other.Dataset);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -3532,56 +3532,56 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 42: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 50: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 58: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 66: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 74: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -3606,56 +3606,56 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
             break;
           case 10: {
             if (product_ == null) {
-              Product = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
+              Product = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct();
             }
             input.ReadMessage(Product);
             break;
           }
           case 18: {
             if (version_ == null) {
-              Version = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Version = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Version);
             break;
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 42: {
             if (model_ == null) {
-              Model = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Model();
+              Model = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Model();
             }
             input.ReadMessage(Model);
             break;
           }
           case 50: {
             if (study_ == null) {
-              Study = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Study();
+              Study = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.Study();
             }
             input.ReadMessage(Study);
             break;
           }
           case 58: {
             if (datasource_ == null) {
-              Datasource = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource();
+              Datasource = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource();
             }
             input.ReadMessage(Datasource);
             break;
           }
           case 66: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
           }
           case 74: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -3683,7 +3683,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3858,7 +3858,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3994,7 +3994,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Trainerd.V1.TrainerdReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

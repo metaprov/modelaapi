@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/attachment/v1";
+option go_package = "github.com/metaprov/modelaapi/services/attachment/v1";
 
-package github.com.metaprov.modeldapi.services.attachment.v1;
+package github.com.metaprov.modelaapi.services.attachment.v1;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListAttachmentsRequest {
     string             namespace = 1;
@@ -12,13 +12,13 @@ message ListAttachmentsRequest {
 }
 
 message ListAttachmentsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AttachmentList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList items = 1;   
 }
 
 message AttachmentResponse {}
 
 message CreateAttachmentRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment  item = 1;
     string password = 2;    
 }
 
@@ -27,7 +27,7 @@ message CreateAttachmentResponse {
 }
 
 message UpdateAttachmentRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
 }
 
 message UpdateAttachmentResponse {
@@ -41,7 +41,7 @@ message GetAttachmentRequest {
 
 
 message GetAttachmentResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
     string yaml = 2;
 }
 
@@ -54,7 +54,7 @@ message GetAttachmentNamespacesRequest {
 
 
 message GetAttachmentNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 

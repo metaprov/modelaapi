@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/predictordbsidecar/v1";
-package github.com.metaprov.modeldapi.services.predictordbsidecar.v1;
+option go_package = "github.com/metaprov/modelaapi/services/predictordbsidecar/v1";
+package github.com.metaprov.modelaapi.services.predictordbsidecar.v1;
 
 
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 service PredictorDbSidecarService {
 }

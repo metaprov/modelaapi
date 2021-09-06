@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/curtain/v1";
+option go_package = "github.com/metaprov/modelaapi/services/curtain/v1";
 
-package github.com.metaprov.modeldapi.services.curtain.v1;
+package github.com.metaprov.modelaapi.services.curtain.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
 
 message ListCurtainsRequest {
@@ -16,7 +16,7 @@ message ListCurtainsRequest {
 }
 
 message ListCurtainsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CurtainList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList items = 1;
     string next_page_token = 2;
 }
 
@@ -24,11 +24,11 @@ message ListCurtainsResponse {
 message CreateCurtainResponse {}
 
 message CreateCurtainRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
 }
 
 message UpdateCurtainRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
 }
 
 message UpdateCurtainResponse {
@@ -41,7 +41,7 @@ message GetCurtainRequest {
 }
 
 message GetCurtainResponse {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
     string yaml = 2;
 
 }

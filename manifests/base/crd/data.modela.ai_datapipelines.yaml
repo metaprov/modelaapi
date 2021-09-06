@@ -1,0 +1,260 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.0
+  creationTimestamp: null
+  name: datapipelines.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    kind: DataPipeline
+    listKind: DataPipelineList
+    plural: datapipelines
+    shortNames:
+    - dpl
+    singular: datapipeline
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.schedule
+      name: Schedule
+      type: string
+    - jsonPath: .status.lastRun
+      name: Last Run
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DataPipeline represents the ETL flow from the data sources to
+          a processed dataset, ready for training.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DataPipelineSpec defines the desired state of a DataPipeline
+            properties:
+              datasetSelector:
+                additionalProperties:
+                  type: string
+                description: DatasetSelector is used to select datasets for processing
+                  in the pipeline
+                type: object
+              description:
+                default: ""
+                description: Description of the data pipeline
+                type: string
+              output:
+                description: The output definition
+                properties:
+                  action:
+                    default: upsert
+                    description: Action define how the new data will be created
+                    enum:
+                    - upsert
+                    - insert
+                    - update
+                    type: string
+                  createTableIfNotExist:
+                    description: Create the data source table on the target, if not
+                      exist.
+                    type: boolean
+                  datasetName:
+                    default: ""
+                    description: DatasetName is the name of the dataset that will
+                      be created. if nil, the system will not create the dataset.
+                    type: string
+                  detectOutliers:
+                    default: false
+                    description: Detect outlier in the prediction
+                    type: boolean
+                  format:
+                    default: csv
+                    description: Format is the format of the output data
+                    enum:
+                    - csv
+                    - json
+                    - parquet
+                    - tde
+                    - sql
+                    - table
+                    - fwf
+                    - excel
+                    - sas
+                    - spss
+                    - auto
+                    type: string
+                  includeFeatures:
+                    description: Include the features in the results
+                    type: boolean
+                  location:
+                    description: Location of the generated data
+                    properties:
+                      bucketName:
+                        default: ""
+                        description: Bucketname is the name of the bucket
+                        type: string
+                      connectionName:
+                        default: ""
+                        description: ConnectionName is the name of the connection
+                          to access the database
+                        type: string
+                      database:
+                        default: ""
+                        description: Database , the database.
+                        type: string
+                      path:
+                        default: ""
+                        description: Path to the full data file (e.g. csv file).
+                        type: string
+                      sql:
+                        default: ""
+                        description: SQL statement, in case we choose the view type
+                        type: string
+                      table:
+                        default: ""
+                        description: Sql or table or topic name.
+                        type: string
+                      topic:
+                        default: ""
+                        description: Topic is the name of the topic in case of streaming
+                        type: string
+                      type:
+                        default: object
+                        description: data location type is the type of the data location
+                        type: string
+                    type: object
+                  xai:
+                    default: false
+                    description: Generate XAI
+                    type: boolean
+                type: object
+              owner:
+                default: no-one
+                description: Owner of this data pipeline
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              paused:
+                default: false
+                description: Set to true to pause the cron prediction
+                type: boolean
+              priority:
+                default: medium
+                description: The priority of this data pipeline. The default is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
+              recipes:
+                description: RecipeOrder defines the list of recipes and the order
+                  they need to run
+                items:
+                  properties:
+                    Dependents:
+                      description: Dependents is the list of recipe that need to run
+                        after this recipe.
+                      items:
+                        type: string
+                      type: array
+                    recipeName:
+                      default: ""
+                      description: RecipeName is the name of the recipe to run
+                      type: string
+                  type: object
+                type: array
+              schedule:
+                description: Schedule is a cron field to schedule the data pipeline.
+                type: string
+              versionName:
+                default: ""
+                description: VersionName is the data product version of the data pipeline
+                type: string
+              workloadClassName:
+                default: nano-cpu-250m-mem-256mi
+                description: WorkloadClassName is the name of the workload class used
+                  to run this pipeline. This is assigned by the datapipeline
+                type: string
+            type: object
+          status:
+            description: DataPipelineStatus is the observed state of the DataPipeline
+              object.
+            properties:
+              conditions:
+                items:
+                  description: DataPipelineCondition describes the state of a wrangler
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              lastRun:
+                description: Last run is the last time a data pipeline run was created
+                format: date-time
+                type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

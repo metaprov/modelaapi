@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Dataset.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto</summary>
   public static partial class DatasetReflection {
@@ -151,32 +151,32 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             "bGlkYXRlQjNaMWdpdGh1Yi5jb20vbWV0YXByb3YvbW9kZWxkYXBpL3NlcnZp",
             "Y2VzL2RhdGFzZXQvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ListDatasetsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ListDatasetsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ListDatasetsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ListDatasetsResponse.Parser, new[]{ "Datasets" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UpdateDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UpdateDatasetRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UpdateDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UpdateDatasetResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DeleteDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DeleteDatasetRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DeleteDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DeleteDatasetResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UploadChunkRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UploadChunkRequest.Parser, new[]{ "Fname", "Content", "Index", "Last" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UploadChunkResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.UploadChunkResponse.Parser, new[]{ "Fname", "Ok" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetProfileRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetProfileRequest.Parser, new[]{ "Namespace", "Name", "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetProfileResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateDatasetProfileResponse.Parser, new[]{ "Uri", "Profile" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateColumnProfileRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateColumnProfileRequest.Parser, new[]{ "Namespace", "Name", "Col", "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateColumnProfileResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CreateColumnProfileResponse.Parser, new[]{ "Name", "Plot" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetProfileRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetProfileRequest.Parser, new[]{ "Namespace", "Name", "Uri" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetProfileResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GetDatasetProfileResponse.Parser, new[]{ "Namespace", "Name", "Profile" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CompareDatasetsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CompareDatasetsRequest.Parser, new[]{ "Namespace", "Names" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CompareDatasetsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.CompareDatasetsResponse.Parser, new[]{ "Namespace", "Names", "Profiles" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GenerateDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GenerateDatasetRequest.Parser, new[]{ "Namespace", "Names" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GenerateDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.GenerateDatasetResponse.Parser, new[]{ "Namespace", "Names", "Profiles" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ValidateDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ValidateDatasetRequest.Parser, new[]{ "Namespace", "Names" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ValidateDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.ValidateDatasetResponse.Parser, new[]{ "Namespace", "Names", "Profiles" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ListDatasetsRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ListDatasetsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ListDatasetsResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ListDatasetsResponse.Parser, new[]{ "Datasets" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UpdateDatasetRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UpdateDatasetRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UpdateDatasetResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UpdateDatasetResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DeleteDatasetRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DeleteDatasetRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DeleteDatasetResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DeleteDatasetResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UploadChunkRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UploadChunkRequest.Parser, new[]{ "Fname", "Content", "Index", "Last" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UploadChunkResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.UploadChunkResponse.Parser, new[]{ "Fname", "Ok" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetProfileRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetProfileRequest.Parser, new[]{ "Namespace", "Name", "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetProfileResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateDatasetProfileResponse.Parser, new[]{ "Uri", "Profile" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateColumnProfileRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateColumnProfileRequest.Parser, new[]{ "Namespace", "Name", "Col", "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateColumnProfileResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CreateColumnProfileResponse.Parser, new[]{ "Name", "Plot" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetProfileRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetProfileRequest.Parser, new[]{ "Namespace", "Name", "Uri" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetProfileResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GetDatasetProfileResponse.Parser, new[]{ "Namespace", "Name", "Profile" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CompareDatasetsRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CompareDatasetsRequest.Parser, new[]{ "Namespace", "Names" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CompareDatasetsResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.CompareDatasetsResponse.Parser, new[]{ "Namespace", "Names", "Profiles" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GenerateDatasetRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GenerateDatasetRequest.Parser, new[]{ "Namespace", "Names" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GenerateDatasetResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.GenerateDatasetResponse.Parser, new[]{ "Namespace", "Names", "Profiles" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ValidateDatasetRequest), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ValidateDatasetRequest.Parser, new[]{ "Namespace", "Names" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ValidateDatasetResponse), global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.ValidateDatasetResponse.Parser, new[]{ "Namespace", "Names", "Profiles" }, null, null, null, null)
           }));
     }
     #endregion
@@ -198,7 +198,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -395,7 +395,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -423,9 +423,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "datasets" field.</summary>
     public const int DatasetsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetList datasets_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetList datasets_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetList Datasets {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetList Datasets {
       get { return datasets_; }
       set {
         datasets_ = value;
@@ -511,7 +511,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.datasets_ != null) {
         if (datasets_ == null) {
-          Datasets = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetList();
+          Datasets = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetList();
         }
         Datasets.MergeFrom(other.Datasets);
       }
@@ -531,7 +531,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (datasets_ == null) {
-              Datasets = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetList();
+              Datasets = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetList();
             }
             input.ReadMessage(Datasets);
             break;
@@ -552,7 +552,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (datasets_ == null) {
-              Datasets = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetList();
+              Datasets = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetList();
             }
             input.ReadMessage(Datasets);
             break;
@@ -579,7 +579,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -812,7 +812,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -841,9 +841,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
       get { return item_; }
       set {
         item_ = value;
@@ -953,7 +953,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Item.MergeFrom(other.Item);
       }
@@ -976,7 +976,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -1001,7 +1001,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -1032,7 +1032,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1060,9 +1060,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1148,7 +1148,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1168,7 +1168,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -1189,7 +1189,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -1213,7 +1213,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1352,7 +1352,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1380,9 +1380,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1468,7 +1468,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1488,7 +1488,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -1509,7 +1509,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -1533,7 +1533,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1669,7 +1669,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1877,7 +1877,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2016,7 +2016,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2311,7 +2311,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2522,7 +2522,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2574,9 +2574,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
       get { return item_; }
       set {
         item_ = value;
@@ -2694,7 +2694,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Item.MergeFrom(other.Item);
       }
@@ -2722,7 +2722,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 26: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -2751,7 +2751,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 26: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -2775,7 +2775,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2818,9 +2818,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "profile" field.</summary>
     public const int ProfileFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile profile_;
+    private global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile profile_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile Profile {
+    public global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile Profile {
       get { return profile_; }
       set {
         profile_ = value;
@@ -2922,7 +2922,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.profile_ != null) {
         if (profile_ == null) {
-          Profile = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile();
+          Profile = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile();
         }
         Profile.MergeFrom(other.Profile);
       }
@@ -2946,7 +2946,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 18: {
             if (profile_ == null) {
-              Profile = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile();
+              Profile = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile();
             }
             input.ReadMessage(Profile);
             break;
@@ -2971,7 +2971,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 18: {
             if (profile_ == null) {
-              Profile = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile();
+              Profile = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile();
             }
             input.ReadMessage(Profile);
             break;
@@ -2995,7 +2995,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3059,9 +3059,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Item {
       get { return item_; }
       set {
         item_ = value;
@@ -3195,7 +3195,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Item.MergeFrom(other.Item);
       }
@@ -3227,7 +3227,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 34: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -3260,7 +3260,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 34: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Item);
             break;
@@ -3284,7 +3284,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3324,9 +3324,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "plot" field.</summary>
     public const int PlotFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot plot_;
+    private global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot plot_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot Plot {
+    public global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot Plot {
       get { return plot_; }
       set {
         plot_ = value;
@@ -3428,7 +3428,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.plot_ != null) {
         if (plot_ == null) {
-          Plot = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot();
+          Plot = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot();
         }
         Plot.MergeFrom(other.Plot);
       }
@@ -3452,7 +3452,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 18: {
             if (plot_ == null) {
-              Plot = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot();
+              Plot = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot();
             }
             input.ReadMessage(Plot);
             break;
@@ -3477,7 +3477,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 18: {
             if (plot_ == null) {
-              Plot = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot();
+              Plot = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot();
             }
             input.ReadMessage(Plot);
             break;
@@ -3501,7 +3501,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3748,7 +3748,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3800,9 +3800,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "profile" field.</summary>
     public const int ProfileFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile profile_;
+    private global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile profile_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile Profile {
+    public global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile Profile {
       get { return profile_; }
       set {
         profile_ = value;
@@ -3920,7 +3920,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
       }
       if (other.profile_ != null) {
         if (profile_ == null) {
-          Profile = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile();
+          Profile = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile();
         }
         Profile.MergeFrom(other.Profile);
       }
@@ -3948,7 +3948,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 26: {
             if (profile_ == null) {
-              Profile = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile();
+              Profile = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile();
             }
             input.ReadMessage(Profile);
             break;
@@ -3977,7 +3977,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
           }
           case 26: {
             if (profile_ == null) {
-              Profile = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile();
+              Profile = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile();
             }
             input.ReadMessage(Profile);
             break;
@@ -4004,7 +4004,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4204,7 +4204,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4255,11 +4255,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "profiles" field.</summary>
     public const int ProfilesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> _repeated_profiles_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> _repeated_profiles_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> Profiles {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> Profiles {
       get { return profiles_; }
     }
 
@@ -4429,7 +4429,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4629,7 +4629,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4680,11 +4680,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "profiles" field.</summary>
     public const int ProfilesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> _repeated_profiles_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> _repeated_profiles_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> Profiles {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> Profiles {
       get { return profiles_; }
     }
 
@@ -4854,7 +4854,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5054,7 +5054,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Dataset.V1.DatasetReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5105,11 +5105,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataset.V1 {
 
     /// <summary>Field number for the "profiles" field.</summary>
     public const int ProfilesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> _repeated_profiles_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> _repeated_profiles_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile> Profiles {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile> Profiles {
       get { return profiles_; }
     }
 

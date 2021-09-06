@@ -1,6 +1,6 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/common/v1";
-package github.com.metaprov.modeldapi.services.common.v1;
+option go_package = "github.com/metaprov/modelaapi/services/common/v1";
+package github.com.metaprov.modelaapi.services.common.v1;
 
 message DatasetProfile {
     int32    cols                      = 1;

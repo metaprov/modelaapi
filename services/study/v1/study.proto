@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/study/v1";
-package github.com.metaprov.modeldapi.services.study.v1;
+option go_package = "github.com/metaprov/modelaapi/services/study/v1";
+package github.com.metaprov.modelaapi.services.study.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message GetStudyRequest {
     string namespace = 1;
@@ -12,7 +12,7 @@ message GetStudyRequest {
 }
 
 message GetStudyResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
     string yaml = 2;
 }
 
@@ -23,26 +23,26 @@ message ListStudyRequest {
 }
 
 message ListStudyResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.StudyList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList items = 1;
 }
 
 
 message CreateStudyRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
 }
 
 message CreateStudyResponse {}
 
 
 message UpdateStudyRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
 }
 
 
 message CreateStudyProfileRequest {
     string namespace = 1;
     string name      = 2;
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model models   = 3;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models   = 3;
 }
 
 message CreateStudyProfileResponse {
@@ -59,8 +59,8 @@ message GetStudyProfileRequest {
 }
 
 message GetStudyProfileResponse {
-    github.com.metaprov.modeldapi.services.common.v1.StudyProfile profile = 1;
-    repeated github.com.metaprov.modeldapi.services.common.v1.ModelProfile modelsProfile = 2;
+    github.com.metaprov.modelaapi.services.common.v1.StudyProfile profile = 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.ModelProfile modelsProfile = 2;
 }
 
 message AbortStudyRequest {

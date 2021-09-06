@@ -5,7 +5,7 @@ set -o nounset
 set -o pipefail
 
 PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
-ROOT_PKG=github.com/metaprov/modeldapi
+ROOT_PKG=github.com/metaprov/modelaapi
 
 verify="${VERIFY:-}"
 

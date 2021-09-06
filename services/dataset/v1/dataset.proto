@@ -1,11 +1,11 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/dataset/v1";
-package github.com.metaprov.modeldapi.services.dataset.v1;
+option go_package = "github.com/metaprov/modelaapi/services/dataset/v1";
+package github.com.metaprov.modelaapi.services.dataset.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 
 
@@ -16,7 +16,7 @@ message ListDatasetsRequest {
 }
 
 message ListDatasetsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
 }
 
 
@@ -28,13 +28,13 @@ message GetDatasetRequest {
 }
 
 message GetDatasetResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
     string yaml = 2;
 }
 
 // Create Dataset
 message CreateDatasetRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
 }
 
 message CreateDatasetResponse {
@@ -43,7 +43,7 @@ message CreateDatasetResponse {
 
 // update dataset
 message UpdateDatasetRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
 }
 
 message UpdateDatasetResponse {
@@ -85,12 +85,12 @@ message UploadChunkResponse {
 message CreateDatasetProfileRequest {
     string namespace   = 1;
     string name        = 2;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 3;
 }
 
 message CreateDatasetProfileResponse {
     string uri = 1; // the profile uri
-    github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profile = 2;
+    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 2;
 }
 
 
@@ -98,12 +98,12 @@ message CreateColumnProfileRequest {
     string namespace   = 1;
     string name        = 2;
     string col         = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 4;
 }
 
 message CreateColumnProfileResponse {
     string name = 1;
-    github.com.metaprov.modeldapi.services.common.v1.Plot plot = 2;
+    github.com.metaprov.modelaapi.services.common.v1.Plot plot = 2;
 }
 
 message GetDatasetProfileRequest {
@@ -115,7 +115,7 @@ message GetDatasetProfileRequest {
 message GetDatasetProfileResponse {
     string namespace = 1;
     string name      = 2;
-    github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profile = 3;
+    github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profile = 3;
 }
 
 // compare the profile of one or more datasets
@@ -127,7 +127,7 @@ message CompareDatasetsRequest {
 message CompareDatasetsResponse {
     string namespace       = 1;
     repeated string names  = 2;
-    repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
+    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
 }
 
 // compare the profile of one or more datasets
@@ -139,7 +139,7 @@ message GenerateDatasetRequest {
 message GenerateDatasetResponse {
     string namespace       = 1;
     repeated string names  = 2;
-    repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
+    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
 }
 
 
@@ -152,7 +152,7 @@ message ValidateDatasetRequest {
 message ValidateDatasetResponse {
     string namespace       = 1;
     repeated string names  = 2;
-    repeated github.com.metaprov.modeldapi.services.common.v1.DatasetProfile profiles = 3;
+    repeated github.com.metaprov.modelaapi.services.common.v1.DatasetProfile profiles = 3;
 }
 
 
@@ -194,7 +194,7 @@ message ExecuteSqlRequest {
 }
 
 message ExecuteSqlResponse {
-    github.com.metaprov.modeldapi.services.common.v1.TableView tableview = 1;
+    github.com.metaprov.modelaapi.services.common.v1.TableView tableview = 1;
 }
 
 

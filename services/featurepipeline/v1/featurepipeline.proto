@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/featurepipeline/v1";
-package github.com.metaprov.modeldapi.services.featurepipeline.v1;
+option go_package = "github.com/metaprov/modelaapi/services/featurepipeline/v1";
+package github.com.metaprov.modelaapi.services.featurepipeline.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListFeaturePipelineRequest {
     string namespace = 1;
@@ -11,11 +11,11 @@ message ListFeaturePipelineRequest {
 }
 
 message ListFeaturePipelineResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineList items = 1;
 }
 
 message CreateFeaturePipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
 }
 
 message CreateFeaturePipelineResponse {
@@ -23,7 +23,7 @@ message CreateFeaturePipelineResponse {
 }
 
 message UpdateFeaturePipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 5;
 }
 
 message UpdateFeaturePipelineResponse {
@@ -37,7 +37,7 @@ message GetFeaturePipelineRequest {
 
 
 message GetFeaturePipelineResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
     string yaml = 2;
 }
 

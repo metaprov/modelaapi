@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/feature/v1";
-package github.com.metaprov.modeldapi.services.feature.v1;
+option go_package = "github.com/metaprov/modelaapi/services/feature/v1";
+package github.com.metaprov.modelaapi.services.feature.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListFeaturesRequest {
     string namespace = 1;
@@ -12,11 +12,11 @@ message ListFeaturesRequest {
 }
 
 message ListFeaturesResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList items = 1;
 }
 
 message CreateFeatureRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message CreateFeatureResponse {
@@ -24,7 +24,7 @@ message CreateFeatureResponse {
 }
 
 message UpdateFeatureRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message UpdateFeatureResponse {
@@ -38,7 +38,7 @@ message GetFeatureRequest {
 
 
 message GetFeatureResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
     string yaml = 2;
 }
 

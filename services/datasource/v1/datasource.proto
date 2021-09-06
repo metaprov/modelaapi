@@ -1,13 +1,13 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/datasource/v1";
+option go_package = "github.com/metaprov/modelaapi/services/datasource/v1";
 
-package github.com.metaprov.modeldapi.services.datasource.v1;
+package github.com.metaprov.modelaapi.services.datasource.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListDataSourceRequest {
     string namespace = 1;
@@ -15,7 +15,7 @@ message ListDataSourceRequest {
 }
 
 message ListDataSourceResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSourceList list = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList list = 1;
 
 }
 
@@ -25,20 +25,20 @@ message GetDataSourceRequest {
 }
 
 message GetDataSourceResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
     string yaml = 2;
 }
 
 
 message UpdateDataSourceRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message UpdateDataSourceResponse {}
 
 
 message CreateDataSourceRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message CreateDataSourceResponse {}
@@ -55,22 +55,22 @@ message DeleteDataSourceResponse {}
 message InferSchemaRequest {
     string namespace = 1;
     string name      = 2;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 3;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
 }
 
 message InferSchemaResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.ColumnProfile   columns   =1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.ColumnProfile   columns   =1;
 
 }
 
 message GetTableViewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FlatFileSpec   flatfilespec = 1; // contain the csv or table definition
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataLocation   location = 2; // contain the csv or table definition
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec   flatfilespec = 1; // contain the csv or table definition
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation   location = 2; // contain the csv or table definition
 }
 
 message GetTableViewResponse {
-    github.com.metaprov.modeldapi.services.common.v1.TableView   table   =1;
+    github.com.metaprov.modelaapi.services.common.v1.TableView   table   =1;
 }
 
 

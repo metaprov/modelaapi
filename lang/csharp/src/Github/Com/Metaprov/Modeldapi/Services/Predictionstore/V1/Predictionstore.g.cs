@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Predictionstore.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/predictionstore/v1/predictionstore.proto</summary>
   public static partial class PredictionstoreReflection {
@@ -45,10 +45,10 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
             "WjlnaXRodWIuY29tL21ldGFwcm92L21vZGVsZGFwaS9zZXJ2aWNlcy9wcmVk",
             "aWN0aW9uc3RvcmUvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1.PredictionsIngestRequest), global::Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1.PredictionsIngestRequest.Parser, new[]{ "Dataset", "Key", "Connection", "Secret" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1.PredictionIngestResponse), global::Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1.PredictionIngestResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Predictionstore.V1.PredictionsIngestRequest), global::Github.Com.Metaprov.modelaapi.Services.Predictionstore.V1.PredictionsIngestRequest.Parser, new[]{ "Dataset", "Key", "Connection", "Secret" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Predictionstore.V1.PredictionIngestResponse), global::Github.Com.Metaprov.modelaapi.Services.Predictionstore.V1.PredictionIngestResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -67,7 +67,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1.PredictionstoreReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Predictionstore.V1.PredictionstoreReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -98,9 +98,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
 
     /// <summary>Field number for the "dataset" field.</summary>
     public const int DatasetFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset dataset_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset Dataset {
       get { return dataset_; }
       set {
         dataset_ = value;
@@ -123,9 +123,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -261,7 +261,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
       }
       if (other.dataset_ != null) {
         if (dataset_ == null) {
-          Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+          Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
         }
         Dataset.MergeFrom(other.Dataset);
       }
@@ -270,7 +270,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -296,7 +296,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
             break;
           case 10: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
@@ -307,7 +307,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
           }
           case 26: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -335,7 +335,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
             break;
           case 10: {
             if (dataset_ == null) {
-              Dataset = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset();
+              Dataset = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset();
             }
             input.ReadMessage(Dataset);
             break;
@@ -346,7 +346,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
           }
           case 26: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -377,7 +377,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictionstore.V1.PredictionstoreReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Predictionstore.V1.PredictionstoreReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

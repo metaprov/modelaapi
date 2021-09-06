@@ -1,0 +1,679 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.0
+  creationTimestamp: null
+  name: datasources.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    - all
+    kind: DataSource
+    listKind: DataSourceList
+    plural: datasources
+    shortNames:
+    - dsrc
+    singular: datasource
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .spec.datasetType
+      name: Type
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DataSource represent source of the data in the system. The spec
+          consist of schema
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            properties:
+              datasetType:
+                default: tabular
+                description: Type is the dataset type
+                enum:
+                - tabular
+                - image
+                - text
+                - video
+                - audio
+                type: string
+              description:
+                default: ""
+                description: User provided description of the data source
+                maxLength: 512
+                type: string
+              flatfile:
+                description: FlatFile access specification
+                properties:
+                  commentChars:
+                    description: CommentCharacter(s) to split comments off the end
+                      of lines.
+                    type: string
+                  delimiter:
+                    description: Refers to the character used to separate fields.
+                      Default to comma
+                    enum:
+                    - crlf
+                    - cr
+                    - lf
+                    - semicolon
+                    - colon
+                    - comma
+                    - tab
+                    - space
+                    - pipe
+                    type: string
+                  encoding:
+                    default: utf-8
+                    description: Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded
+                      text).
+                    enum:
+                    - utf-8
+                    - latin-1
+                    - utf-16
+                    type: string
+                  escapeChar:
+                    description: the char used to escape the delimiter when quoting
+                    type: string
+                  fileType:
+                    default: csv
+                    description: 'The text file type Default: csv'
+                    enum:
+                    - csv
+                    - tsv
+                    - excel
+                    - fwf
+                    - hdf
+                    - html
+                    - json
+                    - pickle
+                    - sas
+                    - stata
+                    - feather
+                    type: string
+                  header:
+                    default: true
+                    description: Check if there is an header
+                    type: boolean
+                  maxRows:
+                    description: The maximum number of rows to read.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  nullValues:
+                    default: ""
+                    description: NullValue is a sequence of values to replace with
+                      NA.
+                    type: string
+                  quote:
+                    description: The quote char.
+                    enum:
+                    - double-quote
+                    - single-quote
+                    type: string
+                  skipRows:
+                    default: 0
+                    description: The number of rows to skip
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  strict:
+                    default: true
+                    description: If true, the import will fail if there is an error
+                    type: boolean
+                type: object
+              owner:
+                default: no-one
+                description: The account name of the owner of this dataset
+                type: string
+              sample:
+                description: Sample spec defines how many rows to use for analysis
+                  for datasets from this datasource.
+                properties:
+                  column:
+                    default: ""
+                    description: Column is used for stratified sampling.
+                    type: string
+                  enabled:
+                    default: false
+                    description: Enabled specify if the sample is enabled
+                    type: boolean
+                  filter:
+                    default: ""
+                    description: Filter formula. Valid only if the sample is a filter.
+                    type: string
+                  percent:
+                    default: 100
+                    description: Pct is the percent of rows to use for analysis.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  rows:
+                    default: 500
+                    description: Rows is the number of rows. Default is 500
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  type:
+                    default: random
+                    description: Type is the sampling type Default is random
+                    enum:
+                    - header
+                    - random
+                    - filter
+                    - anomaly
+                    - stratified
+                    type: string
+                type: object
+              schema:
+                description: The data source schema
+                properties:
+                  columns:
+                    description: Columns
+                    items:
+                      properties:
+                        DefaultValueNum:
+                          description: The following attribute concern with syntatic
+                            data and validation DefaultValueNum is the default value
+                            for numbers
+                          type: number
+                        datatype:
+                          description: Type specify the data type of the attribute
+                            required
+                          enum:
+                          - boolean
+                          - color
+                          - currency
+                          - date
+                          - datetime
+                          - guid
+                          - hyperlink
+                          - image
+                          - media
+                          - categorical
+                          - number
+                          - text
+                          - json
+                          - path
+                          - file
+                          - time
+                          - record
+                          - embedding
+                          - number-list
+                          - categorical-list
+                          - text-list
+                          - useless
+                          type: string
+                        description:
+                          default: ""
+                          description: Description is a description of the feature
+                          maxLength: 63
+                          type: string
+                        driftThreshold:
+                          description: Drift treshold is the treshold for drift detection.
+                          type: number
+                        enum:
+                          description: Enum
+                          items:
+                            type: string
+                          type: array
+                        example:
+                          default: ""
+                          description: Example
+                          type: string
+                        exclusiveMaximum:
+                          description: ExclusiveMaximum
+                          type: boolean
+                        exclusiveMinimum:
+                          default: false
+                          description: ExclusiveMinimum
+                          type: boolean
+                        externalDocs:
+                          default: ""
+                          description: External Docs
+                          type: string
+                        featureName:
+                          default: ""
+                          description: FileName specify the name of the feature, if
+                            this attribute comes from a feature
+                          maxLength: 63
+                          type: string
+                        format:
+                          description: DataFormat is the domain of the column. A domain
+                            constrain the set of values.
+                          enum:
+                          - url
+                          - path
+                          - password
+                          - time
+                          - count
+                          - interval
+                          - nominal
+                          - email
+                          - creditCard
+                          - uuid
+                          - uuid5
+                          - uuid
+                          - base64
+                          - latitude
+                          - longtitude
+                          - dns
+                          - ip4
+                          - ip6
+                          - ssn
+                          - alpha
+                          - alphanumeric
+                          - none
+                          - unknown
+                          type: string
+                        ignore:
+                          default: false
+                          description: Ignore specify if the attribute should be ignored
+                            when building the model default is false
+                          type: boolean
+                        label:
+                          default: false
+                          description: Label should be true if this attribute is the
+                            predictable target Default is false
+                          type: boolean
+                        log:
+                          default: false
+                          description: Log if true, values from this column will be
+                            sampled on logaritmic scale
+                          type: boolean
+                        maxItems:
+                          default: 0
+                          description: Max Items in the data in case of a list
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        maxLength:
+                          default: 0
+                          description: MaxLength
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        maximum:
+                          default: 0
+                          description: MaximumFloat
+                          type: number
+                        minItems:
+                          default: 0
+                          description: Min Items in the data in case of a list.
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        minLength:
+                          default: 0
+                          description: MinLength
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        minimum:
+                          default: 0
+                          description: MinimumFloat
+                          type: number
+                        mu:
+                          default: 0
+                          description: Mu is the mean of the normal distribution
+                          type: number
+                        multipleOf:
+                          default: 0
+                          description: MultipleOf
+                          format: int32
+                          minimum: 0
+                          type: integer
+                        name:
+                          description: FileName specify the name of the attribute
+                          maxLength: 63
+                          minLength: 1
+                          type: string
+                        nullable:
+                          default: false
+                          description: Nullable indicates if a column can contain
+                            string Default is false
+                          type: boolean
+                        pattern:
+                          default: ""
+                          description: Pattern Default is empty
+                          type: string
+                        personalData:
+                          default: false
+                          type: boolean
+                        phi:
+                          default: false
+                          description: Personally Health information
+                          type: boolean
+                        pii:
+                          default: false
+                          description: Personally Identifiable information
+                          type: boolean
+                        pk:
+                          default: false
+                          description: PrimaryKey denotes if this column is part of
+                            the file key.
+                          type: boolean
+                        protected:
+                          default: false
+                          description: Protected means that this feature is important
+                            for ethical AI / Fairness
+                          type: boolean
+                        required:
+                          default: false
+                          description: Required
+                          type: boolean
+                        sigma:
+                          default: 0
+                          description: Sigma is the standard deviation of the distribution
+                          type: number
+                        skewThreshold:
+                          description: Skew treshold is the treshold for skew detection.
+                          type: number
+                        timeColumn:
+                          default: false
+                          description: TimeColumn is true if this column is used as
+                            the time axis in time series foreacst Default is false.
+                          type: boolean
+                        title:
+                          default: ""
+                          description: Title
+                          maxLength: 63
+                          type: string
+                        transformerHint:
+                          default: ""
+                          description: Preprocessor hint constrain the transformer
+                            Default is empty
+                          type: string
+                        uniqueItems:
+                          default: false
+                          description: Enforce that all the items in the list are
+                            unique
+                          type: boolean
+                      required:
+                      - datatype
+                      - name
+                      type: object
+                    type: array
+                  timeSeriesSchema:
+                    description: Time series schema. Set time series specific parameters.
+                    properties:
+                      country:
+                        description: take holiday into account required default is
+                          US
+                        enum:
+                        - US
+                        - BR
+                        - ID
+                        - IN
+                        - MY
+                        - VN
+                        - TH
+                        - PH
+                        - PK
+                        - BD
+                        - EG
+                        - CN
+                        - RU
+                        - KR
+                        - BY
+                        - AE
+                        - none
+                        type: string
+                      freq:
+                        description: The time series frequency required
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                    type: object
+                  validation:
+                    description: Validation spec define the validation to perform
+                      on new datasets
+                    properties:
+                      columnValidations:
+                        description: Column Validations defines assertions for columns
+                          from the dataset
+                        items:
+                          properties:
+                            column:
+                              type: string
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
+                            max:
+                              format: float
+                              type: number
+                            min:
+                              format: float
+                              type: number
+                            strictMax:
+                              type: boolean
+                            strictMin:
+                              type: boolean
+                            type:
+                              type: string
+                            valueSet:
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                        type: array
+                      datasetValidations:
+                        description: DatasetValidations contains validations for the
+                          whole dataset
+                        items:
+                          properties:
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
+                            max:
+                              format: float
+                              type: number
+                            min:
+                              format: float
+                              type: number
+                            strictMax:
+                              type: boolean
+                            strictMin:
+                              type: boolean
+                            type:
+                              type: string
+                            valueSet:
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                        type: array
+                      fileValidations:
+                        description: File Validations defines assertions for actual
+                          files
+                        items:
+                          properties:
+                            bucketName:
+                              type: string
+                            column:
+                              type: string
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
+                            max:
+                              format: float
+                              type: number
+                            min:
+                              format: float
+                              type: number
+                            strictMax:
+                              type: boolean
+                            strictMin:
+                              type: boolean
+                            type:
+                              type: string
+                            valueSet:
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                        type: array
+                      multiColumnValidations:
+                        description: MultiColumnValidations defines validations for
+                          combined columns from the dataset
+                        items:
+                          properties:
+                            columns:
+                              items:
+                                type: string
+                              type: array
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
+                            max:
+                              format: float
+                              type: number
+                            min:
+                              format: float
+                              type: number
+                            strictMax:
+                              type: boolean
+                            strictMin:
+                              type: boolean
+                            type:
+                              type: string
+                            valueSet:
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                        type: array
+                      multiDatasetValidations:
+                        description: MultiDatasetValidation contains validations for
+                          multi datasets
+                        items:
+                          properties:
+                            datasets:
+                              items:
+                                type: string
+                              type: array
+                            generated:
+                              description: Generated indicate weather this validation
+                                rule was automatically generated
+                              type: boolean
+                            type:
+                              type: string
+                          type: object
+                        type: array
+                    type: object
+                type: object
+              versionName:
+                default: ""
+                description: The version of the flat file.
+                maxLength: 63
+                type: string
+            type: object
+          status:
+            description: FlatFileStatus defines the observed state of FlatFileSpec
+            properties:
+              cols:
+                description: number of columns in the data source
+                format: int32
+                minimum: 0
+                type: integer
+              conditions:
+                items:
+                  description: DataSourceCondition describes the state of a datasource
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, Unknown.
+                      type: string
+                    type:
+                      description: Type of condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              lastDatasetCreated:
+                description: Last time an dataset from this datasource was created.
+                format: date-time
+                type: string
+              lastDatasetName:
+                description: Last dataset name
+                type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

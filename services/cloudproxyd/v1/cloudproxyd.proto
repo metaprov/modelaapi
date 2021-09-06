@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/cloudproxyd/v1";
-package github.com.metaprov.modeldapi.services.cloudproxyd.v1;
+option go_package = "github.com/metaprov/modelaapi/services/cloudproxyd/v1";
+package github.com.metaprov.modelaapi.services.cloudproxyd.v1;
 
 
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 
@@ -20,8 +20,8 @@ message ShutdownRequest {}
 message ShutdownResponse {}
 
 message VirtualBucketExistRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection    connection = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection    connection = 2;
     map<string,bytes>  secret    = 3;
 }
 
@@ -31,9 +31,9 @@ message VirtualBucketExistResponse {
 
 message KeyExistInVirtualBucketRequest {
     string region = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 2;
     string key    = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection    connection = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection    connection = 4;
     map<string,bytes>  secret    = 5;
 
 }
@@ -47,8 +47,8 @@ message CloudVirtualBucketResponse {}
 message FileDownloadRequest {
     string key    = 1; // key on the cloud storage
     string path   = 2; // local path
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
     map<string,bytes>  secret    = 5;
 }
 
@@ -57,8 +57,8 @@ message FileDownloadResponse {}
 message FileUploadRequest {
     string key    = 1; // key on the cloud storage
     string path   = 2; // local path
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
     map<string,bytes>  secret    = 5;
 }
 
@@ -66,8 +66,8 @@ message FileUploadResponse {}
 
 
 message CreateVirtualBucketRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection       connection = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 2;
     map<string,bytes>  secret    = 3;
 }
 

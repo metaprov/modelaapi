@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/k8score/v1";
-package github.com.metaprov.modeldapi.services.k8score.v1;
+option go_package = "github.com/metaprov/modelaapi/services/k8score/v1";
+package github.com.metaprov.modelaapi.services.k8score.v1;
 
 import "google/api/annotations.proto";
 import "k8s.io/api/core/v1/generated.proto";

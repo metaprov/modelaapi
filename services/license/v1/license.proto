@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/license/v1";
-package github.com.metaprov.modeldapi.services.license.v1;
+option go_package = "github.com/metaprov/modelaapi/services/license/v1";
+package github.com.metaprov.modelaapi.services.license.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListLicensesRequest {
     string namespace = 1;
@@ -13,13 +13,13 @@ message ListLicensesRequest {
 }
 
 message ListLicensesResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LicenseList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList items = 1;
 }
 
 message LicenseResponse {}
 
 message CreateLicenseRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License item = 1;
 }
 
 
@@ -33,7 +33,7 @@ message CreateLicenseResponse {
 }
 
 message UpdateLicenseRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License item = 5;
 }
 
 message UpdateLicenseResponse {
@@ -47,7 +47,7 @@ message GetLicenseRequest {
 
 
 message GetLicenseResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License license = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License license = 1;
     string yaml = 2;
 }
 
@@ -60,7 +60,7 @@ message GetLicenseNamespacesRequest {
 
 
 message GetLicenseNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 message DeleteLicenseRequest {

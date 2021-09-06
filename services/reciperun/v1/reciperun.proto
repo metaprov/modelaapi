@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/reciperun/v1";
-package github.com.metaprov.modeldapi.services.reciperun.v1;
+option go_package = "github.com/metaprov/modelaapi/services/reciperun/v1";
+package github.com.metaprov.modelaapi.services.reciperun.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListRecipeRunsRequest {
     string namespace = 1;
@@ -11,11 +11,11 @@ message ListRecipeRunsRequest {
 }
 
 message ListRecipeRunsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList items = 1;
 }
 
 message CreateRecipeRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
 }
 
 message CreateRecipeRunResponse {
@@ -23,7 +23,7 @@ message CreateRecipeRunResponse {
 }
 
 message UpdateRecipeRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
 }
 
 message UpdateRecipeRunResponse {
@@ -37,7 +37,7 @@ message GetRecipeRunRequest {
 
 
 message GetRecipeRunResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
     string yaml = 2;
 }
 

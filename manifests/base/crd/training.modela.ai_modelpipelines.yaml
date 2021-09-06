@@ -1,0 +1,891 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.0
+  creationTimestamp: null
+  name: modelpipelines.training.modela.ai
+spec:
+  group: training.modela.ai
+  names:
+    categories:
+    - training
+    - modela
+    - all
+    kind: ModelPipeline
+    listKind: ModelPipelineList
+    plural: modelpipelines
+    shortNames:
+    - pipe
+    singular: modelpipeline
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.schedule
+      name: Schedule
+      type: string
+    - jsonPath: .status.lastRun
+      name: Last Run
+      type: date
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ModelPipeline represent a CI/CD machine learning pipeline definition
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ModelPipelineSpec define the desired state of the ModelPipeline
+              resource.
+            properties:
+              approverAccountName:
+                description: ApproverAccountName is the name of the approver for stages
+                  that need approvals.
+                type: string
+              baselineModelName:
+                description: BaselineModelName is the name of the model which is used
+                  to compare with this pipeline results.
+                type: string
+              capacity:
+                description: Capacity stage for capacity
+                properties:
+                  enabled:
+                    default: false
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
+                  servingSiteName:
+                    description: ServingSiteName is the serving site for the testing
+                      during the capacity stage If the serving site is empty or null,
+                      the system will skip the capacity stage unit tests.
+                    type: string
+                  validations:
+                    description: Validations is the specification of tests to run
+                      in this stage
+                    items:
+                      properties:
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
+                          type: string
+                        column:
+                          type: string
+                        datasetName:
+                          description: Labeled dataset used to test the model, when
+                            measuring a performance metric
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
+                        metric:
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        min:
+                          type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      type: object
+                    type: array
+                  workloadClassName:
+                    default: nano-cpu-250m-mem-256mi
+                    description: A reference to the workload class that is used for
+                      running the prediction
+                    type: string
+                type: object
+              data:
+                description: Datastage build new dataset from the data sources.
+                properties:
+                  dataPipelineName:
+                    description: If not null, run the data pipeline and create a dataset.
+                      else, use the data in the data location
+                    type: string
+                  datasourceName:
+                    description: The data source name for the data in the location.
+                      The data source will be used to create a new dataset for this
+                      pipeline based on the file in the location.
+                    type: string
+                  dockerImage:
+                    description: If Not null, run a docker image is used in order
+                      to generate the data. The data must reside in location after
+                      the container run
+                    type: string
+                  enabled:
+                    default: true
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
+                  labName:
+                    description: LabName is the lab that execute processing of the
+                      data pipeline
+                    type: string
+                type: object
+              datasetSelector:
+                additionalProperties:
+                  type: string
+                description: DatasetSelector is used to select dataset for training
+                type: object
+              deployment:
+                description: Deployment stage define how to place the model into production.
+                properties:
+                  enabled:
+                    default: true
+                    description: Enabled indicates that we want to release the model
+                      into production
+                    type: boolean
+                  manualApproval:
+                    default: true
+                    description: ManualApproval dentoes if we need manual approval
+                      before advancing from deployed to released By default a user
+                      is needed to approve the release to production
+                    type: boolean
+                  servingSiteName:
+                    description: ServingSiteName is the serving site for the release,
+                      if empty, the system will use the default serving site name
+                    type: string
+                  validations:
+                    description: Validations is the specification of tests to run
+                      in this stage
+                    items:
+                      properties:
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
+                          type: string
+                        column:
+                          type: string
+                        datasetName:
+                          description: Labeled dataset used to test the model, when
+                            measuring a performance metric
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
+                        metric:
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        min:
+                          type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      type: object
+                    type: array
+                  workloadClassName:
+                    default: nano-cpu-250m-mem-256mi
+                    description: A reference to the workload class that is used for
+                      running the test prediction
+                    type: string
+                type: object
+              description:
+                description: User provided description
+                type: string
+              location:
+                description: Folder for the pipeline and pipeline run artifacts. The
+                  folder contains all the study artifacts - metadata, reports, profile,models
+                properties:
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: ConnectionName is the name of the connection to access
+                      the database
+                    type: string
+                  database:
+                    default: ""
+                    description: Database , the database.
+                    type: string
+                  path:
+                    default: ""
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                  sql:
+                    default: ""
+                    description: SQL statement, in case we choose the view type
+                    type: string
+                  table:
+                    default: ""
+                    description: Sql or table or topic name.
+                    type: string
+                  topic:
+                    default: ""
+                    description: Topic is the name of the topic in case of streaming
+                    type: string
+                  type:
+                    default: object
+                    description: data location type is the type of the data location
+                    type: string
+                type: object
+              notifierName:
+                description: NotifierName is the name of the notifier to use in case
+                  of pipeline failure
+                type: string
+              owner:
+                default: no-one
+                description: The owner of the run, set to the owner of the pipeline
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              paused:
+                default: false
+                description: Pause the pipeline cron job.
+                type: boolean
+              priority:
+                default: medium
+                description: The priority of this pipeline. The default is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
+              release:
+                description: Deployment stage define how to place the model into production.
+                properties:
+                  enabled:
+                    default: true
+                    description: Enabled indicates that we want to release the model
+                      into production
+                    type: boolean
+                  manualApproval:
+                    default: true
+                    description: ManualApproval dentoes if we need manual approval
+                      before advancing from deployed to released By default a user
+                      is needed to approve the release to production
+                    type: boolean
+                  predictorName:
+                    description: PredictorName is the release predictor. The predictor
+                      will be created if it does not exist.
+                    type: string
+                  servingSiteName:
+                    description: ServingSiteName is the serving site for the release,
+                      if empty, the system will use the default serving site name
+                    type: string
+                  template:
+                    description: Template defines the default model deployment for
+                      this model
+                    properties:
+                      canary:
+                        description: 'Canary denotes if this deployment is staged
+                          release. A staged release will serve traffic in incerements
+                          Default: false'
+                        type: boolean
+                      canaryMetrics:
+                        description: 'If the deployment is canary, the metric define
+                          how to evaluate the canary. Default: none'
+                        items:
+                          description: CanaryMetric is used when testing the canary
+                          enum:
+                          - cpu
+                          - mem
+                          - latency
+                          - crash
+                          type: string
+                        type: array
+                      deployed:
+                        description: 'a deployed model is a model whose containers
+                          are up, but does not serve production traffic. Default:
+                          false'
+                        type: boolean
+                      maxTraffic:
+                        description: 'How much traffic this deployment model should
+                          serve. Default: 100.'
+                        format: int32
+                        maximum: 100
+                        minimum: 0
+                        type: integer
+                      modelName:
+                        description: ModelName is the name of the model. The name
+                          must be unique within
+                        type: string
+                      modelVersion:
+                        description: The version of the model. Note that a single
+                          predictor might serve different models
+                        type: string
+                      mountTar:
+                        description: 'MountTar means that we would mount the model
+                          tar file. Else we would use baked image. Default: true'
+                        type: boolean
+                      released:
+                        description: 'A released model is a model that should serve
+                          production traffic. Default: false'
+                        type: boolean
+                      shadow:
+                        description: 'Shadow denotes if the model is running in shadow
+                          mode. a shadow model face the production traffic, however,
+                          the predictions are not served back to the client Default:
+                          false'
+                        type: boolean
+                      traffic:
+                        description: 'Traffic is the current amount of production
+                          traffic served by this model. Default: 100.'
+                        format: int32
+                        maximum: 100
+                        minimum: 0
+                        type: integer
+                      trafficSelector:
+                        description: TrafficSelector is a filter on the traffic to
+                          this model
+                        type: string
+                    type: object
+                  validations:
+                    description: Validations is the List of expectation run against
+                      the deployed model before moving production traffic to the model
+                    items:
+                      properties:
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
+                          type: string
+                        column:
+                          type: string
+                        datasetName:
+                          description: Labeled dataset used to test the model, when
+                            measuring a performance metric
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
+                        metric:
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        min:
+                          type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      type: object
+                    type: array
+                  workloadClassName:
+                    default: nano-cpu-250m-mem-256mi
+                    description: A reference to the workload class that is used for
+                      running the release
+                    type: string
+                type: object
+              schedule:
+                description: Schedule for running the pipeline
+                type: string
+              training:
+                description: TrainingSpec stage
+                properties:
+                  enabled:
+                    default: true
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
+                  labName:
+                    description: LabName is the name of the lab used for training.
+                      If empty, the system will use the default lab assigned to the
+                      data product
+                    type: string
+                  notebookName:
+                    description: NotebookName specify the notebook to run before training.
+                    type: string
+                  studyTemplateName:
+                    description: StudyName is the name of a study template. The actual
+                      study will clone the study template and will use the dataset
+                      created in the data stage.
+                    type: string
+                  validations:
+                    description: Validations defines the machine learning test cases
+                      to run against the new trained model.
+                    items:
+                      properties:
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
+                          type: string
+                        column:
+                          type: string
+                        datasetName:
+                          description: Labeled dataset used to test the model, when
+                            measuring a performance metric
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
+                        metric:
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        min:
+                          type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              uat:
+                description: Acceptance stage is used for further testing
+                properties:
+                  enabled:
+                    default: false
+                    description: Enabled indicates that the stage is enabled
+                    type: boolean
+                  servingSiteName:
+                    description: The serving site (name space) used for running the
+                      uat tests. If the serving site is empty, the system will skip
+                      the uat stage
+                    type: string
+                  validations:
+                    description: Validations defines the machine learning test cases
+                      to run against the new trained model.
+                    items:
+                      properties:
+                        agg:
+                          description: Agg is used when we measured aggregate performance,
+                            for example median or average
+                          enum:
+                          - min
+                          - max
+                          - avg
+                          - median
+                          type: string
+                        column:
+                          type: string
+                        datasetName:
+                          description: Labeled dataset used to test the model, when
+                            measuring a performance metric
+                          type: string
+                        driftFreq:
+                          description: / The Horizon unit
+                          enum:
+                          - second
+                          - minute
+                          - hour
+                          - day
+                          - week
+                          - month
+                          - quarter
+                          - year
+                          type: string
+                        driftInterval:
+                          format: int32
+                          type: integer
+                        max:
+                          type: number
+                        maxPrecent:
+                          type: number
+                        metric:
+                          description: Metric is the machine learning metric used
+                            to evaluate a model performance.
+                          enum:
+                          - accuracy
+                          - average-precision
+                          - balanced-accuracy
+                          - brier-score-loss
+                          - f1
+                          - f1-macro
+                          - f1-micro
+                          - f1-weighted
+                          - log-loss
+                          - precision
+                          - precision-micro
+                          - precision-macro
+                          - precision-weighted
+                          - recall
+                          - recall-macro
+                          - recall-micro
+                          - recall-weighted
+                          - auc
+                          - fp
+                          - fn
+                          - tn
+                          - tp
+                          - explained_variance
+                          - mae
+                          - mse
+                          - msle
+                          - median-absolute-error
+                          - r2
+                          - adjusted-mutual-info-score
+                          - adjusted-rand-score
+                          - completeness-score
+                          - fowlkes-mallows-score
+                          - homogeneity-score
+                          - mutual-info-score
+                          - normalized-mutual-info-score
+                          - v-measure-score
+                          - rmse
+                          - unknown
+                          - mape
+                          - smape
+                          - mdape
+                          type: string
+                        min:
+                          type: number
+                        minPrecent:
+                          type: number
+                        prevModel:
+                          description: PrevModel compare to model
+                          type: string
+                        type:
+                          description: ModelValidationName is the name of one model
+                            monitoring validation
+                          type: string
+                      type: object
+                    type: array
+                  workloadClassName:
+                    default: nano-cpu-250m-mem-256mi
+                    description: WorkloadClassName is a reference to the workload
+                      class that is used for running the tests in the serving site.
+                    type: string
+                type: object
+              versionName:
+                description: The product version of the resource
+                type: string
+            type: object
+          status:
+            description: ModelPipelineStatus define the observed state of the pipeline
+            properties:
+              conditions:
+                items:
+                  description: ModelPipelineCondition describes the state of a pipeline
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              lastRun:
+                description: Last run is the last time a run was created
+                format: date-time
+                type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

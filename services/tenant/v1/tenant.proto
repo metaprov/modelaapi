@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/tenant/v1";
-package github.com.metaprov.modeldapi.services.tenant.v1;
+option go_package = "github.com/metaprov/modelaapi/services/tenant/v1";
+package github.com.metaprov.modelaapi.services.tenant.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 message ListTenantsRequest {
     string namespace = 1;
@@ -11,11 +11,11 @@ message ListTenantsRequest {
 }
 
 message ListTenantsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.TenantList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList items = 1;
 }
 
 message CreateTenantRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 4;
 }
 
 message CreateTenantResponse {
@@ -23,7 +23,7 @@ message CreateTenantResponse {
 }
 
 message UpdateTenantRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 5;
 }
 
 message UpdateTenantResponse {
@@ -37,7 +37,7 @@ message GetTenantRequest {
 
 
 message GetTenantResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
     string yaml = 2;
 }
 

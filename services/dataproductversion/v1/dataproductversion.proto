@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/dataproductversion/v1";
-package github.com.metaprov.modeldapi.services.dataproductversion.v1;
+option go_package = "github.com/metaprov/modelaapi/services/dataproductversion/v1";
+package github.com.metaprov.modelaapi.services.dataproductversion.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListDataProductVersionsRequest {
     string namespace = 1;
@@ -13,11 +13,11 @@ message ListDataProductVersionsRequest {
 }
 
 message ListDataProductVersionsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersionList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList items = 1;
 }
 
 message CreateDataProductVersionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
 }
 
 message CreateDataProductVersionResponse {
@@ -25,7 +25,7 @@ message CreateDataProductVersionResponse {
 }
 
 message UpdateDataProductVersionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
 }
 
 message UpdateDataProductVersionResponse {
@@ -39,7 +39,7 @@ message GetDataProductVersionRequest {
 
 
 message GetDataProductVersionResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
     string yaml = 2;
 }
 

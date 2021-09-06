@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/cronreport/v1";
-package github.com.metaprov.modeldapi.services.cronreport.v1;
+option go_package = "github.com/metaprov/modelaapi/services/cronreport/v1";
+package github.com.metaprov.modelaapi.services.cronreport.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
 
 
 message ListCronReportsRequest {
@@ -15,17 +15,17 @@ message ListCronReportsRequest {
 }
 
 message ListCronReportsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReportList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList items = 1;
 }
 
 message CreateCronReportResponse {}
 
 message CreateCronReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
 }
 
 message UpdateCronReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
 }
 
 message UpdateCronReportResponse {
@@ -38,7 +38,7 @@ message GetCronReportRequest {
 }
 
 message GetCronReportResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
     string yaml = 2;
 
 }
@@ -73,7 +73,7 @@ message ResumeCronReportResponse {
 
 
 message RunCronReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
 }
 
 

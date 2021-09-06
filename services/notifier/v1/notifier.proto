@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/notifier/v1";
-package github.com.metaprov.modeldapi.services.notifier.v1;
+option go_package = "github.com/metaprov/modelaapi/services/notifier/v1";
+package github.com.metaprov.modelaapi.services.notifier.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListNotifiersRequest {
     string namespace = 1;
@@ -13,13 +13,13 @@ message ListNotifiersRequest {
 }
 
 message ListNotifiersResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.NotifierList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList items = 1;
 }
 
 message NotifierResponse {}
 
 message CreateNotifierRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
 }
 
 message CreateNotifierResponse {
@@ -27,7 +27,7 @@ message CreateNotifierResponse {
 }
 
 message UpdateNotifierRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
 }
 
 message UpdateNotifierResponse {
@@ -41,7 +41,7 @@ message GetNotifierRequest {
 
 
 message GetNotifierResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
     string yaml = 2;
 }
 

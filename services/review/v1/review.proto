@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/review/v1";
-package github.com.metaprov.modeldapi.services.review.v1;
+option go_package = "github.com/metaprov/modelaapi/services/review/v1";
+package github.com.metaprov.modelaapi.services.review.v1;
 
 import "google/protobuf/empty.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
 import "google/api/annotations.proto";
 
 message GetReviewRequest {
@@ -13,12 +13,12 @@ message GetReviewRequest {
 }
 
 message GetReviewResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
     string yaml = 2;
 }
 
 message CreateReviewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
 }
 
 message CreateReviewResponse {
@@ -27,7 +27,7 @@ message CreateReviewResponse {
 
 
 message UpdateReviewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
 }
 
 message UpdateReviewResponse {
@@ -51,7 +51,7 @@ message ListReviewRequest {
 }
 
 message ListReviewResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.ReviewList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewList items = 1;
     string next_page_token = 2;
 }
 

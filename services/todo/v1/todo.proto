@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/todo/v1";
+option go_package = "github.com/metaprov/modelaapi/services/todo/v1";
 
-package github.com.metaprov.modeldapi.services.todo.v1;
+package github.com.metaprov.modelaapi.services.todo.v1;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListTodosRequest {
     string             namespace = 1;
@@ -12,13 +12,13 @@ message ListTodosRequest {
 }
 
 message ListTodosResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.TodoList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList items = 1;   
 }
 
 message TodoResponse {}
 
 message CreateTodoRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo  item = 1;
     string password = 2;    
 }
 
@@ -27,7 +27,7 @@ message CreateTodoResponse {
 }
 
 message UpdateTodoRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
 }
 
 message UpdateTodoResponse {
@@ -41,7 +41,7 @@ message GetTodoRequest {
 
 
 message GetTodoResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
     string yaml = 2;
 }
 
@@ -54,7 +54,7 @@ message GetTodoNamespacesRequest {
 
 
 message GetTodoNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 

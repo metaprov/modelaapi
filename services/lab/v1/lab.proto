@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/lab/v1";
-package github.com.metaprov.modeldapi.services.lab.v1;
+option go_package = "github.com/metaprov/modelaapi/services/lab/v1";
+package github.com.metaprov.modelaapi.services.lab.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListLabsRequest {
     string namespace = 1;
@@ -13,13 +13,13 @@ message ListLabsRequest {
 }
 
 message ListLabsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.LabList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList items = 1;
 }
 
 message LabResponse {}
 
 message CreateLabRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
 }
 
 message CreateLabResponse {
@@ -27,7 +27,7 @@ message CreateLabResponse {
 }
 
 message UpdateLabRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
 }
 
 message UpdateLabResponse {
@@ -41,7 +41,7 @@ message GetLabRequest {
 
 
 message GetLabResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
     string yaml = 2;
 }
 
@@ -54,7 +54,7 @@ message GetLabNamespacesRequest {
 
 
 message GetLabNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 message DeleteLabRequest {

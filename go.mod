@@ -12,8 +12,7 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/grpc-ecosystem/grpc-gateway v1.9.5
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.5.0
-	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/metaprov/modelaapi v0.4.648 // indirect
+	github.com/mailru/easyjson v0.7.7 // indirect	
 	github.com/onsi/ginkgo v1.16.4
 	github.com/onsi/gomega v1.13.0
 	github.com/pkg/errors v0.9.1

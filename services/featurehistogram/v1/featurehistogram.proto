@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/featurehistogram/v1";
-package github.com.metaprov.modeldapi.services.featurehistogram.v1;
+option go_package = "github.com/metaprov/modelaapi/services/featurehistogram/v1";
+package github.com.metaprov.modelaapi.services.featurehistogram.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListFeatureHistogramsRequest {
     string namespace = 1;
@@ -12,11 +12,11 @@ message ListFeatureHistogramsRequest {
 }
 
 message ListFeatureHistogramsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogramList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList items = 1;
 }
 
 message CreateFeatureHistogramRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
 }
 
 message CreateFeatureHistogramResponse {
@@ -24,7 +24,7 @@ message CreateFeatureHistogramResponse {
 }
 
 message UpdateFeatureHistogramRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
 }
 
 message UpdateFeatureHistogramResponse {
@@ -38,7 +38,7 @@ message GetFeatureHistogramRequest {
 
 
 message GetFeatureHistogramResponse {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
     string yaml = 2;
 }
 

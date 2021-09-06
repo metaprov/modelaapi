@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto</summary>
   public static partial class ModelautobuilderReflection {
@@ -83,18 +83,18 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             "LmNvbS9tZXRhcHJvdi9tb2RlbGRhcGkvc2VydmljZXMvbW9kZWxhdXRvYnVp",
             "bGRlci92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ListModelAutobuildersRequest), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ListModelAutobuildersRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ListModelAutobuildersResponse), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ListModelAutobuildersResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.CreateModelAutobuilderRequest), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.CreateModelAutobuilderRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.CreateModelAutobuilderResponse), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.CreateModelAutobuilderResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderRequest), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderResponse), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.GetModelAutobuilderRequest), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.GetModelAutobuilderRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.GetModelAutobuilderResponse), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.GetModelAutobuilderResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderRequest), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderResponse), global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ListModelAutobuildersRequest), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ListModelAutobuildersRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ListModelAutobuildersResponse), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ListModelAutobuildersResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.CreateModelAutobuilderRequest), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.CreateModelAutobuilderRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.CreateModelAutobuilderResponse), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.CreateModelAutobuilderResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderRequest), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderResponse), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.UpdateModelAutobuilderResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.GetModelAutobuilderRequest), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.GetModelAutobuilderRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.GetModelAutobuilderResponse), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.GetModelAutobuilderResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderRequest), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderResponse), global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.DeleteModelAutobuilderResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -113,7 +113,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -310,7 +310,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -338,9 +338,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList items_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList Items {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -426,7 +426,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList();
+          Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -446,7 +446,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList();
             }
             input.ReadMessage(Items);
             break;
@@ -467,7 +467,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilderList();
             }
             input.ReadMessage(Items);
             break;
@@ -491,7 +491,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -519,9 +519,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder Item {
       get { return item_; }
       set {
         item_ = value;
@@ -607,7 +607,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
         }
         Item.MergeFrom(other.Item);
       }
@@ -627,7 +627,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
             }
             input.ReadMessage(Item);
             break;
@@ -648,7 +648,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
             }
             input.ReadMessage(Item);
             break;
@@ -672,7 +672,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -808,7 +808,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -836,9 +836,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder Item {
       get { return item_; }
       set {
         item_ = value;
@@ -924,7 +924,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
         }
         Item.MergeFrom(other.Item);
       }
@@ -944,7 +944,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
             }
             input.ReadMessage(Item);
             break;
@@ -965,7 +965,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
             }
             input.ReadMessage(Item);
             break;
@@ -989,7 +989,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1125,7 +1125,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1333,7 +1333,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1362,9 +1362,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1474,7 +1474,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1497,7 +1497,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
             }
             input.ReadMessage(Item);
             break;
@@ -1522,7 +1522,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Training.V1Alpha1.ModelAutobuilder();
             }
             input.ReadMessage(Item);
             break;
@@ -1550,7 +1550,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1758,7 +1758,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Modelautobuilder.V1.ModelautobuilderReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

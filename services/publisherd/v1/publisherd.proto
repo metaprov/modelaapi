@@ -1,16 +1,16 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/publisherd/v1";
-package github.com.metaprov.modeldapi.services.publisherd.v1;
+option go_package = "github.com/metaprov/modelaapi/services/publisherd/v1";
+package github.com.metaprov.modelaapi.services.publisherd.v1;
 
 
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 message PublishNotebookRequest {
     string notebookName = 1;
     string notebookNamespace = 2;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookSpec notebookSpec            = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec notebookSpec            = 3;
     string   NotebookContent     = 4;
     string   Dockerfile          = 5;
     string   provider            = 6;  // the image registry provider
@@ -22,20 +22,20 @@ message PublishNotebookResponse {
 }
 
 message BakeModelRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model             model               = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study             study               = 4;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource            datasource          = 5;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model             model               = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study             study               = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource            datasource          = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
     string                                                                     provider            = 7; // the image registry provider
     string                                                                     imagename           = 8;
     string                                                                     imagenameWithVersion = 9;
     bool                                                                       push                = 10;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket      = 11;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn   = 12;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket      = 11;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection           cloudConn   = 12;
     map<string,bytes>  cloudSecret   = 13; // the image registry login details.
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           dockerConnection   = 14;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection           dockerConnection   = 14;
     map<string,bytes>  dockerRegistrySecret    = 15; // the image registry login details.    
     bool      kaniko                 = 19;
 }
@@ -47,14 +47,14 @@ message BakeModelResponse {
 }
 
 message TarModelRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model             model               = 3;
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study             study               = 4;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource            datasource          = 5;
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket              = 7;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection           cloudConn           = 8;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model             model               = 3;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study             study               = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource            datasource          = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset               dataset             = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket        bucket              = 7;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection           cloudConn           = 8;
     map<string,bytes>                                                          cloudSecret         = 9; 
 }
 

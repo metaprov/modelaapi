@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/humans/v1";
-package github.com.metaprov.modeldapi.services.humans.v1;
+option go_package = "github.com/metaprov/modelaapi/services/humans/v1";
+package github.com.metaprov.modelaapi.services.humans.v1;
 
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 
 message LabelCreateRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account account = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
     bool upsert = 2;
 }
 
@@ -15,7 +15,7 @@ message LabelCreateResponse{}
 
 message NotificationRequest {
     // one or more notifiers might be involved
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier notifiers = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier notifiers = 1;
     // the msg to send
     string msg = 2;
     // Any attachments.

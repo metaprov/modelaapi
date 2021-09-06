@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/modeldsystem/v1";
+option go_package = "github.com/metaprov/modelaapi/services/modeldsystem/v1";
 
-package github.com.metaprov.modeldapi.services.modeldsystem.v1;
+package github.com.metaprov.modelaapi.services.modeldsystem.v1;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListModeldSystemsRequest {
     string             namespace = 1;
@@ -12,13 +12,13 @@ message ListModeldSystemsRequest {
 }
 
 message ListModeldSystemsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystemList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystemList items = 1;   
 }
 
 message ModeldSystemResponse {}
 
 message CreateModeldSystemRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystem  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem  item = 1;
     string password = 2;    
 }
 
@@ -27,7 +27,7 @@ message CreateModeldSystemResponse {
 }
 
 message UpdateModeldSystemRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
 }
 
 message UpdateModeldSystemResponse {
@@ -41,7 +41,7 @@ message GetModeldSystemRequest {
 
 
 message GetModeldSystemResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModeldSystem item = 1;
     string yaml = 2;
 }
 
@@ -54,7 +54,7 @@ message GetModeldSystemNamespacesRequest {
 
 
 message GetModeldSystemNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 

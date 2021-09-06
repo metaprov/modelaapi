@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/cronprediction/v1";
-package github.com.metaprov.modeldapi.services.cronprediction.v1;
+option go_package = "github.com/metaprov/modelaapi/services/cronprediction/v1";
+package github.com.metaprov.modelaapi.services.cronprediction.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
 
 message ListCronPredictionsRequest {
@@ -15,17 +15,17 @@ message ListCronPredictionsRequest {
 }
 
 message ListCronPredictionsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPredictionList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList items = 1;
 }
 
 message CreateCronPredictionResponse {}
 
 message CreateCronPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
 
 message UpdateCronPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
 
 message UpdateCronPredictionResponse {
@@ -38,7 +38,7 @@ message GetCronPredictionRequest {
 }
 
 message GetCronPredictionResponse {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
     string yaml = 2;
 
 }
@@ -73,7 +73,7 @@ message ResumeCronPredictionResponse {
 
 
 message RunCronPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
 
 

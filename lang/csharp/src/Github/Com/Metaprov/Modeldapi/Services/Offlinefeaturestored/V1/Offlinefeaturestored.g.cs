@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/offlinefeaturestored/v1/offlinefeaturestored.proto</summary>
   public static partial class OfflinefeaturestoredReflection {
@@ -89,20 +89,20 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             "QFo+Z2l0aHViLmNvbS9tZXRhcHJvdi9tb2RlbGRhcGkvc2VydmljZXMvb2Zm",
             "bGluZWZlYXR1cmVzdG9yZWQvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.CreateFeatureRequest), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.CreateFeatureRequest.Parser, new[]{ "Item", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.CreateFeatureResponse), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.CreateFeatureResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.DeleteFeatureRequest), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.DeleteFeatureRequest.Parser, new[]{ "Name", "Ns" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.DeleteFeatureResponse), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.DeleteFeatureResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.UpdateFeatureRequest), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.UpdateFeatureRequest.Parser, new[]{ "Item", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.UpdateFeatureResponse), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.UpdateFeatureResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.ListFeaturesRequest), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.ListFeaturesRequest.Parser, new[]{ "Ns" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.ListFeaturesResponse), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.ListFeaturesResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GetFeatureRequest), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GetFeatureRequest.Parser, new[]{ "Name", "Ns" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GetFeatureResponse), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GetFeatureResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetRequest.Parser, new[]{ "Name", "Ns", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.CreateFeatureRequest), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.CreateFeatureRequest.Parser, new[]{ "Item", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.CreateFeatureResponse), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.CreateFeatureResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.DeleteFeatureRequest), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.DeleteFeatureRequest.Parser, new[]{ "Name", "Ns" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.DeleteFeatureResponse), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.DeleteFeatureResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.UpdateFeatureRequest), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.UpdateFeatureRequest.Parser, new[]{ "Item", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.UpdateFeatureResponse), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.UpdateFeatureResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.ListFeaturesRequest), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.ListFeaturesRequest.Parser, new[]{ "Ns" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.ListFeaturesResponse), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.ListFeaturesResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GetFeatureRequest), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GetFeatureRequest.Parser, new[]{ "Name", "Ns" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GetFeatureResponse), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GetFeatureResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetRequest), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetRequest.Parser, new[]{ "Name", "Ns", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetResponse), global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.GenerateTrainingDatasetResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -121,7 +121,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,9 +151,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature Item {
       get { return item_; }
       set {
         item_ = value;
@@ -162,9 +162,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -278,13 +278,13 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
         }
         Item.MergeFrom(other.Item);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -305,14 +305,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
             }
             input.ReadMessage(Item);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -337,14 +337,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
             }
             input.ReadMessage(Item);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -372,7 +372,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -508,7 +508,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -716,7 +716,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -852,7 +852,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -882,9 +882,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature Item {
       get { return item_; }
       set {
         item_ = value;
@@ -893,9 +893,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -1009,13 +1009,13 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
         }
         Item.MergeFrom(other.Item);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -1036,14 +1036,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
             }
             input.ReadMessage(Item);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1068,14 +1068,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
             }
             input.ReadMessage(Item);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1103,7 +1103,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1239,7 +1239,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1411,7 +1411,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1439,9 +1439,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureList items_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureList Items {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -1527,7 +1527,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureList();
+          Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -1547,7 +1547,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 26: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList();
             }
             input.ReadMessage(Items);
             break;
@@ -1568,7 +1568,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 26: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList();
             }
             input.ReadMessage(Items);
             break;
@@ -1592,7 +1592,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1800,7 +1800,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1828,9 +1828,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1916,7 +1916,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1936,7 +1936,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
             }
             input.ReadMessage(Item);
             break;
@@ -1957,7 +1957,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature();
             }
             input.ReadMessage(Item);
             break;
@@ -1981,7 +1981,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2033,11 +2033,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.Feature> Items {
       get { return items_; }
     }
 
@@ -2214,7 +2214,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Offlinefeaturestored.V1.OfflinefeaturestoredReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

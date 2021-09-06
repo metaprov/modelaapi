@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/virtualbucket/v1";
-package github.com.metaprov.modeldapi.services.virtualbucket.v1;
+option go_package = "github.com/metaprov/modelaapi/services/virtualbucket/v1";
+package github.com.metaprov.modelaapi.services.virtualbucket.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 
 message ListVirtualBucketsRequest {
     string namespace = 1;
@@ -11,12 +11,12 @@ message ListVirtualBucketsRequest {
 }
 
 message ListVirtualBucketsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucketList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList items = 1;
 }
 
 
 message CreateVirtualBucketRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
 }
 
 message CreateVirtualBucketResponse {
@@ -24,7 +24,7 @@ message CreateVirtualBucketResponse {
 }
 
 message UpdateVirtualBucketRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
 }
 
 message UpdateVirtualBucketResponse {
@@ -38,7 +38,7 @@ message GetVirtualBucketRequest {
 
 
 message GetVirtualBucketResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
     string yaml = 2;
 }
 

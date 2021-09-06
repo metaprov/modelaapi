@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto</summary>
   public static partial class DatapipelineReflection {
@@ -87,20 +87,20 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             "cGFjZX0ve25hbWV9QjhaNmdpdGh1Yi5jb20vbWV0YXByb3YvbW9kZWxkYXBp",
             "L3NlcnZpY2VzL2RhdGFwaXBlbGluZS92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.ListDataPipelinesRequest), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.ListDataPipelinesRequest.Parser, new[]{ "Namespace", "Labels", "PageSize", "PageToken" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.ListDataPipelinesResponse), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.ListDataPipelinesResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.CreateDataPipelineRequest), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.CreateDataPipelineRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.CreateDataPipelineResponse), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.CreateDataPipelineResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.UpdateDataPipelineRequest), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.UpdateDataPipelineRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.UpdateDataPipelineResponse), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.UpdateDataPipelineResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.GetDataPipelineRequest), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.GetDataPipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.GetDataPipelineResponse), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.GetDataPipelineResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.RunDataPipelineRequest), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.RunDataPipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.RunDataPipelineResponse), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.RunDataPipelineResponse.Parser, new[]{ "Pipeline", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DeleteDataPipelineRequest), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DeleteDataPipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DeleteDataPipelineResponse), global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DeleteDataPipelineResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.ListDataPipelinesRequest), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.ListDataPipelinesRequest.Parser, new[]{ "Namespace", "Labels", "PageSize", "PageToken" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.ListDataPipelinesResponse), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.ListDataPipelinesResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.CreateDataPipelineRequest), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.CreateDataPipelineRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.CreateDataPipelineResponse), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.CreateDataPipelineResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.UpdateDataPipelineRequest), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.UpdateDataPipelineRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.UpdateDataPipelineResponse), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.UpdateDataPipelineResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.GetDataPipelineRequest), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.GetDataPipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.GetDataPipelineResponse), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.GetDataPipelineResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.RunDataPipelineRequest), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.RunDataPipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.RunDataPipelineResponse), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.RunDataPipelineResponse.Parser, new[]{ "Pipeline", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DeleteDataPipelineRequest), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DeleteDataPipelineRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DeleteDataPipelineResponse), global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DeleteDataPipelineResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -119,7 +119,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -388,7 +388,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -416,9 +416,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList items_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList Items {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -504,7 +504,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList();
+          Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -524,7 +524,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList();
             }
             input.ReadMessage(Items);
             break;
@@ -545,7 +545,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList();
+              Items = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList();
             }
             input.ReadMessage(Items);
             break;
@@ -569,7 +569,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -597,9 +597,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Item {
       get { return item_; }
       set {
         item_ = value;
@@ -685,7 +685,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
         }
         Item.MergeFrom(other.Item);
       }
@@ -705,7 +705,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Item);
             break;
@@ -726,7 +726,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Item);
             break;
@@ -750,7 +750,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -886,7 +886,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -914,9 +914,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1002,7 +1002,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1022,7 +1022,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Item);
             break;
@@ -1043,7 +1043,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Item);
             break;
@@ -1067,7 +1067,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1203,7 +1203,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1411,7 +1411,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1440,9 +1440,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline item_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Item {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1552,7 +1552,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+          Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1575,7 +1575,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Item);
             break;
@@ -1600,7 +1600,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Item = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Item);
             break;
@@ -1628,7 +1628,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1836,7 +1836,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1865,9 +1865,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     /// <summary>Field number for the "pipeline" field.</summary>
     public const int PipelineFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline pipeline_;
+    private global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline pipeline_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Pipeline {
+    public global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline Pipeline {
       get { return pipeline_; }
       set {
         pipeline_ = value;
@@ -1977,7 +1977,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
       }
       if (other.pipeline_ != null) {
         if (pipeline_ == null) {
-          Pipeline = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+          Pipeline = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
         }
         Pipeline.MergeFrom(other.Pipeline);
       }
@@ -2000,7 +2000,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (pipeline_ == null) {
-              Pipeline = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Pipeline = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Pipeline);
             break;
@@ -2025,7 +2025,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
             break;
           case 10: {
             if (pipeline_ == null) {
-              Pipeline = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
+              Pipeline = new global::Github.Com.Metaprov.modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline();
             }
             input.ReadMessage(Pipeline);
             break;
@@ -2053,7 +2053,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2261,7 +2261,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Datapipeline.V1.DatapipelineReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

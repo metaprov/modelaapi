@@ -1,0 +1,226 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.0
+  creationTimestamp: null
+  name: features.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    kind: Feature
+    listKind: FeatureList
+    plural: features
+    singular: feature
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.versionName
+      name: Version
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: Feature represent a single feature in the feature store.
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: FeatureSpec contain the desired state of a Feature
+            properties:
+              description:
+                default: ""
+                description: Comments is a description of the feature
+                maxLength: 512
+                type: string
+              entityName:
+                default: ""
+                description: The name of the entity containing this feature
+                type: string
+              featureColumn:
+                default: ""
+                description: The name of the feature column
+                type: string
+              featurePipelineName:
+                default: ""
+                description: The name of the feature pipeline that is producing this
+                  feature
+                type: string
+              keyColumn:
+                default: ""
+                description: Type name of the column key, this column is the key column
+                  in the entity.
+                type: string
+              owner:
+                default: no-one
+                description: The feature owner
+                type: string
+              timestampColumn:
+                default: ""
+                description: The name of the time stamp column
+                type: string
+              versionName:
+                default: ""
+                description: The product version for the feature.
+                type: string
+            type: object
+          status:
+            description: FeatureStatus defines the observed state of Feature
+            properties:
+              completeness:
+                description: Completeness is the ratio between non null to null
+                type: number
+              conditions:
+                items:
+                  description: FeatureCondition describes the state of a deployment
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of account condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              distinc:
+                format: int32
+                type: integer
+              distinctValueCount:
+                description: The ratio between distinc to total
+                type: number
+              highCorr:
+                description: This column has high corrolation with another feature
+                  and should be dropped. The value is set during the profile process.
+                type: boolean
+              highCred:
+                description: This column has high cardinality and should be ignored.
+                  The value is set during the profile process.
+                type: boolean
+              ignored:
+                description: Should this column be ignored, as specified by the user.
+                  This value is derived from the schema
+                type: boolean
+              importance:
+                description: The feature importance
+                type: number
+              indexOfPeculiarity:
+                description: Used for text attributes
+                type: number
+              invalid:
+                description: The number of invalid values
+                format: int32
+                minimum: 0
+                type: integer
+              kurtosis:
+                description: Kurtosis is the standard deviation value of the attribute
+                type: number
+              max:
+                description: Max is the maximum value of the attribute
+                type: number
+              mean:
+                description: Mean is the mean value of the attribute
+                type: number
+              min:
+                description: Min is the minimum value of the attribute
+                type: number
+              missing:
+                description: The number of missing values
+                format: int32
+                minimum: 0
+                type: integer
+              mostFreqValuesRatio:
+                description: The ratio between most freq value to total
+                type: number
+              nullable:
+                description: Is this column is nullable. This value is derived from
+                  the schema.
+                type: boolean
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              p25:
+                description: Pct25 is the 25 precent point
+                type: number
+              p50:
+                description: Pct50 is the median
+                type: number
+              p75:
+                description: Pct75 is the 75% point
+                type: number
+              skew:
+                description: Mark that this column is skewed and would require a power
+                  transform If skewness is less than -1 or greater than 1, the distribution
+                  is highly skewed. If skewness is between -1 and -0.5 or between
+                  0.5 and 1, the distribution is moderately skewed. If skewness is
+                  between -0.5 and 0.5, the distribution is approximately symmetric
+                type: boolean
+              skewness:
+                description: Skewness is the standard deviation value of the attribute
+                type: number
+              stddev:
+                description: StdDev is the standard deviation value of the attribute
+                type: number
+              target:
+                description: Is this the target attribute, the value is derived from
+                  the schema
+                type: boolean
+              zeros:
+                description: Zeros is the numbers of zeros in the feature
+                type: number
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

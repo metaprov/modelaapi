@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/modelpipeline/v1";
-package github.com.metaprov.modeldapi.services.modelpipeline.v1;
+option go_package = "github.com/metaprov/modelaapi/services/modelpipeline/v1";
+package github.com.metaprov.modelaapi.services.modelpipeline.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
 
 message ListModelPipelinesRequest {
     string namespace = 1;
@@ -11,13 +11,13 @@ message ListModelPipelinesRequest {
 }
 
 message ListModelPipelinesResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList items = 1;
 }
 
 message ModelPipelineResponse {}
 
 message CreateModelPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
 
 message CreateModelPipelineResponse {
@@ -25,7 +25,7 @@ message CreateModelPipelineResponse {
 }
 
 message UpdateModelPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
 
 message UpdateModelPipelineResponse {
@@ -39,7 +39,7 @@ message GetModelPipelineRequest {
 
 
 message GetModelPipelineResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
     string yaml = 2;
 }
 
@@ -56,7 +56,7 @@ message DeleteModelPipelineResponse {
 
 
 message RunModelPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
 
 message RunModelPipelineResponse {

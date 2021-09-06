@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/notebook/v1";
-package github.com.metaprov.modeldapi.services.notebook.v1;
+option go_package = "github.com/metaprov/modelaapi/services/notebook/v1";
+package github.com.metaprov.modelaapi.services.notebook.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListNotebooksRequest {
     string namespace = 1;
@@ -13,13 +13,13 @@ message ListNotebooksRequest {
 }
 
 message ListNotebooksResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList items = 1;
 }
 
 message NotebookResponse {}
 
 message CreateNotebookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook item = 1;
 }
 
 message CreateNotebookResponse {
@@ -27,7 +27,7 @@ message CreateNotebookResponse {
 }
 
 message UpdateNotebookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook item = 1;
 }
 
 message UpdateNotebookResponse {
@@ -41,7 +41,7 @@ message GetNotebookRequest {
 
 
 message GetNotebookResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook item = 1;
     string yaml = 2;
 }
 

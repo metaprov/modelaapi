@@ -1,0 +1,407 @@
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.0
+  creationTimestamp: null
+  name: dataproducts.data.modela.ai
+spec:
+  group: data.modela.ai
+  names:
+    categories:
+    - data
+    - modela
+    - all
+    kind: DataProduct
+    listKind: DataProductList
+    plural: dataproducts
+    shortNames:
+    - prod
+    singular: dataproduct
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - jsonPath: .spec.owner
+      name: Owner
+      type: string
+    - jsonPath: .spec.dataLocation.bucketName
+      name: Bucket
+      type: string
+    - jsonPath: .spec.labName
+      name: Lab
+      type: string
+    - jsonPath: .spec.servingSiteName
+      name: Serving Site
+      type: string
+    - jsonPath: .spec.imageLocation.name
+      name: Image Repo
+      type: string
+    - jsonPath: .spec.task
+      name: Task
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DataProduct represent a single data product in the system
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DataProductSpec defines the desired state of a data product
+            properties:
+              clearenceLevel:
+                default: unclassified
+                description: The clearance level of this data product
+                enum:
+                - unclassified
+                - confidential
+                - secret
+                - top-secret
+                type: string
+              compilation:
+                description: List of documents attached to the this data product
+                properties:
+                  compiler:
+                    default: none
+                    description: Set one or more targets Enable set the enable to
+                    enum:
+                    - tvm
+                    - onyx
+                    - xla
+                    - none
+                    type: string
+                  enable:
+                    default: false
+                    description: Enable set the enable to
+                    type: boolean
+                  targets:
+                    description: Set one or more targets for the compiler
+                    items:
+                      enum:
+                      - amd-epyc-2
+                      - arma-53
+                      - arma-72
+                      - intel-cascade-lake
+                      - intel-broadwell
+                      - intel-skylake
+                      - tesla-v100
+                      - tesla-k80
+                      - t4
+                      - raspberry-pi8-modela-b
+                      type: string
+                    type: array
+                type: object
+              dataLocation:
+                description: This folder contain the root location for all the artifacts
+                  from the product.
+                properties:
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: ConnectionName is the name of the connection to access
+                      the database
+                    type: string
+                  database:
+                    default: ""
+                    description: Database , the database.
+                    type: string
+                  path:
+                    default: ""
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                  sql:
+                    default: ""
+                    description: SQL statement, in case we choose the view type
+                    type: string
+                  table:
+                    default: ""
+                    description: Sql or table or topic name.
+                    type: string
+                  topic:
+                    default: ""
+                    description: Topic is the name of the topic in case of streaming
+                    type: string
+                  type:
+                    default: object
+                    description: data location type is the type of the data location
+                    type: string
+                type: object
+              defaultWorkloadClassName:
+                default: nano-cpu-250m-mem-256mi
+                description: DefaultWorkloadClassName is reference to the workload
+                  class used for running product tasks.
+                type: string
+              description:
+                default: ""
+                description: User provided description
+                maxLength: 512
+                type: string
+              gitLocation:
+                description: GitLocation is the github repository for all the artifacts
+                  for this product
+                properties:
+                  branch:
+                    default: ""
+                    description: Branch in git repo
+                    maxLength: 256
+                    type: string
+                  gitConnectionName:
+                    default: ""
+                    description: GitConnectionName
+                    type: string
+                  private:
+                    description: Private is True if the repository is private.
+                    type: boolean
+                  url:
+                    default: ""
+                    description: URL of the stakeholder
+                    maxLength: 256
+                    type: string
+                type: object
+              imageLocation:
+                description: ImageLocation is the image repository that stores the
+                  models images for the product versions
+                properties:
+                  name:
+                    default: ""
+                    description: The canonical name of the image repo. The default
+                      value is docker/productname optional
+                    maxLength: 256
+                    type: string
+                  registryConnectionName:
+                    default: ""
+                    description: The connection of the docker registry provider If
+                      the value is empty, the system will not push images. optional
+                    type: string
+                type: object
+              kpis:
+                description: KPIs is the product kpi. This is for information porpose
+                items:
+                  properties:
+                    name:
+                      default: ""
+                      description: Name is the name of the kpi
+                      type: string
+                    value:
+                      description: Value is the desired value
+                      type: number
+                  type: object
+                type: array
+              labName:
+                description: LabName is the Lab where models of this products are
+                  trained
+                maxLength: 63
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              notifierName:
+                default: ""
+                description: the notifier selector select the notifier for events
+                  that occur in the product life cycle.
+                type: string
+              onCallAccountName:
+                description: OnCallAccountName is the name of the account on call.
+                type: string
+              owner:
+                default: no-one
+                description: The data product owner
+                type: string
+              priority:
+                default: medium
+                description: Default Priority level assigned to jobs for this data
+                  product (e.g. study, model pipeline,etc)
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
+              retriesOnFailure:
+                default: 3
+                description: Denote how many time a job is retry after failure
+                format: int32
+                maximum: 10
+                minimum: 0
+                type: integer
+              servingSiteName:
+                description: ServingSiteName is the serving site where predictors
+                  of this product are deployed
+                maxLength: 63
+                pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
+                type: string
+              stakeholders:
+                description: Stake holders refer to a list of stackholders, which
+                  have interest in the product.
+                items:
+                  description: Represent a stack holder in the product. Each stake
+                    holder can hove one or more roles.
+                  properties:
+                    accountName:
+                      default: no-one
+                      description: The account name of the stake holder
+                      type: string
+                    roles:
+                      description: The roles assigned to the stake holder
+                      items:
+                        description: RoleName is the type of role a user can have
+                        enum:
+                        - administrator
+                        - data-analyst
+                        - data-scientist
+                        - data-engineer
+                        - data-steward
+                        - product-manager
+                        - risk-manager
+                        - software-engineer
+                        - ml-engineer
+                        type: string
+                      type: array
+                  type: object
+                type: array
+              task:
+                description: Task denote the machine learning task of the product
+                  (classification/regression,etc.)
+                enum:
+                - forecasting
+                - binary-classification
+                - multi-classification
+                - multi-label-classification
+                - text-classification
+                - regression
+                - forecasting
+                - clustering
+                - recommendation
+                - outlier-detection
+                - novelty-detection
+                - topic-modeling
+                - auto
+                - unknown
+                - video-action-recognition
+                - video-classification
+                - video-object-tracking
+                - text-classification
+                - text-multi-label-classification
+                - text-entity-extraction
+                - text-sentiment-analysis
+                - image-classification
+                - image-multi-classification
+                - image-object-detection
+                - image-segmentation
+                type: string
+              tenantRef:
+                description: The tenant that own the data product. Default to default
+                  tenant.
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+            type: object
+          status:
+            description: DataProductStatus defines the observed state of DataProduct
+            properties:
+              conditions:
+                items:
+                  description: DeploymentCondition describes the state of a deployment
+                    at a certain point.
+                  properties:
+                    lastTransitionTime:
+                      description: Last time the condition transitioned from one status
+                        to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: A human readable message indicating details about
+                        the transition.
+                      type: string
+                    reason:
+                      description: The reason for the condition's last transition.
+                      type: string
+                    status:
+                      description: Status of the condition, one of True, False, AutoScaler.
+                      type: string
+                    type:
+                      description: Type of condition.
+                      type: string
+                  required:
+                  - status
+                  - type
+                  type: object
+                type: array
+              lastStudyID:
+                description: The last study id generated for this product.
+                format: int64
+                type: integer
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+            type: object
+        required:
+        - metadata
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []

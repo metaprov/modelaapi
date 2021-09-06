@@ -1,9 +1,9 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/runbook/v1";
-package github.com.metaprov.modeldapi.services.runbook.v1;
+option go_package = "github.com/metaprov/modelaapi/services/runbook/v1";
+package github.com.metaprov.modelaapi.services.runbook.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
 
 message ListRunBooksRequest {
     string namespace = 1;
@@ -11,11 +11,11 @@ message ListRunBooksRequest {
 }
 
 message ListRunBooksResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBookList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList items = 1;
 }
 
 message CreateRunBookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
 }
 
 message CreateRunBookResponse {
@@ -23,7 +23,7 @@ message CreateRunBookResponse {
 }
 
 message UpdateRunBookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
 }
 
 message UpdateRunBookResponse {
@@ -37,7 +37,7 @@ message GetRunBookRequest {
 
 
 message GetRunBookResponse {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
     string yaml = 2;
 }
 

@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/modelautobuilder/v1";
-package github.com.metaprov.modeldapi.services.modelautobuilder.v1;
+option go_package = "github.com/metaprov/modelaapi/services/modelautobuilder/v1";
+package github.com.metaprov.modelaapi.services.modelautobuilder.v1;
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
 
 message ListModelAutobuildersRequest {
     string namespace = 1;
@@ -12,11 +12,11 @@ message ListModelAutobuildersRequest {
 }
 
 message ListModelAutobuildersResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilderList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList items = 1;
 }
 
 message CreateModelAutobuilderRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
 }
 
 message CreateModelAutobuilderResponse {
@@ -24,7 +24,7 @@ message CreateModelAutobuilderResponse {
 }
 
 message UpdateModelAutobuilderRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
 }
 
 message UpdateModelAutobuilderResponse {
@@ -38,7 +38,7 @@ message GetModelAutobuilderRequest {
 
 
 message GetModelAutobuilderResponse {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
     string yaml = 2;
 }
 

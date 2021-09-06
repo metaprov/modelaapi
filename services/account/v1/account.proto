@@ -1,10 +1,10 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/account/v1";
+option go_package = "github.com/metaprov/modelaapi/services/account/v1";
 
-package github.com.metaprov.modeldapi.services.account.v1;
+package github.com.metaprov.modelaapi.services.account.v1;
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/services/common/v1/common.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListAccountsRequest {
     string             namespace = 1;
@@ -12,13 +12,13 @@ message ListAccountsRequest {
 }
 
 message ListAccountsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.AccountList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList items = 1;   
 }
 
 message AccountResponse {}
 
 message CreateAccountRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account  item = 1;
     string password = 2;    
 }
 
@@ -27,7 +27,7 @@ message CreateAccountResponse {
 }
 
 message UpdateAccountRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 1;
 }
 
 message UpdateAccountResponse {
@@ -41,7 +41,7 @@ message GetAccountRequest {
 
 
 message GetAccountResponse {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 1;
     string yaml = 2;
 }
 
@@ -54,7 +54,7 @@ message GetAccountNamespacesRequest {
 
 
 message GetAccountNamespacesResponse {
-    repeated github.com.metaprov.modeldapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
 

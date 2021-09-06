@@ -1,20 +1,20 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/batchpredictord/v1";
-package github.com.metaprov.modeldapi.services.batchpredictord.v1;
+option go_package = "github.com/metaprov/modelaapi/services/batchpredictord/v1";
+package github.com.metaprov.modelaapi.services.batchpredictord.v1;
 
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 import "google/protobuf/empty.proto";
 
 
 // A request to batch predictor
 message BatchPredictRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction prediction     = 1;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket  fromBucket     = 2;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection     fromConnection = 3;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction     = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  fromBucket     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     fromConnection = 3;
     map<string,bytes>                                                    fromSecret     = 4;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket  targetBucket   = 5;
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection     toConnection   = 6;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket  targetBucket   = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection     toConnection   = 6;
     map<string,bytes>                                                    toSecret       = 7;    
 }
 

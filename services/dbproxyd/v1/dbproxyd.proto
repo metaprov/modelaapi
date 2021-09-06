@@ -1,13 +1,13 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/dbproxyd/v1";
+option go_package = "github.com/metaprov/modelaapi/services/dbproxyd/v1";
 import "google/api/annotations.proto";
-package github.com.metaprov.modeldapi.services.dbproxyd.v1;
+package github.com.metaprov.modelaapi.services.dbproxyd.v1;
 
-import "github.com/metaprov/modeldapi/pkg/apis/infra/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/data/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/training/v1alpha1/generated.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/team/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
 import "google/protobuf/empty.proto";
 
 //////////////////////////////////////////////////////
@@ -21,7 +21,7 @@ message ListAccountsRequest {
 }
 
 message ListAccountsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account items = 1;
     string next_page_token = 2;
 }
 
@@ -31,11 +31,11 @@ message GetAccountRequest {
 }
 
 message CreateAccountRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 1;
 }
 
 message UpdateAccountRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account item = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 2;
 }
 
 message DeleteAccountRequest {
@@ -54,7 +54,7 @@ message ListAlertsRequest {
 }
 
 message ListAlertsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert items = 1;
     string next_page_token = 2;
 }
 
@@ -64,11 +64,11 @@ message GetAlertRequest {
 }
 
 message CreateAlertRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
 }
 
 message UpdateAlertRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert item = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 2;
 }
 
 message DeleteAlertRequest {
@@ -88,7 +88,7 @@ message ListTodosRequest {
 }
 
 message ListTodosResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo items = 1;
     string next_page_token = 2;
 }
 
@@ -98,11 +98,11 @@ message GetTodoRequest {
 }
 
 message CreateTodoRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
 }
 
 message UpdateTodoRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo item = 2;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 2;
 }
 
 message DeleteTodoRequest {
@@ -122,7 +122,7 @@ message ListCommitsRequest {
 }
 
 message ListCommitsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit items = 1;
     string next_page_token = 2;
 }
 
@@ -132,11 +132,11 @@ message GetCommitRequest {
 }
 
 message CreateCommitRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit item = 1;
 }
 
 message UpdateCommitRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit item = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit item = 2;
 }
 
 message DeleteCommitRequest {
@@ -156,7 +156,7 @@ message ListApiTokensRequest {
 }
 
 message ListApiTokensResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken items = 1;
     string next_page_token = 2;
 }
 
@@ -166,11 +166,11 @@ message GetApiTokenRequest {
 }
 
 message CreateApiTokenRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
 }
 
 message UpdateApiTokenRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken item = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 2;
 }
 
 message DeleteApiTokenRequest {
@@ -190,7 +190,7 @@ message ListConnectionsRequest {
 }
 
 message ListConnectionsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection items = 1;
     string next_page_token = 2;
 }
 
@@ -200,11 +200,11 @@ message GetConnectionRequest {
 }
 
 message CreateConnectionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection item = 2;
 }
 
 message UpdateConnectionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection item = 2;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection item = 2;
 }
 
 message DeleteConnectionRequest {
@@ -224,7 +224,7 @@ message ListLabsRequest {
 }
 
 message ListLabsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab items = 1;
     string next_page_token = 2;
 }
 
@@ -234,11 +234,11 @@ message GetLabRequest {
 }
 
 message CreateLabRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
 }
 
 message UpdateLabRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
 }
 
 message DeleteLabRequest {
@@ -260,7 +260,7 @@ message ListLicensesRequest {
 }
 
 message ListLicensesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License items = 1;
     string next_page_token = 2;
 }
 
@@ -270,11 +270,11 @@ message GetLicenseRequest {
 }
 
 message CreateLicenseRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License item = 1;
 }
 
 message UpdateLicenseRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License item = 1;
 }
 
 message DeleteLicenseRequest {
@@ -294,7 +294,7 @@ message ListNotifiersRequest {
 }
 
 message ListNotifiersResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier items = 1;
     string next_page_token = 2;
 }
 
@@ -304,11 +304,11 @@ message GetNotifierRequest {
 }
 
 message CreateNotifierRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
 }
 
 message UpdateNotifierRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
 }
 
 message DeleteNotifierRequest {
@@ -328,7 +328,7 @@ message ListServingsitesRequest {
 }
 
 message ListServingsitesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite items = 1;
     string next_page_token = 2;
 }
 
@@ -338,11 +338,11 @@ message GetServingsiteRequest {
 }
 
 message CreateServingsiteRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
 }
 
 message UpdateServingsiteRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
 }
 
 message DeleteServingsiteRequest {
@@ -362,7 +362,7 @@ message ListTenantsRequest {
 }
 
 message ListTenantsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant items = 1;
     string next_page_token = 2;
 }
 
@@ -372,11 +372,11 @@ message GetTenantRequest {
 }
 
 message CreateTenantRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
 }
 
 message UpdateTenantRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
 }
 
 message DeleteTenantRequest {
@@ -396,7 +396,7 @@ message ListVirtualBucketsRequest {
 }
 
 message ListVirtualBucketsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket items = 1;
     string next_page_token = 2;
 }
 
@@ -406,11 +406,11 @@ message GetVirtualBucketRequest {
 }
 
 message CreateVirtualBucketRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
 }
 
 message UpdateVirtualBucketRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
 }
 
 message DeleteVirtualBucketRequest {
@@ -429,7 +429,7 @@ message ListVirtualClustersRequest {
 }
 
 message ListVirtualClustersResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster items = 1;
     string next_page_token = 2;
 }
 
@@ -439,11 +439,11 @@ message GetVirtualClusterRequest {
 }
 
 message CreateVirtualClusterRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
 }
 
 message UpdateVirtualClusterRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
 }
 
 message DeleteVirtualClusterRequest {
@@ -462,7 +462,7 @@ message ListVirtualVolumesRequest {
 }
 
 message ListVirtualVolumesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume items = 1;
     string next_page_token = 2;
 }
 
@@ -472,11 +472,11 @@ message GetVirtualVolumeRequest {
 }
 
 message CreateVirtualVolumeRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
 }
 
 message UpdateVirtualVolumeRequest {
-    github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
 }
 
 message DeleteVirtualVolumeRequest {
@@ -496,7 +496,7 @@ message ListDataPipelinesRequest {
 }
 
 message ListDataPipelinesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline items = 1;
     string next_page_token = 2;
 }
 
@@ -506,11 +506,11 @@ message GetDataPipelineRequest {
 }
 
 message CreateDataPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
 }
 
 message UpdateDataPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;
 }
 
 message DeleteDataPipelineRequest {
@@ -531,7 +531,7 @@ message ListDataPipelineRunsRequest {
 }
 
 message ListDataPipelineRunsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun items = 1;
     string next_page_token = 2;
 }
 
@@ -541,11 +541,11 @@ message GetDataPipelineRunRequest {
 }
 
 message CreateDataPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
 }
 
 message UpdateDataPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;
 }
 
 message DeleteDataPipelineRunRequest {
@@ -565,7 +565,7 @@ message ListDataProductsRequest {
 }
 
 message ListDataProductsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct items = 1;
     string next_page_token = 2;
 }
 
@@ -575,11 +575,11 @@ message GetDataProductRequest {
 }
 
 message CreateDataProductRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
 }
 
 message UpdateDataProductRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
 }
 
 message DeleteDataProductRequest {
@@ -599,7 +599,7 @@ message ListDataProductVersionsRequest {
 }
 
 message ListDataProductVersionsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion items = 1;
     string next_page_token = 2;
 }
 
@@ -609,11 +609,11 @@ message GetDataProductVersionRequest {
 }
 
 message CreateDataProductVersionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
 }
 
 message UpdateDataProductVersionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
 }
 
 message DeleteDataProductVersionRequest {
@@ -634,7 +634,7 @@ message ListDatasetsRequest {
 }
 
 message ListDatasetsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset items = 1;
     string next_page_token = 2;
 }
 
@@ -644,11 +644,11 @@ message GetDatasetRequest {
 }
 
 message CreateDatasetRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
 }
 
 message UpdateDatasetRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
 }
 
 message DeleteDatasetRequest {
@@ -668,7 +668,7 @@ message ListDatasourcesRequest {
 }
 
 message ListDatasourcesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource items = 1;
     string next_page_token = 2;
 }
 
@@ -678,11 +678,11 @@ message GetDatasourceRequest {
 }
 
 message CreateDatasourceRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message UpdateDatasourceRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource item = 1;
 }
 
 message DeleteDatasourceRequest {
@@ -702,7 +702,7 @@ message ListEntitiesRequest {
 }
 
 message ListEntitiesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity items = 1;
     string next_page_token = 2;
 }
 
@@ -712,11 +712,11 @@ message GetEntityRequest {
 }
 
 message CreateEntityRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity item = 1;
 }
 
 message UpdateEntityRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity item = 1;
 }
 
 message DeleteEntityRequest {
@@ -736,7 +736,7 @@ message ListFeaturesRequest {
 }
 
 message ListFeaturesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature items = 1;
     string next_page_token = 2;
 }
 
@@ -746,11 +746,11 @@ message GetFeatureRequest {
 }
 
 message CreateFeatureRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message UpdateFeatureRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
 }
 
 message DeleteFeatureRequest {
@@ -770,7 +770,7 @@ message ListFeaturePipelinesRequest {
 }
 
 message ListFeaturePipelinesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline items = 1;
     string next_page_token = 2;
 }
 
@@ -780,11 +780,11 @@ message GetFeaturePipelineRequest {
 }
 
 message CreateFeaturePipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
 }
 
 message UpdateFeaturePipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
 }
 
 message DeleteFeaturePipelineRequest {
@@ -804,7 +804,7 @@ message ListFeaturePipelineRunsRequest {
 }
 
 message ListFeaturePipelineRunsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun items = 1;
     string next_page_token = 2;
 }
 
@@ -814,11 +814,11 @@ message GetFeaturePipelineRunRequest {
 }
 
 message CreateFeaturePipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
 }
 
 message UpdateFeaturePipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
 }
 
 message DeleteFeaturePipelineRunRequest {
@@ -839,7 +839,7 @@ message ListFeaturesetsRequest {
 }
 
 message ListFeaturesetsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset items = 1;
     string next_page_token = 2;
 }
 
@@ -849,11 +849,11 @@ message GetFeaturesetRequest {
 }
 
 message CreateFeaturesetRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset item = 1;
 }
 
 message UpdateFeaturesetRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset item = 1;
 }
 
 message DeleteFeaturesetRequest {
@@ -872,7 +872,7 @@ message ListLabelingPipelinesRequest {
 }
 
 message ListLabelingPipelinesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline items = 1;
     string next_page_token = 2;
 }
 
@@ -882,11 +882,11 @@ message GetLabelingPipelineRequest {
 }
 
 message CreateLabelingPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
 }
 
 message UpdateLabelingPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
 }
 
 message DeleteLabelingPipelineRequest {
@@ -906,7 +906,7 @@ message ListLabelingPipelineRunsRequest {
 }
 
 message ListLabelingPipelineRunsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun items = 1;
     string next_page_token = 2;
 }
 
@@ -916,11 +916,11 @@ message GetLabelingPipelineRunRequest {
 }
 
 message CreateLabelingPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
 }
 
 message UpdateLabelingPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun item = 1;
 }
 
 message DeleteLabelingPipelineRunRequest {
@@ -940,7 +940,7 @@ message ListRecipesRequest {
 }
 
 message ListRecipesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe items = 1;
     string next_page_token = 2;
 }
 
@@ -950,11 +950,11 @@ message GetRecipeRequest {
 }
 
 message CreateRecipeRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe item = 1;
 }
 
 message UpdateRecipeRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe item = 1;
 }
 
 message DeleteRecipeRequest {
@@ -973,7 +973,7 @@ message ListRecipeRunsRequest {
 }
 
 message ListRecipeRunsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun items = 1;
     string next_page_token = 2;
 }
 
@@ -983,11 +983,11 @@ message GetRecipeRunRequest {
 }
 
 message CreateRecipeRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
 }
 
 message UpdateRecipeRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun item = 1;
 }
 
 message DeleteRecipeRunRequest {
@@ -1008,7 +1008,7 @@ message ListModelAutobuildersRequest {
 }
 
 message ListModelAutobuildersResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder items = 1;
     string next_page_token = 2;
 }
 
@@ -1018,11 +1018,11 @@ message GetModelAutobuilderRequest {
 }
 
 message CreateModelAutobuilderRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
 }
 
 message UpdateModelAutobuilderRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
 }
 
 message DeleteModelAutobuilderRequest {
@@ -1043,7 +1043,7 @@ message ListModelsRequest {
 }
 
 message ListModelsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model items = 1;
     string next_page_token = 2;
 }
 
@@ -1053,11 +1053,11 @@ message GetModelRequest {
 }
 
 message CreateModelRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 1;
 }
 
 message UpdateModelRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model item = 1;
 }
 
 message DeleteModelRequest {
@@ -1077,7 +1077,7 @@ message ListModelPipelinesRequest {
 }
 
 message ListModelPipelinesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline items = 1;
     string next_page_token = 2;
 }
 
@@ -1087,11 +1087,11 @@ message GetModelPipelineRequest {
 }
 
 message CreateModelPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
 
 message UpdateModelPipelineRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
 
 message DeleteModelPipelineRequest {
@@ -1111,7 +1111,7 @@ message ListModelPipelineRunsRequest {
 }
 
 message ListModelPipelineRunsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun items = 1;
     string next_page_token = 2;
 }
 
@@ -1121,11 +1121,11 @@ message GetModelPipelineRunRequest {
 }
 
 message CreateModelPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
 }
 
 message UpdateModelPipelineRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
 }
 
 message DeleteModelPipelineRunRequest {
@@ -1146,7 +1146,7 @@ message ListNotebooksRequest {
 }
 
 message ListNotebooksResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook items = 1;
     string next_page_token = 2;
 }
 
@@ -1156,11 +1156,11 @@ message GetNotebookRequest {
 }
 
 message CreateNotebookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook item = 1;
 }
 
 message UpdateNotebookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook item = 1;
 }
 
 message DeleteNotebookRequest {
@@ -1179,7 +1179,7 @@ message ListNotebookRunsRequest {
 }
 
 message ListNotebookRunsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun items = 1;
     string next_page_token = 2;
 }
 
@@ -1189,11 +1189,11 @@ message GetNotebookRunRequest {
 }
 
 message CreateNotebookRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
 }
 
 message UpdateNotebookRunRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
 }
 
 message DeleteNotebookRunRequest {
@@ -1213,7 +1213,7 @@ message ListReportsRequest {
 }
 
 message ListReportsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report items = 1;
     string next_page_token = 2;
 }
 
@@ -1223,11 +1223,11 @@ message GetReportRequest {
 }
 
 message CreateReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report item = 1;
 }
 
 message UpdateReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report item = 1;
 }
 
 message DeleteReportRequest {
@@ -1247,7 +1247,7 @@ message ListCronReportsRequest {
 }
 
 message ListCronReportsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport items = 1;
     string next_page_token = 2;
 }
 
@@ -1257,11 +1257,11 @@ message GetCronReportRequest {
 }
 
 message CreateCronReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
 }
 
 message UpdateCronReportRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport item = 1;
 }
 
 message DeleteCronReportRequest {
@@ -1282,7 +1282,7 @@ message ListStudiesRequest {
 }
 
 message ListStudiesResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study items = 1;
     string next_page_token = 2;
 }
 
@@ -1292,11 +1292,11 @@ message GetStudyRequest {
 }
 
 message CreateStudyRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
 }
 
 message UpdateStudyRequest {
-    github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
 }
 
 message DeleteStudyRequest {
@@ -1316,7 +1316,7 @@ message ListCronPredictionsRequest {
 }
 
 message ListCronPredictionsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction items = 1;
     string next_page_token = 2;
 }
 
@@ -1326,11 +1326,11 @@ message GetCronPredictionRequest {
 }
 
 message CreateCronPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
 
 message UpdateCronPredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
 }
 
 message DeleteCronPredictionRequest {
@@ -1350,7 +1350,7 @@ message ListCurtainsRequest {
 }
 
 message ListCurtainsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain items = 1;
     string next_page_token = 2;
 }
 
@@ -1360,11 +1360,11 @@ message GetCurtainRequest {
 }
 
 message CreateCurtainRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
 }
 
 message UpdateCurtainRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
 }
 
 message DeleteCurtainRequest {
@@ -1384,7 +1384,7 @@ message ListPredictionsRequest {
 }
 
 message ListPredictionsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction items = 1;
     string next_page_token = 2;
 }
 
@@ -1394,11 +1394,11 @@ message GetPredictionRequest {
 }
 
 message CreatePredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
 }
 
 message UpdatePredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
 }
 
 message DeletePredictionRequest {
@@ -1418,7 +1418,7 @@ message ListPredictorsRequest {
 }
 
 message ListPredictorsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor items = 1;
     string next_page_token = 2;
 }
 
@@ -1428,11 +1428,11 @@ message GetPredictorRequest {
 }
 
 message CreatePredictorRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
 }
 
 message UpdatePredictorRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
 }
 
 message DeletePredictorRequest {
@@ -1452,7 +1452,7 @@ message ListReviewsRequest {
 }
 
 message ListReviewsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review items = 1;
     string next_page_token = 2;
 }
 
@@ -1462,11 +1462,11 @@ message GetReviewRequest {
 }
 
 message CreateReviewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
 }
 
 message UpdateReviewRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
 }
 
 message DeleteReviewRequest {
@@ -1486,7 +1486,7 @@ message ListPostMortemsRequest {
 }
 
 message ListPostMortemsResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem items = 1;
     string next_page_token = 2;
 }
 
@@ -1496,11 +1496,11 @@ message GetPostMortemRequest {
 }
 
 message CreatePostMortemRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
 }
 
 message UpdatePostMortemRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
 }
 
 message DeletePostMortemRequest {
@@ -1520,7 +1520,7 @@ message ListRunbooksRequest {
 }
 
 message ListRunbooksResponse {
-    repeated github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook items = 1;
     string next_page_token = 2;
 }
 
@@ -1530,11 +1530,11 @@ message GetRunbookRequest {
 }
 
 message CreateRunbookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
 }
 
 message UpdateRunbookRequest {
-    github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
 }
 
 message DeleteRunbookRequest {
@@ -1546,291 +1546,291 @@ message DeleteRunbookRequest {
 
 service DatabaseProxyService {
     rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {}
-    rpc GetAccount(GetAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) { }
-    rpc CreateAccount(CreateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {}
-    rpc UpdateAccount(UpdateAccountRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Account) {}
+    rpc GetAccount(GetAccountRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account) { }
+    rpc CreateAccount(CreateAccountRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account) {}
+    rpc UpdateAccount(UpdateAccountRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account) {}
     rpc DeleteAccount(DeleteAccountRequest) returns (google.protobuf.Empty) {}
 
     // alerts
     rpc ListAlerts(ListAlertsRequest) returns (ListAlertsResponse) {}
-    rpc GetAlert(GetAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {}
-    rpc CreateAlert(CreateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) { }
-    rpc UpdateAlert(UpdateAlertRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Alert) {}
+    rpc GetAlert(GetAlertRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert) {}
+    rpc CreateAlert(CreateAlertRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert) { }
+    rpc UpdateAlert(UpdateAlertRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert) {}
     rpc DeleteAlert(DeleteAlertRequest) returns (google.protobuf.Empty) {}
 
     rpc ListTodos(ListTodosRequest) returns (ListTodosResponse) {}
-    rpc GetTodo(GetTodoRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo) {}
-    rpc CreateTodo(CreateTodoRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo) { }
-    rpc UpdateTodo(UpdateTodoRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Todo) {}
+    rpc GetTodo(GetTodoRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo) {}
+    rpc CreateTodo(CreateTodoRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo) { }
+    rpc UpdateTodo(UpdateTodoRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo) {}
     rpc DeleteTodo(DeleteTodoRequest) returns (google.protobuf.Empty) {}
     
     // commits
     rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {}
-    rpc GetCommit(GetCommitRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit) {}
-    rpc CreateCommit(CreateCommitRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit) { }
-    rpc UpdateCommit(UpdateCommitRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Commit) {}
+    rpc GetCommit(GetCommitRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit) {}
+    rpc CreateCommit(CreateCommitRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit) { }
+    rpc UpdateCommit(UpdateCommitRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit) {}
     rpc DeleteCommit(DeleteCommitRequest) returns (google.protobuf.Empty) {}
 
     // api token
     rpc ListApiTokens(ListApiTokensRequest) returns (ListApiTokensResponse) {}
-    rpc GetApiToken(GetApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) { }
-    rpc CreateApiToken(CreateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {}
-    rpc UpdateApiToken(UpdateApiTokenRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ApiToken) {}
+    rpc GetApiToken(GetApiTokenRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken) { }
+    rpc CreateApiToken(CreateApiTokenRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken) {}
+    rpc UpdateApiToken(UpdateApiTokenRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken) {}
     rpc DeleteApiToken(DeleteApiTokenRequest) returns (google.protobuf.Empty) {}
 
     // connection
     rpc ListConnections(ListConnectionsRequest) returns (ListConnectionsResponse) {}
-    rpc GetConnection(GetConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {}
-    rpc CreateConnection(CreateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {}
-    rpc UpdateConnection(UpdateConnectionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Connection) {}
+    rpc GetConnection(GetConnectionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection) {}
+    rpc CreateConnection(CreateConnectionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection) {}
+    rpc UpdateConnection(UpdateConnectionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection) {}
     rpc DeleteConnection(DeleteConnectionRequest) returns (google.protobuf.Empty) {}
 
     // lab
     rpc ListLabs(ListLabsRequest) returns (ListLabsResponse) {}
-    rpc GetLab(GetLabRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab) {}
-    rpc CreateLab(CreateLabRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab) {}
-    rpc UpdateLab(UpdateLabRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Lab) {}
+    rpc GetLab(GetLabRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab) {}
+    rpc CreateLab(CreateLabRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab) {}
+    rpc UpdateLab(UpdateLabRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab) {}
     rpc DeleteLab(DeleteLabRequest) returns (google.protobuf.Empty) {}
 
     // license
     rpc ListLicenses(ListLicensesRequest) returns (ListLicensesResponse) {}
-    rpc GetLicense(GetLicenseRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License) {}
-    rpc CreateLicense(CreateLicenseRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License) {}
-    rpc UpdateLicense(UpdateLicenseRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.License) {}
+    rpc GetLicense(GetLicenseRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License) {}
+    rpc CreateLicense(CreateLicenseRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License) {}
+    rpc UpdateLicense(UpdateLicenseRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License) {}
     rpc DeleteLicense(DeleteLicenseRequest) returns (google.protobuf.Empty) {}
 
     // notifer
     rpc ListNotifiers(ListNotifiersRequest) returns (ListNotifiersResponse) {}
-    rpc GetNotifier(GetNotifierRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier) {}
-    rpc CreateNotifier(CreateNotifierRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier) {}
-    rpc UpdateNotifier(UpdateNotifierRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Notifier) {}
+    rpc GetNotifier(GetNotifierRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier) {}
+    rpc CreateNotifier(CreateNotifierRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier) {}
+    rpc UpdateNotifier(UpdateNotifierRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier) {}
     rpc DeleteNotifier(DeleteNotifierRequest) returns (google.protobuf.Empty) {}
 
     // servingsite
     rpc ListServingSites(ListServingsitesRequest) returns (ListServingsitesResponse) {}
-    rpc GetServingSite(GetServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite) {}
-    rpc CreateServingSite(CreateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite) {}
-    rpc UpdateServingSite(UpdateServingsiteRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.ServingSite) {}
+    rpc GetServingSite(GetServingsiteRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite) {}
+    rpc CreateServingSite(CreateServingsiteRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite) {}
+    rpc UpdateServingSite(UpdateServingsiteRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite) {}
     rpc DeleteServingSite(DeleteServingsiteRequest) returns (google.protobuf.Empty) {}
 
     // servingsite
     rpc ListTenants(ListTenantsRequest) returns (ListTenantsResponse) {}
-    rpc GetTenant(GetTenantRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant) {}
-    rpc CreateTenant(CreateTenantRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant) {}
-    rpc UpdateTenant(UpdateTenantRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.Tenant) {}
+    rpc GetTenant(GetTenantRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant) {}
+    rpc CreateTenant(CreateTenantRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant) {}
+    rpc UpdateTenant(UpdateTenantRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant) {}
     rpc DeleteTenant(DeleteTenantRequest) returns (google.protobuf.Empty) {}
 
     // virtual bucket
     rpc ListVirtualBuckets(ListVirtualBucketsRequest) returns (ListVirtualBucketsResponse) {}
-    rpc GetVirtualBucket(GetVirtualBucketRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
-    rpc CreateVirtualBucket(CreateVirtualBucketRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
-    rpc UpdateVirtualBucket(UpdateVirtualBucketRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
+    rpc GetVirtualBucket(GetVirtualBucketRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
+    rpc CreateVirtualBucket(CreateVirtualBucketRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
+    rpc UpdateVirtualBucket(UpdateVirtualBucketRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket) {}
     rpc DeleteVirtualBucket(DeleteVirtualBucketRequest) returns (google.protobuf.Empty) {}
 
     // virtual cluster
     rpc ListVirtualClusters(ListVirtualClustersRequest) returns (ListVirtualClustersResponse) {}
-    rpc GetVirtualCluster(GetVirtualClusterRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
-    rpc CreateVirtualCluster(CreateVirtualClusterRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
-    rpc UpdateVirtualCluster(UpdateVirtualClusterRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
+    rpc GetVirtualCluster(GetVirtualClusterRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
+    rpc CreateVirtualCluster(CreateVirtualClusterRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
+    rpc UpdateVirtualCluster(UpdateVirtualClusterRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster) {}
     rpc DeleteVirtualCluster(DeleteVirtualClusterRequest) returns (google.protobuf.Empty) {}
 
     // virtual volume
     rpc ListVirtualVolumes(ListVirtualVolumesRequest) returns (ListVirtualVolumesResponse) {}
-    rpc GetVirtualVolume(GetVirtualVolumeRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
-    rpc CreateVirtualVolume(CreateVirtualVolumeRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
-    rpc UpdateVirtualVolume(UpdateVirtualVolumeRequest) returns (github.com.metaprov.modeldapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
+    rpc GetVirtualVolume(GetVirtualVolumeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
+    rpc CreateVirtualVolume(CreateVirtualVolumeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
+    rpc UpdateVirtualVolume(UpdateVirtualVolumeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume) {}
     rpc DeleteVirtualVolume(DeleteVirtualVolumeRequest) returns (google.protobuf.Empty) {}
 
     // data pipeline
     rpc ListDataPipelines(ListDataPipelinesRequest) returns (ListDataPipelinesResponse) {}
-    rpc GetDataPipeline(GetDataPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline) {}
-    rpc CreateDataPipeline(CreateDataPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline) {}
-    rpc UpdateDataPipeline(UpdateDataPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipeline) {}
+    rpc GetDataPipeline(GetDataPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline) {}
+    rpc CreateDataPipeline(CreateDataPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline) {}
+    rpc UpdateDataPipeline(UpdateDataPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline) {}
     rpc DeleteDataPipeline(DeleteDataPipelineRequest) returns (google.protobuf.Empty) {}
 
     // data pipeline run
     rpc ListDataPipelineRuns(ListDataPipelineRunsRequest) returns (ListDataPipelineRunsResponse) {}
-    rpc GetDataPipelineRun(GetDataPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
-    rpc CreateDataPipelineRun(CreateDataPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
-    rpc UpdateDataPipelineRun(UpdateDataPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
+    rpc GetDataPipelineRun(GetDataPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
+    rpc CreateDataPipelineRun(CreateDataPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
+    rpc UpdateDataPipelineRun(UpdateDataPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun) {}
     rpc DeleteDataPipelineRun(DeleteDataPipelineRunRequest) returns (google.protobuf.Empty) {}
 
     // data pipeline run
     rpc ListDataProducts(ListDataProductsRequest) returns (ListDataProductsResponse) {}
-    rpc GetDataProduct(GetDataProductRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct) {}
-    rpc CreateDataProduct(CreateDataProductRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct) {}
-    rpc UpdateDataProduct(UpdateDataProductRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProduct) {}
+    rpc GetDataProduct(GetDataProductRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct) {}
+    rpc CreateDataProduct(CreateDataProductRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct) {}
+    rpc UpdateDataProduct(UpdateDataProductRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct) {}
     rpc DeleteDataProduct(DeleteDataProductRequest) returns (google.protobuf.Empty) {}
 
     rpc ListDataProductVersions(ListDataProductVersionsRequest) returns (ListDataProductVersionsResponse) {}
-    rpc GetDataProductVersion(GetDataProductVersionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
-    rpc CreateDataProductVersion(CreateDataProductVersionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
-    rpc UpdateDataProductVersion(UpdateDataProductVersionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
+    rpc GetDataProductVersion(GetDataProductVersionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
+    rpc CreateDataProductVersion(CreateDataProductVersionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
+    rpc UpdateDataProductVersion(UpdateDataProductVersionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion) {}
     rpc DeleteDataProductVersion(DeleteDataProductVersionRequest) returns (google.protobuf.Empty) {}
 
     rpc ListDatasets(ListDatasetsRequest) returns (ListDatasetsResponse) {}
-    rpc GetDataset(GetDatasetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset) {}
-    rpc CreateDataset(CreateDatasetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset) {}
-    rpc UpdateDataset(UpdateDatasetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Dataset) {}
+    rpc GetDataset(GetDatasetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset) {}
+    rpc CreateDataset(CreateDatasetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset) {}
+    rpc UpdateDataset(UpdateDatasetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset) {}
     rpc DeleteDataset(DeleteDatasetRequest) returns (google.protobuf.Empty) {}
 
     rpc ListDataSources(ListDatasourcesRequest) returns (ListDatasourcesResponse) {}
-    rpc GetDataSource(GetDatasourceRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource) {}
-    rpc CreateDataSource(CreateDatasourceRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource) {}
-    rpc UpdateDataSource(UpdateDatasourceRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.DataSource) {}
+    rpc GetDataSource(GetDatasourceRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource) {}
+    rpc CreateDataSource(CreateDatasourceRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource) {}
+    rpc UpdateDataSource(UpdateDatasourceRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource) {}
     rpc DeleteDataSource(DeleteDatasourceRequest) returns (google.protobuf.Empty) {}
 
     rpc ListEntities(ListEntitiesRequest) returns (ListEntitiesResponse) {}
-    rpc GetEntity(GetEntityRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity) {}
-    rpc CreateEntity(CreateEntityRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity) {}
-    rpc UpdateEntity(UpdateEntityRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Entity) {}
+    rpc GetEntity(GetEntityRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity) {}
+    rpc CreateEntity(CreateEntityRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity) {}
+    rpc UpdateEntity(UpdateEntityRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity) {}
     rpc DeleteEntity(DeleteEntityRequest) returns (google.protobuf.Empty) {}
 
     rpc ListFeatures(ListFeaturesRequest) returns (ListFeaturesResponse) {}
-    rpc GetFeature(GetFeatureRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature) {}
-    rpc CreateFeature(CreateFeatureRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature) {}
-    rpc UpdateFeature(UpdateFeatureRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Feature) {}
+    rpc GetFeature(GetFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
+    rpc CreateFeature(CreateFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
+    rpc UpdateFeature(UpdateFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
     rpc DeleteFeature(DeleteFeatureRequest) returns (google.protobuf.Empty) {}
 
     rpc ListFeaturePipelines(ListFeaturePipelinesRequest) returns (ListFeaturePipelinesResponse) {}
-    rpc GetFeaturePipeline(GetFeaturePipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
-    rpc CreateFeaturePipeline(CreateFeaturePipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
-    rpc UpdateFeaturePipeline(UpdateFeaturePipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
+    rpc GetFeaturePipeline(GetFeaturePipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
+    rpc CreateFeaturePipeline(CreateFeaturePipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
+    rpc UpdateFeaturePipeline(UpdateFeaturePipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
     rpc DeleteFeaturePipeline(DeleteFeaturePipelineRequest) returns (google.protobuf.Empty) {}
 
 
     rpc ListFeaturePipelineRuns(ListFeaturePipelineRunsRequest) returns (ListFeaturePipelineRunsResponse) {}
-    rpc GetFeaturePipelineRun(GetFeaturePipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
-    rpc CreateFeaturePipelineRun(CreateFeaturePipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
-    rpc UpdateFeaturePipelineRun(UpdateFeaturePipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
+    rpc GetFeaturePipelineRun(GetFeaturePipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
+    rpc CreateFeaturePipelineRun(CreateFeaturePipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
+    rpc UpdateFeaturePipelineRun(UpdateFeaturePipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun) {}
     rpc DeleteFeaturePipelineRun(DeleteFeaturePipelineRunRequest) returns (google.protobuf.Empty) {}
 
 
     rpc ListFeaturesets(ListFeaturesetsRequest) returns (ListFeaturesetsResponse) {}
-    rpc GetFeatureset(GetFeaturesetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
-    rpc CreateFeatureset(CreateFeaturesetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
-    rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc GetFeatureset(GetFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc CreateFeatureset(CreateFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
+    rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset) {}
     rpc DeleteFeatureset(DeleteFeaturesetRequest) returns (google.protobuf.Empty) {}
 
     rpc ListLabelingPipelines(ListLabelingPipelinesRequest) returns (ListLabelingPipelinesResponse) {}
-    rpc GetLabelingPipeline(GetLabelingPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
-    rpc CreateLabelingPipeline(CreateLabelingPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
-    rpc UpdateLabelingPipeline(UpdateLabelingPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
+    rpc GetLabelingPipeline(GetLabelingPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
+    rpc CreateLabelingPipeline(CreateLabelingPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
+    rpc UpdateLabelingPipeline(UpdateLabelingPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline) {}
     rpc DeleteLabelingPipeline(DeleteLabelingPipelineRequest) returns (google.protobuf.Empty) {}
 
     rpc ListLabelingPipelineRuns(ListLabelingPipelineRunsRequest) returns (ListLabelingPipelineRunsResponse) {}
-    rpc GetLabelingPipelineRun(GetLabelingPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
-    rpc CreateLabelingPipelineRun(CreateLabelingPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
-    rpc UpdateLabelingPipelineRun(UpdateLabelingPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
+    rpc GetLabelingPipelineRun(GetLabelingPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
+    rpc CreateLabelingPipelineRun(CreateLabelingPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
+    rpc UpdateLabelingPipelineRun(UpdateLabelingPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRun) {}
     rpc DeleteLabelingPipelineRun(DeleteLabelingPipelineRunRequest) returns (google.protobuf.Empty) {}
 
     rpc ListRecipes(ListRecipesRequest) returns (ListRecipesResponse) {}
-    rpc GetRecipe(GetRecipeRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe) {}
-    rpc CreateRecipe(CreateRecipeRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe) {}
-    rpc UpdateRecipe(UpdateRecipeRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.Recipe) {}
+    rpc GetRecipe(GetRecipeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe) {}
+    rpc CreateRecipe(CreateRecipeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe) {}
+    rpc UpdateRecipe(UpdateRecipeRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe) {}
     rpc DeleteRecipe(DeleteRecipeRequest) returns (google.protobuf.Empty) {}
 
     rpc ListRecipeRuns(ListRecipeRunsRequest) returns (ListRecipeRunsResponse) {}
-    rpc GetRecipeRun(GetRecipeRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun) {}
-    rpc CreateRecipeRun(CreateRecipeRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun) {}
-    rpc UpdateRecipeRun(UpdateRecipeRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.data.v1alpha1.RecipeRun) {}
+    rpc GetRecipeRun(GetRecipeRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun) {}
+    rpc CreateRecipeRun(CreateRecipeRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun) {}
+    rpc UpdateRecipeRun(UpdateRecipeRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRun) {}
     rpc DeleteRecipeRun(DeleteRecipeRunRequest) returns (google.protobuf.Empty) {}
 
     rpc ListModelAutobuilders(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {}
-    rpc GetModelAutobuilder(GetModelAutobuilderRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
-    rpc CreateModelAutobuilder(CreateModelAutobuilderRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
-    rpc UpdateModelAutobuilder(UpdateModelAutobuilderRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
+    rpc GetModelAutobuilder(GetModelAutobuilderRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
+    rpc CreateModelAutobuilder(CreateModelAutobuilderRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
+    rpc UpdateModelAutobuilder(UpdateModelAutobuilderRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder) {}
     rpc DeleteModelAutobuilder(DeleteModelAutobuilderRequest) returns (google.protobuf.Empty) {}
 
     rpc ListModelPipelines(ListModelPipelinesRequest) returns (ListModelPipelinesResponse) {}
-    rpc GetModelPipeline(GetModelPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
-    rpc CreateModelPipeline(CreateModelPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
-    rpc UpdateModelPipeline(UpdateModelPipelineRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
+    rpc GetModelPipeline(GetModelPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
+    rpc CreateModelPipeline(CreateModelPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
+    rpc UpdateModelPipeline(UpdateModelPipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline) {}
     rpc DeleteModelPipeline(DeleteModelPipelineRequest) returns (google.protobuf.Empty) {}
 
     rpc ListModelPipelineRuns(ListModelPipelineRunsRequest) returns (ListModelPipelineRunsResponse) {}
-    rpc GetModelPipelineRun(GetModelPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
-    rpc CreateModelPipelineRun(CreateModelPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
-    rpc UpdateModelPipelineRun(UpdateModelPipelineRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
+    rpc GetModelPipelineRun(GetModelPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
+    rpc CreateModelPipelineRun(CreateModelPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
+    rpc UpdateModelPipelineRun(UpdateModelPipelineRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun) {}
     rpc DeleteModelPipelineRun(DeleteModelPipelineRunRequest) returns (google.protobuf.Empty) {}
 
     rpc ListNotebooks(ListNotebooksRequest) returns (ListNotebooksResponse) {}
-    rpc GetNotebook(GetNotebookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook) {}
-    rpc CreateNotebook(CreateNotebookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook) {}
-    rpc UpdateNotebook(UpdateNotebookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Notebook) {}
+    rpc GetNotebook(GetNotebookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook) {}
+    rpc CreateNotebook(CreateNotebookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook) {}
+    rpc UpdateNotebook(UpdateNotebookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook) {}
     rpc DeleteNotebook(DeleteNotebookRequest) returns (google.protobuf.Empty) {}
 
     rpc ListNotebookRuns(ListNotebookRunsRequest) returns (ListNotebookRunsResponse) {}
-    rpc GetNotebookRun(GetNotebookRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun) {}
-    rpc CreateNotebookRun(CreateNotebookRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun) {}
-    rpc UpdateNotebookRun(UpdateNotebookRunRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.NotebookRun) {}
+    rpc GetNotebookRun(GetNotebookRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun) {}
+    rpc CreateNotebookRun(CreateNotebookRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun) {}
+    rpc UpdateNotebookRun(UpdateNotebookRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun) {}
     rpc DeleteNotebookRun(DeleteNotebookRunRequest) returns (google.protobuf.Empty) {}
 
     rpc ListReports(ListReportsRequest) returns (ListReportsResponse) {}
-    rpc GetReport(GetReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
-    rpc CreateReport(CreateReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
-    rpc UpdateReport(UpdateReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Report) {}
+    rpc GetReport(GetReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report) {}
+    rpc CreateReport(CreateReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report) {}
+    rpc UpdateReport(UpdateReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report) {}
     rpc DeleteReport(DeleteReportRequest) returns (google.protobuf.Empty) {}
 
     rpc ListCronReports(ListCronReportsRequest) returns (ListCronReportsResponse) {}
-    rpc GetCronReport(GetCronReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport) {}
-    rpc CreateCronReport(CreateCronReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport) {}
-    rpc UpdateCronReport(UpdateCronReportRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.CronReport) {}
+    rpc GetCronReport(GetCronReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport) {}
+    rpc CreateCronReport(CreateCronReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport) {}
+    rpc UpdateCronReport(UpdateCronReportRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReport) {}
     rpc DeleteCronReport(DeleteCronReportRequest) returns (google.protobuf.Empty) {}
 
     rpc ListStudies(ListStudiesRequest) returns (ListStudiesResponse) {}
-    rpc GetStudy(GetStudyRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
-    rpc CreateStudy(CreateStudyRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
-    rpc UpdateStudy(UpdateStudyRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Study) {}
+    rpc GetStudy(GetStudyRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study) {}
+    rpc CreateStudy(CreateStudyRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study) {}
+    rpc UpdateStudy(UpdateStudyRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study) {}
     rpc DeleteStudy(DeleteStudyRequest) returns (google.protobuf.Empty) {}
 
     rpc ListModels(ListModelsRequest) returns (ListModelsResponse) {}
-    rpc GetModel(GetModelRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
-    rpc CreateModel(CreateModelRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
-    rpc UpdateModel(UpdateModelRequest) returns (github.com.metaprov.modeldapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc GetModel(GetModelRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc CreateModel(CreateModelRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model) {}
+    rpc UpdateModel(UpdateModelRequest) returns (github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model) {}
     rpc DeleteModel(DeleteModelRequest) returns (google.protobuf.Empty) {}
 
 
     rpc ListCronPredictions(ListCronPredictionsRequest) returns (ListCronPredictionsResponse) {}
-    rpc GetCronPrediction(GetCronPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
-    rpc CreateCronPrediction(CreateCronPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
-    rpc UpdateCronPrediction(UpdateCronPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
+    rpc GetCronPrediction(GetCronPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
+    rpc CreateCronPrediction(CreateCronPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
+    rpc UpdateCronPrediction(UpdateCronPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction) {}
     rpc DeleteCronPrediction(DeleteCronPredictionRequest) returns (google.protobuf.Empty) {}
 
     rpc ListPredictions(ListPredictionsRequest) returns (ListPredictionsResponse) {}
-    rpc GetPrediction(GetPredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction) {}
-    rpc CreatePrediction(CreatePredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction) {}
-    rpc UpdatePrediction(UpdatePredictionRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction) {}
+    rpc GetPrediction(GetPredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction) {}
+    rpc CreatePrediction(CreatePredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction) {}
+    rpc UpdatePrediction(UpdatePredictionRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction) {}
     rpc DeletePrediction(DeletePredictionRequest) returns (google.protobuf.Empty) {}
 
     rpc ListPredictors(ListPredictorsRequest) returns (ListPredictorsResponse) {}
-    rpc GetPredictor(GetPredictorRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor) {}
-    rpc CreatePredictor(CreatePredictorRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor) {}
-    rpc UpdatePredictor(UpdatePredictorRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Predictor) {}
+    rpc GetPredictor(GetPredictorRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor) {}
+    rpc CreatePredictor(CreatePredictorRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor) {}
+    rpc UpdatePredictor(UpdatePredictorRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor) {}
     rpc DeletePredictor(DeletePredictorRequest) returns (google.protobuf.Empty) {}
 
     rpc ListCurtains(ListCurtainsRequest) returns (ListCurtainsResponse) {}
-    rpc GetCurtain(GetCurtainRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain) {}
-    rpc CreateCurtain(CreateCurtainRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain) {}
-    rpc UpdateCurtain(UpdateCurtainRequest) returns (github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Curtain) {}
+    rpc GetCurtain(GetCurtainRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain) {}
+    rpc CreateCurtain(CreateCurtainRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain) {}
+    rpc UpdateCurtain(UpdateCurtainRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain) {}
     rpc DeleteCurtain(DeleteCurtainRequest) returns (google.protobuf.Empty) {}
 
     rpc ListReviews(ListReviewsRequest) returns (ListReviewsResponse) {}
-    rpc GetReview(GetReviewRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review) {}
-    rpc CreateReview(CreateReviewRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review) {}
-    rpc UpdateReview(UpdateReviewRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.Review) {}
+    rpc GetReview(GetReviewRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review) {}
+    rpc CreateReview(CreateReviewRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review) {}
+    rpc UpdateReview(UpdateReviewRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review) {}
     rpc DeleteReview(DeleteReviewRequest) returns (google.protobuf.Empty) {}
 
     rpc ListPostMortems(ListPostMortemsRequest) returns (ListPostMortemsResponse) {}
-    rpc GetPostMortem(GetPostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem) {}
-    rpc CreatePostMortem(CreatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem) {}
-    rpc UpdatePostMortem(UpdatePostMortemRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.PostMortem) {}
+    rpc GetPostMortem(GetPostMortemRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem) {}
+    rpc CreatePostMortem(CreatePostMortemRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem) {}
+    rpc UpdatePostMortem(UpdatePostMortemRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem) {}
     rpc DeletePostMortem(DeletePostMortemRequest) returns (google.protobuf.Empty) {}
 
     rpc ListRunBooks(ListRunbooksRequest) returns (ListRunbooksResponse) {}
-    rpc GetRunBook(GetRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook) {}
-    rpc CreateRunBook(CreateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook) {}
-    rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modeldapi.pkg.apis.team.v1alpha1.RunBook) {}
+    rpc GetRunBook(GetRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook) {}
+    rpc CreateRunBook(CreateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook) {}
+    rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook) {}
     rpc DeleteRunBook(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
 
 

@@ -1,11 +1,11 @@
 
 syntax = "proto3";
-option go_package = "github.com/metaprov/modeldapi/services/catalog/v1";
-package github.com.metaprov.modeldapi.services.catalog.v1;
+option go_package = "github.com/metaprov/modelaapi/services/catalog/v1";
+package github.com.metaprov.modelaapi.services.catalog.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/catalog/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 
 message ListAlgorithmsRequest {
     string namespace   = 1;
@@ -13,7 +13,7 @@ message ListAlgorithmsRequest {
 }
 
 message ListAlgorithmsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.AlgorithmList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList items = 1;
 }
 
 message GetAlgorithmRequest {
@@ -22,7 +22,7 @@ message GetAlgorithmRequest {
 }
 
 message GetAlgorithmResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Algorithm item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm item = 1;
 }
 
 //////////////////////////////////////////////////// ML Framewrok ///////////////////////////////////
@@ -33,7 +33,7 @@ message ListMLFrameworksRequest {
 }
 
 message ListMLFrameworksResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFrameworkList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkList items = 1;
 }
 
 message GetMLFrameworkRequest {
@@ -42,7 +42,7 @@ message GetMLFrameworkRequest {
 }
 
 message GetMLFrameworkResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.MLFramework item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework item = 1;
 }
 
 //////////////////////////////////////////////////// Clouds ///////////////////////////////////
@@ -54,7 +54,7 @@ message ListCloudsRequest {
 }
 
 message ListCloudsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.CloudList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudList items = 1;
 }
 
 message GetCloudRequest {
@@ -63,7 +63,7 @@ message GetCloudRequest {
 }
 
 message GetCloudResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.Cloud item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud item = 1;
 }
 
 
@@ -77,7 +77,7 @@ message ListPublicDatasetsRequest {
 }
 
 message ListPublicDatasetsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDatasetList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetList items = 1;
 }
 
 message GetPublicDatasetRequest {
@@ -86,7 +86,7 @@ message GetPublicDatasetRequest {
 }
 
 message GetPublicDatasetResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PublicDataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset item = 1;
 }
 
 
@@ -135,7 +135,7 @@ message ListPretrainedModelsRequest {
 }
 
 message ListPretrainedModelsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModelList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelList items = 1;
 }
 
 message GetPretrainedModelRequest {
@@ -144,7 +144,7 @@ message GetPretrainedModelRequest {
 }
 
 message GetPretrainedModelResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.PretrainedModel item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel item = 1;
 }
 
 
@@ -156,7 +156,7 @@ message ListWorkloadClassesRequest {
 }
 
 message ListWorkloadClassesResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClassList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassList items = 1;
 }
 
 message GetWorkloadClassRequest {
@@ -165,7 +165,7 @@ message GetWorkloadClassRequest {
 }
 
 message GetWorkloadClassResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.WorkloadClass item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass item = 1;
 }
 
 //////////////////////////////////////////////////// UserRoleClass ///////////////////////////////////
@@ -176,7 +176,7 @@ message ListUserRoleClassesRequest {
 }
 
 message ListUserRoleClassesResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClassList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList items = 1;
 }
 
 message GetUserRoleClassRequest {
@@ -185,7 +185,7 @@ message GetUserRoleClassRequest {
 }
 
 message GetUserRoleClassResponse {
-    github.com.metaprov.modeldapi.pkg.apis.catalog.v1alpha1.UserRoleClass item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass item = 1;
 }
 
 //////////////////////////////////////////////////// Service ///////////////////////////////////

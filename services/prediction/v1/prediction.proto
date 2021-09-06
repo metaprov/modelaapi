@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modeldapi/services/prediction/v1";
-package github.com.metaprov.modeldapi.services.prediction.v1;
+option go_package = "github.com/metaprov/modelaapi/services/prediction/v1";
+package github.com.metaprov.modelaapi.services.prediction.v1;
 
 
 import "google/api/annotations.proto";
-import "github.com/metaprov/modeldapi/pkg/apis/inference/v1alpha1/generated.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
 
 message ListPredictionsRequest {
@@ -15,18 +15,18 @@ message ListPredictionsRequest {
 }
 
 message ListPredictionsResponse {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.PredictionList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionList items = 1;
 }
 
 
 message CreatePredictionResponse {}
 
 message CreatePredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
 }
 
 message UpdatePredictionRequest {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
 }
 
 message UpdatePredictionResponse {
@@ -39,7 +39,7 @@ message GetPredictionRequest {
 }
 
 message GetPredictionResponse {
-    github.com.metaprov.modeldapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
     string yaml = 2;
 
 }

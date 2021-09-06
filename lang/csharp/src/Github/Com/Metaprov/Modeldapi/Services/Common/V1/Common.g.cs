@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
+namespace Github.Com.Metaprov.modelaapi.Services.Common.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/common/v1/common.proto</summary>
   public static partial class CommonReflection {
@@ -76,17 +76,17 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.DatasetProfile.Parser, new[]{ "Cols", "Rows", "Filesize", "Imbalance", "Plots", "Columns", "Table" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ModelProfile), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ModelProfile.Parser, new[]{ "Name", "Plots" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ForecastProfile), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ForecastProfile.Parser, new[]{ "Name", "Plots" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.StudyProfile), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.StudyProfile.Parser, new[]{ "Plots", "Models" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot.Parser, new[]{ "Name", "Title", "Img", "Fname", "Url" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile.Parser, new[]{ "Name", "N", "Type", "Missing", "Distinct", "Mean", "Std", "Variance", "Min", "Max", "Kurtosis", "Skewness", "Sum", "Mad", "Zeros", "P25", "P50", "P75", "P100", "Iqr", "Cv", "PMissing", "Top", "Freq", "Ignore", "Label", "Corr", "Histogram" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.HistogramValue), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.HistogramValue.Parser, new[]{ "Name", "V" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Histogram), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Histogram.Parser, new[]{ "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Parser, new[]{ "Type", "Name", "Accounts", "Buckets", "Labs", "Servingsites", "Datasets", "Datasources", "Studies", "Models" }, null, new[]{ typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableView), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableView.Parser, new[]{ "Cols", "Rows", "Profiles" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableViewRow), global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableViewRow.Parser, new[]{ "Values" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.DatasetProfile.Parser, new[]{ "Cols", "Rows", "Filesize", "Imbalance", "Plots", "Columns", "Table" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ModelProfile), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ModelProfile.Parser, new[]{ "Name", "Plots" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ForecastProfile), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ForecastProfile.Parser, new[]{ "Name", "Plots" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.StudyProfile), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.StudyProfile.Parser, new[]{ "Plots", "Models" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot.Parser, new[]{ "Name", "Title", "Img", "Fname", "Url" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile.Parser, new[]{ "Name", "N", "Type", "Missing", "Distinct", "Mean", "Std", "Variance", "Min", "Max", "Kurtosis", "Skewness", "Sum", "Mad", "Zeros", "P25", "P50", "P75", "P100", "Iqr", "Cv", "PMissing", "Top", "Freq", "Ignore", "Label", "Corr", "Histogram" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.HistogramValue), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.HistogramValue.Parser, new[]{ "Name", "V" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Histogram), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Histogram.Parser, new[]{ "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Parser, new[]{ "Type", "Name", "Accounts", "Buckets", "Labs", "Servingsites", "Datasets", "Datasources", "Studies", "Models" }, null, new[]{ typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableView), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableView.Parser, new[]{ "Cols", "Rows", "Profiles" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableViewRow), global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableViewRow.Parser, new[]{ "Values" }, null, null, null, null)
           }));
     }
     #endregion
@@ -105,7 +105,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -186,29 +186,29 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "plots" field.</summary>
     public const int PlotsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> _repeated_plots_codec
-        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> _repeated_plots_codec
+        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> Plots {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> Plots {
       get { return plots_; }
     }
 
     /// <summary>Field number for the "columns" field.</summary>
     public const int ColumnsFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile> _repeated_columns_codec
-        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile> columns_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile> _repeated_columns_codec
+        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile> columns_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile> Columns {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile> Columns {
       get { return columns_; }
     }
 
     /// <summary>Field number for the "table" field.</summary>
     public const int TableFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableView table_;
+    private global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableView table_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableView Table {
+    public global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableView Table {
       get { return table_; }
       set {
         table_ = value;
@@ -370,7 +370,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
       columns_.Add(other.columns_);
       if (other.table_ != null) {
         if (table_ == null) {
-          Table = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableView();
+          Table = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableView();
         }
         Table.MergeFrom(other.Table);
       }
@@ -414,7 +414,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
           }
           case 58: {
             if (table_ == null) {
-              Table = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableView();
+              Table = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableView();
             }
             input.ReadMessage(Table);
             break;
@@ -459,7 +459,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
           }
           case 58: {
             if (table_ == null) {
-              Table = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableView();
+              Table = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableView();
             }
             input.ReadMessage(Table);
             break;
@@ -488,7 +488,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -528,11 +528,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "plots" field.</summary>
     public const int PlotsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> _repeated_plots_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> _repeated_plots_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> Plots {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> Plots {
       get { return plots_; }
     }
 
@@ -690,7 +690,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -730,11 +730,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "plots" field.</summary>
     public const int PlotsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> _repeated_plots_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> _repeated_plots_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> Plots {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> Plots {
       get { return plots_; }
     }
 
@@ -892,7 +892,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -921,21 +921,21 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "plots" field.</summary>
     public const int PlotsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> _repeated_plots_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> _repeated_plots_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> plots_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Plot> Plots {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Plot> Plots {
       get { return plots_; }
     }
 
     /// <summary>Field number for the "models" field.</summary>
     public const int ModelsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ModelProfile> _repeated_models_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ModelProfile.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ModelProfile> models_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ModelProfile>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ModelProfile> _repeated_models_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ModelProfile.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ModelProfile> models_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ModelProfile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ModelProfile> Models {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ModelProfile> Models {
       get { return models_; }
     }
 
@@ -1078,7 +1078,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1406,7 +1406,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1761,12 +1761,12 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "histogram" field.</summary>
     public const int HistogramFieldNumber = 29;
-    private global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Histogram histogram_;
+    private global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Histogram histogram_;
     /// <summary>
     /// histogram
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Histogram Histogram {
+    public global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Histogram Histogram {
       get { return histogram_; }
       set {
         histogram_ = value;
@@ -2284,7 +2284,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
       }
       if (other.histogram_ != null) {
         if (histogram_ == null) {
-          Histogram = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Histogram();
+          Histogram = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Histogram();
         }
         Histogram.MergeFrom(other.Histogram);
       }
@@ -2412,7 +2412,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
           }
           case 234: {
             if (histogram_ == null) {
-              Histogram = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Histogram();
+              Histogram = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Histogram();
             }
             input.ReadMessage(Histogram);
             break;
@@ -2541,7 +2541,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
           }
           case 234: {
             if (histogram_ == null) {
-              Histogram = new global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.Histogram();
+              Histogram = new global::Github.Com.Metaprov.modelaapi.Services.Common.V1.Histogram();
             }
             input.ReadMessage(Histogram);
             break;
@@ -2565,7 +2565,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2773,7 +2773,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2801,11 +2801,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "values" field.</summary>
     public const int ValuesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.HistogramValue> _repeated_values_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.HistogramValue.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.HistogramValue> values_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.HistogramValue>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.HistogramValue> _repeated_values_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.HistogramValue.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.HistogramValue> values_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.HistogramValue>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.HistogramValue> Values {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.HistogramValue> Values {
       get { return values_; }
     }
 
@@ -2934,7 +2934,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2971,9 +2971,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType type_ = global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant;
+    private global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType type_ = global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType Type {
+    public global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -3108,7 +3108,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) hash ^= Type.GetHashCode();
+      if (Type != global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) hash ^= Type.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Accounts != 0) hash ^= Accounts.GetHashCode();
       if (Buckets != 0) hash ^= Buckets.GetHashCode();
@@ -3134,7 +3134,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Type != global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
+      if (Type != global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -3183,7 +3183,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Type != global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
+      if (Type != global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Type);
       }
@@ -3232,7 +3232,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Type != global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
+      if (Type != global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Name.Length != 0) {
@@ -3273,7 +3273,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
       if (other == null) {
         return;
       }
-      if (other.Type != global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
+      if (other.Type != global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType.Tenant) {
         Type = other.Type;
       }
       if (other.Name.Length != 0) {
@@ -3318,7 +3318,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType) input.ReadEnum();
+            Type = (global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -3372,7 +3372,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Type = (global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType) input.ReadEnum();
+            Type = (global::Github.Com.Metaprov.modelaapi.Services.Common.V1.NamespaceInfo.Types.NamespaceType) input.ReadEnum();
             break;
           }
           case 18: {
@@ -3446,7 +3446,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3486,21 +3486,21 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     /// <summary>Field number for the "rows" field.</summary>
     public const int RowsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableViewRow> _repeated_rows_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableViewRow.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableViewRow> rows_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableViewRow>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableViewRow> _repeated_rows_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableViewRow.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableViewRow> rows_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableViewRow>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.TableViewRow> Rows {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.TableViewRow> Rows {
       get { return rows_; }
     }
 
     /// <summary>Field number for the "profiles" field.</summary>
     public const int ProfilesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile> _repeated_profiles_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile> _repeated_profiles_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile> profiles_ = new pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.ColumnProfile> Profiles {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.modelaapi.Services.Common.V1.ColumnProfile> Profiles {
       get { return profiles_; }
     }
 
@@ -3657,7 +3657,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Common.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.modelaapi.Services.Common.V1.CommonReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
