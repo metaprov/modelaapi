@@ -1,7 +1,7 @@
 {
   "name": "modelaapi",
   "description": "Automatic machine learning for kubernetes",
-  "version": "0.4.5",
+  "version": "0.4.7",
   "dependencies": {
     "google-protobuf": "^3.14.0",
     "grpc-web": "~1.2.1",
