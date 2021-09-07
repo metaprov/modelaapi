@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
+namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto</summary>
   public static partial class GeneratedReflection {
@@ -151,38 +151,38 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, global::K8S.Io.Api.Rbac.V1.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Api.Resource.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Apis.Meta.V1.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Runtime.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Runtime.Schema.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec.Parser, new[]{ "FrameworkName", "Description", "Url", "Task", "Sparse", "IntegerParameters", "FloatParameters", "CategoricalParameters" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter.Parser, new[]{ "Name", "DefaultValue", "Enums" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec.Parser, new[]{ "DefaultRegionName", "DefaultMachineClassName", "DefaultGpuClassName", "MachineClasses", "GpuClasses", "Regions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus.Parser, new[]{ "MachineCosts", "GpuCosts" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter.Parser, new[]{ "Name", "Code" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter.Parser, new[]{ "Name", "Min", "Max", "DefaultValue", "Log" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass.Parser, new[]{ "Code", "RegionName", "Vcpu", "Gpumem" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost.Parser, new[]{ "Code", "Region", "CostPerMinute", "CostSpot" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter.Parser, new[]{ "Name", "Type", "Min", "Max", "DefaultValue" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec.Parser, new[]{ "Url", "Description", "Version", "Lang" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass.Parser, new[]{ "Code", "RegionName", "Mem", "Vcpu", "Storage" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost.Parser, new[]{ "Code", "Region", "CostPerMinute", "CostSpot" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec.Parser, new[]{ "Image" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec.Parser, new[]{ "Image", "Task", "Id", "ExternalName", "DataUrl" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Region), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Region.Parser, new[]{ "Code", "DefaultDatacenterName", "Location", "BillingCode", "Datacenters" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec.Parser, new[]{ "Rules" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.VizUri), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.VizUri.Parser, new[]{ "Name", "Uri" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec.Parser, new[]{ "Image", "Tasks", "Frameworks", "PodTemplate" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec.Parser, new[]{ "FrameworkName", "Description", "Url", "Task", "Sparse", "IntegerParameters", "FloatParameters", "CategoricalParameters" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter.Parser, new[]{ "Name", "DefaultValue", "Enums" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec.Parser, new[]{ "DefaultRegionName", "DefaultMachineClassName", "DefaultGpuClassName", "MachineClasses", "GpuClasses", "Regions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus.Parser, new[]{ "MachineCosts", "GpuCosts" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter.Parser, new[]{ "Name", "Code" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter.Parser, new[]{ "Name", "Min", "Max", "DefaultValue", "Log" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass.Parser, new[]{ "Code", "RegionName", "Vcpu", "Gpumem" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost.Parser, new[]{ "Code", "Region", "CostPerMinute", "CostSpot" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter.Parser, new[]{ "Name", "Type", "Min", "Max", "DefaultValue" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec.Parser, new[]{ "Url", "Description", "Version", "Lang" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass.Parser, new[]{ "Code", "RegionName", "Mem", "Vcpu", "Storage" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost.Parser, new[]{ "Code", "Region", "CostPerMinute", "CostSpot" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec.Parser, new[]{ "Image" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec.Parser, new[]{ "Image", "Task", "Id", "ExternalName", "DataUrl" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Region), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Region.Parser, new[]{ "Code", "DefaultDatacenterName", "Location", "BillingCode", "Datacenters" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec.Parser, new[]{ "Rules" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.VizUri), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.VizUri.Parser, new[]{ "Name", "Uri" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec.Parser, new[]{ "Image", "Tasks", "Frameworks", "PodTemplate" }, null, null, null, null)
           }));
     }
     #endregion
@@ -211,7 +211,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -251,9 +251,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -358,7 +358,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -385,7 +385,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -413,7 +413,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -441,7 +441,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -481,11 +481,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm> Items {
       get { return items_; }
     }
 
@@ -651,7 +651,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -826,43 +826,43 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "integerParameters" field.</summary>
     public const int IntegerParametersFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter> _repeated_integerParameters_codec
-        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter> integerParameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter> _repeated_integerParameters_codec
+        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter> integerParameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter>();
     /// <summary>
     /// IntegerParameters is the list of integer hyper parameter ranges.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter> IntegerParameters {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.IntParameter> IntegerParameters {
       get { return integerParameters_; }
     }
 
     /// <summary>Field number for the "floatParameters" field.</summary>
     public const int FloatParametersFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter> _repeated_floatParameters_codec
-        = pb::FieldCodec.ForMessage(58, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter> floatParameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter> _repeated_floatParameters_codec
+        = pb::FieldCodec.ForMessage(58, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter> floatParameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter>();
     /// <summary>
     /// FloatParameters is the list of float hyper parameters ranges
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter> FloatParameters {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.FloatParameter> FloatParameters {
       get { return floatParameters_; }
     }
 
     /// <summary>Field number for the "categoricalParameters" field.</summary>
     public const int CategoricalParametersFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter> _repeated_categoricalParameters_codec
-        = pb::FieldCodec.ForMessage(66, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter> categoricalParameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter> _repeated_categoricalParameters_codec
+        = pb::FieldCodec.ForMessage(66, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter> categoricalParameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter>();
     /// <summary>
     /// CategoricalParameters is the list of categorical hyper parameters ranges
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter> CategoricalParameters {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CategoricalParameter> CategoricalParameters {
       get { return categoricalParameters_; }
     }
 
@@ -1142,7 +1142,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1415,7 +1415,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1456,9 +1456,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -1467,12 +1467,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -1590,13 +1590,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -1623,14 +1623,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -1658,14 +1658,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -1693,7 +1693,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1733,11 +1733,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud> Items {
       get { return items_; }
     }
 
@@ -1902,7 +1902,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2016,43 +2016,43 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "machineClasses" field.</summary>
     public const int MachineClassesFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass> _repeated_machineClasses_codec
-        = pb::FieldCodec.ForMessage(34, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass> machineClasses_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass> _repeated_machineClasses_codec
+        = pb::FieldCodec.ForMessage(34, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass> machineClasses_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass>();
     /// <summary>
     /// MachineClasses defines the types of machines in this provider
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass> MachineClasses {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClass> MachineClasses {
       get { return machineClasses_; }
     }
 
     /// <summary>Field number for the "gpuClasses" field.</summary>
     public const int GpuClassesFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass> _repeated_gpuClasses_codec
-        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass> gpuClasses_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass> _repeated_gpuClasses_codec
+        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass> gpuClasses_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass>();
     /// <summary>
     /// GPUClasses define the type of GPUs offered by this provider
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass> GpuClasses {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClass> GpuClasses {
       get { return gpuClasses_; }
     }
 
     /// <summary>Field number for the "regions" field.</summary>
     public const int RegionsFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Region> _repeated_regions_codec
-        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Region.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Region> regions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Region>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Region> _repeated_regions_codec
+        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Region.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Region> regions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Region>();
     /// <summary>
     /// Regions define the type of regions offered by this provider
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Region> Regions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Region> Regions {
       get { return regions_; }
     }
 
@@ -2284,7 +2284,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2313,27 +2313,27 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "machineCosts" field.</summary>
     public const int MachineCostsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost> _repeated_machineCosts_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost> machineCosts_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost> _repeated_machineCosts_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost> machineCosts_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost>();
     /// <summary>
     /// Machine cost is the costs of
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost> MachineCosts {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MachineClassCost> MachineCosts {
       get { return machineCosts_; }
     }
 
     /// <summary>Field number for the "gpuCosts" field.</summary>
     public const int GpuCostsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost> _repeated_gpuCosts_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost> gpuCosts_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost> _repeated_gpuCosts_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost> gpuCosts_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost>();
     /// <summary>
     /// CostSpot is the spot cost of the machine class
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost> GpuCosts {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GpuClassCost> GpuCosts {
       get { return gpuCosts_; }
     }
 
@@ -2479,7 +2479,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2721,7 +2721,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3126,7 +3126,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3465,7 +3465,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3800,7 +3800,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4206,7 +4206,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4246,9 +4246,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -4353,7 +4353,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -4380,7 +4380,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -4408,7 +4408,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -4436,7 +4436,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4476,11 +4476,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework> Items {
       get { return items_; }
     }
 
@@ -4645,7 +4645,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4995,7 +4995,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5391,7 +5391,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5729,7 +5729,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5769,9 +5769,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -5876,7 +5876,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -5903,7 +5903,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -5931,7 +5931,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -5959,7 +5959,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5999,11 +5999,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel> Items {
       get { return items_; }
     }
 
@@ -6168,7 +6168,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6361,7 +6361,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6401,9 +6401,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -6508,7 +6508,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -6535,7 +6535,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -6563,7 +6563,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -6591,7 +6591,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6631,11 +6631,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset> Items {
       get { return items_; }
     }
 
@@ -6797,7 +6797,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7192,7 +7192,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7329,14 +7329,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "datacenters" field.</summary>
     public const int DatacentersFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter> _repeated_datacenters_codec
-        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter> datacenters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter> _repeated_datacenters_codec
+        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter> datacenters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter>();
     /// <summary>
     /// Datacenters if the list of datacenters
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter> Datacenters {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.DataCenter> Datacenters {
       get { return datacenters_; }
     }
 
@@ -7567,7 +7567,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7607,9 +7607,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -7714,7 +7714,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -7741,7 +7741,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -7769,7 +7769,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -7797,7 +7797,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7837,11 +7837,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass> Items {
       get { return items_; }
     }
 
@@ -8006,7 +8006,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8170,7 +8170,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8408,7 +8408,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8448,9 +8448,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -8555,7 +8555,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -8582,7 +8582,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -8610,7 +8610,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -8638,7 +8638,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8678,11 +8678,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass> Items {
       get { return items_; }
     }
 
@@ -8847,7 +8847,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8919,13 +8919,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
 
     /// <summary>Field number for the "frameworks" field.</summary>
     public const int FrameworksFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList frameworks_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList frameworks_;
     /// <summary>
     /// Frameworks are the machine learning framework supported by the workload
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList Frameworks {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList Frameworks {
       get { return frameworks_; }
       set {
         frameworks_ = value;
@@ -9061,7 +9061,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
       tasks_.Add(other.tasks_);
       if (other.frameworks_ != null) {
         if (frameworks_ == null) {
-          Frameworks = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
+          Frameworks = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
         }
         Frameworks.MergeFrom(other.Frameworks);
       }
@@ -9095,7 +9095,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 26: {
             if (frameworks_ == null) {
-              Frameworks = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
+              Frameworks = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
             }
             input.ReadMessage(Frameworks);
             break;
@@ -9131,7 +9131,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1 {
           }
           case 26: {
             if (frameworks_ == null) {
-              Frameworks = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
+              Frameworks = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
             }
             input.ReadMessage(Frameworks);
             break;

@@ -21,9 +21,9 @@ import "google/api/annotations.proto";
 import "google/protobuf/struct.proto";
 
 
-option csharp_namespace = "Modeld.Client.Autogen.Grpc.v1";
+option csharp_namespace = "Modela.Client.Autogen.Grpc.v1";
 option java_outer_classname = "GrpcInferenceService";
-option java_package = "io.modeld.grpcinferenceservice.v1";
+option java_package = "io.modela.grpcinferenceservice.v1";
 option go_package = "github.com/metaprov/modelaapi/services/grpcinferenceservice/v1";
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
@@ -31,14 +31,14 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
     title: "GrpcInferenceService"
     version: "1.0"
     contact: {
-      name: "modeld authors"
-      url: "https://modeld.io"
-      email: "modeld-discuss@googlegroups.com"
+      name: "modela authors"
+      url: "https://modela.ai"
+      email: "modela-discuss@googlegroups.com"
     }
   }
   external_docs: {
-    url: "https://modeld.io/site/docs/"
-    description: "modeld.io documentation"
+    url: "https://modela.ai/site/docs/"
+    description: "modela.ai documentation"
   }
   schemes: HTTP
   schemes: HTTPS
@@ -83,7 +83,7 @@ service GRPCInferenceService
   // indicates success and other codes indicate failure.
   rpc ModelInfer(ModelInferRequest) returns (ModelInferResponse) {}
 
-  // Extention to the api specific to modeld
+  // Extention to the api specific to modela
   rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
     option (google.api.http) = {
       get: "/v1/predictors/{name}"

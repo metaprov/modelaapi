@@ -1611,7 +1611,7 @@ func schema_pkg_apis_infra_v1alpha1_License(ref common.ReferenceCallback) common
 	return common.OpenAPIDefinition{
 		Schema: spec.Schema{
 			SchemaProps: spec.SchemaProps{
-				Description: "License is an abstraction that represent the cluster wide license as obtained from Modeld. The license is store inside a a secret",
+				Description: "License is an abstraction that represent the cluster wide license as obtained from Modela. The license is store inside a a secret",
 				Type:        []string{"object"},
 				Properties: map[string]spec.Schema{
 					"kind": {

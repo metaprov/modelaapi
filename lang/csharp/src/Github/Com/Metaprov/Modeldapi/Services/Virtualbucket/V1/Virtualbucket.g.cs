@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto</summary>
   public static partial class VirtualbucketReflection {
@@ -79,18 +79,18 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             "aHViLmNvbS9tZXRhcHJvdi9tb2RlbGRhcGkvc2VydmljZXMvdmlydHVhbGJ1",
             "Y2tldC92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.ListVirtualBucketsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.ListVirtualBucketsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.ListVirtualBucketsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.ListVirtualBucketsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.CreateVirtualBucketRequest), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.CreateVirtualBucketRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.CreateVirtualBucketResponse), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.CreateVirtualBucketResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.UpdateVirtualBucketRequest), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.UpdateVirtualBucketRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.UpdateVirtualBucketResponse), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.UpdateVirtualBucketResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.GetVirtualBucketRequest), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.GetVirtualBucketRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.GetVirtualBucketResponse), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.GetVirtualBucketResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.DeleteVirtualBucketRequest), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.DeleteVirtualBucketRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.DeleteVirtualBucketResponse), global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.DeleteVirtualBucketResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.ListVirtualBucketsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.ListVirtualBucketsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.ListVirtualBucketsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.ListVirtualBucketsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.CreateVirtualBucketRequest), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.CreateVirtualBucketRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.CreateVirtualBucketResponse), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.CreateVirtualBucketResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.UpdateVirtualBucketRequest), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.UpdateVirtualBucketRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.UpdateVirtualBucketResponse), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.UpdateVirtualBucketResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.GetVirtualBucketRequest), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.GetVirtualBucketRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.GetVirtualBucketResponse), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.GetVirtualBucketResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.DeleteVirtualBucketRequest), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.DeleteVirtualBucketRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.DeleteVirtualBucketResponse), global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.DeleteVirtualBucketResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -109,7 +109,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -306,7 +306,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -334,9 +334,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -422,7 +422,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -442,7 +442,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList();
             }
             input.ReadMessage(Items);
             break;
@@ -463,7 +463,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucketList();
             }
             input.ReadMessage(Items);
             break;
@@ -487,7 +487,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -515,9 +515,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Item {
       get { return item_; }
       set {
         item_ = value;
@@ -603,7 +603,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Item.MergeFrom(other.Item);
       }
@@ -623,7 +623,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Item);
             break;
@@ -644,7 +644,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Item);
             break;
@@ -668,7 +668,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -804,7 +804,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -832,9 +832,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Item {
       get { return item_; }
       set {
         item_ = value;
@@ -920,7 +920,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Item.MergeFrom(other.Item);
       }
@@ -940,7 +940,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Item);
             break;
@@ -961,7 +961,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Item);
             break;
@@ -985,7 +985,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1121,7 +1121,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1329,7 +1329,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1358,9 +1358,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1470,7 +1470,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1493,7 +1493,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Item);
             break;
@@ -1518,7 +1518,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Item);
             break;
@@ -1546,7 +1546,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1754,7 +1754,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Virtualbucket.V1.VirtualbucketReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

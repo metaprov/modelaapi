@@ -1,7 +1,7 @@
 syntax = "proto3";
-option go_package = "github.com/metaprov/modelaapi/services/modeldsystem/v1";
+option go_package = "github.com/metaprov/modelaapi/services/modelasystem/v1";
 
-package github.com.metaprov.modelaapi.services.modeldsystem.v1;
+package github.com.metaprov.modelaapi.services.modelasystem.v1;
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
@@ -123,26 +123,26 @@ message ResetPasswordReponse {
 
 service ModelaSystemService {
     rpc ListModelaSystems(ListModelaSystemsRequest) returns (ListModelaSystemsResponse) {
-        option (google.api.http).get = "/v1/modeldsystems";
+        option (google.api.http).get = "/v1/modelasystems";
     }
     rpc CreateModelaSystem(CreateModelaSystemRequest) returns (CreateModelaSystemResponse) {
         option (google.api.http) = {
-			post: "/v1/modeldsystems"
-			body: "modeldsystem"
+			post: "/v1/modelasystems"
+			body: "modelasystem"
 		};
     }
     rpc GetModelaSystem(GetModelaSystemRequest) returns (GetModelaSystemResponse) {
-        option (google.api.http).get = "/v1/{namespace}/modeldsystems/{name}";
+        option (google.api.http).get = "/v1/{namespace}/modelasystems/{name}";
     }
     rpc UpdateModelaSystem(UpdateModelaSystemRequest) returns (UpdateModelaSystemResponse) {
         option (google.api.http) = {
-			put: "/v1/{modeldsystem.metadata.namespace}/modeldsystems//{modeldsystem.metadata.name}"
-			body: "modeldsystem"
+			put: "/v1/{modelasystem.metadata.namespace}/modelasystems//{modelasystem.metadata.name}"
+			body: "modelasystem"
 		};
     }
 
     rpc DeleteModelaSystem(DeleteModelaSystemRequest) returns (DeleteModelaSystemResponse) {
-        option (google.api.http).delete = "/api/{namespace}/v1/modeldsystems/{name}";
+        option (google.api.http).delete = "/api/{namespace}/v1/modelasystems/{name}";
     }
 
 }

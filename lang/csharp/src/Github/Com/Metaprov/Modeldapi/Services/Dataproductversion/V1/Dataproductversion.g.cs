@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto</summary>
   public static partial class DataproductversionReflection {
@@ -86,18 +86,18 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             "bWV0YXByb3YvbW9kZWxkYXBpL3NlcnZpY2VzL2RhdGFwcm9kdWN0dmVyc2lv",
             "bi92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.ListDataProductVersionsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.ListDataProductVersionsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.ListDataProductVersionsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.ListDataProductVersionsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.CreateDataProductVersionRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.CreateDataProductVersionRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.CreateDataProductVersionResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.CreateDataProductVersionResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.UpdateDataProductVersionRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.UpdateDataProductVersionRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.UpdateDataProductVersionResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.UpdateDataProductVersionResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.GetDataProductVersionRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.GetDataProductVersionRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.GetDataProductVersionResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.GetDataProductVersionResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DeleteDataProductVersionRequest), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DeleteDataProductVersionRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DeleteDataProductVersionResponse), global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DeleteDataProductVersionResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.ListDataProductVersionsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.ListDataProductVersionsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.ListDataProductVersionsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.ListDataProductVersionsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.CreateDataProductVersionRequest), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.CreateDataProductVersionRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.CreateDataProductVersionResponse), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.CreateDataProductVersionResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.UpdateDataProductVersionRequest), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.UpdateDataProductVersionRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.UpdateDataProductVersionResponse), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.UpdateDataProductVersionResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.GetDataProductVersionRequest), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.GetDataProductVersionRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.GetDataProductVersionResponse), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.GetDataProductVersionResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DeleteDataProductVersionRequest), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DeleteDataProductVersionRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DeleteDataProductVersionResponse), global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DeleteDataProductVersionResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -116,7 +116,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -313,7 +313,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -341,9 +341,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -429,7 +429,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -449,7 +449,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList();
             }
             input.ReadMessage(Items);
             break;
@@ -470,7 +470,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList();
             }
             input.ReadMessage(Items);
             break;
@@ -494,7 +494,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -522,9 +522,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Item {
       get { return item_; }
       set {
         item_ = value;
@@ -610,7 +610,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Item.MergeFrom(other.Item);
       }
@@ -630,7 +630,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Item);
             break;
@@ -651,7 +651,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Item);
             break;
@@ -675,7 +675,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -811,7 +811,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -839,9 +839,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Item {
       get { return item_; }
       set {
         item_ = value;
@@ -927,7 +927,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Item.MergeFrom(other.Item);
       }
@@ -947,7 +947,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Item);
             break;
@@ -968,7 +968,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Item);
             break;
@@ -992,7 +992,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1128,7 +1128,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1336,7 +1336,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1365,9 +1365,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1477,7 +1477,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1500,7 +1500,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Item);
             break;
@@ -1525,7 +1525,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion();
             }
             input.ReadMessage(Item);
             break;
@@ -1553,7 +1553,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1761,7 +1761,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Dataproductversion.V1.DataproductversionReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

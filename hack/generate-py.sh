@@ -51,7 +51,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto \
     github.com/metaprov/modelaapi/services/todo/v1/todo.proto \
     github.com/metaprov/modelaapi/services/commit/v1/commit.proto \
-    github.com/metaprov/modelaapi/services/modeldsystem/v1/modeldsystem.proto \
+    github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto \
     github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto \
     github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto \
     github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \

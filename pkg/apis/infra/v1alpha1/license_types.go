@@ -55,7 +55,7 @@ type LicenseCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
 // License is an abstraction that represent the cluster wide license
-// as obtained from Modeld. The license is store inside a a secret
+// as obtained from Modela. The license is store inside a a secret
 type License struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

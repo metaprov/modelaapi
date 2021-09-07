@@ -37151,7 +37151,7 @@ public final class Predictiond {
       "nd.v1.PredictResponse\" \202\323\344\223\002\032\"\025/v1/predi" +
       "ctors/{name}:\001*B\376\002\n\027io.modela.predictord" +
       ".v1B\013PredictiondZ5github.com/metaprov/mo" +
-      "deldapi/services/predictiond/v1\252\002\035Modeld" +
+      "deldapi/services/predictiond/v1\252\002\035Modela" +
       ".Client.Autogen.Grpc.v1\222A\375\001\022]\n\020Predictio" +
       "nServer\"D\n\016modela authors\022\021https://model" +
       "d.io\032\037modela-discuss@googlegroups.com2\0031" +

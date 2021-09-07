@@ -3354,7 +3354,7 @@ type GRPCInferenceServiceClient interface {
 	// indicated by the google.rpc.Status returned for the request. The OK code
 	// indicates success and other codes indicate failure.
 	ModelInfer(ctx context.Context, in *ModelInferRequest, opts ...grpc.CallOption) (*ModelInferResponse, error)
-	// Extention to the api specific to modeld
+	// Extention to the api specific to modela
 	GetPredictor(ctx context.Context, in *GetPredictorRequest, opts ...grpc.CallOption) (*GetPredictorResponse, error)
 	GetModel(ctx context.Context, in *GetModelRequest, opts ...grpc.CallOption) (*GetModelResponse, error)
 	Predict(ctx context.Context, in *PredictRequest, opts ...grpc.CallOption) (*PredictResponse, error)
@@ -3470,7 +3470,7 @@ type GRPCInferenceServiceServer interface {
 	// indicated by the google.rpc.Status returned for the request. The OK code
 	// indicates success and other codes indicate failure.
 	ModelInfer(context.Context, *ModelInferRequest) (*ModelInferResponse, error)
-	// Extention to the api specific to modeld
+	// Extention to the api specific to modela
 	GetPredictor(context.Context, *GetPredictorRequest) (*GetPredictorResponse, error)
 	GetModel(context.Context, *GetModelRequest) (*GetModelResponse, error)
 	Predict(context.Context, *PredictRequest) (*PredictResponse, error)

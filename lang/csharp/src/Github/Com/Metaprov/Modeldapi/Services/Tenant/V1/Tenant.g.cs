@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Tenant.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto</summary>
   public static partial class TenantReflection {
@@ -70,18 +70,18 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             "dWIuY29tL21ldGFwcm92L21vZGVsZGFwaS9zZXJ2aWNlcy90ZW5hbnQvdjFi",
             "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.ListTenantsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.ListTenantsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.ListTenantsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.ListTenantsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.CreateTenantRequest), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.CreateTenantRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.CreateTenantResponse), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.CreateTenantResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.UpdateTenantRequest), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.UpdateTenantRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.UpdateTenantResponse), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.UpdateTenantResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.GetTenantRequest), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.GetTenantRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.GetTenantResponse), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.GetTenantResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.DeleteTenantRequest), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.DeleteTenantRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.DeleteTenantResponse), global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.DeleteTenantResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.ListTenantsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.ListTenantsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.ListTenantsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.ListTenantsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.CreateTenantRequest), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.CreateTenantRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.CreateTenantResponse), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.CreateTenantResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.UpdateTenantRequest), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.UpdateTenantRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.UpdateTenantResponse), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.UpdateTenantResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.GetTenantRequest), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.GetTenantRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.GetTenantResponse), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.GetTenantResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.DeleteTenantRequest), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.DeleteTenantRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.DeleteTenantResponse), global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.DeleteTenantResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -100,7 +100,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -297,7 +297,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -325,9 +325,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.TenantList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.TenantList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.TenantList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.TenantList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -413,7 +413,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.TenantList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.TenantList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -433,7 +433,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.TenantList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.TenantList();
             }
             input.ReadMessage(Items);
             break;
@@ -454,7 +454,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.TenantList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.TenantList();
             }
             input.ReadMessage(Items);
             break;
@@ -478,7 +478,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -506,9 +506,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant Item {
       get { return item_; }
       set {
         item_ = value;
@@ -594,7 +594,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
         }
         Item.MergeFrom(other.Item);
       }
@@ -614,7 +614,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 34: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
             }
             input.ReadMessage(Item);
             break;
@@ -635,7 +635,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 34: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
             }
             input.ReadMessage(Item);
             break;
@@ -659,7 +659,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -795,7 +795,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -823,9 +823,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant Item {
       get { return item_; }
       set {
         item_ = value;
@@ -911,7 +911,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
         }
         Item.MergeFrom(other.Item);
       }
@@ -931,7 +931,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
             }
             input.ReadMessage(Item);
             break;
@@ -952,7 +952,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
             }
             input.ReadMessage(Item);
             break;
@@ -976,7 +976,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1112,7 +1112,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1320,7 +1320,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1349,9 +1349,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1461,7 +1461,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1484,7 +1484,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
             }
             input.ReadMessage(Item);
             break;
@@ -1509,7 +1509,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Tenant();
             }
             input.ReadMessage(Item);
             break;
@@ -1537,7 +1537,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1745,7 +1745,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Tenant.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Tenant.V1.TenantReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

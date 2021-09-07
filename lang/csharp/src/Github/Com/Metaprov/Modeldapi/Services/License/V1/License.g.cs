@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.License.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/license/v1/license.proto</summary>
   public static partial class LicenseReflection {
@@ -83,22 +83,22 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             "aWNlbnNlX25hbWV9QjNaMWdpdGh1Yi5jb20vbWV0YXByb3YvbW9kZWxkYXBp",
             "L3NlcnZpY2VzL2xpY2Vuc2UvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.ListLicensesRequest), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.ListLicensesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.ListLicensesResponse), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.ListLicensesResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseResponse), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.CreateLicenseRequest), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.CreateLicenseRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.CreateLicenseFromKeyRequest), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.CreateLicenseFromKeyRequest.Parser, new[]{ "Key" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.CreateLicenseResponse), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.CreateLicenseResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.UpdateLicenseRequest), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.UpdateLicenseRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.UpdateLicenseResponse), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.UpdateLicenseResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseRequest), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseResponse), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseResponse.Parser, new[]{ "License", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseNamespacesRequest), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseNamespacesRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseNamespacesResponse), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.GetLicenseNamespacesResponse.Parser, new[]{ "Namespaces" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.DeleteLicenseRequest), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.DeleteLicenseRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.License.V1.DeleteLicenseResponse), global::Github.Com.Metaprov.Modeldapi.Services.License.V1.DeleteLicenseResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.ListLicensesRequest), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.ListLicensesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.ListLicensesResponse), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.ListLicensesResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseResponse), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.CreateLicenseRequest), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.CreateLicenseRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.CreateLicenseFromKeyRequest), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.CreateLicenseFromKeyRequest.Parser, new[]{ "Key" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.CreateLicenseResponse), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.CreateLicenseResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.UpdateLicenseRequest), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.UpdateLicenseRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.UpdateLicenseResponse), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.UpdateLicenseResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseRequest), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseResponse), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseResponse.Parser, new[]{ "License", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseNamespacesRequest), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseNamespacesRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseNamespacesResponse), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.GetLicenseNamespacesResponse.Parser, new[]{ "Namespaces" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.DeleteLicenseRequest), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.DeleteLicenseRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.License.V1.DeleteLicenseResponse), global::Github.Com.Metaprov.Modelaapi.Services.License.V1.DeleteLicenseResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -117,7 +117,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -314,7 +314,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -342,9 +342,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.LicenseList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.LicenseList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.LicenseList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.LicenseList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -430,7 +430,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.LicenseList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.LicenseList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -450,7 +450,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.LicenseList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.LicenseList();
             }
             input.ReadMessage(Items);
             break;
@@ -471,7 +471,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.LicenseList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.LicenseList();
             }
             input.ReadMessage(Items);
             break;
@@ -495,7 +495,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -631,7 +631,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -659,9 +659,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License Item {
       get { return item_; }
       set {
         item_ = value;
@@ -747,7 +747,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
         }
         Item.MergeFrom(other.Item);
       }
@@ -767,7 +767,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
             }
             input.ReadMessage(Item);
             break;
@@ -788,7 +788,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
             }
             input.ReadMessage(Item);
             break;
@@ -812,7 +812,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -984,7 +984,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1120,7 +1120,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1148,9 +1148,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1236,7 +1236,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1256,7 +1256,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
             }
             input.ReadMessage(Item);
             break;
@@ -1277,7 +1277,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
             }
             input.ReadMessage(Item);
             break;
@@ -1301,7 +1301,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1437,7 +1437,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1645,7 +1645,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1674,9 +1674,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     /// <summary>Field number for the "license" field.</summary>
     public const int LicenseFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License license_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License license_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License License {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License License {
       get { return license_; }
       set {
         license_ = value;
@@ -1786,7 +1786,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
       }
       if (other.license_ != null) {
         if (license_ == null) {
-          License = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+          License = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
         }
         License.MergeFrom(other.License);
       }
@@ -1809,7 +1809,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 10: {
             if (license_ == null) {
-              License = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+              License = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
             }
             input.ReadMessage(License);
             break;
@@ -1834,7 +1834,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
             break;
           case 10: {
             if (license_ == null) {
-              License = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.License();
+              License = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.License();
             }
             input.ReadMessage(License);
             break;
@@ -1862,7 +1862,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2070,7 +2070,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2098,11 +2098,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     /// <summary>Field number for the "namespaces" field.</summary>
     public const int NamespacesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo> _repeated_namespaces_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo> namespaces_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo> _repeated_namespaces_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo> namespaces_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo> Namespaces {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo> Namespaces {
       get { return namespaces_; }
     }
 
@@ -2231,7 +2231,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2439,7 +2439,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.License.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.License.V1.LicenseReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

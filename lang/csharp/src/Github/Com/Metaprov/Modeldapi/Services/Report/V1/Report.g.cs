@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Report.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/report/v1/report.proto</summary>
   public static partial class ReportReflection {
@@ -78,20 +78,20 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             "L3YxYWxwaGExL3JlcG9ydHMve25hbWV9QjJaMGdpdGh1Yi5jb20vbWV0YXBy",
             "b3YvbW9kZWxkYXBpL3NlcnZpY2VzL3JlcG9ydC92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ListReportsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ListReportsRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ListReportsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ListReportsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.CreateReportRequest), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.CreateReportRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.CreateReportResponse), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.CreateReportResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.UpdateReportRequest), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.UpdateReportRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.UpdateReportResponse), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.UpdateReportResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.GetReportRequest), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.GetReportRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.GetReportResponse), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.GetReportResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DeleteReportRequest), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DeleteReportRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DeleteReportResponse), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DeleteReportResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DownloadReportRequest), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DownloadReportRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DownloadReportResponse), global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.DownloadReportResponse.Parser, new[]{ "Raw" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ListReportsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ListReportsRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ListReportsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ListReportsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.CreateReportRequest), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.CreateReportRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.CreateReportResponse), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.CreateReportResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.UpdateReportRequest), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.UpdateReportRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.UpdateReportResponse), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.UpdateReportResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.GetReportRequest), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.GetReportRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.GetReportResponse), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.GetReportResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DeleteReportRequest), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DeleteReportRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DeleteReportResponse), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DeleteReportResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DownloadReportRequest), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DownloadReportRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DownloadReportResponse), global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.DownloadReportResponse.Parser, new[]{ "Raw" }, null, null, null, null)
           }));
     }
     #endregion
@@ -110,7 +110,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -343,7 +343,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -371,9 +371,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ReportList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.ReportList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ReportList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.ReportList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -459,7 +459,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ReportList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.ReportList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -479,7 +479,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ReportList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.ReportList();
             }
             input.ReadMessage(Items);
             break;
@@ -500,7 +500,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.ReportList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.ReportList();
             }
             input.ReadMessage(Items);
             break;
@@ -524,7 +524,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -552,9 +552,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report Item {
       get { return item_; }
       set {
         item_ = value;
@@ -640,7 +640,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
         }
         Item.MergeFrom(other.Item);
       }
@@ -660,7 +660,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
             }
             input.ReadMessage(Item);
             break;
@@ -681,7 +681,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
             }
             input.ReadMessage(Item);
             break;
@@ -705,7 +705,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -841,7 +841,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -869,9 +869,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report Item {
       get { return item_; }
       set {
         item_ = value;
@@ -957,7 +957,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
         }
         Item.MergeFrom(other.Item);
       }
@@ -977,7 +977,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
             }
             input.ReadMessage(Item);
             break;
@@ -998,7 +998,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 42: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
             }
             input.ReadMessage(Item);
             break;
@@ -1022,7 +1022,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1158,7 +1158,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1366,7 +1366,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1395,9 +1395,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1507,7 +1507,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1530,7 +1530,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
             }
             input.ReadMessage(Item);
             break;
@@ -1555,7 +1555,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Training.V1Alpha1.Report();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Training.V1Alpha1.Report();
             }
             input.ReadMessage(Item);
             break;
@@ -1583,7 +1583,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1791,7 +1791,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1927,7 +1927,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2138,7 +2138,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Report.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Report.V1.ReportReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

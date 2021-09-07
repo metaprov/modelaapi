@@ -54,7 +54,7 @@ spec:
     schema:
       openAPIV3Schema:
         description: License is an abstraction that represent the cluster wide license
-          as obtained from Modeld. The license is store inside a a secret
+          as obtained from Modela. The license is store inside a a secret
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/cloudsd/v1/cloudsd.proto</summary>
   public static partial class CloudsdReflection {
@@ -99,21 +99,21 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
             "djEuU2h1dGRvd25SZXNwb25zZSIAQjNaMWdpdGh1Yi5jb20vbWV0YXByb3Yv",
             "bW9kZWxkYXBpL3NlcnZpY2VzL2Nsb3Vkc2QvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.ShutdownRequest), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.ShutdownRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.ShutdownResponse), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.ShutdownResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.VirtualBucketExistRequest), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.VirtualBucketExistRequest.Parser, new[]{ "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.VirtualBucketExistResponse), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.VirtualBucketExistResponse.Parser, new[]{ "Exist" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.KeyExistInVirtualBucketRequest), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.KeyExistInVirtualBucketRequest.Parser, new[]{ "Region", "Name", "Key", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.KeyExistInVirtualBucketResponse), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.KeyExistInVirtualBucketResponse.Parser, new[]{ "Exist" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudVirtualBucketResponse), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudVirtualBucketResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileDownloadRequest), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileDownloadRequest.Parser, new[]{ "Key", "Path", "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileDownloadResponse), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileDownloadResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileUploadRequest), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileUploadRequest.Parser, new[]{ "Key", "Path", "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileUploadResponse), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.FileUploadResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CreateVirtualBucketRequest), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CreateVirtualBucketRequest.Parser, new[]{ "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CreateVirtualBucketResponse), global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CreateVirtualBucketResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.ShutdownRequest), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.ShutdownRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.ShutdownResponse), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.ShutdownResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.VirtualBucketExistRequest), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.VirtualBucketExistRequest.Parser, new[]{ "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.VirtualBucketExistResponse), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.VirtualBucketExistResponse.Parser, new[]{ "Exist" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.KeyExistInVirtualBucketRequest), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.KeyExistInVirtualBucketRequest.Parser, new[]{ "Region", "Name", "Key", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.KeyExistInVirtualBucketResponse), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.KeyExistInVirtualBucketResponse.Parser, new[]{ "Exist" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudVirtualBucketResponse), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudVirtualBucketResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileDownloadRequest), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileDownloadRequest.Parser, new[]{ "Key", "Path", "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileDownloadResponse), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileDownloadResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileUploadRequest), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileUploadRequest.Parser, new[]{ "Key", "Path", "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileUploadResponse), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.FileUploadResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CreateVirtualBucketRequest), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CreateVirtualBucketRequest.Parser, new[]{ "Bucket", "Connection", "Secret" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CreateVirtualBucketResponse), global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CreateVirtualBucketResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -132,7 +132,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -268,7 +268,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -404,7 +404,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -434,9 +434,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -445,9 +445,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -561,13 +561,13 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -588,14 +588,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
             break;
           case 10: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -620,14 +620,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
             break;
           case 10: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -655,7 +655,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -827,7 +827,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -892,9 +892,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -1043,7 +1043,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -1076,7 +1076,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
           }
           case 34: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1113,7 +1113,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
           }
           case 34: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1141,7 +1141,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1313,7 +1313,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1452,7 +1452,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1512,9 +1512,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -1523,9 +1523,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -1671,13 +1671,13 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -1706,14 +1706,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 34: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1746,14 +1746,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 34: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -1781,7 +1781,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1917,7 +1917,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1977,9 +1977,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -1988,9 +1988,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -2136,13 +2136,13 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -2171,14 +2171,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 34: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -2211,14 +2211,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
           }
           case 26: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 34: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -2246,7 +2246,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2382,7 +2382,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2412,9 +2412,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "bucket" field.</summary>
     public const int BucketFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket bucket_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket Bucket {
       get { return bucket_; }
       set {
         bucket_ = value;
@@ -2423,9 +2423,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     /// <summary>Field number for the "connection" field.</summary>
     public const int ConnectionFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection connection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection Connection {
       get { return connection_; }
       set {
         connection_ = value;
@@ -2539,13 +2539,13 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
       }
       if (other.bucket_ != null) {
         if (bucket_ == null) {
-          Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+          Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
         }
         Bucket.MergeFrom(other.Bucket);
       }
       if (other.connection_ != null) {
         if (connection_ == null) {
-          Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+          Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
         }
         Connection.MergeFrom(other.Connection);
       }
@@ -2566,14 +2566,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
             break;
           case 10: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -2598,14 +2598,14 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
             break;
           case 10: {
             if (bucket_ == null) {
-              Bucket = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
+              Bucket = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.VirtualBucket();
             }
             input.ReadMessage(Bucket);
             break;
           }
           case 18: {
             if (connection_ == null) {
-              Connection = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Connection();
+              Connection = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Connection();
             }
             input.ReadMessage(Connection);
             break;
@@ -2633,7 +2633,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Cloudsd.V1.CloudsdReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

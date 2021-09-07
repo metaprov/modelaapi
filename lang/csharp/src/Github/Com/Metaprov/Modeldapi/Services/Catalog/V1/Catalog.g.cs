@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Catalog.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto</summary>
   public static partial class CatalogReflection {
@@ -161,36 +161,36 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             "e25hbWV9QjNaMWdpdGh1Yi5jb20vbWV0YXByb3YvbW9kZWxkYXBpL3NlcnZp",
             "Y2VzL2NhdGFsb2cvdjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListAlgorithmsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListAlgorithmsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListAlgorithmsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListAlgorithmsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetAlgorithmRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetAlgorithmRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetAlgorithmResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetAlgorithmResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListMLFrameworksRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListMLFrameworksRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListMLFrameworksResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListMLFrameworksResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetMLFrameworkRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetMLFrameworkRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetMLFrameworkResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetMLFrameworkResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListCloudsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListCloudsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListCloudsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListCloudsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetCloudRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetCloudRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetCloudResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetCloudResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPublicDatasetsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPublicDatasetsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPublicDatasetsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPublicDatasetsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPublicDatasetRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPublicDatasetRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPublicDatasetResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPublicDatasetResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPretrainedModelsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPretrainedModelsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPretrainedModelsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListPretrainedModelsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPretrainedModelRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPretrainedModelRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPretrainedModelResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetPretrainedModelResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListWorkloadClassesRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListWorkloadClassesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListWorkloadClassesResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListWorkloadClassesResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetWorkloadClassRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetWorkloadClassRequest.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetWorkloadClassResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetWorkloadClassResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListUserRoleClassesRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListUserRoleClassesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListUserRoleClassesResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.ListUserRoleClassesResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetUserRoleClassRequest), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetUserRoleClassRequest.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetUserRoleClassResponse), global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.GetUserRoleClassResponse.Parser, new[]{ "Item" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListAlgorithmsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListAlgorithmsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListAlgorithmsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListAlgorithmsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetAlgorithmRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetAlgorithmRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetAlgorithmResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetAlgorithmResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListMLFrameworksRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListMLFrameworksRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListMLFrameworksResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListMLFrameworksResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetMLFrameworkRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetMLFrameworkRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetMLFrameworkResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetMLFrameworkResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListCloudsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListCloudsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListCloudsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListCloudsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetCloudRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetCloudRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetCloudResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetCloudResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPublicDatasetsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPublicDatasetsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPublicDatasetsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPublicDatasetsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPublicDatasetRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPublicDatasetRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPublicDatasetResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPublicDatasetResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPretrainedModelsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPretrainedModelsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPretrainedModelsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListPretrainedModelsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPretrainedModelRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPretrainedModelRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPretrainedModelResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetPretrainedModelResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListWorkloadClassesRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListWorkloadClassesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListWorkloadClassesResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListWorkloadClassesResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetWorkloadClassRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetWorkloadClassRequest.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetWorkloadClassResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetWorkloadClassResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListUserRoleClassesRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListUserRoleClassesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListUserRoleClassesResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.ListUserRoleClassesResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetUserRoleClassRequest), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetUserRoleClassRequest.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetUserRoleClassResponse), global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.GetUserRoleClassResponse.Parser, new[]{ "Item" }, null, null, null, null)
           }));
     }
     #endregion
@@ -209,7 +209,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -406,7 +406,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -434,9 +434,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -522,7 +522,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -542,7 +542,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList();
             }
             input.ReadMessage(Items);
             break;
@@ -563,7 +563,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.AlgorithmList();
             }
             input.ReadMessage(Items);
             break;
@@ -587,7 +587,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -795,7 +795,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -823,9 +823,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm Item {
       get { return item_; }
       set {
         item_ = value;
@@ -911,7 +911,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm();
         }
         Item.MergeFrom(other.Item);
       }
@@ -931,7 +931,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm();
             }
             input.ReadMessage(Item);
             break;
@@ -952,7 +952,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Algorithm();
             }
             input.ReadMessage(Item);
             break;
@@ -976,7 +976,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1173,7 +1173,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1201,9 +1201,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -1289,7 +1289,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -1309,7 +1309,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
             }
             input.ReadMessage(Items);
             break;
@@ -1330,7 +1330,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFrameworkList();
             }
             input.ReadMessage(Items);
             break;
@@ -1354,7 +1354,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1562,7 +1562,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1590,9 +1590,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1678,7 +1678,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1698,7 +1698,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework();
             }
             input.ReadMessage(Item);
             break;
@@ -1719,7 +1719,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.MLFramework();
             }
             input.ReadMessage(Item);
             break;
@@ -1743,7 +1743,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1940,7 +1940,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1968,9 +1968,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -2056,7 +2056,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -2076,7 +2076,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudList();
             }
             input.ReadMessage(Items);
             break;
@@ -2097,7 +2097,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.CloudList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.CloudList();
             }
             input.ReadMessage(Items);
             break;
@@ -2121,7 +2121,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2329,7 +2329,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2357,9 +2357,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud Item {
       get { return item_; }
       set {
         item_ = value;
@@ -2445,7 +2445,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud();
         }
         Item.MergeFrom(other.Item);
       }
@@ -2465,7 +2465,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud();
             }
             input.ReadMessage(Item);
             break;
@@ -2486,7 +2486,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.Cloud();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.Cloud();
             }
             input.ReadMessage(Item);
             break;
@@ -2510,7 +2510,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2707,7 +2707,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2735,9 +2735,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -2823,7 +2823,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -2843,7 +2843,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList();
             }
             input.ReadMessage(Items);
             break;
@@ -2864,7 +2864,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDatasetList();
             }
             input.ReadMessage(Items);
             break;
@@ -2888,7 +2888,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3096,7 +3096,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3124,9 +3124,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset Item {
       get { return item_; }
       set {
         item_ = value;
@@ -3212,7 +3212,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset();
         }
         Item.MergeFrom(other.Item);
       }
@@ -3232,7 +3232,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset();
             }
             input.ReadMessage(Item);
             break;
@@ -3253,7 +3253,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PublicDataset();
             }
             input.ReadMessage(Item);
             break;
@@ -3277,7 +3277,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3474,7 +3474,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3502,9 +3502,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -3590,7 +3590,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -3610,7 +3610,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList();
             }
             input.ReadMessage(Items);
             break;
@@ -3631,7 +3631,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModelList();
             }
             input.ReadMessage(Items);
             break;
@@ -3655,7 +3655,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3863,7 +3863,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3891,9 +3891,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel Item {
       get { return item_; }
       set {
         item_ = value;
@@ -3979,7 +3979,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel();
         }
         Item.MergeFrom(other.Item);
       }
@@ -3999,7 +3999,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel();
             }
             input.ReadMessage(Item);
             break;
@@ -4020,7 +4020,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.PretrainedModel();
             }
             input.ReadMessage(Item);
             break;
@@ -4044,7 +4044,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4241,7 +4241,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4269,9 +4269,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -4357,7 +4357,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -4377,7 +4377,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList();
             }
             input.ReadMessage(Items);
             break;
@@ -4398,7 +4398,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClassList();
             }
             input.ReadMessage(Items);
             break;
@@ -4422,7 +4422,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4630,7 +4630,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4658,9 +4658,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass Item {
       get { return item_; }
       set {
         item_ = value;
@@ -4746,7 +4746,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass();
         }
         Item.MergeFrom(other.Item);
       }
@@ -4766,7 +4766,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass();
             }
             input.ReadMessage(Item);
             break;
@@ -4787,7 +4787,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.WorkloadClass();
             }
             input.ReadMessage(Item);
             break;
@@ -4811,7 +4811,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5008,7 +5008,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5036,9 +5036,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -5124,7 +5124,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -5144,7 +5144,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList();
             }
             input.ReadMessage(Items);
             break;
@@ -5165,7 +5165,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClassList();
             }
             input.ReadMessage(Items);
             break;
@@ -5189,7 +5189,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5397,7 +5397,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Catalog.V1.CatalogReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5425,9 +5425,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass Item {
       get { return item_; }
       set {
         item_ = value;
@@ -5513,7 +5513,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass();
         }
         Item.MergeFrom(other.Item);
       }
@@ -5533,7 +5533,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass();
             }
             input.ReadMessage(Item);
             break;
@@ -5554,7 +5554,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Catalog.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.UserRoleClass();
             }
             input.ReadMessage(Item);
             break;

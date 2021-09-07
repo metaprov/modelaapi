@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
+namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto</summary>
   public static partial class GeneratedReflection {
@@ -438,104 +438,104 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
             "GAcgASgJIjEKEFRpbWVTZXJpZXNTY2hlbWESDAoEZnJlcRgBIAEoCRIPCgdj",
             "b3VudHJ5GAIgASgJQgpaCHYxYWxwaGEx"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor, global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Apis.Meta.V1.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Runtime.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Runtime.Schema.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Catalog.V1Alpha1.GeneratedReflection.Descriptor, global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Apis.Meta.V1.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Runtime.GeneratedReflection.Descriptor, global::K8S.Io.Apimachinery.Pkg.Runtime.Schema.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec.Parser, new[]{ "SlidePeriod", "Aggregations" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Column), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Column.Parser, new[]{ "Name", "FeatureName", "Datatype", "Format", "Description", "Ignore", "Label", "Nullable", "Pk", "MultipleOf", "Maximum", "ExclusiveMaximum", "Minimum", "ExclusiveMinimum", "MaxLength", "MinLength", "Pattern", "Required", "Title", "Example", "ExternalDocs", "Enum", "TransformerHint", "MaxItems", "MinItems", "UniqueItems", "TimeColumn" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics.Parser, new[]{ "Name", "Min", "Max", "Mean", "Stddev", "Skewness", "Kurtosis", "Zeros", "P25", "P50", "P75", "Missing", "Invalid", "Target", "Importance", "Distinc", "Ignored", "Nullable", "HighCred", "HighCorr", "Skew" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation.Parser, new[]{ "BucketName", "Path" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec.Parser, new[]{ "VersionName", "DatapipelineName", "DataLocation", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus.Parser, new[]{ "Inputs", "Output", "Phase", "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec.Parser, new[]{ "VersionName", "Description", "InputDatasets", "RecipeNames", "OutputDatasetName", "Schedule", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec.Parser, new[]{ "Owner", "TenantRef", "Stakeholders", "GitLocation", "ImageLocation", "LabName", "ServingSiteName", "Task", "Description", "DataLocation", "NotifierName", "ModelWorkloadClassName", "DataWorkloadClassName", "RetriesOnFailure" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec.Parser, new[]{ "ProductRef", "Description", "PrevVersionName", "Baseline", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec.Parser, new[]{ "OwnerName", "VersionName", "Description", "Schema", "Type", "File", "Table", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec.Parser, new[]{ "Owner", "VersionName", "DatasourceName", "Description", "Report", "Validate", "Labeled", "Origin", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics.Parser, new[]{ "Columns", "Rows", "Cols", "FileSize" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus.Parser, new[]{ "Statistics", "Phase", "ReportName", "ProfileUri", "Imbalanced", "Sigs", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetTemplate), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetTemplate.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Entity), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Entity.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntitySpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntitySpec.Parser, new[]{ "VersionName", "Description", "Keys", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec.Parser, new[]{ "Column", "Functions", "Windows" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec.Parser, new[]{ "Owner", "VersionName", "FeaturePipelineName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus.Parser, new[]{ "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Aggregation", "Materialization", "Family", "EntityName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus.Parser, new[]{ "AverageCost", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Name", "KeyColumn", "TimestampColumn", "FeatureColumn", "EntityName", "FeaturePipelineName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus.Parser, new[]{ "Sha256", "Name", "Min", "Max", "Mean", "Zeros", "Nulls", "P01", "P99", "Stddev", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Featureset), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Featureset.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec.Parser, new[]{ "VersionName", "Description", "Features", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec.Parser, new[]{ "FileType", "Delimiter", "Quote", "EscapeChar", "CommentChars", "Header", "SkipRows", "NullValues", "Encoding", "MaxRows", "Strict" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GitLocation), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GitLocation.Parser, new[]{ "GitConnectionName", "Url" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ImageLocation), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ImageLocation.Parser, new[]{ "Name", "RegistryConnectionName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec.Parser, new[]{ "Owner", "VersionName", "FeaturePipelineName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus.Parser, new[]{ "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec.Parser, new[]{ "VersionName", "Description", "InputLabelsets", "RecipeNames", "OutputLabelset", "Schedule", "Owner" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec.Parser, new[]{ "Online", "Offline", "StartDate", "ScheduleInterval", "Ttl", "Backfill" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Recipe), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Recipe.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec.Parser, new[]{ "DatasetName", "Location", "Format" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec.Parser, new[]{ "CreateDataset", "DatasetName", "Location" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunCondition), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec.Parser, new[]{ "VersionName", "RecipeName", "LabName", "Output" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus.Parser, new[]{ "StartTime", "CompletionTime", "Phase", "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec.Parser, new[]{ "Type", "Rows", "Filter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Input", "Steps", "Output", "Sample", "WorkloadClassName" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStep), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStep.Parser, new[]{ "Op", "Parameters" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam.Parser, new[]{ "Name", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Schema), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Schema.Parser, new[]{ "TsSchema", "Columns" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Signatures), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Signatures.Parser, new[]{ "Data", "Labels", "Train", "Test", "Validation" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.StakeHolder), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.StakeHolder.Parser, new[]{ "AccountName", "Roles" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Table), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Table.Parser, new[]{ "VersionName", "Description", "Query", "ServerType", "ConnectionString", "ConnectionRef", "ServerVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema), global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema.Parser, new[]{ "Freq", "Country" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec.Parser, new[]{ "SlidePeriod", "Aggregations" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Column), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Column.Parser, new[]{ "Name", "FeatureName", "Datatype", "Format", "Description", "Ignore", "Label", "Nullable", "Pk", "MultipleOf", "Maximum", "ExclusiveMaximum", "Minimum", "ExclusiveMinimum", "MaxLength", "MinLength", "Pattern", "Required", "Title", "Example", "ExternalDocs", "Enum", "TransformerHint", "MaxItems", "MinItems", "UniqueItems", "TimeColumn" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics.Parser, new[]{ "Name", "Min", "Max", "Mean", "Stddev", "Skewness", "Kurtosis", "Zeros", "P25", "P50", "P75", "Missing", "Invalid", "Target", "Importance", "Distinc", "Ignored", "Nullable", "HighCred", "HighCorr", "Skew" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation.Parser, new[]{ "BucketName", "Path" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec.Parser, new[]{ "VersionName", "DatapipelineName", "DataLocation", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus.Parser, new[]{ "Inputs", "Output", "Phase", "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec.Parser, new[]{ "VersionName", "Description", "InputDatasets", "RecipeNames", "OutputDatasetName", "Schedule", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec.Parser, new[]{ "Owner", "TenantRef", "Stakeholders", "GitLocation", "ImageLocation", "LabName", "ServingSiteName", "Task", "Description", "DataLocation", "NotifierName", "ModelWorkloadClassName", "DataWorkloadClassName", "RetriesOnFailure" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec.Parser, new[]{ "ProductRef", "Description", "PrevVersionName", "Baseline", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec.Parser, new[]{ "OwnerName", "VersionName", "Description", "Schema", "Type", "File", "Table", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec.Parser, new[]{ "Owner", "VersionName", "DatasourceName", "Description", "Report", "Validate", "Labeled", "Origin", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics.Parser, new[]{ "Columns", "Rows", "Cols", "FileSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus.Parser, new[]{ "Statistics", "Phase", "ReportName", "ProfileUri", "Imbalanced", "Sigs", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetTemplate), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetTemplate.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Entity), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Entity.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntitySpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntitySpec.Parser, new[]{ "VersionName", "Description", "Keys", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Feature), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Feature.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec.Parser, new[]{ "Column", "Functions", "Windows" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec.Parser, new[]{ "Owner", "VersionName", "FeaturePipelineName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus.Parser, new[]{ "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Aggregation", "Materialization", "Family", "EntityName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus.Parser, new[]{ "AverageCost", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Name", "KeyColumn", "TimestampColumn", "FeatureColumn", "EntityName", "FeaturePipelineName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus.Parser, new[]{ "Sha256", "Name", "Min", "Max", "Mean", "Zeros", "Nulls", "P01", "P99", "Stddev", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec.Parser, new[]{ "VersionName", "Description", "Features", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec.Parser, new[]{ "FileType", "Delimiter", "Quote", "EscapeChar", "CommentChars", "Header", "SkipRows", "NullValues", "Encoding", "MaxRows", "Strict" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation.Parser, new[]{ "GitConnectionName", "Url" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation.Parser, new[]{ "Name", "RegistryConnectionName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec.Parser, new[]{ "Owner", "VersionName", "FeaturePipelineName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus.Parser, new[]{ "StartTime", "CompletionTime", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec.Parser, new[]{ "VersionName", "Description", "InputLabelsets", "RecipeNames", "OutputLabelset", "Schedule", "Owner" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec.Parser, new[]{ "Online", "Offline", "StartDate", "ScheduleInterval", "Ttl", "Backfill" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Recipe), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Recipe.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec.Parser, new[]{ "DatasetName", "Location", "Format" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec.Parser, new[]{ "CreateDataset", "DatasetName", "Location" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunCondition), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunCondition.Parser, new[]{ "Type", "Status", "LastTransitionTime", "Reason", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec.Parser, new[]{ "VersionName", "RecipeName", "LabName", "Output" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus.Parser, new[]{ "StartTime", "CompletionTime", "Phase", "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec.Parser, new[]{ "Type", "Rows", "Filter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec.Parser, new[]{ "Owner", "VersionName", "Description", "Input", "Steps", "Output", "Sample", "WorkloadClassName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStep), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStep.Parser, new[]{ "Op", "Parameters" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam.Parser, new[]{ "Name", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Schema), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Schema.Parser, new[]{ "TsSchema", "Columns" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Signatures), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Signatures.Parser, new[]{ "Data", "Labels", "Train", "Test", "Validation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.StakeHolder), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.StakeHolder.Parser, new[]{ "AccountName", "Roles" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Table), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Table.Parser, new[]{ "VersionName", "Description", "Query", "ServerType", "ConnectionString", "ConnectionRef", "ServerVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema.Parser, new[]{ "Freq", "Country" }, null, null, null, null)
           }));
     }
     #endregion
@@ -557,7 +557,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -609,11 +609,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "aggregations" field.</summary>
     public const int AggregationsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec> _repeated_aggregations_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec> aggregations_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec> _repeated_aggregations_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec> aggregations_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec> Aggregations {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureAggrSpec> Aggregations {
       get { return aggregations_; }
     }
 
@@ -767,7 +767,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2317,7 +2317,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3552,7 +3552,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3796,7 +3796,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3837,9 +3837,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -3848,9 +3848,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -3968,13 +3968,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -4001,14 +4001,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -4036,14 +4036,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -4070,7 +4070,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4462,7 +4462,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4502,11 +4502,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipeline> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipeline> Items {
       get { return items_; }
     }
 
@@ -4676,7 +4676,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4717,9 +4717,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -4728,9 +4728,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -4848,13 +4848,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -4881,14 +4881,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -4916,14 +4916,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -4950,7 +4950,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5342,7 +5342,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5382,11 +5382,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRun> Items {
       get { return items_; }
     }
 
@@ -5551,7 +5551,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5638,13 +5638,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "dataLocation" field.</summary>
     public const int DataLocationFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation dataLocation_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation dataLocation_;
     /// <summary>
     /// The location of data artifacts that are generated during the run
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation DataLocation {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation DataLocation {
       get { return dataLocation_; }
       set {
         dataLocation_ = value;
@@ -5804,7 +5804,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.dataLocation_ != null) {
         if (dataLocation_ == null) {
-          DataLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+          DataLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
         }
         DataLocation.MergeFrom(other.DataLocation);
       }
@@ -5835,7 +5835,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 26: {
             if (dataLocation_ == null) {
-              DataLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              DataLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(DataLocation);
             break;
@@ -5868,7 +5868,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 26: {
             if (dataLocation_ == null) {
-              DataLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              DataLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(DataLocation);
             break;
@@ -5899,7 +5899,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6027,14 +6027,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(50, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineRunCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -6294,7 +6294,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6757,7 +6757,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6785,14 +6785,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataPipelineCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -6932,7 +6932,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6973,9 +6973,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -6984,9 +6984,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -7104,13 +7104,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -7137,14 +7137,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -7172,14 +7172,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -7206,7 +7206,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7598,7 +7598,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7638,11 +7638,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProduct> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProduct> Items {
       get { return items_; }
     }
 
@@ -7808,7 +7808,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7894,27 +7894,27 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "stakeholders" field.</summary>
     public const int StakeholdersFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.StakeHolder> _repeated_stakeholders_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.StakeHolder.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.StakeHolder> stakeholders_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.StakeHolder>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.StakeHolder> _repeated_stakeholders_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.StakeHolder.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.StakeHolder> stakeholders_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.StakeHolder>();
     /// <summary>
     /// Stake holders refer to a list of stackholders, which have interest in the product.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.StakeHolder> Stakeholders {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.StakeHolder> Stakeholders {
       get { return stakeholders_; }
     }
 
     /// <summary>Field number for the "gitLocation" field.</summary>
     public const int GitLocationFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GitLocation gitLocation_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation gitLocation_;
     /// <summary>
     /// GitLocation is the github repository for all the artifacts for this product
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GitLocation GitLocation {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation GitLocation {
       get { return gitLocation_; }
       set {
         gitLocation_ = value;
@@ -7923,13 +7923,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "imageLocation" field.</summary>
     public const int ImageLocationFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ImageLocation imageLocation_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation imageLocation_;
     /// <summary>
     /// ImageLocation is the image repository that stores the models images for the product versions
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ImageLocation ImageLocation {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation ImageLocation {
       get { return imageLocation_; }
       set {
         imageLocation_ = value;
@@ -8056,13 +8056,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "dataLocation" field.</summary>
     public const int DataLocationFieldNumber = 11;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation dataLocation_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation dataLocation_;
     /// <summary>
     /// This folder contain the root location for all the artifacts from the product.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation DataLocation {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation DataLocation {
       get { return dataLocation_; }
       set {
         dataLocation_ = value;
@@ -8432,13 +8432,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       stakeholders_.Add(other.stakeholders_);
       if (other.gitLocation_ != null) {
         if (gitLocation_ == null) {
-          GitLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GitLocation();
+          GitLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation();
         }
         GitLocation.MergeFrom(other.GitLocation);
       }
       if (other.imageLocation_ != null) {
         if (imageLocation_ == null) {
-          ImageLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ImageLocation();
+          ImageLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation();
         }
         ImageLocation.MergeFrom(other.ImageLocation);
       }
@@ -8456,7 +8456,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.dataLocation_ != null) {
         if (dataLocation_ == null) {
-          DataLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+          DataLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
         }
         DataLocation.MergeFrom(other.DataLocation);
       }
@@ -8503,14 +8503,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (gitLocation_ == null) {
-              GitLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GitLocation();
+              GitLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation();
             }
             input.ReadMessage(GitLocation);
             break;
           }
           case 42: {
             if (imageLocation_ == null) {
-              ImageLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ImageLocation();
+              ImageLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation();
             }
             input.ReadMessage(ImageLocation);
             break;
@@ -8533,7 +8533,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 90: {
             if (dataLocation_ == null) {
-              DataLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              DataLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(DataLocation);
             break;
@@ -8585,14 +8585,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (gitLocation_ == null) {
-              GitLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GitLocation();
+              GitLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation();
             }
             input.ReadMessage(GitLocation);
             break;
           }
           case 42: {
             if (imageLocation_ == null) {
-              ImageLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ImageLocation();
+              ImageLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation();
             }
             input.ReadMessage(ImageLocation);
             break;
@@ -8615,7 +8615,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 90: {
             if (dataLocation_ == null) {
-              DataLocation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              DataLocation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(DataLocation);
             break;
@@ -8658,7 +8658,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8686,15 +8686,15 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition>();
     /// <summary>
     /// The conditions of the product.
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -8833,7 +8833,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8874,9 +8874,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -8885,12 +8885,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -9008,13 +9008,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -9041,14 +9041,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -9076,14 +9076,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -9110,7 +9110,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9502,7 +9502,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9542,11 +9542,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersion> Items {
       get { return items_; }
     }
 
@@ -9712,7 +9712,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10117,7 +10117,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10145,15 +10145,15 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition>();
     /// <summary>
     /// Represents the latest available observations of a dataset state.
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataProductVersionCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -10292,7 +10292,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10333,9 +10333,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -10344,12 +10344,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -10467,13 +10467,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -10500,14 +10500,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -10535,14 +10535,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -10569,7 +10569,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10961,7 +10961,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11001,11 +11001,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSource> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSource> Items {
       get { return items_; }
     }
 
@@ -11167,7 +11167,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[27]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11288,12 +11288,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "schema" field.</summary>
     public const int SchemaFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Schema schema_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Schema schema_;
     /// <summary>
     /// The data source schema
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Schema Schema {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Schema Schema {
       get { return schema_; }
       set {
         schema_ = value;
@@ -11328,13 +11328,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "file" field.</summary>
     public const int FileFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec file_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec file_;
     /// <summary>
     /// FlatFile access specification
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec File {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec File {
       get { return file_; }
       set {
         file_ = value;
@@ -11343,13 +11343,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "table" field.</summary>
     public const int TableFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Table table_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Table table_;
     /// <summary>
     /// Table access specification if the data source is a table
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Table Table {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Table Table {
       get { return table_; }
       set {
         table_ = value;
@@ -11563,7 +11563,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.schema_ != null) {
         if (schema_ == null) {
-          Schema = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Schema();
+          Schema = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Schema();
         }
         Schema.MergeFrom(other.Schema);
       }
@@ -11572,13 +11572,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.file_ != null) {
         if (file_ == null) {
-          File = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
+          File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
         }
         File.MergeFrom(other.File);
       }
       if (other.table_ != null) {
         if (table_ == null) {
-          Table = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Table();
+          Table = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Table();
         }
         Table.MergeFrom(other.Table);
       }
@@ -11613,7 +11613,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (schema_ == null) {
-              Schema = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Schema();
+              Schema = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Schema();
             }
             input.ReadMessage(Schema);
             break;
@@ -11624,14 +11624,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (file_ == null) {
-              File = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
+              File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
             }
             input.ReadMessage(File);
             break;
           }
           case 58: {
             if (table_ == null) {
-              Table = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Table();
+              Table = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Table();
             }
             input.ReadMessage(Table);
             break;
@@ -11668,7 +11668,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (schema_ == null) {
-              Schema = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Schema();
+              Schema = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Schema();
             }
             input.ReadMessage(Schema);
             break;
@@ -11679,14 +11679,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (file_ == null) {
-              File = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
+              File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
             }
             input.ReadMessage(File);
             break;
           }
           case 58: {
             if (table_ == null) {
-              Table = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Table();
+              Table = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Table();
             }
             input.ReadMessage(Table);
             break;
@@ -11717,7 +11717,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[28]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11745,14 +11745,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataSourceCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -11895,7 +11895,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[29]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11936,9 +11936,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -11947,12 +11947,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -12070,13 +12070,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -12103,14 +12103,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -12138,14 +12138,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -12172,7 +12172,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[30]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12564,7 +12564,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[31]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12604,11 +12604,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Dataset> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Dataset> Items {
       get { return items_; }
     }
 
@@ -12774,7 +12774,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[32]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13012,14 +13012,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "origin" field.</summary>
     public const int OriginFieldNumber = 12;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation origin_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation origin_;
     /// <summary>
     /// Define the data location. The operator will copy the data from this location into the live location.
     /// The datafiles are initially uploaded to this location.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation Origin {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation Origin {
       get { return origin_; }
       set {
         origin_ = value;
@@ -13028,13 +13028,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "location" field.</summary>
     public const int LocationFieldNumber = 13;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation location_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation location_;
     /// <summary>
     /// Folder of the actual data resides.
     /// +required.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation Location {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation Location {
       get { return location_; }
       set {
         location_ = value;
@@ -13245,13 +13245,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.origin_ != null) {
         if (origin_ == null) {
-          Origin = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+          Origin = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
         }
         Origin.MergeFrom(other.Origin);
       }
       if (other.location_ != null) {
         if (location_ == null) {
-          Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+          Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
         }
         Location.MergeFrom(other.Location);
       }
@@ -13299,14 +13299,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 98: {
             if (origin_ == null) {
-              Origin = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Origin = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Origin);
             break;
           }
           case 106: {
             if (location_ == null) {
-              Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Location);
             break;
@@ -13355,14 +13355,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 98: {
             if (origin_ == null) {
-              Origin = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Origin = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Origin);
             break;
           }
           case 106: {
             if (location_ == null) {
-              Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Location);
             break;
@@ -13390,7 +13390,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[33]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13422,15 +13422,15 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "columns" field.</summary>
     public const int ColumnsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics> _repeated_columns_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics> columns_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics> _repeated_columns_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics> columns_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics>();
     /// <summary>
     /// Columns contain the collection of statistics for each attribute
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics> Columns {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ColumnStatistics> Columns {
       get { return columns_; }
     }
 
@@ -13719,7 +13719,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[34]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13754,13 +13754,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "statistics" field.</summary>
     public const int StatisticsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics statistics_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics statistics_;
     /// <summary>
     /// Statistics for the dataset. The statistics contain information about each column.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics Statistics {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics Statistics {
       get { return statistics_; }
       set {
         statistics_ = value;
@@ -13877,12 +13877,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "sigs" field.</summary>
     public const int SigsFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Signatures sigs_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Signatures sigs_;
     /// <summary>
     /// Sha256 sig of the files
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Signatures Sigs {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Signatures Sigs {
       get { return sigs_; }
       set {
         sigs_ = value;
@@ -13891,15 +13891,15 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 7;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(58, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(58, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition>();
     /// <summary>
     /// Represents the latest available observations of a dataset state.
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -14052,7 +14052,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.statistics_ != null) {
         if (statistics_ == null) {
-          Statistics = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics();
+          Statistics = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics();
         }
         Statistics.MergeFrom(other.Statistics);
       }
@@ -14070,7 +14070,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.sigs_ != null) {
         if (sigs_ == null) {
-          Sigs = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Signatures();
+          Sigs = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Signatures();
         }
         Sigs.MergeFrom(other.Sigs);
       }
@@ -14091,7 +14091,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           case 10: {
             if (statistics_ == null) {
-              Statistics = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics();
+              Statistics = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics();
             }
             input.ReadMessage(Statistics);
             break;
@@ -14114,7 +14114,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (sigs_ == null) {
-              Sigs = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Signatures();
+              Sigs = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Signatures();
             }
             input.ReadMessage(Sigs);
             break;
@@ -14139,7 +14139,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           case 10: {
             if (statistics_ == null) {
-              Statistics = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics();
+              Statistics = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetStatistics();
             }
             input.ReadMessage(Statistics);
             break;
@@ -14162,7 +14162,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (sigs_ == null) {
-              Sigs = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Signatures();
+              Sigs = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Signatures();
             }
             input.ReadMessage(Sigs);
             break;
@@ -14193,7 +14193,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[35]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14238,9 +14238,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -14345,7 +14345,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
@@ -14372,7 +14372,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -14400,7 +14400,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DatasetSpec();
             }
             input.ReadMessage(Spec);
             break;
@@ -14424,7 +14424,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[36]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14465,9 +14465,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntitySpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntitySpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntitySpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntitySpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -14476,12 +14476,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -14599,13 +14599,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntitySpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntitySpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -14632,14 +14632,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntitySpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntitySpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -14667,14 +14667,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntitySpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntitySpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -14701,7 +14701,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[37]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15093,7 +15093,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[38]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15133,11 +15133,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Entity> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Entity.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Entity> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Entity>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Entity> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Entity.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Entity> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Entity>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Entity> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Entity> Items {
       get { return items_; }
     }
 
@@ -15302,7 +15302,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[39]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15630,7 +15630,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[40]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15658,14 +15658,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.EntityCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.EntityCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -15803,7 +15803,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[41]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15844,9 +15844,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -15855,12 +15855,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -15978,13 +15978,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -16011,14 +16011,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -16046,14 +16046,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -16077,7 +16077,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[42]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16323,7 +16323,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[43]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16715,7 +16715,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[44]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16755,11 +16755,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Feature> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Feature.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Feature> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Feature>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Feature> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Feature> Items {
       get { return items_; }
     }
 
@@ -16930,7 +16930,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[45]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[45]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16971,9 +16971,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -16982,9 +16982,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -17102,13 +17102,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -17135,14 +17135,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -17170,14 +17170,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -17204,7 +17204,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[46]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17596,7 +17596,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[47]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17636,11 +17636,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipeline> Items {
       get { return items_; }
     }
 
@@ -17811,7 +17811,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[48]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -17852,9 +17852,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -17863,12 +17863,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -17986,13 +17986,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -18019,14 +18019,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -18054,14 +18054,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -18088,7 +18088,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[49]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18480,7 +18480,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[50]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18520,11 +18520,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRun> Items {
       get { return items_; }
     }
 
@@ -18689,7 +18689,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[51]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[51]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -18989,7 +18989,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[52]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[52]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19049,14 +19049,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineRunCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -19254,7 +19254,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[53]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[53]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19373,13 +19373,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "aggregation" field.</summary>
     public const int AggregationFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec aggregation_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec aggregation_;
     /// <summary>
     /// Aggregation is the aggregation spec
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec Aggregation {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec Aggregation {
       get { return aggregation_; }
       set {
         aggregation_ = value;
@@ -19388,12 +19388,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "materialization" field.</summary>
     public const int MaterializationFieldNumber = 5;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec materialization_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec materialization_;
     /// <summary>
     /// Materialization
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec Materialization {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec Materialization {
       get { return materialization_; }
       set {
         materialization_ = value;
@@ -19620,13 +19620,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.aggregation_ != null) {
         if (aggregation_ == null) {
-          Aggregation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec();
+          Aggregation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec();
         }
         Aggregation.MergeFrom(other.Aggregation);
       }
       if (other.materialization_ != null) {
         if (materialization_ == null) {
-          Materialization = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec();
+          Materialization = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec();
         }
         Materialization.MergeFrom(other.Materialization);
       }
@@ -19664,14 +19664,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (aggregation_ == null) {
-              Aggregation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec();
+              Aggregation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec();
             }
             input.ReadMessage(Aggregation);
             break;
           }
           case 42: {
             if (materialization_ == null) {
-              Materialization = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec();
+              Materialization = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec();
             }
             input.ReadMessage(Materialization);
             break;
@@ -19712,14 +19712,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (aggregation_ == null) {
-              Aggregation = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec();
+              Aggregation = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.AggregationSpec();
             }
             input.ReadMessage(Aggregation);
             break;
           }
           case 42: {
             if (materialization_ == null) {
-              Materialization = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec();
+              Materialization = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.MaterializationSpec();
             }
             input.ReadMessage(Materialization);
             break;
@@ -19755,7 +19755,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[54]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[54]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -19812,14 +19812,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturePipelineCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -19975,7 +19975,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[55]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[55]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20587,7 +20587,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[56]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[56]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -20904,14 +20904,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(106, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(106, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeatureCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -21289,7 +21289,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[57]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[57]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21330,9 +21330,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -21341,12 +21341,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -21464,13 +21464,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -21497,14 +21497,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -21532,14 +21532,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -21566,7 +21566,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[58]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[58]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21958,7 +21958,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[59]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[59]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -21998,11 +21998,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Featureset> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Featureset.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Featureset> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Featureset>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Featureset> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Featureset> Items {
       get { return items_; }
     }
 
@@ -22167,7 +22167,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[60]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[60]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22493,7 +22493,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[61]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[61]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -22521,14 +22521,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -22658,7 +22658,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[62]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[62]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23373,7 +23373,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[63]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[63]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23612,7 +23612,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[64]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[64]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23863,7 +23863,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[65]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[65]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -23904,9 +23904,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -23915,12 +23915,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -24038,13 +24038,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -24071,14 +24071,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -24106,14 +24106,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -24140,7 +24140,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[66]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[66]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24532,7 +24532,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[67]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[67]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24572,11 +24572,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline> Items {
       get { return items_; }
     }
 
@@ -24747,7 +24747,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[68]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[68]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -24788,9 +24788,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -24799,9 +24799,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -24919,13 +24919,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -24952,14 +24952,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -24987,14 +24987,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -25021,7 +25021,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[69]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[69]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25412,7 +25412,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[70]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[70]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25452,11 +25452,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRun> Items {
       get { return items_; }
     }
 
@@ -25621,7 +25621,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[71]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[71]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25917,7 +25917,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[72]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[72]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -25975,14 +25975,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(26, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineRunCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -26180,7 +26180,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[73]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[73]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26637,7 +26637,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[74]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[74]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -26665,14 +26665,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition>();
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipelineCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -26802,7 +26802,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[75]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[75]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27259,7 +27259,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[76]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[76]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27300,9 +27300,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -27311,9 +27311,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus status_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -27431,13 +27431,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -27464,14 +27464,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -27499,14 +27499,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -27533,7 +27533,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[77]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[77]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27924,7 +27924,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[78]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[78]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -27980,13 +27980,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "location" field.</summary>
     public const int LocationFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation location_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation location_;
     /// <summary>
     /// Location is the folder of the actual data resides.
     /// +required.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation Location {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation Location {
       get { return location_; }
       set {
         location_ = value;
@@ -28127,7 +28127,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.location_ != null) {
         if (location_ == null) {
-          Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+          Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
         }
         Location.MergeFrom(other.Location);
       }
@@ -28154,7 +28154,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (location_ == null) {
-              Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Location);
             break;
@@ -28183,7 +28183,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (location_ == null) {
-              Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Location);
             break;
@@ -28215,7 +28215,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[79]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[79]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -28255,11 +28255,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Recipe> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Recipe.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Recipe> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Recipe>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Recipe> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Recipe.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Recipe> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Recipe>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Recipe> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Recipe> Items {
       get { return items_; }
     }
 
@@ -28425,7 +28425,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[80]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[80]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -28511,13 +28511,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "location" field.</summary>
     public const int LocationFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation location_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation location_;
     /// <summary>
     /// Location is the data location folder of the actual data resides.
     /// +required.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation Location {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation Location {
       get { return location_; }
       set {
         location_ = value;
@@ -28635,7 +28635,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.location_ != null) {
         if (location_ == null) {
-          Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+          Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
         }
         Location.MergeFrom(other.Location);
       }
@@ -28663,7 +28663,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 26: {
             if (location_ == null) {
-              Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Location);
             break;
@@ -28692,7 +28692,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 26: {
             if (location_ == null) {
-              Location = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Location = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Location);
             break;
@@ -28726,7 +28726,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[81]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[81]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -28767,9 +28767,9 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "spec" field.</summary>
     public const int SpecFieldNumber = 2;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec spec_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec spec_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec Spec {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec Spec {
       get { return spec_; }
       set {
         spec_ = value;
@@ -28778,12 +28778,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 3;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus status_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus status_;
     /// <summary>
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus Status {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -28901,13 +28901,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.spec_ != null) {
         if (spec_ == null) {
-          Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec();
+          Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec();
         }
         Spec.MergeFrom(other.Spec);
       }
       if (other.status_ != null) {
         if (status_ == null) {
-          Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus();
+          Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus();
         }
         Status.MergeFrom(other.Status);
       }
@@ -28934,14 +28934,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -28969,14 +28969,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 18: {
             if (spec_ == null) {
-              Spec = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec();
+              Spec = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunSpec();
             }
             input.ReadMessage(Spec);
             break;
           }
           case 26: {
             if (status_ == null) {
-              Status = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus();
+              Status = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRunStatus();
             }
             input.ReadMessage(Status);
             break;
@@ -29003,7 +29003,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[82]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[82]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -29395,7 +29395,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[83]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[83]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -29435,11 +29435,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeRun> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeRun> Items {
       get { return items_; }
     }
 
@@ -29604,7 +29604,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[84]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[84]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -29712,13 +29712,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "output" field.</summary>
     public const int OutputFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation output_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation output_;
     /// <summary>
     /// The location of the data output.
     /// +required.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation Output {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation Output {
       get { return output_; }
       set {
         output_ = value;
@@ -29852,7 +29852,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.output_ != null) {
         if (output_ == null) {
-          Output = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+          Output = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
         }
         Output.MergeFrom(other.Output);
       }
@@ -29884,7 +29884,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (output_ == null) {
-              Output = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Output = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Output);
             break;
@@ -29917,7 +29917,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (output_ == null) {
-              Output = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
+              Output = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.DataLocation();
             }
             input.ReadMessage(Output);
             break;
@@ -29944,7 +29944,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[85]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[85]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -30031,15 +30031,15 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(34, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(34, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition>();
     /// <summary>
     /// Represents the latest available observations of a dataset state.
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -30259,7 +30259,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[86]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[86]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -30555,7 +30555,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[87]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[87]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -30675,12 +30675,12 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "input" field.</summary>
     public const int InputFieldNumber = 4;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec input_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec input_;
     /// <summary>
     /// Input is the input recipe spec
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec Input {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec Input {
       get { return input_; }
       set {
         input_ = value;
@@ -30689,25 +30689,25 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "steps" field.</summary>
     public const int StepsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStep> _repeated_steps_codec
-        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStep.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStep> steps_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStep>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStep> _repeated_steps_codec
+        = pb::FieldCodec.ForMessage(42, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStep.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStep> steps_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStep>();
     /// <summary>
     /// Steps are the list of recipe steps
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStep> Steps {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStep> Steps {
       get { return steps_; }
     }
 
     /// <summary>Field number for the "output" field.</summary>
     public const int OutputFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec output_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec output_;
     /// <summary>
     /// Output is the desired output
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec Output {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec Output {
       get { return output_; }
       set {
         output_ = value;
@@ -30716,13 +30716,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "sample" field.</summary>
     public const int SampleFieldNumber = 7;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec sample_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec sample_;
     /// <summary>
     /// Sample specify the sampling paramters when viewing the recipe
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec Sample {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec Sample {
       get { return sample_; }
       set {
         sample_ = value;
@@ -30927,20 +30927,20 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.input_ != null) {
         if (input_ == null) {
-          Input = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec();
+          Input = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec();
         }
         Input.MergeFrom(other.Input);
       }
       steps_.Add(other.steps_);
       if (other.output_ != null) {
         if (output_ == null) {
-          Output = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec();
+          Output = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec();
         }
         Output.MergeFrom(other.Output);
       }
       if (other.sample_ != null) {
         if (sample_ == null) {
-          Sample = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec();
+          Sample = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec();
         }
         Sample.MergeFrom(other.Sample);
       }
@@ -30975,7 +30975,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (input_ == null) {
-              Input = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec();
+              Input = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec();
             }
             input.ReadMessage(Input);
             break;
@@ -30986,14 +30986,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (output_ == null) {
-              Output = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec();
+              Output = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec();
             }
             input.ReadMessage(Output);
             break;
           }
           case 58: {
             if (sample_ == null) {
-              Sample = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec();
+              Sample = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec();
             }
             input.ReadMessage(Sample);
             break;
@@ -31030,7 +31030,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 34: {
             if (input_ == null) {
-              Input = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec();
+              Input = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeInputSpec();
             }
             input.ReadMessage(Input);
             break;
@@ -31041,14 +31041,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (output_ == null) {
-              Output = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec();
+              Output = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeOutputSpec();
             }
             input.ReadMessage(Output);
             break;
           }
           case 58: {
             if (sample_ == null) {
-              Sample = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec();
+              Sample = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeSampleSpec();
             }
             input.ReadMessage(Sample);
             break;
@@ -31079,7 +31079,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[88]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[88]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31107,15 +31107,15 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "conditions" field.</summary>
     public const int ConditionsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> _repeated_conditions_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> _repeated_conditions_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> conditions_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition>();
     /// <summary>
     /// Represents the latest available observations of a dataset state.
     /// +optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> Conditions {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeCondition> Conditions {
       get { return conditions_; }
     }
 
@@ -31247,7 +31247,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[89]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[89]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31299,11 +31299,11 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "parameters" field.</summary>
     public const int ParametersFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam> _repeated_parameters_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam> parameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam> _repeated_parameters_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam> parameters_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam> Parameters {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.RecipeStepParam> Parameters {
       get { return parameters_; }
     }
 
@@ -31459,7 +31459,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[90]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[90]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31691,7 +31691,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[91]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[91]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -31720,13 +31720,13 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "tsSchema" field.</summary>
     public const int TsSchemaFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema tsSchema_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema tsSchema_;
     /// <summary>
     /// Time series schema. Set time series specific parameters.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema TsSchema {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema TsSchema {
       get { return tsSchema_; }
       set {
         tsSchema_ = value;
@@ -31735,14 +31735,14 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "columns" field.</summary>
     public const int ColumnsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Column> _repeated_columns_codec
-        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Column.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Column> columns_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Column>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Column> _repeated_columns_codec
+        = pb::FieldCodec.ForMessage(18, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Column.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Column> columns_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Column>();
     /// <summary>
     /// Columns
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.Column> Columns {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.Column> Columns {
       get { return columns_; }
     }
 
@@ -31830,7 +31830,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.tsSchema_ != null) {
         if (tsSchema_ == null) {
-          TsSchema = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema();
+          TsSchema = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema();
         }
         TsSchema.MergeFrom(other.TsSchema);
       }
@@ -31851,7 +31851,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           case 10: {
             if (tsSchema_ == null) {
-              TsSchema = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema();
+              TsSchema = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema();
             }
             input.ReadMessage(TsSchema);
             break;
@@ -31876,7 +31876,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
             break;
           case 10: {
             if (tsSchema_ == null) {
-              TsSchema = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema();
+              TsSchema = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.TimeSeriesSchema();
             }
             input.ReadMessage(TsSchema);
             break;
@@ -31907,7 +31907,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[92]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[92]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -32304,7 +32304,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[93]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[93]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -32519,7 +32519,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[94]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[94]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -33018,7 +33018,7 @@ namespace Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[95]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GeneratedReflection.Descriptor.MessageTypes[95]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

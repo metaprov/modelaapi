@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Predictor.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/predictor/v1/predictor.proto</summary>
   public static partial class PredictorReflection {
@@ -86,20 +86,20 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             "LmNvbS9tZXRhcHJvdi9tb2RlbGRhcGkvc2VydmljZXMvcHJlZGljdG9yL3Yx",
             "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.GeneratedReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.ListPredictorsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.ListPredictorsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.ListPredictorsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.ListPredictorsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.CreatePredictorResponse), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.CreatePredictorResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.CreatePredictorRequest), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.CreatePredictorRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.UpdatePredictorRequest), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.UpdatePredictorRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.UpdatePredictorResponse), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.UpdatePredictorResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.GetPredictorRequest), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.GetPredictorRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.GetPredictorResponse), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.GetPredictorResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.DeletePredictorRequest), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.DeletePredictorRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.DeletePredictorResponse), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.DeletePredictorResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictOneRequest), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictOneRequest.Parser, new[]{ "Namespace", "Name", "Fields", "Values" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictOneResponse), global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictOneResponse.Parser, new[]{ "Namespace", "Name", "Label", "Score", "Proba" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.ListPredictorsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.ListPredictorsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.ListPredictorsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.ListPredictorsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.CreatePredictorResponse), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.CreatePredictorResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.CreatePredictorRequest), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.CreatePredictorRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.UpdatePredictorRequest), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.UpdatePredictorRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.UpdatePredictorResponse), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.UpdatePredictorResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.GetPredictorRequest), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.GetPredictorRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.GetPredictorResponse), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.GetPredictorResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.DeletePredictorRequest), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.DeletePredictorRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.DeletePredictorResponse), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.DeletePredictorResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictOneRequest), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictOneRequest.Parser, new[]{ "Namespace", "Name", "Fields", "Values" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictOneResponse), global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictOneResponse.Parser, new[]{ "Namespace", "Name", "Label", "Score", "Proba" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -118,7 +118,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -315,7 +315,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -343,9 +343,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.PredictorList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.PredictorList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.PredictorList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.PredictorList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -431,7 +431,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.PredictorList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.PredictorList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -451,7 +451,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.PredictorList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.PredictorList();
             }
             input.ReadMessage(Items);
             break;
@@ -472,7 +472,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.PredictorList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.PredictorList();
             }
             input.ReadMessage(Items);
             break;
@@ -496,7 +496,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -632,7 +632,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -660,9 +660,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor Item {
       get { return item_; }
       set {
         item_ = value;
@@ -748,7 +748,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
         }
         Item.MergeFrom(other.Item);
       }
@@ -768,7 +768,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
             }
             input.ReadMessage(Item);
             break;
@@ -789,7 +789,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
             }
             input.ReadMessage(Item);
             break;
@@ -813,7 +813,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -841,9 +841,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor Item {
       get { return item_; }
       set {
         item_ = value;
@@ -929,7 +929,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
         }
         Item.MergeFrom(other.Item);
       }
@@ -949,7 +949,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
             }
             input.ReadMessage(Item);
             break;
@@ -970,7 +970,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
             }
             input.ReadMessage(Item);
             break;
@@ -994,7 +994,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1130,7 +1130,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1338,7 +1338,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1367,9 +1367,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1479,7 +1479,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1502,7 +1502,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
             }
             input.ReadMessage(Item);
             break;
@@ -1527,7 +1527,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.Predictor();
             }
             input.ReadMessage(Item);
             break;
@@ -1555,7 +1555,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1763,7 +1763,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1899,7 +1899,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2179,7 +2179,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Predictor.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Predictor.V1.PredictorReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

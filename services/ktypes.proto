@@ -1,8 +1,8 @@
 syntax = 'proto2';
 
-option go_package = "github.com.metaprov.modeld.services";
+option go_package = "github.com.metaprov.modela.services";
 
-package github.com.metaprov.modeld.services;
+package github.com.metaprov.modela.services;
 
 
 message ListMeta {

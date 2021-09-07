@@ -120,7 +120,7 @@ class GRPCInferenceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetPredictor(self, request, context):
-        """Extention to the api specific to modeld
+        """Extention to the api specific to modela
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Notifier.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/notifier/v1/notifier.proto</summary>
   public static partial class NotifierReflection {
@@ -76,19 +76,19 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             "fUI0WjJnaXRodWIuY29tL21ldGFwcm92L21vZGVsZGFwaS9zZXJ2aWNlcy9u",
             "b3RpZmllci92MWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.ListNotifiersRequest), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.ListNotifiersRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.ListNotifiersResponse), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.ListNotifiersResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierResponse), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.CreateNotifierRequest), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.CreateNotifierRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.CreateNotifierResponse), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.CreateNotifierResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.UpdateNotifierRequest), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.UpdateNotifierRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.UpdateNotifierResponse), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.UpdateNotifierResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.GetNotifierRequest), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.GetNotifierRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.GetNotifierResponse), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.GetNotifierResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.DeleteNotifierRequest), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.DeleteNotifierRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.DeleteNotifierResponse), global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.DeleteNotifierResponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.ListNotifiersRequest), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.ListNotifiersRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.ListNotifiersResponse), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.ListNotifiersResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierResponse), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.CreateNotifierRequest), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.CreateNotifierRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.CreateNotifierResponse), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.CreateNotifierResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.UpdateNotifierRequest), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.UpdateNotifierRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.UpdateNotifierResponse), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.UpdateNotifierResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.GetNotifierRequest), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.GetNotifierRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.GetNotifierResponse), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.GetNotifierResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.DeleteNotifierRequest), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.DeleteNotifierRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.DeleteNotifierResponse), global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.DeleteNotifierResponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -107,7 +107,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -304,7 +304,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -332,9 +332,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.NotifierList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.NotifierList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.NotifierList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.NotifierList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -420,7 +420,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.NotifierList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.NotifierList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -440,7 +440,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.NotifierList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.NotifierList();
             }
             input.ReadMessage(Items);
             break;
@@ -461,7 +461,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.NotifierList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.NotifierList();
             }
             input.ReadMessage(Items);
             break;
@@ -485,7 +485,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -621,7 +621,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -649,9 +649,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier Item {
       get { return item_; }
       set {
         item_ = value;
@@ -737,7 +737,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
         }
         Item.MergeFrom(other.Item);
       }
@@ -757,7 +757,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
             }
             input.ReadMessage(Item);
             break;
@@ -778,7 +778,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
             }
             input.ReadMessage(Item);
             break;
@@ -802,7 +802,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -938,7 +938,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -966,9 +966,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1054,7 +1054,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1074,7 +1074,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
             }
             input.ReadMessage(Item);
             break;
@@ -1095,7 +1095,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
             }
             input.ReadMessage(Item);
             break;
@@ -1119,7 +1119,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1255,7 +1255,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1463,7 +1463,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1492,9 +1492,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1604,7 +1604,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1627,7 +1627,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
             }
             input.ReadMessage(Item);
             break;
@@ -1652,7 +1652,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Notifier();
             }
             input.ReadMessage(Item);
             break;
@@ -1680,7 +1680,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1888,7 +1888,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Notifier.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Notifier.V1.NotifierReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

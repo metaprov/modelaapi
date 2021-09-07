@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.Account.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/account/v1/account.proto</summary>
   public static partial class AccountReflection {
@@ -111,32 +111,32 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             "dWIuY29tL21ldGFwcm92L21vZGVsZGFwaS9zZXJ2aWNlcy9hY2NvdW50L3Yx",
             "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.CommonReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.GeneratedReflection.Descriptor, global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.CommonReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ListAccountsRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ListAccountsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ListAccountsResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ListAccountsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.CreateAccountRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.CreateAccountRequest.Parser, new[]{ "Item", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.CreateAccountResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.CreateAccountResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.UpdateAccountRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.UpdateAccountRequest.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.UpdateAccountResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.UpdateAccountResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountNamespacesRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountNamespacesRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountNamespacesResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.GetAccountNamespacesResponse.Parser, new[]{ "Namespaces" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.DeleteAccountRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.DeleteAccountRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.DeleteAccountResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.DeleteAccountResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountCreateResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountCreateResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.LogoutResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.LogoutResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ResetPasswordResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ResetPasswordResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountLoginRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountLoginRequest.Parser, new[]{ "Namespace", "Name", "Password" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountLoginResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountLoginResponse.Parser, new[]{ "Token" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountGetByNameRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountGetByNameRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountLogoutRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountLogoutRequest.Parser, new[]{ "Token" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ChangePasswordRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ChangePasswordRequest.Parser, new[]{ "Namespace", "Name", "Old", "New", "ConfirmedNew" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ChangePasswordResponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ChangePasswordResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ResetPasswordRequest), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ResetPasswordRequest.Parser, new[]{ "Namespace", "Name", "New", "ConfirmedNew" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ResetPasswordReponse), global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.ResetPasswordReponse.Parser, null, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ListAccountsRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ListAccountsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ListAccountsResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ListAccountsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.CreateAccountRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.CreateAccountRequest.Parser, new[]{ "Item", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.CreateAccountResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.CreateAccountResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.UpdateAccountRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.UpdateAccountRequest.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.UpdateAccountResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.UpdateAccountResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountResponse.Parser, new[]{ "Item", "Yaml" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountNamespacesRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountNamespacesRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountNamespacesResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.GetAccountNamespacesResponse.Parser, new[]{ "Namespaces" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.DeleteAccountRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.DeleteAccountRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.DeleteAccountResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.DeleteAccountResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountCreateResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountCreateResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.LogoutResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.LogoutResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ResetPasswordResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ResetPasswordResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountLoginRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountLoginRequest.Parser, new[]{ "Namespace", "Name", "Password" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountLoginResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountLoginResponse.Parser, new[]{ "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountGetByNameRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountGetByNameRequest.Parser, new[]{ "Namespace", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountLogoutRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountLogoutRequest.Parser, new[]{ "Token" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ChangePasswordRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ChangePasswordRequest.Parser, new[]{ "Namespace", "Name", "Old", "New", "ConfirmedNew" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ChangePasswordResponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ChangePasswordResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ResetPasswordRequest), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ResetPasswordRequest.Parser, new[]{ "Namespace", "Name", "New", "ConfirmedNew" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ResetPasswordReponse), global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.ResetPasswordReponse.Parser, null, null, null, null, null)
           }));
     }
     #endregion
@@ -155,7 +155,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -352,7 +352,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -380,9 +380,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.AccountList items_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.AccountList items_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.AccountList Items {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.AccountList Items {
       get { return items_; }
       set {
         items_ = value;
@@ -468,7 +468,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.AccountList();
+          Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.AccountList();
         }
         Items.MergeFrom(other.Items);
       }
@@ -488,7 +488,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.AccountList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.AccountList();
             }
             input.ReadMessage(Items);
             break;
@@ -509,7 +509,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (items_ == null) {
-              Items = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.AccountList();
+              Items = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.AccountList();
             }
             input.ReadMessage(Items);
             break;
@@ -533,7 +533,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -669,7 +669,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -698,9 +698,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account Item {
       get { return item_; }
       set {
         item_ = value;
@@ -810,7 +810,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
         }
         Item.MergeFrom(other.Item);
       }
@@ -833,7 +833,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
             }
             input.ReadMessage(Item);
             break;
@@ -858,7 +858,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
             }
             input.ReadMessage(Item);
             break;
@@ -886,7 +886,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1022,7 +1022,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1050,9 +1050,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1138,7 +1138,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1158,7 +1158,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
             }
             input.ReadMessage(Item);
             break;
@@ -1179,7 +1179,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
             }
             input.ReadMessage(Item);
             break;
@@ -1203,7 +1203,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1339,7 +1339,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1547,7 +1547,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1576,9 +1576,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account item_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account Item {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1688,7 +1688,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1711,7 +1711,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
             }
             input.ReadMessage(Item);
             break;
@@ -1736,7 +1736,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Pkg.Apis.Infra.V1Alpha1.Account();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Infra.V1Alpha1.Account();
             }
             input.ReadMessage(Item);
             break;
@@ -1764,7 +1764,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1972,7 +1972,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2000,11 +2000,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     /// <summary>Field number for the "namespaces" field.</summary>
     public const int NamespacesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo> _repeated_namespaces_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo> namespaces_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo> _repeated_namespaces_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo> namespaces_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.Common.V1.NamespaceInfo> Namespaces {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.Common.V1.NamespaceInfo> Namespaces {
       get { return namespaces_; }
     }
 
@@ -2133,7 +2133,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2341,7 +2341,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2477,7 +2477,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2613,7 +2613,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2749,7 +2749,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2885,7 +2885,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3129,7 +3129,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3304,7 +3304,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3512,7 +3512,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3687,7 +3687,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4003,7 +4003,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4139,7 +4139,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4419,7 +4419,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.Account.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.Account.V1.AccountReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
+namespace Github.Com.Metaprov.Modelaapi.Services.K8Score.V1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/k8score/v1/k8score.proto</summary>
   public static partial class K8ScoreReflection {
@@ -156,33 +156,33 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::K8S.Io.Api.Core.V1.GeneratedReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetSecretRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetSecretRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetSecretResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetSecretResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListSecretsRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListSecretsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListSecretResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListSecretResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetDeploymentRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetDeploymentRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetDeploymentResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetDeploymentResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListDeploymentsRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListDeploymentsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListDeploymentsResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListDeploymentsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetServiceRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetServiceRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetServiceResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetServiceResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListServicesRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListServicesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListServicesResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListServicesResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetPodRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetPodRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetPodResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetPodResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListPodsRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListPodsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListPodsResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListPodsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetJobRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetJobRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetJobResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.GetJobResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListJobsRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListJobsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListJobsResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListJobsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListEventsRequest), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListEventsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListEventsResponse), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ListEventsResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.JobInfo), global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.JobInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetSecretRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetSecretRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetSecretResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetSecretResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListSecretsRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListSecretsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListSecretResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListSecretResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetDeploymentRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetDeploymentRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetDeploymentResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetDeploymentResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListDeploymentsRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListDeploymentsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListDeploymentsResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListDeploymentsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetServiceRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetServiceRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetServiceResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetServiceResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListServicesRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListServicesRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListServicesResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListServicesResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetPodRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetPodRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetPodResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetPodResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListPodsRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListPodsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListPodsResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListPodsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetJobRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetJobRequest.Parser, new[]{ "Namespace", "Name", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetJobResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.GetJobResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListJobsRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListJobsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListJobsResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListJobsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListEventsRequest), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListEventsRequest.Parser, new[]{ "Namespace", "Labels" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListEventsResponse), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ListEventsResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.JobInfo), global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.JobInfo.Parser, new[]{ "Name", "Namespace" }, null, null, null, null)
           }));
     }
     #endregion
@@ -201,7 +201,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -434,7 +434,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -462,9 +462,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo item_;
+    private global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo Item {
+    public global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo Item {
       get { return item_; }
       set {
         item_ = value;
@@ -550,7 +550,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo();
         }
         Item.MergeFrom(other.Item);
       }
@@ -570,7 +570,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -591,7 +591,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -615,7 +615,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -812,7 +812,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -840,11 +840,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.SecretInfo> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.SecretInfo> Items {
       get { return items_; }
     }
 
@@ -973,7 +973,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1206,7 +1206,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1234,9 +1234,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo item_;
+    private global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo Item {
+    public global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo Item {
       get { return item_; }
       set {
         item_ = value;
@@ -1322,7 +1322,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo();
         }
         Item.MergeFrom(other.Item);
       }
@@ -1342,7 +1342,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -1363,7 +1363,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -1387,7 +1387,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1584,7 +1584,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1612,11 +1612,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.DeploymentInfo> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.DeploymentInfo> Items {
       get { return items_; }
     }
 
@@ -1745,7 +1745,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1978,7 +1978,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2006,9 +2006,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo item_;
+    private global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo Item {
+    public global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo Item {
       get { return item_; }
       set {
         item_ = value;
@@ -2094,7 +2094,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo();
         }
         Item.MergeFrom(other.Item);
       }
@@ -2114,7 +2114,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2135,7 +2135,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2159,7 +2159,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2356,7 +2356,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2384,11 +2384,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.ServiceInfo> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.ServiceInfo> Items {
       get { return items_; }
     }
 
@@ -2517,7 +2517,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2750,7 +2750,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2778,9 +2778,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo item_;
+    private global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo Item {
+    public global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo Item {
       get { return item_; }
       set {
         item_ = value;
@@ -2866,7 +2866,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo();
         }
         Item.MergeFrom(other.Item);
       }
@@ -2886,7 +2886,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2907,7 +2907,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2931,7 +2931,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3128,7 +3128,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3156,11 +3156,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo> Items {
       get { return items_; }
     }
 
@@ -3289,7 +3289,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3522,7 +3522,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3550,9 +3550,9 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo item_;
+    private global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo Item {
+    public global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo Item {
       get { return item_; }
       set {
         item_ = value;
@@ -3638,7 +3638,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo();
+          Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo();
         }
         Item.MergeFrom(other.Item);
       }
@@ -3658,7 +3658,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -3679,7 +3679,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.PodInfo();
+              Item = new global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.PodInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -3703,7 +3703,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3900,7 +3900,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3928,11 +3928,11 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.JobInfo> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.JobInfo.Parser);
-    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.JobInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.JobInfo>();
+    private static readonly pb::FieldCodec<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.JobInfo> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.JobInfo.Parser);
+    private readonly pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.JobInfo> items_ = new pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.JobInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.JobInfo> Items {
+    public pbc::RepeatedField<global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.JobInfo> Items {
       get { return items_; }
     }
 
@@ -4061,7 +4061,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4258,7 +4258,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4439,7 +4439,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4647,7 +4647,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4855,7 +4855,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5063,7 +5063,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5271,7 +5271,7 @@ namespace Github.Com.Metaprov.Modeldapi.Services.K8Score.V1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Github.Com.Metaprov.Modeldapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Github.Com.Metaprov.Modelaapi.Services.K8Score.V1.K8ScoreReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

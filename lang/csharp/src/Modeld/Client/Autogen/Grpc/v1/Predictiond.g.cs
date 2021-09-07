@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Modeld.Client.Autogen.Grpc.v1 {
+namespace Modela.Client.Autogen.Grpc.v1 {
 
   /// <summary>Holder for reflection information generated from github.com/metaprov/modelaapi/services/predictiond/v1/predictiond.proto</summary>
   public static partial class PredictiondReflection {
@@ -186,36 +186,36 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
             "ZG9jcy9iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Grpc.Gateway.ProtocGenSwagger.Options.AnnotationsReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Modeld.Client.Autogen.Grpc.v1.PredictFormat), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.PredictorInfo), global::Modeld.Client.Autogen.Grpc.v1.PredictorInfo.Parser, new[]{ "Name", "Task", "Models", "Schema" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelInfo), global::Modeld.Client.Autogen.Grpc.v1.ModelInfo.Parser, new[]{ "Name", "Namespace", "Task", "Rmse", "Auc", "Status", "Canary", "Shadow", "Traffic", "Filter", "Rank", "LogPath", "ImageName", "DeploymentName", "ServiceName", "HpaName", "P95", "P99", "LastPrediction", "DailyPredictionAvg" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.SchemaInfo), global::Modeld.Client.Autogen.Grpc.v1.SchemaInfo.Parser, new[]{ "Columns" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ColumnInfo), global::Modeld.Client.Autogen.Grpc.v1.ColumnInfo.Parser, new[]{ "Name", "Type", "Min", "Max", "MinLength", "MaxLength", "Enum", "Nullable" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.GetPredictorRequest), global::Modeld.Client.Autogen.Grpc.v1.GetPredictorRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.GetPredictorResponse), global::Modeld.Client.Autogen.Grpc.v1.GetPredictorResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.GetModelRequest), global::Modeld.Client.Autogen.Grpc.v1.GetModelRequest.Parser, new[]{ "PredictorName", "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.GetModelResponse), global::Modeld.Client.Autogen.Grpc.v1.GetModelResponse.Parser, new[]{ "Item" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.PredictRequest), global::Modeld.Client.Autogen.Grpc.v1.PredictRequest.Parser, new[]{ "Name", "Validate", "Explain", "Format", "Payload" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.PredictResponse), global::Modeld.Client.Autogen.Grpc.v1.PredictResponse.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.PredictResultLineItem), global::Modeld.Client.Autogen.Grpc.v1.PredictResultLineItem.Parser, new[]{ "Success", "Score", "Label", "Probabilities", "MissingColumns", "OutOfBound", "BaseShapValue", "ShapValues" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ProbabilityValue), global::Modeld.Client.Autogen.Grpc.v1.ProbabilityValue.Parser, new[]{ "Label", "Probability" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ShapValue), global::Modeld.Client.Autogen.Grpc.v1.ShapValue.Parser, new[]{ "Feature", "Value" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ServerLiveRequest), global::Modeld.Client.Autogen.Grpc.v1.ServerLiveRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ServerLiveResponse), global::Modeld.Client.Autogen.Grpc.v1.ServerLiveResponse.Parser, new[]{ "Live" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ServerReadyRequest), global::Modeld.Client.Autogen.Grpc.v1.ServerReadyRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ServerReadyResponse), global::Modeld.Client.Autogen.Grpc.v1.ServerReadyResponse.Parser, new[]{ "Ready" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelReadyRequest), global::Modeld.Client.Autogen.Grpc.v1.ModelReadyRequest.Parser, new[]{ "Name", "Version" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelReadyResponse), global::Modeld.Client.Autogen.Grpc.v1.ModelReadyResponse.Parser, new[]{ "Ready" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ServerMetadataRequest), global::Modeld.Client.Autogen.Grpc.v1.ServerMetadataRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ServerMetadataResponse), global::Modeld.Client.Autogen.Grpc.v1.ServerMetadataResponse.Parser, new[]{ "Name", "Version", "Extensions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataRequest), global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataRequest.Parser, new[]{ "Name", "Version" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse), global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Parser, new[]{ "Name", "Versions", "Platform", "Inputs", "Outputs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata), global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata.Parser, new[]{ "Name", "Datatype", "Shape" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest), global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Parser, new[]{ "ModelName", "ModelVersion", "Id", "Parameters", "Inputs", "Outputs", "RawInputContents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor), global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor.Parser, new[]{ "Name", "Datatype", "Shape", "Parameters", "Contents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor), global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor.Parser, new[]{ "Name", "Parameters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Modela.Client.Autogen.Grpc.v1.PredictFormat), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.PredictorInfo), global::Modela.Client.Autogen.Grpc.v1.PredictorInfo.Parser, new[]{ "Name", "Task", "Models", "Schema" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelInfo), global::Modela.Client.Autogen.Grpc.v1.ModelInfo.Parser, new[]{ "Name", "Namespace", "Task", "Rmse", "Auc", "Status", "Canary", "Shadow", "Traffic", "Filter", "Rank", "LogPath", "ImageName", "DeploymentName", "ServiceName", "HpaName", "P95", "P99", "LastPrediction", "DailyPredictionAvg" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.SchemaInfo), global::Modela.Client.Autogen.Grpc.v1.SchemaInfo.Parser, new[]{ "Columns" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ColumnInfo), global::Modela.Client.Autogen.Grpc.v1.ColumnInfo.Parser, new[]{ "Name", "Type", "Min", "Max", "MinLength", "MaxLength", "Enum", "Nullable" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.GetPredictorRequest), global::Modela.Client.Autogen.Grpc.v1.GetPredictorRequest.Parser, new[]{ "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.GetPredictorResponse), global::Modela.Client.Autogen.Grpc.v1.GetPredictorResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.GetModelRequest), global::Modela.Client.Autogen.Grpc.v1.GetModelRequest.Parser, new[]{ "PredictorName", "Name" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.GetModelResponse), global::Modela.Client.Autogen.Grpc.v1.GetModelResponse.Parser, new[]{ "Item" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.PredictRequest), global::Modela.Client.Autogen.Grpc.v1.PredictRequest.Parser, new[]{ "Name", "Validate", "Explain", "Format", "Payload" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.PredictResponse), global::Modela.Client.Autogen.Grpc.v1.PredictResponse.Parser, new[]{ "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.PredictResultLineItem), global::Modela.Client.Autogen.Grpc.v1.PredictResultLineItem.Parser, new[]{ "Success", "Score", "Label", "Probabilities", "MissingColumns", "OutOfBound", "BaseShapValue", "ShapValues" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ProbabilityValue), global::Modela.Client.Autogen.Grpc.v1.ProbabilityValue.Parser, new[]{ "Label", "Probability" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ShapValue), global::Modela.Client.Autogen.Grpc.v1.ShapValue.Parser, new[]{ "Feature", "Value" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ServerLiveRequest), global::Modela.Client.Autogen.Grpc.v1.ServerLiveRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ServerLiveResponse), global::Modela.Client.Autogen.Grpc.v1.ServerLiveResponse.Parser, new[]{ "Live" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ServerReadyRequest), global::Modela.Client.Autogen.Grpc.v1.ServerReadyRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ServerReadyResponse), global::Modela.Client.Autogen.Grpc.v1.ServerReadyResponse.Parser, new[]{ "Ready" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelReadyRequest), global::Modela.Client.Autogen.Grpc.v1.ModelReadyRequest.Parser, new[]{ "Name", "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelReadyResponse), global::Modela.Client.Autogen.Grpc.v1.ModelReadyResponse.Parser, new[]{ "Ready" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ServerMetadataRequest), global::Modela.Client.Autogen.Grpc.v1.ServerMetadataRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ServerMetadataResponse), global::Modela.Client.Autogen.Grpc.v1.ServerMetadataResponse.Parser, new[]{ "Name", "Version", "Extensions" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelMetadataRequest), global::Modela.Client.Autogen.Grpc.v1.ModelMetadataRequest.Parser, new[]{ "Name", "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse), global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Parser, new[]{ "Name", "Versions", "Platform", "Inputs", "Outputs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata), global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata.Parser, new[]{ "Name", "Datatype", "Shape" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest), global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Parser, new[]{ "ModelName", "ModelVersion", "Id", "Parameters", "Inputs", "Outputs", "RawInputContents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor), global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor.Parser, new[]{ "Name", "Datatype", "Shape", "Parameters", "Contents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor), global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor.Parser, new[]{ "Name", "Parameters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.InferParameter), global::Modeld.Client.Autogen.Grpc.v1.InferParameter.Parser, new[]{ "BoolParam", "Int64Param", "StringParam" }, new[]{ "ParameterChoice" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents), global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents.Parser, new[]{ "BoolContents", "IntContents", "Int64Contents", "UintContents", "Uint64Contents", "Fp32Contents", "Fp64Contents", "BytesContents" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse), global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Parser, new[]{ "ModelName", "ModelVersion", "Id", "Parameters", "Outputs", "RawOutputContents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor), global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor.Parser, new[]{ "Name", "Datatype", "Shape", "Parameters", "Contents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.InferParameter), global::Modela.Client.Autogen.Grpc.v1.InferParameter.Parser, new[]{ "BoolParam", "Int64Param", "StringParam" }, new[]{ "ParameterChoice" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.InferTensorContents), global::Modela.Client.Autogen.Grpc.v1.InferTensorContents.Parser, new[]{ "BoolContents", "IntContents", "Int64Contents", "UintContents", "Uint64Contents", "Fp32Contents", "Fp64Contents", "BytesContents" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse), global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Parser, new[]{ "ModelName", "ModelVersion", "Id", "Parameters", "Outputs", "RawOutputContents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor), global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor.Parser, new[]{ "Name", "Datatype", "Shape", "Parameters", "Contents" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             null, })
           }));
     }
@@ -243,7 +243,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -302,25 +302,25 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "models" field.</summary>
     public const int ModelsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ModelInfo> _repeated_models_codec
-        = pb::FieldCodec.ForMessage(26, global::Modeld.Client.Autogen.Grpc.v1.ModelInfo.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInfo> models_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInfo>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ModelInfo> _repeated_models_codec
+        = pb::FieldCodec.ForMessage(26, global::Modela.Client.Autogen.Grpc.v1.ModelInfo.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInfo> models_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInfo>();
     /// <summary>
     /// the models in the predictor
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInfo> Models {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInfo> Models {
       get { return models_; }
     }
 
     /// <summary>Field number for the "schema" field.</summary>
     public const int SchemaFieldNumber = 4;
-    private global::Modeld.Client.Autogen.Grpc.v1.SchemaInfo schema_;
+    private global::Modela.Client.Autogen.Grpc.v1.SchemaInfo schema_;
     /// <summary>
     /// the predictor schema.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Modeld.Client.Autogen.Grpc.v1.SchemaInfo Schema {
+    public global::Modela.Client.Autogen.Grpc.v1.SchemaInfo Schema {
       get { return schema_; }
       set {
         schema_ = value;
@@ -444,7 +444,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
       models_.Add(other.models_);
       if (other.schema_ != null) {
         if (schema_ == null) {
-          Schema = new global::Modeld.Client.Autogen.Grpc.v1.SchemaInfo();
+          Schema = new global::Modela.Client.Autogen.Grpc.v1.SchemaInfo();
         }
         Schema.MergeFrom(other.Schema);
       }
@@ -476,7 +476,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
           }
           case 34: {
             if (schema_ == null) {
-              Schema = new global::Modeld.Client.Autogen.Grpc.v1.SchemaInfo();
+              Schema = new global::Modela.Client.Autogen.Grpc.v1.SchemaInfo();
             }
             input.ReadMessage(Schema);
             break;
@@ -509,7 +509,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
           }
           case 34: {
             if (schema_ == null) {
-              Schema = new global::Modeld.Client.Autogen.Grpc.v1.SchemaInfo();
+              Schema = new global::Modela.Client.Autogen.Grpc.v1.SchemaInfo();
             }
             input.ReadMessage(Schema);
             break;
@@ -533,7 +533,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1449,7 +1449,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1477,14 +1477,14 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "columns" field.</summary>
     public const int ColumnsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ColumnInfo> _repeated_columns_codec
-        = pb::FieldCodec.ForMessage(10, global::Modeld.Client.Autogen.Grpc.v1.ColumnInfo.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ColumnInfo> columns_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ColumnInfo>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ColumnInfo> _repeated_columns_codec
+        = pb::FieldCodec.ForMessage(10, global::Modela.Client.Autogen.Grpc.v1.ColumnInfo.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ColumnInfo> columns_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ColumnInfo>();
     /// <summary>
     /// the schema column
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ColumnInfo> Columns {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ColumnInfo> Columns {
       get { return columns_; }
     }
 
@@ -1616,7 +1616,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2053,7 +2053,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2225,7 +2225,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2253,9 +2253,9 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Modeld.Client.Autogen.Grpc.v1.PredictorInfo item_;
+    private global::Modela.Client.Autogen.Grpc.v1.PredictorInfo item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Modeld.Client.Autogen.Grpc.v1.PredictorInfo Item {
+    public global::Modela.Client.Autogen.Grpc.v1.PredictorInfo Item {
       get { return item_; }
       set {
         item_ = value;
@@ -2341,7 +2341,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Modeld.Client.Autogen.Grpc.v1.PredictorInfo();
+          Item = new global::Modela.Client.Autogen.Grpc.v1.PredictorInfo();
         }
         Item.MergeFrom(other.Item);
       }
@@ -2361,7 +2361,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Modeld.Client.Autogen.Grpc.v1.PredictorInfo();
+              Item = new global::Modela.Client.Autogen.Grpc.v1.PredictorInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2382,7 +2382,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Modeld.Client.Autogen.Grpc.v1.PredictorInfo();
+              Item = new global::Modela.Client.Autogen.Grpc.v1.PredictorInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2406,7 +2406,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2614,7 +2614,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2642,9 +2642,9 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "item" field.</summary>
     public const int ItemFieldNumber = 1;
-    private global::Modeld.Client.Autogen.Grpc.v1.ModelInfo item_;
+    private global::Modela.Client.Autogen.Grpc.v1.ModelInfo item_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Modeld.Client.Autogen.Grpc.v1.ModelInfo Item {
+    public global::Modela.Client.Autogen.Grpc.v1.ModelInfo Item {
       get { return item_; }
       set {
         item_ = value;
@@ -2730,7 +2730,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
       }
       if (other.item_ != null) {
         if (item_ == null) {
-          Item = new global::Modeld.Client.Autogen.Grpc.v1.ModelInfo();
+          Item = new global::Modela.Client.Autogen.Grpc.v1.ModelInfo();
         }
         Item.MergeFrom(other.Item);
       }
@@ -2750,7 +2750,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Modeld.Client.Autogen.Grpc.v1.ModelInfo();
+              Item = new global::Modela.Client.Autogen.Grpc.v1.ModelInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2771,7 +2771,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
             break;
           case 10: {
             if (item_ == null) {
-              Item = new global::Modeld.Client.Autogen.Grpc.v1.ModelInfo();
+              Item = new global::Modela.Client.Autogen.Grpc.v1.ModelInfo();
             }
             input.ReadMessage(Item);
             break;
@@ -2795,7 +2795,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2869,12 +2869,12 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "format" field.</summary>
     public const int FormatFieldNumber = 5;
-    private global::Modeld.Client.Autogen.Grpc.v1.PredictFormat format_ = global::Modeld.Client.Autogen.Grpc.v1.PredictFormat.Csv;
+    private global::Modela.Client.Autogen.Grpc.v1.PredictFormat format_ = global::Modela.Client.Autogen.Grpc.v1.PredictFormat.Csv;
     /// <summary>
     /// can be csv,json.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Modeld.Client.Autogen.Grpc.v1.PredictFormat Format {
+    public global::Modela.Client.Autogen.Grpc.v1.PredictFormat Format {
       get { return format_; }
       set {
         format_ = value;
@@ -2922,7 +2922,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Validate != false) hash ^= Validate.GetHashCode();
       if (Explain != false) hash ^= Explain.GetHashCode();
-      if (Format != global::Modeld.Client.Autogen.Grpc.v1.PredictFormat.Csv) hash ^= Format.GetHashCode();
+      if (Format != global::Modela.Client.Autogen.Grpc.v1.PredictFormat.Csv) hash ^= Format.GetHashCode();
       if (Payload.Length != 0) hash ^= Payload.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -2952,7 +2952,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
         output.WriteRawTag(24);
         output.WriteBool(Explain);
       }
-      if (Format != global::Modeld.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
+      if (Format != global::Modela.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Format);
       }
@@ -2981,7 +2981,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
         output.WriteRawTag(24);
         output.WriteBool(Explain);
       }
-      if (Format != global::Modeld.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
+      if (Format != global::Modela.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Format);
       }
@@ -3007,7 +3007,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
       if (Explain != false) {
         size += 1 + 1;
       }
-      if (Format != global::Modeld.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
+      if (Format != global::Modela.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Format);
       }
       if (Payload.Length != 0) {
@@ -3033,7 +3033,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
       if (other.Explain != false) {
         Explain = other.Explain;
       }
-      if (other.Format != global::Modeld.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
+      if (other.Format != global::Modela.Client.Autogen.Grpc.v1.PredictFormat.Csv) {
         Format = other.Format;
       }
       if (other.Payload.Length != 0) {
@@ -3066,7 +3066,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
             break;
           }
           case 40: {
-            Format = (global::Modeld.Client.Autogen.Grpc.v1.PredictFormat) input.ReadEnum();
+            Format = (global::Modela.Client.Autogen.Grpc.v1.PredictFormat) input.ReadEnum();
             break;
           }
           case 50: {
@@ -3100,7 +3100,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
             break;
           }
           case 40: {
-            Format = (global::Modeld.Client.Autogen.Grpc.v1.PredictFormat) input.ReadEnum();
+            Format = (global::Modela.Client.Autogen.Grpc.v1.PredictFormat) input.ReadEnum();
             break;
           }
           case 50: {
@@ -3126,7 +3126,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3154,11 +3154,11 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.PredictResultLineItem> _repeated_items_codec
-        = pb::FieldCodec.ForMessage(10, global::Modeld.Client.Autogen.Grpc.v1.PredictResultLineItem.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.PredictResultLineItem> items_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.PredictResultLineItem>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.PredictResultLineItem> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(10, global::Modela.Client.Autogen.Grpc.v1.PredictResultLineItem.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.PredictResultLineItem> items_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.PredictResultLineItem>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.PredictResultLineItem> Items {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.PredictResultLineItem> Items {
       get { return items_; }
     }
 
@@ -3287,7 +3287,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3364,14 +3364,14 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "probabilities" field.</summary>
     public const int ProbabilitiesFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ProbabilityValue> _repeated_probabilities_codec
-        = pb::FieldCodec.ForMessage(34, global::Modeld.Client.Autogen.Grpc.v1.ProbabilityValue.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ProbabilityValue> probabilities_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ProbabilityValue>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ProbabilityValue> _repeated_probabilities_codec
+        = pb::FieldCodec.ForMessage(34, global::Modela.Client.Autogen.Grpc.v1.ProbabilityValue.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ProbabilityValue> probabilities_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ProbabilityValue>();
     /// <summary>
     /// the proba predictions
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ProbabilityValue> Probabilities {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ProbabilityValue> Probabilities {
       get { return probabilities_; }
     }
 
@@ -3414,11 +3414,11 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "shapValues" field.</summary>
     public const int ShapValuesFieldNumber = 8;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ShapValue> _repeated_shapValues_codec
-        = pb::FieldCodec.ForMessage(66, global::Modeld.Client.Autogen.Grpc.v1.ShapValue.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ShapValue> shapValues_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ShapValue>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ShapValue> _repeated_shapValues_codec
+        = pb::FieldCodec.ForMessage(66, global::Modela.Client.Autogen.Grpc.v1.ShapValue.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ShapValue> shapValues_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ShapValue>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ShapValue> ShapValues {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ShapValue> ShapValues {
       get { return shapValues_; }
     }
 
@@ -3688,7 +3688,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3896,7 +3896,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4104,7 +4104,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4240,7 +4240,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4415,7 +4415,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4551,7 +4551,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4726,7 +4726,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4941,7 +4941,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5116,7 +5116,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5252,7 +5252,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5494,7 +5494,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5709,7 +5709,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5782,27 +5782,27 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "inputs" field.</summary>
     public const int InputsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> _repeated_inputs_codec
-        = pb::FieldCodec.ForMessage(34, global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> inputs_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> _repeated_inputs_codec
+        = pb::FieldCodec.ForMessage(34, global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> inputs_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata>();
     /// <summary>
     /// The model's inputs.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> Inputs {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> Inputs {
       get { return inputs_; }
     }
 
     /// <summary>Field number for the "outputs" field.</summary>
     public const int OutputsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> _repeated_outputs_codec
-        = pb::FieldCodec.ForMessage(42, global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> outputs_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> _repeated_outputs_codec
+        = pb::FieldCodec.ForMessage(42, global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> outputs_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata>();
     /// <summary>
     /// The model's outputs.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> Outputs {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Types.TensorMetadata> Outputs {
       get { return outputs_; }
     }
 
@@ -6012,7 +6012,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Modeld.Client.Autogen.Grpc.v1.ModelMetadataResponse.Descriptor.NestedTypes[0]; }
+          get { return global::Modela.Client.Autogen.Grpc.v1.ModelMetadataResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6262,7 +6262,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6340,41 +6340,41 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "parameters" field.</summary>
     public const int ParametersFieldNumber = 4;
-    private static readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
-        = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modeld.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
-    private readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>();
+    private static readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
+        = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modela.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
+    private readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>();
     /// <summary>
     /// Optional inference parameters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> Parameters {
+    public pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> Parameters {
       get { return parameters_; }
     }
 
     /// <summary>Field number for the "inputs" field.</summary>
     public const int InputsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor> _repeated_inputs_codec
-        = pb::FieldCodec.ForMessage(42, global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor> inputs_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor> _repeated_inputs_codec
+        = pb::FieldCodec.ForMessage(42, global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor> inputs_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor>();
     /// <summary>
     /// The input tensors for the inference.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor> Inputs {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferInputTensor> Inputs {
       get { return inputs_; }
     }
 
     /// <summary>Field number for the "outputs" field.</summary>
     public const int OutputsFieldNumber = 6;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor> _repeated_outputs_codec
-        = pb::FieldCodec.ForMessage(50, global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor> outputs_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor> _repeated_outputs_codec
+        = pb::FieldCodec.ForMessage(50, global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor> outputs_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor>();
     /// <summary>
     /// The requested output tensors for the inference. Optional, if not
     /// specified all outputs produced by the model will be returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor> Outputs {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Types.InferRequestedOutputTensor> Outputs {
       get { return outputs_; }
     }
 
@@ -6648,7 +6648,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Descriptor.NestedTypes[0]; }
+          get { return global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6721,27 +6721,27 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
         /// <summary>Field number for the "parameters" field.</summary>
         public const int ParametersFieldNumber = 4;
-        private static readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
-            = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modeld.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
-        private readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>();
+        private static readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
+            = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modela.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
+        private readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>();
         /// <summary>
         /// Optional inference input tensor parameters.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> Parameters {
+        public pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> Parameters {
           get { return parameters_; }
         }
 
         /// <summary>Field number for the "contents" field.</summary>
         public const int ContentsFieldNumber = 5;
-        private global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents contents_;
+        private global::Modela.Client.Autogen.Grpc.v1.InferTensorContents contents_;
         /// <summary>
         /// The tensor contents using a data-type format. This field must
         /// not be specified if "raw" tensor contents are being used for
         /// the inference request.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents Contents {
+        public global::Modela.Client.Autogen.Grpc.v1.InferTensorContents Contents {
           get { return contents_; }
           set {
             contents_ = value;
@@ -6871,7 +6871,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
           parameters_.Add(other.parameters_);
           if (other.contents_ != null) {
             if (contents_ == null) {
-              Contents = new global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents();
+              Contents = new global::Modela.Client.Autogen.Grpc.v1.InferTensorContents();
             }
             Contents.MergeFrom(other.Contents);
           }
@@ -6908,7 +6908,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
               }
               case 42: {
                 if (contents_ == null) {
-                  Contents = new global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents();
+                  Contents = new global::Modela.Client.Autogen.Grpc.v1.InferTensorContents();
                 }
                 input.ReadMessage(Contents);
                 break;
@@ -6946,7 +6946,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
               }
               case 42: {
                 if (contents_ == null) {
-                  Contents = new global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents();
+                  Contents = new global::Modela.Client.Autogen.Grpc.v1.InferTensorContents();
                 }
                 input.ReadMessage(Contents);
                 break;
@@ -6973,7 +6973,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Modeld.Client.Autogen.Grpc.v1.ModelInferRequest.Descriptor.NestedTypes[1]; }
+          get { return global::Modela.Client.Autogen.Grpc.v1.ModelInferRequest.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7016,14 +7016,14 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
         /// <summary>Field number for the "parameters" field.</summary>
         public const int ParametersFieldNumber = 2;
-        private static readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
-            = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modeld.Client.Autogen.Grpc.v1.InferParameter.Parser), 18);
-        private readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>();
+        private static readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
+            = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modela.Client.Autogen.Grpc.v1.InferParameter.Parser), 18);
+        private readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>();
         /// <summary>
         /// Optional requested output tensor parameters.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> Parameters {
+        public pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> Parameters {
           get { return parameters_; }
         }
 
@@ -7185,7 +7185,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[24]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7478,7 +7478,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[25]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7870,7 +7870,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Modeld.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[26]; }
+      get { return global::Modela.Client.Autogen.Grpc.v1.PredictiondReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7945,27 +7945,27 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
     /// <summary>Field number for the "parameters" field.</summary>
     public const int ParametersFieldNumber = 4;
-    private static readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
-        = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modeld.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
-    private readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>();
+    private static readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
+        = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modela.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
+    private readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>();
     /// <summary>
     /// Optional inference response parameters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> Parameters {
+    public pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> Parameters {
       get { return parameters_; }
     }
 
     /// <summary>Field number for the "outputs" field.</summary>
     public const int OutputsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor> _repeated_outputs_codec
-        = pb::FieldCodec.ForMessage(42, global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor.Parser);
-    private readonly pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor> outputs_ = new pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor>();
+    private static readonly pb::FieldCodec<global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor> _repeated_outputs_codec
+        = pb::FieldCodec.ForMessage(42, global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor.Parser);
+    private readonly pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor> outputs_ = new pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor>();
     /// <summary>
     /// The output tensors holding inference results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor> Outputs {
+    public pbc::RepeatedField<global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Types.InferOutputTensor> Outputs {
       get { return outputs_; }
     }
 
@@ -8225,7 +8225,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Modeld.Client.Autogen.Grpc.v1.ModelInferResponse.Descriptor.NestedTypes[0]; }
+          get { return global::Modela.Client.Autogen.Grpc.v1.ModelInferResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8298,27 +8298,27 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
 
         /// <summary>Field number for the "parameters" field.</summary>
         public const int ParametersFieldNumber = 4;
-        private static readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
-            = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modeld.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
-        private readonly pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter>();
+        private static readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec _map_parameters_codec
+            = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForMessage(18, global::Modela.Client.Autogen.Grpc.v1.InferParameter.Parser), 34);
+        private readonly pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> parameters_ = new pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter>();
         /// <summary>
         /// Optional output tensor parameters.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public pbc::MapField<string, global::Modeld.Client.Autogen.Grpc.v1.InferParameter> Parameters {
+        public pbc::MapField<string, global::Modela.Client.Autogen.Grpc.v1.InferParameter> Parameters {
           get { return parameters_; }
         }
 
         /// <summary>Field number for the "contents" field.</summary>
         public const int ContentsFieldNumber = 5;
-        private global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents contents_;
+        private global::Modela.Client.Autogen.Grpc.v1.InferTensorContents contents_;
         /// <summary>
         /// The tensor contents using a data-type format. This field must
         /// not be specified if "raw" tensor contents are being used for
         /// the inference response.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents Contents {
+        public global::Modela.Client.Autogen.Grpc.v1.InferTensorContents Contents {
           get { return contents_; }
           set {
             contents_ = value;
@@ -8448,7 +8448,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
           parameters_.Add(other.parameters_);
           if (other.contents_ != null) {
             if (contents_ == null) {
-              Contents = new global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents();
+              Contents = new global::Modela.Client.Autogen.Grpc.v1.InferTensorContents();
             }
             Contents.MergeFrom(other.Contents);
           }
@@ -8485,7 +8485,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
               }
               case 42: {
                 if (contents_ == null) {
-                  Contents = new global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents();
+                  Contents = new global::Modela.Client.Autogen.Grpc.v1.InferTensorContents();
                 }
                 input.ReadMessage(Contents);
                 break;
@@ -8523,7 +8523,7 @@ namespace Modeld.Client.Autogen.Grpc.v1 {
               }
               case 42: {
                 if (contents_ == null) {
-                  Contents = new global::Modeld.Client.Autogen.Grpc.v1.InferTensorContents();
+                  Contents = new global::Modela.Client.Autogen.Grpc.v1.InferTensorContents();
                 }
                 input.ReadMessage(Contents);
                 break;
