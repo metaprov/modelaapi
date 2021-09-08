@@ -29,7 +29,7 @@ spec:
       name: Owner
       priority: 1
       type: string
-    - jsonPath: .spec.predictorName
+    - jsonPath: .spec.template.spec.predictorName
       name: Predictor
       type: string
     - jsonPath: .spec.schedule
