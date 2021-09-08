@@ -761,8 +761,10 @@ export class DataPipelineSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): DataPipelineSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): DataPipelineSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): DataPipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): DataPipelineSpec;
 
   getOwner(): string;
   setOwner(value: string): DataPipelineSpec;
@@ -791,7 +793,7 @@ export namespace DataPipelineSpec {
     datasetselectorMap: Array<[string, string]>,
     recipesList: Array<RecipePartSpec.AsObject>,
     output?: DataOutputSpec.AsObject,
-    schedule: string,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     workloadclassname: string,
     priority: string,
@@ -2519,8 +2521,10 @@ export class FeaturePipelineSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): FeaturePipelineSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): FeaturePipelineSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeaturePipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): FeaturePipelineSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): FeaturePipelineSpec;
@@ -2547,7 +2551,7 @@ export namespace FeaturePipelineSpec {
     family: string,
     entityname: string,
     workloadclassname: string,
-    schedule: string,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     activedeadlineseconds: number,
     paused: boolean,
   }

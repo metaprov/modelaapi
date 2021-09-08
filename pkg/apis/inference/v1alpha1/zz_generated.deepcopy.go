@@ -149,11 +149,7 @@ func (in *CronPredictionSpec) DeepCopyInto(out *CronPredictionSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Schedule != nil {
-		in, out := &in.Schedule, &out.Schedule
-		*out = new(string)
-		**out = **in
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	in.Template.DeepCopyInto(&out.Template)
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
@@ -415,11 +411,7 @@ func (in *MonitorSpec) DeepCopyInto(out *MonitorSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.Schedule != nil {
-		in, out := &in.Schedule, &out.Schedule
-		*out = new(string)
-		**out = **in
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.NotifierName != nil {
 		in, out := &in.NotifierName, &out.NotifierName
 		*out = new(string)

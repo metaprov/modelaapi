@@ -144,8 +144,10 @@ export class CronPredictionSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): CronPredictionSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): CronPredictionSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronPredictionSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): CronPredictionSpec;
 
   getTemplate(): PredictionTemplate | undefined;
   setTemplate(value?: PredictionTemplate): CronPredictionSpec;
@@ -170,7 +172,7 @@ export namespace CronPredictionSpec {
   export type AsObject = {
     versionname: string,
     owner: string,
-    schedule: string,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     template?: PredictionTemplate.AsObject,
     priority: string,
     paused: boolean,
@@ -448,8 +450,10 @@ export class MonitorSpec extends jspb.Message {
   getSampleprecent(): number;
   setSampleprecent(value: number): MonitorSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): MonitorSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MonitorSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): MonitorSpec;
 
   getNotifiername(): string;
   setNotifiername(value: string): MonitorSpec;
@@ -471,7 +475,7 @@ export namespace MonitorSpec {
   export type AsObject = {
     enabled: boolean,
     sampleprecent: number,
-    schedule: string,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notifiername: string,
     validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
   }

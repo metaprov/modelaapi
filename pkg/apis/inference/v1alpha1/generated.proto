@@ -108,15 +108,14 @@ message CronPredictionSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 2;
 
-  // Schedule is the cron schedule
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional string schedule = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 
   // Template refer to the prediction template
   optional PredictionTemplate template = 4;
 
-  // The priority of this data pipeline. The defualt is medium.
+  // The priority of this data pipeline. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
   optional string priority = 5;
@@ -286,10 +285,9 @@ message MonitorSpec {
   // +kubebuilder:validation:Optional
   optional int32 samplePrecent = 2;
 
-  // Schedule is a cron schedule to run the monitor. By default the monitor run daily.
-  // +kubebuilder:default:=""
+  // Schedule for running the monitor
   // +kubebuilder:validation:Optional
-  optional string schedule = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 
   // NotifierName is the name of notifier to alert in case of
   // +kubebuilder:default:=""

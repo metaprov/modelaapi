@@ -110,7 +110,7 @@ type NotebookSpec struct {
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,11,opt,name=activeDeadlineSeconds"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
 	// The priority of this notebook run. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional

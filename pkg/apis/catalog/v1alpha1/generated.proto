@@ -614,29 +614,26 @@ message Region {
 
 // Run Schedule is a specification for job schedule
 message RunSchedule {
+  // Active denote that the schedule is enabled
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
   // The start time of the schedule
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
-
-  // StartDay is the start day of the schedule
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startDay = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
 
   // EndTime is the end time of the schedule
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp endTime = 3;
 
-  // EndDay is the end day of the schedule
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endDay = 4;
-
   // Cron string of the schedule.
   // +kubebuilder:validation:Optional
-  optional string cron = 5;
+  optional string cron = 4;
 
   // +kubebuilder:validation:Optional
   // The type of schedule events.
-  optional string type = 6;
+  optional string type = 5;
 }
 
 // UserRoleClass specify the RBAC premission for a specific user role.

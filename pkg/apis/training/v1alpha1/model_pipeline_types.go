@@ -88,7 +88,7 @@ type ModelPipelineSpec struct {
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule string `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
 	// The owner of the run, set to the owner of the pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"

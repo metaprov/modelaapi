@@ -1162,24 +1162,22 @@ type GithubEvents struct {
 
 //Run Schedule is a specification for job schedule
 type RunSchedule struct {
+	// Active denote that the schedule is enabled
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// The start time of the schedule
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
-	// StartDay is the start day of the schedule
-	// +kubebuilder:validation:Optional
-	StartDay *metav1.Time `json:"startDay,omitempty" protobuf:"bytes,2,opt,name=startDay"`
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,2,opt,name=startTime"`
 	// EndTime is the end time of the schedule
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Timestamp `json:"endTime,omitempty" protobuf:"bytes,3,opt,name=endTime"`
-	// EndDay is the end day of the schedule
-	// +kubebuilder:validation:Optional
-	EndDay *metav1.Time `json:"endDay,omitempty" protobuf:"bytes,4,opt,name=endDay"`
 	// Cron string of the schedule.
 	// +kubebuilder:validation:Optional
-	Cron *string `json:"cron,omitempty" protobuf:"bytes,5,opt,name=cron"`
+	Cron *string `json:"cron,omitempty" protobuf:"bytes,4,opt,name=cron"`
 	// +kubebuilder:validation:Optional
 	// The type of schedule events.
-	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,6,opt,name=type"`
+	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 }
 
 // +kubebuilder:validation:Enum="on-demand";"on-schedule";"on-new-data";"on-github-event";"on-concept-drift";"on-pref-degradation"

@@ -608,9 +608,9 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional DataOutputSpec output = 5;
 
-  // Schedule is a cron field to schedule the data pipeline.
+  // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional string schedule = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
 
   // Owner of this data pipeline
   // +kubebuilder:default:="no-one"
@@ -1668,7 +1668,7 @@ message FeaturePipelineSpec {
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional string schedule = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10;
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600

@@ -300,10 +300,9 @@ type MonitorSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,2,opt,name=samplePrecent"`
-	// Schedule is a cron schedule to run the monitor. By default the monitor run daily.
-	// +kubebuilder:default:=""
+	// Schedule for running the monitor
 	// +kubebuilder:validation:Optional
-	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 	// NotifierName is the name of notifier to alert in case of
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

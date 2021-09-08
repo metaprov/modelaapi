@@ -87,10 +87,10 @@ spec:
                   cron:
                     description: Cron string of the schedule.
                     type: string
-                  endDay:
-                    description: EndDay is the end day of the schedule
-                    format: date-time
-                    type: string
+                  enabled:
+                    default: false
+                    description: Active denote that the schedule is enabled
+                    type: boolean
                   endTime:
                     description: EndTime is the end time of the schedule
                     properties:
@@ -112,10 +112,6 @@ spec:
                     - nanos
                     - seconds
                     type: object
-                  startDay:
-                    description: StartDay is the start day of the schedule
-                    format: date-time
-                    type: string
                   startTime:
                     description: The start time of the schedule
                     format: date-time

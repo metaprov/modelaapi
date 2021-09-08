@@ -1870,7 +1870,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    schedule: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionTemplate.toObject(includeInstance, f),
     priority: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
@@ -1919,7 +1919,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
       msg.setOwner(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
     case 4:
@@ -1978,11 +1979,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = message.getSchedule();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       3,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = message.getTemplate();
@@ -2083,29 +2085,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
 
 
 /**
- * optional string schedule = 3;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return this.setSchedule(undefined);
 };
 
 
@@ -4625,7 +4628,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.toOb
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     sampleprecent: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    schedule: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.toObject, includeInstance)
@@ -4674,7 +4677,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.dese
       msg.setSampleprecent(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
     case 4:
@@ -4729,11 +4733,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = message.getSchedule();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       3,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
@@ -4827,29 +4832,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
 
 
 /**
- * optional string schedule = 3;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return this.setSchedule(undefined);
 };
 
 

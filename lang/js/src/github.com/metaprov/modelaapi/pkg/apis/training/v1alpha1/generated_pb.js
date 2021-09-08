@@ -4399,7 +4399,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.to
   var f, obj = {
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    schedule: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     range: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportTemplate.toObject(includeInstance, f),
     paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
@@ -4448,7 +4448,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.de
       msg.setOwner(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
     case 4:
@@ -4507,11 +4508,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.se
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = message.getSchedule();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       3,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
@@ -4612,29 +4614,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.pr
 
 
 /**
- * optional string schedule = 3;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return this.setSchedule(undefined);
 };
 
 
@@ -21680,7 +21683,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     deployment: (f = msg.getDeployment()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DeploymentStageSpec.toObject(includeInstance, f),
     release: (f = msg.getRelease()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReleaseStageSpec.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
-    schedule: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     approveraccountname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     notifiername: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
@@ -21773,7 +21776,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       msg.setLocation(value);
       break;
     case 14:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
     case 15:
@@ -21903,11 +21907,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 14));
+  f = message.getSchedule();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       14,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 15));
@@ -22309,29 +22314,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 
 
 /**
- * optional string schedule = 14;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 14;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 14));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 14, value);
+  return jspb.Message.setWrapperField(this, 14, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 14, undefined);
+  return this.setSchedule(undefined);
 };
 
 
@@ -31852,7 +31858,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.toOb
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-    schedule: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     priority: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f
   };
@@ -31938,7 +31944,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.dese
       msg.setActivedeadlineseconds(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
       break;
     case 13:
@@ -32057,11 +32064,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  f = message.getSchedule();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       12,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 13));
@@ -32481,29 +32489,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
 
 
 /**
- * optional string schedule = 12;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.getSchedule = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 12));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
- */
+*/
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prototype.clearSchedule = function() {
-  return jspb.Message.setField(this, 12, undefined);
+  return this.setSchedule(undefined);
 };
 
 

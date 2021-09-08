@@ -153,10 +153,9 @@ message CronReportSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 2;
 
-  // Schedule is the cron schedule
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional string schedule = 3;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 3;
 
   // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
@@ -1367,7 +1366,7 @@ message ModelPipelineSpec {
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional string schedule = 14;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 14;
 
   // The owner of the run, set to the owner of the pipeline
   // +kubebuilder:default:="no-one"
@@ -2140,7 +2139,7 @@ message NotebookSpec {
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional string schedule = 12;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 12;
 
   // The priority of this notebook run. The default is medium.
   // +kubebuilder:default:=medium

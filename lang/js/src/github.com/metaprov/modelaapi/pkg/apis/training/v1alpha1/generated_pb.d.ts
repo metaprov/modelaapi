@@ -253,8 +253,10 @@ export class CronReportSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): CronReportSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): CronReportSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronReportSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): CronReportSpec;
 
   getRange(): string;
   setRange(value: string): CronReportSpec;
@@ -279,7 +281,7 @@ export namespace CronReportSpec {
   export type AsObject = {
     versionname: string,
     owner: string,
-    schedule: string,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     range: string,
     template?: ReportTemplate.AsObject,
     paused: boolean,
@@ -2141,8 +2143,10 @@ export class ModelPipelineSpec extends jspb.Message {
   hasLocation(): boolean;
   clearLocation(): ModelPipelineSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): ModelPipelineSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): ModelPipelineSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): ModelPipelineSpec;
 
   getOwner(): string;
   setOwner(value: string): ModelPipelineSpec;
@@ -2182,7 +2186,7 @@ export namespace ModelPipelineSpec {
     deployment?: DeploymentStageSpec.AsObject,
     release?: ReleaseStageSpec.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    schedule: string,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     approveraccountname: string,
     notifiername: string,
@@ -3176,8 +3180,10 @@ export class NotebookSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): NotebookSpec;
 
-  getSchedule(): string;
-  setSchedule(value: string): NotebookSpec;
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): NotebookSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): NotebookSpec;
 
   getPriority(): string;
   setPriority(value: string): NotebookSpec;
@@ -3206,7 +3212,7 @@ export namespace NotebookSpec {
     owner: string,
     workloadclassname: string,
     activedeadlineseconds: number,
-    schedule: string,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     priority: string,
     paused: boolean,
   }

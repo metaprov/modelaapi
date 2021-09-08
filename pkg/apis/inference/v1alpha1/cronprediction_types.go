@@ -69,13 +69,12 @@ type CronPredictionSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=owner"`
-	// Schedule is the cron schedule
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
-	Schedule *string `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`
 	// Template refer to the prediction template
 	Template PredictionTemplate `json:"template" protobuf:"bytes,4,opt,name=template"`
-	// The priority of this data pipeline. The defualt is medium.
+	// The priority of this data pipeline. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
 	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,5,opt,name=priority"`

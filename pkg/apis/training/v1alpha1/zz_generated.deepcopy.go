@@ -260,11 +260,7 @@ func (in *CronReportSpec) DeepCopyInto(out *CronReportSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Schedule != nil {
-		in, out := &in.Schedule, &out.Schedule
-		*out = new(string)
-		**out = **in
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.Range != nil {
 		in, out := &in.Range, &out.Range
 		*out = new(ReportRange)
@@ -1974,6 +1970,7 @@ func (in *ModelPipelineSpec) DeepCopyInto(out *ModelPipelineSpec) {
 		*out = new(datav1alpha1.DataLocation)
 		(*in).DeepCopyInto(*out)
 	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
@@ -2835,11 +2832,7 @@ func (in *NotebookSpec) DeepCopyInto(out *NotebookSpec) {
 		*out = new(int64)
 		**out = **in
 	}
-	if in.Schedule != nil {
-		in, out := &in.Schedule, &out.Schedule
-		*out = new(string)
-		**out = **in
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
 		*out = new(catalogv1alpha1.PriorityLevel)

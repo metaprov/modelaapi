@@ -1059,25 +1059,18 @@ export namespace Region {
 }
 
 export class RunSchedule extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): RunSchedule;
+
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
   hasStarttime(): boolean;
   clearStarttime(): RunSchedule;
 
-  getStartday(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartday(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
-  hasStartday(): boolean;
-  clearStartday(): RunSchedule;
-
   getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp | undefined;
   setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp): RunSchedule;
   hasEndtime(): boolean;
   clearEndtime(): RunSchedule;
-
-  getEndday(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEndday(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunSchedule;
-  hasEndday(): boolean;
-  clearEndday(): RunSchedule;
 
   getCron(): string;
   setCron(value: string): RunSchedule;
@@ -1095,10 +1088,9 @@ export class RunSchedule extends jspb.Message {
 
 export namespace RunSchedule {
   export type AsObject = {
+    enabled: boolean,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    startday?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Timestamp.AsObject,
-    endday?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     cron: string,
     type: string,
   }

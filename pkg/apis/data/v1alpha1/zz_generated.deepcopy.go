@@ -683,11 +683,7 @@ func (in *DataPipelineSpec) DeepCopyInto(out *DataPipelineSpec) {
 		}
 	}
 	in.Output.DeepCopyInto(&out.Output)
-	if in.Schedule != nil {
-		in, out := &in.Schedule, &out.Schedule
-		*out = new(string)
-		**out = **in
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.Owner != nil {
 		in, out := &in.Owner, &out.Owner
 		*out = new(string)
@@ -2212,11 +2208,7 @@ func (in *FeaturePipelineSpec) DeepCopyInto(out *FeaturePipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Schedule != nil {
-		in, out := &in.Schedule, &out.Schedule
-		*out = new(string)
-		**out = **in
-	}
+	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
