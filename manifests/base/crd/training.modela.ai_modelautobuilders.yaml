@@ -663,6 +663,10 @@ spec:
                             type: array
                         type: object
                     type: object
+                  task:
+                    description: The default task for datasets from this data source.
+                      If null this will be setup to the data product task
+                    type: string
                   versionName:
                     default: ""
                     description: The version of the flat file.

@@ -1341,6 +1341,9 @@ export class DataSourceSpec extends jspb.Message {
   hasSample(): boolean;
   clearSample(): DataSourceSpec;
 
+  getTask(): string;
+  setTask(value: string): DataSourceSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1358,6 +1361,7 @@ export namespace DataSourceSpec {
     flatfile?: FlatFileSpec.AsObject,
     datasettype: string,
     sample?: SampleSpec.AsObject,
+    task: string,
   }
 }
 

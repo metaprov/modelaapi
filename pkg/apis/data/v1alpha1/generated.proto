@@ -972,6 +972,10 @@ message DataSourceSpec {
 
   // Sample spec defines how many rows to use for analysis for datasets from this datasource.
   optional SampleSpec sample = 7;
+
+  // The default task for datasets from this data source. If null this will be setup to the data product task
+  // +kubebuilder:validation:Optional
+  optional string task = 8;
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

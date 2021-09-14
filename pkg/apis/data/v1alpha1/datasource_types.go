@@ -574,6 +574,9 @@ type DataSourceSpec struct {
 	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,6,opt,name=datasetType"`
 	// Sample spec defines how many rows to use for analysis for datasets from this datasource.
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
+	// The default task for datasets from this data source. If null this will be setup to the data product task
+	// +kubebuilder:validation:Optional
+	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,8,opt,name=task"`
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec
