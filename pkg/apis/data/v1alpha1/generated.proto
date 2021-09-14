@@ -1149,6 +1149,10 @@ message DatasetSpec {
   // Sample spec defines how many rows to use for analysis
   // +kubebuilder:validation:Optional
   optional SampleSpec sample = 18;
+
+  // DatasetType is the type of dataset
+  // +kubebuilder:validation:Optional
+  optional string task = 19;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

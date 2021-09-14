@@ -17117,7 +17117,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     workloadclassname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f)
+    sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
+    task: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -17220,6 +17221,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.deserializeBinaryFromReader);
       msg.setSample(value);
+      break;
+    case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTask(value);
       break;
     default:
       reader.skipField();
@@ -17363,6 +17368,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
       18,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeString(
+      19,
+      f
     );
   }
 };
@@ -17944,6 +17956,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasSample = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional string task = 19;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getTask = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setTask = function(value) {
+  return jspb.Message.setField(this, 19, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearTask = function() {
+  return jspb.Message.setField(this, 19, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasTask = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

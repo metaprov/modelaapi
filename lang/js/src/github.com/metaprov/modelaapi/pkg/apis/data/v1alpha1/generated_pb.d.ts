@@ -1588,6 +1588,9 @@ export class DatasetSpec extends jspb.Message {
   hasSample(): boolean;
   clearSample(): DatasetSpec;
 
+  getTask(): string;
+  setTask(value: string): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -1614,6 +1617,7 @@ export namespace DatasetSpec {
     activedeadlineseconds: number,
     type: string,
     sample?: SampleSpec.AsObject,
+    task: string,
   }
 }
 

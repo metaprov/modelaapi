@@ -155,6 +155,9 @@ type DatasetSpec struct {
 	// Sample spec defines how many rows to use for analysis
 	// +kubebuilder:validation:Optional
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,18,opt,name=sample"`
+	// DatasetType is the type of dataset
+	// +kubebuilder:validation:Optional
+	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,19,opt,name=task"`
 }
 
 // DatasetStatus defines the observed state of Dataset

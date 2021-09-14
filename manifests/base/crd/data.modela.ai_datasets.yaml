@@ -229,6 +229,9 @@ spec:
                 description: If syntactic is true, indicates how many rows to generate
                 format: int32
                 type: integer
+              task:
+                description: DatasetType is the type of dataset
+                type: string
               type:
                 default: tabular
                 description: DatasetType is the type of dataset
