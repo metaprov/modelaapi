@@ -237,16 +237,18 @@ type ColumnStatistics struct {
 	Min float64 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
 	// Max is the maximum value of the attribute
 	Max float64 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
+	// Mode for categorical values, is the most common value
+	Mode string `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
 	// Mean is the mean value of the attribute
-	Mean float64 `json:"mean,omitempty" protobuf:"bytes,4,opt,name=mean"`
+	Mean float64 `json:"mean,omitempty" protobuf:"bytes,5,opt,name=mean"`
 	// StdDev is the standard deviation value of the attribute
-	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,5,opt,name=stddev"`
+	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,6,opt,name=stddev"`
 	// Skewness is the standard deviation value of the attribute
-	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,6,opt,name=skewness"`
+	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,7,opt,name=skewness"`
 	// Kurtosis is the standard deviation value of the attribute
-	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,7,opt,name=kurtosis"`
+	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,8,opt,name=kurtosis"`
 	// Zeros is the numbers of zeros in the feature
-	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,8,opt,name=zeros"`
+	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,9,opt,name=zeros"`
 	// Pct25 is the 25 precent point
 	P25 float64 `json:"p25,omitempty" protobuf:"bytes,10,opt,name=p25"`
 	// Pct50 is the median

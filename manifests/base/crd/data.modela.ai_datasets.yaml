@@ -442,6 +442,10 @@ spec:
                           description: The number of missing values
                           format: int32
                           type: integer
+                        mode:
+                          description: Mode for categorical values, is the most common
+                            value
+                          type: string
                         mostFreqValuesRatio:
                           description: The ratio between most freq value to total
                           type: number

@@ -205,6 +205,9 @@ export class ColumnStatistics extends jspb.Message {
   getMax(): number;
   setMax(value: number): ColumnStatistics;
 
+  getMode(): string;
+  setMode(value: string): ColumnStatistics;
+
   getMean(): number;
   setMean(value: number): ColumnStatistics;
 
@@ -284,6 +287,7 @@ export namespace ColumnStatistics {
     name: string,
     min: number,
     max: number,
+    mode: string,
     mean: number,
     stddev: number,
     skewness: number,

@@ -229,20 +229,23 @@ message ColumnStatistics {
   // Max is the maximum value of the attribute
   optional double max = 3;
 
+  // Mode for categorical values, is the most common value
+  optional string mode = 4;
+
   // Mean is the mean value of the attribute
-  optional double mean = 4;
+  optional double mean = 5;
 
   // StdDev is the standard deviation value of the attribute
-  optional double stddev = 5;
+  optional double stddev = 6;
 
   // Skewness is the standard deviation value of the attribute
-  optional double skewness = 6;
+  optional double skewness = 7;
 
   // Kurtosis is the standard deviation value of the attribute
-  optional double kurtosis = 7;
+  optional double kurtosis = 8;
 
   // Zeros is the numbers of zeros in the feature
-  optional double zeros = 8;
+  optional double zeros = 9;
 
   // Pct25 is the 25 precent point
   optional double p25 = 10;
