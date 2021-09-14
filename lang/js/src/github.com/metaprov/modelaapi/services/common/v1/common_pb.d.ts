@@ -179,6 +179,9 @@ export class ColumnProfile extends jspb.Message {
   getMean(): number;
   setMean(value: number): ColumnProfile;
 
+  getMode(): string;
+  setMode(value: string): ColumnProfile;
+
   getStd(): number;
   setStd(value: number): ColumnProfile;
 
@@ -263,6 +266,7 @@ export namespace ColumnProfile {
     missing: number,
     distinct: number,
     mean: number,
+    mode: string,
     std: number,
     variance: number,
     min: number,

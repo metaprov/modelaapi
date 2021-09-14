@@ -1547,18 +1547,19 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     missing: jspb.Message.getFieldWithDefault(msg, 4, 0),
     distinct: jspb.Message.getFieldWithDefault(msg, 5, 0),
     mean: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
-    std: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-    variance: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
-    min: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
-    max: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
-    kurtosis: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
-    skewness: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
-    sum: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
-    mad: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
-    zeros: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
-    p25: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0),
-    p50: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0),
-    p75: jspb.Message.getFloatingPointFieldWithDefault(msg, 18, 0.0),
+    mode: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    std: jspb.Message.getFloatingPointFieldWithDefault(msg, 8, 0.0),
+    variance: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
+    min: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
+    max: jspb.Message.getFloatingPointFieldWithDefault(msg, 11, 0.0),
+    kurtosis: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
+    skewness: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
+    sum: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
+    mad: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
+    zeros: jspb.Message.getFloatingPointFieldWithDefault(msg, 16, 0.0),
+    p25: jspb.Message.getFloatingPointFieldWithDefault(msg, 17, 0.0),
+    p50: jspb.Message.getFloatingPointFieldWithDefault(msg, 18, 0.0),
+    p75: jspb.Message.getFloatingPointFieldWithDefault(msg, 19, 0.0),
     p100: jspb.Message.getFloatingPointFieldWithDefault(msg, 20, 0.0),
     iqr: jspb.Message.getFloatingPointFieldWithDefault(msg, 21, 0.0),
     cv: jspb.Message.getFloatingPointFieldWithDefault(msg, 22, 0.0),
@@ -1630,50 +1631,54 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
       msg.setMean(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setStd(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMode(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setVariance(value);
+      msg.setStd(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMin(value);
+      msg.setVariance(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMax(value);
+      msg.setMin(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setKurtosis(value);
+      msg.setMax(value);
       break;
     case 12:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setSkewness(value);
+      msg.setKurtosis(value);
       break;
     case 13:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setSum(value);
+      msg.setSkewness(value);
       break;
     case 14:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMad(value);
+      msg.setSum(value);
       break;
     case 15:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setZeros(value);
+      msg.setMad(value);
       break;
     case 16:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setP25(value);
+      msg.setZeros(value);
       break;
     case 17:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setP50(value);
+      msg.setP25(value);
       break;
     case 18:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setP50(value);
+      break;
+    case 19:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setP75(value);
       break;
@@ -1789,87 +1794,94 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
       f
     );
   }
-  f = message.getStd();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  f = message.getMode();
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
   }
-  f = message.getVariance();
+  f = message.getStd();
   if (f !== 0.0) {
     writer.writeDouble(
       8,
       f
     );
   }
-  f = message.getMin();
+  f = message.getVariance();
   if (f !== 0.0) {
     writer.writeDouble(
       9,
       f
     );
   }
-  f = message.getMax();
+  f = message.getMin();
   if (f !== 0.0) {
     writer.writeDouble(
       10,
       f
     );
   }
-  f = message.getKurtosis();
+  f = message.getMax();
   if (f !== 0.0) {
     writer.writeDouble(
       11,
       f
     );
   }
-  f = message.getSkewness();
+  f = message.getKurtosis();
   if (f !== 0.0) {
     writer.writeDouble(
       12,
       f
     );
   }
-  f = message.getSum();
+  f = message.getSkewness();
   if (f !== 0.0) {
     writer.writeDouble(
       13,
       f
     );
   }
-  f = message.getMad();
+  f = message.getSum();
   if (f !== 0.0) {
     writer.writeDouble(
       14,
       f
     );
   }
-  f = message.getZeros();
+  f = message.getMad();
   if (f !== 0.0) {
     writer.writeDouble(
       15,
       f
     );
   }
-  f = message.getP25();
+  f = message.getZeros();
   if (f !== 0.0) {
     writer.writeDouble(
       16,
       f
     );
   }
-  f = message.getP50();
+  f = message.getP25();
   if (f !== 0.0) {
     writer.writeDouble(
       17,
       f
     );
   }
-  f = message.getP75();
+  f = message.getP50();
   if (f !== 0.0) {
     writer.writeDouble(
       18,
+      f
+    );
+  }
+  f = message.getP75();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      19,
       f
     );
   }
@@ -2056,28 +2068,28 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.s
 
 
 /**
- * optional double std = 7;
+ * optional string mode = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMode = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional double std = 8;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getStd = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setStd = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
-};
-
-
-/**
- * optional double variance = 8;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getVariance = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
 };
 
@@ -2086,16 +2098,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setVariance = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setStd = function(value) {
   return jspb.Message.setProto3FloatField(this, 8, value);
 };
 
 
 /**
- * optional double min = 9;
+ * optional double variance = 9;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMin = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getVariance = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
 };
 
@@ -2104,16 +2116,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMin = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setVariance = function(value) {
   return jspb.Message.setProto3FloatField(this, 9, value);
 };
 
 
 /**
- * optional double max = 10;
+ * optional double min = 10;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMax = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMin = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
 };
 
@@ -2122,16 +2134,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMax = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMin = function(value) {
   return jspb.Message.setProto3FloatField(this, 10, value);
 };
 
 
 /**
- * optional double kurtosis = 11;
+ * optional double max = 11;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getKurtosis = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMax = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
 };
 
@@ -2140,16 +2152,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setKurtosis = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMax = function(value) {
   return jspb.Message.setProto3FloatField(this, 11, value);
 };
 
 
 /**
- * optional double skewness = 12;
+ * optional double kurtosis = 12;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getSkewness = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getKurtosis = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
 };
 
@@ -2158,16 +2170,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setSkewness = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setKurtosis = function(value) {
   return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
 /**
- * optional double sum = 13;
+ * optional double skewness = 13;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getSum = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getSkewness = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
 };
 
@@ -2176,16 +2188,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setSum = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setSkewness = function(value) {
   return jspb.Message.setProto3FloatField(this, 13, value);
 };
 
 
 /**
- * optional double mad = 14;
+ * optional double sum = 14;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMad = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getSum = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
 };
 
@@ -2194,16 +2206,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMad = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setSum = function(value) {
   return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 
 /**
- * optional double zeros = 15;
+ * optional double mad = 15;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getZeros = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMad = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 15, 0.0));
 };
 
@@ -2212,16 +2224,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setZeros = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMad = function(value) {
   return jspb.Message.setProto3FloatField(this, 15, value);
 };
 
 
 /**
- * optional double p25 = 16;
+ * optional double zeros = 16;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getP25 = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getZeros = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 16, 0.0));
 };
 
@@ -2230,16 +2242,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setP25 = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setZeros = function(value) {
   return jspb.Message.setProto3FloatField(this, 16, value);
 };
 
 
 /**
- * optional double p50 = 17;
+ * optional double p25 = 17;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getP50 = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getP25 = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 17, 0.0));
 };
 
@@ -2248,16 +2260,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setP50 = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setP25 = function(value) {
   return jspb.Message.setProto3FloatField(this, 17, value);
 };
 
 
 /**
- * optional double p75 = 18;
+ * optional double p50 = 18;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getP75 = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getP50 = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 18, 0.0));
 };
 
@@ -2266,8 +2278,26 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setP75 = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setP50 = function(value) {
   return jspb.Message.setProto3FloatField(this, 18, value);
+};
+
+
+/**
+ * optional double p75 = 19;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getP75 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 19, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setP75 = function(value) {
+  return jspb.Message.setProto3FloatField(this, 19, value);
 };
 
 

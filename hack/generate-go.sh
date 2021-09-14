@@ -43,6 +43,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          k8s.io/apimachinery/pkg/runtime/schema/generated.proto \
          k8s.io/apimachinery/pkg/runtime/generated.proto \
          github.com/gogo/protobuf/gogoproto/gogo.proto \
+         github.com/metaprov/modelaapi/services/common/v1/common.proto \
          github.com/metaprov/modelaapi/services/account/v1/account.proto \
          github.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto \
          github.com/metaprov/modelaapi/services/alert/v1/alert.proto \
@@ -54,7 +55,6 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto \
          github.com/metaprov/modelaapi/services/cloudproxyd/v1/cloudproxyd.proto \
          github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord.proto \
-         github.com/metaprov/modelaapi/services/common/v1/common.proto \
          github.com/metaprov/modelaapi/services/connection/v1/connection.proto \
          github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto \
          github.com/metaprov/modelaapi/services/data/v1/data.proto \
