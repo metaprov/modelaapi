@@ -158,6 +158,9 @@ type DatasetSpec struct {
 	// DatasetType is the type of dataset
 	// +kubebuilder:validation:Optional
 	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,19,opt,name=task"`
+	// Specification for notification for events that occur during processing
+	// +kubebuilder:validation:Optional
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,20,opt,name=notification"`
 }
 
 // DatasetStatus defines the observed state of Dataset
@@ -193,18 +196,21 @@ type DatasetStatus struct {
 	// Last time a study was done on the dataset.
 	//+kubebuilder:validation:Optional
 	LastStudyTime *metav1.Time `json:"lastStudyTime,omitempty" protobuf:"bytes,10,opt,name=lastStudyTime"`
+	// Notification sent
+	//+kubebuilder:validation:Optional
+	NotificationTime *metav1.Time `json:"lastNotificationTime,omitempty" protobuf:"bytes,11,opt,name=lastNotificationTime"`
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,11,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,12,opt,name=lastError"`
 	// Processing progress
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress,omitempty" protobuf:"bytes,12,opt,name=progress"`
+	Progress *int32 `json:"progress,omitempty" protobuf:"bytes,13,opt,name=progress"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,13,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

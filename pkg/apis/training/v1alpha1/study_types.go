@@ -30,6 +30,22 @@ const (
 )
 
 // +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";
+type AlgorithmFilterName string
+
+const (
+	// only logistic regression and xgboost
+	AlgorithmFilterNameQuick AlgorithmFilterName = "random"
+	// Select only from linear algorithms
+	AlgorithmFilterNameLinearOnly AlgorithmFilterName = "linear-only"
+	// Select only tree based algorithms
+	AlgorithmFilterNameTreeOnly AlgorithmFilterName = "tree"
+	// sample from all algorithms , use default hyper parameters
+	AlgorithmFilterNameDefaultParameters AlgorithmFilterName = "default-hp"
+	// optimal
+	AlgorithmFilterNameOptimal AlgorithmFilterName = "optimal"
+)
+
+// +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";
 type SamplerName string
 
 const (
@@ -255,10 +271,10 @@ type ModelSearchSpec struct {
 	// Set the start time, by default this is set to the start time of the study
 	// +kubebuilder:validation:Optional
 	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,15,opt,name=startAt"`
-	// If true, select only tree algorithms
+	// set a general filter on the allowed algorithm
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	TreeOnly *bool `json:"treeOnly,omitempty" protobuf:"bytes,16,opt,name=treeOnly"`
+	AlgorithmFilter *AlgorithmFilterName `json:"algorithmFilter,omitempty" protobuf:"bytes,16,opt,name=algorithmFilter"`
 }
 
 type PrunerSpec struct {
@@ -387,6 +403,9 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Template *bool `json:"template,omitempty" protobuf:"varint,25,opt,name=template"`
+	// Notification specification.
+	//+kubebuilder:validation:Optional
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,26,opt,name=notification"`
 }
 
 // StudyStatus defines the observed state of the Study

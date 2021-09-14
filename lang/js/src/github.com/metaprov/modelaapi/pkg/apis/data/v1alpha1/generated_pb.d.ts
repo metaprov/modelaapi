@@ -766,6 +766,11 @@ export class DataPipelineSpec extends jspb.Message {
   hasSchedule(): boolean;
   clearSchedule(): DataPipelineSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DataPipelineSpec;
+  hasNotification(): boolean;
+  clearNotification(): DataPipelineSpec;
+
   getOwner(): string;
   setOwner(value: string): DataPipelineSpec;
 
@@ -794,6 +799,7 @@ export namespace DataPipelineSpec {
     recipesList: Array<RecipePartSpec.AsObject>,
     output?: DataOutputSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     owner: string,
     workloadclassname: string,
     priority: string,
@@ -1040,8 +1046,20 @@ export class DataProductStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): DataProductStatus;
 
-  getLaststudyid(): number;
-  setLaststudyid(value: number): DataProductStatus;
+  getLaststudy(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLaststudy(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
+  hasLaststudy(): boolean;
+  clearLaststudy(): DataProductStatus;
+
+  getLastdataset(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastdataset(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
+  hasLastdataset(): boolean;
+  clearLastdataset(): DataProductStatus;
+
+  getLastprediction(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastprediction(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DataProductStatus;
+  hasLastprediction(): boolean;
+  clearLastprediction(): DataProductStatus;
 
   getConditionsList(): Array<DataProductCondition>;
   setConditionsList(value: Array<DataProductCondition>): DataProductStatus;
@@ -1060,7 +1078,9 @@ export namespace DataProductStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    laststudyid: number,
+    laststudy?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastdataset?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastprediction?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<DataProductCondition.AsObject>,
   }
 }
@@ -1591,6 +1611,11 @@ export class DatasetSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): DatasetSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DatasetSpec;
+  hasNotification(): boolean;
+  clearNotification(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -1618,6 +1643,7 @@ export namespace DatasetSpec {
     type: string,
     sample?: SampleSpec.AsObject,
     task: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 
@@ -1692,6 +1718,11 @@ export class DatasetStatus extends jspb.Message {
   hasLaststudytime(): boolean;
   clearLaststudytime(): DatasetStatus;
 
+  getLastnotificationtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastnotificationtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DatasetStatus;
+  hasLastnotificationtime(): boolean;
+  clearLastnotificationtime(): DatasetStatus;
+
   getLasterror(): string;
   setLasterror(value: string): DatasetStatus;
 
@@ -1723,6 +1754,7 @@ export namespace DatasetStatus {
     observedgeneration: number,
     validationresultsList: Array<DataValidationResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastnotificationtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasterror: string,
     progress: number,
     conditionsList: Array<DatasetCondition.AsObject>,

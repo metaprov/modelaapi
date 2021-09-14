@@ -98,10 +98,9 @@ type ModelPipelineSpec struct {
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional
 	ApproverAccountName *string `json:"approverAccountName,omitempty" protobuf:"bytes,16,opt,name=approverAccountName"`
-	// NotifierName is the name of the notifier to use in case of pipeline failure
-	// +kubebuilder:default =""
-	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,17,opt,name=notifierName"`
+	// Notification specification.
+	//+kubebuilder:validation:Optional
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,17,opt,name=notification"`
 	// BaselineModelName is the name of the model which is used to compare with this pipeline results.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Optional

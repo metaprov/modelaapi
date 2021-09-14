@@ -481,6 +481,27 @@ message ModelDeploymentStatus {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvedAt = 15;
 }
 
+message NotificationSpec {
+  // Fire when error occur
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool onError = 1;
+
+  // Fire when success occur.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool onSuccess = 2;
+
+  // The name of the notifier.
+  // +kubebuilder:default:= ""
+  // +kubebuilder:validation:Optional
+  optional string cron = 3;
+
+  // Select the target notifiers by a label.
+  // +kubebuilder:validation:Optional
+  map<string, string> selector = 4;
+}
+
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {

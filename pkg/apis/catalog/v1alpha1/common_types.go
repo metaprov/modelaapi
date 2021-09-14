@@ -955,7 +955,7 @@ const (
 	DataFormatUnknown      DataFormat = "unknown"
 )
 
-// +kubebuilder:validation:Enum="email";"hipchat";"pagerduty";"pushover";"slack";"opengenie";"webook";"victorops";"wechat";
+// +kubebuilder:validation:Enum="email";"hipchat";"pagerduty";"pushover";"slack";"opengenie";"webook";"victorops";"wechat";"msteams"
 type NotificationReceiver string
 
 const (
@@ -965,9 +965,10 @@ const (
 	NotificationReceiverPushOver  NotificationReceiver = "pushover"
 	NotificationReceiverSlack     NotificationReceiver = "slack"
 	NotificationReceiverOpenGenie NotificationReceiver = "opengenie"
-	NotificationReceiverWebhook   NotificationReceiver = "webook"
+	NotificationReceiverWebhook   NotificationReceiver = "webhook"
 	NotificationReceiverVictorOps NotificationReceiver = "victorops"
 	NotificationReceiverWechat    NotificationReceiver = "wechat"
+	NotificationReceiverMSTeams   NotificationReceiver = "msteams"
 )
 
 // Needed in order to map to the protobuf
@@ -991,6 +992,8 @@ func (this NotificationReceiver) Code() int32 {
 		return 7
 	case NotificationReceiverWechat:
 		return 8
+	case NotificationReceiverMSTeams:
+		return 9
 	default:
 		panic("reciver not found")
 
@@ -1485,3 +1488,21 @@ const (
 	SplitTypeStratified     SplitType = "stratified"
 	SplitTypeAuto           SplitType = "auto"
 )
+
+type NotificationSpec struct {
+	// Fire when error occur
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	OnError *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=onError"`
+	// Fire when success occur.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	OnSuccess *bool `json:"onSuccess,omitempty" protobuf:"varint,2,opt,name=onSuccess"`
+	// The name of the notifier.
+	// +kubebuilder:default:= ""
+	// +kubebuilder:validation:Optional
+	NotifierName *string `json:"cron,omitempty" protobuf:"bytes,3,opt,name=cron"`
+	// Select the target notifiers by a label.
+	// +kubebuilder:validation:Optional
+	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,4,opt,name=selector"`
+}

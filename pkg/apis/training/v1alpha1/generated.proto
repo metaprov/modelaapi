@@ -168,6 +168,10 @@ message CronReportSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 6;
+
+  // Notification specification.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
 }
 
 // CronReportStatus is the observed state of a ReportTemplate
@@ -1379,10 +1383,9 @@ message ModelPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string approverAccountName = 16;
 
-  // NotifierName is the name of the notifier to use in case of pipeline failure
-  // +kubebuilder:default =""
+  // Notification specification.
   // +kubebuilder:validation:Optional
-  optional string notifierName = 17;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 17;
 
   // BaselineModelName is the name of the model which is used to compare with this pipeline results.
   // +kubebuilder:default =""
@@ -1522,10 +1525,10 @@ message ModelSearchSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 15;
 
-  // If true, select only tree algorithms
+  // set a general filter on the allowed algorithm
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool treeOnly = 16;
+  optional string algorithmFilter = 16;
 }
 
 // ModelSpec defines the desired state of the Model resource
@@ -2634,6 +2637,10 @@ message StudySpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool template = 25;
+
+  // Notification specification.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 26;
 }
 
 // StudyStatus defines the observed state of the Study

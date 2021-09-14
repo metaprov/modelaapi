@@ -124,6 +124,10 @@ message CronPredictionSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 6;
+
+  // Notification specification.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
 }
 
 // CronPredictionStatus is the observed state of a PredictionTemplate

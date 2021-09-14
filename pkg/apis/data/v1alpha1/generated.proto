@@ -612,26 +612,30 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
 
+  // Specification for notification
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
+
   // Owner of this data pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 7;
+  optional string owner = 8;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipeline
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional string workloadClassName = 9;
 
   // The priority of this data pipeline. The default is medium.
   // +kubebuilder:default:="medium"
   // +kubebuilder:validation:Optional
-  optional string priority = 9;
+  optional string priority = 10;
 
   // Set to true to pause the cron prediction
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 10;
+  optional bool paused = 11;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -800,13 +804,22 @@ message DataProductStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
-  // The last study id generated for this product.
-  optional int64 lastStudyID = 3;
+  // Last time the study was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudy = 3;
+
+  // Last time the dataset was created
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDataset = 4;
+
+  // Last time prediction
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 5;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 4;
+  repeated DataProductCondition conditions = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1153,6 +1166,10 @@ message DatasetSpec {
   // DatasetType is the type of dataset
   // +kubebuilder:validation:Optional
   optional string task = 19;
+
+  // Specification for notification for events that occur during processing
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 20;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -1217,20 +1234,24 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
 
+  // Notification sent
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastNotificationTime = 11;
+
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 11;
+  optional string lastError = 12;
 
   // Processing progress
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 progress = 12;
+  optional int32 progress = 13;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 13;
+  repeated DatasetCondition conditions = 14;
 }
 
 // DatasetTemplate is  used to generate new datasets

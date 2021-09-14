@@ -269,6 +269,11 @@ export class CronReportSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): CronReportSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): CronReportSpec;
+  hasNotification(): boolean;
+  clearNotification(): CronReportSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CronReportSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CronReportSpec): CronReportSpec.AsObject;
@@ -285,6 +290,7 @@ export namespace CronReportSpec {
     range: string,
     template?: ReportTemplate.AsObject,
     paused: boolean,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 
@@ -2154,8 +2160,10 @@ export class ModelPipelineSpec extends jspb.Message {
   getApproveraccountname(): string;
   setApproveraccountname(value: string): ModelPipelineSpec;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): ModelPipelineSpec;
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): ModelPipelineSpec;
+  hasNotification(): boolean;
+  clearNotification(): ModelPipelineSpec;
 
   getBaselinemodelname(): string;
   setBaselinemodelname(value: string): ModelPipelineSpec;
@@ -2189,7 +2197,7 @@ export namespace ModelPipelineSpec {
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
     approveraccountname: string,
-    notifiername: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     baselinemodelname: string,
     priority: string,
     paused: boolean,
@@ -2316,8 +2324,8 @@ export class ModelSearchSpec extends jspb.Message {
   hasStartat(): boolean;
   clearStartat(): ModelSearchSpec;
 
-  getTreeonly(): boolean;
-  setTreeonly(value: boolean): ModelSearchSpec;
+  getAlgorithmfilter(): string;
+  setAlgorithmfilter(value: string): ModelSearchSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
@@ -2344,7 +2352,7 @@ export namespace ModelSearchSpec {
     votingensemble: boolean,
     stackingensemble: boolean,
     startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    treeonly: boolean,
+    algorithmfilter: string,
   }
 }
 
@@ -3897,6 +3905,11 @@ export class StudySpec extends jspb.Message {
   getTemplate(): boolean;
   setTemplate(value: boolean): StudySpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): StudySpec;
+  hasNotification(): boolean;
+  clearNotification(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -3929,6 +3942,7 @@ export namespace StudySpec {
     activedeadlineseconds: number,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template: boolean,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 

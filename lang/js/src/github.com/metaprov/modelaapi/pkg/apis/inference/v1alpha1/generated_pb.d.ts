@@ -160,6 +160,11 @@ export class CronPredictionSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): CronPredictionSpec;
 
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): CronPredictionSpec;
+  hasNotification(): boolean;
+  clearNotification(): CronPredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CronPredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CronPredictionSpec): CronPredictionSpec.AsObject;
@@ -176,6 +181,7 @@ export namespace CronPredictionSpec {
     template?: PredictionTemplate.AsObject,
     priority: string,
     paused: boolean,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
   }
 }
 

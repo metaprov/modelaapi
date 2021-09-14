@@ -377,10 +377,18 @@ spec:
                   - type
                   type: object
                 type: array
-              lastStudyID:
-                description: The last study id generated for this product.
-                format: int64
-                type: integer
+              lastDataset:
+                description: Last time the dataset was created
+                format: date-time
+                type: string
+              lastPrediction:
+                description: Last time prediction
+                format: date-time
+                type: string
+              lastStudy:
+                description: Last time the study was updated
+                format: date-time
+                type: string
               lastUpdated:
                 description: Last time the object was updated
                 format: date-time

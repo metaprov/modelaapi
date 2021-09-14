@@ -4402,7 +4402,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.to
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     range: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportTemplate.toObject(includeInstance, f),
-    paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4464,6 +4465,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.de
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
+      break;
+    case 7:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
+      msg.setNotification(value);
       break;
     default:
       reader.skipField();
@@ -4536,6 +4542,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.se
     writer.writeBool(
       6,
       f
+    );
+  }
+  f = message.getNotification();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
 };
@@ -4756,6 +4770,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.hasPaused = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.getNotification = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.setNotification = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.clearNotification = function() {
+  return this.setNotification(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.prototype.hasNotification = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -21686,7 +21737,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     approveraccountname: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
-    notifiername: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     baselinemodelname: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f
@@ -21789,8 +21840,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       msg.setApproveraccountname(value);
       break;
     case 17:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNotifiername(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
+      msg.setNotification(value);
       break;
     case 18:
       var value = /** @type {string} */ (reader.readString());
@@ -21929,11 +21981,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 17));
+  f = message.getNotification();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       17,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 18));
@@ -22423,29 +22476,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
 
 
 /**
- * optional string notifierName = 17;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 17;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.getNotification = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 17));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 17, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.setNotification = function(value) {
+  return jspb.Message.setWrapperField(this, 17, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 17, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.clearNotification = function() {
+  return this.setNotification(undefined);
 };
 
 
@@ -22453,7 +22507,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasNotifiername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec.prototype.hasNotification = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
@@ -23222,7 +23276,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.t
     votingensemble: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     stackingensemble: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     startat: (f = msg.getStartat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    treeonly: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f
+    algorithmfilter: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23323,8 +23377,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.d
       msg.setStartat(value);
       break;
     case 16:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setTreeonly(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAlgorithmfilter(value);
       break;
     default:
       reader.skipField();
@@ -23463,9 +23517,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.s
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       16,
       f
     );
@@ -24018,19 +24072,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
 
 
 /**
- * optional bool treeOnly = 16;
- * @return {boolean}
+ * optional string algorithmFilter = 16;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getTreeonly = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getAlgorithmfilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setTreeonly = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setAlgorithmfilter = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -24039,7 +24093,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearTreeonly = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearAlgorithmfilter = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -24048,7 +24102,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasTreeonly = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasAlgorithmfilter = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
@@ -38092,7 +38146,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     owner: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
-    template: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f
+    template: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
+    notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -38224,6 +38279,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setTemplate(value);
+      break;
+    case 26:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
+      msg.setNotification(value);
       break;
     default:
       reader.skipField();
@@ -38414,6 +38474,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
     writer.writeBool(
       25,
       f
+    );
+  }
+  f = message.getNotification();
+  if (f != null) {
+    writer.writeMessage(
+      26,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
 };
@@ -39216,6 +39284,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasTemplate = function() {
   return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 26;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getNotification = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 26));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setNotification = function(value) {
+  return jspb.Message.setWrapperField(this, 26, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearNotification = function() {
+  return this.setNotification(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasNotification = function() {
+  return jspb.Message.getField(this, 26) != null;
 };
 
 

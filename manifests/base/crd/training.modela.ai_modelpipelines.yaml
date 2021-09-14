@@ -374,10 +374,27 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
-              notifierName:
-                description: NotifierName is the name of the notifier to use in case
-                  of pipeline failure
-                type: string
+              notification:
+                description: Notification specification.
+                properties:
+                  cron:
+                    default: ""
+                    description: The name of the notifier.
+                    type: string
+                  onError:
+                    default: true
+                    description: Fire when error occur
+                    type: boolean
+                  onSuccess:
+                    default: false
+                    description: Fire when success occur.
+                    type: boolean
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Select the target notifiers by a label.
+                    type: object
+                type: object
               owner:
                 default: no-one
                 description: The owner of the run, set to the owner of the pipeline

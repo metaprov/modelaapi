@@ -91,6 +91,9 @@ type CronReportSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"bytes,6,opt,name=paused"`
+	// Notification specification.
+	//+kubebuilder:validation:Optional
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,7,opt,name=notification"`
 }
 
 // CronReportStatus is the observed state of a ReportTemplate

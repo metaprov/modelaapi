@@ -324,6 +324,27 @@ spec:
                 description: Set to true if you want the system to create a docker
                   model image, at the end of training.
                 type: boolean
+              notification:
+                description: Notification specification.
+                properties:
+                  cron:
+                    default: ""
+                    description: The name of the notifier.
+                    type: string
+                  onError:
+                    default: true
+                    description: Fire when error occur
+                    type: boolean
+                  onSuccess:
+                    default: false
+                    description: Fire when success occur.
+                    type: boolean
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Select the target notifiers by a label.
+                    type: object
+                type: object
               objective:
                 description: Objective is the objective defined how the study controller
                   will compare model performance.
@@ -623,6 +644,17 @@ spec:
               search:
                 description: Search defines the model search
                 properties:
+                  algorithmFilter:
+                    default: false
+                    description: set a general filter on the allowed algorithm
+                    enum:
+                    - random
+                    - grid
+                    - bayesian
+                    - tpe
+                    - manual
+                    - auto
+                    type: string
                   allowlist:
                     description: AllowList contain the list of algorithms that should
                       be tested as part of the search.
@@ -889,10 +921,6 @@ spec:
                     maximum: 50
                     minimum: 0
                     type: integer
-                  treeOnly:
-                    default: false
-                    description: If true, select only tree algorithms
-                    type: boolean
                   votingEnsemble:
                     default: false
                     description: VotingEnsample - If true, create a voting ensemble

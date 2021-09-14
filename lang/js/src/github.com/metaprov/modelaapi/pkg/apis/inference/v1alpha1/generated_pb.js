@@ -1873,7 +1873,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionTemplate.toObject(includeInstance, f),
     priority: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    paused: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1935,6 +1936,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPaused(value);
+      break;
+    case 7:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
+      msg.setNotification(value);
       break;
     default:
       reader.skipField();
@@ -2007,6 +2013,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
     writer.writeBool(
       6,
       f
+    );
+  }
+  f = message.getNotification();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
 };
@@ -2227,6 +2241,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.hasPaused = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.getNotification = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.setNotification = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.clearNotification = function() {
+  return this.setNotification(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec.prototype.hasNotification = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

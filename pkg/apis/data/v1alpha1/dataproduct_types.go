@@ -177,12 +177,19 @@ type DataProductStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
-	// The last study id generated for this product.
-	LastStudyID *int64 `json:"lastStudyID,omitempty" protobuf:"bytes,3,opt,name=lastStudyID"`
+	// Last time the study was updated
+	//+kubebuilder:validation:Optional
+	LastStudy *metav1.Time `json:"lastStudy,omitempty" protobuf:"bytes,3,opt,name=lastStudy"`
+	// Last time the dataset was created
+	//+kubebuilder:validation:Optional
+	LastDataset *metav1.Time `json:"lastDataset,omitempty" protobuf:"bytes,4,opt,name=lastDataset"`
+	// Last time prediction
+	//+kubebuilder:validation:Optional
+	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,5,opt,name=lastPrediction"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

@@ -826,6 +826,36 @@ export namespace ModelDeploymentStatus {
   }
 }
 
+export class NotificationSpec extends jspb.Message {
+  getOnerror(): boolean;
+  setOnerror(value: boolean): NotificationSpec;
+
+  getOnsuccess(): boolean;
+  setOnsuccess(value: boolean): NotificationSpec;
+
+  getCron(): string;
+  setCron(value: string): NotificationSpec;
+
+  getSelectorMap(): jspb.Map<string, string>;
+  clearSelectorMap(): NotificationSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NotificationSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: NotificationSpec): NotificationSpec.AsObject;
+  static serializeBinaryToWriter(message: NotificationSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NotificationSpec;
+  static deserializeBinaryFromReader(message: NotificationSpec, reader: jspb.BinaryReader): NotificationSpec;
+}
+
+export namespace NotificationSpec {
+  export type AsObject = {
+    onerror: boolean,
+    onsuccess: boolean,
+    cron: string,
+    selectorMap: Array<[string, string]>,
+  }
+}
+
 export class PretrainedModel extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PretrainedModel;

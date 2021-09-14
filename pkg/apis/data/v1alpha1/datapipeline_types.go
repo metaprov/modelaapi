@@ -79,23 +79,26 @@ type DataPipelineSpec struct {
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,6,opt,name=schedule"`
+	// Specification for notification
+	// +kubebuilder:validation:Optional
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,7,opt,name=notification"`
 	// Owner of this data pipeline
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
 	// WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipeline
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
 	// The priority of this data pipeline. The default is medium.
 	// +kubebuilder:default:="medium"
 	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,9,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,10,opt,name=priority"`
 	// Set to true to pause the cron prediction
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,10,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"bytes,11,opt,name=paused"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

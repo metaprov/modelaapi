@@ -128,6 +128,28 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
+              notification:
+                description: Specification for notification for events that occur
+                  during processing
+                properties:
+                  cron:
+                    default: ""
+                    description: The name of the notifier.
+                    type: string
+                  onError:
+                    default: true
+                    description: Fire when error occur
+                    type: boolean
+                  onSuccess:
+                    default: false
+                    description: Fire when success occur.
+                    type: boolean
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Select the target notifiers by a label.
+                    type: object
+                type: object
               origin:
                 description: Define the data location. The operator will copy the
                   data from this location into the live location. The datafiles are
@@ -294,6 +316,10 @@ spec:
               lastError:
                 default: ""
                 description: Last error
+                type: string
+              lastNotificationTime:
+                description: Notification sent
+                format: date-time
                 type: string
               lastStudyTime:
                 description: Last time a study was done on the dataset.
