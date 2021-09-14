@@ -310,7 +310,6 @@ func (ms *ModelSearchSpec) Default() {
 	ms.RetainFor = util.Int32Ptr(60)
 	ms.VotingEnsemble = util.BoolPtr(false)
 	ms.StackingEnsemble = util.BoolPtr(true)
-	ms.TreeOnly = util.BoolPtr(false)
 }
 
 func (pspec *PrunerSpec) Default() {
