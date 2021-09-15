@@ -1350,14 +1350,6 @@ spec:
                 description: models that failed during training.
                 format: int32
                 type: integer
-              id:
-                default: -1
-                description: ID is the id of the study within the data product Note
-                  that multiplie models can have the same version Default is -1 -
-                  not assigned, the id is assigned as part of the study ingestion
-                  and it stored in the data product status.
-                format: int64
-                type: integer
               lastError:
                 default: ""
                 description: Last error

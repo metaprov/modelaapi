@@ -39389,7 +39389,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     validationdataset: (f = msg.getValidationdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     lastmodelid: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
     lasterror: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
-    id: (f = jspb.Message.getField(msg, 31)) == null ? undefined : f,
     trainingrows: (f = jspb.Message.getField(msg, 32)) == null ? undefined : f,
     testingrows: (f = jspb.Message.getField(msg, 33)) == null ? undefined : f,
     validationrows: (f = jspb.Message.getField(msg, 34)) == null ? undefined : f,
@@ -39544,10 +39543,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.deser
     case 30:
       var value = /** @type {string} */ (reader.readString());
       msg.setLasterror(value);
-      break;
-    case 31:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setId(value);
       break;
     case 32:
       var value = /** @type {number} */ (reader.readInt32());
@@ -39787,13 +39782,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   if (f != null) {
     writer.writeString(
       30,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 31));
-  if (f != null) {
-    writer.writeInt64(
-      31,
       f
     );
   }
@@ -40778,42 +40766,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasLasterror = function() {
   return jspb.Message.getField(this, 30) != null;
-};
-
-
-/**
- * optional int64 id = 31;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 31, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setId = function(value) {
-  return jspb.Message.setField(this, 31, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearId = function() {
-  return jspb.Message.setField(this, 31, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasId = function() {
-  return jspb.Message.getField(this, 31) != null;
 };
 
 

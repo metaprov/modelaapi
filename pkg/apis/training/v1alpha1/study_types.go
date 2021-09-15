@@ -489,12 +489,6 @@ type StudyStatus struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastError *string `json:"lastError,omitempty" protobuf:"bytes,30,opt,name=lastError"`
-	// ID is the id of the study within the data product
-	// Note that multiplie models can have the same version
-	// Default is -1 - not assigned, the id is assigned as part of the study ingestion and it stored in the data product status.
-	// +kubebuilder:default:=-1
-	// +kubebuilder:validation:Optional
-	ID *int64 `json:"id" protobuf:"bytes,31,opt,name=id"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
 	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,32,opt,name=trainingRows"`

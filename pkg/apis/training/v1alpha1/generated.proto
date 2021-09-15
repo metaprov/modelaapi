@@ -2750,13 +2750,6 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 30;
 
-  // ID is the id of the study within the data product
-  // Note that multiplie models can have the same version
-  // Default is -1 - not assigned, the id is assigned as part of the study ingestion and it stored in the data product status.
-  // +kubebuilder:default:=-1
-  // +kubebuilder:validation:Optional
-  optional int64 id = 31;
-
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
   optional int32 trainingRows = 32;

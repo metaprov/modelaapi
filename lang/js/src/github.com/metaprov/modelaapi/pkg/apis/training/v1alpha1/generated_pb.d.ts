@@ -4043,9 +4043,6 @@ export class StudyStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): StudyStatus;
 
-  getId(): number;
-  setId(value: number): StudyStatus;
-
   getTrainingrows(): number;
   setTrainingrows(value: number): StudyStatus;
 
@@ -4099,7 +4096,6 @@ export namespace StudyStatus {
     validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     lastmodelid: number,
     lasterror: string,
-    id: number,
     trainingrows: number,
     testingrows: number,
     validationrows: number,

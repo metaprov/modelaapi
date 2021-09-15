@@ -3544,11 +3544,6 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.ID != nil {
-		in, out := &in.ID, &out.ID
-		*out = new(int64)
-		**out = **in
-	}
 	if in.TrainingRows != nil {
 		in, out := &in.TrainingRows, &out.TrainingRows
 		*out = new(int32)
