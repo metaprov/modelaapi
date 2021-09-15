@@ -8474,7 +8474,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.t
   var f, obj = {
     onerror: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     onsuccess: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    cron: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    notifiername: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     selectorMap: (f = msg.getSelectorMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -8522,7 +8522,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.d
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCron(value);
+      msg.setNotifiername(value);
       break;
     case 4:
       var value = msg.getSelectorMap();
@@ -8660,10 +8660,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
 
 
 /**
- * optional string cron = 3;
+ * optional string notifierName = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getCron = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getNotifiername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -8672,7 +8672,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setCron = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setNotifiername = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -8681,7 +8681,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearCron = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearNotifiername = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -8690,7 +8690,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasCron = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasNotifiername = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

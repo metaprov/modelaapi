@@ -132,7 +132,7 @@ spec:
                 description: Specification for notification for events that occur
                   during processing
                 properties:
-                  cron:
+                  notifierName:
                     default: ""
                     description: The name of the notifier.
                     type: string

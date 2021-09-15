@@ -833,8 +833,8 @@ export class NotificationSpec extends jspb.Message {
   getOnsuccess(): boolean;
   setOnsuccess(value: boolean): NotificationSpec;
 
-  getCron(): string;
-  setCron(value: string): NotificationSpec;
+  getNotifiername(): string;
+  setNotifiername(value: string): NotificationSpec;
 
   getSelectorMap(): jspb.Map<string, string>;
   clearSelectorMap(): NotificationSpec;
@@ -851,7 +851,7 @@ export namespace NotificationSpec {
   export type AsObject = {
     onerror: boolean,
     onsuccess: boolean,
-    cron: string,
+    notifiername: string,
     selectorMap: Array<[string, string]>,
   }
 }

@@ -68,7 +68,7 @@ spec:
               notification:
                 description: Specification for notification
                 properties:
-                  cron:
+                  notifierName:
                     default: ""
                     description: The name of the notifier.
                     type: string

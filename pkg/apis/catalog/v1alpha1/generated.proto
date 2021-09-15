@@ -495,7 +495,7 @@ message NotificationSpec {
   // The name of the notifier.
   // +kubebuilder:default:= ""
   // +kubebuilder:validation:Optional
-  optional string cron = 3;
+  optional string notifierName = 3;
 
   // Select the target notifiers by a label.
   // +kubebuilder:validation:Optional

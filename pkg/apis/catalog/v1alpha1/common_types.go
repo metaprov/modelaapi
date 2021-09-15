@@ -1501,7 +1501,7 @@ type NotificationSpec struct {
 	// The name of the notifier.
 	// +kubebuilder:default:= ""
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"cron,omitempty" protobuf:"bytes,3,opt,name=cron"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
 	// Select the target notifiers by a label.
 	// +kubebuilder:validation:Optional
 	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,4,opt,name=selector"`
