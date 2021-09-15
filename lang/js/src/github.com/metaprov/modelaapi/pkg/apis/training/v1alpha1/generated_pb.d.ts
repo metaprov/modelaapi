@@ -2324,8 +2324,8 @@ export class ModelSearchSpec extends jspb.Message {
   hasStartat(): boolean;
   clearStartat(): ModelSearchSpec;
 
-  getAlgorithmfilter(): string;
-  setAlgorithmfilter(value: string): ModelSearchSpec;
+  getFilter(): string;
+  setFilter(value: string): ModelSearchSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
@@ -2352,7 +2352,7 @@ export namespace ModelSearchSpec {
     votingensemble: boolean,
     stackingensemble: boolean,
     startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    algorithmfilter: string,
+    filter: string,
   }
 }
 

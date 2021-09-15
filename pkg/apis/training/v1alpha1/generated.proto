@@ -1526,9 +1526,9 @@ message ModelSearchSpec {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 15;
 
   // set a general filter on the allowed algorithm
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string algorithmFilter = 16;
+  optional string filter = 16;
 }
 
 // ModelSpec defines the desired state of the Model resource

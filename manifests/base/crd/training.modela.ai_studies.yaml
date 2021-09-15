@@ -644,16 +644,6 @@ spec:
               search:
                 description: Search defines the model search
                 properties:
-                  algorithmFilter:
-                    default: false
-                    description: set a general filter on the allowed algorithm
-                    enum:
-                    - quick
-                    - linear-only
-                    - tree
-                    - default-hp
-                    - none
-                    type: string
                   allowlist:
                     description: AllowList contain the list of algorithms that should
                       be tested as part of the search.
@@ -707,6 +697,16 @@ spec:
                       - stacking-ensemble
                       type: string
                     type: array
+                  filter:
+                    default: none
+                    description: set a general filter on the allowed algorithm
+                    enum:
+                    - quick
+                    - linear-only
+                    - tree
+                    - default-hp
+                    - none
+                    type: string
                   maxCost:
                     default: 100
                     description: MaxCost specify what is the maximum cost incurred

@@ -272,9 +272,9 @@ type ModelSearchSpec struct {
 	// +kubebuilder:validation:Optional
 	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,15,opt,name=startAt"`
 	// set a general filter on the allowed algorithm
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	AlgorithmFilter *AlgorithmFilterName `json:"algorithmFilter,omitempty" protobuf:"bytes,16,opt,name=algorithmFilter"`
+	AlgorithmFilter *AlgorithmFilterName `json:"filter,omitempty" protobuf:"bytes,16,opt,name=filter"`
 }
 
 type PrunerSpec struct {

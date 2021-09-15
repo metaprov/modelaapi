@@ -23276,7 +23276,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.t
     votingensemble: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     stackingensemble: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
     startat: (f = msg.getStartat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    algorithmfilter: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
+    filter: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -23378,7 +23378,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.d
       break;
     case 16:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAlgorithmfilter(value);
+      msg.setFilter(value);
       break;
     default:
       reader.skipField();
@@ -24072,10 +24072,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
 
 
 /**
- * optional string algorithmFilter = 16;
+ * optional string filter = 16;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getAlgorithmfilter = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.getFilter = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
@@ -24084,7 +24084,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setAlgorithmfilter = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.setFilter = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -24093,7 +24093,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearAlgorithmfilter = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.clearFilter = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -24102,7 +24102,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasAlgorithmfilter = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.prototype.hasFilter = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
