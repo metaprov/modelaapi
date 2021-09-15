@@ -29,12 +29,12 @@ const (
 	StudyPhasePaused       StudyPhase = "Paused"
 )
 
-// +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";
+// +kubebuilder:validation:Enum="quick";"linear-only";"tree";"default-hp";"none";
 type AlgorithmFilterName string
 
 const (
 	// only logistic regression and xgboost
-	AlgorithmFilterNameQuick AlgorithmFilterName = "random"
+	AlgorithmFilterNameQuick AlgorithmFilterName = "quick"
 	// Select only from linear algorithms
 	AlgorithmFilterNameLinearOnly AlgorithmFilterName = "linear-only"
 	// Select only tree based algorithms
@@ -42,7 +42,7 @@ const (
 	// sample from all algorithms , use default hyper parameters
 	AlgorithmFilterNameDefaultParameters AlgorithmFilterName = "default-hp"
 	// optimal
-	AlgorithmFilterNameOptimal AlgorithmFilterName = "optimal"
+	AlgorithmFilterNameNone AlgorithmFilterName = "none"
 )
 
 // +kubebuilder:validation:Enum="random";"grid";"bayesian";"tpe";"manual";"auto";

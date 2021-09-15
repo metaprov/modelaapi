@@ -648,12 +648,11 @@ spec:
                     default: false
                     description: set a general filter on the allowed algorithm
                     enum:
-                    - random
-                    - grid
-                    - bayesian
-                    - tpe
-                    - manual
-                    - auto
+                    - quick
+                    - linear-only
+                    - tree
+                    - default-hp
+                    - none
                     type: string
                   allowlist:
                     description: AllowList contain the list of algorithms that should
