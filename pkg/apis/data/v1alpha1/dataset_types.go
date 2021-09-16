@@ -233,28 +233,30 @@ type DatasetStatistics struct {
 type ColumnStatistics struct {
 	// FileName is the name of the column
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// Type is the name of the column
+	Type catalog.DataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
 	// Min is the minimum value of the attribute
-	Min float64 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
+	Min float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
 	// Max is the maximum value of the attribute
-	Max float64 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
+	Max float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
 	// Mode for categorical values, is the most common value
-	Mode string `json:"mode,omitempty" protobuf:"bytes,4,opt,name=mode"`
+	Mode string `json:"mode,omitempty" protobuf:"bytes,5,opt,name=mode"`
 	// Mean is the mean value of the attribute
-	Mean float64 `json:"mean,omitempty" protobuf:"bytes,5,opt,name=mean"`
+	Mean float64 `json:"mean,omitempty" protobuf:"bytes,6,opt,name=mean"`
 	// StdDev is the standard deviation value of the attribute
-	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,6,opt,name=stddev"`
+	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,7,opt,name=stddev"`
 	// Skewness is the standard deviation value of the attribute
-	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,7,opt,name=skewness"`
+	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,8,opt,name=skewness"`
 	// Kurtosis is the standard deviation value of the attribute
-	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,8,opt,name=kurtosis"`
+	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,9,opt,name=kurtosis"`
 	// Zeros is the numbers of zeros in the feature
-	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,9,opt,name=zeros"`
+	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,10,opt,name=zeros"`
 	// Pct25 is the 25 precent point
-	P25 float64 `json:"p25,omitempty" protobuf:"bytes,10,opt,name=p25"`
+	P25 float64 `json:"p25,omitempty" protobuf:"bytes,11,opt,name=p25"`
 	// Pct50 is the median
-	P50 float64 `json:"p50,omitempty" protobuf:"bytes,11,opt,name=p50"`
+	P50 float64 `json:"p50,omitempty" protobuf:"bytes,12,opt,name=p50"`
 	// Pct75 is the 75% point
-	P75 float64 `json:"p75,omitempty" protobuf:"bytes,12,opt,name=p75"`
+	P75 float64 `json:"p75,omitempty" protobuf:"bytes,13,opt,name=p75"`
 	// The number of missing values
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,14,opt,name=missing"`
 	// The number of invalid values

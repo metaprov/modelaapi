@@ -199,6 +199,9 @@ export class ColumnStatistics extends jspb.Message {
   getName(): string;
   setName(value: string): ColumnStatistics;
 
+  getType(): string;
+  setType(value: string): ColumnStatistics;
+
   getMin(): number;
   setMin(value: number): ColumnStatistics;
 
@@ -285,6 +288,7 @@ export class ColumnStatistics extends jspb.Message {
 export namespace ColumnStatistics {
   export type AsObject = {
     name: string,
+    type: string,
     min: number,
     max: number,
     mode: string,

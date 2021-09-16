@@ -223,38 +223,41 @@ message ColumnStatistics {
   // FileName is the name of the column
   optional string name = 1;
 
+  // Type is the name of the column
+  optional string type = 2;
+
   // Min is the minimum value of the attribute
-  optional double min = 2;
+  optional double min = 3;
 
   // Max is the maximum value of the attribute
-  optional double max = 3;
+  optional double max = 4;
 
   // Mode for categorical values, is the most common value
-  optional string mode = 4;
+  optional string mode = 5;
 
   // Mean is the mean value of the attribute
-  optional double mean = 5;
+  optional double mean = 6;
 
   // StdDev is the standard deviation value of the attribute
-  optional double stddev = 6;
+  optional double stddev = 7;
 
   // Skewness is the standard deviation value of the attribute
-  optional double skewness = 7;
+  optional double skewness = 8;
 
   // Kurtosis is the standard deviation value of the attribute
-  optional double kurtosis = 8;
+  optional double kurtosis = 9;
 
   // Zeros is the numbers of zeros in the feature
-  optional double zeros = 9;
+  optional double zeros = 10;
 
   // Pct25 is the 25 precent point
-  optional double p25 = 10;
+  optional double p25 = 11;
 
   // Pct50 is the median
-  optional double p50 = 11;
+  optional double p50 = 12;
 
   // Pct75 is the 75% point
-  optional double p75 = 12;
+  optional double p75 = 13;
 
   // The number of missing values
   optional int32 missing = 14;
