@@ -64,6 +64,11 @@ spec:
               notification:
                 description: Notification specification.
                 properties:
+                  errorTTL:
+                    default: 3600
+                    description: TTL for error msgs. In seconds
+                    format: int32
+                    type: integer
                   notifierName:
                     default: ""
                     description: The name of the notifier.
@@ -81,6 +86,11 @@ spec:
                       type: string
                     description: Select the target notifiers by a label.
                     type: object
+                  successTTL:
+                    default: 3600
+                    description: TTL for success msgs. In seconds
+                    format: int32
+                    type: integer
                 type: object
               owner:
                 default: no-one

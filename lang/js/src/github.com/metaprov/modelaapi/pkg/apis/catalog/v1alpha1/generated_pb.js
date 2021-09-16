@@ -8473,8 +8473,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     onerror: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    onsuccess: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    notifiername: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    errorttl: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    onsuccess: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    successttl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     selectorMap: (f = msg.getSelectorMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -8517,14 +8519,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.d
       msg.setOnerror(value);
       break;
     case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setErrorttl(value);
+      break;
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setOnsuccess(value);
       break;
-    case 3:
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSuccessttl(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setNotifiername(value);
       break;
-    case 4:
+    case 6:
       var value = msg.getSelectorMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
@@ -8566,23 +8576,37 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.s
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeBool(
+    writer.writeInt32(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeBool(
+      3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
-      3,
+      5,
       f
     );
   }
   f = message.getSelectorMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -8624,19 +8648,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
 
 
 /**
- * optional bool onSuccess = 2;
- * @return {boolean}
+ * optional int32 errorTTL = 2;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getOnsuccess = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getErrorttl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setOnsuccess = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setErrorttl = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -8645,7 +8669,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearOnsuccess = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearErrorttl = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -8654,25 +8678,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasOnsuccess = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasErrorttl = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string notifierName = 3;
- * @return {string}
+ * optional bool onSuccess = 3;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getOnsuccess = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setNotifiername = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setOnsuccess = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -8681,7 +8705,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearNotifiername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearOnsuccess = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -8690,20 +8714,92 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasNotifiername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasOnsuccess = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * map<string, string> selector = 4;
+ * optional int32 successTTL = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getSuccessttl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setSuccessttl = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearSuccessttl = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasSuccessttl = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string notifierName = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getNotifiername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.setNotifiername = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.clearNotifiername = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.hasNotifiername = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * map<string, string> selector = 6;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.prototype.getSelectorMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
 };
 

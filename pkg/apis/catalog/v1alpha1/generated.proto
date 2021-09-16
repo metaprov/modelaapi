@@ -487,19 +487,29 @@ message NotificationSpec {
   // +kubebuilder:validation:Optional
   optional bool onError = 1;
 
+  // TTL for error msgs. In seconds
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional int32 errorTTL = 2;
+
   // Fire when success occur.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool onSuccess = 2;
+  optional bool onSuccess = 3;
+
+  // TTL for success msgs. In seconds
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional int32 successTTL = 4;
 
   // The name of the notifier.
   // +kubebuilder:default:= ""
   // +kubebuilder:validation:Optional
-  optional string notifierName = 3;
+  optional string notifierName = 5;
 
   // Select the target notifiers by a label.
   // +kubebuilder:validation:Optional
-  map<string, string> selector = 4;
+  map<string, string> selector = 6;
 }
 
 // Pretrained model contain the metadata about a pretrained model

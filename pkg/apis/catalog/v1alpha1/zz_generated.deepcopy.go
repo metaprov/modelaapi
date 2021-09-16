@@ -713,9 +713,19 @@ func (in *NotificationSpec) DeepCopyInto(out *NotificationSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.ErrorTTL != nil {
+		in, out := &in.ErrorTTL, &out.ErrorTTL
+		*out = new(int32)
+		**out = **in
+	}
 	if in.OnSuccess != nil {
 		in, out := &in.OnSuccess, &out.OnSuccess
 		*out = new(bool)
+		**out = **in
+	}
+	if in.SuccessTTL != nil {
+		in, out := &in.SuccessTTL, &out.SuccessTTL
+		*out = new(int32)
 		**out = **in
 	}
 	if in.NotifierName != nil {
