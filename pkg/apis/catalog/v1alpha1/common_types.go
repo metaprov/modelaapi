@@ -828,6 +828,7 @@ const (
 	CatBoostClassifier          ClassicEstimatorName = "catboost-classifier"
 	StackingEnsemble            ClassicEstimatorName = "stacking-ensemble" // for stacking ensemble
 	UnknownEstimatorName        ClassicEstimatorName = "unknown"
+	NoneEstimatorName           ClassicEstimatorName = "none"
 )
 
 func ParseEstimatorName(name string) ClassicEstimatorName {

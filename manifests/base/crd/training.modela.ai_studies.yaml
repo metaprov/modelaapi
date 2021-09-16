@@ -314,6 +314,20 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
+              modelImage:
+                description: Model Image specification.
+                properties:
+                  exist:
+                    description: Is the release to
+                    type: boolean
+                  imageName:
+                    description: Full image name to use
+                    type: string
+                  registryConnectionName:
+                    description: The name of the connection object, the name must
+                      be provided in order to push the image.
+                    type: string
+                type: object
               modelImagePushed:
                 default: false
                 description: Set to true if you want the system to push model image
@@ -1316,6 +1330,59 @@ spec:
           status:
             description: StudyStatus defines the observed state of the Study
             properties:
+              baseline:
+                default: none
+                description: define a baseline model that will be the baseline for
+                  the search. If not none, the base line is the first model to be
+                  evaluated.
+                enum:
+                - knn-regressor
+                - ridge-regressor
+                - lasso-regressor
+                - ada-boost-regressor
+                - decision-tree-regressor
+                - extra-tree-regressor
+                - linear-svr
+                - svr
+                - passive-agressive-regressor
+                - sgd-regressor
+                - gradient-boosting-regressor
+                - random-forest-regressor
+                - xgb-regressor
+                - catboost-regressor
+                - sgd-regressor
+                - gradient-boosting-regressor
+                - random-forest-regressor
+                - xgb-regressor
+                - catboost-regressor
+                - lightgbm-regressor
+                - elasticnet-regressor
+                - dnn-regressor
+                - elliptic-envelope
+                - one-class-svm
+                - isolation-forest
+                - local-outlier-factor
+                - prophet
+                - knn-classifier
+                - ada-boost-classifier
+                - bernoulli-nb
+                - decision-tree-classifier
+                - extra-tree-classifier
+                - linear-svc
+                - svc
+                - passive-aggressive-classifier
+                - sgd-classifier
+                - logistic-regression
+                - gradient-boosting-classifier
+                - random-forest-classifier
+                - xgboost-classifier
+                - ridge-classifier
+                - quadratic-discriminant
+                - linear-discriminant
+                - lightgbm-classifier
+                - catboost-classifier
+                - stacking-ensemble
+                type: string
               bestModel:
                 description: The Best model name.
                 type: string
@@ -1348,6 +1415,20 @@ spec:
                       type: string
                   type: object
                 type: array
+              dataSignature:
+                description: Sha 256 of the data sig
+                properties:
+                  testSig:
+                    description: the location of the training data, if different from
+                      the data.
+                    type: string
+                  trainSig:
+                    description: path to the training set
+                    type: string
+                  validationSig:
+                    description: Pointer to the validation
+                    type: string
+                type: object
               endTime:
                 description: The study end time.
                 format: date-time

@@ -1710,11 +1710,6 @@ export class DatasetStatus extends jspb.Message {
   getImbalanced(): boolean;
   setImbalanced(value: boolean): DatasetStatus;
 
-  getSigs(): Signatures | undefined;
-  setSigs(value?: Signatures): DatasetStatus;
-  hasSigs(): boolean;
-  clearSigs(): DatasetStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): DatasetStatus;
 
@@ -1760,7 +1755,6 @@ export namespace DatasetStatus {
     reporturi: string,
     profileuri: string,
     imbalanced: boolean,
-    sigs?: Signatures.AsObject,
     observedgeneration: number,
     validationresultsList: Array<DataValidationResult.AsObject>,
     laststudytime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -4160,40 +4154,6 @@ export namespace Schema {
     timeseriesschema?: TimeSeriesSchema.AsObject,
     columnsList: Array<Column.AsObject>,
     validation?: ValidationSpec.AsObject,
-  }
-}
-
-export class Signatures extends jspb.Message {
-  getData(): string;
-  setData(value: string): Signatures;
-
-  getLabels(): string;
-  setLabels(value: string): Signatures;
-
-  getTrain(): string;
-  setTrain(value: string): Signatures;
-
-  getTest(): string;
-  setTest(value: string): Signatures;
-
-  getValidation(): string;
-  setValidation(value: string): Signatures;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Signatures.AsObject;
-  static toObject(includeInstance: boolean, msg: Signatures): Signatures.AsObject;
-  static serializeBinaryToWriter(message: Signatures, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Signatures;
-  static deserializeBinaryFromReader(message: Signatures, reader: jspb.BinaryReader): Signatures;
-}
-
-export namespace Signatures {
-  export type AsObject = {
-    data: string,
-    labels: string,
-    train: string,
-    test: string,
-    validation: string,
   }
 }
 

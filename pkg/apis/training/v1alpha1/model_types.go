@@ -461,10 +461,16 @@ type ModelStatus struct {
 	// Released at the time when the model was released
 	// +kubebuilder:validation:Optional
 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,44,opt,name=releasedAt"`
+	// Sha 256 of the model tar file
+	// +kubebuilder:validation:Optional
+	ModelSig string `json:"modelSignature,omitempty" protobuf:"bytes,45,opt,name=modelSignature"`
+	// Sha 256 of the data sig
+	// +kubebuilder:validation:Optional
+	DataSig DataSigs `json:"dataSignature,omitempty" protobuf:"bytes,46,opt,name=dataSignature"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,45,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,47,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of
@@ -821,3 +827,14 @@ type DimensionValue struct {
 }
 
 // List compiler spec
+type DataSigs struct {
+	// path to the training set
+	// +kubebuilder:validation:Optional
+	TrainSig string `json:"trainSig" protobuf:"bytes,1,opt,name=trainSig"`
+	// the location of the training data, if different from the data.
+	// +kubebuilder:validation:Optional
+	TestSig string `json:"testSig" protobuf:"bytes,2,opt,name=testSig"`
+	// Pointer to the validation
+	// +kubebuilder:validation:Optional
+	ValidationSig string `json:"validationSig" protobuf:"bytes,3,opt,name=validationSig"`
+}

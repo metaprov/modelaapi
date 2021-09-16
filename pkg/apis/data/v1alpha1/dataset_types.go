@@ -184,9 +184,6 @@ type DatasetStatus struct {
 	// Based on the actual data, treat this dataset as imbalanced.
 	//+kubebuilder:validation:Optional
 	Imbalanced bool `json:"imbalanced,omitempty" protobuf:"bytes,6,opt,name=imbalanced"`
-	// Sha256 sig of the files
-	//+kubebuilder:validation:Optional
-	Sigs Signatures `json:"sigs,omitempty" protobuf:"bytes,7,opt,name=sigs"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,8,opt,name=observedGeneration"`
@@ -347,22 +344,6 @@ type DataLocation struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Topic *string `json:"topic" protobuf:"bytes,8,opt,name=topic"`
-}
-
-// Signatures contains the sha256 signatures of the datasets
-type Signatures struct {
-	// Data to the full data file (e.g. csv file).
-	// +required
-	Data string `json:"data" protobuf:"bytes,2,opt,name=data"`
-	// The location of the labels file (If exist)
-	// +kubebuilder:validation:Optional
-	Labels string `json:"labels" protobuf:"bytes,3,opt,name=labels"`
-	// path to the training set
-	Train string `json:"train" protobuf:"bytes,4,opt,name=train"`
-	// the location of the training data, if different from the data.
-	Test string `json:"test" protobuf:"bytes,5,opt,name=test"`
-	// Pointer to the validation
-	Validation string `json:"validation" protobuf:"bytes,6,opt,name=validation"`
 }
 
 type DataValidationResult struct {

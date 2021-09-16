@@ -1223,10 +1223,6 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional bool imbalanced = 6;
 
-  // Sha256 sig of the files
-  // +kubebuilder:validation:Optional
-  optional Signatures sigs = 7;
-
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 8;
@@ -2658,26 +2654,6 @@ message Schema {
 
   // Validation spec define the validation to perform on new datasets
   optional ValidationSpec validation = 3;
-}
-
-// Signatures contains the sha256 signatures of the datasets
-message Signatures {
-  // Data to the full data file (e.g. csv file).
-  // +required
-  optional string data = 2;
-
-  // The location of the labels file (If exist)
-  // +kubebuilder:validation:Optional
-  optional string labels = 3;
-
-  // path to the training set
-  optional string train = 4;
-
-  // the location of the training data, if different from the data.
-  optional string test = 5;
-
-  // Pointer to the validation
-  optional string validation = 6;
 }
 
 // Represent a stack holder in the product.

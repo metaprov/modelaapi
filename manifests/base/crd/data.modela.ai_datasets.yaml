@@ -360,31 +360,6 @@ spec:
               reportUri:
                 description: ReportURI is the uri of dataset report
                 type: string
-              sigs:
-                description: Sha256 sig of the files
-                properties:
-                  data:
-                    description: Data to the full data file (e.g. csv file).
-                    type: string
-                  labels:
-                    description: The location of the labels file (If exist)
-                    type: string
-                  test:
-                    description: the location of the training data, if different from
-                      the data.
-                    type: string
-                  train:
-                    description: path to the training set
-                    type: string
-                  validation:
-                    description: Pointer to the validation
-                    type: string
-                required:
-                - data
-                - test
-                - train
-                - validation
-                type: object
               statistics:
                 description: Statistics for the dataset. The statistics contain information
                   about each column.

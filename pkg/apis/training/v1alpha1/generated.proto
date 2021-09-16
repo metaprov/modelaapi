@@ -325,6 +325,21 @@ message CustomReportValue {
   optional string scalar = 4;
 }
 
+// List compiler spec
+message DataSigs {
+  // path to the training set
+  // +kubebuilder:validation:Optional
+  optional string trainSig = 1;
+
+  // the location of the training data, if different from the data.
+  // +kubebuilder:validation:Optional
+  optional string testSig = 2;
+
+  // Pointer to the validation
+  // +kubebuilder:validation:Optional
+  optional string validationSig = 3;
+}
+
 message DataSplit {
   // Indicate that this is an automatic split.
   // +kubebuilder:default:=true
@@ -1061,6 +1076,22 @@ message ModelCondition {
 
   // A human readable message indicating details about the transition.
   optional string message = 6;
+}
+
+// Model Image spec define the desired state of the container image of the best model
+// If enabled, the system will create a docker image and push it to a docker registry
+message ModelImageSpec {
+  // Is the release to
+  // +kubebuilder:validation:Optional
+  optional bool exist = 1;
+
+  // Full image name to use
+  // +kubebuilder:validation:Optional
+  optional string imageName = 2;
+
+  // The name of the connection object, the name must be provided in order to push the image.
+  // +kubebuilder:validation:Optional
+  optional string registryConnectionName = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -1866,10 +1897,18 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 44;
 
+  // Sha 256 of the model tar file
+  // +kubebuilder:validation:Optional
+  optional string modelSignature = 45;
+
+  // Sha 256 of the data sig
+  // +kubebuilder:validation:Optional
+  optional DataSigs dataSignature = 46;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 45;
+  repeated ModelCondition conditions = 47;
 }
 
 message ModelValidation {
@@ -2643,6 +2682,10 @@ message StudySpec {
   // Notification specification.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 26;
+
+  // Model Image specification.
+  // +kubebuilder:validation:Optional
+  optional ModelImageSpec modelImage = 27;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -2768,12 +2811,22 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 35;
 
+  // define a baseline model that will be the baseline for the search. If not none, the base line is the first model
+  // to be evaluated.
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string baseline = 36;
+
+  // Sha 256 of the data sig
+  // +kubebuilder:validation:Optional
+  optional DataSigs dataSignature = 37;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 36;
+  repeated StudyCondition conditions = 38;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

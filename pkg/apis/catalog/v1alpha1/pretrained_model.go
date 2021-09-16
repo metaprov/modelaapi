@@ -7,7 +7,7 @@
 package v1alpha1
 
 import (
-	"github.com/metaprov/modelaapi/pkg/apis/training"
+	"github.com/metaprov/modelaapi/pkg/apis/catalog"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -35,7 +35,7 @@ type PretrainedModelSpec struct {
 }
 
 func (p *PretrainedModel) Default() {
-	p.ObjectMeta.Finalizers = append(p.ObjectMeta.Finalizers, training.GroupName)
+	p.ObjectMeta.Finalizers = append(p.ObjectMeta.Finalizers, catalog.GroupName)
 	p.ObjectMeta.Labels = make(map[string]string)
 	p.ObjectMeta.Annotations = make(map[string]string)
 }

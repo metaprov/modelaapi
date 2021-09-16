@@ -574,6 +574,32 @@ export namespace CustomReportValue {
   }
 }
 
+export class DataSigs extends jspb.Message {
+  getTrainsig(): string;
+  setTrainsig(value: string): DataSigs;
+
+  getTestsig(): string;
+  setTestsig(value: string): DataSigs;
+
+  getValidationsig(): string;
+  setValidationsig(value: string): DataSigs;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DataSigs.AsObject;
+  static toObject(includeInstance: boolean, msg: DataSigs): DataSigs.AsObject;
+  static serializeBinaryToWriter(message: DataSigs, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataSigs;
+  static deserializeBinaryFromReader(message: DataSigs, reader: jspb.BinaryReader): DataSigs;
+}
+
+export namespace DataSigs {
+  export type AsObject = {
+    trainsig: string,
+    testsig: string,
+    validationsig: string,
+  }
+}
+
 export class DataSplit extends jspb.Message {
   getAuto(): boolean;
   setAuto(value: boolean): DataSplit;
@@ -1674,6 +1700,32 @@ export namespace ModelCondition {
   }
 }
 
+export class ModelImageSpec extends jspb.Message {
+  getExist(): boolean;
+  setExist(value: boolean): ModelImageSpec;
+
+  getImagename(): string;
+  setImagename(value: string): ModelImageSpec;
+
+  getRegistryconnectionname(): string;
+  setRegistryconnectionname(value: string): ModelImageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ModelImageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ModelImageSpec): ModelImageSpec.AsObject;
+  static serializeBinaryToWriter(message: ModelImageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ModelImageSpec;
+  static deserializeBinaryFromReader(message: ModelImageSpec, reader: jspb.BinaryReader): ModelImageSpec;
+}
+
+export namespace ModelImageSpec {
+  export type AsObject = {
+    exist: boolean,
+    imagename: string,
+    registryconnectionname: string,
+  }
+}
+
 export class ModelList extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ModelList;
@@ -2677,6 +2729,14 @@ export class ModelStatus extends jspb.Message {
   hasReleasedat(): boolean;
   clearReleasedat(): ModelStatus;
 
+  getModelsignature(): string;
+  setModelsignature(value: string): ModelStatus;
+
+  getDatasignature(): DataSigs | undefined;
+  setDatasignature(value?: DataSigs): ModelStatus;
+  hasDatasignature(): boolean;
+  clearDatasignature(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2736,6 +2796,8 @@ export namespace ModelStatus {
     url: string,
     predictorname: string,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    modelsignature: string,
+    datasignature?: DataSigs.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -3910,6 +3972,11 @@ export class StudySpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): StudySpec;
 
+  getModelimage(): ModelImageSpec | undefined;
+  setModelimage(value?: ModelImageSpec): StudySpec;
+  hasModelimage(): boolean;
+  clearModelimage(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -3943,6 +4010,7 @@ export namespace StudySpec {
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template: boolean,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
+    modelimage?: ModelImageSpec.AsObject,
   }
 }
 
@@ -4055,6 +4123,14 @@ export class StudyStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): StudyStatus;
 
+  getBaseline(): string;
+  setBaseline(value: string): StudyStatus;
+
+  getDatasignature(): DataSigs | undefined;
+  setDatasignature(value?: DataSigs): StudyStatus;
+  hasDatasignature(): boolean;
+  clearDatasignature(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4100,6 +4176,8 @@ export namespace StudyStatus {
     testingrows: number,
     validationrows: number,
     progress: number,
+    baseline: string,
+    datasignature?: DataSigs.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

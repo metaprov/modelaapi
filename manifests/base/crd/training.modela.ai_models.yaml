@@ -1192,6 +1192,20 @@ spec:
               cvScore:
                 description: CVScrore is the score using on the training set.
                 type: number
+              dataSignature:
+                description: Sha 256 of the data sig
+                properties:
+                  testSig:
+                    description: the location of the training data, if different from
+                      the data.
+                    type: string
+                  trainSig:
+                    description: path to the training set
+                    type: string
+                  validationSig:
+                    description: Pointer to the validation
+                    type: string
+                type: object
               endTime:
                 description: CompletionTime represent the time that the model is marked
                   as ready
@@ -1236,6 +1250,9 @@ spec:
               misclassUri:
                 description: MisclassUri is a reference to the mis-classification
                   file which were produce during processing
+                type: string
+              modelSignature:
+                description: Sha 256 of the model tar file
                 type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted

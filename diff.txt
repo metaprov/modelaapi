@@ -1,0 +1,152 @@
+diff --git a/pkg/apis/catalog/v1alpha1/common_types.go b/pkg/apis/catalog/v1alpha1/common_types.go
+index 206668d7..8475543e 100644
+--- a/pkg/apis/catalog/v1alpha1/common_types.go
++++ b/pkg/apis/catalog/v1alpha1/common_types.go
+@@ -827,6 +827,7 @@ const (
+ 	LightGBMClassifier          ClassicEstimatorName = "lightgbm-classifier"
+ 	CatBoostClassifier          ClassicEstimatorName = "catboost-classifier"
+ 	StackingEnsemble            ClassicEstimatorName = "stacking-ensemble" // for stacking ensemble
++	NoneEstimator               ClassicEstimatorName = "none"
+ 	UnknownEstimatorName        ClassicEstimatorName = "unknown"
+ )
+ 
+diff --git a/pkg/apis/catalog/v1alpha1/pretrained_model.go b/pkg/apis/catalog/v1alpha1/pretrained_model.go
+index fac6e380..f2ec1fca 100644
+--- a/pkg/apis/catalog/v1alpha1/pretrained_model.go
++++ b/pkg/apis/catalog/v1alpha1/pretrained_model.go
+@@ -7,7 +7,7 @@
+ package v1alpha1
+ 
+ import (
+-	"github.com/metaprov/modelaapi/pkg/apis/training"
++	"github.com/metaprov/modelaapi/pkg/apis/catalog"
+ 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+ )
+ 
+@@ -35,7 +35,7 @@ type PretrainedModelSpec struct {
+ }
+ 
+ func (p *PretrainedModel) Default() {
+-	p.ObjectMeta.Finalizers = append(p.ObjectMeta.Finalizers, training.GroupName)
++	p.ObjectMeta.Finalizers = append(p.ObjectMeta.Finalizers, catalog.GroupName)
+ 	p.ObjectMeta.Labels = make(map[string]string)
+ 	p.ObjectMeta.Annotations = make(map[string]string)
+ }
+diff --git a/pkg/apis/data/v1alpha1/dataset_types.go b/pkg/apis/data/v1alpha1/dataset_types.go
+index 93f139c3..de4b6f81 100644
+--- a/pkg/apis/data/v1alpha1/dataset_types.go
++++ b/pkg/apis/data/v1alpha1/dataset_types.go
+@@ -350,20 +350,6 @@ type DataLocation struct {
+ }
+ 
+ // Signatures contains the sha256 signatures of the datasets
+-type Signatures struct {
+-	// Data to the full data file (e.g. csv file).
+-	// +required
+-	Data string `json:"data" protobuf:"bytes,2,opt,name=data"`
+-	// The location of the labels file (If exist)
+-	// +kubebuilder:validation:Optional
+-	Labels string `json:"labels" protobuf:"bytes,3,opt,name=labels"`
+-	// path to the training set
+-	Train string `json:"train" protobuf:"bytes,4,opt,name=train"`
+-	// the location of the training data, if different from the data.
+-	Test string `json:"test" protobuf:"bytes,5,opt,name=test"`
+-	// Pointer to the validation
+-	Validation string `json:"validation" protobuf:"bytes,6,opt,name=validation"`
+-}
+ 
+ type DataValidationResult struct {
+ 	Type   string `json:"type" protobuf:"bytes,1,opt,name=type"`
+diff --git a/pkg/apis/training/v1alpha1/model_types.go b/pkg/apis/training/v1alpha1/model_types.go
+index 900b7977..0b87a117 100644
+--- a/pkg/apis/training/v1alpha1/model_types.go
++++ b/pkg/apis/training/v1alpha1/model_types.go
+@@ -461,11 +461,31 @@ type ModelStatus struct {
+ 	// Released at the time when the model was released
+ 	// +kubebuilder:validation:Optional
+ 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,44,opt,name=releasedAt"`
++	// Sha 256 of the model tar file
++	// +kubebuilder:validation:Optional
++	//ModelSig string `json:"modelSignature,omitempty" protobuf:"bytes,45,opt,name=modelSignature"`
++	// Sha 256 of the data sig
++	// +kubebuilder:validation:Optional
++	//DataSig DataSigs `json:"dataSignature,omitempty" protobuf:"bytes,45,opt,name=dataSignature"`
+ 	// +kubebuilder:validation:Optional
+ 	// +patchMergeKey=type
+ 	// +patchStrategy=merge
+-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,45,rep,name=conditions"`
++	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,46,rep,name=conditions"`
++}
++
++/*
++type DataSigs struct {
++	// path to the training set
++	// +kubebuilder:validation:Optional
++	TrainSig string `json:"trainSig" protobuf:"bytes,1,opt,name=trainSig"`
++	// the location of the training data, if different from the data.
++	// +kubebuilder:validation:Optional
++	TestSig string `json:"testSig" protobuf:"bytes,2,opt,name=testSig"`
++	// Pointer to the validation
++	// +kubebuilder:validation:Optional
++	ValidationSig string `json:"validationSig" protobuf:"bytes,3,opt,name=validationSig"`
+ }
++*/
+ 
+ // HyperParameterValue represent a specific value of
+ // the learning algorithm hyper-parameter. The value is chosen
+diff --git a/pkg/apis/training/v1alpha1/study_types.go b/pkg/apis/training/v1alpha1/study_types.go
+index 6d1958e3..70b1c979 100644
+--- a/pkg/apis/training/v1alpha1/study_types.go
++++ b/pkg/apis/training/v1alpha1/study_types.go
+@@ -275,6 +275,11 @@ type ModelSearchSpec struct {
+ 	// +kubebuilder:default:="none"
+ 	// +kubebuilder:validation:Optional
+ 	AlgorithmFilter *AlgorithmFilterName `json:"filter,omitempty" protobuf:"bytes,16,opt,name=filter"`
++	// define a baseline model that will be the baseline for the search. If not none, the base line is the first model
++	// to be evaluated.
++	// +kubebuilder:default:="none"
++	// +kubebuilder:validation:Optional
++	//BaslineModel *catalog.ClassicEstimatorName `json:"baseline,omitempty" protobuf:"bytes,17,opt,name=baseline"`
+ }
+ 
+ type PrunerSpec struct {
+@@ -406,6 +411,10 @@ type StudySpec struct {
+ 	// Notification specification.
+ 	//+kubebuilder:validation:Optional
+ 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,26,opt,name=notification"`
++	// Model Image specification.
++	//+kubebuilder:validation:Optional
++	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,27,opt,name=modelImage"`
++	
+ }
+ 
+ // StudyStatus defines the observed state of the Study
+@@ -501,6 +510,9 @@ type StudyStatus struct {
+ 	// Study Progress in precent, the progress takes into account the different stages of the study.
+ 	// +kubebuilder:validation:Optional
+ 	Progress *int32 `json:"progress" protobuf:"varint,35,opt,name=progress"`
++	// Sha 256 of the data sig
++	// +kubebuilder:validation:Optional
++	//DataSig DataSigs `json:"dataSignature,omitempty" protobuf:"bytes,36,opt,name=dataSignature"`
+ 	// This is the set of partition levels
+ 	// Represents the latest available observations of a study state.
+ 	// +optional
+@@ -607,3 +619,18 @@ type ForecastObj struct {
+ 	Key        string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
+ 	LevelIndex int32  `json:"levelIndex,omitempty" protobuf:"varint,2,opt,name=levelIndex"`
+ }
++
++// Model Image spec define the desired state of the container image of the best model
++// If enabled, the system will create a docker image and push it to a docker registry
++type ModelImageSpec {
++	// Is the release to 
++	// +kubebuilder:validation:Optional
++	Exist *bool `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
++	// Full image name to use
++	// +kubebuilder:validation:Optional
++	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,2,opt,name=imageName"`
++	// The name of the connection object, the name must be provided in order to push the image.
++	// +kubebuilder:validation:Optional
++	RegistryConnection *string `json:"registryConnectionName,omitempty" protobuf:"bytes,3,opt,name=registryConnectionName"`
++
++}

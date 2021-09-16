@@ -406,6 +406,9 @@ type StudySpec struct {
 	// Notification specification.
 	//+kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,26,opt,name=notification"`
+	// Model Image specification.
+	//+kubebuilder:validation:Optional
+	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,27,opt,name=modelImage"`
 }
 
 // StudyStatus defines the observed state of the Study
@@ -501,12 +504,20 @@ type StudyStatus struct {
 	// Study Progress in precent, the progress takes into account the different stages of the study.
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress" protobuf:"varint,35,opt,name=progress"`
+	// define a baseline model that will be the baseline for the search. If not none, the base line is the first model
+	// to be evaluated.
+	// +kubebuilder:default:="none"
+	// +kubebuilder:validation:Optional
+	BaslineModel *catalog.ClassicEstimatorName `json:"baseline,omitempty" protobuf:"bytes,36,opt,name=baseline"`
+	// Sha 256 of the data sig
+	// +kubebuilder:validation:Optional
+	DataSig DataSigs `json:"dataSignature,omitempty" protobuf:"bytes,37,opt,name=dataSignature"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,36,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,38,rep,name=conditions"`
 }
 
 // model cv results
@@ -606,4 +617,18 @@ type Hierarchy struct {
 type ForecastObj struct {
 	Key        string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
 	LevelIndex int32  `json:"levelIndex,omitempty" protobuf:"varint,2,opt,name=levelIndex"`
+}
+
+// Model Image spec define the desired state of the container image of the best model
+// If enabled, the system will create a docker image and push it to a docker registry
+type ModelImageSpec struct {
+	// Is the release to
+	// +kubebuilder:validation:Optional
+	Exist *bool `json:"exist,omitempty" protobuf:"bytes,1,opt,name=exist"`
+	// Full image name to use
+	// +kubebuilder:validation:Optional
+	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,2,opt,name=imageName"`
+	// The name of the connection object, the name must be provided in order to push the image.
+	// +kubebuilder:validation:Optional
+	RegistryConnection *string `json:"registryConnectionName,omitempty" protobuf:"bytes,3,opt,name=registryConnectionName"`
 }
