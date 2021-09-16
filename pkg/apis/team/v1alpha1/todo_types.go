@@ -89,6 +89,7 @@ type TodoSpec struct {
 // TodoStatus is the observed state of a Todo
 type TodoStatus struct {
 	// Phase is the phase of the model
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase TodoPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on

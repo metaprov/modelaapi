@@ -986,8 +986,10 @@ export class DataProductSpec extends jspb.Message {
   hasDatalocation(): boolean;
   clearDatalocation(): DataProductSpec;
 
-  getNotifiername(): string;
-  setNotifiername(value: string): DataProductSpec;
+  getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
+  setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): DataProductSpec;
+  hasNotification(): boolean;
+  clearNotification(): DataProductSpec;
 
   getDefaultworkloadclassname(): string;
   setDefaultworkloadclassname(value: string): DataProductSpec;
@@ -1034,7 +1036,7 @@ export namespace DataProductSpec {
     task: string,
     description: string,
     datalocation?: DataLocation.AsObject,
-    notifiername: string,
+    notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     defaultworkloadclassname: string,
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,

@@ -876,11 +876,7 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 		**out = **in
 	}
 	in.DataLocation.DeepCopyInto(&out.DataLocation)
-	if in.NotifierName != nil {
-		in, out := &in.NotifierName, &out.NotifierName
-		*out = new(string)
-		**out = **in
-	}
+	in.Notification.DeepCopyInto(&out.Notification)
 	if in.DefaultWorkloadClassName != nil {
 		in, out := &in.DefaultWorkloadClassName, &out.DefaultWorkloadClassName
 		*out = new(string)

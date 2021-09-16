@@ -214,11 +214,38 @@ spec:
                 maxLength: 63
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
-              notifierName:
-                default: ""
+              notification:
                 description: the notifier selector select the notifier for events
                   that occur in the product life cycle.
-                type: string
+                properties:
+                  errorTTL:
+                    default: 3600
+                    description: TTL for error msgs. In seconds
+                    format: int32
+                    type: integer
+                  notifierName:
+                    default: ""
+                    description: The name of the notifier.
+                    type: string
+                  onError:
+                    default: true
+                    description: Fire when error occur
+                    type: boolean
+                  onSuccess:
+                    default: false
+                    description: Fire when success occur.
+                    type: boolean
+                  selector:
+                    additionalProperties:
+                      type: string
+                    description: Select the target notifiers by a label.
+                    type: object
+                  successTTL:
+                    default: 3600
+                    description: TTL for success msgs. In seconds
+                    format: int32
+                    type: integer
+                type: object
               onCallAccountName:
                 description: OnCallAccountName is the name of the account on call.
                 type: string

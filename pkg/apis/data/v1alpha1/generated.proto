@@ -559,7 +559,7 @@ message DataPipelineRunStatus {
   optional DataLocation output = 2;
 
   // the phase of the run
-  // +kubebuilder:default:=Pending
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 3;
 
@@ -761,9 +761,8 @@ message DataProductSpec {
   optional DataLocation dataLocation = 11;
 
   // the notifier selector select the notifier for events that occur in the product life cycle.
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string notifierName = 12;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
 
   // DefaultWorkloadClassName is reference to the workload class used for running product tasks.
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"

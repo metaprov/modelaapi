@@ -191,6 +191,7 @@ type ModelAutobuilderStatus struct {
 	ImageRepoName string `json:"imageRepoName,omitempty" protobuf:"bytes,8,opt,name=imageRepoName"`
 	// The phase of the auto ml run
 	// +kubebuilder:default:="Pending"
+	// +kubebuilder:validation:Optional
 	Phase ModelAutobuilderPhase `json:"phase,omitempty" protobuf:"bytes,9,opt,name=phase"`
 	// number of rows in the dataset
 	// +kubebuilder:validation:Optional

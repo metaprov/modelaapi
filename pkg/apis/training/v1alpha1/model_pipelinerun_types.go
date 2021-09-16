@@ -185,6 +185,7 @@ type ModelValidationResult struct {
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
 type ModelPipelineRunStageStatus struct {
 	// Phase is the phase of the stage
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase StageStatusPhase `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
 	// Approved indicates that the stage is approved.

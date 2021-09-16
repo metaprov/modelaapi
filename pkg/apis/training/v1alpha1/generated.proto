@@ -873,6 +873,7 @@ message ModelAutobuilderStatus {
 
   // The phase of the auto ml run
   // +kubebuilder:default:="Pending"
+  // +kubebuilder:validation:Optional
   optional string phase = 9;
 
   // number of rows in the dataset
@@ -1205,6 +1206,7 @@ message ModelPipelineRunSpec {
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
 message ModelPipelineRunStageStatus {
   // Phase is the phase of the stage
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 

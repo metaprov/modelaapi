@@ -137,9 +137,8 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	DataLocation DataLocation `json:"dataLocation,omitempty" protobuf:"bytes,11,opt,name=dataLocation"`
 	// the notifier selector select the notifier for events that occur in the product life cycle.
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,12,opt,name=notifierName"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
 	// DefaultWorkloadClassName is reference to the workload class used for running product tasks.
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional

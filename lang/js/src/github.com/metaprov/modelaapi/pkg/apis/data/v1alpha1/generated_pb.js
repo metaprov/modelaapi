@@ -11801,7 +11801,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     task: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     datalocation: (f = msg.getDatalocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    notifiername: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     defaultworkloadclassname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     retriesonfailure: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     kpisList: jspb.Message.toObjectList(msg.getKpisList(),
@@ -11892,8 +11892,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       msg.setDatalocation(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNotifiername(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.deserializeBinaryFromReader);
+      msg.setNotification(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
@@ -12029,11 +12030,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  f = message.getNotification();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       12,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 13));
@@ -12457,29 +12459,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
 
 
 /**
- * optional string notifierName = 12;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getNotification = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec, 12));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 12, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setNotification = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 12, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearNotification = function() {
+  return this.setNotification(undefined);
 };
 
 
@@ -12487,7 +12490,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasNotifiername = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasNotification = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 

@@ -158,6 +158,7 @@ spec:
                 format: int64
                 type: integer
               phase:
+                default: Pending
                 description: Phase is the phase of the model
                 type: string
             type: object

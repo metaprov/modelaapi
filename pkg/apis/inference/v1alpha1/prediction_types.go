@@ -128,6 +128,7 @@ type PredictionStatus struct {
 	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
 	// Phase is the current phase of the prediction
 	// +kubebuilder:default:="Pending"
+	// +kubebuilder:validation:Optional
 	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
 	// Results is the results of running the prediction with a labeled dataset
 	// +kubebuilder:validation:Optional

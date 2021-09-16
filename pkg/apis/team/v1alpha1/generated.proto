@@ -377,6 +377,7 @@ message TodoSpec {
 // TodoStatus is the observed state of a Todo
 message TodoStatus {
   // Phase is the phase of the model
+  // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
 
