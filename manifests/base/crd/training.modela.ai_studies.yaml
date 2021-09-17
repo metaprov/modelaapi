@@ -719,6 +719,7 @@ spec:
                       - lightgbm-classifier
                       - catboost-classifier
                       - stacking-ensemble
+                      - none
                       type: string
                     type: array
                   filter:
@@ -1382,6 +1383,7 @@ spec:
                 - lightgbm-classifier
                 - catboost-classifier
                 - stacking-ensemble
+                - none
                 type: string
               bestModel:
                 description: The Best model name.
