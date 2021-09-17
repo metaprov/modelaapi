@@ -624,7 +624,7 @@ type ForecastObj struct {
 type ModelImageSpec struct {
 	// Is the release to
 	// +kubebuilder:validation:Optional
-	Exist *bool `json:"exist,omitempty" protobuf:"bytes,1,opt,name=exist"`
+	Exist *bool `json:"exist,omitempty" protobuf:"varint,1,opt,name=exist"`
 	// Full image name to use
 	// +kubebuilder:validation:Optional
 	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,2,opt,name=imageName"`
