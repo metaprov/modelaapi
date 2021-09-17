@@ -1196,13 +1196,16 @@ spec:
                 description: Sha 256 of the data sig
                 properties:
                   testSig:
+                    default: ""
                     description: the location of the training data, if different from
                       the data.
                     type: string
                   trainSig:
+                    default: ""
                     description: path to the training set
                     type: string
                   validationSig:
+                    default: ""
                     description: Pointer to the validation
                     type: string
                 type: object

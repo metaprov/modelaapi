@@ -624,11 +624,14 @@ type ForecastObj struct {
 type ModelImageSpec struct {
 	// Is the release to
 	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
 	Exist *bool `json:"exist,omitempty" protobuf:"varint,1,opt,name=exist"`
 	// Full image name to use
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ImageName *string `json:"imageName,omitempty" protobuf:"bytes,2,opt,name=imageName"`
 	// The name of the connection object, the name must be provided in order to push the image.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	RegistryConnection *string `json:"registryConnectionName,omitempty" protobuf:"bytes,3,opt,name=registryConnectionName"`
 }

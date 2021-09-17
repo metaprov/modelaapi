@@ -829,12 +829,15 @@ type DimensionValue struct {
 // List compiler spec
 type DataSigs struct {
 	// path to the training set
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TrainSig *string `json:"trainSig,omitempty" protobuf:"bytes,1,opt,name=trainSig"`
 	// the location of the training data, if different from the data.
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	TestSig *string `json:"testSig,omitempty" protobuf:"bytes,2,opt,name=testSig"`
 	// Pointer to the validation
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ValidationSig *string `json:"validationSig,omitempty" protobuf:"bytes,3,opt,name=validationSig"`
 }

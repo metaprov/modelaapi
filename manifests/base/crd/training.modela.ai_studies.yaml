@@ -318,12 +318,15 @@ spec:
                 description: Model Image specification.
                 properties:
                   exist:
+                    default: false
                     description: Is the release to
                     type: boolean
                   imageName:
+                    default: ""
                     description: Full image name to use
                     type: string
                   registryConnectionName:
+                    default: ""
                     description: The name of the connection object, the name must
                       be provided in order to push the image.
                     type: string
@@ -1421,13 +1424,16 @@ spec:
                 description: Sha 256 of the data sig
                 properties:
                   testSig:
+                    default: ""
                     description: the location of the training data, if different from
                       the data.
                     type: string
                   trainSig:
+                    default: ""
                     description: path to the training set
                     type: string
                   validationSig:
+                    default: ""
                     description: Pointer to the validation
                     type: string
                 type: object

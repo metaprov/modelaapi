@@ -328,14 +328,17 @@ message CustomReportValue {
 // List compiler spec
 message DataSigs {
   // path to the training set
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string trainSig = 1;
 
   // the location of the training data, if different from the data.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string testSig = 2;
 
   // Pointer to the validation
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string validationSig = 3;
 }
@@ -1083,13 +1086,16 @@ message ModelCondition {
 message ModelImageSpec {
   // Is the release to
   // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
   optional bool exist = 1;
 
   // Full image name to use
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string imageName = 2;
 
   // The name of the connection object, the name must be provided in order to push the image.
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string registryConnectionName = 3;
 }
