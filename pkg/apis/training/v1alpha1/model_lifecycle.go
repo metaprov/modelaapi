@@ -100,7 +100,7 @@ func (model *Model) IsExpired(minutes int) bool {
 }
 
 func (model *Model) ReportName() string {
-	return "modela-report-" + model.ObjectMeta.Name
+	return "report-" + model.ObjectMeta.Name
 }
 
 func (model *Model) IsEnsemble() bool {

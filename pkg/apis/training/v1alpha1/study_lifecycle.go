@@ -182,7 +182,7 @@ func (study *Study) SetStartTime() {
 }
 
 func (study *Study) ReportName() string {
-	return "study-report-" + study.ObjectMeta.Name
+	return "report-" + study.ObjectMeta.Name
 
 }
 
