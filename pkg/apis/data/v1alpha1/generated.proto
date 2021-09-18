@@ -1249,10 +1249,15 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 13;
 
+  // Sha256 signature of the dataset file.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string signature = 14;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 14;
+  repeated DatasetCondition conditions = 15;
 }
 
 // DatasetTemplate is  used to generate new datasets

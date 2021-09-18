@@ -360,6 +360,10 @@ spec:
               reportUri:
                 description: ReportURI is the uri of dataset report
                 type: string
+              signature:
+                default: ""
+                description: Sha256 signature of the dataset file.
+                type: string
               statistics:
                 description: Statistics for the dataset. The statistics contain information
                   about each column.

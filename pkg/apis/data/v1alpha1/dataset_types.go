@@ -204,10 +204,14 @@ type DatasetStatus struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress,omitempty" protobuf:"bytes,13,opt,name=progress"`
+	// Sha256 signature of the dataset file.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Signature string `json:"signature,omitempty" protobuf:"bytes,14,opt,name=signature"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
