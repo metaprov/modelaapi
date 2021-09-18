@@ -5579,7 +5579,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    modelsig: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -5616,6 +5616,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.deser
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelsig(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5645,6 +5649,31 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getModelsig();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string modelSig = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.prototype.getModelsig = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.prototype.setModelsig = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 

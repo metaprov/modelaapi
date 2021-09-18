@@ -160,7 +160,7 @@ message DeleteModelResponse {
 }
 
 message PublishModelResponse {
-
+    string modelSig      = 1; // the sig for the moder tar file.
 }
 
 message GetMisclassRequest {

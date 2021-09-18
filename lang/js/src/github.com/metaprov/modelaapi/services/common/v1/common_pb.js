@@ -305,7 +305,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.toObject =
     proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance),
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject, includeInstance),
-    table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f)
+    table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
+    sig: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -372,6 +373,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.deserializ
       var value = new proto.github.com.metaprov.modelaapi.services.common.v1.TableView;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.TableView.deserializeBinaryFromReader);
       msg.setTable(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSig(value);
       break;
     default:
       reader.skipField();
@@ -452,6 +457,13 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.serializeB
       7,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
+    );
+  }
+  f = message.getSig();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -639,6 +651,24 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.hasTable = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string sig = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getSig = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setSig = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -1064,7 +1094,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.toObject = f
     plotsList: jspb.Message.toObjectList(msg.getPlotsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance),
     modelsList: jspb.Message.toObjectList(msg.getModelsList(),
-    proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject, includeInstance),
+    trainingsetsig: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    testingsetsig: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    validationsetsig: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1111,6 +1144,18 @@ proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.deserializeB
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.deserializeBinaryFromReader);
       msg.addModels(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTrainingsetsig(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTestingsetsig(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setValidationsetsig(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1154,6 +1199,27 @@ proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.serializeBin
       2,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.serializeBinaryToWriter
+    );
+  }
+  f = message.getTrainingsetsig();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getTestingsetsig();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getValidationsetsig();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
     );
   }
 };
@@ -1232,6 +1298,60 @@ proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.ad
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.clearModelsList = function() {
   return this.setModelsList([]);
+};
+
+
+/**
+ * optional string trainingSetSig = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.getTrainingsetsig = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.setTrainingsetsig = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string testingSetSig = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.getTestingsetsig = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.setTestingsetsig = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string validationSetSig = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.getValidationsetsig = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.StudyProfile.prototype.setValidationsetsig = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

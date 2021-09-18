@@ -648,6 +648,9 @@ export namespace DeleteModelResponse {
 }
 
 export class PublishModelResponse extends jspb.Message {
+  getModelsig(): string;
+  setModelsig(value: string): PublishModelResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublishModelResponse.AsObject;
   static toObject(includeInstance: boolean, msg: PublishModelResponse): PublishModelResponse.AsObject;
@@ -658,6 +661,7 @@ export class PublishModelResponse extends jspb.Message {
 
 export namespace PublishModelResponse {
   export type AsObject = {
+    modelsig: string,
   }
 }
 

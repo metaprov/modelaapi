@@ -30,6 +30,9 @@ export class DatasetProfile extends jspb.Message {
   hasTable(): boolean;
   clearTable(): DatasetProfile;
 
+  getSig(): string;
+  setSig(value: string): DatasetProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetProfile.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetProfile): DatasetProfile.AsObject;
@@ -47,6 +50,7 @@ export namespace DatasetProfile {
     plotsList: Array<Plot.AsObject>,
     columnsList: Array<ColumnProfile.AsObject>,
     table?: TableView.AsObject,
+    sig: string,
   }
 }
 
@@ -109,6 +113,15 @@ export class StudyProfile extends jspb.Message {
   clearModelsList(): StudyProfile;
   addModels(value?: ModelProfile, index?: number): ModelProfile;
 
+  getTrainingsetsig(): string;
+  setTrainingsetsig(value: string): StudyProfile;
+
+  getTestingsetsig(): string;
+  setTestingsetsig(value: string): StudyProfile;
+
+  getValidationsetsig(): string;
+  setValidationsetsig(value: string): StudyProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudyProfile.AsObject;
   static toObject(includeInstance: boolean, msg: StudyProfile): StudyProfile.AsObject;
@@ -121,6 +134,9 @@ export namespace StudyProfile {
   export type AsObject = {
     plotsList: Array<Plot.AsObject>,
     modelsList: Array<ModelProfile.AsObject>,
+    trainingsetsig: string,
+    testingsetsig: string,
+    validationsetsig: string,
   }
 }
 
