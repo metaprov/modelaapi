@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modelaapi/services/publisherd/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modelaapi.services.publisherd.v1\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xdf\t\n\x10\x42\x61keModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12\x11\n\timagename\x18\x08 \x01(\t\x12\x1c\n\x14imagenameWithVersion\x18\t \x01(\t\x12\x0c\n\x04push\x18\n \x01(\x08\x12T\n\x06\x62ucket\x18\x0b \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x0b\x63loudSecret\x18\r \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry\x12[\n\x10\x64ockerConnection\x18\x0e \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12~\n\x14\x64ockerRegistrySecret\x18\x0f \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry\x12\x0e\n\x06kaniko\x18\x13 \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"&\n\x11\x42\x61keModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xe2\x06\n\x0fTarModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x0b\x63loudSecret\x18\t \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\"\n\x10TarModelResponse\x12\x0e\n\x06tarUri\x18\x01 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xa0\x05\n\x11PublisherdService\x12\x9d\x01\n\nPublishTar\x12\x45.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest\x1a\x46.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse\"\x00\x12\x99\x01\n\x04\x42\x61ke\x12\x46.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest\x1aG.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modelaapi/services/publisherd/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/publisherd/v1/publisherd.proto\x12\x34github.com.metaprov.modelaapi.services.publisherd.v1\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xff\x02\n\x16PublishNotebookRequest\x12\x14\n\x0cnotebookName\x18\x01 \x01(\t\x12\x19\n\x11notebookNamespace\x18\x02 \x01(\t\x12\\\n\x0cnotebookSpec\x18\x03 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec\x12\x17\n\x0fNotebookContent\x18\x04 \x01(\t\x12\x12\n\nDockerfile\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12h\n\x06secret\x18\x07 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\",\n\x17PublishNotebookResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xdf\t\n\x10\x42\x61keModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12\x10\n\x08provider\x18\x07 \x01(\t\x12\x11\n\timagename\x18\x08 \x01(\t\x12\x1c\n\x14imagenameWithVersion\x18\t \x01(\t\x12\x0c\n\x04push\x18\n \x01(\x08\x12T\n\x06\x62ucket\x18\x0b \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x0c \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12l\n\x0b\x63loudSecret\x18\r \x03(\x0b\x32W.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.CloudSecretEntry\x12[\n\x10\x64ockerConnection\x18\x0e \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12~\n\x14\x64ockerRegistrySecret\x18\x0f \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest.DockerRegistrySecretEntry\x12\x0e\n\x06kaniko\x18\x13 \x01(\x08\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a;\n\x19\x44ockerRegistrySecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"&\n\x11\x42\x61keModelResponse\x12\x11\n\tImageName\x18\x01 \x01(\t\"\xe2\x06\n\x0fTarModelRequest\x12V\n\x0b\x64\x61taproduct\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12\x64\n\x12\x64\x61taproductversion\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12N\n\x05model\x18\x03 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12N\n\x05study\x18\x04 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12T\n\ndatasource\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource\x12N\n\x07\x64\x61taset\x18\x06 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12T\n\x06\x62ucket\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12T\n\tcloudConn\x18\x08 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12k\n\x0b\x63loudSecret\x18\t \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest.CloudSecretEntry\x1a\x32\n\x10\x43loudSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"/\n\x10TarModelResponse\x12\x0e\n\x06tarUri\x18\x01 \x01(\t\x12\x0b\n\x03sig\x18\x02 \x01(\t\"\x11\n\x0fShutdownRequest\"\x12\n\x10ShutdownResponse2\xa0\x05\n\x11PublisherdService\x12\x9d\x01\n\nPublishTar\x12\x45.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelRequest\x1a\x46.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse\"\x00\x12\x99\x01\n\x04\x42\x61ke\x12\x46.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelRequest\x1aG.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse\"\x00\x12\xb0\x01\n\x0fPublishNotebook\x12L.github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookRequest\x1aM.github.com.metaprov.modelaapi.services.publisherd.v1.PublishNotebookResponse\"\x00\x12\x9b\x01\n\x08Shutdown\x12\x45.github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownRequest\x1a\x46.github.com.metaprov.modelaapi.services.publisherd.v1.ShutdownResponse\"\x00\x42\x36Z4github.com/metaprov/modelaapi/services/publisherd/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -559,6 +559,13 @@ _TARMODELRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sig', full_name='github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.sig', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -572,7 +579,7 @@ _TARMODELRESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2933,
-  serialized_end=2967,
+  serialized_end=2980,
 )
 
 
@@ -596,8 +603,8 @@ _SHUTDOWNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2969,
-  serialized_end=2986,
+  serialized_start=2982,
+  serialized_end=2999,
 )
 
 
@@ -621,8 +628,8 @@ _SHUTDOWNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2988,
-  serialized_end=3006,
+  serialized_start=3001,
+  serialized_end=3019,
 )
 
 _PUBLISHNOTEBOOKREQUEST_SECRETENTRY.containing_type = _PUBLISHNOTEBOOKREQUEST
@@ -763,8 +770,8 @@ _PUBLISHERDSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3009,
-  serialized_end=3681,
+  serialized_start=3022,
+  serialized_end=3694,
   methods=[
   _descriptor.MethodDescriptor(
     name='PublishTar',

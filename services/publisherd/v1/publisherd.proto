@@ -60,6 +60,7 @@ message TarModelRequest {
 
 message TarModelResponse {
     string tarUri     = 1; // the uri of the tar file
+    string sig        = 2;
 }
 
 message ShutdownRequest {}

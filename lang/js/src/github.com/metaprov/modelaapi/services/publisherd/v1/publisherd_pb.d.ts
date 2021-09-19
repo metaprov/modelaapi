@@ -251,6 +251,9 @@ export class TarModelResponse extends jspb.Message {
   getTaruri(): string;
   setTaruri(value: string): TarModelResponse;
 
+  getSig(): string;
+  setSig(value: string): TarModelResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TarModelResponse.AsObject;
   static toObject(includeInstance: boolean, msg: TarModelResponse): TarModelResponse.AsObject;
@@ -262,6 +265,7 @@ export class TarModelResponse extends jspb.Message {
 export namespace TarModelResponse {
   export type AsObject = {
     taruri: string,
+    sig: string,
   }
 }
 

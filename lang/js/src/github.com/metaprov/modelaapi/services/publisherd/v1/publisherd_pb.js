@@ -2139,7 +2139,8 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prot
  */
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    taruri: jspb.Message.getFieldWithDefault(msg, 1, "")
+    taruri: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    sig: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2180,6 +2181,10 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.dese
       var value = /** @type {string} */ (reader.readString());
       msg.setTaruri(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSig(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2216,6 +2221,13 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.seri
       f
     );
   }
+  f = message.getSig();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -2234,6 +2246,24 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prot
  */
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prototype.setTaruri = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string sig = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prototype.getSig = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prototype.setSig = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
