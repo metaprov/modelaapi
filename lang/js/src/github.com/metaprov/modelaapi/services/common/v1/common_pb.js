@@ -306,7 +306,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.toObject =
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject, includeInstance),
     table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
-    sig: jspb.Message.getFieldWithDefault(msg, 8, "")
+    hash: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -376,7 +376,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.deserializ
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSig(value);
+      msg.setHash(value);
       break;
     default:
       reader.skipField();
@@ -459,7 +459,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.serializeB
       proto.github.com.metaprov.modelaapi.services.common.v1.TableView.serializeBinaryToWriter
     );
   }
-  f = message.getSig();
+  f = message.getHash();
   if (f.length > 0) {
     writer.writeString(
       8,
@@ -655,10 +655,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
 
 
 /**
- * optional string sig = 8;
+ * optional string hash = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getSig = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getHash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -667,7 +667,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setSig = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setHash = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 

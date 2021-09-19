@@ -278,9 +278,9 @@ message DsSplitDatasetResponse {
     int32 training        = 1;
     int32 testing         = 2;
     int32 validation      = 3;
-    string training_sig   = 4;
-    string testing_sig    = 5;
-    string validation_sig = 6;
+    string training_hash   = 4;
+    string testing_hash    = 5;
+    string validation_hash = 6;
 }
 
 // Used to create a profile before the dataset object exist

@@ -167,8 +167,8 @@ export class BakeModelResponse extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): BakeModelResponse;
 
-  getSig(): string;
-  setSig(value: string): BakeModelResponse;
+  getHash(): string;
+  setHash(value: string): BakeModelResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BakeModelResponse.AsObject;
@@ -181,7 +181,7 @@ export class BakeModelResponse extends jspb.Message {
 export namespace BakeModelResponse {
   export type AsObject = {
     imagename: string,
-    sig: string,
+    hash: string,
   }
 }
 
@@ -255,8 +255,8 @@ export class TarModelResponse extends jspb.Message {
   getTaruri(): string;
   setTaruri(value: string): TarModelResponse;
 
-  getSig(): string;
-  setSig(value: string): TarModelResponse;
+  getHash(): string;
+  setHash(value: string): TarModelResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TarModelResponse.AsObject;
@@ -269,7 +269,7 @@ export class TarModelResponse extends jspb.Message {
 export namespace TarModelResponse {
   export type AsObject = {
     taruri: string,
-    sig: string,
+    hash: string,
   }
 }
 

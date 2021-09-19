@@ -1226,14 +1226,14 @@ export class DsSplitDatasetResponse extends jspb.Message {
   getValidation(): number;
   setValidation(value: number): DsSplitDatasetResponse;
 
-  getTrainingSig(): string;
-  setTrainingSig(value: string): DsSplitDatasetResponse;
+  getTrainingHash(): string;
+  setTrainingHash(value: string): DsSplitDatasetResponse;
 
-  getTestingSig(): string;
-  setTestingSig(value: string): DsSplitDatasetResponse;
+  getTestingHash(): string;
+  setTestingHash(value: string): DsSplitDatasetResponse;
 
-  getValidationSig(): string;
-  setValidationSig(value: string): DsSplitDatasetResponse;
+  getValidationHash(): string;
+  setValidationHash(value: string): DsSplitDatasetResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSplitDatasetResponse.AsObject;
@@ -1248,9 +1248,9 @@ export namespace DsSplitDatasetResponse {
     training: number,
     testing: number,
     validation: number,
-    trainingSig: string,
-    testingSig: string,
-    validationSig: string,
+    trainingHash: string,
+    testingHash: string,
+    validationHash: string,
   }
 }
 

@@ -2613,18 +2613,22 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional string objective = 7;
 
+  // Objective2 is the second objective to consider during optimization.
+  // +kubebuilder:validation:Optional
+  optional string objective2 = 8;
+
   // Search defines the model search
   // +kubebuilder:validation:Optional
-  optional ModelSearchSpec search = 8;
+  optional ModelSearchSpec search = 9;
 
   // Preprocessing is template for preprocessors for this study
   // Default: all preprocessing is set to auto.
   // +kubebuilder:validation:Optional
-  optional PreprocessingSpec preprocessing = 9;
+  optional PreprocessingSpec preprocessing = 10;
 
   // Training template contain the desired training parameter for the models.
   // +kubebuilder:validation:Optional
-  optional TrainingSpec training = 10;
+  optional TrainingSpec training = 11;
 
   // Split is reference to the split specification
   // +kubebuilder:validation:Optional

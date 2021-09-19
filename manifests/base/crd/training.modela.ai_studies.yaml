@@ -418,6 +418,52 @@ spec:
                 - smape
                 - mdape
                 type: string
+              objective2:
+                description: Objective2 is the second objective to consider during
+                  optimization.
+                enum:
+                - accuracy
+                - average-precision
+                - balanced-accuracy
+                - brier-score-loss
+                - f1
+                - f1-macro
+                - f1-micro
+                - f1-weighted
+                - log-loss
+                - precision
+                - precision-micro
+                - precision-macro
+                - precision-weighted
+                - recall
+                - recall-macro
+                - recall-micro
+                - recall-weighted
+                - auc
+                - fp
+                - fn
+                - tn
+                - tp
+                - explained_variance
+                - mae
+                - mse
+                - msle
+                - median-absolute-error
+                - r2
+                - adjusted-mutual-info-score
+                - adjusted-rand-score
+                - completeness-score
+                - fowlkes-mallows-score
+                - homogeneity-score
+                - mutual-info-score
+                - normalized-mutual-info-score
+                - v-measure-score
+                - rmse
+                - unknown
+                - mape
+                - smape
+                - mdape
+                type: string
               owner:
                 default: no-one
                 description: The owner account name

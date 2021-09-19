@@ -3909,6 +3909,9 @@ export class StudySpec extends jspb.Message {
   getObjective(): string;
   setObjective(value: string): StudySpec;
 
+  getObjective2(): string;
+  setObjective2(value: string): StudySpec;
+
   getSearch(): ModelSearchSpec | undefined;
   setSearch(value?: ModelSearchSpec): StudySpec;
   hasSearch(): boolean;
@@ -3997,6 +4000,7 @@ export namespace StudySpec {
     datasetname: string,
     task: string,
     objective: string,
+    objective2: string,
     search?: ModelSearchSpec.AsObject,
     preprocessing?: PreprocessingSpec.AsObject,
     training?: TrainingSpec.AsObject,

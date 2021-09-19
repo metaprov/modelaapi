@@ -44,7 +44,7 @@ message BakeModelRequest {
 
 message BakeModelResponse {
     string ImageName     = 1;
-    string sig           = 2;
+    string hash           = 2;
 }
 
 message TarModelRequest {
@@ -61,7 +61,7 @@ message TarModelRequest {
 
 message TarModelResponse {
     string tarUri     = 1; // the uri of the tar file
-    string sig        = 2;
+    string hash       = 2;
 }
 
 message ShutdownRequest {}

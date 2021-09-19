@@ -11279,9 +11279,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.toOb
     training: jspb.Message.getFieldWithDefault(msg, 1, 0),
     testing: jspb.Message.getFieldWithDefault(msg, 2, 0),
     validation: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    trainingSig: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    testingSig: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    validationSig: jspb.Message.getFieldWithDefault(msg, 6, "")
+    trainingHash: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    testingHash: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    validationHash: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -11332,15 +11332,15 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.dese
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTrainingSig(value);
+      msg.setTrainingHash(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTestingSig(value);
+      msg.setTestingHash(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setValidationSig(value);
+      msg.setValidationHash(value);
       break;
     default:
       reader.skipField();
@@ -11392,21 +11392,21 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.seri
       f
     );
   }
-  f = message.getTrainingSig();
+  f = message.getTrainingHash();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getTestingSig();
+  f = message.getTestingHash();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getValidationSig();
+  f = message.getValidationHash();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -11471,10 +11471,10 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prot
 
 
 /**
- * optional string training_sig = 4;
+ * optional string training_hash = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.getTrainingSig = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.getTrainingHash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -11483,16 +11483,16 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.setTrainingSig = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.setTrainingHash = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string testing_sig = 5;
+ * optional string testing_hash = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.getTestingSig = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.getTestingHash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -11501,16 +11501,16 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.setTestingSig = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.setTestingHash = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string validation_sig = 6;
+ * optional string validation_hash = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.getValidationSig = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.getValidationHash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -11519,7 +11519,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.setValidationSig = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse.prototype.setValidationHash = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 

@@ -30,8 +30,8 @@ export class DatasetProfile extends jspb.Message {
   hasTable(): boolean;
   clearTable(): DatasetProfile;
 
-  getSig(): string;
-  setSig(value: string): DatasetProfile;
+  getHash(): string;
+  setHash(value: string): DatasetProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetProfile.AsObject;
@@ -50,7 +50,7 @@ export namespace DatasetProfile {
     plotsList: Array<Plot.AsObject>,
     columnsList: Array<ColumnProfile.AsObject>,
     table?: TableView.AsObject,
-    sig: string,
+    hash: string,
   }
 }
 

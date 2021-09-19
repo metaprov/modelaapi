@@ -1469,7 +1469,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.pro
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     imagename: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sig: jspb.Message.getFieldWithDefault(msg, 2, "")
+    hash: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1512,7 +1512,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.des
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSig(value);
+      msg.setHash(value);
       break;
     default:
       reader.skipField();
@@ -1550,7 +1550,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.ser
       f
     );
   }
-  f = message.getSig();
+  f = message.getHash();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -1579,10 +1579,10 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.pro
 
 
 /**
- * optional string sig = 2;
+ * optional string hash = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.prototype.getSig = function() {
+proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.prototype.getHash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -1591,7 +1591,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.prototype.setSig = function(value) {
+proto.github.com.metaprov.modelaapi.services.publisherd.v1.BakeModelResponse.prototype.setHash = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -2170,7 +2170,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prot
 proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     taruri: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    sig: jspb.Message.getFieldWithDefault(msg, 2, "")
+    hash: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2213,7 +2213,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.dese
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSig(value);
+      msg.setHash(value);
       break;
     default:
       reader.skipField();
@@ -2251,7 +2251,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.seri
       f
     );
   }
-  f = message.getSig();
+  f = message.getHash();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -2280,10 +2280,10 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prot
 
 
 /**
- * optional string sig = 2;
+ * optional string hash = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prototype.getSig = function() {
+proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prototype.getHash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -2292,7 +2292,7 @@ proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prototype.setSig = function(value) {
+proto.github.com.metaprov.modelaapi.services.publisherd.v1.TarModelResponse.prototype.setHash = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 

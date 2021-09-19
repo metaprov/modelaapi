@@ -343,16 +343,19 @@ type StudySpec struct {
 	// Objective is the objective defined how the study controller will compare model performance.
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
+	// Objective2 is the second objective to consider during optimization.
+	// +kubebuilder:validation:Optional
+	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,8,opt,name=objective2"`
 	// Search defines the model search
 	// +kubebuilder:validation:Optional
-	Search *ModelSearchSpec `json:"search,omitempty" protobuf:"bytes,8,opt,name=search"`
+	Search *ModelSearchSpec `json:"search,omitempty" protobuf:"bytes,9,opt,name=search"`
 	// Preprocessing is template for preprocessors for this study
 	// Default: all preprocessing is set to auto.
 	// +kubebuilder:validation:Optional
-	Preprocessing *PreprocessingSpec `json:"preprocessing,omitempty" protobuf:"bytes,9,opt,name=preprocessing"`
+	Preprocessing *PreprocessingSpec `json:"preprocessing,omitempty" protobuf:"bytes,10,opt,name=preprocessing"`
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
-	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,10,opt,name=training"`
+	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,11,opt,name=training"`
 	// Split is reference to the split specification
 	// +kubebuilder:validation:Optional
 	Split *DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`

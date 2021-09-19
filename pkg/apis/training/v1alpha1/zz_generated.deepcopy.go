@@ -3472,6 +3472,11 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 		*out = new(catalogv1alpha1.Metric)
 		**out = **in
 	}
+	if in.Objective2 != nil {
+		in, out := &in.Objective2, &out.Objective2
+		*out = new(catalogv1alpha1.Metric)
+		**out = **in
+	}
 	if in.Search != nil {
 		in, out := &in.Search, &out.Search
 		*out = new(ModelSearchSpec)
