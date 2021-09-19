@@ -113,14 +113,14 @@ export class StudyProfile extends jspb.Message {
   clearModelsList(): StudyProfile;
   addModels(value?: ModelProfile, index?: number): ModelProfile;
 
-  getTrainingsetsig(): string;
-  setTrainingsetsig(value: string): StudyProfile;
+  getTraininghash(): string;
+  setTraininghash(value: string): StudyProfile;
 
-  getTestingsetsig(): string;
-  setTestingsetsig(value: string): StudyProfile;
+  getTestinghash(): string;
+  setTestinghash(value: string): StudyProfile;
 
-  getValidationsetsig(): string;
-  setValidationsetsig(value: string): StudyProfile;
+  getValidationhash(): string;
+  setValidationhash(value: string): StudyProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudyProfile.AsObject;
@@ -134,9 +134,9 @@ export namespace StudyProfile {
   export type AsObject = {
     plotsList: Array<Plot.AsObject>,
     modelsList: Array<ModelProfile.AsObject>,
-    trainingsetsig: string,
-    testingsetsig: string,
-    validationsetsig: string,
+    traininghash: string,
+    testinghash: string,
+    validationhash: string,
   }
 }
 

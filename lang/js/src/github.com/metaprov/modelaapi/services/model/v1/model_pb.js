@@ -5579,7 +5579,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modelsig: jspb.Message.getFieldWithDefault(msg, 1, "")
+    modeltarhash: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -5618,7 +5618,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.deser
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelsig(value);
+      msg.setModeltarhash(value);
       break;
     default:
       reader.skipField();
@@ -5649,7 +5649,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getModelsig();
+  f = message.getModeltarhash();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -5660,10 +5660,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.seria
 
 
 /**
- * optional string modelSig = 1;
+ * optional string modelTarHash = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.prototype.getModelsig = function() {
+proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.prototype.getModeltarhash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5672,7 +5672,7 @@ proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.prototype.setModelsig = function(value) {
+proto.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse.prototype.setModeltarhash = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

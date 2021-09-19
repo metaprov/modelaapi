@@ -207,7 +207,7 @@ type DatasetStatus struct {
 	// Sha256 signature of the dataset file.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Signature string `json:"signature,omitempty" protobuf:"bytes,14,opt,name=signature"`
+	Hash string `json:"hash,omitempty" protobuf:"bytes,14,opt,name=hash"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

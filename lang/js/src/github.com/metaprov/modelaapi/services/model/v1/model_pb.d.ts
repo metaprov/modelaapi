@@ -648,8 +648,8 @@ export namespace DeleteModelResponse {
 }
 
 export class PublishModelResponse extends jspb.Message {
-  getModelsig(): string;
-  setModelsig(value: string): PublishModelResponse;
+  getModeltarhash(): string;
+  setModeltarhash(value: string): PublishModelResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PublishModelResponse.AsObject;
@@ -661,7 +661,7 @@ export class PublishModelResponse extends jspb.Message {
 
 export namespace PublishModelResponse {
   export type AsObject = {
-    modelsig: string,
+    modeltarhash: string,
   }
 }
 

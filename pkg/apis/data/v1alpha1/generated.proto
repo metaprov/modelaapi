@@ -1252,7 +1252,7 @@ message DatasetStatus {
   // Sha256 signature of the dataset file.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string signature = 14;
+  optional string hash = 14;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

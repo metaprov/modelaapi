@@ -574,29 +574,29 @@ export namespace CustomReportValue {
   }
 }
 
-export class DataSigs extends jspb.Message {
-  getTrainsig(): string;
-  setTrainsig(value: string): DataSigs;
+export class DataHashes extends jspb.Message {
+  getTrainhash(): string;
+  setTrainhash(value: string): DataHashes;
 
-  getTestsig(): string;
-  setTestsig(value: string): DataSigs;
+  getTesthash(): string;
+  setTesthash(value: string): DataHashes;
 
-  getValidationsig(): string;
-  setValidationsig(value: string): DataSigs;
+  getValidationhash(): string;
+  setValidationhash(value: string): DataHashes;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataSigs.AsObject;
-  static toObject(includeInstance: boolean, msg: DataSigs): DataSigs.AsObject;
-  static serializeBinaryToWriter(message: DataSigs, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataSigs;
-  static deserializeBinaryFromReader(message: DataSigs, reader: jspb.BinaryReader): DataSigs;
+  toObject(includeInstance?: boolean): DataHashes.AsObject;
+  static toObject(includeInstance: boolean, msg: DataHashes): DataHashes.AsObject;
+  static serializeBinaryToWriter(message: DataHashes, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataHashes;
+  static deserializeBinaryFromReader(message: DataHashes, reader: jspb.BinaryReader): DataHashes;
 }
 
-export namespace DataSigs {
+export namespace DataHashes {
   export type AsObject = {
-    trainsig: string,
-    testsig: string,
-    validationsig: string,
+    trainhash: string,
+    testhash: string,
+    validationhash: string,
   }
 }
 
@@ -2729,13 +2729,16 @@ export class ModelStatus extends jspb.Message {
   hasReleasedat(): boolean;
   clearReleasedat(): ModelStatus;
 
-  getModelsignature(): string;
-  setModelsignature(value: string): ModelStatus;
+  getTarfilehash(): string;
+  setTarfilehash(value: string): ModelStatus;
 
-  getDatasignature(): DataSigs | undefined;
-  setDatasignature(value?: DataSigs): ModelStatus;
-  hasDatasignature(): boolean;
-  clearDatasignature(): ModelStatus;
+  getImagehash(): string;
+  setImagehash(value: string): ModelStatus;
+
+  getTrainingdatahash(): DataHashes | undefined;
+  setTrainingdatahash(value?: DataHashes): ModelStatus;
+  hasTrainingdatahash(): boolean;
+  clearTrainingdatahash(): ModelStatus;
 
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
@@ -2796,8 +2799,9 @@ export namespace ModelStatus {
     url: string,
     predictorname: string,
     releasedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    modelsignature: string,
-    datasignature?: DataSigs.AsObject,
+    tarfilehash: string,
+    imagehash: string,
+    trainingdatahash?: DataHashes.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -4126,10 +4130,10 @@ export class StudyStatus extends jspb.Message {
   getBaseline(): string;
   setBaseline(value: string): StudyStatus;
 
-  getDatasignature(): DataSigs | undefined;
-  setDatasignature(value?: DataSigs): StudyStatus;
-  hasDatasignature(): boolean;
-  clearDatasignature(): StudyStatus;
+  getTrainingdatahash(): DataHashes | undefined;
+  setTrainingdatahash(value?: DataHashes): StudyStatus;
+  hasTrainingdatahash(): boolean;
+  clearTrainingdatahash(): StudyStatus;
 
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
@@ -4177,7 +4181,7 @@ export namespace StudyStatus {
     validationrows: number,
     progress: number,
     baseline: string,
-    datasignature?: DataSigs.AsObject,
+    trainingdatahash?: DataHashes.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

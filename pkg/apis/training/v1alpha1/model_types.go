@@ -463,14 +463,17 @@ type ModelStatus struct {
 	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,44,opt,name=releasedAt"`
 	// Sha 256 of the model tar file
 	// +kubebuilder:validation:Optional
-	ModelSig string `json:"modelSignature,omitempty" protobuf:"bytes,45,opt,name=modelSignature"`
+	TarFileHash string `json:"tarfileHash,omitempty" protobuf:"bytes,45,opt,name=tarfileHash"`
+	// Sha 256 of the model tar file
+	// +kubebuilder:validation:Optional
+	ImageHash string `json:"imageHash,omitempty" protobuf:"bytes,46,opt,name=imageHash"`
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
-	DataSig DataSigs `json:"dataSignature,omitempty" protobuf:"bytes,46,opt,name=dataSignature"`
+	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,47,opt,name=trainingDataHash"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,47,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,48,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of
@@ -827,17 +830,17 @@ type DimensionValue struct {
 }
 
 // List compiler spec
-type DataSigs struct {
+type DataHashes struct {
 	// path to the training set
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TrainSig *string `json:"trainSig,omitempty" protobuf:"bytes,1,opt,name=trainSig"`
+	TrainingHash *string `json:"trainHash,omitempty" protobuf:"bytes,1,opt,name=trainHash"`
 	// the location of the training data, if different from the data.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TestSig *string `json:"testSig,omitempty" protobuf:"bytes,2,opt,name=testSig"`
+	TestHash *string `json:"testHash,omitempty" protobuf:"bytes,2,opt,name=testHash"`
 	// Pointer to the validation
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ValidationSig *string `json:"validationSig,omitempty" protobuf:"bytes,3,opt,name=validationSig"`
+	ValidationHash *string `json:"validationHash,omitempty" protobuf:"bytes,3,opt,name=validationHash"`
 }

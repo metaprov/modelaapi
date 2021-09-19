@@ -326,21 +326,21 @@ message CustomReportValue {
 }
 
 // List compiler spec
-message DataSigs {
+message DataHashes {
   // path to the training set
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string trainSig = 1;
+  optional string trainHash = 1;
 
   // the location of the training data, if different from the data.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string testSig = 2;
+  optional string testHash = 2;
 
   // Pointer to the validation
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string validationSig = 3;
+  optional string validationHash = 3;
 }
 
 message DataSplit {
@@ -1905,16 +1905,20 @@ message ModelStatus {
 
   // Sha 256 of the model tar file
   // +kubebuilder:validation:Optional
-  optional string modelSignature = 45;
+  optional string tarfileHash = 45;
+
+  // Sha 256 of the model tar file
+  // +kubebuilder:validation:Optional
+  optional string imageHash = 46;
 
   // Sha 256 of the data sig
   // +kubebuilder:validation:Optional
-  optional DataSigs dataSignature = 46;
+  optional DataHashes trainingDataHash = 47;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 47;
+  repeated ModelCondition conditions = 48;
 }
 
 message ModelValidation {
@@ -2824,8 +2828,9 @@ message StudyStatus {
   optional string baseline = 36;
 
   // Sha 256 of the data sig
+  // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional DataSigs dataSignature = 37;
+  optional DataHashes trainingDataHash = 37;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.

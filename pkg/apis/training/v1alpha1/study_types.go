@@ -510,8 +510,9 @@ type StudyStatus struct {
 	// +kubebuilder:validation:Optional
 	BaslineModel *catalog.ClassicEstimatorName `json:"baseline,omitempty" protobuf:"bytes,36,opt,name=baseline"`
 	// Sha 256 of the data sig
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	DataSig DataSigs `json:"dataSignature,omitempty" protobuf:"bytes,37,opt,name=dataSignature"`
+	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,37,opt,name=trainingDataHash"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional

@@ -1192,23 +1192,6 @@ spec:
               cvScore:
                 description: CVScrore is the score using on the training set.
                 type: number
-              dataSignature:
-                description: Sha 256 of the data sig
-                properties:
-                  testSig:
-                    default: ""
-                    description: the location of the training data, if different from
-                      the data.
-                    type: string
-                  trainSig:
-                    default: ""
-                    description: path to the training set
-                    type: string
-                  validationSig:
-                    default: ""
-                    description: Pointer to the validation
-                    type: string
-                type: object
               endTime:
                 description: CompletionTime represent the time that the model is marked
                   as ready
@@ -1216,6 +1199,9 @@ spec:
                 type: string
               forecastUri:
                 description: ForecastUri is the uri of the forecast
+                type: string
+              imageHash:
+                description: Sha 256 of the model tar file
                 type: string
               imageName:
                 description: ImageName is the image name of the model
@@ -1253,9 +1239,6 @@ spec:
               misclassUri:
                 description: MisclassUri is a reference to the mis-classification
                   file which were produce during processing
-                type: string
-              modelSignature:
-                description: Sha 256 of the model tar file
                 type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
@@ -1321,6 +1304,9 @@ spec:
                 type: string
               tarUri:
                 description: TarUri is a reference to the model tar file.
+                type: string
+              tarfileHash:
+                description: Sha 256 of the model tar file
                 type: string
               test:
                 description: TestResult is the results of training the model (pipeline)
@@ -1533,6 +1519,23 @@ spec:
                   type:
                     default: object
                     description: data location type is the type of the data location
+                    type: string
+                type: object
+              trainingDataHash:
+                description: Sha 256 of the data sig
+                properties:
+                  testHash:
+                    default: ""
+                    description: the location of the training data, if different from
+                      the data.
+                    type: string
+                  trainHash:
+                    default: ""
+                    description: path to the training set
+                    type: string
+                  validationHash:
+                    default: ""
+                    description: Pointer to the validation
                     type: string
                 type: object
               trainingEndTime:

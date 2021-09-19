@@ -38,9 +38,9 @@ message ForecastProfile {
 message StudyProfile {
     repeated Plot plots          = 1;
     repeated ModelProfile models = 2;
-    string trainingSetSig        = 3; 
-    string testingSetSig         = 4;
-    string validationSetSig      = 5;
+    string trainingHash          = 3; 
+    string testingHash           = 4;
+    string validationHash        = 5;
 }
 
 message Plot {

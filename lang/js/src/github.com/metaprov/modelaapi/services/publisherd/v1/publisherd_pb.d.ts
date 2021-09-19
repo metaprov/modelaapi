@@ -167,6 +167,9 @@ export class BakeModelResponse extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): BakeModelResponse;
 
+  getSig(): string;
+  setSig(value: string): BakeModelResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BakeModelResponse.AsObject;
   static toObject(includeInstance: boolean, msg: BakeModelResponse): BakeModelResponse.AsObject;
@@ -178,6 +181,7 @@ export class BakeModelResponse extends jspb.Message {
 export namespace BakeModelResponse {
   export type AsObject = {
     imagename: string,
+    sig: string,
   }
 }
 

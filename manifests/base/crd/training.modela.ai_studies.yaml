@@ -1420,23 +1420,6 @@ spec:
                       type: string
                   type: object
                 type: array
-              dataSignature:
-                description: Sha 256 of the data sig
-                properties:
-                  testSig:
-                    default: ""
-                    description: the location of the training data, if different from
-                      the data.
-                    type: string
-                  trainSig:
-                    default: ""
-                    description: path to the training set
-                    type: string
-                  validationSig:
-                    default: ""
-                    description: Pointer to the validation
-                    type: string
-                type: object
               endTime:
                 description: The study end time.
                 format: date-time
@@ -1586,6 +1569,24 @@ spec:
                 description: models that were successful during training
                 format: int32
                 type: integer
+              trainingDataHash:
+                default: none
+                description: Sha 256 of the data sig
+                properties:
+                  testHash:
+                    default: ""
+                    description: the location of the training data, if different from
+                      the data.
+                    type: string
+                  trainHash:
+                    default: ""
+                    description: path to the training set
+                    type: string
+                  validationHash:
+                    default: ""
+                    description: Pointer to the validation
+                    type: string
+                type: object
               trainingEndTime:
                 description: End of the training phase.
                 format: date-time

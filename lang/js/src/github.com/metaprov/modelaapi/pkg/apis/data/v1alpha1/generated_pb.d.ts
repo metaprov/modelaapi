@@ -1734,8 +1734,8 @@ export class DatasetStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): DatasetStatus;
 
-  getSignature(): string;
-  setSignature(value: string): DatasetStatus;
+  getHash(): string;
+  setHash(value: string): DatasetStatus;
 
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
@@ -1764,7 +1764,7 @@ export namespace DatasetStatus {
     lastnotificationtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lasterror: string,
     progress: number,
-    signature: string,
+    hash: string,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }

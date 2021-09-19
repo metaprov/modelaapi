@@ -44,6 +44,7 @@ message BakeModelRequest {
 
 message BakeModelResponse {
     string ImageName     = 1;
+    string sig           = 2;
 }
 
 message TarModelRequest {
