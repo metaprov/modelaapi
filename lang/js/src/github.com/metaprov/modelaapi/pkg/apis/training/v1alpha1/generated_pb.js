@@ -7480,7 +7480,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.protot
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject = function(includeInstance, msg) {
   var f, obj = {
     trainhash: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    testhash: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    testinghash: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     validationhash: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
@@ -7524,7 +7524,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.deseri
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTesthash(value);
+      msg.setTestinghash(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -7620,10 +7620,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.protot
 
 
 /**
- * optional string testHash = 2;
+ * optional string testingHash = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.getTesthash = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.getTestinghash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -7632,7 +7632,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.setTesthash = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.setTestinghash = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -7641,7 +7641,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.clearTesthash = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.clearTestinghash = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -7650,7 +7650,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.hasTesthash = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.prototype.hasTestinghash = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

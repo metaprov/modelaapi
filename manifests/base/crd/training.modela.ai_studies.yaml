@@ -1616,17 +1616,15 @@ spec:
                 format: int32
                 type: integer
               trainingDataHash:
-                default: none
                 description: Sha 256 of the data sig
                 properties:
-                  testHash:
+                  testingHash:
                     default: ""
-                    description: the location of the training data, if different from
-                      the data.
+                    description: Testing hash is a sha 256 of the testing data.
                     type: string
-                  trainHash:
+                  trainingHash:
                     default: ""
-                    description: path to the training set
+                    description: Training
                     type: string
                   validationHash:
                     default: ""

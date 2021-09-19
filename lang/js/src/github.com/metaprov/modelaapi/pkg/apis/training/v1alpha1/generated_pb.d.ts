@@ -578,8 +578,8 @@ export class DataHashes extends jspb.Message {
   getTrainhash(): string;
   setTrainhash(value: string): DataHashes;
 
-  getTesthash(): string;
-  setTesthash(value: string): DataHashes;
+  getTestinghash(): string;
+  setTestinghash(value: string): DataHashes;
 
   getValidationhash(): string;
   setValidationhash(value: string): DataHashes;
@@ -595,7 +595,7 @@ export class DataHashes extends jspb.Message {
 export namespace DataHashes {
   export type AsObject = {
     trainhash: string,
-    testhash: string,
+    testinghash: string,
     validationhash: string,
   }
 }

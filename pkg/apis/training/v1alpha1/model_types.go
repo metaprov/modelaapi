@@ -831,14 +831,14 @@ type DimensionValue struct {
 
 // List compiler spec
 type DataHashes struct {
-	// path to the training set
+	// Training
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TrainingHash *string `json:"trainHash,omitempty" protobuf:"bytes,1,opt,name=trainHash"`
-	// the location of the training data, if different from the data.
+	TrainingHash *string `json:"trainingHash,omitempty" protobuf:"bytes,1,opt,name=trainHash"`
+	// Testing hash is a sha 256 of the testing data.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TestHash *string `json:"testHash,omitempty" protobuf:"bytes,2,opt,name=testHash"`
+	TestingHash *string `json:"testingHash,omitempty" protobuf:"bytes,2,opt,name=testingHash"`
 	// Pointer to the validation
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

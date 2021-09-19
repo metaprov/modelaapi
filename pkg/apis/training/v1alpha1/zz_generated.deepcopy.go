@@ -600,8 +600,8 @@ func (in *DataHashes) DeepCopyInto(out *DataHashes) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.TestHash != nil {
-		in, out := &in.TestHash, &out.TestHash
+	if in.TestingHash != nil {
+		in, out := &in.TestingHash, &out.TestingHash
 		*out = new(string)
 		**out = **in
 	}
