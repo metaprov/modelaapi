@@ -1568,6 +1568,10 @@ message ModelSearchSpec {
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string filter = 16;
+
+  // Baselines holds the name of the base line algroithms to try
+  // +kubebuilder:validation:Optional
+  repeated string baselines = 17;
 }
 
 // ModelSpec defines the desired state of the Model resource
@@ -1697,27 +1701,31 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool released = 26;
 
+  // Indicate that this model is a baseline
+  // +kubebuilder:validation:Optional
+  optional bool baseline = 27;
+
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 27;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 28;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 28;
+  optional ForecastingSpec forecastingSpec = 29;
 
   // Compilation denotes how to compile the model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 29;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 30;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 30;
+  optional int64 activeDeadlineSeconds = 31;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 31;
+  optional string estimatorType = 32;
 }
 
 // ModelStatus defines the observed state of the Model

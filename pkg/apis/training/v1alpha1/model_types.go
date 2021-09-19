@@ -297,23 +297,26 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,26,opt,name=released"`
+	// Indicate that this model is a baseline
+	// +kubebuilder:validation:Optional
+	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,27,opt,name=baseline"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,27,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,28,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,28,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,29,opt,name=forecastingSpec"`
 	// Compilation denotes how to compile the model.
 	// +kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,29,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,30,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,30,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,31,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,31,opt,name=estimatorType"`
+	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,32,opt,name=estimatorType"`
 }
 
 type EnsembleSpec struct {

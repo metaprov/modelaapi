@@ -60,6 +60,7 @@ type LabSpec struct {
 	// +kubebuilder:validation:Optional
 	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRange,omitempty" protobuf:"bytes,4,opt,name=limitRange"`
 	// ClusterName is the name of a remote cluster that is used to execute jobs for this lab
+	// If not empty, jobs assigned to this lab should execute on remote cluster
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
 	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,5,opt,name=clusterName"`

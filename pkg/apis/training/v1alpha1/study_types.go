@@ -15,6 +15,7 @@ const (
 	StudyPhaseModelPending StudyPhase = "Pending"
 	StudyPhaseSpliting     StudyPhase = "Spliting"
 	StudyPhaseSplitted     StudyPhase = "Splitted"
+	StudyPhaseBaeline      StudyPhase = "Training Baseline"
 	StudyPhaseSearching    StudyPhase = "Searching"
 	StudyPhaseSearched     StudyPhase = "Searched"
 	StudyPhaseTesting      StudyPhase = "Testing"
@@ -79,6 +80,8 @@ const (
 	StudyInitialized StudyConditionType = "Initialized"
 	// The search the best preprocessor is completed.
 	StudySplitted StudyConditionType = "StudySplitted"
+	// The search the best preprocessor is completed.
+	StudyBaselined StudyConditionType = "StudyBaselined"
 	// The search for the best model candidates is completed.
 	// This phase consists mainly of cross validation.
 	StudySearched StudyConditionType = "ModelsTrained"
@@ -275,6 +278,9 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	AlgorithmFilter *AlgorithmFilterName `json:"filter,omitempty" protobuf:"bytes,16,opt,name=filter"`
+	// Baselines holds the name of the base line algroithms to try
+	// +kubebuilder:validation:Optional
+	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,17,opt,name=baselines"`
 }
 
 type PrunerSpec struct {

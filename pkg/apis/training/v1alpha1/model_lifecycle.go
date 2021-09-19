@@ -783,6 +783,9 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Status.TrainDatasetLocation = study.Status.TrainDatasetLocation
 	model.Status.TestDatasetLocation = study.Status.TestDatasetLocation
 	model.Status.ValidationDataset = study.Status.ValidationDataset
+	model.Status.TrainingDataHash.TestingHash = util.StrPtr(*study.Status.TrainingDataHash.TestingHash)
+	model.Status.TrainingDataHash.TrainingHash = util.StrPtr(*study.Status.TrainingDataHash.TrainingHash)
+	model.Status.TrainingDataHash.ValidationHash = util.StrPtr(*study.Status.TrainingDataHash.TrainingHash)
 
 }
 

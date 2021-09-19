@@ -2379,6 +2379,11 @@ export class ModelSearchSpec extends jspb.Message {
   getFilter(): string;
   setFilter(value: string): ModelSearchSpec;
 
+  getBaselinesList(): Array<string>;
+  setBaselinesList(value: Array<string>): ModelSearchSpec;
+  clearBaselinesList(): ModelSearchSpec;
+  addBaselines(value: string, index?: number): ModelSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSearchSpec): ModelSearchSpec.AsObject;
@@ -2405,6 +2410,7 @@ export namespace ModelSearchSpec {
     stackingensemble: boolean,
     startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     filter: string,
+    baselinesList: Array<string>,
   }
 }
 
@@ -2501,6 +2507,9 @@ export class ModelSpec extends jspb.Message {
   getReleased(): boolean;
   setReleased(value: boolean): ModelSpec;
 
+  getBaseline(): boolean;
+  setBaseline(value: boolean): ModelSpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelSpec;
   hasLocation(): boolean;
@@ -2558,6 +2567,7 @@ export namespace ModelSpec {
     archived: boolean,
     forecasted: boolean,
     released: boolean,
+    baseline: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecastingspec?: ForecastingSpec.AsObject,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
