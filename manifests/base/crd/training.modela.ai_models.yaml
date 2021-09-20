@@ -1270,7 +1270,7 @@ spec:
                 description: Python packages is the result of running pip freeze
                 type: object
               pythonVersion:
-                description: Python version is the result of python vewrsion call.
+                description: Python version is the result of python version call.
                 type: string
               releasedAt:
                 description: Released at the time when the model was released

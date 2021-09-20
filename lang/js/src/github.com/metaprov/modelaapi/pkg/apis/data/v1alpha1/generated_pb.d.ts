@@ -1363,6 +1363,11 @@ export class DataSourceSpec extends jspb.Message {
   hasFlatfile(): boolean;
   clearFlatfile(): DataSourceSpec;
 
+  getExcelnotebook(): ExcelNotebookSpec | undefined;
+  setExcelnotebook(value?: ExcelNotebookSpec): DataSourceSpec;
+  hasExcelnotebook(): boolean;
+  clearExcelnotebook(): DataSourceSpec;
+
   getDatasettype(): string;
   setDatasettype(value: string): DataSourceSpec;
 
@@ -1389,6 +1394,7 @@ export namespace DataSourceSpec {
     description: string,
     schema?: Schema.AsObject,
     flatfile?: FlatFileSpec.AsObject,
+    excelnotebook?: ExcelNotebookSpec.AsObject,
     datasettype: string,
     sample?: SampleSpec.AsObject,
     task: string,
@@ -1986,6 +1992,76 @@ export namespace EntityStatus {
   export type AsObject = {
     observedgeneration: number,
     conditionsList: Array<EntityCondition.AsObject>,
+  }
+}
+
+export class ExcelNotebookSpec extends jspb.Message {
+  getFirstsheetwithdata(): boolean;
+  setFirstsheetwithdata(value: boolean): ExcelNotebookSpec;
+
+  getSheetname(): string;
+  setSheetname(value: string): ExcelNotebookSpec;
+
+  getSheetindex(): number;
+  setSheetindex(value: number): ExcelNotebookSpec;
+
+  getColumnnamerow(): number;
+  setColumnnamerow(value: number): ExcelNotebookSpec;
+
+  getData(): ExcelSheetArea | undefined;
+  setData(value?: ExcelSheetArea): ExcelNotebookSpec;
+  hasData(): boolean;
+  clearData(): ExcelNotebookSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExcelNotebookSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ExcelNotebookSpec): ExcelNotebookSpec.AsObject;
+  static serializeBinaryToWriter(message: ExcelNotebookSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExcelNotebookSpec;
+  static deserializeBinaryFromReader(message: ExcelNotebookSpec, reader: jspb.BinaryReader): ExcelNotebookSpec;
+}
+
+export namespace ExcelNotebookSpec {
+  export type AsObject = {
+    firstsheetwithdata: boolean,
+    sheetname: string,
+    sheetindex: number,
+    columnnamerow: number,
+    data?: ExcelSheetArea.AsObject,
+  }
+}
+
+export class ExcelSheetArea extends jspb.Message {
+  getEntiresheet(): boolean;
+  setEntiresheet(value: boolean): ExcelSheetArea;
+
+  getFromcolumn(): number;
+  setFromcolumn(value: number): ExcelSheetArea;
+
+  getTocolumn(): number;
+  setTocolumn(value: number): ExcelSheetArea;
+
+  getFromrow(): number;
+  setFromrow(value: number): ExcelSheetArea;
+
+  getTorow(): number;
+  setTorow(value: number): ExcelSheetArea;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExcelSheetArea.AsObject;
+  static toObject(includeInstance: boolean, msg: ExcelSheetArea): ExcelSheetArea.AsObject;
+  static serializeBinaryToWriter(message: ExcelSheetArea, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExcelSheetArea;
+  static deserializeBinaryFromReader(message: ExcelSheetArea, reader: jspb.BinaryReader): ExcelSheetArea;
+}
+
+export namespace ExcelSheetArea {
+  export type AsObject = {
+    entiresheet: boolean,
+    fromcolumn: number,
+    tocolumn: number,
+    fromrow: number,
+    torow: number,
   }
 }
 

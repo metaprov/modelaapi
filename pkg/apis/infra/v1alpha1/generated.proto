@@ -1505,6 +1505,7 @@ message LabSpec {
   optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 4;
 
   // ClusterName is the name of a remote cluster that is used to execute jobs for this lab
+  // If not empty, jobs assigned to this lab should execute on remote cluster
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   optional string clusterName = 5;

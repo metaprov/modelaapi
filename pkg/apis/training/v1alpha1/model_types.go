@@ -413,7 +413,7 @@ type ModelStatus struct {
 	// ForecastUri is the uri of the forecast
 	// +kubebuilder:validation:Optional
 	ForecastUri string `json:"forecastUri,omitempty" protobuf:"bytes,27,opt,name=forecastUri"`
-	// Python version is the result of python vewrsion call.
+	// Python version is the result of python version call.
 	// +kubebuilder:validation:Optional
 	PythonVersion string `json:"pythonVersion,omitempty" protobuf:"bytes,28,opt,name=pythonVersion"`
 	// Python packages is the result of running pip freeze

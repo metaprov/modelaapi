@@ -336,6 +336,37 @@ type FlatFileSpec struct {
 	Strict *bool `json:"strict,omitempty" protobuf:"varint,14,opt,name=strict"`
 }
 
+type ExcelNotebookSpec struct {
+	// Use first sheet with data
+	// +kubebuilder:validation:Optional
+	FirstSheetWithData *bool `json:"firstSheetWithData,omitempty" protobuf:"varint,1,opt,name=firstSheetWithData"`
+	// Use sheet with name
+	// +kubebuilder:validation:Optional
+	SheetName *string `json:"sheetName,omitempty" protobuf:"bytes,2,opt,name=sheetName"`
+	// The index of the sheet with the data.
+	// +kubebuilder:validation:Optional
+	SheetIndex *int32 `json:"sheetIndex,omitempty" protobuf:"varint,3,opt,name=sheetIndex"`
+	// The rows number that contain column name
+	// +kubebuilder:validation:Optional
+	ColumnNamesRow *int32 `json:"columnNameRow,omitempty" protobuf:"varint,4,opt,name=columnNameRow"`
+	// Data is the definition of excel data.
+	// +kubebuilder:validation:Optional
+	Data ExcelSheetArea `json:"data,omitempty" protobuf:"bytes,5,opt,name="`
+}
+
+type ExcelSheetArea struct {
+	// If true, read the entire sheet.
+	EntireSheet *bool `json:"entireSheet,omitempty" protobuf:"bytes,1,opt,name=entireSheet"`
+	// If reading part of the excel sheet, start with this column
+	FromColumn *int32 `json:"fromColumn,omitempty" protobuf:"varint,2,opt,name=fromColumn"`
+	// If reading part of the excel sheet, end with this column
+	ToColumn *int32 `json:"toColumn,omitempty" protobuf:"varint,3,opt,name=toColumn"`
+	// If reading part of the excel sheet, start with row
+	FromRow *int32 `json:"fromRow,omitempty" protobuf:"varint,4,opt,name=fromRow"`
+	// If reading part of the excel sheet, end with this row
+	ToRow *int32 `json:"toRow,omitempty" protobuf:"varint,5,opt,name=toRow"`
+}
+
 type ValidationSpec struct {
 	// MultiDatasetValidation contains validations for multi datasets
 	// +kubebuilder:validation:Optional
@@ -568,15 +599,18 @@ type DataSourceSpec struct {
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
 	FlatFile *FlatFileSpec `json:"flatfile,omitempty" protobuf:"bytes,5,opt,name=flatfile"`
+	// Excel Notebook is a notebook in excel
+	// +kubebuilder:validation:Optional
+	ExcelNotebook *ExcelNotebookSpec `json:"excelNotebook,omitempty" protobuf:"bytes,6,opt,name=excelNotebook"`
 	// Type is the dataset type
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
-	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,6,opt,name=datasetType"`
+	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,7,opt,name=datasetType"`
 	// Sample spec defines how many rows to use for analysis for datasets from this datasource.
-	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
+	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,8,opt,name=sample"`
 	// The default task for datasets from this data source. If null this will be setup to the data product task
 	// +kubebuilder:validation:Optional
-	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,8,opt,name=task"`
+	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

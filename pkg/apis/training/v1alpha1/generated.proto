@@ -1843,7 +1843,7 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string forecastUri = 27;
 
-  // Python version is the result of python vewrsion call.
+  // Python version is the result of python version call.
   // +kubebuilder:validation:Optional
   optional string pythonVersion = 28;
 

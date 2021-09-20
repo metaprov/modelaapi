@@ -56,7 +56,8 @@ spec:
               clusterName:
                 default: ""
                 description: ClusterName is the name of a remote cluster that is used
-                  to execute jobs for this lab
+                  to execute jobs for this lab If not empty, jobs assigned to this
+                  lab should execute on remote cluster
                 type: string
               description:
                 default: ""

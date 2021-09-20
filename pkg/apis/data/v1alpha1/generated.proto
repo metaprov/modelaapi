@@ -983,17 +983,21 @@ message DataSourceSpec {
   // +kubebuilder:validation:Optional
   optional FlatFileSpec flatfile = 5;
 
+  // Excel Notebook is a notebook in excel
+  // +kubebuilder:validation:Optional
+  optional ExcelNotebookSpec excelNotebook = 6;
+
   // Type is the dataset type
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string datasetType = 6;
+  optional string datasetType = 7;
 
   // Sample spec defines how many rows to use for analysis for datasets from this datasource.
-  optional SampleSpec sample = 7;
+  optional SampleSpec sample = 8;
 
   // The default task for datasets from this data source. If null this will be setup to the data product task
   // +kubebuilder:validation:Optional
-  optional string task = 8;
+  optional string task = 9;
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec
@@ -1366,6 +1370,45 @@ message EntityStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated EntityCondition conditions = 2;
+}
+
+message ExcelNotebookSpec {
+  // Use first sheet with data
+  // +kubebuilder:validation:Optional
+  optional bool firstSheetWithData = 1;
+
+  // Use sheet with name
+  // +kubebuilder:validation:Optional
+  optional string sheetName = 2;
+
+  // The index of the sheet with the data.
+  // +kubebuilder:validation:Optional
+  optional int32 sheetIndex = 3;
+
+  // The rows number that contain column name
+  // +kubebuilder:validation:Optional
+  optional int32 columnNameRow = 4;
+
+  // Data is the definition of excel data.
+  // +kubebuilder:validation:Optional
+  optional ExcelSheetArea data = 5;
+}
+
+message ExcelSheetArea {
+  // If true, read the entire sheet.
+  optional bool entireSheet = 1;
+
+  // If reading part of the excel sheet, start with this column
+  optional int32 fromColumn = 2;
+
+  // If reading part of the excel sheet, end with this column
+  optional int32 toColumn = 3;
+
+  // If reading part of the excel sheet, start with row
+  optional int32 fromRow = 4;
+
+  // If reading part of the excel sheet, end with this row
+  optional int32 toRow = 5;
 }
 
 // Feature represent a single feature in the feature store.

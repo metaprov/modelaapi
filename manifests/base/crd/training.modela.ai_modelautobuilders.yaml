@@ -125,6 +125,51 @@ spec:
                     description: User provided description of the data source
                     maxLength: 512
                     type: string
+                  excelNotebook:
+                    description: Excel Notebook is a notebook in excel
+                    properties:
+                      columnNameRow:
+                        description: The rows number that contain column name
+                        format: int32
+                        type: integer
+                      data:
+                        description: Data is the definition of excel data.
+                        properties:
+                          entireSheet:
+                            description: If true, read the entire sheet.
+                            type: boolean
+                          fromColumn:
+                            description: If reading part of the excel sheet, start
+                              with this column
+                            format: int32
+                            type: integer
+                          fromRow:
+                            description: If reading part of the excel sheet, start
+                              with row
+                            format: int32
+                            type: integer
+                          toColumn:
+                            description: If reading part of the excel sheet, end with
+                              this column
+                            format: int32
+                            type: integer
+                          toRow:
+                            description: If reading part of the excel sheet, end with
+                              this row
+                            format: int32
+                            type: integer
+                        type: object
+                      firstSheetWithData:
+                        description: Use first sheet with data
+                        type: boolean
+                      sheetIndex:
+                        description: The index of the sheet with the data.
+                        format: int32
+                        type: integer
+                      sheetName:
+                        description: Use sheet with name
+                        type: string
+                    type: object
                   flatfile:
                     description: FlatFile access specification
                     properties:
