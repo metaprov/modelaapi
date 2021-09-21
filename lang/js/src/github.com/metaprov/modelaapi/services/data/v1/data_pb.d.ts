@@ -1969,6 +1969,12 @@ export class AskModelRequest extends jspb.Message {
   getBudget(): number;
   setBudget(value: number): AskModelRequest;
 
+  getDefaulthp(): boolean;
+  setDefaulthp(value: boolean): AskModelRequest;
+
+  getAlgorithm(): string;
+  setAlgorithm(value: string): AskModelRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskModelRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AskModelRequest): AskModelRequest.AsObject;
@@ -1985,6 +1991,8 @@ export namespace AskModelRequest {
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
     budget: number,
+    defaulthp: boolean,
+    algorithm: string,
   }
 }
 

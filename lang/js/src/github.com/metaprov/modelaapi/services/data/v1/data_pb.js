@@ -17061,7 +17061,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.toObject = 
     study: (f = msg.getStudy()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject(includeInstance, f),
     datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     dataset: (f = msg.getDataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject(includeInstance, f),
-    budget: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    budget: jspb.Message.getFieldWithDefault(msg, 6, 0),
+    defaulthp: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    algorithm: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -17126,6 +17128,14 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.deserialize
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setBudget(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDefaulthp(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAlgorithm(value);
       break;
     default:
       reader.skipField();
@@ -17200,6 +17210,20 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.serializeBi
   if (f !== 0) {
     writer.writeInt32(
       6,
+      f
+    );
+  }
+  f = message.getDefaulthp();
+  if (f) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+  f = message.getAlgorithm();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
       f
     );
   }
@@ -17406,6 +17430,42 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.prototype.g
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.prototype.setBudget = function(value) {
   return jspb.Message.setProto3IntField(this, 6, value);
+};
+
+
+/**
+ * optional bool defaultHP = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.prototype.getDefaulthp = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.prototype.setDefaulthp = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 7, value);
+};
+
+
+/**
+ * optional string algorithm = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.prototype.getAlgorithm = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.prototype.setAlgorithm = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

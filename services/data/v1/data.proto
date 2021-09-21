@@ -431,6 +431,8 @@ message AskModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
     int32  budget = 6;
+    bool   defaultHP = 7; // use default HP
+    string algorithm = 8; // ask for a specific algorithm.
 }
 
 
