@@ -440,6 +440,25 @@ message AskModelResponse {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
+// ask all models for task
+
+message AskAllModelsForTaskRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study              = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
+    int32  budget = 6;
+    string task   = 7; // use default HP    
+}
+
+
+message AskAllModelsForTaskResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+}
+
+
+
 message TellModelRequest{
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
@@ -611,6 +630,9 @@ service DataService {
     rpc CreateSummaryReport(CreateSummaryReportRequest) returns (CreateReportResponse) {}
     // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
+    // sample model randomly for a given budget
+    rpc AskAllModelsForTask(AskAllModelsForTaskRequest) returns (AskAllModelsForTaskResponse) {}
+
     // for bayaisn optimization, we tell the planner the result of the model evaluation
     rpc TellModel (TellModelRequest) returns (TellModelResponse) {}
     // Partition the class

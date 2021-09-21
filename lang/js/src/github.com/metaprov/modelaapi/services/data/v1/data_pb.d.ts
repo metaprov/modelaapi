@@ -2016,6 +2016,78 @@ export namespace AskModelResponse {
   }
 }
 
+export class AskAllModelsForTaskRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskAllModelsForTaskRequest;
+  hasProduct(): boolean;
+  clearProduct(): AskAllModelsForTaskRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskAllModelsForTaskRequest;
+  hasVersion(): boolean;
+  clearVersion(): AskAllModelsForTaskRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskAllModelsForTaskRequest;
+  hasStudy(): boolean;
+  clearStudy(): AskAllModelsForTaskRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): AskAllModelsForTaskRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): AskAllModelsForTaskRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): AskAllModelsForTaskRequest;
+  hasDataset(): boolean;
+  clearDataset(): AskAllModelsForTaskRequest;
+
+  getBudget(): number;
+  setBudget(value: number): AskAllModelsForTaskRequest;
+
+  getTask(): string;
+  setTask(value: string): AskAllModelsForTaskRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AskAllModelsForTaskRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AskAllModelsForTaskRequest): AskAllModelsForTaskRequest.AsObject;
+  static serializeBinaryToWriter(message: AskAllModelsForTaskRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AskAllModelsForTaskRequest;
+  static deserializeBinaryFromReader(message: AskAllModelsForTaskRequest, reader: jspb.BinaryReader): AskAllModelsForTaskRequest;
+}
+
+export namespace AskAllModelsForTaskRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    budget: number,
+    task: string,
+  }
+}
+
+export class AskAllModelsForTaskResponse extends jspb.Message {
+  getModelList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setModelList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): AskAllModelsForTaskResponse;
+  clearModelList(): AskAllModelsForTaskResponse;
+  addModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AskAllModelsForTaskResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AskAllModelsForTaskResponse): AskAllModelsForTaskResponse.AsObject;
+  static serializeBinaryToWriter(message: AskAllModelsForTaskResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AskAllModelsForTaskResponse;
+  static deserializeBinaryFromReader(message: AskAllModelsForTaskResponse, reader: jspb.BinaryReader): AskAllModelsForTaskResponse;
+}
+
+export namespace AskAllModelsForTaskResponse {
+  export type AsObject = {
+    modelList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
+  }
+}
+
 export class TellModelRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): TellModelRequest;

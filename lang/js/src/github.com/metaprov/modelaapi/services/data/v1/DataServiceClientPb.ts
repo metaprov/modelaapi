@@ -995,6 +995,46 @@ export class DataServiceClient {
     this.methodInfoAskModel);
   }
 
+  methodInfoAskAllModelsForTask = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse.deserializeBinary
+  );
+
+  askAllModelsForTask(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse>;
+
+  askAllModelsForTask(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse>;
+
+  askAllModelsForTask(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskAllModelsForTaskResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask',
+        request,
+        metadata || {},
+        this.methodInfoAskAllModelsForTask,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskAllModelsForTask',
+    request,
+    metadata || {},
+    this.methodInfoAskAllModelsForTask);
+  }
+
   methodInfoTellModel = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modelaapi_services_data_v1_data_pb.TellModelResponse,
     (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.TellModelRequest) => {
