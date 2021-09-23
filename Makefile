@@ -61,12 +61,12 @@ generate-deepcopy:
 
 .PHONY: generate-crd
 generate-crd:
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/data/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/base/crd
-	$(CONTROLLER_GEN) crd:trivialVersions=true,allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/catalog/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/infra/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/data/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/training/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/inference/v1alpha1 output:crd:artifacts:config=manifests/base/crd
+	$(CONTROLLER_GEN) crd:allowDangerousTypes=true,crdVersions=v1 paths=./pkg/apis/team/v1alpha1 output:crd:artifacts:config=manifests/base/crd
 
 
 .PHONY: controller-gen
@@ -100,7 +100,7 @@ install-gen:
 	go install k8s.io/code-generator/cmd/import-boss     
 	go install k8s.io/code-generator/cmd/lister-gen    
 	go install k8s.io/code-generator/cmd/register-gen
-	GO111MODULE=on go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.6.0 
+	GO111MODULE=on go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.7.0 
 	
 
 .PHONY: generate

@@ -677,6 +677,9 @@ export class ManagedFieldsEntry extends jspb.Message {
   hasFieldsv1(): boolean;
   clearFieldsv1(): ManagedFieldsEntry;
 
+  getSubresource(): string;
+  setSubresource(value: string): ManagedFieldsEntry;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ManagedFieldsEntry.AsObject;
   static toObject(includeInstance: boolean, msg: ManagedFieldsEntry): ManagedFieldsEntry.AsObject;
@@ -693,6 +696,7 @@ export namespace ManagedFieldsEntry {
     time?: Time.AsObject,
     fieldstype: string,
     fieldsv1?: FieldsV1.AsObject,
+    subresource: string,
   }
 }
 

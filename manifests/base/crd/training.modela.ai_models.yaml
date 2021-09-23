@@ -4,7 +4,7 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.6.0
+    controller-gen.kubebuilder.io/version: v0.7.0
   creationTimestamp: null
   name: models.training.modela.ai
 spec:
@@ -442,6 +442,13 @@ spec:
               modelVersion:
                 description: ModelVersion composed of studyid-modelid.
                 type: string
+              nplEstimator:
+                description: Dnn is a specification of the DNN estimator specification.
+                  Not supported for this release.
+                properties:
+                  pretrainedModel:
+                    type: string
+                type: object
               objective:
                 description: 'Objective is the metric by which the system compare
                   models Default: based on the task. classification is logloss. Regression
@@ -1085,10 +1092,6 @@ spec:
                     description: WorkloadClassName is the name of the workload class
                       used to run this model. This is assigned by the study
                     type: string
-                type: object
-              transformer:
-                description: Dnn is a specification of the DNN estimator specification.
-                  Not supported for this release.
                 type: object
               versionName:
                 default: latest

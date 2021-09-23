@@ -243,7 +243,7 @@ type ModelSpec struct {
 	Chatbot *ChatbotEstimatorSpec `json:"chatbot,omitempty" protobuf:"bytes,12,opt,name=chatbot"`
 	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
 	// +kubebuilder:validation:Optional
-	Transformer *TransformerEstimatorSpec `json:"transformer,omitempty" protobuf:"bytes,13,opt,name=transformer"`
+	NLPEstimator *NLPEstimatorSpec `json:"nplEstimator,omitempty" protobuf:"bytes,13,opt,name=nlpEstimator"`
 
 	// If this is an ensemble model, specify the ensemble
 	// Default: None
@@ -502,7 +502,8 @@ type ChatbotEstimatorSpec struct {
 }
 
 //TransformerEstimatorSpec is an transformer. This is not implemented yet.
-type TransformerEstimatorSpec struct {
+type NLPEstimatorSpec struct {
+	PretrainedModel *string `json:"pretrainedModel,omitempty" protobuf:"bytes,1,rep,name=pretrainedModel"`
 }
 
 // PreprocessingSpec of the pre processing pipeline

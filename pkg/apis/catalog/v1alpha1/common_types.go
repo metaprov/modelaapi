@@ -127,16 +127,32 @@ const (
 	VideoActionRecognition        MLTask = "video-action-recognition"
 	VideoClassification           MLTask = "video-classification"
 	VideoObjectTracking           MLTask = "video-object-tracking"
-	TextClassification            MLTask = "text-classification"
-	TextMultiLabelClassification  MLTask = "text-multi-label-classification"
-	TextEntityExtraction          MLTask = "text-entity-extraction"
-	TextSentimentAnalysis         MLTask = "text-sentiment-analysis"
 	ImageClassification           MLTask = "image-classification"
 	ImageMultiLabelClassification MLTask = "image-multi-classification"
 	ImageObjectDetection          MLTask = "image-object-detection"
 	ImageSegmentation             MLTask = "image-segmentation"
 	AutoDetectTask                MLTask = "auto"
-	UnknownTask                   MLTask = "unknown"
+
+	// Text Tasks
+	TextNer                  MLTask = "text-ner"
+	TextClassification       MLTask = "text-classification"
+	TextSummarization        MLTask = "text-summarization"
+	TextQA                   MLTask = "text-qa"
+	TextSentimentAnalysis    MLTask = "text-sentiment-analysis"
+	TextGeneration           MLTask = "text-generation"
+	TextCodeGeneration       MLTask = "text-code-generation"
+	TextTranslation          MLTask = "text-translation"
+	TextLangDetection        MLTask = "text-lang-detection"
+	TextGrammerCorrection    MLTask = "text-grammer-correction"
+	TextParaphrasing         MLTask = "text-paraphrasing"
+	TextIntentClassification MLTask = "text-intent-classification"
+	TextSemanticSimilarity   MLTask = "text-semantic-similarity"
+	TextKeyworkExtraction    MLTask = "text-keyword-extraction"
+	TextPOS                  MLTask = "text-pos"
+	TextTokenization         MLTask = "text-tokenization"
+	TextLemmalization        MLTask = "text-tokenization"
+
+	UnknownTask MLTask = "unknown"
 )
 
 // ProviderName is the machine learning task name

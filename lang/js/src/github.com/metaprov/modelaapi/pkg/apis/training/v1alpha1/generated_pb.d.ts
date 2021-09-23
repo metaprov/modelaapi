@@ -2459,10 +2459,10 @@ export class ModelSpec extends jspb.Message {
   hasChatbot(): boolean;
   clearChatbot(): ModelSpec;
 
-  getTransformer(): TransformerEstimatorSpec | undefined;
-  setTransformer(value?: TransformerEstimatorSpec): ModelSpec;
-  hasTransformer(): boolean;
-  clearTransformer(): ModelSpec;
+  getNlpestimator(): NLPEstimatorSpec | undefined;
+  setNlpestimator(value?: NLPEstimatorSpec): ModelSpec;
+  hasNlpestimator(): boolean;
+  clearNlpestimator(): ModelSpec;
 
   getEnsemble(): EnsembleSpec | undefined;
   setEnsemble(value?: EnsembleSpec): ModelSpec;
@@ -2553,7 +2553,7 @@ export namespace ModelSpec {
     estimator?: ClassicalEstimatorSpec.AsObject,
     dnn?: DeepEstimatorSpec.AsObject,
     chatbot?: ChatbotEstimatorSpec.AsObject,
-    transformer?: TransformerEstimatorSpec.AsObject,
+    nlpestimator?: NLPEstimatorSpec.AsObject,
     ensemble?: EnsembleSpec.AsObject,
     training?: TrainingSpec.AsObject,
     tested: boolean,
@@ -2931,6 +2931,24 @@ export namespace ModelValidationResult {
     passed: boolean,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     durationinsec: number,
+  }
+}
+
+export class NLPEstimatorSpec extends jspb.Message {
+  getPretrainedmodel(): string;
+  setPretrainedmodel(value: string): NLPEstimatorSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NLPEstimatorSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: NLPEstimatorSpec): NLPEstimatorSpec.AsObject;
+  static serializeBinaryToWriter(message: NLPEstimatorSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NLPEstimatorSpec;
+  static deserializeBinaryFromReader(message: NLPEstimatorSpec, reader: jspb.BinaryReader): NLPEstimatorSpec;
+}
+
+export namespace NLPEstimatorSpec {
+  export type AsObject = {
+    pretrainedmodel: string,
   }
 }
 
@@ -4443,20 +4461,6 @@ export namespace TrainingStageSpec {
     labname: string,
     studytemplatename: string,
     validationsList: Array<ModelValidation.AsObject>,
-  }
-}
-
-export class TransformerEstimatorSpec extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TransformerEstimatorSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: TransformerEstimatorSpec): TransformerEstimatorSpec.AsObject;
-  static serializeBinaryToWriter(message: TransformerEstimatorSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TransformerEstimatorSpec;
-  static deserializeBinaryFromReader(message: TransformerEstimatorSpec, reader: jspb.BinaryReader): TransformerEstimatorSpec;
-}
-
-export namespace TransformerEstimatorSpec {
-  export type AsObject = {
   }
 }
 

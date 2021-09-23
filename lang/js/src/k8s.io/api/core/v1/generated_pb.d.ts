@@ -1681,32 +1681,6 @@ export namespace EphemeralContainerCommon {
   }
 }
 
-export class EphemeralContainers extends jspb.Message {
-  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
-  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): EphemeralContainers;
-  hasMetadata(): boolean;
-  clearMetadata(): EphemeralContainers;
-
-  getEphemeralcontainersList(): Array<EphemeralContainer>;
-  setEphemeralcontainersList(value: Array<EphemeralContainer>): EphemeralContainers;
-  clearEphemeralcontainersList(): EphemeralContainers;
-  addEphemeralcontainers(value?: EphemeralContainer, index?: number): EphemeralContainer;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EphemeralContainers.AsObject;
-  static toObject(includeInstance: boolean, msg: EphemeralContainers): EphemeralContainers.AsObject;
-  static serializeBinaryToWriter(message: EphemeralContainers, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EphemeralContainers;
-  static deserializeBinaryFromReader(message: EphemeralContainers, reader: jspb.BinaryReader): EphemeralContainers;
-}
-
-export namespace EphemeralContainers {
-  export type AsObject = {
-    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
-    ephemeralcontainersList: Array<EphemeralContainer.AsObject>,
-  }
-}
-
 export class EphemeralVolumeSource extends jspb.Message {
   getVolumeclaimtemplate(): PersistentVolumeClaimTemplate | undefined;
   setVolumeclaimtemplate(value?: PersistentVolumeClaimTemplate): EphemeralVolumeSource;
@@ -3591,6 +3565,11 @@ export class PersistentVolumeClaimSpec extends jspb.Message {
   hasDatasource(): boolean;
   clearDatasource(): PersistentVolumeClaimSpec;
 
+  getDatasourceref(): TypedLocalObjectReference | undefined;
+  setDatasourceref(value?: TypedLocalObjectReference): PersistentVolumeClaimSpec;
+  hasDatasourceref(): boolean;
+  clearDatasourceref(): PersistentVolumeClaimSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PersistentVolumeClaimSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PersistentVolumeClaimSpec): PersistentVolumeClaimSpec.AsObject;
@@ -3608,6 +3587,7 @@ export namespace PersistentVolumeClaimSpec {
     storageclassname: string,
     volumemode: string,
     datasource?: TypedLocalObjectReference.AsObject,
+    datasourceref?: TypedLocalObjectReference.AsObject,
   }
 }
 
@@ -6302,11 +6282,6 @@ export class ServiceSpec extends jspb.Message {
   hasSessionaffinityconfig(): boolean;
   clearSessionaffinityconfig(): ServiceSpec;
 
-  getTopologykeysList(): Array<string>;
-  setTopologykeysList(value: Array<string>): ServiceSpec;
-  clearTopologykeysList(): ServiceSpec;
-  addTopologykeys(value: string, index?: number): ServiceSpec;
-
   getIpfamiliesList(): Array<string>;
   setIpfamiliesList(value: Array<string>): ServiceSpec;
   clearIpfamiliesList(): ServiceSpec;
@@ -6348,7 +6323,6 @@ export namespace ServiceSpec {
     healthchecknodeport: number,
     publishnotreadyaddresses: boolean,
     sessionaffinityconfig?: SessionAffinityConfig.AsObject,
-    topologykeysList: Array<string>,
     ipfamiliesList: Array<string>,
     ipfamilypolicy: string,
     allocateloadbalancernodeports: boolean,
@@ -7083,6 +7057,9 @@ export class WindowsSecurityContextOptions extends jspb.Message {
   getRunasusername(): string;
   setRunasusername(value: string): WindowsSecurityContextOptions;
 
+  getHostprocess(): boolean;
+  setHostprocess(value: boolean): WindowsSecurityContextOptions;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WindowsSecurityContextOptions.AsObject;
   static toObject(includeInstance: boolean, msg: WindowsSecurityContextOptions): WindowsSecurityContextOptions.AsObject;
@@ -7096,6 +7073,7 @@ export namespace WindowsSecurityContextOptions {
     gmsacredentialspecname: string,
     gmsacredentialspec: string,
     runasusername: string,
+    hostprocess: boolean,
   }
 }
 

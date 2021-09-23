@@ -6923,7 +6923,8 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.toObject = functio
     apiversion: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     time: (f = msg.getTime()) && proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time.toObject(includeInstance, f),
     fieldstype: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    fieldsv1: (f = msg.getFieldsv1()) && proto.k8s.io.apimachinery.pkg.apis.meta.v1.FieldsV1.toObject(includeInstance, f)
+    fieldsv1: (f = msg.getFieldsv1()) && proto.k8s.io.apimachinery.pkg.apis.meta.v1.FieldsV1.toObject(includeInstance, f),
+    subresource: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6985,6 +6986,10 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.deserializeBinaryF
       var value = new proto.k8s.io.apimachinery.pkg.apis.meta.v1.FieldsV1;
       reader.readMessage(value,proto.k8s.io.apimachinery.pkg.apis.meta.v1.FieldsV1.deserializeBinaryFromReader);
       msg.setFieldsv1(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubresource(value);
       break;
     default:
       reader.skipField();
@@ -7057,6 +7062,13 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.serializeBinaryToW
       7,
       f,
       proto.k8s.io.apimachinery.pkg.apis.meta.v1.FieldsV1.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
     );
   }
 };
@@ -7277,6 +7289,42 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.prototype.clearFie
  */
 proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.prototype.hasFieldsv1 = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string subresource = 8;
+ * @return {string}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.prototype.getSubresource = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.prototype.setSubresource = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.prototype.clearSubresource = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.ManagedFieldsEntry.prototype.hasSubresource = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

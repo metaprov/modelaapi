@@ -1634,7 +1634,7 @@ message ModelSpec {
 
   // Dnn is a specification of the DNN estimator specification. Not supported for this release.
   // +kubebuilder:validation:Optional
-  optional TransformerEstimatorSpec transformer = 13;
+  optional NLPEstimatorSpec nlpEstimator = 13;
 
   // If this is an ensemble model, specify the ensemble
   // Default: None
@@ -1998,6 +1998,11 @@ message ModelValidationResult {
 
   // The amount of time it took to compute this result
   optional int32 durationInSec = 10;
+}
+
+// TransformerEstimatorSpec is an transformer. This is not implemented yet.
+message NLPEstimatorSpec {
+  optional string pretrainedModel = 1;
 }
 
 message NNLayerParameter {
@@ -3068,10 +3073,6 @@ message TrainingStageSpec {
   // Validations defines the machine learning test cases to run against the new trained model.
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 5;
-}
-
-// TransformerEstimatorSpec is an transformer. This is not implemented yet.
-message TransformerEstimatorSpec {
 }
 
 // UATStageSpec is the specification of the user acceptance test.
