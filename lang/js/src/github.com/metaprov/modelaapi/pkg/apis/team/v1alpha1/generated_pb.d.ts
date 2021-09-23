@@ -48,6 +48,176 @@ export namespace Comment {
   }
 }
 
+export class Meeting extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Meeting;
+  hasMetadata(): boolean;
+  clearMetadata(): Meeting;
+
+  getSpec(): MeetingSpec | undefined;
+  setSpec(value?: MeetingSpec): Meeting;
+  hasSpec(): boolean;
+  clearSpec(): Meeting;
+
+  getStatus(): MeetingStatus | undefined;
+  setStatus(value?: MeetingStatus): Meeting;
+  hasStatus(): boolean;
+  clearStatus(): Meeting;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Meeting.AsObject;
+  static toObject(includeInstance: boolean, msg: Meeting): Meeting.AsObject;
+  static serializeBinaryToWriter(message: Meeting, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Meeting;
+  static deserializeBinaryFromReader(message: Meeting, reader: jspb.BinaryReader): Meeting;
+}
+
+export namespace Meeting {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: MeetingSpec.AsObject,
+    status?: MeetingStatus.AsObject,
+  }
+}
+
+export class MeetingCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): MeetingCondition;
+
+  getStatus(): string;
+  setStatus(value: string): MeetingCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MeetingCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): MeetingCondition;
+
+  getReason(): string;
+  setReason(value: string): MeetingCondition;
+
+  getMessage(): string;
+  setMessage(value: string): MeetingCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MeetingCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: MeetingCondition): MeetingCondition.AsObject;
+  static serializeBinaryToWriter(message: MeetingCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MeetingCondition;
+  static deserializeBinaryFromReader(message: MeetingCondition, reader: jspb.BinaryReader): MeetingCondition;
+}
+
+export namespace MeetingCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class MeetingList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): MeetingList;
+  hasMetadata(): boolean;
+  clearMetadata(): MeetingList;
+
+  getItemsList(): Array<Meeting>;
+  setItemsList(value: Array<Meeting>): MeetingList;
+  clearItemsList(): MeetingList;
+  addItems(value?: Meeting, index?: number): Meeting;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MeetingList.AsObject;
+  static toObject(includeInstance: boolean, msg: MeetingList): MeetingList.AsObject;
+  static serializeBinaryToWriter(message: MeetingList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MeetingList;
+  static deserializeBinaryFromReader(message: MeetingList, reader: jspb.BinaryReader): MeetingList;
+}
+
+export namespace MeetingList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<Meeting.AsObject>,
+  }
+}
+
+export class MeetingSpec extends jspb.Message {
+  getDescription(): string;
+  setDescription(value: string): MeetingSpec;
+
+  getAgenda(): string;
+  setAgenda(value: string): MeetingSpec;
+
+  getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MeetingSpec;
+  hasEntityref(): boolean;
+  clearEntityref(): MeetingSpec;
+
+  getNotifiername(): string;
+  setNotifiername(value: string): MeetingSpec;
+
+  getAssignedtoList(): Array<string>;
+  setAssignedtoList(value: Array<string>): MeetingSpec;
+  clearAssignedtoList(): MeetingSpec;
+  addAssignedto(value: string, index?: number): MeetingSpec;
+
+  getFlagged(): boolean;
+  setFlagged(value: boolean): MeetingSpec;
+
+  getReminder(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setReminder(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MeetingSpec;
+  hasReminder(): boolean;
+  clearReminder(): MeetingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MeetingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: MeetingSpec): MeetingSpec.AsObject;
+  static serializeBinaryToWriter(message: MeetingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MeetingSpec;
+  static deserializeBinaryFromReader(message: MeetingSpec, reader: jspb.BinaryReader): MeetingSpec;
+}
+
+export namespace MeetingSpec {
+  export type AsObject = {
+    description: string,
+    agenda: string,
+    entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    notifiername: string,
+    assignedtoList: Array<string>,
+    flagged: boolean,
+    reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
+export class MeetingStatus extends jspb.Message {
+  getPhase(): string;
+  setPhase(value: string): MeetingStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): MeetingStatus;
+
+  getConditionsList(): Array<MeetingCondition>;
+  setConditionsList(value: Array<MeetingCondition>): MeetingStatus;
+  clearConditionsList(): MeetingStatus;
+  addConditions(value?: MeetingCondition, index?: number): MeetingCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MeetingStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: MeetingStatus): MeetingStatus.AsObject;
+  static serializeBinaryToWriter(message: MeetingStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MeetingStatus;
+  static deserializeBinaryFromReader(message: MeetingStatus, reader: jspb.BinaryReader): MeetingStatus;
+}
+
+export namespace MeetingStatus {
+  export type AsObject = {
+    phase: string,
+    observedgeneration: number,
+    conditionsList: Array<MeetingCondition.AsObject>,
+  }
+}
+
 export class PostMortem extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PostMortem;

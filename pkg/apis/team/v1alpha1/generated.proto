@@ -46,6 +46,101 @@ message Comment {
 
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=Meetings,singular=Meeting,categories={infra,modela}
+message Meeting {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional MeetingSpec spec = 2;
+
+  optional MeetingStatus status = 3;
+}
+
+// MeetingCondition describes the state of the license at a certain point.
+message MeetingCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// MeetingList is a list of Meetings
+message MeetingList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated Meeting items = 2;
+}
+
+// MeetingSpec defines the desired state of Meeting
+message MeetingSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  // Description of the meeting
+  optional string description = 1;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  // Agenda of the meeting
+  optional string agenda = 2;
+
+  // The modela entity that the meeting is about
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
+
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Required
+  // NotifierName is the name of the notifier used to fire the alert.
+  optional string notifierName = 4;
+
+  // Assigned to is the user name assigned to this task
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  repeated string assignedTo = 5;
+
+  // Flagged denote if the meeting is flagged
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool flagged = 6;
+
+  // Reminder is the time to send a reminder
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
+}
+
+// MeetingStatus is the observed state of a Meeting
+message MeetingStatus {
+  // Phase is the phase of the model
+  // +kubebuilder:default:="Pending"
+  // +kubebuilder:validation:Optional
+  optional string phase = 1;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 2;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated MeetingCondition conditions = 3;
+}
+
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modela,all}

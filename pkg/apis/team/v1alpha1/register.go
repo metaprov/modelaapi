@@ -44,6 +44,8 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&RunBookList{},
 		&Todo{},
 		&TodoList{},
+		&Meeting{},
+		&MeetingList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

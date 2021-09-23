@@ -40,6 +40,7 @@ protoc \
     github.com/metaprov/modelaapi/services/alert/v1/alert.proto \
     github.com/metaprov/modelaapi/services/attachment/v1/attachment.proto \
     github.com/metaprov/modelaapi/services/todo/v1/todo.proto \
+    github.com/metaprov/modelaapi/services/meeting/v1/meeting.proto \
     github.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto \
     github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd.proto \
     github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto \
