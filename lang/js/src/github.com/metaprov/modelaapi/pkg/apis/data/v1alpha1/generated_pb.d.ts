@@ -1358,10 +1358,13 @@ export class DataSourceSpec extends jspb.Message {
   hasSchema(): boolean;
   clearSchema(): DataSourceSpec;
 
-  getFlatfile(): FlatFileSpec | undefined;
-  setFlatfile(value?: FlatFileSpec): DataSourceSpec;
-  hasFlatfile(): boolean;
-  clearFlatfile(): DataSourceSpec;
+  getFiletype(): string;
+  setFiletype(value: string): DataSourceSpec;
+
+  getCsvfile(): FlatFileSpec | undefined;
+  setCsvfile(value?: FlatFileSpec): DataSourceSpec;
+  hasCsvfile(): boolean;
+  clearCsvfile(): DataSourceSpec;
 
   getExcelnotebook(): ExcelNotebookSpec | undefined;
   setExcelnotebook(value?: ExcelNotebookSpec): DataSourceSpec;
@@ -1393,7 +1396,8 @@ export namespace DataSourceSpec {
     versionname: string,
     description: string,
     schema?: Schema.AsObject,
-    flatfile?: FlatFileSpec.AsObject,
+    filetype: string,
+    csvfile?: FlatFileSpec.AsObject,
     excelnotebook?: ExcelNotebookSpec.AsObject,
     datasettype: string,
     sample?: SampleSpec.AsObject,
@@ -3084,9 +3088,6 @@ export namespace FileValidation {
 }
 
 export class FlatFileSpec extends jspb.Message {
-  getFiletype(): string;
-  setFiletype(value: string): FlatFileSpec;
-
   getDelimiter(): string;
   setDelimiter(value: string): FlatFileSpec;
 
@@ -3127,7 +3128,6 @@ export class FlatFileSpec extends jspb.Message {
 
 export namespace FlatFileSpec {
   export type AsObject = {
-    filetype: string,
     delimiter: string,
     quote: string,
     escapechar: string,

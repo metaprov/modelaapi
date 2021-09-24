@@ -291,11 +291,6 @@ const (
 )
 
 type FlatFileSpec struct {
-	// The text file type
-	// Default: csv
-	// +kubebuilder:default:="csv"
-	// +kubebuilder:validation:Optional
-	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,4,opt,name=fileType"`
 	// Refers to the character used to separate fields.
 	// Default to comma
 	// +kubebuilder:validation:Optional
@@ -596,21 +591,26 @@ type DataSourceSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The data source schema
 	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
+	// The text file type
+	// Default: csv
+	// +kubebuilder:default:="csv"
+	// +kubebuilder:validation:Optional
+	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,5,opt,name=fileType"`
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
-	FlatFile *FlatFileSpec `json:"flatfile,omitempty" protobuf:"bytes,5,opt,name=flatfile"`
+	CsvFile *FlatFileSpec `json:"csvfile,omitempty" protobuf:"bytes,6,opt,name=csvfile"`
 	// Excel Notebook is a notebook in excel
 	// +kubebuilder:validation:Optional
-	ExcelNotebook *ExcelNotebookSpec `json:"excelNotebook,omitempty" protobuf:"bytes,6,opt,name=excelNotebook"`
+	ExcelNotebook *ExcelNotebookSpec `json:"excelNotebook,omitempty" protobuf:"bytes,7,opt,name=excelNotebook"`
 	// Type is the dataset type
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
-	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,7,opt,name=datasetType"`
+	DatasetType *catalog.DatasetType `json:"datasetType,omitempty" protobuf:"bytes,8,opt,name=datasetType"`
 	// Sample spec defines how many rows to use for analysis for datasets from this datasource.
-	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,8,opt,name=sample"`
+	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
 	// The default task for datasets from this data source. If null this will be setup to the data product task
 	// +kubebuilder:validation:Optional
-	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,9,opt,name=task"`
+	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec

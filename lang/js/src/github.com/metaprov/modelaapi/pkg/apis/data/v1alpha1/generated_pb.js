@@ -15385,11 +15385,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.toObje
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     schema: (f = msg.getSchema()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.toObject(includeInstance, f),
-    flatfile: (f = msg.getFlatfile()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.toObject(includeInstance, f),
+    filetype: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    csvfile: (f = msg.getCsvfile()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.toObject(includeInstance, f),
     excelnotebook: (f = msg.getExcelnotebook()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec.toObject(includeInstance, f),
-    datasettype: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    datasettype: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
-    task: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    task: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15444,25 +15445,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.deseri
       msg.setSchema(value);
       break;
     case 5:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.deserializeBinaryFromReader);
-      msg.setFlatfile(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFiletype(value);
       break;
     case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.deserializeBinaryFromReader);
+      msg.setCsvfile(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec.deserializeBinaryFromReader);
       msg.setExcelnotebook(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasettype(value);
       break;
-    case 8:
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.deserializeBinaryFromReader);
       msg.setSample(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setTask(value);
       break;
@@ -15524,10 +15529,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema.serializeBinaryToWriter
     );
   }
-  f = message.getFlatfile();
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getCsvfile();
   if (f != null) {
     writer.writeMessage(
-      5,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.serializeBinaryToWriter
     );
@@ -15535,30 +15547,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.serial
   f = message.getExcelnotebook();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
   if (f != null) {
     writer.writeString(
-      7,
+      8,
       f
     );
   }
   f = message.getSample();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
   if (f != null) {
     writer.writeString(
-      9,
+      10,
       f
     );
   }
@@ -15711,30 +15723,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
 
 
 /**
- * optional FlatFileSpec flatfile = 5;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ * optional string fileType = 5;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getFlatfile = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec, 5));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getFiletype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setFlatfile = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setFiletype = function(value) {
+  return jspb.Message.setField(this, 5, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearFlatfile = function() {
-  return this.setFlatfile(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearFiletype = function() {
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -15742,18 +15753,55 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasFlatfile = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasFiletype = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional ExcelNotebookSpec excelNotebook = 6;
+ * optional FlatFileSpec csvfile = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getCsvfile = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setCsvfile = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearCsvfile = function() {
+  return this.setCsvfile(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasCsvfile = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional ExcelNotebookSpec excelNotebook = 7;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getExcelnotebook = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec, 6));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec, 7));
 };
 
 
@@ -15762,7 +15810,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setExcelnotebook = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -15780,16 +15828,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasExcelnotebook = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string datasetType = 7;
+ * optional string datasetType = 8;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getDatasettype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -15798,7 +15846,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setDatasettype = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
@@ -15807,7 +15855,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearDatasettype = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -15816,17 +15864,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasDatasettype = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional SampleSpec sample = 8;
+ * optional SampleSpec sample = 9;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getSample = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec, 8));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec, 9));
 };
 
 
@@ -15835,7 +15883,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setSample = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -15853,16 +15901,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasSample = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional string task = 9;
+ * optional string task = 10;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.getTask = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -15871,7 +15919,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.setTask = function(value) {
-  return jspb.Message.setField(this, 9, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
@@ -15880,7 +15928,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.clearTask = function() {
-  return jspb.Message.setField(this, 9, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -15889,7 +15937,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceSpec.prototype.hasTask = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -31654,7 +31702,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    filetype: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     delimiter: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     quote: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     escapechar: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
@@ -31701,10 +31748,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.deserial
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFiletype(value);
-      break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setDelimiter(value);
@@ -31774,13 +31817,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.prototyp
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
@@ -31851,42 +31887,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.serializ
       f
     );
   }
-};
-
-
-/**
- * optional string fileType = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.prototype.getFiletype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.prototype.setFiletype = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.prototype.clearFiletype = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec.prototype.hasFiletype = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 

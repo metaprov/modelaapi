@@ -979,25 +979,31 @@ message DataSourceSpec {
   // The data source schema
   optional Schema schema = 4;
 
+  // The text file type
+  // Default: csv
+  // +kubebuilder:default:="csv"
+  // +kubebuilder:validation:Optional
+  optional string fileType = 5;
+
   // FlatFile access specification
   // +kubebuilder:validation:Optional
-  optional FlatFileSpec flatfile = 5;
+  optional FlatFileSpec csvfile = 6;
 
   // Excel Notebook is a notebook in excel
   // +kubebuilder:validation:Optional
-  optional ExcelNotebookSpec excelNotebook = 6;
+  optional ExcelNotebookSpec excelNotebook = 7;
 
   // Type is the dataset type
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string datasetType = 7;
+  optional string datasetType = 8;
 
   // Sample spec defines how many rows to use for analysis for datasets from this datasource.
-  optional SampleSpec sample = 8;
+  optional SampleSpec sample = 9;
 
   // The default task for datasets from this data source. If null this will be setup to the data product task
   // +kubebuilder:validation:Optional
-  optional string task = 9;
+  optional string task = 10;
 }
 
 // FlatFileStatus defines the observed state of FlatFileSpec
@@ -2025,12 +2031,6 @@ message FileValidation {
 }
 
 message FlatFileSpec {
-  // The text file type
-  // Default: csv
-  // +kubebuilder:default:="csv"
-  // +kubebuilder:validation:Optional
-  optional string fileType = 4;
-
   // Refers to the character used to separate fields.
   // Default to comma
   // +kubebuilder:validation:Optional
