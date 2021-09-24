@@ -37,8 +37,8 @@ func (datasource *DataSource) Default() {
 
 	}
 
-	if datasource.Spec.FlatFile != nil {
-		ffile := datasource.Spec.FlatFile
+	if datasource.Spec.CsvFile != nil {
+		ffile := datasource.Spec.CsvFile
 		if ffile.Header == nil {
 			ffile.Header = util.BoolPtr(true)
 		}
@@ -46,10 +46,6 @@ func (datasource *DataSource) Default() {
 			ffile.SkipRows = util.Int32Ptr(0)
 		}
 
-		if ffile.FileType != nil {
-			csv := FlatFileTypeCsv
-			ffile.FileType = &csv
-		}
 		if ffile.Delimiter != nil {
 			delimiter := DelimiterComma
 			ffile.Delimiter = &delimiter
