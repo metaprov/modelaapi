@@ -12901,12 +12901,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.protot
 proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
-    flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
-    excel: (f = msg.getExcel()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.toObject(includeInstance, f),
-    location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
+    datasource: (f = msg.getDatasource()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
-    filetype: jspb.Message.getFieldWithDefault(msg, 7, "")
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -12949,34 +12946,20 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.deseri
       msg.setBucket(value);
       break;
     case 2:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
-      msg.setFlatfile(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.deserializeBinaryFromReader);
+      msg.setDatasource(value);
       break;
     case 3:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.deserializeBinaryFromReader);
-      msg.setExcel(value);
-      break;
-    case 4:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
-      msg.setLocation(value);
-      break;
-    case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
       msg.setConnection(value);
       break;
-    case 6:
+    case 4:
       var value = msg.getSecretMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFiletype(value);
       break;
     default:
       reader.skipField();
@@ -13015,48 +12998,25 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.serial
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.serializeBinaryToWriter
     );
   }
-  f = message.getFlatfile();
+  f = message.getDatasource();
   if (f != null) {
     writer.writeMessage(
       2,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getExcel();
-  if (f != null) {
-    writer.writeMessage(
-      3,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getLocation();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.serializeBinaryToWriter
     );
   }
   f = message.getConnection();
   if (f != null) {
     writer.writeMessage(
-      5,
+      3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.serializeBinaryToWriter
     );
   }
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
-  }
-  f = message.getFiletype();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
-      f
-    );
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
   }
 };
 
@@ -13099,20 +13059,20 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.protot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 2;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.getFlatfile = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 2));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.getDatasource = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource, 2));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.setFlatfile = function(value) {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.setDatasource = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -13121,8 +13081,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.protot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.clearFlatfile = function() {
-  return this.setFlatfile(undefined);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.clearDatasource = function() {
+  return this.setDatasource(undefined);
 };
 
 
@@ -13130,92 +13090,18 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.hasFlatfile = function() {
+proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.hasDatasource = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec excel = 3;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.getExcel = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec, 3));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.setExcel = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.clearExcel = function() {
-  return this.setExcel(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.hasExcel = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.getLocation = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 4));
-};
-
-
-/**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
-*/
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.clearLocation = function() {
-  return this.setLocation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 3));
 };
 
 
@@ -13224,7 +13110,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.protot
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.setConnection = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -13242,19 +13128,19 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.hasConnection = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * map<string, bytes> secret = 6;
+ * map<string, bytes> secret = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,!(string|Uint8Array)>}
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.getSecretMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,!(string|Uint8Array)>} */ (
-      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
       null));
 };
 
@@ -13266,24 +13152,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.protot
 proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
-
-
-/**
- * optional string fileType = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.getFiletype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.prototype.setFiletype = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
-};
 
 
 

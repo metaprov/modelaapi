@@ -55,10 +55,7 @@ message DeleteDataSourceResponse {}
 message InferSchemaRequest {
     string namespace = 1;
     string name      = 2;
-    string fileType  = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec excel = 5;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 6;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;    
 }
 
 message InferSchemaResponse {
