@@ -1785,7 +1785,9 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.to
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    filetype: jspb.Message.getFieldWithDefault(msg, 3, ""),
     flatfile: (f = msg.getFlatfile()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
+    excel: (f = msg.getExcel()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
@@ -1832,11 +1834,20 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.de
       msg.setName(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFiletype(value);
+      break;
+    case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
       msg.setFlatfile(value);
       break;
-    case 4:
+    case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.deserializeBinaryFromReader);
+      msg.setExcel(value);
+      break;
+    case 6:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
@@ -1884,18 +1895,33 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.se
       f
     );
   }
+  f = message.getFiletype();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getFlatfile();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getExcel();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.serializeBinaryToWriter
     );
   }
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
-      4,
+      6,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
@@ -1940,12 +1966,30 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 3;
+ * optional string fileType = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getFiletype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setFiletype = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfile = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getFlatfile = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 3));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 4));
 };
 
 
@@ -1954,7 +1998,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setFlatfile = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -1972,17 +2016,54 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.hasFlatfile = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 4;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec excel = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec}
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getExcel = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ExcelNotebookSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setExcel = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.clearExcel = function() {
+  return this.setExcel(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.hasExcel = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 6;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 4));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 6));
 };
 
 
@@ -1991,7 +2072,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2009,7 +2090,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

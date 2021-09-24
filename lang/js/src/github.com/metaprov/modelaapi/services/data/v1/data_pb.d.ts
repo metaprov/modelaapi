@@ -1429,6 +1429,11 @@ export class DsInferSchemaRequest extends jspb.Message {
   hasFlatfile(): boolean;
   clearFlatfile(): DsInferSchemaRequest;
 
+  getExcel(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec | undefined;
+  setExcel(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec): DsInferSchemaRequest;
+  hasExcel(): boolean;
+  clearExcel(): DsInferSchemaRequest;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsInferSchemaRequest;
   hasLocation(): boolean;
@@ -1442,6 +1447,9 @@ export class DsInferSchemaRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): DsInferSchemaRequest;
 
+  getFiletype(): string;
+  setFiletype(value: string): DsInferSchemaRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsInferSchemaRequest.AsObject;
   static toObject(includeInstance: boolean, msg: DsInferSchemaRequest): DsInferSchemaRequest.AsObject;
@@ -1454,9 +1462,11 @@ export namespace DsInferSchemaRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
+    excel?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    filetype: string,
   }
 }
 

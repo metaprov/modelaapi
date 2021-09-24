@@ -205,10 +205,18 @@ export class InferSchemaRequest extends jspb.Message {
   getName(): string;
   setName(value: string): InferSchemaRequest;
 
+  getFiletype(): string;
+  setFiletype(value: string): InferSchemaRequest;
+
   getFlatfile(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec | undefined;
   setFlatfile(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec): InferSchemaRequest;
   hasFlatfile(): boolean;
   clearFlatfile(): InferSchemaRequest;
+
+  getExcel(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec | undefined;
+  setExcel(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec): InferSchemaRequest;
+  hasExcel(): boolean;
+  clearExcel(): InferSchemaRequest;
 
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): InferSchemaRequest;
@@ -227,7 +235,9 @@ export namespace InferSchemaRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    filetype: string,
     flatfile?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.AsObject,
+    excel?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.ExcelNotebookSpec.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
