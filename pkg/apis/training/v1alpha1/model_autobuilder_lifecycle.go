@@ -429,8 +429,8 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 			VersionName: util.StrPtr(b.DataProductVersionName()),
 			Description: util.StrPtr(""),
 			Schema:      &data.Schema{Columns: columns},
-			FlatFile: &data.FlatFileSpec{
-				FileType:     &csv,
+			FileType:    &csv,
+			CsvFile: &data.FlatFileSpec{
 				Delimiter:    &del,
 				QuoteChar:    "",
 				EscapeChar:   "",
