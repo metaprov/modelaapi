@@ -80,7 +80,7 @@ type MeetingSpec struct {
 	// Assigned to is the user name assigned to this task
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Participants []string `json:"assignedTo,omitempty" protobuf:"bytes,5,rep,name=assignedTo"`
+	Participants []string `json:"participants,omitempty" protobuf:"bytes,5,rep,name=participants"`
 	// Flagged denote if the meeting is flagged
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -91,15 +91,19 @@ type MeetingSpec struct {
 
 // MeetingStatus is the observed state of a Meeting
 type MeetingStatus struct {
-	// Phase is the phase of the model
+	// Phase is the phase of the meeting
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
 	Phase MeetingPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
+	// The meeting notes.
+	Notes string `json:"notes,omitempty" protobuf:"bytes,3,opt,name=notes"`
+	// the meeting action items
+	ActionItems string `json:"actionItems,omitempty" protobuf:"bytes,4,opt,name=actionItems"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []MeetingCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []MeetingCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

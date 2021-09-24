@@ -157,10 +157,10 @@ export class MeetingSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): MeetingSpec;
 
-  getAssignedtoList(): Array<string>;
-  setAssignedtoList(value: Array<string>): MeetingSpec;
-  clearAssignedtoList(): MeetingSpec;
-  addAssignedto(value: string, index?: number): MeetingSpec;
+  getParticipantsList(): Array<string>;
+  setParticipantsList(value: Array<string>): MeetingSpec;
+  clearParticipantsList(): MeetingSpec;
+  addParticipants(value: string, index?: number): MeetingSpec;
 
   getFlagged(): boolean;
   setFlagged(value: boolean): MeetingSpec;
@@ -184,7 +184,7 @@ export namespace MeetingSpec {
     agenda: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     notifiername: string,
-    assignedtoList: Array<string>,
+    participantsList: Array<string>,
     flagged: boolean,
     reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
   }
@@ -196,6 +196,12 @@ export class MeetingStatus extends jspb.Message {
 
   getObservedgeneration(): number;
   setObservedgeneration(value: number): MeetingStatus;
+
+  getNotes(): string;
+  setNotes(value: string): MeetingStatus;
+
+  getActionitems(): string;
+  setActionitems(value: string): MeetingStatus;
 
   getConditionsList(): Array<MeetingCondition>;
   setConditionsList(value: Array<MeetingCondition>): MeetingStatus;
@@ -214,6 +220,8 @@ export namespace MeetingStatus {
   export type AsObject = {
     phase: string,
     observedgeneration: number,
+    notes: string,
+    actionitems: string,
     conditionsList: Array<MeetingCondition.AsObject>,
   }
 }

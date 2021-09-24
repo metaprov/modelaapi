@@ -64,12 +64,6 @@ spec:
                 default: ""
                 description: Agenda of the meeting
                 type: string
-              assignedTo:
-                default: no-one
-                description: Assigned to is the user name assigned to this task
-                items:
-                  type: string
-                type: array
               description:
                 default: ""
                 description: Description of the meeting
@@ -119,6 +113,12 @@ spec:
                 description: NotifierName is the name of the notifier used to fire
                   the alert.
                 type: string
+              participants:
+                default: no-one
+                description: Assigned to is the user name assigned to this task
+                items:
+                  type: string
+                type: array
               reminder:
                 description: Reminder is the time to send a reminder
                 format: date-time
@@ -127,6 +127,9 @@ spec:
           status:
             description: MeetingStatus is the observed state of a Meeting
             properties:
+              actionItems:
+                description: the meeting action items
+                type: string
               conditions:
                 items:
                   description: MeetingCondition describes the state of the license
@@ -155,6 +158,9 @@ spec:
                   - type
                   type: object
                 type: array
+              notes:
+                description: The meeting notes.
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
@@ -162,7 +168,7 @@ spec:
                 type: integer
               phase:
                 default: Pending
-                description: Phase is the phase of the model
+                description: Phase is the phase of the meeting
                 type: string
             type: object
         required:

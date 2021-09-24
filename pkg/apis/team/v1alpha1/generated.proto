@@ -111,7 +111,7 @@ message MeetingSpec {
   // Assigned to is the user name assigned to this task
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  repeated string assignedTo = 5;
+  repeated string participants = 5;
 
   // Flagged denote if the meeting is flagged
   // +kubebuilder:default:=false
@@ -124,7 +124,7 @@ message MeetingSpec {
 
 // MeetingStatus is the observed state of a Meeting
 message MeetingStatus {
-  // Phase is the phase of the model
+  // Phase is the phase of the meeting
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
   optional string phase = 1;
@@ -133,10 +133,16 @@ message MeetingStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
+  // The meeting notes.
+  optional string notes = 3;
+
+  // the meeting action items
+  optional string actionItems = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated MeetingCondition conditions = 3;
+  repeated MeetingCondition conditions = 5;
 }
 
 // +kubebuilder:object:root=true

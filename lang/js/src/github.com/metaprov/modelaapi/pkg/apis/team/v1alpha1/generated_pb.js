@@ -1883,7 +1883,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.toObject 
     agenda: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    assignedtoList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    participantsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     flagged: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     reminder: (f = msg.getReminder()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
   };
@@ -1941,7 +1941,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.deseriali
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.addAssignedto(value);
+      msg.addParticipants(value);
       break;
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -2010,7 +2010,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.serialize
       f
     );
   }
-  f = message.getAssignedtoList();
+  f = message.getParticipantsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       5,
@@ -2181,10 +2181,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
 
 
 /**
- * repeated string assignedTo = 5;
+ * repeated string participants = 5;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.getAssignedtoList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.getParticipantsList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
@@ -2193,7 +2193,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.setAssignedtoList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.setParticipantsList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -2203,7 +2203,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.addAssignedto = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.addParticipants = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
@@ -2212,8 +2212,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.clearAssignedtoList = function() {
-  return this.setAssignedtoList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.clearParticipantsList = function() {
+  return this.setParticipantsList([]);
 };
 
 
@@ -2296,7 +2296,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.repeatedFields_ = [3];
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.repeatedFields_ = [5];
 
 
 
@@ -2331,6 +2331,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.toObjec
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    notes: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    actionitems: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition.toObject, includeInstance)
   };
@@ -2378,6 +2380,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.deseria
       msg.setObservedgeneration(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNotes(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setActionitems(value);
+      break;
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -2425,10 +2435,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.seriali
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition.serializeBinaryToWriter
     );
@@ -2509,12 +2533,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototy
 
 
 /**
- * repeated MeetingCondition conditions = 3;
+ * optional string notes = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.getNotes = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.setNotes = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.clearNotes = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.hasNotes = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string actionItems = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.getActionitems = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.setActionitems = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.clearActionitems = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.hasActionitems = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated MeetingCondition conditions = 5;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, 5));
 };
 
 
@@ -2523,7 +2619,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -2533,7 +2629,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, opt_index);
 };
 
 
