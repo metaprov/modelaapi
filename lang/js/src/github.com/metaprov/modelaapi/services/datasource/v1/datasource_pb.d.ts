@@ -210,6 +210,11 @@ export class InferSchemaRequest extends jspb.Message {
   hasDatasource(): boolean;
   clearDatasource(): InferSchemaRequest;
 
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): InferSchemaRequest;
+  hasLocation(): boolean;
+  clearLocation(): InferSchemaRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InferSchemaRequest.AsObject;
   static toObject(includeInstance: boolean, msg: InferSchemaRequest): InferSchemaRequest.AsObject;
@@ -223,6 +228,7 @@ export namespace InferSchemaRequest {
     namespace: string,
     name: string,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }
 }
 

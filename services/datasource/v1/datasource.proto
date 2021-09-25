@@ -51,11 +51,11 @@ message DeleteDataSourceRequest {
 
 message DeleteDataSourceResponse {}
 
-
 message InferSchemaRequest {
     string namespace = 1;
     string name      = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;    
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation   location = 4; 
 }
 
 message InferSchemaResponse {

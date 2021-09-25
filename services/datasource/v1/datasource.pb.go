@@ -513,9 +513,10 @@ type InferSchemaRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Namespace  string               `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
-	Name       string               `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-	Datasource *v1alpha1.DataSource `protobuf:"bytes,3,opt,name=datasource,proto3" json:"datasource,omitempty"`
+	Namespace  string                 `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
+	Name       string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Datasource *v1alpha1.DataSource   `protobuf:"bytes,3,opt,name=datasource,proto3" json:"datasource,omitempty"`
+	Location   *v1alpha1.DataLocation `protobuf:"bytes,4,opt,name=location,proto3" json:"location,omitempty"`
 }
 
 func (x *InferSchemaRequest) Reset() {
@@ -567,6 +568,13 @@ func (x *InferSchemaRequest) GetName() string {
 func (x *InferSchemaRequest) GetDatasource() *v1alpha1.DataSource {
 	if x != nil {
 		return x.Datasource
+	}
+	return nil
+}
+
+func (x *InferSchemaRequest) GetLocation() *v1alpha1.DataLocation {
+	if x != nil {
+		return x.Location
 	}
 	return nil
 }
@@ -804,7 +812,7 @@ var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_r
 	0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
 	0x6e, 0x61, 0x6d, 0x65, 0x22, 0x1a, 0x0a, 0x18, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x44, 0x61,
 	0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0xa8, 0x01, 0x0a, 0x12, 0x49, 0x6e, 0x66, 0x65, 0x72, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61,
+	0x22, 0x88, 0x02, 0x0a, 0x12, 0x49, 0x6e, 0x66, 0x65, 0x72, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73,
 	0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65,
 	0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20,
@@ -814,7 +822,13 @@ var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_r
 	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b,
 	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c,
 	0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52,
-	0x0a, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x22, 0x70, 0x0a, 0x13, 0x49,
+	0x0a, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x5e, 0x0a, 0x08, 0x6c,
+	0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42, 0x2e,
+	0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70,
+	0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b,
+	0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c,
+	0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x52, 0x08, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x70, 0x0a, 0x13, 0x49,
 	0x6e, 0x66, 0x65, 0x72, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x12, 0x59, 0x0a, 0x07, 0x63, 0x6f, 0x6c, 0x75, 0x6d, 0x6e, 0x73, 0x18, 0x01, 0x20,
 	0x03, 0x28, 0x0b, 0x32, 0x3f, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
@@ -978,9 +992,9 @@ var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_g
 	nil,                              // 14: github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest.LabelsEntry
 	(*v1alpha1.DataSourceList)(nil),  // 15: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList
 	(*v1alpha1.DataSource)(nil),      // 16: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	(*v1.ColumnProfile)(nil),         // 17: github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
-	(*v1alpha1.FlatFileSpec)(nil),    // 18: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	(*v1alpha1.DataLocation)(nil),    // 19: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	(*v1alpha1.DataLocation)(nil),    // 17: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	(*v1.ColumnProfile)(nil),         // 18: github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
+	(*v1alpha1.FlatFileSpec)(nil),    // 19: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
 	(*v1.TableView)(nil),             // 20: github.com.metaprov.modelaapi.services.common.v1.TableView
 }
 var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_depIdxs = []int32{
@@ -990,29 +1004,30 @@ var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_d
 	16, // 3: github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
 	16, // 4: github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
 	16, // 5: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	17, // 6: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.columns:type_name -> github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
-	18, // 7: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.flatfilespec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	19, // 8: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
-	20, // 9: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.table:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
-	0,  // 10: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.ListDataSources:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest
-	6,  // 11: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.CreateDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest
-	2,  // 12: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest
-	4,  // 13: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.UpdateDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest
-	8,  // 14: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.DeleteDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest
-	10, // 15: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.InferSchema:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest
-	12, // 16: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetTableView:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest
-	1,  // 17: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.ListDataSources:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse
-	7,  // 18: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.CreateDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse
-	3,  // 19: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
-	5,  // 20: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.UpdateDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse
-	9,  // 21: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.DeleteDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse
-	11, // 22: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.InferSchema:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse
-	13, // 23: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetTableView:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse
-	17, // [17:24] is the sub-list for method output_type
-	10, // [10:17] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	17, // 6: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	18, // 7: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.columns:type_name -> github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
+	19, // 8: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.flatfilespec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	17, // 9: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	20, // 10: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.table:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	0,  // 11: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.ListDataSources:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest
+	6,  // 12: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.CreateDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceRequest
+	2,  // 13: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceRequest
+	4,  // 14: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.UpdateDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceRequest
+	8,  // 15: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.DeleteDataSource:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceRequest
+	10, // 16: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.InferSchema:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest
+	12, // 17: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetTableView:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest
+	1,  // 18: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.ListDataSources:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse
+	7,  // 19: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.CreateDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.CreateDataSourceResponse
+	3,  // 20: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetDataSourceResponse
+	5,  // 21: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.UpdateDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.UpdateDataSourceResponse
+	9,  // 22: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.DeleteDataSource:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.DeleteDataSourceResponse
+	11, // 23: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.InferSchema:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse
+	13, // 24: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.GetTableView:output_type -> github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse
+	18, // [18:25] is the sub-list for method output_type
+	11, // [11:18] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_init() }
