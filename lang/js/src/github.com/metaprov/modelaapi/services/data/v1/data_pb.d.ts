@@ -1424,6 +1424,11 @@ export class DsInferSchemaRequest extends jspb.Message {
   hasBucket(): boolean;
   clearBucket(): DsInferSchemaRequest;
 
+  getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
+  setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): DsInferSchemaRequest;
+  hasLocation(): boolean;
+  clearLocation(): DsInferSchemaRequest;
+
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
   setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsInferSchemaRequest;
   hasDatasource(): boolean;
@@ -1448,6 +1453,7 @@ export class DsInferSchemaRequest extends jspb.Message {
 export namespace DsInferSchemaRequest {
   export type AsObject = {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,

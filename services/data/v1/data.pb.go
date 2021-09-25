@@ -2774,9 +2774,10 @@ type DsInferSchemaRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	Bucket     *v1alpha11.VirtualBucket `protobuf:"bytes,1,opt,name=bucket,proto3" json:"bucket,omitempty"`
-	Datasource *v1alpha1.DataSource     `protobuf:"bytes,2,opt,name=datasource,proto3" json:"datasource,omitempty"`
-	Connection *v1alpha11.Connection    `protobuf:"bytes,3,opt,name=connection,proto3" json:"connection,omitempty"`
-	Secret     map[string][]byte        `protobuf:"bytes,4,rep,name=secret,proto3" json:"secret,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+	Location   *v1alpha1.DataLocation   `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`
+	Datasource *v1alpha1.DataSource     `protobuf:"bytes,3,opt,name=datasource,proto3" json:"datasource,omitempty"`
+	Connection *v1alpha11.Connection    `protobuf:"bytes,4,opt,name=connection,proto3" json:"connection,omitempty"`
+	Secret     map[string][]byte        `protobuf:"bytes,5,rep,name=secret,proto3" json:"secret,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
 func (x *DsInferSchemaRequest) Reset() {
@@ -2814,6 +2815,13 @@ func (*DsInferSchemaRequest) Descriptor() ([]byte, []int) {
 func (x *DsInferSchemaRequest) GetBucket() *v1alpha11.VirtualBucket {
 	if x != nil {
 		return x.Bucket
+	}
+	return nil
+}
+
+func (x *DsInferSchemaRequest) GetLocation() *v1alpha1.DataLocation {
+	if x != nil {
+		return x.Location
 	}
 	return nil
 }
@@ -6328,7 +6336,7 @@ var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDesc = []b
 	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x6f, 0x6d, 0x6d,
 	0x6f, 0x6e, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x61, 0x74, 0x61, 0x73, 0x65, 0x74, 0x50, 0x72, 0x6f,
-	0x66, 0x69, 0x6c, 0x65, 0x52, 0x07, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x22, 0xde, 0x03,
+	0x66, 0x69, 0x6c, 0x65, 0x52, 0x07, 0x70, 0x72, 0x6f, 0x66, 0x69, 0x6c, 0x65, 0x22, 0xbe, 0x04,
 	0x0a, 0x14, 0x44, 0x73, 0x49, 0x6e, 0x66, 0x65, 0x72, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x52,
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x5c, 0x0a, 0x06, 0x62, 0x75, 0x63, 0x6b, 0x65, 0x74,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x44, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
@@ -6336,20 +6344,26 @@ var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_rawDesc = []b
 	0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
 	0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x56,
 	0x69, 0x72, 0x74, 0x75, 0x61, 0x6c, 0x42, 0x75, 0x63, 0x6b, 0x65, 0x74, 0x52, 0x06, 0x62, 0x75,
-	0x63, 0x6b, 0x65, 0x74, 0x12, 0x60, 0x0a, 0x0a, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75, 0x72,
-	0x63, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x63, 0x6b, 0x65, 0x74, 0x12, 0x5e, 0x0a, 0x08, 0x6c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x42, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69, 0x73, 0x2e,
+	0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e, 0x44, 0x61,
+	0x74, 0x61, 0x4c, 0x6f, 0x63, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x08, 0x6c, 0x6f, 0x63, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x60, 0x0a, 0x0a, 0x64, 0x61, 0x74, 0x61, 0x73, 0x6f, 0x75, 0x72,
+	0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x40, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75,
 	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61, 0x70, 0x69,
 	0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68, 0x61, 0x31, 0x2e,
 	0x44, 0x61, 0x74, 0x61, 0x53, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x52, 0x0a, 0x64, 0x61, 0x74, 0x61,
 	0x73, 0x6f, 0x75, 0x72, 0x63, 0x65, 0x12, 0x61, 0x0a, 0x0a, 0x63, 0x6f, 0x6e, 0x6e, 0x65, 0x63,
-	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x69, 0x74,
+	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x41, 0x2e, 0x67, 0x69, 0x74,
 	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
 	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x70, 0x6b, 0x67, 0x2e, 0x61,
 	0x70, 0x69, 0x73, 0x2e, 0x69, 0x6e, 0x66, 0x72, 0x61, 0x2e, 0x76, 0x31, 0x61, 0x6c, 0x70, 0x68,
 	0x61, 0x31, 0x2e, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0a, 0x63,
 	0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x68, 0x0a, 0x06, 0x73, 0x65, 0x63,
-	0x72, 0x65, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x69, 0x74, 0x68,
+	0x72, 0x65, 0x74, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x50, 0x2e, 0x67, 0x69, 0x74, 0x68,
 	0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e,
 	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x73, 0x2e, 0x64, 0x61, 0x74, 0x61, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x73, 0x49, 0x6e, 0x66,
@@ -7748,8 +7762,8 @@ var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_goTypes = []i
 	(*v1alpha12.ForecastObj)(nil),                  // 122: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastObj
 	(*v1alpha1.DataValidationResult)(nil),          // 123: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult
 	(*v1.Plot)(nil),                                // 124: github.com.metaprov.modelaapi.services.common.v1.Plot
-	(*v1alpha1.FlatFileSpec)(nil),                  // 125: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	(*v1alpha1.DataLocation)(nil),                  // 126: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	(*v1alpha1.DataLocation)(nil),                  // 125: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	(*v1alpha1.FlatFileSpec)(nil),                  // 126: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
 	(*v1alpha12.Report)(nil),                       // 127: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
 	(*v1alpha12.ModelList)(nil),                    // 128: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
 	(*v1alpha13.Predictor)(nil),                    // 129: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
@@ -7899,207 +7913,208 @@ var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_depIdxs = []i
 	91,  // 140: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileRequest.SecretEntry
 	119, // 141: github.com.metaprov.modelaapi.services.data.v1.DsDatasetProfileResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
 	112, // 142: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	115, // 143: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	111, // 144: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	92,  // 145: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.SecretEntry
-	119, // 146: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
-	112, // 147: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	125, // 148: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.flatfile:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
-	126, // 149: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
-	111, // 150: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	93,  // 151: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry
-	118, // 152: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
-	112, // 153: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	111, // 154: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	94,  // 155: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry
-	118, // 156: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
-	109, // 157: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 158: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	120, // 159: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	113, // 160: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	115, // 161: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	121, // 162: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
-	111, // 163: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	95,  // 164: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.SecretEntry
-	112, // 165: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	127, // 166: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
-	109, // 167: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 168: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	120, // 169: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	113, // 170: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	115, // 171: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	121, // 172: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.forecast:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
-	111, // 173: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	96,  // 174: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.SecretEntry
-	112, // 175: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	127, // 176: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
-	109, // 177: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 178: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	111, // 179: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	97,  // 180: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.SecretEntry
-	112, // 181: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	127, // 182: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
-	109, // 183: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 184: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	115, // 185: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 186: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	111, // 187: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	112, // 188: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	98,  // 189: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.SecretEntry
-	127, // 190: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
-	109, // 191: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 192: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	120, // 193: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	113, // 194: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	115, // 195: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	128, // 196: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.models:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
-	112, // 197: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	111, // 198: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	99,  // 199: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.SecretEntry
-	127, // 200: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
-	109, // 201: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 202: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	120, // 203: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	115, // 204: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 205: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	121, // 206: github.com.metaprov.modelaapi.services.data.v1.AskModelResponse.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
-	109, // 207: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 208: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	120, // 209: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	115, // 210: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 211: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	121, // 212: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskResponse.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
-	109, // 213: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 214: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	120, // 215: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	115, // 216: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 217: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	121, // 218: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
-	109, // 219: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 220: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	115, // 221: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 222: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	120, // 223: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	121, // 224: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
-	129, // 225: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.predictor:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
-	111, // 226: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	112, // 227: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	100, // 228: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.SecretEntry
-	130, // 229: github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult
-	111, // 230: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	112, // 231: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	101, // 232: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.SecretEntry
-	109, // 233: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 234: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	115, // 235: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 236: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	120, // 237: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	111, // 238: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	112, // 239: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	102, // 240: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.SecretEntry
-	109, // 241: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 242: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	115, // 243: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 244: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	120, // 245: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
-	111, // 246: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	112, // 247: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	103, // 248: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry
-	111, // 249: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	104, // 250: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.SecretEntry
-	111, // 251: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	105, // 252: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.SecretEntry
-	111, // 253: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	106, // 254: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.SecretEntry
-	118, // 255: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
-	109, // 256: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
-	110, // 257: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
-	115, // 258: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
-	113, // 259: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
-	111, // 260: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dbconnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	107, // 261: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dbsecret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.DbsecretEntry
-	111, // 262: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.storageconnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
-	108, // 263: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.storagesecret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry
-	112, // 264: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	0,   // 265: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest
-	1,   // 266: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFeature:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest
-	3,   // 267: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadAudio:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest
-	6,   // 268: github.com.metaprov.modelaapi.services.data.v1.DataService.RunDataPipeline:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest
-	8,   // 269: github.com.metaprov.modelaapi.services.data.v1.DataService.RunRecipe:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest
-	2,   // 270: github.com.metaprov.modelaapi.services.data.v1.DataService.WriteFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest
-	25,  // 271: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest
-	27,  // 272: github.com.metaprov.modelaapi.services.data.v1.DataService.GenerateDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest
-	29,  // 273: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest
-	33,  // 274: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateColumnProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest
-	37,  // 275: github.com.metaprov.modelaapi.services.data.v1.DataService.InferSchema:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest
-	39,  // 276: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTableView:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest
-	41,  // 277: github.com.metaprov.modelaapi.services.data.v1.DataService.GetMisclassTableView:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest
-	30,  // 278: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDatasetToRungs:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest
-	14,  // 279: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest
-	16,  // 280: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest
-	23,  // 281: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest
-	10,  // 282: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateRecipeProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest
-	43,  // 283: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest
-	48,  // 284: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest
-	47,  // 285: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest
-	44,  // 286: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateForecastReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
-	45,  // 287: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateSummaryReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest
-	49,  // 288: github.com.metaprov.modelaapi.services.data.v1.DataService.AskModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.AskModelRequest
-	51,  // 289: github.com.metaprov.modelaapi.services.data.v1.DataService.AskAllModelsForTask:input_type -> github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest
-	53,  // 290: github.com.metaprov.modelaapi.services.data.v1.DataService.TellModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.TellModelRequest
-	18,  // 291: github.com.metaprov.modelaapi.services.data.v1.DataService.PartitionForecastFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest
-	21,  // 292: github.com.metaprov.modelaapi.services.data.v1.DataService.MergeForecastFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest
-	57,  // 293: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest
-	59,  // 294: github.com.metaprov.modelaapi.services.data.v1.DataService.DsTestConnection:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest
-	55,  // 295: github.com.metaprov.modelaapi.services.data.v1.DataService.ShutDown:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsShutdownRequest
-	61,  // 296: github.com.metaprov.modelaapi.services.data.v1.DataService.StudyEnded:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest
-	63,  // 297: github.com.metaprov.modelaapi.services.data.v1.DataService.SaveOptimizerDB:input_type -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest
-	65,  // 298: github.com.metaprov.modelaapi.services.data.v1.DataService.GetDatabases:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest
-	67,  // 299: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTables:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest
-	69,  // 300: github.com.metaprov.modelaapi.services.data.v1.DataService.ExecuteSql:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest
-	71,  // 301: github.com.metaprov.modelaapi.services.data.v1.DataService.Snapshot:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest
-	5,   // 302: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
-	5,   // 303: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFeature:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
-	5,   // 304: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadAudio:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
-	7,   // 305: github.com.metaprov.modelaapi.services.data.v1.DataService.RunDataPipeline:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse
-	9,   // 306: github.com.metaprov.modelaapi.services.data.v1.DataService.RunRecipe:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse
-	5,   // 307: github.com.metaprov.modelaapi.services.data.v1.DataService.WriteFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
-	26,  // 308: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse
-	28,  // 309: github.com.metaprov.modelaapi.services.data.v1.DataService.GenerateDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse
-	32,  // 310: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse
-	34,  // 311: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateColumnProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileResponse
-	38,  // 312: github.com.metaprov.modelaapi.services.data.v1.DataService.InferSchema:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse
-	40,  // 313: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTableView:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse
-	42,  // 314: github.com.metaprov.modelaapi.services.data.v1.DataService.GetMisclassTableView:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewResponse
-	31,  // 315: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDatasetToRungs:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsResponse
-	15,  // 316: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileResponse
-	17,  // 317: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileResponse
-	24,  // 318: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileResponse
-	11,  // 319: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateRecipeProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileResponse
-	46,  // 320: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
-	46,  // 321: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
-	46,  // 322: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
-	46,  // 323: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateForecastReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
-	46,  // 324: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateSummaryReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
-	50,  // 325: github.com.metaprov.modelaapi.services.data.v1.DataService.AskModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.AskModelResponse
-	52,  // 326: github.com.metaprov.modelaapi.services.data.v1.DataService.AskAllModelsForTask:output_type -> github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskResponse
-	54,  // 327: github.com.metaprov.modelaapi.services.data.v1.DataService.TellModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.TellModelResponse
-	19,  // 328: github.com.metaprov.modelaapi.services.data.v1.DataService.PartitionForecastFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesResponse
-	22,  // 329: github.com.metaprov.modelaapi.services.data.v1.DataService.MergeForecastFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileResponse
-	58,  // 330: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse
-	60,  // 331: github.com.metaprov.modelaapi.services.data.v1.DataService.DsTestConnection:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionResponse
-	56,  // 332: github.com.metaprov.modelaapi.services.data.v1.DataService.ShutDown:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse
-	62,  // 333: github.com.metaprov.modelaapi.services.data.v1.DataService.StudyEnded:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedResponse
-	64,  // 334: github.com.metaprov.modelaapi.services.data.v1.DataService.SaveOptimizerDB:output_type -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBResponse
-	66,  // 335: github.com.metaprov.modelaapi.services.data.v1.DataService.GetDatabases:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesResponse
-	68,  // 336: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTables:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesResponse
-	70,  // 337: github.com.metaprov.modelaapi.services.data.v1.DataService.ExecuteSql:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse
-	72,  // 338: github.com.metaprov.modelaapi.services.data.v1.DataService.Snapshot:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse
-	302, // [302:339] is the sub-list for method output_type
-	265, // [265:302] is the sub-list for method input_type
-	265, // [265:265] is the sub-list for extension type_name
-	265, // [265:265] is the sub-list for extension extendee
-	0,   // [0:265] is the sub-list for field type_name
+	125, // 143: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	115, // 144: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	111, // 145: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	92,  // 146: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.SecretEntry
+	119, // 147: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
+	112, // 148: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	126, // 149: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.flatfile:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	125, // 150: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
+	111, // 151: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	93,  // 152: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry
+	118, // 153: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	112, // 154: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	111, // 155: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	94,  // 156: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest.SecretEntry
+	118, // 157: github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	109, // 158: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 159: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	120, // 160: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	113, // 161: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	115, // 162: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	121, // 163: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	111, // 164: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	95,  // 165: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.SecretEntry
+	112, // 166: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	127, // 167: github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	109, // 168: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 169: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	120, // 170: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	113, // 171: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	115, // 172: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	121, // 173: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.forecast:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	111, // 174: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	96,  // 175: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.SecretEntry
+	112, // 176: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	127, // 177: github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	109, // 178: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 179: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	111, // 180: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	97,  // 181: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.SecretEntry
+	112, // 182: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	127, // 183: github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	109, // 184: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 185: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	115, // 186: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 187: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	111, // 188: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	112, // 189: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	98,  // 190: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.SecretEntry
+	127, // 191: github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	109, // 192: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 193: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	120, // 194: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	113, // 195: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	115, // 196: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	128, // 197: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.models:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
+	112, // 198: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	111, // 199: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	99,  // 200: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.SecretEntry
+	127, // 201: github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest.report:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
+	109, // 202: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 203: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	120, // 204: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	115, // 205: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 206: github.com.metaprov.modelaapi.services.data.v1.AskModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	121, // 207: github.com.metaprov.modelaapi.services.data.v1.AskModelResponse.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 208: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 209: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	120, // 210: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	115, // 211: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 212: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	121, // 213: github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskResponse.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 214: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 215: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	120, // 216: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	115, // 217: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 218: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	121, // 219: github.com.metaprov.modelaapi.services.data.v1.TellModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	109, // 220: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 221: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	115, // 222: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 223: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	120, // 224: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	121, // 225: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.model:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model
+	129, // 226: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.predictor:type_name -> github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
+	111, // 227: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	112, // 228: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	100, // 229: github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest.SecretEntry
+	130, // 230: github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse.result:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult
+	111, // 231: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	112, // 232: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	101, // 233: github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest.SecretEntry
+	109, // 234: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 235: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	115, // 236: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 237: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	120, // 238: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	111, // 239: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	112, // 240: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	102, // 241: github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest.SecretEntry
+	109, // 242: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 243: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	115, // 244: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 245: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	120, // 246: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.study:type_name -> github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study
+	111, // 247: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	112, // 248: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	103, // 249: github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest.SecretEntry
+	111, // 250: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	104, // 251: github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest.SecretEntry
+	111, // 252: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	105, // 253: github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest.SecretEntry
+	111, // 254: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	106, // 255: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest.SecretEntry
+	118, // 256: github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse.tableview:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
+	109, // 257: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.product:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct
+	110, // 258: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.version:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion
+	115, // 259: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
+	113, // 260: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dataset:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset
+	111, // 261: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dbconnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	107, // 262: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.dbsecret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.DbsecretEntry
+	111, // 263: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.storageconnection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
+	108, // 264: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.storagesecret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.StoragesecretEntry
+	112, // 265: github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
+	0,   // 266: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFileRequest
+	1,   // 267: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFeature:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFeatureRequest
+	3,   // 268: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadAudio:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadAudioRequest
+	6,   // 269: github.com.metaprov.modelaapi.services.data.v1.DataService.RunDataPipeline:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineRequest
+	8,   // 270: github.com.metaprov.modelaapi.services.data.v1.DataService.RunRecipe:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeRequest
+	2,   // 271: github.com.metaprov.modelaapi.services.data.v1.DataService.WriteFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsWriteFileRequest
+	25,  // 272: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetRequest
+	27,  // 273: github.com.metaprov.modelaapi.services.data.v1.DataService.GenerateDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetRequest
+	29,  // 274: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDataset:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetRequest
+	33,  // 275: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateColumnProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileRequest
+	37,  // 276: github.com.metaprov.modelaapi.services.data.v1.DataService.InferSchema:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest
+	39,  // 277: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTableView:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest
+	41,  // 278: github.com.metaprov.modelaapi.services.data.v1.DataService.GetMisclassTableView:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewRequest
+	30,  // 279: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDatasetToRungs:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsRequest
+	14,  // 280: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileRequest
+	16,  // 281: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileRequest
+	23,  // 282: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileRequest
+	10,  // 283: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateRecipeProfile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileRequest
+	43,  // 284: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateModelReportRequest
+	48,  // 285: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateStudyReportRequest
+	47,  // 286: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateDatasetReportRequest
+	44,  // 287: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateForecastReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateForecastReportRequest
+	45,  // 288: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateSummaryReport:input_type -> github.com.metaprov.modelaapi.services.data.v1.CreateSummaryReportRequest
+	49,  // 289: github.com.metaprov.modelaapi.services.data.v1.DataService.AskModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.AskModelRequest
+	51,  // 290: github.com.metaprov.modelaapi.services.data.v1.DataService.AskAllModelsForTask:input_type -> github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskRequest
+	53,  // 291: github.com.metaprov.modelaapi.services.data.v1.DataService.TellModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.TellModelRequest
+	18,  // 292: github.com.metaprov.modelaapi.services.data.v1.DataService.PartitionForecastFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesRequest
+	21,  // 293: github.com.metaprov.modelaapi.services.data.v1.DataService.MergeForecastFile:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileRequest
+	57,  // 294: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateModel:input_type -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelRequest
+	59,  // 295: github.com.metaprov.modelaapi.services.data.v1.DataService.DsTestConnection:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionRequest
+	55,  // 296: github.com.metaprov.modelaapi.services.data.v1.DataService.ShutDown:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsShutdownRequest
+	61,  // 297: github.com.metaprov.modelaapi.services.data.v1.DataService.StudyEnded:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedRequest
+	63,  // 298: github.com.metaprov.modelaapi.services.data.v1.DataService.SaveOptimizerDB:input_type -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBRequest
+	65,  // 299: github.com.metaprov.modelaapi.services.data.v1.DataService.GetDatabases:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesRequest
+	67,  // 300: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTables:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesRequest
+	69,  // 301: github.com.metaprov.modelaapi.services.data.v1.DataService.ExecuteSql:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlRequest
+	71,  // 302: github.com.metaprov.modelaapi.services.data.v1.DataService.Snapshot:input_type -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotRequest
+	5,   // 303: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	5,   // 304: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadFeature:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	5,   // 305: github.com.metaprov.modelaapi.services.data.v1.DataService.ReadAudio:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	7,   // 306: github.com.metaprov.modelaapi.services.data.v1.DataService.RunDataPipeline:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunDataPipelineResponse
+	9,   // 307: github.com.metaprov.modelaapi.services.data.v1.DataService.RunRecipe:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsRunRecipeResponse
+	5,   // 308: github.com.metaprov.modelaapi.services.data.v1.DataService.WriteFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsReadFromStoreResponse
+	26,  // 309: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsValidateDatasetResponse
+	28,  // 310: github.com.metaprov.modelaapi.services.data.v1.DataService.GenerateDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGenerateDatasetResponse
+	32,  // 311: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDataset:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetResponse
+	34,  // 312: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateColumnProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateColumnProfileResponse
+	38,  // 313: github.com.metaprov.modelaapi.services.data.v1.DataService.InferSchema:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse
+	40,  // 314: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTableView:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewResponse
+	42,  // 315: github.com.metaprov.modelaapi.services.data.v1.DataService.GetMisclassTableView:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetMisclassTableViewResponse
+	31,  // 316: github.com.metaprov.modelaapi.services.data.v1.DataService.SplitDatasetToRungs:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSplitDatasetToRungsResponse
+	15,  // 317: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateDatasetProfileResponse
+	17,  // 318: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateModelProfileResponse
+	24,  // 319: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateStudyProfileResponse
+	11,  // 320: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateRecipeProfile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateRecipeProfileResponse
+	46,  // 321: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateModelReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 322: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateStudyReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 323: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateDatasetReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 324: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateForecastReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	46,  // 325: github.com.metaprov.modelaapi.services.data.v1.DataService.CreateSummaryReport:output_type -> github.com.metaprov.modelaapi.services.data.v1.CreateReportResponse
+	50,  // 326: github.com.metaprov.modelaapi.services.data.v1.DataService.AskModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.AskModelResponse
+	52,  // 327: github.com.metaprov.modelaapi.services.data.v1.DataService.AskAllModelsForTask:output_type -> github.com.metaprov.modelaapi.services.data.v1.AskAllModelsForTaskResponse
+	54,  // 328: github.com.metaprov.modelaapi.services.data.v1.DataService.TellModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.TellModelResponse
+	19,  // 329: github.com.metaprov.modelaapi.services.data.v1.DataService.PartitionForecastFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsCreateForecastPartitionFilesResponse
+	22,  // 330: github.com.metaprov.modelaapi.services.data.v1.DataService.MergeForecastFile:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsMergeForecastFileResponse
+	58,  // 331: github.com.metaprov.modelaapi.services.data.v1.DataService.ValidateModel:output_type -> github.com.metaprov.modelaapi.services.data.v1.ValidateModelResponse
+	60,  // 332: github.com.metaprov.modelaapi.services.data.v1.DataService.DsTestConnection:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsTestConnectionResponse
+	56,  // 333: github.com.metaprov.modelaapi.services.data.v1.DataService.ShutDown:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsShutdownResponse
+	62,  // 334: github.com.metaprov.modelaapi.services.data.v1.DataService.StudyEnded:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsStudyEndedResponse
+	64,  // 335: github.com.metaprov.modelaapi.services.data.v1.DataService.SaveOptimizerDB:output_type -> github.com.metaprov.modelaapi.services.data.v1.SaveOptimizerDBResponse
+	66,  // 336: github.com.metaprov.modelaapi.services.data.v1.DataService.GetDatabases:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetDatabasesResponse
+	68,  // 337: github.com.metaprov.modelaapi.services.data.v1.DataService.GetTables:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsGetTablesResponse
+	70,  // 338: github.com.metaprov.modelaapi.services.data.v1.DataService.ExecuteSql:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsExecuteSqlResponse
+	72,  // 339: github.com.metaprov.modelaapi.services.data.v1.DataService.Snapshot:output_type -> github.com.metaprov.modelaapi.services.data.v1.DsSnapshotResponse
+	303, // [303:340] is the sub-list for method output_type
+	266, // [266:303] is the sub-list for method input_type
+	266, // [266:266] is the sub-list for extension type_name
+	266, // [266:266] is the sub-list for extension extendee
+	0,   // [0:266] is the sub-list for field type_name
 }
 
 func init() { file_github_com_metaprov_modelaapi_services_data_v1_data_proto_init() }
