@@ -294,45 +294,48 @@ type CsvFileSpec struct {
 	// Refers to the character used to separate fields.
 	// Default to comma
 	// +kubebuilder:validation:Optional
-	Delimiter *Delimiter `json:"delimiter,omitempty" protobuf:"bytes,5,opt,name=delimiter"`
+	ColumnDelimiter *Delimiter `json:"columnDelimiter,omitempty" protobuf:"bytes,1,opt,name=columnDelimiter"`
+	// The row delimiter
+	// +kubebuilder:validation:Optional
+	RowDelimiter *Delimiter `json:"rowDelimiter,omitempty" protobuf:"bytes,2,opt,name=rowDelimiter"`
 	//The quote char.
 	// +kubebuilder:validation:Optional
-	QuoteChar QuoteChar `json:"quote,omitempty" protobuf:"bytes,6,opt,name=quote"`
+	QuoteChar QuoteChar `json:"quote,omitempty" protobuf:"bytes,3,opt,name=quote"`
 	// the char used to escape the delimiter when quoting
 	// +kubebuilder:validation:Optional
-	EscapeChar EscapeChar `json:"escapeChar,omitempty" protobuf:"bytes,7,opt,name=escapeChar"`
+	EscapeChar EscapeChar `json:"escapeChar,omitempty" protobuf:"bytes,4,opt,name=escapeChar"`
 	//CommentCharacter(s) to split comments off the end of lines.
 	// +kubebuilder:validation:Optional
-	CommentChars string `json:"commentChars,omitempty" protobuf:"bytes,8,opt,name=commentChars"`
+	CommentChars string `json:"commentChars,omitempty" protobuf:"bytes,5,opt,name=commentChars"`
 	//Check if there is an header
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Header *bool `json:"header,omitempty" protobuf:"varint,9,opt,name=header"`
+	Header *bool `json:"header,omitempty" protobuf:"varint,6,opt,name=header"`
 	//The number of rows to skip
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	SkipRows *int32 `json:"skipRows,omitempty" protobuf:"varint,10,opt,name=skipRows"`
+	SkipRows *int32 `json:"skipRows,omitempty" protobuf:"varint,7,opt,name=skipRows"`
 	// NullValue is a sequence of values to replace with NA.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	NullValues *string `json:"nullValues,omitempty" protobuf:"bytes,11,opt,name=nullValues"`
+	NullValues *string `json:"nullValues,omitempty" protobuf:"bytes,8,opt,name=nullValues"`
 	//Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
 	// +kubebuilder:default:="utf-8"
 	// +kubebuilder:validation:Optional
-	Encoding *catalog.FileEncoding `json:"encoding,omitempty" protobuf:"bytes,12,opt,name=encoding"`
+	Encoding *catalog.FileEncoding `json:"encoding,omitempty" protobuf:"bytes,9,opt,name=encoding"`
 	//The maximum number of rows to read.
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	MaxRows *int32 `json:"maxRows,omitempty" protobuf:"varint,13,opt,name=maxRows"`
+	MaxRows *int32 `json:"maxRows,omitempty" protobuf:"varint,10,opt,name=maxRows"`
 	//If true, the import will fail if there is an error
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Strict *bool `json:"strict,omitempty" protobuf:"varint,14,opt,name=strict"`
+	Strict *bool `json:"strict,omitempty" protobuf:"varint,11,opt,name=strict"`
 	// The compression type, if the file is compressed
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	Compression *string `json:"compression,omitempty" protobuf:"bytes,15,opt,name=compression"`
+	Compression *string `json:"compression,omitempty" protobuf:"bytes,12,opt,name=compression"`
 }
 
 type ExcelNotebookSpec struct {

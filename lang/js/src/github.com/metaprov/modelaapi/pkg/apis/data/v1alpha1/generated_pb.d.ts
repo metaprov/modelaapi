@@ -366,8 +366,11 @@ export namespace ColumnValidation {
 }
 
 export class CsvFileSpec extends jspb.Message {
-  getDelimiter(): string;
-  setDelimiter(value: string): CsvFileSpec;
+  getColumndelimiter(): string;
+  setColumndelimiter(value: string): CsvFileSpec;
+
+  getRowdelimiter(): string;
+  setRowdelimiter(value: string): CsvFileSpec;
 
   getQuote(): string;
   setQuote(value: string): CsvFileSpec;
@@ -409,7 +412,8 @@ export class CsvFileSpec extends jspb.Message {
 
 export namespace CsvFileSpec {
   export type AsObject = {
-    delimiter: string,
+    columndelimiter: string,
+    rowdelimiter: string,
     quote: string,
     escapechar: string,
     commentchars: string,

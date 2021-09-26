@@ -343,55 +343,59 @@ message CsvFileSpec {
   // Refers to the character used to separate fields.
   // Default to comma
   // +kubebuilder:validation:Optional
-  optional string delimiter = 5;
+  optional string columnDelimiter = 1;
+
+  // The row delimiter
+  // +kubebuilder:validation:Optional
+  optional string rowDelimiter = 2;
 
   // The quote char.
   // +kubebuilder:validation:Optional
-  optional string quote = 6;
+  optional string quote = 3;
 
   // the char used to escape the delimiter when quoting
   // +kubebuilder:validation:Optional
-  optional string escapeChar = 7;
+  optional string escapeChar = 4;
 
   // CommentCharacter(s) to split comments off the end of lines.
   // +kubebuilder:validation:Optional
-  optional string commentChars = 8;
+  optional string commentChars = 5;
 
   // Check if there is an header
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool header = 9;
+  optional bool header = 6;
 
   // The number of rows to skip
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 skipRows = 10;
+  optional int32 skipRows = 7;
 
   // NullValue is a sequence of values to replace with NA.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string nullValues = 11;
+  optional string nullValues = 8;
 
   // Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
   // +kubebuilder:default:="utf-8"
   // +kubebuilder:validation:Optional
-  optional string encoding = 12;
+  optional string encoding = 9;
 
   // The maximum number of rows to read.
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxRows = 13;
+  optional int32 maxRows = 10;
 
   // If true, the import will fail if there is an error
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool strict = 14;
+  optional bool strict = 11;
 
   // The compression type, if the file is compressed
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string compression = 15;
+  optional string compression = 12;
 }
 
 // data reference contain pointers to the actual data objects

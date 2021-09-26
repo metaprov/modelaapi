@@ -6479,17 +6479,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    delimiter: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    quote: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    escapechar: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    commentchars: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    header: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
-    skiprows: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    nullvalues: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-    encoding: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    maxrows: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    strict: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
-    compression: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
+    columndelimiter: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    rowdelimiter: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    quote: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    escapechar: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    commentchars: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    header: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    skiprows: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    nullvalues: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    encoding: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    maxrows: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    strict: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
+    compression: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6526,47 +6527,51 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.deseriali
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 5:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDelimiter(value);
+      msg.setColumndelimiter(value);
       break;
-    case 6:
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRowdelimiter(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setQuote(value);
       break;
-    case 7:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setEscapechar(value);
       break;
-    case 8:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setCommentchars(value);
       break;
-    case 9:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setHeader(value);
       break;
-    case 10:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSkiprows(value);
       break;
-    case 11:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setNullvalues(value);
       break;
-    case 12:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setEncoding(value);
       break;
-    case 13:
+    case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMaxrows(value);
       break;
-    case 14:
+    case 11:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrict(value);
       break;
-    case 15:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setCompression(value);
       break;
@@ -6599,6 +6604,34 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
@@ -6606,16 +6639,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       6,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       7,
       f
     );
@@ -6627,9 +6660,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       9,
       f
     );
@@ -6641,9 +6674,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 11));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       11,
       f
     );
@@ -6655,36 +6688,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 13));
-  if (f != null) {
-    writer.writeInt32(
-      13,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
-  if (f != null) {
-    writer.writeBool(
-      14,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
-  if (f != null) {
-    writer.writeString(
-      15,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string delimiter = 5;
+ * optional string columnDelimiter = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getDelimiter = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getColumndelimiter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -6692,8 +6704,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setDelimiter = function(value) {
-  return jspb.Message.setField(this, 5, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setColumndelimiter = function(value) {
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -6701,8 +6713,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearDelimiter = function() {
-  return jspb.Message.setField(this, 5, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearColumndelimiter = function() {
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -6710,17 +6722,53 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasDelimiter = function() {
-  return jspb.Message.getField(this, 5) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasColumndelimiter = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string quote = 6;
+ * optional string rowDelimiter = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getRowdelimiter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setRowdelimiter = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearRowdelimiter = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasRowdelimiter = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string quote = 3;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getQuote = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -6729,7 +6777,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setQuote = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -6738,7 +6786,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearQuote = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -6747,16 +6795,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasQuote = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string escapeChar = 7;
+ * optional string escapeChar = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getEscapechar = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -6765,7 +6813,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setEscapechar = function(value) {
-  return jspb.Message.setField(this, 7, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -6774,7 +6822,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearEscapechar = function() {
-  return jspb.Message.setField(this, 7, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -6783,16 +6831,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasEscapechar = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string commentChars = 8;
+ * optional string commentChars = 5;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getCommentchars = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -6801,7 +6849,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setCommentchars = function(value) {
-  return jspb.Message.setField(this, 8, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -6810,7 +6858,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearCommentchars = function() {
-  return jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -6819,16 +6867,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasCommentchars = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional bool header = 9;
+ * optional bool header = 6;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getHeader = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -6837,7 +6885,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setHeader = function(value) {
-  return jspb.Message.setField(this, 9, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
@@ -6846,7 +6894,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearHeader = function() {
-  return jspb.Message.setField(this, 9, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -6855,16 +6903,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasHeader = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 skipRows = 10;
+ * optional int32 skipRows = 7;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getSkiprows = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -6873,7 +6921,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setSkiprows = function(value) {
-  return jspb.Message.setField(this, 10, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
@@ -6882,7 +6930,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearSkiprows = function() {
-  return jspb.Message.setField(this, 10, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -6891,16 +6939,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasSkiprows = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string nullValues = 11;
+ * optional string nullValues = 8;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getNullvalues = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -6909,7 +6957,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setNullvalues = function(value) {
-  return jspb.Message.setField(this, 11, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
@@ -6918,7 +6966,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearNullvalues = function() {
-  return jspb.Message.setField(this, 11, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -6927,16 +6975,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasNullvalues = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string encoding = 12;
+ * optional string encoding = 9;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getEncoding = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
@@ -6945,7 +6993,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setEncoding = function(value) {
-  return jspb.Message.setField(this, 12, value);
+  return jspb.Message.setField(this, 9, value);
 };
 
 
@@ -6954,7 +7002,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearEncoding = function() {
-  return jspb.Message.setField(this, 12, undefined);
+  return jspb.Message.setField(this, 9, undefined);
 };
 
 
@@ -6963,16 +7011,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasEncoding = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional int32 maxRows = 13;
+ * optional int32 maxRows = 10;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getMaxrows = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
@@ -6981,7 +7029,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setMaxrows = function(value) {
-  return jspb.Message.setField(this, 13, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
@@ -6990,7 +7038,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearMaxrows = function() {
-  return jspb.Message.setField(this, 13, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -6999,16 +7047,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasMaxrows = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional bool strict = 14;
+ * optional bool strict = 11;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getStrict = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
 };
 
 
@@ -7017,7 +7065,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setStrict = function(value) {
-  return jspb.Message.setField(this, 14, value);
+  return jspb.Message.setField(this, 11, value);
 };
 
 
@@ -7026,7 +7074,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearStrict = function() {
-  return jspb.Message.setField(this, 14, undefined);
+  return jspb.Message.setField(this, 11, undefined);
 };
 
 
@@ -7035,16 +7083,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasStrict = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional string compression = 15;
+ * optional string compression = 12;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getCompression = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
@@ -7053,7 +7101,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setCompression = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 12, value);
 };
 
 
@@ -7062,7 +7110,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearCompression = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 12, undefined);
 };
 
 
@@ -7071,7 +7119,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasCompression = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
