@@ -46,9 +46,9 @@ func (datasource *DataSource) Default() {
 			ffile.SkipRows = util.Int32Ptr(0)
 		}
 
-		if ffile.Delimiter != nil {
+		if ffile.ColumnDelimiter != nil {
 			delimiter := DelimiterComma
-			ffile.Delimiter = &delimiter
+			ffile.ColumnDelimiter = &delimiter
 		}
 
 		if ffile.Encoding == nil {
