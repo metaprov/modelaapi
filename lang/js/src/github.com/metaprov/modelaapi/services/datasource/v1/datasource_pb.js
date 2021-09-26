@@ -2205,7 +2205,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    flatfilespec: (f = msg.getFlatfilespec()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.toObject(includeInstance, f),
+    flatfilespec: (f = msg.getFlatfilespec()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
 
@@ -2244,8 +2244,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.deserializeBinaryFromReader);
       msg.setFlatfilespec(value);
       break;
     case 2:
@@ -2287,7 +2287,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.s
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.serializeBinaryToWriter
     );
   }
   f = message.getLocation();
@@ -2302,17 +2302,17 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec flatfilespec = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec flatfilespec = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.getFlatfilespec = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FlatFileSpec, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.setFlatfilespec = function(value) {

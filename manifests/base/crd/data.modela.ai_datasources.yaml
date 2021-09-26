@@ -660,7 +660,7 @@ spec:
                 type: string
             type: object
           status:
-            description: FlatFileStatus defines the observed state of FlatFileSpec
+            description: FlatFileStatus defines the observed state of CsvFileSpec
             properties:
               cols:
                 description: number of columns in the data source

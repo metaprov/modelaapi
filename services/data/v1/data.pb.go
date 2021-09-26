@@ -2900,7 +2900,7 @@ type DsGetTableViewRequest struct {
 	unknownFields protoimpl.UnknownFields
 
 	Bucket     *v1alpha11.VirtualBucket `protobuf:"bytes,1,opt,name=bucket,proto3" json:"bucket,omitempty"`
-	Flatfile   *v1alpha1.FlatFileSpec   `protobuf:"bytes,2,opt,name=flatfile,proto3" json:"flatfile,omitempty"`
+	Flatfile   *v1alpha1.CsvFileSpec    `protobuf:"bytes,2,opt,name=flatfile,proto3" json:"flatfile,omitempty"`
 	Location   *v1alpha1.DataLocation   `protobuf:"bytes,3,opt,name=location,proto3" json:"location,omitempty"`
 	Connection *v1alpha11.Connection    `protobuf:"bytes,4,opt,name=connection,proto3" json:"connection,omitempty"`
 	Secret     map[string][]byte        `protobuf:"bytes,5,rep,name=secret,proto3" json:"secret,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
@@ -2945,7 +2945,7 @@ func (x *DsGetTableViewRequest) GetBucket() *v1alpha11.VirtualBucket {
 	return nil
 }
 
-func (x *DsGetTableViewRequest) GetFlatfile() *v1alpha1.FlatFileSpec {
+func (x *DsGetTableViewRequest) GetFlatfile() *v1alpha1.CsvFileSpec {
 	if x != nil {
 		return x.Flatfile
 	}
@@ -7763,7 +7763,7 @@ var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_goTypes = []i
 	(*v1alpha1.DataValidationResult)(nil),          // 123: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataValidationResult
 	(*v1.Plot)(nil),                                // 124: github.com.metaprov.modelaapi.services.common.v1.Plot
 	(*v1alpha1.DataLocation)(nil),                  // 125: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
-	(*v1alpha1.FlatFileSpec)(nil),                  // 126: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	(*v1alpha1.CsvFileSpec)(nil),                   // 126: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec
 	(*v1alpha12.Report)(nil),                       // 127: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report
 	(*v1alpha12.ModelList)(nil),                    // 128: github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList
 	(*v1alpha13.Predictor)(nil),                    // 129: github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor
@@ -7919,7 +7919,7 @@ var file_github_com_metaprov_modelaapi_services_data_v1_data_proto_depIdxs = []i
 	92,  // 146: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaRequest.SecretEntry
 	119, // 147: github.com.metaprov.modelaapi.services.data.v1.DsInferSchemaResponse.profile:type_name -> github.com.metaprov.modelaapi.services.common.v1.DatasetProfile
 	112, // 148: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.bucket:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket
-	126, // 149: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.flatfile:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	126, // 149: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.flatfile:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec
 	125, // 150: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
 	111, // 151: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.connection:type_name -> github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection
 	93,  // 152: github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.secret:type_name -> github.com.metaprov.modelaapi.services.data.v1.DsGetTableViewRequest.SecretEntry

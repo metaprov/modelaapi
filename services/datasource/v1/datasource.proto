@@ -64,7 +64,7 @@ message InferSchemaResponse {
 }
 
 message GetTableViewRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec   flatfilespec = 1; // contain the csv or table definition
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec   flatfilespec = 1; // contain the csv or table definition
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation   location = 2; // contain the csv or table definition
 }
 

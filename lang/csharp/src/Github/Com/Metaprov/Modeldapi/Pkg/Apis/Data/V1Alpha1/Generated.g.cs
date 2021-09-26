@@ -502,7 +502,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetList.Parser, new[]{ "Metadata", "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetSpec.Parser, new[]{ "VersionName", "Description", "Features", "Owner" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FeaturesetStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec.Parser, new[]{ "FileType", "Delimiter", "Quote", "EscapeChar", "CommentChars", "Header", "SkipRows", "NullValues", "Encoding", "MaxRows", "Strict" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec.Parser, new[]{ "FileType", "Delimiter", "Quote", "EscapeChar", "CommentChars", "Header", "SkipRows", "NullValues", "Encoding", "MaxRows", "Strict" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.GitLocation.Parser, new[]{ "GitConnectionName", "Url" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.ImageLocation.Parser, new[]{ "Name", "RegistryConnectionName" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.LabelingPipeline.Parser, new[]{ "Metadata", "Spec", "Status" }, null, null, null, null),
@@ -11328,13 +11328,13 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     /// <summary>Field number for the "file" field.</summary>
     public const int FileFieldNumber = 6;
-    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec file_;
+    private global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec file_;
     /// <summary>
     /// FlatFile access specification
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec File {
+    public global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec File {
       get { return file_; }
       set {
         file_ = value;
@@ -11572,7 +11572,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
       }
       if (other.file_ != null) {
         if (file_ == null) {
-          File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
+          File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec();
         }
         File.MergeFrom(other.File);
       }
@@ -11624,7 +11624,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (file_ == null) {
-              File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
+              File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec();
             }
             input.ReadMessage(File);
             break;
@@ -11679,7 +11679,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
           }
           case 50: {
             if (file_ == null) {
-              File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.FlatFileSpec();
+              File = new global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1.CsvFileSpec();
             }
             input.ReadMessage(File);
             break;
@@ -11703,7 +11703,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
   }
 
   /// <summary>
-  /// FlatFileStatus defines the observed state of FlatFileSpec
+  /// FlatFileStatus defines the observed state of CsvFileSpec
   /// </summary>
   public sealed partial class DataSourceStatus : pb::IMessage<DataSourceStatus>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -22645,16 +22645,16 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
   }
 
-  public sealed partial class FlatFileSpec : pb::IMessage<FlatFileSpec>
+  public sealed partial class CsvFileSpec : pb::IMessage<CsvFileSpec>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FlatFileSpec> _parser = new pb::MessageParser<FlatFileSpec>(() => new FlatFileSpec());
+    private static readonly pb::MessageParser<CsvFileSpec> _parser = new pb::MessageParser<CsvFileSpec>(() => new CsvFileSpec());
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<FlatFileSpec> Parser { get { return _parser; } }
+    public static pb::MessageParser<CsvFileSpec> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -22667,14 +22667,14 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FlatFileSpec() {
+    public CsvFileSpec() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FlatFileSpec(FlatFileSpec other) : this() {
+    public CsvFileSpec(CsvFileSpec other) : this() {
       _hasBits0 = other._hasBits0;
       fileType_ = other.fileType_;
       delimiter_ = other.delimiter_;
@@ -22691,8 +22691,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public FlatFileSpec Clone() {
-      return new FlatFileSpec(this);
+    public CsvFileSpec Clone() {
+      return new CsvFileSpec(this);
     }
 
     /// <summary>Field number for the "fileType" field.</summary>
@@ -23000,11 +23000,11 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as FlatFileSpec);
+      return Equals(other as CsvFileSpec);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(FlatFileSpec other) {
+    public bool Equals(CsvFileSpec other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -23201,7 +23201,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(FlatFileSpec other) {
+    public void MergeFrom(CsvFileSpec other) {
       if (other == null) {
         return;
       }

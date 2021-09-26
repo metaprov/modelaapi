@@ -987,7 +987,7 @@ message DataSourceSpec {
 
   // FlatFile access specification
   // +kubebuilder:validation:Optional
-  optional FlatFileSpec csvfile = 6;
+  optional CsvFileSpec csvfile = 6;
 
   // Excel Notebook is a notebook in excel
   // +kubebuilder:validation:Optional
@@ -1006,7 +1006,7 @@ message DataSourceSpec {
   optional string task = 10;
 }
 
-// FlatFileStatus defines the observed state of FlatFileSpec
+// FlatFileStatus defines the observed state of CsvFileSpec
 message DataSourceStatus {
   // number of columns in the data source
   // +kubebuilder:validation:Minimum=0
@@ -2030,7 +2030,7 @@ message FileValidation {
   optional bool generated = 9;
 }
 
-message FlatFileSpec {
+message CsvFileSpec {
   // Refers to the character used to separate fields.
   // Default to comma
   // +kubebuilder:validation:Optional

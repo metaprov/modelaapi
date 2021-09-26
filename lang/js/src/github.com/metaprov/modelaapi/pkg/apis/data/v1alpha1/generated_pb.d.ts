@@ -1361,8 +1361,8 @@ export class DataSourceSpec extends jspb.Message {
   getFiletype(): string;
   setFiletype(value: string): DataSourceSpec;
 
-  getCsvfile(): FlatFileSpec | undefined;
-  setCsvfile(value?: FlatFileSpec): DataSourceSpec;
+  getCsvfile(): CsvFileSpec | undefined;
+  setCsvfile(value?: CsvFileSpec): DataSourceSpec;
   hasCsvfile(): boolean;
   clearCsvfile(): DataSourceSpec;
 
@@ -1397,7 +1397,7 @@ export namespace DataSourceSpec {
     description: string,
     schema?: Schema.AsObject,
     filetype: string,
-    csvfile?: FlatFileSpec.AsObject,
+    csvfile?: CsvFileSpec.AsObject,
     excelnotebook?: ExcelNotebookSpec.AsObject,
     datasettype: string,
     sample?: SampleSpec.AsObject,
@@ -3087,46 +3087,46 @@ export namespace FileValidation {
   }
 }
 
-export class FlatFileSpec extends jspb.Message {
+export class CsvFileSpec extends jspb.Message {
   getDelimiter(): string;
-  setDelimiter(value: string): FlatFileSpec;
+  setDelimiter(value: string): CsvFileSpec;
 
   getQuote(): string;
-  setQuote(value: string): FlatFileSpec;
+  setQuote(value: string): CsvFileSpec;
 
   getEscapechar(): string;
-  setEscapechar(value: string): FlatFileSpec;
+  setEscapechar(value: string): CsvFileSpec;
 
   getCommentchars(): string;
-  setCommentchars(value: string): FlatFileSpec;
+  setCommentchars(value: string): CsvFileSpec;
 
   getHeader(): boolean;
-  setHeader(value: boolean): FlatFileSpec;
+  setHeader(value: boolean): CsvFileSpec;
 
   getSkiprows(): number;
-  setSkiprows(value: number): FlatFileSpec;
+  setSkiprows(value: number): CsvFileSpec;
 
   getNullvalues(): string;
-  setNullvalues(value: string): FlatFileSpec;
+  setNullvalues(value: string): CsvFileSpec;
 
   getEncoding(): string;
-  setEncoding(value: string): FlatFileSpec;
+  setEncoding(value: string): CsvFileSpec;
 
   getMaxrows(): number;
-  setMaxrows(value: number): FlatFileSpec;
+  setMaxrows(value: number): CsvFileSpec;
 
   getStrict(): boolean;
-  setStrict(value: boolean): FlatFileSpec;
+  setStrict(value: boolean): CsvFileSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FlatFileSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FlatFileSpec): FlatFileSpec.AsObject;
-  static serializeBinaryToWriter(message: FlatFileSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FlatFileSpec;
-  static deserializeBinaryFromReader(message: FlatFileSpec, reader: jspb.BinaryReader): FlatFileSpec;
+  toObject(includeInstance?: boolean): CsvFileSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CsvFileSpec): CsvFileSpec.AsObject;
+  static serializeBinaryToWriter(message: CsvFileSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CsvFileSpec;
+  static deserializeBinaryFromReader(message: CsvFileSpec, reader: jspb.BinaryReader): CsvFileSpec;
 }
 
-export namespace FlatFileSpec {
+export namespace CsvFileSpec {
   export type AsObject = {
     delimiter: string,
     quote: string,

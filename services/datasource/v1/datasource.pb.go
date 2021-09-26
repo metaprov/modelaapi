@@ -631,7 +631,7 @@ type GetTableViewRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Flatfilespec *v1alpha1.FlatFileSpec `protobuf:"bytes,1,opt,name=flatfilespec,proto3" json:"flatfilespec,omitempty"` // contain the csv or table definition
+	Flatfilespec *v1alpha1.CsvFileSpec  `protobuf:"bytes,1,opt,name=flatfilespec,proto3" json:"flatfilespec,omitempty"` // contain the csv or table definition
 	Location     *v1alpha1.DataLocation `protobuf:"bytes,2,opt,name=location,proto3" json:"location,omitempty"`         // contain the csv or table definition
 }
 
@@ -667,7 +667,7 @@ func (*GetTableViewRequest) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *GetTableViewRequest) GetFlatfilespec() *v1alpha1.FlatFileSpec {
+func (x *GetTableViewRequest) GetFlatfilespec() *v1alpha1.CsvFileSpec {
 	if x != nil {
 		return x.Flatfilespec
 	}
@@ -994,7 +994,7 @@ var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_g
 	(*v1alpha1.DataSource)(nil),      // 16: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
 	(*v1alpha1.DataLocation)(nil),    // 17: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
 	(*v1.ColumnProfile)(nil),         // 18: github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
-	(*v1alpha1.FlatFileSpec)(nil),    // 19: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	(*v1alpha1.CsvFileSpec)(nil),     // 19: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec
 	(*v1.TableView)(nil),             // 20: github.com.metaprov.modelaapi.services.common.v1.TableView
 }
 var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_depIdxs = []int32{
@@ -1006,7 +1006,7 @@ var file_github_com_metaprov_modelaapi_services_datasource_v1_datasource_proto_d
 	16, // 5: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.datasource:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource
 	17, // 6: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
 	18, // 7: github.com.metaprov.modelaapi.services.datasource.v1.InferSchemaResponse.columns:type_name -> github.com.metaprov.modelaapi.services.common.v1.ColumnProfile
-	19, // 8: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.flatfilespec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec
+	19, // 8: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.flatfilespec:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec
 	17, // 9: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.location:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation
 	20, // 10: github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewResponse.table:type_name -> github.com.metaprov.modelaapi.services.common.v1.TableView
 	0,  // 11: github.com.metaprov.modelaapi.services.datasource.v1.DataSourceService.ListDataSources:input_type -> github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRequest

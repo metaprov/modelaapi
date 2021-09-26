@@ -430,7 +430,7 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 			Description: util.StrPtr(""),
 			Schema:      &data.Schema{Columns: columns},
 			FileType:    &csv,
-			CsvFile: &data.FlatFileSpec{
+			CsvFile: &data.CsvFileSpec{
 				Delimiter:    &del,
 				QuoteChar:    "",
 				EscapeChar:   "",

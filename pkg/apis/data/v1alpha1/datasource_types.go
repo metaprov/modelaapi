@@ -290,7 +290,7 @@ const (
 	Exasol         DatabaseServerType = "exasol"
 )
 
-type FlatFileSpec struct {
+type CsvFileSpec struct {
 	// Refers to the character used to separate fields.
 	// Default to comma
 	// +kubebuilder:validation:Optional
@@ -329,6 +329,9 @@ type FlatFileSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Strict *bool `json:"strict,omitempty" protobuf:"varint,14,opt,name=strict"`
+	// The compression type, if the file is compressed
+	// +kubebuilder:validation:Optional
+	CompressionType 
 }
 
 type ExcelNotebookSpec struct {
@@ -598,7 +601,7 @@ type DataSourceSpec struct {
 	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,5,opt,name=fileType"`
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
-	CsvFile *FlatFileSpec `json:"csvfile,omitempty" protobuf:"bytes,6,opt,name=csvfile"`
+	CsvFile *CsvFileSpec `json:"csvfile,omitempty" protobuf:"bytes,6,opt,name=csvfile"`
 	// Excel Notebook is a notebook in excel
 	// +kubebuilder:validation:Optional
 	ExcelNotebook *ExcelNotebookSpec `json:"excelNotebook,omitempty" protobuf:"bytes,7,opt,name=excelNotebook"`
@@ -613,7 +616,7 @@ type DataSourceSpec struct {
 	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 }
 
-// FlatFileStatus defines the observed state of FlatFileSpec
+// FlatFileStatus defines the observed state of CsvFileSpec
 type DataSourceStatus struct {
 	// number of columns in the data source
 	// +kubebuilder:validation:Minimum=0

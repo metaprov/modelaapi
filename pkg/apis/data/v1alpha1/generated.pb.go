@@ -2110,15 +2110,15 @@ func (m *FileValidation) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_FileValidation proto.InternalMessageInfo
 
-func (m *FlatFileSpec) Reset()      { *m = FlatFileSpec{} }
-func (*FlatFileSpec) ProtoMessage() {}
-func (*FlatFileSpec) Descriptor() ([]byte, []int) {
+func (m *CsvFileSpec) Reset()      { *m = CsvFileSpec{} }
+func (*CsvFileSpec) ProtoMessage() {}
+func (*CsvFileSpec) Descriptor() ([]byte, []int) {
 	return fileDescriptor_0c557a5a515a9338, []int{74}
 }
-func (m *FlatFileSpec) XXX_Unmarshal(b []byte) error {
+func (m *CsvFileSpec) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *FlatFileSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *CsvFileSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	b = b[:cap(b)]
 	n, err := m.MarshalToSizedBuffer(b)
 	if err != nil {
@@ -2126,17 +2126,17 @@ func (m *FlatFileSpec) XXX_Marshal(b []byte, deterministic bool) ([]byte, error)
 	}
 	return b[:n], nil
 }
-func (m *FlatFileSpec) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_FlatFileSpec.Merge(m, src)
+func (m *CsvFileSpec) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CsvFileSpec.Merge(m, src)
 }
-func (m *FlatFileSpec) XXX_Size() int {
+func (m *CsvFileSpec) XXX_Size() int {
 	return m.Size()
 }
-func (m *FlatFileSpec) XXX_DiscardUnknown() {
-	xxx_messageInfo_FlatFileSpec.DiscardUnknown(m)
+func (m *CsvFileSpec) XXX_DiscardUnknown() {
+	xxx_messageInfo_CsvFileSpec.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_FlatFileSpec proto.InternalMessageInfo
+var xxx_messageInfo_CsvFileSpec proto.InternalMessageInfo
 
 func (m *GitLocation) Reset()      { *m = GitLocation{} }
 func (*GitLocation) ProtoMessage() {}
@@ -3223,7 +3223,7 @@ func init() {
 	proto.RegisterType((*FeaturesetSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetSpec")
 	proto.RegisterType((*FeaturesetStatus)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetStatus")
 	proto.RegisterType((*FileValidation)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation")
-	proto.RegisterType((*FlatFileSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FlatFileSpec")
+	proto.RegisterType((*CsvFileSpec)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec")
 	proto.RegisterType((*GitLocation)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation")
 	proto.RegisterType((*ImageLocation)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation")
 	proto.RegisterType((*KPI)(nil), "github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.KPI")
@@ -9068,7 +9068,7 @@ func (m *FileValidation) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *FlatFileSpec) Marshal() (dAtA []byte, err error) {
+func (m *CsvFileSpec) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -9078,12 +9078,12 @@ func (m *FlatFileSpec) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *FlatFileSpec) MarshalTo(dAtA []byte) (int, error) {
+func (m *CsvFileSpec) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *FlatFileSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *CsvFileSpec) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -13191,7 +13191,7 @@ func (m *FileValidation) Size() (n int) {
 	return n
 }
 
-func (m *FlatFileSpec) Size() (n int) {
+func (m *CsvFileSpec) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -14601,7 +14601,7 @@ func (this *DataSourceSpec) String() string {
 		`Description:` + valueToStringGenerated(this.Description) + `,`,
 		`Schema:` + strings.Replace(this.Schema.String(), "Schema", "Schema", 1) + `,`,
 		`FileType:` + valueToStringGenerated(this.FileType) + `,`,
-		`CsvFile:` + strings.Replace(this.CsvFile.String(), "FlatFileSpec", "FlatFileSpec", 1) + `,`,
+		`CsvFile:` + strings.Replace(this.CsvFile.String(), "CsvFileSpec", "CsvFileSpec", 1) + `,`,
 		`ExcelNotebook:` + strings.Replace(this.ExcelNotebook.String(), "ExcelNotebookSpec", "ExcelNotebookSpec", 1) + `,`,
 		`DatasetType:` + valueToStringGenerated(this.DatasetType) + `,`,
 		`Sample:` + strings.Replace(strings.Replace(this.Sample.String(), "SampleSpec", "SampleSpec", 1), `&`, ``, 1) + `,`,
@@ -15329,11 +15329,11 @@ func (this *FileValidation) String() string {
 	}, "")
 	return s
 }
-func (this *FlatFileSpec) String() string {
+func (this *CsvFileSpec) String() string {
 	if this == nil {
 		return "nil"
 	}
-	s := strings.Join([]string{`&FlatFileSpec{`,
+	s := strings.Join([]string{`&CsvFileSpec{`,
 		`Delimiter:` + valueToStringGenerated(this.Delimiter) + `,`,
 		`QuoteChar:` + fmt.Sprintf("%v", this.QuoteChar) + `,`,
 		`EscapeChar:` + fmt.Sprintf("%v", this.EscapeChar) + `,`,
@@ -23384,7 +23384,7 @@ func (m *DataSourceSpec) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.CsvFile == nil {
-				m.CsvFile = &FlatFileSpec{}
+				m.CsvFile = &CsvFileSpec{}
 			}
 			if err := m.CsvFile.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -32469,7 +32469,7 @@ func (m *FileValidation) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *FlatFileSpec) Unmarshal(dAtA []byte) error {
+func (m *CsvFileSpec) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -32492,10 +32492,10 @@ func (m *FlatFileSpec) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: FlatFileSpec: wiretype end group for non-group")
+			return fmt.Errorf("proto: CsvFileSpec: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: FlatFileSpec: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: CsvFileSpec: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 5:
