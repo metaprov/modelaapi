@@ -272,8 +272,11 @@ type ModelPipelineRunStatus struct {
 	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress" protobuf:"varint,19,opt,name=progress"`
+	// What triggered the run
+	//+kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,20,opt,name=triggeredBy"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,20,rep,name=conditions"`
+	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,21,rep,name=conditions"`
 }

@@ -139,8 +139,11 @@ type PredictionStatus struct {
 	// The number of rows in the predictions
 	//+kubebuilder:validation:Optional
 	Rows int32 `json:"rows,omitempty" protobuf:"varint,6,opt,name=rows"`
+	// What triggered the run
+	//+kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,7,opt,name=triggeredBy"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
+	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

@@ -604,24 +604,28 @@ message PublicDatasetSpec {
   // +kubebuilder:default =""
   optional string targetColumn = 10;
 
+  // The target column name
+  // +kubebuilder:default =""
+  optional string industry = 11;
+
   // +kubebuilder:default = false
-  optional bool imbalanced = 11;
+  optional bool imbalanced = 12;
 
   // URI of the datasource CR for this public dataset
   // +kubebuilder:default =""
-  optional string datasourceCR = 12;
+  optional string datasourceCR = 13;
 
   // URI of the dataset CR for this public dataset
   // +kubebuilder:default =""
-  optional string datasetCR = 13;
+  optional string datasetCR = 14;
 
   // URI of the study CR for this public dataset
   // +kubebuilder:default =""
-  optional string studyCR = 14;
+  optional string studyCR = 15;
 
   // URI of the data product CR
   // +kubebuilder:default =""
-  optional string dataProductCR = 15;
+  optional string dataProductCR = 16;
 }
 
 // Region defines a region within the data provider

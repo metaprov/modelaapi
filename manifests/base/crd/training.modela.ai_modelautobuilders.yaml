@@ -117,6 +117,10 @@ spec:
                         description: CommentCharacter(s) to split comments off the
                           end of lines.
                         type: string
+                      compression:
+                        default: none
+                        description: The compression type, if the file is compressed
+                        type: string
                       delimiter:
                         description: Refers to the character used to separate fields.
                           Default to comma

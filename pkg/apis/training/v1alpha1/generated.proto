@@ -1356,10 +1356,14 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 19;
 
+  // What triggered the run
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 20;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineRunCondition conditions = 20;
+  repeated ModelPipelineRunCondition conditions = 21;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
@@ -2144,6 +2148,10 @@ message NotebookRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 5;
 
+  // What triggered the run
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 20;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
@@ -2848,12 +2856,16 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional DataHashes trainingDataHash = 37;
 
+  // What triggered the run
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 38;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 38;
+  repeated StudyCondition conditions = 39;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

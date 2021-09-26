@@ -1701,6 +1701,16 @@ spec:
                 description: Start of the training phase
                 format: date-time
                 type: string
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
               validationDataset:
                 description: ValidationDatasetLocation is the location of the dataset
                   used for validation

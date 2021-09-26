@@ -2118,6 +2118,9 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): ModelPipelineRunStatus;
 
+  getTriggeredby(): string;
+  setTriggeredby(value: string): ModelPipelineRunStatus;
+
   getConditionsList(): Array<ModelPipelineRunCondition>;
   setConditionsList(value: Array<ModelPipelineRunCondition>): ModelPipelineRunStatus;
   clearConditionsList(): ModelPipelineRunStatus;
@@ -2152,6 +2155,7 @@ export namespace ModelPipelineRunStatus {
     evalmetrics: string,
     lasterror: string,
     progress: number,
+    triggeredby: string,
     conditionsList: Array<ModelPipelineRunCondition.AsObject>,
   }
 }
@@ -3218,6 +3222,9 @@ export class NotebookRunStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): NotebookRunStatus;
 
+  getTriggeredby(): string;
+  setTriggeredby(value: string): NotebookRunStatus;
+
   getConditionsList(): Array<NotebookRunCondition>;
   setConditionsList(value: Array<NotebookRunCondition>): NotebookRunStatus;
   clearConditionsList(): NotebookRunStatus;
@@ -3238,6 +3245,7 @@ export namespace NotebookRunStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lasterror: string,
+    triggeredby: string,
     conditionsList: Array<NotebookRunCondition.AsObject>,
   }
 }
@@ -4167,6 +4175,9 @@ export class StudyStatus extends jspb.Message {
   hasTrainingdatahash(): boolean;
   clearTrainingdatahash(): StudyStatus;
 
+  getTriggeredby(): string;
+  setTriggeredby(value: string): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4214,6 +4225,7 @@ export namespace StudyStatus {
     progress: number,
     baseline: string,
     trainingdatahash?: DataHashes.AsObject,
+    triggeredby: string,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

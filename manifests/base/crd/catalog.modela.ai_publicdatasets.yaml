@@ -90,6 +90,9 @@ spec:
                 type: integer
               imbalanced:
                 type: boolean
+              industry:
+                description: The target column name
+                type: string
               openmlID:
                 description: The open ml id of the dataset
                 type: string

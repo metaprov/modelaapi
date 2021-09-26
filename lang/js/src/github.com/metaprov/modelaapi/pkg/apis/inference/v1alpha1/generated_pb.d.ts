@@ -744,6 +744,9 @@ export class PredictionStatus extends jspb.Message {
   getRows(): number;
   setRows(value: number): PredictionStatus;
 
+  getTriggeredby(): string;
+  setTriggeredby(value: string): PredictionStatus;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -765,6 +768,7 @@ export namespace PredictionStatus {
     resultsList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     observedgeneration: number,
     rows: number,
+    triggeredby: string,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }

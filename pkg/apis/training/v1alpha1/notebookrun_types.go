@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -116,6 +117,9 @@ type NotebookRunStatus struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,5,opt,name=lastError"`
+	// What triggered the run
+	//+kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,20,opt,name=triggeredBy"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

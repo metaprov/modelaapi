@@ -62,20 +62,23 @@ type PublicDatasetSpec struct {
 	// The target column name
 	// +kubebuilder:default =""
 	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,10,opt,name=targetColumn"`
+	// The target column name
+	// +kubebuilder:default =""
+	Industry *string `json:"industry,omitempty" protobuf:"bytes,11,opt,name=industry"`
 	// +kubebuilder:default = false
-	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,11,opt,name=imbalanced"`
+	Imbalanced *bool `json:"imbalanced,omitempty" protobuf:"bytes,12,opt,name=imbalanced"`
 	// URI of the datasource CR for this public dataset
 	// +kubebuilder:default =""
-	DatasourceCR *string `json:"datasourceCR,omitempty" protobuf:"bytes,12,opt,name=datasourceCR"`
+	DatasourceCR *string `json:"datasourceCR,omitempty" protobuf:"bytes,13,opt,name=datasourceCR"`
 	// URI of the dataset CR for this public dataset
 	// +kubebuilder:default =""
-	DatasetCR *string `json:"datasetCR,omitempty" protobuf:"bytes,13,opt,name=datasetCR"`
+	DatasetCR *string `json:"datasetCR,omitempty" protobuf:"bytes,14,opt,name=datasetCR"`
 	// URI of the study CR for this public dataset
 	// +kubebuilder:default =""
-	StudyCR *string `json:"studyCR,omitempty" protobuf:"bytes,14,opt,name=studyCR"`
+	StudyCR *string `json:"studyCR,omitempty" protobuf:"bytes,15,opt,name=studyCR"`
 	// URI of the data product CR
 	// +kubebuilder:default =""
-	DataProductCR *string `json:"dataProductCR,omitempty" protobuf:"bytes,15,opt,name=dataProductCR"`
+	DataProductCR *string `json:"dataProductCR,omitempty" protobuf:"bytes,16,opt,name=dataProductCR"`
 }
 
 //==============================================================================

@@ -1017,6 +1017,9 @@ export class PublicDatasetSpec extends jspb.Message {
   getTargetcolumn(): string;
   setTargetcolumn(value: string): PublicDatasetSpec;
 
+  getIndustry(): string;
+  setIndustry(value: string): PublicDatasetSpec;
+
   getImbalanced(): boolean;
   setImbalanced(value: boolean): PublicDatasetSpec;
 
@@ -1052,6 +1055,7 @@ export namespace PublicDatasetSpec {
     columns: number,
     filesize: number,
     targetcolumn: string,
+    industry: string,
     imbalanced: boolean,
     datasourcecr: string,
     datasetcr: string,

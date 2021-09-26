@@ -932,6 +932,11 @@ func (in *PublicDatasetSpec) DeepCopyInto(out *PublicDatasetSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Industry != nil {
+		in, out := &in.Industry, &out.Industry
+		*out = new(string)
+		**out = **in
+	}
 	if in.Imbalanced != nil {
 		in, out := &in.Imbalanced, &out.Imbalanced
 		*out = new(bool)

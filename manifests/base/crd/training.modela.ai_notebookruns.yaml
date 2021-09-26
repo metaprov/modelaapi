@@ -150,6 +150,16 @@ spec:
                 description: StartTime is the times that this prediction job started
                 format: date-time
                 type: string
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
             type: object
         required:
         - spec

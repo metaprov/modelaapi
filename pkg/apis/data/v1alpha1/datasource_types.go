@@ -330,8 +330,9 @@ type CsvFileSpec struct {
 	// +kubebuilder:validation:Optional
 	Strict *bool `json:"strict,omitempty" protobuf:"varint,14,opt,name=strict"`
 	// The compression type, if the file is compressed
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	CompressionType 
+	Compression *string `json:"compression,omitempty" protobuf:"bytes,15,opt,name=compression"`
 }
 
 type ExcelNotebookSpec struct {

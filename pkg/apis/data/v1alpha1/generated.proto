@@ -339,6 +339,61 @@ message ColumnValidation {
   optional bool generated = 8;
 }
 
+message CsvFileSpec {
+  // Refers to the character used to separate fields.
+  // Default to comma
+  // +kubebuilder:validation:Optional
+  optional string delimiter = 5;
+
+  // The quote char.
+  // +kubebuilder:validation:Optional
+  optional string quote = 6;
+
+  // the char used to escape the delimiter when quoting
+  // +kubebuilder:validation:Optional
+  optional string escapeChar = 7;
+
+  // CommentCharacter(s) to split comments off the end of lines.
+  // +kubebuilder:validation:Optional
+  optional string commentChars = 8;
+
+  // Check if there is an header
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool header = 9;
+
+  // The number of rows to skip
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Optional
+  optional int32 skipRows = 10;
+
+  // NullValue is a sequence of values to replace with NA.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string nullValues = 11;
+
+  // Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
+  // +kubebuilder:default:="utf-8"
+  // +kubebuilder:validation:Optional
+  optional string encoding = 12;
+
+  // The maximum number of rows to read.
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Optional
+  optional int32 maxRows = 13;
+
+  // If true, the import will fail if there is an error
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool strict = 14;
+
+  // The compression type, if the file is compressed
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string compression = 15;
+}
+
 // data reference contain pointers to the actual data objects
 message DataLocation {
   // +kubebuilder:default:="object"
@@ -1699,10 +1754,14 @@ message FeaturePipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
+  // What triggered the run
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturePipelineRunCondition conditions = 5;
+  repeated FeaturePipelineRunCondition conditions = 6;
 }
 
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
@@ -2030,56 +2089,6 @@ message FileValidation {
   optional bool generated = 9;
 }
 
-message CsvFileSpec {
-  // Refers to the character used to separate fields.
-  // Default to comma
-  // +kubebuilder:validation:Optional
-  optional string delimiter = 5;
-
-  // The quote char.
-  // +kubebuilder:validation:Optional
-  optional string quote = 6;
-
-  // the char used to escape the delimiter when quoting
-  // +kubebuilder:validation:Optional
-  optional string escapeChar = 7;
-
-  // CommentCharacter(s) to split comments off the end of lines.
-  // +kubebuilder:validation:Optional
-  optional string commentChars = 8;
-
-  // Check if there is an header
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool header = 9;
-
-  // The number of rows to skip
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int32 skipRows = 10;
-
-  // NullValue is a sequence of values to replace with NA.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string nullValues = 11;
-
-  // Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
-  // +kubebuilder:default:="utf-8"
-  // +kubebuilder:validation:Optional
-  optional string encoding = 12;
-
-  // The maximum number of rows to read.
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int32 maxRows = 13;
-
-  // If true, the import will fail if there is an error
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool strict = 14;
-}
-
 message GitLocation {
   // GitConnectionName
   // +kubebuilder:default:=""
@@ -2247,10 +2256,14 @@ message LabelingPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
+  // What triggered the run
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabelingPipelineRunCondition conditions = 5;
+  repeated LabelingPipelineRunCondition conditions = 6;
 }
 
 // LabelingPipelineSpec defines the desired state of a LabelingPipeline
@@ -2573,10 +2586,14 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 5;
 
+  // What triggered the run
+  // +kubebuilder:validation:Optional
+  optional string triggeredBy = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 6;
+  repeated RecipeCondition conditions = 7;
 }
 
 // RecipeSpec defines the desired state of a dataset

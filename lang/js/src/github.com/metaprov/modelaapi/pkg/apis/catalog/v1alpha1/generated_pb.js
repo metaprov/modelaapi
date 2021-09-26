@@ -9829,11 +9829,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
     columns: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     filesize: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     targetcolumn: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    imbalanced: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
-    datasourcecr: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    datasetcr: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    studycr: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    dataproductcr: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
+    industry: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    imbalanced: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+    datasourcecr: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    datasetcr: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    studycr: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    dataproductcr: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9911,22 +9912,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
       msg.setTargetcolumn(value);
       break;
     case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIndustry(value);
+      break;
+    case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setImbalanced(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasourcecr(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {string} */ (reader.readString());
       msg.setDatasetcr(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setStudycr(value);
       break;
-    case 15:
+    case 16:
       var value = /** @type {string} */ (reader.readString());
       msg.setDataproductcr(value);
       break;
@@ -10029,16 +10034,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 11));
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       11,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 12));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       12,
       f
     );
@@ -10061,6 +10066,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
   if (f != null) {
     writer.writeString(
       15,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeString(
+      16,
       f
     );
   }
@@ -10428,19 +10440,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
 
 
 /**
- * optional bool imbalanced = 11;
- * @return {boolean}
+ * optional string industry = 11;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getImbalanced = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getIndustry = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setImbalanced = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setIndustry = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -10449,7 +10461,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearImbalanced = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearIndustry = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -10458,25 +10470,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasImbalanced = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasIndustry = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional string datasourceCR = 12;
- * @return {string}
+ * optional bool imbalanced = 12;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDatasourcecr = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getImbalanced = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDatasourcecr = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setImbalanced = function(value) {
   return jspb.Message.setField(this, 12, value);
 };
 
@@ -10485,7 +10497,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDatasourcecr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearImbalanced = function() {
   return jspb.Message.setField(this, 12, undefined);
 };
 
@@ -10494,16 +10506,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDatasourcecr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasImbalanced = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional string datasetCR = 13;
+ * optional string datasourceCR = 13;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDatasetcr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDatasourcecr = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -10512,7 +10524,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDatasetcr = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDatasourcecr = function(value) {
   return jspb.Message.setField(this, 13, value);
 };
 
@@ -10521,7 +10533,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDatasetcr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDatasourcecr = function() {
   return jspb.Message.setField(this, 13, undefined);
 };
 
@@ -10530,16 +10542,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDatasetcr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDatasourcecr = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional string studyCR = 14;
+ * optional string datasetCR = 14;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getStudycr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDatasetcr = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
@@ -10548,7 +10560,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setStudycr = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDatasetcr = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -10557,7 +10569,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearStudycr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDatasetcr = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -10566,16 +10578,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasStudycr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDatasetcr = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional string dataProductCR = 15;
+ * optional string studyCR = 15;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDataproductcr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getStudycr = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -10584,7 +10596,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDataproductcr = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setStudycr = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -10593,7 +10605,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDataproductcr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearStudycr = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -10602,8 +10614,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDataproductcr = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasStudycr = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional string dataProductCR = 16;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.getDataproductcr = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.setDataproductcr = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.clearDataproductcr = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec.prototype.hasDataproductcr = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 

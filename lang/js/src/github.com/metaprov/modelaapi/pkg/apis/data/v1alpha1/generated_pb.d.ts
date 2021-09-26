@@ -365,6 +365,64 @@ export namespace ColumnValidation {
   }
 }
 
+export class CsvFileSpec extends jspb.Message {
+  getDelimiter(): string;
+  setDelimiter(value: string): CsvFileSpec;
+
+  getQuote(): string;
+  setQuote(value: string): CsvFileSpec;
+
+  getEscapechar(): string;
+  setEscapechar(value: string): CsvFileSpec;
+
+  getCommentchars(): string;
+  setCommentchars(value: string): CsvFileSpec;
+
+  getHeader(): boolean;
+  setHeader(value: boolean): CsvFileSpec;
+
+  getSkiprows(): number;
+  setSkiprows(value: number): CsvFileSpec;
+
+  getNullvalues(): string;
+  setNullvalues(value: string): CsvFileSpec;
+
+  getEncoding(): string;
+  setEncoding(value: string): CsvFileSpec;
+
+  getMaxrows(): number;
+  setMaxrows(value: number): CsvFileSpec;
+
+  getStrict(): boolean;
+  setStrict(value: boolean): CsvFileSpec;
+
+  getCompression(): string;
+  setCompression(value: string): CsvFileSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CsvFileSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CsvFileSpec): CsvFileSpec.AsObject;
+  static serializeBinaryToWriter(message: CsvFileSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CsvFileSpec;
+  static deserializeBinaryFromReader(message: CsvFileSpec, reader: jspb.BinaryReader): CsvFileSpec;
+}
+
+export namespace CsvFileSpec {
+  export type AsObject = {
+    delimiter: string,
+    quote: string,
+    escapechar: string,
+    commentchars: string,
+    header: boolean,
+    skiprows: number,
+    nullvalues: string,
+    encoding: string,
+    maxrows: number,
+    strict: boolean,
+    compression: string,
+  }
+}
+
 export class DataLocation extends jspb.Message {
   getType(): string;
   setType(value: string): DataLocation;
@@ -2594,6 +2652,9 @@ export class FeaturePipelineRunStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeaturePipelineRunStatus;
 
+  getTriggeredby(): string;
+  setTriggeredby(value: string): FeaturePipelineRunStatus;
+
   getConditionsList(): Array<FeaturePipelineRunCondition>;
   setConditionsList(value: Array<FeaturePipelineRunCondition>): FeaturePipelineRunStatus;
   clearConditionsList(): FeaturePipelineRunStatus;
@@ -2613,6 +2674,7 @@ export namespace FeaturePipelineRunStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     phase: string,
     observedgeneration: number,
+    triggeredby: string,
     conditionsList: Array<FeaturePipelineRunCondition.AsObject>,
   }
 }
@@ -3087,60 +3149,6 @@ export namespace FileValidation {
   }
 }
 
-export class CsvFileSpec extends jspb.Message {
-  getDelimiter(): string;
-  setDelimiter(value: string): CsvFileSpec;
-
-  getQuote(): string;
-  setQuote(value: string): CsvFileSpec;
-
-  getEscapechar(): string;
-  setEscapechar(value: string): CsvFileSpec;
-
-  getCommentchars(): string;
-  setCommentchars(value: string): CsvFileSpec;
-
-  getHeader(): boolean;
-  setHeader(value: boolean): CsvFileSpec;
-
-  getSkiprows(): number;
-  setSkiprows(value: number): CsvFileSpec;
-
-  getNullvalues(): string;
-  setNullvalues(value: string): CsvFileSpec;
-
-  getEncoding(): string;
-  setEncoding(value: string): CsvFileSpec;
-
-  getMaxrows(): number;
-  setMaxrows(value: number): CsvFileSpec;
-
-  getStrict(): boolean;
-  setStrict(value: boolean): CsvFileSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CsvFileSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: CsvFileSpec): CsvFileSpec.AsObject;
-  static serializeBinaryToWriter(message: CsvFileSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CsvFileSpec;
-  static deserializeBinaryFromReader(message: CsvFileSpec, reader: jspb.BinaryReader): CsvFileSpec;
-}
-
-export namespace CsvFileSpec {
-  export type AsObject = {
-    delimiter: string,
-    quote: string,
-    escapechar: string,
-    commentchars: string,
-    header: boolean,
-    skiprows: number,
-    nullvalues: string,
-    encoding: string,
-    maxrows: number,
-    strict: boolean,
-  }
-}
-
 export class GitLocation extends jspb.Message {
   getGitconnectionname(): string;
   setGitconnectionname(value: string): GitLocation;
@@ -3450,6 +3458,9 @@ export class LabelingPipelineRunStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LabelingPipelineRunStatus;
 
+  getTriggeredby(): string;
+  setTriggeredby(value: string): LabelingPipelineRunStatus;
+
   getConditionsList(): Array<LabelingPipelineRunCondition>;
   setConditionsList(value: Array<LabelingPipelineRunCondition>): LabelingPipelineRunStatus;
   clearConditionsList(): LabelingPipelineRunStatus;
@@ -3469,6 +3480,7 @@ export namespace LabelingPipelineRunStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    triggeredby: string,
     conditionsList: Array<LabelingPipelineRunCondition.AsObject>,
   }
 }
@@ -4003,6 +4015,9 @@ export class RecipeRunStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): RecipeRunStatus;
 
+  getTriggeredby(): string;
+  setTriggeredby(value: string): RecipeRunStatus;
+
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeRunStatus;
   clearConditionsList(): RecipeRunStatus;
@@ -4023,6 +4038,7 @@ export namespace RecipeRunStatus {
     phase: string,
     observedgeneration: number,
     lasterror: string,
+    triggeredby: string,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
 }

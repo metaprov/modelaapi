@@ -1046,6 +1046,16 @@ spec:
                     format: date-time
                     type: string
                 type: object
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
+                type: string
               uatStatus:
                 description: UATStatus is the status of the uat stage
                 properties:

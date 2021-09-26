@@ -521,12 +521,15 @@ type StudyStatus struct {
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
 	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,37,opt,name=trainingDataHash"`
+	// What triggered the run
+	//+kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,38,opt,name=triggeredBy"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,38,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,39,rep,name=conditions"`
 }
 
 // model cv results
