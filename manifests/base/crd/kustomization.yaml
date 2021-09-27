@@ -46,6 +46,7 @@ resources:
   - team.modela.ai_reviews.yaml
   - team.modela.ai_postmortems.yaml
   - team.modela.ai_runbooks.yaml
+  - team.modela.ai_meetings.yaml
   - training.modela.ai_modelautobuilders.yaml
   - training.modela.ai_modelpipelineruns.yaml
   - training.modela.ai_modelcompilerruns.yaml
