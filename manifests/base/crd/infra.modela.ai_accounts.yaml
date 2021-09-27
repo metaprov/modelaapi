@@ -123,14 +123,11 @@ spec:
                       description: The role in relation to the entity.
                       enum:
                       - administrator
-                      - data-analyst
+                      - business-stakeholder
                       - data-scientist
                       - data-engineer
-                      - data-steward
-                      - product-manager
-                      - risk-manager
-                      - software-engineer
                       - ml-engineer
+                      - sre
                       type: string
                   type: object
                 type: array
@@ -162,14 +159,11 @@ spec:
                       description: The role in relation to the entity.
                       enum:
                       - administrator
-                      - data-analyst
+                      - business-stakeholder
                       - data-scientist
                       - data-engineer
-                      - data-steward
-                      - product-manager
-                      - risk-manager
-                      - software-engineer
                       - ml-engineer
+                      - sre
                       type: string
                   type: object
                 type: array
@@ -190,14 +184,11 @@ spec:
                       description: The role in relation to the entity.
                       enum:
                       - administrator
-                      - data-analyst
+                      - business-stakeholder
                       - data-scientist
                       - data-engineer
-                      - data-steward
-                      - product-manager
-                      - risk-manager
-                      - software-engineer
                       - ml-engineer
+                      - sre
                       type: string
                   type: object
                 type: array
