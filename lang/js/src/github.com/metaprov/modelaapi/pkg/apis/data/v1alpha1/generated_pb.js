@@ -6490,7 +6490,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.toObject 
     encoding: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     maxrows: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     strict: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
-    compression: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
+    compression: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    hasindexcolumn: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
+    indexcolumn: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6574,6 +6576,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.deseriali
     case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setCompression(value);
+      break;
+    case 13:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHasindexcolumn(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setIndexcolumn(value);
       break;
     default:
       reader.skipField();
@@ -6685,6 +6695,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.serialize
   if (f != null) {
     writer.writeString(
       12,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeBool(
+      13,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeInt32(
+      14,
       f
     );
   }
@@ -7120,6 +7144,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasCompression = function() {
   return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional bool hasIndexColumn = 13;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getHasindexcolumn = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setHasindexcolumn = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearHasindexcolumn = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasHasindexcolumn = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional int32 indexColumn = 14;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.getIndexcolumn = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.setIndexcolumn = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.clearIndexcolumn = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec.prototype.hasIndexcolumn = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

@@ -396,6 +396,16 @@ message CsvFileSpec {
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string compression = 12;
+
+  // If true, the file contain an index column
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional bool hasIndexColumn = 13;
+
+  // If has index column.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional int32 indexColumn = 14;
 }
 
 // data reference contain pointers to the actual data objects

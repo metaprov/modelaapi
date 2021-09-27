@@ -147,6 +147,9 @@ spec:
                 description: Description is user provided description
                 maxLength: 512
                 type: string
+              flagged:
+                description: Is this model flagged
+                type: boolean
               hierarchy:
                 description: The group hierarchy
                 properties:

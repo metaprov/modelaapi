@@ -267,6 +267,9 @@ spec:
                 - chatbot
                 - rl
                 type: string
+              flagged:
+                description: Is this model flagged
+                type: boolean
               forecasted:
                 default: false
                 description: Forecasted is true when the model should perform a forecast

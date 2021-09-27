@@ -2363,6 +2363,11 @@ func (in *ModelSpec) DeepCopyInto(out *ModelSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.Flagged != nil {
+		in, out := &in.Flagged, &out.Flagged
+		*out = new(bool)
+		**out = **in
+	}
 	if in.Location != nil {
 		in, out := &in.Location, &out.Location
 		*out = new(datav1alpha1.DataLocation)
@@ -3585,6 +3590,11 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	}
 	if in.Template != nil {
 		in, out := &in.Template, &out.Template
+		*out = new(bool)
+		**out = **in
+	}
+	if in.Flagged != nil {
+		in, out := &in.Flagged, &out.Flagged
 		*out = new(bool)
 		**out = **in
 	}

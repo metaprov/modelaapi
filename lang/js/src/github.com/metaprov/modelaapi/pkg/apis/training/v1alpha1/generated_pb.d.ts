@@ -2514,6 +2514,9 @@ export class ModelSpec extends jspb.Message {
   getBaseline(): boolean;
   setBaseline(value: boolean): ModelSpec;
 
+  getFlagged(): boolean;
+  setFlagged(value: boolean): ModelSpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): ModelSpec;
   hasLocation(): boolean;
@@ -2572,6 +2575,7 @@ export namespace ModelSpec {
     forecasted: boolean,
     released: boolean,
     baseline: boolean,
+    flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     forecastingspec?: ForecastingSpec.AsObject,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
@@ -4010,6 +4014,9 @@ export class StudySpec extends jspb.Message {
   getTemplate(): boolean;
   setTemplate(value: boolean): StudySpec;
 
+  getFlagged(): boolean;
+  setFlagged(value: boolean): StudySpec;
+
   getNotification(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec | undefined;
   setNotification(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec): StudySpec;
   hasNotification(): boolean;
@@ -4053,6 +4060,7 @@ export namespace StudySpec {
     activedeadlineseconds: number,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     template: boolean,
+    flagged: boolean,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
   }

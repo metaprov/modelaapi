@@ -402,6 +402,12 @@ export class CsvFileSpec extends jspb.Message {
   getCompression(): string;
   setCompression(value: string): CsvFileSpec;
 
+  getHasindexcolumn(): boolean;
+  setHasindexcolumn(value: boolean): CsvFileSpec;
+
+  getIndexcolumn(): number;
+  setIndexcolumn(value: number): CsvFileSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CsvFileSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CsvFileSpec): CsvFileSpec.AsObject;
@@ -424,6 +430,8 @@ export namespace CsvFileSpec {
     maxrows: number,
     strict: boolean,
     compression: string,
+    hasindexcolumn: boolean,
+    indexcolumn: number,
   }
 }
 

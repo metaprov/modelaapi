@@ -95,10 +95,19 @@ spec:
                   escapeChar:
                     description: the char used to escape the delimiter when quoting
                     type: string
+                  hasIndexColumn:
+                    default: 0
+                    description: If true, the file contain an index column
+                    type: boolean
                   header:
                     default: true
                     description: Check if there is an header
                     type: boolean
+                  indexColumn:
+                    default: false
+                    description: If has index column.
+                    format: int32
+                    type: integer
                   maxRows:
                     description: The maximum number of rows to read.
                     format: int32

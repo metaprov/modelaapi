@@ -412,12 +412,15 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Template *bool `json:"template,omitempty" protobuf:"varint,25,opt,name=template"`
+	// Is this model flagged
+	// +kubebuilder:validation:Optional
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,26,opt,name=flagged"`
 	// Notification specification.
 	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,26,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,27,opt,name=notification"`
 	// Model Image specification.
 	//+kubebuilder:validation:Optional
-	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,27,opt,name=modelImage"`
+	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,28,opt,name=modelImage"`
 }
 
 // StudyStatus defines the observed state of the Study

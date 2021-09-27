@@ -1709,27 +1709,31 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool baseline = 27;
 
+  // Is this model flagged
+  // +kubebuilder:validation:Optional
+  optional bool flagged = 28;
+
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 28;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 29;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 29;
+  optional ForecastingSpec forecastingSpec = 30;
 
   // Compilation denotes how to compile the model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 30;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 31;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 31;
+  optional int64 activeDeadlineSeconds = 32;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 32;
+  optional string estimatorType = 33;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2714,13 +2718,17 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional bool template = 25;
 
+  // Is this model flagged
+  // +kubebuilder:validation:Optional
+  optional bool flagged = 26;
+
   // Notification specification.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 26;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 27;
 
   // Model Image specification.
   // +kubebuilder:validation:Optional
-  optional ModelImageSpec modelImage = 27;
+  optional ModelImageSpec modelImage = 28;
 }
 
 // StudyStatus defines the observed state of the Study
