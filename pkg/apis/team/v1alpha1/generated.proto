@@ -108,7 +108,6 @@ message MeetingSpec {
   optional string notifierName = 4;
 
   // Assigned to is the user name assigned to this task
-  // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   repeated string participants = 5;
 

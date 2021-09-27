@@ -77,7 +77,6 @@ type MeetingSpec struct {
 	// NotifierName is the name of the notifier used to fire the alert.
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
 	// Assigned to is the user name assigned to this task
-	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Participants []string `json:"participants,omitempty" protobuf:"bytes,5,rep,name=participants"`
 	// Flagged denote if the meeting is flagged

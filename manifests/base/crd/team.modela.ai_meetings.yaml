@@ -111,7 +111,6 @@ spec:
                   the alert.
                 type: string
               participants:
-                default: no-one
                 description: Assigned to is the user name assigned to this task
                 items:
                   type: string
