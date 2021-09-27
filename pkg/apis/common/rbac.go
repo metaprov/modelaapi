@@ -51,6 +51,7 @@ const (
 	ApiTokenKind       KindName = "ApiToken"
 	AlertKind          KindName = "Alert"
 	TodoKind           KindName = "Todo"
+	MeetingKind        KindName = "Meeting"
 
 	// Training kind
 	ModelKind            KindName = "Model"
