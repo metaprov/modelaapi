@@ -641,6 +641,206 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteTodo);
   }
 
+  methodInfoListMeetings = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse.deserializeBinary
+  );
+
+  listMeetings(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse>;
+
+  listMeetings(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse>;
+
+  listMeetings(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListMeetings',
+        request,
+        metadata || {},
+        this.methodInfoListMeetings,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListMeetings',
+    request,
+    metadata || {},
+    this.methodInfoListMeetings);
+  }
+
+  methodInfoGetMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.deserializeBinary
+  );
+
+  getMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
+
+  getMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
+
+  getMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetMeeting',
+        request,
+        metadata || {},
+        this.methodInfoGetMeeting,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetMeeting',
+    request,
+    metadata || {},
+    this.methodInfoGetMeeting);
+  }
+
+  methodInfoCreateMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.deserializeBinary
+  );
+
+  createMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
+
+  createMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
+
+  createMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateMeeting',
+        request,
+        metadata || {},
+        this.methodInfoCreateMeeting,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateMeeting',
+    request,
+    metadata || {},
+    this.methodInfoCreateMeeting);
+  }
+
+  methodInfoUpdateMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.deserializeBinary
+  );
+
+  updateMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
+
+  updateMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
+
+  updateMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateMeeting',
+        request,
+        metadata || {},
+        this.methodInfoUpdateMeeting,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateMeeting',
+    request,
+    metadata || {},
+    this.methodInfoUpdateMeeting);
+  }
+
+  methodInfoDeleteMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteMeeting(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteMeeting',
+        request,
+        metadata || {},
+        this.methodInfoDeleteMeeting,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteMeeting',
+    request,
+    metadata || {},
+    this.methodInfoDeleteMeeting);
+  }
+
   methodInfoListCommits = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest) => {

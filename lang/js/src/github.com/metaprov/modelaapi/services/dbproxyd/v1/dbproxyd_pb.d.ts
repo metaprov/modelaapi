@@ -411,6 +411,140 @@ export namespace DeleteTodoRequest {
   }
 }
 
+export class ListMeetingsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListMeetingsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListMeetingsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListMeetingsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListMeetingsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListMeetingsRequest): ListMeetingsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListMeetingsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListMeetingsRequest;
+  static deserializeBinaryFromReader(message: ListMeetingsRequest, reader: jspb.BinaryReader): ListMeetingsRequest;
+}
+
+export namespace ListMeetingsRequest {
+  export type AsObject = {
+    namespace: string,
+    pageSize: number,
+    pageToken: string,
+  }
+}
+
+export class ListMeetingsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>): ListMeetingsResponse;
+  clearItemsList(): ListMeetingsResponse;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting, index?: number): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListMeetingsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListMeetingsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListMeetingsResponse): ListMeetingsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListMeetingsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListMeetingsResponse;
+  static deserializeBinaryFromReader(message: ListMeetingsResponse, reader: jspb.BinaryReader): ListMeetingsResponse;
+}
+
+export namespace ListMeetingsResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class GetMeetingRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetMeetingRequest;
+
+  getName(): string;
+  setName(value: string): GetMeetingRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetMeetingRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetMeetingRequest): GetMeetingRequest.AsObject;
+  static serializeBinaryToWriter(message: GetMeetingRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetMeetingRequest;
+  static deserializeBinaryFromReader(message: GetMeetingRequest, reader: jspb.BinaryReader): GetMeetingRequest;
+}
+
+export namespace GetMeetingRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class CreateMeetingRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): CreateMeetingRequest;
+  hasItem(): boolean;
+  clearItem(): CreateMeetingRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateMeetingRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateMeetingRequest): CreateMeetingRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateMeetingRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateMeetingRequest;
+  static deserializeBinaryFromReader(message: CreateMeetingRequest, reader: jspb.BinaryReader): CreateMeetingRequest;
+}
+
+export namespace CreateMeetingRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
+  }
+}
+
+export class UpdateMeetingRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting): UpdateMeetingRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateMeetingRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateMeetingRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateMeetingRequest): UpdateMeetingRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateMeetingRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateMeetingRequest;
+  static deserializeBinaryFromReader(message: UpdateMeetingRequest, reader: jspb.BinaryReader): UpdateMeetingRequest;
+}
+
+export namespace UpdateMeetingRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting.AsObject,
+  }
+}
+
+export class DeleteMeetingRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteMeetingRequest;
+
+  getName(): string;
+  setName(value: string): DeleteMeetingRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteMeetingRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteMeetingRequest): DeleteMeetingRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteMeetingRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteMeetingRequest;
+  static deserializeBinaryFromReader(message: DeleteMeetingRequest, reader: jspb.BinaryReader): DeleteMeetingRequest;
+}
+
+export namespace DeleteMeetingRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
 export class ListCommitsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListCommitsRequest;
