@@ -61,6 +61,10 @@ spec:
                       type: string
                   type: object
                 type: array
+              description:
+                default: ""
+                description: Description of the meeting
+                type: string
               entityRef:
                 description: The target object of the post mortem for example a predictor.
                 properties:

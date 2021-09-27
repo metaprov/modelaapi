@@ -187,40 +187,45 @@ message PostMortemList {
 
 // PostMortemSpec defines the desired state of PostMorem
 message PostMortemSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  // Description of the meeting
+  optional string description = 1;
+
   // The target object of the post mortem for example a predictor.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // The place of the events, can be lab or serving site.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference locationRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference locationRef = 3;
 
   // Reference to accounts that handled the post-mortem
   // +kubebuilder:validation:Optional
-  repeated k8s.io.api.core.v1.ObjectReference handledBy = 3;
+  repeated k8s.io.api.core.v1.ObjectReference handledBy = 4;
 
   // Alerts
   // +kubebuilder:validation:Optional
-  repeated RaisedAlert alert = 4;
+  repeated RaisedAlert alert = 5;
 
   // Timeline is the list of events that happed during the events
   // +kubebuilder:validation:Optional
-  repeated TimeLineEvent timeline = 5;
+  repeated TimeLineEvent timeline = 6;
 
   // Root cause
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string rootCause = 6;
+  optional string rootCause = 7;
 
   // Summary of the post mortem
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string summary = 7;
+  optional string summary = 8;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 8;
+  optional string owner = 9;
 }
 
 // PostMortemStatus defines the actual state of a PostMortem
@@ -365,17 +370,22 @@ message RunBookList {
 
 // RunBookSpec defines the desired state of RunBook
 message RunBookSpec {
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  // Description of the run book
+  optional string description = 1;
+
   // The target object of run book
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // The author of the comment
-  optional k8s.io.api.core.v1.ObjectReference authorRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference authorRef = 3;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 3;
+  optional string owner = 4;
 }
 
 // RunBookStatus defines the actual state of a RunBook

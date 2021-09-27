@@ -60,15 +60,19 @@ type RunBookList struct {
 
 // RunBookSpec defines the desired state of RunBook
 type RunBookSpec struct {
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	// Description of the run book
+	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// The target object of run book
 	// +kubebuilder:validation:Optional
-	EntityRef *v1.ObjectReference `json:"entityRef" protobuf:"bytes,1,opt,name=entityRef"`
+	EntityRef *v1.ObjectReference `json:"entityRef" protobuf:"bytes,2,opt,name=entityRef"`
 	// The author of the comment
-	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,2,opt,name=authorRef"`
+	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,3,opt,name=authorRef"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
 }
 
 // RunBookStatus defines the actual state of a RunBook

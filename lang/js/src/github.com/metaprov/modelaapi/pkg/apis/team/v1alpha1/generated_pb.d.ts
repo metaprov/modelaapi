@@ -321,6 +321,9 @@ export namespace PostMortemList {
 }
 
 export class PostMortemSpec extends jspb.Message {
+  getDescription(): string;
+  setDescription(value: string): PostMortemSpec;
+
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PostMortemSpec;
   hasEntityref(): boolean;
@@ -365,6 +368,7 @@ export class PostMortemSpec extends jspb.Message {
 
 export namespace PostMortemSpec {
   export type AsObject = {
+    description: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     locationref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     handledbyList: Array<k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject>,
@@ -683,6 +687,9 @@ export namespace RunBookList {
 }
 
 export class RunBookSpec extends jspb.Message {
+  getDescription(): string;
+  setDescription(value: string): RunBookSpec;
+
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): RunBookSpec;
   hasEntityref(): boolean;
@@ -706,6 +713,7 @@ export class RunBookSpec extends jspb.Message {
 
 export namespace RunBookSpec {
   export type AsObject = {
+    description: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     authorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     owner: string,

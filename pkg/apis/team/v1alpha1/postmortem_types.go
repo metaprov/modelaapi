@@ -78,33 +78,37 @@ type RaisedAlert struct {
 
 // PostMortemSpec defines the desired state of PostMorem
 type PostMortemSpec struct {
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	// Description of the meeting
+	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// The target object of the post mortem for example a predictor.
 	// +kubebuilder:validation:Optional
-	EntityRef *v1.ObjectReference `json:"entityRef" protobuf:"bytes,1,opt,name=entityRef"`
+	EntityRef *v1.ObjectReference `json:"entityRef" protobuf:"bytes,2,opt,name=entityRef"`
 	// The place of the events, can be lab or serving site.
 	// +kubebuilder:validation:Optional
-	LocationRef *v1.ObjectReference `json:"locationRef" protobuf:"bytes,2,opt,name=locationRef"`
+	LocationRef *v1.ObjectReference `json:"locationRef" protobuf:"bytes,3,opt,name=locationRef"`
 	// Reference to accounts that handled the post-mortem
 	// +kubebuilder:validation:Optional
-	HandledBy []v1.ObjectReference `json:"handledBy" protobuf:"bytes,3,rep,name=handledBy"`
+	HandledBy []v1.ObjectReference `json:"handledBy" protobuf:"bytes,4,rep,name=handledBy"`
 	// Alerts
 	// +kubebuilder:validation:Optional
-	Alerts []RaisedAlert `json:"alerts" protobuf:"bytes,4,rep,name=alert"`
+	Alerts []RaisedAlert `json:"alerts" protobuf:"bytes,5,rep,name=alert"`
 	// Timeline is the list of events that happed during the events
 	// +kubebuilder:validation:Optional
-	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,5,rep,name=timeline"`
+	TimeLine []TimeLineEvent `json:"timeline" protobuf:"bytes,6,rep,name=timeline"`
 	// Root cause
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	RootCause *string `json:"rootCause" protobuf:"bytes,6,opt,name=rootCause"`
+	RootCause *string `json:"rootCause" protobuf:"bytes,7,opt,name=rootCause"`
 	// Summary of the post mortem
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Summary *string `json:"summary" protobuf:"bytes,7,opt,name=summary"`
+	Summary *string `json:"summary" protobuf:"bytes,8,opt,name=summary"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 }
 
 // PostMortemStatus defines the actual state of a PostMortem

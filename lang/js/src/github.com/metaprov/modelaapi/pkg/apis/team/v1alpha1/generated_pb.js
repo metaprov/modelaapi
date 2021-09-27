@@ -3455,7 +3455,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.repeatedFields_ = [3,4,5];
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.repeatedFields_ = [4,5,6];
 
 
 
@@ -3488,6 +3488,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
+    description: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     locationref: (f = msg.getLocationref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     handledbyList: jspb.Message.toObjectList(msg.getHandledbyList(),
@@ -3496,9 +3497,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.toObje
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert.toObject, includeInstance),
     timelineList: jspb.Message.toObjectList(msg.getTimelineList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent.toObject, includeInstance),
-    rootcause: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    summary: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
+    rootcause: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    summary: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3536,39 +3537,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.deseri
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setEntityref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setLocationref(value);
+      msg.setEntityref(value);
       break;
     case 3:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.addHandledby(value);
+      msg.setLocationref(value);
       break;
     case 4:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.addHandledby(value);
+      break;
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert.deserializeBinaryFromReader);
       msg.addAlert(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent.deserializeBinaryFromReader);
       msg.addTimeline(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setRootcause(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setSummary(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -3601,15 +3606,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEntityref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getLocationref();
+  f = message.getEntityref();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -3617,10 +3621,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.serial
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
+  f = message.getLocationref();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
   f = message.getHandledbyList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -3628,7 +3640,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.serial
   f = message.getAlertList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert.serializeBinaryToWriter
     );
@@ -3636,16 +3648,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.serial
   f = message.getTimelineList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
-  if (f != null) {
-    writer.writeString(
-      6,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 7));
@@ -3662,16 +3667,59 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.serial
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
+ * optional string description = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getEntityref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -3680,7 +3728,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setEntityref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -3698,17 +3746,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasEntityref = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference locationRef = 2;
+ * optional k8s.io.api.core.v1.ObjectReference locationRef = 3;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getLocationref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
 };
 
 
@@ -3717,7 +3765,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setLocationref = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -3735,17 +3783,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasLocationref = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated k8s.io.api.core.v1.ObjectReference handledBy = 3;
+ * repeated k8s.io.api.core.v1.ObjectReference handledBy = 4;
  * @return {!Array<!proto.k8s.io.api.core.v1.ObjectReference>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getHandledbyList = function() {
   return /** @type{!Array<!proto.k8s.io.api.core.v1.ObjectReference>} */ (
-    jspb.Message.getRepeatedWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
+    jspb.Message.getRepeatedWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
 };
 
 
@@ -3754,7 +3802,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setHandledbyList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -3764,7 +3812,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.addHandledby = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.k8s.io.api.core.v1.ObjectReference, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.k8s.io.api.core.v1.ObjectReference, opt_index);
 };
 
 
@@ -3778,12 +3826,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
 
 
 /**
- * repeated RaisedAlert alert = 4;
+ * repeated RaisedAlert alert = 5;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getAlertList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert, 5));
 };
 
 
@@ -3792,7 +3840,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setAlertList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -3802,7 +3850,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.addAlert = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RaisedAlert, opt_index);
 };
 
 
@@ -3816,12 +3864,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
 
 
 /**
- * repeated TimeLineEvent timeline = 5;
+ * repeated TimeLineEvent timeline = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getTimelineList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent, 6));
 };
 
 
@@ -3830,7 +3878,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setTimelineList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -3840,7 +3888,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.addTimeline = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent, opt_index);
 };
 
 
@@ -3854,46 +3902,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
 
 
 /**
- * optional string rootCause = 6;
+ * optional string rootCause = 7;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getRootcause = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setRootcause = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearRootcause = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasRootcause = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional string summary = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getSummary = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -3902,7 +3914,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setSummary = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setRootcause = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -3911,7 +3923,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearSummary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearRootcause = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -3920,16 +3932,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasSummary = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasRootcause = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string owner = 8;
+ * optional string summary = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getSummary = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -3938,7 +3950,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setOwner = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setSummary = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -3947,7 +3959,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearSummary = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -3956,8 +3968,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasSummary = function() {
   return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string owner = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setOwner = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearOwner = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -6631,9 +6679,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
+    description: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     authorref: (f = msg.getAuthorref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6671,16 +6720,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.deseriali
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setEntityref(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
       break;
     case 2:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
-      msg.setAuthorref(value);
+      msg.setEntityref(value);
       break;
     case 3:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setAuthorref(value);
+      break;
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
@@ -6713,15 +6766,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getEntityref();
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeString(
       1,
-      f,
-      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getAuthorref();
+  f = message.getEntityref();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -6729,10 +6781,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.serialize
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = message.getAuthorref();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeString(
-      3,
+      4,
       f
     );
   }
@@ -6740,12 +6800,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.serialize
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference entityRef = 1;
+ * optional string description = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.getEntityref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
@@ -6754,7 +6850,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.setEntityref = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -6772,17 +6868,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.hasEntityref = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference authorRef = 2;
+ * optional k8s.io.api.core.v1.ObjectReference authorRef = 3;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.getAuthorref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
 };
 
 
@@ -6791,7 +6887,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.setAuthorref = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -6809,16 +6905,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.hasAuthorref = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string owner = 3;
+ * optional string owner = 4;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.getOwner = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -6827,7 +6923,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.setOwner = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -6836,7 +6932,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.clearOwner = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -6845,7 +6941,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.hasOwner = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

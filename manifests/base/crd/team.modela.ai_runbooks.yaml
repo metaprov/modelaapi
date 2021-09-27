@@ -84,6 +84,10 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+              description:
+                default: ""
+                description: Description of the run book
+                type: string
               entityRef:
                 description: The target object of run book
                 properties:
