@@ -337,11 +337,11 @@ type CsvFileSpec struct {
 	// +kubebuilder:validation:Optional
 	Compression *string `json:"compression,omitempty" protobuf:"bytes,12,opt,name=compression"`
 	// If true, the file contain an index column
-	// +kubebuilder:default:=0
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	HasIndexColumn *bool `json:"hasIndexColumn,omitempty" protobuf:"varint,13,opt,name=hasIndexColumn"`
 	// If has index column.
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	IndexColumn *int32 `json:"indexColumn,omitempty" protobuf:"varint,14,opt,name=indexColumn"`
 }

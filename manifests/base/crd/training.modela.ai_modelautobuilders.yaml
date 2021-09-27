@@ -148,7 +148,7 @@ spec:
                         description: the char used to escape the delimiter when quoting
                         type: string
                       hasIndexColumn:
-                        default: 0
+                        default: false
                         description: If true, the file contain an index column
                         type: boolean
                       header:
@@ -156,7 +156,7 @@ spec:
                         description: Check if there is an header
                         type: boolean
                       indexColumn:
-                        default: false
+                        default: 0
                         description: If has index column.
                         format: int32
                         type: integer
