@@ -50,6 +50,7 @@ const (
 	VirtualVolumeKind  KindName = "VirtualVolume"
 	ApiTokenKind       KindName = "ApiToken"
 	AlertKind          KindName = "Alert"
+	AttachmentKind     KindName = "AttachmentKind"
 	TodoKind           KindName = "Todo"
 	MeetingKind        KindName = "Meeting"
 
