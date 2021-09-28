@@ -49,7 +49,7 @@ spec:
             description: RunBookSpec defines the desired state of RunBook
             properties:
               authorRef:
-                description: The author of the comment
+                description: The author of the run book
                 properties:
                   apiVersion:
                     description: API version of the referent.
@@ -84,6 +84,35 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+              checklist:
+                description: The checklist
+                items:
+                  properties:
+                    attachment:
+                      default: no-one
+                      description: Attachment is a link to the documentation for this
+                        checklist item
+                      type: string
+                    condition:
+                      default: no-one
+                      description: Condition is the condition to use this checklist
+                        item
+                      type: string
+                    enabled:
+                      default: no-one
+                      description: Enabled indicate weather this item is enabled
+                      type: boolean
+                    instruction:
+                      default: no-one
+                      description: Instruction is the instruction to follow
+                      type: string
+                    location:
+                      default: no-one
+                      description: Condition is the condition to tune this checklist
+                        item
+                      type: string
+                  type: object
+                type: array
               description:
                 default: ""
                 description: Description of the run book

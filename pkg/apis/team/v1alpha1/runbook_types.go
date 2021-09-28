@@ -60,19 +60,22 @@ type RunBookList struct {
 
 // RunBookSpec defines the desired state of RunBook
 type RunBookSpec struct {
+	// Description of the run book
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	// Description of the run book
 	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// The target object of run book
 	// +kubebuilder:validation:Optional
 	EntityRef *v1.ObjectReference `json:"entityRef" protobuf:"bytes,2,opt,name=entityRef"`
-	// The author of the comment
+	// The author of the run book
 	AuthorRef *v1.ObjectReference `json:"authorRef,omitempty" protobuf:"bytes,3,opt,name=authorRef"`
+	// The checklist
+	// +kubebuilder:validation:Optional
+	CheckList []CheckListItem `json:"checklist,omitempty" protobuf:"bytes,4,opt,name=checklist"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }
 
 // RunBookStatus defines the actual state of a RunBook
@@ -84,4 +87,27 @@ type RunBookStatus struct {
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []RunBookCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+}
+
+type CheckListItem struct {
+	// Instruction is the instruction to follow
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Instruction *string `json:"instruction,omitempty" protobuf:"bytes,1,opt,name=instruction"`
+	// Enabled indicate weather this item is enabled
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,2,opt,name=enabled"`
+	// Condition is the condition to tune this checklist item
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Location *string `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
+	// Condition is the condition to use this checklist item
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Condition *string `json:"condition,omitempty" protobuf:"bytes,4,opt,name=condition"`
+	// Attachment is a link to the documentation for this checklist item
+	// +kubebuilder:default:="no-one"
+	// +kubebuilder:validation:Optional
+	Attachment *string `json:"attachment,omitempty" protobuf:"bytes,5,opt,name=attachment"`
 }

@@ -62,19 +62,20 @@ type MeetingList struct {
 
 // MeetingSpec defines the desired state of Meeting
 type MeetingSpec struct {
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
 	// Description of the meeting
-	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
+	Description *string `json:"description,omitempty" protobuf:"bytes,1,opt,name=description"`
 	// Agenda of the meeting
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	Agenda *string `json:"agenda,omitempty" protobuf:"bytes,2,opt,name=agenda"`
 	// The modela entity that the meeting is about
+	// +kubebuilder:validation:Optional
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,3,opt,name=entityRef"`
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Required
 	// NotifierName is the name of the notifier used to fire the alert.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
 	// Assigned to is the user name assigned to this task
 	// +kubebuilder:validation:Optional
@@ -84,6 +85,7 @@ type MeetingSpec struct {
 	// +kubebuilder:validation:Optional
 	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,6,opt,name=flagged"`
 	// Reminder is the time to send a reminder
+	// +kubebuilder:validation:Optional
 	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,7,opt,name=reminder"`
 }
 

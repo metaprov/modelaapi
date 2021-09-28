@@ -17,6 +17,33 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
+message CheckListItem {
+  // Instruction is the instruction to follow
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string instruction = 1;
+
+  // Enabled indicate weather this item is enabled
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 2;
+
+  // Condition is the condition to tune this checklist item
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string location = 3;
+
+  // Condition is the condition to use this checklist item
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string condition = 4;
+
+  // Attachment is a link to the documentation for this checklist item
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string attachment = 5;
+}
+
 // Commnet represents a single comment in the review
 message Comment {
   // ID is the comment ID. Used when replying to a comment.
@@ -89,22 +116,23 @@ message MeetingList {
 
 // MeetingSpec defines the desired state of Meeting
 message MeetingSpec {
+  // Description of the meeting
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  // Description of the meeting
   optional string description = 1;
 
+  // Agenda of the meeting
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  // Agenda of the meeting
   optional string agenda = 2;
 
   // The modela entity that the meeting is about
+  // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
 
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Required
   // NotifierName is the name of the notifier used to fire the alert.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
   optional string notifierName = 4;
 
   // Assigned to is the user name assigned to this task
@@ -117,6 +145,7 @@ message MeetingSpec {
   optional bool flagged = 6;
 
   // Reminder is the time to send a reminder
+  // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
 }
 
@@ -368,22 +397,26 @@ message RunBookList {
 
 // RunBookSpec defines the desired state of RunBook
 message RunBookSpec {
+  // Description of the run book
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  // Description of the run book
   optional string description = 1;
 
   // The target object of run book
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
-  // The author of the comment
+  // The author of the run book
   optional k8s.io.api.core.v1.ObjectReference authorRef = 3;
+
+  // The checklist
+  // +kubebuilder:validation:Optional
+  repeated CheckListItem checklist = 4;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 4;
+  optional string owner = 5;
 }
 
 // RunBookStatus defines the actual state of a RunBook

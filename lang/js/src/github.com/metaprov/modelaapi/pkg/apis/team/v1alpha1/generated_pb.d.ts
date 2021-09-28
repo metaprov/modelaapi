@@ -6,6 +6,40 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class CheckListItem extends jspb.Message {
+  getInstruction(): string;
+  setInstruction(value: string): CheckListItem;
+
+  getEnabled(): boolean;
+  setEnabled(value: boolean): CheckListItem;
+
+  getLocation(): string;
+  setLocation(value: string): CheckListItem;
+
+  getCondition(): string;
+  setCondition(value: string): CheckListItem;
+
+  getAttachment(): string;
+  setAttachment(value: string): CheckListItem;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CheckListItem.AsObject;
+  static toObject(includeInstance: boolean, msg: CheckListItem): CheckListItem.AsObject;
+  static serializeBinaryToWriter(message: CheckListItem, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CheckListItem;
+  static deserializeBinaryFromReader(message: CheckListItem, reader: jspb.BinaryReader): CheckListItem;
+}
+
+export namespace CheckListItem {
+  export type AsObject = {
+    instruction: string,
+    enabled: boolean,
+    location: string,
+    condition: string,
+    attachment: string,
+  }
+}
+
 export class Comment extends jspb.Message {
   getId(): string;
   setId(value: string): Comment;
@@ -700,6 +734,11 @@ export class RunBookSpec extends jspb.Message {
   hasAuthorref(): boolean;
   clearAuthorref(): RunBookSpec;
 
+  getChecklistList(): Array<CheckListItem>;
+  setChecklistList(value: Array<CheckListItem>): RunBookSpec;
+  clearChecklistList(): RunBookSpec;
+  addChecklist(value?: CheckListItem, index?: number): CheckListItem;
+
   getOwner(): string;
   setOwner(value: string): RunBookSpec;
 
@@ -716,6 +755,7 @@ export namespace RunBookSpec {
     description: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     authorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    checklistList: Array<CheckListItem.AsObject>,
     owner: string,
   }
 }
