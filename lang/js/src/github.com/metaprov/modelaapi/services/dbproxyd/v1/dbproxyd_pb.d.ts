@@ -3252,10 +3252,10 @@ export namespace ListFeatureHistogramsRequest {
 }
 
 export class ListFeatureHistogramsResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
-  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature>): ListFeatureHistogramsResponse;
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>): ListFeatureHistogramsResponse;
   clearItemsList(): ListFeatureHistogramsResponse;
-  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListFeatureHistogramsResponse;
@@ -3270,7 +3270,7 @@ export class ListFeatureHistogramsResponse extends jspb.Message {
 
 export namespace ListFeatureHistogramsResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject>,
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject>,
     nextPageToken: string,
   }
 }
@@ -3298,8 +3298,8 @@ export namespace GetFeatureHistogramRequest {
 }
 
 export class CreateFeatureHistogramRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): CreateFeatureHistogramRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): CreateFeatureHistogramRequest;
   hasItem(): boolean;
   clearItem(): CreateFeatureHistogramRequest;
 
@@ -3313,13 +3313,13 @@ export class CreateFeatureHistogramRequest extends jspb.Message {
 
 export namespace CreateFeatureHistogramRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
   }
 }
 
 export class UpdateFeatureHistogramRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): UpdateFeatureHistogramRequest;
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): UpdateFeatureHistogramRequest;
   hasItem(): boolean;
   clearItem(): UpdateFeatureHistogramRequest;
 
@@ -3333,7 +3333,7 @@ export class UpdateFeatureHistogramRequest extends jspb.Message {
 
 export namespace UpdateFeatureHistogramRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
   }
 }
 

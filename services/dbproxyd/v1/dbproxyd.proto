@@ -839,7 +839,7 @@ message ListFeatureHistogramsRequest {
 }
 
 message ListFeatureHistogramsResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature items = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram items = 1;
     string next_page_token = 2;
 }
 
@@ -849,11 +849,11 @@ message GetFeatureHistogramRequest {
 }
 
 message CreateFeatureHistogramRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
 }
 
 message UpdateFeatureHistogramRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
 }
 
 message DeleteFeatureHistogramRequest {

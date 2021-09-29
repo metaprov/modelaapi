@@ -30643,7 +30643,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRe
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject, includeInstance),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -30682,8 +30682,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     case 2:
@@ -30724,7 +30724,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRe
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -30738,17 +30738,17 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRe
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature items = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature, 1));
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature>} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse.prototype.setItemsList = function(value) {
@@ -30757,12 +30757,12 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsRe
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListFeatureHistogramsResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram, opt_index);
 };
 
 
@@ -30985,7 +30985,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramR
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -31023,8 +31023,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -31061,24 +31061,24 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramR
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateFeatureHistogramRequest.prototype.setItem = function(value) {
@@ -31136,7 +31136,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramR
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -31174,8 +31174,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -31212,24 +31212,24 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramR
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram}
  */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateFeatureHistogramRequest.prototype.setItem = function(value) {
