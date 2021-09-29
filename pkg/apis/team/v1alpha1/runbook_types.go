@@ -91,23 +91,23 @@ type RunBookStatus struct {
 
 type CheckListItem struct {
 	// Instruction is the instruction to follow
-	// +kubebuilder:default:="no-one"
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Instruction *string `json:"instruction,omitempty" protobuf:"bytes,1,opt,name=instruction"`
 	// Enabled indicate weather this item is enabled
-	// +kubebuilder:default:="no-one"
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,2,opt,name=enabled"`
 	// Condition is the condition to tune this checklist item
-	// +kubebuilder:default:="no-one"
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Location *string `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 	// Condition is the condition to use this checklist item
-	// +kubebuilder:default:="no-one"
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Condition *string `json:"condition,omitempty" protobuf:"bytes,4,opt,name=condition"`
 	// Attachment is a link to the documentation for this checklist item
-	// +kubebuilder:default:="no-one"
+	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Attachment *string `json:"attachment,omitempty" protobuf:"bytes,5,opt,name=attachment"`
 }

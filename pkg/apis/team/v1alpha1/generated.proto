@@ -19,27 +19,27 @@ option go_package = "v1alpha1";
 
 message CheckListItem {
   // Instruction is the instruction to follow
-  // +kubebuilder:default:="no-one"
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string instruction = 1;
 
   // Enabled indicate weather this item is enabled
-  // +kubebuilder:default:="no-one"
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 2;
 
   // Condition is the condition to tune this checklist item
-  // +kubebuilder:default:="no-one"
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string location = 3;
 
   // Condition is the condition to use this checklist item
-  // +kubebuilder:default:="no-one"
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string condition = 4;
 
   // Attachment is a link to the documentation for this checklist item
-  // +kubebuilder:default:="no-one"
+  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string attachment = 5;
 }

@@ -89,25 +89,25 @@ spec:
                 items:
                   properties:
                     attachment:
-                      default: no-one
+                      default: ""
                       description: Attachment is a link to the documentation for this
                         checklist item
                       type: string
                     condition:
-                      default: no-one
+                      default: ""
                       description: Condition is the condition to use this checklist
                         item
                       type: string
                     enabled:
-                      default: no-one
+                      default: false
                       description: Enabled indicate weather this item is enabled
                       type: boolean
                     instruction:
-                      default: no-one
+                      default: ""
                       description: Instruction is the instruction to follow
                       type: string
                     location:
-                      default: no-one
+                      default: ""
                       description: Condition is the condition to tune this checklist
                         item
                       type: string
