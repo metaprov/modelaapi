@@ -14,7 +14,14 @@ import (
 	"gopkg.in/yaml.v2"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	ctrl "sigs.k8s.io/controller-runtime"
 )
+
+func (pm *PostMortem) SetupWebhookWithManager(mgr ctrl.Manager) error {
+	return ctrl.NewWebhookManagedBy(mgr).
+		For(pm).
+		Complete()
+}
 
 func (pm *PostMortem) HasFinalizer() bool {
 	return util.HasFin(&pm.ObjectMeta, team.GroupName)
