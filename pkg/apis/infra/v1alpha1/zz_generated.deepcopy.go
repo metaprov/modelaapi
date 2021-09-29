@@ -348,6 +348,11 @@ func (in *AlertSpec) DeepCopyInto(out *AlertSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.TTL != nil {
+		in, out := &in.TTL, &out.TTL
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Fields != nil {
 		in, out := &in.Fields, &out.Fields
 		*out = make(map[string]string, len(*in))

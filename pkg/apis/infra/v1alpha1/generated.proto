@@ -250,9 +250,14 @@ message AlertSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 6;
 
+  // the alert TTL. Measured from alert creation time. The default TTL is 1H.
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 7;
+
   // The actual information about the alerts
   // +kubebuilder:validation:Optional
-  map<string, string> fields = 7;
+  map<string, string> fields = 8;
 }
 
 // AlertStatus is the observed state of a Alert

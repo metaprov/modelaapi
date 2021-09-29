@@ -32,8 +32,14 @@ spec:
     - jsonPath: .spec.versionName
       name: Version
       type: string
+    - jsonPath: .spec.fileType
+      name: Format
+      type: string
     - jsonPath: .spec.datasetType
       name: Type
+      type: string
+    - jsonPath: .spec.task
+      name: Task
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

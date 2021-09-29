@@ -93,9 +93,13 @@ type AlertSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
+	// the alert TTL. Measured from alert creation time. The default TTL is 1H.
+	// +kubebuilder:default:=3600
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,7,opt,name=ttl"`
 	// The actual information about the alerts
 	// +kubebuilder:validation:Optional
-	Fields map[string]string `json:"fields,omitempty" protobuf:"bytes,7,opt,name=fields"`
+	Fields map[string]string `json:"fields,omitempty" protobuf:"bytes,8,opt,name=fields"`
 }
 
 // AlertStatus is the observed state of a Alert

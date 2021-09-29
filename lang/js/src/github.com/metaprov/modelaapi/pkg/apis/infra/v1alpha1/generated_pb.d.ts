@@ -366,6 +366,9 @@ export class AlertSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): AlertSpec;
 
+  getTtl(): number;
+  setTtl(value: number): AlertSpec;
+
   getFieldsMap(): jspb.Map<string, string>;
   clearFieldsMap(): AlertSpec;
 
@@ -385,6 +388,7 @@ export namespace AlertSpec {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     notifiername: string,
     owner: string,
+    ttl: number,
     fieldsMap: Array<[string, string]>,
   }
 }
