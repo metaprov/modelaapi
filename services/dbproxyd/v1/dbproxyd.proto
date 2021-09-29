@@ -828,6 +828,40 @@ message DeleteFeatureRequest {
     string name = 2;
 }
 
+////////////////////////////////////////////////////////////////
+// FeatureHistogram
+////////////////////////////////////////////////////////////////
+
+message ListFeatureHistogramsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListFeatureHistogramsResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature items = 1;
+    string next_page_token = 2;
+}
+
+message GetFeatureHistogramRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateFeatureHistogramRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+}
+
+message UpdateFeatureHistogramRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+}
+
+message DeleteFeatureHistogramRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
 
 ////////////////////////////////////////////////////////////////
 // FeaturePipeline
@@ -1774,6 +1808,13 @@ service DatabaseProxyService {
     rpc CreateFeature(CreateFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
     rpc UpdateFeature(UpdateFeatureRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature) {}
     rpc DeleteFeature(DeleteFeatureRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListFeatureHistograms(ListFeatureHistogramsRequest) returns (ListFeatureHistogramsResponse) {}
+    rpc GetFeatureHistogram(GetFeatureHistogramRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram) {}
+    rpc CreateFeatureHistogram(CreateFeatureHistogramRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram) {}
+    rpc UpdateFeatureHistogram(UpdateFeatureHistogramRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram) {}
+    rpc DeleteFeatureHistogram(DeleteFeatureHistogramRequest) returns (google.protobuf.Empty) {}
+
 
     rpc ListFeaturePipelines(ListFeaturePipelinesRequest) returns (ListFeaturePipelinesResponse) {}
     rpc GetFeaturePipeline(GetFeaturePipelineRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline) {}
