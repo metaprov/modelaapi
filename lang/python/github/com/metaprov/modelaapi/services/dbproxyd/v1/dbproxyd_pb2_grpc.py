@@ -120,6 +120,31 @@ class DatabaseProxyServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteMeetingRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.ListAttachments = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAttachments',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAttachmentsRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAttachmentsResponse.FromString,
+                )
+        self.GetAttachment = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAttachment',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAttachmentRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.FromString,
+                )
+        self.CreateAttachment = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAttachment',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAttachmentRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.FromString,
+                )
+        self.UpdateAttachment = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAttachment',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAttachmentRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.FromString,
+                )
+        self.DeleteAttachment = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAttachment',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAttachmentRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ListCommits = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListCommitsRequest.SerializeToString,
@@ -1291,6 +1316,36 @@ class DatabaseProxyServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteMeeting(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAttachments(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAttachment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAttachment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAttachment(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAttachment(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2671,6 +2726,31 @@ def add_DatabaseProxyServiceServicer_to_server(servicer, server):
             'DeleteMeeting': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteMeeting,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteMeetingRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListAttachments': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAttachments,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAttachmentsRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAttachmentsResponse.SerializeToString,
+            ),
+            'GetAttachment': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAttachment,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAttachmentRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.SerializeToString,
+            ),
+            'CreateAttachment': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAttachment,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAttachmentRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.SerializeToString,
+            ),
+            'UpdateAttachment': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAttachment,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAttachmentRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.SerializeToString,
+            ),
+            'DeleteAttachment': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAttachment,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAttachmentRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListCommits': grpc.unary_unary_rpc_method_handler(
@@ -4069,6 +4149,91 @@ class DatabaseProxyService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteMeeting',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteMeetingRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAttachments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAttachments',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAttachmentsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListAttachmentsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAttachment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAttachment',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.GetAttachmentRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAttachment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAttachment',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.CreateAttachmentRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAttachment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAttachment',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.UpdateAttachmentRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.Attachment.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAttachment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAttachment',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.DeleteAttachmentRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

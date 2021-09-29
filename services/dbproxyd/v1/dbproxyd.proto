@@ -78,6 +78,42 @@ message DeleteAlertRequest {
 
 
 //////////////////////////////////////////////////////
+/// Attachment
+//////////////////////////////////////////////////////
+
+message ListAttachmentsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListAttachmentsResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment items = 1;
+    string next_page_token = 2;
+}
+
+message GetAttachmentRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateAttachmentRequest {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+}
+
+message UpdateAttachmentRequest {
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 2;
+}
+
+message DeleteAttachmentRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+
+//////////////////////////////////////////////////////
 /// Todo
 //////////////////////////////////////////////////////
 
@@ -1603,6 +1639,13 @@ service DatabaseProxyService {
     rpc CreateMeeting(CreateMeetingRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting) { }
     rpc UpdateMeeting(UpdateMeetingRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting) {}
     rpc DeleteMeeting(DeleteMeetingRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListAttachments(ListAttachmentsRequest) returns (ListAttachmentsResponse) {}
+    rpc GetAttachment(GetAttachmentRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment) {}
+    rpc CreateAttachment(CreateAttachmentRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment) { }
+    rpc UpdateAttachment(UpdateAttachmentRequest) returns (github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment) {}
+    rpc DeleteAttachment(DeleteAttachmentRequest) returns (google.protobuf.Empty) {}
+    
     
     // commits
     rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {}

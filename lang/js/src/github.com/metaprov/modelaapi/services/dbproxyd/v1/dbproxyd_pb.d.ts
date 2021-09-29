@@ -277,6 +277,140 @@ export namespace DeleteAlertRequest {
   }
 }
 
+export class ListAttachmentsRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListAttachmentsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListAttachmentsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListAttachmentsRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAttachmentsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAttachmentsRequest): ListAttachmentsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListAttachmentsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAttachmentsRequest;
+  static deserializeBinaryFromReader(message: ListAttachmentsRequest, reader: jspb.BinaryReader): ListAttachmentsRequest;
+}
+
+export namespace ListAttachmentsRequest {
+  export type AsObject = {
+    namespace: string,
+    pageSize: number,
+    pageToken: string,
+  }
+}
+
+export class ListAttachmentsResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>): ListAttachmentsResponse;
+  clearItemsList(): ListAttachmentsResponse;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment, index?: number): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListAttachmentsResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListAttachmentsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListAttachmentsResponse): ListAttachmentsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListAttachmentsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListAttachmentsResponse;
+  static deserializeBinaryFromReader(message: ListAttachmentsResponse, reader: jspb.BinaryReader): ListAttachmentsResponse;
+}
+
+export namespace ListAttachmentsResponse {
+  export type AsObject = {
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject>,
+    nextPageToken: string,
+  }
+}
+
+export class GetAttachmentRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetAttachmentRequest;
+
+  getName(): string;
+  setName(value: string): GetAttachmentRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetAttachmentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetAttachmentRequest): GetAttachmentRequest.AsObject;
+  static serializeBinaryToWriter(message: GetAttachmentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetAttachmentRequest;
+  static deserializeBinaryFromReader(message: GetAttachmentRequest, reader: jspb.BinaryReader): GetAttachmentRequest;
+}
+
+export namespace GetAttachmentRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class CreateAttachmentRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): CreateAttachmentRequest;
+  hasItem(): boolean;
+  clearItem(): CreateAttachmentRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CreateAttachmentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateAttachmentRequest): CreateAttachmentRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateAttachmentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateAttachmentRequest;
+  static deserializeBinaryFromReader(message: CreateAttachmentRequest, reader: jspb.BinaryReader): CreateAttachmentRequest;
+}
+
+export namespace CreateAttachmentRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+  }
+}
+
+export class UpdateAttachmentRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment): UpdateAttachmentRequest;
+  hasItem(): boolean;
+  clearItem(): UpdateAttachmentRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UpdateAttachmentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateAttachmentRequest): UpdateAttachmentRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateAttachmentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateAttachmentRequest;
+  static deserializeBinaryFromReader(message: UpdateAttachmentRequest, reader: jspb.BinaryReader): UpdateAttachmentRequest;
+}
+
+export namespace UpdateAttachmentRequest {
+  export type AsObject = {
+    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.AsObject,
+  }
+}
+
+export class DeleteAttachmentRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): DeleteAttachmentRequest;
+
+  getName(): string;
+  setName(value: string): DeleteAttachmentRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAttachmentRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAttachmentRequest): DeleteAttachmentRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteAttachmentRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAttachmentRequest;
+  static deserializeBinaryFromReader(message: DeleteAttachmentRequest, reader: jspb.BinaryReader): DeleteAttachmentRequest;
+}
+
+export namespace DeleteAttachmentRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
 export class ListTodosRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListTodosRequest;

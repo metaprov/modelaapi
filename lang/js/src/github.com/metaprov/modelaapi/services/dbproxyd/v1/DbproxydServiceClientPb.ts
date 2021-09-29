@@ -841,6 +841,206 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteMeeting);
   }
 
+  methodInfoListAttachments = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse.deserializeBinary
+  );
+
+  listAttachments(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse>;
+
+  listAttachments(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse>;
+
+  listAttachments(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAttachments',
+        request,
+        metadata || {},
+        this.methodInfoListAttachments,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAttachments',
+    request,
+    metadata || {},
+    this.methodInfoListAttachments);
+  }
+
+  methodInfoGetAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.deserializeBinary
+  );
+
+  getAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
+
+  getAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
+
+  getAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAttachment',
+        request,
+        metadata || {},
+        this.methodInfoGetAttachment,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAttachment',
+    request,
+    metadata || {},
+    this.methodInfoGetAttachment);
+  }
+
+  methodInfoCreateAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.deserializeBinary
+  );
+
+  createAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
+
+  createAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
+
+  createAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAttachment',
+        request,
+        metadata || {},
+        this.methodInfoCreateAttachment,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAttachment',
+    request,
+    metadata || {},
+    this.methodInfoCreateAttachment);
+  }
+
+  methodInfoUpdateAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment.deserializeBinary
+  );
+
+  updateAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
+
+  updateAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
+
+  updateAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAttachment',
+        request,
+        metadata || {},
+        this.methodInfoUpdateAttachment,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAttachment',
+    request,
+    metadata || {},
+    this.methodInfoUpdateAttachment);
+  }
+
+  methodInfoDeleteAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+    google_protobuf_empty_pb.Empty,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest) => {
+      return request.serializeBinary();
+    },
+    google_protobuf_empty_pb.Empty.deserializeBinary
+  );
+
+  deleteAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest,
+    metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
+
+  deleteAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
+
+  deleteAttachment(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: google_protobuf_empty_pb.Empty) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAttachment',
+        request,
+        metadata || {},
+        this.methodInfoDeleteAttachment,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAttachment',
+    request,
+    metadata || {},
+    this.methodInfoDeleteAttachment);
+  }
+
   methodInfoListCommits = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest) => {
