@@ -441,6 +441,11 @@ message PredictionSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 13;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 14;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

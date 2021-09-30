@@ -383,6 +383,11 @@ spec:
                           - mdape
                           type: string
                         type: array
+                      ttl:
+                        default: 0
+                        description: TTL.
+                        format: int32
+                        type: integer
                       versionName:
                         default: ""
                         description: VersionName is the data product version of the

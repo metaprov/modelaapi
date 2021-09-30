@@ -83,6 +83,12 @@ spec:
                 default: no-one
                 description: The feature owner
                 type: string
+              ttl:
+                default: 0
+                description: TTL for the data product run. Set to 0 if no garbage
+                  collected is needed.
+                format: int32
+                type: integer
               versionName:
                 default: ""
                 description: The product version for the feature.

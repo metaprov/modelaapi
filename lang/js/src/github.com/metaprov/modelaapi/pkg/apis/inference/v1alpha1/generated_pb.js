@@ -6453,7 +6453,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f
+    aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
+    ttl: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6539,6 +6540,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
     case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAborted(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTtl(value);
       break;
     default:
       reader.skipField();
@@ -6652,6 +6657,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
   if (f != null) {
     writer.writeBool(
       13,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
+  if (f != null) {
+    writer.writeInt32(
+      14,
       f
     );
   }
@@ -7090,6 +7102,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasAborted = function() {
   return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional int32 ttl = 14;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getTtl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setTtl = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearTtl = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasTtl = function() {
+  return jspb.Message.getField(this, 14) != null;
 };
 
 

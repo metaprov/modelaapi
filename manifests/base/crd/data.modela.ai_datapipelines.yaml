@@ -264,6 +264,12 @@ spec:
                     - cron
                     type: string
                 type: object
+              ttl:
+                default: 0
+                description: TTL for the data product run. Set to 0 if no garbage
+                  collected is needed.
+                format: int32
+                type: integer
               versionName:
                 default: ""
                 description: VersionName is the data product version of the data pipeline

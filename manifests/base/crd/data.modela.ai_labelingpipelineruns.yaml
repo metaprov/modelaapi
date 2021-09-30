@@ -75,6 +75,11 @@ spec:
                 default: no-one
                 description: The owner of the LabelingPipelineRunSpec
                 type: string
+              ttl:
+                default: 0
+                description: TTL.
+                format: int32
+                type: integer
               versionName:
                 description: The product version for the pipeline
                 type: string

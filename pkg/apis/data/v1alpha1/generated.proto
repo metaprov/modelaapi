@@ -711,6 +711,11 @@ message DataPipelineSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 11;
+
+  // TTL for the data product run. Set to 0 if no garbage collected is needed.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 12;
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
@@ -1610,6 +1615,11 @@ message FeatureHistogramSpec {
 
   // Bins is the number of bins in the histogram
   optional int32 bins = 7;
+
+  // TTL for the data product run. Set to 0 if no garbage collected is needed.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 12;
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
@@ -1749,6 +1759,11 @@ message FeaturePipelineRunSpec {
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 4;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 5;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -1839,6 +1854,11 @@ message FeaturePipelineSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool paused = 12;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 13;
 }
 
 // FeatureStatus defines the observed state of Feature
@@ -2254,6 +2274,11 @@ message LabelingPipelineRunSpec {
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 4;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 5;
 }
 
 // LabelPipelineRunStatus defines the observed state of Label
@@ -2326,6 +2351,11 @@ message LabelingPipelineSpec {
   // Paused request the labeling pipeline to suspend
   // +kubebuilder:default:=false
   optional bool paused = 10;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 11;
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
@@ -2577,6 +2607,11 @@ message RecipeRunSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 6;
 }
 
 // RecipeStatus defines the observed state of Recipe
@@ -2653,6 +2688,11 @@ message RecipeSpec {
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
   optional int64 activeDeadlineSeconds = 10;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 11;
 }
 
 // RecipeStatus defines the observed state of Recipe

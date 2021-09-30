@@ -1965,6 +1965,9 @@ export class ModelPipelineRunSpec extends jspb.Message {
   getAborted(): boolean;
   setAborted(value: boolean): ModelPipelineRunSpec;
 
+  getTtl(): number;
+  setTtl(value: number): ModelPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelPipelineRunSpec): ModelPipelineRunSpec.AsObject;
@@ -1983,6 +1986,7 @@ export namespace ModelPipelineRunSpec {
     priority: string,
     paused: boolean,
     aborted: boolean,
+    ttl: number,
   }
 }
 
@@ -2538,6 +2542,9 @@ export class ModelSpec extends jspb.Message {
   getEstimatortype(): string;
   setEstimatortype(value: string): ModelSpec;
 
+  getTtl(): number;
+  setTtl(value: number): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2581,6 +2588,7 @@ export namespace ModelSpec {
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     activedeadlineseconds: number,
     estimatortype: string,
+    ttl: number,
   }
 }
 
@@ -3188,6 +3196,9 @@ export class NotebookRunSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): NotebookRunSpec;
 
+  getTtl(): number;
+  setTtl(value: number): NotebookRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotebookRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: NotebookRunSpec): NotebookRunSpec.AsObject;
@@ -3203,6 +3214,7 @@ export namespace NotebookRunSpec {
     valuesList: Array<NotebookVarValue.AsObject>,
     owner: string,
     workloadclassname: string,
+    ttl: number,
   }
 }
 
@@ -4027,6 +4039,9 @@ export class StudySpec extends jspb.Message {
   hasModelimage(): boolean;
   clearModelimage(): StudySpec;
 
+  getTtl(): number;
+  setTtl(value: number): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -4063,6 +4078,7 @@ export namespace StudySpec {
     flagged: boolean,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
+    ttl: number,
   }
 }
 

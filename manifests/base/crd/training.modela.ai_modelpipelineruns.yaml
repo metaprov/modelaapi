@@ -105,6 +105,11 @@ spec:
                 - high
                 - urgent
                 type: string
+              ttl:
+                default: 0
+                description: TTL.
+                format: int32
+                type: integer
               versionName:
                 default: ""
                 description: VersionName is the data product version of the run

@@ -91,6 +91,10 @@ type LabelingPipelineSpec struct {
 	// Paused request the labeling pipeline to suspend
 	// +kubebuilder:default:=false
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,10,opt,name=paused"`
+	// TTL.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,11,opt,name=ttl"`
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.

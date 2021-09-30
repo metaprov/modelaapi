@@ -143,6 +143,10 @@ type ModelPipelineRunSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"bytes,8,opt,name=aborted"`
+	// TTL.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,9,opt,name=ttl"`
 }
 
 type StageStatusPhase string

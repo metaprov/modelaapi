@@ -1238,6 +1238,11 @@ message ModelPipelineRunSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 8;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 9;
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.
@@ -1734,6 +1739,11 @@ message ModelSpec {
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
   optional string estimatorType = 33;
+
+  // TTL
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 34;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2126,6 +2136,11 @@ message NotebookRunSpec {
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
+
+  // TTL.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 6;
 }
 
 // NotebookRunStatus define that observed state of NotebookRun resource
@@ -2729,6 +2744,11 @@ message StudySpec {
   // Model Image specification.
   // +kubebuilder:validation:Optional
   optional ModelImageSpec modelImage = 28;
+
+  // TTL for models.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 ttl = 29;
 }
 
 // StudyStatus defines the observed state of the Study

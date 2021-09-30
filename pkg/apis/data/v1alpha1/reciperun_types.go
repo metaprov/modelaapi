@@ -89,6 +89,10 @@ type RecipeRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
+	// TTL.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,6,opt,name=ttl"`
 }
 
 // RecipeStatus defines the observed state of Recipe

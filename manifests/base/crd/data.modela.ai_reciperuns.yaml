@@ -109,6 +109,11 @@ spec:
                 default: ""
                 description: The name of the recipe that execute this run
                 type: string
+              ttl:
+                default: 0
+                description: TTL.
+                format: int32
+                type: integer
               versionName:
                 default: ""
                 type: string

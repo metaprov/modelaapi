@@ -861,6 +861,9 @@ export class DataPipelineSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): DataPipelineSpec;
 
+  getTtl(): number;
+  setTtl(value: number): DataPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataPipelineSpec): DataPipelineSpec.AsObject;
@@ -882,6 +885,7 @@ export namespace DataPipelineSpec {
     workloadclassname: string,
     priority: string,
     paused: boolean,
+    ttl: number,
   }
 }
 
@@ -2350,6 +2354,9 @@ export class FeatureHistogramSpec extends jspb.Message {
   getBins(): number;
   setBins(value: number): FeatureHistogramSpec;
 
+  getTtl(): number;
+  setTtl(value: number): FeatureHistogramSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureHistogramSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureHistogramSpec): FeatureHistogramSpec.AsObject;
@@ -2366,6 +2373,7 @@ export namespace FeatureHistogramSpec {
     column: string,
     datasetname: string,
     bins: number,
+    ttl: number,
   }
 }
 
@@ -2630,6 +2638,9 @@ export class FeaturePipelineRunSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): FeaturePipelineRunSpec;
 
+  getTtl(): number;
+  setTtl(value: number): FeaturePipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeaturePipelineRunSpec): FeaturePipelineRunSpec.AsObject;
@@ -2644,6 +2655,7 @@ export namespace FeaturePipelineRunSpec {
     versionname: string,
     featurepipelinename: string,
     workloadclassname: string,
+    ttl: number,
   }
 }
 
@@ -2734,6 +2746,9 @@ export class FeaturePipelineSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): FeaturePipelineSpec;
 
+  getTtl(): number;
+  setTtl(value: number): FeaturePipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeaturePipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeaturePipelineSpec): FeaturePipelineSpec.AsObject;
@@ -2756,6 +2771,7 @@ export namespace FeaturePipelineSpec {
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     activedeadlineseconds: number,
     paused: boolean,
+    ttl: number,
   }
 }
 
@@ -3436,6 +3452,9 @@ export class LabelingPipelineRunSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): LabelingPipelineRunSpec;
 
+  getTtl(): number;
+  setTtl(value: number): LabelingPipelineRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelingPipelineRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelingPipelineRunSpec): LabelingPipelineRunSpec.AsObject;
@@ -3450,6 +3469,7 @@ export namespace LabelingPipelineRunSpec {
     versionname: string,
     labelpipelinename: string,
     workloadclassname: string,
+    ttl: number,
   }
 }
 
@@ -3532,6 +3552,9 @@ export class LabelingPipelineSpec extends jspb.Message {
   getPaused(): boolean;
   setPaused(value: boolean): LabelingPipelineSpec;
 
+  getTtl(): number;
+  setTtl(value: number): LabelingPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabelingPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabelingPipelineSpec): LabelingPipelineSpec.AsObject;
@@ -3552,6 +3575,7 @@ export namespace LabelingPipelineSpec {
     workloadclassname: string,
     activedeadlineseconds: number,
     paused: boolean,
+    ttl: number,
   }
 }
 
@@ -3989,6 +4013,9 @@ export class RecipeRunSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): RecipeRunSpec;
 
+  getTtl(): number;
+  setTtl(value: number): RecipeRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RecipeRunSpec): RecipeRunSpec.AsObject;
@@ -4004,6 +4031,7 @@ export namespace RecipeRunSpec {
     labname: string,
     output?: DataLocation.AsObject,
     workloadclassname: string,
+    ttl: number,
   }
 }
 
@@ -4091,6 +4119,9 @@ export class RecipeSpec extends jspb.Message {
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): RecipeSpec;
 
+  getTtl(): number;
+  setTtl(value: number): RecipeSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RecipeSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RecipeSpec): RecipeSpec.AsObject;
@@ -4110,6 +4141,7 @@ export namespace RecipeSpec {
     sample?: SampleSpec.AsObject,
     workloadclassname: string,
     activedeadlineseconds: number,
+    ttl: number,
   }
 }
 

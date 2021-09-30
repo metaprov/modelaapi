@@ -1096,6 +1096,11 @@ spec:
                       used to run this model. This is assigned by the study
                     type: string
                 type: object
+              ttl:
+                default: 0
+                description: TTL
+                format: int32
+                type: integer
               versionName:
                 default: latest
                 description: VersionName is the product version name for this model

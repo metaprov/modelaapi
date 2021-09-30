@@ -320,6 +320,10 @@ type ModelSpec struct {
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
 	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,33,opt,name=estimatorType"`
+	// TTL
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,34,opt,name=ttl"`
 }
 
 type EnsembleSpec struct {

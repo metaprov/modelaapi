@@ -88,6 +88,10 @@ type RecipeSpec struct {
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
+	// TTL.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,11,opt,name=ttl"`
 }
 
 // RecipeStatus defines the observed state of Recipe

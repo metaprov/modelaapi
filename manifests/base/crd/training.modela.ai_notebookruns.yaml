@@ -73,6 +73,11 @@ spec:
                 default: no-one
                 description: Owner account name
                 type: string
+              ttl:
+                default: 0
+                description: TTL.
+                format: int32
+                type: integer
               values:
                 description: Values to pass to the notebook during execution
                 items:

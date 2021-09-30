@@ -194,6 +194,11 @@ spec:
                     - cron
                     type: string
                 type: object
+              ttl:
+                default: 0
+                description: TTL.
+                format: int32
+                type: integer
               versionName:
                 default: ""
                 description: Version name is the the product version for the feature.

@@ -86,6 +86,10 @@ type FeatureHistogramSpec struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,6,opt,name=datasetName"`
 	// Bins is the number of bins in the histogram
 	Bins *int32 `json:"bins,omitempty" protobuf:"bytes,7,opt,name=bins"`
+	// TTL for the data product run. Set to 0 if no garbage collected is needed.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,12,opt,name=ttl"`
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram

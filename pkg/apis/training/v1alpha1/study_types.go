@@ -421,6 +421,10 @@ type StudySpec struct {
 	// Model Image specification.
 	//+kubebuilder:validation:Optional
 	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,28,opt,name=modelImage"`
+	// TTL for models.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,29,opt,name=ttl"`
 }
 
 // StudyStatus defines the observed state of the Study
