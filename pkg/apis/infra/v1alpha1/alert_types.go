@@ -96,7 +96,7 @@ type AlertSpec struct {
 	// the alert TTL. Measured from alert creation time. The default TTL is 1H.
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,7,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,7,opt,name=ttl"`
 	// The actual information about the alerts
 	// +kubebuilder:validation:Optional
 	Fields map[string]string `json:"fields,omitempty" protobuf:"bytes,8,opt,name=fields"`

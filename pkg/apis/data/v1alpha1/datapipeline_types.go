@@ -102,7 +102,7 @@ type DataPipelineSpec struct {
 	// TTL for the data product run. Set to 0 if no garbage collected is needed.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,12,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,12,opt,name=ttl"`
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.

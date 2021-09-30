@@ -94,7 +94,7 @@ type LabelingPipelineSpec struct {
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,11,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,11,opt,name=ttl"`
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
