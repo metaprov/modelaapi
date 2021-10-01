@@ -28,6 +28,11 @@ func (e *EnsembleRules) Add(m Model) {
 		return
 	}
 
+	// Add only trained model
+	if !m.Trained() {
+		return
+	}
+
 	_, ok := e.byAlg[m.Spec.Estimator.AlgorithmName]
 	if !ok {
 		e.byAlg[m.Spec.Estimator.AlgorithmName] = m.Status.CVScore
