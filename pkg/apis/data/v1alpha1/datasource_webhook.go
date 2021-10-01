@@ -7,9 +7,7 @@
 package v1alpha1
 
 import (
-	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/apis/common"
-	"github.com/metaprov/modelaapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -22,45 +20,6 @@ import (
 var _ webhook.Defaulter = &DataSource{}
 
 func (datasource *DataSource) Default() {
-
-	if datasource.Spec.Owner == nil {
-		datasource.Spec.Owner = util.StrPtr("")
-	}
-
-	if datasource.Spec.Description != nil {
-		datasource.Spec.Description = util.StrPtr("")
-	}
-
-	for i, v := range datasource.Spec.Schema.Columns {
-		c := v
-		datasource.Spec.Schema.Columns[i] = c
-
-	}
-
-	if datasource.Spec.CsvFile != nil {
-		ffile := datasource.Spec.CsvFile
-		if ffile.Header == nil {
-			ffile.Header = util.BoolPtr(true)
-		}
-		if ffile.SkipRows == nil {
-			ffile.SkipRows = util.Int32Ptr(0)
-		}
-
-		if ffile.ColumnDelimiter != nil {
-			delimiter := DelimiterComma
-			ffile.ColumnDelimiter = &delimiter
-		}
-
-		if ffile.Encoding == nil {
-			encoding := catalog.FileEncodingUtf8
-			ffile.Encoding = &encoding
-		}
-	}
-
-	// set default
-	if datasource.Spec.Schema.Validation == nil {
-		datasource.Spec.Schema.Validation = &ValidationSpec{}
-	}
 
 }
 
