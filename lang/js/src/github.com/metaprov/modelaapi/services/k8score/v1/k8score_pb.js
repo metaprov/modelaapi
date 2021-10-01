@@ -3506,7 +3506,7 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3544,8 +3544,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.deseriali
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -3582,24 +3582,24 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.serialize
     writer.writeMessage(
       1,
       f,
-      proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional PodInfo item = 1;
- * @return {?proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo}
+ * optional JobInfo item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo}
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo, 1));
+  return /** @type{?proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse} returns this
 */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.prototype.setItem = function(value) {

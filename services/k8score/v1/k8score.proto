@@ -101,7 +101,7 @@ message GetJobRequest {
 }
 
 message GetJobResponse {
-    PodInfo item = 1;
+    JobInfo item = 1;
 }
 
 message ListJobsRequest {

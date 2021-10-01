@@ -947,7 +947,7 @@ type GetJobResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Item *PodInfo `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
+	Item *JobInfo `protobuf:"bytes,1,opt,name=item,proto3" json:"item,omitempty"`
 }
 
 func (x *GetJobResponse) Reset() {
@@ -982,7 +982,7 @@ func (*GetJobResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDescGZIP(), []int{17}
 }
 
-func (x *GetJobResponse) GetItem() *PodInfo {
+func (x *GetJobResponse) GetItem() *JobInfo {
 	if x != nil {
 		return x.Item
 	}
@@ -1677,7 +1677,7 @@ var file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_rawDesc
 	0x28, 0x0b, 0x32, 0x3a, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
 	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
 	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x6b, 0x38, 0x73, 0x63,
-	0x6f, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x6f, 0x64, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04,
+	0x6f, 0x72, 0x65, 0x2e, 0x76, 0x31, 0x2e, 0x4a, 0x6f, 0x62, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x04,
 	0x69, 0x74, 0x65, 0x6d, 0x22, 0xd2, 0x01, 0x0a, 0x0f, 0x4c, 0x69, 0x73, 0x74, 0x4a, 0x6f, 0x62,
 	0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x6e, 0x61, 0x6d, 0x65,
 	0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x6e, 0x61, 0x6d,
@@ -1949,7 +1949,7 @@ var file_github_com_metaprov_modelaapi_services_k8score_v1_k8score_proto_depIdxs
 	34, // 14: github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListPodsRequest.LabelsEntry
 	25, // 15: github.com.metaprov.modelaapi.services.k8score.v1.ListPodsResponse.items:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.PodInfo
 	35, // 16: github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.GetJobRequest.LabelsEntry
-	25, // 17: github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.item:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.PodInfo
+	26, // 17: github.com.metaprov.modelaapi.services.k8score.v1.GetJobResponse.item:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.JobInfo
 	36, // 18: github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListJobsRequest.LabelsEntry
 	26, // 19: github.com.metaprov.modelaapi.services.k8score.v1.ListJobsResponse.items:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.JobInfo
 	37, // 20: github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.k8score.v1.ListEventsRequest.LabelsEntry

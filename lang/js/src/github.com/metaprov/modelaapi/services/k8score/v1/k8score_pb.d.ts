@@ -383,8 +383,8 @@ export namespace GetJobRequest {
 }
 
 export class GetJobResponse extends jspb.Message {
-  getItem(): PodInfo | undefined;
-  setItem(value?: PodInfo): GetJobResponse;
+  getItem(): JobInfo | undefined;
+  setItem(value?: JobInfo): GetJobResponse;
   hasItem(): boolean;
   clearItem(): GetJobResponse;
 
@@ -398,7 +398,7 @@ export class GetJobResponse extends jspb.Message {
 
 export namespace GetJobResponse {
   export type AsObject = {
-    item?: PodInfo.AsObject,
+    item?: JobInfo.AsObject,
   }
 }
 
