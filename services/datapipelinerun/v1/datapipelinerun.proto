@@ -57,6 +57,24 @@ message AbortDataPipelineRunRequest {
     string name      = 2;
 }
 
+message PauseDataPipelineRunResponse {
+}
+
+message PauseDataPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
+message ResumeDataPipelineRunResponse {
+}
+
+message ResumeDataPipelineRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+
 
 
 service DataPipelineRunService {
@@ -88,6 +106,15 @@ service DataPipelineRunService {
     rpc AbortDataPipelineRun(AbortDataPipelineRunRequest) returns (AbortDataPipelineRunResponse) {
         option (google.api.http).post = "/v1/datapipelineruns/{name}:abort";
     }
+
+    rpc PauseDataPipelineRun(PauseDataPipelineRunRequest) returns (PauseDataPipelineRunResponse) {
+        option (google.api.http).post = "/v1/datapipelines/{name}:pause";
+    }
+
+    rpc ResumeDataPipelineRun(ResumeDataPipelineRunRequest) returns (ResumeDataPipelineRunResponse) {
+        option (google.api.http).post = "/v1/datapipelines/{name}:resume";
+    }
+ 
 
     
 }

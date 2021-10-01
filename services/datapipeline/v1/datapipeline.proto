@@ -58,22 +58,6 @@ message DeleteDataPipelineRequest {
     string name      = 2;
 }
 
-message PauseDataPipelineResponse {
-}
-
-message PauseDataPipelineRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-
-message ResumeDataPipelineResponse {
-}
-
-message ResumeDataPipelineRequest {
-    string namespace = 1;
-    string name      = 2;
-}
 
 
 message DeleteDataPipelineResponse {
@@ -108,13 +92,6 @@ service DataPipelineService {
     }
     
     
-    rpc PauseDataPipeline(PauseDataPipelineRequest) returns (PauseDataPipelineResponse) {
-        option (google.api.http).post = "/v1/datapipelines/{name}:pause";
-    }
-
-    rpc ResumeDataPipeline(ResumeDataPipelineRequest) returns (ResumeDataPipelineResponse) {
-        option (google.api.http).post = "/v1/datapipelines/{name}:pause";
-    }
     
 
     rpc RunDataPipeline(RunDataPipelineRequest) returns (RunDataPipelineResponse) {

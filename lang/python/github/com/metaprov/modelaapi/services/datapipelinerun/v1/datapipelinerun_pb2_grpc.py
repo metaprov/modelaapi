@@ -44,6 +44,16 @@ class DataPipelineRunServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunResponse.FromString,
                 )
+        self.PauseDataPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/PauseDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.PauseDataPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.PauseDataPipelineRunResponse.FromString,
+                )
+        self.ResumeDataPipelineRun = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/ResumeDataPipelineRun',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ResumeDataPipelineRunRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ResumeDataPipelineRunResponse.FromString,
+                )
 
 
 class DataPipelineRunServiceServicer(object):
@@ -85,6 +95,18 @@ class DataPipelineRunServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PauseDataPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResumeDataPipelineRun(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DataPipelineRunServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -117,6 +139,16 @@ def add_DataPipelineRunServiceServicer_to_server(servicer, server):
                     servicer.AbortDataPipelineRun,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunResponse.SerializeToString,
+            ),
+            'PauseDataPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.PauseDataPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.PauseDataPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.PauseDataPipelineRunResponse.SerializeToString,
+            ),
+            'ResumeDataPipelineRun': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResumeDataPipelineRun,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ResumeDataPipelineRunRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ResumeDataPipelineRunResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -227,5 +259,39 @@ class DataPipelineRunService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/AbortDataPipelineRun',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.AbortDataPipelineRunResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PauseDataPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/PauseDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.PauseDataPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.PauseDataPipelineRunResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResumeDataPipelineRun(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/ResumeDataPipelineRun',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ResumeDataPipelineRunRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_datapipelinerun_dot_v1_dot_datapipelinerun__pb2.ResumeDataPipelineRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
