@@ -215,16 +215,18 @@ type DataSourceCondition struct {
 type QuoteChar string
 
 const (
-	SingleQuote QuoteChar = "double-quote"
-	DoubleQuote QuoteChar = "single-quote"
+	SingleQuote QuoteChar = "single-quote"
+	DoubleQuote QuoteChar = "double-quote"
 )
 
+// +kubebuilder:validation:Enum="single-quote";"double-quote";"tilda";"none"
 type EscapeChar string
 
 const (
-	SingleEscapeChar EscapeChar = "double-quote"
-	DoubleEscapeChar EscapeChar = "single-quote"
-	Tilda            EscapeChar = "tilda"
+	SingleEscapeChar EscapeChar = "single-quote"
+	DoubleEscapeChar EscapeChar = "double-quote"
+	TildaEscapeChar  EscapeChar = "tilda"
+	NoneEscapeChar   EscapeChar = "none"
 )
 
 // Delimiter specify char or group of char
@@ -292,21 +294,25 @@ const (
 
 type CsvFileSpec struct {
 	// Refers to the character used to separate fields.
-	// Default to comma
+	// +kubebuilder:default:="comma"
 	// +kubebuilder:validation:Optional
 	ColumnDelimiter *Delimiter `json:"columnDelimiter,omitempty" protobuf:"bytes,1,opt,name=columnDelimiter"`
 	// The row delimiter
+	// +kubebuilder:default:="crlf"
 	// +kubebuilder:validation:Optional
 	RowDelimiter *Delimiter `json:"rowDelimiter,omitempty" protobuf:"bytes,2,opt,name=rowDelimiter"`
 	//The quote char.
+	// +kubebuilder:default:="double-quote"
 	// +kubebuilder:validation:Optional
 	QuoteChar QuoteChar `json:"quote,omitempty" protobuf:"bytes,3,opt,name=quote"`
 	// the char used to escape the delimiter when quoting
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	EscapeChar EscapeChar `json:"escapeChar,omitempty" protobuf:"bytes,4,opt,name=escapeChar"`
 	//CommentCharacter(s) to split comments off the end of lines.
+	// +kubebuilder:default:="#"
 	// +kubebuilder:validation:Optional
-	CommentChars string `json:"commentChars,omitempty" protobuf:"bytes,5,opt,name=commentChars"`
+	CommentChars *string `json:"commentChars,omitempty" protobuf:"bytes,5,opt,name=commentChars"`
 	//Check if there is an header
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

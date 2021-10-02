@@ -341,23 +341,27 @@ message ColumnValidation {
 
 message CsvFileSpec {
   // Refers to the character used to separate fields.
-  // Default to comma
+  // +kubebuilder:default:="comma"
   // +kubebuilder:validation:Optional
   optional string columnDelimiter = 1;
 
   // The row delimiter
+  // +kubebuilder:default:="crlf"
   // +kubebuilder:validation:Optional
   optional string rowDelimiter = 2;
 
   // The quote char.
+  // +kubebuilder:default:="double-quote"
   // +kubebuilder:validation:Optional
   optional string quote = 3;
 
   // the char used to escape the delimiter when quoting
+  // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string escapeChar = 4;
 
   // CommentCharacter(s) to split comments off the end of lines.
+  // +kubebuilder:default:="#"
   // +kubebuilder:validation:Optional
   optional string commentChars = 5;
 

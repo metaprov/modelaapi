@@ -312,6 +312,11 @@ func (in *CsvFileSpec) DeepCopyInto(out *CsvFileSpec) {
 		*out = new(Delimiter)
 		**out = **in
 	}
+	if in.CommentChars != nil {
+		in, out := &in.CommentChars, &out.CommentChars
+		*out = new(string)
+		**out = **in
+	}
 	if in.Header != nil {
 		in, out := &in.Header, &out.Header
 		*out = new(bool)

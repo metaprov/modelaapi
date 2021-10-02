@@ -68,8 +68,8 @@ spec:
                 description: FlatFile access specification
                 properties:
                   columnDelimiter:
+                    default: comma
                     description: Refers to the character used to separate fields.
-                      Default to comma
                     enum:
                     - crlf
                     - cr
@@ -82,6 +82,7 @@ spec:
                     - pipe
                     type: string
                   commentChars:
+                    default: '#'
                     description: CommentCharacter(s) to split comments off the end
                       of lines.
                     type: string
@@ -99,7 +100,13 @@ spec:
                     - utf-16
                     type: string
                   escapeChar:
+                    default: none
                     description: the char used to escape the delimiter when quoting
+                    enum:
+                    - single-quote
+                    - double-quote
+                    - tilda
+                    - none
                     type: string
                   hasIndexColumn:
                     default: false
@@ -125,12 +132,14 @@ spec:
                       NA.
                     type: string
                   quote:
+                    default: double-quote
                     description: The quote char.
                     enum:
                     - double-quote
                     - single-quote
                     type: string
                   rowDelimiter:
+                    default: crlf
                     description: The row delimiter
                     enum:
                     - crlf
