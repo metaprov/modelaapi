@@ -434,7 +434,7 @@ func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSou
 				ColumnDelimiter: &del,
 				QuoteChar:       "",
 				EscapeChar:      "",
-				CommentChars:    "",
+				CommentChars:    util.StrPtr(""),
 				Header:          util.BoolPtr(true),
 				SkipRows:        nil,
 				NullValues:      nil,
