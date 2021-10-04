@@ -40,6 +40,22 @@ type Comment struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Sent *bool `json:"sent,omitempty" protobuf:"varint,6,opt,name=sent"`
+	// Pin the comment
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Pinned *bool `json:"pinned,omitempty" protobuf:"varint,7,opt,name=pinned"`
+	// The ID of the reply
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ReplyIndicationID *string `json:"replyIndicationID,omitempty" protobuf:"bytes,8,opt,name=replyIndicationID"`
+	// The URL of an Image attached to this review
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ImageURL *string `json:"imageURL,omitempty" protobuf:"bytes,9,opt,name=imageURL"`
+	// The ID of the reply
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	AccountMentionID *string `json:"accountMentionID,omitempty" protobuf:"bytes,10,opt,name=accountMentionID"`
 }
 
 // ReviewCondition describes the state of the review

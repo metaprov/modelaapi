@@ -9,8 +9,9 @@ import (
 type TodoPhase string
 
 const (
-	TodoPhasePending TodoPhase = "Pending"
-	TodoPhaseDone    TodoPhase = "Done"
+	TodoPhaseBacklog    TodoPhase = "Backlog"
+	TodoPhaseInProgress TodoPhase = "Inprogress"
+	TodoPhaseDone       TodoPhase = "Done"
 )
 
 // Todo condition
@@ -64,24 +65,32 @@ type TodoSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Task *string `json:"task,omitempty" protobuf:"bytes,1,opt,name=task"`
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// The modela entity that the task refer to.
-	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
+	// +kubebuilder:validation:Optional
+	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,3,opt,name=entityRef"`
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Required
 	// NotifierName is the name of the notifier used to fire the alert.
-	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,3,opt,name=notifierName"`
+	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
 	// Assigned to is the user name assigned to this task
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	AssignedTo *string `json:"assignedTo,omitempty" protobuf:"bytes,4,opt,name=assignedTo"`
+	AssignedTo *string `json:"assignedTo,omitempty" protobuf:"bytes,5,opt,name=assignedTo"`
 	// Flagged donete that task was flagged
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,5,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,6,opt,name=flagged"`
 	// Reminder is the time to send a reminder
-	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,6,opt,name=reminder"`
+	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,7,opt,name=reminder"`
 	// Flagged donete that task was flagged
-	DueDate *metav1.Time `json:"dueDate,omitempty" protobuf:"bytes,7,opt,name=dueDate"`
+	DueDate *metav1.Time `json:"dueDate,omitempty" protobuf:"bytes,8,opt,name=dueDate"`
+	// If this task is a subtask, this is the name of the subtask
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ParentTask *string `json:"parentTask,omitempty" protobuf:"bytes,9,opt,name=parentTask"`
 }
 
 // TodoStatus is the observed state of a Todo
