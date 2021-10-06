@@ -1531,3 +1531,22 @@ type NotificationSpec struct {
 	// +kubebuilder:validation:Optional
 	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,6,opt,name=selector"`
 }
+
+type FeatureFilter struct {
+	// Is the feature filter enbled
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Lowvar specify the filter to remove low variance features
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	LowVar *bool `json:"lowVar,omitempty" protobuf:"varint,2,opt,name=lowVar"`
+	// High correlation specify to filter features with high correlation.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	HighCorr *bool `json:"highCorr,omitempty" protobuf:"varint,3,opt,name=highCorr"`
+	// List of feature names to consider when training.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Names []string `json:"names,omitempty" protobuf:"bytes,4,opt,name=names"`
+}

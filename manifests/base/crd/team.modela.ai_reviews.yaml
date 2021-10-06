@@ -98,6 +98,10 @@ spec:
                 items:
                   description: Commnet represents a single comment in the review
                   properties:
+                    accountMentionID:
+                      default: ""
+                      description: The ID of the reply
+                      type: string
                     authorRef:
                       description: AuthorRef is a reference to the author of the comment
                       properties:
@@ -142,9 +146,21 @@ spec:
                     id:
                       description: ID is the comment ID. Used when replying to a comment.
                       type: string
+                    imageURL:
+                      default: ""
+                      description: The URL of an Image attached to this review
+                      type: string
+                    pinned:
+                      default: false
+                      description: Pin the comment
+                      type: boolean
                     postedAt:
                       description: PostedAt is the time when the comment was posted
                       format: date-time
+                      type: string
+                    replyIndicationID:
+                      default: ""
+                      description: The ID of the reply
                       type: string
                     replyTo:
                       default: ""

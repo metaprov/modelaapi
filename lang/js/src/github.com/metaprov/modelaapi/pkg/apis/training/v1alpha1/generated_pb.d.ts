@@ -2392,6 +2392,9 @@ export class ModelSearchSpec extends jspb.Message {
   clearBaselinesList(): ModelSearchSpec;
   addBaselines(value: string, index?: number): ModelSearchSpec;
 
+  getModeltested(): boolean;
+  setModeltested(value: boolean): ModelSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSearchSpec): ModelSearchSpec.AsObject;
@@ -2419,6 +2422,7 @@ export namespace ModelSearchSpec {
     startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     filter: string,
     baselinesList: Array<string>,
+    modeltested: boolean,
   }
 }
 
@@ -2766,6 +2770,21 @@ export class ModelStatus extends jspb.Message {
   hasTrainingdatahash(): boolean;
   clearTrainingdatahash(): ModelStatus;
 
+  getTrainingmem(): number;
+  setTrainingmem(value: number): ModelStatus;
+
+  getTrainingcpu(): number;
+  setTrainingcpu(value: number): ModelStatus;
+
+  getMem(): number;
+  setMem(value: number): ModelStatus;
+
+  getCpu(): number;
+  setCpu(value: number): ModelStatus;
+
+  getGpumem(): number;
+  setGpumem(value: number): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2828,6 +2847,11 @@ export namespace ModelStatus {
     tarfilehash: string,
     imagehash: string,
     trainingdatahash?: DataHashes.AsObject,
+    trainingmem: number,
+    trainingcpu: number,
+    mem: number,
+    cpu: number,
+    gpumem: number,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -4042,6 +4066,11 @@ export class StudySpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): StudySpec;
 
+  getStudyfeaturefilter(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter | undefined;
+  setStudyfeaturefilter(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter): StudySpec;
+  hasStudyfeaturefilter(): boolean;
+  clearStudyfeaturefilter(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -4079,6 +4108,7 @@ export namespace StudySpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     ttl: number,
+    studyfeaturefilter?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.AsObject,
   }
 }
 
@@ -4437,6 +4467,14 @@ export class TrainingSpec extends jspb.Message {
   getNodecount(): number;
   setNodecount(value: number): TrainingSpec;
 
+  getSamplepct(): number;
+  setSamplepct(value: number): TrainingSpec;
+
+  getFeaturefilter(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter | undefined;
+  setFeaturefilter(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter): TrainingSpec;
+  hasFeaturefilter(): boolean;
+  clearFeaturefilter(): TrainingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TrainingSpec): TrainingSpec.AsObject;
@@ -4461,6 +4499,8 @@ export namespace TrainingSpec {
     gpu: boolean,
     dist: boolean,
     nodecount: number,
+    samplepct: number,
+    featurefilter?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.AsObject,
   }
 }
 

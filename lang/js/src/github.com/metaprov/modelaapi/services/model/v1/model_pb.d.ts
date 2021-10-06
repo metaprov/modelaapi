@@ -749,3 +749,75 @@ export namespace DownloadModelResponse {
   }
 }
 
+export class FlagModelRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): FlagModelRequest;
+
+  getName(): string;
+  setName(value: string): FlagModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlagModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: FlagModelRequest): FlagModelRequest.AsObject;
+  static serializeBinaryToWriter(message: FlagModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlagModelRequest;
+  static deserializeBinaryFromReader(message: FlagModelRequest, reader: jspb.BinaryReader): FlagModelRequest;
+}
+
+export namespace FlagModelRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class FlagModelResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FlagModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: FlagModelResponse): FlagModelResponse.AsObject;
+  static serializeBinaryToWriter(message: FlagModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FlagModelResponse;
+  static deserializeBinaryFromReader(message: FlagModelResponse, reader: jspb.BinaryReader): FlagModelResponse;
+}
+
+export namespace FlagModelResponse {
+  export type AsObject = {
+  }
+}
+
+export class TestModelRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): TestModelRequest;
+
+  getName(): string;
+  setName(value: string): TestModelRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TestModelRequest): TestModelRequest.AsObject;
+  static serializeBinaryToWriter(message: TestModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestModelRequest;
+  static deserializeBinaryFromReader(message: TestModelRequest, reader: jspb.BinaryReader): TestModelRequest;
+}
+
+export namespace TestModelRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class TestModelResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TestModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TestModelResponse): TestModelResponse.AsObject;
+  static serializeBinaryToWriter(message: TestModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TestModelResponse;
+  static deserializeBinaryFromReader(message: TestModelResponse, reader: jspb.BinaryReader): TestModelResponse;
+}
+
+export namespace TestModelResponse {
+  export type AsObject = {
+  }
+}
+

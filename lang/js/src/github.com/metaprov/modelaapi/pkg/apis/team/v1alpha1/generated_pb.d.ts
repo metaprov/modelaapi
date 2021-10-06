@@ -63,6 +63,18 @@ export class Comment extends jspb.Message {
   getSent(): boolean;
   setSent(value: boolean): Comment;
 
+  getPinned(): boolean;
+  setPinned(value: boolean): Comment;
+
+  getReplyindicationid(): string;
+  setReplyindicationid(value: string): Comment;
+
+  getImageurl(): string;
+  setImageurl(value: string): Comment;
+
+  getAccountmentionid(): string;
+  setAccountmentionid(value: string): Comment;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Comment.AsObject;
   static toObject(includeInstance: boolean, msg: Comment): Comment.AsObject;
@@ -79,6 +91,10 @@ export namespace Comment {
     content: string,
     postedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     sent: boolean,
+    pinned: boolean,
+    replyindicationid: string,
+    imageurl: string,
+    accountmentionid: string,
   }
 }
 
@@ -906,6 +922,9 @@ export class TodoSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): TodoSpec;
 
+  getDescription(): string;
+  setDescription(value: string): TodoSpec;
+
   getEntityref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setEntityref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TodoSpec;
   hasEntityref(): boolean;
@@ -930,6 +949,9 @@ export class TodoSpec extends jspb.Message {
   hasDuedate(): boolean;
   clearDuedate(): TodoSpec;
 
+  getParenttask(): string;
+  setParenttask(value: string): TodoSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TodoSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TodoSpec): TodoSpec.AsObject;
@@ -941,12 +963,14 @@ export class TodoSpec extends jspb.Message {
 export namespace TodoSpec {
   export type AsObject = {
     task: string,
+    description: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     notifiername: string,
     assignedto: string,
     flagged: boolean,
     reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     duedate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    parenttask: string,
   }
 }
 

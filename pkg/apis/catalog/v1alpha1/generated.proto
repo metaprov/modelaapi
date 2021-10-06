@@ -175,6 +175,28 @@ message DataCenter {
   optional string code = 2;
 }
 
+message FeatureFilter {
+  // Is the feature filter enbled
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Lowvar specify the filter to remove low variance features
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool lowVar = 2;
+
+  // High correlation specify to filter features with high correlation.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool highCorr = 3;
+
+  // List of feature names to consider when training.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  repeated string names = 4;
+}
+
 // FloatParameter contain the specification of an float hyper parameter
 message FloatParameter {
   // Name is the name of the hyper parameter

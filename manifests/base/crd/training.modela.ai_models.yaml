@@ -893,6 +893,31 @@ spec:
                       - mdape
                       type: string
                     type: array
+                  featureFilter:
+                    description: Feature filter specified what features to use from
+                      the original dataset.
+                    properties:
+                      highCorr:
+                        default: false
+                        description: High correlation specify to filter features with
+                          high correlation.
+                        type: boolean
+                      lowVar:
+                        default: false
+                        description: Lowvar specify the filter to remove low variance
+                          features
+                        type: boolean
+                      names:
+                        default: false
+                        description: List of feature names to consider when training.
+                        items:
+                          type: string
+                        type: array
+                      onError:
+                        default: true
+                        description: Is the feature filter enbled
+                        type: boolean
+                    type: object
                   folds:
                     default: 5
                     description: The number of folds during cross validation.
@@ -1042,6 +1067,10 @@ spec:
                     - high
                     - urgent
                     type: string
+                  samplePct:
+                    description: Set the precent of data to use during training.
+                    format: int32
+                    type: integer
                   seed:
                     default: 42
                     description: Used as the random state for an estimator if needed
@@ -1144,6 +1173,9 @@ spec:
               cost:
                 description: Cost is the cost of training the model
                 type: number
+              cpu:
+                description: Model req on cpu
+                type: number
               cv:
                 description: CV results is the results of performing cross validation
                   on the training set during search.
@@ -1214,6 +1246,9 @@ spec:
               forecastUri:
                 description: ForecastUri is the uri of the forecast
                 type: string
+              gpuMem:
+                description: GPU Memory req
+                type: number
               imageHash:
                 description: Sha 256 of the model tar file
                 type: string
@@ -1250,6 +1285,9 @@ spec:
                 description: ManifestUri is the URI of the manifest in the product
                   bucket.
                 type: string
+              mem:
+                description: Model req for the resulting model
+                type: number
               misclassUri:
                 description: MisclassUri is a reference to the mis-classification
                   file which were produce during processing
@@ -1308,7 +1346,7 @@ spec:
                     type: integer
                 type: object
               sizeInBytes:
-                description: Size is the maximum model size
+                description: Size of the model size
                 format: int32
                 type: integer
               startTime:
@@ -1535,6 +1573,9 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
+              trainingCpu:
+                description: The training cpu usage
+                type: number
               trainingDataHash:
                 description: Sha 256 of the data sig
                 properties:
@@ -1556,6 +1597,9 @@ spec:
                   training
                 format: date-time
                 type: string
+              trainingMem:
+                description: The training memory usage
+                type: number
               trainingRows:
                 description: TrainingRows is the amount of rows in training
                 format: int32

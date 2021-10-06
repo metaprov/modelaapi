@@ -278,9 +278,12 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	AlgorithmFilter *AlgorithmFilterName `json:"filter,omitempty" protobuf:"bytes,16,opt,name=filter"`
-	// Baselines holds the name of the base line algroithms to try
+	// Baselines holds the name of the base line algorithms to try
 	// +kubebuilder:validation:Optional
 	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,17,opt,name=baselines"`
+	// Indicate the all models should be tests
+	// +kubebuilder:default:=true
+	ModelTested *bool `json:"modelTested,omitempty" protobuf:"bytes,18,opt,name=modelTested"`
 }
 
 type PrunerSpec struct {
@@ -425,6 +428,9 @@ type StudySpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,29,opt,name=ttl"`
+	// Feature filter is applied to the data for this study. The filter specifies how to filter the original dataset.
+	// +kubebuilder:validation:Optional
+	StudyFeatureFilter *catalog.FeatureFilter `json:"studyFeatureFilter,omitempty" protobuf:"bytes,30,opt,name=studyFeatureFilter"`
 }
 
 // StudyStatus defines the observed state of the Study

@@ -58,6 +58,9 @@ spec:
                 default: no-one
                 description: Assigned to is the user name assigned to this task
                 type: string
+              description:
+                default: ""
+                type: string
               dueDate:
                 description: Flagged donete that task was flagged
                 format: date-time
@@ -106,6 +109,10 @@ spec:
                 default: ""
                 description: NotifierName is the name of the notifier used to fire
                   the alert.
+                type: string
+              parentTask:
+                default: ""
+                description: If this task is a subtask, this is the name of the subtask
                 type: string
               reminder:
                 description: Reminder is the time to send a reminder

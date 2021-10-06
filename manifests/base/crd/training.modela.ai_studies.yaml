@@ -775,7 +775,7 @@ spec:
                       type: string
                     type: array
                   baselines:
-                    description: Baselines holds the name of the base line algroithms
+                    description: Baselines holds the name of the base line algorithms
                       to try
                     items:
                       enum:
@@ -865,6 +865,10 @@ spec:
                     default: 0
                     description: The minimum score by which the search would stop
                     type: number
+                  modelTested:
+                    default: true
+                    description: Indicate the all models should be tests
+                    type: boolean
                   pruner:
                     description: The pruner to use during model search.
                     properties:
@@ -1104,6 +1108,31 @@ spec:
                     minimum: 0
                     type: integer
                 type: object
+              studyFeatureFilter:
+                description: Feature filter is applied to the data for this study.
+                  The filter specifies how to filter the original dataset.
+                properties:
+                  highCorr:
+                    default: false
+                    description: High correlation specify to filter features with
+                      high correlation.
+                    type: boolean
+                  lowVar:
+                    default: false
+                    description: Lowvar specify the filter to remove low variance
+                      features
+                    type: boolean
+                  names:
+                    default: false
+                    description: List of feature names to consider when training.
+                    items:
+                      type: string
+                    type: array
+                  onError:
+                    default: true
+                    description: Is the feature filter enbled
+                    type: boolean
+                type: object
               task:
                 description: Task specify the machine learning task (e.g classification).
                   This must match the task of the data product.
@@ -1222,6 +1251,31 @@ spec:
                       - mdape
                       type: string
                     type: array
+                  featureFilter:
+                    description: Feature filter specified what features to use from
+                      the original dataset.
+                    properties:
+                      highCorr:
+                        default: false
+                        description: High correlation specify to filter features with
+                          high correlation.
+                        type: boolean
+                      lowVar:
+                        default: false
+                        description: Lowvar specify the filter to remove low variance
+                          features
+                        type: boolean
+                      names:
+                        default: false
+                        description: List of feature names to consider when training.
+                        items:
+                          type: string
+                        type: array
+                      onError:
+                        default: true
+                        description: Is the feature filter enbled
+                        type: boolean
+                    type: object
                   folds:
                     default: 5
                     description: The number of folds during cross validation.
@@ -1371,6 +1425,10 @@ spec:
                     - high
                     - urgent
                     type: string
+                  samplePct:
+                    description: Set the precent of data to use during training.
+                    format: int32
+                    type: integer
                   seed:
                     default: 42
                     description: Used as the random state for an estimator if needed

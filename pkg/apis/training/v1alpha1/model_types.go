@@ -457,7 +457,7 @@ type ModelStatus struct {
 	// Model Progress in precent, the progress takes into account the different stages of the model.
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress,omitempty" protobuf:"varint,39,opt,name=progress"`
-	// Size is the maximum model size
+	// Size of the model size
 	// +kubebuilder:validation:Optional
 	SizeInBytes int32 `json:"sizeInBytes,omitempty" protobuf:"varint,40,opt,name=sizeInBytes"`
 	// Prediction Latency
@@ -480,10 +480,25 @@ type ModelStatus struct {
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
 	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,47,opt,name=trainingDataHash"`
+	// The training memory usage
+	// +kubebuilder:validation:Optional
+	TrainingMem float64 `json:"trainingMem,omitempty" protobuf:"bytes,48,opt,name=trainingMem"`
+	// The training cpu usage
+	// +kubebuilder:validation:Optional
+	TrainingCpu float64 `json:"trainingCpu,omitempty" protobuf:"bytes,49,opt,name=trainingCpu"`
+	// Model req for the resulting model
+	// +kubebuilder:validation:Optional
+	Mem float64 `json:"mem,omitempty" protobuf:"bytes,50,opt,name=mem"`
+	// Model req on cpu
+	// +kubebuilder:validation:Optional
+	Cpu float64 `json:"cpu,omitempty" protobuf:"bytes,51,opt,name=cpu"`
+	// GPU Memory req
+	// +kubebuilder:validation:Optional
+	GpuMem float64 `json:"gpuMem,omitempty" protobuf:"bytes,52,opt,name=gpuMem"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,48,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,53,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of
@@ -645,6 +660,12 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,17,opt,name=nodeCount"`
+	// Set the precent of dataset to use during training.
+	// +kubebuilder:validation:Optional
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,18,opt,name=SamplePct"`
+	// Feature filter specified what features to use from the original dataset.
+	// +kubebuilder:validation:Optional
+	FeatureFilter *catalog.FeatureFilter `json:"featureFilter,omitempty" protobuf:"varint,19,opt,name=featureFilter"`
 }
 
 // CategoricalPipelineSpec is the specification for processing categorical columns

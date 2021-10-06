@@ -318,6 +318,38 @@ export namespace DataCenter {
   }
 }
 
+export class FeatureFilter extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FeatureFilter;
+
+  getLowvar(): boolean;
+  setLowvar(value: boolean): FeatureFilter;
+
+  getHighcorr(): boolean;
+  setHighcorr(value: boolean): FeatureFilter;
+
+  getNamesList(): Array<string>;
+  setNamesList(value: Array<string>): FeatureFilter;
+  clearNamesList(): FeatureFilter;
+  addNames(value: string, index?: number): FeatureFilter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureFilter.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureFilter): FeatureFilter.AsObject;
+  static serializeBinaryToWriter(message: FeatureFilter, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureFilter;
+  static deserializeBinaryFromReader(message: FeatureFilter, reader: jspb.BinaryReader): FeatureFilter;
+}
+
+export namespace FeatureFilter {
+  export type AsObject = {
+    enabled: boolean,
+    lowvar: boolean,
+    highcorr: boolean,
+    namesList: Array<string>,
+  }
+}
+
 export class FloatParameter extends jspb.Message {
   getName(): string;
   setName(value: string): FloatParameter;

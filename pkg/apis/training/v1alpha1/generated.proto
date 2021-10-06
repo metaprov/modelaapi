@@ -1578,9 +1578,13 @@ message ModelSearchSpec {
   // +kubebuilder:validation:Optional
   optional string filter = 16;
 
-  // Baselines holds the name of the base line algroithms to try
+  // Baselines holds the name of the base line algorithms to try
   // +kubebuilder:validation:Optional
   repeated string baselines = 17;
+
+  // Indicate the all models should be tests
+  // +kubebuilder:default:=true
+  optional bool modelTested = 18;
 }
 
 // ModelSpec defines the desired state of the Model resource
@@ -1910,7 +1914,7 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 39;
 
-  // Size is the maximum model size
+  // Size of the model size
   // +kubebuilder:validation:Optional
   optional int32 sizeInBytes = 40;
 
@@ -1941,10 +1945,30 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional DataHashes trainingDataHash = 47;
 
+  // The training memory usage
+  // +kubebuilder:validation:Optional
+  optional double trainingMem = 48;
+
+  // The training cpu usage
+  // +kubebuilder:validation:Optional
+  optional double trainingCpu = 49;
+
+  // Model req for the resulting model
+  // +kubebuilder:validation:Optional
+  optional double mem = 50;
+
+  // Model req on cpu
+  // +kubebuilder:validation:Optional
+  optional double cpu = 51;
+
+  // GPU Memory req
+  // +kubebuilder:validation:Optional
+  optional double gpuMem = 52;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 48;
+  repeated ModelCondition conditions = 53;
 }
 
 message ModelValidation {
@@ -2749,6 +2773,10 @@ message StudySpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 29;
+
+  // Feature filter is applied to the data for this study. The filter specifies how to filter the original dataset.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter studyFeatureFilter = 30;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -3085,6 +3113,14 @@ message TrainingSpec {
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
   optional int32 nodeCount = 17;
+
+  // Set the precent of data to use during training.
+  // +kubebuilder:validation:Optional
+  optional int32 SamplePct = 18;
+
+  // Feature filter specified what features to use from the original dataset.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter featureFilter = 19;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

@@ -69,6 +69,26 @@ message Comment {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool sent = 6;
+
+  // Pin the comment
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool pinned = 7;
+
+  // The ID of the reply
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string replyIndicationID = 8;
+
+  // The URL of an Image attached to this review
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string imageURL = 9;
+
+  // The ID of the reply
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string accountMentionID = 10;
 }
 
 // +kubebuilder:object:root=true
@@ -489,29 +509,39 @@ message TodoSpec {
   // +kubebuilder:validation:Optional
   optional string task = 1;
 
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 2;
+
   // The modela entity that the task refer to.
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Required
   // NotifierName is the name of the notifier used to fire the alert.
-  optional string notifierName = 3;
+  optional string notifierName = 4;
 
   // Assigned to is the user name assigned to this task
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string assignedTo = 4;
+  optional string assignedTo = 5;
 
   // Flagged donete that task was flagged
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool flagged = 5;
+  optional bool flagged = 6;
 
   // Reminder is the time to send a reminder
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 6;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
 
   // Flagged donete that task was flagged
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 8;
+
+  // If this task is a subtask, this is the name of the subtask
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string parentTask = 9;
 }
 
 // TodoStatus is the observed state of a Todo

@@ -715,5 +715,85 @@ export class ModelServiceClient {
     this.methodInfoDownloadModel);
   }
 
+  methodInfoFlagModel = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse.deserializeBinary
+  );
+
+  flagModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse>;
+
+  flagModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse>;
+
+  flagModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.FlagModelResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel',
+        request,
+        metadata || {},
+        this.methodInfoFlagModel,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/FlagModel',
+    request,
+    metadata || {},
+    this.methodInfoFlagModel);
+  }
+
+  methodInfoTestModel = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelResponse,
+    (request: github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelResponse.deserializeBinary
+  );
+
+  testModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelResponse>;
+
+  testModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelResponse>;
+
+  testModel(
+    request: github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_model_v1_model_pb.TestModelResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel',
+        request,
+        metadata || {},
+        this.methodInfoTestModel,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.model.v1.ModelService/TestModel',
+    request,
+    metadata || {},
+    this.methodInfoTestModel);
+  }
+
 }
 

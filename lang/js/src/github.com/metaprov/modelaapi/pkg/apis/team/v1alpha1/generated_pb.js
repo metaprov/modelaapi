@@ -1038,7 +1038,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.toObject = fu
     replyto: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     content: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     postedat: (f = msg.getPostedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    sent: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
+    sent: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    pinned: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+    replyindicationid: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    imageurl: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    accountmentionid: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1100,6 +1104,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.deserializeBi
     case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSent(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPinned(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReplyindicationid(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImageurl(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccountmentionid(value);
       break;
     default:
       reader.skipField();
@@ -1171,6 +1191,34 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.serializeBina
   if (f != null) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -1392,6 +1440,150 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.cle
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.hasSent = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool pinned = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.getPinned = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.setPinned = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.clearPinned = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.hasPinned = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional string replyIndicationID = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.getReplyindicationid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.setReplyindicationid = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.clearReplyindicationid = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.hasReplyindicationid = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string imageURL = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.getImageurl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.setImageurl = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.clearImageurl = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.hasImageurl = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string accountMentionID = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.getAccountmentionid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.setAccountmentionid = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.clearAccountmentionid = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.prototype.hasAccountmentionid = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -8614,12 +8806,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.to
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     task: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    notifiername: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    assignedto: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    flagged: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    assignedto: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    flagged: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     reminder: (f = msg.getReminder()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    duedate: (f = msg.getDuedate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    duedate: (f = msg.getDuedate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    parenttask: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8661,31 +8855,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.deserializeB
       msg.setTask(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 3:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setEntityref(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setNotifiername(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setAssignedto(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setFlagged(value);
-      break;
-    case 6:
-      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
-      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setReminder(value);
       break;
     case 7:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setReminder(value);
+      break;
+    case 8:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setDuedate(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParenttask(value);
       break;
     default:
       reader.skipField();
@@ -8723,19 +8925,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.serializeBin
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getEntityref();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
@@ -8745,17 +8947,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.serializeBin
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
   if (f != null) {
     writer.writeBool(
-      5,
+      6,
       f
     );
   }
   f = message.getReminder();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -8763,9 +8972,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.serializeBin
   f = message.getDuedate();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeString(
+      9,
+      f
     );
   }
 };
@@ -8808,12 +9024,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.ha
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
+ * optional string description = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getEntityref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
 };
 
 
@@ -8822,7 +9074,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.ge
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setEntityref = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -8840,51 +9092,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.cl
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasEntityref = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string notifierName = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getNotifiername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setNotifiername = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearNotifiername = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasNotifiername = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string assignedTo = 4;
+ * optional string notifierName = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getAssignedto = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getNotifiername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -8893,7 +9109,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.ge
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setAssignedto = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setNotifiername = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -8902,7 +9118,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.se
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearAssignedto = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearNotifiername = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -8911,25 +9127,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasAssignedto = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasNotifiername = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional bool flagged = 5;
- * @return {boolean}
+ * optional string assignedTo = 5;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getFlagged = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getAssignedto = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setFlagged = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setAssignedto = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -8938,7 +9154,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.se
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearFlagged = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearAssignedto = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -8947,18 +9163,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.cl
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasFlagged = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasAssignedto = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 6;
+ * optional bool flagged = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getFlagged = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setFlagged = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearFlagged = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasFlagged = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getReminder = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 7));
 };
 
 
@@ -8967,7 +9219,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.ge
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setReminder = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -8985,17 +9237,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.cl
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasReminder = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 7;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time dueDate = 8;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getDuedate = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 7));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 8));
 };
 
 
@@ -9004,7 +9256,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.ge
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setDuedate = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -9022,7 +9274,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.cl
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasDuedate = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional string parentTask = 9;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getParenttask = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setParenttask = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearParenttask = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasParenttask = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 

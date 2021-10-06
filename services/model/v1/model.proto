@@ -180,9 +180,29 @@ message DownloadModelRequest {
 // Answer the report in base 64
 message DownloadModelResponse {
     bytes raw = 1;
-
 }
 
+// Flag model
+message FlagModelRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message FlagModelResponse {
+    
+}
+
+// Flag model
+message TestModelRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+// Answer the report in base 64
+message TestModelResponse {
+    
+}
 
 
 
@@ -266,5 +286,15 @@ service ModelService {
 
     rpc DownloadModel(DownloadModelRequest) returns (DownloadModelResponse) {
         option (google.api.http).post = "/api/v1/models/{model.metadata.name}:download";
+    }
+    
+    // Flag model 
+    rpc FlagModel(FlagModelRequest) returns (FlagModelResponse) {
+        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:flag";
+    }
+
+    // Mark the model to test
+    rpc TestModel(TestModelRequest) returns (TestModelResponse) {
+        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:test";
     }
 }
