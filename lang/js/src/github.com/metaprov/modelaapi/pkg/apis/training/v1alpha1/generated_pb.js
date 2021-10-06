@@ -44217,7 +44217,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     gpu: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
     dist: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
     nodecount: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    samplepct: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+    sample: (f = msg.getSample()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.toObject(includeInstance, f),
     featurefilter: (f = msg.getFeaturefilter()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.toObject(includeInstance, f)
   };
 
@@ -44314,8 +44314,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
       msg.setNodecount(value);
       break;
     case 18:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setSamplepct(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.deserializeBinaryFromReader);
+      msg.setSample(value);
       break;
     case 19:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter;
@@ -44451,11 +44452,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 18));
+  f = message.getSample();
   if (f != null) {
-    writer.writeInt32(
+    writer.writeMessage(
       18,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.serializeBinaryToWriter
     );
   }
   f = message.getFeaturefilter();
@@ -44977,29 +44979,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 /**
- * optional int32 SamplePct = 18;
- * @return {number}
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 18;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSamplepct = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSample = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec, 18));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSamplepct = function(value) {
-  return jspb.Message.setField(this, 18, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSample = function(value) {
+  return jspb.Message.setWrapperField(this, 18, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearSamplepct = function() {
-  return jspb.Message.setField(this, 18, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearSample = function() {
+  return this.setSample(undefined);
 };
 
 
@@ -45007,7 +45010,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSamplepct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSample = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 

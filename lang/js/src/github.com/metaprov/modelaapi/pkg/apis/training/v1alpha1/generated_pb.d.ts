@@ -4467,8 +4467,10 @@ export class TrainingSpec extends jspb.Message {
   getNodecount(): number;
   setNodecount(value: number): TrainingSpec;
 
-  getSamplepct(): number;
-  setSamplepct(value: number): TrainingSpec;
+  getSample(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec | undefined;
+  setSample(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec): TrainingSpec;
+  hasSample(): boolean;
+  clearSample(): TrainingSpec;
 
   getFeaturefilter(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter | undefined;
   setFeaturefilter(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter): TrainingSpec;
@@ -4499,7 +4501,7 @@ export namespace TrainingSpec {
     gpu: boolean,
     dist: boolean,
     nodecount: number,
-    samplepct: number,
+    sample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
     featurefilter?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.AsObject,
   }
 }

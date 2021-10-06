@@ -177,7 +177,7 @@ message DataCenter {
 
 message FeatureFilter {
   // Is the feature filter enbled
-  // +kubebuilder:default:=true
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
@@ -192,7 +192,6 @@ message FeatureFilter {
   optional bool highCorr = 3;
 
   // List of feature names to consider when training.
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   repeated string names = 4;
 }

@@ -3940,11 +3940,7 @@ func (in *TrainingSpec) DeepCopyInto(out *TrainingSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.SamplePct != nil {
-		in, out := &in.SamplePct, &out.SamplePct
-		*out = new(int32)
-		**out = **in
-	}
+	in.Sample.DeepCopyInto(&out.Sample)
 	if in.FeatureFilter != nil {
 		in, out := &in.FeatureFilter, &out.FeatureFilter
 		*out = new(catalogv1alpha1.FeatureFilter)

@@ -3114,9 +3114,9 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional int32 nodeCount = 17;
 
-  // Set the precent of data to use during training.
+  // Set the precent of dataset to use during training.
   // +kubebuilder:validation:Optional
-  optional int32 SamplePct = 18;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 18;
 
   // Feature filter specified what features to use from the original dataset.
   // +kubebuilder:validation:Optional

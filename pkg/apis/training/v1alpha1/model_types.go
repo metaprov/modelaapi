@@ -651,7 +651,7 @@ type TrainingSpec struct {
 	// Gpu indicate that training should be done on a gpu.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,15,opt,name=gpu"`
+	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,15,optc ,name=gpu"`
 	// Dist indicate the training should be be distributed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -662,7 +662,7 @@ type TrainingSpec struct {
 	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,17,opt,name=nodeCount"`
 	// Set the precent of dataset to use during training.
 	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,18,opt,name=SamplePct"`
+	Sample data.SampleSpec `json:"sample,omitempty" protobuf:"varint,18,opt,name=sample"`
 	// Feature filter specified what features to use from the original dataset.
 	// +kubebuilder:validation:Optional
 	FeatureFilter *catalog.FeatureFilter `json:"featureFilter,omitempty" protobuf:"varint,19,opt,name=featureFilter"`

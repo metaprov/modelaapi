@@ -1534,7 +1534,7 @@ type NotificationSpec struct {
 
 type FeatureFilter struct {
 	// Is the feature filter enbled
-	// +kubebuilder:default:=true
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Lowvar specify the filter to remove low variance features
@@ -1546,7 +1546,6 @@ type FeatureFilter struct {
 	// +kubebuilder:validation:Optional
 	HighCorr *bool `json:"highCorr,omitempty" protobuf:"varint,3,opt,name=highCorr"`
 	// List of feature names to consider when training.
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Names []string `json:"names,omitempty" protobuf:"bytes,4,opt,name=names"`
+	Names []string `json:"names,omitempty" protobuf:"bytes,4,rep,name=names"`
 }
