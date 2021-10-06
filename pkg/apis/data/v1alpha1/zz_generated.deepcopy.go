@@ -257,6 +257,11 @@ func (in *ColumnValidation) DeepCopyInto(out *ColumnValidation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Value != nil {
+		in, out := &in.Value, &out.Value
+		*out = new(float64)
+		**out = **in
+	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
 		*out = new(float64)
@@ -1621,6 +1626,11 @@ func (in *DatasetValidation) DeepCopyInto(out *DatasetValidation) {
 		*out = new(DatasetValidationName)
 		**out = **in
 	}
+	if in.Value != nil {
+		in, out := &in.Value, &out.Value
+		*out = new(float64)
+		**out = **in
+	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
 		*out = new(float64)
@@ -2687,6 +2697,11 @@ func (in *FileValidation) DeepCopyInto(out *FileValidation) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Value != nil {
+		in, out := &in.Value, &out.Value
+		*out = new(float64)
+		**out = **in
+	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min
 		*out = new(float64)
@@ -3190,6 +3205,11 @@ func (in *MultiColumnValidation) DeepCopyInto(out *MultiColumnValidation) {
 		in, out := &in.Columns, &out.Columns
 		*out = make([]string, len(*in))
 		copy(*out, *in)
+	}
+	if in.Value != nil {
+		in, out := &in.Value, &out.Value
+		*out = new(float64)
+		**out = **in
 	}
 	if in.Min != nil {
 		in, out := &in.Min, &out.Min

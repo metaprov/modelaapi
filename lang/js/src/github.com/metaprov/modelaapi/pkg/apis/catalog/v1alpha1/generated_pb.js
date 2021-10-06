@@ -3641,7 +3641,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataCenter.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.repeatedFields_ = [4];
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.repeatedFields_ = [5];
 
 
 
@@ -3677,7 +3677,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.toOb
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     lowvar: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     highcorr: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    namesList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+    topn: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    namesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3727,6 +3728,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.dese
       msg.setHighcorr(value);
       break;
     case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTopn(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addNames(value);
       break;
@@ -3780,10 +3785,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.seri
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
   f = message.getNamesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      4,
+      5,
       f
     );
   }
@@ -3899,11 +3911,47 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prot
 
 
 /**
- * repeated string names = 4;
+ * optional int32 topN = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.getTopn = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.setTopn = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.clearTopn = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.hasTopn = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated string names = 5;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.getNamesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
@@ -3912,7 +3960,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.setNamesList = function(value) {
-  return jspb.Message.setField(this, 4, value || []);
+  return jspb.Message.setField(this, 5, value || []);
 };
 
 
@@ -3922,7 +3970,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.addNames = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 

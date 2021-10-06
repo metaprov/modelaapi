@@ -629,6 +629,9 @@ spec:
                                   type: boolean
                                 type:
                                   type: string
+                                value:
+                                  description: For validation that need a single value
+                                  type: number
                                 valueSet:
                                   items:
                                     type: string
@@ -656,6 +659,9 @@ spec:
                                   type: boolean
                                 type:
                                   type: string
+                                value:
+                                  format: float
+                                  type: number
                                 valueSet:
                                   items:
                                     type: string
@@ -687,6 +693,9 @@ spec:
                                   type: boolean
                                 type:
                                   type: string
+                                value:
+                                  description: For validation that need a single value
+                                  type: number
                                 valueSet:
                                   items:
                                     type: string
@@ -718,6 +727,9 @@ spec:
                                   type: boolean
                                 type:
                                   type: string
+                                value:
+                                  description: For validation that need a single value
+                                  type: number
                                 valueSet:
                                   items:
                                     type: string

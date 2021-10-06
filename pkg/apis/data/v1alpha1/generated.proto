@@ -315,28 +315,32 @@ message ColumnValidation {
   // +kubebuilder:validation:Optional
   optional string column = 2;
 
-  // +kubebuilder:validation:Format=float
-  // +kubebuilder:validation:Type=number
+  // For validation that need a single value
   // +kubebuilder:validation:Optional
-  optional double min = 3;
+  optional double value = 3;
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 4;
+  optional double min = 4;
+
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
+  // +kubebuilder:validation:Optional
+  optional double max = 5;
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 5;
+  repeated string valueSet = 6;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 6;
+  optional bool strictMin = 7;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 7;
+  optional bool strictMax = 8;
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 8;
+  optional bool generated = 9;
 }
 
 message CsvFileSpec {
@@ -1367,25 +1371,30 @@ message DatasetValidation {
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double min = 2;
+  optional double value = 2;
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 3;
+  optional double min = 3;
+
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
+  // +kubebuilder:validation:Optional
+  optional double max = 4;
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 4;
+  repeated string valueSet = 5;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 5;
+  optional bool strictMin = 6;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 6;
+  optional bool strictMax = 7;
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 7;
+  optional bool generated = 8;
 }
 
 message Entity {
@@ -2105,28 +2114,32 @@ message FileValidation {
   // +kubebuilder:validation:Optional
   optional string column = 3;
 
-  // +kubebuilder:validation:Format=float
-  // +kubebuilder:validation:Type=number
+  // For validation that need a single value
   // +kubebuilder:validation:Optional
-  optional double min = 4;
+  optional double value = 4;
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 5;
+  optional double min = 5;
+
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
+  // +kubebuilder:validation:Optional
+  optional double max = 6;
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 6;
+  repeated string valueSet = 7;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 7;
+  optional bool strictMin = 8;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 8;
+  optional bool strictMax = 9;
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 9;
+  optional bool generated = 10;
 }
 
 message GitLocation {
@@ -2415,28 +2428,32 @@ message MultiColumnValidation {
   // +kubebuilder:validation:Optional
   repeated string columns = 2;
 
-  // +kubebuilder:validation:Format=float
-  // +kubebuilder:validation:Type=number
+  // For validation that need a single value
   // +kubebuilder:validation:Optional
-  optional double min = 3;
+  optional double value = 3;
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 4;
+  optional double min = 4;
+
+  // +kubebuilder:validation:Format=float
+  // +kubebuilder:validation:Type=number
+  // +kubebuilder:validation:Optional
+  optional double max = 5;
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 5;
+  repeated string valueSet = 6;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 6;
+  optional bool strictMin = 7;
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 7;
+  optional bool strictMax = 8;
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 8;
+  optional bool generated = 9;
 }
 
 message MultiDatasetValidation {

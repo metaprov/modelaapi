@@ -1545,7 +1545,11 @@ type FeatureFilter struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	HighCorr *bool `json:"highCorr,omitempty" protobuf:"varint,3,opt,name=highCorr"`
+	// Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TopN *int32 `json:"topN,omitempty" protobuf:"varint,4,opt,name=topN"`
 	// List of feature names to consider when training.
 	// +kubebuilder:validation:Optional
-	Names []string `json:"names,omitempty" protobuf:"bytes,4,rep,name=names"`
+	Names []string `json:"names,omitempty" protobuf:"bytes,5,rep,name=names"`
 }

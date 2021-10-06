@@ -324,6 +324,9 @@ export class ColumnValidation extends jspb.Message {
   getColumn(): string;
   setColumn(value: string): ColumnValidation;
 
+  getValue(): number;
+  setValue(value: number): ColumnValidation;
+
   getMin(): number;
   setMin(value: number): ColumnValidation;
 
@@ -356,6 +359,7 @@ export namespace ColumnValidation {
   export type AsObject = {
     type: string,
     column: string,
+    value: number,
     min: number,
     max: number,
     valuesetList: Array<string>,
@@ -1883,6 +1887,9 @@ export class DatasetValidation extends jspb.Message {
   getType(): string;
   setType(value: string): DatasetValidation;
 
+  getValue(): number;
+  setValue(value: number): DatasetValidation;
+
   getMin(): number;
   setMin(value: number): DatasetValidation;
 
@@ -1914,6 +1921,7 @@ export class DatasetValidation extends jspb.Message {
 export namespace DatasetValidation {
   export type AsObject = {
     type: string,
+    value: number,
     min: number,
     max: number,
     valuesetList: Array<string>,
@@ -3135,6 +3143,9 @@ export class FileValidation extends jspb.Message {
   getColumn(): string;
   setColumn(value: string): FileValidation;
 
+  getValue(): number;
+  setValue(value: number): FileValidation;
+
   getMin(): number;
   setMin(value: number): FileValidation;
 
@@ -3168,6 +3179,7 @@ export namespace FileValidation {
     type: string,
     bucketname: string,
     column: string,
+    value: number,
     min: number,
     max: number,
     valuesetList: Array<string>,
@@ -3658,6 +3670,9 @@ export class MultiColumnValidation extends jspb.Message {
   clearColumnsList(): MultiColumnValidation;
   addColumns(value: string, index?: number): MultiColumnValidation;
 
+  getValue(): number;
+  setValue(value: number): MultiColumnValidation;
+
   getMin(): number;
   setMin(value: number): MultiColumnValidation;
 
@@ -3690,6 +3705,7 @@ export namespace MultiColumnValidation {
   export type AsObject = {
     type: string,
     columnsList: Array<string>,
+    value: number,
     min: number,
     max: number,
     valuesetList: Array<string>,

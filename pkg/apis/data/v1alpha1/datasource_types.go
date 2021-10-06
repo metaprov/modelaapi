@@ -47,33 +47,7 @@ type DatasetValidation struct {
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
-	Min *float64 `json:"min,omitempty" protobuf:"bytes,2,opt,name=min"`
-	// +kubebuilder:validation:Format=float
-	// +kubebuilder:validation:Type=number
-	// +kubebuilder:validation:Optional
-	Max *float64 `json:"max,omitempty" protobuf:"bytes,3,opt,name=max"`
-	// +kubebuilder:validation:Optional
-	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,4,rep,name=valueSet"`
-	// +kubebuilder:validation:Optional
-	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,5,opt,name=strictMin"`
-	// +kubebuilder:validation:Optional
-	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,6,opt,name=strictMax"`
-	// Generated indicate weather this validation rule was automatically generated
-	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,7,rep,name=generated"`
-}
-
-const (
-	MultiColumnCorr MultiColumnValidationName = "multi-column-corr"
-)
-
-type MultiColumnValidationName string
-
-type MultiColumnValidation struct {
-	// +kubebuilder:validation:Optional
-	Type *MultiColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	// +kubebuilder:validation:Optional
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
+	Value *float64 `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
@@ -91,6 +65,39 @@ type MultiColumnValidation struct {
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,rep,name=generated"`
+}
+
+const (
+	MultiColumnCorr MultiColumnValidationName = "multi-column-corr"
+)
+
+type MultiColumnValidationName string
+
+type MultiColumnValidation struct {
+	// +kubebuilder:validation:Optional
+	Type *MultiColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	Columns []string `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
+	// For validation that need a single value
+	// +kubebuilder:validation:Optional
+	Value *float64 `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
+	// +kubebuilder:validation:Optional
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,4,opt,name=min"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
+	// +kubebuilder:validation:Optional
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,5,opt,name=max"`
+	// +kubebuilder:validation:Optional
+	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,6,rep,name=valueSet"`
+	// +kubebuilder:validation:Optional
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,7,opt,name=strictMin"`
+	// +kubebuilder:validation:Optional
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,8,opt,name=strictMax"`
+	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:validation:Optional
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,rep,name=generated"`
 }
 
 type ColumnValidationName string
@@ -142,32 +149,9 @@ type ColumnValidation struct {
 	Type *ColumnValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
-	// +kubebuilder:validation:Format=float
-	// +kubebuilder:validation:Type=number
+	// For validation that need a single value
 	// +kubebuilder:validation:Optional
-	Min *float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
-	// +kubebuilder:validation:Format=float
-	// +kubebuilder:validation:Type=number
-	// +kubebuilder:validation:Optional
-	Max *float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
-	// +kubebuilder:validation:Optional
-	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,5,rep,name=valueSet"`
-	// +kubebuilder:validation:Optional
-	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,6,opt,name=strictMin"`
-	// +kubebuilder:validation:Optional
-	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,7,opt,name=strictMax"`
-	// Generated indicate weather this validation rule was automatically generated
-	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,rep,name=generated"`
-}
-
-type FileValidation struct {
-	// +kubebuilder:validation:Optional
-	Type *FileValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
-	// +kubebuilder:validation:Optional
-	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,2,opt,name=bucketName"`
-	// +kubebuilder:validation:Optional
-	Path *string `json:"column,omitempty" protobuf:"bytes,3,opt,name=column"`
+	Value *float64 `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
 	// +kubebuilder:validation:Format=float
 	// +kubebuilder:validation:Type=number
 	// +kubebuilder:validation:Optional
@@ -185,6 +169,35 @@ type FileValidation struct {
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
 	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,rep,name=generated"`
+}
+
+type FileValidation struct {
+	// +kubebuilder:validation:Optional
+	Type *FileValidationName `json:"type,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// +kubebuilder:validation:Optional
+	BucketName *string `json:"bucketName,omitempty" protobuf:"bytes,2,opt,name=bucketName"`
+	// +kubebuilder:validation:Optional
+	Path *string `json:"column,omitempty" protobuf:"bytes,3,opt,name=column"`
+	// For validation that need a single value
+	// +kubebuilder:validation:Optional
+	Value *float64 `json:"value,omitempty" protobuf:"bytes,4,opt,name=value"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
+	// +kubebuilder:validation:Optional
+	Min *float64 `json:"min,omitempty" protobuf:"bytes,5,opt,name=min"`
+	// +kubebuilder:validation:Format=float
+	// +kubebuilder:validation:Type=number
+	// +kubebuilder:validation:Optional
+	Max *float64 `json:"max,omitempty" protobuf:"bytes,6,opt,name=max"`
+	// +kubebuilder:validation:Optional
+	ValueSet []string `json:"valueSet,omitempty" protobuf:"bytes,7,rep,name=valueSet"`
+	// +kubebuilder:validation:Optional
+	StrictMin *bool `json:"strictMin,omitempty" protobuf:"varint,8,opt,name=strictMin"`
+	// +kubebuilder:validation:Optional
+	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,9,opt,name=strictMax"`
+	// Generated indicate weather this validation rule was automatically generated
+	// +kubebuilder:validation:Optional
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,10,rep,name=generated"`
 }
 
 // Condition on the dataset

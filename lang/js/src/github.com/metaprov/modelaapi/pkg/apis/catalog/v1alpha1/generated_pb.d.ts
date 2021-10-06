@@ -328,6 +328,9 @@ export class FeatureFilter extends jspb.Message {
   getHighcorr(): boolean;
   setHighcorr(value: boolean): FeatureFilter;
 
+  getTopn(): number;
+  setTopn(value: number): FeatureFilter;
+
   getNamesList(): Array<string>;
   setNamesList(value: Array<string>): FeatureFilter;
   clearNamesList(): FeatureFilter;
@@ -346,6 +349,7 @@ export namespace FeatureFilter {
     enabled: boolean,
     lowvar: boolean,
     highcorr: boolean,
+    topn: number,
     namesList: Array<string>,
   }
 }
