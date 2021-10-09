@@ -713,7 +713,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject = f
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     plotsList: jspb.Message.toObjectList(msg.getPlotsList(),
-    proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance)
+    proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance),
+    importanceMap: (f = msg.getImportanceMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -759,6 +760,12 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.deserializeB
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.Plot.deserializeBinaryFromReader);
       msg.addPlots(value);
       break;
+    case 3:
+      var value = msg.getImportanceMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
+         });
+      break;
     default:
       reader.skipField();
       break;
@@ -802,6 +809,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.serializeBin
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.Plot.serializeBinaryToWriter
     );
+  }
+  f = message.getImportanceMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
 };
 
@@ -860,6 +871,28 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.ad
 proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearPlotsList = function() {
   return this.setPlotsList([]);
 };
+
+
+/**
+ * map<string, float> importance = 3;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getImportanceMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearImportanceMap = function() {
+  this.getImportanceMap().clear();
+  return this;};
 
 
 

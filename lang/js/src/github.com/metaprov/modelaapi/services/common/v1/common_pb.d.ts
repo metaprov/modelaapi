@@ -63,6 +63,9 @@ export class ModelProfile extends jspb.Message {
   clearPlotsList(): ModelProfile;
   addPlots(value?: Plot, index?: number): Plot;
 
+  getImportanceMap(): jspb.Map<string, number>;
+  clearImportanceMap(): ModelProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ModelProfile): ModelProfile.AsObject;
@@ -75,6 +78,7 @@ export namespace ModelProfile {
   export type AsObject = {
     name: string,
     plotsList: Array<Plot.AsObject>,
+    importanceMap: Array<[string, number]>,
   }
 }
 

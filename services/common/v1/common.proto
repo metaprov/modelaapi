@@ -20,6 +20,7 @@ message DatasetProfile {
 message ModelProfile {
     string name                            = 1;
     repeated Plot plots                    = 2;
+    map<string,float> importance           = 3; // hold the feature importance
     
 }
 
