@@ -434,7 +434,7 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
-// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";
+// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr"
 // Metric is the machine learning metric used to evaluate a model performance.
 type Metric string
 
@@ -467,11 +467,14 @@ const (
 	HammingLoss       Metric = "hamming-loss"
 	HingeLoss         Metric = "hinge-loss"
 	JacquardScore     Metric = "jacquard-loss"
-	MatthewsCorrCoef  Metric = "matthews-corr-coef"
+	MatthewsCorrCoef  Metric = "mcc"
 	Fp                Metric = "fp"
 	Fn                Metric = "fn"
 	Tn                Metric = "tn"
 	Tp                Metric = "tp"
+	Tpr               Metric = "tpr"
+	Fpr               Metric = "fpr"
+	Tnr               Metric = "tnr"
 
 	/// Regression
 	ExplainedVariance   Metric = "explained-variance"
@@ -482,12 +485,14 @@ const (
 	RMSE                Metric = "rmse"
 	MedianAbsoluteError Metric = "median-absolute-error"
 	R2                  Metric = "r2"
+	AdjR2               Metric = "adj-r2"
 	MeanPoissonDeviance Metric = "mean_poisson_deviance"
 	MeanGammaDeviance   Metric = "mean-gamma-deviance"
 	MeanTweedieDeviance Metric = "mean-tweedie-deviance"
+
 	// Forecast specific
 	MAPE  Metric = "mape"
-	MDAPE Metric = "mdape"
+	MDAPE Metric = "mdape" // median absolute precentage error
 	SMAPE Metric = "smape"
 
 	//Clustering

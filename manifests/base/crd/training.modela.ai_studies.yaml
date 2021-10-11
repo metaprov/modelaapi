@@ -407,6 +407,7 @@ spec:
                 - msle
                 - median-absolute-error
                 - r2
+                - adj-r2
                 - adjusted-mutual-info-score
                 - adjusted-rand-score
                 - completeness-score
@@ -420,6 +421,11 @@ spec:
                 - mape
                 - smape
                 - mdape
+                - adjr2
+                - mcc
+                - tpr
+                - fpr
+                - tnr
                 type: string
               objective2:
                 description: Objective2 is the second objective to consider during
@@ -453,6 +459,7 @@ spec:
                 - msle
                 - median-absolute-error
                 - r2
+                - adj-r2
                 - adjusted-mutual-info-score
                 - adjusted-rand-score
                 - completeness-score
@@ -466,6 +473,11 @@ spec:
                 - mape
                 - smape
                 - mdape
+                - adjr2
+                - mcc
+                - tpr
+                - fpr
+                - tnr
                 type: string
               owner:
                 default: no-one
@@ -1241,6 +1253,7 @@ spec:
                       - msle
                       - median-absolute-error
                       - r2
+                      - adj-r2
                       - adjusted-mutual-info-score
                       - adjusted-rand-score
                       - completeness-score
@@ -1254,6 +1267,11 @@ spec:
                       - mape
                       - smape
                       - mdape
+                      - adjr2
+                      - mcc
+                      - tpr
+                      - fpr
+                      - tnr
                       type: string
                     type: array
                   featureFilter:

@@ -485,6 +485,7 @@ spec:
                 - msle
                 - median-absolute-error
                 - r2
+                - adj-r2
                 - adjusted-mutual-info-score
                 - adjusted-rand-score
                 - completeness-score
@@ -498,6 +499,11 @@ spec:
                 - mape
                 - smape
                 - mdape
+                - adjr2
+                - mcc
+                - tpr
+                - fpr
+                - tnr
                 type: string
               owner:
                 default: no-one
@@ -878,6 +884,7 @@ spec:
                       - msle
                       - median-absolute-error
                       - r2
+                      - adj-r2
                       - adjusted-mutual-info-score
                       - adjusted-rand-score
                       - completeness-score
@@ -891,6 +898,11 @@ spec:
                       - mape
                       - smape
                       - mdape
+                      - adjr2
+                      - mcc
+                      - tpr
+                      - fpr
+                      - tnr
                       type: string
                     type: array
                   featureFilter:
@@ -1253,6 +1265,7 @@ spec:
                       - msle
                       - median-absolute-error
                       - r2
+                      - adj-r2
                       - adjusted-mutual-info-score
                       - adjusted-rand-score
                       - completeness-score
@@ -1266,6 +1279,11 @@ spec:
                       - mape
                       - smape
                       - mdape
+                      - adjr2
+                      - mcc
+                      - tpr
+                      - fpr
+                      - tnr
                       type: string
                     value:
                       description: The value for this model
@@ -1437,6 +1455,7 @@ spec:
                       - msle
                       - median-absolute-error
                       - r2
+                      - adj-r2
                       - adjusted-mutual-info-score
                       - adjusted-rand-score
                       - completeness-score
@@ -1450,6 +1469,11 @@ spec:
                       - mape
                       - smape
                       - mdape
+                      - adjr2
+                      - mcc
+                      - tpr
+                      - fpr
+                      - tnr
                       type: string
                     value:
                       description: The value for this model
@@ -1554,6 +1578,7 @@ spec:
                       - msle
                       - median-absolute-error
                       - r2
+                      - adj-r2
                       - adjusted-mutual-info-score
                       - adjusted-rand-score
                       - completeness-score
@@ -1567,6 +1592,11 @@ spec:
                       - mape
                       - smape
                       - mdape
+                      - adjr2
+                      - mcc
+                      - tpr
+                      - fpr
+                      - tnr
                       type: string
                     value:
                       description: The value for this model

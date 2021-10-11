@@ -202,6 +202,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -215,6 +216,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -357,6 +363,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -370,6 +377,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -484,6 +496,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -497,6 +510,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -612,6 +630,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -625,6 +644,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -742,6 +766,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -755,6 +780,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -879,6 +909,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -892,6 +923,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1011,6 +1047,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -1024,6 +1061,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1144,6 +1186,7 @@ spec:
                           - msle
                           - median-absolute-error
                           - r2
+                          - adj-r2
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -1157,6 +1200,11 @@ spec:
                           - mape
                           - smape
                           - mdape
+                          - adjr2
+                          - mcc
+                          - tpr
+                          - fpr
+                          - tnr
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
