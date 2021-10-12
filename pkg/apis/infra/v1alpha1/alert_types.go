@@ -83,6 +83,8 @@ type AlertSpec struct {
 	// +kubebuilder:validation:Optional
 	Message *string `json:"message,omitempty" protobuf:"bytes,2,opt,name=message"`
 	// Scopes is the list of scopes for this token.
+	// +kubebuilder:default:="normal"
+	// +kubebuilder:validation:Optional
 	Level *AlertLevel `json:"level,omitempty" protobuf:"bytes,3,opt,name=level"`
 	// The subject entity
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,4,opt,name=entityRef"`
