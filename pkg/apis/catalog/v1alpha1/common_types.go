@@ -795,7 +795,7 @@ const (
 // Estimators
 //==============================================================================
 
-// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";
+// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking"
 type ClassicEstimatorName string
 
 const (
@@ -825,8 +825,18 @@ const (
 	LocalOutlierFactor ClassicEstimatorName = "local-outlier-factor"
 
 	// Forcast
-	Prophet ClassicEstimatorName = "prophet"
+	Prophet              ClassicEstimatorName = "prophet"
+	ARIMA                ClassicEstimatorName = "arima"
+	AutoARIMA            ClassicEstimatorName = "auto-arima"
+	VRIMA                ClassicEstimatorName = "vrima"
+	ExponentialSmoothing ClassicEstimatorName = "exponential-smoothing"
+	FastFourierTransform ClassicEstimatorName = "fast-fourier-transform"
+	NBeats               ClassicEstimatorName = "nbeats"
+	ThetaMethod          ClassicEstimatorName = "theata-method"
+
 	// Recommendation
+	ALS                         ClassicEstimatorName = "als"
+	BayesianPersonalizedRanking ClassicEstimatorName = "bayesian-personalized-ranking"
 
 	// Classifiers
 	KNeighborsClassifier        ClassicEstimatorName = "knn-classifier"
@@ -871,10 +881,6 @@ func ParseEstimatorName(name string) ClassicEstimatorName {
 		IsolationForest,
 		LocalOutlierFactor,
 
-		// Forcast
-		Prophet,
-		// Recommendation
-
 		// Classifiers
 		KNeighborsClassifier,
 		AdaBoostClassifier,
@@ -889,6 +895,20 @@ func ParseEstimatorName(name string) ClassicEstimatorName {
 		GradientBoostingClassifier,
 		RandomForestClassifier,
 		XGBClassifier,
+
+		// Forcasting
+		Prophet,
+		ARIMA,
+		AutoARIMA,
+		VRIMA,
+		ExponentialSmoothing,
+		FastFourierTransform,
+		NBeats,
+		ThetaMethod,
+
+		// Recommendation
+		ALS,
+		BayesianPersonalizedRanking,
 	}
 
 	for _, v := range estimators {

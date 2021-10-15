@@ -784,6 +784,15 @@ spec:
                       - catboost-classifier
                       - stacking-ensemble
                       - none
+                      - arima
+                      - auto-arima
+                      - vrima
+                      - exponential-smoothing
+                      - fast-fourier-transform
+                      - nbeats
+                      - theata-method
+                      - als
+                      - bayesian-personalized-ranking
                       type: string
                     type: array
                   baselines:
@@ -838,6 +847,15 @@ spec:
                       - catboost-classifier
                       - stacking-ensemble
                       - none
+                      - arima
+                      - auto-arima
+                      - vrima
+                      - exponential-smoothing
+                      - fast-fourier-transform
+                      - nbeats
+                      - theata-method
+                      - als
+                      - bayesian-personalized-ranking
                       type: string
                     type: array
                   filter:
@@ -1616,6 +1634,15 @@ spec:
                 - catboost-classifier
                 - stacking-ensemble
                 - none
+                - arima
+                - auto-arima
+                - vrima
+                - exponential-smoothing
+                - fast-fourier-transform
+                - nbeats
+                - theata-method
+                - als
+                - bayesian-personalized-ranking
                 type: string
               bestModel:
                 description: The Best model name.
