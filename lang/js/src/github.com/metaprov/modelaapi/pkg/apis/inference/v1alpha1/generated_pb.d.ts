@@ -9,6 +9,46 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class AppSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): AppSpec;
+
+  getPort(): number;
+  setPort(value: number): AppSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AppSpec): AppSpec.AsObject;
+  static serializeBinaryToWriter(message: AppSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppSpec;
+  static deserializeBinaryFromReader(message: AppSpec, reader: jspb.BinaryReader): AppSpec;
+}
+
+export namespace AppSpec {
+  export type AsObject = {
+    enabled: boolean,
+    port: number,
+  }
+}
+
+export class AppStatus extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): AppStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AppStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: AppStatus): AppStatus.AsObject;
+  static serializeBinaryToWriter(message: AppStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AppStatus;
+  static deserializeBinaryFromReader(message: AppStatus, reader: jspb.BinaryReader): AppStatus;
+}
+
+export namespace AppStatus {
+  export type AsObject = {
+    enabled: boolean,
+  }
+}
+
 export class AutoScaling extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): AutoScaling;
@@ -1027,6 +1067,11 @@ export class PredictorSpec extends jspb.Message {
   hasMonitor(): boolean;
   clearMonitor(): PredictorSpec;
 
+  getApp(): AppSpec | undefined;
+  setApp(value?: AppSpec): PredictorSpec;
+  hasApp(): boolean;
+  clearApp(): PredictorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorSpec): PredictorSpec.AsObject;
@@ -1060,6 +1105,7 @@ export namespace PredictorSpec {
     task: string,
     predictiontreshold: number,
     monitor?: MonitorSpec.AsObject,
+    app?: AppSpec.AsObject,
   }
 }
 
@@ -1112,6 +1158,11 @@ export class PredictorStatus extends jspb.Message {
   getNegativelabel(): string;
   setNegativelabel(value: string): PredictorStatus;
 
+  getAppstatus(): AppStatus | undefined;
+  setAppstatus(value?: AppStatus): PredictorStatus;
+  hasAppstatus(): boolean;
+  clearAppstatus(): PredictorStatus;
+
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1139,6 +1190,7 @@ export namespace PredictorStatus {
     targetcolumn: string,
     positivelabel: string,
     negativelabel: string,
+    appstatus?: AppStatus.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

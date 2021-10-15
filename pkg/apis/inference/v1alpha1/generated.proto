@@ -20,6 +20,24 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "v1alpha1";
 
+// Dash App specification, the app is created based on the model schema.
+message AppSpec {
+  // Retried at is the time that the model was retired from production.
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // App port. default port is 8080.
+  // +kubebuilder:default:=8080
+  // +kubebuilder:validation:Optional
+  optional int32 port = 2;
+}
+
+message AppStatus {
+  // Retried at is the time that the model was retired from production.
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+}
+
 // AutoScaling defines the configuration for auto scaling
 message AutoScaling {
   optional bool enabled = 1;
@@ -672,6 +690,10 @@ message PredictorSpec {
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional
   optional MonitorSpec monitor = 23;
+
+  // specification for dash app
+  // +kubebuilder:validation:Optional
+  optional AppSpec app = 24;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -720,10 +742,14 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional string negativeLabel = 14;
 
+  // The predictor app status
+  // +kubebuilder:validation:Optional
+  optional AppStatus appStatus = 15;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 15;
+  repeated PredictorCondition conditions = 16;
 }
 
 message ProgressiveSpec {

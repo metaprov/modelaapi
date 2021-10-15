@@ -418,10 +418,13 @@ type Schema struct {
 	// Time series schema. Set time series specific parameters.
 	// +kubebuilder:validation:Optional
 	TimeSeriesSchema *TimeSeriesSchema `json:"timeSeriesSchema,omitempty" protobuf:"bytes,1,opt,name=timeSeriesSchema"`
+	// Recommendation schema. Used for recommendation task
+	// +kubebuilder:validation:Optional
+	RecommendationSchema *RecommendationSchema `json:"recommendationSchema,omitempty" protobuf:"bytes,2,opt,name=recommendationSchema"`
 	// Columns
-	Columns []Column `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
+	Columns []Column `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
 	// Validation spec define the validation to perform on new datasets
-	Validation *ValidationSpec `json:"validation,omitempty" protobuf:"bytes,3,opt,name=validation"`
+	Validation *ValidationSpec `json:"validation,omitempty" protobuf:"bytes,4,opt,name=validation"`
 }
 
 type TimeSeriesSchema struct {
@@ -432,6 +435,21 @@ type TimeSeriesSchema struct {
 	// required
 	// default is US
 	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
+}
+
+type RecommendationSchema struct {
+	// The name of the user id column in the dataset
+	// +kubebuilder:default:="user_id"
+	// +kubebuilder:validation:Optional
+	UserID *string `json:"userIDColumn,omitempty" protobuf:"bytes,1,opt,name=userIDColumn"`
+	// The name of the item id column in the dataset
+	// +kubebuilder:default:="item_id"
+	// +kubebuilder:validation:Optional
+	ItemID *string `json:"itemIDColumn,omitempty" protobuf:"bytes,2,opt,name=itemIDColumn"`
+	// The rating column name
+	// +kubebuilder:default:="rating"
+	// +kubebuilder:validation:Optional
+	Rating *string `json:"ratingColumn,omitempty" protobuf:"bytes,3,opt,name=ratingColumn"`
 }
 
 type Column struct {

@@ -180,6 +180,9 @@ type PredictorSpec struct {
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
 	Monitor *MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,23,opt,name=monitor"`
+	// specification for dash app
+	// +kubebuilder:validation:Optional
+	AppSpec *AppSpec `json:"app,omitempty" protobuf:"bytes,24,opt,name=app"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
@@ -267,10 +270,13 @@ type PredictorStatus struct {
 	// For binary classification, the name of the negative class
 	//+kubebuilder:validation:Optional
 	NegativeLabel string `json:"negativeLabel,omitempty" protobuf:"bytes,14,opt,name=negativeLabel"`
+	// The predictor app status
+	//+kubebuilder:validation:Optional
+	AppStatus AppStatus `json:"appStatus,omitempty" protobuf:"bytes,15,opt,name=appStatus"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,15,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
 }
 
 type PredictorHealth struct {
@@ -338,4 +344,22 @@ type ModelRecord struct {
 	// Retried at is the time that the model was retired from production.
 	// +kubebuilder:validation:Optional
 	AvgLatency float64 `json:"avgLatency,omitempty" protobuf:"bytes,6,opt,name=avgLatency"`
+}
+
+// Dash App specification, the app is created based on the model schema.
+type AppSpec struct {
+	// Retried at is the time that the model was retired from production.
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+
+	// App port. default port is 8080.
+	// +kubebuilder:default:=8080
+	// +kubebuilder:validation:Optional
+	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
+}
+
+type AppStatus struct {
+	// Retried at is the time that the model was retired from production.
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 }

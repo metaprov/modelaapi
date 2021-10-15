@@ -115,6 +115,9 @@ export namespace CategoricalPipelineSpec {
 }
 
 export class ChatbotEstimatorSpec extends jspb.Message {
+  getBase(): string;
+  setBase(value: string): ChatbotEstimatorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ChatbotEstimatorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ChatbotEstimatorSpec): ChatbotEstimatorSpec.AsObject;
@@ -125,6 +128,7 @@ export class ChatbotEstimatorSpec extends jspb.Message {
 
 export namespace ChatbotEstimatorSpec {
   export type AsObject = {
+    base: string,
   }
 }
 
@@ -2975,8 +2979,8 @@ export namespace ModelValidationResult {
 }
 
 export class NLPEstimatorSpec extends jspb.Message {
-  getPretrainedmodel(): string;
-  setPretrainedmodel(value: string): NLPEstimatorSpec;
+  getBase(): string;
+  setBase(value: string): NLPEstimatorSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NLPEstimatorSpec.AsObject;
@@ -2988,7 +2992,7 @@ export class NLPEstimatorSpec extends jspb.Message {
 
 export namespace NLPEstimatorSpec {
   export type AsObject = {
-    pretrainedmodel: string,
+    base: string,
   }
 }
 

@@ -563,6 +563,23 @@ spec:
                           - name
                           type: object
                         type: array
+                      recommendationSchema:
+                        description: Recommendation schema. Used for recommendation
+                          task
+                        properties:
+                          itemIDColumn:
+                            default: item_id
+                            description: The name of the item id column in the dataset
+                            type: string
+                          ratingColumn:
+                            default: rating
+                            description: The rating column name
+                            type: string
+                          userIDColumn:
+                            default: user_id
+                            description: The name of the user id column in the dataset
+                            type: string
+                        type: object
                       timeSeriesSchema:
                         description: Time series schema. Set time series specific
                           parameters.

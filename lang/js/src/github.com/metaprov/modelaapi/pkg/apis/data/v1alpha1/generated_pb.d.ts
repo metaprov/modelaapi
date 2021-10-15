@@ -4243,6 +4243,32 @@ export namespace RecipeStepParam {
   }
 }
 
+export class RecommendationSchema extends jspb.Message {
+  getUseridcolumn(): string;
+  setUseridcolumn(value: string): RecommendationSchema;
+
+  getItemidcolumn(): string;
+  setItemidcolumn(value: string): RecommendationSchema;
+
+  getRatingcolumn(): string;
+  setRatingcolumn(value: string): RecommendationSchema;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RecommendationSchema.AsObject;
+  static toObject(includeInstance: boolean, msg: RecommendationSchema): RecommendationSchema.AsObject;
+  static serializeBinaryToWriter(message: RecommendationSchema, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RecommendationSchema;
+  static deserializeBinaryFromReader(message: RecommendationSchema, reader: jspb.BinaryReader): RecommendationSchema;
+}
+
+export namespace RecommendationSchema {
+  export type AsObject = {
+    useridcolumn: string,
+    itemidcolumn: string,
+    ratingcolumn: string,
+  }
+}
+
 export class SampleSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): SampleSpec;
@@ -4287,6 +4313,11 @@ export class Schema extends jspb.Message {
   hasTimeseriesschema(): boolean;
   clearTimeseriesschema(): Schema;
 
+  getRecommendationschema(): RecommendationSchema | undefined;
+  setRecommendationschema(value?: RecommendationSchema): Schema;
+  hasRecommendationschema(): boolean;
+  clearRecommendationschema(): Schema;
+
   getColumnsList(): Array<Column>;
   setColumnsList(value: Array<Column>): Schema;
   clearColumnsList(): Schema;
@@ -4308,6 +4339,7 @@ export class Schema extends jspb.Message {
 export namespace Schema {
   export type AsObject = {
     timeseriesschema?: TimeSeriesSchema.AsObject,
+    recommendationschema?: RecommendationSchema.AsObject,
     columnsList: Array<Column.AsObject>,
     validation?: ValidationSpec.AsObject,
   }

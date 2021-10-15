@@ -108,6 +108,10 @@ spec:
               chatbot:
                 description: Dnn is a specification of the DNN estimator specification.
                   Not supported for this release.
+                properties:
+                  base:
+                    description: The name of the base model
+                    type: string
                 type: object
               compilation:
                 description: Compilation denotes how to compile the model.
@@ -449,7 +453,8 @@ spec:
                 description: Dnn is a specification of the DNN estimator specification.
                   Not supported for this release.
                 properties:
-                  pretrainedModel:
+                  base:
+                    description: The name of the base model
                     type: string
                 type: object
               objective:

@@ -2750,6 +2750,23 @@ message RecipeStepParam {
   optional string value = 2;
 }
 
+message RecommendationSchema {
+  // The name of the user id column in the dataset
+  // +kubebuilder:default:="user_id"
+  // +kubebuilder:validation:Optional
+  optional string userIDColumn = 1;
+
+  // The name of the item id column in the dataset
+  // +kubebuilder:default:="item_id"
+  // +kubebuilder:validation:Optional
+  optional string itemIDColumn = 2;
+
+  // The rating column name
+  // +kubebuilder:default:="rating"
+  // +kubebuilder:validation:Optional
+  optional string ratingColumn = 3;
+}
+
 // The sample spec define how to sample a dataset for analysis
 message SampleSpec {
   // Enabled specify if the sample is enabled
@@ -2791,11 +2808,15 @@ message Schema {
   // +kubebuilder:validation:Optional
   optional TimeSeriesSchema timeSeriesSchema = 1;
 
+  // Recommendation schema. Used for recommendation task
+  // +kubebuilder:validation:Optional
+  optional RecommendationSchema recommendationSchema = 2;
+
   // Columns
-  repeated Column columns = 2;
+  repeated Column columns = 3;
 
   // Validation spec define the validation to perform on new datasets
-  optional ValidationSpec validation = 3;
+  optional ValidationSpec validation = 4;
 }
 
 // Represent a stack holder in the product.

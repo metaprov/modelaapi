@@ -236,6 +236,8 @@ message AlertSpec {
   optional string message = 2;
 
   // Scopes is the list of scopes for this token.
+  // +kubebuilder:default:="normal"
+  // +kubebuilder:validation:Optional
   optional string level = 3;
 
   // The subject entity

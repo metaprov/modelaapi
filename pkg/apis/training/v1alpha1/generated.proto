@@ -87,6 +87,9 @@ message CategoricalPipelineSpec {
 
 // ChatbotEstimatorSpec is an spec for chat bot. This is not implemented yet
 message ChatbotEstimatorSpec {
+  // The name of the base model
+  // +kubebuilder:validation:Optional
+  optional string base = 1;
 }
 
 // ClassicalEstimatorSpec is the specification for an algorithm and the actual value fof the hyper parameters
@@ -2044,7 +2047,9 @@ message ModelValidationResult {
 
 // TransformerEstimatorSpec is an transformer. This is not implemented yet.
 message NLPEstimatorSpec {
-  optional string pretrainedModel = 1;
+  // The name of the base model
+  // +kubebuilder:validation:Optional
+  optional string base = 1;
 }
 
 message NNLayerParameter {

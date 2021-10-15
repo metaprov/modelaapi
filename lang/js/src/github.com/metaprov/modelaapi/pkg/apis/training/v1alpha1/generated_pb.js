@@ -3325,7 +3325,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    base: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3362,6 +3362,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorS
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBase(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3391,6 +3395,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string base = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec.prototype.getBase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec.prototype.setBase = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec.prototype.clearBase = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ChatbotEstimatorSpec.prototype.hasBase = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -30582,7 +30629,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pretrainedmodel: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+    base: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -30621,7 +30668,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPretrainedmodel(value);
+      msg.setBase(value);
       break;
     default:
       reader.skipField();
@@ -30663,10 +30710,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.
 
 
 /**
- * optional string pretrainedModel = 1;
+ * optional string base = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.getPretrainedmodel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.getBase = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -30675,7 +30722,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.setPretrainedmodel = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.setBase = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -30684,7 +30731,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.clearPretrainedmodel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.clearBase = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -30693,7 +30740,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.hasPretrainedmodel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NLPEstimatorSpec.prototype.hasBase = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

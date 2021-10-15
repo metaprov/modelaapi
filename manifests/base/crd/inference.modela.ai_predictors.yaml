@@ -78,6 +78,19 @@ spec:
                 - mesh
                 - none
                 type: string
+              app:
+                description: specification for dash app
+                properties:
+                  enabled:
+                    description: Retried at is the time that the model was retired
+                      from production.
+                    type: boolean
+                  port:
+                    default: 8080
+                    description: App port. default port is 8080.
+                    format: int32
+                    type: integer
+                type: object
               artifactsFolder:
                 default: ""
                 description: The key in the bucket for storing all the predictor artifacts.
@@ -7741,6 +7754,14 @@ spec:
             description: PredictorStatus contain the current state of the Predictor
               resource
             properties:
+              appStatus:
+                description: The predictor app status
+                properties:
+                  enabled:
+                    description: Retried at is the time that the model was retired
+                      from production.
+                    type: boolean
+                type: object
               conditions:
                 items:
                   description: PredictorCondition describes the state of a prediction

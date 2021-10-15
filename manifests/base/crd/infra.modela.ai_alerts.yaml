@@ -105,6 +105,7 @@ spec:
                 description: The actual information about the alerts
                 type: object
               level:
+                default: normal
                 description: Scopes is the list of scopes for this token.
                 type: string
               message:

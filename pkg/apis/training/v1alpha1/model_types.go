@@ -521,11 +521,16 @@ type ClassicalEstimatorSpec struct {
 
 //ChatbotEstimatorSpec is an spec for chat bot. This is not implemented yet
 type ChatbotEstimatorSpec struct {
+	// The name of the base model
+	// +kubebuilder:validation:Optional
+	Base *string `json:"base,omitempty" protobuf:"bytes,1,rep,name=base"`
 }
 
 //TransformerEstimatorSpec is an transformer. This is not implemented yet.
 type NLPEstimatorSpec struct {
-	PretrainedModel *string `json:"pretrainedModel,omitempty" protobuf:"bytes,1,rep,name=pretrainedModel"`
+	// The name of the base model
+	// +kubebuilder:validation:Optional
+	Base *string `json:"base,omitempty" protobuf:"bytes,1,rep,name=base"`
 }
 
 // PreprocessingSpec of the pre processing pipeline
