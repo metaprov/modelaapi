@@ -314,7 +314,16 @@ type MonitorSpec struct {
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
 	// List of model validation
+	// +kubebuilder:validation:Optional
 	Validations []training.ModelValidation `json:"validations,omitempty" protobuf:"bytes,5,opt,name=validations"`
+	// Log requests (incoming traffic)
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	LogRequests *bool `json:"logRequests,omitempty" protobuf:"varint,6,opt,name=logRequests"`
+	// Log outgoing traffic
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	LogResponses *bool `json:"logResponses,omitempty" protobuf:"varint,7,opt,name=logResponses"`
 }
 
 type MonitorStatus struct {

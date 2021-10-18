@@ -247,8 +247,8 @@ export class ColumnStatistics extends jspb.Message {
   getImportance(): number;
   setImportance(value: number): ColumnStatistics;
 
-  getDistinc(): number;
-  setDistinc(value: number): ColumnStatistics;
+  getUnique(): number;
+  setUnique(value: number): ColumnStatistics;
 
   getIgnored(): boolean;
   setIgnored(value: boolean): ColumnStatistics;
@@ -304,7 +304,7 @@ export namespace ColumnStatistics {
     invalid: number,
     target: boolean,
     importance: number,
-    distinc: number,
+    unique: number,
     ignored: boolean,
     nullable: boolean,
     highcred: boolean,
@@ -366,6 +366,32 @@ export namespace ColumnValidation {
     strictmin: boolean,
     strictmax: boolean,
     generated: boolean,
+  }
+}
+
+export class CorrelationSpec extends jspb.Message {
+  getFloat64(): number;
+  setFloat64(value: number): CorrelationSpec;
+
+  getMethod(): string;
+  setMethod(value: string): CorrelationSpec;
+
+  getTop(): number;
+  setTop(value: number): CorrelationSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CorrelationSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CorrelationSpec): CorrelationSpec.AsObject;
+  static serializeBinaryToWriter(message: CorrelationSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CorrelationSpec;
+  static deserializeBinaryFromReader(message: CorrelationSpec, reader: jspb.BinaryReader): CorrelationSpec;
+}
+
+export namespace CorrelationSpec {
+  export type AsObject = {
+    float64: number,
+    method: string,
+    top: number,
   }
 }
 
@@ -1714,6 +1740,11 @@ export class DatasetSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): DatasetSpec;
 
+  getCorrelation(): CorrelationSpec | undefined;
+  setCorrelation(value?: CorrelationSpec): DatasetSpec;
+  hasCorrelation(): boolean;
+  clearCorrelation(): DatasetSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetSpec): DatasetSpec.AsObject;
@@ -1742,6 +1773,7 @@ export namespace DatasetSpec {
     sample?: SampleSpec.AsObject,
     task: string,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
+    correlation?: CorrelationSpec.AsObject,
   }
 }
 
@@ -1760,6 +1792,11 @@ export class DatasetStatistics extends jspb.Message {
   getFilesize(): number;
   setFilesize(value: number): DatasetStatistics;
 
+  getCorrelationsList(): Array<FeatureCorr>;
+  setCorrelationsList(value: Array<FeatureCorr>): DatasetStatistics;
+  clearCorrelationsList(): DatasetStatistics;
+  addCorrelations(value?: FeatureCorr, index?: number): FeatureCorr;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetStatistics): DatasetStatistics.AsObject;
@@ -1774,6 +1811,7 @@ export namespace DatasetStatistics {
     rows: number,
     cols: number,
     filesize: number,
+    correlationsList: Array<FeatureCorr.AsObject>,
   }
 }
 
@@ -2246,6 +2284,36 @@ export namespace FeatureCondition {
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     reason: string,
     message: string,
+  }
+}
+
+export class FeatureCorr extends jspb.Message {
+  getFeature1(): string;
+  setFeature1(value: string): FeatureCorr;
+
+  getFeature2(): string;
+  setFeature2(value: string): FeatureCorr;
+
+  getValue(): number;
+  setValue(value: number): FeatureCorr;
+
+  getMethod(): string;
+  setMethod(value: string): FeatureCorr;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureCorr.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureCorr): FeatureCorr.AsObject;
+  static serializeBinaryToWriter(message: FeatureCorr, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureCorr;
+  static deserializeBinaryFromReader(message: FeatureCorr, reader: jspb.BinaryReader): FeatureCorr;
+}
+
+export namespace FeatureCorr {
+  export type AsObject = {
+    feature1: string,
+    feature2: string,
+    value: number,
+    method: string,
   }
 }
 

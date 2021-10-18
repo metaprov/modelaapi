@@ -271,7 +271,8 @@ message ColumnStatistics {
   // The feature importance
   optional double importance = 17;
 
-  optional int32 distinc = 18;
+  // Count of unique values.
+  optional int32 Unique = 18;
 
   // Should this column be ignored, as specified by the user.
   // This value is derived from the schema
@@ -341,6 +342,24 @@ message ColumnValidation {
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
   optional bool generated = 9;
+}
+
+// Specify how the correlation should be computed
+message CorrelationSpec {
+  // Specify the minimum value of the corr
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional double float64 = 1;
+
+  // Specify the method to use when computing the correlation.
+  // +kubebuilder:default:="pearson"
+  // +kubebuilder:validation:Optional
+  optional string method = 2;
+
+  // Specify the top number of correlation to include in the status.
+  // +kubebuilder:default:=10
+  // +kubebuilder:validation:Optional
+  optional int32 top = 3;
 }
 
 message CsvFileSpec {
@@ -1269,6 +1288,10 @@ message DatasetSpec {
   // Specification for notification for events that occur during processing
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 20;
+
+  // Specification for the correlation spec
+  // +kubebuilder:validation:Optional
+  optional CorrelationSpec correlation = 21;
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
@@ -1288,6 +1311,9 @@ message DatasetStatistics {
   // file size in bytes
   // +kubebuilder:validation:Optional
   optional int32 fileSize = 5;
+
+  // Holds the correlation stats
+  repeated FeatureCorr correlations = 6;
 }
 
 // DatasetStatus defines the observed state of Dataset
@@ -1550,6 +1576,21 @@ message FeatureCondition {
 
   // A human readable message indicating details about the transition.
   optional string message = 5;
+}
+
+// Feature corr is used to record a correlation between two features.
+message FeatureCorr {
+  // The first feature name
+  optional string feature1 = 1;
+
+  // The second feature name
+  optional string feature2 = 2;
+
+  // The corr value
+  optional double value = 3;
+
+  // How the value was calculated
+  optional string method = 4;
 }
 
 // FeatureHistogram represent a single feature in the feature store.

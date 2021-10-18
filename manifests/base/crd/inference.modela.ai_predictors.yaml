@@ -229,6 +229,14 @@ spec:
                   enabled:
                     description: If true monitoring is enabled.
                     type: boolean
+                  logRequests:
+                    default: false
+                    description: Log requests (incoming traffic)
+                    type: boolean
+                  logResponses:
+                    default: false
+                    description: Log outgoing traffic
+                    type: boolean
                   notifierName:
                     default: ""
                     description: NotifierName is the name of notifier to alert in

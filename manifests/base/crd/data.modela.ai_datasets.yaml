@@ -76,6 +76,24 @@ spec:
                   dataset.
                 format: int64
                 type: integer
+              correlation:
+                description: Specification for the correlation spec
+                properties:
+                  float64:
+                    default: ""
+                    description: Specify the minimum value of the corr
+                    type: number
+                  method:
+                    default: pearson
+                    description: Specify the method to use when computing the correlation.
+                    type: string
+                  top:
+                    default: 10
+                    description: Specify the top number of correlation to include
+                      in the status.
+                    format: int32
+                    type: integer
+                type: object
               datasourceName:
                 default: ""
                 description: DataSourceName is the name of the data source which created
@@ -380,13 +398,14 @@ spec:
                       description: Hold the statistical parameters about a single
                         attribute
                       properties:
+                        Unique:
+                          description: Count of unique values.
+                          format: int32
+                          type: integer
                         completeness:
                           description: Completeness is the ratio between non null
                             to null
                           type: number
-                        distinc:
-                          format: int32
-                          type: integer
                         distinctValueCount:
                           description: The ratio between distinct count to total count
                           type: number
@@ -503,6 +522,29 @@ spec:
                         zeros:
                           description: Zeros is the numbers of zeros in the feature
                           type: number
+                      type: object
+                    type: array
+                  correlations:
+                    description: Holds the correlation stats
+                    items:
+                      description: Feature corr is used to record a correlation between
+                        two features.
+                      properties:
+                        feature1:
+                          description: The first feature name
+                          type: string
+                        feature2:
+                          description: The second feature name
+                          type: string
+                        method:
+                          description: How the value was calculated
+                          type: string
+                        value:
+                          description: The corr value
+                          type: number
+                      required:
+                      - feature1
+                      - feature2
                       type: object
                     type: array
                   fileSize:

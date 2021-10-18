@@ -317,7 +317,18 @@ message MonitorSpec {
   optional string notifierName = 4;
 
   // List of model validation
+  // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation validations = 5;
+
+  // Log requests (incoming traffic)
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool logRequests = 6;
+
+  // Log outgoing traffic
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool logResponses = 7;
 }
 
 message MonitorStatus {

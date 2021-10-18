@@ -161,6 +161,9 @@ type DatasetSpec struct {
 	// Specification for notification for events that occur during processing
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,20,opt,name=notification"`
+	// Specification for the correlation spec
+	// +kubebuilder:validation:Optional
+	Correlation CorrelationSpec `json:"correlation,omitempty" protobuf:"bytes,21,opt,name=correlation"`
 }
 
 // DatasetStatus defines the observed state of Dataset
@@ -228,6 +231,8 @@ type DatasetStatistics struct {
 	// file size in bytes
 	// +kubebuilder:validation:Optional
 	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,5,opt,name=fileSize"`
+	// Holds the correlation stats
+	Correlations []FeatureCorr `json:"correlations,omitempty" protobuf:"bytes,6,opt,name=correlations"`
 }
 
 // Hold the statistical parameters about a single attribute
@@ -266,8 +271,8 @@ type ColumnStatistics struct {
 	Target bool `json:"target,omitempty" protobuf:"bytes,16,opt,name=target"`
 	// The feature importance
 	Importance float64 `json:"importance,omitempty" protobuf:"bytes,17,opt,name=importance"`
-	//
-	Distinct int32 `json:"distinc,omitempty" protobuf:"varint,18,opt,name=distinc"`
+	// Count of unique values.
+	Unique int32 `json:"Unique,omitempty" protobuf:"varint,18,opt,name=Unique"`
 	// Should this column be ignored, as specified by the user.
 	// This value is derived from the schema
 	Ignored bool `json:"ignored,omitempty" protobuf:"varint,19,opt,name=ignored"`
@@ -355,4 +360,32 @@ type DataValidationResult struct {
 	Column string `json:"column" protobuf:"bytes,2,opt,name=column"`
 	Error  string `json:"error" protobuf:"bytes,3,opt,name=error"`
 	Passed bool   `json:"passed" protobuf:"varint,4,opt,name=passed"`
+}
+
+// Feature corr is used to record a correlation between two features.
+type FeatureCorr struct {
+	// The first feature name
+	Feature1 string `json:"feature1" protobuf:"bytes,1,opt,name=feature1"`
+	// The second feature name
+	Feature2 string `json:"feature2" protobuf:"bytes,2,opt,name=feature2"`
+	// The corr value
+	Value float64 `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
+	// How the value was calculated
+	Method string `json:"method,omitempty" protobuf:"bytes,4,opt,name=method"`
+}
+
+// Specify how the correlation should be computed
+type CorrelationSpec struct {
+	// Specify the minimum value of the corr
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Cutoff *float64 `json:"float64,omitempty" protobuf:"bytes,1,opt,name=float64"`
+	// Specify the method to use when computing the correlation.
+	// +kubebuilder:default:="pearson"
+	// +kubebuilder:validation:Optional
+	Method *string `json:"method,omitempty" protobuf:"bytes,2,opt,name=method"`
+	// Specify the top number of correlation to include in the status.
+	// +kubebuilder:default:=10
+	// +kubebuilder:validation:Optional
+	Top *int32 `json:"top,omitempty" protobuf:"bytes,3,opt,name=top"`
 }

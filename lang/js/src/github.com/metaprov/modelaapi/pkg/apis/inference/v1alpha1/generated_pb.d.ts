@@ -509,6 +509,12 @@ export class MonitorSpec extends jspb.Message {
   clearValidationsList(): MonitorSpec;
   addValidations(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
 
+  getLogrequests(): boolean;
+  setLogrequests(value: boolean): MonitorSpec;
+
+  getLogresponses(): boolean;
+  setLogresponses(value: boolean): MonitorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MonitorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MonitorSpec): MonitorSpec.AsObject;
@@ -524,6 +530,8 @@ export namespace MonitorSpec {
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notifiername: string,
     validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,
+    logrequests: boolean,
+    logresponses: boolean,
   }
 }
 

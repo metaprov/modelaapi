@@ -5070,7 +5070,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.toOb
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
-    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.toObject, includeInstance)
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.toObject, includeInstance),
+    logrequests: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    logresponses: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5128,6 +5130,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.dese
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.deserializeBinaryFromReader);
       msg.addValidations(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLogrequests(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLogresponses(value);
       break;
     default:
       reader.skipField();
@@ -5193,6 +5203,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.seri
       5,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
     );
   }
 };
@@ -5378,6 +5402,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearValidationsList = function() {
   return this.setValidationsList([]);
+};
+
+
+/**
+ * optional bool logRequests = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getLogrequests = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setLogrequests = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearLogrequests = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasLogrequests = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool logResponses = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getLogresponses = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setLogresponses = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearLogresponses = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasLogresponses = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
