@@ -347,7 +347,7 @@ message ColumnValidation {
 // Specify how the correlation should be computed
 message CorrelationSpec {
   // Specify the minimum value of the corr
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:=50
   // +kubebuilder:validation:Optional
   optional double float64 = 1;
 

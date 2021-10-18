@@ -377,7 +377,7 @@ type FeatureCorr struct {
 // Specify how the correlation should be computed
 type CorrelationSpec struct {
 	// Specify the minimum value of the corr
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:=50
 	// +kubebuilder:validation:Optional
 	Cutoff *float64 `json:"float64,omitempty" protobuf:"bytes,1,opt,name=float64"`
 	// Specify the method to use when computing the correlation.

@@ -80,7 +80,7 @@ spec:
                 description: Specification for the correlation spec
                 properties:
                   float64:
-                    default: ""
+                    default: 50
                     description: Specify the minimum value of the corr
                     type: number
                   method:
