@@ -259,7 +259,7 @@ func MLTaskFromString(name string) (MLTask, error) {
 	case "regression":
 		return Regression, nil
 	case "forecasting":
-		return Forcasting, nil
+		return Forecasting, nil
 	case "clustering":
 		return Clustering, nil
 	case "recommendation":
@@ -900,7 +900,7 @@ func ParseEstimatorName(name string) ClassicEstimatorName {
 		RandomForestClassifier,
 		XGBClassifier,
 
-		// Forcasting
+		// Forecasting
 		Prophet,
 		ARIMA,
 		AutoARIMA,

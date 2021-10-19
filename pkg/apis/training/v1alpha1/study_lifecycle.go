@@ -139,7 +139,7 @@ func (r *Study) IsPartitioned() bool {
 }
 
 func (r *Study) IsForecast() bool {
-	return *r.Spec.Task == catalog.Forcasting
+	return *r.Spec.Task == catalog.Forecasting
 }
 
 // Compute the current phase based on the condition

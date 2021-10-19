@@ -115,7 +115,7 @@ func (model *Model) ReportType() ReportType {
 		return MultiClassificationModelReport
 	case catalog.Regression:
 		return RegressionModelReport
-	case catalog.Forcasting:
+	case catalog.Forecasting:
 		return ForecastModelReport
 	}
 	return InvalidReport

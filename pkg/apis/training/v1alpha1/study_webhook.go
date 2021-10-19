@@ -106,7 +106,7 @@ func (study *Study) Default() {
 	}
 	study.Spec.Search.StackingEnsemble = util.BoolPtr(true)
 
-	if study.Spec.Training.Forecast == nil && *study.Spec.Task == catalog.Forcasting {
+	if study.Spec.Training.Forecast == nil && *study.Spec.Task == catalog.Forecasting {
 		study.Spec.Training.Forecast = &ForecastingSpec{
 			Horizon:                nil,
 			TimeColumn:             nil,
