@@ -335,8 +335,8 @@ func (in *FeatureFilter) DeepCopyInto(out *FeatureFilter) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.Names != nil {
-		in, out := &in.Names, &out.Names
+	if in.Features != nil {
+		in, out := &in.Features, &out.Features
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}

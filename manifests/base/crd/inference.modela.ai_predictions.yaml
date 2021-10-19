@@ -293,6 +293,7 @@ spec:
                   - tpr
                   - fpr
                   - tnr
+                  - rmsle
                   type: string
                 type: array
               ttl:
@@ -408,6 +409,7 @@ spec:
                       - tpr
                       - fpr
                       - tnr
+                      - rmsle
                       type: string
                     value:
                       description: The value for this model

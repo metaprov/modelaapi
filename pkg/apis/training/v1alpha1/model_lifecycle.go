@@ -295,6 +295,14 @@ func (model *Model) RMSE() float64 {
 	return model.GetTestResult(catalog.RMSE)
 }
 
+func (model *Model) RMSLE() float64 {
+	return model.GetTestResult(catalog.RMSLE)
+}
+
+func (model *Model) MAPE() float64 {
+	return model.GetTestResult(catalog.MAPE)
+}
+
 func (model *Model) Precision() float64 {
 	return model.GetTestResult(catalog.PrecisionBinary)
 }

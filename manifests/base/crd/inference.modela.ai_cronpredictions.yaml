@@ -387,6 +387,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         type: array
                       ttl:

@@ -70,6 +70,10 @@ type VirtualBucketSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
+	// For cloud based bucket, this is the region of the bucket
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Region *string `json:"region,omitempty" protobuf:"bytes,5,opt,name=region"`
 }
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket

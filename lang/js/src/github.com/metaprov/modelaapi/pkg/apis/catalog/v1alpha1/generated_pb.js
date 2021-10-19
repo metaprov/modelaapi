@@ -3678,7 +3678,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.toOb
     lowvar: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     highcorr: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
     topn: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    namesList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+    featuresList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3733,7 +3733,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.dese
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.addNames(value);
+      msg.addFeatures(value);
       break;
     default:
       reader.skipField();
@@ -3792,7 +3792,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.seri
       f
     );
   }
-  f = message.getNamesList();
+  f = message.getFeaturesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       5,
@@ -3947,10 +3947,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prot
 
 
 /**
- * repeated string names = 5;
+ * repeated string features = 5;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.getNamesList = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.getFeaturesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
@@ -3959,7 +3959,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prot
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.setNamesList = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.setFeaturesList = function(value) {
   return jspb.Message.setField(this, 5, value || []);
 };
 
@@ -3969,7 +3969,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.addNames = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.addFeatures = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
@@ -3978,8 +3978,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.clearNamesList = function() {
-  return this.setNamesList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter.prototype.clearFeaturesList = function() {
+  return this.setFeaturesList([]);
 };
 
 

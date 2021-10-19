@@ -4822,6 +4822,9 @@ export class VirtualBucketSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): VirtualBucketSpec;
 
+  getRegion(): string;
+  setRegion(value: string): VirtualBucketSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualBucketSpec.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualBucketSpec): VirtualBucketSpec.AsObject;
@@ -4836,6 +4839,7 @@ export namespace VirtualBucketSpec {
     connectionname: string,
     description: string,
     owner: string,
+    region: string,
   }
 }
 

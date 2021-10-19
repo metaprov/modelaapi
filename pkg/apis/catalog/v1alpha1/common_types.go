@@ -118,7 +118,6 @@ const (
 	MultiLabelClassification      MLTask = "multi-label-classification"
 	Forecasting                   MLTask = "forecasting"
 	Regression                    MLTask = "regression"
-	Forcasting                    MLTask = "forecasting"
 	Clustering                    MLTask = "clustering"
 	Recommendation                MLTask = "recommendation"
 	OutlierDetection              MLTask = "outlier-detection"
@@ -382,7 +381,11 @@ func (metric Metric) IsRegression() bool {
 		metric == MaxError ||
 		metric == MeanPoissonDeviance ||
 		metric == MeanGammaDeviance ||
-		metric == MeanTweedieDeviance
+		metric == MeanTweedieDeviance ||
+		metric == MAPE ||
+		metric == SMAPE ||
+		metric == MDAPE
+
 }
 
 func (metric Metric) IsForecast() bool {
@@ -434,7 +437,7 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
-// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr"
+// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr";"rmsle"
 // Metric is the machine learning metric used to evaluate a model performance.
 type Metric string
 
@@ -483,6 +486,7 @@ const (
 	MSE                 Metric = "mse"
 	MSLE                Metric = "msle"
 	RMSE                Metric = "rmse"
+	RMSLE               Metric = "rmsle"
 	MedianAbsoluteError Metric = "median-absolute-error"
 	R2                  Metric = "r2"
 	AdjR2               Metric = "adj-r2"
@@ -1576,5 +1580,5 @@ type FeatureFilter struct {
 	TopN *int32 `json:"topN,omitempty" protobuf:"varint,4,opt,name=topN"`
 	// List of feature names to consider when training.
 	// +kubebuilder:validation:Optional
-	Names []string `json:"names,omitempty" protobuf:"bytes,5,rep,name=names"`
+	Features []string `json:"features,omitempty" protobuf:"bytes,5,rep,name=features"`
 }

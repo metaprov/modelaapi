@@ -384,6 +384,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         min:
                           type: number
@@ -8038,6 +8039,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test

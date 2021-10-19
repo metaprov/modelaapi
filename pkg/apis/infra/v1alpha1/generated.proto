@@ -2602,6 +2602,11 @@ message VirtualBucketSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 4;
+
+  // For cloud based bucket, this is the region of the bucket
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string region = 5;
 }
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket

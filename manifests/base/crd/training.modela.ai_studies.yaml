@@ -426,6 +426,7 @@ spec:
                 - tpr
                 - fpr
                 - tnr
+                - rmsle
                 type: string
               objective2:
                 description: Objective2 is the second objective to consider during
@@ -478,6 +479,7 @@ spec:
                 - tpr
                 - fpr
                 - tnr
+                - rmsle
                 type: string
               owner:
                 default: no-one
@@ -1142,6 +1144,11 @@ spec:
                 description: Feature filter is applied to the data for this study.
                   The filter specifies how to filter the original dataset.
                 properties:
+                  features:
+                    description: List of feature names to consider when training.
+                    items:
+                      type: string
+                    type: array
                   highCorr:
                     default: false
                     description: High correlation specify to filter features with
@@ -1152,11 +1159,6 @@ spec:
                     description: Lowvar specify the filter to remove low variance
                       features
                     type: boolean
-                  names:
-                    description: List of feature names to consider when training.
-                    items:
-                      type: string
-                    type: array
                   onError:
                     default: false
                     description: Is the feature filter enbled
@@ -1290,12 +1292,18 @@ spec:
                       - tpr
                       - fpr
                       - tnr
+                      - rmsle
                       type: string
                     type: array
                   featureFilter:
                     description: Feature filter specified what features to use from
                       the original dataset.
                     properties:
+                      features:
+                        description: List of feature names to consider when training.
+                        items:
+                          type: string
+                        type: array
                       highCorr:
                         default: false
                         description: High correlation specify to filter features with
@@ -1306,11 +1314,6 @@ spec:
                         description: Lowvar specify the filter to remove low variance
                           features
                         type: boolean
-                      names:
-                        description: List of feature names to consider when training.
-                        items:
-                          type: string
-                        type: array
                       onError:
                         default: false
                         description: Is the feature filter enbled

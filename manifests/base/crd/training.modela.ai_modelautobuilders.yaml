@@ -935,6 +935,7 @@ spec:
                 - tpr
                 - fpr
                 - tnr
+                - rmsle
                 type: string
               owner:
                 default: no-one

@@ -166,6 +166,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         min:
                           type: number
@@ -325,6 +326,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         min:
                           type: number
@@ -614,6 +616,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         min:
                           type: number
@@ -792,6 +795,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         min:
                           type: number
@@ -909,6 +913,7 @@ spec:
                           - tpr
                           - fpr
                           - tnr
+                          - rmsle
                           type: string
                         min:
                           type: number

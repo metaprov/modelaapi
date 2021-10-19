@@ -198,7 +198,7 @@ message FeatureFilter {
 
   // List of feature names to consider when training.
   // +kubebuilder:validation:Optional
-  repeated string names = 5;
+  repeated string features = 5;
 }
 
 // FloatParameter contain the specification of an float hyper parameter

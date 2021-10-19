@@ -29,7 +29,9 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	if task == catalog.Regression {
 		return catalog.RMSE
 	}
-	return catalog.UnknownMetric
+	if task == catalog.Forecasting {
+		return catalog.MAPE
+	}
 }
 
 var _ webhook.Defaulter = &Study{}

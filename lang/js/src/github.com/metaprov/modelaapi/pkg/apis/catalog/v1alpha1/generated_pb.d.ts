@@ -331,10 +331,10 @@ export class FeatureFilter extends jspb.Message {
   getTopn(): number;
   setTopn(value: number): FeatureFilter;
 
-  getNamesList(): Array<string>;
-  setNamesList(value: Array<string>): FeatureFilter;
-  clearNamesList(): FeatureFilter;
-  addNames(value: string, index?: number): FeatureFilter;
+  getFeaturesList(): Array<string>;
+  setFeaturesList(value: Array<string>): FeatureFilter;
+  clearFeaturesList(): FeatureFilter;
+  addFeatures(value: string, index?: number): FeatureFilter;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureFilter.AsObject;
@@ -350,7 +350,7 @@ export namespace FeatureFilter {
     lowvar: boolean,
     highcorr: boolean,
     topn: number,
-    namesList: Array<string>,
+    featuresList: Array<string>,
   }
 }
 

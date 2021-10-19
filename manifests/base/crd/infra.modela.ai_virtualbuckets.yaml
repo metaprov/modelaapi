@@ -73,6 +73,10 @@ spec:
                 default: no-one
                 description: Owner of the bucket
                 type: string
+              region:
+                default: ""
+                description: For cloud based bucket, this is the region of the bucket
+                type: string
               tenantRef:
                 description: The owner of the virtual bucket
                 properties:

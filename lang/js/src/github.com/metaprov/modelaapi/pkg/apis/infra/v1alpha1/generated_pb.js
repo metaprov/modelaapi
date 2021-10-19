@@ -47986,7 +47986,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.to
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     connectionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    region: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -48039,6 +48040,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.de
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRegion(value);
       break;
     default:
       reader.skipField();
@@ -48095,6 +48100,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.se
   if (f != null) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -48243,6 +48255,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.pr
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string region = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.prototype.getRegion = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.prototype.setRegion = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.prototype.clearRegion = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec.prototype.hasRegion = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
