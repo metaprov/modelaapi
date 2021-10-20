@@ -12,7 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
+from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/metaprov/modelaapi/services/dataproduct/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto\x12\x35github.com.metaprov.modelaapi.services.dataproduct.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xc7\x01\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"p\n\x18ListDataProductsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductList\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19\x43reateDataProductResponse\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19UpdateDataProductResponse\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"w\n\x16GetDataProductResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteDataProductResponse2\x94\t\n\x12\x44\x61taProductService\x12\xcd\x01\n\x10ListDataProducts\x12N.github.com.metaprov.modelaapi.services.dataproduct.v1.ListDataProductsRequest\x1aO.github.com.metaprov.modelaapi.services.dataproduct.v1.ListDataProductsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/dataproducts\x12\xd3\x01\n\x11\x43reateDataProduct\x12O.github.com.metaprov.modelaapi.services.dataproduct.v1.CreateDataProductRequest\x1aP.github.com.metaprov.modelaapi.services.dataproduct.v1.CreateDataProductResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/dataproducts:\x01*\x12\xda\x01\n\x0eGetDataProduct\x12L.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRequest\x1aM.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/{namespace}/dataproducts/{name}\x12\x90\x02\n\x11UpdateDataProduct\x12O.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest\x1aP.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductResponse\"X\x82\xd3\xe4\x93\x02R\x1aM/v1/{dataproduct.metadata.namespace}/dataproducts/{dataproduct.metadata.name}:\x01*\x12\xe7\x01\n\x11\x44\x65leteDataProduct\x12O.github.com.metaprov.modelaapi.services.dataproduct.v1.DeleteDataProductRequest\x1aP.github.com.metaprov.modelaapi.services.dataproduct.v1.DeleteDataProductResponse\"/\x82\xd3\xe4\x93\x02)*\'/api/v1/{namespace}/dataproducts/{name}B7Z5github.com/metaprov/modelaapi/services/dataproduct/v1b\x06proto3'
+  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto\x12\x35github.com.metaprov.modelaapi.services.dataproduct.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xc7\x01\n\x17ListDataProductsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.dataproduct.v1.ListDataProductsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"p\n\x18ListDataProductsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductList\"k\n\x18\x43reateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19\x43reateDataProductResponse\"k\n\x18UpdateDataProductRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\"\x1b\n\x19UpdateDataProductResponse\"8\n\x15GetDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x93\x04\n\x16GetDataProductResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct\x12L\n\x06\x61lerts\x18\x02 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12O\n\x08\x64\x61tasets\x18\x03 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12P\n\x07studies\x18\x04 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12O\n\x06models\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12X\n\npredictors\x18\x06 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\x12\x0c\n\x04yaml\x18\x07 \x01(\t\";\n\x18\x44\x65leteDataProductRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteDataProductResponse2\x94\t\n\x12\x44\x61taProductService\x12\xcd\x01\n\x10ListDataProducts\x12N.github.com.metaprov.modelaapi.services.dataproduct.v1.ListDataProductsRequest\x1aO.github.com.metaprov.modelaapi.services.dataproduct.v1.ListDataProductsResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/dataproducts\x12\xd3\x01\n\x11\x43reateDataProduct\x12O.github.com.metaprov.modelaapi.services.dataproduct.v1.CreateDataProductRequest\x1aP.github.com.metaprov.modelaapi.services.dataproduct.v1.CreateDataProductResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/dataproducts:\x01*\x12\xda\x01\n\x0eGetDataProduct\x12L.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRequest\x1aM.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/{namespace}/dataproducts/{name}\x12\x90\x02\n\x11UpdateDataProduct\x12O.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductRequest\x1aP.github.com.metaprov.modelaapi.services.dataproduct.v1.UpdateDataProductResponse\"X\x82\xd3\xe4\x93\x02R\x1aM/v1/{dataproduct.metadata.namespace}/dataproducts/{dataproduct.metadata.name}:\x01*\x12\xe7\x01\n\x11\x44\x65leteDataProduct\x12O.github.com.metaprov.modelaapi.services.dataproduct.v1.DeleteDataProductRequest\x1aP.github.com.metaprov.modelaapi.services.dataproduct.v1.DeleteDataProductResponse\"/\x82\xd3\xe4\x93\x02)*\'/api/v1/{namespace}/dataproducts/{name}B7Z5github.com/metaprov/modelaapi/services/dataproduct/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +65,8 @@ _LISTDATAPRODUCTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=385,
-  serialized_end=430,
+  serialized_start=605,
+  serialized_end=650,
 )
 
 _LISTDATAPRODUCTSREQUEST = _descriptor.Descriptor(
@@ -100,8 +103,8 @@ _LISTDATAPRODUCTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=231,
-  serialized_end=430,
+  serialized_start=451,
+  serialized_end=650,
 )
 
 
@@ -132,8 +135,8 @@ _LISTDATAPRODUCTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=432,
-  serialized_end=544,
+  serialized_start=652,
+  serialized_end=764,
 )
 
 
@@ -164,8 +167,8 @@ _CREATEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=546,
-  serialized_end=653,
+  serialized_start=766,
+  serialized_end=873,
 )
 
 
@@ -189,8 +192,8 @@ _CREATEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=655,
-  serialized_end=682,
+  serialized_start=875,
+  serialized_end=902,
 )
 
 
@@ -221,8 +224,8 @@ _UPDATEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=684,
-  serialized_end=791,
+  serialized_start=904,
+  serialized_end=1011,
 )
 
 
@@ -246,8 +249,8 @@ _UPDATEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=793,
-  serialized_end=820,
+  serialized_start=1013,
+  serialized_end=1040,
 )
 
 
@@ -285,8 +288,8 @@ _GETDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=822,
-  serialized_end=878,
+  serialized_start=1042,
+  serialized_end=1098,
 )
 
 
@@ -306,8 +309,43 @@ _GETDATAPRODUCTRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.yaml', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='alerts', full_name='github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.alerts', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='datasets', full_name='github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.datasets', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='studies', full_name='github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.studies', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='models', full_name='github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.models', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='predictors', full_name='github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.predictors', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='yaml', full_name='github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.yaml', index=6,
+      number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -324,8 +362,8 @@ _GETDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=880,
-  serialized_end=999,
+  serialized_start=1101,
+  serialized_end=1632,
 )
 
 
@@ -363,8 +401,8 @@ _DELETEDATAPRODUCTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1001,
-  serialized_end=1060,
+  serialized_start=1634,
+  serialized_end=1693,
 )
 
 
@@ -388,8 +426,8 @@ _DELETEDATAPRODUCTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1062,
-  serialized_end=1089,
+  serialized_start=1695,
+  serialized_end=1722,
 )
 
 _LISTDATAPRODUCTSREQUEST_LABELSENTRY.containing_type = _LISTDATAPRODUCTSREQUEST
@@ -398,6 +436,11 @@ _LISTDATAPRODUCTSRESPONSE.fields_by_name['items'].message_type = github_dot_com_
 _CREATEDATAPRODUCTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _UPDATEDATAPRODUCTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
 _GETDATAPRODUCTRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATAPRODUCT
+_GETDATAPRODUCTRESPONSE.fields_by_name['alerts'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
+_GETDATAPRODUCTRESPONSE.fields_by_name['datasets'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
+_GETDATAPRODUCTRESPONSE.fields_by_name['studies'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._STUDY
+_GETDATAPRODUCTRESPONSE.fields_by_name['models'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODEL
+_GETDATAPRODUCTRESPONSE.fields_by_name['predictors'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2._PREDICTOR
 DESCRIPTOR.message_types_by_name['ListDataProductsRequest'] = _LISTDATAPRODUCTSREQUEST
 DESCRIPTOR.message_types_by_name['ListDataProductsResponse'] = _LISTDATAPRODUCTSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateDataProductRequest'] = _CREATEDATAPRODUCTREQUEST
@@ -499,8 +542,8 @@ _DATAPRODUCTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1092,
-  serialized_end=2264,
+  serialized_start=1725,
+  serialized_end=2897,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataProducts',

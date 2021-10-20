@@ -1,7 +1,10 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
 
 
 export class ListDataProductsRequest extends jspb.Message {
@@ -142,6 +145,31 @@ export class GetDataProductResponse extends jspb.Message {
   hasItem(): boolean;
   clearItem(): GetDataProductResponse;
 
+  getAlertsList(): Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert>;
+  setAlertsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert>): GetDataProductResponse;
+  clearAlertsList(): GetDataProductResponse;
+  addAlerts(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert, index?: number): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert;
+
+  getDatasetsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
+  setDatasetsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>): GetDataProductResponse;
+  clearDatasetsList(): GetDataProductResponse;
+  addDatasets(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+
+  getStudiesList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
+  setStudiesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study>): GetDataProductResponse;
+  clearStudiesList(): GetDataProductResponse;
+  addStudies(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study;
+
+  getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): GetDataProductResponse;
+  clearModelsList(): GetDataProductResponse;
+  addModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+
+  getPredictorsList(): Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor>;
+  setPredictorsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor>): GetDataProductResponse;
+  clearPredictorsList(): GetDataProductResponse;
+  addPredictors(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor, index?: number): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor;
+
   getYaml(): string;
   setYaml(value: string): GetDataProductResponse;
 
@@ -156,6 +184,11 @@ export class GetDataProductResponse extends jspb.Message {
 export namespace GetDataProductResponse {
   export type AsObject = {
     item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    alertsList: Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject>,
+    datasetsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject>,
+    studiesList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject>,
+    modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
+    predictorsList: Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject>,
     yaml: string,
   }
 }

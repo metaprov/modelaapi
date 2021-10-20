@@ -19,6 +19,12 @@ var google_api_annotations_pb = require('../../../../../../google/api/annotation
 goog.object.extend(proto, google_api_annotations_pb);
 var github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb);
+var github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb.js');
+goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantRequest', null, global);
@@ -187,7 +193,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1218,6 +1224,13 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantRequest.prototyp
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.repeatedFields_ = [2,3,4,5,6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1250,7 +1263,17 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
 proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f),
-    yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
+    alertsList: jspb.Message.toObjectList(msg.getAlertsList(),
+    github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject, includeInstance),
+    datasetsList: jspb.Message.toObjectList(msg.getDatasetsList(),
+    github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.toObject, includeInstance),
+    studiesList: jspb.Message.toObjectList(msg.getStudiesList(),
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.toObject, includeInstance),
+    modelsList: jspb.Message.toObjectList(msg.getModelsList(),
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject, includeInstance),
+    predictorsList: jspb.Message.toObjectList(msg.getPredictorsList(),
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.toObject, includeInstance),
+    yaml: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1293,6 +1316,31 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.deseria
       msg.setItem(value);
       break;
     case 2:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.deserializeBinaryFromReader);
+      msg.addAlerts(value);
+      break;
+    case 3:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.deserializeBinaryFromReader);
+      msg.addDatasets(value);
+      break;
+    case 4:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.deserializeBinaryFromReader);
+      msg.addStudies(value);
+      break;
+    case 5:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
+      msg.addModels(value);
+      break;
+    case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.deserializeBinaryFromReader);
+      msg.addPredictors(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setYaml(value);
       break;
@@ -1333,10 +1381,50 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.seriali
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.serializeBinaryToWriter
     );
   }
+  f = message.getAlertsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.serializeBinaryToWriter
+    );
+  }
+  f = message.getDatasetsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.serializeBinaryToWriter
+    );
+  }
+  f = message.getStudiesList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.serializeBinaryToWriter
+    );
+  }
+  f = message.getModelsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
+    );
+  }
+  f = message.getPredictorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.serializeBinaryToWriter
+    );
+  }
   f = message.getYaml();
   if (f.length > 0) {
     writer.writeString(
-      2,
+      7,
       f
     );
   }
@@ -1381,11 +1469,201 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
 
 
 /**
- * optional string yaml = 2;
+ * repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alerts = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert>}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getAlertsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setAlertsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.addAlerts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.clearAlertsList = function() {
+  return this.setAlertsList([]);
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset datasets = 3;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset>}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getDatasetsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setDatasetsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.addDatasets = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.clearDatasetsList = function() {
+  return this.setDatasetsList([]);
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study studies = 4;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study>}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getStudiesList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setStudiesList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.addStudies = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.clearStudiesList = function() {
+  return this.setStudiesList([]);
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models = 5;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model>}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getModelsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setModelsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.addModels = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.clearModelsList = function() {
+  return this.setModelsList([]);
+};
+
+
+/**
+ * repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictors = 6;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor>}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getPredictorsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setPredictorsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.addPredictors = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.clearPredictorsList = function() {
+  return this.setPredictorsList([]);
+};
+
+
+/**
+ * optional string yaml = 7;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getYaml = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -1394,7 +1672,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setYaml = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
