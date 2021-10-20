@@ -32,6 +32,7 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	if task == catalog.Forecasting {
 		return catalog.MAPE
 	}
+	return catalog.Accuracy
 }
 
 var _ webhook.Defaulter = &Study{}
