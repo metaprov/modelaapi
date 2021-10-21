@@ -167,6 +167,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         min:
                           type: number
@@ -327,6 +328,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         min:
                           type: number
@@ -617,6 +619,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         min:
                           type: number
@@ -796,6 +799,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         min:
                           type: number
@@ -914,6 +918,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         min:
                           type: number

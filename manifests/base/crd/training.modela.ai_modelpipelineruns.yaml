@@ -222,6 +222,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -384,6 +385,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -518,6 +520,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -653,6 +656,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -790,6 +794,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -934,6 +939,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1073,6 +1079,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1213,6 +1220,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test

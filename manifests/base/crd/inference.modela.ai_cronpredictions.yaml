@@ -388,6 +388,7 @@ spec:
                           - fpr
                           - tnr
                           - rmsle
+                          - matthews-corr-coef
                           type: string
                         type: array
                       ttl:

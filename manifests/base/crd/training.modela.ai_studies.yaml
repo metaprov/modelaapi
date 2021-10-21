@@ -427,6 +427,7 @@ spec:
                 - fpr
                 - tnr
                 - rmsle
+                - matthews-corr-coef
                 type: string
               objective2:
                 description: Objective2 is the second objective to consider during
@@ -480,6 +481,7 @@ spec:
                 - fpr
                 - tnr
                 - rmsle
+                - matthews-corr-coef
                 type: string
               owner:
                 default: no-one
@@ -1293,6 +1295,7 @@ spec:
                       - fpr
                       - tnr
                       - rmsle
+                      - matthews-corr-coef
                       type: string
                     type: array
                   featureFilter:

@@ -936,6 +936,7 @@ spec:
                 - fpr
                 - tnr
                 - rmsle
+                - matthews-corr-coef
                 type: string
               owner:
                 default: no-one
