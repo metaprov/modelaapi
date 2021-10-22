@@ -67,31 +67,26 @@ type ServingSiteSpec struct {
 	// Default to default tenant.
 	// +kubebuilder:validation:Optional
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
-	// QuotaSpec is  resource quota for the serving site
-	// By default, not quota is applied
+	// Specify resource limits
 	// +kubebuilder:validation:Optional
-	QuotaSpec *v1.ResourceQuotaSpec `json:"quotaSpec,omitempty" protobuf:"bytes,3,opt,name=quotaSpec"`
-	// LimitRangeSpec limit range for the serving site
-	// By default, no limit range apply
-	// +kubebuilder:validation:Optional
-	LimitRangeSpec *v1.LimitRangeSpec `json:"limitRangeSpec,omitempty" protobuf:"bytes,4,opt,name=limitRangeSpec"`
+	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
 	// IngressName denote the name of the ingress object where the serving site
 	// places the external points used to access the predictors
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,5,opt,name=ingressName"`
+	IngressName *string `json:"ingressName,omitempty" protobuf:"bytes,4,opt,name=ingressName"`
 	// The FDQN for this site. This will register with ingress.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	FDQN *string `json:"fdqn,omitempty" protobuf:"bytes,6,opt,name=fdqn"`
+	FDQN *string `json:"fdqn,omitempty" protobuf:"bytes,5,opt,name=fdqn"`
 	// ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,7,opt,name=clusterName"`
+	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,6,opt,name=clusterName"`
 	// Owner is the owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,8,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
 }
 
 type ServingSiteStatus struct {

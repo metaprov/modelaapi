@@ -2774,15 +2774,10 @@ export class LabSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): LabSpec;
 
-  getQuota(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
-  setQuota(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): LabSpec;
-  hasQuota(): boolean;
-  clearQuota(): LabSpec;
-
-  getLimitrange(): k8s_io_api_core_v1_generated_pb.LimitRangeSpec | undefined;
-  setLimitrange(value?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec): LabSpec;
-  hasLimitrange(): boolean;
-  clearLimitrange(): LabSpec;
+  getLimits(): ResourceLimitSpec | undefined;
+  setLimits(value?: ResourceLimitSpec): LabSpec;
+  hasLimits(): boolean;
+  clearLimits(): LabSpec;
 
   getClustername(): string;
   setClustername(value: string): LabSpec;
@@ -2802,8 +2797,7 @@ export namespace LabSpec {
   export type AsObject = {
     description: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    quota?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
-    limitrange?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
+    limits?: ResourceLimitSpec.AsObject,
     clustername: string,
     owner: string,
   }
@@ -3913,6 +3907,36 @@ export namespace RabbitMQSpec {
   }
 }
 
+export class ResourceLimitSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): ResourceLimitSpec;
+
+  getQuota(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
+  setQuota(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): ResourceLimitSpec;
+  hasQuota(): boolean;
+  clearQuota(): ResourceLimitSpec;
+
+  getLimitrange(): k8s_io_api_core_v1_generated_pb.LimitRangeSpec | undefined;
+  setLimitrange(value?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec): ResourceLimitSpec;
+  hasLimitrange(): boolean;
+  clearLimitrange(): ResourceLimitSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResourceLimitSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ResourceLimitSpec): ResourceLimitSpec.AsObject;
+  static serializeBinaryToWriter(message: ResourceLimitSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResourceLimitSpec;
+  static deserializeBinaryFromReader(message: ResourceLimitSpec, reader: jspb.BinaryReader): ResourceLimitSpec;
+}
+
+export namespace ResourceLimitSpec {
+  export type AsObject = {
+    enabled: boolean,
+    quota?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
+    limitrange?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
+  }
+}
+
 export class SAPHanaSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): SAPHanaSpec;
@@ -4146,15 +4170,10 @@ export class ServingSiteSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): ServingSiteSpec;
 
-  getQuotaspec(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
-  setQuotaspec(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): ServingSiteSpec;
-  hasQuotaspec(): boolean;
-  clearQuotaspec(): ServingSiteSpec;
-
-  getLimitrangespec(): k8s_io_api_core_v1_generated_pb.LimitRangeSpec | undefined;
-  setLimitrangespec(value?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec): ServingSiteSpec;
-  hasLimitrangespec(): boolean;
-  clearLimitrangespec(): ServingSiteSpec;
+  getLimits(): ResourceLimitSpec | undefined;
+  setLimits(value?: ResourceLimitSpec): ServingSiteSpec;
+  hasLimits(): boolean;
+  clearLimits(): ServingSiteSpec;
 
   getIngressname(): string;
   setIngressname(value: string): ServingSiteSpec;
@@ -4180,8 +4199,7 @@ export namespace ServingSiteSpec {
   export type AsObject = {
     description: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    quotaspec?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
-    limitrangespec?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
+    limits?: ResourceLimitSpec.AsObject,
     ingressname: string,
     fdqn: string,
     clustername: string,
@@ -4999,6 +5017,11 @@ export class VirtualClusterSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): VirtualClusterSpec;
 
+  getLimits(): ResourceLimitSpec | undefined;
+  setLimits(value?: ResourceLimitSpec): VirtualClusterSpec;
+  hasLimits(): boolean;
+  clearLimits(): VirtualClusterSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualClusterSpec.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualClusterSpec): VirtualClusterSpec.AsObject;
@@ -5018,6 +5041,7 @@ export namespace VirtualClusterSpec {
     spot: boolean,
     connectionname: string,
     owner: string,
+    limits?: ResourceLimitSpec.AsObject,
   }
 }
 

@@ -1504,23 +1504,20 @@ message LabSpec {
   // Default to default tenant.
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // QuotaSpec is quoute specification for the lab namespace.
+  // Specify resource limits
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 3;
-
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 4;
+  optional ResourceLimitSpec limits = 3;
 
   // ClusterName is the name of a remote cluster that is used to execute jobs for this lab
   // If not empty, jobs assigned to this lab should execute on remote cluster
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string clusterName = 5;
+  optional string clusterName = 4;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 6;
+  optional string owner = 5;
 }
 
 // LabStatus is the observed state of a Lab
@@ -2117,6 +2114,21 @@ message RabbitMQSpec {
   optional string password = 4;
 }
 
+// Defines the resource limits for lab and serving site.
+message ResourceLimitSpec {
+  // Enabled, set to true if you want to
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=false
+  optional bool enabled = 1;
+
+  // QuotaSpec is quoute specification for the lab namespace.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 2;
+
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 3;
+}
+
 message SAPHanaSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -2238,36 +2250,30 @@ message ServingSiteSpec {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
-  // QuotaSpec is  resource quota for the serving site
-  // By default, not quota is applied
+  // Specify resource limits
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceQuotaSpec quotaSpec = 3;
-
-  // LimitRangeSpec limit range for the serving site
-  // By default, no limit range apply
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.LimitRangeSpec limitRangeSpec = 4;
+  optional ResourceLimitSpec limits = 3;
 
   // IngressName denote the name of the ingress object where the serving site
   // places the external points used to access the predictors
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string ingressName = 5;
+  optional string ingressName = 4;
 
   // The FDQN for this site. This will register with ingress.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string fdqn = 6;
+  optional string fdqn = 5;
 
   // ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string clusterName = 7;
+  optional string clusterName = 6;
 
   // Owner is the owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 8;
+  optional string owner = 7;
 }
 
 message ServingSiteStatus {
@@ -2717,6 +2723,11 @@ message VirtualClusterSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 9;
+
+  // Specify resource limits for the virtual cluster
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional ResourceLimitSpec limits = 10;
 }
 
 message VirtualClusterStatus {

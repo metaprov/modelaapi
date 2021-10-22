@@ -54,20 +54,18 @@ type LabSpec struct {
 	// TenantRef is a reference to the tenant owning this lab
 	// Default to default tenant.
 	TenantRef *corev1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
-	// QuotaSpec is quoute specification for the lab namespace.
+	// Specify resource limits
 	// +kubebuilder:validation:Optional
-	QuotaSpec *corev1.ResourceQuotaSpec `json:"quota,omitempty" protobuf:"bytes,3,opt,name=quota"`
-	// +kubebuilder:validation:Optional
-	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRange,omitempty" protobuf:"bytes,4,opt,name=limitRange"`
+	Limits ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,3,opt,name=limits"`
 	// ClusterName is the name of a remote cluster that is used to execute jobs for this lab
 	// If not empty, jobs assigned to this lab should execute on remote cluster
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,5,opt,name=clusterName"`
+	ClusterName *string `json:"clusterName,omitempty" protobuf:"bytes,4,opt,name=clusterName"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,6,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
 }
 
 // +kubebuilder:object:root=true
@@ -91,4 +89,17 @@ type LabStatus struct {
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []LabCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+}
+
+// Defines the resource limits for lab and serving site.
+type ResourceLimitSpec struct {
+	// Enabled, set to true if you want to
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=false
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// QuotaSpec is quoute specification for the lab namespace.
+	// +kubebuilder:validation:Optional
+	QuotaSpec *corev1.ResourceQuotaSpec `json:"quota,omitempty" protobuf:"bytes,2,opt,name=quota"`
+	// +kubebuilder:validation:Optional
+	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRange,omitempty" protobuf:"bytes,3,opt,name=limitRange"`
 }
