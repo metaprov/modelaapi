@@ -2,6 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
+import * as k8s_io_apimachinery_pkg_api_resource_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
@@ -3911,6 +3912,22 @@ export class ResourceLimitSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): ResourceLimitSpec;
 
+  getMaxmem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
+  setMaxmem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): ResourceLimitSpec;
+  hasMaxmem(): boolean;
+  clearMaxmem(): ResourceLimitSpec;
+
+  getMaxcpu(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
+  setMaxcpu(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): ResourceLimitSpec;
+  hasMaxcpu(): boolean;
+  clearMaxcpu(): ResourceLimitSpec;
+
+  getMaxpods(): number;
+  setMaxpods(value: number): ResourceLimitSpec;
+
+  getMaxpvc(): number;
+  setMaxpvc(value: number): ResourceLimitSpec;
+
   getQuota(): k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec | undefined;
   setQuota(value?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec): ResourceLimitSpec;
   hasQuota(): boolean;
@@ -3932,6 +3949,10 @@ export class ResourceLimitSpec extends jspb.Message {
 export namespace ResourceLimitSpec {
   export type AsObject = {
     enabled: boolean,
+    maxmem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
+    maxcpu?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
+    maxpods: number,
+    maxpvc: number,
     quota?: k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.AsObject,
     limitrange?: k8s_io_api_core_v1_generated_pb.LimitRangeSpec.AsObject,
   }

@@ -3953,6 +3953,26 @@ func (in *ResourceLimitSpec) DeepCopyInto(out *ResourceLimitSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.MaxMem != nil {
+		in, out := &in.MaxMem, &out.MaxMem
+		x := (*in).DeepCopy()
+		*out = &x
+	}
+	if in.MaxCpu != nil {
+		in, out := &in.MaxCpu, &out.MaxCpu
+		x := (*in).DeepCopy()
+		*out = &x
+	}
+	if in.MaxPods != nil {
+		in, out := &in.MaxPods, &out.MaxPods
+		*out = new(int32)
+		**out = **in
+	}
+	if in.MaxPvc != nil {
+		in, out := &in.MaxPvc, &out.MaxPvc
+		*out = new(int32)
+		**out = **in
+	}
 	if in.QuotaSpec != nil {
 		in, out := &in.QuotaSpec, &out.QuotaSpec
 		*out = new(v1.ResourceQuotaSpec)

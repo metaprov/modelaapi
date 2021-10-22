@@ -102,7 +102,6 @@ type VirtualClusterSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
 	// Specify resource limits for the virtual cluster
-	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Limits *ResourceLimitSpec `json:"limits,omitempty" protobuf:"bytes,10,opt,name=limits"`
 }

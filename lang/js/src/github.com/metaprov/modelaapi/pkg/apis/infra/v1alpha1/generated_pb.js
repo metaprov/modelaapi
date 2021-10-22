@@ -19,6 +19,8 @@ var github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb = requi
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb);
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
+var k8s_io_apimachinery_pkg_api_resource_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb.js');
+goog.object.extend(proto, k8s_io_apimachinery_pkg_api_resource_generated_pb);
 var k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb);
 var k8s_io_apimachinery_pkg_runtime_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb.js');
@@ -39601,6 +39603,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.pr
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    maxmem: (f = msg.getMaxmem()) && k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.toObject(includeInstance, f),
+    maxcpu: (f = msg.getMaxcpu()) && k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.toObject(includeInstance, f),
+    maxpods: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    maxpvc: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     quota: (f = msg.getQuota()) && k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.toObject(includeInstance, f),
     limitrange: (f = msg.getLimitrange()) && k8s_io_api_core_v1_generated_pb.LimitRangeSpec.toObject(includeInstance, f)
   };
@@ -39644,11 +39650,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.de
       msg.setEnabled(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.deserializeBinaryFromReader);
+      msg.setMaxmem(value);
+      break;
+    case 3:
+      var value = new k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.deserializeBinaryFromReader);
+      msg.setMaxcpu(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxpods(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxpvc(value);
+      break;
+    case 6:
       var value = new k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.deserializeBinaryFromReader);
       msg.setQuota(value);
       break;
-    case 3:
+    case 7:
       var value = new k8s_io_api_core_v1_generated_pb.LimitRangeSpec;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.LimitRangeSpec.deserializeBinaryFromReader);
       msg.setLimitrange(value);
@@ -39689,10 +39713,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.se
       f
     );
   }
-  f = message.getQuota();
+  f = message.getMaxmem();
   if (f != null) {
     writer.writeMessage(
       2,
+      f,
+      k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.serializeBinaryToWriter
+    );
+  }
+  f = message.getMaxcpu();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = message.getQuota();
+  if (f != null) {
+    writer.writeMessage(
+      6,
       f,
       k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec.serializeBinaryToWriter
     );
@@ -39700,7 +39754,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.se
   f = message.getLimitrange();
   if (f != null) {
     writer.writeMessage(
-      3,
+      7,
       f,
       k8s_io_api_core_v1_generated_pb.LimitRangeSpec.serializeBinaryToWriter
     );
@@ -39745,12 +39799,158 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.pr
 
 
 /**
- * optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 2;
+ * optional k8s.io.apimachinery.pkg.api.resource.Quantity maxMem = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.getMaxmem = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.api.resource.Quantity} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.setMaxmem = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.clearMaxmem = function() {
+  return this.setMaxmem(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.hasMaxmem = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.api.resource.Quantity maxCpu = 3;
+ * @return {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.getMaxcpu = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.api.resource.Quantity} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity, 3));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.api.resource.Quantity|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.setMaxcpu = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.clearMaxcpu = function() {
+  return this.setMaxcpu(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.hasMaxcpu = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 maxPods = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.getMaxpods = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.setMaxpods = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.clearMaxpods = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.hasMaxpods = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int32 maxPvc = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.getMaxpvc = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.setMaxpvc = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.clearMaxpvc = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.hasMaxpvc = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 6;
  * @return {?proto.k8s.io.api.core.v1.ResourceQuotaSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.getQuota = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ResourceQuotaSpec} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec, 2));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceQuotaSpec, 6));
 };
 
 
@@ -39759,7 +39959,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.setQuota = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -39777,17 +39977,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.hasQuota = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 3;
+ * optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 7;
  * @return {?proto.k8s.io.api.core.v1.LimitRangeSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.getLimitrange = function() {
   return /** @type{?proto.k8s.io.api.core.v1.LimitRangeSpec} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.LimitRangeSpec, 3));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.LimitRangeSpec, 7));
 };
 
 
@@ -39796,7 +39996,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.setLimitrange = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -39814,7 +40014,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.pr
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.prototype.hasLimitrange = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

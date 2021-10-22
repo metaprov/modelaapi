@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	corev1 "k8s.io/api/core/v1"
+	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -97,9 +98,22 @@ type ResourceLimitSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=false
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// High level max memory provider
+	// +kubebuilder:validation:Optional
+	MaxMem *resource.Quantity `json:"maxMem,omitempty" protobuf:"bytes,2,opt,name=maxMem"`
+	// High level req.
+	// +kubebuilder:validation:Optional
+	MaxCpu *resource.Quantity `json:"maxCpu,omitempty" protobuf:"bytes,3,opt,name=maxCpu"`
+	// Max number of pods
+	// +kubebuilder:validation:Optional
+	MaxPods *int32 `json:"maxPods,omitempty" protobuf:"bytes,4,opt,name=maxPods"`
+	// Max number of pvc
+	// +kubebuilder:validation:Optional
+	MaxPvc *int32 `json:"maxPvc,omitempty" protobuf:"bytes,5,opt,name=maxPvc"`
+	// Low level spec.
 	// QuotaSpec is quoute specification for the lab namespace.
 	// +kubebuilder:validation:Optional
-	QuotaSpec *corev1.ResourceQuotaSpec `json:"quota,omitempty" protobuf:"bytes,2,opt,name=quota"`
+	QuotaSpec *corev1.ResourceQuotaSpec `json:"quota,omitempty" protobuf:"bytes,6,opt,name=quota"`
 	// +kubebuilder:validation:Optional
-	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRange,omitempty" protobuf:"bytes,3,opt,name=limitRange"`
+	LimitRangeSpec *corev1.LimitRangeSpec `json:"limitRange,omitempty" protobuf:"bytes,7,opt,name=limitRange"`
 }

@@ -147,8 +147,31 @@ spec:
                     required:
                     - limits
                     type: object
+                  maxCpu:
+                    anyOf:
+                    - type: integer
+                    - type: string
+                    description: High level req.
+                    pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                    x-kubernetes-int-or-string: true
+                  maxMem:
+                    anyOf:
+                    - type: integer
+                    - type: string
+                    description: High level max memory provider
+                    pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                    x-kubernetes-int-or-string: true
+                  maxPods:
+                    description: Max number of pods
+                    format: int32
+                    type: integer
+                  maxPvc:
+                    description: Max number of pvc
+                    format: int32
+                    type: integer
                   quota:
-                    description: QuotaSpec is quoute specification for the lab namespace.
+                    description: Low level spec. QuotaSpec is quoute specification
+                      for the lab namespace.
                     properties:
                       hard:
                         additionalProperties:
