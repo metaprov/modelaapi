@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
@@ -196,10 +197,13 @@ type ReportStatus struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,7,opt,name=lastError"`
+	// Holds the location of log paths
+	//+kubebuilder:validation:Optional
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,8,opt,name=logs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
+	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,9,rep,name=conditions"`
 }
 
 // Container for custom reports.

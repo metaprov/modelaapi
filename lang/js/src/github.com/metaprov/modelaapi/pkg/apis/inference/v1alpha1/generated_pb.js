@@ -7631,7 +7631,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.repeatedFields_ = [4,8];
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.repeatedFields_ = [4,9];
 
 
 
@@ -7672,6 +7672,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
     observedgeneration: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     rows: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     triggeredby: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition.toObject, includeInstance)
   };
@@ -7742,6 +7743,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
       msg.setTriggeredby(value);
       break;
     case 8:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -7827,10 +7833,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
       f
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition.serializeBinaryToWriter
     );
@@ -8095,12 +8109,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
 
 
 /**
- * repeated PredictionCondition conditions = 8;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 8));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated PredictionCondition conditions = 9;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition, 9));
 };
 
 
@@ -8109,7 +8160,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -8119,7 +8170,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition, opt_index);
 };
 
 

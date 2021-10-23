@@ -132,8 +132,11 @@ type DataPipelineRunStatus struct {
 	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress" protobuf:"varint,8,opt,name=progress"`
+	// Holds the location of log paths
+	//+kubebuilder:validation:Optional
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,9,opt,name=logs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,9,rep,name=conditions"`
+	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
 }

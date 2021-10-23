@@ -2874,6 +2874,7 @@ func (in *NotebookRunStatus) DeepCopyInto(out *NotebookRunStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]NotebookRunCondition, len(*in))
@@ -3372,6 +3373,7 @@ func (in *ReportStatus) DeepCopyInto(out *ReportStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ReportCondition, len(*in))
@@ -3713,6 +3715,7 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		**out = **in
 	}
 	in.TrainingDataHash.DeepCopyInto(&out.TrainingDataHash)
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]StudyCondition, len(*in))

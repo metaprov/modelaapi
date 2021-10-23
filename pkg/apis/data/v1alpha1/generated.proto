@@ -680,10 +680,14 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int32 progress = 8;
 
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineRunCondition conditions = 9;
+  repeated DataPipelineRunCondition conditions = 10;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -1374,10 +1378,13 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional string hash = 14;
 
+  // Holds the location of log paths
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 15;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 15;
+  repeated DatasetCondition conditions = 16;
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -1843,10 +1850,14 @@ message FeaturePipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string triggeredBy = 5;
 
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturePipelineRunCondition conditions = 6;
+  repeated FeaturePipelineRunCondition conditions = 7;
 }
 
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
@@ -2703,10 +2714,14 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional string triggeredBy = 6;
 
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 7;
+  repeated RecipeCondition conditions = 8;
 }
 
 // RecipeSpec defines the desired state of a dataset

@@ -537,12 +537,15 @@ type StudyStatus struct {
 	// What triggered the run
 	//+kubebuilder:validation:Optional
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,38,opt,name=triggeredBy"`
+	// Holds the location of log paths
+	//+kubebuilder:validation:Optional
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,39,opt,name=logs"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,39,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,40,rep,name=conditions"`
 }
 
 // model cv results

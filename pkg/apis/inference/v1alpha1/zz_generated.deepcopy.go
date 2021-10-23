@@ -745,6 +745,7 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictionCondition, len(*in))

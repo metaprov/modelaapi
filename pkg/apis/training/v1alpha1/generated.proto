@@ -2198,12 +2198,16 @@ message NotebookRunStatus {
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 20;
+  optional string triggeredBy = 6;
+
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated NotebookRunCondition conditions = 6;
+  repeated NotebookRunCondition conditions = 8;
 }
 
 // NotebookSpec is the desired state of the notebook resource.
@@ -2572,10 +2576,14 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 7;
 
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ReportCondition conditions = 8;
+  repeated ReportCondition conditions = 9;
 }
 
 message ReportTemplate {
@@ -2921,12 +2929,16 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional string triggeredBy = 38;
 
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 39;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 39;
+  repeated StudyCondition conditions = 40;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

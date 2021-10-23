@@ -10604,7 +10604,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.repeatedFields_ = [1,9];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.repeatedFields_ = [1,10];
 
 
 
@@ -10645,6 +10645,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus
     observedgeneration: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     lasterror: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     progress: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition.toObject, includeInstance)
   };
@@ -10719,6 +10720,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus
       msg.setProgress(value);
       break;
     case 9:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -10811,10 +10817,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus
       f
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition.serializeBinaryToWriter
     );
@@ -11115,12 +11129,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus
 
 
 /**
- * repeated DataPipelineRunCondition conditions = 9;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 9));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * repeated DataPipelineRunCondition conditions = 10;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition, 10));
 };
 
 
@@ -11129,7 +11180,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -11139,7 +11190,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunCondition, opt_index);
 };
 
 
@@ -20014,7 +20065,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatistics.pro
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.repeatedFields_ = [9,15];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.repeatedFields_ = [9,16];
 
 
 
@@ -20061,6 +20112,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.toObjec
     lasterror: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     progress: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     hash: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition.toObject, includeInstance)
   };
@@ -20156,6 +20208,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.deseria
       msg.setHash(value);
       break;
     case 15:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 16:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -20284,10 +20341,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
       f
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      15,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      15,
+      16,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition.serializeBinaryToWriter
     );
@@ -20769,12 +20834,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
 
 
 /**
- * repeated DatasetCondition conditions = 15;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 15;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 15));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * repeated DatasetCondition conditions = 16;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition, 15));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition, 16));
 };
 
 
@@ -20783,7 +20885,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 15, value);
+  return jspb.Message.setRepeatedWrapperField(this, 16, value);
 };
 
 
@@ -20793,7 +20895,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 15, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 16, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition, opt_index);
 };
 
 
@@ -28360,7 +28462,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.repeatedFields_ = [7];
 
 
 
@@ -28398,6 +28500,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
     phase: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     triggeredby: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.toObject, includeInstance)
   };
@@ -28459,6 +28562,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
       msg.setTriggeredby(value);
       break;
     case 6:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -28529,10 +28637,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
       f
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition.serializeBinaryToWriter
     );
@@ -28723,12 +28839,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
 
 
 /**
- * repeated FeaturePipelineRunCondition conditions = 6;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated FeaturePipelineRunCondition conditions = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, 7));
 };
 
 
@@ -28737,7 +28890,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -28747,7 +28900,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSta
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunCondition, opt_index);
 };
 
 
@@ -41352,7 +41505,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.repeatedFields_ = [7];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.repeatedFields_ = [8];
 
 
 
@@ -41391,6 +41544,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.toObj
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     lasterror: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     triggeredby: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition.toObject, includeInstance)
   };
@@ -41456,6 +41610,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.deser
       msg.setTriggeredby(value);
       break;
     case 7:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 8:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -41533,10 +41692,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.seria
       f
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      7,
+      8,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition.serializeBinaryToWriter
     );
@@ -41763,12 +41930,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.proto
 
 
 /**
- * repeated RecipeCondition conditions = 7;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * repeated RecipeCondition conditions = 8;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, 7));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, 8));
 };
 
 
@@ -41777,7 +41981,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -41787,7 +41991,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition, opt_index);
 };
 
 

@@ -32961,7 +32961,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.repeatedFields_ = [8];
 
 
 
@@ -32999,7 +32999,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
     endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     lasterror: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    triggeredby: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    triggeredby: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition.toObject, includeInstance)
   };
@@ -33060,11 +33061,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
       var value = /** @type {string} */ (reader.readString());
       msg.setLasterror(value);
       break;
-    case 20:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setTriggeredby(value);
       break;
-    case 6:
+    case 7:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 8:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -33135,17 +33141,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 20));
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
   if (f != null) {
     writer.writeString(
-      20,
+      6,
       f
+    );
+  }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      8,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition.serializeBinaryToWriter
     );
@@ -33336,11 +33350,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
 
 
 /**
- * optional string triggeredBy = 20;
+ * optional string triggeredBy = 6;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getTriggeredby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
@@ -33349,7 +33363,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setTriggeredby = function(value) {
-  return jspb.Message.setField(this, 20, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
@@ -33358,7 +33372,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearTriggeredby = function() {
-  return jspb.Message.setField(this, 20, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -33367,17 +33381,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasTriggeredby = function() {
-  return jspb.Message.getField(this, 20) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * repeated NotebookRunCondition conditions = 6;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * repeated NotebookRunCondition conditions = 8;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, 8));
 };
 
 
@@ -33386,7 +33437,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -33396,7 +33447,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, opt_index);
 };
 
 
@@ -37990,7 +38041,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.repeatedFields_ = [8];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.repeatedFields_ = [9];
 
 
 
@@ -38029,6 +38080,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.toOb
     uri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     lasterror: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition.toObject, includeInstance)
   };
@@ -38094,6 +38146,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.dese
       msg.setLasterror(value);
       break;
     case 8:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -38171,10 +38228,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.seri
       f
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      8,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition.serializeBinaryToWriter
     );
@@ -38401,12 +38466,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
 
 
 /**
- * repeated ReportCondition conditions = 8;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 8));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated ReportCondition conditions = 9;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, 8));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, 9));
 };
 
 
@@ -38415,7 +38517,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
 };
 
 
@@ -38425,7 +38527,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, opt_index);
 };
 
 
@@ -41123,7 +41225,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [39];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [40];
 
 
 
@@ -41189,6 +41291,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     baseline: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
     trainingdatahash: (f = msg.getTrainingdatahash()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject(includeInstance, f),
     triggeredby: (f = jspb.Message.getField(msg, 38)) == null ? undefined : f,
+    logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition.toObject, includeInstance)
   };
@@ -41370,6 +41473,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.deser
       msg.setTriggeredby(value);
       break;
     case 39:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
+      msg.setLogs(value);
+      break;
+    case 40:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -41644,10 +41752,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       f
     );
   }
+  f = message.getLogs();
+  if (f != null) {
+    writer.writeMessage(
+      39,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      39,
+      40,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition.serializeBinaryToWriter
     );
@@ -42854,12 +42970,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
 
 
 /**
- * repeated StudyCondition conditions = 39;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 39;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getLogs = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 39));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setLogs = function(value) {
+  return jspb.Message.setWrapperField(this, 39, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearLogs = function() {
+  return this.setLogs(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasLogs = function() {
+  return jspb.Message.getField(this, 39) != null;
+};
+
+
+/**
+ * repeated StudyCondition conditions = 40;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, 39));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, 40));
 };
 
 
@@ -42868,7 +43021,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 39, value);
+  return jspb.Message.setRepeatedWrapperField(this, 40, value);
 };
 
 
@@ -42878,7 +43031,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 39, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 40, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
 };
 
 

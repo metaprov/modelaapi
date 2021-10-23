@@ -115,8 +115,11 @@ type FeaturePipelineRunStatus struct {
 	// What triggered the run
 	//+kubebuilder:validation:Optional
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,5,opt,name=triggeredBy"`
+	// Holds the location of log paths
+	//+kubebuilder:validation:Optional
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,6,opt,name=logs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
 }

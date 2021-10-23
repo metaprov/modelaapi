@@ -123,11 +123,14 @@ type NotebookRunStatus struct {
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,5,opt,name=lastError"`
 	// What triggered the run
 	//+kubebuilder:validation:Optional
-	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,20,opt,name=triggeredBy"`
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,6,opt,name=triggeredBy"`
+	// Holds the location of log paths
+	//+kubebuilder:validation:Optional
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,7,opt,name=logs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []NotebookRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []NotebookRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }
 
 // NotebookVarValue is an assignment of value to the notebook var

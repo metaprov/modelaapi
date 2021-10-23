@@ -301,6 +301,16 @@ message Lib {
   optional string version = 2;
 }
 
+// type to represent the logs for a given object. This type should be part of any objects that create logs (e.g. job logs)
+message Logs {
+  // +kubebuilder:validation:Optional
+  optional string bucketName = 1;
+
+  // Paths is the log paths
+  // +kubebuilder:validation:Optional
+  repeated string paths = 2;
+}
+
 // MLFramework define the metadata about a machine learning framework
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"

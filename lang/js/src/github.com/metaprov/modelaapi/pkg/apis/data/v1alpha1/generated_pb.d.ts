@@ -822,6 +822,11 @@ export class DataPipelineRunStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): DataPipelineRunStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DataPipelineRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): DataPipelineRunStatus;
+
   getConditionsList(): Array<DataPipelineRunCondition>;
   setConditionsList(value: Array<DataPipelineRunCondition>): DataPipelineRunStatus;
   clearConditionsList(): DataPipelineRunStatus;
@@ -845,6 +850,7 @@ export namespace DataPipelineRunStatus {
     observedgeneration: number,
     lasterror: string,
     progress: number,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<DataPipelineRunCondition.AsObject>,
   }
 }
@@ -1863,6 +1869,11 @@ export class DatasetStatus extends jspb.Message {
   getHash(): string;
   setHash(value: string): DatasetStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): DatasetStatus;
+  hasLogs(): boolean;
+  clearLogs(): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -1891,6 +1902,7 @@ export namespace DatasetStatus {
     lasterror: string,
     progress: number,
     hash: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }
@@ -2755,6 +2767,11 @@ export class FeaturePipelineRunStatus extends jspb.Message {
   getTriggeredby(): string;
   setTriggeredby(value: string): FeaturePipelineRunStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): FeaturePipelineRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): FeaturePipelineRunStatus;
+
   getConditionsList(): Array<FeaturePipelineRunCondition>;
   setConditionsList(value: Array<FeaturePipelineRunCondition>): FeaturePipelineRunStatus;
   clearConditionsList(): FeaturePipelineRunStatus;
@@ -2775,6 +2792,7 @@ export namespace FeaturePipelineRunStatus {
     phase: string,
     observedgeneration: number,
     triggeredby: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<FeaturePipelineRunCondition.AsObject>,
   }
 }
@@ -4142,6 +4160,11 @@ export class RecipeRunStatus extends jspb.Message {
   getTriggeredby(): string;
   setTriggeredby(value: string): RecipeRunStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): RecipeRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): RecipeRunStatus;
+
   getConditionsList(): Array<RecipeCondition>;
   setConditionsList(value: Array<RecipeCondition>): RecipeRunStatus;
   clearConditionsList(): RecipeRunStatus;
@@ -4163,6 +4186,7 @@ export namespace RecipeRunStatus {
     observedgeneration: number,
     lasterror: string,
     triggeredby: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<RecipeCondition.AsObject>,
   }
 }

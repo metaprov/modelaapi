@@ -546,6 +546,30 @@ export namespace Lib {
   }
 }
 
+export class Logs extends jspb.Message {
+  getBucketname(): string;
+  setBucketname(value: string): Logs;
+
+  getPathsList(): Array<string>;
+  setPathsList(value: Array<string>): Logs;
+  clearPathsList(): Logs;
+  addPaths(value: string, index?: number): Logs;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Logs.AsObject;
+  static toObject(includeInstance: boolean, msg: Logs): Logs.AsObject;
+  static serializeBinaryToWriter(message: Logs, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Logs;
+  static deserializeBinaryFromReader(message: Logs, reader: jspb.BinaryReader): Logs;
+}
+
+export namespace Logs {
+  export type AsObject = {
+    bucketname: string,
+    pathsList: Array<string>,
+  }
+}
+
 export class MLFramework extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): MLFramework;

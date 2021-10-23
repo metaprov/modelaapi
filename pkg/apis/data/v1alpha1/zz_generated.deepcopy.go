@@ -747,6 +747,7 @@ func (in *DataPipelineRunStatus) DeepCopyInto(out *DataPipelineRunStatus) {
 		*out = new(int32)
 		**out = **in
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DataPipelineRunCondition, len(*in))
@@ -1618,6 +1619,7 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 		*out = new(int32)
 		**out = **in
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DatasetCondition, len(*in))
@@ -2400,6 +2402,7 @@ func (in *FeaturePipelineRunStatus) DeepCopyInto(out *FeaturePipelineRunStatus) 
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]FeaturePipelineRunCondition, len(*in))
@@ -3627,6 +3630,7 @@ func (in *RecipeRunStatus) DeepCopyInto(out *RecipeRunStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]RecipeCondition, len(*in))

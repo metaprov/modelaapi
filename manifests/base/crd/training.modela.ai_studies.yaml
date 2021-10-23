@@ -1702,6 +1702,17 @@ spec:
                 description: the last model id generated for this study
                 format: int64
                 type: integer
+              logs:
+                description: Holds the location of log paths
+                properties:
+                  bucketName:
+                    type: string
+                  paths:
+                    description: Paths is the log paths
+                    items:
+                      type: string
+                    type: array
+                type: object
               models:
                 description: Total models created for the study
                 format: int32

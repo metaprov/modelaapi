@@ -1583,3 +1583,12 @@ type FeatureFilter struct {
 	// +kubebuilder:validation:Optional
 	Features []string `json:"features,omitempty" protobuf:"bytes,5,rep,name=features"`
 }
+
+// type to represent the logs for a given object. This type should be part of any objects that create logs (e.g. job logs)
+type Logs struct {
+	// +kubebuilder:validation:Optional
+	BucketName string `json:"bucketName,omitempty" protobuf:"bytes,1,opt,name=bucketName"`
+	// Paths is the log paths
+	// +kubebuilder:validation:Optional
+	Paths []string `json:"paths,omitempty" protobuf:"bytes,2,rep,name=paths"`
+}

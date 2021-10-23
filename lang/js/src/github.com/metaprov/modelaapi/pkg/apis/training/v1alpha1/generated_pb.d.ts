@@ -3269,6 +3269,11 @@ export class NotebookRunStatus extends jspb.Message {
   getTriggeredby(): string;
   setTriggeredby(value: string): NotebookRunStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): NotebookRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): NotebookRunStatus;
+
   getConditionsList(): Array<NotebookRunCondition>;
   setConditionsList(value: Array<NotebookRunCondition>): NotebookRunStatus;
   clearConditionsList(): NotebookRunStatus;
@@ -3290,6 +3295,7 @@ export namespace NotebookRunStatus {
     observedgeneration: number,
     lasterror: string,
     triggeredby: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<NotebookRunCondition.AsObject>,
   }
 }
@@ -3803,6 +3809,11 @@ export class ReportStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): ReportStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ReportStatus;
+  hasLogs(): boolean;
+  clearLogs(): ReportStatus;
+
   getConditionsList(): Array<ReportCondition>;
   setConditionsList(value: Array<ReportCondition>): ReportStatus;
   clearConditionsList(): ReportStatus;
@@ -3824,6 +3835,7 @@ export namespace ReportStatus {
     uri: string,
     observedgeneration: number,
     lasterror: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<ReportCondition.AsObject>,
   }
 }
@@ -4236,6 +4248,11 @@ export class StudyStatus extends jspb.Message {
   getTriggeredby(): string;
   setTriggeredby(value: string): StudyStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): StudyStatus;
+  hasLogs(): boolean;
+  clearLogs(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4284,6 +4301,7 @@ export namespace StudyStatus {
     baseline: string,
     trainingdatahash?: DataHashes.AsObject,
     triggeredby: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

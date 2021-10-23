@@ -357,6 +357,17 @@ spec:
                 description: Last time a study was done on the dataset.
                 format: date-time
                 type: string
+              logs:
+                description: Holds the location of log paths
+                properties:
+                  bucketName:
+                    type: string
+                  paths:
+                    description: Paths is the log paths
+                    items:
+                      type: string
+                    type: array
+                type: object
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on
@@ -576,6 +587,8 @@ spec:
                   - type
                   type: object
                 type: array
+            required:
+            - logs
             type: object
         required:
         - metadata
