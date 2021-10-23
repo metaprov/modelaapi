@@ -2514,6 +2514,7 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		*out = (*in).DeepCopy()
 	}
 	in.TrainingDataHash.DeepCopyInto(&out.TrainingDataHash)
+	in.Logs.DeepCopyInto(&out.Logs)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))

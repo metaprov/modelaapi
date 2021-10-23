@@ -1968,10 +1968,14 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional double gpuMem = 52;
 
+  // Holds the location of log paths
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 53;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 53;
+  repeated ModelCondition conditions = 54;
 }
 
 message ModelValidation {

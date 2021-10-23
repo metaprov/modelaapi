@@ -495,10 +495,13 @@ type ModelStatus struct {
 	// GPU Memory req
 	// +kubebuilder:validation:Optional
 	GpuMem float64 `json:"gpuMem,omitempty" protobuf:"bytes,52,opt,name=gpuMem"`
+	// Holds the location of log paths
+	//+kubebuilder:validation:Optional
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,53,opt,name=logs"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,53,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,54,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

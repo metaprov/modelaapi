@@ -1347,6 +1347,17 @@ spec:
               latency:
                 description: Prediction Latency
                 type: number
+              logs:
+                description: Holds the location of log paths
+                properties:
+                  bucketName:
+                    type: string
+                  paths:
+                    description: Paths is the log paths
+                    items:
+                      type: string
+                    type: array
+                type: object
               logsUri:
                 description: LogsUri is the URI of the log file
                 type: string

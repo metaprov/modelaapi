@@ -2789,6 +2789,11 @@ export class ModelStatus extends jspb.Message {
   getGpumem(): number;
   setGpumem(value: number): ModelStatus;
 
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelStatus;
+  hasLogs(): boolean;
+  clearLogs(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -2856,6 +2861,7 @@ export namespace ModelStatus {
     mem: number,
     cpu: number,
     gpumem: number,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
