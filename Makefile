@@ -1,4 +1,4 @@
-.PHONY: generate-proto 
+.PHONY: generate-proto  
 generate-proto:
 	cd hack && ./generate-proto.sh
 
