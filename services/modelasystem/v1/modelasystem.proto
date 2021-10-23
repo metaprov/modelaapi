@@ -57,9 +57,6 @@ message GetModelaSystemNamespacesResponse {
     repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
 
-
-
-
 message DeleteModelaSystemRequest {
     string namespace = 1;
     string name      = 2;
@@ -72,16 +69,6 @@ message ModelaSystemCreateResponse {}
 message LogoutResponse {}
 message ResetPasswordResponse {}
 
-message ModelaSystemLoginRequest {
-    string namespace = 1;
-    string name      = 2;
-    string password  = 3;
-}
-
-message ModelaSystemLoginResponse {
-    string token = 1; // jwt token
-}
-
 
 message ModelaSystemGetByNameRequest {
     string namespace = 1;
@@ -93,8 +80,9 @@ message ModelaSystemLogoutRequest {
 }
 
 message DownloadLogFileRequest {
-    string bucket = 1;
-    string path   = 2;
+    string namespace = 1;
+    string bucket = 2;
+    string path   = 3;
 }
 
 message DownloadLogFileResponse {
@@ -103,8 +91,9 @@ message DownloadLogFileResponse {
 
 // Backup database
 message BackupDatabaseRequest {
-    string bucket = 1;
-    string path   = 2;
+    string namespace = 1;
+    string bucket    = 2;
+    string path      = 3;
 }
 
 message BackupDatabaseResponse {
@@ -113,41 +102,14 @@ message BackupDatabaseResponse {
 
 // Backup etcd
 message BackupEtcdRequest {
-    string bucket = 1;
-    string path   = 2;
+    string namespace = 1;
+    string bucket    = 2;
+    string path      = 3;
 }
 
 message BackupEtcdResponse {
     string path = 1;
 }
-
-
-
-
-
-
-
-message ChangePasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string old       = 3;
-    string new       = 4;
-    string confirmedNew = 5;
-}
-
-message ChangePasswordResponse {}
-
-message ResetPasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string new       = 3;
-    string confirmedNew = 4;
-}
-
-message ResetPasswordReponse {
-
-}
-
 
 
 service ModelaSystemService {
