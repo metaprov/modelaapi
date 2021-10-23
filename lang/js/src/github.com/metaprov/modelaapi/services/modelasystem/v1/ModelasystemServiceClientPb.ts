@@ -235,5 +235,125 @@ export class ModelaSystemServiceClient {
     this.methodInfoDeleteModelaSystem);
   }
 
+  methodInfoDownloadLogfile = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse.deserializeBinary
+  );
+
+  downloadLogfile(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse>;
+
+  downloadLogfile(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse>;
+
+  downloadLogfile(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DownloadLogfile',
+        request,
+        metadata || {},
+        this.methodInfoDownloadLogfile,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DownloadLogfile',
+    request,
+    metadata || {},
+    this.methodInfoDownloadLogfile);
+  }
+
+  methodInfoBackupDatabase = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse.deserializeBinary
+  );
+
+  backupDatabase(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse>;
+
+  backupDatabase(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse>;
+
+  backupDatabase(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupDatabase',
+        request,
+        metadata || {},
+        this.methodInfoBackupDatabase,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupDatabase',
+    request,
+    metadata || {},
+    this.methodInfoBackupDatabase);
+  }
+
+  methodInfoBackupEtcd = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse,
+    (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse.deserializeBinary
+  );
+
+  backupEtcd(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse>;
+
+  backupEtcd(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse>;
+
+  backupEtcd(
+    request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.Error,
+               response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupEtcd',
+        request,
+        metadata || {},
+        this.methodInfoBackupEtcd,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupEtcd',
+    request,
+    metadata || {},
+    this.methodInfoBackupEtcd);
+  }
+
 }
 

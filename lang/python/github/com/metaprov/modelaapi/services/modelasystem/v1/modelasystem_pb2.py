@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/metaprov/modelaapi/services/modelasystem/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto\x12\x36github.com.metaprov.modelaapi.services.modelasystem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xca\x01\n\x18ListModelaSystemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12l\n\x06labels\x18\x02 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x19ListModelaSystemsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList\"\x16\n\x14ModelaSystemResponse\"\x80\x01\n\x19\x43reateModelaSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\x1a\x43reateModelaSystemResponse\"n\n\x19UpdateModelaSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\"\x1c\n\x1aUpdateModelaSystemResponse\"9\n\x16GetModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"z\n\x17GetModelaSystemResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"C\n GetModelaSystemNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n!GetModelaSystemNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"<\n\x19\x44\x65leteModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteModelaSystemResponse\"\x1c\n\x1aModelaSystemCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"M\n\x18ModelaSystemLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"*\n\x19ModelaSystemLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\"?\n\x1cModelaSystemGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"*\n\x19ModelaSystemLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse2\xcc\t\n\x13ModelaSystemService\x12\xd3\x01\n\x11ListModelaSystems\x12P.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest\x1aQ.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/modelasystems\x12\xe4\x01\n\x12\x43reateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemResponse\"\'\x82\xd3\xe4\x93\x02!\"\x11/v1/modelasystems:\x0cmodelasystem\x12\xe0\x01\n\x0fGetModelaSystem\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse\",\x82\xd3\xe4\x93\x02&\x12$/v1/{namespace}/modelasystems/{name}\x12\xa4\x02\n\x12UpdateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemResponse\"g\x82\xd3\xe4\x93\x02\x61\x1aQ/v1/{modelasystem.metadata.namespace}/modelasystems//{modelasystem.metadata.name}:\x0cmodelasystem\x12\xed\x01\n\x12\x44\x65leteModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemResponse\"0\x82\xd3\xe4\x93\x02**(/api/{namespace}/v1/modelasystems/{name}B8Z6github.com/metaprov/modelaapi/services/modelasystem/v1b\x06proto3'
+  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/modelasystem/v1/modelasystem.proto\x12\x36github.com.metaprov.modelaapi.services.modelasystem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xca\x01\n\x18ListModelaSystemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12l\n\x06labels\x18\x02 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x19ListModelaSystemsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemList\"\x16\n\x14ModelaSystemResponse\"\x80\x01\n\x19\x43reateModelaSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x10\n\x08password\x18\x02 \x01(\t\"\x1c\n\x1a\x43reateModelaSystemResponse\"n\n\x19UpdateModelaSystemRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\"\x1c\n\x1aUpdateModelaSystemResponse\"9\n\x16GetModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"z\n\x17GetModelaSystemResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"C\n GetModelaSystemNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n!GetModelaSystemNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"<\n\x19\x44\x65leteModelaSystemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteModelaSystemResponse\"\x1c\n\x1aModelaSystemCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"M\n\x18ModelaSystemLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"*\n\x19ModelaSystemLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\"?\n\x1cModelaSystemGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"*\n\x19ModelaSystemLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"6\n\x16\x44ownloadLogFileRequest\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\")\n\x17\x44ownloadLogFileResponse\x12\x0e\n\x06result\x18\x01 \x01(\x0c\"5\n\x15\x42\x61\x63kupDatabaseRequest\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"&\n\x16\x42\x61\x63kupDatabaseResponse\x12\x0c\n\x04path\x18\x01 \x01(\t\"1\n\x11\x42\x61\x63kupEtcdRequest\x12\x0e\n\x06\x62ucket\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"\"\n\x12\x42\x61\x63kupEtcdResponse\x12\x0c\n\x04path\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse2\x9d\x0e\n\x13ModelaSystemService\x12\xd3\x01\n\x11ListModelaSystems\x12P.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsRequest\x1aQ.github.com.metaprov.modelaapi.services.modelasystem.v1.ListModelaSystemsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/modelasystems\x12\xe4\x01\n\x12\x43reateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.CreateModelaSystemResponse\"\'\x82\xd3\xe4\x93\x02!\"\x11/v1/modelasystems:\x0cmodelasystem\x12\xe0\x01\n\x0fGetModelaSystem\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.GetModelaSystemResponse\",\x82\xd3\xe4\x93\x02&\x12$/v1/{namespace}/modelasystems/{name}\x12\xa4\x02\n\x12UpdateModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.UpdateModelaSystemResponse\"g\x82\xd3\xe4\x93\x02\x61\x1aQ/v1/{modelasystem.metadata.namespace}/modelasystems//{modelasystem.metadata.name}:\x0cmodelasystem\x12\xed\x01\n\x12\x44\x65leteModelaSystem\x12Q.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemRequest\x1aR.github.com.metaprov.modelaapi.services.modelasystem.v1.DeleteModelaSystemResponse\"0\x82\xd3\xe4\x93\x02**(/api/{namespace}/v1/modelasystems/{name}\x12\xc8\x01\n\x0f\x44ownloadLogfile\x12N.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest\x1aO.github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/download\x12\xc5\x01\n\x0e\x42\x61\x63kupDatabase\x12M.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseRequest\x1aN.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\x0c/v1/backupdb\x12\xbb\x01\n\nBackupEtcd\x12I.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdRequest\x1aJ.github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0e/v1/backupetcdB8Z6github.com/metaprov/modelaapi/services/modelasystem/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -721,6 +721,219 @@ _MODELASYSTEMLOGOUTREQUEST = _descriptor.Descriptor(
 )
 
 
+_DOWNLOADLOGFILEREQUEST = _descriptor.Descriptor(
+  name='DownloadLogFileRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bucket', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.bucket', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='path', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest.path', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1717,
+  serialized_end=1771,
+)
+
+
+_DOWNLOADLOGFILERESPONSE = _descriptor.Descriptor(
+  name='DownloadLogFileResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='result', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileResponse.result', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1773,
+  serialized_end=1814,
+)
+
+
+_BACKUPDATABASEREQUEST = _descriptor.Descriptor(
+  name='BackupDatabaseRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bucket', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseRequest.bucket', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='path', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseRequest.path', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1816,
+  serialized_end=1869,
+)
+
+
+_BACKUPDATABASERESPONSE = _descriptor.Descriptor(
+  name='BackupDatabaseResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='path', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseResponse.path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1871,
+  serialized_end=1909,
+)
+
+
+_BACKUPETCDREQUEST = _descriptor.Descriptor(
+  name='BackupEtcdRequest',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bucket', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdRequest.bucket', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='path', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdRequest.path', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1911,
+  serialized_end=1960,
+)
+
+
+_BACKUPETCDRESPONSE = _descriptor.Descriptor(
+  name='BackupEtcdResponse',
+  full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='path', full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdResponse.path', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1962,
+  serialized_end=1996,
+)
+
+
 _CHANGEPASSWORDREQUEST = _descriptor.Descriptor(
   name='ChangePasswordRequest',
   full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ChangePasswordRequest',
@@ -776,8 +989,8 @@ _CHANGEPASSWORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1717,
-  serialized_end=1821,
+  serialized_start=1998,
+  serialized_end=2102,
 )
 
 
@@ -801,8 +1014,8 @@ _CHANGEPASSWORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1823,
-  serialized_end=1847,
+  serialized_start=2104,
+  serialized_end=2128,
 )
 
 
@@ -854,8 +1067,8 @@ _RESETPASSWORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1849,
-  serialized_end=1939,
+  serialized_start=2130,
+  serialized_end=2220,
 )
 
 
@@ -879,8 +1092,8 @@ _RESETPASSWORDREPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1941,
-  serialized_end=1963,
+  serialized_start=2222,
+  serialized_end=2244,
 )
 
 _LISTMODELASYSTEMSREQUEST_LABELSENTRY.containing_type = _LISTMODELASYSTEMSREQUEST
@@ -910,6 +1123,12 @@ DESCRIPTOR.message_types_by_name['ModelaSystemLoginRequest'] = _MODELASYSTEMLOGI
 DESCRIPTOR.message_types_by_name['ModelaSystemLoginResponse'] = _MODELASYSTEMLOGINRESPONSE
 DESCRIPTOR.message_types_by_name['ModelaSystemGetByNameRequest'] = _MODELASYSTEMGETBYNAMEREQUEST
 DESCRIPTOR.message_types_by_name['ModelaSystemLogoutRequest'] = _MODELASYSTEMLOGOUTREQUEST
+DESCRIPTOR.message_types_by_name['DownloadLogFileRequest'] = _DOWNLOADLOGFILEREQUEST
+DESCRIPTOR.message_types_by_name['DownloadLogFileResponse'] = _DOWNLOADLOGFILERESPONSE
+DESCRIPTOR.message_types_by_name['BackupDatabaseRequest'] = _BACKUPDATABASEREQUEST
+DESCRIPTOR.message_types_by_name['BackupDatabaseResponse'] = _BACKUPDATABASERESPONSE
+DESCRIPTOR.message_types_by_name['BackupEtcdRequest'] = _BACKUPETCDREQUEST
+DESCRIPTOR.message_types_by_name['BackupEtcdResponse'] = _BACKUPETCDRESPONSE
 DESCRIPTOR.message_types_by_name['ChangePasswordRequest'] = _CHANGEPASSWORDREQUEST
 DESCRIPTOR.message_types_by_name['ChangePasswordResponse'] = _CHANGEPASSWORDRESPONSE
 DESCRIPTOR.message_types_by_name['ResetPasswordRequest'] = _RESETPASSWORDREQUEST
@@ -1064,6 +1283,48 @@ ModelaSystemLogoutRequest = _reflection.GeneratedProtocolMessageType('ModelaSyst
   })
 _sym_db.RegisterMessage(ModelaSystemLogoutRequest)
 
+DownloadLogFileRequest = _reflection.GeneratedProtocolMessageType('DownloadLogFileRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DOWNLOADLOGFILEREQUEST,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileRequest)
+  })
+_sym_db.RegisterMessage(DownloadLogFileRequest)
+
+DownloadLogFileResponse = _reflection.GeneratedProtocolMessageType('DownloadLogFileResponse', (_message.Message,), {
+  'DESCRIPTOR' : _DOWNLOADLOGFILERESPONSE,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.DownloadLogFileResponse)
+  })
+_sym_db.RegisterMessage(DownloadLogFileResponse)
+
+BackupDatabaseRequest = _reflection.GeneratedProtocolMessageType('BackupDatabaseRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BACKUPDATABASEREQUEST,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseRequest)
+  })
+_sym_db.RegisterMessage(BackupDatabaseRequest)
+
+BackupDatabaseResponse = _reflection.GeneratedProtocolMessageType('BackupDatabaseResponse', (_message.Message,), {
+  'DESCRIPTOR' : _BACKUPDATABASERESPONSE,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.BackupDatabaseResponse)
+  })
+_sym_db.RegisterMessage(BackupDatabaseResponse)
+
+BackupEtcdRequest = _reflection.GeneratedProtocolMessageType('BackupEtcdRequest', (_message.Message,), {
+  'DESCRIPTOR' : _BACKUPETCDREQUEST,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdRequest)
+  })
+_sym_db.RegisterMessage(BackupEtcdRequest)
+
+BackupEtcdResponse = _reflection.GeneratedProtocolMessageType('BackupEtcdResponse', (_message.Message,), {
+  'DESCRIPTOR' : _BACKUPETCDRESPONSE,
+  '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.modelasystem.v1.BackupEtcdResponse)
+  })
+_sym_db.RegisterMessage(BackupEtcdResponse)
+
 ChangePasswordRequest = _reflection.GeneratedProtocolMessageType('ChangePasswordRequest', (_message.Message,), {
   'DESCRIPTOR' : _CHANGEPASSWORDREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.modelasystem.v1.modelasystem_pb2'
@@ -1103,8 +1364,8 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1966,
-  serialized_end=3194,
+  serialized_start=2247,
+  serialized_end=4068,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListModelaSystems',
@@ -1154,6 +1415,36 @@ _MODELASYSTEMSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEMODELASYSTEMREQUEST,
     output_type=_DELETEMODELASYSTEMRESPONSE,
     serialized_options=b'\202\323\344\223\002**(/api/{namespace}/v1/modelasystems/{name}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DownloadLogfile',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.DownloadLogfile',
+    index=5,
+    containing_service=None,
+    input_type=_DOWNLOADLOGFILEREQUEST,
+    output_type=_DOWNLOADLOGFILERESPONSE,
+    serialized_options=b'\202\323\344\223\002\016\022\014/v1/download',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='BackupDatabase',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.BackupDatabase',
+    index=6,
+    containing_service=None,
+    input_type=_BACKUPDATABASEREQUEST,
+    output_type=_BACKUPDATABASERESPONSE,
+    serialized_options=b'\202\323\344\223\002\016\"\014/v1/backupdb',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='BackupEtcd',
+    full_name='github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService.BackupEtcd',
+    index=7,
+    containing_service=None,
+    input_type=_BACKUPETCDREQUEST,
+    output_type=_BACKUPETCDRESPONSE,
+    serialized_options=b'\202\323\344\223\002\020\"\016/v1/backupetcd',
     create_key=_descriptor._internal_create_key,
   ),
 ])

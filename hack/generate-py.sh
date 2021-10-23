@@ -105,7 +105,6 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/study/v1/study.proto \
     github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto \
     github.com/metaprov/modelaapi/services/trainerd/v1/trainerd.proto \
-    github.com/metaprov/modelaapi/services/system/v1/system.proto \
     github.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto \
     github.com/metaprov/modelaapi/services/virtualcluster/v1/virtualcluster.proto \
     github.com/metaprov/modelaapi/services/virtualvolume/v1/virtualvolume.proto \

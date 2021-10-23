@@ -39,6 +39,21 @@ class ModelaSystemServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemResponse.FromString,
                 )
+        self.DownloadLogfile = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DownloadLogfile',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileResponse.FromString,
+                )
+        self.BackupDatabase = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupDatabase',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupDatabaseRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupDatabaseResponse.FromString,
+                )
+        self.BackupEtcd = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupEtcd',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupEtcdRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupEtcdResponse.FromString,
+                )
 
 
 class ModelaSystemServiceServicer(object):
@@ -74,6 +89,24 @@ class ModelaSystemServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DownloadLogfile(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BackupDatabase(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BackupEtcd(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ModelaSystemServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -101,6 +134,21 @@ def add_ModelaSystemServiceServicer_to_server(servicer, server):
                     servicer.DeleteModelaSystem,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemResponse.SerializeToString,
+            ),
+            'DownloadLogfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.DownloadLogfile,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileResponse.SerializeToString,
+            ),
+            'BackupDatabase': grpc.unary_unary_rpc_method_handler(
+                    servicer.BackupDatabase,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupDatabaseRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupDatabaseResponse.SerializeToString,
+            ),
+            'BackupEtcd': grpc.unary_unary_rpc_method_handler(
+                    servicer.BackupEtcd,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupEtcdRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupEtcdResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -194,5 +242,56 @@ class ModelaSystemService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DeleteModelaSystem',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DeleteModelaSystemResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DownloadLogfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DownloadLogfile',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.DownloadLogFileResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BackupDatabase(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupDatabase',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupDatabaseRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupDatabaseResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BackupEtcd(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupEtcd',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupEtcdRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_modelasystem_dot_v1_dot_modelasystem__pb2.BackupEtcdResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -92,6 +92,37 @@ message ModelaSystemLogoutRequest {
     string token = 1; // jwt token
 }
 
+message DownloadLogFileRequest {
+    string bucket = 1;
+    string path   = 2;
+}
+
+message DownloadLogFileResponse {
+    bytes result = 1;
+}
+
+// Backup database
+message BackupDatabaseRequest {
+    string bucket = 1;
+    string path   = 2;
+}
+
+message BackupDatabaseResponse {
+    string path = 1;
+}
+
+// Backup etcd
+message BackupEtcdRequest {
+    string bucket = 1;
+    string path   = 2;
+}
+
+message BackupEtcdResponse {
+    string path = 1;
+}
+
+
+
 
 
 
@@ -119,8 +150,6 @@ message ResetPasswordReponse {
 
 
 
-
-
 service ModelaSystemService {
     rpc ListModelaSystems(ListModelaSystemsRequest) returns (ListModelaSystemsResponse) {
         option (google.api.http).get = "/v1/modelasystems";
@@ -144,5 +173,18 @@ service ModelaSystemService {
     rpc DeleteModelaSystem(DeleteModelaSystemRequest) returns (DeleteModelaSystemResponse) {
         option (google.api.http).delete = "/api/{namespace}/v1/modelasystems/{name}";
     }
+
+    rpc DownloadLogfile(DownloadLogFileRequest) returns (DownloadLogFileResponse) {
+        option (google.api.http).get = "/v1/download";
+    }    
+
+    rpc BackupDatabase(BackupDatabaseRequest) returns (BackupDatabaseResponse) {
+        option (google.api.http).post = "/v1/backupdb";
+    }    
+
+    rpc BackupEtcd(BackupEtcdRequest) returns (BackupEtcdResponse) {
+        option (google.api.http).post = "/v1/backupetcd";
+    }    
+
 
 }
