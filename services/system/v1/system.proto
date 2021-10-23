@@ -1,0 +1,51 @@
+syntax = "proto3";
+option go_package = "github.com/metaprov/modelaapi/services/servingsite/v1";
+package github.com.metaprov.modelaapi.services.servingsite.v1;
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
+
+message DownloadLogFileRequest {
+    string bucket = 1;
+    string path   = 2;
+}
+
+message DownloadLogFileResponse {
+    bytes result = 1;
+}
+
+// Backup database
+message BackupDatabaseRequest {
+    string bucket = 1;
+    string path   = 2;
+}
+
+message BackupDatabaseResponse {
+    string path = 1;
+}
+
+// Backup etcd
+message BackupEtcdRequest {
+    string bucket = 1;
+    string path   = 2;
+}
+
+message BackupEtcdResponse {
+    string path = 1;
+}
+
+
+service SystemService {
+    rpc DownloadLogfile(DownloadLogFileRequest) returns (DownloadLogFileResponse) {
+        option (google.api.http).get = "/v1/download";
+    }    
+
+    rpc BackupDatabase(BackupDatabaseRequest) returns (BackupDatabaseResponse) {
+        option (google.api.http).post = "/v1/backupdb";
+    }    
+
+    rpc BackupEtcd(BackupEtcdRequest) returns (BackupEtcdResponse) {
+        option (google.api.http).post = "/v1/backupetcd";
+    }    
+
+}

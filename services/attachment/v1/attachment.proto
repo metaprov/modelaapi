@@ -18,8 +18,7 @@ message ListAttachmentsResponse {
 message AttachmentResponse {}
 
 message CreateAttachmentRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment  item = 1;
-    string password = 2;    
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment  item = 1;   
 }
 
 message CreateAttachmentResponse {
@@ -69,18 +68,8 @@ message DeleteAttachmentResponse {}
 
 
 message AttachmentCreateResponse {}
-message LogoutResponse {}
-message ResetPasswordResponse {}
 
-message AttachmentLoginRequest {
-    string namespace = 1;
-    string name      = 2;
-    string password  = 3;
-}
 
-message AttachmentLoginResponse {
-    string token = 1; // jwt token
-}
 
 
 message AttachmentGetByNameRequest {
@@ -94,28 +83,6 @@ message AttachmentLogoutRequest {
 
 
 
-
-
-message ChangePasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string old       = 3;
-    string new       = 4;
-    string confirmedNew = 5;
-}
-
-message ChangePasswordResponse {}
-
-message ResetPasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string new       = 3;
-    string confirmedNew = 4;
-}
-
-message ResetPasswordReponse {
-
-}
 
 
 
