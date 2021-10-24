@@ -38825,9 +38825,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumpti
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cpu: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    mem: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    gpu: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    cpu: (f = jspb.Message.getOptionalFloatingPointField(msg, 1)) == null ? undefined : f,
+    mem: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
+    gpu: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -38865,15 +38865,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumpti
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setCpu(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setMem(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setGpu(value);
       break;
     default:
@@ -38907,21 +38907,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumpti
   var f = undefined;
   f = /** @type {number} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeDouble(
       1,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeDouble(
       2,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeDouble(
       3,
       f
     );
@@ -38930,11 +38930,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumpti
 
 
 /**
- * optional int32 cpu = 1;
+ * optional double cpu = 1;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.prototype.getCpu = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
 };
 
 
@@ -38966,11 +38966,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumpti
 
 
 /**
- * optional int32 mem = 2;
+ * optional double mem = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.prototype.getMem = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
 };
 
 
@@ -39002,11 +39002,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumpti
 
 
 /**
- * optional int32 gpu = 3;
+ * optional double gpu = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.prototype.getGpu = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 

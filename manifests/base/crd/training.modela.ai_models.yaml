@@ -1541,14 +1541,11 @@ spec:
                 description: ResourceConsumed during testing
                 properties:
                   cpu:
-                    format: int32
-                    type: integer
+                    type: number
                   gpu:
-                    format: int32
-                    type: integer
+                    type: number
                   mem:
-                    format: int32
-                    type: integer
+                    type: number
                 type: object
               testingRows:
                 description: TestingRows is the amount of rows in testing
@@ -1696,14 +1693,11 @@ spec:
                 description: ResourceConsumed during training
                 properties:
                   cpu:
-                    format: int32
-                    type: integer
+                    type: number
                   gpu:
-                    format: int32
-                    type: integer
+                    type: number
                   mem:
-                    format: int32
-                    type: integer
+                    type: number
                 type: object
               trainingRows:
                 description: TrainingRows is the amount of rows in training

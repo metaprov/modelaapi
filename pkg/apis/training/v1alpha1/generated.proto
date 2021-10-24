@@ -2601,11 +2601,11 @@ message ReportTemplate {
 
 // PreformanceStatus containt the avg resource consumption
 message ResourceConsumption {
-  optional int32 cpu = 1;
+  optional double cpu = 1;
 
-  optional int32 mem = 2;
+  optional double mem = 2;
 
-  optional int32 gpu = 3;
+  optional double gpu = 3;
 }
 
 // +kubebuilder:subresource:status

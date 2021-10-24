@@ -781,9 +781,9 @@ type AudioPipelineSpec struct {
 
 // PreformanceStatus containt the avg resource consumption
 type ResourceConsumption struct {
-	Cpu int32 `json:"cpu,omitempty" protobuf:"varint,1,opt,name=cpu"`
-	Mem int32 `json:"mem,omitempty" protobuf:"varint,2,opt,name=mem"`
-	Gpu int32 `json:"gpu,omitempty" protobuf:"varint,3,opt,name=gpu"`
+	Cpu float64 `json:"cpu,omitempty" protobuf:"bytes,1,opt,name=cpu"`
+	Mem float64 `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
+	Gpu float64 `json:"gpu,omitempty" protobuf:"bytes,3,opt,name=gpu"`
 }
 
 // ForecastingSpec
