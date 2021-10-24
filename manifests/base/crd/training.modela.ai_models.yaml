@@ -1234,9 +1234,6 @@ spec:
               cost:
                 description: Cost is the cost of training the model
                 type: number
-              cpu:
-                description: Model req on cpu
-                type: number
               cv:
                 description: CV results is the results of performing cross validation
                   on the training set during search.
@@ -1312,12 +1309,12 @@ spec:
                   as ready
                 format: date-time
                 type: string
+              endpoint:
+                description: If the model is deployed, this points to the end point.
+                type: string
               forecastUri:
                 description: ForecastUri is the uri of the forecast
                 type: string
-              gpuMem:
-                description: GPU Memory req
-                type: number
               imageHash:
                 description: Sha 256 of the model tar file
                 type: string
@@ -1365,9 +1362,6 @@ spec:
                 description: ManifestUri is the URI of the manifest in the product
                   bucket.
                 type: string
-              mem:
-                description: Model req for the resulting model
-                type: number
               misclassUri:
                 description: MisclassUri is a reference to the mis-classification
                   file which were produce during processing
@@ -1411,20 +1405,6 @@ spec:
               reportUri:
                 description: ReportURI is the uri of report
                 type: string
-              resourceConsumed:
-                description: ResourceConsumed is the avg resource consumed during
-                  the training of the model
-                properties:
-                  cpu:
-                    format: int32
-                    type: integer
-                  gpu:
-                    format: int32
-                    type: integer
-                  mem:
-                    format: int32
-                    type: integer
-                type: object
               sizeInBytes:
                 description: Size of the model size
                 format: int32
@@ -1439,6 +1419,9 @@ spec:
                 type: string
               tarfileHash:
                 description: Sha 256 of the model tar file
+                type: string
+              team:
+                description: The team that trained this model
                 type: string
               test:
                 description: TestResult is the results of training the model (pipeline)
@@ -1554,6 +1537,19 @@ spec:
                   represented in RFC3339 form and is in UTC.
                 format: date-time
                 type: string
+              testingResources:
+                description: ResourceConsumed during testing
+                properties:
+                  cpu:
+                    format: int32
+                    type: integer
+                  gpu:
+                    format: int32
+                    type: integer
+                  mem:
+                    format: int32
+                    type: integer
+                type: object
               testingRows:
                 description: TestingRows is the amount of rows in testing
                 format: int32
@@ -1669,9 +1665,12 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
-              trainingCpu:
-                description: The training cpu usage
-                type: number
+              trainedBy:
+                description: The account that trained the model
+                type: string
+              trainerImage:
+                description: The image used during training
+                type: string
               trainingDataHash:
                 description: Sha 256 of the data sig
                 properties:
@@ -1693,9 +1692,19 @@ spec:
                   training
                 format: date-time
                 type: string
-              trainingMem:
-                description: The training memory usage
-                type: number
+              trainingResources:
+                description: ResourceConsumed during training
+                properties:
+                  cpu:
+                    format: int32
+                    type: integer
+                  gpu:
+                    format: int32
+                    type: integer
+                  mem:
+                    format: int32
+                    type: integer
+                type: object
               trainingRows:
                 description: TrainingRows is the amount of rows in training
                 format: int32

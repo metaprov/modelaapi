@@ -862,6 +862,12 @@ spec:
                       - bayesian-personalized-ranking
                       type: string
                     type: array
+                  earlyStopAfter:
+                    default: "0"
+                    description: If larget than 0, stop the search if no change in
+                      best score occur.
+                    format: int32
+                    type: integer
                   filter:
                     default: none
                     description: set a general filter on the allowed algorithm

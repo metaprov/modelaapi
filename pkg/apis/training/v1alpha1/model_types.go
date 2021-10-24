@@ -435,9 +435,6 @@ type ModelStatus struct {
 	// ValidationDatasetLocation is the location of the dataset used for validation
 	// +kubebuilder:validation:Optional
 	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,32,opt,name=validationDataset"`
-	//ResourceConsumed is the avg resource consumed during the training of the model
-	// +kubebuilder:validation:Optional
-	ResourceConsumed ResourceConsumption `json:"resourceConsumed,omitempty" protobuf:"bytes,33,opt,name=resourceConsumed"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,34,opt,name=observedGeneration"`
@@ -480,28 +477,31 @@ type ModelStatus struct {
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
 	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,47,opt,name=trainingDataHash"`
-	// The training memory usage
+	//ResourceConsumed during training
 	// +kubebuilder:validation:Optional
-	TrainingMem float64 `json:"trainingMem,omitempty" protobuf:"bytes,48,opt,name=trainingMem"`
-	// The training cpu usage
+	TrainingResources ResourceConsumption `json:"trainingResources,omitempty" protobuf:"bytes,48,opt,name=trainingResources"`
+	//ResourceConsumed during testing
 	// +kubebuilder:validation:Optional
-	TrainingCpu float64 `json:"trainingCpu,omitempty" protobuf:"bytes,49,opt,name=trainingCpu"`
-	// Model req for the resulting model
+	TestingResources ResourceConsumption `json:"testingResources,omitempty" protobuf:"bytes,49,opt,name=testingResources"`
+	// The account that trained the model
 	// +kubebuilder:validation:Optional
-	Mem float64 `json:"mem,omitempty" protobuf:"bytes,50,opt,name=mem"`
-	// Model req on cpu
+	TrainedBy string `json:"trainedBy,omitempty" protobuf:"bytes,50,opt,name=trainedBy"`
+	// The team that trained this model
 	// +kubebuilder:validation:Optional
-	Cpu float64 `json:"cpu,omitempty" protobuf:"bytes,51,opt,name=cpu"`
-	// GPU Memory req
+	Team string `json:"team,omitempty" protobuf:"bytes,51,opt,name=team"`
+	// The image used during training
 	// +kubebuilder:validation:Optional
-	GpuMem float64 `json:"gpuMem,omitempty" protobuf:"bytes,52,opt,name=gpuMem"`
+	TrainerImage string `json:"trainerImage,omitempty" protobuf:"bytes,52,opt,name=trainerImage"`
+	// If the model is deployed, this points to the end point.
+	// +kubebuilder:validation:Optional
+	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,53,opt,name=endpoint"`
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,53,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,54,opt,name=logs"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,54,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,55,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

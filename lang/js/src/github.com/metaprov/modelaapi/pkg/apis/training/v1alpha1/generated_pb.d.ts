@@ -2399,6 +2399,9 @@ export class ModelSearchSpec extends jspb.Message {
   getModeltested(): boolean;
   setModeltested(value: boolean): ModelSearchSpec;
 
+  getEarlystopafter(): number;
+  setEarlystopafter(value: number): ModelSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSearchSpec): ModelSearchSpec.AsObject;
@@ -2427,6 +2430,7 @@ export namespace ModelSearchSpec {
     filter: string,
     baselinesList: Array<string>,
     modeltested: boolean,
+    earlystopafter: number,
   }
 }
 
@@ -2723,11 +2727,6 @@ export class ModelStatus extends jspb.Message {
   hasValidationdataset(): boolean;
   clearValidationdataset(): ModelStatus;
 
-  getResourceconsumed(): ResourceConsumption | undefined;
-  setResourceconsumed(value?: ResourceConsumption): ModelStatus;
-  hasResourceconsumed(): boolean;
-  clearResourceconsumed(): ModelStatus;
-
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelStatus;
 
@@ -2774,20 +2773,27 @@ export class ModelStatus extends jspb.Message {
   hasTrainingdatahash(): boolean;
   clearTrainingdatahash(): ModelStatus;
 
-  getTrainingmem(): number;
-  setTrainingmem(value: number): ModelStatus;
+  getTrainingresources(): ResourceConsumption | undefined;
+  setTrainingresources(value?: ResourceConsumption): ModelStatus;
+  hasTrainingresources(): boolean;
+  clearTrainingresources(): ModelStatus;
 
-  getTrainingcpu(): number;
-  setTrainingcpu(value: number): ModelStatus;
+  getTestingresources(): ResourceConsumption | undefined;
+  setTestingresources(value?: ResourceConsumption): ModelStatus;
+  hasTestingresources(): boolean;
+  clearTestingresources(): ModelStatus;
 
-  getMem(): number;
-  setMem(value: number): ModelStatus;
+  getTrainedby(): string;
+  setTrainedby(value: string): ModelStatus;
 
-  getCpu(): number;
-  setCpu(value: number): ModelStatus;
+  getTeam(): string;
+  setTeam(value: string): ModelStatus;
 
-  getGpumem(): number;
-  setGpumem(value: number): ModelStatus;
+  getTrainerimage(): string;
+  setTrainerimage(value: string): ModelStatus;
+
+  getEndpoint(): string;
+  setEndpoint(value: string): ModelStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ModelStatus;
@@ -2841,7 +2847,6 @@ export namespace ModelStatus {
     traindataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
-    resourceconsumed?: ResourceConsumption.AsObject,
     observedgeneration: number,
     trainingrows: number,
     testingrows: number,
@@ -2856,11 +2861,12 @@ export namespace ModelStatus {
     tarfilehash: string,
     imagehash: string,
     trainingdatahash?: DataHashes.AsObject,
-    trainingmem: number,
-    trainingcpu: number,
-    mem: number,
-    cpu: number,
-    gpumem: number,
+    trainingresources?: ResourceConsumption.AsObject,
+    testingresources?: ResourceConsumption.AsObject,
+    trainedby: string,
+    team: string,
+    trainerimage: string,
+    endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }

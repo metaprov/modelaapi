@@ -1588,6 +1588,11 @@ message ModelSearchSpec {
   // Indicate the all models should be tests
   // +kubebuilder:default:=true
   optional bool modelTested = 18;
+
+  // If larget than 0, stop the search if no change in best score occur.
+  // +kubebuilder:default:="0"
+  // +kubebuilder:validation:Optional
+  optional int32 earlyStopAfter = 19;
 }
 
 // ModelSpec defines the desired state of the Model resource
@@ -1888,10 +1893,6 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 32;
 
-  // ResourceConsumed is the avg resource consumed during the training of the model
-  // +kubebuilder:validation:Optional
-  optional ResourceConsumption resourceConsumed = 33;
-
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 34;
@@ -1948,34 +1949,38 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional DataHashes trainingDataHash = 47;
 
-  // The training memory usage
+  // ResourceConsumed during training
   // +kubebuilder:validation:Optional
-  optional double trainingMem = 48;
+  optional ResourceConsumption trainingResources = 48;
 
-  // The training cpu usage
+  // ResourceConsumed during testing
   // +kubebuilder:validation:Optional
-  optional double trainingCpu = 49;
+  optional ResourceConsumption testingResources = 49;
 
-  // Model req for the resulting model
+  // The account that trained the model
   // +kubebuilder:validation:Optional
-  optional double mem = 50;
+  optional string trainedBy = 50;
 
-  // Model req on cpu
+  // The team that trained this model
   // +kubebuilder:validation:Optional
-  optional double cpu = 51;
+  optional string team = 51;
 
-  // GPU Memory req
+  // The image used during training
   // +kubebuilder:validation:Optional
-  optional double gpuMem = 52;
+  optional string trainerImage = 52;
+
+  // If the model is deployed, this points to the end point.
+  // +kubebuilder:validation:Optional
+  optional string endpoint = 53;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 53;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 54;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 54;
+  repeated ModelCondition conditions = 55;
 }
 
 message ModelValidation {
