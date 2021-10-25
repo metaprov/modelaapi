@@ -101,28 +101,30 @@ message TestResponse {
     repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement train_result = 1;
     // measurements on the testing set
     repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement test_result = 2;
+    // The benchmark measurments
+    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement benchmark_result = 3;
     // The location in the bucket of the trained bin model
-    string modelWeightsCloudUri = 3;
+    string modelWeightsCloudUri = 4;
     // The location in the bucket of the cloud manifest.
-    string modelManifestCloudUri = 4;
+    string modelManifestCloudUri = 5;
     // The location in the bucket of the logs.
-    string modelLogsCloudUri = 5;
+    string modelLogsCloudUri = 6;
     // The location in the bucket of the trained bin model
-    string preWeightsCloudUri = 6;
+    string preWeightsCloudUri = 7;
     // The location in the bucket of the cloud manifest.
-    string preManifestCloudUri = 7;
+    string preManifestCloudUri = 8;
     // The location in the bucket of the logs.
-    string preLogsCloudUri = 8;
+    string preLogsCloudUri = 9;
     // The label encoder uri.
-    string labelEncoder = 9;
+    string labelEncoder = 10;
     // Misclassfied uri
-    string misclassUri = 10;
+    string misclassUri = 11;
     // python version info
-    string pythonVersionInfo = 11;
+    string pythonVersionInfo = 12;
     // pip freeze string
-    map<string,string> pipFreeze = 12;
+    map<string,string> pipFreeze = 13;
     // feature importance
-    map<string,float> featuresImportance = 13;
+    map<string,float> featuresImportance = 14;
 
 
 

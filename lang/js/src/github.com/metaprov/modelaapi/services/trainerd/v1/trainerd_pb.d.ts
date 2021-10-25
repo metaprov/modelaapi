@@ -282,6 +282,11 @@ export class TestResponse extends jspb.Message {
   clearTestResultList(): TestResponse;
   addTestResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
 
+  getBenchmarkResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>;
+  setBenchmarkResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement>): TestResponse;
+  clearBenchmarkResultList(): TestResponse;
+  addBenchmarkResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement;
+
   getModelweightsclouduri(): string;
   setModelweightsclouduri(value: string): TestResponse;
 
@@ -327,6 +332,7 @@ export namespace TestResponse {
   export type AsObject = {
     trainResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     testResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
+    benchmarkResultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Measurement.AsObject>,
     modelweightsclouduri: string,
     modelmanifestclouduri: string,
     modellogsclouduri: string,
