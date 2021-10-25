@@ -337,8 +337,6 @@ spec:
                         description: Tests is the list of metrics that we need to
                           measure if we are running a labeled prediction
                         items:
-                          description: Metric is the machine learning metric used
-                            to evaluate a model performance.
                           enum:
                           - accuracy
                           - average-precision
@@ -389,6 +387,12 @@ spec:
                           - tnr
                           - rmsle
                           - matthews-corr-coef
+                          - p50-latency
+                          - p95-latency
+                          - p99-latency
+                          - cpu
+                          - mem
+                          - req-per-sec
                           type: string
                         type: array
                       ttl:

@@ -511,6 +511,12 @@ spec:
                 - tnr
                 - rmsle
                 - matthews-corr-coef
+                - p50-latency
+                - p95-latency
+                - p99-latency
+                - cpu
+                - mem
+                - req-per-sec
                 type: string
               owner:
                 default: no-one
@@ -860,8 +866,6 @@ spec:
                   evalMetrics:
                     description: Evaluation metrics are the scores
                     items:
-                      description: Metric is the machine learning metric used to evaluate
-                        a model performance.
                       enum:
                       - accuracy
                       - average-precision
@@ -912,6 +916,12 @@ spec:
                       - tnr
                       - rmsle
                       - matthews-corr-coef
+                      - p50-latency
+                      - p95-latency
+                      - p99-latency
+                      - cpu
+                      - mem
+                      - req-per-sec
                       type: string
                     type: array
                   featureFilter:
@@ -1292,6 +1302,12 @@ spec:
                       - tnr
                       - rmsle
                       - matthews-corr-coef
+                      - p50-latency
+                      - p95-latency
+                      - p99-latency
+                      - cpu
+                      - mem
+                      - req-per-sec
                       type: string
                     value:
                       description: The value for this model
@@ -1481,6 +1497,12 @@ spec:
                       - tnr
                       - rmsle
                       - matthews-corr-coef
+                      - p50-latency
+                      - p95-latency
+                      - p99-latency
+                      - cpu
+                      - mem
+                      - req-per-sec
                       type: string
                     value:
                       description: The value for this model
@@ -1616,6 +1638,12 @@ spec:
                       - tnr
                       - rmsle
                       - matthews-corr-coef
+                      - p50-latency
+                      - p95-latency
+                      - p99-latency
+                      - cpu
+                      - mem
+                      - req-per-sec
                       type: string
                     value:
                       description: The value for this model

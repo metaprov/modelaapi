@@ -428,6 +428,12 @@ spec:
                 - tnr
                 - rmsle
                 - matthews-corr-coef
+                - p50-latency
+                - p95-latency
+                - p99-latency
+                - cpu
+                - mem
+                - req-per-sec
                 type: string
               objective2:
                 description: Objective2 is the second objective to consider during
@@ -482,6 +488,12 @@ spec:
                 - tnr
                 - rmsle
                 - matthews-corr-coef
+                - p50-latency
+                - p95-latency
+                - p99-latency
+                - cpu
+                - mem
+                - req-per-sec
                 type: string
               owner:
                 default: no-one
@@ -1250,8 +1262,6 @@ spec:
                   evalMetrics:
                     description: Evaluation metrics are the scores
                     items:
-                      description: Metric is the machine learning metric used to evaluate
-                        a model performance.
                       enum:
                       - accuracy
                       - average-precision
@@ -1302,6 +1312,12 @@ spec:
                       - tnr
                       - rmsle
                       - matthews-corr-coef
+                      - p50-latency
+                      - p95-latency
+                      - p99-latency
+                      - cpu
+                      - mem
+                      - req-per-sec
                       type: string
                     type: array
                   featureFilter:

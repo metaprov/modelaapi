@@ -334,8 +334,6 @@ spec:
                         maxPrecent:
                           type: number
                         metric:
-                          description: Metric is the machine learning metric used
-                            to evaluate a model performance.
                           enum:
                           - accuracy
                           - average-precision
@@ -386,6 +384,12 @@ spec:
                           - tnr
                           - rmsle
                           - matthews-corr-coef
+                          - p50-latency
+                          - p95-latency
+                          - p99-latency
+                          - cpu
+                          - mem
+                          - req-per-sec
                           type: string
                         min:
                           type: number
@@ -8042,6 +8046,12 @@ spec:
                           - tnr
                           - rmsle
                           - matthews-corr-coef
+                          - p50-latency
+                          - p95-latency
+                          - p99-latency
+                          - cpu
+                          - mem
+                          - req-per-sec
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test

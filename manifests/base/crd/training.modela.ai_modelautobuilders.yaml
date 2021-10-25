@@ -937,6 +937,12 @@ spec:
                 - tnr
                 - rmsle
                 - matthews-corr-coef
+                - p50-latency
+                - p95-latency
+                - p99-latency
+                - cpu
+                - mem
+                - req-per-sec
                 type: string
               owner:
                 default: no-one
