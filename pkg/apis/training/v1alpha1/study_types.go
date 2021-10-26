@@ -285,7 +285,7 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:=true
 	ModelTested *bool `json:"modelTested,omitempty" protobuf:"bytes,18,opt,name=modelTested"`
 	// If larget than 0, stop the search if no change in best score occur.
-	// +kubebuilder:default:="0"
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"bytes,19,opt,name=earlyStopAfter"`
 }

@@ -875,7 +875,7 @@ spec:
                       type: string
                     type: array
                   earlyStopAfter:
-                    default: "0"
+                    default: 0
                     description: If larget than 0, stop the search if no change in
                       best score occur.
                     format: int32

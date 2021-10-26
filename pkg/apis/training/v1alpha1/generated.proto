@@ -1590,7 +1590,7 @@ message ModelSearchSpec {
   optional bool modelTested = 18;
 
   // If larget than 0, stop the search if no change in best score occur.
-  // +kubebuilder:default:="0"
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 earlyStopAfter = 19;
 }
