@@ -370,7 +370,7 @@ type ModelStatus struct {
 	Cost float64 `json:"cost,omitempty" protobuf:"bytes,10,opt,name=cost"`
 	// Best is true if this is the best model
 	// +kubebuilder:validation:Optional
-	Best bool `json:"best,omitempty" protobuf:"bytes,11,opt,name=best"`
+	Best bool `json:"best,omitempty" protobuf:"varint,11,opt,name=best"`
 	// CV results is the results of performing cross validation on the training set during search.
 	// +kubebuilder:validation:Optional
 	CV []catalog.Measurement `json:"cv,omitempty" protobuf:"bytes,12,rep,name=cv"`
@@ -459,7 +459,7 @@ type ModelStatus struct {
 	SizeInBytes int32 `json:"sizeInBytes,omitempty" protobuf:"varint,40,opt,name=sizeInBytes"`
 	// Prediction Latency
 	// +kubebuilder:validation:Optional
-	Latency float64 `json:"latency,omitempty" protobuf:"varint,41,opt,name=latency"`
+	Latency float64 `json:"latency,omitempty" protobuf:"bytes,41,opt,name=latency"`
 	// The URL to the released version
 	URL string `json:"url,omitempty" protobuf:"bytes,42,opt,name=url"`
 	// If the model is released, this is the name of the predictor
@@ -497,7 +497,7 @@ type ModelStatus struct {
 	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,53,opt,name=endpoint"`
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,54,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,54,opt,name=logs"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
