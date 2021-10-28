@@ -113,7 +113,7 @@ type FeaturePipelineSpec struct {
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"bytes,13,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,13,opt,name=ttl"`
 }
 
 // FeatureStatus defines the observed state of Feature

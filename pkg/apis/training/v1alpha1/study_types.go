@@ -287,7 +287,7 @@ type ModelSearchSpec struct {
 	// If larget than 0, stop the search if no change in best score occur.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"bytes,19,opt,name=earlyStopAfter"`
+	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,19,opt,name=earlyStopAfter"`
 }
 
 type PrunerSpec struct {
@@ -298,31 +298,31 @@ type PrunerSpec struct {
 	// Pruning is disabled until the given number of trials finish in the same study.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	StartupTrials *int32 `json:"startupTrials,omitempty" protobuf:"bytes,2,opt,name=startupTrials"`
+	StartupTrials *int32 `json:"startupTrials,omitempty" protobuf:"varint,2,opt,name=startupTrials"`
 	//  Pruning is disabled until the trial exceeds the given number of step
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	WramupTrials *int32 `json:"wramupTrials,omitempty" protobuf:"bytes,3,opt,name=wramupTrials"`
+	WramupTrials *int32 `json:"wramupTrials,omitempty" protobuf:"varint,3,opt,name=wramupTrials"`
 	// Minimum number of reported trials.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	MinimumTrials *int32 `json:"minTrials,omitempty" protobuf:"bytes,4,opt,name=minTrials"`
+	MinimumTrials *int32 `json:"minTrials,omitempty" protobuf:"varint,4,opt,name=minTrials"`
 	// Interval in number of steps between the pruning checks
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"bytes,5,opt,name=intervalTrials"`
+	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,5,opt,name=intervalTrials"`
 	// Keep specific precent of trials. Used only with precential pruner
 	// +kubebuilder:default:=25
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Optional
-	Precentile *int32 `json:"precentialTrials,omitempty" protobuf:"bytes,6,opt,name=precentialTrials"`
+	Precentile *int32 `json:"precentialTrials,omitempty" protobuf:"varint,6,opt,name=precentialTrials"`
 	// A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
 	// +kubebuilder:validation:Optional
-	Lower *int32 `json:"lower,omitempty" protobuf:"bytes,7,opt,name=lower"`
+	Lower *int32 `json:"lower,omitempty" protobuf:"varint,7,opt,name=lower"`
 	// A maximum value which determines whether pruner prunes or not. Used only for treshold pruner
 	// +kubebuilder:validation:Optional
-	Upper *int32 `json:"upper,omitempty" protobuf:"bytes,8,opt,name=upper"`
+	Upper *int32 `json:"upper,omitempty" protobuf:"varint,8,opt,name=upper"`
 	// SHOptions is the desired options for successive halving search.
 	// All other models are saved into an archive.
 	// +kubebuilder:validation:Optional

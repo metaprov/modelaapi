@@ -53,7 +53,7 @@ type ModelValidation struct {
 	// +kubebuilder:validation:Optional
 	DriftFreq catalog.Freq `json:"driftFreq,omitempty" protobuf:"bytes,4,opt,name=driftFreq"`
 	// +kubebuilder:validation:Optional
-	DriftInterval *int32 `json:"driftInterval,omitempty" protobuf:"bytes,5,opt,name=driftInterval"`
+	DriftInterval *int32 `json:"driftInterval,omitempty" protobuf:"varint,5,opt,name=driftInterval"`
 	// +kubebuilder:validation:Optional
 	Column *string `json:"column,omitempty" protobuf:"bytes,6,opt,name=column"`
 	// +kubebuilder:validation:Optional

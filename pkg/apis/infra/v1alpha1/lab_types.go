@@ -106,10 +106,10 @@ type ResourceLimitSpec struct {
 	MaxCpu *resource.Quantity `json:"maxCpu,omitempty" protobuf:"bytes,3,opt,name=maxCpu"`
 	// Max number of pods
 	// +kubebuilder:validation:Optional
-	MaxPods *int32 `json:"maxPods,omitempty" protobuf:"bytes,4,opt,name=maxPods"`
+	MaxPods *int32 `json:"maxPods,omitempty" protobuf:"varint,4,opt,name=maxPods"`
 	// Max number of pvc
 	// +kubebuilder:validation:Optional
-	MaxPvc *int32 `json:"maxPvc,omitempty" protobuf:"bytes,5,opt,name=maxPvc"`
+	MaxPvc *int32 `json:"maxPvc,omitempty" protobuf:"varint,5,opt,name=maxPvc"`
 	// Low level spec.
 	// QuotaSpec is quoute specification for the lab namespace.
 	// +kubebuilder:validation:Optional

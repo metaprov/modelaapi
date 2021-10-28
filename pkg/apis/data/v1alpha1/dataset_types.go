@@ -206,7 +206,7 @@ type DatasetStatus struct {
 	// Processing progress
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress,omitempty" protobuf:"bytes,13,opt,name=progress"`
+	Progress *int32 `json:"progress,omitempty" protobuf:"varint,13,opt,name=progress"`
 	// Sha256 signature of the dataset file.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
