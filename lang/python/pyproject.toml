@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "modelaapi"
-version = "0.4.131"
+version = "0.4.135"
 description = "data science for modela."
 authors = ["tsagi <tsagi@metaprov.com>"]
 keywords = ["modela", "automl"]
@@ -15,10 +15,10 @@ include = [
 [tool.poetry.dependencies]
 python = "^3.8"
 grpcio = "^1.41.0"
-sphinx-apidoc
+
 
 [tool.poetry.dev-dependencies]
-sphinx-apidoc
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
