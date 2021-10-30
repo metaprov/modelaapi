@@ -627,7 +627,7 @@ type TrainingSpec struct {
 	Folds *int32 `json:"folds,omitempty" protobuf:"varint,4,opt,name=folds"`
 	// Evaluation metrics are the scores
 	// +kubebuilder:validation:Optional
-	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,5,opt,name=evalMetrics"`
+	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,5,rep,name=evalMetrics"`
 	// Early stopping, stop the training after X models with no improvement.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -659,7 +659,7 @@ type TrainingSpec struct {
 	// Gpu indicate that training should be done on a gpu.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,12,optc ,name=gpu"`
+	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,12,opt,name=gpu"`
 	// Dist indicate the training should be be distributed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
