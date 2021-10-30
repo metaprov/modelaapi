@@ -3069,84 +3069,84 @@ message TrainingSpec {
   // Priority specify the priority of the model in the training queue.
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="medium"
-  optional string priority = 2;
+  optional string priority = 1;
 
   // The  type of cross validation.
   // if we have a validation set, we do not do cv.
   // +kubebuilder:default:=kfold
   // +kubebuilder:validation:Optional
-  optional string cvtype = 3;
+  optional string cvtype = 2;
 
   // If true, this is a cross validation using folds. If False, use the validation set.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool cv = 4;
+  optional bool cv = 3;
 
   // The number of folds during cross validation.
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 folds = 6;
+  optional int32 folds = 4;
 
   // Evaluation metrics are the scores
   // +kubebuilder:validation:Optional
-  repeated string evalMetrics = 8;
+  repeated string evalMetrics = 5;
 
   // Early stopping, stop the training after X models with no improvement.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool earlyStop = 9;
+  optional bool earlyStop = 6;
 
   // Add snapshot interval for long training time in minutes.
   // This is used to checkpoint training model.
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=0
-  optional int32 checkpointInterval = 10;
+  optional int32 checkpointInterval = 7;
 
   // Define the forecast period for time series studies. This is only used in time series models.
   // Default: Empty
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecast = 11;
+  optional ForecastingSpec forecast = 8;
 
   // Successive halving represent the configuration for the model training, when running
   // the SuccessiveHalvingSpec model search algorithm
   // The metrics are evaluated using the final model, both on the training set
   // and on the test set
   // +kubebuilder:validation:Optional
-  optional SuccessiveHalvingSpec sh = 12;
+  optional SuccessiveHalvingSpec sh = 9;
 
   // Used as the random state for an estimator if needed (for example, in RandomForestClassifier)
   // +kubebuilder:default:=42
   // +kubebuilder:validation:Optional
-  optional double seed = 13;
+  optional double seed = 10;
 
   // WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 14;
+  optional string workloadClassName = 11;
 
   // Gpu indicate that training should be done on a gpu.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool gpu = 15;
+  optional bool gpu = 12;
 
   // Dist indicate the training should be be distributed
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool dist = 16;
+  optional bool dist = 13;
 
   // In case of dist node, how many nodes to use.
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 nodeCount = 17;
+  optional int32 nodeCount = 14;
 
   // Set the precent of dataset to use during training.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 18;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 15;
 
   // Feature filter specified what features to use from the original dataset.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter featureFilter = 19;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter featureFilter = 16;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

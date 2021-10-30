@@ -611,69 +611,69 @@ type TrainingSpec struct {
 	// Priority specify the priority of the model in the training queue.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,2,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,1,opt,name=priority"`
 	// The  type of cross validation.
 	// if we have a validation set, we do not do cv.
 	// +kubebuilder:default:=kfold
 	// +kubebuilder:validation:Optional
-	CvType *catalog.CvType `json:"cvtype,omitempty" protobuf:"bytes,3,opt,name=cvtype"`
+	CvType *catalog.CvType `json:"cvtype,omitempty" protobuf:"bytes,2,opt,name=cvtype"`
 	// If true, this is a cross validation using folds. If False, use the validation set.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	CV *bool `json:"cv,omitempty" protobuf:"varint,4,opt,name=cv"`
+	CV *bool `json:"cv,omitempty" protobuf:"varint,3,opt,name=cv"`
 	// The number of folds during cross validation.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	Folds *int32 `json:"folds,omitempty" protobuf:"varint,6,opt,name=folds"`
+	Folds *int32 `json:"folds,omitempty" protobuf:"varint,4,opt,name=folds"`
 	// Evaluation metrics are the scores
 	// +kubebuilder:validation:Optional
-	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,8,opt,name=evalMetrics"`
+	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,5,opt,name=evalMetrics"`
 	// Early stopping, stop the training after X models with no improvement.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,9,opt,name=earlyStop"`
+	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,6,opt,name=earlyStop"`
 	// Add snapshot interval for long training time in minutes.
 	// This is used to checkpoint training model.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
-	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,10,opt,name=checkpointInterval"`
+	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,7,opt,name=checkpointInterval"`
 	// Define the forecast period for time series studies. This is only used in time series models.
 	// Default: Empty
 	// +kubebuilder:validation:Optional
-	Forecast *ForecastingSpec `json:"forecast,omitempty" protobuf:"bytes,11,opt,name=forecast"`
+	Forecast *ForecastingSpec `json:"forecast,omitempty" protobuf:"bytes,8,opt,name=forecast"`
 	// Successive halving represent the configuration for the model training, when running
 	// the SuccessiveHalvingSpec model search algorithm
 	// The metrics are evaluated using the final model, both on the training set
 	// and on the test set
 	// +kubebuilder:validation:Optional
-	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,12,opt,name=sh"`
+	SH *SuccessiveHalvingSpec `json:"sh,omitempty" protobuf:"bytes,9,opt,name=sh"`
 	// Used as the random state for an estimator if needed (for example, in RandomForestClassifier)
 	// +kubebuilder:default:=42
 	// +kubebuilder:validation:Optional
-	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,13,opt,name=seed"`
+	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,10,opt,name=seed"`
 	// WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
 	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,14,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,11,opt,name=workloadClassName"`
 	// Gpu indicate that training should be done on a gpu.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,15,optc ,name=gpu"`
+	Gpu *bool `json:"gpu,omitempty" protobuf:"varint,12,optc ,name=gpu"`
 	// Dist indicate the training should be be distributed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Dist *bool `json:"dist,omitempty" protobuf:"varint,16,opt,name=dist"`
+	Dist *bool `json:"dist,omitempty" protobuf:"varint,13,opt,name=dist"`
 	// In case of dist node, how many nodes to use.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,17,opt,name=nodeCount"`
+	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,14,opt,name=nodeCount"`
 	// Set the precent of dataset to use during training.
 	// +kubebuilder:validation:Optional
-	Sample data.SampleSpec `json:"sample,omitempty" protobuf:"varint,18,opt,name=sample"`
+	Sample data.SampleSpec `json:"sample,omitempty" protobuf:"bytes,15,opt,name=sample"`
 	// Feature filter specified what features to use from the original dataset.
 	// +kubebuilder:validation:Optional
-	FeatureFilter *catalog.FeatureFilter `json:"featureFilter,omitempty" protobuf:"varint,19,opt,name=featureFilter"`
+	FeatureFilter *catalog.FeatureFilter `json:"featureFilter,omitempty" protobuf:"bytes,16,opt,name=featureFilter"`
 }
 
 // CategoricalPipelineSpec is the specification for processing categorical columns

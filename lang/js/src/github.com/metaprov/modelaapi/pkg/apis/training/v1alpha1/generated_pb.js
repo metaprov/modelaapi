@@ -44472,7 +44472,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingResourceR
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.repeatedFields_ = [8];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.repeatedFields_ = [5];
 
 
 
@@ -44505,20 +44505,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    priority: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    cvtype: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    cv: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
-    folds: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    evalmetricsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
-    earlystop: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
-    checkpointinterval: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    priority: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    cvtype: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    cv: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    folds: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    evalmetricsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    earlystop: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    checkpointinterval: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec.toObject(includeInstance, f),
     sh: (f = msg.getSh()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec.toObject(includeInstance, f),
-    seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    gpu: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
-    dist: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    nodecount: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    seed: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    gpu: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+    dist: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
+    nodecount: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     sample: (f = msg.getSample()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.toObject(includeInstance, f),
     featurefilter: (f = msg.getFeaturefilter()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.toObject(includeInstance, f)
   };
@@ -44557,70 +44557,70 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
       msg.setPriority(value);
       break;
-    case 3:
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setCvtype(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCv(value);
       break;
-    case 6:
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setFolds(value);
       break;
-    case 8:
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.addEvalmetrics(value);
       break;
-    case 9:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEarlystop(value);
       break;
-    case 10:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCheckpointinterval(value);
       break;
-    case 11:
+    case 8:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec.deserializeBinaryFromReader);
       msg.setForecast(value);
       break;
-    case 12:
+    case 9:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec.deserializeBinaryFromReader);
       msg.setSh(value);
       break;
-    case 13:
+    case 10:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setSeed(value);
       break;
-    case 14:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setWorkloadclassname(value);
       break;
-    case 15:
+    case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGpu(value);
       break;
-    case 16:
+    case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setDist(value);
       break;
-    case 17:
+    case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setNodecount(value);
       break;
-    case 18:
+    case 15:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.deserializeBinaryFromReader);
       msg.setSample(value);
       break;
-    case 19:
+    case 16:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.deserializeBinaryFromReader);
       msg.setFeaturefilter(value);
@@ -44654,6 +44654,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeString(
@@ -44661,52 +44668,45 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       3,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeBool(
-      4,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeInt32(
-      6,
+      4,
       f
     );
   }
   f = message.getEvalmetricsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      8,
+      5,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
   if (f != null) {
     writer.writeBool(
-      9,
+      6,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
     writer.writeInt32(
-      10,
+      7,
       f
     );
   }
   f = message.getForecast();
   if (f != null) {
     writer.writeMessage(
-      11,
+      8,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec.serializeBinaryToWriter
     );
@@ -44714,50 +44714,50 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
   f = message.getSh();
   if (f != null) {
     writer.writeMessage(
-      12,
+      9,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 13));
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
   if (f != null) {
     writer.writeDouble(
+      10,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  if (f != null) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 12));
+  if (f != null) {
+    writer.writeBool(
+      12,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  if (f != null) {
+    writer.writeBool(
       13,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 14));
-  if (f != null) {
-    writer.writeString(
-      14,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 15));
-  if (f != null) {
-    writer.writeBool(
-      15,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
-  if (f != null) {
-    writer.writeBool(
-      16,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 17));
+  f = /** @type {number} */ (jspb.Message.getField(message, 14));
   if (f != null) {
     writer.writeInt32(
-      17,
+      14,
       f
     );
   }
   f = message.getSample();
   if (f != null) {
     writer.writeMessage(
-      18,
+      15,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.serializeBinaryToWriter
     );
@@ -44765,7 +44765,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
   f = message.getFeaturefilter();
   if (f != null) {
     writer.writeMessage(
-      19,
+      16,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.serializeBinaryToWriter
     );
@@ -44774,11 +44774,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
 
 
 /**
- * optional string priority = 2;
+ * optional string priority = 1;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getPriority = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -44787,7 +44787,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setPriority = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 1, value);
 };
 
 
@@ -44796,7 +44796,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearPriority = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 1, undefined);
 };
 
 
@@ -44805,16 +44805,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasPriority = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string cvtype = 3;
+ * optional string cvtype = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getCvtype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -44823,7 +44823,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setCvtype = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -44832,7 +44832,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearCvtype = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -44841,16 +44841,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasCvtype = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional bool cv = 4;
+ * optional bool cv = 3;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getCv = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
 
@@ -44859,7 +44859,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setCv = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
@@ -44868,7 +44868,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearCv = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 3, undefined);
 };
 
 
@@ -44877,16 +44877,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasCv = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 folds = 6;
+ * optional int32 folds = 4;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getFolds = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -44895,7 +44895,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setFolds = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -44904,7 +44904,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearFolds = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -44913,16 +44913,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasFolds = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated string evalMetrics = 8;
+ * repeated string evalMetrics = 5;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getEvalmetricsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
@@ -44931,7 +44931,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setEvalmetricsList = function(value) {
-  return jspb.Message.setField(this, 8, value || []);
+  return jspb.Message.setField(this, 5, value || []);
 };
 
 
@@ -44941,7 +44941,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.addEvalmetrics = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
 };
 
 
@@ -44955,11 +44955,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 /**
- * optional bool earlyStop = 9;
+ * optional bool earlyStop = 6;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getEarlystop = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
 
@@ -44968,7 +44968,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setEarlystop = function(value) {
-  return jspb.Message.setField(this, 9, value);
+  return jspb.Message.setField(this, 6, value);
 };
 
 
@@ -44977,7 +44977,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearEarlystop = function() {
-  return jspb.Message.setField(this, 9, undefined);
+  return jspb.Message.setField(this, 6, undefined);
 };
 
 
@@ -44986,16 +44986,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasEarlystop = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 checkpointInterval = 10;
+ * optional int32 checkpointInterval = 7;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getCheckpointinterval = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -45004,7 +45004,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setCheckpointinterval = function(value) {
-  return jspb.Message.setField(this, 10, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
@@ -45013,7 +45013,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearCheckpointinterval = function() {
-  return jspb.Message.setField(this, 10, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -45022,17 +45022,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasCheckpointinterval = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional ForecastingSpec forecast = 11;
+ * optional ForecastingSpec forecast = 8;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getForecast = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec, 11));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastingSpec, 8));
 };
 
 
@@ -45041,7 +45041,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setForecast = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -45059,17 +45059,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasForecast = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional SuccessiveHalvingSpec sh = 12;
+ * optional SuccessiveHalvingSpec sh = 9;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSh = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec, 12));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SuccessiveHalvingSpec, 9));
 };
 
 
@@ -45078,7 +45078,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSh = function(value) {
-  return jspb.Message.setWrapperField(this, 12, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -45096,16 +45096,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSh = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional double seed = 13;
+ * optional double seed = 10;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSeed = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
 };
 
 
@@ -45114,7 +45114,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSeed = function(value) {
-  return jspb.Message.setField(this, 13, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
@@ -45123,7 +45123,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearSeed = function() {
-  return jspb.Message.setField(this, 13, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -45132,16 +45132,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSeed = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional string workloadClassName = 14;
+ * optional string workloadClassName = 11;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -45150,7 +45150,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 14, value);
+  return jspb.Message.setField(this, 11, value);
 };
 
 
@@ -45159,7 +45159,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 14, undefined);
+  return jspb.Message.setField(this, 11, undefined);
 };
 
 
@@ -45168,16 +45168,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasWorkloadclassname = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional bool gpu = 15;
+ * optional bool gpu = 12;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getGpu = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
 
@@ -45186,7 +45186,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setGpu = function(value) {
-  return jspb.Message.setField(this, 15, value);
+  return jspb.Message.setField(this, 12, value);
 };
 
 
@@ -45195,7 +45195,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearGpu = function() {
-  return jspb.Message.setField(this, 15, undefined);
+  return jspb.Message.setField(this, 12, undefined);
 };
 
 
@@ -45204,16 +45204,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasGpu = function() {
-  return jspb.Message.getField(this, 15) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional bool dist = 16;
+ * optional bool dist = 13;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getDist = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
 };
 
 
@@ -45222,7 +45222,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setDist = function(value) {
-  return jspb.Message.setField(this, 16, value);
+  return jspb.Message.setField(this, 13, value);
 };
 
 
@@ -45231,7 +45231,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearDist = function() {
-  return jspb.Message.setField(this, 16, undefined);
+  return jspb.Message.setField(this, 13, undefined);
 };
 
 
@@ -45240,16 +45240,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasDist = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional int32 nodeCount = 17;
+ * optional int32 nodeCount = 14;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getNodecount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
 };
 
 
@@ -45258,7 +45258,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setNodecount = function(value) {
-  return jspb.Message.setField(this, 17, value);
+  return jspb.Message.setField(this, 14, value);
 };
 
 
@@ -45267,7 +45267,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearNodecount = function() {
-  return jspb.Message.setField(this, 17, undefined);
+  return jspb.Message.setField(this, 14, undefined);
 };
 
 
@@ -45276,17 +45276,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasNodecount = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 18;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 15;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSample = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec, 18));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec, 15));
 };
 
 
@@ -45295,7 +45295,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSample = function(value) {
-  return jspb.Message.setWrapperField(this, 18, value);
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
@@ -45313,17 +45313,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSample = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter featureFilter = 19;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter featureFilter = 16;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getFeaturefilter = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter, 19));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter, 16));
 };
 
 
@@ -45332,7 +45332,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setFeaturefilter = function(value) {
-  return jspb.Message.setWrapperField(this, 19, value);
+  return jspb.Message.setWrapperField(this, 16, value);
 };
 
 
@@ -45350,7 +45350,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasFeaturefilter = function() {
-  return jspb.Message.getField(this, 19) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
