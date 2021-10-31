@@ -9621,6 +9621,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.toObj
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
@@ -9668,11 +9669,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.deser
       msg.setVersionname(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
-    case 4:
+    case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
@@ -9720,10 +9725,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.seria
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getTemplate();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.serializeBinaryToWriter
     );
@@ -9731,7 +9743,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.seria
   f = message.getSchedule();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
@@ -9812,12 +9824,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.proto
 
 
 /**
- * optional SqlQuerySpec template = 3;
+ * optional string description = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional SqlQuerySpec template = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.getTemplate = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec, 3));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec, 4));
 };
 
 
@@ -9826,7 +9874,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.setTemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -9844,17 +9892,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.hasTemplate = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 4;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.getSchedule = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 4));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 5));
 };
 
 
@@ -9863,7 +9911,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -9881,7 +9929,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronApiCallSpec.prototype.hasSchedule = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -10937,6 +10985,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.toOb
   var f, obj = {
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
@@ -10984,11 +11033,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.dese
       msg.setVersionname(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDescription(value);
+      break;
+    case 4:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
-    case 4:
+    case 5:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.deserializeBinaryFromReader);
       msg.setSchedule(value);
@@ -11036,10 +11089,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getTemplate();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.serializeBinaryToWriter
     );
@@ -11047,7 +11107,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.seri
   f = message.getSchedule();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.serializeBinaryToWriter
     );
@@ -11128,12 +11188,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prot
 
 
 /**
- * optional SqlQuerySpec template = 3;
+ * optional string description = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.getDescription = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.setDescription = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.clearDescription = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.hasDescription = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional SqlQuerySpec template = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.getTemplate = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec, 3));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec, 4));
 };
 
 
@@ -11142,7 +11238,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.setTemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -11160,17 +11256,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.hasTemplate = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 4;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.getSchedule = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 4));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule, 5));
 };
 
 
@@ -11179,7 +11275,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.setSchedule = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -11197,7 +11293,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuerySpec.prototype.hasSchedule = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

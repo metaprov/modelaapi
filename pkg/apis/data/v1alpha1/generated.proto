@@ -521,14 +521,19 @@ message CronApiCallSpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 2;
 
+  // Description of the cron api call
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 3;
+
   // The sql template to create.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional SqlQuerySpec template = 3;
+  optional SqlQuerySpec template = 4;
 
   // Schedule for running the sql query
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 }
 
 // CronApiCallStatus defines the observed state of CronApiCall
@@ -599,14 +604,19 @@ message CronSqlQuerySpec {
   // +kubebuilder:validation:Optional
   optional string versionName = 2;
 
+  // Description of the cron query
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 3;
+
   // The sql template to create.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional SqlQuerySpec template = 3;
+  optional SqlQuerySpec template = 4;
 
   // Schedule for running the sql query
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 }
 
 // CronSqlQueryStatus defines the observed state of CronSqlQuery

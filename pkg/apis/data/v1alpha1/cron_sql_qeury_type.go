@@ -69,13 +69,17 @@ type CronSqlQuerySpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	// Description of the cron query
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The sql template to create.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Template SqlQuerySpec `json:"template,omitempty" protobuf:"bytes,3,opt,name=template"`
+	Template SqlQuerySpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// Schedule for running the sql query
 	// +kubebuilder:validation:Optional
-	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,4,opt,name=schedule"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
 }
 
 // CronSqlQueryStatus defines the observed state of CronSqlQuery

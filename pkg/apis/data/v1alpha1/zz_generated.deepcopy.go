@@ -591,6 +591,11 @@ func (in *CronApiCallSpec) DeepCopyInto(out *CronApiCallSpec) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Description != nil {
+		in, out := &in.Description, &out.Description
+		*out = new(string)
+		**out = **in
+	}
 	in.Template.DeepCopyInto(&out.Template)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 }
@@ -719,6 +724,11 @@ func (in *CronSqlQuerySpec) DeepCopyInto(out *CronSqlQuerySpec) {
 	}
 	if in.VersionName != nil {
 		in, out := &in.VersionName, &out.VersionName
+		*out = new(string)
+		**out = **in
+	}
+	if in.Description != nil {
+		in, out := &in.Description, &out.Description
 		*out = new(string)
 		**out = **in
 	}

@@ -666,6 +666,9 @@ export class CronApiCallSpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): CronApiCallSpec;
 
+  getDescription(): string;
+  setDescription(value: string): CronApiCallSpec;
+
   getTemplate(): SqlQuerySpec | undefined;
   setTemplate(value?: SqlQuerySpec): CronApiCallSpec;
   hasTemplate(): boolean;
@@ -688,6 +691,7 @@ export namespace CronApiCallSpec {
   export type AsObject = {
     owner: string,
     versionname: string,
+    description: string,
     template?: SqlQuerySpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
@@ -820,6 +824,9 @@ export class CronSqlQuerySpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): CronSqlQuerySpec;
 
+  getDescription(): string;
+  setDescription(value: string): CronSqlQuerySpec;
+
   getTemplate(): SqlQuerySpec | undefined;
   setTemplate(value?: SqlQuerySpec): CronSqlQuerySpec;
   hasTemplate(): boolean;
@@ -842,6 +849,7 @@ export namespace CronSqlQuerySpec {
   export type AsObject = {
     owner: string,
     versionname: string,
+    description: string,
     template?: SqlQuerySpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
