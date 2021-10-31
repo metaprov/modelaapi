@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/apicall/v1";
+package github.com.metaprov.modelaapi.services.apicall.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+message ListApiCallsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListApiCallsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ApiCallList items = 1;
+}
+
+message CreateApiCallResponse {}
+
+message CreateApiCallRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ApiCall item = 1;
+}
+
+message UpdateApiCallRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ApiCall item = 1;
+}
+
+message UpdateApiCallResponse {
+
+}
+
+message GetApiCallRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetApiCallResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ApiCall item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteApiCallRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteApiCallResponse {
+
+}
+
+message PauseApiCallRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PauseApiCallResponse {
+
+}
+
+message ResumeApiCallRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumeApiCallResponse {
+
+}
+
+
+
+message RunApiCallRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ApiCall item = 1;
+}
+
+
+message RunApiCallResponse {
+    
+}
+
+
+service ApiCallService {
+
+    rpc ListApiCalls(ListApiCallsRequest) returns (ListApiCallsResponse) {
+        option (google.api.http).get = "/v1/apicalls";
+    }
+
+    rpc CreateApiCall(CreateApiCallRequest) returns (CreateApiCallResponse) {
+        option (google.api.http) = {
+			post: "/v1/apicalls"
+			body: "*"
+		};
+    }
+
+    rpc GetApiCall(GetApiCallRequest) returns (GetApiCallResponse) {
+        option (google.api.http).get = "/v1/apicalls/{name}";
+    }
+
+    rpc UpdateApiCall(UpdateApiCallRequest) returns (UpdateApiCallResponse) {
+        option (google.api.http) = {
+			put: "/v1/apicalls/{apicall.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteApiCall(DeleteApiCallRequest) returns (DeleteApiCallResponse) {
+        option (google.api.http).delete = "/v1/apicalls/{name}";
+    }
+
+
+    rpc PauseApiCall(PauseApiCallRequest) returns (PauseApiCallResponse) {
+        option (google.api.http).post = "/v1/apicalls/{name}:pause";
+    }
+
+    rpc ResumeApiCall(ResumeApiCallRequest) returns (ResumeApiCallResponse) {
+        option (google.api.http).post = "/v1/apicalls/{name}:resume";
+    }
+
+ 
+  
+
+}

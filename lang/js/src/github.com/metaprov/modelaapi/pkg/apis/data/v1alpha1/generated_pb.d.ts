@@ -31,6 +31,164 @@ export namespace AggregationSpec {
   }
 }
 
+export class ApiCall extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ApiCall;
+  hasMetadata(): boolean;
+  clearMetadata(): ApiCall;
+
+  getSpec(): ApiCallSpec | undefined;
+  setSpec(value?: ApiCallSpec): ApiCall;
+  hasSpec(): boolean;
+  clearSpec(): ApiCall;
+
+  getStatus(): ApiCallStatus | undefined;
+  setStatus(value?: ApiCallStatus): ApiCall;
+  hasStatus(): boolean;
+  clearStatus(): ApiCall;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApiCall.AsObject;
+  static toObject(includeInstance: boolean, msg: ApiCall): ApiCall.AsObject;
+  static serializeBinaryToWriter(message: ApiCall, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApiCall;
+  static deserializeBinaryFromReader(message: ApiCall, reader: jspb.BinaryReader): ApiCall;
+}
+
+export namespace ApiCall {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ApiCallSpec.AsObject,
+    status?: ApiCallStatus.AsObject,
+  }
+}
+
+export class ApiCallCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): ApiCallCondition;
+
+  getStatus(): string;
+  setStatus(value: string): ApiCallCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ApiCallCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): ApiCallCondition;
+
+  getReason(): string;
+  setReason(value: string): ApiCallCondition;
+
+  getMessage(): string;
+  setMessage(value: string): ApiCallCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApiCallCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: ApiCallCondition): ApiCallCondition.AsObject;
+  static serializeBinaryToWriter(message: ApiCallCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApiCallCondition;
+  static deserializeBinaryFromReader(message: ApiCallCondition, reader: jspb.BinaryReader): ApiCallCondition;
+}
+
+export namespace ApiCallCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class ApiCallList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ApiCallList;
+  hasMetadata(): boolean;
+  clearMetadata(): ApiCallList;
+
+  getItemsList(): Array<ApiCall>;
+  setItemsList(value: Array<ApiCall>): ApiCallList;
+  clearItemsList(): ApiCallList;
+  addItems(value?: ApiCall, index?: number): ApiCall;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApiCallList.AsObject;
+  static toObject(includeInstance: boolean, msg: ApiCallList): ApiCallList.AsObject;
+  static serializeBinaryToWriter(message: ApiCallList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApiCallList;
+  static deserializeBinaryFromReader(message: ApiCallList, reader: jspb.BinaryReader): ApiCallList;
+}
+
+export namespace ApiCallList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<ApiCall.AsObject>,
+  }
+}
+
+export class ApiCallSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): ApiCallSpec;
+
+  getVersionname(): string;
+  setVersionname(value: string): ApiCallSpec;
+
+  getDescription(): string;
+  setDescription(value: string): ApiCallSpec;
+
+  getQuery(): string;
+  setQuery(value: string): ApiCallSpec;
+
+  getParametersMap(): jspb.Map<string, string>;
+  clearParametersMap(): ApiCallSpec;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): ApiCallSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApiCallSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ApiCallSpec): ApiCallSpec.AsObject;
+  static serializeBinaryToWriter(message: ApiCallSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApiCallSpec;
+  static deserializeBinaryFromReader(message: ApiCallSpec, reader: jspb.BinaryReader): ApiCallSpec;
+}
+
+export namespace ApiCallSpec {
+  export type AsObject = {
+    owner: string,
+    versionname: string,
+    description: string,
+    query: string,
+    parametersMap: Array<[string, string]>,
+    connectionname: string,
+  }
+}
+
+export class ApiCallStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ApiCallStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): ApiCallStatus;
+
+  getConditionsList(): Array<ApiCallCondition>;
+  setConditionsList(value: Array<ApiCallCondition>): ApiCallStatus;
+  clearConditionsList(): ApiCallStatus;
+  addConditions(value?: ApiCallCondition, index?: number): ApiCallCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ApiCallStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: ApiCallStatus): ApiCallStatus.AsObject;
+  static serializeBinaryToWriter(message: ApiCallStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ApiCallStatus;
+  static deserializeBinaryFromReader(message: ApiCallStatus, reader: jspb.BinaryReader): ApiCallStatus;
+}
+
+export namespace ApiCallStatus {
+  export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<ApiCallCondition.AsObject>,
+  }
+}
+
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
@@ -145,6 +303,15 @@ export class Column extends jspb.Message {
   getDriftthreshold(): number;
   setDriftthreshold(value: number): Column;
 
+  getIndex(): boolean;
+  setIndex(value: boolean): Column;
+
+  getFold(): boolean;
+  setFold(value: boolean): Column;
+
+  getWeight(): boolean;
+  setWeight(value: boolean): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -192,6 +359,9 @@ export namespace Column {
     sigma: number,
     skewthreshold: number,
     driftthreshold: number,
+    index: boolean,
+    fold: boolean,
+    weight: boolean,
   }
 }
 
@@ -392,6 +562,314 @@ export namespace CorrelationSpec {
     float64: number,
     method: string,
     top: number,
+  }
+}
+
+export class CronApiCall extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronApiCall;
+  hasMetadata(): boolean;
+  clearMetadata(): CronApiCall;
+
+  getSpec(): CronApiCallSpec | undefined;
+  setSpec(value?: CronApiCallSpec): CronApiCall;
+  hasSpec(): boolean;
+  clearSpec(): CronApiCall;
+
+  getStatus(): CronApiCallStatus | undefined;
+  setStatus(value?: CronApiCallStatus): CronApiCall;
+  hasStatus(): boolean;
+  clearStatus(): CronApiCall;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronApiCall.AsObject;
+  static toObject(includeInstance: boolean, msg: CronApiCall): CronApiCall.AsObject;
+  static serializeBinaryToWriter(message: CronApiCall, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronApiCall;
+  static deserializeBinaryFromReader(message: CronApiCall, reader: jspb.BinaryReader): CronApiCall;
+}
+
+export namespace CronApiCall {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: CronApiCallSpec.AsObject,
+    status?: CronApiCallStatus.AsObject,
+  }
+}
+
+export class CronApiCallCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): CronApiCallCondition;
+
+  getStatus(): string;
+  setStatus(value: string): CronApiCallCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronApiCallCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): CronApiCallCondition;
+
+  getReason(): string;
+  setReason(value: string): CronApiCallCondition;
+
+  getMessage(): string;
+  setMessage(value: string): CronApiCallCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronApiCallCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: CronApiCallCondition): CronApiCallCondition.AsObject;
+  static serializeBinaryToWriter(message: CronApiCallCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronApiCallCondition;
+  static deserializeBinaryFromReader(message: CronApiCallCondition, reader: jspb.BinaryReader): CronApiCallCondition;
+}
+
+export namespace CronApiCallCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class CronApiCallList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): CronApiCallList;
+  hasMetadata(): boolean;
+  clearMetadata(): CronApiCallList;
+
+  getItemsList(): Array<CronApiCall>;
+  setItemsList(value: Array<CronApiCall>): CronApiCallList;
+  clearItemsList(): CronApiCallList;
+  addItems(value?: CronApiCall, index?: number): CronApiCall;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronApiCallList.AsObject;
+  static toObject(includeInstance: boolean, msg: CronApiCallList): CronApiCallList.AsObject;
+  static serializeBinaryToWriter(message: CronApiCallList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronApiCallList;
+  static deserializeBinaryFromReader(message: CronApiCallList, reader: jspb.BinaryReader): CronApiCallList;
+}
+
+export namespace CronApiCallList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<CronApiCall.AsObject>,
+  }
+}
+
+export class CronApiCallSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): CronApiCallSpec;
+
+  getVersionname(): string;
+  setVersionname(value: string): CronApiCallSpec;
+
+  getTemplate(): SqlQuerySpec | undefined;
+  setTemplate(value?: SqlQuerySpec): CronApiCallSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): CronApiCallSpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronApiCallSpec;
+  hasSchedule(): boolean;
+  clearSchedule(): CronApiCallSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronApiCallSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CronApiCallSpec): CronApiCallSpec.AsObject;
+  static serializeBinaryToWriter(message: CronApiCallSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronApiCallSpec;
+  static deserializeBinaryFromReader(message: CronApiCallSpec, reader: jspb.BinaryReader): CronApiCallSpec;
+}
+
+export namespace CronApiCallSpec {
+  export type AsObject = {
+    owner: string,
+    versionname: string,
+    template?: SqlQuerySpec.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
+export class CronApiCallStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronApiCallStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): CronApiCallStatus;
+
+  getConditionsList(): Array<CronApiCallCondition>;
+  setConditionsList(value: Array<CronApiCallCondition>): CronApiCallStatus;
+  clearConditionsList(): CronApiCallStatus;
+  addConditions(value?: CronApiCallCondition, index?: number): CronApiCallCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronApiCallStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: CronApiCallStatus): CronApiCallStatus.AsObject;
+  static serializeBinaryToWriter(message: CronApiCallStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronApiCallStatus;
+  static deserializeBinaryFromReader(message: CronApiCallStatus, reader: jspb.BinaryReader): CronApiCallStatus;
+}
+
+export namespace CronApiCallStatus {
+  export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<CronApiCallCondition.AsObject>,
+  }
+}
+
+export class CronSqlQuery extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): CronSqlQuery;
+  hasMetadata(): boolean;
+  clearMetadata(): CronSqlQuery;
+
+  getSpec(): CronSqlQuerySpec | undefined;
+  setSpec(value?: CronSqlQuerySpec): CronSqlQuery;
+  hasSpec(): boolean;
+  clearSpec(): CronSqlQuery;
+
+  getStatus(): CronSqlQueryStatus | undefined;
+  setStatus(value?: CronSqlQueryStatus): CronSqlQuery;
+  hasStatus(): boolean;
+  clearStatus(): CronSqlQuery;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronSqlQuery.AsObject;
+  static toObject(includeInstance: boolean, msg: CronSqlQuery): CronSqlQuery.AsObject;
+  static serializeBinaryToWriter(message: CronSqlQuery, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronSqlQuery;
+  static deserializeBinaryFromReader(message: CronSqlQuery, reader: jspb.BinaryReader): CronSqlQuery;
+}
+
+export namespace CronSqlQuery {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: CronSqlQuerySpec.AsObject,
+    status?: CronSqlQueryStatus.AsObject,
+  }
+}
+
+export class CronSqlQueryCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): CronSqlQueryCondition;
+
+  getStatus(): string;
+  setStatus(value: string): CronSqlQueryCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronSqlQueryCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): CronSqlQueryCondition;
+
+  getReason(): string;
+  setReason(value: string): CronSqlQueryCondition;
+
+  getMessage(): string;
+  setMessage(value: string): CronSqlQueryCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronSqlQueryCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: CronSqlQueryCondition): CronSqlQueryCondition.AsObject;
+  static serializeBinaryToWriter(message: CronSqlQueryCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronSqlQueryCondition;
+  static deserializeBinaryFromReader(message: CronSqlQueryCondition, reader: jspb.BinaryReader): CronSqlQueryCondition;
+}
+
+export namespace CronSqlQueryCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class CronSqlQueryList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): CronSqlQueryList;
+  hasMetadata(): boolean;
+  clearMetadata(): CronSqlQueryList;
+
+  getItemsList(): Array<CronSqlQuery>;
+  setItemsList(value: Array<CronSqlQuery>): CronSqlQueryList;
+  clearItemsList(): CronSqlQueryList;
+  addItems(value?: CronSqlQuery, index?: number): CronSqlQuery;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronSqlQueryList.AsObject;
+  static toObject(includeInstance: boolean, msg: CronSqlQueryList): CronSqlQueryList.AsObject;
+  static serializeBinaryToWriter(message: CronSqlQueryList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronSqlQueryList;
+  static deserializeBinaryFromReader(message: CronSqlQueryList, reader: jspb.BinaryReader): CronSqlQueryList;
+}
+
+export namespace CronSqlQueryList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<CronSqlQuery.AsObject>,
+  }
+}
+
+export class CronSqlQuerySpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): CronSqlQuerySpec;
+
+  getVersionname(): string;
+  setVersionname(value: string): CronSqlQuerySpec;
+
+  getTemplate(): SqlQuerySpec | undefined;
+  setTemplate(value?: SqlQuerySpec): CronSqlQuerySpec;
+  hasTemplate(): boolean;
+  clearTemplate(): CronSqlQuerySpec;
+
+  getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
+  setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): CronSqlQuerySpec;
+  hasSchedule(): boolean;
+  clearSchedule(): CronSqlQuerySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronSqlQuerySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CronSqlQuerySpec): CronSqlQuerySpec.AsObject;
+  static serializeBinaryToWriter(message: CronSqlQuerySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronSqlQuerySpec;
+  static deserializeBinaryFromReader(message: CronSqlQuerySpec, reader: jspb.BinaryReader): CronSqlQuerySpec;
+}
+
+export namespace CronSqlQuerySpec {
+  export type AsObject = {
+    owner: string,
+    versionname: string,
+    template?: SqlQuerySpec.AsObject,
+    schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
+  }
+}
+
+export class CronSqlQueryStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CronSqlQueryStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): CronSqlQueryStatus;
+
+  getConditionsList(): Array<CronSqlQueryCondition>;
+  setConditionsList(value: Array<CronSqlQueryCondition>): CronSqlQueryStatus;
+  clearConditionsList(): CronSqlQueryStatus;
+  addConditions(value?: CronSqlQueryCondition, index?: number): CronSqlQueryCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CronSqlQueryStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: CronSqlQueryStatus): CronSqlQueryStatus.AsObject;
+  static serializeBinaryToWriter(message: CronSqlQueryStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CronSqlQueryStatus;
+  static deserializeBinaryFromReader(message: CronSqlQueryStatus, reader: jspb.BinaryReader): CronSqlQueryStatus;
+}
+
+export namespace CronSqlQueryStatus {
+  export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<CronSqlQueryCondition.AsObject>,
   }
 }
 
@@ -1696,6 +2174,9 @@ export class DatasetSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): DatasetSpec;
 
+  getDisplayname(): string;
+  setDisplayname(value: string): DatasetSpec;
+
   getReported(): boolean;
   setReported(value: boolean): DatasetSpec;
 
@@ -1765,6 +2246,7 @@ export namespace DatasetSpec {
     versionname: string,
     datasourcename: string,
     description: string,
+    displayname: string,
     reported: boolean,
     snapshotted: boolean,
     validate: boolean,
@@ -4434,6 +4916,160 @@ export namespace Schema {
     recommendationschema?: RecommendationSchema.AsObject,
     columnsList: Array<Column.AsObject>,
     validation?: ValidationSpec.AsObject,
+  }
+}
+
+export class SqlQuery extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): SqlQuery;
+  hasMetadata(): boolean;
+  clearMetadata(): SqlQuery;
+
+  getSpec(): SqlQuerySpec | undefined;
+  setSpec(value?: SqlQuerySpec): SqlQuery;
+  hasSpec(): boolean;
+  clearSpec(): SqlQuery;
+
+  getStatus(): SqlQueryStatus | undefined;
+  setStatus(value?: SqlQueryStatus): SqlQuery;
+  hasStatus(): boolean;
+  clearStatus(): SqlQuery;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SqlQuery.AsObject;
+  static toObject(includeInstance: boolean, msg: SqlQuery): SqlQuery.AsObject;
+  static serializeBinaryToWriter(message: SqlQuery, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SqlQuery;
+  static deserializeBinaryFromReader(message: SqlQuery, reader: jspb.BinaryReader): SqlQuery;
+}
+
+export namespace SqlQuery {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: SqlQuerySpec.AsObject,
+    status?: SqlQueryStatus.AsObject,
+  }
+}
+
+export class SqlQueryCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): SqlQueryCondition;
+
+  getStatus(): string;
+  setStatus(value: string): SqlQueryCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): SqlQueryCondition;
+
+  getReason(): string;
+  setReason(value: string): SqlQueryCondition;
+
+  getMessage(): string;
+  setMessage(value: string): SqlQueryCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SqlQueryCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: SqlQueryCondition): SqlQueryCondition.AsObject;
+  static serializeBinaryToWriter(message: SqlQueryCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SqlQueryCondition;
+  static deserializeBinaryFromReader(message: SqlQueryCondition, reader: jspb.BinaryReader): SqlQueryCondition;
+}
+
+export namespace SqlQueryCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class SqlQueryList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): SqlQueryList;
+  hasMetadata(): boolean;
+  clearMetadata(): SqlQueryList;
+
+  getItemsList(): Array<SqlQuery>;
+  setItemsList(value: Array<SqlQuery>): SqlQueryList;
+  clearItemsList(): SqlQueryList;
+  addItems(value?: SqlQuery, index?: number): SqlQuery;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SqlQueryList.AsObject;
+  static toObject(includeInstance: boolean, msg: SqlQueryList): SqlQueryList.AsObject;
+  static serializeBinaryToWriter(message: SqlQueryList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SqlQueryList;
+  static deserializeBinaryFromReader(message: SqlQueryList, reader: jspb.BinaryReader): SqlQueryList;
+}
+
+export namespace SqlQueryList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<SqlQuery.AsObject>,
+  }
+}
+
+export class SqlQuerySpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): SqlQuerySpec;
+
+  getVersionname(): string;
+  setVersionname(value: string): SqlQuerySpec;
+
+  getDescription(): string;
+  setDescription(value: string): SqlQuerySpec;
+
+  getQuery(): string;
+  setQuery(value: string): SqlQuerySpec;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): SqlQuerySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SqlQuerySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SqlQuerySpec): SqlQuerySpec.AsObject;
+  static serializeBinaryToWriter(message: SqlQuerySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SqlQuerySpec;
+  static deserializeBinaryFromReader(message: SqlQuerySpec, reader: jspb.BinaryReader): SqlQuerySpec;
+}
+
+export namespace SqlQuerySpec {
+  export type AsObject = {
+    owner: string,
+    versionname: string,
+    description: string,
+    query: string,
+    connectionname: string,
+  }
+}
+
+export class SqlQueryStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): SqlQueryStatus;
+
+  getConditionsList(): Array<SqlQueryCondition>;
+  setConditionsList(value: Array<SqlQueryCondition>): SqlQueryStatus;
+  clearConditionsList(): SqlQueryStatus;
+  addConditions(value?: SqlQueryCondition, index?: number): SqlQueryCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SqlQueryStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: SqlQueryStatus): SqlQueryStatus.AsObject;
+  static serializeBinaryToWriter(message: SqlQueryStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SqlQueryStatus;
+  static deserializeBinaryFromReader(message: SqlQueryStatus, reader: jspb.BinaryReader): SqlQueryStatus;
+}
+
+export namespace SqlQueryStatus {
+  export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<SqlQueryCondition.AsObject>,
   }
 }
 

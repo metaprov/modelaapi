@@ -67,6 +67,10 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto \
     github.com/metaprov/modelaapi/services/dataset/v1/dataset.proto \
     github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
+    github.com/metaprov/modelaapi/services/sqlquery/v1/sqlquery.proto \
+    github.com/metaprov/modelaapi/services/cronsqlquery/v1/cronsqlquery.proto \
+    github.com/metaprov/modelaapi/services/apicall/v1/apicall.proto \
+    github.com/metaprov/modelaapi/services/cronapicall/v1/cronapicall.proto \
     github.com/metaprov/modelaapi/services/entity/v1/entity.proto \
     github.com/metaprov/modelaapi/services/feature/v1/feature.proto \
     github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto \

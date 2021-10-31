@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/sqlquery/v1";
+package github.com.metaprov.modelaapi.services.sqlquery.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+message ListSqlQueriesRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListSqlQueriesResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList items = 1;
+}
+
+message CreateSqlQueryResponse {}
+
+message CreateSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+}
+
+message UpdateSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+}
+
+message UpdateSqlQueryResponse {
+
+}
+
+message GetSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetSqlQueryResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteSqlQueryResponse {
+
+}
+
+message PauseSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PauseSqlQueryResponse {
+
+}
+
+message ResumeSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumeSqlQueryResponse {
+
+}
+
+
+
+message RunSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+}
+
+
+message RunSqlQueryResponse {
+    
+}
+
+
+service SqlQueryService {
+
+    rpc ListSqlQueries(ListSqlQueriesRequest) returns (ListSqlQueriesResponse) {
+        option (google.api.http).get = "/v1/apicalls";
+    }
+
+    rpc CreateSqlQuery(CreateSqlQueryRequest) returns (CreateSqlQueryResponse) {
+        option (google.api.http) = {
+			post: "/v1/apicalls"
+			body: "*"
+		};
+    }
+
+    rpc GetSqlQuery(GetSqlQueryRequest) returns (GetSqlQueryResponse) {
+        option (google.api.http).get = "/v1/apicalls/{name}";
+    }
+
+    rpc UpdateSqlQuery(UpdateSqlQueryRequest) returns (UpdateSqlQueryResponse) {
+        option (google.api.http) = {
+			put: "/v1/apicalls/{apicall.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteSqlQuery(DeleteSqlQueryRequest) returns (DeleteSqlQueryResponse) {
+        option (google.api.http).delete = "/v1/apicalls/{name}";
+    }
+
+
+    rpc PauseSqlQuery(PauseSqlQueryRequest) returns (PauseSqlQueryResponse) {
+        option (google.api.http).post = "/v1/apicalls/{name}:pause";
+    }
+
+    rpc ResumeSqlQuery(ResumeSqlQueryRequest) returns (ResumeSqlQueryResponse) {
+        option (google.api.http).post = "/v1/apicalls/{name}:resume";
+    }
+
+ 
+  
+
+}

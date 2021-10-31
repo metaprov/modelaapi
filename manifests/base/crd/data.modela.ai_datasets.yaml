@@ -105,6 +105,10 @@ spec:
                 description: User provided description
                 maxLength: 512
                 type: string
+              displayName:
+                default: ""
+                description: The display name
+                type: string
               labeled:
                 default: true
                 description: Labeled indicates if this dataset is labeled or not.

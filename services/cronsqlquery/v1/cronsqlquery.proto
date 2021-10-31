@@ -1,0 +1,116 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/cronsqlquery/v1";
+package github.com.metaprov.modelaapi.services.cronsqlquery.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+message ListCronSqlQuerysRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListCronSqlQuerysResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQueryList items = 1;
+}
+
+message CreateCronSqlQueryResponse {}
+
+message CreateCronSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery item = 1;
+}
+
+message UpdateCronSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery item = 1;
+}
+
+message UpdateCronSqlQueryResponse {
+
+}
+
+message GetCronSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetCronSqlQueryResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteCronSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteCronSqlQueryResponse {
+
+}
+
+message PauseCronSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PauseCronSqlQueryResponse {
+
+}
+
+message ResumeCronSqlQueryRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumeCronSqlQueryResponse {
+
+}
+
+message RunCronSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery item = 1;
+}
+
+
+message RunCronSqlQueryResponse {
+    
+}
+
+
+service CronSqlQueryService {
+
+    rpc ListCronSqlQuerys(ListCronSqlQuerysRequest) returns (ListCronSqlQuerysResponse) {
+        option (google.api.http).get = "/v1/cronsqlqueries";
+    }
+
+    rpc CreateCronSqlQuery(CreateCronSqlQueryRequest) returns (CreateCronSqlQueryResponse) {
+        option (google.api.http) = {
+			post: "/v1/cronsqlquerys"
+			body: "*"
+		};
+    }
+
+    rpc GetCronSqlQuery(GetCronSqlQueryRequest) returns (GetCronSqlQueryResponse) {
+        option (google.api.http).get = "/v1/cronsqlqueries/{name}";
+    }
+
+    rpc UpdateCronSqlQuery(UpdateCronSqlQueryRequest) returns (UpdateCronSqlQueryResponse) {
+        option (google.api.http) = {
+			put: "/v1/cronsqlquerys/{cronsqlquery.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteCronSqlQuery(DeleteCronSqlQueryRequest) returns (DeleteCronSqlQueryResponse) {
+        option (google.api.http).delete = "/v1/cronsqlqueries/{name}";
+    }
+
+    rpc RunSqlQuery(RunCronSqlQueryRequest) returns (RunCronSqlQueryResponse) {
+        option (google.api.http).post = "/v1/cronsqlqueries/{name}:run";
+    }
+ 
+
+}

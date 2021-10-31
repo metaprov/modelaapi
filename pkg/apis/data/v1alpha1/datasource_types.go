@@ -566,7 +566,7 @@ type Column struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	UniqueItems *bool `json:"uniqueItems,omitempty" protobuf:"varint,26,opt,name=uniqueItems"`
-	// TimeColumn is true if this column is used as the time axis in time series foreacst
+	// TimeColumn is true if this column is used as the time axis in time series forecast
 	// Default is false.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -607,6 +607,18 @@ type Column struct {
 	// Drift treshold is the treshold for drift detection.
 	// +kubebuilder:validation:Optional
 	DriftTreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
+	// If True than this is an index column
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Index *bool `json:"index,omitempty" protobuf:"bytes,38,opt,name=index"`
+	// If True than this columns holds folds values
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Fold *bool `json:"fold,omitempty" protobuf:"bytes,39,opt,name=fold"`
+	// If True than this is a weight column
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Weight *bool `json:"weight,omitempty" protobuf:"bytes,40,opt,name=weight"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

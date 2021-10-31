@@ -109,6 +109,10 @@ type DatasetSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,4,opt,name=description"`
+	// The display name
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,5,opt,name=displayName"`
 	// If true, a dataset report should be generated for this dataset.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

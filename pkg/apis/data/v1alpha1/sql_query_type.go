@@ -1,0 +1,96 @@
+/*
+ * Copyright (c) 2020.
+ *
+ * Metaprov.com
+ */
+
+package v1alpha1
+
+import (
+	v1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+// SqlQueryConditionType is the condition of the sqlquery
+type SqlQueryConditionType string
+
+/// SqlQuery Condition
+const (
+	SqlQueryReady SqlQueryConditionType = "Ready"
+	SqlQuerySaved SqlQueryConditionType = "Saved"
+)
+
+// SqlQueryCondition describes the state of a deployment at a certain point.
+type SqlQueryCondition struct {
+	// Type of account condition.
+	Type SqlQueryConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=SqlQueryConditionType"`
+	// Status of the condition, one of True, False, AutoScaler.
+	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
+	// Last time the condition transitioned from one status to another.
+	LastTransitionTime *metav1.Time `json:"lastTransitionTime,omitempty" protobuf:"bytes,7,opt,name=lastTransitionTime"`
+	// The reason for the condition's last transition.
+	Reason string `json:"reason,omitempty" protobuf:"bytes,4,opt,name=reason"`
+	// A human readable message indicating details about the transition.
+	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
+}
+
+// SqlQuery represent a single sqlquery in the sqlquery store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
+// +kubebuilder:subresource:status
+type SqlQuery struct {
+	metav1.TypeMeta   `json:",inline"`
+	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
+	Spec              SqlQuerySpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	//+optional
+	Status SqlQueryStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+}
+
+// +kubebuilder:object:root=true
+// SqlQueryList contain a list of sqlquery objects
+type SqlQueryList struct {
+	metav1.TypeMeta `json:",inline"`
+	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
+	Items           []SqlQuery `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
+// SqlQuerySpec contain the desired state of a SqlQuery
+type SqlQuerySpec struct {
+	// The sqlquery owner
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:="no-one"
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	// The product version for the sqlquery.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
+	// Comments is a description of the sqlquery
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:MaxLength=512
+	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	// Type name of the column key, this column is the key column in the entity.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Query *string `json:"text,omitempty" protobuf:"bytes,4,opt,name=query"`
+	// The name of the time stamp column
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,5,opt,name=connectionName"`
+}
+
+// SqlQueryStatus defines the observed state of SqlQuery
+type SqlQueryStatus struct {
+	// Last Time the query run
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	// +patchMergeKey=type
+	// +patchStrategy=merge
+	// +kubebuilder:validation:Optional
+	Conditions []SqlQueryCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+}

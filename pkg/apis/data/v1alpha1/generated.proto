@@ -25,6 +25,95 @@ message AggregationSpec {
   repeated FeatureAggrSpec aggregations = 2;
 }
 
+// ApiCall represent a single apicall in the apicall store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=apicalls,singular=apicall,categories={data,modela}
+// +kubebuilder:subresource:status
+message ApiCall {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ApiCallSpec spec = 2;
+
+  // +optional
+  optional ApiCallStatus status = 3;
+}
+
+// ApiCallCondition describes the state of a deployment at a certain point.
+message ApiCallCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// ApiCallList contain a list of apicall objects
+message ApiCallList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated ApiCall items = 2;
+}
+
+// ApiCallSpec contain the desired state of a ApiCall
+message ApiCallSpec {
+  // The apicall owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the apicall.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // Comments is a description of the apicall
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:MaxLength=512
+  optional string description = 3;
+
+  // Type name of the column key, this column is the key column in the entity.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string query = 4;
+
+  // URL Parameters
+  // +kubebuilder:validation:Optional
+  map<string, string> parameters = 5;
+
+  // The name of the time stamp column
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string connectionName = 6;
+}
+
+// ApiCallStatus defines the observed state of ApiCall
+message ApiCallStatus {
+  // Last Time the query run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated ApiCallCondition conditions = 2;
+}
+
 message Column {
   // FileName specify the name of the attribute
   // +kubebuilder:validation:MaxLength=63
@@ -165,7 +254,7 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool uniqueItems = 26;
 
-  // TimeColumn is true if this column is used as the time axis in time series foreacst
+  // TimeColumn is true if this column is used as the time axis in time series forecast
   // Default is false.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -216,6 +305,21 @@ message Column {
   // Drift treshold is the treshold for drift detection.
   // +kubebuilder:validation:Optional
   optional double driftThreshold = 37;
+
+  // If True than this is an index column
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool index = 38;
+
+  // If True than this columns holds folds values
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool fold = 39;
+
+  // If True than this is a weight column
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool weight = 40;
 }
 
 // Hold the statistical parameters about a single attribute
@@ -360,6 +464,162 @@ message CorrelationSpec {
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
   optional int32 top = 3;
+}
+
+// CronApiCall represent a single sqlquery in the sqlquery store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
+// +kubebuilder:subresource:status
+message CronApiCall {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional CronApiCallSpec spec = 2;
+
+  // +optional
+  optional CronApiCallStatus status = 3;
+}
+
+// CronApiCallCondition describes the state of a deployment at a certain point.
+message CronApiCallCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// CronApiCallList contain a list of sqlquery objects
+message CronApiCallList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated CronApiCall items = 2;
+}
+
+// CronApiCallSpec contain the desired state of a CronApiCall
+message CronApiCallSpec {
+  // The sqlquery owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the sqlquery.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // The sql template to create.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional SqlQuerySpec template = 3;
+
+  // Schedule for running the sql query
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 4;
+}
+
+// CronApiCallStatus defines the observed state of CronApiCall
+message CronApiCallStatus {
+  // Last Time the query run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated CronApiCallCondition conditions = 2;
+}
+
+// CronSqlQuery represent a single sqlquery in the sqlquery store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
+// +kubebuilder:subresource:status
+message CronSqlQuery {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional CronSqlQuerySpec spec = 2;
+
+  // +optional
+  optional CronSqlQueryStatus status = 3;
+}
+
+// CronSqlQueryCondition describes the state of a deployment at a certain point.
+message CronSqlQueryCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// CronSqlQueryList contain a list of sqlquery objects
+message CronSqlQueryList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated CronSqlQuery items = 2;
+}
+
+// CronSqlQuerySpec contain the desired state of a CronSqlQuery
+message CronSqlQuerySpec {
+  // The sqlquery owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the sqlquery.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // The sql template to create.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional SqlQuerySpec template = 3;
+
+  // Schedule for running the sql query
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 4;
+}
+
+// CronSqlQueryStatus defines the observed state of CronSqlQuery
+message CronSqlQueryStatus {
+  // Last Time the query run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated CronSqlQueryCondition conditions = 2;
 }
 
 message CsvFileSpec {
@@ -1226,6 +1486,11 @@ message DatasetSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string description = 4;
+
+  // The display name
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string displayName = 5;
 
   // If true, a dataset report should be generated for this dataset.
   // +kubebuilder:default:=true
@@ -2873,6 +3138,91 @@ message Schema {
 
   // Validation spec define the validation to perform on new datasets
   optional ValidationSpec validation = 4;
+}
+
+// SqlQuery represent a single sqlquery in the sqlquery store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
+// +kubebuilder:subresource:status
+message SqlQuery {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional SqlQuerySpec spec = 2;
+
+  // +optional
+  optional SqlQueryStatus status = 3;
+}
+
+// SqlQueryCondition describes the state of a deployment at a certain point.
+message SqlQueryCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// SqlQueryList contain a list of sqlquery objects
+message SqlQueryList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated SqlQuery items = 2;
+}
+
+// SqlQuerySpec contain the desired state of a SqlQuery
+message SqlQuerySpec {
+  // The sqlquery owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the sqlquery.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // Comments is a description of the sqlquery
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:MaxLength=512
+  optional string description = 3;
+
+  // Type name of the column key, this column is the key column in the entity.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string query = 4;
+
+  // The name of the time stamp column
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string connectionName = 5;
+}
+
+// SqlQueryStatus defines the observed state of SqlQuery
+message SqlQueryStatus {
+  // Last Time the query run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated SqlQueryCondition conditions = 2;
 }
 
 // Represent a stack holder in the product.

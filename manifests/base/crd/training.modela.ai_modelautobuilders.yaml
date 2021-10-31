@@ -404,6 +404,10 @@ spec:
                                 if this attribute comes from a feature
                               maxLength: 63
                               type: string
+                            fold:
+                              default: false
+                              description: If True than this columns holds folds values
+                              type: boolean
                             format:
                               description: DataFormat is the domain of the column.
                                 A domain constrain the set of values.
@@ -436,6 +440,10 @@ spec:
                               default: false
                               description: Ignore specify if the attribute should
                                 be ignored when building the model default is false
+                              type: boolean
+                            index:
+                              default: false
+                              description: If True than this is an index column
                               type: boolean
                             label:
                               default: false
@@ -540,7 +548,7 @@ spec:
                             timeColumn:
                               default: false
                               description: TimeColumn is true if this column is used
-                                as the time axis in time series foreacst Default is
+                                as the time axis in time series forecast Default is
                                 false.
                               type: boolean
                             title:
@@ -557,6 +565,10 @@ spec:
                               default: false
                               description: Enforce that all the items in the list
                                 are unique
+                              type: boolean
+                            weight:
+                              default: false
+                              description: If True than this is a weight column
                               type: boolean
                           required:
                           - datatype
