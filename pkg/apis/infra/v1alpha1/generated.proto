@@ -681,6 +681,17 @@ message BoxSpec {
   optional string token = 1;
 }
 
+message BucketResourceQuotas {
+  // If true enable quate
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity hardLimit = 2;
+}
+
 message ClickHouseSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
@@ -2631,6 +2642,15 @@ message VirtualBucketSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string region = 5;
+
+  // If true support versioning
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool versioning = 6;
+
+  // If true support versioning
+  // +kubebuilder:validation:Optional
+  optional BucketResourceQuotas quotas = 7;
 }
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket

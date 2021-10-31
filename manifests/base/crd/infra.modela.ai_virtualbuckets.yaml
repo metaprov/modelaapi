@@ -73,6 +73,21 @@ spec:
                 default: no-one
                 description: Owner of the bucket
                 type: string
+              quotas:
+                description: If true support versioning
+                properties:
+                  enabled:
+                    default: false
+                    description: If true enable quate
+                    type: boolean
+                  hardLimit:
+                    anyOf:
+                    - type: integer
+                    - type: string
+                    default: true
+                    pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                    x-kubernetes-int-or-string: true
+                type: object
               region:
                 default: ""
                 description: For cloud based bucket, this is the region of the bucket
@@ -113,6 +128,10 @@ spec:
                     description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
                     type: string
                 type: object
+              versioning:
+                default: false
+                description: If true support versioning
+                type: boolean
             type: object
           status:
             description: VirtualBucketStatus defines the actual state of a VirtualBucket

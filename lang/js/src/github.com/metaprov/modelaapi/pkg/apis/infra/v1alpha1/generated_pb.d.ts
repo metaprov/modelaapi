@@ -1182,6 +1182,30 @@ export namespace BoxSpec {
   }
 }
 
+export class BucketResourceQuotas extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): BucketResourceQuotas;
+
+  getHardlimit(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
+  setHardlimit(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): BucketResourceQuotas;
+  hasHardlimit(): boolean;
+  clearHardlimit(): BucketResourceQuotas;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BucketResourceQuotas.AsObject;
+  static toObject(includeInstance: boolean, msg: BucketResourceQuotas): BucketResourceQuotas.AsObject;
+  static serializeBinaryToWriter(message: BucketResourceQuotas, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BucketResourceQuotas;
+  static deserializeBinaryFromReader(message: BucketResourceQuotas, reader: jspb.BinaryReader): BucketResourceQuotas;
+}
+
+export namespace BucketResourceQuotas {
+  export type AsObject = {
+    enabled: boolean,
+    hardlimit?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
+  }
+}
+
 export class ClickHouseSpec extends jspb.Message {
   getHost(): string;
   setHost(value: string): ClickHouseSpec;
@@ -4864,6 +4888,14 @@ export class VirtualBucketSpec extends jspb.Message {
   getRegion(): string;
   setRegion(value: string): VirtualBucketSpec;
 
+  getVersioning(): boolean;
+  setVersioning(value: boolean): VirtualBucketSpec;
+
+  getQuotas(): BucketResourceQuotas | undefined;
+  setQuotas(value?: BucketResourceQuotas): VirtualBucketSpec;
+  hasQuotas(): boolean;
+  clearQuotas(): VirtualBucketSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): VirtualBucketSpec.AsObject;
   static toObject(includeInstance: boolean, msg: VirtualBucketSpec): VirtualBucketSpec.AsObject;
@@ -4879,6 +4911,8 @@ export namespace VirtualBucketSpec {
     description: string,
     owner: string,
     region: string,
+    versioning: boolean,
+    quotas?: BucketResourceQuotas.AsObject,
   }
 }
 

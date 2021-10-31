@@ -2,6 +2,7 @@ package v1alpha1
 
 import (
 	v1 "k8s.io/api/core/v1"
+	resource "k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -74,6 +75,23 @@ type VirtualBucketSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Region *string `json:"region,omitempty" protobuf:"bytes,5,opt,name=region"`
+	// If true support versioning
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Versioning *bool `json:"versioning,omitempty" protobuf:"bytes,6,opt,name=versioning"`
+	// If true support versioning
+	// +kubebuilder:validation:Optional
+	Quotas BucketResourceQuotas `json:"quotas,omitempty" protobuf:"bytes,7,opt,name=quotas"`
+}
+
+type BucketResourceQuotas struct {
+	// If true enable quate
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	HardLimit *resource.Quantity `json:"hardLimit,omitempty" protobuf:"bytes,2,opt,name=hardLimit"`
 }
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket
