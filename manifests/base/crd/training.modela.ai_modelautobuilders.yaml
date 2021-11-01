@@ -441,6 +441,23 @@ spec:
                               description: Ignore specify if the attribute should
                                 be ignored when building the model default is false
                               type: boolean
+                            imputer:
+                              default: none
+                              description: The recommended imputer for a column.
+                              enum:
+                              - remove-rows-with-missing-values
+                              - mean
+                              - median
+                              - mode
+                              - arbitrary-number
+                              - end-tail
+                              - random-sample
+                              - add-missing-indication
+                              - iterative
+                              - none
+                              - auto
+                              - constant
+                              type: string
                             index:
                               default: false
                               description: If True than this is an index column
@@ -536,6 +553,18 @@ spec:
                               default: false
                               description: Required
                               type: boolean
+                            scaler:
+                              default: none
+                              description: The recommended scaler for a column.
+                              enum:
+                              - standard
+                              - max-abs
+                              - min-max
+                              - normalizer
+                              - robust
+                              - none
+                              - auto
+                              type: string
                             sigma:
                               default: 0
                               description: Sigma is the standard deviation of the

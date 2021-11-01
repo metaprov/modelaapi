@@ -183,6 +183,9 @@ type PredictorSpec struct {
 	// specification for dash app
 	// +kubebuilder:validation:Optional
 	AppSpec *AppSpec `json:"app,omitempty" protobuf:"bytes,24,opt,name=app"`
+	// specify the predictor authentication
+	// +kubebuilder:validation:Optional
+	Auth *PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.
@@ -273,10 +276,13 @@ type PredictorStatus struct {
 	// The predictor app status
 	//+kubebuilder:validation:Optional
 	AppStatus AppStatus `json:"appStatus,omitempty" protobuf:"bytes,15,opt,name=appStatus"`
+	// the end point url of the predictor
+	//+kubebuilder:validation:Optional
+	EndPoint string `json:"endPoint,omitempty" protobuf:"bytes,16,opt,name=endPoint"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,17,rep,name=conditions"`
 }
 
 type PredictorHealth struct {
@@ -368,7 +374,13 @@ type AppSpec struct {
 }
 
 type AppStatus struct {
-	// Retried at is the time that the model was retired from production.
+	//
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
+}
+
+type PredictorAuthSpec struct {
+	// If true auth is enabled.
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 }

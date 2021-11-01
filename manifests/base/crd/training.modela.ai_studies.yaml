@@ -142,6 +142,44 @@ spec:
                 description: DatasetName refer to the dataset object for which the
                   study is for.
                 type: string
+              datasetSample:
+                description: Sample spec defines how many rows to use for analysis
+                properties:
+                  column:
+                    default: ""
+                    description: Column is used for stratified sampling.
+                    type: string
+                  enabled:
+                    default: false
+                    description: Enabled specify if the sample is enabled
+                    type: boolean
+                  filter:
+                    default: ""
+                    description: Filter formula. Valid only if the sample is a filter.
+                    type: string
+                  percent:
+                    default: 100
+                    description: Pct is the percent of rows to use for analysis.
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  rows:
+                    default: 500
+                    description: Rows is the number of rows. Default is 500
+                    format: int32
+                    minimum: 0
+                    type: integer
+                  type:
+                    default: random
+                    description: Type is the sampling type Default is random
+                    enum:
+                    - header
+                    - random
+                    - filter
+                    - anomaly
+                    - stratified
+                    type: string
+                type: object
               description:
                 default: ""
                 description: Description is user provided description
@@ -317,6 +355,11 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
+              modelBenchmarked:
+                default: true
+                description: Set to true if you want the system to push model image
+                  to remote docker registry
+                type: boolean
               modelImage:
                 description: Model Image specification.
                 properties:
@@ -702,6 +745,11 @@ spec:
                         description: If true, the controller will Add lemma handling
                           to the text pipeline.
                         type: boolean
+                      maxSvdComponents:
+                        default: 0
+                        description: Max SVD Components to use
+                        format: int32
+                        type: integer
                       pos:
                         default: true
                         description: If true, the controller will Add part of speech
@@ -716,6 +764,10 @@ spec:
                         default: true
                         description: If true, the controller will Add stop word handling
                           to the text pipeline.
+                        type: boolean
+                      svd:
+                        default: true
+                        description: Use SVD
                         type: boolean
                       tokenizer:
                         description: Text tokenizer
@@ -890,6 +942,10 @@ spec:
                     - default-hp
                     - none
                     type: string
+                  keepOnlyTopModel:
+                    default: true
+                    description: If true, keep only the top model from an algorithm
+                    type: boolean
                   maxCost:
                     default: 100
                     description: MaxCost specify what is the maximum cost incurred
@@ -917,10 +973,6 @@ spec:
                     default: 0
                     description: The minimum score by which the search would stop
                     type: number
-                  modelTested:
-                    default: true
-                    description: Indicate the all models should be tests
-                    type: boolean
                   pruner:
                     description: The pruner to use during model search.
                     properties:
@@ -1100,6 +1152,10 @@ spec:
                     maximum: 5
                     minimum: 1
                     type: integer
+                  testAll:
+                    default: true
+                    description: Indicate the all models should be tests
+                    type: boolean
                   trainers:
                     default: 1
                     description: The desired number of trainers running during search.
@@ -1408,26 +1464,6 @@ spec:
                       datetimeFormat:
                         description: The format of the datetime column. Used default
                         type: string
-                      dimensionValues:
-                        description: a set of value for each partition key
-                        items:
-                          description: DimensionValue specify the partition key values
-                            are used for the partition
-                          properties:
-                            key:
-                              description: Key is the partition key
-                              type: string
-                            value:
-                              description: Value if the partition value
-                              type: string
-                          type: object
-                        type: array
-                      dimensions:
-                        description: The list of the dimension columns. If non, the
-                          system will treat the whole time series as one.
-                        items:
-                          type: string
-                        type: array
                       forecast:
                         description: Specify if we should generate a forecast using
                           the model If true, the system will perform a forecast and
@@ -1466,6 +1502,15 @@ spec:
                         format: int32
                         minimum: 0
                         type: integer
+                      level1:
+                        description: Column name of the first level of grouping
+                        type: string
+                      level2:
+                        description: Column name of the second level of grouping
+                        type: string
+                      level3:
+                        description: Column name of the third level of grouping
+                        type: string
                       repressors:
                         description: List of other columns to take into consideration
                           Default None

@@ -936,10 +936,14 @@ export class ForecastingSpec extends jspb.Message {
   getDatetimeformat(): string;
   setDatetimeformat(value: string): ForecastingSpec;
 
-  getDimensionsList(): Array<string>;
-  setDimensionsList(value: Array<string>): ForecastingSpec;
-  clearDimensionsList(): ForecastingSpec;
-  addDimensions(value: string, index?: number): ForecastingSpec;
+  getLevel1(): string;
+  setLevel1(value: string): ForecastingSpec;
+
+  getLevel2(): string;
+  setLevel2(value: string): ForecastingSpec;
+
+  getLevel3(): string;
+  setLevel3(value: string): ForecastingSpec;
 
   getRepressorsList(): Array<string>;
   setRepressorsList(value: Array<string>): ForecastingSpec;
@@ -959,11 +963,6 @@ export class ForecastingSpec extends jspb.Message {
 
   getCountryforholiday(): string;
   setCountryforholiday(value: string): ForecastingSpec;
-
-  getDimensionvaluesList(): Array<DimensionValue>;
-  setDimensionvaluesList(value: Array<DimensionValue>): ForecastingSpec;
-  clearDimensionvaluesList(): ForecastingSpec;
-  addDimensionvalues(value?: DimensionValue, index?: number): DimensionValue;
 
   getBacktest(): BacktestSpec | undefined;
   setBacktest(value?: BacktestSpec): ForecastingSpec;
@@ -989,13 +988,14 @@ export namespace ForecastingSpec {
     timecolumn: string,
     targetcolumn: string,
     datetimeformat: string,
-    dimensionsList: Array<string>,
+    level1: string,
+    level2: string,
+    level3: string,
     repressorsList: Array<string>,
     freqspec?: FreqSpec.AsObject,
     horizon: number,
     confidenceinterval: number,
     countryforholiday: string,
-    dimensionvaluesList: Array<DimensionValue.AsObject>,
     backtest?: BacktestSpec.AsObject,
     forecastconnectionname: string,
     forecast: boolean,
@@ -2396,11 +2396,14 @@ export class ModelSearchSpec extends jspb.Message {
   clearBaselinesList(): ModelSearchSpec;
   addBaselines(value: string, index?: number): ModelSearchSpec;
 
-  getModeltested(): boolean;
-  setModeltested(value: boolean): ModelSearchSpec;
+  getTestall(): boolean;
+  setTestall(value: boolean): ModelSearchSpec;
 
   getEarlystopafter(): number;
   setEarlystopafter(value: number): ModelSearchSpec;
+
+  getKeeponlytopmodel(): boolean;
+  setKeeponlytopmodel(value: boolean): ModelSearchSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSearchSpec.AsObject;
@@ -2429,8 +2432,9 @@ export namespace ModelSearchSpec {
     startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     filter: string,
     baselinesList: Array<string>,
-    modeltested: boolean,
+    testall: boolean,
     earlystopafter: number,
+    keeponlytopmodel: boolean,
   }
 }
 
@@ -2527,6 +2531,9 @@ export class ModelSpec extends jspb.Message {
   getReleased(): boolean;
   setReleased(value: boolean): ModelSpec;
 
+  getBenchmarked(): boolean;
+  setBenchmarked(value: boolean): ModelSpec;
+
   getBaseline(): boolean;
   setBaseline(value: boolean): ModelSpec;
 
@@ -2593,6 +2600,7 @@ export namespace ModelSpec {
     archived: boolean,
     forecasted: boolean,
     released: boolean,
+    benchmarked: boolean,
     baseline: boolean,
     flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -4054,6 +4062,9 @@ export class StudySpec extends jspb.Message {
   getModelimagepushed(): boolean;
   setModelimagepushed(value: boolean): StudySpec;
 
+  getModelbenchmarked(): boolean;
+  setModelbenchmarked(value: boolean): StudySpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudySpec;
   hasLocation(): boolean;
@@ -4099,6 +4110,11 @@ export class StudySpec extends jspb.Message {
   hasStudyfeaturefilter(): boolean;
   clearStudyfeaturefilter(): StudySpec;
 
+  getDatasetsample(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec | undefined;
+  setDatasetsample(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec): StudySpec;
+  hasDatasetsample(): boolean;
+  clearDatasetsample(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -4126,6 +4142,7 @@ export namespace StudySpec {
     profiled: boolean,
     modelpublished: boolean,
     modelimagepushed: boolean,
+    modelbenchmarked: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     hierarchy?: Hierarchy.AsObject,
     owner: string,
@@ -4137,6 +4154,7 @@ export namespace StudySpec {
     modelimage?: ModelImageSpec.AsObject,
     ttl: number,
     studyfeaturefilter?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.AsObject,
+    datasetsample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
   }
 }
 
@@ -4405,6 +4423,12 @@ export class TextPipelineSpec extends jspb.Message {
   getEmbedding(): string;
   setEmbedding(value: string): TextPipelineSpec;
 
+  getSvd(): boolean;
+  setSvd(value: boolean): TextPipelineSpec;
+
+  getMaxsvdcomponents(): number;
+  setMaxsvdcomponents(value: number): TextPipelineSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TextPipelineSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TextPipelineSpec): TextPipelineSpec.AsObject;
@@ -4423,6 +4447,8 @@ export namespace TextPipelineSpec {
     lemma: boolean,
     stem: boolean,
     embedding: string,
+    svd: boolean,
+    maxsvdcomponents: number,
   }
 }
 

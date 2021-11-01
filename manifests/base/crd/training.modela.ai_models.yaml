@@ -105,6 +105,11 @@ spec:
               baseline:
                 description: Indicate that this model is a baseline
                 type: boolean
+              benchmarked:
+                default: true
+                description: Set to true if you want the system to push model image
+                  to remote docker registry
+                type: boolean
               chatbot:
                 description: Dnn is a specification of the DNN estimator specification.
                   Not supported for this release.
@@ -331,26 +336,6 @@ spec:
                   datetimeFormat:
                     description: The format of the datetime column. Used default
                     type: string
-                  dimensionValues:
-                    description: a set of value for each partition key
-                    items:
-                      description: DimensionValue specify the partition key values
-                        are used for the partition
-                      properties:
-                        key:
-                          description: Key is the partition key
-                          type: string
-                        value:
-                          description: Value if the partition value
-                          type: string
-                      type: object
-                    type: array
-                  dimensions:
-                    description: The list of the dimension columns. If non, the system
-                      will treat the whole time series as one.
-                    items:
-                      type: string
-                    type: array
                   forecast:
                     description: Specify if we should generate a forecast using the
                       model If true, the system will perform a forecast and update
@@ -389,6 +374,15 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  level1:
+                    description: Column name of the first level of grouping
+                    type: string
+                  level2:
+                    description: Column name of the second level of grouping
+                    type: string
+                  level3:
+                    description: Column name of the third level of grouping
+                    type: string
                   repressors:
                     description: List of other columns to take into consideration
                       Default None
@@ -726,6 +720,11 @@ spec:
                         description: If true, the controller will Add lemma handling
                           to the text pipeline.
                         type: boolean
+                      maxSvdComponents:
+                        default: 0
+                        description: Max SVD Components to use
+                        format: int32
+                        type: integer
                       pos:
                         default: true
                         description: If true, the controller will Add part of speech
@@ -740,6 +739,10 @@ spec:
                         default: true
                         description: If true, the controller will Add stop word handling
                           to the text pipeline.
+                        type: boolean
+                      svd:
+                        default: true
+                        description: Use SVD
                         type: boolean
                       tokenizer:
                         description: Text tokenizer
@@ -1012,26 +1015,6 @@ spec:
                       datetimeFormat:
                         description: The format of the datetime column. Used default
                         type: string
-                      dimensionValues:
-                        description: a set of value for each partition key
-                        items:
-                          description: DimensionValue specify the partition key values
-                            are used for the partition
-                          properties:
-                            key:
-                              description: Key is the partition key
-                              type: string
-                            value:
-                              description: Value if the partition value
-                              type: string
-                          type: object
-                        type: array
-                      dimensions:
-                        description: The list of the dimension columns. If non, the
-                          system will treat the whole time series as one.
-                        items:
-                          type: string
-                        type: array
                       forecast:
                         description: Specify if we should generate a forecast using
                           the model If true, the system will perform a forecast and
@@ -1070,6 +1053,15 @@ spec:
                         format: int32
                         minimum: 0
                         type: integer
+                      level1:
+                        description: Column name of the first level of grouping
+                        type: string
+                      level2:
+                        description: Column name of the second level of grouping
+                        type: string
+                      level3:
+                        description: Column name of the third level of grouping
+                        type: string
                       repressors:
                         description: List of other columns to take into consideration
                           Default None

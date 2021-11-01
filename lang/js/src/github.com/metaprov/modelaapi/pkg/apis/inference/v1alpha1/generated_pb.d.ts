@@ -883,6 +883,24 @@ export namespace Predictor {
   }
 }
 
+export class PredictorAuthSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): PredictorAuthSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictorAuthSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictorAuthSpec): PredictorAuthSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictorAuthSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictorAuthSpec;
+  static deserializeBinaryFromReader(message: PredictorAuthSpec, reader: jspb.BinaryReader): PredictorAuthSpec;
+}
+
+export namespace PredictorAuthSpec {
+  export type AsObject = {
+    enabled: boolean,
+  }
+}
+
 export class PredictorCondition extends jspb.Message {
   getType(): string;
   setType(value: string): PredictorCondition;
@@ -1086,6 +1104,11 @@ export class PredictorSpec extends jspb.Message {
   hasApp(): boolean;
   clearApp(): PredictorSpec;
 
+  getAuth(): PredictorAuthSpec | undefined;
+  setAuth(value?: PredictorAuthSpec): PredictorSpec;
+  hasAuth(): boolean;
+  clearAuth(): PredictorSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictorSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictorSpec): PredictorSpec.AsObject;
@@ -1120,6 +1143,7 @@ export namespace PredictorSpec {
     predictiontreshold: number,
     monitor?: MonitorSpec.AsObject,
     app?: AppSpec.AsObject,
+    auth?: PredictorAuthSpec.AsObject,
   }
 }
 
@@ -1177,6 +1201,9 @@ export class PredictorStatus extends jspb.Message {
   hasAppstatus(): boolean;
   clearAppstatus(): PredictorStatus;
 
+  getEndpoint(): string;
+  setEndpoint(value: string): PredictorStatus;
+
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1205,6 +1232,7 @@ export namespace PredictorStatus {
     positivelabel: string,
     negativelabel: string,
     appstatus?: AppStatus.AsObject,
+    endpoint: string,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

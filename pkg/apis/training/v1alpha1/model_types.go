@@ -297,33 +297,37 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,26,opt,name=released"`
+	// Set to true if you want the system to push model image to remote docker registry
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Benchmarked *bool `json:"benchmarked,omitempty" protobuf:"varint,27,opt,name=benchmarked"`
 	// Indicate that this model is a baseline
 	// +kubebuilder:validation:Optional
-	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,27,opt,name=baseline"`
+	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,28,opt,name=baseline"`
 	// Is this model flagged
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,28,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,29,opt,name=flagged"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,29,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,30,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,30,opt,name=forecastingSpec"`
+	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,31,opt,name=forecastingSpec"`
 	// Compilation denotes how to compile the model.
 	// +kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,31,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,32,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,32,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,33,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,33,opt,name=estimatorType"`
+	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,34,opt,name=estimatorType"`
 	// TTL
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,34,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,35,opt,name=ttl"`
 }
 
 type EnsembleSpec struct {
@@ -734,6 +738,14 @@ type TextPipelineSpec struct {
 	// If true, the controller will Add word embedding handling to the text pipeline.
 	// +kubebuilder:validation:Optional
 	Embedding *string `json:"embedding,omitempty" protobuf:"bytes,8,opt,name=embedding"`
+	// Use SVD
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Svd *bool `json:"svd,omitempty" protobuf:"varint,9,opt,name=svd"`
+	// Max SVD Components to use
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	MaxSvdComponents *int32 `json:"maxSvdComponents,omitempty" protobuf:"varint,10,opt,name=maxSvdComponents"`
 }
 
 //DateTimePipelineSpec is the specification for preprocessing datetime features
@@ -798,42 +810,45 @@ type ForecastingSpec struct {
 	// The format of the datetime column. Used default
 	// +kubebuilder:validation:Optional
 	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,3,opt,name=datetimeFormat"`
-	// The list of the dimension columns. If non, the system will treat the whole time series as one.
+	// Column name of the first level of grouping
 	// +kubebuilder:validation:Optional
-	Dimensions []string `json:"dimensions,omitempty" protobuf:"bytes,4,rep,name=dimensions"`
+	Level1 *string `json:"level1,omitempty" protobuf:"bytes,4,rep,name=level1"`
+	// Column name of the second level of grouping
+	// +kubebuilder:validation:Optional
+	Level2 *string `json:"level2,omitempty" protobuf:"bytes,5,rep,name=level2"`
+	// Column name of the third level of grouping
+	// +kubebuilder:validation:Optional
+	Level3 *string `json:"level3,omitempty" protobuf:"bytes,6,rep,name=level3"`
 	// List of other columns to take into consideration
 	// Default None
 	// +kubebuilder:validation:Optional
-	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,5,rep,name=repressors"`
+	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,7,rep,name=repressors"`
 	// Required, the freq of the time series (daily,weekly)
 	// +kubebuilder:validation:Optional
-	FreqSpec *FreqSpec `json:"freqSpec,omitempty" protobuf:"bytes,6,opt,name=freqSpec"`
+	FreqSpec *FreqSpec `json:"freqSpec,omitempty" protobuf:"bytes,8,opt,name=freqSpec"`
 	// Horizon is the number of data points to predict in the future.
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,7,opt,name=horizon"`
+	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,9,opt,name=horizon"`
 	// The confidence levels for the forecast, each level must be between 1-100.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0
-	ConfidenceInterval *int32 `json:"confidenceIntervals,omitempty" protobuf:"varint,8,opt,name=confidenceInterval"`
+	ConfidenceInterval *int32 `json:"confidenceIntervals,omitempty" protobuf:"varint,10,opt,name=confidenceInterval"`
 	// Set an holiday schedule for a country.
 	//+optional
-	CountryForHoliday *catalog.HolidayCountry `json:"countryForHoliday,omitempty" protobuf:"bytes,9,opt,name=countryForHoliday"`
-	// a set of value for each partition key
-	// +kubebuilder:validation:Optional
-	DimensionValues []DimensionValue `json:"dimensionValues,omitempty" protobuf:"bytes,10,rep,name=dimensionValues"`
+	CountryForHoliday *catalog.HolidayCountry `json:"countryForHoliday,omitempty" protobuf:"bytes,11,opt,name=countryForHoliday"`
 	// The backtest specification, the system supports back testing with expanding windows.
 	// +kubebuilder:validation:Optional
-	Backtest *BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,11,opt,name=backtest"`
+	Backtest *BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,12,opt,name=backtest"`
 	// The name of the connection for a database the result of the forecast
 	// If null, the system will insert the forecast in the database.
 	// +kubebuilder:validation:Optional
-	ForecastConnectionName *string `json:"forecastConnectionName,omitempty" protobuf:"bytes,12,opt,name=forecastConnectionName"`
+	ForecastConnectionName *string `json:"forecastConnectionName,omitempty" protobuf:"bytes,13,opt,name=forecastConnectionName"`
 	// Specify if we should generate a forecast using the model
 	// If true, the system will perform a forecast and update the forecast connection.
 	// Default it true
 	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,13,opt,name=forecast"`
+	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,14,opt,name=forecast"`
 }
 
 // FreqSpec specify the frequency specification.

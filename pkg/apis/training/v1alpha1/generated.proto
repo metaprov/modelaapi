@@ -569,51 +569,55 @@ message ForecastingSpec {
   // +kubebuilder:validation:Optional
   optional string datetimeFormat = 3;
 
-  // The list of the dimension columns. If non, the system will treat the whole time series as one.
+  // Column name of the first level of grouping
   // +kubebuilder:validation:Optional
-  repeated string dimensions = 4;
+  optional string level1 = 4;
+
+  // Column name of the second level of grouping
+  // +kubebuilder:validation:Optional
+  optional string level2 = 5;
+
+  // Column name of the third level of grouping
+  // +kubebuilder:validation:Optional
+  optional string level3 = 6;
 
   // List of other columns to take into consideration
   // Default None
   // +kubebuilder:validation:Optional
-  repeated string repressors = 5;
+  repeated string repressors = 7;
 
   // Required, the freq of the time series (daily,weekly)
   // +kubebuilder:validation:Optional
-  optional FreqSpec freqSpec = 6;
+  optional FreqSpec freqSpec = 8;
 
   // Horizon is the number of data points to predict in the future.
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 horizon = 7;
+  optional int32 horizon = 9;
 
   // The confidence levels for the forecast, each level must be between 1-100.
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=0
-  optional int32 confidenceInterval = 8;
+  optional int32 confidenceInterval = 10;
 
   // Set an holiday schedule for a country.
   // +optional
-  optional string countryForHoliday = 9;
-
-  // a set of value for each partition key
-  // +kubebuilder:validation:Optional
-  repeated DimensionValue dimensionValues = 10;
+  optional string countryForHoliday = 11;
 
   // The backtest specification, the system supports back testing with expanding windows.
   // +kubebuilder:validation:Optional
-  optional BacktestSpec backtest = 11;
+  optional BacktestSpec backtest = 12;
 
   // The name of the connection for a database the result of the forecast
   // If null, the system will insert the forecast in the database.
   // +kubebuilder:validation:Optional
-  optional string forecastConnectionName = 12;
+  optional string forecastConnectionName = 13;
 
   // Specify if we should generate a forecast using the model
   // If true, the system will perform a forecast and update the forecast connection.
   // Default it true
   // +kubebuilder:validation:Optional
-  optional bool forecast = 13;
+  optional bool forecast = 14;
 }
 
 message FormatSpec {
@@ -1587,12 +1591,18 @@ message ModelSearchSpec {
 
   // Indicate the all models should be tests
   // +kubebuilder:default:=true
-  optional bool modelTested = 18;
+  // +kubebuilder:validation:Optional
+  optional bool testAll = 18;
 
   // If larget than 0, stop the search if no change in best score occur.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 earlyStopAfter = 19;
+
+  // If true, keep only the top model from an algorithm
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool keepOnlyTopModel = 20;
 }
 
 // ModelSpec defines the desired state of the Model resource
@@ -1722,40 +1732,45 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool released = 26;
 
+  // Set to true if you want the system to push model image to remote docker registry
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool benchmarked = 27;
+
   // Indicate that this model is a baseline
   // +kubebuilder:validation:Optional
-  optional bool baseline = 27;
+  optional bool baseline = 28;
 
   // Is this model flagged
   // +kubebuilder:validation:Optional
-  optional bool flagged = 28;
+  optional bool flagged = 29;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 29;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 30;
 
   // The specification for the forecasting algorithm if this is a forecast study.
   // +kubebuilder:validation:Optional
-  optional ForecastingSpec forecastingSpec = 30;
+  optional ForecastingSpec forecastingSpec = 31;
 
   // Compilation denotes how to compile the model.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 31;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 32;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 32;
+  optional int64 activeDeadlineSeconds = 33;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 33;
+  optional string estimatorType = 34;
 
   // TTL
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 34;
+  optional int32 ttl = 35;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2750,10 +2765,15 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional bool modelImagePushed = 18;
 
+  // Set to true if you want the system to push model image to remote docker registry
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool modelBenchmarked = 19;
+
   // The location of the study artifacts
   // By default the bucket is the data product bucket.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 19;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 20;
 
   // The group hierarchy
   // +kubebuilder:validation:Optional
@@ -2799,6 +2819,10 @@ message StudySpec {
   // Feature filter is applied to the data for this study. The filter specifies how to filter the original dataset.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter studyFeatureFilter = 30;
+
+  // Sample spec defines how many rows to use for analysis
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec datasetSample = 31;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -3044,6 +3068,16 @@ message TextPipelineSpec {
   // If true, the controller will Add word embedding handling to the text pipeline.
   // +kubebuilder:validation:Optional
   optional string embedding = 8;
+
+  // Use SVD
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool svd = 9;
+
+  // Max SVD Components to use
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 maxSvdComponents = 10;
 }
 
 // TrainingResourceRequest specify the desired resources for the training job

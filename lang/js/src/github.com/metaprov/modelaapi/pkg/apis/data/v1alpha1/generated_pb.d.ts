@@ -312,6 +312,12 @@ export class Column extends jspb.Message {
   getWeight(): boolean;
   setWeight(value: boolean): Column;
 
+  getImputer(): string;
+  setImputer(value: string): Column;
+
+  getScaler(): string;
+  setScaler(value: string): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -362,6 +368,8 @@ export namespace Column {
     index: boolean,
     fold: boolean,
     weight: boolean,
+    imputer: string,
+    scaler: string,
   }
 }
 

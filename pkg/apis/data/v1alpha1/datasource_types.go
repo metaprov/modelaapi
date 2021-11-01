@@ -619,6 +619,14 @@ type Column struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Weight *bool `json:"weight,omitempty" protobuf:"bytes,40,opt,name=weight"`
+	// The recommended imputer for a column.
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,41,opt,name=imputer"`
+	// The recommended scaler for a column.
+	// +kubebuilder:default:=none
+	// +kubebuilder:validation:Optional
+	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,42,opt,name=scaler"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

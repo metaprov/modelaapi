@@ -33,7 +33,6 @@ message AppSpec {
 }
 
 message AppStatus {
-  // Retried at is the time that the model was retired from production.
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 }
@@ -540,6 +539,12 @@ message Predictor {
   optional PredictorStatus status = 3;
 }
 
+message PredictorAuthSpec {
+  // If true auth is enabled.
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+}
+
 // PredictorCondition describes the state of a prediction at a certain point.
 message PredictorCondition {
   // Type of account condition.
@@ -709,6 +714,10 @@ message PredictorSpec {
   // specification for dash app
   // +kubebuilder:validation:Optional
   optional AppSpec app = 24;
+
+  // specify the predictor authentication
+  // +kubebuilder:validation:Optional
+  optional PredictorAuthSpec auth = 25;
 }
 
 // PredictorStatus contain the current state of the Predictor resource
@@ -761,10 +770,14 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional AppStatus appStatus = 15;
 
+  // the end point url of the predictor
+  // +kubebuilder:validation:Optional
+  optional string endPoint = 16;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 16;
+  repeated PredictorCondition conditions = 17;
 }
 
 message ProgressiveSpec {

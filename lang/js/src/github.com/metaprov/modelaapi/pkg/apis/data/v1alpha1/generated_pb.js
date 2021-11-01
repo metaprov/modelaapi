@@ -4650,7 +4650,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     driftthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 37)) == null ? undefined : f,
     index: (f = jspb.Message.getBooleanField(msg, 38)) == null ? undefined : f,
     fold: (f = jspb.Message.getBooleanField(msg, 39)) == null ? undefined : f,
-    weight: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f
+    weight: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f,
+    imputer: (f = jspb.Message.getField(msg, 41)) == null ? undefined : f,
+    scaler: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4846,6 +4848,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 40:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setWeight(value);
+      break;
+    case 41:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImputer(value);
+      break;
+    case 42:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScaler(value);
       break;
     default:
       reader.skipField();
@@ -5153,6 +5163,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeBool(
       40,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 41));
+  if (f != null) {
+    writer.writeString(
+      41,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 42));
+  if (f != null) {
+    writer.writeString(
+      42,
       f
     );
   }
@@ -6597,6 +6621,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasWeight = function() {
   return jspb.Message.getField(this, 40) != null;
+};
+
+
+/**
+ * optional string imputer = 41;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getImputer = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 41, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setImputer = function(value) {
+  return jspb.Message.setField(this, 41, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearImputer = function() {
+  return jspb.Message.setField(this, 41, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasImputer = function() {
+  return jspb.Message.getField(this, 41) != null;
+};
+
+
+/**
+ * optional string scaler = 42;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getScaler = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 42, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setScaler = function(value) {
+  return jspb.Message.setField(this, 42, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearScaler = function() {
+  return jspb.Message.setField(this, 42, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasScaler = function() {
+  return jspb.Message.getField(this, 42) != null;
 };
 
 

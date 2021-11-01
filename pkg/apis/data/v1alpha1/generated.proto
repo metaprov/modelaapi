@@ -320,6 +320,16 @@ message Column {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool weight = 40;
+
+  // The recommended imputer for a column.
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string imputer = 41;
+
+  // The recommended scaler for a column.
+  // +kubebuilder:default:=none
+  // +kubebuilder:validation:Optional
+  optional string scaler = 42;
 }
 
 // Hold the statistical parameters about a single attribute

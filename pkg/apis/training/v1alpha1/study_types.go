@@ -283,11 +283,16 @@ type ModelSearchSpec struct {
 	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,17,opt,name=baselines"`
 	// Indicate the all models should be tests
 	// +kubebuilder:default:=true
-	ModelTested *bool `json:"modelTested,omitempty" protobuf:"bytes,18,opt,name=modelTested"`
+	// +kubebuilder:validation:Optional
+	TestAll *bool `json:"testAll,omitempty" protobuf:"bytes,18,opt,name=testAll"`
 	// If larget than 0, stop the search if no change in best score occur.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,19,opt,name=earlyStopAfter"`
+	// If true, keep only the top model from an algorithm
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	KeepOnlyTopModel *bool `json:"keepOnlyTopModel,omitempty" protobuf:"bytes,20,opt,name=keepOnlyTopModel"`
 }
 
 type PrunerSpec struct {
@@ -396,10 +401,14 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,18,opt,name=modelImagePushed"`
+	// Set to true if you want the system to push model image to remote docker registry
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	ModelBenchmarked *bool `json:"modelBenchmarked,omitempty" protobuf:"varint,19,opt,name=modelBenchmarked"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,19,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,20,opt,name=location"`
 	// The group hierarchy
 	// +kubebuilder:validation:Optional
 	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,21,opt,name=hierarchy"`
@@ -435,6 +444,9 @@ type StudySpec struct {
 	// Feature filter is applied to the data for this study. The filter specifies how to filter the original dataset.
 	// +kubebuilder:validation:Optional
 	StudyFeatureFilter *catalog.FeatureFilter `json:"studyFeatureFilter,omitempty" protobuf:"bytes,30,opt,name=studyFeatureFilter"`
+	// Sample spec defines how many rows to use for analysis
+	// +kubebuilder:validation:Optional
+	DatasetSample data.SampleSpec `json:"datasetSample,omitempty" protobuf:"bytes,31,opt,name=datasetSample"`
 }
 
 // StudyStatus defines the observed state of the Study

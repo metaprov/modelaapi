@@ -96,6 +96,13 @@ spec:
                 description: The key in the bucket for storing all the predictor artifacts.
                 maxLength: 512
                 type: string
+              auth:
+                description: specify the predictor authentication
+                properties:
+                  enabled:
+                    description: If true auth is enabled.
+                    type: boolean
+                type: object
               autoScaling:
                 description: AutoScaling defines the auto scaling policy
                 properties:
@@ -7772,8 +7779,6 @@ spec:
                 description: The predictor app status
                 properties:
                   enabled:
-                    description: Retried at is the time that the model was retired
-                      from production.
                     type: boolean
                 type: object
               conditions:
@@ -7804,6 +7809,9 @@ spec:
                   - type
                   type: object
                 type: array
+              endPoint:
+                description: the end point url of the predictor
+                type: string
               health:
                 description: The Health of the predictor
                 properties:
