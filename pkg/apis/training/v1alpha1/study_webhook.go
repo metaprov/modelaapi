@@ -109,17 +109,14 @@ func (study *Study) Default() {
 
 	if study.Spec.Training.Forecast == nil && *study.Spec.Task == catalog.Forecasting {
 		study.Spec.Training.Forecast = &ForecastingSpec{
-			Horizon:                nil,
-			TimeColumn:             nil,
-			TargetColumn:           nil,
-			DateTimeFormat:         nil,
-			Repressors:             nil,
-			FreqSpec:               &FreqSpec{},
-			ConfidenceInterval:     nil,
-			CountryForHoliday:      nil,
-			Backtest:               nil,
-			ForecastConnectionName: nil,
-			Forecast:               nil,
+			TimeColumn:         nil,
+			TargetColumn:       nil,
+			DateTimeFormat:     nil,
+			Repressors:         nil,
+			ConfidenceInterval: nil,
+			CountryForHoliday:  nil,
+			Backtest:           nil,
+			Forecast:           nil,
 		}
 	}
 
