@@ -13,8 +13,8 @@ spec:
     categories:
     - data
     - modela
-    kind: CronSqlQuery
-    listKind: CronSqlQueryList
+    kind: CronApiCall
+    listKind: CronApiCallList
     plural: sqlqueries
     singular: sqlquery
   scope: Namespaced
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: CronSqlQuery represent a single sqlquery in the sqlquery store.
+        description: CronApiCall represent a single sqlquery in the sqlquery store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,11 +50,11 @@ spec:
           metadata:
             type: object
           spec:
-            description: CronSqlQuerySpec contain the desired state of a CronSqlQuery
+            description: CronApiCallSpec contain the desired state of a CronApiCall
             properties:
               description:
                 default: ""
-                description: Description of the cron query
+                description: Description of the cron api call
                 type: string
               owner:
                 default: no-one
@@ -141,11 +141,11 @@ spec:
                 type: string
             type: object
           status:
-            description: CronSqlQueryStatus defines the observed state of CronSqlQuery
+            description: CronApiCallStatus defines the observed state of CronApiCall
             properties:
               conditions:
                 items:
-                  description: CronSqlQueryCondition describes the state of a deployment
+                  description: CronApiCallCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:

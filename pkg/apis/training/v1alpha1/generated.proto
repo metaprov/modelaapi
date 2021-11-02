@@ -36,13 +36,18 @@ message BacktestSpec {
   // +kubebuilder:default:=80
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 initial = 1;
+  optional int32 splits = 1;
 
   // The number of backtesting windows. Default to 3. can be from 1 to 5.
-  // +kubebuilder:default:=3
-  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 windows = 2;
+  optional int32 maxTrainSize = 2;
+
+  // The number of backtesting windows. Default to 3. can be from 1 to 5.
+  // +kubebuilder:validation:Optional
+  optional int32 maxTestSize = 3;
+
+  // +kubebuilder:validation:Optional
+  optional int32 gap = 4;
 }
 
 // CapacityStageSpec is the desired state of the capcity testing.
@@ -522,9 +527,11 @@ message DeploymentStageSpec {
 // DimensionValue specify the partition key values are used for the partition
 message DimensionValue {
   // Key is the partition key
+  // +kubebuilder:validation:Optional
   optional string key = 1;
 
   // Value if the partition value
+  // +kubebuilder:validation:Optional
   optional string value = 2;
 }
 
@@ -554,8 +561,27 @@ message ForecastObj {
   optional int32 levelIndex = 2;
 }
 
+// Represent a general time window.
+// When used in the future start < end.
+// When used in the past start > end
+message ForecastWindow {
+  // The window start day
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 start = 1;
+
+  // The windows end day
+  // +kubebuilder:validation:Optional
+  optional int32 end = 2;
+
+  // Time Frequency (day)
+  // +kubebuilder:validation:Optional
+  optional string freq = 3;
+}
+
 // ForecastingSpec
 message ForecastingSpec {
+  // General Forecast attributes:
   // The name of the time column
   // +kubebuilder:validation:Required
   optional string timeColumn = 1;
@@ -588,12 +614,11 @@ message ForecastingSpec {
 
   // Required, the freq of the time series (daily,weekly)
   // +kubebuilder:validation:Optional
-  optional FreqSpec freqSpec = 8;
+  optional ForecastWindow past = 8;
 
-  // Horizon is the number of data points to predict in the future.
-  // +kubebuilder:validation:Minimum=0
+  // Required, the freq of the time series (daily,weekly)
   // +kubebuilder:validation:Optional
-  optional int32 horizon = 9;
+  optional ForecastWindow future = 9;
 
   // The confidence levels for the forecast, each level must be between 1-100.
   // +kubebuilder:validation:Optional
@@ -611,7 +636,7 @@ message ForecastingSpec {
   // The name of the connection for a database the result of the forecast
   // If null, the system will insert the forecast in the database.
   // +kubebuilder:validation:Optional
-  optional string forecastConnectionName = 13;
+  optional string connectionName = 13;
 
   // Specify if we should generate a forecast using the model
   // If true, the system will perform a forecast and update the forecast connection.
@@ -621,18 +646,6 @@ message ForecastingSpec {
 }
 
 message FormatSpec {
-}
-
-// FreqSpec specify the frequency specification.
-message FreqSpec {
-  // Default to 1.
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int32 interval = 1;
-
-  // required
-  optional string unit = 2;
 }
 
 message Hierarchy {

@@ -291,17 +291,23 @@ spec:
                     description: The backtest specification, the system supports back
                       testing with expanding windows.
                     properties:
-                      initial:
+                      gap:
+                        format: int32
+                        type: integer
+                      maxTestSize:
+                        description: The number of backtesting windows. Default to
+                          3. can be from 1 to 5.
+                        format: int32
+                        type: integer
+                      maxTrainSize:
+                        description: The number of backtesting windows. Default to
+                          3. can be from 1 to 5.
+                        format: int32
+                        type: integer
+                      splits:
                         default: 80
                         description: The initial number of data points, default to
                           80% of rows.
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      windows:
-                        default: 3
-                        description: The number of backtesting windows. Default to
-                          3. can be from 1 to 5.
                         format: int32
                         minimum: 0
                         type: integer
@@ -312,6 +318,11 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
+                  connectionName:
+                    description: The name of the connection for a database the result
+                      of the forecast If null, the system will insert the forecast
+                      in the database.
+                    type: string
                   countryForHoliday:
                     description: Set an holiday schedule for a country.
                     enum:
@@ -341,22 +352,15 @@ spec:
                       model If true, the system will perform a forecast and update
                       the forecast connection. Default it true
                     type: boolean
-                  forecastConnectionName:
-                    description: The name of the connection for a database the result
-                      of the forecast If null, the system will insert the forecast
-                      in the database.
-                    type: string
-                  freqSpec:
+                  future:
                     description: Required, the freq of the time series (daily,weekly)
                     properties:
-                      interval:
-                        default: 1
-                        description: Default to 1.
+                      end:
+                        description: The windows end day
                         format: int32
-                        minimum: 0
                         type: integer
-                      unit:
-                        description: required
+                      freq:
+                        description: Time Frequency (day)
                         enum:
                         - second
                         - minute
@@ -367,13 +371,12 @@ spec:
                         - quarter
                         - year
                         type: string
+                      start:
+                        default: 0
+                        description: The window start day
+                        format: int32
+                        type: integer
                     type: object
-                  horizon:
-                    description: Horizon is the number of data points to predict in
-                      the future.
-                    format: int32
-                    minimum: 0
-                    type: integer
                   level1:
                     description: Column name of the first level of grouping
                     type: string
@@ -383,6 +386,31 @@ spec:
                   level3:
                     description: Column name of the third level of grouping
                     type: string
+                  past:
+                    description: Required, the freq of the time series (daily,weekly)
+                    properties:
+                      end:
+                        description: The windows end day
+                        format: int32
+                        type: integer
+                      freq:
+                        description: Time Frequency (day)
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      start:
+                        default: 0
+                        description: The window start day
+                        format: int32
+                        type: integer
+                    type: object
                   repressors:
                     description: List of other columns to take into consideration
                       Default None
@@ -394,7 +422,8 @@ spec:
                       this is the target column from the dataset.
                     type: string
                   timeColumn:
-                    description: The name of the time column
+                    description: 'General Forecast attributes: The name of the time
+                      column'
                     type: string
                 type: object
               id:
@@ -970,17 +999,23 @@ spec:
                         description: The backtest specification, the system supports
                           back testing with expanding windows.
                         properties:
-                          initial:
+                          gap:
+                            format: int32
+                            type: integer
+                          maxTestSize:
+                            description: The number of backtesting windows. Default
+                              to 3. can be from 1 to 5.
+                            format: int32
+                            type: integer
+                          maxTrainSize:
+                            description: The number of backtesting windows. Default
+                              to 3. can be from 1 to 5.
+                            format: int32
+                            type: integer
+                          splits:
                             default: 80
                             description: The initial number of data points, default
                               to 80% of rows.
-                            format: int32
-                            minimum: 0
-                            type: integer
-                          windows:
-                            default: 3
-                            description: The number of backtesting windows. Default
-                              to 3. can be from 1 to 5.
                             format: int32
                             minimum: 0
                             type: integer
@@ -991,6 +1026,11 @@ spec:
                         format: int32
                         minimum: 0
                         type: integer
+                      connectionName:
+                        description: The name of the connection for a database the
+                          result of the forecast If null, the system will insert the
+                          forecast in the database.
+                        type: string
                       countryForHoliday:
                         description: Set an holiday schedule for a country.
                         enum:
@@ -1020,22 +1060,15 @@ spec:
                           the model If true, the system will perform a forecast and
                           update the forecast connection. Default it true
                         type: boolean
-                      forecastConnectionName:
-                        description: The name of the connection for a database the
-                          result of the forecast If null, the system will insert the
-                          forecast in the database.
-                        type: string
-                      freqSpec:
+                      future:
                         description: Required, the freq of the time series (daily,weekly)
                         properties:
-                          interval:
-                            default: 1
-                            description: Default to 1.
+                          end:
+                            description: The windows end day
                             format: int32
-                            minimum: 0
                             type: integer
-                          unit:
-                            description: required
+                          freq:
+                            description: Time Frequency (day)
                             enum:
                             - second
                             - minute
@@ -1046,13 +1079,12 @@ spec:
                             - quarter
                             - year
                             type: string
+                          start:
+                            default: 0
+                            description: The window start day
+                            format: int32
+                            type: integer
                         type: object
-                      horizon:
-                        description: Horizon is the number of data points to predict
-                          in the future.
-                        format: int32
-                        minimum: 0
-                        type: integer
                       level1:
                         description: Column name of the first level of grouping
                         type: string
@@ -1062,6 +1094,31 @@ spec:
                       level3:
                         description: Column name of the third level of grouping
                         type: string
+                      past:
+                        description: Required, the freq of the time series (daily,weekly)
+                        properties:
+                          end:
+                            description: The windows end day
+                            format: int32
+                            type: integer
+                          freq:
+                            description: Time Frequency (day)
+                            enum:
+                            - second
+                            - minute
+                            - hour
+                            - day
+                            - week
+                            - month
+                            - quarter
+                            - year
+                            type: string
+                          start:
+                            default: 0
+                            description: The window start day
+                            format: int32
+                            type: integer
+                        type: object
                       repressors:
                         description: List of other columns to take into consideration
                           Default None
@@ -1073,7 +1130,8 @@ spec:
                           default this is the target column from the dataset.
                         type: string
                       timeColumn:
-                        description: The name of the time column
+                        description: 'General Forecast attributes: The name of the
+                          time column'
                         type: string
                     type: object
                   gpu:

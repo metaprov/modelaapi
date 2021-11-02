@@ -800,6 +800,7 @@ type ResourceConsumption struct {
 
 // ForecastingSpec
 type ForecastingSpec struct {
+	// General Forecast attributes:
 	// The name of the time column
 	// +kubebuilder:validation:Required
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,1,opt,name=timeColumn"`
@@ -825,11 +826,10 @@ type ForecastingSpec struct {
 	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,7,rep,name=repressors"`
 	// Required, the freq of the time series (daily,weekly)
 	// +kubebuilder:validation:Optional
-	FreqSpec *FreqSpec `json:"freqSpec,omitempty" protobuf:"bytes,8,opt,name=freqSpec"`
-	// Horizon is the number of data points to predict in the future.
-	// +kubebuilder:validation:Minimum=0
+	Past *ForecastWindow `json:"past,omitempty" protobuf:"bytes,8,opt,name=past"`
+	// Required, the freq of the time series (daily,weekly)
 	// +kubebuilder:validation:Optional
-	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,9,opt,name=horizon"`
+	Future *ForecastWindow `json:"future,omitempty" protobuf:"bytes,9,opt,name=future"`
 	// The confidence levels for the forecast, each level must be between 1-100.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0
@@ -843,7 +843,7 @@ type ForecastingSpec struct {
 	// The name of the connection for a database the result of the forecast
 	// If null, the system will insert the forecast in the database.
 	// +kubebuilder:validation:Optional
-	ForecastConnectionName *string `json:"forecastConnectionName,omitempty" protobuf:"bytes,13,opt,name=forecastConnectionName"`
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,13,opt,name=connectionName"`
 	// Specify if we should generate a forecast using the model
 	// If true, the system will perform a forecast and update the forecast connection.
 	// Default it true
@@ -851,15 +851,20 @@ type ForecastingSpec struct {
 	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,14,opt,name=forecast"`
 }
 
-// FreqSpec specify the frequency specification.
-type FreqSpec struct {
-	// Default to 1.
-	// +kubebuilder:default:=1
-	// +kubebuilder:validation:Minimum=0
+// Represent a general time window.
+// When used in the future start < end.
+// When used in the past start > end
+type ForecastWindow struct {
+	// The window start day
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Interval *int32 `json:"interval,omitempty" protobuf:"varint,1,opt,name=interval"`
-	// required
-	Units *catalog.Freq `json:"unit,omitempty" protobuf:"bytes,2,opt,name=unit"`
+	Start *int32 `json:"start,omitempty" protobuf:"varint,1,opt,name=start"`
+	// The windows end day
+	// +kubebuilder:validation:Optional
+	End *int32 `json:"end,omitempty" protobuf:"varint,2,opt,name=end"`
+	// Time Frequency (day)
+	// +kubebuilder:validation:Optional
+	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
 }
 
 // BacktestSpec specify the back test
@@ -868,19 +873,24 @@ type BacktestSpec struct {
 	// +kubebuilder:default:=80
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	Initial *int32 `json:"initial,omitempty" protobuf:"varint,1,opt,name=initial"`
+	Splits *int32 `json:"splits,omitempty" protobuf:"varint,1,opt,name=splits"`
 	// The number of backtesting windows. Default to 3. can be from 1 to 5.
-	// +kubebuilder:default:=3
-	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	Windows *int32 `json:"windows,omitempty" protobuf:"varint,2,opt,name=windows"`
+	MaxTrainSize *int32 `json:"maxTrainSize,omitempty" protobuf:"varint,2,opt,name=maxTrainSize"`
+	// The number of backtesting windows. Default to 3. can be from 1 to 5.
+	// +kubebuilder:validation:Optional
+	MaxTestSize *int32 `json:"maxTestSize,omitempty" protobuf:"varint,3,opt,name=maxTestSize"`
+	// +kubebuilder:validation:Optional
+	Gap *int32 `json:"gap,omitempty" protobuf:"varint,4,opt,name=gap"`
 }
 
 // DimensionValue specify the partition key values are used for the partition
 type DimensionValue struct {
 	// Key is the partition key
+	// +kubebuilder:validation:Optional
 	Key *string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
 	// Value if the partition value
+	// +kubebuilder:validation:Optional
 	Value *string `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }
 

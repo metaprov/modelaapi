@@ -33,11 +33,17 @@ export namespace AudioPipelineSpec {
 }
 
 export class BacktestSpec extends jspb.Message {
-  getInitial(): number;
-  setInitial(value: number): BacktestSpec;
+  getSplits(): number;
+  setSplits(value: number): BacktestSpec;
 
-  getWindows(): number;
-  setWindows(value: number): BacktestSpec;
+  getMaxtrainsize(): number;
+  setMaxtrainsize(value: number): BacktestSpec;
+
+  getMaxtestsize(): number;
+  setMaxtestsize(value: number): BacktestSpec;
+
+  getGap(): number;
+  setGap(value: number): BacktestSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BacktestSpec.AsObject;
@@ -49,8 +55,10 @@ export class BacktestSpec extends jspb.Message {
 
 export namespace BacktestSpec {
   export type AsObject = {
-    initial: number,
-    windows: number,
+    splits: number,
+    maxtrainsize: number,
+    maxtestsize: number,
+    gap: number,
   }
 }
 
@@ -926,6 +934,32 @@ export namespace ForecastObj {
   }
 }
 
+export class ForecastWindow extends jspb.Message {
+  getStart(): number;
+  setStart(value: number): ForecastWindow;
+
+  getEnd(): number;
+  setEnd(value: number): ForecastWindow;
+
+  getFreq(): string;
+  setFreq(value: string): ForecastWindow;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastWindow.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastWindow): ForecastWindow.AsObject;
+  static serializeBinaryToWriter(message: ForecastWindow, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastWindow;
+  static deserializeBinaryFromReader(message: ForecastWindow, reader: jspb.BinaryReader): ForecastWindow;
+}
+
+export namespace ForecastWindow {
+  export type AsObject = {
+    start: number,
+    end: number,
+    freq: string,
+  }
+}
+
 export class ForecastingSpec extends jspb.Message {
   getTimecolumn(): string;
   setTimecolumn(value: string): ForecastingSpec;
@@ -950,13 +984,15 @@ export class ForecastingSpec extends jspb.Message {
   clearRepressorsList(): ForecastingSpec;
   addRepressors(value: string, index?: number): ForecastingSpec;
 
-  getFreqspec(): FreqSpec | undefined;
-  setFreqspec(value?: FreqSpec): ForecastingSpec;
-  hasFreqspec(): boolean;
-  clearFreqspec(): ForecastingSpec;
+  getPast(): ForecastWindow | undefined;
+  setPast(value?: ForecastWindow): ForecastingSpec;
+  hasPast(): boolean;
+  clearPast(): ForecastingSpec;
 
-  getHorizon(): number;
-  setHorizon(value: number): ForecastingSpec;
+  getFuture(): ForecastWindow | undefined;
+  setFuture(value?: ForecastWindow): ForecastingSpec;
+  hasFuture(): boolean;
+  clearFuture(): ForecastingSpec;
 
   getConfidenceinterval(): number;
   setConfidenceinterval(value: number): ForecastingSpec;
@@ -969,8 +1005,8 @@ export class ForecastingSpec extends jspb.Message {
   hasBacktest(): boolean;
   clearBacktest(): ForecastingSpec;
 
-  getForecastconnectionname(): string;
-  setForecastconnectionname(value: string): ForecastingSpec;
+  getConnectionname(): string;
+  setConnectionname(value: string): ForecastingSpec;
 
   getForecast(): boolean;
   setForecast(value: boolean): ForecastingSpec;
@@ -992,12 +1028,12 @@ export namespace ForecastingSpec {
     level2: string,
     level3: string,
     repressorsList: Array<string>,
-    freqspec?: FreqSpec.AsObject,
-    horizon: number,
+    past?: ForecastWindow.AsObject,
+    future?: ForecastWindow.AsObject,
     confidenceinterval: number,
     countryforholiday: string,
     backtest?: BacktestSpec.AsObject,
-    forecastconnectionname: string,
+    connectionname: string,
     forecast: boolean,
   }
 }
@@ -1013,28 +1049,6 @@ export class FormatSpec extends jspb.Message {
 
 export namespace FormatSpec {
   export type AsObject = {
-  }
-}
-
-export class FreqSpec extends jspb.Message {
-  getInterval(): number;
-  setInterval(value: number): FreqSpec;
-
-  getUnit(): string;
-  setUnit(value: string): FreqSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FreqSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FreqSpec): FreqSpec.AsObject;
-  static serializeBinaryToWriter(message: FreqSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FreqSpec;
-  static deserializeBinaryFromReader(message: FreqSpec, reader: jspb.BinaryReader): FreqSpec;
-}
-
-export namespace FreqSpec {
-  export type AsObject = {
-    interval: number,
-    unit: string,
   }
 }
 
