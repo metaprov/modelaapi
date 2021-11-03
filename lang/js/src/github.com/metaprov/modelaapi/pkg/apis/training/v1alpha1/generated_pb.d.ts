@@ -890,36 +890,6 @@ export namespace FeatureImportance {
   }
 }
 
-export class ForecastHyperParametersSpec extends jspb.Message {
-  getSeasonalitymode(): string;
-  setSeasonalitymode(value: string): ForecastHyperParametersSpec;
-
-  getChangepriorscale(): number;
-  setChangepriorscale(value: number): ForecastHyperParametersSpec;
-
-  getSeasonalitypriorscale(): number;
-  setSeasonalitypriorscale(value: number): ForecastHyperParametersSpec;
-
-  getHolidayspriorscale(): number;
-  setHolidayspriorscale(value: number): ForecastHyperParametersSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ForecastHyperParametersSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: ForecastHyperParametersSpec): ForecastHyperParametersSpec.AsObject;
-  static serializeBinaryToWriter(message: ForecastHyperParametersSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ForecastHyperParametersSpec;
-  static deserializeBinaryFromReader(message: ForecastHyperParametersSpec, reader: jspb.BinaryReader): ForecastHyperParametersSpec;
-}
-
-export namespace ForecastHyperParametersSpec {
-  export type AsObject = {
-    seasonalitymode: string,
-    changepriorscale: number,
-    seasonalitypriorscale: number,
-    holidayspriorscale: number,
-  }
-}
-
 export class ForecastObj extends jspb.Message {
   getKey(): string;
   setKey(value: string): ForecastObj;

@@ -11,21 +11,6 @@ const (
 	Flat     GrowthMode = "flat"
 )
 
-type ForecastHyperParametersSpec struct {
-	// The period interval
-	// +kubebuilder:validation:Optional
-	SeasonalityMode *catalog.SeasonalityMode `json:"seasonalityMode,omitempty" protobuf:"bytes,1,opt,name=seasonalityMode"`
-	// The change prior scale
-	// +kubebuilder:validation:Optional
-	ChangePriorScale *float64 `json:"changePriorScale,omitempty" protobuf:"bytes,2,opt,name=changePriorScale"`
-	// The Seasonality prior scale
-	// +kubebuilder:validation:Optional
-	SeasonalityPriorScale *float64 `json:"seasonalityPriorScale,omitempty" protobuf:"bytes,3,opt,name=seasonalityPriorScale"`
-	// The holiday prior scale
-	// +kubebuilder:validation:Optional
-	HolidaysPriorScale *float64 `json:"holidaysPriorScale,omitempty" protobuf:"bytes,4,opt,name=holidaysPriorScale"`
-}
-
 // SeasonalitySpec defines the custom seasonality
 type SeasonalitySpec struct {
 	// The name of the custom seasonality

@@ -543,24 +543,6 @@ message FeatureImportance {
   optional double importance = 2;
 }
 
-message ForecastHyperParametersSpec {
-  // The period interval
-  // +kubebuilder:validation:Optional
-  optional string seasonalityMode = 1;
-
-  // The change prior scale
-  // +kubebuilder:validation:Optional
-  optional double changePriorScale = 2;
-
-  // The Seasonality prior scale
-  // +kubebuilder:validation:Optional
-  optional double seasonalityPriorScale = 3;
-
-  // The holiday prior scale
-  // +kubebuilder:validation:Optional
-  optional double holidaysPriorScale = 4;
-}
-
 // A definition for a single forecast
 // A single forecast knows its forecast key and the index to its level
 message ForecastObj {
