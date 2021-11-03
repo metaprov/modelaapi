@@ -107,19 +107,6 @@ func (study *Study) Default() {
 	}
 	study.Spec.Search.StackingEnsemble = util.BoolPtr(true)
 
-	if study.Spec.Training.Forecast == nil && *study.Spec.Task == catalog.Forecasting {
-		study.Spec.Training.Forecast = &ForecastingSpec{
-			TimeColumn:         nil,
-			TargetColumn:       nil,
-			DateTimeFormat:     nil,
-			Repressors:         nil,
-			ConfidenceInterval: nil,
-			CountryForHoliday:  nil,
-			Backtest:           nil,
-			Forecast:           nil,
-		}
-	}
-
 	if study.Spec.Search.Pruner.SHOptions == nil {
 		study.Spec.Search.Pruner.SHOptions = &SuccessiveHalvingOptions{}
 	}

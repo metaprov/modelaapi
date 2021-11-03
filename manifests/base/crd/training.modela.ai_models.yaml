@@ -279,11 +279,7 @@ spec:
               flagged:
                 description: Is this model flagged
                 type: boolean
-              forecasted:
-                default: false
-                description: Forecasted is true when the model should perform a forecast
-                type: boolean
-              forecastingSpec:
+              forecast:
                 description: The specification for the forecasting algorithm if this
                   is a forecast study.
                 properties:
@@ -291,23 +287,22 @@ spec:
                     description: The backtest specification, the system supports back
                       testing with expanding windows.
                     properties:
-                      gap:
+                      forecastingWindowsSize:
+                        description: The number of data points to forecast on.
                         format: int32
                         type: integer
-                      maxTestSize:
-                        description: The number of backtesting windows. Default to
-                          3. can be from 1 to 5.
+                      sliding:
+                        description: If true, use sliding windows, else use expanding
+                          windows
+                        type: boolean
+                      slidingSteps:
+                        description: The number of data points between each windows
                         format: int32
                         type: integer
-                      maxTrainSize:
-                        description: The number of backtesting windows. Default to
-                          3. can be from 1 to 5.
-                        format: int32
-                        type: integer
-                      splits:
+                      trainingWindowsSize:
                         default: 80
-                        description: The initial number of data points, default to
-                          80% of rows.
+                        description: The number of data points in each windows used
+                          for training.
                         format: int32
                         minimum: 0
                         type: integer
@@ -318,114 +313,171 @@ spec:
                     format: int32
                     minimum: 0
                     type: integer
-                  connectionName:
-                    description: The name of the connection for a database the result
-                      of the forecast If null, the system will insert the forecast
-                      in the database.
-                    type: string
-                  countryForHoliday:
-                    description: Set an holiday schedule for a country.
-                    enum:
-                    - US
-                    - BR
-                    - ID
-                    - IN
-                    - MY
-                    - VN
-                    - TH
-                    - PH
-                    - PK
-                    - BD
-                    - EG
-                    - CN
-                    - RU
-                    - KR
-                    - BY
-                    - AE
-                    - none
-                    type: string
-                  datetimeFormat:
-                    description: The format of the datetime column. Used default
-                    type: string
-                  forecast:
-                    description: Specify if we should generate a forecast using the
-                      model If true, the system will perform a forecast and update
-                      the forecast connection. Default it true
+                  data:
+                    description: Required, the freq of the time series (daily,weekly)
+                    properties:
+                      countryForHoliday:
+                        description: Set an holiday schedule for a country.
+                        enum:
+                        - US
+                        - BR
+                        - ID
+                        - IN
+                        - MY
+                        - VN
+                        - TH
+                        - PH
+                        - PK
+                        - BD
+                        - EG
+                        - CN
+                        - RU
+                        - KR
+                        - BY
+                        - AE
+                        - none
+                        type: string
+                      datetimeFormat:
+                        description: The format of the datetime column. Used default
+                        type: string
+                      extraSeasonality:
+                        description: The list of additional regressors. The regresors
+                          are part of the time series data
+                        items:
+                          description: SeasonalitySpec defines the custom seasonality
+                          properties:
+                            fourierOrder:
+                              format: int32
+                              type: integer
+                            name:
+                              description: The name of the custom seasonality
+                              type: string
+                            period:
+                              description: The name of the custom seasonality
+                              type: number
+                          type: object
+                        type: array
+                      forecast:
+                        description: The forecast periods
+                        properties:
+                          end:
+                            description: The windows end day
+                            format: int32
+                            type: integer
+                          interval:
+                            description: The period interval
+                            enum:
+                            - second
+                            - minute
+                            - hour
+                            - day
+                            - week
+                            - month
+                            - quarter
+                            - year
+                            type: string
+                          start:
+                            default: 0
+                            description: The window start day
+                            format: int32
+                            type: integer
+                        type: object
+                      growth:
+                        enum:
+                        - linear
+                        - logistic
+                        - flat
+                        type: string
+                      historical:
+                        description: The historical periods
+                        properties:
+                          end:
+                            description: The windows end day
+                            format: int32
+                            type: integer
+                          interval:
+                            description: The period interval
+                            enum:
+                            - second
+                            - minute
+                            - hour
+                            - day
+                            - week
+                            - month
+                            - quarter
+                            - year
+                            type: string
+                          start:
+                            default: 0
+                            description: The window start day
+                            format: int32
+                            type: integer
+                        type: object
+                      level1:
+                        description: Column name of the first level of grouping
+                        type: string
+                      level2:
+                        description: Column name of the second level of grouping
+                        type: string
+                      level3:
+                        description: Column name of the third level of grouping
+                        type: string
+                      regressors:
+                        description: The list of additional regressors. The regresors
+                          are part of the time series data
+                        items:
+                          properties:
+                            interval:
+                              description: The Name of the regressor
+                              type: string
+                            priorScale:
+                              description: The Name of the regressor
+                              type: number
+                            standardize:
+                              description: The Name of the regressor
+                              type: boolean
+                          type: object
+                        type: array
+                      targetColumn:
+                        description: The name of the column holding the value. By
+                          default this is the target column from the dataset.
+                        type: string
+                      timeColumn:
+                        description: 'General Forecast attributes: The name of the
+                          time column'
+                        type: string
+                      yearlySeasonality:
+                        description: Predictor format represent the API implementation
+                          of the model
+                        enum:
+                        - multipicative
+                        - additive
+                        type: string
+                    type: object
+                  plot:
+                    description: If true generate the plots
                     type: boolean
-                  future:
-                    description: Required, the freq of the time series (daily,weekly)
+                  plotChangePoints:
+                    type: boolean
+                  postProcessing:
+                    description: Post processing
                     properties:
-                      end:
-                        description: The windows end day
-                        format: int32
-                        type: integer
-                      freq:
-                        description: Time Frequency (day)
-                        enum:
-                        - second
-                        - minute
-                        - hour
-                        - day
-                        - week
-                        - month
-                        - quarter
-                        - year
+                      connectionName:
+                        description: The name of the connection for a database the
+                          result of the forecast If null, the system will insert the
+                          forecast in the database.
                         type: string
-                      start:
-                        default: 0
-                        description: The window start day
-                        format: int32
-                        type: integer
+                      forecast:
+                        description: Specify if we should generate a forecast using
+                          the model If true, the system will perform a forecast and
+                          update the forecast connection. Default it true
+                        type: boolean
                     type: object
-                  level1:
-                    description: Column name of the first level of grouping
-                    type: string
-                  level2:
-                    description: Column name of the second level of grouping
-                    type: string
-                  level3:
-                    description: Column name of the third level of grouping
-                    type: string
-                  past:
-                    description: Required, the freq of the time series (daily,weekly)
-                    properties:
-                      end:
-                        description: The windows end day
-                        format: int32
-                        type: integer
-                      freq:
-                        description: Time Frequency (day)
-                        enum:
-                        - second
-                        - minute
-                        - hour
-                        - day
-                        - week
-                        - month
-                        - quarter
-                        - year
-                        type: string
-                      start:
-                        default: 0
-                        description: The window start day
-                        format: int32
-                        type: integer
-                    type: object
-                  repressors:
-                    description: List of other columns to take into consideration
-                      Default None
-                    items:
-                      type: string
-                    type: array
-                  targetColumn:
-                    description: The name of the column holding the value. By default
-                      this is the target column from the dataset.
-                    type: string
-                  timeColumn:
-                    description: 'General Forecast attributes: The name of the time
-                      column'
-                    type: string
                 type: object
+              forecasted:
+                default: false
+                description: Forecasted is true when the model should perform a forecast
+                type: boolean
               id:
                 description: ID is the generate id of the model. It is assigned to
                   every model within the data product
@@ -991,149 +1043,6 @@ spec:
                     description: The number of folds during cross validation.
                     format: int32
                     type: integer
-                  forecast:
-                    description: 'Define the forecast period for time series studies.
-                      This is only used in time series models. Default: Empty'
-                    properties:
-                      backtest:
-                        description: The backtest specification, the system supports
-                          back testing with expanding windows.
-                        properties:
-                          gap:
-                            format: int32
-                            type: integer
-                          maxTestSize:
-                            description: The number of backtesting windows. Default
-                              to 3. can be from 1 to 5.
-                            format: int32
-                            type: integer
-                          maxTrainSize:
-                            description: The number of backtesting windows. Default
-                              to 3. can be from 1 to 5.
-                            format: int32
-                            type: integer
-                          splits:
-                            default: 80
-                            description: The initial number of data points, default
-                              to 80% of rows.
-                            format: int32
-                            minimum: 0
-                            type: integer
-                        type: object
-                      confidenceIntervals:
-                        description: The confidence levels for the forecast, each
-                          level must be between 1-100.
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      connectionName:
-                        description: The name of the connection for a database the
-                          result of the forecast If null, the system will insert the
-                          forecast in the database.
-                        type: string
-                      countryForHoliday:
-                        description: Set an holiday schedule for a country.
-                        enum:
-                        - US
-                        - BR
-                        - ID
-                        - IN
-                        - MY
-                        - VN
-                        - TH
-                        - PH
-                        - PK
-                        - BD
-                        - EG
-                        - CN
-                        - RU
-                        - KR
-                        - BY
-                        - AE
-                        - none
-                        type: string
-                      datetimeFormat:
-                        description: The format of the datetime column. Used default
-                        type: string
-                      forecast:
-                        description: Specify if we should generate a forecast using
-                          the model If true, the system will perform a forecast and
-                          update the forecast connection. Default it true
-                        type: boolean
-                      future:
-                        description: Required, the freq of the time series (daily,weekly)
-                        properties:
-                          end:
-                            description: The windows end day
-                            format: int32
-                            type: integer
-                          freq:
-                            description: Time Frequency (day)
-                            enum:
-                            - second
-                            - minute
-                            - hour
-                            - day
-                            - week
-                            - month
-                            - quarter
-                            - year
-                            type: string
-                          start:
-                            default: 0
-                            description: The window start day
-                            format: int32
-                            type: integer
-                        type: object
-                      level1:
-                        description: Column name of the first level of grouping
-                        type: string
-                      level2:
-                        description: Column name of the second level of grouping
-                        type: string
-                      level3:
-                        description: Column name of the third level of grouping
-                        type: string
-                      past:
-                        description: Required, the freq of the time series (daily,weekly)
-                        properties:
-                          end:
-                            description: The windows end day
-                            format: int32
-                            type: integer
-                          freq:
-                            description: Time Frequency (day)
-                            enum:
-                            - second
-                            - minute
-                            - hour
-                            - day
-                            - week
-                            - month
-                            - quarter
-                            - year
-                            type: string
-                          start:
-                            default: 0
-                            description: The window start day
-                            format: int32
-                            type: integer
-                        type: object
-                      repressors:
-                        description: List of other columns to take into consideration
-                          Default None
-                        items:
-                          type: string
-                        type: array
-                      targetColumn:
-                        description: The name of the column holding the value. By
-                          default this is the target column from the dataset.
-                        type: string
-                      timeColumn:
-                        description: 'General Forecast attributes: The name of the
-                          time column'
-                        type: string
-                    type: object
                   gpu:
                     default: false
                     description: Gpu indicate that training should be done on a gpu.

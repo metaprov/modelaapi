@@ -312,7 +312,7 @@ type ModelSpec struct {
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,30,opt,name=location"`
 	// The specification for the forecasting algorithm if this is a forecast study.
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastingSpec `json:"forecastingSpec,omitempty" protobuf:"bytes,31,opt,name=forecastingSpec"`
+	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,31,opt,name=forecast"`
 	// Compilation denotes how to compile the model.
 	// +kubebuilder:validation:Optional
 	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,32,opt,name=compilation"`
@@ -642,10 +642,6 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
 	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,7,opt,name=checkpointInterval"`
-	// Define the forecast period for time series studies. This is only used in time series models.
-	// Default: Empty
-	// +kubebuilder:validation:Optional
-	Forecast *ForecastingSpec `json:"forecast,omitempty" protobuf:"bytes,8,opt,name=forecast"`
 	// Successive halving represent the configuration for the model training, when running
 	// the SuccessiveHalvingSpec model search algorithm
 	// The metrics are evaluated using the final model, both on the training set
@@ -796,102 +792,6 @@ type ResourceConsumption struct {
 	Cpu float64 `json:"cpu,omitempty" protobuf:"bytes,1,opt,name=cpu"`
 	Mem float64 `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
 	Gpu float64 `json:"gpu,omitempty" protobuf:"bytes,3,opt,name=gpu"`
-}
-
-// ForecastingSpec
-type ForecastingSpec struct {
-	// General Forecast attributes:
-	// The name of the time column
-	// +kubebuilder:validation:Required
-	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,1,opt,name=timeColumn"`
-	// The name of the column holding the value.
-	// By default this is the target column from the dataset.
-	// +kubebuilder:validation:Optional
-	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,2,opt,name=targetColumn"`
-	// The format of the datetime column. Used default
-	// +kubebuilder:validation:Optional
-	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,3,opt,name=datetimeFormat"`
-	// Column name of the first level of grouping
-	// +kubebuilder:validation:Optional
-	Level1 *string `json:"level1,omitempty" protobuf:"bytes,4,rep,name=level1"`
-	// Column name of the second level of grouping
-	// +kubebuilder:validation:Optional
-	Level2 *string `json:"level2,omitempty" protobuf:"bytes,5,rep,name=level2"`
-	// Column name of the third level of grouping
-	// +kubebuilder:validation:Optional
-	Level3 *string `json:"level3,omitempty" protobuf:"bytes,6,rep,name=level3"`
-	// List of other columns to take into consideration
-	// Default None
-	// +kubebuilder:validation:Optional
-	Repressors []string `json:"repressors,omitempty" protobuf:"bytes,7,rep,name=repressors"`
-	// Required, the freq of the time series (daily,weekly)
-	// +kubebuilder:validation:Optional
-	Past *ForecastWindow `json:"past,omitempty" protobuf:"bytes,8,opt,name=past"`
-	// Required, the freq of the time series (daily,weekly)
-	// +kubebuilder:validation:Optional
-	Future *ForecastWindow `json:"future,omitempty" protobuf:"bytes,9,opt,name=future"`
-	// The confidence levels for the forecast, each level must be between 1-100.
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Minimum=0
-	ConfidenceInterval *int32 `json:"confidenceIntervals,omitempty" protobuf:"varint,10,opt,name=confidenceInterval"`
-	// Set an holiday schedule for a country.
-	//+optional
-	CountryForHoliday *catalog.HolidayCountry `json:"countryForHoliday,omitempty" protobuf:"bytes,11,opt,name=countryForHoliday"`
-	// The backtest specification, the system supports back testing with expanding windows.
-	// +kubebuilder:validation:Optional
-	Backtest *BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,12,opt,name=backtest"`
-	// The name of the connection for a database the result of the forecast
-	// If null, the system will insert the forecast in the database.
-	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,13,opt,name=connectionName"`
-	// Specify if we should generate a forecast using the model
-	// If true, the system will perform a forecast and update the forecast connection.
-	// Default it true
-	// +kubebuilder:validation:Optional
-	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,14,opt,name=forecast"`
-}
-
-// Represent a general time window.
-// When used in the future start < end.
-// When used in the past start > end
-type ForecastWindow struct {
-	// The window start day
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	Start *int32 `json:"start,omitempty" protobuf:"varint,1,opt,name=start"`
-	// The windows end day
-	// +kubebuilder:validation:Optional
-	End *int32 `json:"end,omitempty" protobuf:"varint,2,opt,name=end"`
-	// Time Frequency (day)
-	// +kubebuilder:validation:Optional
-	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
-}
-
-// BacktestSpec specify the back test
-type BacktestSpec struct {
-	// The initial number of data points, default to 80% of rows.
-	// +kubebuilder:default:=80
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Optional
-	Splits *int32 `json:"splits,omitempty" protobuf:"varint,1,opt,name=splits"`
-	// The number of backtesting windows. Default to 3. can be from 1 to 5.
-	// +kubebuilder:validation:Optional
-	MaxTrainSize *int32 `json:"maxTrainSize,omitempty" protobuf:"varint,2,opt,name=maxTrainSize"`
-	// The number of backtesting windows. Default to 3. can be from 1 to 5.
-	// +kubebuilder:validation:Optional
-	MaxTestSize *int32 `json:"maxTestSize,omitempty" protobuf:"varint,3,opt,name=maxTestSize"`
-	// +kubebuilder:validation:Optional
-	Gap *int32 `json:"gap,omitempty" protobuf:"varint,4,opt,name=gap"`
-}
-
-// DimensionValue specify the partition key values are used for the partition
-type DimensionValue struct {
-	// Key is the partition key
-	// +kubebuilder:validation:Optional
-	Key *string `json:"key,omitempty" protobuf:"bytes,1,opt,name=key"`
-	// Value if the partition value
-	// +kubebuilder:validation:Optional
-	Value *string `json:"value,omitempty" protobuf:"bytes,2,opt,name=value"`
 }
 
 // List compiler spec

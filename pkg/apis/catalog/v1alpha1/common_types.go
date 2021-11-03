@@ -1591,3 +1591,14 @@ type Logs struct {
 	// +kubebuilder:validation:Optional
 	Paths []string `json:"paths,omitempty" protobuf:"bytes,2,rep,name=paths"`
 }
+
+// +kubebuilder:validation:Enum="multipicative";"additive";
+// Predictor format represent the API implementation of the model
+type SeasonalityMode string
+
+const (
+	Multipicative SeasonalityMode = "multipicative"
+	Addadive      SeasonalityMode = "additive"
+	Auto          PredictorFormat = "auto"
+	None          PredictorFormat = "none"
+)
