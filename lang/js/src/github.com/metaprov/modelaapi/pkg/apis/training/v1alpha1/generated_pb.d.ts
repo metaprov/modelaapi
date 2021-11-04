@@ -608,6 +608,32 @@ export namespace CustomReportValue {
   }
 }
 
+export class CustomSeasonalitySpec extends jspb.Message {
+  getName(): string;
+  setName(value: string): CustomSeasonalitySpec;
+
+  getPeriod(): number;
+  setPeriod(value: number): CustomSeasonalitySpec;
+
+  getFourierorder(): number;
+  setFourierorder(value: number): CustomSeasonalitySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomSeasonalitySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomSeasonalitySpec): CustomSeasonalitySpec.AsObject;
+  static serializeBinaryToWriter(message: CustomSeasonalitySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomSeasonalitySpec;
+  static deserializeBinaryFromReader(message: CustomSeasonalitySpec, reader: jspb.BinaryReader): CustomSeasonalitySpec;
+}
+
+export namespace CustomSeasonalitySpec {
+  export type AsObject = {
+    name: string,
+    period: number,
+    fourierorder: number,
+  }
+}
+
 export class DataHashes extends jspb.Message {
   getTrainhash(): string;
   setTrainhash(value: string): DataHashes;
@@ -3462,6 +3488,32 @@ export namespace NumericPipelineSpec {
   }
 }
 
+export class PeriodSeasonalitySpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): PeriodSeasonalitySpec;
+
+  getPeriods(): number;
+  setPeriods(value: number): PeriodSeasonalitySpec;
+
+  getMode(): string;
+  setMode(value: string): PeriodSeasonalitySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PeriodSeasonalitySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PeriodSeasonalitySpec): PeriodSeasonalitySpec.AsObject;
+  static serializeBinaryToWriter(message: PeriodSeasonalitySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PeriodSeasonalitySpec;
+  static deserializeBinaryFromReader(message: PeriodSeasonalitySpec, reader: jspb.BinaryReader): PeriodSeasonalitySpec;
+}
+
+export namespace PeriodSeasonalitySpec {
+  export type AsObject = {
+    enabled: boolean,
+    periods: number,
+    mode: string,
+  }
+}
+
 export class PeriodSpec extends jspb.Message {
   getInterval(): string;
   setInterval(value: string): PeriodSpec;
@@ -3609,8 +3661,8 @@ export namespace PrunerSpec {
 }
 
 export class RegressorSpec extends jspb.Message {
-  getInterval(): string;
-  setInterval(value: string): RegressorSpec;
+  getName(): string;
+  setName(value: string): RegressorSpec;
 
   getPriorscale(): number;
   setPriorscale(value: number): RegressorSpec;
@@ -3628,7 +3680,7 @@ export class RegressorSpec extends jspb.Message {
 
 export namespace RegressorSpec {
   export type AsObject = {
-    interval: string,
+    name: string,
     priorscale: number,
     standardize: boolean,
   }
@@ -3931,32 +3983,6 @@ export namespace ResourceConsumption {
     cpu: number,
     mem: number,
     gpu: number,
-  }
-}
-
-export class SeasonalitySpec extends jspb.Message {
-  getName(): string;
-  setName(value: string): SeasonalitySpec;
-
-  getPeriod(): number;
-  setPeriod(value: number): SeasonalitySpec;
-
-  getFourierorder(): number;
-  setFourierorder(value: number): SeasonalitySpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SeasonalitySpec.AsObject;
-  static toObject(includeInstance: boolean, msg: SeasonalitySpec): SeasonalitySpec.AsObject;
-  static serializeBinaryToWriter(message: SeasonalitySpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SeasonalitySpec;
-  static deserializeBinaryFromReader(message: SeasonalitySpec, reader: jspb.BinaryReader): SeasonalitySpec;
-}
-
-export namespace SeasonalitySpec {
-  export type AsObject = {
-    name: string,
-    period: number,
-    fourierorder: number,
   }
 }
 
@@ -4535,14 +4561,20 @@ export class TimeSeriesDataSpec extends jspb.Message {
   hasForecast(): boolean;
   clearForecast(): TimeSeriesDataSpec;
 
-  getYearlyseasonality(): string;
-  setYearlyseasonality(value: string): TimeSeriesDataSpec;
+  getYearlyseasonality(): PeriodSeasonalitySpec | undefined;
+  setYearlyseasonality(value?: PeriodSeasonalitySpec): TimeSeriesDataSpec;
+  hasYearlyseasonality(): boolean;
+  clearYearlyseasonality(): TimeSeriesDataSpec;
 
-  getWeeklyseasonality(): string;
-  setWeeklyseasonality(value: string): TimeSeriesDataSpec;
+  getWeeklyseasonality(): PeriodSeasonalitySpec | undefined;
+  setWeeklyseasonality(value?: PeriodSeasonalitySpec): TimeSeriesDataSpec;
+  hasWeeklyseasonality(): boolean;
+  clearWeeklyseasonality(): TimeSeriesDataSpec;
 
-  getDailyseasonality(): string;
-  setDailyseasonality(value: string): TimeSeriesDataSpec;
+  getDailyseasonality(): PeriodSeasonalitySpec | undefined;
+  setDailyseasonality(value?: PeriodSeasonalitySpec): TimeSeriesDataSpec;
+  hasDailyseasonality(): boolean;
+  clearDailyseasonality(): TimeSeriesDataSpec;
 
   getGrowth(): string;
   setGrowth(value: string): TimeSeriesDataSpec;
@@ -4552,13 +4584,13 @@ export class TimeSeriesDataSpec extends jspb.Message {
   clearRegressorsList(): TimeSeriesDataSpec;
   addRegressors(value?: RegressorSpec, index?: number): RegressorSpec;
 
-  getExtraseasonalityList(): Array<SeasonalitySpec>;
-  setExtraseasonalityList(value: Array<SeasonalitySpec>): TimeSeriesDataSpec;
-  clearExtraseasonalityList(): TimeSeriesDataSpec;
-  addExtraseasonality(value?: SeasonalitySpec, index?: number): SeasonalitySpec;
+  getCustomseasonalitiesList(): Array<CustomSeasonalitySpec>;
+  setCustomseasonalitiesList(value: Array<CustomSeasonalitySpec>): TimeSeriesDataSpec;
+  clearCustomseasonalitiesList(): TimeSeriesDataSpec;
+  addCustomseasonalities(value?: CustomSeasonalitySpec, index?: number): CustomSeasonalitySpec;
 
-  getCountryforholiday(): string;
-  setCountryforholiday(value: string): TimeSeriesDataSpec;
+  getHoliday(): string;
+  setHoliday(value: string): TimeSeriesDataSpec;
 
   getChangepoints(): ChangePointSpec | undefined;
   setChangepoints(value?: ChangePointSpec): TimeSeriesDataSpec;
@@ -4589,13 +4621,13 @@ export namespace TimeSeriesDataSpec {
     level3: string,
     historical?: PeriodSpec.AsObject,
     forecast?: PeriodSpec.AsObject,
-    yearlyseasonality: string,
-    weeklyseasonality: string,
-    dailyseasonality: string,
+    yearlyseasonality?: PeriodSeasonalitySpec.AsObject,
+    weeklyseasonality?: PeriodSeasonalitySpec.AsObject,
+    dailyseasonality?: PeriodSeasonalitySpec.AsObject,
     growth: string,
     regressorsList: Array<RegressorSpec.AsObject>,
-    extraseasonalityList: Array<SeasonalitySpec.AsObject>,
-    countryforholiday: string,
+    customseasonalitiesList: Array<CustomSeasonalitySpec.AsObject>,
+    holiday: string,
     changepoints?: ChangePointSpec.AsObject,
     intevalwidth: number,
     uncertaintysamples: number,

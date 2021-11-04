@@ -290,6 +290,7 @@ spec:
                       forecastingWindowsSize:
                         description: The number of data points to forecast on.
                         format: int32
+                        minimum: 0
                         type: integer
                       sliding:
                         description: If true, use sliding windows, else use expanding
@@ -298,9 +299,9 @@ spec:
                       slidingSteps:
                         description: The number of data points between each windows
                         format: int32
+                        minimum: 0
                         type: integer
                       trainingWindowsSize:
-                        default: 80
                         description: The number of data points in each windows used
                           for training.
                         format: int32
@@ -327,39 +328,7 @@ spec:
                             description: Change point range
                             type: number
                         type: object
-                      countryForHoliday:
-                        description: Set an holiday schedule for a country.
-                        enum:
-                        - US
-                        - BR
-                        - ID
-                        - IN
-                        - MY
-                        - VN
-                        - TH
-                        - PH
-                        - PK
-                        - BD
-                        - EG
-                        - CN
-                        - RU
-                        - KR
-                        - BY
-                        - AE
-                        - none
-                        type: string
-                      dailySeasonality:
-                        default: auto
-                        description: Predictor format represent the API implementation
-                          of the model
-                        enum:
-                        - multipicative
-                        - additive
-                        type: string
-                      datetimeFormat:
-                        description: The format of the datetime column. Used default
-                        type: string
-                      extraSeasonality:
+                      customSeasonalities:
                         description: The list of additional regressors. The regresors
                           are part of the time series data
                         items:
@@ -376,6 +345,32 @@ spec:
                               type: number
                           type: object
                         type: array
+                      dailySeasonality:
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          enabled:
+                            default: true
+                            description: Is this seasonality enabled
+                            type: boolean
+                          mode:
+                            default: auto
+                            description: Predictor format represent the API implementation
+                              of the model
+                            enum:
+                            - multipicative
+                            - additive
+                            type: string
+                          periods:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
+                      datetimeFormat:
+                        description: The format of the datetime column. Used default
+                        type: string
                       forecast:
                         description: The forecast periods
                         properties:
@@ -432,6 +427,27 @@ spec:
                             format: int32
                             type: integer
                         type: object
+                      holiday:
+                        description: Set an holiday schedule for a country.
+                        enum:
+                        - US
+                        - BR
+                        - ID
+                        - IN
+                        - MY
+                        - VN
+                        - TH
+                        - PH
+                        - PK
+                        - BD
+                        - EG
+                        - CN
+                        - RU
+                        - KR
+                        - BY
+                        - AE
+                        - none
+                        type: string
                       intevalWidth:
                         type: number
                       level1:
@@ -448,13 +464,15 @@ spec:
                           are part of the time series data
                         items:
                           properties:
-                            interval:
+                            name:
                               description: The Name of the regressor
                               type: string
                             priorScale:
+                              default: 0
                               description: The Name of the regressor
                               type: number
                             standardize:
+                              default: false
                               description: The Name of the regressor
                               type: boolean
                           type: object
@@ -471,21 +489,51 @@ spec:
                         format: int32
                         type: integer
                       weeklySeasonality:
-                        default: auto
-                        description: Predictor format represent the API implementation
-                          of the model
-                        enum:
-                        - multipicative
-                        - additive
-                        type: string
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          enabled:
+                            default: true
+                            description: Is this seasonality enabled
+                            type: boolean
+                          mode:
+                            default: auto
+                            description: Predictor format represent the API implementation
+                              of the model
+                            enum:
+                            - multipicative
+                            - additive
+                            type: string
+                          periods:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
                       yearlySeasonality:
-                        default: auto
-                        description: Predictor format represent the API implementation
-                          of the model
-                        enum:
-                        - multipicative
-                        - additive
-                        type: string
+                        description: Define the seasonality for a period (yearly /
+                          monthly / daily)
+                        properties:
+                          enabled:
+                            default: true
+                            description: Is this seasonality enabled
+                            type: boolean
+                          mode:
+                            default: auto
+                            description: Predictor format represent the API implementation
+                              of the model
+                            enum:
+                            - multipicative
+                            - additive
+                            type: string
+                          periods:
+                            default: 0
+                            description: If enabled, the number of data points in
+                              the interval
+                            format: int32
+                            type: integer
+                        type: object
                     type: object
                   plot:
                     description: If true generate the plots

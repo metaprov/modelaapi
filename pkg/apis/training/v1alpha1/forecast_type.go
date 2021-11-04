@@ -11,8 +11,23 @@ const (
 	Flat     GrowthMode = "flat"
 )
 
+// Define the seasonality for a period (yearly / monthly / daily)
+type PeriodSeasonalitySpec struct {
+	// Is this seasonality enabled
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// If enabled, the number of data points in the interval
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Periods *int32 `json:"periods,omitempty" protobuf:"bytes,2,opt,name=periods"`
+	// +kubebuilder:default:="auto"
+	// +kubebuilder:validation:Optional
+	Mode *catalog.SeasonalityMode `json:"mode,omitempty" protobuf:"bytes,3,opt,name=mode"`
+}
+
 // SeasonalitySpec defines the custom seasonality
-type SeasonalitySpec struct {
+type CustomSeasonalitySpec struct {
 	// The name of the custom seasonality
 	// +kubebuilder:validation:Required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
@@ -25,9 +40,11 @@ type SeasonalitySpec struct {
 
 type ChangePointSpec struct {
 	// number of change points
+	// +kubebuilder:default = 25
 	// +kubebuilder:validation:Optional
 	N *int32 `json:"N,omitempty" protobuf:"varint,1,opt,name=N"`
 	// Change point range
+	// +kubebuilder:default = 0.8
 	// +kubebuilder:validation:Optional
 	Range *float64 `json:"range,omitempty" protobuf:"bytes,2,opt,name=range"`
 }
@@ -49,11 +66,13 @@ type PeriodSpec struct {
 type RegressorSpec struct {
 	// The Name of the regressor
 	// +kubebuilder:validation:Optional
-	Name *string `json:"interval,omitempty" protobuf:"bytes,1,opt,name=interval"`
+	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The Name of the regressor
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	PriorScale *float64 `json:"priorScale,omitempty" protobuf:"bytes,2,opt,name=priorScale"`
 	// The Name of the regressor
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Standardize *bool `json:"standardize,omitempty" protobuf:"bytes,3,opt,name=standardize"`
 }
@@ -85,31 +104,31 @@ type TimeSeriesDataSpec struct {
 	// The forecast periods
 	// +kubebuilder:validation:Optional
 	ForecastPeriod *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,8,opt,name=forecast"`
-	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
-	YearlySeasonality *catalog.SeasonalityMode `json:"yearlySeasonality,omitempty" protobuf:"bytes,9,opt,name=yearlySeasonality"`
-	// +kubebuilder:default:="auto"
+	YearlySeasonality PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,9,opt,name=yearlySeasonality"`
 	// +kubebuilder:validation:Optional
-	WeeklySeasonality *catalog.SeasonalityMode `json:"weeklySeasonality,omitempty" protobuf:"bytes,10,opt,name=weeklySeasonality"`
-	// +kubebuilder:default:="auto"
+	WeeklySeasonality PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,10,opt,name=weeklySeasonality"`
 	// +kubebuilder:validation:Optional
-	DailySeasonality *catalog.SeasonalityMode `json:"dailySeasonality,omitempty" protobuf:"bytes,11,opt,name=dailySeasonality"`
+	DailySeasonality PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,11,opt,name=dailySeasonality"`
+	// +kubebuilder:default = "linear"
 	// +kubebuilder:validation:Optional
 	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,12,opt,name=growth"`
 	// The list of additional regressors. The regresors are part of the time series data
 	// +kubebuilder:validation:Optional
-	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,13,opt,name=regressors"`
+	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,13,rep,name=regressors"`
 	// The list of additional regressors. The regresors are part of the time series data
 	// +kubebuilder:validation:Optional
-	ExtraSeasonalities []SeasonalitySpec `json:"extraSeasonality,omitempty" protobuf:"bytes,14,opt,name=extraSeasonality"`
+	CustomSeasonalities []CustomSeasonalitySpec `json:"customSeasonalities,omitempty" protobuf:"bytes,14,rep,name=customSeasonalities"`
 	// Set an holiday schedule for a country.
 	// +kubebuilder:validation:Optional
-	CountryForHoliday *catalog.HolidayCountry `json:"countryForHoliday,omitempty" protobuf:"bytes,15,opt,name=countryForHoliday"`
+	Holiday *catalog.HolidayCountry `json:"holiday,omitempty" protobuf:"bytes,15,opt,name=holiday"`
 	// Change point specification
 	// +kubebuilder:validation:Optional
 	ChangePoints ChangePointSpec `json:"changepoints,omitempty" protobuf:"bytes,16,opt,name=changepoints"`
+	// +kubebuilder:default = 0.8
 	// +kubebuilder:validation:Optional
 	IntervalWidth *float64 `json:"intevalWidth,omitempty" protobuf:"bytes,17,opt,name=intevalWidth"`
+	// +kubebuilder:default = 1000
 	// +kubebuilder:validation:Optional
 	UncertaintySamples *int32 `json:"uncertaintySamples,omitempty" protobuf:"bytes,18,opt,name=uncertaintySamples"`
 }
@@ -140,6 +159,7 @@ type ForecastSpec struct {
 	// +kubebuilder:validation:Optional
 	Backtest BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,3,opt,name=backtest"`
 	// Post processing
+	// +kubebuilder:validation:Optional
 	PostPrecessing ForecastPostProcessingSpec `json:"postProcessing,omitempty" protobuf:"bytes,4,opt,name=postProcessing"`
 	// If true generate the plots
 	// +kubebuilder:default = true
@@ -156,14 +176,15 @@ type BacktestSpec struct {
 	// +kubebuilder:validation:Optional
 	Sliding *bool `json:"sliding,omitempty" protobuf:"varint,1,opt,name=sliding"`
 	// The number of data points in each windows used for training.
-	// +kubebuilder:default:=80
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	TrainingWindowSize *int32 `json:"trainingWindowsSize,omitempty" protobuf:"varint,2,opt,name=trainingWindowsSize"`
 	// The number of data points to forecast on.
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	ForecastingWindowSize *int32 `json:"forecastingWindowsSize,omitempty" protobuf:"varint,3,opt,name=forecastingWindowsSize"`
 	// The number of data points between each windows
+	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
 	SlidingSteps *int32 `json:"slidingSteps,omitempty" protobuf:"varint,4,opt,name=slidingSteps"`
 }

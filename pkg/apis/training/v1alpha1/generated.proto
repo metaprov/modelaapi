@@ -37,16 +37,17 @@ message BacktestSpec {
   optional bool sliding = 1;
 
   // The number of data points in each windows used for training.
-  // +kubebuilder:default:=80
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 trainingWindowsSize = 2;
 
   // The number of data points to forecast on.
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 forecastingWindowsSize = 3;
 
   // The number of data points between each windows
+  // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 slidingSteps = 4;
 }
@@ -93,10 +94,12 @@ message CategoricalPipelineSpec {
 
 message ChangePointSpec {
   // number of change points
+  // +kubebuilder:default = 25
   // +kubebuilder:validation:Optional
   optional int32 N = 1;
 
   // Change point range
+  // +kubebuilder:default = 0.8
   // +kubebuilder:validation:Optional
   optional double range = 2;
 }
@@ -342,6 +345,20 @@ message CustomReportValue {
   // Scalar the a const value
   // +kubebuilder:validation:Optional
   optional string scalar = 4;
+}
+
+// SeasonalitySpec defines the custom seasonality
+message CustomSeasonalitySpec {
+  // The name of the custom seasonality
+  // +kubebuilder:validation:Required
+  optional string name = 1;
+
+  // The name of the custom seasonality
+  // +kubebuilder:validation:Required
+  optional double period = 2;
+
+  // +kubebuilder:validation:Optional
+  optional int32 fourierOrder = 3;
 }
 
 // List compiler spec
@@ -591,6 +608,7 @@ message ForecastSpec {
   optional BacktestSpec backtest = 3;
 
   // Post processing
+  // +kubebuilder:validation:Optional
   optional ForecastPostProcessingSpec postProcessing = 4;
 
   // If true generate the plots
@@ -2320,6 +2338,23 @@ message NumericPipelineSpec {
   optional string scaler = 3;
 }
 
+// Define the seasonality for a period (yearly / monthly / daily)
+message PeriodSeasonalitySpec {
+  // Is this seasonality enabled
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // If enabled, the number of data points in the interval
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 periods = 2;
+
+  // +kubebuilder:default:="auto"
+  // +kubebuilder:validation:Optional
+  optional string mode = 3;
+}
+
 // Define a range of time series data points
 message PeriodSpec {
   // The period interval
@@ -2429,13 +2464,15 @@ message PrunerSpec {
 message RegressorSpec {
   // The Name of the regressor
   // +kubebuilder:validation:Optional
-  optional string interval = 1;
+  optional string name = 1;
 
   // The Name of the regressor
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional double priorScale = 2;
 
   // The Name of the regressor
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool standardize = 3;
 }
@@ -2622,20 +2659,6 @@ message ResourceConsumption {
   optional double mem = 2;
 
   optional double gpu = 3;
-}
-
-// SeasonalitySpec defines the custom seasonality
-message SeasonalitySpec {
-  // The name of the custom seasonality
-  // +kubebuilder:validation:Required
-  optional string name = 1;
-
-  // The name of the custom seasonality
-  // +kubebuilder:validation:Required
-  optional double period = 2;
-
-  // +kubebuilder:validation:Optional
-  optional int32 fourierOrder = 3;
 }
 
 // +kubebuilder:subresource:status
@@ -3130,18 +3153,16 @@ message TimeSeriesDataSpec {
   // +kubebuilder:validation:Optional
   optional PeriodSpec forecast = 8;
 
-  // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
-  optional string yearlySeasonality = 9;
+  optional PeriodSeasonalitySpec yearlySeasonality = 9;
 
-  // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
-  optional string weeklySeasonality = 10;
+  optional PeriodSeasonalitySpec weeklySeasonality = 10;
 
-  // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
-  optional string dailySeasonality = 11;
+  optional PeriodSeasonalitySpec dailySeasonality = 11;
 
+  // +kubebuilder:default = "linear"
   // +kubebuilder:validation:Optional
   optional string growth = 12;
 
@@ -3151,19 +3172,21 @@ message TimeSeriesDataSpec {
 
   // The list of additional regressors. The regresors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated SeasonalitySpec extraSeasonality = 14;
+  repeated CustomSeasonalitySpec customSeasonalities = 14;
 
   // Set an holiday schedule for a country.
   // +kubebuilder:validation:Optional
-  optional string countryForHoliday = 15;
+  optional string holiday = 15;
 
   // Change point specification
   // +kubebuilder:validation:Optional
   optional ChangePointSpec changepoints = 16;
 
+  // +kubebuilder:default = 0.8
   // +kubebuilder:validation:Optional
   optional double intevalWidth = 17;
 
+  // +kubebuilder:default = 1000
   // +kubebuilder:validation:Optional
   optional int32 uncertaintySamples = 18;
 }
