@@ -316,6 +316,17 @@ spec:
                   data:
                     description: Required, the freq of the time series (daily,weekly)
                     properties:
+                      changepoints:
+                        description: Change point specification
+                        properties:
+                          "N":
+                            description: number of change points
+                            format: int32
+                            type: integer
+                          range:
+                            description: Change point range
+                            type: number
+                        type: object
                       countryForHoliday:
                         description: Set an holiday schedule for a country.
                         enum:
@@ -336,6 +347,14 @@ spec:
                         - BY
                         - AE
                         - none
+                        type: string
+                      dailySeasonality:
+                        default: auto
+                        description: Predictor format represent the API implementation
+                          of the model
+                        enum:
+                        - multipicative
+                        - additive
                         type: string
                       datetimeFormat:
                         description: The format of the datetime column. Used default
@@ -413,6 +432,8 @@ spec:
                             format: int32
                             type: integer
                         type: object
+                      intevalWidth:
+                        type: number
                       level1:
                         description: Column name of the first level of grouping
                         type: string
@@ -446,7 +467,19 @@ spec:
                         description: 'General Forecast attributes: The name of the
                           time column'
                         type: string
+                      uncertaintySamples:
+                        format: int32
+                        type: integer
+                      weeklySeasonality:
+                        default: auto
+                        description: Predictor format represent the API implementation
+                          of the model
+                        enum:
+                        - multipicative
+                        - additive
+                        type: string
                       yearlySeasonality:
+                        default: auto
                         description: Predictor format represent the API implementation
                           of the model
                         enum:

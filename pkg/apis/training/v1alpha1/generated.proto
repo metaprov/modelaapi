@@ -91,6 +91,16 @@ message CategoricalPipelineSpec {
   optional string encoder = 3;
 }
 
+message ChangePointSpec {
+  // number of change points
+  // +kubebuilder:validation:Optional
+  optional int32 N = 1;
+
+  // Change point range
+  // +kubebuilder:validation:Optional
+  optional double range = 2;
+}
+
 // ChatbotEstimatorSpec is an spec for chat bot. This is not implemented yet
 message ChatbotEstimatorSpec {
   // The name of the base model
@@ -3120,23 +3130,42 @@ message TimeSeriesDataSpec {
   // +kubebuilder:validation:Optional
   optional PeriodSpec forecast = 8;
 
+  // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
   optional string yearlySeasonality = 9;
 
+  // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
-  optional string growth = 10;
+  optional string weeklySeasonality = 10;
+
+  // +kubebuilder:default:="auto"
+  // +kubebuilder:validation:Optional
+  optional string dailySeasonality = 11;
+
+  // +kubebuilder:validation:Optional
+  optional string growth = 12;
 
   // The list of additional regressors. The regresors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated RegressorSpec regressors = 11;
+  repeated RegressorSpec regressors = 13;
 
   // The list of additional regressors. The regresors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated SeasonalitySpec extraSeasonality = 12;
+  repeated SeasonalitySpec extraSeasonality = 14;
 
   // Set an holiday schedule for a country.
-  // +optional
-  optional string countryForHoliday = 13;
+  // +kubebuilder:validation:Optional
+  optional string countryForHoliday = 15;
+
+  // Change point specification
+  // +kubebuilder:validation:Optional
+  optional ChangePointSpec changepoints = 16;
+
+  // +kubebuilder:validation:Optional
+  optional double intevalWidth = 17;
+
+  // +kubebuilder:validation:Optional
+  optional int32 uncertaintySamples = 18;
 }
 
 // TrainingResourceRequest specify the desired resources for the training job

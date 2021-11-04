@@ -122,6 +122,28 @@ export namespace CategoricalPipelineSpec {
   }
 }
 
+export class ChangePointSpec extends jspb.Message {
+  getN(): number;
+  setN(value: number): ChangePointSpec;
+
+  getRange(): number;
+  setRange(value: number): ChangePointSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ChangePointSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ChangePointSpec): ChangePointSpec.AsObject;
+  static serializeBinaryToWriter(message: ChangePointSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ChangePointSpec;
+  static deserializeBinaryFromReader(message: ChangePointSpec, reader: jspb.BinaryReader): ChangePointSpec;
+}
+
+export namespace ChangePointSpec {
+  export type AsObject = {
+    n: number,
+    range: number,
+  }
+}
+
 export class ChatbotEstimatorSpec extends jspb.Message {
   getBase(): string;
   setBase(value: string): ChatbotEstimatorSpec;
@@ -4516,6 +4538,12 @@ export class TimeSeriesDataSpec extends jspb.Message {
   getYearlyseasonality(): string;
   setYearlyseasonality(value: string): TimeSeriesDataSpec;
 
+  getWeeklyseasonality(): string;
+  setWeeklyseasonality(value: string): TimeSeriesDataSpec;
+
+  getDailyseasonality(): string;
+  setDailyseasonality(value: string): TimeSeriesDataSpec;
+
   getGrowth(): string;
   setGrowth(value: string): TimeSeriesDataSpec;
 
@@ -4531,6 +4559,17 @@ export class TimeSeriesDataSpec extends jspb.Message {
 
   getCountryforholiday(): string;
   setCountryforholiday(value: string): TimeSeriesDataSpec;
+
+  getChangepoints(): ChangePointSpec | undefined;
+  setChangepoints(value?: ChangePointSpec): TimeSeriesDataSpec;
+  hasChangepoints(): boolean;
+  clearChangepoints(): TimeSeriesDataSpec;
+
+  getIntevalwidth(): number;
+  setIntevalwidth(value: number): TimeSeriesDataSpec;
+
+  getUncertaintysamples(): number;
+  setUncertaintysamples(value: number): TimeSeriesDataSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesDataSpec.AsObject;
@@ -4551,10 +4590,15 @@ export namespace TimeSeriesDataSpec {
     historical?: PeriodSpec.AsObject,
     forecast?: PeriodSpec.AsObject,
     yearlyseasonality: string,
+    weeklyseasonality: string,
+    dailyseasonality: string,
     growth: string,
     regressorsList: Array<RegressorSpec.AsObject>,
     extraseasonalityList: Array<SeasonalitySpec.AsObject>,
     countryforholiday: string,
+    changepoints?: ChangePointSpec.AsObject,
+    intevalwidth: number,
+    uncertaintysamples: number,
   }
 }
 

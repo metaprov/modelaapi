@@ -23,6 +23,15 @@ type SeasonalitySpec struct {
 	FourierOrder *int32 `json:"fourierOrder,omitempty" protobuf:"bytes,3,opt,name=fourierOrder"`
 }
 
+type ChangePointSpec struct {
+	// number of change points
+	// +kubebuilder:validation:Optional
+	N *int32 `json:"N,omitempty" protobuf:"varint,1,opt,name=N"`
+	// Change point range
+	// +kubebuilder:validation:Optional
+	Range *float64 `json:"range,omitempty" protobuf:"bytes,2,opt,name=range"`
+}
+
 // Define a range of time series data points
 type PeriodSpec struct {
 	// The period interval
@@ -63,32 +72,46 @@ type TimeSeriesDataSpec struct {
 	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,3,opt,name=datetimeFormat"`
 	// Column name of the first level of grouping
 	// +kubebuilder:validation:Optional
-	Level1 *string `json:"level1,omitempty" protobuf:"bytes,4,rep,name=level1"`
+	Level1 *string `json:"level1,omitempty" protobuf:"bytes,4,opt,name=level1"`
 	// Column name of the second level of grouping
 	// +kubebuilder:validation:Optional
-	Level2 *string `json:"level2,omitempty" protobuf:"bytes,5,rep,name=level2"`
+	Level2 *string `json:"level2,omitempty" protobuf:"bytes,5,opt,name=level2"`
 	// Column name of the third level of grouping
 	// +kubebuilder:validation:Optional
-	Level3 *string `json:"level3,omitempty" protobuf:"bytes,6,rep,name=level3"`
+	Level3 *string `json:"level3,omitempty" protobuf:"bytes,6,opt,name=level3"`
 	// The historical periods
 	// +kubebuilder:validation:Optional
-	HistoricalPeriod *PeriodSpec `json:"historical,omitempty" protobuf:"bytes,7,rep,name=historical"`
+	HistoricalPeriod *PeriodSpec `json:"historical,omitempty" protobuf:"bytes,7,opt,name=historical"`
 	// The forecast periods
 	// +kubebuilder:validation:Optional
-	ForecastPeriod *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,8,rep,name=forecast"`
+	ForecastPeriod *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,8,opt,name=forecast"`
+	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
-	YearlySeasonality *catalog.SeasonalityMode `json:"yearlySeasonality,omitempty" protobuf:"bytes,9,rep,name=yearlySeasonality"`
+	YearlySeasonality *catalog.SeasonalityMode `json:"yearlySeasonality,omitempty" protobuf:"bytes,9,opt,name=yearlySeasonality"`
+	// +kubebuilder:default:="auto"
 	// +kubebuilder:validation:Optional
-	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,10,rep,name=growth"`
+	WeeklySeasonality *catalog.SeasonalityMode `json:"weeklySeasonality,omitempty" protobuf:"bytes,10,opt,name=weeklySeasonality"`
+	// +kubebuilder:default:="auto"
+	// +kubebuilder:validation:Optional
+	DailySeasonality *catalog.SeasonalityMode `json:"dailySeasonality,omitempty" protobuf:"bytes,11,opt,name=dailySeasonality"`
+	// +kubebuilder:validation:Optional
+	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,12,opt,name=growth"`
 	// The list of additional regressors. The regresors are part of the time series data
 	// +kubebuilder:validation:Optional
-	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,11,rep,name=regressors"`
+	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,13,opt,name=regressors"`
 	// The list of additional regressors. The regresors are part of the time series data
 	// +kubebuilder:validation:Optional
-	ExtraSeasonalities []SeasonalitySpec `json:"extraSeasonality,omitempty" protobuf:"bytes,12,rep,name=extraSeasonality"`
+	ExtraSeasonalities []SeasonalitySpec `json:"extraSeasonality,omitempty" protobuf:"bytes,14,opt,name=extraSeasonality"`
 	// Set an holiday schedule for a country.
-	//+optional
-	CountryForHoliday *catalog.HolidayCountry `json:"countryForHoliday,omitempty" protobuf:"bytes,13,opt,name=countryForHoliday"`
+	// +kubebuilder:validation:Optional
+	CountryForHoliday *catalog.HolidayCountry `json:"countryForHoliday,omitempty" protobuf:"bytes,15,opt,name=countryForHoliday"`
+	// Change point specification
+	// +kubebuilder:validation:Optional
+	ChangePoints ChangePointSpec `json:"changepoints,omitempty" protobuf:"bytes,16,opt,name=changepoints"`
+	// +kubebuilder:validation:Optional
+	IntervalWidth *float64 `json:"intevalWidth,omitempty" protobuf:"bytes,17,opt,name=intevalWidth"`
+	// +kubebuilder:validation:Optional
+	UncertaintySamples *int32 `json:"uncertaintySamples,omitempty" protobuf:"bytes,18,opt,name=uncertaintySamples"`
 }
 
 // The Forecast storage spec specify where to store the forecast after prediction.
