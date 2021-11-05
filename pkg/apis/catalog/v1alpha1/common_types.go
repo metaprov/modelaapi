@@ -1599,6 +1599,6 @@ type SeasonalityMode string
 const (
 	Multipicative SeasonalityMode = "multipicative"
 	Addadive      SeasonalityMode = "additive"
-	Auto          PredictorFormat = "auto"
-	None          PredictorFormat = "none"
+	Auto          SeasonalityMode = "auto"
+	None          SeasonalityMode = "none"
 )
