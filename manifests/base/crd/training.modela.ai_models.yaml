@@ -361,6 +361,8 @@ spec:
                             enum:
                             - multipicative
                             - additive
+                            - auto
+                            - none
                             type: string
                           periods:
                             default: 0
@@ -516,6 +518,8 @@ spec:
                             enum:
                             - multipicative
                             - additive
+                            - auto
+                            - none
                             type: string
                           periods:
                             default: 0
@@ -539,6 +543,8 @@ spec:
                             enum:
                             - multipicative
                             - additive
+                            - auto
+                            - none
                             type: string
                           periods:
                             default: 0

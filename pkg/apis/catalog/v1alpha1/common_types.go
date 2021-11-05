@@ -1592,7 +1592,7 @@ type Logs struct {
 	Paths []string `json:"paths,omitempty" protobuf:"bytes,2,rep,name=paths"`
 }
 
-// +kubebuilder:validation:Enum="multipicative";"additive";
+// +kubebuilder:validation:Enum="multipicative";"additive";"auto";"none"
 // Predictor format represent the API implementation of the model
 type SeasonalityMode string
 
