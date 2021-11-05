@@ -447,6 +447,9 @@ type StudySpec struct {
 	// Sample spec defines how many rows to use for analysis
 	// +kubebuilder:validation:Optional
 	DatasetSample data.SampleSpec `json:"datasetSample,omitempty" protobuf:"bytes,31,opt,name=datasetSample"`
+	// The specification for the forecasting algorithm if this is a forecast study.
+	// +kubebuilder:validation:Optional
+	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,32,opt,name=forecast"`
 }
 
 // StudyStatus defines the observed state of the Study

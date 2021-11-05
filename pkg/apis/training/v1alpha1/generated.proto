@@ -2874,6 +2874,10 @@ message StudySpec {
   // Sample spec defines how many rows to use for analysis
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec datasetSample = 31;
+
+  // The specification for the forecasting algorithm if this is a forecast study.
+  // +kubebuilder:validation:Optional
+  optional ForecastSpec forecast = 32;
 }
 
 // StudyStatus defines the observed state of the Study

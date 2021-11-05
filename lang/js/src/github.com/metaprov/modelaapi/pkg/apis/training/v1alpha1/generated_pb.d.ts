@@ -4221,6 +4221,11 @@ export class StudySpec extends jspb.Message {
   hasDatasetsample(): boolean;
   clearDatasetsample(): StudySpec;
 
+  getForecast(): ForecastSpec | undefined;
+  setForecast(value?: ForecastSpec): StudySpec;
+  hasForecast(): boolean;
+  clearForecast(): StudySpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudySpec.AsObject;
   static toObject(includeInstance: boolean, msg: StudySpec): StudySpec.AsObject;
@@ -4261,6 +4266,7 @@ export namespace StudySpec {
     ttl: number,
     studyfeaturefilter?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.AsObject,
     datasetsample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
+    forecast?: ForecastSpec.AsObject,
   }
 }
 

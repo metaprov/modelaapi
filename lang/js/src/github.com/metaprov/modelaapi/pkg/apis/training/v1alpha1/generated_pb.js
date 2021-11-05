@@ -41102,7 +41102,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     modelimage: (f = msg.getModelimage()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelImageSpec.toObject(includeInstance, f),
     ttl: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
     studyfeaturefilter: (f = msg.getStudyfeaturefilter()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureFilter.toObject(includeInstance, f),
-    datasetsample: (f = msg.getDatasetsample()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.toObject(includeInstance, f)
+    datasetsample: (f = msg.getDatasetsample()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.toObject(includeInstance, f),
+    forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -41270,6 +41271,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.deserializeBinaryFromReader);
       msg.setDatasetsample(value);
+      break;
+    case 32:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.deserializeBinaryFromReader);
+      msg.setForecast(value);
       break;
     default:
       reader.skipField();
@@ -41520,6 +41526,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
       31,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getForecast();
+  if (f != null) {
+    writer.writeMessage(
+      32,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.serializeBinaryToWriter
     );
   }
 };
@@ -42614,6 +42628,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasDatasetsample = function() {
   return jspb.Message.getField(this, 31) != null;
+};
+
+
+/**
+ * optional ForecastSpec forecast = 32;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getForecast = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec, 32));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setForecast = function(value) {
+  return jspb.Message.setWrapperField(this, 32, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearForecast = function() {
+  return this.setForecast(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasForecast = function() {
+  return jspb.Message.getField(this, 32) != null;
 };
 
 
