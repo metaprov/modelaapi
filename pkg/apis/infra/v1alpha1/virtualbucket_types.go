@@ -89,7 +89,6 @@ type BucketResourceQuotas struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
-	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	HardLimit *resource.Quantity `json:"hardLimit,omitempty" protobuf:"bytes,2,opt,name=hardLimit"`
 }

@@ -687,7 +687,6 @@ message BucketResourceQuotas {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.api.resource.Quantity hardLimit = 2;
 }
