@@ -77,6 +77,17 @@ type RegressorSpec struct {
 	Standardize *bool `json:"standardize,omitempty" protobuf:"bytes,3,opt,name=standardize"`
 }
 
+type HolidaySpec struct {
+	// The name of the holiday column. If the column is empty, no holiday
+	// Column name of the first level of grouping
+	// +kubebuilder:validation:Optional
+	HolidayColumn *string `json:"holidayColumn,omitempty" protobuf:"bytes,1,opt,name=holidayColumn"`
+	// +kubebuilder:validation:Optional
+	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
+	// For custom holiday use external dataset
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
+}
+
 type TimeSeriesDataSpec struct {
 	// General Forecast attributes:
 	// The name of the time column
@@ -89,39 +100,41 @@ type TimeSeriesDataSpec struct {
 	// The format of the datetime column. Used default
 	// +kubebuilder:validation:Optional
 	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,3,opt,name=datetimeFormat"`
+	// The format of the datetime column. Used default
+	// +kubebuilder:validation:Optional
+	Holiday HolidaySpec `json:"holiday,omitempty" protobuf:"bytes,4,opt,name=holiday"`
 	// Column name of the first level of grouping
 	// +kubebuilder:validation:Optional
-	Level1 *string `json:"level1,omitempty" protobuf:"bytes,4,opt,name=level1"`
+	GroupColumn *string `json:"groupColumn,omitempty" protobuf:"bytes,5,opt,name=groupColumn"`
 	// Column name of the second level of grouping
 	// +kubebuilder:validation:Optional
-	Level2 *string `json:"level2,omitempty" protobuf:"bytes,5,opt,name=level2"`
+	SubGroupColumn *string `json:"subGroupColumn,omitempty" protobuf:"bytes,6,opt,name=subGroupColumn"`
 	// Column name of the third level of grouping
 	// +kubebuilder:validation:Optional
-	Level3 *string `json:"level3,omitempty" protobuf:"bytes,6,opt,name=level3"`
+	SubSubGroupColumn *string `json:"subSubGroupColumn,omitempty" protobuf:"bytes,7,opt,name=subSubGroupColumn"`
 	// The historical periods
 	// +kubebuilder:validation:Optional
-	HistoricalPeriod *PeriodSpec `json:"historical,omitempty" protobuf:"bytes,7,opt,name=historical"`
+	History *PeriodSpec `json:"history,omitempty" protobuf:"bytes,8,opt,name=history"`
 	// The forecast periods
 	// +kubebuilder:validation:Optional
-	ForecastPeriod *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,8,opt,name=forecast"`
+	Forecast *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,9,opt,name=forecast"`
 	// +kubebuilder:validation:Optional
-	YearlySeasonality PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,9,opt,name=yearlySeasonality"`
+	YearlySeasonality PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,10,opt,name=yearlySeasonality"`
 	// +kubebuilder:validation:Optional
-	WeeklySeasonality PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,10,opt,name=weeklySeasonality"`
+	WeeklySeasonality PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,11,opt,name=weeklySeasonality"`
 	// +kubebuilder:validation:Optional
-	DailySeasonality PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,11,opt,name=dailySeasonality"`
+	DailySeasonality PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,12,opt,name=dailySeasonality"`
 	// +kubebuilder:default = "linear"
 	// +kubebuilder:validation:Optional
-	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,12,opt,name=growth"`
+	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,13,opt,name=growth"`
 	// The list of additional regressors. The regresors are part of the time series data
 	// +kubebuilder:validation:Optional
-	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,13,rep,name=regressors"`
+	Regressors []RegressorSpec `json:"regressors,omitempty" protobuf:"bytes,14,rep,name=regressors"`
 	// The list of additional regressors. The regresors are part of the time series data
 	// +kubebuilder:validation:Optional
-	CustomSeasonalities []CustomSeasonalitySpec `json:"customSeasonalities,omitempty" protobuf:"bytes,14,rep,name=customSeasonalities"`
+	CustomSeasonalities []CustomSeasonalitySpec `json:"customSeasonalities,omitempty" protobuf:"bytes,15,rep,name=customSeasonalities"`
 	// Set an holiday schedule for a country.
 	// +kubebuilder:validation:Optional
-	Holiday *catalog.HolidayCountry `json:"holiday,omitempty" protobuf:"bytes,15,opt,name=holiday"`
 	// Change point specification
 	// +kubebuilder:validation:Optional
 	ChangePoints ChangePointSpec `json:"changepoints,omitempty" protobuf:"bytes,16,opt,name=changepoints"`

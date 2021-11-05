@@ -1076,6 +1076,32 @@ export namespace Hierarchy {
   }
 }
 
+export class HolidaySpec extends jspb.Message {
+  getHolidaycolumn(): string;
+  setHolidaycolumn(value: string): HolidaySpec;
+
+  getCountry(): string;
+  setCountry(value: string): HolidaySpec;
+
+  getDatasetname(): string;
+  setDatasetname(value: string): HolidaySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HolidaySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: HolidaySpec): HolidaySpec.AsObject;
+  static serializeBinaryToWriter(message: HolidaySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HolidaySpec;
+  static deserializeBinaryFromReader(message: HolidaySpec, reader: jspb.BinaryReader): HolidaySpec;
+}
+
+export namespace HolidaySpec {
+  export type AsObject = {
+    holidaycolumn: string,
+    country: string,
+    datasetname: string,
+  }
+}
+
 export class HyperParameterValue extends jspb.Message {
   getName(): string;
   setName(value: string): HyperParameterValue;
@@ -4542,19 +4568,24 @@ export class TimeSeriesDataSpec extends jspb.Message {
   getDatetimeformat(): string;
   setDatetimeformat(value: string): TimeSeriesDataSpec;
 
-  getLevel1(): string;
-  setLevel1(value: string): TimeSeriesDataSpec;
+  getHoliday(): HolidaySpec | undefined;
+  setHoliday(value?: HolidaySpec): TimeSeriesDataSpec;
+  hasHoliday(): boolean;
+  clearHoliday(): TimeSeriesDataSpec;
 
-  getLevel2(): string;
-  setLevel2(value: string): TimeSeriesDataSpec;
+  getGroupcolumn(): string;
+  setGroupcolumn(value: string): TimeSeriesDataSpec;
 
-  getLevel3(): string;
-  setLevel3(value: string): TimeSeriesDataSpec;
+  getSubgroupcolumn(): string;
+  setSubgroupcolumn(value: string): TimeSeriesDataSpec;
 
-  getHistorical(): PeriodSpec | undefined;
-  setHistorical(value?: PeriodSpec): TimeSeriesDataSpec;
-  hasHistorical(): boolean;
-  clearHistorical(): TimeSeriesDataSpec;
+  getSubsubgroupcolumn(): string;
+  setSubsubgroupcolumn(value: string): TimeSeriesDataSpec;
+
+  getHistory(): PeriodSpec | undefined;
+  setHistory(value?: PeriodSpec): TimeSeriesDataSpec;
+  hasHistory(): boolean;
+  clearHistory(): TimeSeriesDataSpec;
 
   getForecast(): PeriodSpec | undefined;
   setForecast(value?: PeriodSpec): TimeSeriesDataSpec;
@@ -4589,9 +4620,6 @@ export class TimeSeriesDataSpec extends jspb.Message {
   clearCustomseasonalitiesList(): TimeSeriesDataSpec;
   addCustomseasonalities(value?: CustomSeasonalitySpec, index?: number): CustomSeasonalitySpec;
 
-  getHoliday(): string;
-  setHoliday(value: string): TimeSeriesDataSpec;
-
   getChangepoints(): ChangePointSpec | undefined;
   setChangepoints(value?: ChangePointSpec): TimeSeriesDataSpec;
   hasChangepoints(): boolean;
@@ -4616,10 +4644,11 @@ export namespace TimeSeriesDataSpec {
     timecolumn: string,
     targetcolumn: string,
     datetimeformat: string,
-    level1: string,
-    level2: string,
-    level3: string,
-    historical?: PeriodSpec.AsObject,
+    holiday?: HolidaySpec.AsObject,
+    groupcolumn: string,
+    subgroupcolumn: string,
+    subsubgroupcolumn: string,
+    history?: PeriodSpec.AsObject,
     forecast?: PeriodSpec.AsObject,
     yearlyseasonality?: PeriodSeasonalitySpec.AsObject,
     weeklyseasonality?: PeriodSeasonalitySpec.AsObject,
@@ -4627,7 +4656,6 @@ export namespace TimeSeriesDataSpec {
     growth: string,
     regressorsList: Array<RegressorSpec.AsObject>,
     customseasonalitiesList: Array<CustomSeasonalitySpec.AsObject>,
-    holiday: string,
     changepoints?: ChangePointSpec.AsObject,
     intevalwidth: number,
     uncertaintysamples: number,

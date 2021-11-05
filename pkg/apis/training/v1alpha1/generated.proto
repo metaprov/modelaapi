@@ -639,6 +639,19 @@ message Hierarchy {
   optional string notifierName = 4;
 }
 
+message HolidaySpec {
+  // The name of the holiday column. If the column is empty, no holiday
+  // Column name of the first level of grouping
+  // +kubebuilder:validation:Optional
+  optional string holidayColumn = 1;
+
+  // +kubebuilder:validation:Optional
+  optional string country = 2;
+
+  // For custom holiday use external dataset
+  optional string datasetName = 3;
+}
+
 // HyperParameterValue represent a specific value of
 // the learning algorithm hyper-parameter. The value is chosen
 // by the planner
@@ -3133,51 +3146,53 @@ message TimeSeriesDataSpec {
   // +kubebuilder:validation:Optional
   optional string datetimeFormat = 3;
 
+  // The format of the datetime column. Used default
+  // +kubebuilder:validation:Optional
+  optional HolidaySpec holiday = 4;
+
   // Column name of the first level of grouping
   // +kubebuilder:validation:Optional
-  optional string level1 = 4;
+  optional string groupColumn = 5;
 
   // Column name of the second level of grouping
   // +kubebuilder:validation:Optional
-  optional string level2 = 5;
+  optional string subGroupColumn = 6;
 
   // Column name of the third level of grouping
   // +kubebuilder:validation:Optional
-  optional string level3 = 6;
+  optional string subSubGroupColumn = 7;
 
   // The historical periods
   // +kubebuilder:validation:Optional
-  optional PeriodSpec historical = 7;
+  optional PeriodSpec history = 8;
 
   // The forecast periods
   // +kubebuilder:validation:Optional
-  optional PeriodSpec forecast = 8;
+  optional PeriodSpec forecast = 9;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec yearlySeasonality = 9;
+  optional PeriodSeasonalitySpec yearlySeasonality = 10;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec weeklySeasonality = 10;
+  optional PeriodSeasonalitySpec weeklySeasonality = 11;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec dailySeasonality = 11;
+  optional PeriodSeasonalitySpec dailySeasonality = 12;
 
   // +kubebuilder:default = "linear"
   // +kubebuilder:validation:Optional
-  optional string growth = 12;
+  optional string growth = 13;
 
   // The list of additional regressors. The regresors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated RegressorSpec regressors = 13;
+  repeated RegressorSpec regressors = 14;
 
   // The list of additional regressors. The regresors are part of the time series data
   // +kubebuilder:validation:Optional
-  repeated CustomSeasonalitySpec customSeasonalities = 14;
+  repeated CustomSeasonalitySpec customSeasonalities = 15;
 
   // Set an holiday schedule for a country.
   // +kubebuilder:validation:Optional
-  optional string holiday = 15;
-
   // Change point specification
   // +kubebuilder:validation:Optional
   optional ChangePointSpec changepoints = 16;

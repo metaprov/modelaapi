@@ -318,7 +318,8 @@ spec:
                     description: Required, the freq of the time series (daily,weekly)
                     properties:
                       changepoints:
-                        description: Change point specification
+                        description: Set an holiday schedule for a country. Change
+                          point specification
                         properties:
                           "N":
                             description: number of change points
@@ -396,13 +397,16 @@ spec:
                             format: int32
                             type: integer
                         type: object
+                      groupColumn:
+                        description: Column name of the first level of grouping
+                        type: string
                       growth:
                         enum:
                         - linear
                         - logistic
                         - flat
                         type: string
-                      historical:
+                      history:
                         description: The historical periods
                         properties:
                           end:
@@ -428,37 +432,40 @@ spec:
                             type: integer
                         type: object
                       holiday:
-                        description: Set an holiday schedule for a country.
-                        enum:
-                        - US
-                        - BR
-                        - ID
-                        - IN
-                        - MY
-                        - VN
-                        - TH
-                        - PH
-                        - PK
-                        - BD
-                        - EG
-                        - CN
-                        - RU
-                        - KR
-                        - BY
-                        - AE
-                        - none
-                        type: string
+                        description: The format of the datetime column. Used default
+                        properties:
+                          country:
+                            description: / The HolidayCountry unit
+                            enum:
+                            - US
+                            - BR
+                            - ID
+                            - IN
+                            - MY
+                            - VN
+                            - TH
+                            - PH
+                            - PK
+                            - BD
+                            - EG
+                            - CN
+                            - RU
+                            - KR
+                            - BY
+                            - AE
+                            - none
+                            type: string
+                          datasetName:
+                            description: For custom holiday use external dataset
+                            type: string
+                          holidayColumn:
+                            description: The name of the holiday column. If the column
+                              is empty, no holiday Column name of the first level
+                              of grouping
+                            type: string
+                        type: object
                       intevalWidth:
                         type: number
-                      level1:
-                        description: Column name of the first level of grouping
-                        type: string
-                      level2:
-                        description: Column name of the second level of grouping
-                        type: string
-                      level3:
-                        description: Column name of the third level of grouping
-                        type: string
                       regressors:
                         description: The list of additional regressors. The regresors
                           are part of the time series data
@@ -477,6 +484,12 @@ spec:
                               type: boolean
                           type: object
                         type: array
+                      subGroupColumn:
+                        description: Column name of the second level of grouping
+                        type: string
+                      subSubGroupColumn:
+                        description: Column name of the third level of grouping
+                        type: string
                       targetColumn:
                         description: The name of the column holding the value. By
                           default this is the target column from the dataset.
