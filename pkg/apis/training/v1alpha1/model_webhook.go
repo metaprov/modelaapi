@@ -70,8 +70,13 @@ func (model *Model) Default() {
 	if model.Spec.Aborted == nil {
 		model.Spec.Aborted = util.BoolPtr(false)
 	}
-	if model.Spec.Baked == nil {
-		model.Spec.Baked = util.BoolPtr(false)
+
+	if model.Spec.Packaged == nil {
+		model.Spec.Packaged = util.BoolPtr(false)
+	}
+
+	if model.Spec.Published == nil {
+		model.Spec.Published = util.BoolPtr(false)
 	}
 
 	if model.Spec.Pushed == nil {

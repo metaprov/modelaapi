@@ -697,6 +697,10 @@ spec:
                 default: no-one
                 description: Owner is the account name of the owner of this model
                 type: string
+              packaged:
+                default: false
+                description: Packaged the model into tar file
+                type: boolean
               paused:
                 default: false
                 description: Paused is set when we want to pause the training
@@ -950,7 +954,7 @@ spec:
                 type: boolean
               published:
                 default: false
-                description: Baked indicate that the system should create an docker
+                description: Published indicate that the system should create an docker
                   image with the container.
                 type: boolean
               pushed:
@@ -972,11 +976,6 @@ spec:
                   the model is stand alone
                 maxLength: 63
                 type: string
-              tar:
-                default: false
-                description: Published is set when we want to wrap the model in a
-                  docker container
-                type: boolean
               task:
                 description: Task is the machine learning task (regression, classification).
                   The task is generated from the study task

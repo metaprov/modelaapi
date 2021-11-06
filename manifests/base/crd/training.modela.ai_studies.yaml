@@ -1942,6 +1942,46 @@ spec:
                 description: models that failed during training.
                 format: int32
                 type: integer
+              fe:
+                description: Holds the status of the feature engineering process
+                properties:
+                  dropped:
+                    description: List of dropped features
+                    items:
+                      properties:
+                        name:
+                          default: ""
+                          description: The feature name
+                          type: string
+                        reason:
+                          description: The reason that the feature was dropped
+                          type: string
+                        value:
+                          type: number
+                      type: object
+                    type: array
+                  generated:
+                    description: contains the list of the generated features
+                    items:
+                      type: string
+                    type: array
+                type: object
+              featureGenEndTime:
+                description: End of feature generation
+                format: date-time
+                type: string
+              featureGenStartTime:
+                description: Start of feature generation
+                format: date-time
+                type: string
+              featureSelectionEndTime:
+                description: End of feature selection
+                format: date-time
+                type: string
+              featureSelectionStartTime:
+                description: Start of feature selection
+                format: date-time
+                type: string
               lastError:
                 default: ""
                 description: Last error

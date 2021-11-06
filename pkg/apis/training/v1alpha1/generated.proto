@@ -552,6 +552,20 @@ message DeploymentStageSpec {
   optional string workloadClassName = 5;
 }
 
+message DroppedFeature {
+  // The feature name
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // The reason that the feature was dropped
+  // +kubebuilder:validation:Optional
+  optional string reason = 2;
+
+  // +kubebuilder:validation:Optional
+  optional double value = 3;
+}
+
 // EnsembleRules is an algorithm class that decide
 message EnsembleRules {
 }
@@ -560,6 +574,18 @@ message EnsembleSpec {
   // A list of base model to ensemble. The ensemble method is represented as the algorithm name.
   // +kubebuilder:validation:Optional
   repeated string base = 2;
+}
+
+// Contain the status of the feature engineering process.
+// The status contain the list of generated features and dropped features.
+message FeatureEngineeringStatus {
+  // contains the list of the generated features
+  // +kubebuilder:validation:Optional
+  repeated string generated = 1;
+
+  // List of dropped features
+  // +kubebuilder:validation:Optional
+  repeated DroppedFeature dropped = 2;
 }
 
 message FeatureImportance {
@@ -1689,12 +1715,12 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool aborted = 17;
 
-  // Published is set when we want to wrap the model in a docker container
+  // Packaged the model into tar file
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool tar = 18;
+  optional bool packaged = 18;
 
-  // Baked indicate that the system should create an docker image with the container.
+  // Published indicate that the system should create an docker image with the container.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool published = 19;
@@ -2922,111 +2948,131 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 13;
 
+  // Start of feature generation
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureGenStartTime = 14;
+
+  // End of feature generation
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureGenEndTime = 15;
+
+  // Start of feature selection
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureSelectionStartTime = 16;
+
+  // End of feature selection
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureSelectionEndTime = 17;
+
   // Start of the training phase
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 14;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 18;
 
   // End of the training phase.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 15;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 19;
 
   // Start of the testing phase
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 16;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 20;
 
   // Represents time when the study reached a successful complete or failure phase. It is not guaranteed to
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 17;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 21;
 
   // The study end time.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 18;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 22;
 
   // The Best model name.
   // +kubebuilder:validation:Optional
-  optional string bestModel = 20;
+  optional string bestModel = 23;
 
   // The Best model score, so far.
   // +kubebuilder:validation:Optional
-  optional double bestModelScore = 21;
+  optional double bestModelScore = 24;
 
   // A reference to the profile uri which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string profileUri = 22;
+  optional string profileUri = 25;
 
   // The study report name
   // +kubebuilder:validation:Optional
-  optional string reportName = 23;
+  optional string reportName = 26;
 
   // The phase of the study
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 24;
+  optional string phase = 27;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 25;
+  optional int64 observedGeneration = 28;
 
   // TrainDatasetLocation is the location of the train dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 26;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 29;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 27;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 30;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 28;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 31;
 
   // the last model id generated for this study
-  optional int64 lastModelID = 29;
+  optional int64 lastModelID = 32;
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 30;
+  optional string lastError = 33;
 
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 32;
+  optional int32 trainingRows = 34;
 
   // TestingRows is the amount of rows in testing
   // +kubebuilder:validation:Optional
-  optional int32 testingRows = 33;
+  optional int32 testingRows = 35;
 
   // Validation row contain the number of validation rows for cases that we have validation.
   // +kubebuilder:validation:Optional
-  optional int32 validationRows = 34;
+  optional int32 validationRows = 36;
 
   // Study Progress in precent, the progress takes into account the different stages of the study.
   // +kubebuilder:validation:Optional
-  optional int32 progress = 35;
+  optional int32 progress = 37;
 
   // define a baseline model that will be the baseline for the search. If not none, the base line is the first model
   // to be evaluated.
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string baseline = 36;
+  optional string baseline = 38;
 
   // Sha 256 of the data sig
   // +kubebuilder:validation:Optional
-  optional DataHashes trainingDataHash = 37;
+  optional DataHashes trainingDataHash = 39;
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 38;
+  optional string triggeredBy = 40;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 39;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 41;
+
+  // Holds the status of the feature engineering process
+  // +kubebuilder:validation:Optional
+  optional FeatureEngineeringStatus fe = 42;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 40;
+  repeated StudyCondition conditions = 43;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

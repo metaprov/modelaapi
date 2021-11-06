@@ -83,10 +83,10 @@ const (
 	ModelPhaseReporting   ModelPhase = "Reporting"
 	ModelPhaseReported    ModelPhase = "Reported"
 	ModelPhaseCompleted   ModelPhase = "Completed"
-	ModelPhaseTar         ModelPhase = "CreatringTar"
-	ModelPhaseTarred      ModelPhase = "Tarred"
-	ModelPhaseBaking      ModelPhase = "Baking"
-	ModelPhaseBaked       ModelPhase = "Baked"
+	ModelPhasePublishing  ModelPhase = "Publishing"
+	ModelPhasePublished   ModelPhase = "Published"
+	ModelPhasePackaging   ModelPhase = "Packaging"
+	ModelPhasePackaged    ModelPhase = "Packaged"
 	ModelPhaseProfiling   ModelPhase = "Profiling"
 	ModelPhaseProfiled    ModelPhase = "Profiled"
 	ModelPhaseAborted     ModelPhase = "Aborted"
@@ -113,10 +113,10 @@ const (
 	ModelTested ModelConditionType = "Tested"
 	// Model report was generated and uploaded to the bucket.
 	ModelReported ModelConditionType = "Reported"
-	// Model was tarred
-	ModelTarred ModelConditionType = "Tarred"
 	// Model was baked
-	ModelBaked ModelConditionType = "Baked"
+	ModelPackaged ModelConditionType = "Packaged"
+	// Model was baked
+	ModelPublished ModelConditionType = "Published"
 	// Model profiled
 	ModelProfiled ModelConditionType = "Profiled"
 	// Execution of the model completed successful
@@ -244,7 +244,6 @@ type ModelSpec struct {
 	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
 	// +kubebuilder:validation:Optional
 	NLPEstimator *NLPEstimatorSpec `json:"nplEstimator,omitempty" protobuf:"bytes,13,opt,name=nlpEstimator"`
-
 	// If this is an ensemble model, specify the ensemble
 	// Default: None
 	// +kubebuilder:validation:Optional
@@ -261,14 +260,14 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,17,opt,name=aborted"`
-	// Published is set when we want to wrap the model in a docker container
+	// Packaged the model into tar file
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Tar *bool `json:"tar,omitempty" protobuf:"varint,18,opt,name=tar"`
-	// Baked indicate that the system should create an docker image with the container.
+	Packaged *bool `json:"packaged,omitempty" protobuf:"varint,18,opt,name=packaged"`
+	// Published indicate that the system should create an docker image with the container.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Baked *bool `json:"published,omitempty" protobuf:"varint,19,opt,name=published"`
+	Published *bool `json:"published,omitempty" protobuf:"varint,19,opt,name=published"`
 	// Pushed indicate if the model image should be pushed into the remote docker registry.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

@@ -630,12 +630,49 @@ func (model *Model) MarkForecasting() {
 	model.Status.Progress = util.Int32Ptr(50)
 }
 
-// ---------------------- publish
+///
 
-func (model *Model) MarkBaking() {
-	model.Status.Phase = ModelPhaseBaking
+func (model *Model) MarkPackaging() {
+	model.Status.Phase = ModelPhasePackaging
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelBaked,
+		Type:   ModelPackaged,
+		Status: v1.ConditionFalse,
+		Reason: "Packaging",
+	})
+
+}
+
+func (model *Model) Packaged() bool {
+	cond := model.GetCond(ModelPackaged)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (model *Model) MarkPackaged(image string) {
+	model.Status.ImageName = image
+	model.Status.Phase = ModelPhasePublished
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelPublished,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (model *Model) MarkPackgedFailed(err string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelPackaged,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	model.Status.Phase = ModelPhaseFailed
+	model.Status.LastError = "Failed to package." + err
+}
+
+// ---------------------- baking
+
+func (model *Model) MarkPublishing() {
+	model.Status.Phase = ModelPhasePublishing
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelPublished,
 		Status: v1.ConditionFalse,
 		Reason: ReasonPublishing,
 	})
@@ -643,22 +680,22 @@ func (model *Model) MarkBaking() {
 }
 
 func (model *Model) Published() bool {
-	cond := model.GetCond(ModelBaked)
+	cond := model.GetCond(ModelPublished)
 	return cond.Status == v1.ConditionTrue
 }
 
 func (model *Model) MarkPublished(image string) {
 	model.Status.ImageName = image
-	model.Status.Phase = ModelPhaseBaked
+	model.Status.Phase = ModelPhasePublished
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelBaked,
+		Type:   ModelPublished,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (model *Model) MarkPublishFailed(err string) {
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:    ModelBaked,
+		Type:    ModelPublished,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
@@ -783,7 +820,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
 	model.ObjectMeta.Labels["study"] = study.Name
 	model.Spec.Pushed = study.Spec.ModelImagePushed
-	model.Spec.Baked = study.Spec.ModelPublished
+	model.Spec.Published = study.Spec.ModelPublished
 	model.Spec.Location = &data.DataLocation{
 		BucketName: study.Spec.Location.BucketName,
 		Path:       util.StrPtr(path.Join(*study.Spec.Location.Path, "models", model.Name)),

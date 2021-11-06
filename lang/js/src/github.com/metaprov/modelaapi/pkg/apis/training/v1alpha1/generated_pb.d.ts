@@ -882,6 +882,32 @@ export namespace DeploymentStageSpec {
   }
 }
 
+export class DroppedFeature extends jspb.Message {
+  getName(): string;
+  setName(value: string): DroppedFeature;
+
+  getReason(): string;
+  setReason(value: string): DroppedFeature;
+
+  getValue(): number;
+  setValue(value: number): DroppedFeature;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DroppedFeature.AsObject;
+  static toObject(includeInstance: boolean, msg: DroppedFeature): DroppedFeature.AsObject;
+  static serializeBinaryToWriter(message: DroppedFeature, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DroppedFeature;
+  static deserializeBinaryFromReader(message: DroppedFeature, reader: jspb.BinaryReader): DroppedFeature;
+}
+
+export namespace DroppedFeature {
+  export type AsObject = {
+    name: string,
+    reason: string,
+    value: number,
+  }
+}
+
 export class EnsembleRules extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnsembleRules.AsObject;
@@ -913,6 +939,32 @@ export class EnsembleSpec extends jspb.Message {
 export namespace EnsembleSpec {
   export type AsObject = {
     baseList: Array<string>,
+  }
+}
+
+export class FeatureEngineeringStatus extends jspb.Message {
+  getGeneratedList(): Array<string>;
+  setGeneratedList(value: Array<string>): FeatureEngineeringStatus;
+  clearGeneratedList(): FeatureEngineeringStatus;
+  addGenerated(value: string, index?: number): FeatureEngineeringStatus;
+
+  getDroppedList(): Array<DroppedFeature>;
+  setDroppedList(value: Array<DroppedFeature>): FeatureEngineeringStatus;
+  clearDroppedList(): FeatureEngineeringStatus;
+  addDropped(value?: DroppedFeature, index?: number): DroppedFeature;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureEngineeringStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureEngineeringStatus): FeatureEngineeringStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureEngineeringStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringStatus;
+  static deserializeBinaryFromReader(message: FeatureEngineeringStatus, reader: jspb.BinaryReader): FeatureEngineeringStatus;
+}
+
+export namespace FeatureEngineeringStatus {
+  export type AsObject = {
+    generatedList: Array<string>,
+    droppedList: Array<DroppedFeature.AsObject>,
   }
 }
 
@@ -2532,8 +2584,8 @@ export class ModelSpec extends jspb.Message {
   getAborted(): boolean;
   setAborted(value: boolean): ModelSpec;
 
-  getTar(): boolean;
-  setTar(value: boolean): ModelSpec;
+  getPackaged(): boolean;
+  setPackaged(value: boolean): ModelSpec;
 
   getPublished(): boolean;
   setPublished(value: boolean): ModelSpec;
@@ -2619,7 +2671,7 @@ export namespace ModelSpec {
     training?: TrainingSpec.AsObject,
     tested: boolean,
     aborted: boolean,
-    tar: boolean,
+    packaged: boolean,
     published: boolean,
     pushed: boolean,
     reported: boolean,
@@ -4303,6 +4355,26 @@ export class StudyStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): StudyStatus;
 
+  getFeaturegenstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFeaturegenstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasFeaturegenstarttime(): boolean;
+  clearFeaturegenstarttime(): StudyStatus;
+
+  getFeaturegenendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFeaturegenendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasFeaturegenendtime(): boolean;
+  clearFeaturegenendtime(): StudyStatus;
+
+  getFeatureselectionstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFeatureselectionstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasFeatureselectionstarttime(): boolean;
+  clearFeatureselectionstarttime(): StudyStatus;
+
+  getFeatureselectionendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFeatureselectionendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasFeatureselectionendtime(): boolean;
+  clearFeatureselectionendtime(): StudyStatus;
+
   getTrainingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setTrainingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
   hasTrainingstarttime(): boolean;
@@ -4395,6 +4467,11 @@ export class StudyStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): StudyStatus;
 
+  getFe(): FeatureEngineeringStatus | undefined;
+  setFe(value?: FeatureEngineeringStatus): StudyStatus;
+  hasFe(): boolean;
+  clearFe(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4420,6 +4497,10 @@ export namespace StudyStatus {
     failedtestingmodels: number,
     testedmodels: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    featuregenstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    featuregenendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    featureselectionstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    featureselectionendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -4444,6 +4525,7 @@ export namespace StudyStatus {
     trainingdatahash?: DataHashes.AsObject,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    fe?: FeatureEngineeringStatus.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }
