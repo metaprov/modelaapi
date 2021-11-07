@@ -79,8 +79,12 @@ const (
 	PartitionForecastTask TaskName = "partition-forecast"
 	SplitDatasetToRungs   TaskName = "split-dataset-to-rungs"
 	CompileTask           TaskName = "compile-model"
-	GenerateDataset       TaskName = "generate-dataset"
-	ValidateModel         TaskName = "validate-model"
+	PackageModelTask      TaskName = "package-model"
+	FeatureGenTask        TaskName = "feature-gen"
+	FeatureSelectTask     TaskName = "feature-select"
+
+	GenerateDataset TaskName = "generate-dataset"
+	ValidateModel   TaskName = "validate-model"
 )
 
 // ApiKeyName is the secret or in env variable
