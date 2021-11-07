@@ -1671,7 +1671,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1713,7 +1713,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -23617,13 +23617,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesRequest.p
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -23655,8 +23648,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.toObject, includeInstance)
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -23696,7 +23688,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.deserializeBinaryFromReader);
-      msg.addResult(value);
+      msg.setResult(value);
       break;
     default:
       reader.skipField();
@@ -23727,9 +23719,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResultList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.serializeBinaryToWriter
@@ -23739,40 +23731,39 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus result = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus, 1));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.setResultList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.clearResultList = function() {
-  return this.setResultList([]);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsGenerateFeaturesResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -24267,13 +24258,6 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesRequest.pro
 
 
 
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -24305,8 +24289,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.pr
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultList: jspb.Message.toObjectList(msg.getResultList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.toObject, includeInstance)
+    result: (f = msg.getResult()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -24346,7 +24329,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.de
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.deserializeBinaryFromReader);
-      msg.addResult(value);
+      msg.setResult(value);
       break;
     default:
       reader.skipField();
@@ -24377,9 +24360,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.pr
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getResultList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = message.getResult();
+  if (f != null) {
+    writer.writeMessage(
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.serializeBinaryToWriter
@@ -24389,40 +24372,39 @@ proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.se
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus result = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus>}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus result = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.getResultList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus, 1));
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.getResult = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus>} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.setResultList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.setResult = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus=} opt_value
- * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.addResult = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.clearResultList = function() {
-  return this.setResultList([]);
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.clearResult = function() {
+  return this.setResult(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.DsSelectFeaturesResponse.prototype.hasResult = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

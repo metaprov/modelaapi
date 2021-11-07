@@ -2760,10 +2760,10 @@ export namespace DsGenerateFeaturesRequest {
 }
 
 export class DsGenerateFeaturesResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus>): DsGenerateFeaturesResponse;
-  clearResultList(): DsGenerateFeaturesResponse;
-  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus): DsGenerateFeaturesResponse;
+  hasResult(): boolean;
+  clearResult(): DsGenerateFeaturesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsGenerateFeaturesResponse.AsObject;
@@ -2775,7 +2775,7 @@ export class DsGenerateFeaturesResponse extends jspb.Message {
 
 export namespace DsGenerateFeaturesResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.AsObject>,
+    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.AsObject,
   }
 }
 
@@ -2840,10 +2840,10 @@ export namespace DsSelectFeaturesRequest {
 }
 
 export class DsSelectFeaturesResponse extends jspb.Message {
-  getResultList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus>;
-  setResultList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus>): DsSelectFeaturesResponse;
-  clearResultList(): DsSelectFeaturesResponse;
-  addResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus;
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus): DsSelectFeaturesResponse;
+  hasResult(): boolean;
+  clearResult(): DsSelectFeaturesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DsSelectFeaturesResponse.AsObject;
@@ -2855,7 +2855,7 @@ export class DsSelectFeaturesResponse extends jspb.Message {
 
 export namespace DsSelectFeaturesResponse {
   export type AsObject = {
-    resultList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.AsObject>,
+    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.AsObject,
   }
 }
 

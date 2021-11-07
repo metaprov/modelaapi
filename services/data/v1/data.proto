@@ -594,7 +594,7 @@ message DsGenerateFeaturesRequest {
 }
 
 message DsGenerateFeaturesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus result = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus result = 1;
 }
 
 
@@ -610,7 +610,7 @@ message DsSelectFeaturesRequest {
 }
 
 message DsSelectFeaturesResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus result = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus result = 1;
 }
 
 
