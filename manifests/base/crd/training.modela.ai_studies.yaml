@@ -212,14 +212,16 @@ spec:
                 description: Specification for feature selection
                 properties:
                   corrTreshold:
-                    default: false
+                    default: 95
                     description: Remove Features with high correlations
-                    type: number
+                    format: int32
+                    type: integer
                   cumulativeImportancePrecent:
                     default: 95
                     description: The cummulative importance of all the importance
                       feature to include
-                    type: number
+                    format: int32
+                    type: integer
                   features:
                     description: List of feature names to consider when training ,
                       even after filtering
@@ -227,10 +229,11 @@ spec:
                       type: string
                     type: array
                   lowVarTreshold:
-                    default: false
+                    default: 5
                     description: Lowvar specify the filter to remove low variance
                       features
-                    type: number
+                    format: int32
+                    type: integer
                   onError:
                     default: false
                     description: Is the feature filter enbled

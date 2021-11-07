@@ -405,14 +405,14 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.VarianceTreshold != nil {
-		in, out := &in.VarianceTreshold, &out.VarianceTreshold
-		*out = new(float64)
+	if in.VarianceTresholdPct != nil {
+		in, out := &in.VarianceTresholdPct, &out.VarianceTresholdPct
+		*out = new(int32)
 		**out = **in
 	}
 	if in.CorrTreshold != nil {
 		in, out := &in.CorrTreshold, &out.CorrTreshold
-		*out = new(float64)
+		*out = new(int32)
 		**out = **in
 	}
 	if in.TopN != nil {
@@ -422,7 +422,7 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 	}
 	if in.CumulativeImportancePrecent != nil {
 		in, out := &in.CumulativeImportancePrecent, &out.CumulativeImportancePrecent
-		*out = new(float64)
+		*out = new(int32)
 		**out = **in
 	}
 	if in.Features != nil {

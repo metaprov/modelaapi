@@ -4620,10 +4620,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    lowvartreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    corrtreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    lowvartreshold: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    corrtreshold: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     topn: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    cumulativeimportanceprecent: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
+    cumulativeimportanceprecent: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     featuresList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
@@ -4666,11 +4666,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
       msg.setEnabled(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setLowvartreshold(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setCorrtreshold(value);
       break;
     case 4:
@@ -4678,7 +4678,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
       msg.setTopn(value);
       break;
     case 5:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setCumulativeimportanceprecent(value);
       break;
     case 6:
@@ -4723,14 +4723,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       2,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       3,
       f
     );
@@ -4744,7 +4744,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       5,
       f
     );
@@ -4796,11 +4796,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
 
 
 /**
- * optional double lowVarTreshold = 2;
+ * optional int32 lowVarTreshold = 2;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSpec.prototype.getLowvartreshold = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -4832,11 +4832,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
 
 
 /**
- * optional double corrTreshold = 3;
+ * optional int32 corrTreshold = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSpec.prototype.getCorrtreshold = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
@@ -4904,11 +4904,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSp
 
 
 /**
- * optional double cumulativeImportancePrecent = 5;
+ * optional int32 cumulativeImportancePrecent = 5;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSpec.prototype.getCumulativeimportanceprecent = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 

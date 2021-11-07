@@ -225,14 +225,14 @@ message FeatureSelectionSpec {
   optional bool enabled = 1;
 
   // Lowvar specify the filter to remove low variance features
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional double lowVarTreshold = 2;
+  optional int32 lowVarTreshold = 2;
 
   // Remove Features with high correlations
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  optional double corrTreshold = 3;
+  optional int32 corrTreshold = 3;
 
   // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
   // +kubebuilder:default:=0
@@ -242,7 +242,7 @@ message FeatureSelectionSpec {
   // The cummulative importance of all the importance feature to include
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  optional double cumulativeImportancePrecent = 5;
+  optional int32 cumulativeImportancePrecent = 5;
 
   // List of feature names to consider when training , even after filtering
   // +kubebuilder:validation:Optional

@@ -1620,13 +1620,13 @@ type FeatureSelectionSpec struct {
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Lowvar specify the filter to remove low variance features
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	VarianceTreshold *float64 `json:"lowVarTreshold,omitempty" protobuf:"bytes,2,opt,name=lowVarTreshold"`
+	VarianceTresholdPct *int32 `json:"lowVarTreshold,omitempty" protobuf:"varint,2,opt,name=lowVarTreshold"`
 	// Remove Features with high correlations
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	CorrTreshold *float64 `json:"corrTreshold,omitempty" protobuf:"varint,3,opt,name=corrTreshold"`
+	CorrTreshold *int32 `json:"corrTreshold,omitempty" protobuf:"varint,3,opt,name=corrTreshold"`
 	// Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -1634,7 +1634,7 @@ type FeatureSelectionSpec struct {
 	// The cummulative importance of all the importance feature to include
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	CumulativeImportancePrecent *float64 `json:"cumulativeImportancePrecent,omitempty" protobuf:"varint,5,opt,name=cumulativeImportancePrecent"`
+	CumulativeImportancePrecent *int32 `json:"cumulativeImportancePrecent,omitempty" protobuf:"varint,5,opt,name=cumulativeImportancePrecent"`
 	// List of feature names to consider when training , even after filtering
 	// +kubebuilder:validation:Optional
 	Features []string `json:"features,omitempty" protobuf:"bytes,6,rep,name=features"`
