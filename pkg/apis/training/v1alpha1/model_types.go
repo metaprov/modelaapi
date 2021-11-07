@@ -670,9 +670,6 @@ type TrainingSpec struct {
 	// Set the precent of dataset to use during training.
 	// +kubebuilder:validation:Optional
 	Sample data.SampleSpec `json:"sample,omitempty" protobuf:"bytes,15,opt,name=sample"`
-	// Feature filter specified what features to use from the original dataset.
-	// +kubebuilder:validation:Optional
-	FeatureFilter *catalog.FeatureFilter `json:"featureFilter,omitempty" protobuf:"bytes,16,opt,name=featureFilter"`
 }
 
 // CategoricalPipelineSpec is the specification for processing categorical columns

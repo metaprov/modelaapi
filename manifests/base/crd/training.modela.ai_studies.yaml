@@ -185,113 +185,434 @@ spec:
                 description: Description is user provided description
                 maxLength: 512
                 type: string
+              featureEngineering:
+                default: false
+                description: Perform feature generation and selection before the modeling
+                  phase
+                type: boolean
+              featureGeneration:
+                description: Specification for feature generation
+                properties:
+                  expression:
+                    description: List of expression to apply to the existing feature.
+                    items:
+                      type: string
+                    type: array
+                  externalDatasets:
+                    description: List of dataset to join to the current dataset
+                    items:
+                      type: string
+                    type: array
+                  onError:
+                    default: true
+                    description: Is the feature filter enbled
+                    type: boolean
+                type: object
+              featureSelection:
+                description: Specification for feature selection
+                properties:
+                  corrTreshold:
+                    default: false
+                    description: Remove Features with high correlations
+                    type: number
+                  cumulativeImportancePrecent:
+                    default: 95
+                    description: The cummulative importance of all the importance
+                      feature to include
+                    type: number
+                  features:
+                    description: List of feature names to consider when training ,
+                      even after filtering
+                    items:
+                      type: string
+                    type: array
+                  lowVarTreshold:
+                    default: false
+                    description: Lowvar specify the filter to remove low variance
+                      features
+                    type: number
+                  onError:
+                    default: false
+                    description: Is the feature filter enbled
+                    type: boolean
+                  topN:
+                    default: 0
+                    description: Select the Top N is the number of feature to select
+                      by importance. If 0, all the features are selected.
+                    format: int32
+                    type: integer
+                type: object
               flagged:
                 description: Is this model flagged
                 type: boolean
               forecast:
-                description: The specification for the forecasting algorithm if this
-                  is a forecast study.
+                description: Forecast template
                 properties:
-                  backtest:
-                    description: The backtest specification, the system supports back
-                      testing with expanding windows.
+                  forecast:
+                    description: Template to use for each model
                     properties:
-                      forecastingWindowsSize:
-                        description: The number of data points to forecast on.
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      sliding:
-                        description: If true, use sliding windows, else use expanding
-                          windows
-                        type: boolean
-                      slidingSteps:
-                        description: The number of data points between each windows
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      trainingWindowsSize:
-                        description: The number of data points in each windows used
-                          for training.
-                        format: int32
-                        minimum: 0
-                        type: integer
-                    type: object
-                  confidenceIntervals:
-                    description: The confidence levels for the forecast, each level
-                      must be between 1-100.
-                    format: int32
-                    minimum: 0
-                    type: integer
-                  data:
-                    description: Required, the freq of the time series (daily,weekly)
-                    properties:
-                      changepoints:
-                        description: Set an holiday schedule for a country. Change
-                          point specification
+                      backtest:
+                        description: The backtest specification, the system supports
+                          back testing with expanding windows.
                         properties:
-                          "N":
-                            description: number of change points
+                          forecastingWindowsSize:
+                            description: The number of data points to forecast on.
+                            format: int32
+                            minimum: 0
+                            type: integer
+                          sliding:
+                            description: If true, use sliding windows, else use expanding
+                              windows
+                            type: boolean
+                          slidingSteps:
+                            description: The number of data points between each windows
+                            format: int32
+                            minimum: 0
+                            type: integer
+                          trainingWindowsSize:
+                            description: The number of data points in each windows
+                              used for training.
+                            format: int32
+                            minimum: 0
+                            type: integer
+                        type: object
+                      confidenceIntervals:
+                        description: The confidence levels for the forecast, each
+                          level must be between 1-100.
+                        format: int32
+                        minimum: 0
+                        type: integer
+                      data:
+                        description: Required, the freq of the time series (daily,weekly)
+                        properties:
+                          changepoints:
+                            description: Set an holiday schedule for a country. Change
+                              point specification
+                            properties:
+                              "N":
+                                description: number of change points
+                                format: int32
+                                type: integer
+                              range:
+                                description: Change point range
+                                type: number
+                            type: object
+                          customSeasonalities:
+                            description: The list of additional regressors. The regresors
+                              are part of the time series data
+                            items:
+                              description: SeasonalitySpec defines the custom seasonality
+                              properties:
+                                fourierOrder:
+                                  format: int32
+                                  type: integer
+                                name:
+                                  description: The name of the custom seasonality
+                                  type: string
+                                period:
+                                  description: The name of the custom seasonality
+                                  type: number
+                              type: object
+                            type: array
+                          dailySeasonality:
+                            description: Define the seasonality for a period (yearly
+                              / monthly / daily)
+                            properties:
+                              enabled:
+                                default: true
+                                description: Is this seasonality enabled
+                                type: boolean
+                              mode:
+                                default: auto
+                                description: Predictor format represent the API implementation
+                                  of the model
+                                enum:
+                                - multipicative
+                                - additive
+                                - auto
+                                - none
+                                type: string
+                              periods:
+                                default: 0
+                                description: If enabled, the number of data points
+                                  in the interval
+                                format: int32
+                                type: integer
+                            type: object
+                          datetimeFormat:
+                            description: The format of the datetime column. Used default
+                            type: string
+                          forecast:
+                            description: The forecast periods
+                            properties:
+                              end:
+                                description: The windows end day
+                                format: int32
+                                type: integer
+                              interval:
+                                description: The period interval
+                                enum:
+                                - second
+                                - minute
+                                - hour
+                                - day
+                                - week
+                                - month
+                                - quarter
+                                - year
+                                type: string
+                              start:
+                                default: 0
+                                description: The window start day
+                                format: int32
+                                type: integer
+                            type: object
+                          groupColumn:
+                            description: Column name of the first level of grouping
+                            type: string
+                          growth:
+                            enum:
+                            - linear
+                            - logistic
+                            - flat
+                            type: string
+                          history:
+                            description: The historical periods
+                            properties:
+                              end:
+                                description: The windows end day
+                                format: int32
+                                type: integer
+                              interval:
+                                description: The period interval
+                                enum:
+                                - second
+                                - minute
+                                - hour
+                                - day
+                                - week
+                                - month
+                                - quarter
+                                - year
+                                type: string
+                              start:
+                                default: 0
+                                description: The window start day
+                                format: int32
+                                type: integer
+                            type: object
+                          holiday:
+                            description: The format of the datetime column. Used default
+                            properties:
+                              country:
+                                description: / The HolidayCountry unit
+                                enum:
+                                - US
+                                - BR
+                                - ID
+                                - IN
+                                - MY
+                                - VN
+                                - TH
+                                - PH
+                                - PK
+                                - BD
+                                - EG
+                                - CN
+                                - RU
+                                - KR
+                                - BY
+                                - AE
+                                - none
+                                type: string
+                              datasetName:
+                                description: For custom holiday use external dataset
+                                type: string
+                              holidayColumn:
+                                description: The name of the holiday column. If the
+                                  column is empty, no holiday Column name of the first
+                                  level of grouping
+                                type: string
+                            type: object
+                          intevalWidth:
+                            type: number
+                          regressors:
+                            description: The list of additional regressors. The regresors
+                              are part of the time series data
+                            items:
+                              properties:
+                                name:
+                                  description: The Name of the regressor
+                                  type: string
+                                priorScale:
+                                  default: 0
+                                  description: The Name of the regressor
+                                  type: number
+                                standardize:
+                                  default: false
+                                  description: The Name of the regressor
+                                  type: boolean
+                              type: object
+                            type: array
+                          subGroupColumn:
+                            description: Column name of the second level of grouping
+                            type: string
+                          subSubGroupColumn:
+                            description: Column name of the third level of grouping
+                            type: string
+                          targetColumn:
+                            description: The name of the column holding the value.
+                              By default this is the target column from the dataset.
+                            type: string
+                          timeColumn:
+                            description: 'General Forecast attributes: The name of
+                              the time column'
+                            type: string
+                          uncertaintySamples:
                             format: int32
                             type: integer
-                          range:
-                            description: Change point range
-                            type: number
+                          weeklySeasonality:
+                            description: Define the seasonality for a period (yearly
+                              / monthly / daily)
+                            properties:
+                              enabled:
+                                default: true
+                                description: Is this seasonality enabled
+                                type: boolean
+                              mode:
+                                default: auto
+                                description: Predictor format represent the API implementation
+                                  of the model
+                                enum:
+                                - multipicative
+                                - additive
+                                - auto
+                                - none
+                                type: string
+                              periods:
+                                default: 0
+                                description: If enabled, the number of data points
+                                  in the interval
+                                format: int32
+                                type: integer
+                            type: object
+                          yearlySeasonality:
+                            description: Define the seasonality for a period (yearly
+                              / monthly / daily)
+                            properties:
+                              enabled:
+                                default: true
+                                description: Is this seasonality enabled
+                                type: boolean
+                              mode:
+                                default: auto
+                                description: Predictor format represent the API implementation
+                                  of the model
+                                enum:
+                                - multipicative
+                                - additive
+                                - auto
+                                - none
+                                type: string
+                              periods:
+                                default: 0
+                                description: If enabled, the number of data points
+                                  in the interval
+                                format: int32
+                                type: integer
+                            type: object
                         type: object
-                      customSeasonalities:
-                        description: The list of additional regressors. The regresors
-                          are part of the time series data
+                      plot:
+                        description: If true generate the plots
+                        type: boolean
+                      plotChangePoints:
+                        type: boolean
+                      postProcessing:
+                        description: Post processing
+                        properties:
+                          connectionName:
+                            description: The name of the connection for a database
+                              the result of the forecast If null, the system will
+                              insert the forecast in the database.
+                            type: string
+                          forecast:
+                            description: Specify if we should generate a forecast
+                              using the model If true, the system will perform a forecast
+                              and update the forecast connection. Default it true
+                            type: boolean
+                        type: object
+                    type: object
+                  hierarchy:
+                    description: for multi level forecast The group hierarchy
+                    properties:
+                      columns:
+                        description: The columns in the data frame that belongs to
+                          the hierarchy. By default, all the item level column is
+                          the last one. The default aggregate function is sum.
                         items:
-                          description: SeasonalitySpec defines the custom seasonality
+                          type: string
+                        type: array
+                      groupLevels:
+                        description: The group level columns. For each group level
+                          column specify the horizon and the aggregate function
+                        items:
                           properties:
-                            fourierOrder:
+                            aggregate:
+                              description: The aggregate function used to roll up
+                                the lower level
+                              enum:
+                              - min
+                              - max
+                              - avg
+                              - median
+                              type: string
+                            distinc:
+                              description: The distinct values of the column for this
+                                level
+                              items:
+                                type: string
+                              type: array
+                            freq:
+                              description: The freq of the level
+                              enum:
+                              - second
+                              - minute
+                              - hour
+                              - day
+                              - week
+                              - month
+                              - quarter
+                              - year
+                              type: string
+                            horizon:
+                              description: The number of time periods to
                               format: int32
                               type: integer
-                            name:
-                              description: The name of the custom seasonality
+                            string:
+                              description: The name of the level - the column name
                               type: string
-                            period:
-                              description: The name of the custom seasonality
-                              type: number
                           type: object
                         type: array
-                      dailySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
+                      itemLevel:
+                        description: Item level column.
                         properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            description: Predictor format represent the API implementation
-                              of the model
+                          aggregate:
+                            description: The aggregate function used to roll up the
+                              lower level
                             enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
+                            - min
+                            - max
+                            - avg
+                            - median
                             type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                      datetimeFormat:
-                        description: The format of the datetime column. Used default
-                        type: string
-                      forecast:
-                        description: The forecast periods
-                        properties:
-                          end:
-                            description: The windows end day
-                            format: int32
-                            type: integer
-                          interval:
-                            description: The period interval
+                          distinc:
+                            description: The distinct values of the column for this
+                              level
+                            items:
+                              type: string
+                            type: array
+                          freq:
+                            description: The freq of the level
                             enum:
                             - second
                             - minute
@@ -302,278 +623,19 @@ spec:
                             - quarter
                             - year
                             type: string
-                          start:
-                            default: 0
-                            description: The window start day
+                          horizon:
+                            description: The number of time periods to
                             format: int32
                             type: integer
-                        type: object
-                      groupColumn:
-                        description: Column name of the first level of grouping
-                        type: string
-                      growth:
-                        enum:
-                        - linear
-                        - logistic
-                        - flat
-                        type: string
-                      history:
-                        description: The historical periods
-                        properties:
-                          end:
-                            description: The windows end day
-                            format: int32
-                            type: integer
-                          interval:
-                            description: The period interval
-                            enum:
-                            - second
-                            - minute
-                            - hour
-                            - day
-                            - week
-                            - month
-                            - quarter
-                            - year
-                            type: string
-                          start:
-                            default: 0
-                            description: The window start day
-                            format: int32
-                            type: integer
-                        type: object
-                      holiday:
-                        description: The format of the datetime column. Used default
-                        properties:
-                          country:
-                            description: / The HolidayCountry unit
-                            enum:
-                            - US
-                            - BR
-                            - ID
-                            - IN
-                            - MY
-                            - VN
-                            - TH
-                            - PH
-                            - PK
-                            - BD
-                            - EG
-                            - CN
-                            - RU
-                            - KR
-                            - BY
-                            - AE
-                            - none
-                            type: string
-                          datasetName:
-                            description: For custom holiday use external dataset
-                            type: string
-                          holidayColumn:
-                            description: The name of the holiday column. If the column
-                              is empty, no holiday Column name of the first level
-                              of grouping
+                          string:
+                            description: The name of the level - the column name
                             type: string
                         type: object
-                      intevalWidth:
-                        type: number
-                      regressors:
-                        description: The list of additional regressors. The regresors
-                          are part of the time series data
-                        items:
-                          properties:
-                            name:
-                              description: The Name of the regressor
-                              type: string
-                            priorScale:
-                              default: 0
-                              description: The Name of the regressor
-                              type: number
-                            standardize:
-                              default: false
-                              description: The Name of the regressor
-                              type: boolean
-                          type: object
-                        type: array
-                      subGroupColumn:
-                        description: Column name of the second level of grouping
-                        type: string
-                      subSubGroupColumn:
-                        description: Column name of the third level of grouping
-                        type: string
-                      targetColumn:
-                        description: The name of the column holding the value. By
-                          default this is the target column from the dataset.
-                        type: string
-                      timeColumn:
-                        description: 'General Forecast attributes: The name of the
-                          time column'
-                        type: string
-                      uncertaintySamples:
-                        format: int32
-                        type: integer
-                      weeklySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            description: Predictor format represent the API implementation
-                              of the model
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                      yearlySeasonality:
-                        description: Define the seasonality for a period (yearly /
-                          monthly / daily)
-                        properties:
-                          enabled:
-                            default: true
-                            description: Is this seasonality enabled
-                            type: boolean
-                          mode:
-                            default: auto
-                            description: Predictor format represent the API implementation
-                              of the model
-                            enum:
-                            - multipicative
-                            - additive
-                            - auto
-                            - none
-                            type: string
-                          periods:
-                            default: 0
-                            description: If enabled, the number of data points in
-                              the interval
-                            format: int32
-                            type: integer
-                        type: object
-                    type: object
-                  plot:
-                    description: If true generate the plots
-                    type: boolean
-                  plotChangePoints:
-                    type: boolean
-                  postProcessing:
-                    description: Post processing
-                    properties:
-                      connectionName:
-                        description: The name of the connection for a database the
-                          result of the forecast If null, the system will insert the
-                          forecast in the database.
-                        type: string
-                      forecast:
-                        description: Specify if we should generate a forecast using
-                          the model If true, the system will perform a forecast and
-                          update the forecast connection. Default it true
-                        type: boolean
-                    type: object
-                type: object
-              hierarchy:
-                description: The group hierarchy
-                properties:
-                  columns:
-                    description: The columns in the data frame that belongs to the
-                      hierarchy. By default, all the item level column is the last
-                      one. The default aggregate function is sum.
-                    items:
-                      type: string
-                    type: array
-                  groupLevels:
-                    description: The group level columns. For each group level column
-                      specify the horizon and the aggregate function
-                    items:
-                      properties:
-                        aggregate:
-                          description: The aggregate function used to roll up the
-                            lower level
-                          enum:
-                          - min
-                          - max
-                          - avg
-                          - median
-                          type: string
-                        distinc:
-                          description: The distinct values of the column for this
-                            level
-                          items:
-                            type: string
-                          type: array
-                        freq:
-                          description: The freq of the level
-                          enum:
-                          - second
-                          - minute
-                          - hour
-                          - day
-                          - week
-                          - month
-                          - quarter
-                          - year
-                          type: string
-                        horizon:
-                          description: The number of time periods to
-                          format: int32
-                          type: integer
-                        string:
-                          description: The name of the level - the column name
-                          type: string
-                      type: object
-                    type: array
-                  itemLevel:
-                    description: Item level column.
-                    properties:
-                      aggregate:
-                        description: The aggregate function used to roll up the lower
-                          level
-                        enum:
-                        - min
-                        - max
-                        - avg
-                        - median
-                        type: string
-                      distinc:
-                        description: The distinct values of the column for this level
-                        items:
-                          type: string
-                        type: array
-                      freq:
-                        description: The freq of the level
-                        enum:
-                        - second
-                        - minute
-                        - hour
-                        - day
-                        - week
-                        - month
-                        - quarter
-                        - year
-                        type: string
-                      horizon:
-                        description: The number of time periods to
-                        format: int32
-                        type: integer
-                      string:
-                        description: The name of the level - the column name
+                      notifierName:
+                        description: Optional notifier to use when the forecast is
+                          complete.
                         type: string
                     type: object
-                  notifierName:
-                    description: Optional notifier to use when the forecast is complete.
-                    type: string
                 type: object
               labRef:
                 description: LabRef is a reference to the lab where the trainers for
@@ -1511,36 +1573,6 @@ spec:
                     minimum: 0
                     type: integer
                 type: object
-              studyFeatureFilter:
-                description: Feature filter is applied to the data for this study.
-                  The filter specifies how to filter the original dataset.
-                properties:
-                  features:
-                    description: List of feature names to consider when training.
-                    items:
-                      type: string
-                    type: array
-                  highCorr:
-                    default: false
-                    description: High correlation specify to filter features with
-                      high correlation.
-                    type: boolean
-                  lowVar:
-                    default: false
-                    description: Lowvar specify the filter to remove low variance
-                      features
-                    type: boolean
-                  onError:
-                    default: false
-                    description: Is the feature filter enbled
-                    type: boolean
-                  topN:
-                    default: 0
-                    description: Select the Top N is the number of feature to select
-                      by importance. If 0, all the features are selected.
-                    format: int32
-                    type: integer
-                type: object
               task:
                 description: Task specify the machine learning task (e.g classification).
                   This must match the task of the data product.
@@ -1671,36 +1703,6 @@ spec:
                       - req-per-sec
                       type: string
                     type: array
-                  featureFilter:
-                    description: Feature filter specified what features to use from
-                      the original dataset.
-                    properties:
-                      features:
-                        description: List of feature names to consider when training.
-                        items:
-                          type: string
-                        type: array
-                      highCorr:
-                        default: false
-                        description: High correlation specify to filter features with
-                          high correlation.
-                        type: boolean
-                      lowVar:
-                        default: false
-                        description: Lowvar specify the filter to remove low variance
-                          features
-                        type: boolean
-                      onError:
-                        default: false
-                        description: Is the feature filter enbled
-                        type: boolean
-                      topN:
-                        default: 0
-                        description: Select the Top N is the number of feature to
-                          select by importance. If 0, all the features are selected.
-                        format: int32
-                        type: integer
-                    type: object
                   folds:
                     default: 5
                     description: The number of folds during cross validation.
@@ -1942,11 +1944,18 @@ spec:
                 description: models that failed during training.
                 format: int32
                 type: integer
-              fe:
+              featureGenEndTime:
+                description: End of feature generation
+                format: date-time
+                type: string
+              featureGenStartTime:
+                description: Start of feature generation
+                format: date-time
+                type: string
+              featureGeneration:
                 description: Holds the status of the feature engineering process
                 properties:
-                  dropped:
-                    description: List of dropped features
+                  generated:
                     items:
                       properties:
                         name:
@@ -1960,20 +1969,39 @@ spec:
                           type: number
                       type: object
                     type: array
-                  generated:
-                    description: contains the list of the generated features
+                type: object
+              featureSelection:
+                description: Holds the status of the feature engineering process
+                properties:
+                  removed:
                     items:
-                      type: string
+                      properties:
+                        name:
+                          default: ""
+                          description: The feature name
+                          type: string
+                        reason:
+                          description: The reason that the feature was dropped
+                          type: string
+                        value:
+                          type: number
+                      type: object
+                    type: array
+                  selected:
+                    items:
+                      properties:
+                        name:
+                          default: ""
+                          description: The feature name
+                          type: string
+                        reason:
+                          description: The reason that the feature was dropped
+                          type: string
+                        value:
+                          type: number
+                      type: object
                     type: array
                 type: object
-              featureGenEndTime:
-                description: End of feature generation
-                format: date-time
-                type: string
-              featureGenStartTime:
-                description: Start of feature generation
-                format: date-time
-                type: string
               featureSelectionEndTime:
                 description: End of feature selection
                 format: date-time

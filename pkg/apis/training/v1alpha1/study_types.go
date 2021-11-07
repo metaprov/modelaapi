@@ -343,6 +343,16 @@ type PrunerSpec struct {
 	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,9,opt,name=shOptions"`
 }
 
+type StudyForecastSpec struct {
+	// Template to use for each model
+	// +kubebuilder:validation:Optional
+	ForecastTemplate *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,35,opt,name=forecast"`
+	// for multi level forecast
+	// The group hierarchy
+	// +kubebuilder:validation:Optional
+	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,23,opt,name=hierarchy"`
+}
+
 // StudySpec defines the desired state of the study
 type StudySpec struct {
 	// VersionName is the data product version of the study
@@ -390,75 +400,79 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,13,opt,name=aborted"`
+	// Perform feature generation and selection before the modeling phase
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	FeatureEngineering *bool `json:"featureEngineering,omitempty" protobuf:"varint,14,opt,name=featureEngineering"`
 	// Reported is set when we want to create model report
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,14,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,15,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,15,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,16,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,16,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,17,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,17,opt,name=modelPublished"`
+	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,18,opt,name=modelPublished"`
 	// Set to true if you want the system to push model image to remote docker registry
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,18,opt,name=modelImagePushed"`
+	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,19,opt,name=modelImagePushed"`
 	// Set to true if you want the system to push model image to remote docker registry
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	ModelBenchmarked *bool `json:"modelBenchmarked,omitempty" protobuf:"varint,19,opt,name=modelBenchmarked"`
+	ModelBenchmarked *bool `json:"modelBenchmarked,omitempty" protobuf:"varint,21,opt,name=modelBenchmarked"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,20,opt,name=location"`
-	// The group hierarchy
-	// +kubebuilder:validation:Optional
-	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,21,opt,name=hierarchy"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,22,opt,name=location"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,24,opt,name=owner"`
 	// ActiveDeadlineSeconds is the deadline of a job for this study.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,23,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,25,opt,name=activeDeadlineSeconds"`
 	// This is the compiler spec for models. This spec will act as a template for the models created by the study
 	//+kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,24,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,26,opt,name=compilation"`
 	// Set to true if this study is a template
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Template *bool `json:"template,omitempty" protobuf:"varint,25,opt,name=template"`
+	Template *bool `json:"template,omitempty" protobuf:"varint,27,opt,name=template"`
 	// Is this model flagged
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,26,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,28,opt,name=flagged"`
 	// Notification specification.
 	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,27,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,29,opt,name=notification"`
 	// Model Image specification.
 	//+kubebuilder:validation:Optional
-	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,28,opt,name=modelImage"`
+	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,30,opt,name=modelImage"`
 	// TTL for models.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,29,opt,name=ttl"`
-	// Feature filter is applied to the data for this study. The filter specifies how to filter the original dataset.
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,31,opt,name=ttl"`
+	// Specification for feature generation
 	// +kubebuilder:validation:Optional
-	StudyFeatureFilter *catalog.FeatureFilter `json:"studyFeatureFilter,omitempty" protobuf:"bytes,30,opt,name=studyFeatureFilter"`
+	FeatureGeneration *catalog.FeatureGenerationSpec `json:"featureGeneration,omitempty" protobuf:"bytes,32,opt,name=featureGeneration"`
+	// Specification for feature selection
+	// +kubebuilder:validation:Optional
+	FeatureSelection *catalog.FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,33,opt,name=featureSelection"`
 	// Sample spec defines how many rows to use for analysis
 	// +kubebuilder:validation:Optional
-	DatasetSample data.SampleSpec `json:"datasetSample,omitempty" protobuf:"bytes,31,opt,name=datasetSample"`
-	// The specification for the forecasting algorithm if this is a forecast study.
+	DatasetSample data.SampleSpec `json:"datasetSample,omitempty" protobuf:"bytes,34,opt,name=datasetSample"`
+	// Forecast template
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,32,opt,name=forecast"`
+	ForecastSpec StudyForecastSpec `json:"forecast,omitempty" protobuf:"bytes,35,opt,name=forecast"`
 }
 
 // StudyStatus defines the observed state of the Study
@@ -582,13 +596,16 @@ type StudyStatus struct {
 	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,41,opt,name=logs"`
 	// Holds the status of the feature engineering process
 	//+kubebuilder:validation:Optional
-	FE FeatureEngineeringStatus `json:"fe,,omitempty" protobuf:"bytes,42,opt,name=fe"`
+	FeatureGeneration catalog.FeatureGenerationStatus `json:"featureGeneration,,omitempty" protobuf:"bytes,42,opt,name=featureGeneration"`
+	// Holds the status of the feature engineering process
+	//+kubebuilder:validation:Optional
+	FeatureSelection catalog.FeatureSelectionStatus `json:"featureSelection,,omitempty" protobuf:"bytes,43,opt,name=featureSelection"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,43,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,44,rep,name=conditions"`
 }
 
 // model cv results
@@ -705,27 +722,4 @@ type ModelImageSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	RegistryConnection *string `json:"registryConnectionName,omitempty" protobuf:"bytes,3,opt,name=registryConnectionName"`
-}
-
-// Contain the status of the feature engineering process.
-// The status contain the list of generated features and dropped features.
-type FeatureEngineeringStatus struct {
-	// contains the list of the generated features
-	// +kubebuilder:validation:Optional
-	Generated []string `json:"generated,omitempty" protobuf:"bytes,1,opt,name=generated"`
-	// List of dropped features
-	// +kubebuilder:validation:Optional
-	Dropped []DroppedFeature `json:"dropped,omitempty" protobuf:"bytes,2,opt,name=dropped"`
-}
-
-type DroppedFeature struct {
-	// The feature name
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// The reason that the feature was dropped
-	// +kubebuilder:validation:Optional
-	Reason string `json:"reason,omitempty" protobuf:"bytes,2,opt,name=reason"`
-	// +kubebuilder:validation:Optional
-	Value float64 `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
 }

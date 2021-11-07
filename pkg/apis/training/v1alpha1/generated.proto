@@ -552,20 +552,6 @@ message DeploymentStageSpec {
   optional string workloadClassName = 5;
 }
 
-message DroppedFeature {
-  // The feature name
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // The reason that the feature was dropped
-  // +kubebuilder:validation:Optional
-  optional string reason = 2;
-
-  // +kubebuilder:validation:Optional
-  optional double value = 3;
-}
-
 // EnsembleRules is an algorithm class that decide
 message EnsembleRules {
 }
@@ -574,18 +560,6 @@ message EnsembleSpec {
   // A list of base model to ensemble. The ensemble method is represented as the algorithm name.
   // +kubebuilder:validation:Optional
   repeated string base = 2;
-}
-
-// Contain the status of the feature engineering process.
-// The status contain the list of generated features and dropped features.
-message FeatureEngineeringStatus {
-  // contains the list of the generated features
-  // +kubebuilder:validation:Optional
-  repeated string generated = 1;
-
-  // List of dropped features
-  // +kubebuilder:validation:Optional
-  repeated DroppedFeature dropped = 2;
 }
 
 message FeatureImportance {
@@ -2750,6 +2724,17 @@ message StudyCondition {
   optional string message = 6;
 }
 
+message StudyForecastSpec {
+  // Template to use for each model
+  // +kubebuilder:validation:Optional
+  optional ForecastSpec forecast = 35;
+
+  // for multi level forecast
+  // The group hierarchy
+  // +kubebuilder:validation:Optional
+  optional Hierarchy hierarchy = 23;
+}
+
 // +kubebuilder:object:root=true
 // StudyList is a list of Study
 message StudyList {
@@ -2817,93 +2802,98 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional bool aborted = 13;
 
+  // Perform feature generation and selection before the modeling phase
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool featureEngineering = 14;
+
   // Reported is set when we want to create model report
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 14;
+  optional bool reported = 15;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 15;
+  optional bool paused = 16;
 
   // Profiled is set when we want to create model profile and study profile.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool profiled = 16;
+  optional bool profiled = 17;
 
   // Set to true if you want the system to create a docker model image, at the end of training.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelPublished = 17;
+  optional bool modelPublished = 18;
 
   // Set to true if you want the system to push model image to remote docker registry
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelImagePushed = 18;
+  optional bool modelImagePushed = 19;
 
   // Set to true if you want the system to push model image to remote docker registry
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool modelBenchmarked = 19;
+  optional bool modelBenchmarked = 21;
 
   // The location of the study artifacts
   // By default the bucket is the data product bucket.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 20;
-
-  // The group hierarchy
-  // +kubebuilder:validation:Optional
-  optional Hierarchy hierarchy = 21;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 22;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 22;
+  optional string owner = 24;
 
   // ActiveDeadlineSeconds is the deadline of a job for this study.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 23;
+  optional int64 activeDeadlineSeconds = 25;
 
   // This is the compiler spec for models. This spec will act as a template for the models created by the study
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 24;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 26;
 
   // Set to true if this study is a template
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool template = 25;
+  optional bool template = 27;
 
   // Is this model flagged
   // +kubebuilder:validation:Optional
-  optional bool flagged = 26;
+  optional bool flagged = 28;
 
   // Notification specification.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 27;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 29;
 
   // Model Image specification.
   // +kubebuilder:validation:Optional
-  optional ModelImageSpec modelImage = 28;
+  optional ModelImageSpec modelImage = 30;
 
   // TTL for models.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 29;
+  optional int32 ttl = 31;
 
-  // Feature filter is applied to the data for this study. The filter specifies how to filter the original dataset.
+  // Specification for feature generation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter studyFeatureFilter = 30;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationSpec featureGeneration = 32;
+
+  // Specification for feature selection
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSpec featureSelection = 33;
 
   // Sample spec defines how many rows to use for analysis
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec datasetSample = 31;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec datasetSample = 34;
 
-  // The specification for the forecasting algorithm if this is a forecast study.
+  // Forecast template
   // +kubebuilder:validation:Optional
-  optional ForecastSpec forecast = 32;
+  optional StudyForecastSpec forecast = 35;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -3065,14 +3055,18 @@ message StudyStatus {
 
   // Holds the status of the feature engineering process
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringStatus fe = 42;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus featureGeneration = 42;
+
+  // Holds the status of the feature engineering process
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus featureSelection = 43;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 43;
+  repeated StudyCondition conditions = 44;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm
@@ -3348,10 +3342,6 @@ message TrainingSpec {
   // Set the precent of dataset to use during training.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 15;
-
-  // Feature filter specified what features to use from the original dataset.
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureFilter featureFilter = 16;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

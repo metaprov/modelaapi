@@ -318,39 +318,165 @@ export namespace DataCenter {
   }
 }
 
-export class FeatureFilter extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): FeatureFilter;
-
-  getLowvar(): boolean;
-  setLowvar(value: boolean): FeatureFilter;
-
-  getHighcorr(): boolean;
-  setHighcorr(value: boolean): FeatureFilter;
-
-  getTopn(): number;
-  setTopn(value: number): FeatureFilter;
-
-  getFeaturesList(): Array<string>;
-  setFeaturesList(value: Array<string>): FeatureFilter;
-  clearFeaturesList(): FeatureFilter;
-  addFeatures(value: string, index?: number): FeatureFilter;
+export class FeatureEngineeringStatus extends jspb.Message {
+  getGeneratedList(): Array<string>;
+  setGeneratedList(value: Array<string>): FeatureEngineeringStatus;
+  clearGeneratedList(): FeatureEngineeringStatus;
+  addGenerated(value: string, index?: number): FeatureEngineeringStatus;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureFilter.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureFilter): FeatureFilter.AsObject;
-  static serializeBinaryToWriter(message: FeatureFilter, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureFilter;
-  static deserializeBinaryFromReader(message: FeatureFilter, reader: jspb.BinaryReader): FeatureFilter;
+  toObject(includeInstance?: boolean): FeatureEngineeringStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureEngineeringStatus): FeatureEngineeringStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureEngineeringStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringStatus;
+  static deserializeBinaryFromReader(message: FeatureEngineeringStatus, reader: jspb.BinaryReader): FeatureEngineeringStatus;
 }
 
-export namespace FeatureFilter {
+export namespace FeatureEngineeringStatus {
+  export type AsObject = {
+    generatedList: Array<string>,
+  }
+}
+
+export class FeatureGenerationSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FeatureGenerationSpec;
+
+  getExpressionList(): Array<string>;
+  setExpressionList(value: Array<string>): FeatureGenerationSpec;
+  clearExpressionList(): FeatureGenerationSpec;
+  addExpression(value: string, index?: number): FeatureGenerationSpec;
+
+  getExternaldatasetsList(): Array<string>;
+  setExternaldatasetsList(value: Array<string>): FeatureGenerationSpec;
+  clearExternaldatasetsList(): FeatureGenerationSpec;
+  addExternaldatasets(value: string, index?: number): FeatureGenerationSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureGenerationSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureGenerationSpec): FeatureGenerationSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureGenerationSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureGenerationSpec;
+  static deserializeBinaryFromReader(message: FeatureGenerationSpec, reader: jspb.BinaryReader): FeatureGenerationSpec;
+}
+
+export namespace FeatureGenerationSpec {
   export type AsObject = {
     enabled: boolean,
-    lowvar: boolean,
-    highcorr: boolean,
+    expressionList: Array<string>,
+    externaldatasetsList: Array<string>,
+  }
+}
+
+export class FeatureGenerationStatus extends jspb.Message {
+  getGeneratedList(): Array<FeatureInfo>;
+  setGeneratedList(value: Array<FeatureInfo>): FeatureGenerationStatus;
+  clearGeneratedList(): FeatureGenerationStatus;
+  addGenerated(value?: FeatureInfo, index?: number): FeatureInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureGenerationStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureGenerationStatus): FeatureGenerationStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureGenerationStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureGenerationStatus;
+  static deserializeBinaryFromReader(message: FeatureGenerationStatus, reader: jspb.BinaryReader): FeatureGenerationStatus;
+}
+
+export namespace FeatureGenerationStatus {
+  export type AsObject = {
+    generatedList: Array<FeatureInfo.AsObject>,
+  }
+}
+
+export class FeatureInfo extends jspb.Message {
+  getName(): string;
+  setName(value: string): FeatureInfo;
+
+  getReason(): string;
+  setReason(value: string): FeatureInfo;
+
+  getValue(): number;
+  setValue(value: number): FeatureInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureInfo): FeatureInfo.AsObject;
+  static serializeBinaryToWriter(message: FeatureInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureInfo;
+  static deserializeBinaryFromReader(message: FeatureInfo, reader: jspb.BinaryReader): FeatureInfo;
+}
+
+export namespace FeatureInfo {
+  export type AsObject = {
+    name: string,
+    reason: string,
+    value: number,
+  }
+}
+
+export class FeatureSelectionSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FeatureSelectionSpec;
+
+  getLowvartreshold(): number;
+  setLowvartreshold(value: number): FeatureSelectionSpec;
+
+  getCorrtreshold(): number;
+  setCorrtreshold(value: number): FeatureSelectionSpec;
+
+  getTopn(): number;
+  setTopn(value: number): FeatureSelectionSpec;
+
+  getCumulativeimportanceprecent(): number;
+  setCumulativeimportanceprecent(value: number): FeatureSelectionSpec;
+
+  getFeaturesList(): Array<string>;
+  setFeaturesList(value: Array<string>): FeatureSelectionSpec;
+  clearFeaturesList(): FeatureSelectionSpec;
+  addFeatures(value: string, index?: number): FeatureSelectionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureSelectionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSelectionSpec): FeatureSelectionSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureSelectionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSelectionSpec;
+  static deserializeBinaryFromReader(message: FeatureSelectionSpec, reader: jspb.BinaryReader): FeatureSelectionSpec;
+}
+
+export namespace FeatureSelectionSpec {
+  export type AsObject = {
+    enabled: boolean,
+    lowvartreshold: number,
+    corrtreshold: number,
     topn: number,
+    cumulativeimportanceprecent: number,
     featuresList: Array<string>,
+  }
+}
+
+export class FeatureSelectionStatus extends jspb.Message {
+  getSelectedList(): Array<FeatureInfo>;
+  setSelectedList(value: Array<FeatureInfo>): FeatureSelectionStatus;
+  clearSelectedList(): FeatureSelectionStatus;
+  addSelected(value?: FeatureInfo, index?: number): FeatureInfo;
+
+  getRemovedList(): Array<FeatureInfo>;
+  setRemovedList(value: Array<FeatureInfo>): FeatureSelectionStatus;
+  clearRemovedList(): FeatureSelectionStatus;
+  addRemoved(value?: FeatureInfo, index?: number): FeatureInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureSelectionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSelectionStatus): FeatureSelectionStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureSelectionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSelectionStatus;
+  static deserializeBinaryFromReader(message: FeatureSelectionStatus, reader: jspb.BinaryReader): FeatureSelectionStatus;
+}
+
+export namespace FeatureSelectionStatus {
+  export type AsObject = {
+    selectedList: Array<FeatureInfo.AsObject>,
+    removedList: Array<FeatureInfo.AsObject>,
   }
 }
 

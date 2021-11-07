@@ -1107,36 +1107,6 @@ spec:
                       - req-per-sec
                       type: string
                     type: array
-                  featureFilter:
-                    description: Feature filter specified what features to use from
-                      the original dataset.
-                    properties:
-                      features:
-                        description: List of feature names to consider when training.
-                        items:
-                          type: string
-                        type: array
-                      highCorr:
-                        default: false
-                        description: High correlation specify to filter features with
-                          high correlation.
-                        type: boolean
-                      lowVar:
-                        default: false
-                        description: Lowvar specify the filter to remove low variance
-                          features
-                        type: boolean
-                      onError:
-                        default: false
-                        description: Is the feature filter enbled
-                        type: boolean
-                      topN:
-                        default: 0
-                        description: Select the Top N is the number of feature to
-                          select by importance. If 0, all the features are selected.
-                        format: int32
-                        type: integer
-                    type: object
                   folds:
                     default: 5
                     description: The number of folds during cross validation.

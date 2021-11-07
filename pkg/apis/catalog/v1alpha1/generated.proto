@@ -175,7 +175,50 @@ message DataCenter {
   optional string code = 2;
 }
 
-message FeatureFilter {
+// Contain the status of the feature engineering process.
+// The status contain the list of generated features and dropped features.
+message FeatureEngineeringStatus {
+  // contains the list of the generated features
+  // +kubebuilder:validation:Optional
+  repeated string generated = 1;
+}
+
+message FeatureGenerationSpec {
+  // Is the feature filter enbled
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // List of expression to apply to the existing feature.
+  // +kubebuilder:validation:Optional
+  repeated string expression = 2;
+
+  // List of dataset to join to the current dataset
+  // +kubebuilder:validation:Optional
+  repeated string externalDatasets = 3;
+}
+
+message FeatureGenerationStatus {
+  // +kubebuilder:validation:Optional
+  repeated FeatureInfo generated = 1;
+}
+
+message FeatureInfo {
+  // The feature name
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // The reason that the feature was dropped
+  // +kubebuilder:validation:Optional
+  optional string reason = 2;
+
+  // +kubebuilder:validation:Optional
+  optional double value = 3;
+}
+
+// Feature selection spec defines how to select feature
+message FeatureSelectionSpec {
   // Is the feature filter enbled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -184,21 +227,34 @@ message FeatureFilter {
   // Lowvar specify the filter to remove low variance features
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool lowVar = 2;
+  optional double lowVarTreshold = 2;
 
-  // High correlation specify to filter features with high correlation.
+  // Remove Features with high correlations
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool highCorr = 3;
+  optional double corrTreshold = 3;
 
   // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 topN = 4;
 
-  // List of feature names to consider when training.
+  // The cummulative importance of all the importance feature to include
+  // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  repeated string features = 5;
+  optional double cumulativeImportancePrecent = 5;
+
+  // List of feature names to consider when training , even after filtering
+  // +kubebuilder:validation:Optional
+  repeated string features = 6;
+}
+
+message FeatureSelectionStatus {
+  // +kubebuilder:validation:Optional
+  repeated FeatureInfo selected = 1;
+
+  // +kubebuilder:validation:Optional
+  repeated FeatureInfo removed = 2;
 }
 
 // FloatParameter contain the specification of an float hyper parameter

@@ -1561,7 +1561,56 @@ type NotificationSpec struct {
 	Selector map[string]string `json:"selector,omitempty" protobuf:"bytes,6,opt,name=selector"`
 }
 
-type FeatureFilter struct {
+// Contain the status of the feature engineering process.
+// The status contain the list of generated features and dropped features.
+type FeatureEngineeringStatus struct {
+	// contains the list of the generated features
+	// +kubebuilder:validation:Optional
+	Generated []string `json:"generated,omitempty" protobuf:"bytes,1,opt,name=generated"`
+	// List of dropped features
+	// +kubebuilder:validation:Optional
+
+}
+
+type FeatureInfo struct {
+	// The feature name
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
+	// The reason that the feature was dropped
+	// +kubebuilder:validation:Optional
+	Reason string `json:"reason,omitempty" protobuf:"bytes,2,opt,name=reason"`
+	// +kubebuilder:validation:Optional
+	Value float64 `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
+}
+
+type FeatureGenerationSpec struct {
+	// Is the feature filter enbled
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// List of expression to apply to the existing feature.
+	// +kubebuilder:validation:Optional
+	Expression []string `json:"expression,omitempty" protobuf:"bytes,2,opt,name=expression"`
+	// List of dataset to join to the current dataset
+	// +kubebuilder:validation:Optional
+	ExternalDatasets []string `json:"externalDatasets,omitempty" protobuf:"bytes,3,opt,name=externalDatasets"`
+}
+
+type FeatureGenerationStatus struct {
+	// +kubebuilder:validation:Optional
+	Generated []FeatureInfo `json:"generated,omitempty" protobuf:"bytes,1,opt,name=generated"`
+}
+
+type FeatureSelectionStatus struct {
+	// +kubebuilder:validation:Optional
+	Selected []FeatureInfo `json:"selected,omitempty" protobuf:"bytes,1,opt,name=selected"`
+	// +kubebuilder:validation:Optional
+	Removed []FeatureInfo `json:"removed,omitempty" protobuf:"bytes,2,opt,name=removed"`
+}
+
+// Feature selection spec defines how to select feature
+type FeatureSelectionSpec struct {
 	// Is the feature filter enbled
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -1569,18 +1618,22 @@ type FeatureFilter struct {
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	LowVar *bool `json:"lowVar,omitempty" protobuf:"varint,2,opt,name=lowVar"`
-	// High correlation specify to filter features with high correlation.
+	VarianceTreshold *float64 `json:"lowVarTreshold,omitempty" protobuf:"bytes,2,opt,name=lowVarTreshold"`
+	// Remove Features with high correlations
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	HighCorr *bool `json:"highCorr,omitempty" protobuf:"varint,3,opt,name=highCorr"`
+	CorrTreshold *float64 `json:"corrTreshold,omitempty" protobuf:"varint,3,opt,name=corrTreshold"`
 	// Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TopN *int32 `json:"topN,omitempty" protobuf:"varint,4,opt,name=topN"`
-	// List of feature names to consider when training.
+	// The cummulative importance of all the importance feature to include
+	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	Features []string `json:"features,omitempty" protobuf:"bytes,5,rep,name=features"`
+	CumulativeImportancePrecent *float64 `json:"cumulativeImportancePrecent,omitempty" protobuf:"varint,5,opt,name=cumulativeImportancePrecent"`
+	// List of feature names to consider when training , even after filtering
+	// +kubebuilder:validation:Optional
+	Features []string `json:"features,omitempty" protobuf:"bytes,6,rep,name=features"`
 }
 
 // type to represent the logs for a given object. This type should be part of any objects that create logs (e.g. job logs)
