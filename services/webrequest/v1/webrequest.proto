@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/webreequest/v1";
+package github.com.metaprov.modelaapi.services.webrequest.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+message ListWebRequestsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListWebRequestsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestList items = 1;
+}
+
+message CreateWebRequestResponse {}
+
+message CreateWebRequestRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+}
+
+message UpdateWebRequestRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+}
+
+message UpdateWebRequestResponse {
+
+}
+
+message GetWebRequestRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetWebRequestResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteWebRequestRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteWebRequestResponse {
+
+}
+
+message PauseWebRequestRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PauseWebRequestResponse {
+
+}
+
+message ResumeWebRequestRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumeWebRequestResponse {
+
+}
+
+
+
+message RunWebRequestRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+}
+
+
+message RunWebRequestResponse {
+    
+}
+
+
+service WebRequestService {
+
+    rpc ListWebRequests(ListWebRequestsRequest) returns (ListWebRequestsResponse) {
+        option (google.api.http).get = "/v1/webeequests";
+    }
+
+    rpc CreateWebRequest(CreateWebRequestRequest) returns (CreateWebRequestResponse) {
+        option (google.api.http) = {
+			post: "/v1/webeequests"
+			body: "*"
+		};
+    }
+
+    rpc GetWebRequest(GetWebRequestRequest) returns (GetWebRequestResponse) {
+        option (google.api.http).get = "/v1/webeequests/{name}";
+    }
+
+    rpc UpdateWebRequest(UpdateWebRequestRequest) returns (UpdateWebRequestResponse) {
+        option (google.api.http) = {
+			put: "/v1/webeequests/{webeequest.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteWebRequest(DeleteWebRequestRequest) returns (DeleteWebRequestResponse) {
+        option (google.api.http).delete = "/v1/webeequests/{name}";
+    }
+
+
+    rpc PauseWebRequest(PauseWebRequestRequest) returns (PauseWebRequestResponse) {
+        option (google.api.http).post = "/v1/webeequests/{name}:pause";
+    }
+
+    rpc ResumeWebRequest(ResumeWebRequestRequest) returns (ResumeWebRequestResponse) {
+        option (google.api.http).post = "/v1/webeequests/{name}:resume";
+    }
+
+ 
+  
+
+}

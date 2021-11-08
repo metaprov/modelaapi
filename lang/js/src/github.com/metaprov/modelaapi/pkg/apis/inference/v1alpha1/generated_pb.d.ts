@@ -851,6 +851,164 @@ export namespace PredictionTemplate {
   }
 }
 
+export class PredictiveApp extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PredictiveApp;
+  hasMetadata(): boolean;
+  clearMetadata(): PredictiveApp;
+
+  getSpec(): PredictiveAppSpec | undefined;
+  setSpec(value?: PredictiveAppSpec): PredictiveApp;
+  hasSpec(): boolean;
+  clearSpec(): PredictiveApp;
+
+  getStatus(): PredictiveAppStatus | undefined;
+  setStatus(value?: PredictiveAppStatus): PredictiveApp;
+  hasStatus(): boolean;
+  clearStatus(): PredictiveApp;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictiveApp.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictiveApp): PredictiveApp.AsObject;
+  static serializeBinaryToWriter(message: PredictiveApp, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictiveApp;
+  static deserializeBinaryFromReader(message: PredictiveApp, reader: jspb.BinaryReader): PredictiveApp;
+}
+
+export namespace PredictiveApp {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: PredictiveAppSpec.AsObject,
+    status?: PredictiveAppStatus.AsObject,
+  }
+}
+
+export class PredictiveAppCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): PredictiveAppCondition;
+
+  getStatus(): string;
+  setStatus(value: string): PredictiveAppCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictiveAppCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): PredictiveAppCondition;
+
+  getReason(): string;
+  setReason(value: string): PredictiveAppCondition;
+
+  getMessage(): string;
+  setMessage(value: string): PredictiveAppCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictiveAppCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictiveAppCondition): PredictiveAppCondition.AsObject;
+  static serializeBinaryToWriter(message: PredictiveAppCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictiveAppCondition;
+  static deserializeBinaryFromReader(message: PredictiveAppCondition, reader: jspb.BinaryReader): PredictiveAppCondition;
+}
+
+export namespace PredictiveAppCondition {
+  export type AsObject = {
+    type: string,
+    status: string,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
+  }
+}
+
+export class PredictiveAppList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): PredictiveAppList;
+  hasMetadata(): boolean;
+  clearMetadata(): PredictiveAppList;
+
+  getItemsList(): Array<PredictiveApp>;
+  setItemsList(value: Array<PredictiveApp>): PredictiveAppList;
+  clearItemsList(): PredictiveAppList;
+  addItems(value?: PredictiveApp, index?: number): PredictiveApp;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictiveAppList.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictiveAppList): PredictiveAppList.AsObject;
+  static serializeBinaryToWriter(message: PredictiveAppList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictiveAppList;
+  static deserializeBinaryFromReader(message: PredictiveAppList, reader: jspb.BinaryReader): PredictiveAppList;
+}
+
+export namespace PredictiveAppList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<PredictiveApp.AsObject>,
+  }
+}
+
+export class PredictiveAppSpec extends jspb.Message {
+  getOwner(): string;
+  setOwner(value: string): PredictiveAppSpec;
+
+  getVersionname(): string;
+  setVersionname(value: string): PredictiveAppSpec;
+
+  getDescription(): string;
+  setDescription(value: string): PredictiveAppSpec;
+
+  getQuery(): string;
+  setQuery(value: string): PredictiveAppSpec;
+
+  getParametersMap(): jspb.Map<string, string>;
+  clearParametersMap(): PredictiveAppSpec;
+
+  getConnectionname(): string;
+  setConnectionname(value: string): PredictiveAppSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictiveAppSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictiveAppSpec): PredictiveAppSpec.AsObject;
+  static serializeBinaryToWriter(message: PredictiveAppSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictiveAppSpec;
+  static deserializeBinaryFromReader(message: PredictiveAppSpec, reader: jspb.BinaryReader): PredictiveAppSpec;
+}
+
+export namespace PredictiveAppSpec {
+  export type AsObject = {
+    owner: string,
+    versionname: string,
+    description: string,
+    query: string,
+    parametersMap: Array<[string, string]>,
+    connectionname: string,
+  }
+}
+
+export class PredictiveAppStatus extends jspb.Message {
+  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictiveAppStatus;
+  hasLastrun(): boolean;
+  clearLastrun(): PredictiveAppStatus;
+
+  getConditionsList(): Array<PredictiveAppCondition>;
+  setConditionsList(value: Array<PredictiveAppCondition>): PredictiveAppStatus;
+  clearConditionsList(): PredictiveAppStatus;
+  addConditions(value?: PredictiveAppCondition, index?: number): PredictiveAppCondition;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredictiveAppStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PredictiveAppStatus): PredictiveAppStatus.AsObject;
+  static serializeBinaryToWriter(message: PredictiveAppStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredictiveAppStatus;
+  static deserializeBinaryFromReader(message: PredictiveAppStatus, reader: jspb.BinaryReader): PredictiveAppStatus;
+}
+
+export namespace PredictiveAppStatus {
+  export type AsObject = {
+    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    conditionsList: Array<PredictiveAppCondition.AsObject>,
+  }
+}
+
 export class Predictor extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): Predictor;

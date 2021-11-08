@@ -519,6 +519,95 @@ message PredictionTemplate {
   optional PredictionSpec spec = 1;
 }
 
+// PredictiveApp represent a single webrequest in the webrequest store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=apicalls,singular=webrequest,categories={data,modela}
+// +kubebuilder:subresource:status
+message PredictiveApp {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional PredictiveAppSpec spec = 2;
+
+  // +optional
+  optional PredictiveAppStatus status = 3;
+}
+
+// PredictiveAppCondition describes the state of a deployment at a certain point.
+message PredictiveAppCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// PredictiveAppList contain a list of webrequest objects
+message PredictiveAppList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated PredictiveApp items = 2;
+}
+
+// PredictiveAppSpec contain the desired state of a PredictiveApp
+message PredictiveAppSpec {
+  // The webrequest owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the webrequest.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // Comments is a description of the webrequest
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:MaxLength=512
+  optional string description = 3;
+
+  // Type name of the column key, this column is the key column in the entity.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string query = 4;
+
+  // URL Parameters
+  // +kubebuilder:validation:Optional
+  map<string, string> parameters = 5;
+
+  // The name of the time stamp column
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string connectionName = 6;
+}
+
+// PredictiveAppStatus defines the observed state of PredictiveApp
+message PredictiveAppStatus {
+  // Last Time the query run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated PredictiveAppCondition conditions = 2;
+}
+
 // Predictor represent an PredictorName API object
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status

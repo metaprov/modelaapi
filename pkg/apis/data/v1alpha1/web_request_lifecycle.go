@@ -17,22 +17,22 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (r *ApiCall) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (r *WebRequest) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(r).
 		Complete()
 }
 
-func (r *ApiCall) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
-func (r *ApiCall) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
-func (r *ApiCall) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
+func (r *WebRequest) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
+func (r *WebRequest) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
+func (r *WebRequest) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Validate
 //==============================================================================
 
 // Merge or update condition
-func (r *ApiCall) CreateOrUpdateCond(cond ApiCallCondition) {
+func (r *WebRequest) CreateOrUpdateCond(cond WebRequestCondition) {
 	i := r.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -51,7 +51,7 @@ func (r *ApiCall) CreateOrUpdateCond(cond ApiCallCondition) {
 	r.Status.Conditions[i] = current
 }
 
-func (r *ApiCall) GetCondIdx(t ApiCallConditionType) int {
+func (r *WebRequest) GetCondIdx(t WebRequestConditionType) int {
 	for i, v := range r.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -60,14 +60,14 @@ func (r *ApiCall) GetCondIdx(t ApiCallConditionType) int {
 	return -1
 }
 
-func (r *ApiCall) GetCond(t ApiCallConditionType) ApiCallCondition {
+func (r *WebRequest) GetCond(t WebRequestConditionType) WebRequestCondition {
 	for _, v := range r.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return ApiCallCondition{
+	return WebRequestCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -76,55 +76,55 @@ func (r *ApiCall) GetCond(t ApiCallConditionType) ApiCallCondition {
 
 }
 
-func (r *ApiCall) IsReady() bool {
-	return r.GetCond(ApiCallReady).Status == v1.ConditionTrue
+func (r *WebRequest) IsReady() bool {
+	return r.GetCond(WebRequestReady).Status == v1.ConditionTrue
 }
 
-func (r *ApiCall) Populate(name string) {
+func (r *WebRequest) Populate(name string) {
 
 	r.ObjectMeta = metav1.ObjectMeta{
 		Name:      "iris",
 		Namespace: "modela-data",
 	}
 
-	r.Spec = ApiCallSpec{
+	r.Spec = WebRequestSpec{
 		VersionName: util.StrPtr("iris-0.0.1"),
 	}
 }
 
-func (r *ApiCall) ToYamlFile() ([]byte, error) {
+func (r *WebRequest) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(r)
 }
 
-func (r *ApiCall) IsInCond(ct ApiCallConditionType) bool {
+func (r *WebRequest) IsInCond(ct WebRequestConditionType) bool {
 	current := r.GetCond(ct)
 	return current.Status == v1.ConditionTrue
 }
 
-func (r *ApiCall) PrintConditions() {
+func (r *WebRequest) PrintConditions() {
 	for _, v := range r.Status.Conditions {
 		fmt.Println(v)
 	}
 }
 
-func (r *ApiCall) MarkReady() {
-	r.CreateOrUpdateCond(ApiCallCondition{
-		Type:   ApiCallReady,
+func (r *WebRequest) MarkReady() {
+	r.CreateOrUpdateCond(WebRequestCondition{
+		Type:   WebRequestReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *ApiCall) Deleted() bool {
+func (r *WebRequest) Deleted() bool {
 	return !r.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (r *ApiCall) MarkSaved() {
-	r.CreateOrUpdateCond(ApiCallCondition{
-		Type:   ApiCallSaved,
+func (r *WebRequest) MarkSaved() {
+	r.CreateOrUpdateCond(WebRequestCondition{
+		Type:   WebRequestSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *ApiCall) IsSaved() bool {
-	return r.GetCond(ApiCallSaved).Status == v1.ConditionTrue
+func (r *WebRequest) IsSaved() bool {
+	return r.GetCond(WebRequestSaved).Status == v1.ConditionTrue
 }

@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/predictiveapp/v1";
+package github.com.metaprov.modelaapi.services.predictiveapp.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListPredictiveAppsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListPredictiveAppsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppList items = 1;
+}
+
+message CreatePredictiveAppResponse {}
+
+message CreatePredictiveAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+}
+
+message UpdatePredictiveAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+}
+
+message UpdatePredictiveAppResponse {
+
+}
+
+message GetPredictiveAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetPredictiveAppResponse {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+    string yaml = 2;
+
+}
+
+message DeletePredictiveAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeletePredictiveAppResponse {
+
+}
+
+message PausePredictiveAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PausePredictiveAppResponse {
+
+}
+
+message ResumePredictiveAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumePredictiveAppResponse {
+
+}
+
+
+
+message RunPredictiveAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+}
+
+
+message RunPredictiveAppResponse {
+    
+}
+
+
+service PredictiveAppService {
+
+    rpc ListPredictiveApps(ListPredictiveAppsRequest) returns (ListPredictiveAppsResponse) {
+        option (google.api.http).get = "/v1/webeequests";
+    }
+
+    rpc CreatePredictiveApp(CreatePredictiveAppRequest) returns (CreatePredictiveAppResponse) {
+        option (google.api.http) = {
+			post: "/v1/webeequests"
+			body: "*"
+		};
+    }
+
+    rpc GetPredictiveApp(GetPredictiveAppRequest) returns (GetPredictiveAppResponse) {
+        option (google.api.http).get = "/v1/webeequests/{name}";
+    }
+
+    rpc UpdatePredictiveApp(UpdatePredictiveAppRequest) returns (UpdatePredictiveAppResponse) {
+        option (google.api.http) = {
+			put: "/v1/webeequests/{webeequest.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeletePredictiveApp(DeletePredictiveAppRequest) returns (DeletePredictiveAppResponse) {
+        option (google.api.http).delete = "/v1/webeequests/{name}";
+    }
+
+
+    rpc PausePredictiveApp(PausePredictiveAppRequest) returns (PausePredictiveAppResponse) {
+        option (google.api.http).post = "/v1/webeequests/{name}:pause";
+    }
+
+    rpc ResumePredictiveApp(ResumePredictiveAppRequest) returns (ResumePredictiveAppResponse) {
+        option (google.api.http).post = "/v1/webeequests/{name}:resume";
+    }
+
+ 
+  
+
+}

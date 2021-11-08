@@ -101,7 +101,7 @@ service SqlQueryService {
 
     rpc UpdateSqlQuery(UpdateSqlQueryRequest) returns (UpdateSqlQueryResponse) {
         option (google.api.http) = {
-			put: "/v1/apicalls/{apicall.metadata.name}"
+			put: "/v1/apicalls/{webrequest.metadata.name}"
 			body: "*"
 		};
     }

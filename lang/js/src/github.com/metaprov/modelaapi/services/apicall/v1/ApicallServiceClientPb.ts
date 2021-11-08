@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.apicall.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.webrequest.v1
  * @enhanceable
  * @public
  */
@@ -13,7 +13,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modelaapi_services_apicall_v1_apicall_pb from '../../../../../../github.com/metaprov/modelaapi/services/apicall/v1/apicall_pb';
+import * as github_com_metaprov_modelaapi_services_apicall_v1_apicall_pb from '../../../../../../github.com/metaprov/modelaapi/services/webrequest/v1/apicall_pb';
 
 
 export class ApiCallServiceClient {
@@ -61,7 +61,7 @@ export class ApiCallServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ListApiCalls',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ListApiCalls',
         request,
         metadata || {},
         this.methodInfoListApiCalls,
@@ -69,7 +69,7 @@ export class ApiCallServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ListApiCalls',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ListApiCalls',
     request,
     metadata || {},
     this.methodInfoListApiCalls);
@@ -101,7 +101,7 @@ export class ApiCallServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/CreateApiCall',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/CreateApiCall',
         request,
         metadata || {},
         this.methodInfoCreateApiCall,
@@ -109,7 +109,7 @@ export class ApiCallServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/CreateApiCall',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/CreateApiCall',
     request,
     metadata || {},
     this.methodInfoCreateApiCall);
@@ -141,7 +141,7 @@ export class ApiCallServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/GetApiCall',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/GetApiCall',
         request,
         metadata || {},
         this.methodInfoGetApiCall,
@@ -149,7 +149,7 @@ export class ApiCallServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/GetApiCall',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/GetApiCall',
     request,
     metadata || {},
     this.methodInfoGetApiCall);
@@ -181,7 +181,7 @@ export class ApiCallServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/UpdateApiCall',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/UpdateApiCall',
         request,
         metadata || {},
         this.methodInfoUpdateApiCall,
@@ -189,7 +189,7 @@ export class ApiCallServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/UpdateApiCall',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/UpdateApiCall',
     request,
     metadata || {},
     this.methodInfoUpdateApiCall);
@@ -221,7 +221,7 @@ export class ApiCallServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/DeleteApiCall',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/DeleteApiCall',
         request,
         metadata || {},
         this.methodInfoDeleteApiCall,
@@ -229,7 +229,7 @@ export class ApiCallServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/DeleteApiCall',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/DeleteApiCall',
     request,
     metadata || {},
     this.methodInfoDeleteApiCall);
@@ -261,7 +261,7 @@ export class ApiCallServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/PauseApiCall',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/PauseApiCall',
         request,
         metadata || {},
         this.methodInfoPauseApiCall,
@@ -269,7 +269,7 @@ export class ApiCallServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/PauseApiCall',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/PauseApiCall',
     request,
     metadata || {},
     this.methodInfoPauseApiCall);
@@ -301,7 +301,7 @@ export class ApiCallServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ResumeApiCall',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ResumeApiCall',
         request,
         metadata || {},
         this.methodInfoResumeApiCall,
@@ -309,7 +309,7 @@ export class ApiCallServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ResumeApiCall',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ResumeApiCall',
     request,
     metadata || {},
     this.methodInfoResumeApiCall);

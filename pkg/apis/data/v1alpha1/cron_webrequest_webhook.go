@@ -13,9 +13,9 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &ApiCall{}
+var _ webhook.Defaulter = &CronWebRequest{}
 
-func (r *ApiCall) Default() {
+func (r *CronWebRequest) Default() {
 
 	if r.Spec.Owner == nil {
 		r.Spec.Owner = util.StrPtr("")
@@ -28,22 +28,22 @@ func (r *ApiCall) Default() {
 }
 
 // validation
-var _ webhook.Validator = &ApiCall{}
+var _ webhook.Validator = &CronWebRequest{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *ApiCall) ValidateCreate() error {
+func (recipe *CronWebRequest) ValidateCreate() error {
 	return recipe.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *ApiCall) ValidateUpdate(old runtime.Object) error {
+func (recipe *CronWebRequest) ValidateUpdate(old runtime.Object) error {
 	return recipe.validate()
 }
 
-func (recipe *ApiCall) validate() error {
+func (recipe *CronWebRequest) validate() error {
 	return nil
 }
 
-func (recipe *ApiCall) ValidateDelete() error {
+func (recipe *CronWebRequest) ValidateDelete() error {
 	return nil
 }

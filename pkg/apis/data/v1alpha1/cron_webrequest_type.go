@@ -7,23 +7,24 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// ApiCallConditionType is the condition of the apicall
-type ApiCallConditionType string
+// CronWebRequestConditionType is the condition of the sqlquery
+type CronWebRequestConditionType string
 
-/// ApiCall Condition
+/// CronWebRequest Condition
 const (
-	ApiCallReady ApiCallConditionType = "Ready"
-	ApiCallSaved ApiCallConditionType = "Saved"
+	CronWebRequestReady CronWebRequestConditionType = "Ready"
+	CronWebRequestSaved CronWebRequestConditionType = "Saved"
 )
 
-// ApiCallCondition describes the state of a deployment at a certain point.
-type ApiCallCondition struct {
+// CronWebRequestCondition describes the state of a deployment at a certain point.
+type CronWebRequestCondition struct {
 	// Type of account condition.
-	Type ApiCallConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=ApiCallConditionType"`
+	Type CronWebRequestConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=CronWebRequestConditionType"`
 	// Status of the condition, one of True, False, AutoScaler.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -34,60 +35,55 @@ type ApiCallCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// ApiCall represent a single apicall in the apicall store.
+// CronWebRequest represent a single sqlquery in the sqlquery store.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=apicalls,singular=apicall,categories={data,modela}
+// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
 // +kubebuilder:subresource:status
-type ApiCall struct {
+type CronWebRequest struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              ApiCallSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Spec              CronWebRequestSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 	//+optional
-	Status ApiCallStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Status CronWebRequestStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
-// ApiCallList contain a list of apicall objects
-type ApiCallList struct {
+// CronWebRequestList contain a list of sqlquery objects
+type CronWebRequestList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []ApiCall `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []CronWebRequest `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// ApiCallSpec contain the desired state of a ApiCall
-type ApiCallSpec struct {
-	// The apicall owner
+// CronWebRequestSpec contain the desired state of a CronWebRequest
+type CronWebRequestSpec struct {
+	// The sqlquery owner
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The product version for the apicall.
+	// The product version for the sqlquery.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// Comments is a description of the apicall
-	// +kubebuilder:validation:Optional
+	// Description of the cron api call
 	// +kubebuilder:default:=""
-	// +kubebuilder:validation:MaxLength=512
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Type name of the column key, this column is the key column in the entity.
+	// The sql template to create.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	URL *string `json:"text,omitempty" protobuf:"bytes,4,opt,name=query"`
-	// URL Parameters
+	Template SqlQuerySpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
+	// Schedule for running the sql query
 	// +kubebuilder:validation:Optional
-	Parameters map[string]string `json:"parameters,omitempty" protobuf:"bytes,5,opt,name=parameters"`
-	// The name of the time stamp column
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,6,opt,name=connectionName"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
 }
 
-// ApiCallStatus defines the observed state of ApiCall
-type ApiCallStatus struct {
+// CronWebRequestStatus defines the observed state of CronWebRequest
+type CronWebRequestStatus struct {
 	// Last Time the query run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -95,5 +91,5 @@ type ApiCallStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ApiCallCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []CronWebRequestCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
 }

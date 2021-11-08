@@ -67,8 +67,9 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          github.com/metaprov/modelaapi/services/datasource/v1/datasource.proto \
          github.com/metaprov/modelaapi/services/sqlquery/v1/sqlquery.proto \
          github.com/metaprov/modelaapi/services/cronsqlquery/v1/cronsqlquery.proto \
-         github.com/metaprov/modelaapi/services/apicall/v1/apicall.proto \
-         github.com/metaprov/modelaapi/services/cronapicall/v1/cronapicall.proto \
+         github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \
+         github.com/metaprov/modelaapi/services/predictiveapp/v1/predictiveapp.proto \
+         github.com/metaprov/modelaapi/services/cronwebrequest/v1/cronwebrequest.proto \
          github.com/metaprov/modelaapi/services/entity/v1/entity.proto \
          github.com/metaprov/modelaapi/services/feature/v1/feature.proto \
          github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto \

@@ -13,10 +13,10 @@ spec:
     categories:
     - data
     - modela
-    kind: ApiCall
-    listKind: ApiCallList
+    kind: WebRequest
+    listKind: WebRequestList
     plural: apicalls
-    singular: apicall
+    singular: webrequest
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ApiCall represent a single apicall in the apicall store.
+        description: WebRequest represent a single webrequest in the webrequest store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: ApiCallSpec contain the desired state of a ApiCall
+            description: WebRequestSpec contain the desired state of a WebRequest
             properties:
               connectionName:
                 default: ""
@@ -58,12 +58,12 @@ spec:
                 type: string
               description:
                 default: ""
-                description: Comments is a description of the apicall
+                description: Comments is a description of the webrequest
                 maxLength: 512
                 type: string
               owner:
                 default: no-one
-                description: The apicall owner
+                description: The webrequest owner
                 type: string
               parameters:
                 additionalProperties:
@@ -77,15 +77,15 @@ spec:
                 type: string
               versionName:
                 default: ""
-                description: The product version for the apicall.
+                description: The product version for the webrequest.
                 type: string
             type: object
           status:
-            description: ApiCallStatus defines the observed state of ApiCall
+            description: WebRequestStatus defines the observed state of WebRequest
             properties:
               conditions:
                 items:
-                  description: ApiCallCondition describes the state of a deployment
+                  description: WebRequestCondition describes the state of a deployment
                     at a certain point.
                   properties:
                     lastTransitionTime:

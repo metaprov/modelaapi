@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from github.com.metaprov.modelaapi.services.apicall.v1 import apicall_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2
+from github.com.metaprov.modelaapi.services.webrequest.v1 import apicall_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2
 
 
 class ApiCallServiceStub(object):
@@ -15,37 +15,37 @@ class ApiCallServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListApiCalls = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ListApiCalls',
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ListApiCalls',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ListApiCallsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ListApiCallsResponse.FromString,
                 )
         self.CreateApiCall = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/CreateApiCall',
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/CreateApiCall',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.CreateApiCallRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.CreateApiCallResponse.FromString,
                 )
         self.GetApiCall = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/GetApiCall',
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/GetApiCall',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.GetApiCallRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.GetApiCallResponse.FromString,
                 )
         self.UpdateApiCall = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/UpdateApiCall',
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/UpdateApiCall',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.UpdateApiCallRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.UpdateApiCallResponse.FromString,
                 )
         self.DeleteApiCall = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/DeleteApiCall',
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/DeleteApiCall',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.DeleteApiCallRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.DeleteApiCallResponse.FromString,
                 )
         self.PauseApiCall = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/PauseApiCall',
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/PauseApiCall',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.PauseApiCallRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.PauseApiCallResponse.FromString,
                 )
         self.ResumeApiCall = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ResumeApiCall',
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ResumeApiCall',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ResumeApiCallRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ResumeApiCallResponse.FromString,
                 )
@@ -136,7 +136,7 @@ def add_ApiCallServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -155,7 +155,7 @@ class ApiCallService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ListApiCalls',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ListApiCalls',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ListApiCallsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ListApiCallsResponse.FromString,
             options, channel_credentials,
@@ -172,7 +172,7 @@ class ApiCallService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/CreateApiCall',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/CreateApiCall',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.CreateApiCallRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.CreateApiCallResponse.FromString,
             options, channel_credentials,
@@ -189,7 +189,7 @@ class ApiCallService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/GetApiCall',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/GetApiCall',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.GetApiCallRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.GetApiCallResponse.FromString,
             options, channel_credentials,
@@ -206,7 +206,7 @@ class ApiCallService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/UpdateApiCall',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/UpdateApiCall',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.UpdateApiCallRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.UpdateApiCallResponse.FromString,
             options, channel_credentials,
@@ -223,7 +223,7 @@ class ApiCallService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/DeleteApiCall',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/DeleteApiCall',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.DeleteApiCallRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.DeleteApiCallResponse.FromString,
             options, channel_credentials,
@@ -240,7 +240,7 @@ class ApiCallService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/PauseApiCall',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/PauseApiCall',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.PauseApiCallRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.PauseApiCallResponse.FromString,
             options, channel_credentials,
@@ -257,7 +257,7 @@ class ApiCallService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.apicall.v1.ApiCallService/ResumeApiCall',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.ApiCallService/ResumeApiCall',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ResumeApiCallRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_apicall_dot_v1_dot_apicall__pb2.ResumeApiCallResponse.FromString,
             options, channel_credentials,

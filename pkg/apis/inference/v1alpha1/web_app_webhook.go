@@ -13,9 +13,9 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &CronApiCall{}
+var _ webhook.Defaulter = &PredictiveApp{}
 
-func (r *CronApiCall) Default() {
+func (r *PredictiveApp) Default() {
 
 	if r.Spec.Owner == nil {
 		r.Spec.Owner = util.StrPtr("")
@@ -28,22 +28,22 @@ func (r *CronApiCall) Default() {
 }
 
 // validation
-var _ webhook.Validator = &CronApiCall{}
+var _ webhook.Validator = &PredictiveApp{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *CronApiCall) ValidateCreate() error {
+func (recipe *PredictiveApp) ValidateCreate() error {
 	return recipe.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *CronApiCall) ValidateUpdate(old runtime.Object) error {
+func (recipe *PredictiveApp) ValidateUpdate(old runtime.Object) error {
 	return recipe.validate()
 }
 
-func (recipe *CronApiCall) validate() error {
+func (recipe *PredictiveApp) validate() error {
 	return nil
 }
 
-func (recipe *CronApiCall) ValidateDelete() error {
+func (recipe *PredictiveApp) ValidateDelete() error {
 	return nil
 }
