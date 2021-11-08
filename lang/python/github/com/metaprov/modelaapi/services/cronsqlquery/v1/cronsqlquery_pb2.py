@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z6github.com/metaprov/modelaapi/services/cronsqlquery/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/cronsqlquery/v1/cronsqlquery.proto\x12\x36github.com.metaprov.modelaapi.services.cronsqlquery.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd8\x01\n\x18ListCronSqlQuerysRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12l\n\x06labels\x18\x03 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.cronsqlquery.v1.ListCronSqlQuerysRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"r\n\x19ListCronSqlQuerysResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQueryList\"\x1c\n\x1a\x43reateCronSqlQueryResponse\"m\n\x19\x43reateCronSqlQueryRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\"m\n\x19UpdateCronSqlQueryRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\"\x1c\n\x1aUpdateCronSqlQueryResponse\"9\n\x16GetCronSqlQueryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x17GetCronSqlQueryResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19\x44\x65leteCronSqlQueryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteCronSqlQueryResponse\";\n\x18PauseCronSqlQueryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19PauseCronSqlQueryResponse\"<\n\x19ResumeCronSqlQueryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1aResumeCronSqlQueryResponse\"j\n\x16RunCronSqlQueryRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\"\x19\n\x17RunCronSqlQueryResponse2\xd2\n\n\x13\x43ronSqlQueryService\x12\xd4\x01\n\x11ListCronSqlQuerys\x12P.github.com.metaprov.modelaapi.services.cronsqlquery.v1.ListCronSqlQuerysRequest\x1aQ.github.com.metaprov.modelaapi.services.cronsqlquery.v1.ListCronSqlQuerysResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/cronsqlqueries\x12\xd9\x01\n\x12\x43reateCronSqlQuery\x12Q.github.com.metaprov.modelaapi.services.cronsqlquery.v1.CreateCronSqlQueryRequest\x1aR.github.com.metaprov.modelaapi.services.cronsqlquery.v1.CreateCronSqlQueryResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/cronsqlquerys:\x01*\x12\xd5\x01\n\x0fGetCronSqlQuery\x12N.github.com.metaprov.modelaapi.services.cronsqlquery.v1.GetCronSqlQueryRequest\x1aO.github.com.metaprov.modelaapi.services.cronsqlquery.v1.GetCronSqlQueryResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/cronsqlqueries/{name}\x12\xf6\x01\n\x12UpdateCronSqlQuery\x12Q.github.com.metaprov.modelaapi.services.cronsqlquery.v1.UpdateCronSqlQueryRequest\x1aR.github.com.metaprov.modelaapi.services.cronsqlquery.v1.UpdateCronSqlQueryResponse\"9\x82\xd3\xe4\x93\x02\x33\x1a./v1/cronsqlquerys/{cronsqlquery.metadata.name}:\x01*\x12\xde\x01\n\x12\x44\x65leteCronSqlQuery\x12Q.github.com.metaprov.modelaapi.services.cronsqlquery.v1.DeleteCronSqlQueryRequest\x1aR.github.com.metaprov.modelaapi.services.cronsqlquery.v1.DeleteCronSqlQueryResponse\"!\x82\xd3\xe4\x93\x02\x1b*\x19/v1/cronsqlqueries/{name}\x12\xd5\x01\n\x0bRunSqlQuery\x12N.github.com.metaprov.modelaapi.services.cronsqlquery.v1.RunCronSqlQueryRequest\x1aO.github.com.metaprov.modelaapi.services.cronsqlquery.v1.RunCronSqlQueryResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1d/v1/cronsqlqueries/{name}:runB8Z6github.com/metaprov/modelaapi/services/cronsqlquery/v1b\x06proto3'
+  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/services/cronsqlquery/v1/cronsqlquery.proto\x12\x36github.com.metaprov.modelaapi.services.cronsqlquery.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd8\x01\n\x18ListCronSqlQuerysRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12l\n\x06labels\x18\x03 \x03(\x0b\x32\\.github.com.metaprov.modelaapi.services.cronsqlquery.v1.ListCronSqlQuerysRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"r\n\x19ListCronSqlQuerysResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQueryList\"\x1c\n\x1a\x43reateCronSqlQueryResponse\"m\n\x19\x43reateCronSqlQueryRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\"m\n\x19UpdateCronSqlQueryRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\"\x1c\n\x1aUpdateCronSqlQueryResponse\"9\n\x16GetCronSqlQueryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"y\n\x17GetCronSqlQueryResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19\x44\x65leteCronSqlQueryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65leteCronSqlQueryResponse\"j\n\x16RunCronSqlQueryRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery\"\x19\n\x17RunCronSqlQueryResponse2\xd6\n\n\x13\x43ronSqlQueryService\x12\xd4\x01\n\x11ListCronSqlQuerys\x12P.github.com.metaprov.modelaapi.services.cronsqlquery.v1.ListCronSqlQuerysRequest\x1aQ.github.com.metaprov.modelaapi.services.cronsqlquery.v1.ListCronSqlQuerysResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/cronsqlqueries\x12\xd9\x01\n\x12\x43reateCronSqlQuery\x12Q.github.com.metaprov.modelaapi.services.cronsqlquery.v1.CreateCronSqlQueryRequest\x1aR.github.com.metaprov.modelaapi.services.cronsqlquery.v1.CreateCronSqlQueryResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/cronsqlquerys:\x01*\x12\xd5\x01\n\x0fGetCronSqlQuery\x12N.github.com.metaprov.modelaapi.services.cronsqlquery.v1.GetCronSqlQueryRequest\x1aO.github.com.metaprov.modelaapi.services.cronsqlquery.v1.GetCronSqlQueryResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/cronsqlqueries/{name}\x12\xf6\x01\n\x12UpdateCronSqlQuery\x12Q.github.com.metaprov.modelaapi.services.cronsqlquery.v1.UpdateCronSqlQueryRequest\x1aR.github.com.metaprov.modelaapi.services.cronsqlquery.v1.UpdateCronSqlQueryResponse\"9\x82\xd3\xe4\x93\x02\x33\x1a./v1/cronsqlquerys/{cronsqlquery.metadata.name}:\x01*\x12\xde\x01\n\x12\x44\x65leteCronSqlQuery\x12Q.github.com.metaprov.modelaapi.services.cronsqlquery.v1.DeleteCronSqlQueryRequest\x1aR.github.com.metaprov.modelaapi.services.cronsqlquery.v1.DeleteCronSqlQueryResponse\"!\x82\xd3\xe4\x93\x02\x1b*\x19/v1/cronsqlqueries/{name}\x12\xd9\x01\n\x0fRunCronSqlQuery\x12N.github.com.metaprov.modelaapi.services.cronsqlquery.v1.RunCronSqlQueryRequest\x1aO.github.com.metaprov.modelaapi.services.cronsqlquery.v1.RunCronSqlQueryResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1d/v1/cronsqlqueries/{name}:runB8Z6github.com/metaprov/modelaapi/services/cronsqlquery/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -400,134 +400,6 @@ _DELETECRONSQLQUERYRESPONSE = _descriptor.Descriptor(
 )
 
 
-_PAUSECRONSQLQUERYREQUEST = _descriptor.Descriptor(
-  name='PauseCronSqlQueryRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.PauseCronSqlQueryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.PauseCronSqlQueryRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.PauseCronSqlQueryRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1124,
-  serialized_end=1183,
-)
-
-
-_PAUSECRONSQLQUERYRESPONSE = _descriptor.Descriptor(
-  name='PauseCronSqlQueryResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.PauseCronSqlQueryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1185,
-  serialized_end=1212,
-)
-
-
-_RESUMECRONSQLQUERYREQUEST = _descriptor.Descriptor(
-  name='ResumeCronSqlQueryRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.ResumeCronSqlQueryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.ResumeCronSqlQueryRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.ResumeCronSqlQueryRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1214,
-  serialized_end=1274,
-)
-
-
-_RESUMECRONSQLQUERYRESPONSE = _descriptor.Descriptor(
-  name='ResumeCronSqlQueryResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.ResumeCronSqlQueryResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1276,
-  serialized_end=1304,
-)
-
-
 _RUNCRONSQLQUERYREQUEST = _descriptor.Descriptor(
   name='RunCronSqlQueryRequest',
   full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.RunCronSqlQueryRequest',
@@ -555,8 +427,8 @@ _RUNCRONSQLQUERYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1306,
-  serialized_end=1412,
+  serialized_start=1124,
+  serialized_end=1230,
 )
 
 
@@ -580,8 +452,8 @@ _RUNCRONSQLQUERYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1414,
-  serialized_end=1439,
+  serialized_start=1232,
+  serialized_end=1257,
 )
 
 _LISTCRONSQLQUERYSREQUEST_LABELSENTRY.containing_type = _LISTCRONSQLQUERYSREQUEST
@@ -601,10 +473,6 @@ DESCRIPTOR.message_types_by_name['GetCronSqlQueryRequest'] = _GETCRONSQLQUERYREQ
 DESCRIPTOR.message_types_by_name['GetCronSqlQueryResponse'] = _GETCRONSQLQUERYRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteCronSqlQueryRequest'] = _DELETECRONSQLQUERYREQUEST
 DESCRIPTOR.message_types_by_name['DeleteCronSqlQueryResponse'] = _DELETECRONSQLQUERYRESPONSE
-DESCRIPTOR.message_types_by_name['PauseCronSqlQueryRequest'] = _PAUSECRONSQLQUERYREQUEST
-DESCRIPTOR.message_types_by_name['PauseCronSqlQueryResponse'] = _PAUSECRONSQLQUERYRESPONSE
-DESCRIPTOR.message_types_by_name['ResumeCronSqlQueryRequest'] = _RESUMECRONSQLQUERYREQUEST
-DESCRIPTOR.message_types_by_name['ResumeCronSqlQueryResponse'] = _RESUMECRONSQLQUERYRESPONSE
 DESCRIPTOR.message_types_by_name['RunCronSqlQueryRequest'] = _RUNCRONSQLQUERYREQUEST
 DESCRIPTOR.message_types_by_name['RunCronSqlQueryResponse'] = _RUNCRONSQLQUERYRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -687,34 +555,6 @@ DeleteCronSqlQueryResponse = _reflection.GeneratedProtocolMessageType('DeleteCro
   })
 _sym_db.RegisterMessage(DeleteCronSqlQueryResponse)
 
-PauseCronSqlQueryRequest = _reflection.GeneratedProtocolMessageType('PauseCronSqlQueryRequest', (_message.Message,), {
-  'DESCRIPTOR' : _PAUSECRONSQLQUERYREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronsqlquery.v1.cronsqlquery_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronsqlquery.v1.PauseCronSqlQueryRequest)
-  })
-_sym_db.RegisterMessage(PauseCronSqlQueryRequest)
-
-PauseCronSqlQueryResponse = _reflection.GeneratedProtocolMessageType('PauseCronSqlQueryResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PAUSECRONSQLQUERYRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronsqlquery.v1.cronsqlquery_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronsqlquery.v1.PauseCronSqlQueryResponse)
-  })
-_sym_db.RegisterMessage(PauseCronSqlQueryResponse)
-
-ResumeCronSqlQueryRequest = _reflection.GeneratedProtocolMessageType('ResumeCronSqlQueryRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESUMECRONSQLQUERYREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronsqlquery.v1.cronsqlquery_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronsqlquery.v1.ResumeCronSqlQueryRequest)
-  })
-_sym_db.RegisterMessage(ResumeCronSqlQueryRequest)
-
-ResumeCronSqlQueryResponse = _reflection.GeneratedProtocolMessageType('ResumeCronSqlQueryResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESUMECRONSQLQUERYRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronsqlquery.v1.cronsqlquery_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronsqlquery.v1.ResumeCronSqlQueryResponse)
-  })
-_sym_db.RegisterMessage(ResumeCronSqlQueryResponse)
-
 RunCronSqlQueryRequest = _reflection.GeneratedProtocolMessageType('RunCronSqlQueryRequest', (_message.Message,), {
   'DESCRIPTOR' : _RUNCRONSQLQUERYREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.cronsqlquery.v1.cronsqlquery_pb2'
@@ -740,8 +580,8 @@ _CRONSQLQUERYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1442,
-  serialized_end=2804,
+  serialized_start=1260,
+  serialized_end=2626,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListCronSqlQuerys',
@@ -794,8 +634,8 @@ _CRONSQLQUERYSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='RunSqlQuery',
-    full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.CronSqlQueryService.RunSqlQuery',
+    name='RunCronSqlQuery',
+    full_name='github.com.metaprov.modelaapi.services.cronsqlquery.v1.CronSqlQueryService.RunCronSqlQuery',
     index=5,
     containing_service=None,
     input_type=_RUNCRONSQLQUERYREQUEST,

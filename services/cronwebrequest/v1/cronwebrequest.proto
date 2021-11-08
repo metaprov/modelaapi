@@ -52,26 +52,6 @@ message DeleteCronWebRequestResponse {
 
 }
 
-message PauseCronWebRequestRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message PauseCronWebRequestResponse {
-
-}
-
-message ResumeCronWebRequestRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message ResumeCronWebRequestResponse {
-
-}
-
-
-
 message RunCronWebRequestRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest item = 1;
 }
@@ -110,16 +90,8 @@ service CronWebRequestService {
         option (google.api.http).delete = "/v1/cronwebrequests/{name}";
     }
 
-    rpc PauseCronWebRequest(PauseCronWebRequestRequest) returns (PauseCronWebRequestResponse) {
-        option (google.api.http).post = "/v1/cronwebrequests/{name}:pause";
-    }
-
-    rpc ResumeCronWebRequest(ResumeCronWebRequestRequest) returns (ResumeCronWebRequestResponse) {
-        option (google.api.http).post = "/v1/cronwebrequests/{name}:resume";
-    }
-
-
-    rpc RunPrediction(RunCronWebRequestRequest) returns (RunCronWebRequestResponse) {
+    
+    rpc RunCronWebRequest(RunCronWebRequestRequest) returns (RunCronWebRequestResponse) {
         option (google.api.http).post = "/v1/cronwebrequests/{name}:run";
     }
 

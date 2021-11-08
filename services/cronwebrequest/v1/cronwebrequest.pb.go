@@ -514,192 +514,6 @@ func (*DeleteCronWebRequestResponse) Descriptor() ([]byte, []int) {
 	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{9}
 }
 
-type PauseCronWebRequestRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
-	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-}
-
-func (x *PauseCronWebRequestRequest) Reset() {
-	*x = PauseCronWebRequestRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PauseCronWebRequestRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PauseCronWebRequestRequest) ProtoMessage() {}
-
-func (x *PauseCronWebRequestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PauseCronWebRequestRequest.ProtoReflect.Descriptor instead.
-func (*PauseCronWebRequestRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *PauseCronWebRequestRequest) GetNamespace() string {
-	if x != nil {
-		return x.Namespace
-	}
-	return ""
-}
-
-func (x *PauseCronWebRequestRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-type PauseCronWebRequestResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *PauseCronWebRequestResponse) Reset() {
-	*x = PauseCronWebRequestResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *PauseCronWebRequestResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*PauseCronWebRequestResponse) ProtoMessage() {}
-
-func (x *PauseCronWebRequestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use PauseCronWebRequestResponse.ProtoReflect.Descriptor instead.
-func (*PauseCronWebRequestResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{11}
-}
-
-type ResumeCronWebRequestRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Namespace string `protobuf:"bytes,1,opt,name=namespace,proto3" json:"namespace,omitempty"`
-	Name      string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
-}
-
-func (x *ResumeCronWebRequestRequest) Reset() {
-	*x = ResumeCronWebRequestRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[12]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ResumeCronWebRequestRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ResumeCronWebRequestRequest) ProtoMessage() {}
-
-func (x *ResumeCronWebRequestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[12]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ResumeCronWebRequestRequest.ProtoReflect.Descriptor instead.
-func (*ResumeCronWebRequestRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{12}
-}
-
-func (x *ResumeCronWebRequestRequest) GetNamespace() string {
-	if x != nil {
-		return x.Namespace
-	}
-	return ""
-}
-
-func (x *ResumeCronWebRequestRequest) GetName() string {
-	if x != nil {
-		return x.Name
-	}
-	return ""
-}
-
-type ResumeCronWebRequestResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-}
-
-func (x *ResumeCronWebRequestResponse) Reset() {
-	*x = ResumeCronWebRequestResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[13]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ResumeCronWebRequestResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ResumeCronWebRequestResponse) ProtoMessage() {}
-
-func (x *ResumeCronWebRequestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[13]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ResumeCronWebRequestResponse.ProtoReflect.Descriptor instead.
-func (*ResumeCronWebRequestResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{13}
-}
-
 type RunCronWebRequestRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -711,7 +525,7 @@ type RunCronWebRequestRequest struct {
 func (x *RunCronWebRequestRequest) Reset() {
 	*x = RunCronWebRequestRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[14]
+		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -724,7 +538,7 @@ func (x *RunCronWebRequestRequest) String() string {
 func (*RunCronWebRequestRequest) ProtoMessage() {}
 
 func (x *RunCronWebRequestRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[14]
+	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -737,7 +551,7 @@ func (x *RunCronWebRequestRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronWebRequestRequest.ProtoReflect.Descriptor instead.
 func (*RunCronWebRequestRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{14}
+	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *RunCronWebRequestRequest) GetItem() *v1alpha1.CronWebRequest {
@@ -756,7 +570,7 @@ type RunCronWebRequestResponse struct {
 func (x *RunCronWebRequestResponse) Reset() {
 	*x = RunCronWebRequestResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[15]
+		mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -769,7 +583,7 @@ func (x *RunCronWebRequestResponse) String() string {
 func (*RunCronWebRequestResponse) ProtoMessage() {}
 
 func (x *RunCronWebRequestResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[15]
+	mi := &file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -782,7 +596,7 @@ func (x *RunCronWebRequestResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RunCronWebRequestResponse.ProtoReflect.Descriptor instead.
 func (*RunCronWebRequestResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{15}
+	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescGZIP(), []int{11}
 }
 
 var File_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto protoreflect.FileDescriptor
@@ -867,20 +681,6 @@ var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest
 	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22,
 	0x1e, 0x0a, 0x1c, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x4e, 0x0a, 0x1a, 0x50, 0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a,
-	0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22,
-	0x1d, 0x0a, 0x1b, 0x50, 0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x4f,
-	0x0a, 0x1b, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1c, 0x0a,
-	0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x09, 0x6e, 0x61, 0x6d, 0x65, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x6e,
-	0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22,
-	0x1e, 0x0a, 0x1c, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
 	0x74, 0x0a, 0x18, 0x52, 0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71,
 	0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x58, 0x0a, 0x04, 0x69,
 	0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x44, 0x2e, 0x67, 0x69, 0x74, 0x68,
@@ -890,7 +690,7 @@ var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest
 	0x2e, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52,
 	0x04, 0x69, 0x74, 0x65, 0x6d, 0x22, 0x1b, 0x0a, 0x19, 0x52, 0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e,
 	0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x32, 0xfc, 0x0e, 0x0a, 0x15, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65,
+	0x73, 0x65, 0x32, 0x9e, 0x0b, 0x0a, 0x15, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0xdf, 0x01, 0x0a,
 	0x13, 0x4c, 0x69, 0x73, 0x74, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x73, 0x12, 0x54, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
@@ -965,56 +765,26 @@ var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest
 	0x74, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x22, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x1c,
 	0x2a, 0x1a, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x12, 0xec, 0x01, 0x0a,
-	0x13, 0x50, 0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x54, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72,
-	0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x76, 0x31, 0x2e,
-	0x50, 0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x55, 0x2e, 0x67, 0x69, 0x74,
-	0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76,
-	0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x61, 0x75, 0x73, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57,
-	0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x28, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x22, 0x22, 0x20, 0x2f, 0x76, 0x31, 0x2f, 0x63,
-	0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x73, 0x2f, 0x7b,
-	0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x70, 0x61, 0x75, 0x73, 0x65, 0x12, 0xf0, 0x01, 0x0a, 0x14,
-	0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x55, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72,
-	0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x56, 0x2e, 0x67, 0x69,
-	0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f,
-	0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76,
-	0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x43, 0x72, 0x6f,
-	0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x22, 0x29, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x23, 0x22, 0x21, 0x2f, 0x76, 0x31,
-	0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x73,
-	0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x72, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x12, 0xe0,
-	0x01, 0x0a, 0x0d, 0x52, 0x75, 0x6e, 0x50, 0x72, 0x65, 0x64, 0x69, 0x63, 0x74, 0x69, 0x6f, 0x6e,
-	0x12, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65,
-	0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61, 0x70, 0x69,
-	0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65,
-	0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x75, 0x6e, 0x43,
-	0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
-	0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72,
-	0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x20, 0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a, 0x72, 0x75,
-	0x6e, 0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
-	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
-	0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x72, 0x6f, 0x6e,
-	0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2f, 0x76, 0x31, 0x62, 0x06, 0x70,
-	0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x75, 0x65, 0x73, 0x74, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x12, 0xe4, 0x01, 0x0a,
+	0x11, 0x52, 0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x12, 0x52, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2e,
+	0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x61, 0x61,
+	0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e, 0x63, 0x72, 0x6f, 0x6e,
+	0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x75,
+	0x6e, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x53, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2e, 0x6d, 0x6f, 0x64,
+	0x65, 0x6c, 0x61, 0x61, 0x70, 0x69, 0x2e, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2e,
+	0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x76,
+	0x31, 0x2e, 0x52, 0x75, 0x6e, 0x43, 0x72, 0x6f, 0x6e, 0x57, 0x65, 0x62, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x26, 0x82, 0xd3, 0xe4,
+	0x93, 0x02, 0x20, 0x22, 0x1e, 0x2f, 0x76, 0x31, 0x2f, 0x63, 0x72, 0x6f, 0x6e, 0x77, 0x65, 0x62,
+	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x73, 0x2f, 0x7b, 0x6e, 0x61, 0x6d, 0x65, 0x7d, 0x3a,
+	0x72, 0x75, 0x6e, 0x42, 0x3a, 0x5a, 0x38, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x6d, 0x65, 0x74, 0x61, 0x70, 0x72, 0x6f, 0x76, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
+	0x61, 0x61, 0x70, 0x69, 0x2f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x63, 0x72,
+	0x6f, 0x6e, 0x77, 0x65, 0x62, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2f, 0x76, 0x31, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1029,7 +799,7 @@ func file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebreques
 	return file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDescData
 }
 
-var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_goTypes = []interface{}{
 	(*ListCronWebRequestsRequest)(nil),   // 0: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest
 	(*ListCronWebRequestsResponse)(nil),  // 1: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsResponse
@@ -1041,41 +811,33 @@ var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest
 	(*GetCronWebRequestResponse)(nil),    // 7: github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestResponse
 	(*DeleteCronWebRequestRequest)(nil),  // 8: github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestRequest
 	(*DeleteCronWebRequestResponse)(nil), // 9: github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestResponse
-	(*PauseCronWebRequestRequest)(nil),   // 10: github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestRequest
-	(*PauseCronWebRequestResponse)(nil),  // 11: github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestResponse
-	(*ResumeCronWebRequestRequest)(nil),  // 12: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestRequest
-	(*ResumeCronWebRequestResponse)(nil), // 13: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestResponse
-	(*RunCronWebRequestRequest)(nil),     // 14: github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest
-	(*RunCronWebRequestResponse)(nil),    // 15: github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestResponse
-	nil,                                  // 16: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.LabelsEntry
-	(*v1alpha1.CronWebRequestList)(nil),  // 17: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequestList
-	(*v1alpha1.CronWebRequest)(nil),      // 18: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
+	(*RunCronWebRequestRequest)(nil),     // 10: github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest
+	(*RunCronWebRequestResponse)(nil),    // 11: github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestResponse
+	nil,                                  // 12: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.LabelsEntry
+	(*v1alpha1.CronWebRequestList)(nil),  // 13: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequestList
+	(*v1alpha1.CronWebRequest)(nil),      // 14: github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
 }
 var file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_depIdxs = []int32{
-	16, // 0: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.LabelsEntry
-	17, // 1: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequestList
-	18, // 2: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
-	18, // 3: github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
-	18, // 4: github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
-	18, // 5: github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
+	12, // 0: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.labels:type_name -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.LabelsEntry
+	13, // 1: github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsResponse.items:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequestList
+	14, // 2: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
+	14, // 3: github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
+	14, // 4: github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestResponse.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
+	14, // 5: github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest.item:type_name -> github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest
 	0,  // 6: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.ListCronWebRequests:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest
 	3,  // 7: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.CreateCronWebRequest:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestRequest
 	6,  // 8: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.GetCronWebRequest:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestRequest
 	4,  // 9: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.UpdateCronWebRequest:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestRequest
 	8,  // 10: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.DeleteCronWebRequest:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestRequest
-	10, // 11: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.PauseCronWebRequest:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestRequest
-	12, // 12: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.ResumeCronWebRequest:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestRequest
-	14, // 13: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.RunPrediction:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest
-	1,  // 14: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.ListCronWebRequests:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsResponse
-	2,  // 15: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.CreateCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestResponse
-	7,  // 16: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.GetCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestResponse
-	5,  // 17: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.UpdateCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestResponse
-	9,  // 18: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.DeleteCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestResponse
-	11, // 19: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.PauseCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestResponse
-	13, // 20: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.ResumeCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestResponse
-	15, // 21: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.RunPrediction:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestResponse
-	14, // [14:22] is the sub-list for method output_type
-	6,  // [6:14] is the sub-list for method input_type
+	10, // 11: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.RunCronWebRequest:input_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest
+	1,  // 12: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.ListCronWebRequests:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsResponse
+	2,  // 13: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.CreateCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestResponse
+	7,  // 14: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.GetCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestResponse
+	5,  // 15: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.UpdateCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestResponse
+	9,  // 16: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.DeleteCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestResponse
+	11, // 17: github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.RunCronWebRequest:output_type -> github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestResponse
+	12, // [12:18] is the sub-list for method output_type
+	6,  // [6:12] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
 	6,  // [6:6] is the sub-list for extension extendee
 	0,  // [0:6] is the sub-list for field type_name
@@ -1210,54 +972,6 @@ func file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebreques
 			}
 		}
 		file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PauseCronWebRequestRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*PauseCronWebRequestResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResumeCronWebRequestRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ResumeCronWebRequestResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunCronWebRequestRequest); i {
 			case 0:
 				return &v.state
@@ -1269,7 +983,7 @@ func file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebreques
 				return nil
 			}
 		}
-		file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RunCronWebRequestResponse); i {
 			case 0:
 				return &v.state
@@ -1288,7 +1002,7 @@ func file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebreques
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   17,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -1319,9 +1033,7 @@ type CronWebRequestServiceClient interface {
 	GetCronWebRequest(ctx context.Context, in *GetCronWebRequestRequest, opts ...grpc.CallOption) (*GetCronWebRequestResponse, error)
 	UpdateCronWebRequest(ctx context.Context, in *UpdateCronWebRequestRequest, opts ...grpc.CallOption) (*UpdateCronWebRequestResponse, error)
 	DeleteCronWebRequest(ctx context.Context, in *DeleteCronWebRequestRequest, opts ...grpc.CallOption) (*DeleteCronWebRequestResponse, error)
-	PauseCronWebRequest(ctx context.Context, in *PauseCronWebRequestRequest, opts ...grpc.CallOption) (*PauseCronWebRequestResponse, error)
-	ResumeCronWebRequest(ctx context.Context, in *ResumeCronWebRequestRequest, opts ...grpc.CallOption) (*ResumeCronWebRequestResponse, error)
-	RunPrediction(ctx context.Context, in *RunCronWebRequestRequest, opts ...grpc.CallOption) (*RunCronWebRequestResponse, error)
+	RunCronWebRequest(ctx context.Context, in *RunCronWebRequestRequest, opts ...grpc.CallOption) (*RunCronWebRequestResponse, error)
 }
 
 type cronWebRequestServiceClient struct {
@@ -1377,27 +1089,9 @@ func (c *cronWebRequestServiceClient) DeleteCronWebRequest(ctx context.Context, 
 	return out, nil
 }
 
-func (c *cronWebRequestServiceClient) PauseCronWebRequest(ctx context.Context, in *PauseCronWebRequestRequest, opts ...grpc.CallOption) (*PauseCronWebRequestResponse, error) {
-	out := new(PauseCronWebRequestResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/PauseCronWebRequest", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cronWebRequestServiceClient) ResumeCronWebRequest(ctx context.Context, in *ResumeCronWebRequestRequest, opts ...grpc.CallOption) (*ResumeCronWebRequestResponse, error) {
-	out := new(ResumeCronWebRequestResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/ResumeCronWebRequest", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *cronWebRequestServiceClient) RunPrediction(ctx context.Context, in *RunCronWebRequestRequest, opts ...grpc.CallOption) (*RunCronWebRequestResponse, error) {
+func (c *cronWebRequestServiceClient) RunCronWebRequest(ctx context.Context, in *RunCronWebRequestRequest, opts ...grpc.CallOption) (*RunCronWebRequestResponse, error) {
 	out := new(RunCronWebRequestResponse)
-	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunPrediction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunCronWebRequest", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1411,9 +1105,7 @@ type CronWebRequestServiceServer interface {
 	GetCronWebRequest(context.Context, *GetCronWebRequestRequest) (*GetCronWebRequestResponse, error)
 	UpdateCronWebRequest(context.Context, *UpdateCronWebRequestRequest) (*UpdateCronWebRequestResponse, error)
 	DeleteCronWebRequest(context.Context, *DeleteCronWebRequestRequest) (*DeleteCronWebRequestResponse, error)
-	PauseCronWebRequest(context.Context, *PauseCronWebRequestRequest) (*PauseCronWebRequestResponse, error)
-	ResumeCronWebRequest(context.Context, *ResumeCronWebRequestRequest) (*ResumeCronWebRequestResponse, error)
-	RunPrediction(context.Context, *RunCronWebRequestRequest) (*RunCronWebRequestResponse, error)
+	RunCronWebRequest(context.Context, *RunCronWebRequestRequest) (*RunCronWebRequestResponse, error)
 }
 
 // UnimplementedCronWebRequestServiceServer can be embedded to have forward compatible implementations.
@@ -1435,14 +1127,8 @@ func (*UnimplementedCronWebRequestServiceServer) UpdateCronWebRequest(context.Co
 func (*UnimplementedCronWebRequestServiceServer) DeleteCronWebRequest(context.Context, *DeleteCronWebRequestRequest) (*DeleteCronWebRequestResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteCronWebRequest not implemented")
 }
-func (*UnimplementedCronWebRequestServiceServer) PauseCronWebRequest(context.Context, *PauseCronWebRequestRequest) (*PauseCronWebRequestResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PauseCronWebRequest not implemented")
-}
-func (*UnimplementedCronWebRequestServiceServer) ResumeCronWebRequest(context.Context, *ResumeCronWebRequestRequest) (*ResumeCronWebRequestResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ResumeCronWebRequest not implemented")
-}
-func (*UnimplementedCronWebRequestServiceServer) RunPrediction(context.Context, *RunCronWebRequestRequest) (*RunCronWebRequestResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RunPrediction not implemented")
+func (*UnimplementedCronWebRequestServiceServer) RunCronWebRequest(context.Context, *RunCronWebRequestRequest) (*RunCronWebRequestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RunCronWebRequest not implemented")
 }
 
 func RegisterCronWebRequestServiceServer(s *grpc.Server, srv CronWebRequestServiceServer) {
@@ -1539,56 +1225,20 @@ func _CronWebRequestService_DeleteCronWebRequest_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _CronWebRequestService_PauseCronWebRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PauseCronWebRequestRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CronWebRequestServiceServer).PauseCronWebRequest(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/PauseCronWebRequest",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CronWebRequestServiceServer).PauseCronWebRequest(ctx, req.(*PauseCronWebRequestRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CronWebRequestService_ResumeCronWebRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ResumeCronWebRequestRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(CronWebRequestServiceServer).ResumeCronWebRequest(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/ResumeCronWebRequest",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CronWebRequestServiceServer).ResumeCronWebRequest(ctx, req.(*ResumeCronWebRequestRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _CronWebRequestService_RunPrediction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _CronWebRequestService_RunCronWebRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RunCronWebRequestRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(CronWebRequestServiceServer).RunPrediction(ctx, in)
+		return srv.(CronWebRequestServiceServer).RunCronWebRequest(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunPrediction",
+		FullMethod: "/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunCronWebRequest",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CronWebRequestServiceServer).RunPrediction(ctx, req.(*RunCronWebRequestRequest))
+		return srv.(CronWebRequestServiceServer).RunCronWebRequest(ctx, req.(*RunCronWebRequestRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1618,16 +1268,8 @@ var _CronWebRequestService_serviceDesc = grpc.ServiceDesc{
 			Handler:    _CronWebRequestService_DeleteCronWebRequest_Handler,
 		},
 		{
-			MethodName: "PauseCronWebRequest",
-			Handler:    _CronWebRequestService_PauseCronWebRequest_Handler,
-		},
-		{
-			MethodName: "ResumeCronWebRequest",
-			Handler:    _CronWebRequestService_ResumeCronWebRequest_Handler,
-		},
-		{
-			MethodName: "RunPrediction",
-			Handler:    _CronWebRequestService_RunPrediction_Handler,
+			MethodName: "RunCronWebRequest",
+			Handler:    _CronWebRequestService_RunCronWebRequest_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

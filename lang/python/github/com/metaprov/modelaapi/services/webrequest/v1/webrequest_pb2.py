@@ -19,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto',
   package='github.com.metaprov.modelaapi.services.webrequest.v1',
   syntax='proto3',
-  serialized_options=b'Z5github.com/metaprov/modelaapi/services/webreequest/v1',
+  serialized_options=b'Z4github.com/metaprov/modelaapi/services/webrequest/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto\x12\x34github.com.metaprov.modelaapi.services.webrequest.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd2\x01\n\x16ListWebRequestsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListWebRequestsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestList\"\x1a\n\x18\x43reateWebRequestResponse\"i\n\x17\x43reateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"i\n\x17UpdateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x1a\n\x18UpdateWebRequestResponse\"7\n\x14GetWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetWebRequestResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteWebRequestResponse\"9\n\x16PauseWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17PauseWebRequestResponse\":\n\x17ResumeWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18ResumeWebRequestResponse\"f\n\x14RunWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x17\n\x15RunWebRequestResponse2\xe9\x0b\n\x11WebRequestService\x12\xc7\x01\n\x0fListWebRequests\x12L.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest\x1aM.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/webeequests\x12\xcd\x01\n\x10\x43reateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/webeequests:\x01*\x12\xc8\x01\n\rGetWebRequest\x12J.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestRequest\x1aK.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/webeequests/{name}\x12\xe8\x01\n\x10UpdateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/webeequests/{webeequest.metadata.name}:\x01*\x12\xd1\x01\n\x10\x44\x65leteWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/webeequests/{name}\x12\xd4\x01\n\x0fPauseWebRequest\x12L.github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestRequest\x1aM.github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x1c/v1/webeequests/{name}:pause\x12\xd8\x01\n\x10ResumeWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1d/v1/webeequests/{name}:resumeB7Z5github.com/metaprov/modelaapi/services/webreequest/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto\x12\x34github.com.metaprov.modelaapi.services.webrequest.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd2\x01\n\x16ListWebRequestsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListWebRequestsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestList\"\x1a\n\x18\x43reateWebRequestResponse\"i\n\x17\x43reateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"i\n\x17UpdateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x1a\n\x18UpdateWebRequestResponse\"7\n\x14GetWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetWebRequestResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteWebRequestResponse\"f\n\x14RunWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x17\n\x15RunWebRequestResponse2\x86\n\n\x11WebRequestService\x12\xc7\x01\n\x0fListWebRequests\x12L.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest\x1aM.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/webeequests\x12\xcd\x01\n\x10\x43reateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/webeequests:\x01*\x12\xc8\x01\n\rGetWebRequest\x12J.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestRequest\x1aK.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/webeequests/{name}\x12\xe8\x01\n\x10UpdateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/webeequests/{webeequest.metadata.name}:\x01*\x12\xd1\x01\n\x10\x44\x65leteWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/webeequests/{name}\x12\xcc\x01\n\rRunWebRequest\x12J.github.com.metaprov.modelaapi.services.webrequest.v1.RunWebRequestRequest\x1aK.github.com.metaprov.modelaapi.services.webrequest.v1.RunWebRequestResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/v1/webeequests/{name}:runB6Z4github.com/metaprov/modelaapi/services/webrequest/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -400,134 +400,6 @@ _DELETEWEBREQUESTRESPONSE = _descriptor.Descriptor(
 )
 
 
-_PAUSEWEBREQUESTREQUEST = _descriptor.Descriptor(
-  name='PauseWebRequestRequest',
-  full_name='github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1086,
-  serialized_end=1143,
-)
-
-
-_PAUSEWEBREQUESTRESPONSE = _descriptor.Descriptor(
-  name='PauseWebRequestResponse',
-  full_name='github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1145,
-  serialized_end=1170,
-)
-
-
-_RESUMEWEBREQUESTREQUEST = _descriptor.Descriptor(
-  name='ResumeWebRequestRequest',
-  full_name='github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1172,
-  serialized_end=1230,
-)
-
-
-_RESUMEWEBREQUESTRESPONSE = _descriptor.Descriptor(
-  name='ResumeWebRequestResponse',
-  full_name='github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1232,
-  serialized_end=1258,
-)
-
-
 _RUNWEBREQUESTREQUEST = _descriptor.Descriptor(
   name='RunWebRequestRequest',
   full_name='github.com.metaprov.modelaapi.services.webrequest.v1.RunWebRequestRequest',
@@ -555,8 +427,8 @@ _RUNWEBREQUESTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1260,
-  serialized_end=1362,
+  serialized_start=1086,
+  serialized_end=1188,
 )
 
 
@@ -580,8 +452,8 @@ _RUNWEBREQUESTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1364,
-  serialized_end=1387,
+  serialized_start=1190,
+  serialized_end=1213,
 )
 
 _LISTWEBREQUESTSREQUEST_LABELSENTRY.containing_type = _LISTWEBREQUESTSREQUEST
@@ -601,10 +473,6 @@ DESCRIPTOR.message_types_by_name['GetWebRequestRequest'] = _GETWEBREQUESTREQUEST
 DESCRIPTOR.message_types_by_name['GetWebRequestResponse'] = _GETWEBREQUESTRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteWebRequestRequest'] = _DELETEWEBREQUESTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteWebRequestResponse'] = _DELETEWEBREQUESTRESPONSE
-DESCRIPTOR.message_types_by_name['PauseWebRequestRequest'] = _PAUSEWEBREQUESTREQUEST
-DESCRIPTOR.message_types_by_name['PauseWebRequestResponse'] = _PAUSEWEBREQUESTRESPONSE
-DESCRIPTOR.message_types_by_name['ResumeWebRequestRequest'] = _RESUMEWEBREQUESTREQUEST
-DESCRIPTOR.message_types_by_name['ResumeWebRequestResponse'] = _RESUMEWEBREQUESTRESPONSE
 DESCRIPTOR.message_types_by_name['RunWebRequestRequest'] = _RUNWEBREQUESTREQUEST
 DESCRIPTOR.message_types_by_name['RunWebRequestResponse'] = _RUNWEBREQUESTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -687,34 +555,6 @@ DeleteWebRequestResponse = _reflection.GeneratedProtocolMessageType('DeleteWebRe
   })
 _sym_db.RegisterMessage(DeleteWebRequestResponse)
 
-PauseWebRequestRequest = _reflection.GeneratedProtocolMessageType('PauseWebRequestRequest', (_message.Message,), {
-  'DESCRIPTOR' : _PAUSEWEBREQUESTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.webrequest.v1.webrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestRequest)
-  })
-_sym_db.RegisterMessage(PauseWebRequestRequest)
-
-PauseWebRequestResponse = _reflection.GeneratedProtocolMessageType('PauseWebRequestResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PAUSEWEBREQUESTRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.webrequest.v1.webrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.webrequest.v1.PauseWebRequestResponse)
-  })
-_sym_db.RegisterMessage(PauseWebRequestResponse)
-
-ResumeWebRequestRequest = _reflection.GeneratedProtocolMessageType('ResumeWebRequestRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESUMEWEBREQUESTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.webrequest.v1.webrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestRequest)
-  })
-_sym_db.RegisterMessage(ResumeWebRequestRequest)
-
-ResumeWebRequestResponse = _reflection.GeneratedProtocolMessageType('ResumeWebRequestResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESUMEWEBREQUESTRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.webrequest.v1.webrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.webrequest.v1.ResumeWebRequestResponse)
-  })
-_sym_db.RegisterMessage(ResumeWebRequestResponse)
-
 RunWebRequestRequest = _reflection.GeneratedProtocolMessageType('RunWebRequestRequest', (_message.Message,), {
   'DESCRIPTOR' : _RUNWEBREQUESTREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.webrequest.v1.webrequest_pb2'
@@ -740,8 +580,8 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1390,
-  serialized_end=2903,
+  serialized_start=1216,
+  serialized_end=2502,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListWebRequests',
@@ -794,23 +634,13 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='PauseWebRequest',
-    full_name='github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService.PauseWebRequest',
+    name='RunWebRequest',
+    full_name='github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService.RunWebRequest',
     index=5,
     containing_service=None,
-    input_type=_PAUSEWEBREQUESTREQUEST,
-    output_type=_PAUSEWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\036\"\034/v1/webeequests/{name}:pause',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ResumeWebRequest',
-    full_name='github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService.ResumeWebRequest',
-    index=6,
-    containing_service=None,
-    input_type=_RESUMEWEBREQUESTREQUEST,
-    output_type=_RESUMEWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\037\"\035/v1/webeequests/{name}:resume',
+    input_type=_RUNWEBREQUESTREQUEST,
+    output_type=_RUNWEBREQUESTRESPONSE,
+    serialized_options=b'\202\323\344\223\002\034\"\032/v1/webeequests/{name}:run',
     create_key=_descriptor._internal_create_key,
   ),
 ])

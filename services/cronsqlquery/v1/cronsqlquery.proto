@@ -52,24 +52,6 @@ message DeleteCronSqlQueryResponse {
 
 }
 
-message PauseCronSqlQueryRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message PauseCronSqlQueryResponse {
-
-}
-
-message ResumeCronSqlQueryRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message ResumeCronSqlQueryResponse {
-
-}
-
 message RunCronSqlQueryRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronSqlQuery item = 1;
 }
@@ -108,7 +90,7 @@ service CronSqlQueryService {
         option (google.api.http).delete = "/v1/cronsqlqueries/{name}";
     }
 
-    rpc RunSqlQuery(RunCronSqlQueryRequest) returns (RunCronSqlQueryResponse) {
+    rpc RunCronSqlQuery(RunCronSqlQueryRequest) returns (RunCronSqlQueryResponse) {
         option (google.api.http).post = "/v1/cronsqlqueries/{name}:run";
     }
  

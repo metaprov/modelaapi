@@ -39,15 +39,10 @@ class SqlQueryServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.DeleteSqlQueryRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.DeleteSqlQueryResponse.FromString,
                 )
-        self.PauseSqlQuery = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/PauseSqlQuery',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.PauseSqlQueryRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.PauseSqlQueryResponse.FromString,
-                )
-        self.ResumeSqlQuery = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/ResumeSqlQuery',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.ResumeSqlQueryRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.ResumeSqlQueryResponse.FromString,
+        self.RunSqlQuery = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/RunSqlQuery',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.RunSqlQueryRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.RunSqlQueryResponse.FromString,
                 )
 
 
@@ -84,13 +79,7 @@ class SqlQueryServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PauseSqlQuery(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ResumeSqlQuery(self, request, context):
+    def RunSqlQuery(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -124,15 +113,10 @@ def add_SqlQueryServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.DeleteSqlQueryRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.DeleteSqlQueryResponse.SerializeToString,
             ),
-            'PauseSqlQuery': grpc.unary_unary_rpc_method_handler(
-                    servicer.PauseSqlQuery,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.PauseSqlQueryRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.PauseSqlQueryResponse.SerializeToString,
-            ),
-            'ResumeSqlQuery': grpc.unary_unary_rpc_method_handler(
-                    servicer.ResumeSqlQuery,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.ResumeSqlQueryRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.ResumeSqlQueryResponse.SerializeToString,
+            'RunSqlQuery': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunSqlQuery,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.RunSqlQueryRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.RunSqlQueryResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -230,7 +214,7 @@ class SqlQueryService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def PauseSqlQuery(request,
+    def RunSqlQuery(request,
             target,
             options=(),
             channel_credentials=None,
@@ -240,25 +224,8 @@ class SqlQueryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/PauseSqlQuery',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.PauseSqlQueryRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.PauseSqlQueryResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ResumeSqlQuery(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/ResumeSqlQuery',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.ResumeSqlQueryRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.ResumeSqlQueryResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/RunSqlQuery',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.RunSqlQueryRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_sqlquery_dot_v1_dot_sqlquery__pb2.RunSqlQueryResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

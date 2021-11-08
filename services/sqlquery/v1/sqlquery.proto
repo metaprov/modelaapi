@@ -52,25 +52,6 @@ message DeleteSqlQueryResponse {
 
 }
 
-message PauseSqlQueryRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message PauseSqlQueryResponse {
-
-}
-
-message ResumeSqlQueryRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message ResumeSqlQueryResponse {
-
-}
-
-
 
 message RunSqlQueryRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
@@ -111,15 +92,10 @@ service SqlQueryService {
     }
 
 
-    rpc PauseSqlQuery(PauseSqlQueryRequest) returns (PauseSqlQueryResponse) {
-        option (google.api.http).post = "/v1/apicalls/{name}:pause";
+    rpc RunSqlQuery(RunSqlQueryRequest) returns (RunSqlQueryResponse) {
+        option (google.api.http).post = "/v1/apicalls/{name}:run";
     }
 
-    rpc ResumeSqlQuery(ResumeSqlQueryRequest) returns (ResumeSqlQueryResponse) {
-        option (google.api.http).post = "/v1/apicalls/{name}:resume";
-    }
-
- 
-  
+    
 
 }

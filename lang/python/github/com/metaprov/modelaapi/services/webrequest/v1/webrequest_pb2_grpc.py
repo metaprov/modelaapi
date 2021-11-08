@@ -39,15 +39,10 @@ class WebRequestServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.DeleteWebRequestRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.DeleteWebRequestResponse.FromString,
                 )
-        self.PauseWebRequest = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/PauseWebRequest',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.PauseWebRequestRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.PauseWebRequestResponse.FromString,
-                )
-        self.ResumeWebRequest = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/ResumeWebRequest',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.ResumeWebRequestRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.ResumeWebRequestResponse.FromString,
+        self.RunWebRequest = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/RunWebRequest',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.RunWebRequestRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.RunWebRequestResponse.FromString,
                 )
 
 
@@ -84,13 +79,7 @@ class WebRequestServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PauseWebRequest(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ResumeWebRequest(self, request, context):
+    def RunWebRequest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -124,15 +113,10 @@ def add_WebRequestServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.DeleteWebRequestRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.DeleteWebRequestResponse.SerializeToString,
             ),
-            'PauseWebRequest': grpc.unary_unary_rpc_method_handler(
-                    servicer.PauseWebRequest,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.PauseWebRequestRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.PauseWebRequestResponse.SerializeToString,
-            ),
-            'ResumeWebRequest': grpc.unary_unary_rpc_method_handler(
-                    servicer.ResumeWebRequest,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.ResumeWebRequestRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.ResumeWebRequestResponse.SerializeToString,
+            'RunWebRequest': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunWebRequest,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.RunWebRequestRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.RunWebRequestResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -230,7 +214,7 @@ class WebRequestService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def PauseWebRequest(request,
+    def RunWebRequest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -240,25 +224,8 @@ class WebRequestService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/PauseWebRequest',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.PauseWebRequestRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.PauseWebRequestResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ResumeWebRequest(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/ResumeWebRequest',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.ResumeWebRequestRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.ResumeWebRequestResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/RunWebRequest',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.RunWebRequestRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequest_dot_v1_dot_webrequest__pb2.RunWebRequestResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

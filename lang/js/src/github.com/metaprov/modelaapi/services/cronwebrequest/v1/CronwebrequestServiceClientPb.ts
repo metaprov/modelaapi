@@ -235,87 +235,7 @@ export class CronWebRequestServiceClient {
     this.methodInfoDeleteCronWebRequest);
   }
 
-  methodInfoPauseCronWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestResponse,
-    (request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestResponse.deserializeBinary
-  );
-
-  pauseCronWebRequest(
-    request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestResponse>;
-
-  pauseCronWebRequest(
-    request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestResponse>;
-
-  pauseCronWebRequest(
-    request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.PauseCronWebRequestResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/PauseCronWebRequest',
-        request,
-        metadata || {},
-        this.methodInfoPauseCronWebRequest,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/PauseCronWebRequest',
-    request,
-    metadata || {},
-    this.methodInfoPauseCronWebRequest);
-  }
-
-  methodInfoResumeCronWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestResponse,
-    (request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestResponse.deserializeBinary
-  );
-
-  resumeCronWebRequest(
-    request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestResponse>;
-
-  resumeCronWebRequest(
-    request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestResponse>;
-
-  resumeCronWebRequest(
-    request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.ResumeCronWebRequestResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/ResumeCronWebRequest',
-        request,
-        metadata || {},
-        this.methodInfoResumeCronWebRequest,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/ResumeCronWebRequest',
-    request,
-    metadata || {},
-    this.methodInfoResumeCronWebRequest);
-  }
-
-  methodInfoRunPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRunCronWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestResponse,
     (request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestRequest) => {
       return request.serializeBinary();
@@ -323,17 +243,17 @@ export class CronWebRequestServiceClient {
     github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestResponse.deserializeBinary
   );
 
-  runPrediction(
+  runCronWebRequest(
     request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestResponse>;
 
-  runPrediction(
+  runCronWebRequest(
     request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestResponse>;
 
-  runPrediction(
+  runCronWebRequest(
     request: github_com_metaprov_modelaapi_services_cronwebrequest_v1_cronwebrequest_pb.RunCronWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -341,18 +261,18 @@ export class CronWebRequestServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunPrediction',
+          '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunCronWebRequest',
         request,
         metadata || {},
-        this.methodInfoRunPrediction,
+        this.methodInfoRunCronWebRequest,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunPrediction',
+      '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunCronWebRequest',
     request,
     metadata || {},
-    this.methodInfoRunPrediction);
+    this.methodInfoRunCronWebRequest);
   }
 
 }

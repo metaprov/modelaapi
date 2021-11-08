@@ -235,84 +235,44 @@ export class SqlQueryServiceClient {
     this.methodInfoDeleteSqlQuery);
   }
 
-  methodInfoPauseSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryResponse,
-    (request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryRequest) => {
+  methodInfoRunSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryResponse,
+    (request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryResponse.deserializeBinary
   );
 
-  pauseSqlQuery(
-    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryResponse>;
+  runSqlQuery(
+    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryResponse>;
 
-  pauseSqlQuery(
-    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryRequest,
+  runSqlQuery(
+    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryResponse>;
+               response: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryResponse>;
 
-  pauseSqlQuery(
-    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryRequest,
+  runSqlQuery(
+    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.PauseSqlQueryResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.RunSqlQueryResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/PauseSqlQuery',
+          '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/RunSqlQuery',
         request,
         metadata || {},
-        this.methodInfoPauseSqlQuery,
+        this.methodInfoRunSqlQuery,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/PauseSqlQuery',
+      '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/RunSqlQuery',
     request,
     metadata || {},
-    this.methodInfoPauseSqlQuery);
-  }
-
-  methodInfoResumeSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryResponse,
-    (request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryResponse.deserializeBinary
-  );
-
-  resumeSqlQuery(
-    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryResponse>;
-
-  resumeSqlQuery(
-    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryResponse>;
-
-  resumeSqlQuery(
-    request: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_sqlquery_v1_sqlquery_pb.ResumeSqlQueryResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/ResumeSqlQuery',
-        request,
-        metadata || {},
-        this.methodInfoResumeSqlQuery,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.sqlquery.v1.SqlQueryService/ResumeSqlQuery',
-    request,
-    metadata || {},
-    this.methodInfoResumeSqlQuery);
+    this.methodInfoRunSqlQuery);
   }
 
 }

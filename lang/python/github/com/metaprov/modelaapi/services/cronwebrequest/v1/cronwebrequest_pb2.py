@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z8github.com/metaprov/modelaapi/services/cronwebrequest/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nMgithub.com/metaprov/modelaapi/services/cronwebrequest/v1/cronwebrequest.proto\x12\x38github.com.metaprov.modelaapi.services.cronwebrequest.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xde\x01\n\x1aListCronWebRequestsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12p\n\x06labels\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"v\n\x1bListCronWebRequestsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequestList\"\x1e\n\x1c\x43reateCronWebRequestResponse\"q\n\x1b\x43reateCronWebRequestRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\"q\n\x1bUpdateCronWebRequestRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\"\x1e\n\x1cUpdateCronWebRequestResponse\";\n\x18GetCronWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"}\n\x19GetCronWebRequestResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteCronWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteCronWebRequestResponse\"=\n\x1aPauseCronWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1bPauseCronWebRequestResponse\">\n\x1bResumeCronWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1cResumeCronWebRequestResponse\"n\n\x18RunCronWebRequestRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\"\x1b\n\x19RunCronWebRequestResponse2\xfc\x0e\n\x15\x43ronWebRequestService\x12\xdf\x01\n\x13ListCronWebRequests\x12T.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest\x1aU.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/cronwebrequests\x12\xe5\x01\n\x14\x43reateCronWebRequest\x12U.github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestRequest\x1aV.github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/cronwebrequests:\x01*\x12\xe0\x01\n\x11GetCronWebRequest\x12R.github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestRequest\x1aS.github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/cronwebrequests/{name}\x12\x84\x02\n\x14UpdateCronWebRequest\x12U.github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestRequest\x1aV.github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestResponse\"=\x82\xd3\xe4\x93\x02\x37\x1a\x32/v1/cronwebrequests/{cronprediction.metadata.name}:\x01*\x12\xe9\x01\n\x14\x44\x65leteCronWebRequest\x12U.github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestRequest\x1aV.github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestResponse\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/cronwebrequests/{name}\x12\xec\x01\n\x13PauseCronWebRequest\x12T.github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestRequest\x1aU.github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestResponse\"(\x82\xd3\xe4\x93\x02\"\" /v1/cronwebrequests/{name}:pause\x12\xf0\x01\n\x14ResumeCronWebRequest\x12U.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestRequest\x1aV.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestResponse\")\x82\xd3\xe4\x93\x02#\"!/v1/cronwebrequests/{name}:resume\x12\xe0\x01\n\rRunPrediction\x12R.github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest\x1aS.github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestResponse\"&\x82\xd3\xe4\x93\x02 \"\x1e/v1/cronwebrequests/{name}:runB:Z8github.com/metaprov/modelaapi/services/cronwebrequest/v1b\x06proto3'
+  serialized_pb=b'\nMgithub.com/metaprov/modelaapi/services/cronwebrequest/v1/cronwebrequest.proto\x12\x38github.com.metaprov.modelaapi.services.cronwebrequest.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xde\x01\n\x1aListCronWebRequestsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12p\n\x06labels\x18\x03 \x03(\x0b\x32`.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"v\n\x1bListCronWebRequestsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequestList\"\x1e\n\x1c\x43reateCronWebRequestResponse\"q\n\x1b\x43reateCronWebRequestRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\"q\n\x1bUpdateCronWebRequestRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\"\x1e\n\x1cUpdateCronWebRequestResponse\";\n\x18GetCronWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"}\n\x19GetCronWebRequestResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1b\x44\x65leteCronWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1e\n\x1c\x44\x65leteCronWebRequestResponse\"n\n\x18RunCronWebRequestRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CronWebRequest\"\x1b\n\x19RunCronWebRequestResponse2\x9e\x0b\n\x15\x43ronWebRequestService\x12\xdf\x01\n\x13ListCronWebRequests\x12T.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsRequest\x1aU.github.com.metaprov.modelaapi.services.cronwebrequest.v1.ListCronWebRequestsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/cronwebrequests\x12\xe5\x01\n\x14\x43reateCronWebRequest\x12U.github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestRequest\x1aV.github.com.metaprov.modelaapi.services.cronwebrequest.v1.CreateCronWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/cronwebrequests:\x01*\x12\xe0\x01\n\x11GetCronWebRequest\x12R.github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestRequest\x1aS.github.com.metaprov.modelaapi.services.cronwebrequest.v1.GetCronWebRequestResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/cronwebrequests/{name}\x12\x84\x02\n\x14UpdateCronWebRequest\x12U.github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestRequest\x1aV.github.com.metaprov.modelaapi.services.cronwebrequest.v1.UpdateCronWebRequestResponse\"=\x82\xd3\xe4\x93\x02\x37\x1a\x32/v1/cronwebrequests/{cronprediction.metadata.name}:\x01*\x12\xe9\x01\n\x14\x44\x65leteCronWebRequest\x12U.github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestRequest\x1aV.github.com.metaprov.modelaapi.services.cronwebrequest.v1.DeleteCronWebRequestResponse\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/cronwebrequests/{name}\x12\xe4\x01\n\x11RunCronWebRequest\x12R.github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest\x1aS.github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestResponse\"&\x82\xd3\xe4\x93\x02 \"\x1e/v1/cronwebrequests/{name}:runB:Z8github.com/metaprov/modelaapi/services/cronwebrequest/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -400,134 +400,6 @@ _DELETECRONWEBREQUESTRESPONSE = _descriptor.Descriptor(
 )
 
 
-_PAUSECRONWEBREQUESTREQUEST = _descriptor.Descriptor(
-  name='PauseCronWebRequestRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1162,
-  serialized_end=1223,
-)
-
-
-_PAUSECRONWEBREQUESTRESPONSE = _descriptor.Descriptor(
-  name='PauseCronWebRequestResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1225,
-  serialized_end=1254,
-)
-
-
-_RESUMECRONWEBREQUESTREQUEST = _descriptor.Descriptor(
-  name='ResumeCronWebRequestRequest',
-  full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1256,
-  serialized_end=1318,
-)
-
-
-_RESUMECRONWEBREQUESTRESPONSE = _descriptor.Descriptor(
-  name='ResumeCronWebRequestResponse',
-  full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1320,
-  serialized_end=1350,
-)
-
-
 _RUNCRONWEBREQUESTREQUEST = _descriptor.Descriptor(
   name='RunCronWebRequestRequest',
   full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.RunCronWebRequestRequest',
@@ -555,8 +427,8 @@ _RUNCRONWEBREQUESTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1352,
-  serialized_end=1462,
+  serialized_start=1162,
+  serialized_end=1272,
 )
 
 
@@ -580,8 +452,8 @@ _RUNCRONWEBREQUESTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1464,
-  serialized_end=1491,
+  serialized_start=1274,
+  serialized_end=1301,
 )
 
 _LISTCRONWEBREQUESTSREQUEST_LABELSENTRY.containing_type = _LISTCRONWEBREQUESTSREQUEST
@@ -601,10 +473,6 @@ DESCRIPTOR.message_types_by_name['GetCronWebRequestRequest'] = _GETCRONWEBREQUES
 DESCRIPTOR.message_types_by_name['GetCronWebRequestResponse'] = _GETCRONWEBREQUESTRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteCronWebRequestRequest'] = _DELETECRONWEBREQUESTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteCronWebRequestResponse'] = _DELETECRONWEBREQUESTRESPONSE
-DESCRIPTOR.message_types_by_name['PauseCronWebRequestRequest'] = _PAUSECRONWEBREQUESTREQUEST
-DESCRIPTOR.message_types_by_name['PauseCronWebRequestResponse'] = _PAUSECRONWEBREQUESTRESPONSE
-DESCRIPTOR.message_types_by_name['ResumeCronWebRequestRequest'] = _RESUMECRONWEBREQUESTREQUEST
-DESCRIPTOR.message_types_by_name['ResumeCronWebRequestResponse'] = _RESUMECRONWEBREQUESTRESPONSE
 DESCRIPTOR.message_types_by_name['RunCronWebRequestRequest'] = _RUNCRONWEBREQUESTREQUEST
 DESCRIPTOR.message_types_by_name['RunCronWebRequestResponse'] = _RUNCRONWEBREQUESTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -687,34 +555,6 @@ DeleteCronWebRequestResponse = _reflection.GeneratedProtocolMessageType('DeleteC
   })
 _sym_db.RegisterMessage(DeleteCronWebRequestResponse)
 
-PauseCronWebRequestRequest = _reflection.GeneratedProtocolMessageType('PauseCronWebRequestRequest', (_message.Message,), {
-  'DESCRIPTOR' : _PAUSECRONWEBREQUESTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronwebrequest.v1.cronwebrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestRequest)
-  })
-_sym_db.RegisterMessage(PauseCronWebRequestRequest)
-
-PauseCronWebRequestResponse = _reflection.GeneratedProtocolMessageType('PauseCronWebRequestResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PAUSECRONWEBREQUESTRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronwebrequest.v1.cronwebrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronwebrequest.v1.PauseCronWebRequestResponse)
-  })
-_sym_db.RegisterMessage(PauseCronWebRequestResponse)
-
-ResumeCronWebRequestRequest = _reflection.GeneratedProtocolMessageType('ResumeCronWebRequestRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESUMECRONWEBREQUESTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronwebrequest.v1.cronwebrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestRequest)
-  })
-_sym_db.RegisterMessage(ResumeCronWebRequestRequest)
-
-ResumeCronWebRequestResponse = _reflection.GeneratedProtocolMessageType('ResumeCronWebRequestResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESUMECRONWEBREQUESTRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.cronwebrequest.v1.cronwebrequest_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.cronwebrequest.v1.ResumeCronWebRequestResponse)
-  })
-_sym_db.RegisterMessage(ResumeCronWebRequestResponse)
-
 RunCronWebRequestRequest = _reflection.GeneratedProtocolMessageType('RunCronWebRequestRequest', (_message.Message,), {
   'DESCRIPTOR' : _RUNCRONWEBREQUESTREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.cronwebrequest.v1.cronwebrequest_pb2'
@@ -740,8 +580,8 @@ _CRONWEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1494,
-  serialized_end=3410,
+  serialized_start=1304,
+  serialized_end=2742,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListCronWebRequests',
@@ -794,29 +634,9 @@ _CRONWEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='PauseCronWebRequest',
-    full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.PauseCronWebRequest',
+    name='RunCronWebRequest',
+    full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.RunCronWebRequest',
     index=5,
-    containing_service=None,
-    input_type=_PAUSECRONWEBREQUESTREQUEST,
-    output_type=_PAUSECRONWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\"\" /v1/cronwebrequests/{name}:pause',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ResumeCronWebRequest',
-    full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.ResumeCronWebRequest',
-    index=6,
-    containing_service=None,
-    input_type=_RESUMECRONWEBREQUESTREQUEST,
-    output_type=_RESUMECRONWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002#\"!/v1/cronwebrequests/{name}:resume',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RunPrediction',
-    full_name='github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService.RunPrediction',
-    index=7,
     containing_service=None,
     input_type=_RUNCRONWEBREQUESTREQUEST,
     output_type=_RUNCRONWEBREQUESTRESPONSE,

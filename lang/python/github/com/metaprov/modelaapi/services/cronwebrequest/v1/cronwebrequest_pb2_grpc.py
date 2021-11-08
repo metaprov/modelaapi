@@ -39,18 +39,8 @@ class CronWebRequestServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.DeleteCronWebRequestRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.DeleteCronWebRequestResponse.FromString,
                 )
-        self.PauseCronWebRequest = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/PauseCronWebRequest',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.PauseCronWebRequestRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.PauseCronWebRequestResponse.FromString,
-                )
-        self.ResumeCronWebRequest = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/ResumeCronWebRequest',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.ResumeCronWebRequestRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.ResumeCronWebRequestResponse.FromString,
-                )
-        self.RunPrediction = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunPrediction',
+        self.RunCronWebRequest = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunCronWebRequest',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.RunCronWebRequestRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.RunCronWebRequestResponse.FromString,
                 )
@@ -89,19 +79,7 @@ class CronWebRequestServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def PauseCronWebRequest(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ResumeCronWebRequest(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RunPrediction(self, request, context):
+    def RunCronWebRequest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -135,18 +113,8 @@ def add_CronWebRequestServiceServicer_to_server(servicer, server):
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.DeleteCronWebRequestRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.DeleteCronWebRequestResponse.SerializeToString,
             ),
-            'PauseCronWebRequest': grpc.unary_unary_rpc_method_handler(
-                    servicer.PauseCronWebRequest,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.PauseCronWebRequestRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.PauseCronWebRequestResponse.SerializeToString,
-            ),
-            'ResumeCronWebRequest': grpc.unary_unary_rpc_method_handler(
-                    servicer.ResumeCronWebRequest,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.ResumeCronWebRequestRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.ResumeCronWebRequestResponse.SerializeToString,
-            ),
-            'RunPrediction': grpc.unary_unary_rpc_method_handler(
-                    servicer.RunPrediction,
+            'RunCronWebRequest': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunCronWebRequest,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.RunCronWebRequestRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.RunCronWebRequestResponse.SerializeToString,
             ),
@@ -246,7 +214,7 @@ class CronWebRequestService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def PauseCronWebRequest(request,
+    def RunCronWebRequest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -256,41 +224,7 @@ class CronWebRequestService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/PauseCronWebRequest',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.PauseCronWebRequestRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.PauseCronWebRequestResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ResumeCronWebRequest(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/ResumeCronWebRequest',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.ResumeCronWebRequestRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.ResumeCronWebRequestResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RunPrediction(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunPrediction',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.cronwebrequest.v1.CronWebRequestService/RunCronWebRequest',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.RunCronWebRequestRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_cronwebrequest_dot_v1_dot_cronwebrequest__pb2.RunCronWebRequestResponse.FromString,
             options, channel_credentials,

@@ -235,7 +235,7 @@ export class CronSqlQueryServiceClient {
     this.methodInfoDeleteCronSqlQuery);
   }
 
-  methodInfoRunSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRunCronSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryResponse,
     (request: github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryRequest) => {
       return request.serializeBinary();
@@ -243,17 +243,17 @@ export class CronSqlQueryServiceClient {
     github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryResponse.deserializeBinary
   );
 
-  runSqlQuery(
+  runCronSqlQuery(
     request: github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryResponse>;
 
-  runSqlQuery(
+  runCronSqlQuery(
     request: github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryResponse>;
 
-  runSqlQuery(
+  runCronSqlQuery(
     request: github_com_metaprov_modelaapi_services_cronsqlquery_v1_cronsqlquery_pb.RunCronSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
@@ -261,18 +261,18 @@ export class CronSqlQueryServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.cronsqlquery.v1.CronSqlQueryService/RunSqlQuery',
+          '/github.com.metaprov.modelaapi.services.cronsqlquery.v1.CronSqlQueryService/RunCronSqlQuery',
         request,
         metadata || {},
-        this.methodInfoRunSqlQuery,
+        this.methodInfoRunCronSqlQuery,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.cronsqlquery.v1.CronSqlQueryService/RunSqlQuery',
+      '/github.com.metaprov.modelaapi.services.cronsqlquery.v1.CronSqlQueryService/RunCronSqlQuery',
     request,
     metadata || {},
-    this.methodInfoRunSqlQuery);
+    this.methodInfoRunCronSqlQuery);
   }
 
 }

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modelaapi/services/webreequest/v1";
+option go_package = "github.com/metaprov/modelaapi/services/webrequest/v1";
 package github.com.metaprov.modelaapi.services.webrequest.v1;
 
 
@@ -52,25 +52,6 @@ message DeleteWebRequestResponse {
 
 }
 
-message PauseWebRequestRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message PauseWebRequestResponse {
-
-}
-
-message ResumeWebRequestRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-message ResumeWebRequestResponse {
-
-}
-
-
 
 message RunWebRequestRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
@@ -110,16 +91,8 @@ service WebRequestService {
         option (google.api.http).delete = "/v1/webeequests/{name}";
     }
 
-
-    rpc PauseWebRequest(PauseWebRequestRequest) returns (PauseWebRequestResponse) {
-        option (google.api.http).post = "/v1/webeequests/{name}:pause";
+    rpc RunWebRequest(RunWebRequestRequest) returns (RunWebRequestResponse) {
+        option (google.api.http).post = "/v1/webeequests/{name}:run";
     }
-
-    rpc ResumeWebRequest(ResumeWebRequestRequest) returns (ResumeWebRequestResponse) {
-        option (google.api.http).post = "/v1/webeequests/{name}:resume";
-    }
-
- 
-  
 
 }

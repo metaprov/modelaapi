@@ -235,84 +235,44 @@ export class WebRequestServiceClient {
     this.methodInfoDeleteWebRequest);
   }
 
-  methodInfoPauseWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestResponse,
-    (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestRequest) => {
+  methodInfoRunWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse,
+    (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse.deserializeBinary
   );
 
-  pauseWebRequest(
-    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestResponse>;
+  runWebRequest(
+    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse>;
 
-  pauseWebRequest(
-    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestRequest,
+  runWebRequest(
+    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestResponse>;
+               response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse>;
 
-  pauseWebRequest(
-    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestRequest,
+  runWebRequest(
+    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.PauseWebRequestResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/PauseWebRequest',
+          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/RunWebRequest',
         request,
         metadata || {},
-        this.methodInfoPauseWebRequest,
+        this.methodInfoRunWebRequest,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/PauseWebRequest',
+      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/RunWebRequest',
     request,
     metadata || {},
-    this.methodInfoPauseWebRequest);
-  }
-
-  methodInfoResumeWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestResponse,
-    (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestResponse.deserializeBinary
-  );
-
-  resumeWebRequest(
-    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestResponse>;
-
-  resumeWebRequest(
-    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestResponse>;
-
-  resumeWebRequest(
-    request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ResumeWebRequestResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/ResumeWebRequest',
-        request,
-        metadata || {},
-        this.methodInfoResumeWebRequest,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/ResumeWebRequest',
-    request,
-    metadata || {},
-    this.methodInfoResumeWebRequest);
+    this.methodInfoRunWebRequest);
   }
 
 }
