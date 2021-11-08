@@ -1,0 +1,101 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/sqlqueryrun/v1";
+package github.com.metaprov.modelaapi.services.sqlqueryrun.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+message ListSqlQueriesRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListSqlQueriesResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunList items = 1;
+}
+
+message CreateSqlQueryRunResponse {}
+
+message CreateSqlQueryRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+}
+
+message UpdateSqlQueryRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+}
+
+message UpdateSqlQueryRunResponse {
+
+}
+
+message GetSqlQueryRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetSqlQueryRunResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteSqlQueryRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteSqlQueryRunResponse {
+
+}
+
+
+message RunSqlQueryRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+}
+
+
+message RunSqlQueryRunResponse {
+    
+}
+
+
+service SqlQueryRunService {
+
+    rpc ListSqlQueries(ListSqlQueriesRequest) returns (ListSqlQueriesResponse) {
+        option (google.api.http).get = "/v1/sqlqueryruns";
+    }
+
+    rpc CreateSqlQueryRun(CreateSqlQueryRunRequest) returns (CreateSqlQueryRunResponse) {
+        option (google.api.http) = {
+			post: "/v1/sqlqueryruns"
+			body: "*"
+		};
+    }
+
+    rpc GetSqlQueryRun(GetSqlQueryRunRequest) returns (GetSqlQueryRunResponse) {
+        option (google.api.http).get = "/v1/sqlqueryruns/{name}";
+    }
+
+    rpc UpdateSqlQueryRun(UpdateSqlQueryRunRequest) returns (UpdateSqlQueryRunResponse) {
+        option (google.api.http) = {
+			put: "/v1/sqlqueryruns/{webrequest.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteSqlQueryRun(DeleteSqlQueryRunRequest) returns (DeleteSqlQueryRunResponse) {
+        option (google.api.http).delete = "/v1/sqlqueryruns/{name}";
+    }
+
+
+    rpc RunSqlQueryRun(RunSqlQueryRunRequest) returns (RunSqlQueryRunResponse) {
+        option (google.api.http).post = "/v1/sqlqueryruns/{name}:run";
+    }
+
+    
+
+}

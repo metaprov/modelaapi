@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/webrequest/v1";
+package github.com.metaprov.modelaapi.services.webrequest.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
+
+
+message ListWebRequestRunsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListWebRequestRunsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunList items = 1;
+}
+
+message CreateWebRequestRunResponse {}
+
+message CreateWebRequestRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+}
+
+message UpdateWebRequestRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+}
+
+message UpdateWebRequestRunResponse {
+
+}
+
+message GetWebRequestRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetWebRequestRunResponse {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteWebRequestRunRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteWebRequestRunResponse {
+
+}
+
+
+message RunWebRequestRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+}
+
+
+message RunWebRequestRunResponse {
+    
+}
+
+
+service WebRequestRunService {
+
+    rpc ListWebRequestRuns(ListWebRequestRunsRequest) returns (ListWebRequestRunsResponse) {
+        option (google.api.http).get = "/v1/webeequestruns";
+    }
+
+    rpc CreateWebRequestRun(CreateWebRequestRunRequest) returns (CreateWebRequestRunResponse) {
+        option (google.api.http) = {
+			post: "/v1/webeequestruns"
+			body: "*"
+		};
+    }
+
+    rpc GetWebRequestRun(GetWebRequestRunRequest) returns (GetWebRequestRunResponse) {
+        option (google.api.http).get = "/v1/webeequestruns/{name}";
+    }
+
+    rpc UpdateWebRequestRun(UpdateWebRequestRunRequest) returns (UpdateWebRequestRunResponse) {
+        option (google.api.http) = {
+			put: "/v1/webeequestruns/{webeequestrun.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteWebRequestRun(DeleteWebRequestRunRequest) returns (DeleteWebRequestRunResponse) {
+        option (google.api.http).delete = "/v1/webeequestruns/{name}";
+    }
+
+    rpc RunWebRequestRun(RunWebRequestRunRequest) returns (RunWebRequestRunResponse) {
+        option (google.api.http).post = "/v1/webeequestruns/{name}:run";
+    }
+
+}

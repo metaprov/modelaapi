@@ -387,89 +387,6 @@ message CorrelationSpec {
   optional int32 top = 3;
 }
 
-// CronSqlQuery represent a single sqlquery in the sqlquery store.
-// +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
-// +kubebuilder:subresource:status
-message CronSqlQuery {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional CronSqlQuerySpec spec = 2;
-
-  // +optional
-  optional CronSqlQueryStatus status = 3;
-}
-
-// CronSqlQueryCondition describes the state of a deployment at a certain point.
-message CronSqlQueryCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// CronSqlQueryList contain a list of sqlquery objects
-message CronSqlQueryList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated CronSqlQuery items = 2;
-}
-
-// CronSqlQuerySpec contain the desired state of a CronSqlQuery
-message CronSqlQuerySpec {
-  // The sqlquery owner
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:="no-one"
-  optional string owner = 1;
-
-  // The product version for the sqlquery.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string versionName = 2;
-
-  // Description of the cron query
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string description = 3;
-
-  // The sql template to create.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional SqlQuerySpec template = 4;
-
-  // Schedule for running the sql query
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
-}
-
-// CronSqlQueryStatus defines the observed state of CronSqlQuery
-message CronSqlQueryStatus {
-  // Last Time the query run
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated CronSqlQueryCondition conditions = 2;
-}
-
 // CronWebRequest represent a single sqlquery in the sqlquery store.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -3114,8 +3031,51 @@ message SqlQueryList {
   repeated SqlQuery items = 2;
 }
 
-// SqlQuerySpec contain the desired state of a SqlQuery
-message SqlQuerySpec {
+// SqlQueryRun represent a single sqlquery in the sqlquery store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
+// +kubebuilder:subresource:status
+message SqlQueryRun {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional SqlQueryRunSpec spec = 2;
+
+  // +optional
+  optional SqlQueryRunStatus status = 3;
+}
+
+// SqlQueryRunCondition describes the state of a deployment at a certain point.
+message SqlQueryRunCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// SqlQueryRunList contain a list of sqlquery objects
+message SqlQueryRunList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated SqlQueryRun items = 2;
+}
+
+// SqlQueryRunSpec contain the desired state of a SqlQueryRun
+message SqlQueryRunSpec {
   // The sqlquery owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
@@ -3141,6 +3101,46 @@ message SqlQuerySpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string connectionName = 5;
+}
+
+// SqlQueryRunStatus defines the observed state of SqlQueryRun
+message SqlQueryRunStatus {
+  // Last Time the query run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated SqlQueryRunCondition conditions = 2;
+}
+
+// SqlQuerySpec contain the desired state of a SqlQuery
+message SqlQuerySpec {
+  // The sqlquery owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the sqlquery.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // Description of the cron query
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 3;
+
+  // The sql template to create.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional SqlQuerySpec template = 4;
+
+  // Schedule for running the sql query
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 }
 
 // SqlQueryStatus defines the observed state of SqlQuery

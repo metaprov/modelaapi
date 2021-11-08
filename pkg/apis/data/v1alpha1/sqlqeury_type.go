@@ -12,19 +12,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// CronSqlQueryConditionType is the condition of the sqlquery
-type CronSqlQueryConditionType string
+// SqlQueryConditionType is the condition of the sqlquery
+type SqlQueryConditionType string
 
-/// CronSqlQuery Condition
+/// SqlQuery Condition
 const (
-	CronSqlQueryReady CronSqlQueryConditionType = "Ready"
-	CronSqlQuerySaved CronSqlQueryConditionType = "Saved"
+	SqlQueryReady SqlQueryConditionType = "Ready"
+	SqlQuerySaved SqlQueryConditionType = "Saved"
 )
 
-// CronSqlQueryCondition describes the state of a deployment at a certain point.
-type CronSqlQueryCondition struct {
+// SqlQueryCondition describes the state of a deployment at a certain point.
+type SqlQueryCondition struct {
 	// Type of account condition.
-	Type CronSqlQueryConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=CronSqlQueryConditionType"`
+	Type SqlQueryConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=SqlQueryConditionType"`
 	// Status of the condition, one of True, False, AutoScaler.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -35,7 +35,7 @@ type CronSqlQueryCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// CronSqlQuery represent a single sqlquery in the sqlquery store.
+// SqlQuery represent a single sqlquery in the sqlquery store.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
@@ -43,24 +43,24 @@ type CronSqlQueryCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
 // +kubebuilder:subresource:status
-type CronSqlQuery struct {
+type SqlQuery struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              CronSqlQuerySpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Spec              SqlQuerySpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 	//+optional
-	Status CronSqlQueryStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Status SqlQueryStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
-// CronSqlQueryList contain a list of sqlquery objects
-type CronSqlQueryList struct {
+// SqlQueryList contain a list of sqlquery objects
+type SqlQueryList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []CronSqlQuery `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []SqlQuery `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// CronSqlQuerySpec contain the desired state of a CronSqlQuery
-type CronSqlQuerySpec struct {
+// SqlQuerySpec contain the desired state of a SqlQuery
+type SqlQuerySpec struct {
 	// The sqlquery owner
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
@@ -82,8 +82,8 @@ type CronSqlQuerySpec struct {
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
 }
 
-// CronSqlQueryStatus defines the observed state of CronSqlQuery
-type CronSqlQueryStatus struct {
+// SqlQueryStatus defines the observed state of SqlQuery
+type SqlQueryStatus struct {
 	// Last Time the query run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -91,5 +91,5 @@ type CronSqlQueryStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []CronSqlQueryCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []SqlQueryCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
 }

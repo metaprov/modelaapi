@@ -13,9 +13,9 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &CronSqlQuery{}
+var _ webhook.Defaulter = &SqlQueryRun{}
 
-func (r *CronSqlQuery) Default() {
+func (r *SqlQueryRun) Default() {
 
 	if r.Spec.Owner == nil {
 		r.Spec.Owner = util.StrPtr("")
@@ -28,22 +28,22 @@ func (r *CronSqlQuery) Default() {
 }
 
 // validation
-var _ webhook.Validator = &CronSqlQuery{}
+var _ webhook.Validator = &SqlQueryRun{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *CronSqlQuery) ValidateCreate() error {
+func (recipe *SqlQueryRun) ValidateCreate() error {
 	return recipe.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *CronSqlQuery) ValidateUpdate(old runtime.Object) error {
+func (recipe *SqlQueryRun) ValidateUpdate(old runtime.Object) error {
 	return recipe.validate()
 }
 
-func (recipe *CronSqlQuery) validate() error {
+func (recipe *SqlQueryRun) validate() error {
 	return nil
 }
 
-func (recipe *CronSqlQuery) ValidateDelete() error {
+func (recipe *SqlQueryRun) ValidateDelete() error {
 	return nil
 }

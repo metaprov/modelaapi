@@ -8,13 +8,13 @@ import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 
-message ListSqlQueriesRequest {
+message ListSqlQuerysRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels =3;
 }
 
-message ListSqlQueriesResponse {
+message ListSqlQuerysResponse {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList items = 1;
 }
 
@@ -52,7 +52,6 @@ message DeleteSqlQueryResponse {
 
 }
 
-
 message RunSqlQueryRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
 }
@@ -65,37 +64,35 @@ message RunSqlQueryResponse {
 
 service SqlQueryService {
 
-    rpc ListSqlQueries(ListSqlQueriesRequest) returns (ListSqlQueriesResponse) {
-        option (google.api.http).get = "/v1/apicalls";
+    rpc ListSqlQuerys(ListSqlQuerysRequest) returns (ListSqlQuerysResponse) {
+        option (google.api.http).get = "/v1/sqlqueries";
     }
 
     rpc CreateSqlQuery(CreateSqlQueryRequest) returns (CreateSqlQueryResponse) {
         option (google.api.http) = {
-			post: "/v1/apicalls"
+			post: "/v1/sqlquerys"
 			body: "*"
 		};
     }
 
     rpc GetSqlQuery(GetSqlQueryRequest) returns (GetSqlQueryResponse) {
-        option (google.api.http).get = "/v1/apicalls/{name}";
+        option (google.api.http).get = "/v1/sqlqueries/{name}";
     }
 
     rpc UpdateSqlQuery(UpdateSqlQueryRequest) returns (UpdateSqlQueryResponse) {
         option (google.api.http) = {
-			put: "/v1/apicalls/{webrequest.metadata.name}"
+			put: "/v1/sqlquerys/{sqlquery.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteSqlQuery(DeleteSqlQueryRequest) returns (DeleteSqlQueryResponse) {
-        option (google.api.http).delete = "/v1/apicalls/{name}";
+        option (google.api.http).delete = "/v1/sqlqueries/{name}";
     }
-
 
     rpc RunSqlQuery(RunSqlQueryRequest) returns (RunSqlQueryResponse) {
-        option (google.api.http).post = "/v1/apicalls/{name}:run";
+        option (google.api.http).post = "/v1/sqlqueries/{name}:run";
     }
-
-    
+ 
 
 }

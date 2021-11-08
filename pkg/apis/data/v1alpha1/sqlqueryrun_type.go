@@ -11,19 +11,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// SqlQueryConditionType is the condition of the sqlquery
-type SqlQueryConditionType string
+// SqlQueryRunConditionType is the condition of the sqlquery
+type SqlQueryRunConditionType string
 
-/// SqlQuery Condition
+/// SqlQueryRun Condition
 const (
-	SqlQueryReady SqlQueryConditionType = "Ready"
-	SqlQuerySaved SqlQueryConditionType = "Saved"
+	SqlQueryRunReady SqlQueryRunConditionType = "Ready"
+	SqlQueryRunSaved SqlQueryRunConditionType = "Saved"
 )
 
-// SqlQueryCondition describes the state of a deployment at a certain point.
-type SqlQueryCondition struct {
+// SqlQueryRunCondition describes the state of a deployment at a certain point.
+type SqlQueryRunCondition struct {
 	// Type of account condition.
-	Type SqlQueryConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=SqlQueryConditionType"`
+	Type SqlQueryRunConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=SqlQueryRunConditionType"`
 	// Status of the condition, one of True, False, AutoScaler.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -34,7 +34,7 @@ type SqlQueryCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// SqlQuery represent a single sqlquery in the sqlquery store.
+// SqlQueryRun represent a single sqlquery in the sqlquery store.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
@@ -42,24 +42,24 @@ type SqlQueryCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
 // +kubebuilder:subresource:status
-type SqlQuery struct {
+type SqlQueryRun struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              SqlQuerySpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Spec              SqlQueryRunSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 	//+optional
-	Status SqlQueryStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Status SqlQueryRunStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
-// SqlQueryList contain a list of sqlquery objects
-type SqlQueryList struct {
+// SqlQueryRunList contain a list of sqlquery objects
+type SqlQueryRunList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []SqlQuery `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []SqlQueryRun `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// SqlQuerySpec contain the desired state of a SqlQuery
-type SqlQuerySpec struct {
+// SqlQueryRunSpec contain the desired state of a SqlQueryRun
+type SqlQueryRunSpec struct {
 	// The sqlquery owner
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
@@ -83,8 +83,8 @@ type SqlQuerySpec struct {
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,5,opt,name=connectionName"`
 }
 
-// SqlQueryStatus defines the observed state of SqlQuery
-type SqlQueryStatus struct {
+// SqlQueryRunStatus defines the observed state of SqlQueryRun
+type SqlQueryRunStatus struct {
 	// Last Time the query run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -92,5 +92,5 @@ type SqlQueryStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
 }
