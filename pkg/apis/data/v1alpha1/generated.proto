@@ -26,16 +26,16 @@ message AggregationSpec {
 }
 
 message Column {
-  // FileName specify the name of the attribute
+  // Name is the name of the raw feature.
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
   optional string name = 1;
 
-  // FileName specify the name of the feature, if this attribute comes from a feature
+  // Display Name specify the name of the feature that should be used in reports. If empty, use the raw name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
-  optional string featureName = 2;
+  optional string displayName = 2;
 
   // Type specify the data type of the attribute
   // required
@@ -122,12 +122,6 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool required = 18;
 
-  // Title
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:MaxLength=63
-  // +kubebuilder:validation:Optional
-  optional string title = 19;
-
   // Example
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
@@ -138,15 +132,14 @@ message Column {
   // +kubebuilder:validation:Optional
   optional string externalDocs = 21;
 
-  // Enum
+  // Enum contain the unique values for categorical feature.
   // +kubebuilder:validation:Optional
   repeated string enum = 22;
 
-  // Preprocessor hint constrain the transformer
-  // Default is empty
-  // +kubebuilder:default:=""
+  // For categorical feature , set to true if this is an ordinal feature.
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional string transformerHint = 23;
+  optional bool ordinal = 23;
 
   // Max Items in the data in case of a list
   // +kubebuilder:default:=0
@@ -232,15 +225,20 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool weight = 40;
 
-  // The recommended imputer for a column.
-  // +kubebuilder:default:=none
+  // If True indicate that this feature should always be used in training
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional string imputer = 41;
+  optional bool reserved = 41;
+
+  // The recommended imputer for a column.
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string imputer = 42;
 
   // The recommended scaler for a column.
-  // +kubebuilder:default:=none
+  // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string scaler = 42;
+  optional string scaler = 43;
 }
 
 // Hold the statistical parameters about a single attribute
@@ -297,7 +295,7 @@ message ColumnStatistics {
   optional double importance = 17;
 
   // Count of unique values.
-  optional int32 Unique = 18;
+  optional int32 unique = 18;
 
   // Should this column be ignored, as specified by the user.
   // This value is derived from the schema
@@ -309,29 +307,40 @@ message ColumnStatistics {
 
   // This column has high cardinality and should use high cred encoder
   // The value is set during the profile process.
-  optional bool highCred = 21;
+  optional bool highCardinality = 21;
 
   // This column has high correlation with another feature and should be dropped.
   // The value is set during the profile process.
-  optional bool highCorr = 22;
+  optional bool correlatedWithOtherFeature = 22;
+
+  // Indicate that this feature is not corrolated with
+  optional bool lowCorrelatedWithTarget = 23;
+
+  // This column has high correlation with another feature and should be dropped.
+  // The value is set during the profile process.
+  optional bool constant = 24;
+
+  // This column has high amount of missing pct, and should be removed from consideration.
+  // The value is set during the profile process.
+  optional bool highMissingPct = 25;
 
   // Mark that this column is skewed and would require a power transform
   // If skewness is less than -1 or greater than 1, the distribution is highly skewed.
   // If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
   // If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-  optional bool skew = 23;
+  optional bool skew = 26;
 
   // Completeness is the ratio between non null to null
-  optional double completeness = 24;
+  optional double completeness = 27;
 
   // The ratio between distinct count to total count
-  optional double distinctValueCount = 25;
+  optional double distinctValueCount = 28;
 
   // The ratio between most freq value to total
-  optional double mostFreqValuesRatio = 26;
+  optional double mostFreqValuesRatio = 29;
 
   // Used for text attributes
-  optional double indexOfPeculiarity = 27;
+  optional double indexOfPeculiarity = 30;
 }
 
 message ColumnValidation {
@@ -385,89 +394,6 @@ message CorrelationSpec {
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
   optional int32 top = 3;
-}
-
-// CronWebRequest represent a single sqlquery in the sqlquery store.
-// +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
-// +kubebuilder:subresource:status
-message CronWebRequest {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional CronWebRequestSpec spec = 2;
-
-  // +optional
-  optional CronWebRequestStatus status = 3;
-}
-
-// CronWebRequestCondition describes the state of a deployment at a certain point.
-message CronWebRequestCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// CronWebRequestList contain a list of sqlquery objects
-message CronWebRequestList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated CronWebRequest items = 2;
-}
-
-// CronWebRequestSpec contain the desired state of a CronWebRequest
-message CronWebRequestSpec {
-  // The sqlquery owner
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:="no-one"
-  optional string owner = 1;
-
-  // The product version for the sqlquery.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string versionName = 2;
-
-  // Description of the cron api call
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string description = 3;
-
-  // The sql template to create.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional SqlQuerySpec template = 4;
-
-  // Schedule for running the sql query
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
-}
-
-// CronWebRequestStatus defines the observed state of CronWebRequest
-message CronWebRequestStatus {
-  // Last Time the query run
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated CronWebRequestCondition conditions = 2;
 }
 
 message CsvFileSpec {
@@ -3037,7 +2963,7 @@ message SqlQueryList {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
+// +kubebuilder:resource:path=sqlqueryruns,singular=sqlqueryrun,categories={data,modela}
 // +kubebuilder:subresource:status
 message SqlQueryRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -3201,13 +3127,13 @@ message ValidationSpec {
   repeated FileValidation fileValidations = 5;
 }
 
-// WebRequest represent a single webrequest in the webrequest store.
+// WebRequest represent a single sqlquery in the sqlquery store.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=apicalls,singular=webrequest,categories={data,modela}
+// +kubebuilder:resource:path=webrequests,singular=webrequest,categories={data,modela}
 // +kubebuilder:subresource:status
 message WebRequest {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -3237,15 +3163,58 @@ message WebRequestCondition {
 }
 
 // +kubebuilder:object:root=true
-// WebRequestList contain a list of webrequest objects
+// WebRequestList contain a list of sqlquery objects
 message WebRequestList {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
   repeated WebRequest items = 2;
 }
 
-// WebRequestSpec contain the desired state of a WebRequest
-message WebRequestSpec {
+// WebRequestRun represent a single webrequest in the webrequest store.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=webrequestruns,singular=webrequestrun,categories={data,modela}
+// +kubebuilder:subresource:status
+message WebRequestRun {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional WebRequestRunSpec spec = 2;
+
+  // +optional
+  optional WebRequestRunStatus status = 3;
+}
+
+// WebRequestRunCondition describes the state of a deployment at a certain point.
+message WebRequestRunCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// WebRequestRunList contain a list of webrequest objects
+message WebRequestRunList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated WebRequestRun items = 2;
+}
+
+// WebRequestRunSpec contain the desired state of a WebRequestRun
+message WebRequestRunSpec {
   // The webrequest owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
@@ -3275,6 +3244,46 @@ message WebRequestSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string connectionName = 6;
+}
+
+// WebRequestRunStatus defines the observed state of WebRequestRun
+message WebRequestRunStatus {
+  // Last Time the query run
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated WebRequestRunCondition conditions = 2;
+}
+
+// WebRequestSpec contain the desired state of a WebRequest
+message WebRequestSpec {
+  // The sqlquery owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the sqlquery.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // Description of the cron api call
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string description = 3;
+
+  // The sql template to create.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional SqlQuerySpec template = 4;
+
+  // Schedule for running the sql query
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
 }
 
 // WebRequestStatus defines the observed state of WebRequest

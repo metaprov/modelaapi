@@ -453,15 +453,15 @@ type RecommendationSchema struct {
 }
 
 type Column struct {
-	// FileName specify the name of the attribute
+	// Name is the name of the raw feature.
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:MinLength=1
 	Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
-	// FileName specify the name of the feature, if this attribute comes from a feature
+	// Display Name specify the name of the feature that should be used in reports. If empty, use the raw name
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Optional
-	FeatureName *string `json:"featureName,omitempty" protobuf:"bytes,2,opt,name=featureName"`
+	DisplayName *string `json:"displayName,omitempty" protobuf:"bytes,2,opt,name=displayName"`
 	// Type specify the data type of the attribute
 	// required
 	DataType catalog.DataType `json:"datatype" protobuf:"bytes,3,opt,name=datatype"`
@@ -531,11 +531,6 @@ type Column struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Required *bool `json:"required,omitempty" protobuf:"varint,18,opt,name=required"`
-	// Title
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:MaxLength=63
-	// +kubebuilder:validation:Optional
-	Title *string `json:"title,omitempty" protobuf:"bytes,19,opt,name=title"`
 	// Example
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
@@ -544,14 +539,13 @@ type Column struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ExternalDocs *string `json:"externalDocs,omitempty" protobuf:"bytes,21,opt,name=externalDocs"`
-	// Enum
+	// Enum contain the unique values for categorical feature.
 	// +kubebuilder:validation:Optional
 	Enum []string `json:"enum,omitempty" protobuf:"bytes,22,rep,name=enum"`
-	// Preprocessor hint constrain the transformer
-	// Default is empty
-	// +kubebuilder:default:=""
+	// For categorical feature , set to true if this is an ordinal feature.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	TransformerHint *string `json:"transformerHint,omitempty" protobuf:"bytes,23,opt,name=transformerHint"`
+	Ordinal *bool `json:"ordinal,omitempty" protobuf:"bytes,23,opt,name=ordinal"`
 	// Max Items in the data in case of a list
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
@@ -619,14 +613,18 @@ type Column struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Weight *bool `json:"weight,omitempty" protobuf:"bytes,40,opt,name=weight"`
+	// If True indicate that this feature should always be used in training
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Reserved *bool `json:"reserved,omitempty" protobuf:"bytes,41,opt,name=reserved"`
 	// The recommended imputer for a column.
-	// +kubebuilder:default:=none
+	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,41,opt,name=imputer"`
+	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,42,opt,name=imputer"`
 	// The recommended scaler for a column.
-	// +kubebuilder:default:=none
+	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,42,opt,name=scaler"`
+	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,43,opt,name=scaler"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

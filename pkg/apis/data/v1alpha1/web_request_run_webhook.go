@@ -13,9 +13,9 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &CronWebRequest{}
+var _ webhook.Defaulter = &WebRequestRun{}
 
-func (r *CronWebRequest) Default() {
+func (r *WebRequestRun) Default() {
 
 	if r.Spec.Owner == nil {
 		r.Spec.Owner = util.StrPtr("")
@@ -28,22 +28,22 @@ func (r *CronWebRequest) Default() {
 }
 
 // validation
-var _ webhook.Validator = &CronWebRequest{}
+var _ webhook.Validator = &WebRequestRun{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *CronWebRequest) ValidateCreate() error {
+func (recipe *WebRequestRun) ValidateCreate() error {
 	return recipe.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *CronWebRequest) ValidateUpdate(old runtime.Object) error {
+func (recipe *WebRequestRun) ValidateUpdate(old runtime.Object) error {
 	return recipe.validate()
 }
 
-func (recipe *CronWebRequest) validate() error {
+func (recipe *WebRequestRun) validate() error {
 	return nil
 }
 
-func (recipe *CronWebRequest) ValidateDelete() error {
+func (recipe *WebRequestRun) ValidateDelete() error {
 	return nil
 }

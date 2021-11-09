@@ -50,7 +50,7 @@ protoc \
     github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto \
     github.com/metaprov/modelaapi/services/data/v1/data.proto \
     github.com/metaprov/modelaapi/services/sqlquery/v1/sqlquery.proto \
-    github.com/metaprov/modelaapi/services/cronsqlquery/v1/cronsqlquery.proto \
+    github.com/metaprov/modelaapi/services/sqlqueryrun/v1/sqlqueryrun.proto \
     github.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto \
     github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \
     github.com/metaprov/modelaapi/services/predictiveapp/v1/predictiveapp.proto \

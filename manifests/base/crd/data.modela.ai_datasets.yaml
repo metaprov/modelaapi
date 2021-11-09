@@ -413,26 +413,32 @@ spec:
                       description: Hold the statistical parameters about a single
                         attribute
                       properties:
-                        Unique:
-                          description: Count of unique values.
-                          format: int32
-                          type: integer
                         completeness:
                           description: Completeness is the ratio between non null
                             to null
                           type: number
-                        distinctValueCount:
-                          description: The ratio between distinct count to total count
-                          type: number
-                        highCorr:
+                        constant:
                           description: This column has high correlation with another
                             feature and should be dropped. The value is set during
                             the profile process.
                           type: boolean
-                        highCred:
+                        correlatedWithOtherFeature:
+                          description: This column has high correlation with another
+                            feature and should be dropped. The value is set during
+                            the profile process.
+                          type: boolean
+                        distinctValueCount:
+                          description: The ratio between distinct count to total count
+                          type: number
+                        highCardinality:
                           description: This column has high cardinality and should
                             use high cred encoder The value is set during the profile
                             process.
+                          type: boolean
+                        highMissingPct:
+                          description: This column has high amount of missing pct,
+                            and should be removed from consideration. The value is
+                            set during the profile process.
                           type: boolean
                         ignored:
                           description: Should this column be ignored, as specified
@@ -452,6 +458,10 @@ spec:
                           description: Kurtosis is the standard deviation value of
                             the attribute
                           type: number
+                        lowCorrelatedWithTarget:
+                          description: Indicate that this feature is not corrolated
+                            with
+                          type: boolean
                         max:
                           description: Max is the maximum value of the attribute
                           type: number
@@ -534,6 +544,10 @@ spec:
                           - text-list
                           - useless
                           type: string
+                        unique:
+                          description: Count of unique values.
+                          format: int32
+                          type: integer
                         zeros:
                           description: Zeros is the numbers of zeros in the feature
                           type: number

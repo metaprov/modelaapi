@@ -7,11 +7,12 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// WebRequestConditionType is the condition of the webrequest
+// WebRequestConditionType is the condition of the sqlquery
 type WebRequestConditionType string
 
 /// WebRequest Condition
@@ -34,13 +35,13 @@ type WebRequestCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// WebRequest represent a single webrequest in the webrequest store.
+// WebRequest represent a single sqlquery in the sqlquery store.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=apicalls,singular=webrequest,categories={data,modela}
+// +kubebuilder:resource:path=webrequests,singular=webrequest,categories={data,modela}
 // +kubebuilder:subresource:status
 type WebRequest struct {
 	metav1.TypeMeta   `json:",inline"`
@@ -51,7 +52,7 @@ type WebRequest struct {
 }
 
 // +kubebuilder:object:root=true
-// WebRequestList contain a list of webrequest objects
+// WebRequestList contain a list of sqlquery objects
 type WebRequestList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
@@ -60,30 +61,25 @@ type WebRequestList struct {
 
 // WebRequestSpec contain the desired state of a WebRequest
 type WebRequestSpec struct {
-	// The webrequest owner
+	// The sqlquery owner
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
-	// The product version for the webrequest.
+	// The product version for the sqlquery.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// Comments is a description of the webrequest
-	// +kubebuilder:validation:Optional
+	// Description of the cron api call
 	// +kubebuilder:default:=""
-	// +kubebuilder:validation:MaxLength=512
+	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Type name of the column key, this column is the key column in the entity.
+	// The sql template to create.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	URL *string `json:"text,omitempty" protobuf:"bytes,4,opt,name=query"`
-	// URL Parameters
+	Template SqlQuerySpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
+	// Schedule for running the sql query
 	// +kubebuilder:validation:Optional
-	Parameters map[string]string `json:"parameters,omitempty" protobuf:"bytes,5,opt,name=parameters"`
-	// The name of the time stamp column
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,6,opt,name=connectionName"`
+	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`
 }
 
 // WebRequestStatus defines the observed state of WebRequest

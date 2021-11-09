@@ -40,7 +40,7 @@ type SqlQueryRunCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
+// +kubebuilder:resource:path=sqlqueryruns,singular=sqlqueryrun,categories={data,modela}
 // +kubebuilder:subresource:status
 type SqlQueryRun struct {
 	metav1.TypeMeta   `json:",inline"`

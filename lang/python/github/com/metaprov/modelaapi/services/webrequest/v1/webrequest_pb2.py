@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modelaapi/services/webrequest/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto\x12\x34github.com.metaprov.modelaapi.services.webrequest.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd2\x01\n\x16ListWebRequestsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListWebRequestsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestList\"\x1a\n\x18\x43reateWebRequestResponse\"i\n\x17\x43reateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"i\n\x17UpdateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x1a\n\x18UpdateWebRequestResponse\"7\n\x14GetWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetWebRequestResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteWebRequestResponse\"f\n\x14RunWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x17\n\x15RunWebRequestResponse2\x86\n\n\x11WebRequestService\x12\xc7\x01\n\x0fListWebRequests\x12L.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest\x1aM.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/webeequests\x12\xcd\x01\n\x10\x43reateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/webeequests:\x01*\x12\xc8\x01\n\rGetWebRequest\x12J.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestRequest\x1aK.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/webeequests/{name}\x12\xe8\x01\n\x10UpdateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/webeequests/{webeequest.metadata.name}:\x01*\x12\xd1\x01\n\x10\x44\x65leteWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/webeequests/{name}\x12\xcc\x01\n\rRunWebRequest\x12J.github.com.metaprov.modelaapi.services.webrequest.v1.RunWebRequestRequest\x1aK.github.com.metaprov.modelaapi.services.webrequest.v1.RunWebRequestResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/v1/webeequests/{name}:runB6Z4github.com/metaprov/modelaapi/services/webrequest/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto\x12\x34github.com.metaprov.modelaapi.services.webrequest.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd2\x01\n\x16ListWebRequestsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListWebRequestsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestList\"\x1a\n\x18\x43reateWebRequestResponse\"i\n\x17\x43reateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"i\n\x17UpdateWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x1a\n\x18UpdateWebRequestResponse\"7\n\x14GetWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetWebRequestResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteWebRequestRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteWebRequestResponse\"f\n\x14RunWebRequestRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest\"\x17\n\x15RunWebRequestResponse2\x86\n\n\x11WebRequestService\x12\xc7\x01\n\x0fListWebRequests\x12L.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsRequest\x1aM.github.com.metaprov.modelaapi.services.webrequest.v1.ListWebRequestsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/webrequests\x12\xcd\x01\n\x10\x43reateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.CreateWebRequestResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/webrequests:\x01*\x12\xc8\x01\n\rGetWebRequest\x12J.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestRequest\x1aK.github.com.metaprov.modelaapi.services.webrequest.v1.GetWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/webrequests/{name}\x12\xe8\x01\n\x10UpdateWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.UpdateWebRequestResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/webrequests/{prediction.metadata.name}:\x01*\x12\xd1\x01\n\x10\x44\x65leteWebRequest\x12M.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestRequest\x1aN.github.com.metaprov.modelaapi.services.webrequest.v1.DeleteWebRequestResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/webrequests/{name}\x12\xcc\x01\n\rRunWebRequest\x12J.github.com.metaprov.modelaapi.services.webrequest.v1.RunWebRequestRequest\x1aK.github.com.metaprov.modelaapi.services.webrequest.v1.RunWebRequestResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x1a/v1/webrequests/{name}:runB6Z4github.com/metaprov/modelaapi/services/webrequest/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -590,7 +590,7 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTWEBREQUESTSREQUEST,
     output_type=_LISTWEBREQUESTSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\021\022\017/v1/webeequests',
+    serialized_options=b'\202\323\344\223\002\021\022\017/v1/webrequests',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -600,7 +600,7 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEWEBREQUESTREQUEST,
     output_type=_CREATEWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\024\"\017/v1/webeequests:\001*',
+    serialized_options=b'\202\323\344\223\002\024\"\017/v1/webrequests:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -610,7 +610,7 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETWEBREQUESTREQUEST,
     output_type=_GETWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\022\026/v1/webeequests/{name}',
+    serialized_options=b'\202\323\344\223\002\030\022\026/v1/webrequests/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -620,7 +620,7 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEWEBREQUESTREQUEST,
     output_type=_UPDATEWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002/\032*/v1/webeequests/{webeequest.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002/\032*/v1/webrequests/{prediction.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -630,7 +630,7 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEWEBREQUESTREQUEST,
     output_type=_DELETEWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030*\026/v1/webeequests/{name}',
+    serialized_options=b'\202\323\344\223\002\030*\026/v1/webrequests/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -640,7 +640,7 @@ _WEBREQUESTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_RUNWEBREQUESTREQUEST,
     output_type=_RUNWEBREQUESTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\034\"\032/v1/webeequests/{name}:run',
+    serialized_options=b'\202\323\344\223\002\034\"\032/v1/webrequests/{name}:run',
     create_key=_descriptor._internal_create_key,
   ),
 ])

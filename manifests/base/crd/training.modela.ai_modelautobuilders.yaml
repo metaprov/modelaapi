@@ -374,12 +374,20 @@ spec:
                               description: Description is a description of the feature
                               maxLength: 63
                               type: string
+                            displayName:
+                              default: ""
+                              description: Display Name specify the name of the feature
+                                that should be used in reports. If empty, use the
+                                raw name
+                              maxLength: 63
+                              type: string
                             driftThreshold:
                               description: Drift treshold is the treshold for drift
                                 detection.
                               type: number
                             enum:
-                              description: Enum
+                              description: Enum contain the unique values for categorical
+                                feature.
                               items:
                                 type: string
                               type: array
@@ -397,12 +405,6 @@ spec:
                             externalDocs:
                               default: ""
                               description: External Docs
-                              type: string
-                            featureName:
-                              default: ""
-                              description: FileName specify the name of the feature,
-                                if this attribute comes from a feature
-                              maxLength: 63
                               type: string
                             fold:
                               default: false
@@ -442,7 +444,7 @@ spec:
                                 be ignored when building the model default is false
                               type: boolean
                             imputer:
-                              default: none
+                              default: auto
                               description: The recommended imputer for a column.
                               enum:
                               - remove-rows-with-missing-values
@@ -515,7 +517,7 @@ spec:
                               minimum: 0
                               type: integer
                             name:
-                              description: FileName specify the name of the attribute
+                              description: Name is the name of the raw feature.
                               maxLength: 63
                               minLength: 1
                               type: string
@@ -523,6 +525,11 @@ spec:
                               default: false
                               description: Nullable indicates if a column can contain
                                 string Default is false
+                              type: boolean
+                            ordinal:
+                              default: false
+                              description: For categorical feature , set to true if
+                                this is an ordinal feature.
                               type: boolean
                             pattern:
                               default: ""
@@ -553,8 +560,13 @@ spec:
                               default: false
                               description: Required
                               type: boolean
+                            reserved:
+                              default: false
+                              description: If True indicate that this feature should
+                                always be used in training
+                              type: boolean
                             scaler:
-                              default: none
+                              default: auto
                               description: The recommended scaler for a column.
                               enum:
                               - standard
@@ -580,16 +592,6 @@ spec:
                                 as the time axis in time series forecast Default is
                                 false.
                               type: boolean
-                            title:
-                              default: ""
-                              description: Title
-                              maxLength: 63
-                              type: string
-                            transformerHint:
-                              default: ""
-                              description: Preprocessor hint constrain the transformer
-                                Default is empty
-                              type: string
                             uniqueItems:
                               default: false
                               description: Enforce that all the items in the list

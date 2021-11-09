@@ -278,7 +278,7 @@ type ColumnStatistics struct {
 	// The feature importance
 	Importance float64 `json:"importance,omitempty" protobuf:"bytes,17,opt,name=importance"`
 	// Count of unique values.
-	Unique int32 `json:"Unique,omitempty" protobuf:"varint,18,opt,name=Unique"`
+	Unique int32 `json:"unique,omitempty" protobuf:"varint,18,opt,name=unique"`
 	// Should this column be ignored, as specified by the user.
 	// This value is derived from the schema
 	Ignored bool `json:"ignored,omitempty" protobuf:"varint,19,opt,name=ignored"`
@@ -287,23 +287,31 @@ type ColumnStatistics struct {
 	Nullable bool `json:"nullable,omitempty" protobuf:"varint,20,opt,name=nullable"`
 	// This column has high cardinality and should use high cred encoder
 	// The value is set during the profile process.
-	HighCred bool `json:"highCred,omitempty" protobuf:"varint,21,opt,name=highCred"`
+	HighCardinality bool `json:"highCardinality,omitempty" protobuf:"varint,21,opt,name=highCardinality"`
 	// This column has high correlation with another feature and should be dropped.
 	// The value is set during the profile process.
-	HighCorr bool `json:"highCorr,omitempty" protobuf:"varint,22,opt,name=highCorr"`
+	CorrelatedWithOtherFeature bool `json:"correlatedWithOtherFeature,omitempty" protobuf:"varint,22,opt,name=correlatedWithOtherFeature"`
+	// Indicate that this feature is not corrolated with
+	LowCorrelatedWithTarget bool `json:"lowCorrelatedWithTarget,omitempty" protobuf:"varint,23,opt,name=lowCorrelatedWithTarget"`
+	// This column has high correlation with another feature and should be dropped.
+	// The value is set during the profile process.
+	Constant bool `json:"constant,omitempty" protobuf:"varint,24,opt,name=constant"`
+	// This column has high amount of missing pct, and should be removed from consideration.
+	// The value is set during the profile process.
+	HighMissingPct bool `json:"highMissingPct,omitempty" protobuf:"varint,25,opt,name=highMissingPct"`
 	// Mark that this column is skewed and would require a power transform
 	//If skewness is less than -1 or greater than 1, the distribution is highly skewed.
 	//If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
 	//If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-	Skew bool `json:"skew,omitempty" protobuf:"varint,23,opt,name=skew"`
+	Skew bool `json:"skew,omitempty" protobuf:"varint,26,opt,name=skew"`
 	// Completeness is the ratio between non null to null
-	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,24,opt,name=completeness"`
+	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,27,opt,name=completeness"`
 	// The ratio between distinct count to total count
-	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,25,opt,name=distinctValueCount"`
+	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,28,opt,name=distinctValueCount"`
 	// The ratio between most freq value to total
-	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,26,opt,name=mostFreqValuesRatio"`
+	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,29,opt,name=mostFreqValuesRatio"`
 	// Used for text attributes
-	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,27,opt,name=indexOfPeculiarity"`
+	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,30,opt,name=indexOfPeculiarity"`
 }
 
 // DatasetTemplate is  used to generate new datasets

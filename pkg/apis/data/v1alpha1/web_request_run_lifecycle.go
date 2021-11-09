@@ -17,22 +17,22 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (r *CronWebRequest) SetupWebhookWithManager(mgr ctrl.Manager) error {
+func (r *WebRequestRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
 		For(r).
 		Complete()
 }
 
-func (r *CronWebRequest) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
-func (r *CronWebRequest) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
-func (r *CronWebRequest) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
+func (r *WebRequestRun) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
+func (r *WebRequestRun) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
+func (r *WebRequestRun) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
 
 //==============================================================================
 // Validate
 //==============================================================================
 
 // Merge or update condition
-func (r *CronWebRequest) CreateOrUpdateCond(cond CronWebRequestCondition) {
+func (r *WebRequestRun) CreateOrUpdateCond(cond WebRequestRunCondition) {
 	i := r.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
@@ -51,7 +51,7 @@ func (r *CronWebRequest) CreateOrUpdateCond(cond CronWebRequestCondition) {
 	r.Status.Conditions[i] = current
 }
 
-func (r *CronWebRequest) GetCondIdx(t CronWebRequestConditionType) int {
+func (r *WebRequestRun) GetCondIdx(t WebRequestRunConditionType) int {
 	for i, v := range r.Status.Conditions {
 		if v.Type == t {
 			return i
@@ -60,14 +60,14 @@ func (r *CronWebRequest) GetCondIdx(t CronWebRequestConditionType) int {
 	return -1
 }
 
-func (r *CronWebRequest) GetCond(t CronWebRequestConditionType) CronWebRequestCondition {
+func (r *WebRequestRun) GetCond(t WebRequestRunConditionType) WebRequestRunCondition {
 	for _, v := range r.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
 	}
 	// if we did not find the condition, we return an unknown object
-	return CronWebRequestCondition{
+	return WebRequestRunCondition{
 		Type:    t,
 		Status:  v1.ConditionUnknown,
 		Reason:  "",
@@ -76,55 +76,55 @@ func (r *CronWebRequest) GetCond(t CronWebRequestConditionType) CronWebRequestCo
 
 }
 
-func (r *CronWebRequest) IsReady() bool {
-	return r.GetCond(CronWebRequestReady).Status == v1.ConditionTrue
+func (r *WebRequestRun) IsReady() bool {
+	return r.GetCond(WebRequestRunReady).Status == v1.ConditionTrue
 }
 
-func (r *CronWebRequest) Populate(name string) {
+func (r *WebRequestRun) Populate(name string) {
 
 	r.ObjectMeta = metav1.ObjectMeta{
 		Name:      "iris",
 		Namespace: "modela-data",
 	}
 
-	r.Spec = CronWebRequestSpec{
+	r.Spec = WebRequestRunSpec{
 		VersionName: util.StrPtr("iris-0.0.1"),
 	}
 }
 
-func (r *CronWebRequest) ToYamlFile() ([]byte, error) {
+func (r *WebRequestRun) ToYamlFile() ([]byte, error) {
 	return yaml.Marshal(r)
 }
 
-func (r *CronWebRequest) IsInCond(ct CronWebRequestConditionType) bool {
+func (r *WebRequestRun) IsInCond(ct WebRequestRunConditionType) bool {
 	current := r.GetCond(ct)
 	return current.Status == v1.ConditionTrue
 }
 
-func (r *CronWebRequest) PrintConditions() {
+func (r *WebRequestRun) PrintConditions() {
 	for _, v := range r.Status.Conditions {
 		fmt.Println(v)
 	}
 }
 
-func (r *CronWebRequest) MarkReady() {
-	r.CreateOrUpdateCond(CronWebRequestCondition{
-		Type:   CronWebRequestReady,
+func (r *WebRequestRun) MarkReady() {
+	r.CreateOrUpdateCond(WebRequestRunCondition{
+		Type:   WebRequestRunReady,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *CronWebRequest) Deleted() bool {
+func (r *WebRequestRun) Deleted() bool {
 	return !r.ObjectMeta.DeletionTimestamp.IsZero()
 }
 
-func (r *CronWebRequest) MarkSaved() {
-	r.CreateOrUpdateCond(CronWebRequestCondition{
-		Type:   CronWebRequestSaved,
+func (r *WebRequestRun) MarkSaved() {
+	r.CreateOrUpdateCond(WebRequestRunCondition{
+		Type:   WebRequestRunSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *CronWebRequest) IsSaved() bool {
-	return r.GetCond(CronWebRequestSaved).Status == v1.ConditionTrue
+func (r *WebRequestRun) IsSaved() bool {
+	return r.GetCond(WebRequestRunSaved).Status == v1.ConditionTrue
 }
