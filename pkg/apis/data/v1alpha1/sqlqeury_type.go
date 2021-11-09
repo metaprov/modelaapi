@@ -76,7 +76,7 @@ type SqlQuerySpec struct {
 	// The sql template to create.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Template SqlQuerySpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
+	Template SqlQueryRunSpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// Schedule for running the sql query
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,5,opt,name=schedule"`

@@ -78,6 +78,11 @@ spec:
           status:
             description: SqlQueryRunStatus defines the observed state of SqlQueryRun
             properties:
+              completedAt:
+                default: ""
+                description: End time for the query
+                format: date-time
+                type: string
               conditions:
                 items:
                   description: SqlQueryRunCondition describes the state of a deployment
@@ -106,9 +111,9 @@ spec:
                   - type
                   type: object
                 type: array
-              lastRun:
+              startedAt:
                 default: ""
-                description: Last Time the query run
+                description: Start time for the query
                 format: date-time
                 type: string
             type: object

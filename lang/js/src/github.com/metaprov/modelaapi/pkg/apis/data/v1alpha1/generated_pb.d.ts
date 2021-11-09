@@ -4696,10 +4696,15 @@ export namespace SqlQueryRunSpec {
 }
 
 export class SqlQueryRunStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): SqlQueryRunStatus;
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
+  hasStartedat(): boolean;
+  clearStartedat(): SqlQueryRunStatus;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): SqlQueryRunStatus;
 
   getConditionsList(): Array<SqlQueryRunCondition>;
   setConditionsList(value: Array<SqlQueryRunCondition>): SqlQueryRunStatus;
@@ -4716,7 +4721,8 @@ export class SqlQueryRunStatus extends jspb.Message {
 
 export namespace SqlQueryRunStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<SqlQueryRunCondition.AsObject>,
   }
 }
@@ -4731,8 +4737,8 @@ export class SqlQuerySpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): SqlQuerySpec;
 
-  getTemplate(): SqlQuerySpec | undefined;
-  setTemplate(value?: SqlQuerySpec): SqlQuerySpec;
+  getTemplate(): SqlQueryRunSpec | undefined;
+  setTemplate(value?: SqlQueryRunSpec): SqlQuerySpec;
   hasTemplate(): boolean;
   clearTemplate(): SqlQuerySpec;
 
@@ -4754,7 +4760,7 @@ export namespace SqlQuerySpec {
     owner: string,
     versionname: string,
     description: string,
-    template?: SqlQuerySpec.AsObject,
+    template?: SqlQueryRunSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }

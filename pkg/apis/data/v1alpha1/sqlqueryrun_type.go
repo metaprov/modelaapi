@@ -85,12 +85,16 @@ type SqlQueryRunSpec struct {
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
 type SqlQueryRunStatus struct {
-	// Last Time the query run
+	// Start time for the query
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,1,opt,name=startedAt"`
+	// End time for the query
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

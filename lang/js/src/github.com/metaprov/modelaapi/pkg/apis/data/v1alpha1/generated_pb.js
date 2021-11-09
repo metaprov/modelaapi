@@ -47096,7 +47096,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.proto
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.repeatedFields_ = [3];
 
 
 
@@ -47129,7 +47129,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    startedat: (f = msg.getStartedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition.toObject, includeInstance)
   };
@@ -47171,9 +47172,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.des
     case 1:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastrun(value);
+      msg.setStartedat(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setCompletedat(value);
+      break;
+    case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -47207,7 +47213,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLastrun();
+  f = message.getStartedat();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -47215,10 +47221,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.ser
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = message.getCompletedat();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition.serializeBinaryToWriter
     );
@@ -47227,10 +47241,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.ser
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.getLastrun = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.getStartedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
@@ -47240,7 +47254,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.setLastrun = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.setStartedat = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -47249,8 +47263,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.clearLastrun = function() {
-  return this.setLastrun(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.clearStartedat = function() {
+  return this.setStartedat(undefined);
 };
 
 
@@ -47258,18 +47272,55 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.hasLastrun = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.hasStartedat = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated SqlQueryRunCondition conditions = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.getCompletedat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.setCompletedat = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.clearCompletedat = function() {
+  return this.setCompletedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.hasCompletedat = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated SqlQueryRunCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, 3));
 };
 
 
@@ -47278,7 +47329,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -47288,7 +47339,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, opt_index);
 };
 
 
@@ -47336,7 +47387,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.toObject
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.toObject(includeInstance, f),
+    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
 
@@ -47387,8 +47438,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.deserial
       msg.setDescription(value);
       break;
     case 4:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
     case 5:
@@ -47451,7 +47502,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.serializ
     writer.writeMessage(
       4,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.serializeBinaryToWriter
     );
   }
   f = message.getSchedule();
@@ -47574,17 +47625,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.prototyp
 
 
 /**
- * optional SqlQuerySpec template = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec}
+ * optional SqlQueryRunSpec template = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.prototype.getTemplate = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec, 4));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec, 4));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.prototype.setTemplate = function(value) {

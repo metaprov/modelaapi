@@ -3031,15 +3031,20 @@ message SqlQueryRunSpec {
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
 message SqlQueryRunStatus {
-  // Last Time the query run
+  // Start time for the query
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 1;
+
+  // End time for the query
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryRunCondition conditions = 2;
+  repeated SqlQueryRunCondition conditions = 3;
 }
 
 // SqlQuerySpec contain the desired state of a SqlQuery
@@ -3062,7 +3067,7 @@ message SqlQuerySpec {
   // The sql template to create.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional SqlQuerySpec template = 4;
+  optional SqlQueryRunSpec template = 4;
 
   // Schedule for running the sql query
   // +kubebuilder:validation:Optional
