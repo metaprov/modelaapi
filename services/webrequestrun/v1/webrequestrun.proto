@@ -4,7 +4,7 @@ option go_package = "github.com/metaprov/modelaapi/services/webrequestrun/v1";
 package github.com.metaprov.modelaapi.services.webrequestrun.v1;
 
 
-import "google/api/annotations.proto";
+import "google/api/annotations.proto"; 
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 
