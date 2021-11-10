@@ -4,25 +4,25 @@ import * as google_api_annotations_pb from '../../../../../../google/api/annotat
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
 
-export class ListSqlQueriesRequest extends jspb.Message {
+export class ListSqlQueryRunsRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListSqlQueriesRequest;
+  setNamespace(value: string): ListSqlQueryRunsRequest;
 
   getName(): string;
-  setName(value: string): ListSqlQueriesRequest;
+  setName(value: string): ListSqlQueryRunsRequest;
 
   getLabelsMap(): jspb.Map<string, string>;
-  clearLabelsMap(): ListSqlQueriesRequest;
+  clearLabelsMap(): ListSqlQueryRunsRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListSqlQueriesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListSqlQueriesRequest): ListSqlQueriesRequest.AsObject;
-  static serializeBinaryToWriter(message: ListSqlQueriesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListSqlQueriesRequest;
-  static deserializeBinaryFromReader(message: ListSqlQueriesRequest, reader: jspb.BinaryReader): ListSqlQueriesRequest;
+  toObject(includeInstance?: boolean): ListSqlQueryRunsRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSqlQueryRunsRequest): ListSqlQueryRunsRequest.AsObject;
+  static serializeBinaryToWriter(message: ListSqlQueryRunsRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSqlQueryRunsRequest;
+  static deserializeBinaryFromReader(message: ListSqlQueryRunsRequest, reader: jspb.BinaryReader): ListSqlQueryRunsRequest;
 }
 
-export namespace ListSqlQueriesRequest {
+export namespace ListSqlQueryRunsRequest {
   export type AsObject = {
     namespace: string,
     name: string,
@@ -30,21 +30,21 @@ export namespace ListSqlQueriesRequest {
   }
 }
 
-export class ListSqlQueriesResponse extends jspb.Message {
+export class ListSqlQueryRunsResponse extends jspb.Message {
   getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList): ListSqlQueriesResponse;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList): ListSqlQueryRunsResponse;
   hasItems(): boolean;
-  clearItems(): ListSqlQueriesResponse;
+  clearItems(): ListSqlQueryRunsResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListSqlQueriesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListSqlQueriesResponse): ListSqlQueriesResponse.AsObject;
-  static serializeBinaryToWriter(message: ListSqlQueriesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListSqlQueriesResponse;
-  static deserializeBinaryFromReader(message: ListSqlQueriesResponse, reader: jspb.BinaryReader): ListSqlQueriesResponse;
+  toObject(includeInstance?: boolean): ListSqlQueryRunsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListSqlQueryRunsResponse): ListSqlQueryRunsResponse.AsObject;
+  static serializeBinaryToWriter(message: ListSqlQueryRunsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListSqlQueryRunsResponse;
+  static deserializeBinaryFromReader(message: ListSqlQueryRunsResponse, reader: jspb.BinaryReader): ListSqlQueryRunsResponse;
 }
 
-export namespace ListSqlQueriesResponse {
+export namespace ListSqlQueryRunsResponse {
   export type AsObject = {
     items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList.AsObject,
   }

@@ -8,13 +8,13 @@ import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 
-message ListSqlQueriesRequest {
+message ListSqlQueryRunsRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels =3;
 }
 
-message ListSqlQueriesResponse {
+message ListSqlQueryRunsResponse {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunList items = 1;
 }
 
@@ -65,7 +65,7 @@ message RunSqlQueryRunResponse {
 
 service SqlQueryRunService {
 
-    rpc ListSqlQueries(ListSqlQueriesRequest) returns (ListSqlQueriesResponse) {
+    rpc ListSqlQuerieRuns(ListSqlQueryRunsRequest) returns (ListSqlQueryRunsResponse) {
         option (google.api.http).get = "/v1/sqlqueryruns";
     }
 
