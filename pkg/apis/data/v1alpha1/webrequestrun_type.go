@@ -77,23 +77,43 @@ type WebRequestRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	URL *string `json:"text,omitempty" protobuf:"bytes,4,opt,name=query"`
-	// URL Parameters
-	// +kubebuilder:validation:Optional
-	Parameters map[string]string `json:"parameters,omitempty" protobuf:"bytes,5,opt,name=parameters"`
-	// The name of the time stamp column
+	// HTTP Verb to use
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,6,opt,name=connectionName"`
+	Verb *string `json:"verb,omitempty" protobuf:"bytes,5,opt,name=verb"`
+	// URL Parameters
+	// +kubebuilder:validation:Optional
+	Parameters map[string]string `json:"parameters,omitempty" protobuf:"bytes,6,opt,name=parameters"`
+	// The Http headers to use
+	// +kubebuilder:validation:Optional
+	Headers map[string]string `json:"headers,omitempty" protobuf:"bytes,7,opt,name=headers"`
+	// The name of the connection to the data source.
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
+	// The SQL statement timeout
+	// +kubebuilder:default:=3600
+	// +kubebuilder:validation:Optional
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,9,opt,name=timeout"`
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
 type WebRequestRunStatus struct {
-	// Last Time the query run
-	// +kubebuilder:default:=""
+	// Start time for the query
 	// +kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,1,opt,name=startedAt"`
+	// End time for the query
+	// +kubebuilder:validation:Optional
+	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
+	// The result of the HTTP execution
+	// +kubebuilder:validation:Optional
+	HttpResultCode int32 `json:"httpResultCode,omitempty" protobuf:"bytes,3,opt,name=httpResultCode"`
+	// The location of the result
+	ResultLocation DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,4,opt,name=resultLocation"`
+	// The last error that occur as a result of the execution
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,5,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }

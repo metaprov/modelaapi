@@ -25,6 +25,7 @@ const (
 	FeaturePipelineKind     KindName = "FeaturePipeline"
 	FeaturePipelineRunKind  KindName = "FeaturePipelineRun"
 	FeaturesetKind          KindName = "Featureset"
+	FeatureHistogram        KindName = "FeatureHistogram"
 	LabelingPipelineKind    KindName = "LabelingPipeline"
 	LabelingPipelineRunKind KindName = "LabelingPipelineRun"
 	RecipeKind              KindName = "Recipe"
@@ -43,6 +44,8 @@ const (
 
 	// infra
 	AccountKind        KindName = "Account"
+	AlertKind          KindName = "Alert"
+	ApiTokenKind       KindName = "ApiToken"
 	ConnectionKind     KindName = "Connection"
 	CommitKind         KindName = "Commit"
 	LabKind            KindName = "Lab"
@@ -53,11 +56,7 @@ const (
 	VirtualBucketKind  KindName = "Bucket"
 	VirtualClusterKind KindName = "VirtualCluster"
 	VirtualVolumeKind  KindName = "VirtualVolume"
-	ApiTokenKind       KindName = "ApiToken"
-	AlertKind          KindName = "Alert"
 	AttachmentKind     KindName = "AttachmentKind"
-	TodoKind           KindName = "Todo"
-	MeetingKind        KindName = "Meeting"
 
 	// Training kind
 	ModelKind            KindName = "Model"
@@ -75,6 +74,8 @@ const (
 	ReviewKind     KindName = "Review"
 	PostMortemKind KindName = "PostMortem"
 	RunBookKind    KindName = "RunBook"
+	TodoKind       KindName = "Todo"
+	MeetingKind    KindName = "Meeting"
 
 	// k8s core kinds
 	SecretKind     KindName = "Secret"

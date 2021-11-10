@@ -3023,10 +3023,15 @@ message SqlQueryRunSpec {
   // +kubebuilder:validation:Optional
   optional string query = 4;
 
-  // The name of the time stamp column
+  // The name of the connection to the SQL data source
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string connectionName = 5;
+
+  // The SQL statement timeout
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional int32 timeout = 6;
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -3041,10 +3046,16 @@ message SqlQueryRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
 
+  // The location of the result
+  optional DataLocation resultLocation = 3;
+
+  // The last error that occur as a result of the execution
+  optional string lastError = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryRunCondition conditions = 3;
+  repeated SqlQueryRunCondition conditions = 5;
 }
 
 // SqlQuerySpec contain the desired state of a SqlQuery
@@ -3241,27 +3252,54 @@ message WebRequestRunSpec {
   // +kubebuilder:validation:Optional
   optional string query = 4;
 
-  // URL Parameters
-  // +kubebuilder:validation:Optional
-  map<string, string> parameters = 5;
-
-  // The name of the time stamp column
+  // HTTP Verb to use
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string connectionName = 6;
+  optional string verb = 5;
+
+  // URL Parameters
+  // +kubebuilder:validation:Optional
+  map<string, string> parameters = 6;
+
+  // The Http headers to use
+  // +kubebuilder:validation:Optional
+  map<string, string> headers = 7;
+
+  // The name of the connection to the data source.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string connectionName = 8;
+
+  // The SQL statement timeout
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional int32 timeout = 9;
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
 message WebRequestRunStatus {
-  // Last Time the query run
-  // +kubebuilder:default:=""
+  // Start time for the query
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 1;
+
+  // End time for the query
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
+
+  // The result of the HTTP execution
+  // +kubebuilder:validation:Optional
+  optional int32 httpResultCode = 3;
+
+  // The location of the result
+  optional DataLocation resultLocation = 4;
+
+  // The last error that occur as a result of the execution
+  optional string lastError = 5;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestRunCondition conditions = 2;
+  repeated WebRequestRunCondition conditions = 6;
 }
 
 // WebRequestSpec contain the desired state of a WebRequest
@@ -3284,7 +3322,7 @@ message WebRequestSpec {
   // The sql template to create.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional SqlQuerySpec template = 4;
+  optional WebRequestRunSpec template = 4;
 
   // Schedule for running the sql query
   // +kubebuilder:validation:Optional

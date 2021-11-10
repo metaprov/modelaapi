@@ -4677,6 +4677,9 @@ export class SqlQueryRunSpec extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): SqlQueryRunSpec;
 
+  getTimeout(): number;
+  setTimeout(value: number): SqlQueryRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SqlQueryRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SqlQueryRunSpec): SqlQueryRunSpec.AsObject;
@@ -4692,6 +4695,7 @@ export namespace SqlQueryRunSpec {
     description: string,
     query: string,
     connectionname: string,
+    timeout: number,
   }
 }
 
@@ -4705,6 +4709,14 @@ export class SqlQueryRunStatus extends jspb.Message {
   setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
   hasCompletedat(): boolean;
   clearCompletedat(): SqlQueryRunStatus;
+
+  getResultlocation(): DataLocation | undefined;
+  setResultlocation(value?: DataLocation): SqlQueryRunStatus;
+  hasResultlocation(): boolean;
+  clearResultlocation(): SqlQueryRunStatus;
+
+  getLasterror(): string;
+  setLasterror(value: string): SqlQueryRunStatus;
 
   getConditionsList(): Array<SqlQueryRunCondition>;
   setConditionsList(value: Array<SqlQueryRunCondition>): SqlQueryRunStatus;
@@ -4723,6 +4735,8 @@ export namespace SqlQueryRunStatus {
   export type AsObject = {
     startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    resultlocation?: DataLocation.AsObject,
+    lasterror: string,
     conditionsList: Array<SqlQueryRunCondition.AsObject>,
   }
 }
@@ -5082,11 +5096,20 @@ export class WebRequestRunSpec extends jspb.Message {
   getQuery(): string;
   setQuery(value: string): WebRequestRunSpec;
 
+  getVerb(): string;
+  setVerb(value: string): WebRequestRunSpec;
+
   getParametersMap(): jspb.Map<string, string>;
   clearParametersMap(): WebRequestRunSpec;
 
+  getHeadersMap(): jspb.Map<string, string>;
+  clearHeadersMap(): WebRequestRunSpec;
+
   getConnectionname(): string;
   setConnectionname(value: string): WebRequestRunSpec;
+
+  getTimeout(): number;
+  setTimeout(value: number): WebRequestRunSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebRequestRunSpec.AsObject;
@@ -5102,16 +5125,35 @@ export namespace WebRequestRunSpec {
     versionname: string,
     description: string,
     query: string,
+    verb: string,
     parametersMap: Array<[string, string]>,
+    headersMap: Array<[string, string]>,
     connectionname: string,
+    timeout: number,
   }
 }
 
 export class WebRequestRunStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): WebRequestRunStatus;
+  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
+  hasStartedat(): boolean;
+  clearStartedat(): WebRequestRunStatus;
+
+  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
+  hasCompletedat(): boolean;
+  clearCompletedat(): WebRequestRunStatus;
+
+  getHttpresultcode(): number;
+  setHttpresultcode(value: number): WebRequestRunStatus;
+
+  getResultlocation(): DataLocation | undefined;
+  setResultlocation(value?: DataLocation): WebRequestRunStatus;
+  hasResultlocation(): boolean;
+  clearResultlocation(): WebRequestRunStatus;
+
+  getLasterror(): string;
+  setLasterror(value: string): WebRequestRunStatus;
 
   getConditionsList(): Array<WebRequestRunCondition>;
   setConditionsList(value: Array<WebRequestRunCondition>): WebRequestRunStatus;
@@ -5128,7 +5170,11 @@ export class WebRequestRunStatus extends jspb.Message {
 
 export namespace WebRequestRunStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    httpresultcode: number,
+    resultlocation?: DataLocation.AsObject,
+    lasterror: string,
     conditionsList: Array<WebRequestRunCondition.AsObject>,
   }
 }
@@ -5143,8 +5189,8 @@ export class WebRequestSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): WebRequestSpec;
 
-  getTemplate(): SqlQuerySpec | undefined;
-  setTemplate(value?: SqlQuerySpec): WebRequestSpec;
+  getTemplate(): WebRequestRunSpec | undefined;
+  setTemplate(value?: WebRequestRunSpec): WebRequestSpec;
   hasTemplate(): boolean;
   clearTemplate(): WebRequestSpec;
 
@@ -5166,7 +5212,7 @@ export namespace WebRequestSpec {
     owner: string,
     versionname: string,
     description: string,
-    template?: SqlQuerySpec.AsObject,
+    template?: WebRequestRunSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }

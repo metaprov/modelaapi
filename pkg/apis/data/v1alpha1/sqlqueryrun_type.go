@@ -77,10 +77,14 @@ type SqlQueryRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Query *string `json:"text,omitempty" protobuf:"bytes,4,opt,name=query"`
-	// The name of the time stamp column
+	// The name of the connection to the SQL data source
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,5,opt,name=connectionName"`
+	// The SQL statement timeout
+	// +kubebuilder:default:=3600
+	// +kubebuilder:validation:Optional
+	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,6,opt,name=timeout"`
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -93,8 +97,12 @@ type SqlQueryRunStatus struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
+	// The location of the result
+	ResultLocation DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,3,opt,name=resultLocation"`
+	// The last error that occur as a result of the execution
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,4,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

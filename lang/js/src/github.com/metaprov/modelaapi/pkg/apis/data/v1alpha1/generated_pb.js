@@ -46786,7 +46786,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.toObj
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     query: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    connectionname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    connectionname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    timeout: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -46842,6 +46843,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.deser
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setConnectionname(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTimeout(value);
       break;
     default:
       reader.skipField();
@@ -46904,6 +46909,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.seria
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeInt32(
+      6,
       f
     );
   }
@@ -47090,13 +47102,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.proto
 };
 
 
+/**
+ * optional int32 timeout = 6;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.getTimeout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.setTimeout = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.clearTimeout = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.hasTimeout = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.repeatedFields_ = [3];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.repeatedFields_ = [5];
 
 
 
@@ -47131,6 +47179,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.toO
   var f, obj = {
     startedat: (f = msg.getStartedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    resultlocation: (f = msg.getResultlocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
+    lasterror: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition.toObject, includeInstance)
   };
@@ -47180,6 +47230,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.des
       msg.setCompletedat(value);
       break;
     case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
+      msg.setResultlocation(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLasterror(value);
+      break;
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -47229,10 +47288,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.ser
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = message.getResultlocation();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition.serializeBinaryToWriter
     );
@@ -47315,12 +47389,85 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
 
 
 /**
- * repeated SqlQueryRunCondition conditions = 3;
+ * optional DataLocation resultLocation = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.getResultlocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.setResultlocation = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.clearResultlocation = function() {
+  return this.setResultlocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.hasResultlocation = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string lastError = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.getLasterror = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.setLasterror = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.clearLasterror = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.hasLasterror = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated SqlQueryRunCondition conditions = 5;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, 5));
 };
 
 
@@ -47329,7 +47476,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -47339,7 +47486,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunCondition, opt_index);
 };
 
 
@@ -50331,8 +50478,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.toO
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     query: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    verb: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, undefined) : [],
-    connectionname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    headersMap: (f = msg.getHeadersMap()) ? f.toObject(includeInstance, undefined) : [],
+    connectionname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    timeout: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -50386,14 +50536,28 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.des
       msg.setQuery(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setVerb(value);
+      break;
+    case 6:
       var value = msg.getParametersMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 6:
+    case 7:
+      var value = msg.getHeadersMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setConnectionname(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTimeout(value);
       break;
     default:
       reader.skipField();
@@ -50452,14 +50616,32 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.ser
       f
     );
   }
-  f = message.getParametersMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
-      6,
+      5,
+      f
+    );
+  }
+  f = message.getParametersMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getHeadersMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeInt32(
+      9,
       f
     );
   }
@@ -50611,14 +50793,50 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
 
 
 /**
- * map<string, string> parameters = 5;
+ * optional string verb = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getVerb = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.setVerb = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearVerb = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasVerb = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * map<string, string> parameters = 6;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getParametersMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 6, opt_noLazyCreate,
       null));
 };
 
@@ -50633,11 +50851,33 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
 
 
 /**
- * optional string connectionName = 6;
+ * map<string, string> headers = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getHeadersMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearHeadersMap = function() {
+  this.getHeadersMap().clear();
+  return this;};
+
+
+/**
+ * optional string connectionName = 8;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getConnectionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -50646,7 +50886,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.setConnectionname = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
@@ -50655,7 +50895,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearConnectionname = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -50664,7 +50904,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasConnectionname = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional int32 timeout = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getTimeout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.setTimeout = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearTimeout = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasTimeout = function() {
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
@@ -50674,7 +50950,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.repeatedFields_ = [6];
 
 
 
@@ -50707,7 +50983,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    startedat: (f = msg.getStartedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    completedat: (f = msg.getCompletedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    httpresultcode: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    resultlocation: (f = msg.getResultlocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
+    lasterror: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition.toObject, includeInstance)
   };
@@ -50749,9 +51029,27 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.d
     case 1:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
-      msg.setLastrun(value);
+      msg.setStartedat(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setCompletedat(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setHttpresultcode(value);
+      break;
+    case 4:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.deserializeBinaryFromReader);
+      msg.setResultlocation(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLasterror(value);
+      break;
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -50785,7 +51083,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLastrun();
+  f = message.getStartedat();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -50793,10 +51091,40 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.s
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = message.getCompletedat();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getResultlocation();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition.serializeBinaryToWriter
     );
@@ -50805,10 +51133,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.s
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startedAt = 1;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.getLastrun = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.getStartedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
     jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 1));
 };
@@ -50818,7 +51146,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.p
  * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.setLastrun = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.setStartedat = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -50827,8 +51155,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.clearLastrun = function() {
-  return this.setLastrun(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.clearStartedat = function() {
+  return this.setStartedat(undefined);
 };
 
 
@@ -50836,18 +51164,164 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.hasLastrun = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.hasStartedat = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated WebRequestRunCondition conditions = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completedAt = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.getCompletedat = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.setCompletedat = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.clearCompletedat = function() {
+  return this.setCompletedat(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.hasCompletedat = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 httpResultCode = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.getHttpresultcode = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.setHttpresultcode = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.clearHttpresultcode = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.hasHttpresultcode = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional DataLocation resultLocation = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.getResultlocation = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.setResultlocation = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.clearResultlocation = function() {
+  return this.setResultlocation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.hasResultlocation = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string lastError = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.getLasterror = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.setLasterror = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.clearLasterror = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.hasLasterror = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated WebRequestRunCondition conditions = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition, 6));
 };
 
 
@@ -50856,7 +51330,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -50866,7 +51340,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunCondition, opt_index);
 };
 
 
@@ -50914,7 +51388,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.toObje
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.toObject(includeInstance, f),
+    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
 
@@ -50965,8 +51439,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.deseri
       msg.setDescription(value);
       break;
     case 4:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
     case 5:
@@ -51029,7 +51503,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.serial
     writer.writeMessage(
       4,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.serializeBinaryToWriter
     );
   }
   f = message.getSchedule();
@@ -51152,17 +51626,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.protot
 
 
 /**
- * optional SqlQuerySpec template = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec}
+ * optional WebRequestRunSpec template = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.prototype.getTemplate = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec, 4));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec, 4));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.prototype.setTemplate = function(value) {

@@ -114,7 +114,7 @@ spec:
                 properties:
                   connectionName:
                     default: ""
-                    description: The name of the time stamp column
+                    description: The name of the connection to the SQL data source
                     type: string
                   description:
                     default: ""
@@ -130,6 +130,11 @@ spec:
                     description: Type name of the column key, this column is the key
                       column in the entity.
                     type: string
+                  timeout:
+                    default: 3600
+                    description: The SQL statement timeout
+                    format: int32
+                    type: integer
                   versionName:
                     default: ""
                     description: The product version for the sqlquery.

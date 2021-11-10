@@ -54,7 +54,7 @@ spec:
             properties:
               connectionName:
                 default: ""
-                description: The name of the time stamp column
+                description: The name of the connection to the SQL data source
                 type: string
               description:
                 default: ""
@@ -70,6 +70,11 @@ spec:
                 description: Type name of the column key, this column is the key column
                   in the entity.
                 type: string
+              timeout:
+                default: 3600
+                description: The SQL statement timeout
+                format: int32
+                type: integer
               versionName:
                 default: ""
                 description: The product version for the sqlquery.
@@ -111,6 +116,46 @@ spec:
                   - type
                   type: object
                 type: array
+              lastError:
+                description: The last error that occur as a result of the execution
+                type: string
+              resultLocation:
+                description: The location of the result
+                properties:
+                  bucketName:
+                    default: ""
+                    description: Bucketname is the name of the bucket
+                    type: string
+                  connectionName:
+                    default: ""
+                    description: ConnectionName is the name of the connection to access
+                      the database
+                    type: string
+                  database:
+                    default: ""
+                    description: Database , the database.
+                    type: string
+                  path:
+                    default: ""
+                    description: Path to the full data file (e.g. csv file).
+                    type: string
+                  sql:
+                    default: ""
+                    description: SQL statement, in case we choose the view type
+                    type: string
+                  table:
+                    default: ""
+                    description: Sql or table or topic name.
+                    type: string
+                  topic:
+                    default: ""
+                    description: Topic is the name of the topic in case of streaming
+                    type: string
+                  type:
+                    default: object
+                    description: data location type is the type of the data location
+                    type: string
+                type: object
               startedAt:
                 default: ""
                 description: Start time for the query
