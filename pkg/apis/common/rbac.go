@@ -29,6 +29,10 @@ const (
 	LabelingPipelineRunKind KindName = "LabelingPipelineRun"
 	RecipeKind              KindName = "Recipe"
 	RecipeRunKind           KindName = "RecipeRun"
+	SqlQueryKind            KindName = "SqlQuery"
+	SqlQueryRunKind         KindName = "SqlQueryRun"
+	WebRequestKind          KindName = "WebRequest"
+	WebRequestRunKind       KindName = "WebRequestRun"
 
 	// inference
 	CronPredictionKind KindName = "CronPrediction"
