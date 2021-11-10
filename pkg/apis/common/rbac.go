@@ -39,6 +39,7 @@ const (
 	PredictionKind     KindName = "Prediction"
 	PredictorKind      KindName = "Predictor"
 	CurtainKind        KindName = "Curtain"
+	PredictiveAppKind  KindName = "PredictiveApp"
 
 	// infra
 	AccountKind        KindName = "Account"
