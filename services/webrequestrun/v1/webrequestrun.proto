@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modelaapi/services/webrequest/v1";
-package github.com.metaprov.modelaapi.services.webrequest.v1;
+option go_package = "github.com/metaprov/modelaapi/services/webrequestrun/v1";
+package github.com.metaprov.modelaapi.services.webrequestrun.v1;
 
 
 import "google/api/annotations.proto";

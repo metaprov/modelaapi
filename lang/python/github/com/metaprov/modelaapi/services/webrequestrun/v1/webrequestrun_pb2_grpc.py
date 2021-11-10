@@ -15,32 +15,32 @@ class WebRequestRunServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListWebRequestRuns = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/ListWebRequestRuns',
+                '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/ListWebRequestRuns',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.ListWebRequestRunsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.ListWebRequestRunsResponse.FromString,
                 )
         self.CreateWebRequestRun = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/CreateWebRequestRun',
+                '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/CreateWebRequestRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.CreateWebRequestRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.CreateWebRequestRunResponse.FromString,
                 )
         self.GetWebRequestRun = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/GetWebRequestRun',
+                '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/GetWebRequestRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.GetWebRequestRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.GetWebRequestRunResponse.FromString,
                 )
         self.UpdateWebRequestRun = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/UpdateWebRequestRun',
+                '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/UpdateWebRequestRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.UpdateWebRequestRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.UpdateWebRequestRunResponse.FromString,
                 )
         self.DeleteWebRequestRun = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/DeleteWebRequestRun',
+                '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/DeleteWebRequestRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunResponse.FromString,
                 )
         self.RunWebRequestRun = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/RunWebRequestRun',
+                '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunResponse.FromString,
                 )
@@ -120,7 +120,7 @@ def add_WebRequestRunServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class WebRequestRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/ListWebRequestRuns',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/ListWebRequestRuns',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.ListWebRequestRunsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.ListWebRequestRunsResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class WebRequestRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/CreateWebRequestRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/CreateWebRequestRun',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.CreateWebRequestRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.CreateWebRequestRunResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class WebRequestRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/GetWebRequestRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/GetWebRequestRun',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.GetWebRequestRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.GetWebRequestRunResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class WebRequestRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/UpdateWebRequestRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/UpdateWebRequestRun',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.UpdateWebRequestRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.UpdateWebRequestRunResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class WebRequestRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/DeleteWebRequestRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/DeleteWebRequestRun',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunResponse.FromString,
             options, channel_credentials,
@@ -224,7 +224,7 @@ class WebRequestRunService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/RunWebRequestRun',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunResponse.FromString,
             options, channel_credentials,

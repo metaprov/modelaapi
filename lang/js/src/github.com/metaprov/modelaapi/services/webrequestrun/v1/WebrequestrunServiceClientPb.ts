@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.webrequest.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.webrequestrun.v1
  * @enhanceable
  * @public
  */
@@ -61,7 +61,7 @@ export class WebRequestRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/ListWebRequestRuns',
+          '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/ListWebRequestRuns',
         request,
         metadata || {},
         this.methodInfoListWebRequestRuns,
@@ -69,7 +69,7 @@ export class WebRequestRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/ListWebRequestRuns',
+      '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/ListWebRequestRuns',
     request,
     metadata || {},
     this.methodInfoListWebRequestRuns);
@@ -101,7 +101,7 @@ export class WebRequestRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/CreateWebRequestRun',
+          '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/CreateWebRequestRun',
         request,
         metadata || {},
         this.methodInfoCreateWebRequestRun,
@@ -109,7 +109,7 @@ export class WebRequestRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/CreateWebRequestRun',
+      '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/CreateWebRequestRun',
     request,
     metadata || {},
     this.methodInfoCreateWebRequestRun);
@@ -141,7 +141,7 @@ export class WebRequestRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/GetWebRequestRun',
+          '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/GetWebRequestRun',
         request,
         metadata || {},
         this.methodInfoGetWebRequestRun,
@@ -149,7 +149,7 @@ export class WebRequestRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/GetWebRequestRun',
+      '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/GetWebRequestRun',
     request,
     metadata || {},
     this.methodInfoGetWebRequestRun);
@@ -181,7 +181,7 @@ export class WebRequestRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/UpdateWebRequestRun',
+          '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/UpdateWebRequestRun',
         request,
         metadata || {},
         this.methodInfoUpdateWebRequestRun,
@@ -189,7 +189,7 @@ export class WebRequestRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/UpdateWebRequestRun',
+      '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/UpdateWebRequestRun',
     request,
     metadata || {},
     this.methodInfoUpdateWebRequestRun);
@@ -221,7 +221,7 @@ export class WebRequestRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/DeleteWebRequestRun',
+          '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/DeleteWebRequestRun',
         request,
         metadata || {},
         this.methodInfoDeleteWebRequestRun,
@@ -229,7 +229,7 @@ export class WebRequestRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/DeleteWebRequestRun',
+      '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/DeleteWebRequestRun',
     request,
     metadata || {},
     this.methodInfoDeleteWebRequestRun);
@@ -261,7 +261,7 @@ export class WebRequestRunServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/RunWebRequestRun',
+          '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
         request,
         metadata || {},
         this.methodInfoRunWebRequestRun,
@@ -269,7 +269,7 @@ export class WebRequestRunServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestRunService/RunWebRequestRun',
+      '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
     request,
     metadata || {},
     this.methodInfoRunWebRequestRun);
