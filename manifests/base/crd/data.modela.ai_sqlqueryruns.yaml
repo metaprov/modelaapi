@@ -52,6 +52,17 @@ spec:
           spec:
             description: SqlQueryRunSpec contain the desired state of a SqlQueryRun
             properties:
+              aborted:
+                default: false
+                description: Aborted is set when we want to abort the prediction
+                type: boolean
+              activeDeadlineSeconds:
+                default: 600
+                description: ActiveDeadlineSeconds is the deadline of a job for this
+                  dataset.
+                format: int64
+                minimum: 0
+                type: integer
               connectionName:
                 default: ""
                 description: The name of the connection to the SQL data source
@@ -65,29 +76,32 @@ spec:
                 default: no-one
                 description: The sqlquery owner
                 type: string
-              text:
+              priority:
+                default: medium
+                description: The priority of this prediction. The default is medium.
+                enum:
+                - low
+                - medium
+                - high
+                - urgent
+                type: string
+              sql:
                 default: ""
                 description: Type name of the column key, this column is the key column
                   in the entity.
                 type: string
-              timeout:
-                default: 3600
-                description: The SQL statement timeout
-                format: int32
-                type: integer
               versionName:
                 default: ""
                 description: The product version for the sqlquery.
+                type: string
+              workloadClassName:
+                default: default-prediction-workload-class
+                description: A reference to the workload class that is used for training
                 type: string
             type: object
           status:
             description: SqlQueryRunStatus defines the observed state of SqlQueryRun
             properties:
-              completedAt:
-                default: ""
-                description: End time for the query
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: SqlQueryRunCondition describes the state of a deployment
@@ -116,50 +130,47 @@ spec:
                   - type
                   type: object
                 type: array
-              lastError:
-                description: The last error that occur as a result of the execution
+              endTime:
+                description: EndTime is the end time of the prediction.
+                format: date-time
                 type: string
-              resultLocation:
-                description: The location of the result
+              logs:
+                description: Holds the location of log paths
                 properties:
                   bucketName:
-                    default: ""
-                    description: Bucketname is the name of the bucket
                     type: string
-                  connectionName:
-                    default: ""
-                    description: ConnectionName is the name of the connection to access
-                      the database
-                    type: string
-                  database:
-                    default: ""
-                    description: Database , the database.
-                    type: string
-                  path:
-                    default: ""
-                    description: Path to the full data file (e.g. csv file).
-                    type: string
-                  sql:
-                    default: ""
-                    description: SQL statement, in case we choose the view type
-                    type: string
-                  table:
-                    default: ""
-                    description: Sql or table or topic name.
-                    type: string
-                  topic:
-                    default: ""
-                    description: Topic is the name of the topic in case of streaming
-                    type: string
-                  type:
-                    default: object
-                    description: data location type is the type of the data location
-                    type: string
+                  paths:
+                    description: Paths is the log paths
+                    items:
+                      type: string
+                    type: array
                 type: object
-              startedAt:
-                default: ""
-                description: Start time for the query
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: Phase is the current phase of the prediction
+                type: string
+              rows:
+                description: The number of rows in the result query
+                format: int32
+                type: integer
+              startTime:
+                description: StartTime is the start time of the prediction.
                 format: date-time
+                type: string
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
                 type: string
             type: object
         required:

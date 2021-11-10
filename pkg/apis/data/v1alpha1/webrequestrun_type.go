@@ -7,17 +7,29 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// WebRequestRunConditionType is the condition of the webrequest
+// SqlQueryPhase is the current phase of a model
+type WebRequestRunPhase string
+
+const (
+	WebRequestRunPhasePending   WebRequestRunPhase = "Pending"
+	WebRequestRunPhaseRunning   WebRequestRunPhase = "Running"
+	WebRequestRunPhaseFailed    WebRequestRunPhase = "Failed"
+	WebRequestRunPhaseAborted   WebRequestRunPhase = "Aborted"
+	WebRequestRunPhaseCompleted WebRequestRunPhase = "Completed"
+)
+
+// WebRequestRunConditionType is the condition of the sqlquery
 type WebRequestRunConditionType string
 
 /// WebRequestRun Condition
 const (
-	WebRequestRunReady WebRequestRunConditionType = "Ready"
-	WebRequestRunSaved WebRequestRunConditionType = "Saved"
+	WebRequestRunCompleted WebRequestRunConditionType = "Completed"
+	WebRequestRunSaved     WebRequestRunConditionType = "Saved"
 )
 
 // WebRequestRunCondition describes the state of a deployment at a certain point.
@@ -99,21 +111,32 @@ type WebRequestRunSpec struct {
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
 type WebRequestRunStatus struct {
-	// Start time for the query
+	// StartTime is the start time of the prediction.
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
+	// EndTime is the end time of the prediction.
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
+	// Phase is the current phase of the prediction
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,1,opt,name=startedAt"`
-	// End time for the query
-	// +kubebuilder:validation:Optional
-	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
+	Phase WebRequestRunPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
+	// The number of rows in the result query
+	//+kubebuilder:validation:Optional
+	Rows int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
+	// What triggered the run
+	//+kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,6,opt,name=triggeredBy"`
 	// The result of the HTTP execution
 	// +kubebuilder:validation:Optional
-	HttpResultCode int32 `json:"httpResultCode,omitempty" protobuf:"bytes,3,opt,name=httpResultCode"`
+	HttpResultCode int32 `json:"httpResultCode,omitempty" protobuf:"bytes,7,opt,name=httpResultCode"`
 	// The location of the result
-	ResultLocation DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,4,opt,name=resultLocation"`
+	ResultLocation DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,8,opt,name=resultLocation"`
 	// The last error that occur as a result of the execution
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,5,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,9,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
 }

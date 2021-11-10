@@ -98,10 +98,6 @@ spec:
           status:
             description: WebRequestRunStatus defines the observed state of WebRequestRun
             properties:
-              completedAt:
-                description: End time for the query
-                format: date-time
-                type: string
               conditions:
                 items:
                   description: WebRequestRunCondition describes the state of a deployment
@@ -130,12 +126,25 @@ spec:
                   - type
                   type: object
                 type: array
+              endTime:
+                description: EndTime is the end time of the prediction.
+                format: date-time
+                type: string
               httpResultCode:
                 description: The result of the HTTP execution
                 format: int32
                 type: integer
               lastError:
                 description: The last error that occur as a result of the execution
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
+              phase:
+                default: Pending
+                description: Phase is the current phase of the prediction
                 type: string
               resultLocation:
                 description: The location of the result
@@ -174,9 +183,23 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
-              startedAt:
-                description: Start time for the query
+              rows:
+                description: The number of rows in the result query
+                format: int32
+                type: integer
+              startTime:
+                description: StartTime is the start time of the prediction.
                 format: date-time
+                type: string
+              triggeredBy:
+                description: What triggered the run
+                enum:
+                - on-demand
+                - on-schedule
+                - on-new-data
+                - on-github-event
+                - on-concept-drift
+                - on-pref-degradation
                 type: string
             type: object
         required:

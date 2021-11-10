@@ -1,58 +1,97 @@
-/*
- * Copyright (c) 2019.
- *
- * Metaprov.com
- */
-
 package v1alpha1
 
 import (
 	"fmt"
 
-	"github.com/metaprov/modelaapi/pkg/apis/data"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (r *SqlQueryRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
+//==============================================================================
+// EntityRef
+//==============================================================================
+
+func (prediction *SqlQueryRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(prediction).
 		Complete()
 }
 
-func (r *SqlQueryRun) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
-func (r *SqlQueryRun) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
-func (r *SqlQueryRun) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
+const SqlQueryLabelKey = "sqlquery"
+
+//==============================================================================
+// Keys
+//==============================================================================
+
+func (prediction *SqlQueryRun) RootUri() string {
+	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
+}
+
+func (prediction *SqlQueryRun) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-prediction.yaml", prediction.RootUri(), prediction.Name)
+}
 
 //==============================================================================
 // Validate
 //==============================================================================
 
+func (prediction *SqlQueryRun) SqlQueryName() string {
+	return prediction.ObjectMeta.Labels[SqlQueryLabelKey]
+}
+
+//==============================================================================
+// Finalizer
+//==============================================================================
+
+func (prediction *SqlQueryRun) HasFinalizer() bool {
+	return util.HasFin(&prediction.ObjectMeta, inference.GroupName)
+}
+func (prediction *SqlQueryRun) AddFinalizer() {
+	util.AddFin(&prediction.ObjectMeta, inference.GroupName)
+}
+func (prediction *SqlQueryRun) RemoveFinalizer() {
+	util.RemoveFin(&prediction.ObjectMeta, inference.GroupName)
+}
+
+//==============================================================================
+// Trackable
+//==============================================================================
+
+// Return the on disk rep location
+func (prediction *SqlQueryRun) RepPath(root string) (string, error) {
+	return fmt.Sprintf("%s/predictions/%s.yaml", root, prediction.ObjectMeta.Name), nil
+}
+
 // Merge or update condition
-func (r *SqlQueryRun) CreateOrUpdateCond(cond SqlQueryRunCondition) {
-	i := r.GetCondIdx(cond.Type)
+// Merge or update condition
+func (prediction *SqlQueryRun) CreateOrUpdateCond(cond SqlQueryRunCondition) {
+	i := prediction.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		r.Status.Conditions = append(r.Status.Conditions, cond)
+		prediction.Status.Conditions = append(prediction.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := r.Status.Conditions[i]
+	current := prediction.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	r.Status.Conditions[i] = current
+	prediction.Status.Conditions[i] = current
 }
 
-func (r *SqlQueryRun) GetCondIdx(t SqlQueryRunConditionType) int {
-	for i, v := range r.Status.Conditions {
+func (prediction *SqlQueryRun) GetCondIdx(t SqlQueryRunConditionType) int {
+	for i, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -60,8 +99,8 @@ func (r *SqlQueryRun) GetCondIdx(t SqlQueryRunConditionType) int {
 	return -1
 }
 
-func (r *SqlQueryRun) GetCond(t SqlQueryRunConditionType) SqlQueryRunCondition {
-	for _, v := range r.Status.Conditions {
+func (prediction *SqlQueryRun) GetCond(t SqlQueryRunConditionType) SqlQueryRunCondition {
+	for _, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -73,58 +112,73 @@ func (r *SqlQueryRun) GetCond(t SqlQueryRunConditionType) SqlQueryRunCondition {
 		Reason:  "",
 		Message: "",
 	}
-
 }
 
-func (r *SqlQueryRun) IsReady() bool {
-	return r.GetCond(SqlQueryRunReady).Status == v1.ConditionTrue
+func (prediction *SqlQueryRun) IsCompleted() bool {
+	return prediction.GetCond(SqlQueryRunCompleted).Status == v1.ConditionTrue
 }
 
-func (r *SqlQueryRun) Populate(name string) {
+func (prediction *SqlQueryRun) Key() string {
+	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
+}
 
-	r.ObjectMeta = metav1.ObjectMeta{
-		Name:      "iris",
-		Namespace: "modela-data",
+func ParseSqlQueryRunYaml(content []byte) (*SqlQueryRun, error) {
+	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
+	if err != nil {
+		return nil, err
 	}
-
-	r.Spec = SqlQueryRunSpec{
-		VersionName: util.StrPtr("iris-0.0.1"),
-	}
+	r := requiredObj.(*SqlQueryRun)
+	return r, nil
 }
 
-func (r *SqlQueryRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
+func (prediction *SqlQueryRun) ToYamlFile() ([]byte, error) {
+	return yaml.Marshal(prediction)
 }
 
-func (r *SqlQueryRun) IsInCond(ct SqlQueryRunConditionType) bool {
-	current := r.GetCond(ct)
-	return current.Status == v1.ConditionTrue
-}
-
-func (r *SqlQueryRun) PrintConditions() {
-	for _, v := range r.Status.Conditions {
-		fmt.Println(v)
-	}
-}
-
-func (r *SqlQueryRun) MarkReady() {
-	r.CreateOrUpdateCond(SqlQueryRunCondition{
-		Type:   SqlQueryRunReady,
-		Status: v1.ConditionTrue,
+func (prediction *SqlQueryRun) MarkFailed(msg string) {
+	prediction.CreateOrUpdateCond(SqlQueryRunCondition{
+		Type:    SqlQueryRunCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  string(catalog.Failed),
+		Message: msg,
 	})
 }
 
-func (r *SqlQueryRun) Deleted() bool {
-	return !r.ObjectMeta.DeletionTimestamp.IsZero()
+func (prediction *SqlQueryRun) MarkCompleted() {
+	prediction.CreateOrUpdateCond(SqlQueryRunCondition{
+		Type:   SqlQueryRunCompleted,
+		Status: v1.ConditionTrue,
+	})
+	prediction.Status.Phase = SqlQueryRunPhaseCompleted
+	now := metav1.Now()
+	if prediction.Status.EndTime == nil {
+		prediction.Status.EndTime = &now
+	}
 }
 
-func (r *SqlQueryRun) MarkSaved() {
-	r.CreateOrUpdateCond(SqlQueryRunCondition{
+func (prediction *SqlQueryRun) OpName() string {
+	return prediction.Namespace + "-" + prediction.Name
+}
+
+func (version *SqlQueryRun) MarkSaved() {
+	version.CreateOrUpdateCond(SqlQueryRunCondition{
 		Type:   SqlQueryRunSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *SqlQueryRun) IsSaved() bool {
-	return r.GetCond(SqlQueryRunSaved).Status == v1.ConditionTrue
+func (version *SqlQueryRun) IsSaved() bool {
+	return version.GetCond(SqlQueryRunSaved).Status == v1.ConditionTrue
+}
+
+func (run *SqlQueryRun) MarkRunning() {
+	run.CreateOrUpdateCond(SqlQueryRunCondition{
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
+	run.Status.Phase = SqlQueryRunPhaseRunning
+	now := metav1.Now()
+	if run.Status.StartTime == nil {
+		run.Status.EndTime = &now
+	}
 }

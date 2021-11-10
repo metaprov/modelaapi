@@ -1,58 +1,97 @@
-/*
- * Copyright (c) 2019.
- *
- * Metaprov.com
- */
-
 package v1alpha1
 
 import (
 	"fmt"
 
-	"github.com/metaprov/modelaapi/pkg/apis/data"
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	"github.com/metaprov/modelaapi/pkg/apis/inference"
 	"github.com/metaprov/modelaapi/pkg/util"
 	"gopkg.in/yaml.v2"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime"
+	"k8s.io/client-go/kubernetes/scheme"
 	ctrl "sigs.k8s.io/controller-runtime"
 )
 
-func (r *WebRequestRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
+//==============================================================================
+// EntityRef
+//==============================================================================
+
+func (prediction *WebRequestRun) SetupWebhookWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewWebhookManagedBy(mgr).
-		For(r).
+		For(prediction).
 		Complete()
 }
 
-func (r *WebRequestRun) HasFinalizer() bool { return util.HasFin(&r.ObjectMeta, data.GroupName) }
-func (r *WebRequestRun) AddFinalizer()      { util.AddFin(&r.ObjectMeta, data.GroupName) }
-func (r *WebRequestRun) RemoveFinalizer()   { util.RemoveFin(&r.ObjectMeta, data.GroupName) }
+const WebQueryLabelKey = "sqlquery"
+
+//==============================================================================
+// Keys
+//==============================================================================
+
+func (prediction *WebRequestRun) RootUri() string {
+	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
+}
+
+func (prediction *WebRequestRun) ManifestUri() string {
+	return fmt.Sprintf("%s/%s-prediction.yaml", prediction.RootUri(), prediction.Name)
+}
 
 //==============================================================================
 // Validate
 //==============================================================================
 
+func (prediction *WebRequestRun) WebQueryName() string {
+	return prediction.ObjectMeta.Labels[WebQueryLabelKey]
+}
+
+//==============================================================================
+// Finalizer
+//==============================================================================
+
+func (prediction *WebRequestRun) HasFinalizer() bool {
+	return util.HasFin(&prediction.ObjectMeta, inference.GroupName)
+}
+func (prediction *WebRequestRun) AddFinalizer() {
+	util.AddFin(&prediction.ObjectMeta, inference.GroupName)
+}
+func (prediction *WebRequestRun) RemoveFinalizer() {
+	util.RemoveFin(&prediction.ObjectMeta, inference.GroupName)
+}
+
+//==============================================================================
+// Trackable
+//==============================================================================
+
+// Return the on disk rep location
+func (prediction *WebRequestRun) RepPath(root string) (string, error) {
+	return fmt.Sprintf("%s/predictions/%s.yaml", root, prediction.ObjectMeta.Name), nil
+}
+
 // Merge or update condition
-func (r *WebRequestRun) CreateOrUpdateCond(cond WebRequestRunCondition) {
-	i := r.GetCondIdx(cond.Type)
+// Merge or update condition
+func (prediction *WebRequestRun) CreateOrUpdateCond(cond WebRequestRunCondition) {
+	i := prediction.GetCondIdx(cond.Type)
 	now := metav1.Now()
 	if i == -1 { // not found
 		cond.LastTransitionTime = &now
-		r.Status.Conditions = append(r.Status.Conditions, cond)
+		prediction.Status.Conditions = append(prediction.Status.Conditions, cond)
 		return
 	}
 	// else we already have the condition, update it
-	current := r.Status.Conditions[i]
+	current := prediction.Status.Conditions[i]
 	current.Message = cond.Message
 	current.Reason = cond.Reason
 	current.LastTransitionTime = &now
 	if current.Status != cond.Status {
 		current.Status = cond.Status
 	}
-	r.Status.Conditions[i] = current
+	prediction.Status.Conditions[i] = current
 }
 
-func (r *WebRequestRun) GetCondIdx(t WebRequestRunConditionType) int {
-	for i, v := range r.Status.Conditions {
+func (prediction *WebRequestRun) GetCondIdx(t WebRequestRunConditionType) int {
+	for i, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return i
 		}
@@ -60,8 +99,8 @@ func (r *WebRequestRun) GetCondIdx(t WebRequestRunConditionType) int {
 	return -1
 }
 
-func (r *WebRequestRun) GetCond(t WebRequestRunConditionType) WebRequestRunCondition {
-	for _, v := range r.Status.Conditions {
+func (prediction *WebRequestRun) GetCond(t WebRequestRunConditionType) WebRequestRunCondition {
+	for _, v := range prediction.Status.Conditions {
 		if v.Type == t {
 			return v
 		}
@@ -73,58 +112,73 @@ func (r *WebRequestRun) GetCond(t WebRequestRunConditionType) WebRequestRunCondi
 		Reason:  "",
 		Message: "",
 	}
-
 }
 
-func (r *WebRequestRun) IsReady() bool {
-	return r.GetCond(WebRequestRunReady).Status == v1.ConditionTrue
+func (prediction *WebRequestRun) IsCompleted() bool {
+	return prediction.GetCond(WebRequestRunCompleted).Status == v1.ConditionTrue
 }
 
-func (r *WebRequestRun) Populate(name string) {
+func (prediction *WebRequestRun) Key() string {
+	return fmt.Sprintf("dataproducts/%s/predictions/%s", prediction.Namespace, prediction.Name)
+}
 
-	r.ObjectMeta = metav1.ObjectMeta{
-		Name:      "iris",
-		Namespace: "modela-data",
+func ParseWebRequestRunYaml(content []byte) (*WebRequestRun, error) {
+	requiredObj, err := runtime.Decode(scheme.Codecs.UniversalDecoder(SchemeGroupVersion), content)
+	if err != nil {
+		return nil, err
 	}
-
-	r.Spec = WebRequestRunSpec{
-		VersionName: util.StrPtr("iris-0.0.1"),
-	}
+	r := requiredObj.(*WebRequestRun)
+	return r, nil
 }
 
-func (r *WebRequestRun) ToYamlFile() ([]byte, error) {
-	return yaml.Marshal(r)
+func (prediction *WebRequestRun) ToYamlFile() ([]byte, error) {
+	return yaml.Marshal(prediction)
 }
 
-func (r *WebRequestRun) IsInCond(ct WebRequestRunConditionType) bool {
-	current := r.GetCond(ct)
-	return current.Status == v1.ConditionTrue
-}
-
-func (r *WebRequestRun) PrintConditions() {
-	for _, v := range r.Status.Conditions {
-		fmt.Println(v)
-	}
-}
-
-func (r *WebRequestRun) MarkReady() {
-	r.CreateOrUpdateCond(WebRequestRunCondition{
-		Type:   WebRequestRunReady,
-		Status: v1.ConditionTrue,
+func (prediction *WebRequestRun) MarkFailed(msg string) {
+	prediction.CreateOrUpdateCond(WebRequestRunCondition{
+		Type:    WebRequestRunCompleted,
+		Status:  v1.ConditionFalse,
+		Reason:  string(catalog.Failed),
+		Message: msg,
 	})
 }
 
-func (r *WebRequestRun) Deleted() bool {
-	return !r.ObjectMeta.DeletionTimestamp.IsZero()
+func (prediction *WebRequestRun) MarkCompleted() {
+	prediction.CreateOrUpdateCond(WebRequestRunCondition{
+		Type:   WebRequestRunCompleted,
+		Status: v1.ConditionTrue,
+	})
+	prediction.Status.Phase = WebRequestRunPhaseCompleted
+	now := metav1.Now()
+	if prediction.Status.EndTime == nil {
+		prediction.Status.EndTime = &now
+	}
 }
 
-func (r *WebRequestRun) MarkSaved() {
-	r.CreateOrUpdateCond(WebRequestRunCondition{
+func (prediction *WebRequestRun) OpName() string {
+	return prediction.Namespace + "-" + prediction.Name
+}
+
+func (version *WebRequestRun) MarkSaved() {
+	version.CreateOrUpdateCond(WebRequestRunCondition{
 		Type:   WebRequestRunSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
-func (r *WebRequestRun) IsSaved() bool {
-	return r.GetCond(WebRequestRunSaved).Status == v1.ConditionTrue
+func (version *WebRequestRun) IsSaved() bool {
+	return version.GetCond(WebRequestRunSaved).Status == v1.ConditionTrue
+}
+
+func (run *WebRequestRun) MarkRunning() {
+	run.CreateOrUpdateCond(WebRequestRunCondition{
+		Status: v1.ConditionFalse,
+		Reason: string(catalog.Running),
+	})
+	run.Status.Phase = WebRequestRunPhaseRunning
+	now := metav1.Now()
+	if run.Status.StartTime == nil {
+		run.Status.EndTime = &now
+	}
 }

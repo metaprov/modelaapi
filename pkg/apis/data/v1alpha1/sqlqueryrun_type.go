@@ -7,8 +7,20 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+)
+
+// SqlQueryPhase is the current phase of a model
+type SqlQueryRunPhase string
+
+const (
+	SqlQueryRunPhasePending   SqlQueryRunPhase = "Pending"
+	SqlQueryRunPhaseRunning   SqlQueryRunPhase = "Running"
+	SqlQueryRunPhaseFailed    SqlQueryRunPhase = "Failed"
+	SqlQueryRunPhaseAborted   SqlQueryRunPhase = "Aborted"
+	SqlQueryRunPhaseCompleted SqlQueryRunPhase = "Completed"
 )
 
 // SqlQueryRunConditionType is the condition of the sqlquery
@@ -16,8 +28,8 @@ type SqlQueryRunConditionType string
 
 /// SqlQueryRun Condition
 const (
-	SqlQueryRunReady SqlQueryRunConditionType = "Ready"
-	SqlQueryRunSaved SqlQueryRunConditionType = "Saved"
+	SqlQueryRunCompleted SqlQueryRunConditionType = "Completed"
+	SqlQueryRunSaved     SqlQueryRunConditionType = "Saved"
 )
 
 // SqlQueryRunCondition describes the state of a deployment at a certain point.
@@ -76,33 +88,54 @@ type SqlQueryRunSpec struct {
 	// Type name of the column key, this column is the key column in the entity.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Query *string `json:"text,omitempty" protobuf:"bytes,4,opt,name=query"`
+	Sql *string `json:"sql,omitempty" protobuf:"bytes,4,opt,name=sql"`
 	// The name of the connection to the SQL data source
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,5,opt,name=connectionName"`
-	// The SQL statement timeout
-	// +kubebuilder:default:=3600
+	// A reference to the workload class that is used for training
+	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
-	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,6,opt,name=timeout"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,6,opt,name=workloadClassName"`
+	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
+	// +kubebuilder:default:=600
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Optional
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,7,opt,name=activeDeadlineSeconds"`
+	// The priority of this prediction. The default is medium.
+	// +kubebuilder:default:=medium
+	// +kubebuilder:validation:Optional
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,8,opt,name=priority"`
+	// Aborted is set when we want to abort the prediction
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,9,opt,name=aborted"`
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
 type SqlQueryRunStatus struct {
-	// Start time for the query
-	// +kubebuilder:default:=""
+	// StartTime is the start time of the prediction.
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
+	// EndTime is the end time of the prediction.
+	EndTime *metav1.Time `json:"endTime,omitempty" protobuf:"bytes,2,opt,name=endTime"`
+	// Phase is the current phase of the prediction
+	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	StartedAt *metav1.Time `json:"startedAt,omitempty" protobuf:"bytes,1,opt,name=startedAt"`
-	// End time for the query
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	CompletedAt *metav1.Time `json:"completedAt,omitempty" protobuf:"bytes,2,opt,name=completedAt"`
-	// The location of the result
-	ResultLocation DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,3,opt,name=resultLocation"`
-	// The last error that occur as a result of the execution
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,4,opt,name=lastError"`
+	Phase SqlQueryRunPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
+	// The number of rows in the result query
+	//+kubebuilder:validation:Optional
+	Rows int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
+	// What triggered the run
+	//+kubebuilder:validation:Optional
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,6,opt,name=triggeredBy"`
+	// Holds the location of log paths
+	//+kubebuilder:validation:Optional
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
+	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

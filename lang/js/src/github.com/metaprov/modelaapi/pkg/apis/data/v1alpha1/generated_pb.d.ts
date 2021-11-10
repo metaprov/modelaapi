@@ -4671,14 +4671,23 @@ export class SqlQueryRunSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): SqlQueryRunSpec;
 
-  getQuery(): string;
-  setQuery(value: string): SqlQueryRunSpec;
+  getSql(): string;
+  setSql(value: string): SqlQueryRunSpec;
 
   getConnectionname(): string;
   setConnectionname(value: string): SqlQueryRunSpec;
 
-  getTimeout(): number;
-  setTimeout(value: number): SqlQueryRunSpec;
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): SqlQueryRunSpec;
+
+  getActivedeadlineseconds(): number;
+  setActivedeadlineseconds(value: number): SqlQueryRunSpec;
+
+  getPriority(): string;
+  setPriority(value: string): SqlQueryRunSpec;
+
+  getAborted(): boolean;
+  setAborted(value: boolean): SqlQueryRunSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SqlQueryRunSpec.AsObject;
@@ -4693,30 +4702,42 @@ export namespace SqlQueryRunSpec {
     owner: string,
     versionname: string,
     description: string,
-    query: string,
+    sql: string,
     connectionname: string,
-    timeout: number,
+    workloadclassname: string,
+    activedeadlineseconds: number,
+    priority: string,
+    aborted: boolean,
   }
 }
 
 export class SqlQueryRunStatus extends jspb.Message {
-  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
-  hasStartedat(): boolean;
-  clearStartedat(): SqlQueryRunStatus;
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): SqlQueryRunStatus;
 
-  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
-  hasCompletedat(): boolean;
-  clearCompletedat(): SqlQueryRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): SqlQueryRunStatus;
 
-  getResultlocation(): DataLocation | undefined;
-  setResultlocation(value?: DataLocation): SqlQueryRunStatus;
-  hasResultlocation(): boolean;
-  clearResultlocation(): SqlQueryRunStatus;
+  getPhase(): string;
+  setPhase(value: string): SqlQueryRunStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): SqlQueryRunStatus;
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): SqlQueryRunStatus;
+
+  getRows(): number;
+  setRows(value: number): SqlQueryRunStatus;
+
+  getTriggeredby(): string;
+  setTriggeredby(value: string): SqlQueryRunStatus;
+
+  getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
+  setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): SqlQueryRunStatus;
+  hasLogs(): boolean;
+  clearLogs(): SqlQueryRunStatus;
 
   getConditionsList(): Array<SqlQueryRunCondition>;
   setConditionsList(value: Array<SqlQueryRunCondition>): SqlQueryRunStatus;
@@ -4733,10 +4754,13 @@ export class SqlQueryRunStatus extends jspb.Message {
 
 export namespace SqlQueryRunStatus {
   export type AsObject = {
-    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    resultlocation?: DataLocation.AsObject,
-    lasterror: string,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    phase: string,
+    observedgeneration: number,
+    rows: number,
+    triggeredby: string,
+    logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     conditionsList: Array<SqlQueryRunCondition.AsObject>,
   }
 }
@@ -5134,15 +5158,27 @@ export namespace WebRequestRunSpec {
 }
 
 export class WebRequestRunStatus extends jspb.Message {
-  getStartedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
-  hasStartedat(): boolean;
-  clearStartedat(): WebRequestRunStatus;
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): WebRequestRunStatus;
 
-  getCompletedat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setCompletedat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
-  hasCompletedat(): boolean;
-  clearCompletedat(): WebRequestRunStatus;
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestRunStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): WebRequestRunStatus;
+
+  getPhase(): string;
+  setPhase(value: string): WebRequestRunStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): WebRequestRunStatus;
+
+  getRows(): number;
+  setRows(value: number): WebRequestRunStatus;
+
+  getTriggeredby(): string;
+  setTriggeredby(value: string): WebRequestRunStatus;
 
   getHttpresultcode(): number;
   setHttpresultcode(value: number): WebRequestRunStatus;
@@ -5170,8 +5206,12 @@ export class WebRequestRunStatus extends jspb.Message {
 
 export namespace WebRequestRunStatus {
   export type AsObject = {
-    startedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    completedat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    phase: string,
+    observedgeneration: number,
+    rows: number,
+    triggeredby: string,
     httpresultcode: number,
     resultlocation?: DataLocation.AsObject,
     lasterror: string,
@@ -5189,8 +5229,8 @@ export class WebRequestSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): WebRequestSpec;
 
-  getTemplate(): WebRequestRunSpec | undefined;
-  setTemplate(value?: WebRequestRunSpec): WebRequestSpec;
+  getTemplate(): SqlQuerySpec | undefined;
+  setTemplate(value?: SqlQuerySpec): WebRequestSpec;
   hasTemplate(): boolean;
   clearTemplate(): WebRequestSpec;
 
@@ -5212,7 +5252,7 @@ export namespace WebRequestSpec {
     owner: string,
     versionname: string,
     description: string,
-    template?: WebRequestRunSpec.AsObject,
+    template?: SqlQuerySpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
