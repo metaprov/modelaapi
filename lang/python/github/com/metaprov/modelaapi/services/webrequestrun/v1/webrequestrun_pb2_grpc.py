@@ -39,11 +39,6 @@ class WebRequestRunServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunResponse.FromString,
                 )
-        self.RunWebRequestRun = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunResponse.FromString,
-                )
 
 
 class WebRequestRunServiceServicer(object):
@@ -79,12 +74,6 @@ class WebRequestRunServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def RunWebRequestRun(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_WebRequestRunServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -112,11 +101,6 @@ def add_WebRequestRunServiceServicer_to_server(servicer, server):
                     servicer.DeleteWebRequestRun,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunResponse.SerializeToString,
-            ),
-            'RunWebRequestRun': grpc.unary_unary_rpc_method_handler(
-                    servicer.RunWebRequestRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -210,22 +194,5 @@ class WebRequestRunService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/DeleteWebRequestRun',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.DeleteWebRequestRunResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RunWebRequestRun(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_webrequestrun_dot_v1_dot_webrequestrun__pb2.RunWebRequestRunResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

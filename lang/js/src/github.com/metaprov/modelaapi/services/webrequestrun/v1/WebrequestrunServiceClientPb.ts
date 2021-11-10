@@ -235,45 +235,5 @@ export class WebRequestRunServiceClient {
     this.methodInfoDeleteWebRequestRun);
   }
 
-  methodInfoRunWebRequestRun = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunResponse,
-    (request: github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunResponse.deserializeBinary
-  );
-
-  runWebRequestRun(
-    request: github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunResponse>;
-
-  runWebRequestRun(
-    request: github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunResponse>;
-
-  runWebRequestRun(
-    request: github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_webrequestrun_v1_webrequestrun_pb.RunWebRequestRunResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
-        request,
-        metadata || {},
-        this.methodInfoRunWebRequestRun,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.webrequestrun.v1.WebRequestRunService/RunWebRequestRun',
-    request,
-    metadata || {},
-    this.methodInfoRunWebRequestRun);
-  }
-
 }
 

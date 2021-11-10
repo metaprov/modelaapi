@@ -53,16 +53,6 @@ message DeleteWebRequestRunResponse {
 }
 
 
-message RunWebRequestRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
-}
-
-
-message RunWebRequestRunResponse {
-    
-}
-
-
 service WebRequestRunService {
 
     rpc ListWebRequestRuns(ListWebRequestRunsRequest) returns (ListWebRequestRunsResponse) {
@@ -91,8 +81,6 @@ service WebRequestRunService {
         option (google.api.http).delete = "/v1/webeequestruns/{name}";
     }
 
-    rpc RunWebRequestRun(RunWebRequestRunRequest) returns (RunWebRequestRunResponse) {
-        option (google.api.http).post = "/v1/webeequestruns/{name}:run";
-    }
+   
 
 }

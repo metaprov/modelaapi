@@ -200,37 +200,3 @@ export namespace DeleteWebRequestRunResponse {
   }
 }
 
-export class RunWebRequestRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun): RunWebRequestRunRequest;
-  hasItem(): boolean;
-  clearItem(): RunWebRequestRunRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunWebRequestRunRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: RunWebRequestRunRequest): RunWebRequestRunRequest.AsObject;
-  static serializeBinaryToWriter(message: RunWebRequestRunRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunWebRequestRunRequest;
-  static deserializeBinaryFromReader(message: RunWebRequestRunRequest, reader: jspb.BinaryReader): RunWebRequestRunRequest;
-}
-
-export namespace RunWebRequestRunRequest {
-  export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.AsObject,
-  }
-}
-
-export class RunWebRequestRunResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): RunWebRequestRunResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: RunWebRequestRunResponse): RunWebRequestRunResponse.AsObject;
-  static serializeBinaryToWriter(message: RunWebRequestRunResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): RunWebRequestRunResponse;
-  static deserializeBinaryFromReader(message: RunWebRequestRunResponse, reader: jspb.BinaryReader): RunWebRequestRunResponse;
-}
-
-export namespace RunWebRequestRunResponse {
-  export type AsObject = {
-  }
-}
-
