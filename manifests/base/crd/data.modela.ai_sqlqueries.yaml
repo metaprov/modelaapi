@@ -201,6 +201,15 @@ spec:
                 description: Last Time the query run
                 format: date-time
                 type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
             type: object
         required:
         - metadata

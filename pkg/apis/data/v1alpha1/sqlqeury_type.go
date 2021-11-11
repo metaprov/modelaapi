@@ -84,12 +84,18 @@ type SqlQuerySpec struct {
 
 // SqlQueryStatus defines the observed state of SqlQuery
 type SqlQueryStatus struct {
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,1,opt,name=lastUpdated"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// Last Time the query run
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,3,opt,name=lastRun"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []SqlQueryCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
 }

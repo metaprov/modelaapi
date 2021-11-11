@@ -4804,6 +4804,14 @@ export namespace SqlQuerySpec {
 }
 
 export class SqlQueryStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): SqlQueryStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): SqlQueryStatus;
+
   getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): SqlQueryStatus;
   hasLastrun(): boolean;
@@ -4824,6 +4832,8 @@ export class SqlQueryStatus extends jspb.Message {
 
 export namespace SqlQueryStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<SqlQueryCondition.AsObject>,
   }
@@ -5258,6 +5268,14 @@ export namespace WebRequestSpec {
 }
 
 export class WebRequestStatus extends jspb.Message {
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): WebRequestStatus;
+
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): WebRequestStatus;
+
   getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): WebRequestStatus;
   hasLastrun(): boolean;
@@ -5278,6 +5296,8 @@ export class WebRequestStatus extends jspb.Message {
 
 export namespace WebRequestStatus {
   export type AsObject = {
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<WebRequestCondition.AsObject>,
   }

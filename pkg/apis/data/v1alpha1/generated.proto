@@ -3114,15 +3114,23 @@ message SqlQuerySpec {
 
 // SqlQueryStatus defines the observed state of SqlQuery
 message SqlQueryStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 2;
+
   // Last Time the query run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryCondition conditions = 2;
+  repeated SqlQueryCondition conditions = 4;
 }
 
 // Represent a stack holder in the product.
@@ -3373,14 +3381,22 @@ message WebRequestSpec {
 
 // WebRequestStatus defines the observed state of WebRequest
 message WebRequestStatus {
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 2;
+
   // Last Time the query run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestCondition conditions = 2;
+  repeated WebRequestCondition conditions = 4;
 }
 
