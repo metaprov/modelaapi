@@ -1646,6 +1646,176 @@ message DeleteRunbookRequest {
     string name = 2;
 }
 
+/////////////////////////////////////
+// SQLQuueryRun
+/////////////////////////////////////
+
+message ListSqlQuerysRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListSqlQuerysResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery items = 1;
+    string next_page_token = 2;
+}
+
+message GetSqlQueryRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+}
+
+message UpdateSqlQueryRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+}
+
+message DeleteSqlQueryRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+/////////////////////////////////////
+// SQLQuueryRun
+/////////////////////////////////////
+
+message ListSqlQueryRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListSqlQueryRunsResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetSqlQueryRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateSqlQueryRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+}
+
+message UpdateSqlQueryRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+}
+
+message DeleteSqlQueryRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+/////////////////////////////////////
+// WebRequest
+/////////////////////////////////////
+
+message ListWebRequestsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListWebRequestsResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest items = 1;
+    string next_page_token = 2;
+}
+
+message GetWebRequestRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateWebRequestRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+}
+
+message UpdateWebRequestRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+}
+
+message DeleteWebRequestRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+
+/////////////////////////////////////
+// WebRequestRun
+/////////////////////////////////////
+
+message ListWebRequestRunsRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListWebRequestRunsResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun items = 1;
+    string next_page_token = 2;
+}
+
+message GetWebRequestRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreateWebRequestRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+}
+
+message UpdateWebRequestRunRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+}
+
+message DeleteWebRequestRunRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+
+/////////////////////////////////////
+// PredictiveAppRun
+/////////////////////////////////////
+
+message ListPredictiveAppRequest {
+    string namespace   = 1;
+    int32 page_size    = 2;
+    string page_token  = 3;
+}
+
+message ListPredictiveAppResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp items = 1;
+    string next_page_token = 2;
+}
+
+message GetPredictiveAppRequest {
+    string namespace = 1;
+    string name = 2;
+}
+
+message CreatePredictiveAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+}
+
+message UpdatePredictiveAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+}
+
+message DeletePredictiveAppRequest {
+    string namespace = 1;
+    string name = 2;
+}
 
 
 service DatabaseProxyService {
@@ -1957,6 +2127,35 @@ service DatabaseProxyService {
     rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook) {}
     rpc DeleteRunBook(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
 
+    rpc ListSqkQueries(ListRunbooksRequest) returns (ListSqlQuerysResponse) {}
+    rpc GetSqlQuery(GetRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery) {}
+    rpc CreateSqlQuery(CreateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery) {}
+    rpc UpdateSqlQuery(UpdateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery) {}
+    rpc DeleteSqlQuery(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListSqlQueryRun(ListRunbooksRequest) returns (ListSqlQueryRunsResponse) {}
+    rpc GetSqlQueryRun(GetRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun) {}
+    rpc CreateSqlQueryRun(CreateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun) {}
+    rpc UpdateSqlQueryRun(UpdateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun) {}
+    rpc DeleteSqlQueryRun(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListWebRequestRun(ListRunbooksRequest) returns (ListWebRequestRunsResponse) {}
+    rpc GetWebRequestRun(GetRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun) {}
+    rpc CreateWebRequestRun(CreateWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun) {}
+    rpc UpdateWebRequestRun(UpdateWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun) {}
+    rpc DeleteWebRequestRun(DeleteWebRequestRequest) returns (google.protobuf.Empty) {}
+
+    rpc ListWebRequest(ListRunbooksRequest) returns (ListWebRequestRunsResponse) {}
+    rpc GetWebRequet(GetRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
+    rpc CreateWebRequest(CreateWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
+    rpc UpdateWebRequest(UpdateWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
+    rpc DeleteWebRequest(DeleteWebRequestRequest) returns (google.protobuf.Empty) {}
+    
+    rpc ListPredictiveApp(ListPredictiveAppRequest) returns (ListPredictiveAppResponse) {}
+    rpc GetPredictiveApp(GetPredictiveAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp) {}
+    rpc CreatePredictiveApp(CreatePredictiveAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp) {}
+    rpc UpdatePredictiveApp(UpdatePredictiveAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp) {}
+    rpc DeletePredictiveApp(DeletePredictiveAppRequest) returns (google.protobuf.Empty) {}
 
 }
 
