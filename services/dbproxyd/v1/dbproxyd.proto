@@ -2127,13 +2127,13 @@ service DatabaseProxyService {
     rpc UpdateRunBook(UpdateRunbookRequest) returns (github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook) {}
     rpc DeleteRunBook(DeleteRunbookRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListSqkQueries(ListSqlQuerysRequest) returns (ListSqlQuerysResponse) {}
+    rpc ListSqlQueries(ListSqlQuerysRequest) returns (ListSqlQuerysResponse) {}
     rpc GetSqlQuery(GetSqlQueryRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery) {}
     rpc CreateSqlQuery(CreateSqlQueryRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery) {}
     rpc UpdateSqlQuery(UpdateSqlQueryRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery) {}
     rpc DeleteSqlQuery(DeleteSqlQueryRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListSqlQueryRun(ListSqlQueryRunsRequest) returns (ListSqlQueryRunsResponse) {}
+    rpc ListSqlQueryRuns(ListSqlQueryRunsRequest) returns (ListSqlQueryRunsResponse) {}
     rpc GetSqlQueryRun(GetSqlQueryRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun) {}
     rpc CreateSqlQueryRun(CreateSqlQueryRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun) {}
     rpc UpdateSqlQueryRun(UpdateSqlQueryRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun) {}
@@ -2145,8 +2145,8 @@ service DatabaseProxyService {
     rpc UpdateWebRequestRun(UpdateWebRequestRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun) {}
     rpc DeleteWebRequestRun(DeleteWebRequestRunRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListWebRequest(ListWebRequestsRequest) returns (ListWebRequestsResponse) {}
-    rpc GetWebRequet(GetWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
+    rpc ListWebRequests(ListWebRequestsRequest) returns (ListWebRequestsResponse) {}
+    rpc GetWebRequest(GetWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
     rpc CreateWebRequest(CreateWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
     rpc UpdateWebRequest(UpdateWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
     rpc DeleteWebRequest(DeleteWebRequestRequest) returns (google.protobuf.Empty) {}
