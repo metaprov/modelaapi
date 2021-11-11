@@ -10043,24 +10043,24 @@ export class DatabaseProxyServiceClient {
 
   methodInfoListWebRequestRun = new grpcWeb.AbstractClientBase.MethodInfo(
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest) => {
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest) => {
       return request.serializeBinary();
     },
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse.deserializeBinary
   );
 
   listWebRequestRun(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest,
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest,
     metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse>;
 
   listWebRequestRun(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest,
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse>;
 
   listWebRequestRun(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest,
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse) => void) {

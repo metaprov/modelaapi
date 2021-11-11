@@ -1272,7 +1272,7 @@ class DatabaseProxyServiceStub(object):
                 )
         self.ListWebRequestRun = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListWebRequestRun',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestsRequest.SerializeToString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestRunsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestRunsResponse.FromString,
                 )
         self.GetWebRequestRun = channel.unary_unary(
@@ -4210,7 +4210,7 @@ def add_DatabaseProxyServiceServicer_to_server(servicer, server):
             ),
             'ListWebRequestRun': grpc.unary_unary_rpc_method_handler(
                     servicer.ListWebRequestRun,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestsRequest.FromString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestRunsRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestRunsResponse.SerializeToString,
             ),
             'GetWebRequestRun': grpc.unary_unary_rpc_method_handler(
@@ -8555,7 +8555,7 @@ class DatabaseProxyService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListWebRequestRun',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestsRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestRunsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dbproxyd_dot_v1_dot_dbproxyd__pb2.ListWebRequestRunsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

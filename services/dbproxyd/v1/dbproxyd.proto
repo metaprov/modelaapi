@@ -2139,7 +2139,7 @@ service DatabaseProxyService {
     rpc UpdateSqlQueryRun(UpdateSqlQueryRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun) {}
     rpc DeleteSqlQueryRun(DeleteSqlQueryRunRequest) returns (google.protobuf.Empty) {}
 
-    rpc ListWebRequestRun(ListWebRequestsRequest) returns (ListWebRequestRunsResponse) {}
+    rpc ListWebRequestRun(ListWebRequestRunsRequest) returns (ListWebRequestRunsResponse) {}
     rpc GetWebRequestRun(GetWebRequestRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun) {}
     rpc CreateWebRequestRun(CreateWebRequestRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun) {}
     rpc UpdateWebRequestRun(UpdateWebRequestRunRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun) {}
