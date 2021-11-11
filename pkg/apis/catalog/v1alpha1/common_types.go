@@ -82,6 +82,8 @@ const (
 	PackageModelTask      TaskName = "package-model"
 	FeatureGenTask        TaskName = "feature-gen"
 	FeatureSelectTask     TaskName = "feature-select"
+	RunSqlQueryTask       TaskName = "run-sql-query"
+	RunWebRequestTask     TaskName = "run-web-request"
 
 	GenerateDataset TaskName = "generate-dataset"
 	ValidateModel   TaskName = "validate-model"
