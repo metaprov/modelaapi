@@ -94,6 +94,10 @@ spec:
                 default: ""
                 description: The product version for the webrequest.
                 type: string
+              workloadClassName:
+                default: default-prediction-workload-class
+                description: A reference to the workload class that is used for training
+                type: string
             type: object
           status:
             description: WebRequestRunStatus defines the observed state of WebRequestRun

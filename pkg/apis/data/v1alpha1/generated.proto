@@ -3309,6 +3309,11 @@ message WebRequestRunSpec {
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 timeout = 9;
+
+  // A reference to the workload class that is used for training
+  // +kubebuilder:default:="default-prediction-workload-class"
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 10;
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
@@ -3372,7 +3377,7 @@ message WebRequestSpec {
   // The sql template to create.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional SqlQuerySpec template = 4;
+  optional WebRequestRunSpec template = 4;
 
   // Schedule for running the sql query
   // +kubebuilder:validation:Optional

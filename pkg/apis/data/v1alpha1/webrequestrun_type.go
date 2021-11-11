@@ -107,6 +107,10 @@ type WebRequestRunSpec struct {
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
 	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,9,opt,name=timeout"`
+	// A reference to the workload class that is used for training
+	// +kubebuilder:default:="default-prediction-workload-class"
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,10,opt,name=workloadClassName"`
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun

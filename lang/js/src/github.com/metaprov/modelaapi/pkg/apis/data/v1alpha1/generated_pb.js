@@ -50869,7 +50869,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.toO
     parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, undefined) : [],
     headersMap: (f = msg.getHeadersMap()) ? f.toObject(includeInstance, undefined) : [],
     connectionname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    timeout: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    timeout: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -50945,6 +50946,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.des
     case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTimeout(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setWorkloadclassname(value);
       break;
     default:
       reader.skipField();
@@ -51029,6 +51034,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.ser
   if (f != null) {
     writer.writeInt32(
       9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
       f
     );
   }
@@ -51328,6 +51340,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasTimeout = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string workloadClassName = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getWorkloadclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.setWorkloadclassname = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearWorkloadclassname = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasWorkloadclassname = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -51967,7 +52015,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.toObje
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.toObject(includeInstance, f),
+    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f)
   };
 
@@ -52018,8 +52066,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.deseri
       msg.setDescription(value);
       break;
     case 4:
-      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec;
-      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.deserializeBinaryFromReader);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.deserializeBinaryFromReader);
       msg.setTemplate(value);
       break;
     case 5:
@@ -52082,7 +52130,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.serial
     writer.writeMessage(
       4,
       f,
-      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec.serializeBinaryToWriter
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.serializeBinaryToWriter
     );
   }
   f = message.getSchedule();
@@ -52205,17 +52253,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.protot
 
 
 /**
- * optional SqlQuerySpec template = 4;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec}
+ * optional WebRequestRunSpec template = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.prototype.getTemplate = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec, 4));
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec, 4));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec|undefined} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestSpec.prototype.setTemplate = function(value) {

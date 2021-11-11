@@ -5145,6 +5145,9 @@ export class WebRequestRunSpec extends jspb.Message {
   getTimeout(): number;
   setTimeout(value: number): WebRequestRunSpec;
 
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): WebRequestRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebRequestRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: WebRequestRunSpec): WebRequestRunSpec.AsObject;
@@ -5164,6 +5167,7 @@ export namespace WebRequestRunSpec {
     headersMap: Array<[string, string]>,
     connectionname: string,
     timeout: number,
+    workloadclassname: string,
   }
 }
 
@@ -5239,8 +5243,8 @@ export class WebRequestSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): WebRequestSpec;
 
-  getTemplate(): SqlQuerySpec | undefined;
-  setTemplate(value?: SqlQuerySpec): WebRequestSpec;
+  getTemplate(): WebRequestRunSpec | undefined;
+  setTemplate(value?: WebRequestRunSpec): WebRequestSpec;
   hasTemplate(): boolean;
   clearTemplate(): WebRequestSpec;
 
@@ -5262,7 +5266,7 @@ export namespace WebRequestSpec {
     owner: string,
     versionname: string,
     description: string,
-    template?: SqlQuerySpec.AsObject,
+    template?: WebRequestRunSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
   }
 }
