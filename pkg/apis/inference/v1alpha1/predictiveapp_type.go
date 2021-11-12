@@ -41,7 +41,7 @@ type PredictiveAppCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=apicalls,singular=webrequest,categories={data,modela}
+// +kubebuilder:resource:path=predictiveapps,singular=predictiveapp,categories={data,modela}
 // +kubebuilder:subresource:status
 type PredictiveApp struct {
 	metav1.TypeMeta   `json:",inline"`

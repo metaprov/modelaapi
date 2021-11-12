@@ -24,10 +24,16 @@ resources:
   - data.modela.ai_labelingpipelines.yaml
   - data.modela.ai_recipes.yaml
   - data.modela.ai_reciperuns.yaml
+  - data.modela.ai_sqlqueries.yaml
+  - data.modela.ai_sqlqueryruns.yaml
+  - data.modela.ai_webrequests.yaml
+  - data.modela.ai_webrequestruns.yaml
+  - data.modela.ai_featurehistograms.yaml
   - inference.modela.ai_curtains.yaml
   - inference.modela.ai_predictions.yaml
   - inference.modela.ai_cronpredictions.yaml
   - inference.modela.ai_predictors.yaml
+  - inference.modela.ai_predictiveapps.yaml
   - infra.modela.ai_accounts.yaml
   - infra.modela.ai_attachments.yaml
   - infra.modela.ai_alerts.yaml
