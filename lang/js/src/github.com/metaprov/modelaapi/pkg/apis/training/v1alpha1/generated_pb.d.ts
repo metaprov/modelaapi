@@ -2310,6 +2310,9 @@ export class ModelPipelineStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ModelPipelineStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): ModelPipelineStatus;
+
   getConditionsList(): Array<ModelPipelineCondition>;
   setConditionsList(value: Array<ModelPipelineCondition>): ModelPipelineStatus;
   clearConditionsList(): ModelPipelineStatus;
@@ -2328,6 +2331,7 @@ export namespace ModelPipelineStatus {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lasterror: string,
     conditionsList: Array<ModelPipelineCondition.AsObject>,
   }
 }
@@ -2731,6 +2735,9 @@ export class ModelStatus extends jspb.Message {
   getTaruri(): string;
   setTaruri(value: string): ModelStatus;
 
+  getAppuri(): string;
+  setAppuri(value: string): ModelStatus;
+
   getImagename(): string;
   setImagename(value: string): ModelStatus;
 
@@ -2875,6 +2882,7 @@ export namespace ModelStatus {
     profileuri: string,
     misclassuri: string,
     taruri: string,
+    appuri: string,
     imagename: string,
     importanceList: Array<FeatureImportance.AsObject>,
     forecasturi: string,

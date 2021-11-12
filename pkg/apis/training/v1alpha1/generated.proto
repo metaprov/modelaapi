@@ -1474,10 +1474,15 @@ message ModelPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
+  // Last error during reconciliation
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string lastError = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineCondition conditions = 4;
+  repeated ModelPipelineCondition conditions = 5;
 }
 
 // model cv results
@@ -1878,126 +1883,130 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string tarUri = 24;
 
+  // AppUri is a reference to the model app file
+  // +kubebuilder:validation:Optional
+  optional string appUri = 25;
+
   // ImageName is the image name of the model
   // +kubebuilder:validation:Optional
-  optional string imageName = 25;
+  optional string imageName = 26;
 
   // +kubebuilder:validation:Optional
   // Importance is list of feature importance based on the alg of this model, sorted by importance
-  repeated FeatureImportance importance = 26;
+  repeated FeatureImportance importance = 27;
 
   // ForecastUri is the uri of the forecast
   // +kubebuilder:validation:Optional
-  optional string forecastUri = 27;
+  optional string forecastUri = 29;
 
   // Python version is the result of python version call.
   // +kubebuilder:validation:Optional
-  optional string pythonVersion = 28;
+  optional string pythonVersion = 30;
 
   // Python packages is the result of running pip freeze
   // +kubebuilder:validation:Optional
-  map<string, string> pythonPackages = 29;
+  map<string, string> pythonPackages = 31;
 
   // TrainDatasetLocation is the location of the train dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 30;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 32;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 31;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 33;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 32;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 34;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 34;
+  optional int64 observedGeneration = 35;
 
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 35;
+  optional int32 trainingRows = 36;
 
   // TestingRows is the amount of rows in testing
   // +kubebuilder:validation:Optional
-  optional int32 testingRows = 36;
+  optional int32 testingRows = 37;
 
   // Validation row contain the number of validation rows for cases that we have validation.
   // +kubebuilder:validation:Optional
-  optional int32 validationRows = 37;
+  optional int32 validationRows = 38;
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 38;
+  optional string lastError = 39;
 
   // Model Progress in precent, the progress takes into account the different stages of the model.
   // +kubebuilder:validation:Optional
-  optional int32 progress = 39;
+  optional int32 progress = 40;
 
   // Size of the model size
   // +kubebuilder:validation:Optional
-  optional int32 sizeInBytes = 40;
+  optional int32 sizeInBytes = 41;
 
   // Prediction Latency
   // +kubebuilder:validation:Optional
-  optional double latency = 41;
+  optional double latency = 42;
 
   // The URL to the released version
-  optional string url = 42;
+  optional string url = 43;
 
   // If the model is released, this is the name of the predictor
   // +kubebuilder:validation:Optional
-  optional string predictorName = 43;
+  optional string predictorName = 44;
 
   // Released at the time when the model was released
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 44;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 45;
 
   // Sha 256 of the model tar file
   // +kubebuilder:validation:Optional
-  optional string tarfileHash = 45;
+  optional string tarfileHash = 46;
 
   // Sha 256 of the model tar file
   // +kubebuilder:validation:Optional
-  optional string imageHash = 46;
+  optional string imageHash = 47;
 
   // Sha 256 of the data sig
   // +kubebuilder:validation:Optional
-  optional DataHashes trainingDataHash = 47;
+  optional DataHashes trainingDataHash = 48;
 
   // ResourceConsumed during training
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption trainingResources = 48;
+  optional ResourceConsumption trainingResources = 49;
 
   // ResourceConsumed during testing
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption testingResources = 49;
+  optional ResourceConsumption testingResources = 50;
 
   // The account that trained the model
   // +kubebuilder:validation:Optional
-  optional string trainedBy = 50;
+  optional string trainedBy = 51;
 
   // The team that trained this model
   // +kubebuilder:validation:Optional
-  optional string team = 51;
+  optional string team = 52;
 
   // The image used during training
   // +kubebuilder:validation:Optional
-  optional string trainerImage = 52;
+  optional string trainerImage = 53;
 
   // If the model is deployed, this points to the end point.
   // +kubebuilder:validation:Optional
-  optional string endpoint = 53;
+  optional string endpoint = 54;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 54;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 55;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 55;
+  repeated ModelCondition conditions = 56;
 }
 
 message ModelValidation {

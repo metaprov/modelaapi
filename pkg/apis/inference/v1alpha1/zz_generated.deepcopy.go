@@ -899,6 +899,11 @@ func (in *PredictiveAppSpec) DeepCopyInto(out *PredictiveAppSpec) {
 		*out = new(int32)
 		**out = **in
 	}
+	if in.Port != nil {
+		in, out := &in.Port, &out.Port
+		*out = new(int32)
+		**out = **in
+	}
 	if in.WorkloadClassName != nil {
 		in, out := &in.WorkloadClassName, &out.WorkloadClassName
 		*out = new(string)

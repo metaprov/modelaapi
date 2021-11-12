@@ -598,24 +598,29 @@ message PredictiveAppSpec {
   // +kubebuilder:validation:Optional
   optional int32 replicas = 7;
 
+  // The port for the app
+  // +kubebuilder:default:=3000
+  // +kubebuilder:validation:Optional
+  optional int32 port = 8;
+
   // The workload class to use when running the app pod
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional string workloadClassName = 9;
 
   // The access method specified how external clients will access the predictor
   // Default: ClusterPort
   // +kubebuilder:default:="cluster-port"
   // +kubebuilder:validation:Optional
-  optional string accessType = 9;
+  optional string accessType = 10;
 
   // The product that this predictor serve.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference productRef = 10;
+  optional k8s.io.api.core.v1.ObjectReference productRef = 11;
 
   // The serving site that hosts this predictor and the models
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 11;
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 12;
 }
 
 // PredictiveAppStatus defines the observed state of PredictiveApp

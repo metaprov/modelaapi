@@ -994,6 +994,10 @@ spec:
                   - type
                   type: object
                 type: array
+              lastError:
+                default: ""
+                description: Last error during reconciliation
+                type: string
               lastRun:
                 description: Last run is the last time a run was created
                 format: date-time

@@ -180,16 +180,23 @@ message MeetingStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
+  // Last error
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string lastError = 3;
+
   // The meeting notes.
-  optional string notes = 3;
+  // +kubebuilder:validation:Optional
+  optional string notes = 4;
 
   // the meeting action items
-  optional string actionItems = 4;
+  // +kubebuilder:validation:Optional
+  optional string actionItems = 5;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated MeetingCondition conditions = 5;
+  repeated MeetingCondition conditions = 6;
 }
 
 // +kubebuilder:object:root=true

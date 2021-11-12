@@ -154,6 +154,10 @@ spec:
                   - type
                   type: object
                 type: array
+              lastError:
+                default: ""
+                description: Last error
+                type: string
               notes:
                 description: The meeting notes.
                 type: string

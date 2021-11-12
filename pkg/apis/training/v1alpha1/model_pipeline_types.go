@@ -270,8 +270,12 @@ type ModelPipelineStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,3,opt,name=lastUpdated"`
+	// Last error during reconciliation
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,4,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []ModelPipelineCondition `json:"conditions,omitempty" protobuf:"bytes,5,rep,name=conditions"`
 }

@@ -247,6 +247,9 @@ export class MeetingStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): MeetingStatus;
 
+  getLasterror(): string;
+  setLasterror(value: string): MeetingStatus;
+
   getNotes(): string;
   setNotes(value: string): MeetingStatus;
 
@@ -270,6 +273,7 @@ export namespace MeetingStatus {
   export type AsObject = {
     phase: string,
     observedgeneration: number,
+    lasterror: string,
     notes: string,
     actionitems: string,
     conditionsList: Array<MeetingCondition.AsObject>,

@@ -9312,8 +9312,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
     parametersMap: (f = msg.getParametersMap()) ? f.toObject(includeInstance, undefined) : [],
     connectionname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     replicas: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    accesstype: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    port: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    accesstype: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     productref: (f = msg.getProductref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
@@ -9383,19 +9384,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
       msg.setReplicas(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPort(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAccesstype(value);
+      msg.setWorkloadclassname(value);
       break;
     case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAccesstype(value);
+      break;
+    case 11:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setProductref(value);
       break;
-    case 11:
+    case 12:
       var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setServingsiteref(value);
@@ -9475,9 +9480,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       8,
       f
     );
@@ -9489,10 +9494,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
   f = message.getProductref();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -9500,7 +9512,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
   f = message.getServingsiteref();
   if (f != null) {
     writer.writeMessage(
-      11,
+      12,
       f,
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
@@ -9747,19 +9759,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
 
 
 /**
- * optional string workloadClassName = 8;
- * @return {string}
+ * optional int32 port = 8;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.getPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.setWorkloadclassname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.setPort = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -9768,7 +9780,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.clearWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.clearPort = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -9777,16 +9789,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.hasPort = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string accessType = 9;
+ * optional string workloadClassName = 9;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.getAccesstype = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.getWorkloadclassname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -9795,7 +9807,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.setAccesstype = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.setWorkloadclassname = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -9804,7 +9816,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.clearAccesstype = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.clearWorkloadclassname = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -9813,18 +9825,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.hasAccesstype = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.hasWorkloadclassname = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference productRef = 10;
+ * optional string accessType = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.getAccesstype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.setAccesstype = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.clearAccesstype = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.hasAccesstype = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference productRef = 11;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.getProductref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 10));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 11));
 };
 
 
@@ -9833,7 +9881,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.setProductref = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -9851,17 +9899,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.hasProductref = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 11;
+ * optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 12;
  * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.getServingsiteref = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 11));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 12));
 };
 
 
@@ -9870,7 +9918,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.setServingsiteref = function(value) {
-  return jspb.Message.setWrapperField(this, 11, value);
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
@@ -9888,7 +9936,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpe
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveAppSpec.prototype.hasServingsiteref = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 

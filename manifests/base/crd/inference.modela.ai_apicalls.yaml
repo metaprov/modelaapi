@@ -86,6 +86,11 @@ spec:
                 default: ""
                 description: The path of the predictive path
                 type: string
+              port:
+                default: 3000
+                description: The port for the app
+                format: int32
+                type: integer
               productRef:
                 description: The product that this predictor serve.
                 properties:

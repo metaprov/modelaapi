@@ -1238,6 +1238,9 @@ spec:
           status:
             description: ModelStatus defines the observed state of the Model
             properties:
+              appUri:
+                description: AppUri is a reference to the model app file
+                type: string
               best:
                 description: Best is true if this is the best model
                 type: boolean

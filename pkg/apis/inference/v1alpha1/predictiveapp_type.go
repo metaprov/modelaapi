@@ -88,21 +88,25 @@ type PredictiveAppSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,7,opt,name=replicas"`
+	// The port for the app
+	// +kubebuilder:default:=3000
+	// +kubebuilder:validation:Optional
+	Port *int32 `json:"port,omitempty" protobuf:"varint,8,opt,name=port"`
 	// The workload class to use when running the app pod
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
 	// The access method specified how external clients will access the predictor
 	// Default: ClusterPort
 	// +kubebuilder:default:="cluster-port"
 	// +kubebuilder:validation:Optional
-	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,9,opt,name=accessType"`
+	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,10,opt,name=accessType"`
 	// The product that this predictor serve.
 	// +kubebuilder:validation:Optional
-	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,10,opt,name=productRef"`
+	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,11,opt,name=productRef"`
 	// The serving site that hosts this predictor and the models
 	// +kubebuilder:validation:Optional
-	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,11,opt,name=servingsiteRef"`
+	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,12,opt,name=servingsiteRef"`
 }
 
 // PredictiveAppStatus defines the observed state of PredictiveApp

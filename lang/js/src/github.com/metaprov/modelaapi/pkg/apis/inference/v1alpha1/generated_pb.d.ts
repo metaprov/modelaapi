@@ -967,6 +967,9 @@ export class PredictiveAppSpec extends jspb.Message {
   getReplicas(): number;
   setReplicas(value: number): PredictiveAppSpec;
 
+  getPort(): number;
+  setPort(value: number): PredictiveAppSpec;
+
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): PredictiveAppSpec;
 
@@ -1000,6 +1003,7 @@ export namespace PredictiveAppSpec {
     parametersMap: Array<[string, string]>,
     connectionname: string,
     replicas: number,
+    port: number,
     workloadclassname: string,
     accesstype: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
