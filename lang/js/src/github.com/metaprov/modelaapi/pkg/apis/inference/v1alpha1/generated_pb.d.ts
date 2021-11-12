@@ -955,14 +955,33 @@ export class PredictiveAppSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): PredictiveAppSpec;
 
-  getQuery(): string;
-  setQuery(value: string): PredictiveAppSpec;
+  getPath(): string;
+  setPath(value: string): PredictiveAppSpec;
 
   getParametersMap(): jspb.Map<string, string>;
   clearParametersMap(): PredictiveAppSpec;
 
   getConnectionname(): string;
   setConnectionname(value: string): PredictiveAppSpec;
+
+  getReplicas(): number;
+  setReplicas(value: number): PredictiveAppSpec;
+
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): PredictiveAppSpec;
+
+  getAccesstype(): string;
+  setAccesstype(value: string): PredictiveAppSpec;
+
+  getProductref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setProductref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictiveAppSpec;
+  hasProductref(): boolean;
+  clearProductref(): PredictiveAppSpec;
+
+  getServingsiteref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServingsiteref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictiveAppSpec;
+  hasServingsiteref(): boolean;
+  clearServingsiteref(): PredictiveAppSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictiveAppSpec.AsObject;
@@ -977,17 +996,25 @@ export namespace PredictiveAppSpec {
     owner: string,
     versionname: string,
     description: string,
-    query: string,
+    path: string,
     parametersMap: Array<[string, string]>,
     connectionname: string,
+    replicas: number,
+    workloadclassname: string,
+    accesstype: string,
+    productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
 export class PredictiveAppStatus extends jspb.Message {
-  getLastrun(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setLastrun(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictiveAppStatus;
-  hasLastrun(): boolean;
-  clearLastrun(): PredictiveAppStatus;
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): PredictiveAppStatus;
+
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PredictiveAppStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): PredictiveAppStatus;
 
   getConditionsList(): Array<PredictiveAppCondition>;
   setConditionsList(value: Array<PredictiveAppCondition>): PredictiveAppStatus;
@@ -1004,7 +1031,8 @@ export class PredictiveAppStatus extends jspb.Message {
 
 export namespace PredictiveAppStatus {
   export type AsObject = {
-    lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<PredictiveAppCondition.AsObject>,
   }
 }

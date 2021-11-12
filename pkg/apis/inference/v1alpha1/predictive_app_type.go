@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -71,12 +72,11 @@ type PredictiveAppSpec struct {
 	// Comments is a description of the webrequest
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
-	// Type name of the column key, this column is the key column in the entity.
+	// The path of the predictive path
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	URL *string `json:"text,omitempty" protobuf:"bytes,4,opt,name=query"`
+	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
 	// URL Parameters
 	// +kubebuilder:validation:Optional
 	Parameters map[string]string `json:"parameters,omitempty" protobuf:"bytes,5,opt,name=parameters"`
@@ -84,16 +84,37 @@ type PredictiveAppSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,6,opt,name=connectionName"`
+	// Number of replicates
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,7,opt,name=replicas"`
+	// The workload class to use when running the app pod
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	// The access method specified how external clients will access the predictor
+	// Default: ClusterPort
+	// +kubebuilder:default:="cluster-port"
+	// +kubebuilder:validation:Optional
+	AccessType *catalog.AccessType `json:"accessType,omitempty" protobuf:"bytes,9,opt,name=accessType"`
+	// The product that this predictor serve.
+	// +kubebuilder:validation:Optional
+	ProductRef *v1.ObjectReference `json:"productRef,omitempty" protobuf:"bytes,10,opt,name=productRef"`
+	// The serving site that hosts this predictor and the models
+	// +kubebuilder:validation:Optional
+	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,11,opt,name=servingsiteRef"`
 }
 
 // PredictiveAppStatus defines the observed state of PredictiveApp
 type PredictiveAppStatus struct {
-	// Last Time the query run
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,2,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictiveAppCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,2,rep,name=conditions"`
+	Conditions []PredictiveAppCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

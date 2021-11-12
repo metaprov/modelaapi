@@ -53,6 +53,18 @@ spec:
           spec:
             description: PredictiveAppSpec contain the desired state of a PredictiveApp
             properties:
+              accessType:
+                default: cluster-port
+                description: 'The access method specified how external clients will
+                  access the predictor Default: ClusterPort'
+                enum:
+                - cluster-port
+                - node-port
+                - load-balancer
+                - ingress
+                - mesh
+                - none
+                type: string
               connectionName:
                 default: ""
                 description: The name of the time stamp column
@@ -60,7 +72,6 @@ spec:
               description:
                 default: ""
                 description: Comments is a description of the webrequest
-                maxLength: 512
                 type: string
               owner:
                 default: no-one
@@ -71,14 +82,94 @@ spec:
                   type: string
                 description: URL Parameters
                 type: object
-              text:
+              path:
                 default: ""
-                description: Type name of the column key, this column is the key column
-                  in the entity.
+                description: The path of the predictive path
                 type: string
+              productRef:
+                description: The product that this predictor serve.
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
+              replicas:
+                default: 1
+                description: Number of replicates
+                format: int32
+                type: integer
+              servingsiteRef:
+                description: The serving site that hosts this predictor and the models
+                properties:
+                  apiVersion:
+                    description: API version of the referent.
+                    type: string
+                  fieldPath:
+                    description: 'If referring to a piece of an object instead of
+                      an entire object, this string should contain a valid JSON/Go
+                      field access statement, such as desiredState.manifest.containers[2].
+                      For example, if the object reference is to a container within
+                      a pod, this would take on a value like: "spec.containers{name}"
+                      (where "name" refers to the name of the container that triggered
+                      the event) or if no container name is specified "spec.containers[2]"
+                      (container with index 2 in this pod). This syntax is chosen
+                      only to have some well-defined way of referencing a part of
+                      an object. TODO: this design is not final and this field is
+                      subject to change in the future.'
+                    type: string
+                  kind:
+                    description: 'Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+                    type: string
+                  name:
+                    description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names'
+                    type: string
+                  namespace:
+                    description: 'Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/'
+                    type: string
+                  resourceVersion:
+                    description: 'Specific resourceVersion to which this reference
+                      is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency'
+                    type: string
+                  uid:
+                    description: 'UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids'
+                    type: string
+                type: object
               versionName:
                 default: ""
                 description: The product version for the webrequest.
+                type: string
+              workloadClassName:
+                default: ""
+                description: The workload class to use when running the app pod
                 type: string
             type: object
           status:
@@ -112,11 +203,15 @@ spec:
                   - type
                   type: object
                 type: array
-              lastRun:
-                default: ""
-                description: Last Time the query run
+              lastUpdated:
+                description: Last time the object was updated
                 format: date-time
                 type: string
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
             type: object
         required:
         - metadata
