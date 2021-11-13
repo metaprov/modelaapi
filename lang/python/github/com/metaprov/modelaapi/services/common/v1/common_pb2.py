@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/common/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/common/v1/common.proto\x12\x30github.com.metaprov.modelaapi.services.common.v1\"\xc4\x02\n\x0e\x44\x61tasetProfile\x12\x0c\n\x04\x63ols\x18\x01 \x01(\x05\x12\x0c\n\x04rows\x18\x02 \x01(\x05\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\x05\x12\x11\n\timbalance\x18\x04 \x01(\x08\x12\x45\n\x05plots\x18\x05 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12P\n\x07\x63olumns\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\x12J\n\x05table\x18\x07 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\x12\x0c\n\x04hash\x18\x08 \x01(\t\"\xfa\x01\n\x0cModelProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12\x62\n\nimportance\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.ImportanceEntry\x1a\x31\n\x0fImportanceEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"f\n\x0f\x46orecastProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\"\xe8\x01\n\x0cStudyProfile\x12\x45\n\x05plots\x18\x01 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12N\n\x06models\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\x12\x14\n\x0ctrainingHash\x18\x03 \x01(\t\x12\x13\n\x0btestingHash\x18\x04 \x01(\t\x12\x16\n\x0evalidationHash\x18\x05 \x01(\t\"L\n\x04Plot\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0b\n\x03img\x18\x03 \x01(\x0c\x12\r\n\x05\x66name\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\"\xf4\x03\n\rColumnProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\t\n\x01n\x18\x02 \x01(\x05\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x0f\n\x07missing\x18\x04 \x01(\x05\x12\x10\n\x08\x64istinct\x18\x05 \x01(\x05\x12\x0c\n\x04mean\x18\x06 \x01(\x01\x12\x0c\n\x04mode\x18\x07 \x01(\t\x12\x0b\n\x03std\x18\x08 \x01(\x01\x12\x10\n\x08variance\x18\t \x01(\x01\x12\x0b\n\x03min\x18\n \x01(\x01\x12\x0b\n\x03max\x18\x0b \x01(\x01\x12\x10\n\x08kurtosis\x18\x0c \x01(\x01\x12\x10\n\x08skewness\x18\r \x01(\x01\x12\x0b\n\x03sum\x18\x0e \x01(\x01\x12\x0b\n\x03mad\x18\x0f \x01(\x01\x12\r\n\x05zeros\x18\x10 \x01(\x01\x12\x0b\n\x03p25\x18\x11 \x01(\x01\x12\x0b\n\x03p50\x18\x12 \x01(\x01\x12\x0b\n\x03p75\x18\x13 \x01(\x01\x12\x0c\n\x04p100\x18\x14 \x01(\x01\x12\x0b\n\x03iqr\x18\x15 \x01(\x01\x12\n\n\x02\x63v\x18\x16 \x01(\x01\x12\x11\n\tp_missing\x18\x17 \x01(\x01\x12\x0b\n\x03top\x18\x18 \x01(\x05\x12\x0c\n\x04\x66req\x18\x19 \x01(\x05\x12\x0e\n\x06ignore\x18\x1a \x01(\x08\x12\r\n\x05label\x18\x1b \x01(\x08\x12\x0c\n\x04\x63orr\x18\x1c \x01(\x08\x12N\n\thistogram\x18\x1d \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.Histogram\")\n\x0eHistogramValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\t\n\x01v\x18\x02 \x01(\x02\"]\n\tHistogram\x12P\n\x06values\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.HistogramValue\"\xf6\x02\n\rNamespaceInfo\x12[\n\x04type\x18\x01 \x01(\x0e\x32M.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo.NamespaceType\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x03 \x01(\x05\x12\x0f\n\x07\x62uckets\x18\x04 \x01(\x05\x12\x0c\n\x04labs\x18\x05 \x01(\x05\x12\x14\n\x0cservingsites\x18\x06 \x01(\x05\x12\x10\n\x08\x64\x61tasets\x18\x07 \x01(\x05\x12\x13\n\x0b\x64\x61tasources\x18\x08 \x01(\x05\x12\x0f\n\x07studies\x18\t \x01(\x05\x12\x0e\n\x06models\x18\n \x01(\x05\"k\n\rNamespaceType\x12\n\n\x06TENANT\x10\x00\x12\x0f\n\x0b\x44\x41TAPRODUCT\x10\x01\x12\x07\n\x03LAB\x10\x02\x12\x0f\n\x0bSERVINGSITE\x10\x03\x12\x10\n\x0cMODELASYSTEM\x10\x04\x12\x11\n\rMODELACATALOG\x10\x05\"\xba\x01\n\tTableView\x12\x0c\n\x04\x63ols\x18\x01 \x03(\t\x12L\n\x04rows\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.TableViewRow\x12Q\n\x08profiles\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\"\x1e\n\x0cTableViewRow\x12\x0e\n\x06values\x18\x01 \x03(\tB2Z0github.com/metaprov/modelaapi/services/common/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/common/v1/common.proto\x12\x30github.com.metaprov.modelaapi.services.common.v1\"\xc4\x02\n\x0e\x44\x61tasetProfile\x12\x0c\n\x04\x63ols\x18\x01 \x01(\x05\x12\x0c\n\x04rows\x18\x02 \x01(\x05\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\x05\x12\x11\n\timbalance\x18\x04 \x01(\x08\x12\x45\n\x05plots\x18\x05 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12P\n\x07\x63olumns\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\x12J\n\x05table\x18\x07 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\x12\x0c\n\x04hash\x18\x08 \x01(\t\"\xfa\x01\n\x0cModelProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12\x62\n\nimportance\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.ImportanceEntry\x1a\x31\n\x0fImportanceEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"f\n\x0f\x46orecastProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\"\xe8\x01\n\x0cStudyProfile\x12\x45\n\x05plots\x18\x01 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12N\n\x06models\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\x12\x14\n\x0ctrainingHash\x18\x03 \x01(\t\x12\x13\n\x0btestingHash\x18\x04 \x01(\t\x12\x16\n\x0evalidationHash\x18\x05 \x01(\t\"L\n\x04Plot\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0b\n\x03img\x18\x03 \x01(\x0c\x12\r\n\x05\x66name\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\"\xf7\x06\n\rColumnProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x0f\n\x07missing\x18\x04 \x01(\x05\x12\x16\n\x0epercentMissing\x18\x05 \x01(\x02\x12\x10\n\x08\x64istinct\x18\x06 \x01(\x05\x12\x0c\n\x04mean\x18\x07 \x01(\x01\x12\x0c\n\x04mode\x18\x08 \x01(\t\x12\x0e\n\x06stddev\x18\t \x01(\x01\x12\x10\n\x08variance\x18\n \x01(\x01\x12\x0b\n\x03min\x18\x0b \x01(\x01\x12\x0b\n\x03max\x18\x0c \x01(\x01\x12\x10\n\x08kurtosis\x18\r \x01(\x01\x12\x10\n\x08skewness\x18\x0e \x01(\x01\x12\x0b\n\x03sum\x18\x0f \x01(\x01\x12\x0b\n\x03mad\x18\x10 \x01(\x01\x12\r\n\x05zeros\x18\x11 \x01(\x01\x12\x0b\n\x03p25\x18\x12 \x01(\x01\x12\x0b\n\x03p50\x18\x13 \x01(\x01\x12\x0b\n\x03p75\x18\x14 \x01(\x01\x12\x0c\n\x04p100\x18\x15 \x01(\x01\x12\x0b\n\x03iqr\x18\x16 \x01(\x01\x12\n\n\x02\x63v\x18\x17 \x01(\x01\x12\x0b\n\x03top\x18\x18 \x01(\x05\x12\x0c\n\x04\x66req\x18\x19 \x01(\x05\x12\x0e\n\x06ignore\x18\x1a \x01(\x08\x12\r\n\x05label\x18\x1b \x01(\x08\x12N\n\thistogram\x18\x1d \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.Histogram\x12\x0f\n\x07invalid\x18  \x01(\x05\x12\x12\n\nimportance\x18! \x01(\x01\x12\x0e\n\x06target\x18\" \x01(\x08\x12\x0f\n\x07ignored\x18# \x01(\x08\x12\x10\n\x08nullable\x18$ \x01(\x08\x12\x17\n\x0fhighCardinality\x18% \x01(\x08\x12!\n\x19highCorrWithOtherFeatures\x18& \x01(\x08\x12\x19\n\x11lowCorrWithTarget\x18\' \x01(\x08\x12\x16\n\x0ehighMissingPct\x18( \x01(\x08\x12\x0e\n\x06skewed\x18) \x01(\x08\x12\n\n\x02id\x18* \x01(\x08\x12\x10\n\x08\x63onstant\x18+ \x01(\x08\x12\x11\n\tduplicate\x18, \x01(\x08\x12\x10\n\x08reserved\x18- \x01(\x08\x12\x14\n\x0c\x63ompleteness\x18. \x01(\x08\x12\x1a\n\x12\x64istinctValueCount\x18/ \x01(\x01\x12\x1b\n\x13mostFreqValuesRatio\x18\x30 \x01(\x01\x12\x1a\n\x12indexOfPeculiarity\x18\x31 \x01(\x01\")\n\x0eHistogramValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\t\n\x01v\x18\x02 \x01(\x02\"]\n\tHistogram\x12P\n\x06values\x18\x01 \x03(\x0b\x32@.github.com.metaprov.modelaapi.services.common.v1.HistogramValue\"\xf6\x02\n\rNamespaceInfo\x12[\n\x04type\x18\x01 \x01(\x0e\x32M.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo.NamespaceType\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x03 \x01(\x05\x12\x0f\n\x07\x62uckets\x18\x04 \x01(\x05\x12\x0c\n\x04labs\x18\x05 \x01(\x05\x12\x14\n\x0cservingsites\x18\x06 \x01(\x05\x12\x10\n\x08\x64\x61tasets\x18\x07 \x01(\x05\x12\x13\n\x0b\x64\x61tasources\x18\x08 \x01(\x05\x12\x0f\n\x07studies\x18\t \x01(\x05\x12\x0e\n\x06models\x18\n \x01(\x05\"k\n\rNamespaceType\x12\n\n\x06TENANT\x10\x00\x12\x0f\n\x0b\x44\x41TAPRODUCT\x10\x01\x12\x07\n\x03LAB\x10\x02\x12\x0f\n\x0bSERVINGSITE\x10\x03\x12\x10\n\x0cMODELASYSTEM\x10\x04\x12\x11\n\rMODELACATALOG\x10\x05\"\xba\x01\n\tTableView\x12\x0c\n\x04\x63ols\x18\x01 \x03(\t\x12L\n\x04rows\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.TableViewRow\x12Q\n\x08profiles\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\"\x1e\n\x0cTableViewRow\x12\x0e\n\x06values\x18\x01 \x03(\tB2Z0github.com/metaprov/modelaapi/services/common/v1b\x06proto3'
 )
 
 
@@ -64,8 +64,8 @@ _NAMESPACEINFO_NAMESPACETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2021,
-  serialized_end=2128,
+  serialized_start=2408,
+  serialized_end=2515,
 )
 _sym_db.RegisterEnumDescriptor(_NAMESPACEINFO_NAMESPACETYPE)
 
@@ -410,7 +410,7 @@ _COLUMNPROFILE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='n', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.n', index=1,
+      name='count', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.count', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -431,133 +431,133 @@ _COLUMNPROFILE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='distinct', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.distinct', index=4,
-      number=5, type=5, cpp_type=1, label=1,
+      name='percentMissing', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.percentMissing', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='distinct', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.distinct', index=5,
+      number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mean', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.mean', index=5,
-      number=6, type=1, cpp_type=5, label=1,
+      name='mean', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.mean', index=6,
+      number=7, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mode', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.mode', index=6,
-      number=7, type=9, cpp_type=9, label=1,
+      name='mode', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.mode', index=7,
+      number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='std', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.std', index=7,
-      number=8, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='variance', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.variance', index=8,
+      name='stddev', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.stddev', index=8,
       number=9, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='min', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.min', index=9,
+      name='variance', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.variance', index=9,
       number=10, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='max', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.max', index=10,
+      name='min', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.min', index=10,
       number=11, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kurtosis', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.kurtosis', index=11,
+      name='max', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.max', index=11,
       number=12, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='skewness', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.skewness', index=12,
+      name='kurtosis', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.kurtosis', index=12,
       number=13, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sum', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.sum', index=13,
+      name='skewness', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.skewness', index=13,
       number=14, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mad', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.mad', index=14,
+      name='sum', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.sum', index=14,
       number=15, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='zeros', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.zeros', index=15,
+      name='mad', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.mad', index=15,
       number=16, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='p25', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p25', index=16,
+      name='zeros', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.zeros', index=16,
       number=17, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='p50', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p50', index=17,
+      name='p25', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p25', index=17,
       number=18, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='p75', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p75', index=18,
+      name='p50', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p50', index=18,
       number=19, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='p100', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p100', index=19,
+      name='p75', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p75', index=19,
       number=20, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='iqr', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.iqr', index=20,
+      name='p100', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p100', index=20,
       number=21, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cv', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.cv', index=21,
+      name='iqr', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.iqr', index=21,
       number=22, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='p_missing', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.p_missing', index=22,
+      name='cv', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.cv', index=22,
       number=23, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -592,16 +592,135 @@ _COLUMNPROFILE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='corr', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.corr', index=27,
-      number=28, type=8, cpp_type=7, label=1,
+      name='histogram', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.histogram', index=27,
+      number=29, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='invalid', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.invalid', index=28,
+      number=32, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='importance', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.importance', index=29,
+      number=33, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='target', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.target', index=30,
+      number=34, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='histogram', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.histogram', index=28,
-      number=29, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='ignored', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.ignored', index=31,
+      number=35, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='nullable', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.nullable', index=32,
+      number=36, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='highCardinality', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.highCardinality', index=33,
+      number=37, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='highCorrWithOtherFeatures', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.highCorrWithOtherFeatures', index=34,
+      number=38, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lowCorrWithTarget', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.lowCorrWithTarget', index=35,
+      number=39, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='highMissingPct', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.highMissingPct', index=36,
+      number=40, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='skewed', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.skewed', index=37,
+      number=41, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.id', index=38,
+      number=42, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='constant', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.constant', index=39,
+      number=43, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='duplicate', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.duplicate', index=40,
+      number=44, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reserved', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.reserved', index=41,
+      number=45, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='completeness', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.completeness', index=42,
+      number=46, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='distinctValueCount', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.distinctValueCount', index=43,
+      number=47, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mostFreqValuesRatio', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.mostFreqValuesRatio', index=44,
+      number=48, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='indexOfPeculiarity', full_name='github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.indexOfPeculiarity', index=45,
+      number=49, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -618,7 +737,7 @@ _COLUMNPROFILE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1113,
-  serialized_end=1613,
+  serialized_end=2000,
 )
 
 
@@ -656,8 +775,8 @@ _HISTOGRAMVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1615,
-  serialized_end=1656,
+  serialized_start=2002,
+  serialized_end=2043,
 )
 
 
@@ -688,8 +807,8 @@ _HISTOGRAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1658,
-  serialized_end=1751,
+  serialized_start=2045,
+  serialized_end=2138,
 )
 
 
@@ -784,8 +903,8 @@ _NAMESPACEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1754,
-  serialized_end=2128,
+  serialized_start=2141,
+  serialized_end=2515,
 )
 
 
@@ -830,8 +949,8 @@ _TABLEVIEW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2131,
-  serialized_end=2317,
+  serialized_start=2518,
+  serialized_end=2704,
 )
 
 
@@ -862,8 +981,8 @@ _TABLEVIEWROW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2319,
-  serialized_end=2349,
+  serialized_start=2706,
+  serialized_end=2736,
 )
 
 _DATASETPROFILE.fields_by_name['plots'].message_type = _PLOT

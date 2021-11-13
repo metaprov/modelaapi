@@ -58,37 +58,54 @@ message Plot {
 
 
 message ColumnProfile {
-    string name       = 1;
-    int32  n          = 2;
-    string type       = 3;
-    int32  missing    = 4;
-    int32  distinct   = 5;
-    double mean        = 6;
-    string mode        = 7;
-    double std         = 8;
-    double variance    = 9;
-    double min         = 10;
-    double max         = 11;
-    double kurtosis    = 12;
-    double skewness    = 13;
-    double sum         = 14;
-    double mad         = 15;
-    double zeros       = 16;
-    double p25         = 17;
-    double p50         = 18;
-    double p75         = 19;
-    double p100        = 20;
-    double iqr         = 21;
-    double cv          = 22;
-    double p_missing   = 23;
-    int32  top        = 24;
-    int32  freq       = 25;
-    bool  ignore      = 26;
-    bool  label       = 27;
-    // return true if this cols is corrlated to another cols
-    bool  corr        = 28;
-    // histogram
-    Histogram histogram = 29;
+	
+    string    name            = 1;
+    int32     count           = 2;
+    string    type            = 3;
+    int32     missing         = 4;
+    float     percentMissing  = 5;
+    int32     distinct        = 6;
+    double    mean            = 7;
+    string    mode            = 8;
+    double    stddev          = 9;
+    double    variance        = 10;
+    double    min             = 11;
+    double    max             = 12;
+    double    kurtosis        = 13;
+    double    skewness        = 14;
+    double    sum             = 15;
+    double    mad             = 16;
+    double    zeros           = 17;
+    double    p25             = 18;
+    double    p50             = 19;
+    double    p75             = 20;
+    double    p100            = 21;
+    double    iqr             = 22;
+    double    cv              = 23;
+    int32     top             = 24;
+    int32     freq            = 25;
+    bool      ignore          = 26;
+    bool      label           = 27;
+    Histogram histogram       = 29;
+	int32     invalid         = 32; 
+	double    importance      = 33; 
+	bool      target          = 34; 
+	bool      ignored         = 35; 
+	bool      nullable        = 36; 
+	bool      highCardinality = 37; 
+	bool      highCorrWithOtherFeatures =38;   
+	bool      lowCorrWithTarget =39;   
+	bool      highMissingPct  = 40;   
+	bool      skewed          = 41;   
+	bool      id              = 42;   
+	bool      constant        = 43;   
+	bool      duplicate       = 44;   
+	bool      reserved        = 45;   
+	bool      completeness    = 46;   
+	double    distinctValueCount = 47;    
+	double    mostFreqValuesRatio = 48;   
+	double    indexOfPeculiarity = 49;   
+
 }
 
 message HistogramValue {

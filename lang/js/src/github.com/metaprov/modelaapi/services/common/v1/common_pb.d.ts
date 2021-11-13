@@ -184,14 +184,17 @@ export class ColumnProfile extends jspb.Message {
   getName(): string;
   setName(value: string): ColumnProfile;
 
-  getN(): number;
-  setN(value: number): ColumnProfile;
+  getCount(): number;
+  setCount(value: number): ColumnProfile;
 
   getType(): string;
   setType(value: string): ColumnProfile;
 
   getMissing(): number;
   setMissing(value: number): ColumnProfile;
+
+  getPercentmissing(): number;
+  setPercentmissing(value: number): ColumnProfile;
 
   getDistinct(): number;
   setDistinct(value: number): ColumnProfile;
@@ -202,8 +205,8 @@ export class ColumnProfile extends jspb.Message {
   getMode(): string;
   setMode(value: string): ColumnProfile;
 
-  getStd(): number;
-  setStd(value: number): ColumnProfile;
+  getStddev(): number;
+  setStddev(value: number): ColumnProfile;
 
   getVariance(): number;
   setVariance(value: number): ColumnProfile;
@@ -247,9 +250,6 @@ export class ColumnProfile extends jspb.Message {
   getCv(): number;
   setCv(value: number): ColumnProfile;
 
-  getPMissing(): number;
-  setPMissing(value: number): ColumnProfile;
-
   getTop(): number;
   setTop(value: number): ColumnProfile;
 
@@ -262,13 +262,64 @@ export class ColumnProfile extends jspb.Message {
   getLabel(): boolean;
   setLabel(value: boolean): ColumnProfile;
 
-  getCorr(): boolean;
-  setCorr(value: boolean): ColumnProfile;
-
   getHistogram(): Histogram | undefined;
   setHistogram(value?: Histogram): ColumnProfile;
   hasHistogram(): boolean;
   clearHistogram(): ColumnProfile;
+
+  getInvalid(): number;
+  setInvalid(value: number): ColumnProfile;
+
+  getImportance(): number;
+  setImportance(value: number): ColumnProfile;
+
+  getTarget(): boolean;
+  setTarget(value: boolean): ColumnProfile;
+
+  getIgnored(): boolean;
+  setIgnored(value: boolean): ColumnProfile;
+
+  getNullable(): boolean;
+  setNullable(value: boolean): ColumnProfile;
+
+  getHighcardinality(): boolean;
+  setHighcardinality(value: boolean): ColumnProfile;
+
+  getHighcorrwithotherfeatures(): boolean;
+  setHighcorrwithotherfeatures(value: boolean): ColumnProfile;
+
+  getLowcorrwithtarget(): boolean;
+  setLowcorrwithtarget(value: boolean): ColumnProfile;
+
+  getHighmissingpct(): boolean;
+  setHighmissingpct(value: boolean): ColumnProfile;
+
+  getSkewed(): boolean;
+  setSkewed(value: boolean): ColumnProfile;
+
+  getId(): boolean;
+  setId(value: boolean): ColumnProfile;
+
+  getConstant(): boolean;
+  setConstant(value: boolean): ColumnProfile;
+
+  getDuplicate(): boolean;
+  setDuplicate(value: boolean): ColumnProfile;
+
+  getReserved(): boolean;
+  setReserved(value: boolean): ColumnProfile;
+
+  getCompleteness(): boolean;
+  setCompleteness(value: boolean): ColumnProfile;
+
+  getDistinctvaluecount(): number;
+  setDistinctvaluecount(value: number): ColumnProfile;
+
+  getMostfreqvaluesratio(): number;
+  setMostfreqvaluesratio(value: number): ColumnProfile;
+
+  getIndexofpeculiarity(): number;
+  setIndexofpeculiarity(value: number): ColumnProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnProfile.AsObject;
@@ -281,13 +332,14 @@ export class ColumnProfile extends jspb.Message {
 export namespace ColumnProfile {
   export type AsObject = {
     name: string,
-    n: number,
+    count: number,
     type: string,
     missing: number,
+    percentmissing: number,
     distinct: number,
     mean: number,
     mode: string,
-    std: number,
+    stddev: number,
     variance: number,
     min: number,
     max: number,
@@ -302,13 +354,29 @@ export namespace ColumnProfile {
     p100: number,
     iqr: number,
     cv: number,
-    pMissing: number,
     top: number,
     freq: number,
     ignore: boolean,
     label: boolean,
-    corr: boolean,
     histogram?: Histogram.AsObject,
+    invalid: number,
+    importance: number,
+    target: boolean,
+    ignored: boolean,
+    nullable: boolean,
+    highcardinality: boolean,
+    highcorrwithotherfeatures: boolean,
+    lowcorrwithtarget: boolean,
+    highmissingpct: boolean,
+    skewed: boolean,
+    id: boolean,
+    constant: boolean,
+    duplicate: boolean,
+    reserved: boolean,
+    completeness: boolean,
+    distinctvaluecount: number,
+    mostfreqvaluesratio: number,
+    indexofpeculiarity: number,
   }
 }
 
