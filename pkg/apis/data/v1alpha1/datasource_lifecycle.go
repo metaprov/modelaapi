@@ -21,7 +21,7 @@ import (
 func (sc *DataSource) AddColumn(
 	name string,
 	dtype catalog.DataType,
-	dformat catalog.DataFormat,
+	dformat catalog.DataDomain,
 	Ignore bool,
 	Target bool,
 	Nullable bool) {
@@ -217,11 +217,11 @@ func (sc *DataSource) Poplulate() {
 	}
 
 	sc.Spec.Schema.Columns = make([]Column, 0)
-	sc.AddColumn("a", catalog.DataTypeNumber, catalog.DataFormatNone, false, false, false)
-	sc.AddColumn("b", catalog.DataTypeNumber, catalog.DataFormatNone, false, false, false)
-	sc.AddColumn("c", catalog.DataTypeNumber, catalog.DataFormatNone, false, false, false)
-	sc.AddColumn("d", catalog.DataTypeNumber, catalog.DataFormatNone, false, false, false)
-	sc.AddColumn("class", catalog.DataTypeCategorical, catalog.DataFormatNone, false, true, false)
+	sc.AddColumn("a", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	sc.AddColumn("b", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	sc.AddColumn("c", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	sc.AddColumn("d", catalog.DataTypeNumber, catalog.DataDomainNone, false, false, false)
+	sc.AddColumn("class", catalog.DataTypeCategorical, catalog.DataDomainNone, false, true, false)
 
 }
 

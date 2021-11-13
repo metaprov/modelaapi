@@ -910,7 +910,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     private string format_;
     /// <summary>
-    /// DataFormat is the domain of the column. A domain constrain the set of values.
+    /// DataDomain is the domain of the column. A domain constrain the set of values.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -41,7 +41,7 @@ message Column {
   // required
   optional string datatype = 3;
 
-  // DataFormat is the domain of the column. A domain constrain the set of values.
+  // DataDomain is the domain of the column. A domain constrain the set of values.
   // +kubebuilder:validation:Optional
   optional string format = 4;
 

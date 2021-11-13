@@ -49,7 +49,7 @@ func (in *Column) DeepCopyInto(out *Column) {
 	}
 	if in.Format != nil {
 		in, out := &in.Format, &out.Format
-		*out = new(catalogv1alpha1.DataFormat)
+		*out = new(catalogv1alpha1.DataDomain)
 		**out = **in
 	}
 	if in.Description != nil {

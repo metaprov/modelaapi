@@ -465,9 +465,9 @@ type Column struct {
 	// Type specify the data type of the attribute
 	// required
 	DataType catalog.DataType `json:"datatype" protobuf:"bytes,3,opt,name=datatype"`
-	// DataFormat is the domain of the column. A domain constrain the set of values.
+	// DataDomain is the domain of the column. A domain constrain the set of values.
 	// +kubebuilder:validation:Optional
-	Format *catalog.DataFormat `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
+	Format *catalog.DataDomain `json:"format,omitempty" protobuf:"bytes,4,opt,name=format"`
 	// Description is a description of the feature
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63

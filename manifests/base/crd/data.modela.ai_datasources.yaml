@@ -350,7 +350,7 @@ spec:
                           description: If True than this columns holds folds values
                           type: boolean
                         format:
-                          description: DataFormat is the domain of the column. A domain
+                          description: DataDomain is the domain of the column. A domain
                             constrain the set of values.
                           enum:
                           - url
