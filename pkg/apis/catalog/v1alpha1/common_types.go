@@ -1597,15 +1597,26 @@ type FeatureGenerationSpec struct {
 	Enabled *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// List of expression to apply to the existing feature.
 	// +kubebuilder:validation:Optional
-	Expression []string `json:"expression,omitempty" protobuf:"bytes,2,opt,name=expression"`
+	Derived []GeneratedColumn `json:"derived,omitempty" protobuf:"bytes,2,opt,name=derived"`
+	// Specify custom columns. Custom Columns are specified by the user
+	Custom []GeneratedColumn `json:"custom,omitempty" protobuf:"bytes,3,opt,name=custom"`
 	// List of dataset to join to the current dataset
 	// +kubebuilder:validation:Optional
-	ExternalDatasets []string `json:"externalDatasets,omitempty" protobuf:"bytes,3,opt,name=externalDatasets"`
+	ExternalDatasets []string `json:"externalDatasets,omitempty" protobuf:"bytes,4,opt,name=externalDatasets"`
 }
 
-type FeatureGenerationStatus struct {
+type GeneratedColumn struct {
+	// The name of the first original column
+	First string `json:"first,omitempty" protobuf:"bytes,1,opt,name=first"`
+	// The name of the second original column, if the expression is binary operator
 	// +kubebuilder:validation:Optional
-	Generated []FeatureInfo `json:"generated,omitempty" protobuf:"bytes,1,opt,name=generated"`
+	Second string `json:"second,omitempty" protobuf:"bytes,2,opt,name=second"`
+	// The name of the generated column
+	// +kubebuilder:validation:Optional
+	GeneratedName *string `json:"generatedName,omitempty" protobuf:"bytes,3,opt,name=generatedName"`
+	// The expression to apply in order to generate the new column
+	// +kubebuilder:validation:Optional
+	Expression string `json:"original,omitempty" protobuf:"bytes,4,opt,name=original"`
 }
 
 type FeatureSelectionStatus struct {

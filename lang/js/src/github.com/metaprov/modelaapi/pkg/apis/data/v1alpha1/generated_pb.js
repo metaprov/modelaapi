@@ -5339,34 +5339,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.toOb
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    mode: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    mean: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
-    stddev: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
-    skewness: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
-    kurtosis: (f = jspb.Message.getOptionalFloatingPointField(msg, 9)) == null ? undefined : f,
-    zeros: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
-    p25: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
-    p50: (f = jspb.Message.getOptionalFloatingPointField(msg, 12)) == null ? undefined : f,
-    p75: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f,
-    missing: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    invalid: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    target: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    importance: (f = jspb.Message.getOptionalFloatingPointField(msg, 17)) == null ? undefined : f,
-    unique: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    ignored: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
-    nullable: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
-    highcardinality: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
-    correlatedwithotherfeature: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
-    lowcorrelatedwithtarget: (f = jspb.Message.getBooleanField(msg, 23)) == null ? undefined : f,
-    constant: (f = jspb.Message.getBooleanField(msg, 24)) == null ? undefined : f,
-    highmissingpct: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
-    skew: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
-    completeness: (f = jspb.Message.getOptionalFloatingPointField(msg, 27)) == null ? undefined : f,
-    distinctvaluecount: (f = jspb.Message.getOptionalFloatingPointField(msg, 28)) == null ? undefined : f,
-    mostfreqvaluesratio: (f = jspb.Message.getOptionalFloatingPointField(msg, 29)) == null ? undefined : f,
-    indexofpeculiarity: (f = jspb.Message.getOptionalFloatingPointField(msg, 30)) == null ? undefined : f
+    count: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
+    distinct: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    missing: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    percentmissing: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
+    mean: (f = jspb.Message.getOptionalFloatingPointField(msg, 7)) == null ? undefined : f,
+    stddev: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
+    variance: (f = jspb.Message.getOptionalFloatingPointField(msg, 9)) == null ? undefined : f,
+    min: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
+    max: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
+    kurtosis: (f = jspb.Message.getOptionalFloatingPointField(msg, 12)) == null ? undefined : f,
+    skewness: (f = jspb.Message.getOptionalFloatingPointField(msg, 13)) == null ? undefined : f,
+    sum: (f = jspb.Message.getOptionalFloatingPointField(msg, 14)) == null ? undefined : f,
+    mad: (f = jspb.Message.getOptionalFloatingPointField(msg, 15)) == null ? undefined : f,
+    p25: (f = jspb.Message.getOptionalFloatingPointField(msg, 16)) == null ? undefined : f,
+    p50: (f = jspb.Message.getOptionalFloatingPointField(msg, 17)) == null ? undefined : f,
+    p75: (f = jspb.Message.getOptionalFloatingPointField(msg, 18)) == null ? undefined : f,
+    iqr: (f = jspb.Message.getOptionalFloatingPointField(msg, 19)) == null ? undefined : f,
+    mode: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    zeros: (f = jspb.Message.getOptionalFloatingPointField(msg, 21)) == null ? undefined : f,
+    invalid: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+    importance: (f = jspb.Message.getOptionalFloatingPointField(msg, 23)) == null ? undefined : f,
+    target: (f = jspb.Message.getBooleanField(msg, 24)) == null ? undefined : f,
+    ignored: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
+    nullable: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
+    highcardinality: (f = jspb.Message.getBooleanField(msg, 27)) == null ? undefined : f,
+    highcorrwithotherfeatures: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
+    lowcorrwithtarget: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
+    highmissingpct: (f = jspb.Message.getBooleanField(msg, 30)) == null ? undefined : f,
+    skewed: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f,
+    id: (f = jspb.Message.getBooleanField(msg, 32)) == null ? undefined : f,
+    constant: (f = jspb.Message.getBooleanField(msg, 33)) == null ? undefined : f,
+    duplicate: (f = jspb.Message.getBooleanField(msg, 34)) == null ? undefined : f,
+    reserved: (f = jspb.Message.getBooleanField(msg, 35)) == null ? undefined : f,
+    completeness: (f = jspb.Message.getOptionalFloatingPointField(msg, 36)) == null ? undefined : f,
+    distinctvaluecount: (f = jspb.Message.getOptionalFloatingPointField(msg, 37)) == null ? undefined : f,
+    mostfreqvaluesratio: (f = jspb.Message.getOptionalFloatingPointField(msg, 38)) == null ? undefined : f,
+    indexofpeculiarity: (f = jspb.Message.getOptionalFloatingPointField(msg, 39)) == null ? undefined : f,
+    generated: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5413,115 +5423,155 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.dese
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMin(value);
+      msg.setCount(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMax(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setDistinct(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setMode(value);
-      break;
-    case 6:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMean(value);
-      break;
-    case 7:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setStddev(value);
-      break;
-    case 8:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setSkewness(value);
-      break;
-    case 9:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setKurtosis(value);
-      break;
-    case 10:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setZeros(value);
-      break;
-    case 11:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP25(value);
-      break;
-    case 12:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP50(value);
-      break;
-    case 13:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setP75(value);
-      break;
-    case 14:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMissing(value);
       break;
+    case 6:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setPercentmissing(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMean(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setStddev(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setVariance(value);
+      break;
+    case 10:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMin(value);
+      break;
+    case 11:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMax(value);
+      break;
+    case 12:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setKurtosis(value);
+      break;
+    case 13:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setSkewness(value);
+      break;
+    case 14:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setSum(value);
+      break;
     case 15:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setInvalid(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMad(value);
       break;
     case 16:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setTarget(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setP25(value);
       break;
     case 17:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setImportance(value);
+      msg.setP50(value);
       break;
     case 18:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setUnique(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setP75(value);
       break;
     case 19:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIgnored(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setIqr(value);
       break;
     case 20:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNullable(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMode(value);
       break;
     case 21:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setHighcardinality(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setZeros(value);
       break;
     case 22:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setCorrelatedwithotherfeature(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInvalid(value);
       break;
     case 23:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setLowcorrelatedwithtarget(value);
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setImportance(value);
       break;
     case 24:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setConstant(value);
+      msg.setTarget(value);
       break;
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setHighmissingpct(value);
+      msg.setIgnored(value);
       break;
     case 26:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSkew(value);
+      msg.setNullable(value);
       break;
     case 27:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHighcardinality(value);
+      break;
+    case 28:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHighcorrwithotherfeatures(value);
+      break;
+    case 29:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLowcorrwithtarget(value);
+      break;
+    case 30:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHighmissingpct(value);
+      break;
+    case 31:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSkewed(value);
+      break;
+    case 32:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setId(value);
+      break;
+    case 33:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setConstant(value);
+      break;
+    case 34:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDuplicate(value);
+      break;
+    case 35:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setReserved(value);
+      break;
+    case 36:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setCompleteness(value);
       break;
-    case 28:
+    case 37:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setDistinctvaluecount(value);
       break;
-    case 29:
+    case 38:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setMostfreqvaluesratio(value);
       break;
-    case 30:
+    case 39:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setIndexofpeculiarity(value);
+      break;
+    case 40:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerated(value);
       break;
     default:
       reader.skipField();
@@ -5575,14 +5625,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.seri
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       4,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       5,
       f
     );
@@ -5645,21 +5695,21 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.seri
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 14));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeDouble(
       14,
       f
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 15));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeDouble(
       15,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
+  f = /** @type {number} */ (jspb.Message.getField(message, 16));
   if (f != null) {
-    writer.writeBool(
+    writer.writeDouble(
       16,
       f
     );
@@ -5673,42 +5723,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.seri
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 18));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeDouble(
       18,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 19));
+  f = /** @type {number} */ (jspb.Message.getField(message, 19));
   if (f != null) {
-    writer.writeBool(
+    writer.writeDouble(
       19,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 20));
+  f = /** @type {string} */ (jspb.Message.getField(message, 20));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       20,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 21));
+  f = /** @type {number} */ (jspb.Message.getField(message, 21));
   if (f != null) {
-    writer.writeBool(
+    writer.writeDouble(
       21,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 22));
+  f = /** @type {number} */ (jspb.Message.getField(message, 22));
   if (f != null) {
-    writer.writeBool(
+    writer.writeInt32(
       22,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 23));
+  f = /** @type {number} */ (jspb.Message.getField(message, 23));
   if (f != null) {
-    writer.writeBool(
+    writer.writeDouble(
       23,
       f
     );
@@ -5734,31 +5784,101 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.seri
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 27));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 27));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeBool(
       27,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 28));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 28));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeBool(
       28,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 29));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 29));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeBool(
       29,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 30));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 30));
+  if (f != null) {
+    writer.writeBool(
+      30,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 31));
+  if (f != null) {
+    writer.writeBool(
+      31,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 32));
+  if (f != null) {
+    writer.writeBool(
+      32,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 33));
+  if (f != null) {
+    writer.writeBool(
+      33,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 34));
+  if (f != null) {
+    writer.writeBool(
+      34,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 35));
+  if (f != null) {
+    writer.writeBool(
+      35,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 36));
   if (f != null) {
     writer.writeDouble(
-      30,
+      36,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 37));
+  if (f != null) {
+    writer.writeDouble(
+      37,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 38));
+  if (f != null) {
+    writer.writeDouble(
+      38,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 39));
+  if (f != null) {
+    writer.writeDouble(
+      39,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 40));
+  if (f != null) {
+    writer.writeBool(
+      40,
       f
     );
   }
@@ -5838,10 +5958,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
 
 
 /**
- * optional double min = 3;
+ * optional double count = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getCount = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
@@ -5850,7 +5970,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMin = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setCount = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -5859,7 +5979,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearCount = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -5868,17 +5988,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMin = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasCount = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional double max = 4;
+ * optional int32 distinct = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMax = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getDistinct = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -5886,7 +6006,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMax = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setDistinct = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -5895,7 +6015,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearDistinct = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -5904,341 +6024,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMax = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasDistinct = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string mode = 5;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMode = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMode = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMode = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional double mean = 6;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMean = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMean = function(value) {
-  return jspb.Message.setField(this, 6, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMean = function() {
-  return jspb.Message.setField(this, 6, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMean = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional double stddev = 7;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getStddev = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setStddev = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearStddev = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasStddev = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
- * optional double skewness = 8;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getSkewness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setSkewness = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearSkewness = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasSkewness = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional double kurtosis = 9;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getKurtosis = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setKurtosis = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearKurtosis = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasKurtosis = function() {
-  return jspb.Message.getField(this, 9) != null;
-};
-
-
-/**
- * optional double zeros = 10;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getZeros = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setZeros = function(value) {
-  return jspb.Message.setField(this, 10, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearZeros = function() {
-  return jspb.Message.setField(this, 10, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasZeros = function() {
-  return jspb.Message.getField(this, 10) != null;
-};
-
-
-/**
- * optional double p25 = 11;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getP25 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setP25 = function(value) {
-  return jspb.Message.setField(this, 11, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearP25 = function() {
-  return jspb.Message.setField(this, 11, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasP25 = function() {
-  return jspb.Message.getField(this, 11) != null;
-};
-
-
-/**
- * optional double p50 = 12;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getP50 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setP50 = function(value) {
-  return jspb.Message.setField(this, 12, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearP50 = function() {
-  return jspb.Message.setField(this, 12, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasP50 = function() {
-  return jspb.Message.getField(this, 12) != null;
-};
-
-
-/**
- * optional double p75 = 13;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getP75 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setP75 = function(value) {
-  return jspb.Message.setField(this, 13, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearP75 = function() {
-  return jspb.Message.setField(this, 13, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasP75 = function() {
-  return jspb.Message.getField(this, 13) != null;
-};
-
-
-/**
- * optional int32 missing = 14;
+ * optional int32 missing = 5;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMissing = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
@@ -6247,7 +6043,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMissing = function(value) {
-  return jspb.Message.setField(this, 14, value);
+  return jspb.Message.setField(this, 5, value);
 };
 
 
@@ -6256,7 +6052,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMissing = function() {
-  return jspb.Message.setField(this, 14, undefined);
+  return jspb.Message.setField(this, 5, undefined);
 };
 
 
@@ -6265,16 +6061,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMissing = function() {
-  return jspb.Message.getField(this, 14) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional int32 invalid = 15;
+ * optional double percentMissing = 6;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getInvalid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getPercentmissing = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
 
@@ -6282,7 +6078,331 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setInvalid = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setPercentmissing = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearPercentmissing = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasPercentmissing = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional double mean = 7;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMean = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMean = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMean = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMean = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional double stddev = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getStddev = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 8, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setStddev = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearStddev = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasStddev = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional double variance = 9;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getVariance = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setVariance = function(value) {
+  return jspb.Message.setField(this, 9, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearVariance = function() {
+  return jspb.Message.setField(this, 9, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasVariance = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional double min = 10;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMin = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMin = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMin = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional double max = 11;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMax = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMax = function(value) {
+  return jspb.Message.setField(this, 11, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMax = function() {
+  return jspb.Message.setField(this, 11, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional double kurtosis = 12;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getKurtosis = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setKurtosis = function(value) {
+  return jspb.Message.setField(this, 12, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearKurtosis = function() {
+  return jspb.Message.setField(this, 12, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasKurtosis = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional double skewness = 13;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getSkewness = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setSkewness = function(value) {
+  return jspb.Message.setField(this, 13, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearSkewness = function() {
+  return jspb.Message.setField(this, 13, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasSkewness = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+/**
+ * optional double sum = 14;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getSum = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setSum = function(value) {
+  return jspb.Message.setField(this, 14, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearSum = function() {
+  return jspb.Message.setField(this, 14, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasSum = function() {
+  return jspb.Message.getField(this, 14) != null;
+};
+
+
+/**
+ * optional double mad = 15;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMad = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 15, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMad = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -6291,7 +6411,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearInvalid = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMad = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -6300,25 +6420,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasInvalid = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMad = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional bool target = 16;
- * @return {boolean}
+ * optional double p25 = 16;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getTarget = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getP25 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 16, 0.0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setTarget = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setP25 = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -6327,7 +6447,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearTarget = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearP25 = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -6336,16 +6456,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasTarget = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasP25 = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional double importance = 17;
+ * optional double p50 = 17;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getImportance = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getP50 = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 17, 0.0));
 };
 
@@ -6354,7 +6474,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setImportance = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setP50 = function(value) {
   return jspb.Message.setField(this, 17, value);
 };
 
@@ -6363,7 +6483,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearImportance = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearP50 = function() {
   return jspb.Message.setField(this, 17, undefined);
 };
 
@@ -6372,17 +6492,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasImportance = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasP50 = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional int32 unique = 18;
+ * optional double p75 = 18;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getUnique = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getP75 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 18, 0.0));
 };
 
 
@@ -6390,7 +6510,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setUnique = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setP75 = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -6399,7 +6519,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearUnique = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearP75 = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -6408,25 +6528,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasUnique = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasP75 = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional bool ignored = 19;
- * @return {boolean}
+ * optional double iqr = 19;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getIgnored = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getIqr = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 19, 0.0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setIgnored = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setIqr = function(value) {
   return jspb.Message.setField(this, 19, value);
 };
 
@@ -6435,7 +6555,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearIgnored = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearIqr = function() {
   return jspb.Message.setField(this, 19, undefined);
 };
 
@@ -6444,25 +6564,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIgnored = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIqr = function() {
   return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional bool nullable = 20;
- * @return {boolean}
+ * optional string mode = 20;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getNullable = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setNullable = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMode = function(value) {
   return jspb.Message.setField(this, 20, value);
 };
 
@@ -6471,7 +6591,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearNullable = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMode = function() {
   return jspb.Message.setField(this, 20, undefined);
 };
 
@@ -6480,25 +6600,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasNullable = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMode = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional bool highCardinality = 21;
- * @return {boolean}
+ * optional double zeros = 21;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getHighcardinality = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getZeros = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 21, 0.0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setHighcardinality = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setZeros = function(value) {
   return jspb.Message.setField(this, 21, value);
 };
 
@@ -6507,7 +6627,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearHighcardinality = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearZeros = function() {
   return jspb.Message.setField(this, 21, undefined);
 };
 
@@ -6516,25 +6636,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasHighcardinality = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasZeros = function() {
   return jspb.Message.getField(this, 21) != null;
 };
 
 
 /**
- * optional bool correlatedWithOtherFeature = 22;
- * @return {boolean}
+ * optional int32 invalid = 22;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getCorrelatedwithotherfeature = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getInvalid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setCorrelatedwithotherfeature = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setInvalid = function(value) {
   return jspb.Message.setField(this, 22, value);
 };
 
@@ -6543,7 +6663,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearCorrelatedwithotherfeature = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearInvalid = function() {
   return jspb.Message.setField(this, 22, undefined);
 };
 
@@ -6552,25 +6672,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasCorrelatedwithotherfeature = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasInvalid = function() {
   return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * optional bool lowCorrelatedWithTarget = 23;
- * @return {boolean}
+ * optional double importance = 23;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getLowcorrelatedwithtarget = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 23, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getImportance = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 23, 0.0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setLowcorrelatedwithtarget = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setImportance = function(value) {
   return jspb.Message.setField(this, 23, value);
 };
 
@@ -6579,7 +6699,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearLowcorrelatedwithtarget = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearImportance = function() {
   return jspb.Message.setField(this, 23, undefined);
 };
 
@@ -6588,16 +6708,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasLowcorrelatedwithtarget = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasImportance = function() {
   return jspb.Message.getField(this, 23) != null;
 };
 
 
 /**
- * optional bool constant = 24;
+ * optional bool target = 24;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getConstant = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getTarget = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
 };
 
@@ -6606,7 +6726,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setConstant = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setTarget = function(value) {
   return jspb.Message.setField(this, 24, value);
 };
 
@@ -6615,7 +6735,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearConstant = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearTarget = function() {
   return jspb.Message.setField(this, 24, undefined);
 };
 
@@ -6624,16 +6744,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasConstant = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasTarget = function() {
   return jspb.Message.getField(this, 24) != null;
 };
 
 
 /**
- * optional bool highMissingPct = 25;
+ * optional bool ignored = 25;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getHighmissingpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getIgnored = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
 };
 
@@ -6642,7 +6762,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setHighmissingpct = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setIgnored = function(value) {
   return jspb.Message.setField(this, 25, value);
 };
 
@@ -6651,7 +6771,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearHighmissingpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearIgnored = function() {
   return jspb.Message.setField(this, 25, undefined);
 };
 
@@ -6660,16 +6780,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasHighmissingpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIgnored = function() {
   return jspb.Message.getField(this, 25) != null;
 };
 
 
 /**
- * optional bool skew = 26;
+ * optional bool nullable = 26;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getSkew = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getNullable = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
 };
 
@@ -6678,7 +6798,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setSkew = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setNullable = function(value) {
   return jspb.Message.setField(this, 26, value);
 };
 
@@ -6687,7 +6807,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearSkew = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearNullable = function() {
   return jspb.Message.setField(this, 26, undefined);
 };
 
@@ -6696,25 +6816,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasSkew = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasNullable = function() {
   return jspb.Message.getField(this, 26) != null;
 };
 
 
 /**
- * optional double completeness = 27;
- * @return {number}
+ * optional bool highCardinality = 27;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getCompleteness = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 27, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getHighcardinality = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setCompleteness = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setHighcardinality = function(value) {
   return jspb.Message.setField(this, 27, value);
 };
 
@@ -6723,7 +6843,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearCompleteness = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearHighcardinality = function() {
   return jspb.Message.setField(this, 27, undefined);
 };
 
@@ -6732,25 +6852,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasCompleteness = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasHighcardinality = function() {
   return jspb.Message.getField(this, 27) != null;
 };
 
 
 /**
- * optional double distinctValueCount = 28;
- * @return {number}
+ * optional bool highCorrWithOtherFeatures = 28;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getDistinctvaluecount = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 28, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getHighcorrwithotherfeatures = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setDistinctvaluecount = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setHighcorrwithotherfeatures = function(value) {
   return jspb.Message.setField(this, 28, value);
 };
 
@@ -6759,7 +6879,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearDistinctvaluecount = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearHighcorrwithotherfeatures = function() {
   return jspb.Message.setField(this, 28, undefined);
 };
 
@@ -6768,25 +6888,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasDistinctvaluecount = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasHighcorrwithotherfeatures = function() {
   return jspb.Message.getField(this, 28) != null;
 };
 
 
 /**
- * optional double mostFreqValuesRatio = 29;
- * @return {number}
+ * optional bool lowCorrWithTarget = 29;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMostfreqvaluesratio = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 29, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getLowcorrwithtarget = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMostfreqvaluesratio = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setLowcorrwithtarget = function(value) {
   return jspb.Message.setField(this, 29, value);
 };
 
@@ -6795,7 +6915,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMostfreqvaluesratio = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearLowcorrwithtarget = function() {
   return jspb.Message.setField(this, 29, undefined);
 };
 
@@ -6804,25 +6924,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMostfreqvaluesratio = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasLowcorrwithtarget = function() {
   return jspb.Message.getField(this, 29) != null;
 };
 
 
 /**
- * optional double indexOfPeculiarity = 30;
- * @return {number}
+ * optional bool highMissingPct = 30;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getIndexofpeculiarity = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 30, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getHighmissingpct = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setIndexofpeculiarity = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setHighmissingpct = function(value) {
   return jspb.Message.setField(this, 30, value);
 };
 
@@ -6831,7 +6951,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearIndexofpeculiarity = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearHighmissingpct = function() {
   return jspb.Message.setField(this, 30, undefined);
 };
 
@@ -6840,8 +6960,368 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIndexofpeculiarity = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasHighmissingpct = function() {
   return jspb.Message.getField(this, 30) != null;
+};
+
+
+/**
+ * optional bool skewed = 31;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getSkewed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setSkewed = function(value) {
+  return jspb.Message.setField(this, 31, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearSkewed = function() {
+  return jspb.Message.setField(this, 31, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasSkewed = function() {
+  return jspb.Message.getField(this, 31) != null;
+};
+
+
+/**
+ * optional bool id = 32;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getId = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 32, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setId = function(value) {
+  return jspb.Message.setField(this, 32, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearId = function() {
+  return jspb.Message.setField(this, 32, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasId = function() {
+  return jspb.Message.getField(this, 32) != null;
+};
+
+
+/**
+ * optional bool constant = 33;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getConstant = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 33, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setConstant = function(value) {
+  return jspb.Message.setField(this, 33, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearConstant = function() {
+  return jspb.Message.setField(this, 33, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasConstant = function() {
+  return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
+ * optional bool duplicate = 34;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getDuplicate = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 34, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setDuplicate = function(value) {
+  return jspb.Message.setField(this, 34, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearDuplicate = function() {
+  return jspb.Message.setField(this, 34, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasDuplicate = function() {
+  return jspb.Message.getField(this, 34) != null;
+};
+
+
+/**
+ * optional bool reserved = 35;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getReserved = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 35, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setReserved = function(value) {
+  return jspb.Message.setField(this, 35, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearReserved = function() {
+  return jspb.Message.setField(this, 35, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasReserved = function() {
+  return jspb.Message.getField(this, 35) != null;
+};
+
+
+/**
+ * optional double completeness = 36;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getCompleteness = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 36, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setCompleteness = function(value) {
+  return jspb.Message.setField(this, 36, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearCompleteness = function() {
+  return jspb.Message.setField(this, 36, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasCompleteness = function() {
+  return jspb.Message.getField(this, 36) != null;
+};
+
+
+/**
+ * optional double distinctValueCount = 37;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getDistinctvaluecount = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 37, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setDistinctvaluecount = function(value) {
+  return jspb.Message.setField(this, 37, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearDistinctvaluecount = function() {
+  return jspb.Message.setField(this, 37, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasDistinctvaluecount = function() {
+  return jspb.Message.getField(this, 37) != null;
+};
+
+
+/**
+ * optional double mostFreqValuesRatio = 38;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getMostfreqvaluesratio = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 38, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setMostfreqvaluesratio = function(value) {
+  return jspb.Message.setField(this, 38, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearMostfreqvaluesratio = function() {
+  return jspb.Message.setField(this, 38, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasMostfreqvaluesratio = function() {
+  return jspb.Message.getField(this, 38) != null;
+};
+
+
+/**
+ * optional double indexOfPeculiarity = 39;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getIndexofpeculiarity = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 39, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setIndexofpeculiarity = function(value) {
+  return jspb.Message.setField(this, 39, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearIndexofpeculiarity = function() {
+  return jspb.Message.setField(this, 39, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIndexofpeculiarity = function() {
+  return jspb.Message.getField(this, 39) != null;
+};
+
+
+/**
+ * optional bool generated = 40;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getGenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 40, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setGenerated = function(value) {
+  return jspb.Message.setField(this, 40, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearGenerated = function() {
+  return jspb.Message.setField(this, 40, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasGenerated = function() {
+  return jspb.Message.getField(this, 40) != null;
 };
 
 

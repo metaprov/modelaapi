@@ -9,6 +9,7 @@ syntax = "proto2";
 
 package github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1;
 
+import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
@@ -16,366 +17,451 @@ import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
+option (gogoproto.marshaler_all) = true;
+option (gogoproto.stable_marshaler_all) = true;
+option (gogoproto.sizer_all) = true;
+option (gogoproto.goproto_stringer_all) = false;
+option (gogoproto.stringer_all) = true;
+option (gogoproto.unmarshaler_all) = true;
+option (gogoproto.goproto_unrecognized_all) = false;
+option (gogoproto.goproto_enum_prefix_all) = false;
+option (gogoproto.goproto_getters_all) = false;
 option go_package = "v1alpha1";
 
 // Define the aggregation period
 message AggregationSpec {
-  optional string slidePeriod = 1;
+  optional string slidePeriod = 1 [(gogoproto.customname) = "SlidePeriod", (gogoproto.nullable) = false];
 
-  repeated FeatureAggrSpec aggregations = 2;
+  repeated FeatureAggrSpec aggregations = 2 [(gogoproto.customname) = "Aggregations", (gogoproto.nullable) = false];
 }
 
 message Column {
   // Name is the name of the raw feature.
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:MinLength=1
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // Display Name specify the name of the feature that should be used in reports. If empty, use the raw name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
-  optional string displayName = 2;
+  optional string displayName = 2 [(gogoproto.customname) = "DisplayName"];
 
   // Type specify the data type of the attribute
   // required
-  optional string datatype = 3;
+  optional string datatype = 3 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.DataType", (gogoproto.customname) = "DataType", (gogoproto.nullable) = false];
 
   // DataFormat is the domain of the column. A domain constrain the set of values.
   // +kubebuilder:validation:Optional
-  optional string format = 4;
+  optional string format = 4 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.DataFormat", (gogoproto.customname) = "Format"];
 
   // Description is a description of the feature
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
-  optional string description = 5;
+  optional string description = 5 [(gogoproto.customname) = "Description"];
 
   // Ignore specify if the attribute should be ignored when building the model
   // default is false
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool ignore = 6;
+  optional bool ignore = 6 [(gogoproto.customname) = "Ignore"];
 
   // Label should be true if this attribute is the predictable target
   // Default is false
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool label = 7;
+  optional bool label = 7 [(gogoproto.customname) = "Label"];
 
   // Nullable indicates if a column can contain string
   // Default is false
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool nullable = 8;
+  optional bool nullable = 8 [(gogoproto.customname) = "Nullable"];
 
   // PrimaryKey denotes if this column is part of the file key.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pk = 9;
+  optional bool pk = 9 [(gogoproto.customname) = "PK"];
 
   // MultipleOf
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 multipleOf = 10;
+  optional int32 multipleOf = 10 [(gogoproto.customname) = "MultipleOf"];
 
   // MaximumFloat
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double maximum = 11;
+  optional double maximum = 11 [(gogoproto.customname) = "Maximum"];
 
   // ExclusiveMaximum
   // +kubebuilder:validation:Optional
-  optional bool exclusiveMaximum = 12;
+  optional bool exclusiveMaximum = 12 [(gogoproto.customname) = "ExclusiveMaximum"];
 
   // MinimumFloat
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double minimum = 13;
+  optional double minimum = 13 [(gogoproto.customname) = "Minimum"];
 
   // ExclusiveMinimum
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool exclusiveMinimum = 14;
+  optional bool exclusiveMinimum = 14 [(gogoproto.customname) = "ExclusiveMinimum"];
 
   // MaxLength
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxLength = 15;
+  optional int32 maxLength = 15 [(gogoproto.customname) = "MaxLength"];
 
   // MinLength
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 minLength = 16;
+  optional int32 minLength = 16 [(gogoproto.customname) = "MinLength"];
 
   // Pattern
   // Default is empty
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string pattern = 17;
+  optional string pattern = 17 [(gogoproto.customname) = "Pattern"];
 
   // Required
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool required = 18;
+  optional bool required = 18 [(gogoproto.customname) = "Required"];
 
   // Example
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string example = 20;
+  optional string example = 20 [(gogoproto.customname) = "Example"];
 
   // External Docs
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string externalDocs = 21;
+  optional string externalDocs = 21 [(gogoproto.customname) = "ExternalDocs"];
 
   // Enum contain the unique values for categorical feature.
   // +kubebuilder:validation:Optional
-  repeated string enum = 22;
+  repeated string enum = 22 [(gogoproto.customname) = "Enum"];
 
   // For categorical feature , set to true if this is an ordinal feature.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool ordinal = 23;
+  optional bool ordinal = 23 [(gogoproto.customname) = "Ordinal"];
 
   // Max Items in the data in case of a list
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxItems = 24;
+  optional int32 maxItems = 24 [(gogoproto.customname) = "MaxItems"];
 
   // Min Items in the data in case of a list.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 minItems = 25;
+  optional int32 minItems = 25 [(gogoproto.customname) = "MinItems"];
 
   // Enforce that all the items in the list are unique
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool uniqueItems = 26;
+  optional bool uniqueItems = 26 [(gogoproto.customname) = "UniqueItems"];
 
   // TimeColumn is true if this column is used as the time axis in time series forecast
   // Default is false.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool timeColumn = 27;
+  optional bool timeColumn = 27 [(gogoproto.customname) = "TimeColumn"];
 
   // Personally Identifiable information
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pii = 28;
+  optional bool pii = 28 [(gogoproto.customname) = "PII"];
 
   // Personally Health information
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool phi = 29;
+  optional bool phi = 29 [(gogoproto.customname) = "PHI"];
 
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool personalData = 30;
+  optional bool personalData = 30 [(gogoproto.customname) = "PersonalData"];
 
   // Protected means that this feature is important for ethical AI / Fairness
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool protected = 31;
+  optional bool protected = 31 [(gogoproto.customname) = "Protected"];
 
   // The following attribute concern with syntatic data and validation
   // DefaultValueNum is the default value for numbers
-  optional double defaultValueNum = 32;
+  optional double defaultValueNum = 32 [(gogoproto.customname) = "DefaultValueNum"];
 
   // Log if true, values from this column will be sampled on logaritmic scale
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool log = 33;
+  optional bool log = 33 [(gogoproto.customname) = "Log"];
 
   // Mu is the mean of the normal distribution
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double mu = 34;
+  optional double mu = 34 [(gogoproto.customname) = "Mu"];
 
   // Sigma is the standard deviation of the distribution
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double sigma = 35;
+  optional double sigma = 35 [(gogoproto.customname) = "Sigma"];
 
   // Skew treshold is the treshold for skew detection.
   // +kubebuilder:validation:Optional
-  optional double skewThreshold = 36;
+  optional double skewThreshold = 36 [(gogoproto.customname) = "SkewTreshold"];
 
   // Drift treshold is the treshold for drift detection.
   // +kubebuilder:validation:Optional
-  optional double driftThreshold = 37;
+  optional double driftThreshold = 37 [(gogoproto.customname) = "DriftTreshold"];
 
   // If True than this is an index column
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool index = 38;
+  optional bool index = 38 [(gogoproto.customname) = "Index"];
 
   // If True than this columns holds folds values
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool fold = 39;
+  optional bool fold = 39 [(gogoproto.customname) = "Fold"];
 
   // If True than this is a weight column
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool weight = 40;
+  optional bool weight = 40 [(gogoproto.customname) = "Weight"];
 
   // If True indicate that this feature should always be used in training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool reserved = 41;
+  optional bool reserved = 41 [(gogoproto.customname) = "Reserved"];
 
   // The recommended imputer for a column.
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string imputer = 42;
+  optional string imputer = 42 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.Imputator", (gogoproto.customname) = "Imputer"];
 
   // The recommended scaler for a column.
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string scaler = 43;
+  optional string scaler = 43 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.Scaler", (gogoproto.customname) = "Scaler"];
+
+  // If true this feature is generate
+  // +kubebuilder:validation:Optionald.
+  optional bool generated = 44 [(gogoproto.customname) = "Generated", (gogoproto.nullable) = false];
+
+  // The formula used to generate  this column
+  // +kubebuilder:validation:Optionald.
+  optional string generated = 45 [(gogoproto.customname) = "Formula", (gogoproto.nullable) = false];
 }
 
 // Hold the statistical parameters about a single attribute
 message ColumnStatistics {
   // FileName is the name of the column
-  optional string name = 1;
+  // +kubebuilder:validation:Optional
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
   // Type is the name of the column
-  optional string type = 2;
+  // +kubebuilder:validation:Optional
+  optional string type = 2 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.DataType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
-  // Min is the minimum value of the attribute
-  optional double min = 3;
-
-  // Max is the maximum value of the attribute
-  optional double max = 4;
-
-  // Mode for categorical values, is the most common value
-  optional string mode = 5;
-
-  // Mean is the mean value of the attribute
-  optional double mean = 6;
-
-  // StdDev is the standard deviation value of the attribute
-  optional double stddev = 7;
-
-  // Skewness is the standard deviation value of the attribute
-  optional double skewness = 8;
-
-  // Kurtosis is the standard deviation value of the attribute
-  optional double kurtosis = 9;
-
-  // Zeros is the numbers of zeros in the feature
-  optional double zeros = 10;
-
-  // Pct25 is the 25 precent point
-  optional double p25 = 11;
-
-  // Pct50 is the median
-  optional double p50 = 12;
-
-  // Pct75 is the 75% point
-  optional double p75 = 13;
-
-  // The number of missing values
-  optional int32 missing = 14;
-
-  // The number of invalid values
-  optional int32 invalid = 15;
-
-  // Is this the target attribute, the value is derived from the schema
-  optional bool target = 16;
-
-  // The feature importance
-  optional double importance = 17;
+  // Number of rows
+  // +kubebuilder:validation:Optional
+  optional double count = 3 [(gogoproto.customname) = "Count", (gogoproto.nullable) = false];
 
   // Count of unique values.
-  optional int32 unique = 18;
+  // +kubebuilder:validation:Optional
+  optional int32 distinct = 4 [(gogoproto.customname) = "Distinct", (gogoproto.nullable) = false];
 
-  // Should this column be ignored, as specified by the user.
-  // This value is derived from the schema
-  optional bool ignored = 19;
+  // The number of missing values
+  // +kubebuilder:validation:Optional
+  optional int32 missing = 5 [(gogoproto.customname) = "Missing", (gogoproto.nullable) = false];
+
+  // Precent missing
+  // +kubebuilder:validation:Optional
+  optional double percentMissing = 6 [(gogoproto.customname) = "PercentMissing", (gogoproto.nullable) = false];
+
+  // Mean is the mean value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double mean = 7 [(gogoproto.customname) = "Mean", (gogoproto.nullable) = false];
+
+  // StdDev is the standard deviation value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double stddev = 8 [(gogoproto.customname) = "StdDev", (gogoproto.nullable) = false];
+
+  // Variance
+  // +kubebuilder:validation:Optional
+  optional double variance = 9 [(gogoproto.customname) = "Variance", (gogoproto.nullable) = false];
+
+  // Min is the minimum value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double min = 10 [(gogoproto.customname) = "Min", (gogoproto.nullable) = false];
+
+  // Max is the maximum value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double max = 11 [(gogoproto.customname) = "Max", (gogoproto.nullable) = false];
+
+  // Kurtosis is the standard deviation value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double kurtosis = 12 [(gogoproto.customname) = "Kurtosis", (gogoproto.nullable) = false];
+
+  // Skewness is the standard deviation value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double skewness = 13 [(gogoproto.customname) = "Skewness", (gogoproto.nullable) = false];
+
+  // Skewness is the standard deviation value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double sum = 14 [(gogoproto.customname) = "Sum", (gogoproto.nullable) = false];
+
+  // Skewness is the standard deviation value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double mad = 15 [(gogoproto.customname) = "Mad", (gogoproto.nullable) = false];
+
+  // Pct25 is the 25 precent point
+  // +kubebuilder:validation:Optional
+  optional double p25 = 16 [(gogoproto.customname) = "P25", (gogoproto.nullable) = false];
+
+  // Pct50 is the median
+  // +kubebuilder:validation:Optional
+  optional double p50 = 17 [(gogoproto.customname) = "P50", (gogoproto.nullable) = false];
+
+  // Pct75 is the 75% point
+  // +kubebuilder:validation:Optional
+  optional double p75 = 18 [(gogoproto.customname) = "P75", (gogoproto.nullable) = false];
+
+  // Skewness is the standard deviation value of the attribute
+  // +kubebuilder:validation:Optional
+  optional double iqr = 19 [(gogoproto.customname) = "IQR", (gogoproto.nullable) = false];
+
+  // Mode for categorical values, is the most common value
+  // +kubebuilder:validation:Optional
+  optional string mode = 20 [(gogoproto.customname) = "Mode", (gogoproto.nullable) = false];
+
+  // Zeros is the numbers of zeros in the feature
+  // +kubebuilder:validation:Optional
+  optional double zeros = 21 [(gogoproto.customname) = "Zeros", (gogoproto.nullable) = false];
+
+  // The number of invalid values
+  // +kubebuilder:validation:Optional
+  optional int32 invalid = 22 [(gogoproto.customname) = "Invalid", (gogoproto.nullable) = false];
+
+  // The feature importance
+  // +kubebuilder:validation:Optional
+  optional double importance = 23 [(gogoproto.customname) = "Importance", (gogoproto.nullable) = false];
+
+  // Is this the target attribute, the value is derived from the data source
+  // +kubebuilder:validation:Optional
+  optional bool target = 24 [(gogoproto.customname) = "Target", (gogoproto.nullable) = false];
+
+  // Should this column be ignored, as specified by the user
+  // This value is derived from the datasource
+  // +kubebuilder:validation:Optional
+  optional bool ignored = 25 [(gogoproto.customname) = "Ignored", (gogoproto.nullable) = false];
 
   // Is this column is nullable.
   // This value is derived from the schema.
-  optional bool nullable = 20;
+  // +kubebuilder:validation:Optional
+  optional bool nullable = 26 [(gogoproto.customname) = "Nullable", (gogoproto.nullable) = false];
 
   // This column has high cardinality and should use high cred encoder
   // The value is set during the profile process.
-  optional bool highCardinality = 21;
+  // +kubebuilder:validation:Optional
+  optional bool highCardinality = 27 [(gogoproto.customname) = "HighCardinality", (gogoproto.nullable) = false];
 
   // This column has high correlation with another feature and should be dropped.
   // The value is set during the profile process.
-  optional bool correlatedWithOtherFeature = 22;
+  // +kubebuilder:validation:Optional
+  optional bool highCorrWithOtherFeatures = 28 [(gogoproto.customname) = "HighCorrWithOtherFeatures", (gogoproto.nullable) = false];
 
-  // Indicate that this feature is not corrolated with
-  optional bool lowCorrelatedWithTarget = 23;
-
-  // This column has high correlation with another feature and should be dropped.
-  // The value is set during the profile process.
-  optional bool constant = 24;
+  // Indicate that this feature is not corrolated with target and should be dropped
+  // +kubebuilder:validation:Optional
+  optional bool lowCorrWithTarget = 29 [(gogoproto.customname) = "LowCorrWithTarget", (gogoproto.nullable) = false];
 
   // This column has high amount of missing pct, and should be removed from consideration.
   // The value is set during the profile process.
-  optional bool highMissingPct = 25;
+  // +kubebuilder:validation:Optional
+  optional bool highMissingPct = 30 [(gogoproto.customname) = "HighMissingPct", (gogoproto.nullable) = false];
 
   // Mark that this column is skewed and would require a power transform
   // If skewness is less than -1 or greater than 1, the distribution is highly skewed.
   // If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
   // If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-  optional bool skew = 26;
+  // +kubebuilder:validation:Optional
+  optional bool skewed = 31 [(gogoproto.customname) = "Skewed", (gogoproto.nullable) = false];
+
+  // This is updated from the data source. If true, the column is an id column
+  // +kubebuilder:validation:Optional
+  optional bool id = 32 [(gogoproto.customname) = "Id", (gogoproto.nullable) = false];
+
+  // This column has high correlation with another feature and should be dropped.
+  // The value is set during the profile process.
+  // +kubebuilder:validation:Optional
+  optional bool constant = 33 [(gogoproto.customname) = "Constant", (gogoproto.nullable) = false];
+
+  // This column is duplicate of other column
+  // The value is set during the profile process.
+  // +kubebuilder:validation:Optional
+  optional bool duplicate = 34 [(gogoproto.customname) = "Duplicate", (gogoproto.nullable) = false];
+
+  // The column is reserved and must be part of the features set for the task.
+  // The value is derived from the data source.
+  // +kubebuilder:validation:Optional
+  optional bool reserved = 35 [(gogoproto.customname) = "Reserved", (gogoproto.nullable) = false];
 
   // Completeness is the ratio between non null to null
-  optional double completeness = 27;
+  // +kubebuilder:validation:Optional
+  optional double completeness = 36 [(gogoproto.customname) = "Completeness", (gogoproto.nullable) = false];
 
   // The ratio between distinct count to total count
-  optional double distinctValueCount = 28;
+  // +kubebuilder:validation:Optional
+  optional double distinctValueCount = 37 [(gogoproto.customname) = "DistinctValueCount", (gogoproto.nullable) = false];
 
   // The ratio between most freq value to total
-  optional double mostFreqValuesRatio = 29;
+  // +kubebuilder:validation:Optional
+  optional double mostFreqValuesRatio = 38 [(gogoproto.customname) = "MostFreqValuesRatio", (gogoproto.nullable) = false];
 
   // Used for text attributes
-  optional double indexOfPeculiarity = 30;
+  // +kubebuilder:validation:Optional
+  optional double indexOfPeculiarity = 39 [(gogoproto.customname) = "IndexOfPeculiarity", (gogoproto.nullable) = false];
 }
 
 message ColumnValidation {
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "ColumnValidationName", (gogoproto.customname) = "Type"];
 
   // +kubebuilder:validation:Optional
-  optional string column = 2;
+  optional string column = 2 [(gogoproto.customname) = "Column"];
 
   // For validation that need a single value
   // +kubebuilder:validation:Optional
-  optional double value = 3;
+  optional double value = 3 [(gogoproto.customname) = "Value"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double min = 4;
+  optional double min = 4 [(gogoproto.customname) = "Min"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 5;
+  optional double max = 5 [(gogoproto.customname) = "Max"];
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 6;
+  repeated string valueSet = 6 [(gogoproto.customname) = "ValueSet"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 7;
+  optional bool strictMin = 7 [(gogoproto.customname) = "StrictMin"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 8;
+  optional bool strictMax = 8 [(gogoproto.customname) = "StrictMax"];
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 9;
+  optional bool generated = 9 [(gogoproto.customname) = "Generated"];
 }
 
 // Specify how the correlation should be computed
@@ -383,90 +469,90 @@ message CorrelationSpec {
   // Specify the minimum value of the corr
   // +kubebuilder:default:=50
   // +kubebuilder:validation:Optional
-  optional double float64 = 1;
+  optional double float64 = 1 [(gogoproto.customname) = "Cutoff"];
 
   // Specify the method to use when computing the correlation.
   // +kubebuilder:default:="pearson"
   // +kubebuilder:validation:Optional
-  optional string method = 2;
+  optional string method = 2 [(gogoproto.customname) = "Method"];
 
   // Specify the top number of correlation to include in the status.
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
-  optional int32 top = 3;
+  optional int32 top = 3 [(gogoproto.customname) = "Top"];
 }
 
 message CsvFileSpec {
   // Refers to the character used to separate fields.
   // +kubebuilder:default:="comma"
   // +kubebuilder:validation:Optional
-  optional string columnDelimiter = 1;
+  optional string columnDelimiter = 1 [(gogoproto.casttype) = "Delimiter", (gogoproto.customname) = "ColumnDelimiter"];
 
   // The row delimiter
   // +kubebuilder:default:="crlf"
   // +kubebuilder:validation:Optional
-  optional string rowDelimiter = 2;
+  optional string rowDelimiter = 2 [(gogoproto.casttype) = "Delimiter", (gogoproto.customname) = "RowDelimiter"];
 
   // The quote char.
   // +kubebuilder:default:="double-quote"
   // +kubebuilder:validation:Optional
-  optional string quote = 3;
+  optional string quote = 3 [(gogoproto.casttype) = "QuoteChar", (gogoproto.customname) = "QuoteChar", (gogoproto.nullable) = false];
 
   // the char used to escape the delimiter when quoting
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string escapeChar = 4;
+  optional string escapeChar = 4 [(gogoproto.casttype) = "EscapeChar", (gogoproto.customname) = "EscapeChar", (gogoproto.nullable) = false];
 
   // CommentCharacter(s) to split comments off the end of lines.
   // +kubebuilder:default:="#"
   // +kubebuilder:validation:Optional
-  optional string commentChars = 5;
+  optional string commentChars = 5 [(gogoproto.customname) = "CommentChars"];
 
   // Check if there is an header
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool header = 6;
+  optional bool header = 6 [(gogoproto.customname) = "Header"];
 
   // The number of rows to skip
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 skipRows = 7;
+  optional int32 skipRows = 7 [(gogoproto.customname) = "SkipRows"];
 
   // NullValue is a sequence of values to replace with NA.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string nullValues = 8;
+  optional string nullValues = 8 [(gogoproto.customname) = "NullValues"];
 
   // Encoding for Unicode (e.g., 'utf-8' for UTF-8 encoded text).
   // +kubebuilder:default:="utf-8"
   // +kubebuilder:validation:Optional
-  optional string encoding = 9;
+  optional string encoding = 9 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.FileEncoding", (gogoproto.customname) = "Encoding"];
 
   // The maximum number of rows to read.
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxRows = 10;
+  optional int32 maxRows = 10 [(gogoproto.customname) = "MaxRows"];
 
   // If true, the import will fail if there is an error
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool strict = 11;
+  optional bool strict = 11 [(gogoproto.customname) = "Strict"];
 
   // The compression type, if the file is compressed
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string compression = 12;
+  optional string compression = 12 [(gogoproto.customname) = "Compression"];
 
   // If true, the file contain an index column
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool hasIndexColumn = 13;
+  optional bool hasIndexColumn = 13 [(gogoproto.customname) = "HasIndexColumn"];
 
   // If has index column.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 indexColumn = 14;
+  optional int32 indexColumn = 14 [(gogoproto.customname) = "IndexColumn"];
 }
 
 // data reference contain pointers to the actual data objects
@@ -474,42 +560,42 @@ message DataLocation {
   // +kubebuilder:default:="object"
   // data location type is the type of the data location
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DataLocationType", (gogoproto.customname) = "Type"];
 
   // ConnectionName is the name of the connection to access the database
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string connectionName = 2;
+  optional string connectionName = 2 [(gogoproto.customname) = "ConnectionName"];
 
   // +kubebuilder:default:=""
   // Bucketname is the name of the bucket
   // +kubebuilder:validation:Optional
-  optional string bucketName = 3;
+  optional string bucketName = 3 [(gogoproto.customname) = "BucketName"];
 
   // Path to the full data file (e.g. csv file).
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string path = 4;
+  optional string path = 4 [(gogoproto.customname) = "Path"];
 
   // Sql or table or topic name.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string table = 5;
+  optional string table = 5 [(gogoproto.customname) = "Table"];
 
   // Database , the database.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string database = 6;
+  optional string database = 6 [(gogoproto.customname) = "Database"];
 
   // SQL statement, in case we choose the view type
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string sql = 7;
+  optional string sql = 7 [(gogoproto.customname) = "Sql"];
 
   // Topic is the name of the topic in case of streaming
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string topic = 8;
+  optional string topic = 8 [(gogoproto.customname) = "Topic"];
 }
 
 // DataOutputSpec is the definition of the out file.
@@ -517,39 +603,39 @@ message DataOutputSpec {
   // DatasetName is the name of the dataset that will be created. if nil, the system will not create the dataset.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string datasetName = 1;
+  optional string datasetName = 1 [(gogoproto.customname) = "DatasetName"];
 
   // Location of the generated data
   // +kubebuilder:validation:Optional
-  optional DataLocation location = 2;
+  optional DataLocation location = 2 [(gogoproto.customname) = "Location"];
 
   // Format is the format of the output data
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
-  optional string format = 3;
+  optional string format = 3 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.DatastoreType", (gogoproto.customname) = "Format"];
 
   // Action define how the new data will be created
   // +kubebuilder:default:="upsert"
   // +kubebuilder:validation:Optional
-  optional string action = 4;
+  optional string action = 4 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.UpdateStrategy", (gogoproto.customname) = "Action"];
 
   // Create the data source table on the target, if not exist.
   // +kubebuilder:validation:Optional
-  optional bool createTableIfNotExist = 5;
+  optional bool createTableIfNotExist = 5 [(gogoproto.customname) = "CreateTableIfNotExist"];
 
   // Include the features in the results
   // +kubebuilder:validation:Optional
-  optional bool includeFeatures = 6;
+  optional bool includeFeatures = 6 [(gogoproto.customname) = "IncludeFeatures"];
 
   // Generate XAI
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool xai = 7;
+  optional bool xai = 7 [(gogoproto.customname) = "XAI"];
 
   // Detect outlier in the prediction
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool detectOutliers = 8;
+  optional bool detectOutliers = 8 [(gogoproto.customname) = "DetectOutliers"];
 }
 
 // +kubebuilder:object:root=true
@@ -561,37 +647,37 @@ message DataOutputSpec {
 // +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modela}
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 message DataPipeline {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional DataPipelineSpec spec = 2;
+  optional DataPipelineSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
-  optional DataPipelineStatus status = 3;
+  optional DataPipelineStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // DataPipelineCondition describes the state of a wrangler at a certain point.
 message DataPipelineCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DataPipelineConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // DataPipelineList contain the list of DataPipeline
 message DataPipelineList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated DataPipeline items = 2;
+  repeated DataPipeline items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
@@ -606,37 +692,37 @@ message DataPipelineList {
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
 // DataPipelineRun represent one execution of the data pipeline
 message DataPipelineRun {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional DataPipelineRunSpec spec = 2;
+  optional DataPipelineRunSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
-  optional DataPipelineRunStatus status = 3;
+  optional DataPipelineRunStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // DataPipelineRunCondition describes the state of a data processor run at a certain point.
 message DataPipelineRunCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DataPipelineRunConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // DataPipelineRunList contains a list of DataPipelineRun
 message DataPipelineRunList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated DataPipelineRun items = 2;
+  repeated DataPipelineRun items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // DataPipelineRunSpec defines the desired state of a schema
@@ -644,84 +730,84 @@ message DataPipelineRunSpec {
   // The data product version of the run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 1;
+  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
 
   // The data product
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string datapipelineName = 2;
+  optional string datapipelineName = 2 [(gogoproto.customname) = "DataPipelineName"];
 
   // The owner of the run, set to the owner of the pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 4;
+  optional string owner = 4 [(gogoproto.customname) = "Owner"];
 
   // WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipelineeun
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional string workloadClassName = 5 [(gogoproto.customname) = "WorkloadClassName"];
 
   // The priority of this data pipeline. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
-  optional string priority = 6;
+  optional string priority = 6 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.PriorityLevel", (gogoproto.customname) = "Priority"];
 
   // Set to true to pause the pipeline run
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 7;
+  optional bool paused = 7 [(gogoproto.customname) = "Paused"];
 
   // Set to true to abort the  pipeline run
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 8;
+  optional bool aborted = 8 [(gogoproto.customname) = "Aborted"];
 }
 
 // DataPipelineRunStatus defines the observed state of DataPipelineRun
 message DataPipelineRunStatus {
   // RecipeRuns is the names of the recipe runs that occur during running of the pipeline.
   // +kubebuilder:validation:Optional
-  repeated string recipeRuns = 1;
+  repeated string recipeRuns = 1 [(gogoproto.customname) = "RecipeRuns"];
 
   // the resulting dataset from the flow
   // +kubebuilder:validation:Optional
-  optional DataLocation output = 2;
+  optional DataLocation output = 2 [(gogoproto.customname) = "Output", (gogoproto.nullable) = false];
 
   // the phase of the run
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 3 [(gogoproto.casttype) = "DataPipelineRunPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
 
   // StartTime is the start time of the pipeline
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 4 [(gogoproto.customname) = "StartTime"];
 
   // CompletionTime is the end time of the pipeline
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 5 [(gogoproto.customname) = "EndTime"];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 6;
+  optional int64 observedGeneration = 6 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 7;
+  optional string lastError = 7 [(gogoproto.customname) = "LastError", (gogoproto.nullable) = false];
 
   // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
-  optional int32 progress = 8;
+  optional int32 progress = 8 [(gogoproto.customname) = "Progress"];
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9 [(gogoproto.customname) = "Logs", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineRunCondition conditions = 10;
+  repeated DataPipelineRunCondition conditions = 10 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -729,78 +815,78 @@ message DataPipelineSpec {
   // VersionName is the data product version of the data pipeline
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 1;
+  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
 
   // Description of the data pipeline
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // DatasetSelector is used to select datasets for processing in the pipeline
   // +kubebuilder:validation:Optional
-  map<string, string> datasetSelector = 3;
+  map<string, string> datasetSelector = 3 [(gogoproto.customname) = "DatasetSelector", (gogoproto.nullable) = false];
 
   // RecipeOrder defines the list of recipes and the order they need to run
   // +kubebuilder:validation:Optional
-  repeated RecipePartSpec recipes = 4;
+  repeated RecipePartSpec recipes = 4 [(gogoproto.customname) = "Recipes", (gogoproto.nullable) = false];
 
   // The output definition
   // +kubebuilder:validation:Optional
-  optional DataOutputSpec output = 5;
+  optional DataOutputSpec output = 5 [(gogoproto.customname) = "Output", (gogoproto.nullable) = false];
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
 
   // Specification for notification
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 7 [(gogoproto.customname) = "Notification", (gogoproto.nullable) = false];
 
   // Owner of this data pipeline
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 8;
+  optional string owner = 8 [(gogoproto.customname) = "Owner"];
 
   // WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipeline
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional string workloadClassName = 9 [(gogoproto.customname) = "WorkloadClassName"];
 
   // The priority of this data pipeline. The default is medium.
   // +kubebuilder:default:="medium"
   // +kubebuilder:validation:Optional
-  optional string priority = 10;
+  optional string priority = 10 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.PriorityLevel", (gogoproto.customname) = "Priority"];
 
   // Set to true to pause the cron prediction
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 11;
+  optional bool paused = 11 [(gogoproto.customname) = "Paused"];
 
   // TTL for the data product run. Set to 0 if no garbage collected is needed.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 12;
+  optional int32 ttl = 12 [(gogoproto.customname) = "TTL"];
 }
 
 // DataPipelineStatus is the observed state of the DataPipeline object.
 message DataPipelineStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
 
   // Last run is the last time a data pipeline run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3 [(gogoproto.customname) = "LastRun"];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineCondition conditions = 4;
+  repeated DataPipelineCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // DataProduct represent a single data product in the system
@@ -816,37 +902,37 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
 message DataProduct {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional DataProductSpec spec = 2;
+  optional DataProductSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
-  optional DataProductStatus status = 3;
+  optional DataProductStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // DeploymentCondition describes the state of a deployment at a certain point.
 message DataProductCondition {
   // Type of condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DataProductConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // DataProductList contains a list of DataProducts
 message DataProductList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated DataProduct items = 2;
+  repeated DataProduct items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // DataProductSpec defines the desired state of a data product
@@ -854,116 +940,116 @@ message DataProductSpec {
   // The data product owner
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The tenant that own the data product.
   // Default to default tenant.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2 [(gogoproto.customname) = "TenantRef"];
 
   // Stake holders refer to a list of stackholders, which have interest in the product.
   // +kubebuilder:validation:Optional
-  repeated StakeHolder stakeholders = 3;
+  repeated StakeHolder stakeholders = 3 [(gogoproto.customname) = "StakeHolders", (gogoproto.nullable) = false];
 
   // GitLocation is the github repository for all the artifacts for this product
   // +kubebuilder:validation:Optional
-  optional GitLocation gitLocation = 4;
+  optional GitLocation gitLocation = 4 [(gogoproto.customname) = "GitLocation"];
 
   // ImageLocation is the image repository that stores the models images for the product versions
   // +kubebuilder:validation:Optional
-  optional ImageLocation imageLocation = 5;
+  optional ImageLocation imageLocation = 5 [(gogoproto.customname) = "ImageLocation"];
 
   // LabName is the Lab where models of this products are trained
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Optional
-  optional string labName = 7;
+  optional string labName = 7 [(gogoproto.customname) = "LabName"];
 
   // ServingSiteName is the serving site where predictors of this product are deployed
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string servingSiteName = 8;
+  optional string servingSiteName = 8 [(gogoproto.customname) = "ServingSiteName"];
 
   // Task denote the machine learning task of the product (classification/regression,etc.)
   // +kubebuilder:validation:Optional
-  optional string task = 9;
+  optional string task = 9 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.MLTask", (gogoproto.customname) = "Task"];
 
   // User provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 10;
+  optional string description = 10 [(gogoproto.customname) = "Description"];
 
   // This folder contain the root location for all the artifacts from the product.
   // +kubebuilder:validation:Optional
-  optional DataLocation dataLocation = 11;
+  optional DataLocation dataLocation = 11 [(gogoproto.customname) = "DataLocation", (gogoproto.nullable) = false];
 
   // the notifier selector select the notifier for events that occur in the product life cycle.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12 [(gogoproto.customname) = "Notification", (gogoproto.nullable) = false];
 
   // DefaultWorkloadClassName is reference to the workload class used for running product tasks.
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string defaultWorkloadClassName = 13;
+  optional string defaultWorkloadClassName = 13 [(gogoproto.customname) = "DefaultWorkloadClassName"];
 
   // Denote how many time a job is retry after failure
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 retriesOnFailure = 14;
+  optional int32 retriesOnFailure = 14 [(gogoproto.customname) = "RetriesOnFailure"];
 
   // KPIs is the product kpi. This is for information porpose
   // +kubebuilder:validation:Optional
-  repeated KPI kpis = 15;
+  repeated KPI kpis = 15 [(gogoproto.customname) = "KPIs", (gogoproto.nullable) = false];
 
   // OnCallAccountName is the name of the account on call.
   // +kubebuilder:validation:Optional
-  optional string onCallAccountName = 17;
+  optional string onCallAccountName = 17 [(gogoproto.customname) = "OnCallAccountName", (gogoproto.nullable) = false];
 
   // List of documents attached to the this data product
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 19;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 19 [(gogoproto.customname) = "Compilation"];
 
   // The clearance level of this data product
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
-  optional string clearenceLevel = 20;
+  optional string clearenceLevel = 20 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.SecurityClearanceLevel", (gogoproto.customname) = "ClearenceLevel"];
 
   // Default Priority level assigned to jobs for this data product (e.g. study, model pipeline,etc)
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="medium"
-  optional string priority = 21;
+  optional string priority = 21 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.PriorityLevel", (gogoproto.customname) = "DefaultPriority"];
 }
 
 // DataProductStatus defines the observed state of DataProduct
 message DataProductStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
 
   // Last time the study was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudy = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudy = 3 [(gogoproto.customname) = "LastStudy"];
 
   // Last time the dataset was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDataset = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDataset = 4 [(gogoproto.customname) = "LastDataset"];
 
   // Last time prediction
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 5 [(gogoproto.customname) = "LastPrediction"];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 6;
+  repeated DataProductCondition conditions = 6 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
@@ -977,80 +1063,80 @@ message DataProductStatus {
 // DataProductVersion represent a version of the data product. A version is usually created when a new
 // data was gathered for the same product.
 message DataProductVersion {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional DataProductVersionSpec spec = 2;
+  optional DataProductVersionSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional DataProductVersionStatus status = 3;
+  optional DataProductVersionStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // DataProductVersionCondition describes the state of a DataProductVersion at a certain point.
 message DataProductVersionCondition {
   // Type of condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DataProductVersionConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // DataProductVersionList contains a list of DataProductVersion
 message DataProductVersionList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated DataProductVersion items = 2;
+  repeated DataProductVersion items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // DataProductVersionSpec defines the desired state of a data product version
 message DataProductVersionSpec {
   // Reference to the product reference
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference productRef = 1;
+  optional k8s.io.api.core.v1.ObjectReference productRef = 1 [(gogoproto.customname) = "ProductRef", (gogoproto.nullable) = false];
 
   // Description is user provided description
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // PrevVersionName is a pointer to the version that we derived from
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string prevVersionName = 3;
+  optional string prevVersionName = 3 [(gogoproto.customname) = "PrevVersionName"];
 
   // Baseline denote if this product version a baseline. If a product version is a baseline, we can garbage
   // collect all the parents' product versions
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool baseline = 4;
+  optional bool baseline = 4 [(gogoproto.customname) = "Baseline"];
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 5;
+  optional string owner = 5 [(gogoproto.customname) = "Owner"];
 }
 
 // DataProductVersionStatus defines the observed state of DataProductVersion
 message DataProductVersionStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 3 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductVersionCondition conditions = 2;
+  repeated DataProductVersionCondition conditions = 2 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema
@@ -1065,86 +1151,86 @@ message DataProductVersionStatus {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modela,all}
 message DataSource {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional DataSourceSpec spec = 2;
+  optional DataSourceSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional DataSourceStatus status = 3;
+  optional DataSourceStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // DataSourceCondition describes the state of a datasource at a certain point.
 message DataSourceCondition {
   // Type of condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DataSourceConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 5;
+  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 6;
+  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // DataSourceList contain a list of DataSource objects
 message DataSourceList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated DataSource items = 2;
+  repeated DataSource items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 message DataSourceSpec {
   // The account name of the owner of this dataset
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The version of the flat file.
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // User provided description of the data source
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // The data source schema
-  optional Schema schema = 4;
+  optional Schema schema = 4 [(gogoproto.customname) = "Schema"];
 
   // The text file type
   // Default: csv
   // +kubebuilder:default:="csv"
   // +kubebuilder:validation:Optional
-  optional string fileType = 5;
+  optional string fileType = 5 [(gogoproto.casttype) = "FlatFileType", (gogoproto.customname) = "FileType"];
 
   // FlatFile access specification
   // +kubebuilder:validation:Optional
-  optional CsvFileSpec csvfile = 6;
+  optional CsvFileSpec csvfile = 6 [(gogoproto.customname) = "CsvFile"];
 
   // Excel Notebook is a notebook in excel
   // +kubebuilder:validation:Optional
-  optional ExcelNotebookSpec excelNotebook = 7;
+  optional ExcelNotebookSpec excelNotebook = 7 [(gogoproto.customname) = "ExcelNotebook"];
 
   // Type is the dataset type
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string datasetType = 8;
+  optional string datasetType = 8 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.DatasetType", (gogoproto.customname) = "DatasetType"];
 
   // Sample spec defines how many rows to use for analysis for datasets from this datasource.
-  optional SampleSpec sample = 9;
+  optional SampleSpec sample = 9 [(gogoproto.customname) = "Sample", (gogoproto.nullable) = false];
 
   // The default task for datasets from this data source. If null this will be setup to the data product task
   // +kubebuilder:validation:Optional
-  optional string task = 10;
+  optional string task = 10 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TaskName", (gogoproto.customname) = "Task"];
 }
 
 // FlatFileStatus defines the observed state of CsvFileSpec
@@ -1152,38 +1238,38 @@ message DataSourceStatus {
   // number of columns in the data source
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 cols = 1;
+  optional int32 cols = 1 [(gogoproto.customname) = "Cols", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last time an dataset from this datasource was created.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDatasetCreated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastDatasetCreated = 3 [(gogoproto.customname) = "LastDatasetCreated"];
 
   // Last dataset name
   // +kubebuilder:validation:Optional
-  optional string lastDatasetName = 4;
+  optional string lastDatasetName = 4 [(gogoproto.customname) = "LastDatasetName", (gogoproto.nullable) = false];
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5 [(gogoproto.customname) = "LastUpdated"];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataSourceCondition conditions = 6;
+  repeated DataSourceCondition conditions = 6 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 message DataValidationResult {
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
-  optional string column = 2;
+  optional string column = 2 [(gogoproto.customname) = "Column", (gogoproto.nullable) = false];
 
-  optional string error = 3;
+  optional string error = 3 [(gogoproto.customname) = "Error", (gogoproto.nullable) = false];
 
-  optional bool passed = 4;
+  optional bool passed = 4 [(gogoproto.customname) = "Passed", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
@@ -1200,40 +1286,40 @@ message DataValidationResult {
 // +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
 // Dataset represents a single batch of data
 message Dataset {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional DatasetSpec spec = 2;
+  optional DatasetSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional DatasetStatus status = 3;
+  optional DatasetStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // DatasetCondition describes the state of a dataset at a certain point.
 message DatasetCondition {
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DatasetConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
   // +kubebuilder:validation:Optional
-  optional string reason = 5;
+  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
   // +kubebuilder:validation:Optional
-  optional string message = 6;
+  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // DatasetList contains a list of Datasets
 message DatasetList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated Dataset items = 2;
+  repeated Dataset items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // DatasetSpec defines the desired state of a dataset
@@ -1241,189 +1327,193 @@ message DatasetSpec {
   // The account name of the owner of this dataset
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // VersionName is the data product version of the dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // DataSourceName is the name of the data source which created this dataset. For example flat file
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
-  optional string datasourceName = 3;
+  optional string datasourceName = 3 [(gogoproto.customname) = "DataSourceName"];
 
   // User provided description
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 4;
+  optional string description = 4 [(gogoproto.customname) = "Description"];
 
   // The display name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string displayName = 5;
+  optional string displayName = 5 [(gogoproto.customname) = "DisplayName"];
 
   // If true, a dataset report should be generated for this dataset.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 7;
+  optional bool reported = 7 [(gogoproto.customname) = "Reported"];
 
   // If true, we should take a snapshot of the databases in order to create a dataset
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool snapshotted = 8;
+  optional bool snapshotted = 8 [(gogoproto.customname) = "Snapshotted"];
 
   // If true, we should validate the dataset
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool validate = 9;
+  optional bool validate = 9 [(gogoproto.customname) = "Validated"];
 
   // Labeled indicates if this dataset is labeled or not.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool labeled = 10;
+  optional bool labeled = 10 [(gogoproto.customname) = "Labeled"];
 
   // Syntactic indicates if we want to generate this dataset based on the data source
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool syntactic = 11;
+  optional bool syntactic = 11 [(gogoproto.customname) = "Syntactic"];
 
   // If syntactic is true, indicates how many rows to generate
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 syntacticRows = 12;
+  optional int32 syntacticRows = 12 [(gogoproto.customname) = "SyntacticRows"];
 
   // Define the data location. The operator will copy the data from this location into the live location.
   // The datafiles are initially uploaded to this location.
   // +kubebuilder:validation:Optional
-  optional DataLocation origin = 13;
+  optional DataLocation origin = 13 [(gogoproto.customname) = "Origin"];
 
   // Folder of the actual data resides.
   // +kubebuilder:validation:Required
-  optional DataLocation location = 14;
+  optional DataLocation location = 14 [(gogoproto.customname) = "Location"];
 
   // A reference to the workload class this is used to analyze the workload
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 15;
+  optional string workloadClassName = 15 [(gogoproto.customname) = "WorkloadClassName"];
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 16;
+  optional int64 activeDeadlineSeconds = 16 [(gogoproto.customname) = "ActiveDeadlineSeconds"];
 
   // DatasetType is the type of dataset
   // +kubebuilder:default:="tabular"
   // +kubebuilder:validation:Optional
-  optional string type = 17;
+  optional string type = 17 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.DatasetType", (gogoproto.customname) = "Type"];
 
   // Sample spec defines how many rows to use for analysis
   // +kubebuilder:validation:Optional
-  optional SampleSpec sample = 18;
+  optional SampleSpec sample = 18 [(gogoproto.customname) = "Sample", (gogoproto.nullable) = false];
 
   // DatasetType is the type of dataset
   // +kubebuilder:validation:Optional
-  optional string task = 19;
+  optional string task = 19 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TaskName", (gogoproto.customname) = "Task"];
 
   // Specification for notification for events that occur during processing
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 20;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 20 [(gogoproto.customname) = "Notification", (gogoproto.nullable) = false];
 
   // Specification for the correlation spec
   // +kubebuilder:validation:Optional
-  optional CorrelationSpec correlation = 21;
+  optional CorrelationSpec correlation = 21 [(gogoproto.customname) = "Correlation", (gogoproto.nullable) = false];
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes
 message DatasetStatistics {
   // Columns contain the collection of statistics for each attribute
   // +kubebuilder:validation:Optional
-  repeated ColumnStatistics columns = 1;
+  repeated ColumnStatistics columns = 1 [(gogoproto.customname) = "Columns", (gogoproto.nullable) = false];
 
   // number of rows in the dataset
   // +kubebuilder:validation:Optional
-  optional int32 rows = 3;
+  optional int32 rows = 3 [(gogoproto.customname) = "Rows", (gogoproto.nullable) = false];
 
   // number of columns, used mainly to show the columns in the kubectl
   // +kubebuilder:validation:Optional
-  optional int32 cols = 4;
+  optional int32 cols = 4 [(gogoproto.customname) = "Cols", (gogoproto.nullable) = false];
 
   // file size in bytes
   // +kubebuilder:validation:Optional
-  optional int32 fileSize = 5;
+  optional int32 fileSize = 5 [(gogoproto.customname) = "FileSize", (gogoproto.nullable) = false];
 
   // Holds the correlation stats
-  repeated FeatureCorr correlations = 6;
+  repeated FeatureCorr correlations = 6 [(gogoproto.customname) = "Correlations", (gogoproto.nullable) = false];
 }
 
 // DatasetStatus defines the observed state of Dataset
 message DatasetStatus {
   // Statistics for the dataset. The statistics contain information about each column.
   // +kubebuilder:validation:Optional
-  optional DatasetStatistics statistics = 1;
+  optional DatasetStatistics statistics = 1 [(gogoproto.customname) = "Statistics", (gogoproto.nullable) = false];
 
   // The phase of the dataset processing
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 2;
+  optional string phase = 2 [(gogoproto.casttype) = "DatasetPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
 
   // Reference to the report object that was generated for the dataset
   // +kubebuilder:validation:Optional
-  optional string reportName = 3;
+  optional string reportName = 3 [(gogoproto.customname) = "ReportName", (gogoproto.nullable) = false];
 
   // ReportURI is the uri of dataset report
   // +kubebuilder:validation:Optional
-  optional string reportUri = 4;
+  optional string reportUri = 4 [(gogoproto.customname) = "ReportUri", (gogoproto.nullable) = false];
 
   // A reference to the visualization uri which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string profileUri = 5;
+  optional string profileUri = 5 [(gogoproto.customname) = "ProfileUri", (gogoproto.nullable) = false];
 
   // Based on the actual data, treat this dataset as imbalanced.
   // +kubebuilder:validation:Optional
-  optional bool imbalanced = 6;
+  optional bool imbalanced = 6 [(gogoproto.customname) = "Imbalanced", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 8;
+  optional int64 observedGeneration = 8 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // List of data problems, as reported by the validation process
   // +kubebuilder:validation:Optional
-  repeated DataValidationResult validationResults = 9;
+  repeated DataValidationResult validationResults = 9 [(gogoproto.customname) = "ValidationResults", (gogoproto.nullable) = false];
 
   // Last time a study was done on the dataset.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastStudyTime = 10 [(gogoproto.customname) = "LastStudyTime"];
 
   // Notification sent
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastNotificationTime = 11;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastNotificationTime = 11 [(gogoproto.customname) = "NotificationTime"];
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 12;
+  optional string lastError = 12 [(gogoproto.customname) = "LastError", (gogoproto.nullable) = false];
 
   // Processing progress
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 progress = 13;
+  optional int32 progress = 13 [(gogoproto.customname) = "Progress"];
 
   // Sha256 signature of the dataset file.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string hash = 14;
+  optional string hash = 14 [(gogoproto.customname) = "Hash", (gogoproto.nullable) = false];
 
   // Holds the location of log paths
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 15 [(gogoproto.customname) = "Logs", (gogoproto.nullable) = false];
+
+  // If this dataset is derived, the name of the dataset that this is derived from.
+  // +kubebuilder:validation:Optional
+  optional string derivedFromDataset = 22 [(gogoproto.customname) = "DerivedFromDataset"];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 16;
+  repeated DatasetCondition conditions = 16 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -1431,151 +1521,151 @@ message DatasetTemplate {
   // Standard object's metadata.
   // More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional DatasetSpec spec = 2;
+  optional DatasetSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 }
 
 message DatasetValidation {
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "DatasetValidationName", (gogoproto.customname) = "Type"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double value = 2;
+  optional double value = 2 [(gogoproto.customname) = "Value"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double min = 3;
+  optional double min = 3 [(gogoproto.customname) = "Min"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 4;
+  optional double max = 4 [(gogoproto.customname) = "Max"];
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 5;
+  repeated string valueSet = 5 [(gogoproto.customname) = "ValueSet"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 6;
+  optional bool strictMin = 6 [(gogoproto.customname) = "StrictMin"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 7;
+  optional bool strictMax = 7 [(gogoproto.customname) = "StrictMax"];
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 8;
+  optional bool generated = 8 [(gogoproto.customname) = "Generated"];
 }
 
 message Entity {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional EntitySpec spec = 2;
+  optional EntitySpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional EntityStatus status = 3;
+  optional EntityStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // EntityCondition describes the state of a deployment at a certain point.
 message EntityCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "EntityConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // EntityList contains a list of Entity
 message EntityList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated Entity items = 2;
+  repeated Entity items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // EntitySpec contain the desired state of a Entity.
 message EntitySpec {
   // The product version of the entity
   // +kubebuilder:default:=""
-  optional string versionName = 1;
+  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
 
   // Description of the entity
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // Keys are the features that create a unique key to the entity.
   // +kubebuilder:validation:Optional
-  repeated string keys = 3;
+  repeated string keys = 3 [(gogoproto.customname) = "Keys"];
 
   // Owner of this Entity
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 4;
+  optional string owner = 4 [(gogoproto.customname) = "Owner"];
 }
 
 // EntityStatus defines the observed state of Entity
 message EntityStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated EntityCondition conditions = 2;
+  repeated EntityCondition conditions = 2 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 message ExcelNotebookSpec {
   // Use first sheet with data
   // +kubebuilder:validation:Optional
-  optional bool firstSheetWithData = 1;
+  optional bool firstSheetWithData = 1 [(gogoproto.customname) = "FirstSheetWithData"];
 
   // Use sheet with name
   // +kubebuilder:validation:Optional
-  optional string sheetName = 2;
+  optional string sheetName = 2 [(gogoproto.customname) = "SheetName"];
 
   // The index of the sheet with the data.
   // +kubebuilder:validation:Optional
-  optional int32 sheetIndex = 3;
+  optional int32 sheetIndex = 3 [(gogoproto.customname) = "SheetIndex"];
 
   // The rows number that contain column name
   // +kubebuilder:validation:Optional
-  optional int32 columnNameRow = 4;
+  optional int32 columnNameRow = 4 [(gogoproto.customname) = "ColumnNamesRow"];
 
   // Data is the definition of excel data.
   // +kubebuilder:validation:Optional
-  optional ExcelSheetArea data = 5;
+  optional ExcelSheetArea data = 5 [(gogoproto.customname) = "Data", (gogoproto.nullable) = false];
 }
 
 message ExcelSheetArea {
   // If true, read the entire sheet.
-  optional bool entireSheet = 1;
+  optional bool entireSheet = 1 [(gogoproto.customname) = "EntireSheet"];
 
   // If reading part of the excel sheet, start with this column
-  optional int32 fromColumn = 2;
+  optional int32 fromColumn = 2 [(gogoproto.customname) = "FromColumn"];
 
   // If reading part of the excel sheet, end with this column
-  optional int32 toColumn = 3;
+  optional int32 toColumn = 3 [(gogoproto.customname) = "ToColumn"];
 
   // If reading part of the excel sheet, start with row
-  optional int32 fromRow = 4;
+  optional int32 fromRow = 4 [(gogoproto.customname) = "FromRow"];
 
   // If reading part of the excel sheet, end with this row
-  optional int32 toRow = 5;
+  optional int32 toRow = 5 [(gogoproto.customname) = "ToRow"];
 }
 
 // Feature represent a single feature in the feature store.
@@ -1587,56 +1677,56 @@ message ExcelSheetArea {
 // +kubebuilder:resource:path=features,singular=feature,categories={data,modela}
 // +kubebuilder:subresource:status
 message Feature {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional FeatureSpec spec = 2;
+  optional FeatureSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional FeatureStatus status = 3;
+  optional FeatureStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 message FeatureAggrSpec {
   // The column
-  optional string column = 1;
+  optional string column = 1 [(gogoproto.customname) = "Column", (gogoproto.nullable) = false];
 
   // The aggregation function
-  repeated string functions = 2;
+  repeated string functions = 2 [(gogoproto.customname) = "Functions"];
 
   // List of windows functions
-  repeated string windows = 3;
+  repeated string windows = 3 [(gogoproto.customname) = "Windows"];
 }
 
 // FeatureCondition describes the state of a deployment at a certain point.
 message FeatureCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "FeatureConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // Feature corr is used to record a correlation between two features.
 message FeatureCorr {
   // The first feature name
-  optional string feature1 = 1;
+  optional string feature1 = 1 [(gogoproto.customname) = "Feature1", (gogoproto.nullable) = false];
 
   // The second feature name
-  optional string feature2 = 2;
+  optional string feature2 = 2 [(gogoproto.customname) = "Feature2", (gogoproto.nullable) = false];
 
   // The corr value
-  optional double value = 3;
+  optional double value = 3 [(gogoproto.customname) = "Value", (gogoproto.nullable) = false];
 
   // How the value was calculated
-  optional string method = 4;
+  optional string method = 4 [(gogoproto.customname) = "Method", (gogoproto.nullable) = false];
 }
 
 // FeatureHistogram represent a single feature in the feature store.
@@ -1651,38 +1741,38 @@ message FeatureCorr {
 // +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
 // +kubebuilder:subresource:status
 message FeatureHistogram {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional FeatureHistogramSpec spec = 2;
+  optional FeatureHistogramSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional FeatureHistogramStatus status = 3;
+  optional FeatureHistogramStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // FeatureHistogramCondition describes the state of a deployment at a certain point.
 message FeatureHistogramCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "FeatureHistogramConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // FeatureHistogramList contain a list of feature objects
 message FeatureHistogramList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated FeatureHistogram items = 2;
+  repeated FeatureHistogram items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // FeatureHistogramSpec contain the desired state of a FeatureHistogram
@@ -1690,62 +1780,62 @@ message FeatureHistogramSpec {
   // The feature owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the feature.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // Comments is a description of the feature
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // Type name of the column key, this column is the key column in the entity.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string column = 5;
+  optional string column = 5 [(gogoproto.customname) = "Column"];
 
   // The name of the dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string datasetName = 6;
+  optional string datasetName = 6 [(gogoproto.customname) = "DatasetName"];
 
   // Bins is the number of bins in the histogram
-  optional int32 bins = 7;
+  optional int32 bins = 7 [(gogoproto.customname) = "Bins"];
 
   // TTL for the data product run. Set to 0 if no garbage collected is needed.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 12;
+  optional int32 ttl = 12 [(gogoproto.customname) = "TTL"];
 }
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
 message FeatureHistogramStatus {
-  repeated double values = 1;
+  repeated double values = 1 [(gogoproto.customname) = "Values"];
 
   // The number of missing values
   // +kubebuilder:validation:Minimum=0
-  optional int32 missing = 2;
+  optional int32 missing = 2 [(gogoproto.customname) = "Missing", (gogoproto.nullable) = false];
 
   // The number of invalid values
   // +kubebuilder:validation:Minimum=0
-  optional int32 invalid = 3;
+  optional int32 invalid = 3 [(gogoproto.customname) = "Invalid", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 4;
+  repeated FeatureHistogramCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // FeatureList contain a list of feature objects
 message FeatureList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated Feature items = 2;
+  repeated Feature items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // FeaturePipeline represent the processing of feature in the store.
@@ -1758,37 +1848,37 @@ message FeatureList {
 // +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modela}
 // +kubebuilder:subresource:status
 message FeaturePipeline {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional FeaturePipelineSpec spec = 2;
+  optional FeaturePipelineSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
-  optional FeaturePipelineStatus status = 3;
+  optional FeaturePipelineStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // FeaturePipelineCondition describes the state of a deployment at a certain point.
 message FeaturePipelineCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "FeaturePipelineConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // FeatureList contain a list of feature objects
 message FeaturePipelineList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated FeaturePipeline items = 2;
+  repeated FeaturePipeline items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // FeaturePipeline represent a feature set object in the feature store.
@@ -1803,38 +1893,38 @@ message FeaturePipelineList {
 // +kubebuilder:resource:path=featurepipelineruns,shortName=fpr,singular=featurepipelinerun,categories={data,modela}
 // +kubebuilder:subresource:status
 message FeaturePipelineRun {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional FeaturePipelineRunSpec spec = 2;
+  optional FeaturePipelineRunSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional FeaturePipelineRunStatus status = 3;
+  optional FeaturePipelineRunStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // FeaturePipelineRunCondition describes the state of a deployment at a certain point.
 message FeaturePipelineRunCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "FeaturePipelineRunConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // FeaturePipelineRunList contain a list of FeaturePipelineRun objects
 // +kubebuilder:object:root=true
 message FeaturePipelineRunList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated FeaturePipelineRun items = 2;
+  repeated FeaturePipelineRun items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // FeatureSpec contain the desired state of a Feature
@@ -1843,60 +1933,60 @@ message FeaturePipelineRunSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the feature.
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // FileName specify the name of the attribute
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:MaxLength=64
-  optional string featurePipelineName = 3;
+  optional string featurePipelineName = 3 [(gogoproto.customname) = "FeaturePipelineName"];
 
   // A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 4;
+  optional string workloadClassName = 4 [(gogoproto.customname) = "WorkloadClassName"];
 
   // TTL.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 5;
+  optional int32 ttl = 5 [(gogoproto.customname) = "TTL"];
 }
 
 // FeatureStatus defines the observed state of Feature
 message FeaturePipelineRunStatus {
   // The Start time of the run
   // +option
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1 [(gogoproto.customname) = "StartTime"];
 
   // The End time of the run
   // +option
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2 [(gogoproto.customname) = "EndTime"];
 
   // The phase of the dataset processing
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 3 [(gogoproto.casttype) = "FeautrePipelineRunPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
+  optional int64 observedGeneration = 4 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 5;
+  optional string triggeredBy = 5 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TriggerType", (gogoproto.customname) = "TriggeredBy", (gogoproto.nullable) = false];
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 6 [(gogoproto.customname) = "Logs", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturePipelineRunCondition conditions = 7;
+  repeated FeaturePipelineRunCondition conditions = 7 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
@@ -1905,83 +1995,83 @@ message FeaturePipelineSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
   // +kubebuilder:validation:Optional
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // DatasetSelector is used to select datasets to process the features from.
   // +kubebuilder:validation:Optional
-  map<string, string> datasetSelector = 2;
+  map<string, string> datasetSelector = 2 [(gogoproto.customname) = "DatasetSelector", (gogoproto.nullable) = false];
 
   // Version name is the the product version for the feature.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 3;
+  optional string versionName = 3 [(gogoproto.customname) = "VersionName"];
 
   // Description of the feature pipeline
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 4;
+  optional string description = 4 [(gogoproto.customname) = "Description", (gogoproto.nullable) = false];
 
   // Aggregation is the aggregation spec
   // +kubebuilder:validation:Optional
-  optional AggregationSpec aggregation = 5;
+  optional AggregationSpec aggregation = 5 [(gogoproto.customname) = "Aggregation"];
 
   // Materialization
-  optional MaterializationSpec materialization = 6;
+  optional MaterializationSpec materialization = 6 [(gogoproto.customname) = "Materialization"];
 
   // Family is the feature family
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string family = 7;
+  optional string family = 7 [(gogoproto.customname) = "Family"];
 
   // Reference to the entity name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string entityName = 8;
+  optional string entityName = 8 [(gogoproto.customname) = "EntityName"];
 
   // A reference to the workload class that is used for running the workload class
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional string workloadClassName = 9 [(gogoproto.customname) = "WorkloadClassName"];
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 10 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 11;
+  optional int64 activeDeadlineSeconds = 11 [(gogoproto.customname) = "ActiveDeadlineSeconds"];
 
   // Set to true to pause the data pipeline
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 12;
+  optional bool paused = 12 [(gogoproto.customname) = "Paused"];
 
   // TTL.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 13;
+  optional int32 ttl = 13 [(gogoproto.customname) = "TTL"];
 }
 
 // FeatureStatus defines the observed state of Feature
 message FeaturePipelineStatus {
   // Last run is the last time a run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1 [(gogoproto.customname) = "LastRun"];
 
   // Store the avg cost of running this pipeline
-  optional double averageCost = 2;
+  optional double averageCost = 2 [(gogoproto.customname) = "AverageCost", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 3 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturePipelineCondition conditions = 4;
+  repeated FeaturePipelineCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // FeatureSpec contain the desired state of a Feature
@@ -1989,135 +2079,135 @@ message FeatureSpec {
   // The feature owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the feature.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // Comments is a description of the feature
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // Type name of the column key, this column is the key column in the entity.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string keyColumn = 5;
+  optional string keyColumn = 5 [(gogoproto.customname) = "KeyColumn"];
 
   // The name of the time stamp column
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string timestampColumn = 6;
+  optional string timestampColumn = 6 [(gogoproto.customname) = "TimestampColumn"];
 
   // The name of the feature column
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string featureColumn = 7;
+  optional string featureColumn = 7 [(gogoproto.customname) = "FeatureColumn"];
 
   // The name of the entity containing this feature
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string entityName = 8;
+  optional string entityName = 8 [(gogoproto.customname) = "EntityName"];
 
   // The name of the feature pipeline that is producing this feature
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string featurePipelineName = 9;
+  optional string featurePipelineName = 9 [(gogoproto.customname) = "FeaturePipelineName"];
 }
 
 // FeatureStatus defines the observed state of Feature
 message FeatureStatus {
   // Min is the minimum value of the attribute
-  optional double min = 2;
+  optional double min = 2 [(gogoproto.customname) = "Min", (gogoproto.nullable) = false];
 
   // Max is the maximum value of the attribute
-  optional double max = 3;
+  optional double max = 3 [(gogoproto.customname) = "Max", (gogoproto.nullable) = false];
 
   // Mean is the mean value of the attribute
-  optional double mean = 4;
+  optional double mean = 4 [(gogoproto.customname) = "Mean", (gogoproto.nullable) = false];
 
   // StdDev is the standard deviation value of the attribute
-  optional double stddev = 5;
+  optional double stddev = 5 [(gogoproto.customname) = "StdDev", (gogoproto.nullable) = false];
 
   // Skewness is the standard deviation value of the attribute
-  optional double skewness = 6;
+  optional double skewness = 6 [(gogoproto.customname) = "Skewness", (gogoproto.nullable) = false];
 
   // Kurtosis is the standard deviation value of the attribute
-  optional double kurtosis = 7;
+  optional double kurtosis = 7 [(gogoproto.customname) = "Kurtosis", (gogoproto.nullable) = false];
 
   // Zeros is the numbers of zeros in the feature
-  optional double zeros = 8;
+  optional double zeros = 8 [(gogoproto.customname) = "Zeros", (gogoproto.nullable) = false];
 
   // Pct25 is the 25 precent point
-  optional double p25 = 10;
+  optional double p25 = 10 [(gogoproto.customname) = "P25", (gogoproto.nullable) = false];
 
   // Pct50 is the median
-  optional double p50 = 11;
+  optional double p50 = 11 [(gogoproto.customname) = "P50", (gogoproto.nullable) = false];
 
   // Pct75 is the 75% point
-  optional double p75 = 12;
+  optional double p75 = 12 [(gogoproto.customname) = "P75", (gogoproto.nullable) = false];
 
   // The number of missing values
   // +kubebuilder:validation:Minimum=0
-  optional int32 missing = 14;
+  optional int32 missing = 14 [(gogoproto.customname) = "Missing", (gogoproto.nullable) = false];
 
   // The number of invalid values
   // +kubebuilder:validation:Minimum=0
-  optional int32 invalid = 15;
+  optional int32 invalid = 15 [(gogoproto.customname) = "Invalid", (gogoproto.nullable) = false];
 
   // Is this the target attribute, the value is derived from the schema
-  optional bool target = 16;
+  optional bool target = 16 [(gogoproto.customname) = "Target", (gogoproto.nullable) = false];
 
   // The feature importance
-  optional double importance = 17;
+  optional double importance = 17 [(gogoproto.customname) = "Importance", (gogoproto.nullable) = false];
 
-  optional int32 distinc = 18;
+  optional int32 distinc = 18 [(gogoproto.customname) = "Distinct", (gogoproto.nullable) = false];
 
   // Should this column be ignored, as specified by the user.
   // This value is derived from the schema
-  optional bool ignored = 19;
+  optional bool ignored = 19 [(gogoproto.customname) = "Ignored", (gogoproto.nullable) = false];
 
   // Is this column is nullable.
   // This value is derived from the schema.
-  optional bool nullable = 20;
+  optional bool nullable = 20 [(gogoproto.customname) = "Nullable", (gogoproto.nullable) = false];
 
   // This column has high cardinality and should be ignored.
   // The value is set during the profile process.
-  optional bool highCred = 21;
+  optional bool highCred = 21 [(gogoproto.customname) = "HighCred", (gogoproto.nullable) = false];
 
   // This column has high corrolation with another feature and should be dropped.
   // The value is set during the profile process.
-  optional bool highCorr = 22;
+  optional bool highCorr = 22 [(gogoproto.customname) = "HighCorr", (gogoproto.nullable) = false];
 
   // Mark that this column is skewed and would require a power transform
   // If skewness is less than -1 or greater than 1, the distribution is highly skewed.
   // If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
   // If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-  optional bool skew = 23;
+  optional bool skew = 23 [(gogoproto.customname) = "Skew", (gogoproto.nullable) = false];
 
   // Completeness is the ratio between non null to null
-  optional double completeness = 24;
+  optional double completeness = 24 [(gogoproto.customname) = "Completeness", (gogoproto.nullable) = false];
 
   // The ratio between distinc to total
-  optional double distinctValueCount = 25;
+  optional double distinctValueCount = 25 [(gogoproto.customname) = "DistinctValueCount", (gogoproto.nullable) = false];
 
   // The ratio between most freq value to total
-  optional double mostFreqValuesRatio = 26;
+  optional double mostFreqValuesRatio = 26 [(gogoproto.customname) = "MostFreqValuesRatio", (gogoproto.nullable) = false];
 
   // Used for text attributes
-  optional double indexOfPeculiarity = 27;
+  optional double indexOfPeculiarity = 27 [(gogoproto.customname) = "IndexOfPeculiarity", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 28;
+  optional int64 observedGeneration = 28 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureCondition conditions = 29;
+  repeated FeatureCondition conditions = 29 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // Featureset represents a featureset object
@@ -2128,129 +2218,129 @@ message FeatureStatus {
 // +kubebuilder:resource:path=featuresets,singular=featureset,shortName=fset,categories={data,modela}
 // +kubebuilder:subresource:status
 message Featureset {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional FeaturesetSpec spec = 2;
+  optional FeaturesetSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional FeaturesetStatus status = 3;
+  optional FeaturesetStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // FeaturesetCondition describes the state of a deployment at a certain point.
 message FeaturesetCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "FeaturesetConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // FeaturesetList contains a list of Featureset
 message FeaturesetList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated Featureset items = 2;
+  repeated Featureset items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // FeaturesetSpec contain the desired state of a Featureset.
 message FeaturesetSpec {
   // The product version of the featureset
   // +kubebuilder:default:=""
-  optional string versionName = 1;
+  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
 
   // User provided description
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // Reference to the feature names of this featureset
-  repeated string features = 3;
+  repeated string features = 3 [(gogoproto.customname) = "Features"];
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 4;
+  optional string owner = 4 [(gogoproto.customname) = "Owner"];
 }
 
 // FeaturesetStatus defines the observed state of Featureset
 message FeaturesetStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturesetCondition conditions = 2;
+  repeated FeaturesetCondition conditions = 2 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 message FileValidation {
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "FileValidationName", (gogoproto.customname) = "Type"];
 
   // +kubebuilder:validation:Optional
-  optional string bucketName = 2;
+  optional string bucketName = 2 [(gogoproto.customname) = "BucketName"];
 
   // +kubebuilder:validation:Optional
-  optional string column = 3;
+  optional string column = 3 [(gogoproto.customname) = "Path"];
 
   // For validation that need a single value
   // +kubebuilder:validation:Optional
-  optional double value = 4;
+  optional double value = 4 [(gogoproto.customname) = "Value"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double min = 5;
+  optional double min = 5 [(gogoproto.customname) = "Min"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 6;
+  optional double max = 6 [(gogoproto.customname) = "Max"];
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 7;
+  repeated string valueSet = 7 [(gogoproto.customname) = "ValueSet"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 8;
+  optional bool strictMin = 8 [(gogoproto.customname) = "StrictMin"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 9;
+  optional bool strictMax = 9 [(gogoproto.customname) = "StrictMax"];
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 10;
+  optional bool generated = 10 [(gogoproto.customname) = "Generated"];
 }
 
 message GitLocation {
   // GitConnectionName
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string gitConnectionName = 1;
+  optional string gitConnectionName = 1 [(gogoproto.customname) = "GitConnectionName"];
 
   // URL of the stakeholder
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
-  optional string url = 2;
+  optional string url = 2 [(gogoproto.customname) = "URL"];
 
   // Branch in git repo
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
-  optional string branch = 3;
+  optional string branch = 3 [(gogoproto.customname) = "Branch"];
 
   // Private is True if the repository is private.
-  optional bool private = 4;
+  optional bool private = 4 [(gogoproto.customname) = "Private"];
 }
 
 message ImageLocation {
@@ -2259,23 +2349,23 @@ message ImageLocation {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
   // optional
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name"];
 
   // The connection of the docker registry provider
   // +kubebuilder:default:=""
   // If the value is empty, the system will not push images.
   // optional
-  optional string registryConnectionName = 2;
+  optional string registryConnectionName = 2 [(gogoproto.customname) = "RegistryConnectionName"];
 }
 
 message KPI {
   // Name is the name of the kpi
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name"];
 
   // Value is the desired value
-  optional double value = 2;
+  optional double value = 2 [(gogoproto.customname) = "Value"];
 }
 
 // LabelingPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
@@ -2285,38 +2375,38 @@ message KPI {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,shortName=lp,categories={data,modela}
 message LabelingPipeline {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional LabelingPipelineSpec spec = 2;
+  optional LabelingPipelineSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional LabelingPipelineStatus status = 3;
+  optional LabelingPipelineStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // LabelingPipelineCondition describes the state of a wrangler at a certain point.
 message LabelingPipelineCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "LabelingPipelineConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // LabelingPipelineList contain the list of LabelingPipeline
 message LabelingPipelineList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated LabelingPipeline items = 2;
+  repeated LabelingPipeline items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // LabelingPipeline represent a feature set object in the feature store.
@@ -2331,232 +2421,232 @@ message LabelingPipelineList {
 // +kubebuilder:resource:path=labelingpipelineruns,singular=labelingpipelinerun,shortName=lpr,categories={data,modela}
 // +kubebuilder:subresource:status
 message LabelingPipelineRun {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional LabelingPipelineRunSpec spec = 2;
+  optional LabelingPipelineRunSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
-  optional LabelingPipelineRunStatus status = 3;
+  optional LabelingPipelineRunStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // LabelingPipelineRunCondition describes the state of a deployment at a certain point.
 message LabelingPipelineRunCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "LabelingPipelineRunConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 message LabelingPipelineRunList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated LabelingPipelineRun items = 2;
+  repeated LabelingPipelineRun items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // LabelSpec contain the desired state of a Label
 message LabelingPipelineRunSpec {
   // The owner of the LabelingPipelineRunSpec
   // +kubebuilder:default:="no-one"
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the pipeline
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // LabelPipelineName specifies the name of LabelingPipeline
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:default:=""
-  optional string labelPipelineName = 3;
+  optional string labelPipelineName = 3 [(gogoproto.customname) = "LabelPipelineName"];
 
   // WorkloadClassName is the name of the workload class used to run this pipeline.
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 4;
+  optional string workloadClassName = 4 [(gogoproto.customname) = "WorkloadClassName"];
 
   // TTL.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 5;
+  optional int32 ttl = 5 [(gogoproto.customname) = "TTL"];
 }
 
 // LabelPipelineRunStatus defines the observed state of Label
 message LabelingPipelineRunStatus {
   // The phase of the labeling pipeline run
   // +kubebuilder:default:="Pending"
-  optional string phase = 1;
+  optional string phase = 1 [(gogoproto.casttype) = "LabelingPipelineRunPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
 
   // The Start time of the run
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 2 [(gogoproto.customname) = "StartTime"];
 
   // The End time of the run
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 3 [(gogoproto.customname) = "EndTime"];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
+  optional int64 observedGeneration = 4 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 5;
+  optional string triggeredBy = 5 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TriggerType", (gogoproto.customname) = "TriggeredBy", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabelingPipelineRunCondition conditions = 6;
+  repeated LabelingPipelineRunCondition conditions = 6 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // LabelingPipelineSpec defines the desired state of a LabelingPipeline
 message LabelingPipelineSpec {
   // The product of the rejoiner
-  optional string versionName = 1;
+  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
 
   // User provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2;
+  optional string description = 2 [(gogoproto.customname) = "Description"];
 
   // DatasetSelector is used to select unlabeled dataset for labeling
   // +kubebuilder:validation:Optional
-  map<string, string> datasetSelector = 3;
+  map<string, string> datasetSelector = 3 [(gogoproto.customname) = "DatasetSelector", (gogoproto.nullable) = false];
 
   // The recipe for this pipeline.
   // +kubebuilder:validation:Optional
-  repeated string recipeNames = 4;
+  repeated string recipeNames = 4 [(gogoproto.customname) = "RecipeNames"];
 
   // The output file of the pipeline
   // +kubebuilder:validation:Optional
-  optional string outputLabelset = 5;
+  optional string outputLabelset = 5 [(gogoproto.customname) = "OutputLabelsetName"];
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 6 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 7;
+  optional string owner = 7 [(gogoproto.customname) = "Owner"];
 
   // WorkloadClassName is the name of the workload class used to run this pipeline.
   // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional string workloadClassName = 8 [(gogoproto.customname) = "WorkloadClassName"];
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 9;
+  optional int64 activeDeadlineSeconds = 9 [(gogoproto.customname) = "ActiveDeadlineSeconds"];
 
   // Paused request the labeling pipeline to suspend
   // +kubebuilder:default:=false
-  optional bool paused = 10;
+  optional bool paused = 10 [(gogoproto.customname) = "Paused"];
 
   // TTL.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 11;
+  optional int32 ttl = 11 [(gogoproto.customname) = "TTL"];
 }
 
 // LabelingPipelineStatus is the observed state of the LabelingPipeline object.
 message LabelingPipelineStatus {
   // Last run is the last time a run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 1 [(gogoproto.customname) = "LastRun"];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabelingPipelineCondition conditions = 3;
+  repeated LabelingPipelineCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 message MaterializationSpec {
   // If true, update the online store
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool online = 1;
+  optional bool online = 1 [(gogoproto.customname) = "Online"];
 
   // If true update the offline store.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool offline = 2;
+  optional bool offline = 2 [(gogoproto.customname) = "Offline"];
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startDate = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startDate = 3 [(gogoproto.customname) = "StartDate"];
 
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string scheduleInterval = 4;
+  optional string scheduleInterval = 4 [(gogoproto.customname) = "ScheduleInterval"];
 
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:default:=0
-  optional int32 ttl = 5;
+  optional int32 ttl = 5 [(gogoproto.customname) = "TTL"];
 
   // Number of days to store information from the past in the feature store.
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=21
   // +kubebuilder:validation:Minimum=0
-  optional int32 backfill = 6;
+  optional int32 backfill = 6 [(gogoproto.customname) = "Backfill"];
 }
 
 message MultiColumnValidation {
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "MultiColumnValidationName", (gogoproto.customname) = "Type"];
 
   // +kubebuilder:validation:Optional
-  repeated string columns = 2;
+  repeated string columns = 2 [(gogoproto.customname) = "Columns"];
 
   // For validation that need a single value
   // +kubebuilder:validation:Optional
-  optional double value = 3;
+  optional double value = 3 [(gogoproto.customname) = "Value"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double min = 4;
+  optional double min = 4 [(gogoproto.customname) = "Min"];
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   // +kubebuilder:validation:Optional
-  optional double max = 5;
+  optional double max = 5 [(gogoproto.customname) = "Max"];
 
   // +kubebuilder:validation:Optional
-  repeated string valueSet = 6;
+  repeated string valueSet = 6 [(gogoproto.customname) = "ValueSet"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMin = 7;
+  optional bool strictMin = 7 [(gogoproto.customname) = "StrictMin"];
 
   // +kubebuilder:validation:Optional
-  optional bool strictMax = 8;
+  optional bool strictMax = 8 [(gogoproto.customname) = "StrictMax"];
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 9;
+  optional bool generated = 9 [(gogoproto.customname) = "Generated"];
 }
 
 message MultiDatasetValidation {
   // +kubebuilder:validation:Optional
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "MultiDatasetValidationName", (gogoproto.customname) = "Type"];
 
   // +kubebuilder:validation:Optional
-  repeated string datasets = 2;
+  repeated string datasets = 2 [(gogoproto.customname) = "Datasets"];
 
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
-  optional bool generated = 3;
+  optional bool generated = 3 [(gogoproto.customname) = "Generated"];
 }
 
 // Recipe represents a single batch of data
@@ -2569,31 +2659,31 @@ message MultiDatasetValidation {
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
 message Recipe {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional RecipeSpec spec = 2;
+  optional RecipeSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
-  optional RecipeStatus status = 3;
+  optional RecipeStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // RecipeCondition describes the state of a dataset at a certain point.
 message RecipeCondition {
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "RecipeConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
   // +kubebuilder:validation:Optional
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
   // +kubebuilder:validation:Optional
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // RecipeInputSpec specify the input for a recipe
@@ -2601,46 +2691,46 @@ message RecipeInputSpec {
   // DatasetName is the name of the dataset
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string datasetName = 1;
+  optional string datasetName = 1 [(gogoproto.customname) = "DatasetName"];
 
   // Location is the folder of the actual data resides, if not using dataset
   // +required.
-  optional DataLocation location = 2;
+  optional DataLocation location = 2 [(gogoproto.customname) = "Location"];
 
   // Format is the dataset format
   // +kubebuilder:default:=csv
-  optional string format = 3;
+  optional string format = 3 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.DatastoreType", (gogoproto.customname) = "Format"];
 }
 
 // +kubebuilder:object:root=true
 // RecipeList contains a list of Recipes
 message RecipeList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated Recipe items = 2;
+  repeated Recipe items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // RecipeOutputSpec for the recipe output
 message RecipeOutputSpec {
   // CreateDataset if true, create a new dataset when the recipe is done.
   // +kubebuilder:validation:Optional
-  optional bool createDataset = 1;
+  optional bool createDataset = 1 [(gogoproto.customname) = "CreateDataset"];
 
   // DatasetName is the name of the dataset output to the recipe
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string datasetName = 2;
+  optional string datasetName = 2 [(gogoproto.customname) = "DatasetName"];
 
   // Location is the data location folder of the actual data resides.
   // +kubebuilder:validation:Required
-  optional DataLocation location = 3;
+  optional DataLocation location = 3 [(gogoproto.customname) = "Location"];
 }
 
 message RecipePartSpec {
   // RecipeName is the name of the recipe to run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string recipeName = 1;
+  optional string recipeName = 1 [(gogoproto.customname) = "RecipeName"];
 
   // Dependents is the list of recipe that need to run after this recipe.
   repeated string Dependents = 2;
@@ -2658,109 +2748,109 @@ message RecipePartSpec {
 // Recipe run represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 message RecipeRun {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional RecipeRunSpec spec = 2;
+  optional RecipeRunSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional RecipeRunStatus status = 3;
+  optional RecipeRunStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // RecipeRunCondition describes the state of a dataset at a certain point.
 message RecipeRunCondition {
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "RecipeConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
   // +kubebuilder:validation:Optional
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
   // +kubebuilder:validation:Optional
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // RecipeRunList contains a list of Recipes
 message RecipeRunList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated RecipeRun items = 2;
+  repeated RecipeRun items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // RecipeSpec defines the desired state of a dataset
 message RecipeRunSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 1;
+  optional string versionName = 1 [(gogoproto.customname) = "VersionName"];
 
   // The name of the recipe that execute this run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string recipeName = 2;
+  optional string recipeName = 2 [(gogoproto.customname) = "RecipeName"];
 
   // The execution env of this recipes
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string labName = 3;
+  optional string labName = 3 [(gogoproto.customname) = "LabName"];
 
   // The location of the data output.
   // +required.
-  optional DataLocation output = 4;
+  optional DataLocation output = 4 [(gogoproto.customname) = "Output", (gogoproto.nullable) = false];
 
   // WorkloadClassName is the name of the workload used to execute this recipe run,
   // The value is set from the Recipe definition.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional string workloadClassName = 5 [(gogoproto.customname) = "WorkloadClassName"];
 
   // TTL.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 6;
+  optional int32 ttl = 6 [(gogoproto.customname) = "TTL"];
 }
 
 // RecipeStatus defines the observed state of Recipe
 message RecipeRunStatus {
   // Represents the start time
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1 [(gogoproto.customname) = "StartTime"];
 
   // Represents the end time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2 [(gogoproto.customname) = "EndTime"];
 
   // The phase of the dataset processing
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 3 [(gogoproto.casttype) = "RecipeRunPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
+  optional int64 observedGeneration = 4 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 5;
+  optional string lastError = 5 [(gogoproto.customname) = "LastError", (gogoproto.nullable) = false];
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 6;
+  optional string triggeredBy = 6 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TriggerType", (gogoproto.customname) = "TriggeredBy", (gogoproto.nullable) = false];
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7 [(gogoproto.customname) = "Logs", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 8;
+  repeated RecipeCondition conditions = 8 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // RecipeSpec defines the desired state of a dataset
@@ -2768,98 +2858,98 @@ message RecipeSpec {
   // Owner is the owner of the recipe
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // VersionName is the data product version of the recipe
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // required.
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // Description is the user provided description
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // Input is the input recipe spec
-  optional RecipeInputSpec input = 4;
+  optional RecipeInputSpec input = 4 [(gogoproto.customname) = "Input", (gogoproto.nullable) = false];
 
   // Steps are the list of recipe steps
-  repeated RecipeStep steps = 5;
+  repeated RecipeStep steps = 5 [(gogoproto.customname) = "Steps", (gogoproto.nullable) = false];
 
   // Output is the desired output
-  optional RecipeOutputSpec output = 6;
+  optional RecipeOutputSpec output = 6 [(gogoproto.customname) = "Output", (gogoproto.nullable) = false];
 
   // Sample specify the sampling paramters when viewing the recipe
   // +kubebuilder:validation:Optional
-  optional SampleSpec sample = 7;
+  optional SampleSpec sample = 7 [(gogoproto.customname) = "Sample"];
 
   // WorkloadClassName is the name of the workload used to execute this recipe
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional string workloadClassName = 9 [(gogoproto.customname) = "WorkloadClassName"];
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 10;
+  optional int64 activeDeadlineSeconds = 10 [(gogoproto.customname) = "ActiveDeadlineSeconds"];
 
   // TTL.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 11;
+  optional int32 ttl = 11 [(gogoproto.customname) = "TTL"];
 }
 
 // RecipeStatus defines the observed state of Recipe
 message RecipeStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
+  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last run is the last time a run was created
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 2 [(gogoproto.customname) = "LastRun"];
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3 [(gogoproto.customname) = "LastUpdated"];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 4;
+  repeated RecipeCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // RecipeStep defines one step in the recipe
 message RecipeStep {
-  optional string op = 1;
+  optional string op = 1 [(gogoproto.casttype) = "RecipeStepOperation", (gogoproto.customname) = "Op", (gogoproto.nullable) = false];
 
-  repeated RecipeStepParam parameters = 2;
+  repeated RecipeStepParam parameters = 2 [(gogoproto.customname) = "Parameters"];
 }
 
 // RecipeStepParam is a key value parameter of the recipe
 message RecipeStepParam {
-  optional string name = 1;
+  optional string name = 1 [(gogoproto.customname) = "Name", (gogoproto.nullable) = false];
 
-  optional string value = 2;
+  optional string value = 2 [(gogoproto.customname) = "Value", (gogoproto.nullable) = false];
 }
 
 message RecommendationSchema {
   // The name of the user id column in the dataset
   // +kubebuilder:default:="user_id"
   // +kubebuilder:validation:Optional
-  optional string userIDColumn = 1;
+  optional string userIDColumn = 1 [(gogoproto.customname) = "UserID"];
 
   // The name of the item id column in the dataset
   // +kubebuilder:default:="item_id"
   // +kubebuilder:validation:Optional
-  optional string itemIDColumn = 2;
+  optional string itemIDColumn = 2 [(gogoproto.customname) = "ItemID"];
 
   // The rating column name
   // +kubebuilder:default:="rating"
   // +kubebuilder:validation:Optional
-  optional string ratingColumn = 3;
+  optional string ratingColumn = 3 [(gogoproto.customname) = "Rating"];
 }
 
 // The sample spec define how to sample a dataset for analysis
@@ -2867,51 +2957,51 @@ message SampleSpec {
   // Enabled specify if the sample is enabled
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
+  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
 
   // Type is the sampling type
   // Default is random
   // +kubebuilder:default:="random"
   // +kubebuilder:validation:Optional
-  optional string type = 2;
+  optional string type = 2 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.SamplingType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Rows is the number of rows. Default is 500
   // +kubebuilder:default:=500
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 rows = 3;
+  optional int32 rows = 3 [(gogoproto.customname) = "Rows"];
 
   // Pct is the percent of rows to use for analysis.
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 percent = 4;
+  optional int32 percent = 4 [(gogoproto.customname) = "Pct"];
 
   // Filter formula. Valid only if the sample is a filter.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string filter = 5;
+  optional string filter = 5 [(gogoproto.customname) = "Filter"];
 
   // Column is used for stratified sampling.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string column = 6;
+  optional string column = 6 [(gogoproto.customname) = "Column"];
 }
 
 message Schema {
   // Time series schema. Set time series specific parameters.
   // +kubebuilder:validation:Optional
-  optional TimeSeriesSchema timeSeriesSchema = 1;
+  optional TimeSeriesSchema timeSeriesSchema = 1 [(gogoproto.customname) = "TimeSeriesSchema"];
 
   // Recommendation schema. Used for recommendation task
   // +kubebuilder:validation:Optional
-  optional RecommendationSchema recommendationSchema = 2;
+  optional RecommendationSchema recommendationSchema = 2 [(gogoproto.customname) = "RecommendationSchema"];
 
   // Columns
-  repeated Column columns = 3;
+  repeated Column columns = 3 [(gogoproto.customname) = "Columns", (gogoproto.nullable) = false];
 
   // Validation spec define the validation to perform on new datasets
-  optional ValidationSpec validation = 4;
+  optional ValidationSpec validation = 4 [(gogoproto.customname) = "Validation"];
 }
 
 // SqlQuery represent a single sqlquery in the sqlquery store.
@@ -2923,38 +3013,38 @@ message Schema {
 // +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
 // +kubebuilder:subresource:status
 message SqlQuery {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional SqlQuerySpec spec = 2;
+  optional SqlQuerySpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional SqlQueryStatus status = 3;
+  optional SqlQueryStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // SqlQueryCondition describes the state of a deployment at a certain point.
 message SqlQueryCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "SqlQueryConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // SqlQueryList contain a list of sqlquery objects
 message SqlQueryList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated SqlQuery items = 2;
+  repeated SqlQuery items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // SqlQueryRun represent a single sqlquery in the sqlquery store.
@@ -2966,38 +3056,38 @@ message SqlQueryList {
 // +kubebuilder:resource:path=sqlqueryruns,singular=sqlqueryrun,categories={data,modela}
 // +kubebuilder:subresource:status
 message SqlQueryRun {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional SqlQueryRunSpec spec = 2;
+  optional SqlQueryRunSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional SqlQueryRunStatus status = 3;
+  optional SqlQueryRunStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // SqlQueryRunCondition describes the state of a deployment at a certain point.
 message SqlQueryRunCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "SqlQueryRunConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // SqlQueryRunList contain a list of sqlquery objects
 message SqlQueryRunList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated SqlQueryRun items = 2;
+  repeated SqlQueryRun items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // SqlQueryRunSpec contain the desired state of a SqlQueryRun
@@ -3005,84 +3095,84 @@ message SqlQueryRunSpec {
   // The sqlquery owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the sqlquery.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // Comments is a description of the sqlquery
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // Type name of the column key, this column is the key column in the entity.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string sql = 4;
+  optional string sql = 4 [(gogoproto.customname) = "Sql"];
 
   // The name of the connection to the SQL data source
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string connectionName = 5;
+  optional string connectionName = 5 [(gogoproto.customname) = "ConnectionName"];
 
   // A reference to the workload class that is used for training
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 6;
+  optional string workloadClassName = 6 [(gogoproto.customname) = "WorkloadClassName"];
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 7;
+  optional int64 activeDeadlineSeconds = 7 [(gogoproto.customname) = "ActiveDeadlineSeconds"];
 
   // The priority of this prediction. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
-  optional string priority = 8;
+  optional string priority = 8 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.PriorityLevel", (gogoproto.customname) = "Priority"];
 
   // Aborted is set when we want to abort the prediction
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 9;
+  optional bool aborted = 9 [(gogoproto.customname) = "Aborted"];
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
 message SqlQueryRunStatus {
   // StartTime is the start time of the prediction.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1 [(gogoproto.customname) = "StartTime"];
 
   // EndTime is the end time of the prediction.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2 [(gogoproto.customname) = "EndTime"];
 
   // Phase is the current phase of the prediction
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 3 [(gogoproto.casttype) = "SqlQueryRunPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
+  optional int64 observedGeneration = 4 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // The number of rows in the result query
   // +kubebuilder:validation:Optional
-  optional int32 rows = 5;
+  optional int32 rows = 5 [(gogoproto.customname) = "Rows", (gogoproto.nullable) = false];
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 6;
+  optional string triggeredBy = 6 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TriggerType", (gogoproto.customname) = "TriggeredBy", (gogoproto.nullable) = false];
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7 [(gogoproto.customname) = "Logs", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryRunCondition conditions = 8;
+  repeated SqlQueryRunCondition conditions = 8 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // SqlQuerySpec contain the desired state of a SqlQuery
@@ -3090,47 +3180,47 @@ message SqlQuerySpec {
   // The sqlquery owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the sqlquery.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // Description of the cron query
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // The sql template to create.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional SqlQueryRunSpec template = 4;
+  optional SqlQueryRunSpec template = 4 [(gogoproto.customname) = "Template", (gogoproto.nullable) = false];
 
   // Schedule for running the sql query
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
 }
 
 // SqlQueryStatus defines the observed state of SqlQuery
 message SqlQueryStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1 [(gogoproto.customname) = "LastUpdated"];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last Time the query run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3 [(gogoproto.customname) = "LastRun"];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryCondition conditions = 4;
+  repeated SqlQueryCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // Represent a stack holder in the product.
@@ -3139,43 +3229,43 @@ message StakeHolder {
   // The account name of the stake holder
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string accountName = 1;
+  optional string accountName = 1 [(gogoproto.customname) = "AccountName"];
 
   // The roles assigned to the stake holder
-  repeated string roles = 2;
+  repeated string roles = 2 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.RoleName", (gogoproto.customname) = "Roles"];
 }
 
 message TimeSeriesSchema {
   // The time series frequency
   // required
-  optional string freq = 1;
+  optional string freq = 1 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.Freq", (gogoproto.customname) = "Freq", (gogoproto.nullable) = false];
 
   // take holiday into account
   // required
   // default is US
-  optional string country = 2;
+  optional string country = 2 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.HolidayCountry", (gogoproto.customname) = "Country"];
 }
 
 message ValidationSpec {
   // MultiDatasetValidation contains validations for multi datasets
   // +kubebuilder:validation:Optional
-  repeated MultiDatasetValidation multiDatasetValidations = 1;
+  repeated MultiDatasetValidation multiDatasetValidations = 1 [(gogoproto.customname) = "MultiDatasetValidations", (gogoproto.nullable) = false];
 
   // DatasetValidations contains validations for the whole dataset
   // +kubebuilder:validation:Optional
-  repeated DatasetValidation datasetValidations = 2;
+  repeated DatasetValidation datasetValidations = 2 [(gogoproto.customname) = "DatasetValidations", (gogoproto.nullable) = false];
 
   // MultiColumnValidations defines validations for combined columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated MultiColumnValidation multiColumnValidations = 3;
+  repeated MultiColumnValidation multiColumnValidations = 3 [(gogoproto.customname) = "MultiColumnValidations", (gogoproto.nullable) = false];
 
   // Column Validations defines assertions for columns from the dataset
   // +kubebuilder:validation:Optional
-  repeated ColumnValidation columnValidations = 4;
+  repeated ColumnValidation columnValidations = 4 [(gogoproto.customname) = "ColumnValidations", (gogoproto.nullable) = false];
 
   // File Validations defines assertions for actual files
   // +kubebuilder:validation:Optional
-  repeated FileValidation fileValidations = 5;
+  repeated FileValidation fileValidations = 5 [(gogoproto.customname) = "FileValidations", (gogoproto.nullable) = false];
 }
 
 // WebRequest represent a single sqlquery in the sqlquery store.
@@ -3187,38 +3277,38 @@ message ValidationSpec {
 // +kubebuilder:resource:path=webrequests,singular=webrequest,categories={data,modela}
 // +kubebuilder:subresource:status
 message WebRequest {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional WebRequestSpec spec = 2;
+  optional WebRequestSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional WebRequestStatus status = 3;
+  optional WebRequestStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // WebRequestCondition describes the state of a deployment at a certain point.
 message WebRequestCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "WebRequestConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // WebRequestList contain a list of sqlquery objects
 message WebRequestList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated WebRequest items = 2;
+  repeated WebRequest items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // WebRequestRun represent a single webrequest in the webrequest store.
@@ -3230,38 +3320,38 @@ message WebRequestList {
 // +kubebuilder:resource:path=webrequestruns,singular=webrequestrun,categories={data,modela}
 // +kubebuilder:subresource:status
 message WebRequestRun {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
 
-  optional WebRequestRunSpec spec = 2;
+  optional WebRequestRunSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
 
   // +optional
-  optional WebRequestRunStatus status = 3;
+  optional WebRequestRunStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 }
 
 // WebRequestRunCondition describes the state of a deployment at a certain point.
 message WebRequestRunCondition {
   // Type of account condition.
-  optional string type = 1;
+  optional string type = 1 [(gogoproto.casttype) = "WebRequestRunConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
+  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7 [(gogoproto.customname) = "LastTransitionTime"];
 
   // The reason for the condition's last transition.
-  optional string reason = 4;
+  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
 
   // A human readable message indicating details about the transition.
-  optional string message = 5;
+  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
 }
 
 // +kubebuilder:object:root=true
 // WebRequestRunList contain a list of webrequest objects
 message WebRequestRunList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
 
-  repeated WebRequestRun items = 2;
+  repeated WebRequestRun items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
 }
 
 // WebRequestRunSpec contain the desired state of a WebRequestRun
@@ -3269,92 +3359,92 @@ message WebRequestRunSpec {
   // The webrequest owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the webrequest.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // Comments is a description of the webrequest
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // Type name of the column key, this column is the key column in the entity.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string query = 4;
+  optional string query = 4 [(gogoproto.customname) = "URL"];
 
   // HTTP Verb to use
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string verb = 5;
+  optional string verb = 5 [(gogoproto.customname) = "Verb"];
 
   // URL Parameters
   // +kubebuilder:validation:Optional
-  map<string, string> parameters = 6;
+  map<string, string> parameters = 6 [(gogoproto.customname) = "Parameters", (gogoproto.nullable) = false];
 
   // The Http headers to use
   // +kubebuilder:validation:Optional
-  map<string, string> headers = 7;
+  map<string, string> headers = 7 [(gogoproto.customname) = "Headers", (gogoproto.nullable) = false];
 
   // The name of the connection to the data source.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string connectionName = 8;
+  optional string connectionName = 8 [(gogoproto.customname) = "ConnectionName"];
 
   // The SQL statement timeout
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 timeout = 9;
+  optional int32 timeout = 9 [(gogoproto.customname) = "Timeout"];
 
   // A reference to the workload class that is used for training
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 10;
+  optional string workloadClassName = 10 [(gogoproto.customname) = "WorkloadClassName"];
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
 message WebRequestRunStatus {
   // StartTime is the start time of the prediction.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1 [(gogoproto.customname) = "StartTime"];
 
   // EndTime is the end time of the prediction.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 2 [(gogoproto.customname) = "EndTime"];
 
   // Phase is the current phase of the prediction
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 3;
+  optional string phase = 3 [(gogoproto.casttype) = "WebRequestRunPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 4;
+  optional int64 observedGeneration = 4 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // The number of rows in the result query
   // +kubebuilder:validation:Optional
-  optional int32 rows = 5;
+  optional int32 rows = 5 [(gogoproto.customname) = "Rows", (gogoproto.nullable) = false];
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 6;
+  optional string triggeredBy = 6 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.TriggerType", (gogoproto.customname) = "TriggeredBy", (gogoproto.nullable) = false];
 
   // The result of the HTTP execution
   // +kubebuilder:validation:Optional
-  optional int32 httpResultCode = 7;
+  optional int32 httpResultCode = 7 [(gogoproto.customname) = "HttpResultCode", (gogoproto.nullable) = false];
 
   // The location of the result
-  optional DataLocation resultLocation = 8;
+  optional DataLocation resultLocation = 8 [(gogoproto.customname) = "ResultLocation", (gogoproto.nullable) = false];
 
   // The last error that occur as a result of the execution
-  optional string lastError = 9;
+  optional string lastError = 9 [(gogoproto.customname) = "LastError", (gogoproto.nullable) = false];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestRunCondition conditions = 10;
+  repeated WebRequestRunCondition conditions = 10 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 
 // WebRequestSpec contain the desired state of a WebRequest
@@ -3362,46 +3452,46 @@ message WebRequestSpec {
   // The sqlquery owner
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 1;
+  optional string owner = 1 [(gogoproto.customname) = "Owner"];
 
   // The product version for the sqlquery.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string versionName = 2;
+  optional string versionName = 2 [(gogoproto.customname) = "VersionName"];
 
   // Description of the cron api call
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 3;
+  optional string description = 3 [(gogoproto.customname) = "Description"];
 
   // The sql template to create.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional WebRequestRunSpec template = 4;
+  optional WebRequestRunSpec template = 4 [(gogoproto.customname) = "Template", (gogoproto.nullable) = false];
 
   // Schedule for running the sql query
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule schedule = 5 [(gogoproto.customname) = "Schedule", (gogoproto.nullable) = false];
 }
 
 // WebRequestStatus defines the observed state of WebRequest
 message WebRequestStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1 [(gogoproto.customname) = "LastUpdated"];
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2;
+  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
 
   // Last Time the query run
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3 [(gogoproto.customname) = "LastRun"];
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestCondition conditions = 4;
+  repeated WebRequestCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
 }
 

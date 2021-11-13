@@ -422,27 +422,44 @@ spec:
                             feature and should be dropped. The value is set during
                             the profile process.
                           type: boolean
-                        correlatedWithOtherFeature:
-                          description: This column has high correlation with another
-                            feature and should be dropped. The value is set during
-                            the profile process.
-                          type: boolean
+                        count:
+                          description: Number of rows
+                          type: number
+                        distinct:
+                          description: Count of unique values.
+                          format: int32
+                          type: integer
                         distinctValueCount:
                           description: The ratio between distinct count to total count
                           type: number
+                        duplicate:
+                          description: This column is duplicate of other column The
+                            value is set during the profile process.
+                          type: boolean
+                        generated:
+                          type: boolean
                         highCardinality:
                           description: This column has high cardinality and should
                             use high cred encoder The value is set during the profile
                             process.
+                          type: boolean
+                        highCorrWithOtherFeatures:
+                          description: This column has high correlation with another
+                            feature and should be dropped. The value is set during
+                            the profile process.
                           type: boolean
                         highMissingPct:
                           description: This column has high amount of missing pct,
                             and should be removed from consideration. The value is
                             set during the profile process.
                           type: boolean
+                        id:
+                          description: This is updated from the data source. If true,
+                            the column is an id column
+                          type: boolean
                         ignored:
                           description: Should this column be ignored, as specified
-                            by the user. This value is derived from the schema
+                            by the user This value is derived from the datasource
                           type: boolean
                         importance:
                           description: The feature importance
@@ -454,14 +471,22 @@ spec:
                           description: The number of invalid values
                           format: int32
                           type: integer
+                        iqr:
+                          description: Skewness is the standard deviation value of
+                            the attribute
+                          type: number
                         kurtosis:
                           description: Kurtosis is the standard deviation value of
                             the attribute
                           type: number
-                        lowCorrelatedWithTarget:
+                        lowCorrWithTarget:
                           description: Indicate that this feature is not corrolated
-                            with
+                            with target and should be dropped
                           type: boolean
+                        mad:
+                          description: Skewness is the standard deviation value of
+                            the attribute
+                          type: number
                         max:
                           description: Max is the maximum value of the attribute
                           type: number
@@ -498,7 +523,15 @@ spec:
                         p75:
                           description: Pct75 is the 75% point
                           type: number
-                        skew:
+                        percentMissing:
+                          description: Precent missing
+                          type: number
+                        reserved:
+                          description: The column is reserved and must be part of
+                            the features set for the task. The value is derived from
+                            the data source.
+                          type: boolean
+                        skewed:
                           description: Mark that this column is skewed and would require
                             a power transform If skewness is less than -1 or greater
                             than 1, the distribution is highly skewed. If skewness
@@ -514,9 +547,13 @@ spec:
                           description: StdDev is the standard deviation value of the
                             attribute
                           type: number
+                        sum:
+                          description: Skewness is the standard deviation value of
+                            the attribute
+                          type: number
                         target:
                           description: Is this the target attribute, the value is
-                            derived from the schema
+                            derived from the data source
                           type: boolean
                         type:
                           description: Type is the name of the column
@@ -544,10 +581,9 @@ spec:
                           - text-list
                           - useless
                           type: string
-                        unique:
-                          description: Count of unique values.
-                          format: int32
-                          type: integer
+                        variance:
+                          description: Variance
+                          type: number
                         zeros:
                           description: Zeros is the numbers of zeros in the feature
                           type: number

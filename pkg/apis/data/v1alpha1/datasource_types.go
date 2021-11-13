@@ -625,6 +625,12 @@ type Column struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,43,opt,name=scaler"`
+	// If true this feature is generate
+	// +kubebuilder:validation:Optionald.
+	Generated bool `json:"generated,omitempty" protobuf:"varint,44,opt,name=generated"`
+	// The formula used to generate  this column
+	// +kubebuilder:validation:Optionald.
+	Formula string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=generated"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

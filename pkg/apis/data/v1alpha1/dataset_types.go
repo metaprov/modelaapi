@@ -217,6 +217,9 @@ type DatasetStatus struct {
 	Hash string `json:"hash,omitempty" protobuf:"bytes,14,opt,name=hash"`
 	// Holds the location of log paths
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,15,opt,name=logs"`
+	// If this dataset is derived, the name of the dataset that this is derived from.
+	// +kubebuilder:validation:Optional
+	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,22,opt,name=derivedFromDataset"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
@@ -244,74 +247,133 @@ type DatasetStatistics struct {
 // Hold the statistical parameters about a single attribute
 type ColumnStatistics struct {
 	// FileName is the name of the column
+	// +kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Type is the name of the column
+	// +kubebuilder:validation:Optional
 	Type catalog.DataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
-	// Min is the minimum value of the attribute
-	Min float64 `json:"min,omitempty" protobuf:"bytes,3,opt,name=min"`
-	// Max is the maximum value of the attribute
-	Max float64 `json:"max,omitempty" protobuf:"bytes,4,opt,name=max"`
-	// Mode for categorical values, is the most common value
-	Mode string `json:"mode,omitempty" protobuf:"bytes,5,opt,name=mode"`
-	// Mean is the mean value of the attribute
-	Mean float64 `json:"mean,omitempty" protobuf:"bytes,6,opt,name=mean"`
-	// StdDev is the standard deviation value of the attribute
-	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,7,opt,name=stddev"`
-	// Skewness is the standard deviation value of the attribute
-	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,8,opt,name=skewness"`
-	// Kurtosis is the standard deviation value of the attribute
-	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,9,opt,name=kurtosis"`
-	// Zeros is the numbers of zeros in the feature
-	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,10,opt,name=zeros"`
-	// Pct25 is the 25 precent point
-	P25 float64 `json:"p25,omitempty" protobuf:"bytes,11,opt,name=p25"`
-	// Pct50 is the median
-	P50 float64 `json:"p50,omitempty" protobuf:"bytes,12,opt,name=p50"`
-	// Pct75 is the 75% point
-	P75 float64 `json:"p75,omitempty" protobuf:"bytes,13,opt,name=p75"`
-	// The number of missing values
-	Missing int32 `json:"missing,omitempty" protobuf:"varint,14,opt,name=missing"`
-	// The number of invalid values
-	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,15,opt,name=invalid"`
-	// Is this the target attribute, the value is derived from the schema
-	Target bool `json:"target,omitempty" protobuf:"bytes,16,opt,name=target"`
-	// The feature importance
-	Importance float64 `json:"importance,omitempty" protobuf:"bytes,17,opt,name=importance"`
+	// Number of rows
+	// +kubebuilder:validation:Optional
+	Count float64 `json:"count,omitempty" protobuf:"bytes,3,opt,name=count"`
 	// Count of unique values.
-	Unique int32 `json:"unique,omitempty" protobuf:"varint,18,opt,name=unique"`
-	// Should this column be ignored, as specified by the user.
-	// This value is derived from the schema
-	Ignored bool `json:"ignored,omitempty" protobuf:"varint,19,opt,name=ignored"`
+	// +kubebuilder:validation:Optional
+	Distinct int32 `json:"distinct,omitempty" protobuf:"varint,4,opt,name=distinct"`
+	// The number of missing values
+	// +kubebuilder:validation:Optional
+	Missing int32 `json:"missing,omitempty" protobuf:"varint,5,opt,name=missing"`
+	// Precent missing
+	// +kubebuilder:validation:Optional
+	PercentMissing float64 `json:"percentMissing,omitempty" protobuf:"bytes,6,opt,name=percentMissing"`
+	// Mean is the mean value of the attribute
+	// +kubebuilder:validation:Optional
+	Mean float64 `json:"mean,omitempty" protobuf:"bytes,7,opt,name=mean"`
+	// StdDev is the standard deviation value of the attribute
+	// +kubebuilder:validation:Optional
+	StdDev float64 `json:"stddev,omitempty" protobuf:"bytes,8,opt,name=stddev"`
+	// Variance
+	// +kubebuilder:validation:Optional
+	Variance float64 `json:"variance,omitempty" protobuf:"bytes,9,opt,name=variance"`
+	// Min is the minimum value of the attribute
+	// +kubebuilder:validation:Optional
+	Min float64 `json:"min,omitempty" protobuf:"bytes,10,opt,name=min"`
+	// Max is the maximum value of the attribute
+	// +kubebuilder:validation:Optional
+	Max float64 `json:"max,omitempty" protobuf:"bytes,11,opt,name=max"`
+	// Kurtosis is the standard deviation value of the attribute
+	// +kubebuilder:validation:Optional
+	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,12,opt,name=kurtosis"`
+	// Skewness is the standard deviation value of the attribute
+	// +kubebuilder:validation:Optional
+	Skewness float64 `json:"skewness,omitempty" protobuf:"bytes,13,opt,name=skewness"`
+	// Skewness is the standard deviation value of the attribute
+	// +kubebuilder:validation:Optional
+	Sum float64 `json:"sum,omitempty" protobuf:"bytes,14,opt,name=sum"`
+	// Skewness is the standard deviation value of the attribute
+	// +kubebuilder:validation:Optional
+	Mad float64 `json:"mad,omitempty" protobuf:"bytes,15,opt,name=mad"`
+	// Pct25 is the 25 precent point
+	// +kubebuilder:validation:Optional
+	P25 float64 `json:"p25,omitempty" protobuf:"bytes,16,opt,name=p25"`
+	// Pct50 is the median
+	// +kubebuilder:validation:Optional
+	P50 float64 `json:"p50,omitempty" protobuf:"bytes,17,opt,name=p50"`
+	// Pct75 is the 75% point
+	// +kubebuilder:validation:Optional
+	P75 float64 `json:"p75,omitempty" protobuf:"bytes,18,opt,name=p75"`
+	// Skewness is the standard deviation value of the attribute
+	// +kubebuilder:validation:Optional
+	IQR float64 `json:"iqr,omitempty" protobuf:"bytes,19,opt,name=iqr"`
+	// Mode for categorical values, is the most common value
+	// +kubebuilder:validation:Optional
+	Mode string `json:"mode,omitempty" protobuf:"bytes,20,opt,name=mode"`
+	// Zeros is the numbers of zeros in the feature
+	// +kubebuilder:validation:Optional
+	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,21,opt,name=zeros"`
+	// The number of invalid values
+	// +kubebuilder:validation:Optional
+	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,22,opt,name=invalid"`
+	// The feature importance
+	// +kubebuilder:validation:Optional
+	Importance float64 `json:"importance,omitempty" protobuf:"bytes,23,opt,name=importance"`
+	// Is this the target attribute, the value is derived from the data source
+	// +kubebuilder:validation:Optional
+	Target bool `json:"target,omitempty" protobuf:"bytes,24,opt,name=target"`
+	// Should this column be ignored, as specified by the user
+	// This value is derived from the datasource
+	// +kubebuilder:validation:Optional
+	Ignored bool `json:"ignored,omitempty" protobuf:"varint,25,opt,name=ignored"`
 	// Is this column is nullable.
 	// This value is derived from the schema.
-	Nullable bool `json:"nullable,omitempty" protobuf:"varint,20,opt,name=nullable"`
+	// +kubebuilder:validation:Optional
+	Nullable bool `json:"nullable,omitempty" protobuf:"varint,26,opt,name=nullable"`
 	// This column has high cardinality and should use high cred encoder
 	// The value is set during the profile process.
-	HighCardinality bool `json:"highCardinality,omitempty" protobuf:"varint,21,opt,name=highCardinality"`
+	// +kubebuilder:validation:Optional
+	HighCardinality bool `json:"highCardinality,omitempty" protobuf:"varint,27,opt,name=highCardinality"`
 	// This column has high correlation with another feature and should be dropped.
 	// The value is set during the profile process.
-	CorrelatedWithOtherFeature bool `json:"correlatedWithOtherFeature,omitempty" protobuf:"varint,22,opt,name=correlatedWithOtherFeature"`
-	// Indicate that this feature is not corrolated with
-	LowCorrelatedWithTarget bool `json:"lowCorrelatedWithTarget,omitempty" protobuf:"varint,23,opt,name=lowCorrelatedWithTarget"`
-	// This column has high correlation with another feature and should be dropped.
-	// The value is set during the profile process.
-	Constant bool `json:"constant,omitempty" protobuf:"varint,24,opt,name=constant"`
+	// +kubebuilder:validation:Optional
+	HighCorrWithOtherFeatures bool `json:"highCorrWithOtherFeatures,omitempty" protobuf:"varint,28,opt,name=highCorrWithOtherFeatures"`
+	// Indicate that this feature is not corrolated with target and should be dropped
+	// +kubebuilder:validation:Optional
+	LowCorrWithTarget bool `json:"lowCorrWithTarget,omitempty" protobuf:"varint,29,opt,name=lowCorrWithTarget"`
 	// This column has high amount of missing pct, and should be removed from consideration.
 	// The value is set during the profile process.
-	HighMissingPct bool `json:"highMissingPct,omitempty" protobuf:"varint,25,opt,name=highMissingPct"`
+	// +kubebuilder:validation:Optional
+	HighMissingPct bool `json:"highMissingPct,omitempty" protobuf:"varint,30,opt,name=highMissingPct"`
 	// Mark that this column is skewed and would require a power transform
 	//If skewness is less than -1 or greater than 1, the distribution is highly skewed.
 	//If skewness is between -1 and -0.5 or between 0.5 and 1, the distribution is moderately skewed.
 	//If skewness is between -0.5 and 0.5, the distribution is approximately symmetric
-	Skew bool `json:"skew,omitempty" protobuf:"varint,26,opt,name=skew"`
+	// +kubebuilder:validation:Optional
+	Skewed bool `json:"skewed,omitempty" protobuf:"varint,31,opt,name=skewed"`
+	// This is updated from the data source. If true, the column is an id column
+	// +kubebuilder:validation:Optional
+	Id bool `json:"id,omitempty" protobuf:"varint,32,opt,name=id"`
+	// This column has high correlation with another feature and should be dropped.
+	// The value is set during the profile process.
+	// +kubebuilder:validation:Optional
+	Constant bool `json:"constant,omitempty" protobuf:"varint,33,opt,name=constant"`
+	// This column is duplicate of other column
+	// The value is set during the profile process.
+	// +kubebuilder:validation:Optional
+	Duplicate bool `json:"duplicate,omitempty" protobuf:"varint,34,opt,name=duplicate"`
+	// The column is reserved and must be part of the features set for the task.
+	// The value is derived from the data source.
+	// +kubebuilder:validation:Optional
+	Reserved bool `json:"reserved,omitempty" protobuf:"varint,35,opt,name=reserved"`
 	// Completeness is the ratio between non null to null
-	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,27,opt,name=completeness"`
+	// +kubebuilder:validation:Optional
+	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,36,opt,name=completeness"`
 	// The ratio between distinct count to total count
-	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,28,opt,name=distinctValueCount"`
+	// +kubebuilder:validation:Optional
+	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,37,opt,name=distinctValueCount"`
 	// The ratio between most freq value to total
-	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,29,opt,name=mostFreqValuesRatio"`
+	// +kubebuilder:validation:Optional
+	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,38,opt,name=mostFreqValuesRatio"`
 	// Used for text attributes
-	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,30,opt,name=indexOfPeculiarity"`
+	// +kubebuilder:validation:Optional
+	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,39,opt,name=indexOfPeculiarity"`
 }
 
 // DatasetTemplate is  used to generate new datasets

@@ -222,14 +222,17 @@ export class ColumnStatistics extends jspb.Message {
   getType(): string;
   setType(value: string): ColumnStatistics;
 
-  getMin(): number;
-  setMin(value: number): ColumnStatistics;
+  getCount(): number;
+  setCount(value: number): ColumnStatistics;
 
-  getMax(): number;
-  setMax(value: number): ColumnStatistics;
+  getDistinct(): number;
+  setDistinct(value: number): ColumnStatistics;
 
-  getMode(): string;
-  setMode(value: string): ColumnStatistics;
+  getMissing(): number;
+  setMissing(value: number): ColumnStatistics;
+
+  getPercentmissing(): number;
+  setPercentmissing(value: number): ColumnStatistics;
 
   getMean(): number;
   setMean(value: number): ColumnStatistics;
@@ -237,14 +240,26 @@ export class ColumnStatistics extends jspb.Message {
   getStddev(): number;
   setStddev(value: number): ColumnStatistics;
 
-  getSkewness(): number;
-  setSkewness(value: number): ColumnStatistics;
+  getVariance(): number;
+  setVariance(value: number): ColumnStatistics;
+
+  getMin(): number;
+  setMin(value: number): ColumnStatistics;
+
+  getMax(): number;
+  setMax(value: number): ColumnStatistics;
 
   getKurtosis(): number;
   setKurtosis(value: number): ColumnStatistics;
 
-  getZeros(): number;
-  setZeros(value: number): ColumnStatistics;
+  getSkewness(): number;
+  setSkewness(value: number): ColumnStatistics;
+
+  getSum(): number;
+  setSum(value: number): ColumnStatistics;
+
+  getMad(): number;
+  setMad(value: number): ColumnStatistics;
 
   getP25(): number;
   setP25(value: number): ColumnStatistics;
@@ -255,20 +270,23 @@ export class ColumnStatistics extends jspb.Message {
   getP75(): number;
   setP75(value: number): ColumnStatistics;
 
-  getMissing(): number;
-  setMissing(value: number): ColumnStatistics;
+  getIqr(): number;
+  setIqr(value: number): ColumnStatistics;
+
+  getMode(): string;
+  setMode(value: string): ColumnStatistics;
+
+  getZeros(): number;
+  setZeros(value: number): ColumnStatistics;
 
   getInvalid(): number;
   setInvalid(value: number): ColumnStatistics;
 
-  getTarget(): boolean;
-  setTarget(value: boolean): ColumnStatistics;
-
   getImportance(): number;
   setImportance(value: number): ColumnStatistics;
 
-  getUnique(): number;
-  setUnique(value: number): ColumnStatistics;
+  getTarget(): boolean;
+  setTarget(value: boolean): ColumnStatistics;
 
   getIgnored(): boolean;
   setIgnored(value: boolean): ColumnStatistics;
@@ -279,20 +297,29 @@ export class ColumnStatistics extends jspb.Message {
   getHighcardinality(): boolean;
   setHighcardinality(value: boolean): ColumnStatistics;
 
-  getCorrelatedwithotherfeature(): boolean;
-  setCorrelatedwithotherfeature(value: boolean): ColumnStatistics;
+  getHighcorrwithotherfeatures(): boolean;
+  setHighcorrwithotherfeatures(value: boolean): ColumnStatistics;
 
-  getLowcorrelatedwithtarget(): boolean;
-  setLowcorrelatedwithtarget(value: boolean): ColumnStatistics;
-
-  getConstant(): boolean;
-  setConstant(value: boolean): ColumnStatistics;
+  getLowcorrwithtarget(): boolean;
+  setLowcorrwithtarget(value: boolean): ColumnStatistics;
 
   getHighmissingpct(): boolean;
   setHighmissingpct(value: boolean): ColumnStatistics;
 
-  getSkew(): boolean;
-  setSkew(value: boolean): ColumnStatistics;
+  getSkewed(): boolean;
+  setSkewed(value: boolean): ColumnStatistics;
+
+  getId(): boolean;
+  setId(value: boolean): ColumnStatistics;
+
+  getConstant(): boolean;
+  setConstant(value: boolean): ColumnStatistics;
+
+  getDuplicate(): boolean;
+  setDuplicate(value: boolean): ColumnStatistics;
+
+  getReserved(): boolean;
+  setReserved(value: boolean): ColumnStatistics;
 
   getCompleteness(): number;
   setCompleteness(value: number): ColumnStatistics;
@@ -306,6 +333,9 @@ export class ColumnStatistics extends jspb.Message {
   getIndexofpeculiarity(): number;
   setIndexofpeculiarity(value: number): ColumnStatistics;
 
+  getGenerated(): boolean;
+  setGenerated(value: boolean): ColumnStatistics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnStatistics): ColumnStatistics.AsObject;
@@ -318,34 +348,44 @@ export namespace ColumnStatistics {
   export type AsObject = {
     name: string,
     type: string,
-    min: number,
-    max: number,
-    mode: string,
+    count: number,
+    distinct: number,
+    missing: number,
+    percentmissing: number,
     mean: number,
     stddev: number,
-    skewness: number,
+    variance: number,
+    min: number,
+    max: number,
     kurtosis: number,
-    zeros: number,
+    skewness: number,
+    sum: number,
+    mad: number,
     p25: number,
     p50: number,
     p75: number,
-    missing: number,
+    iqr: number,
+    mode: string,
+    zeros: number,
     invalid: number,
-    target: boolean,
     importance: number,
-    unique: number,
+    target: boolean,
     ignored: boolean,
     nullable: boolean,
     highcardinality: boolean,
-    correlatedwithotherfeature: boolean,
-    lowcorrelatedwithtarget: boolean,
-    constant: boolean,
+    highcorrwithotherfeatures: boolean,
+    lowcorrwithtarget: boolean,
     highmissingpct: boolean,
-    skew: boolean,
+    skewed: boolean,
+    id: boolean,
+    constant: boolean,
+    duplicate: boolean,
+    reserved: boolean,
     completeness: number,
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
     indexofpeculiarity: number,
+    generated: boolean,
   }
 }
 
