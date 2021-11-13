@@ -160,6 +160,12 @@ export class Column extends jspb.Message {
   getScaler(): string;
   setScaler(value: string): Column;
 
+  getGenerated(): boolean;
+  setGenerated(value: boolean): Column;
+
+  getFormula(): string;
+  setFormula(value: string): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -212,6 +218,8 @@ export namespace Column {
     reserved: boolean,
     imputer: string,
     scaler: string,
+    generated: boolean,
+    formula: string,
   }
 }
 
@@ -333,9 +341,6 @@ export class ColumnStatistics extends jspb.Message {
   getIndexofpeculiarity(): number;
   setIndexofpeculiarity(value: number): ColumnStatistics;
 
-  getGenerated(): boolean;
-  setGenerated(value: boolean): ColumnStatistics;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnStatistics): ColumnStatistics.AsObject;
@@ -385,7 +390,6 @@ export namespace ColumnStatistics {
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
     indexofpeculiarity: number,
-    generated: boolean,
   }
 }
 
@@ -1950,6 +1954,9 @@ export class DatasetStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): DatasetStatus;
 
+  getDerivedfromdataset(): string;
+  setDerivedfromdataset(value: string): DatasetStatus;
+
   getConditionsList(): Array<DatasetCondition>;
   setConditionsList(value: Array<DatasetCondition>): DatasetStatus;
   clearConditionsList(): DatasetStatus;
@@ -1979,6 +1986,7 @@ export namespace DatasetStatus {
     progress: number,
     hash: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    derivedfromdataset: string,
     conditionsList: Array<DatasetCondition.AsObject>,
   }
 }

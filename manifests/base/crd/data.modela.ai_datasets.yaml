@@ -342,6 +342,10 @@ spec:
                   - type
                   type: object
                 type: array
+              derivedFromDataset:
+                description: If this dataset is derived, the name of the dataset that
+                  this is derived from.
+                type: string
               hash:
                 default: ""
                 description: Sha256 signature of the dataset file.
@@ -435,8 +439,6 @@ spec:
                         duplicate:
                           description: This column is duplicate of other column The
                             value is set during the profile process.
-                          type: boolean
-                        generated:
                           type: boolean
                         highCardinality:
                           description: This column has high cardinality and should

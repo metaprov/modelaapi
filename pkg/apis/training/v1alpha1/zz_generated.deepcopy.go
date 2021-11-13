@@ -3887,7 +3887,7 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 	}
 	in.TrainingDataHash.DeepCopyInto(&out.TrainingDataHash)
 	in.Logs.DeepCopyInto(&out.Logs)
-	in.FeatureGeneration.DeepCopyInto(&out.FeatureGeneration)
+	out.FeatureGeneration = in.FeatureGeneration
 	in.FeatureSelection.DeepCopyInto(&out.FeatureSelection)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions

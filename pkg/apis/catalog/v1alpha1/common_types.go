@@ -1602,7 +1602,13 @@ type FeatureGenerationSpec struct {
 	Custom []GeneratedColumn `json:"custom,omitempty" protobuf:"bytes,3,opt,name=custom"`
 	// List of dataset to join to the current dataset
 	// +kubebuilder:validation:Optional
+
 	ExternalDatasets []string `json:"externalDatasets,omitempty" protobuf:"bytes,4,opt,name=externalDatasets"`
+}
+
+type FeatureGenerationStatus struct {
+	// The name of the first original column
+	GeneratedDataset string `json:"generatedDataset,omitempty" protobuf:"bytes,1,opt,name=generatedDatasets"`
 }
 
 type GeneratedColumn struct {

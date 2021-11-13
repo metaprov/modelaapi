@@ -9,7 +9,6 @@ syntax = "proto2";
 
 package github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1;
 
-import "github.com/gogo/protobuf/gogoproto/gogo.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/api/resource/generated.proto";
@@ -18,15 +17,6 @@ import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
-option (gogoproto.marshaler_all) = true;
-option (gogoproto.stable_marshaler_all) = true;
-option (gogoproto.sizer_all) = true;
-option (gogoproto.goproto_stringer_all) = false;
-option (gogoproto.stringer_all) = true;
-option (gogoproto.unmarshaler_all) = true;
-option (gogoproto.goproto_unrecognized_all) = false;
-option (gogoproto.goproto_enum_prefix_all) = false;
-option (gogoproto.goproto_getters_all) = false;
 option go_package = "v1alpha1";
 
 // Account represents a user or team in the system
@@ -41,153 +31,153 @@ option go_package = "v1alpha1";
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modela}
 message Account {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional AccountSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional AccountSpec spec = 2;
 
-  optional AccountStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional AccountStatus status = 3;
 }
 
 // AccountCondition describes the state of a account at a certain point.
 message AccountCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "AccountConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // AccountList represent list of accounts.
 message AccountList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Account items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Account items = 2;
 }
 
 message AccountRoleBinding {
   // Entity is the name of the entity, can be a product name,lab name or serving site name
-  optional string entity = 1 [(gogoproto.customname) = "Entity", (gogoproto.nullable) = false];
+  optional string entity = 1;
 
   // The role in relation to the entity.
-  optional string role = 2 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.RoleName", (gogoproto.customname) = "Role", (gogoproto.nullable) = false];
+  optional string role = 2;
 }
 
 // AccountSpec defines the desired state of Account
 message AccountSpec {
   // TenantRef is the account tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // Type is the type of account - user, group. default is user
   // +kubebuilder:default:=user
   // +kubebuilder:validation:Optional
-  optional string type = 3 [(gogoproto.casttype) = "AccountType", (gogoproto.customname) = "Type"];
+  optional string type = 3;
 
   // UserName specifies the name of the account
   // +kubebuilder:validation:MinLength=4
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
-  optional string username = 4 [(gogoproto.customname) = "UserName"];
+  optional string username = 4;
 
   // First FileName is the user first name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
-  optional string firstName = 5 [(gogoproto.customname) = "FirstName"];
+  optional string firstName = 5;
 
   // LastName is the user last name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Optional
-  optional string lastName = 6 [(gogoproto.customname) = "LastName"];
+  optional string lastName = 6;
 
   // Email specify the email of the user
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
-  optional string email = 7 [(gogoproto.customname) = "Email"];
+  optional string email = 7;
 
   // Phone specify the phone of the user
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=64
-  optional string phone = 8 [(gogoproto.customname) = "Phone"];
+  optional string phone = 8;
 
   // User is admin. Admin have full control on other accounts.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool admin = 9 [(gogoproto.customname) = "Admin"];
+  optional bool admin = 9;
 
   // Team indicates if this a team account.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool team = 10 [(gogoproto.customname) = "Team"];
+  optional bool team = 10;
 
   // MemberOf is the team name of this account. An account can belong to one team
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string memberOf = 11 [(gogoproto.customname) = "MemberOf"];
+  optional string memberOf = 11;
 
   // Email account creation event to user (using the user email)
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool emailPassword = 12 [(gogoproto.customname) = "EmailPassword"];
+  optional bool emailPassword = 12;
 
   // User need to reset password upon login
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool resetPassword = 13 [(gogoproto.customname) = "ResetPassword"];
+  optional bool resetPassword = 13;
 
   // ProductBinding is the premission that the user have for each product
   // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding productBindings = 14 [(gogoproto.customname) = "ProductBindings", (gogoproto.nullable) = false];
+  repeated AccountRoleBinding productBindings = 14;
 
   // LabBinding is the RBAC roles that the user have within each lab
   // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding labBindings = 15 [(gogoproto.customname) = "LabBindings", (gogoproto.nullable) = false];
+  repeated AccountRoleBinding labBindings = 15;
 
   // SiteBindings is the RBAC roles that the user have within each serving site.
   // +kubebuilder:validation:Optional
-  repeated AccountRoleBinding siteBindings = 16 [(gogoproto.customname) = "SiteBindings", (gogoproto.nullable) = false];
+  repeated AccountRoleBinding siteBindings = 16;
 
   // The clearence level of this account. The clearence level override user premissions.
   // +kubebuilder:default:=unclassified
   // +kubebuilder:validation:Optional
-  optional string clearenceLevel = 17 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.SecurityClearanceLevel", (gogoproto.customname) = "ClearenceLevel"];
+  optional string clearenceLevel = 17;
 
   // The avatar location
   // +kubebuilder:validation:Optional
-  optional AvatarSpec avatar = 18 [(gogoproto.customname) = "Avatar"];
+  optional AvatarSpec avatar = 18;
 
   // List of favorite data product
   // +kubebuilder:validation:Optional
-  repeated string favorites = 19 [(gogoproto.customname) = "Favorites"];
+  repeated string favorites = 19;
 }
 
 // AccountStatus defines the actual state of the api object
 message AccountStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AccountCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated AccountCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -202,75 +192,75 @@ message AccountStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modela}
 message Alert {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional AlertSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional AlertSpec spec = 2;
 
-  optional AlertStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional AlertStatus status = 3;
 }
 
 // AlertCondition describes the state of the license at a certain point.
 message AlertCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "AlertConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // AlertList is a list of Alerts
 message AlertList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Alert items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Alert items = 2;
 }
 
 // AlertSpec defines the desired state of Alert
 message AlertSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string subject = 1 [(gogoproto.customname) = "Subject"];
+  optional string subject = 1;
 
   // Alert Message
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string message = 2 [(gogoproto.customname) = "Message"];
+  optional string message = 2;
 
   // Scopes is the list of scopes for this token.
   // +kubebuilder:default:="normal"
   // +kubebuilder:validation:Optional
-  optional string level = 3 [(gogoproto.casttype) = "AlertLevel", (gogoproto.customname) = "Level"];
+  optional string level = 3;
 
   // The subject entity
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 4 [(gogoproto.customname) = "EntityRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 4;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Required
   // NotifierName is the name of the notifier used to fire the alert.
-  optional string notifierName = 5 [(gogoproto.customname) = "NotifierName"];
+  optional string notifierName = 5;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 6 [(gogoproto.customname) = "Owner"];
+  optional string owner = 6;
 
   // the alert TTL. Measured from alert creation time. The default TTL is 1H.
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 7 [(gogoproto.customname) = "TTL"];
+  optional int32 ttl = 7;
 
   // The actual information about the alerts
   // +kubebuilder:validation:Optional
-  map<string, string> fields = 8 [(gogoproto.customname) = "Fields", (gogoproto.nullable) = false];
+  map<string, string> fields = 8;
 }
 
 // AlertStatus is the observed state of a Alert
@@ -278,187 +268,187 @@ message AlertStatus {
   // Phase is the phase of the model
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 1 [(gogoproto.casttype) = "AlertPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
+  optional string phase = 1;
 
   // The time when the alert was fired
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2 [(gogoproto.customname) = "At", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AlertCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated AlertCondition conditions = 4;
 }
 
 message AliCloudSpec {
   // +kubebuilder:default:=""
-  optional string accessKey = 1 [(gogoproto.customname) = "AccessKey"];
+  optional string accessKey = 1;
 
   // +kubebuilder:default:=""
-  optional string secretKey = 2 [(gogoproto.customname) = "SecretKey"];
+  optional string secretKey = 2;
 
   // +kubebuilder:default:=""
-  optional string region = 3 [(gogoproto.customname) = "Region"];
+  optional string region = 3;
 
   // +kubebuilder:default:=""
-  optional string host = 4 [(gogoproto.customname) = "Host"];
+  optional string host = 4;
 }
 
 // =================== Definitions of spec files for each type
 // AthenaSpec defines the connection to Athena db
 message AmazonAthenaSpec {
   // +kubebuilder:default:=""
-  optional string hostName = 1 [(gogoproto.customname) = "Database"];
+  optional string hostName = 1;
 
   // UserName
   // +kubebuilder:default:=""
-  optional string username = 2 [(gogoproto.customname) = "Username"];
+  optional string username = 2;
 
   // +kubebuilder:default:=""
-  optional string password = 3 [(gogoproto.customname) = "Password"];
+  optional string password = 3;
 
   // +kubebuilder:default:=""
-  optional string region = 4 [(gogoproto.customname) = "Region"];
+  optional string region = 4;
 
   // +kubebuilder:default:=""
-  optional string url = 5 [(gogoproto.customname) = "URL"];
+  optional string url = 5;
 }
 
 message AmazonRedShiftSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Hostname"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5439
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 // CassandraSpec defines the connection to cassandra
 message ApacheCassandraSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string keyspace = 3 [(gogoproto.customname) = "KeySpace"];
+  optional string keyspace = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 // ApacheDruid
 message ApacheDrillSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string keyspace = 3 [(gogoproto.customname) = "KeySpace"];
+  optional string keyspace = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 // ApacheDruid defines the connection to cassandra
 message ApacheDruidSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string keyspace = 3 [(gogoproto.customname) = "KeySpace"];
+  optional string keyspace = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message ApacheHiveSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=10000
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string schema = 3 [(gogoproto.customname) = "Schema"];
+  optional string schema = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message ApacheSparkSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5433
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string schema = 3 [(gogoproto.customname) = "Schema"];
+  optional string schema = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -467,37 +457,37 @@ message ApacheSparkSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=apitokens,singular=apitoken,categories={infra,modela}
 message ApiToken {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional ApiTokenSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional ApiTokenSpec spec = 2;
 
-  optional ApiTokenStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional ApiTokenStatus status = 3;
 }
 
 // ApiTokenCondition describes the state of the license at a certain point.
 message ApiTokenCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "ApiTokenConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // ApiTokenList is a list of ApiTokens
 message ApiTokenList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated ApiToken items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated ApiToken items = 2;
 }
 
 // ApiTokenSpec defines the desired state of ApiToken
@@ -505,26 +495,26 @@ message ApiTokenSpec {
   // User provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // Scopes is the list of scopes for this token.
-  repeated Scope scopes = 2 [(gogoproto.customname) = "Scopes", (gogoproto.nullable) = false];
+  repeated Scope scopes = 2;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 3 [(gogoproto.customname) = "Owner"];
+  optional string owner = 3;
 }
 
 // ApiTokenStatus is the observed state of a ApiToken
 message ApiTokenStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ApiTokenCondition conditions = 2 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated ApiTokenCondition conditions = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -537,60 +527,60 @@ message ApiTokenStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=attachments,singular=attachment,categories={infra,modela}
 message Attachment {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional AttachmentSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional AttachmentSpec spec = 2;
 
-  optional AttachmentStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional AttachmentStatus status = 3;
 }
 
 // AttachmentCondition describes the state of the license at a certain point.
 message AttachmentCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "AttachmentConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // AttachmentList is a list of Attachments
 message AttachmentList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Attachment items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Attachment items = 2;
 }
 
 // AttachmentSpec defines the desired state of Attachment
 message AttachmentSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 1 [(gogoproto.customname) = "Owner"];
+  optional string owner = 1;
 
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2 [(gogoproto.customname) = "Description"];
+  optional string description = 2;
 
   // Entity ref
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 3 [(gogoproto.customname) = "EntityRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 3;
 
   // +kubebuilder:default:=""
   // Bucketname is the name of the bucket
   // +kubebuilder:validation:Optional
-  optional string bucketName = 4 [(gogoproto.customname) = "BucketName", (gogoproto.nullable) = false];
+  optional string bucketName = 4;
 
   // Path to the full data file (e.g. csv file).
   // +kubebuilder:validation:Optional
-  optional string path = 5 [(gogoproto.customname) = "Path", (gogoproto.nullable) = false];
+  optional string path = 5;
 }
 
 // AttachmentStatus is the observed state of a Attachment
@@ -598,32 +588,32 @@ message AttachmentStatus {
   // Phase is the phase of the model
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 1 [(gogoproto.casttype) = "AttachmentPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
+  optional string phase = 1;
 
   // The time when the alert was fired
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2 [(gogoproto.customname) = "At", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AttachmentCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated AttachmentCondition conditions = 4;
 }
 
 message AvatarSpec {
   // +kubebuilder:default:=""
   // Bucketname is the name of the bucket holding the bucket name
   // +kubebuilder:validation:Optional
-  optional string bucketName = 1 [(gogoproto.customname) = "BucketName"];
+  optional string bucketName = 1;
 
   // Path to the full data file (e.g. csv file).
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string path = 2 [(gogoproto.customname) = "Path"];
+  optional string path = 2;
 }
 
 // //////////////////////////
@@ -632,116 +622,116 @@ message AvatarSpec {
 message AwsS3Spec {
   // Default zone.
   // +kubebuilder:default:=""
-  optional string defaultRegion = 1 [(gogoproto.customname) = "DefaultRegion"];
+  optional string defaultRegion = 1;
 
   // Aws Access key. This is an hidden fields which are stored in the secret
   // +kubebuilder:default:=""
-  optional string accessKey = 2 [(gogoproto.customname) = "AccessKey"];
+  optional string accessKey = 2;
 
   // Aws StorageSecret key. This is an hidden fields which are stored in the secret
   // +kubebuilder:default:=""
-  optional string secretKey = 3 [(gogoproto.customname) = "SecretKey"];
+  optional string secretKey = 3;
 }
 
 // CassandraSpec defines the connection to cassandra
 message AzureSQLDatabaseSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 1433
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string database = 5 [(gogoproto.customname) = "Database"];
+  optional string database = 5;
 
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message AzureStorageSpec {
   // +kubebuilder:default:=""
-  optional string storageAccount = 1 [(gogoproto.customname) = "StorageAccount"];
+  optional string storageAccount = 1;
 
   // This is an hidden field which is stored in a p
   // +kubebuilder:default:=""
-  optional string accessKey = 2 [(gogoproto.customname) = "AccessKey"];
+  optional string accessKey = 2;
 }
 
 message BitbucketSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 
   // +kubebuilder:default:=""
-  optional string userName = 2 [(gogoproto.customname) = "Username"];
+  optional string userName = 2;
 
   // +kubebuilder:default:=""
-  optional string ssh = 3 [(gogoproto.customname) = "SSH"];
+  optional string ssh = 3;
 }
 
 message BoxSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 }
 
 message BucketResourceQuotas {
   // If true enable quate
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity hardLimit = 2 [(gogoproto.customname) = "HardLimit"];
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity hardLimit = 2;
 }
 
 message ClickHouseSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=8123
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message CockroachDBSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5432
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -754,37 +744,37 @@ message CockroachDBSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=commits,singular=commit,categories={infra,modela}
 message Commit {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional CommitSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional CommitSpec spec = 2;
 
-  optional CommitStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional CommitStatus status = 3;
 }
 
 // CommitCondition describes the state of the license at a certain point.
 message CommitCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "CommitConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // CommitList is a list of Commits
 message CommitList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Commit items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Commit items = 2;
 }
 
 // CommitSpec defines the desired state of Commit
@@ -792,14 +782,14 @@ message CommitSpec {
   // User provided commit message
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string message = 1 [(gogoproto.customname) = "Message"];
+  optional string message = 1;
 
   // The subject entity
-  optional k8s.io.api.core.v1.ObjectReference entityRef = 2 [(gogoproto.customname) = "EntityRef", (gogoproto.nullable) = false];
+  optional k8s.io.api.core.v1.ObjectReference entityRef = 2;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 3 [(gogoproto.customname) = "Owner"];
+  optional string owner = 3;
 }
 
 // CommitStatus is the observed state of a Commit
@@ -807,20 +797,20 @@ message CommitStatus {
   // Phase is the phase of the model
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 1 [(gogoproto.casttype) = "CommitPhase", (gogoproto.customname) = "Phase", (gogoproto.nullable) = false];
+  optional string phase = 1;
 
   // The time when the commit was completed
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2 [(gogoproto.customname) = "At", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated CommitCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated CommitCondition conditions = 4;
 }
 
 // Connection define a connection to an external system (e.g. database, public cloud)
@@ -833,37 +823,37 @@ message CommitStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=connections,shortName=conn,singular=connection,categories={infra,modela}
 message Connection {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional ConnectionSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional ConnectionSpec spec = 2;
 
-  optional ConnectionStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional ConnectionStatus status = 3;
 }
 
 // ConnectionCondition describes the state of a connection at a certain point.
 message ConnectionCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "ConnectionConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
 
   // The reason for the condition's last transition.
-  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 5;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 6;
 }
 
 // +kubebuilder:object:root=true
 // ConnectionList is a list of Connections.
 message ConnectionList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Connection items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Connection items = 2;
 }
 
 // ConnectionSpec defines the desired state of Connection
@@ -871,603 +861,603 @@ message ConnectionSpec {
   // TenantRef is the tenant of the connection
   // default to the default tenant
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // The connection category
   // +kubebuilder:default:="general"
   // +kubebuilder:validation:Optional
-  optional string category = 2 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.ConnectionCategory", (gogoproto.customname) = "Category"];
+  optional string category = 2;
 
   // Provider specifies the name api provider (E.g. aws)
   // +kubebuilder:validation:Required
-  optional string provider = 3 [(gogoproto.casttype) = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1.ProviderName", (gogoproto.customname) = "Provider"];
+  optional string provider = 3;
 
   // SecretName is a reference to a secret which holds the connection credentials
   // +kubebuilder:validation:Required
-  optional string secretName = 4 [(gogoproto.customname) = "SecretName"];
+  optional string secretName = 4;
 
   // +kubebuilder:validation:Optional
-  optional AmazonAthenaSpec athena = 5 [(gogoproto.customname) = "AmazonAthena"];
+  optional AmazonAthenaSpec athena = 5;
 
   // +kubebuilder:validation:Optional
-  optional ApacheDrillSpec drill = 6 [(gogoproto.customname) = "ApacheDrill"];
+  optional ApacheDrillSpec drill = 6;
 
   // +kubebuilder:validation:Optional
-  optional ApacheDruidSpec druid = 7 [(gogoproto.customname) = "ApacheDruid"];
+  optional ApacheDruidSpec druid = 7;
 
   // +kubebuilder:validation:Optional
-  optional ApacheHiveSpec hive = 8 [(gogoproto.customname) = "ApacheHive"];
+  optional ApacheHiveSpec hive = 8;
 
   // +kubebuilder:validation:Optional
-  optional AmazonRedShiftSpec redshift = 9 [(gogoproto.customname) = "RedShift"];
+  optional AmazonRedShiftSpec redshift = 9;
 
   // +kubebuilder:validation:Optional
-  optional DermioSpec dermio = 10 [(gogoproto.customname) = "Dermio"];
+  optional DermioSpec dermio = 10;
 
   // +kubebuilder:validation:Optional
-  optional DB2Spec db2 = 11 [(gogoproto.customname) = "DB2"];
+  optional DB2Spec db2 = 11;
 
   // +kubebuilder:validation:Optional
-  optional GcpBigQuerySpec bigquery = 12 [(gogoproto.customname) = "GcpBigQuery"];
+  optional GcpBigQuerySpec bigquery = 12;
 
   // +kubebuilder:validation:Optional
-  optional ApacheCassandraSpec cassandra = 13 [(gogoproto.customname) = "Cassandra"];
+  optional ApacheCassandraSpec cassandra = 13;
 
   // +kubebuilder:validation:Optional
-  optional AzureSQLDatabaseSpec azuresqldatabase = 14 [(gogoproto.customname) = "AzureSQLDatabase"];
+  optional AzureSQLDatabaseSpec azuresqldatabase = 14;
 
   // +kubebuilder:validation:Optional
-  optional MongoDbSpec mongodb = 15 [(gogoproto.customname) = "MongoDb"];
+  optional MongoDbSpec mongodb = 15;
 
   // +kubebuilder:validation:Optional
-  optional MySqlSpec mysql = 16 [(gogoproto.customname) = "MySql"];
+  optional MySqlSpec mysql = 16;
 
   // +kubebuilder:validation:Optional
-  optional OdbcSpec odbc = 17 [(gogoproto.customname) = "Odbc"];
+  optional OdbcSpec odbc = 17;
 
   // +kubebuilder:validation:Optional
-  optional OracleSpec oracle = 18 [(gogoproto.customname) = "Oracle"];
+  optional OracleSpec oracle = 18;
 
   // +kubebuilder:validation:Optional
-  optional PostgresSQLSpec postgres = 19 [(gogoproto.customname) = "PostgresSQL"];
+  optional PostgresSQLSpec postgres = 19;
 
   // +kubebuilder:validation:Optional
-  optional PrestoSpec presto = 20 [(gogoproto.customname) = "Presto"];
+  optional PrestoSpec presto = 20;
 
   // +kubebuilder:validation:Optional
-  optional SnowflakeSpec snowflake = 22 [(gogoproto.customname) = "Snowflake"];
+  optional SnowflakeSpec snowflake = 22;
 
   // +kubebuilder:validation:Optional
-  optional SybaseSpec sybase = 23 [(gogoproto.customname) = "Sybase"];
+  optional SybaseSpec sybase = 23;
 
   // +kubebuilder:validation:Optional
-  optional VerticaSpec vertica = 24 [(gogoproto.customname) = "Vertica"];
+  optional VerticaSpec vertica = 24;
 
   // +kubebuilder:validation:Optional
-  optional CockroachDBSpec cockroachdb = 25 [(gogoproto.customname) = "CockroachDB"];
+  optional CockroachDBSpec cockroachdb = 25;
 
   // +kubebuilder:validation:Optional
-  optional ElasticSearchSpec elasticsearch = 26 [(gogoproto.customname) = "ElasticSearch"];
+  optional ElasticSearchSpec elasticsearch = 26;
 
   // +kubebuilder:validation:Optional
-  optional InformixSpec informix = 27 [(gogoproto.customname) = "Informix"];
+  optional InformixSpec informix = 27;
 
   // +kubebuilder:validation:Optional
-  optional SAPHanaSpec hana = 28 [(gogoproto.customname) = "SAPHana"];
+  optional SAPHanaSpec hana = 28;
 
   // +kubebuilder:validation:Optional
-  optional TeradataSpec teradata = 29 [(gogoproto.customname) = "Teradata"];
+  optional TeradataSpec teradata = 29;
 
   // +kubebuilder:validation:Optional
-  optional GcpSpannerSpec spanner = 30 [(gogoproto.customname) = "GcpSpanner"];
+  optional GcpSpannerSpec spanner = 30;
 
   // +kubebuilder:validation:Optional
-  optional ApacheSparkSpec spark = 31 [(gogoproto.customname) = "Spark"];
+  optional ApacheSparkSpec spark = 31;
 
   // +kubebuilder:validation:Optional
-  optional MSSqlServerSpec mssqlserver = 32 [(gogoproto.customname) = "MSSqlServer"];
+  optional MSSqlServerSpec mssqlserver = 32;
 
   // +kubebuilder:validation:Optional
-  optional ClickHouseSpec clickhouse = 33 [(gogoproto.customname) = "Clickhouse"];
+  optional ClickHouseSpec clickhouse = 33;
 
   // +kubebuilder:validation:Optional
-  optional GreenPlumSpec greenplum = 34 [(gogoproto.customname) = "Greenplum"];
+  optional GreenPlumSpec greenplum = 34;
 
   // +kubebuilder:validation:Optional
-  optional CouchbaseSpec couchbase = 35 [(gogoproto.customname) = "Couchbase"];
+  optional CouchbaseSpec couchbase = 35;
 
   // +kubebuilder:validation:Optional
-  optional ExasolSpec exasol = 36 [(gogoproto.customname) = "Exasol"];
+  optional ExasolSpec exasol = 36;
 
   // +kubebuilder:validation:Optional
-  optional SqliteSpec sqlite = 37 [(gogoproto.customname) = "SqlLite"];
+  optional SqliteSpec sqlite = 37;
 
   // +kubebuilder:validation:Optional
-  optional SingleStoreSpec singlestore = 38 [(gogoproto.customname) = "SingleStore"];
+  optional SingleStoreSpec singlestore = 38;
 
   // +kubebuilder:validation:Optional
-  optional GoogleSheetsSpec gsheets = 39 [(gogoproto.customname) = "GoogleSheets"];
+  optional GoogleSheetsSpec gsheets = 39;
 
   // +kubebuilder:validation:Optional
-  optional AzureStorageSpec azurestorage = 40 [(gogoproto.customname) = "AzureStorage"];
+  optional AzureStorageSpec azurestorage = 40;
 
   // +kubebuilder:validation:Optional
-  optional AliCloudSpec alicloud = 41 [(gogoproto.customname) = "AliCloud"];
+  optional AliCloudSpec alicloud = 41;
 
   // +kubebuilder:validation:Optional
-  optional DigitalOceanSpec digitalocean = 42 [(gogoproto.customname) = "DigitalOcean"];
+  optional DigitalOceanSpec digitalocean = 42;
 
   // +kubebuilder:validation:Optional
-  optional HetznerSpec hetzner = 43 [(gogoproto.customname) = "Hetzner"];
+  optional HetznerSpec hetzner = 43;
 
   // +kubebuilder:validation:Optional
-  optional GcpStorageSpec gcpstorage = 45 [(gogoproto.customname) = "GcpStorage"];
+  optional GcpStorageSpec gcpstorage = 45;
 
   // +kubebuilder:validation:Optional
-  optional LinodeSpec linode = 46 [(gogoproto.customname) = "Linode"];
+  optional LinodeSpec linode = 46;
 
   // +kubebuilder:validation:Optional
-  optional MinioSpec minio = 47 [(gogoproto.customname) = "Minio"];
+  optional MinioSpec minio = 47;
 
   // +kubebuilder:validation:Optional
-  optional OpenstackSpec openstack = 48 [(gogoproto.customname) = "Openstack"];
+  optional OpenstackSpec openstack = 48;
 
   // +kubebuilder:validation:Optional
-  optional OvhSpec ovh = 49 [(gogoproto.customname) = "Ovh"];
+  optional OvhSpec ovh = 49;
 
   // +kubebuilder:validation:Optional
-  optional AwsS3Spec aws = 50 [(gogoproto.customname) = "Aws"];
+  optional AwsS3Spec aws = 50;
 
   // +kubebuilder:validation:Optional
-  optional SmtpSpec smtp = 51 [(gogoproto.customname) = "Smtp"];
+  optional SmtpSpec smtp = 51;
 
   // +kubebuilder:validation:Optional
-  optional FtpSpec ftp = 52 [(gogoproto.customname) = "FTP"];
+  optional FtpSpec ftp = 52;
 
   // +kubebuilder:validation:Optional
-  optional SFtpSpec sftp = 53 [(gogoproto.customname) = "SFTP"];
+  optional SFtpSpec sftp = 53;
 
   // +kubebuilder:validation:Optional
-  optional DropboxSpec dropbox = 54 [(gogoproto.customname) = "Dropbox"];
+  optional DropboxSpec dropbox = 54;
 
   // +kubebuilder:validation:Optional
-  optional BoxSpec box = 55 [(gogoproto.customname) = "Box"];
+  optional BoxSpec box = 55;
 
   // +kubebuilder:validation:Optional
-  optional ImageRegistrySpec imageRegistry = 56 [(gogoproto.customname) = "ImageRegistry"];
+  optional ImageRegistrySpec imageRegistry = 56;
 
   // +kubebuilder:validation:Optional
-  optional GithubSpec github = 57 [(gogoproto.customname) = "Github"];
+  optional GithubSpec github = 57;
 
   // +kubebuilder:validation:Optional
-  optional GitlabSpec gitlab = 58 [(gogoproto.customname) = "Gitlab"];
+  optional GitlabSpec gitlab = 58;
 
   // +kubebuilder:validation:Optional
-  optional BitbucketSpec bitbucket = 59 [(gogoproto.customname) = "Bitbucket"];
+  optional BitbucketSpec bitbucket = 59;
 
   // +kubebuilder:validation:Optional
-  optional SlackSpec slack = 60 [(gogoproto.customname) = "Slack"];
+  optional SlackSpec slack = 60;
 
   // +kubebuilder:validation:Optional
-  optional MSTeamSpec msteam = 61 [(gogoproto.customname) = "MSTeam"];
+  optional MSTeamSpec msteam = 61;
 
   // +kubebuilder:validation:Optional
-  optional MattermostSpec matterMost = 62 [(gogoproto.customname) = "MatterMost"];
+  optional MattermostSpec matterMost = 62;
 
   // +kubebuilder:validation:Optional
-  optional HipchatSpec hipchat = 63 [(gogoproto.customname) = "Hipchat"];
+  optional HipchatSpec hipchat = 63;
 
   // +kubebuilder:validation:Optional
-  optional VictorOpSpec victorop = 64 [(gogoproto.customname) = "VictorOps"];
+  optional VictorOpSpec victorop = 64;
 
   // +kubebuilder:validation:Optional
-  optional PagerDutySpec pagerduty = 65 [(gogoproto.customname) = "PagerDuty"];
+  optional PagerDutySpec pagerduty = 65;
 
   // +kubebuilder:validation:Optional
-  optional PushoverSpec pushover = 66 [(gogoproto.customname) = "Pushover"];
+  optional PushoverSpec pushover = 66;
 
   // +kubebuilder:validation:Optional
-  optional OpsgenieSpec opsgenie = 67 [(gogoproto.customname) = "Opsgenie"];
+  optional OpsgenieSpec opsgenie = 67;
 
   // +kubebuilder:validation:Optional
-  optional WebhookSpec webhook = 68 [(gogoproto.customname) = "Webhook"];
+  optional WebhookSpec webhook = 68;
 
   // Social media
   // +kubebuilder:validation:Optional
-  optional FacebookSpec facebook = 69 [(gogoproto.customname) = "Facebook"];
+  optional FacebookSpec facebook = 69;
 
   // +kubebuilder:validation:Optional
-  optional TwitterSpec twitter = 70 [(gogoproto.customname) = "Twitter"];
+  optional TwitterSpec twitter = 70;
 
   // Message broker
   // +kubebuilder:validation:Optional
-  optional RabbitMQSpec rabbitmq = 71 [(gogoproto.customname) = "RabbitMQ"];
+  optional RabbitMQSpec rabbitmq = 71;
 
   // +kubebuilder:validation:Optional
-  optional KafkaSpec kafka = 72 [(gogoproto.customname) = "Kafka"];
+  optional KafkaSpec kafka = 72;
 
   // +kubebuilder:validation:Optional
-  optional Neo4JSpec neo4j = 73 [(gogoproto.customname) = "Neo4j"];
+  optional Neo4JSpec neo4j = 73;
 
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 74 [(gogoproto.customname) = "Owner"];
+  optional string owner = 74;
 }
 
 // ConnectionStatus is the observed state of a Connection
 message ConnectionStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ConnectionCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated ConnectionCondition conditions = 3;
 }
 
 message CouchbaseSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=8123
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string defaultBucket = 6 [(gogoproto.customname) = "DefaultBucket"];
+  optional string defaultBucket = 6;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 7 [(gogoproto.customname) = "URL"];
+  optional string url = 7;
 }
 
 message DB2Spec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string keyspace = 3 [(gogoproto.customname) = "KeySpace"];
+  optional string keyspace = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message DermioSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string keyspace = 3 [(gogoproto.customname) = "KeySpace"];
+  optional string keyspace = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message DigitalOceanSpec {
   // Token for digital ocean
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 
   // Access Key for digital ocean spaces
   // +kubebuilder:default:=""
-  optional string accessKey = 2 [(gogoproto.customname) = "AccessKey"];
+  optional string accessKey = 2;
 
   // StorageSecret Key for digital ocean spaces
   // +kubebuilder:default:=""
-  optional string secretKey = 3 [(gogoproto.customname) = "SecretKey"];
+  optional string secretKey = 3;
 
   // Default digital ocean
   // +kubebuilder:default:=""
-  optional string defaultRegion = 4 [(gogoproto.customname) = "DefaultRegion"];
+  optional string defaultRegion = 4;
 
   // url or connection string
   // +kubebuilder:default:=""
-  optional string host = 5 [(gogoproto.customname) = "Host"];
+  optional string host = 5;
 }
 
 message DropboxSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 }
 
 message ElasticSearchSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5432
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string prefix = 3 [(gogoproto.customname) = "Prefix"];
+  optional string prefix = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message ExasolSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 7 [(gogoproto.customname) = "URL"];
+  optional string url = 7;
 }
 
 message FTPSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string keyspace = 3 [(gogoproto.customname) = "KeySpace"];
+  optional string keyspace = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message FacebookSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 }
 
 message FtpSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 21
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 }
 
 // BigQuerySpec defines the connection to big query
 message GcpBigQuerySpec {
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // UserName
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 
   // +kubebuilder:default:=""
-  optional string projectID = 5 [(gogoproto.customname) = "ProjectID"];
+  optional string projectID = 5;
 
   // +kubebuilder:default:=""
-  optional string oauthType = 6 [(gogoproto.customname) = "OAuthType"];
+  optional string oauthType = 6;
 
   // +kubebuilder:default:=""
-  optional string serviceAccountKeyPath = 7 [(gogoproto.customname) = "ServiceAccountKeyPath"];
+  optional string serviceAccountKeyPath = 7;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 8 [(gogoproto.customname) = "URL"];
+  optional string url = 8;
 }
 
 message GcpSpannerSpec {
   // +kubebuilder:default:=""
-  optional string project = 1 [(gogoproto.customname) = "Project"];
+  optional string project = 1;
 
   // +kubebuilder:default:=""
-  optional string instance = 2 [(gogoproto.customname) = "Instance"];
+  optional string instance = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 
   // +kubebuilder:default:=""
-  optional string database = 5 [(gogoproto.customname) = "Database"];
+  optional string database = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message GcpStorageSpec {
   // +kubebuilder:default:=""
-  optional string keyFile = 1 [(gogoproto.customname) = "KeyFile"];
+  optional string keyFile = 1;
 
   // +kubebuilder:default:=""
-  optional string project = 2 [(gogoproto.customname) = "Project"];
+  optional string project = 2;
 }
 
 message GithubSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 
   // +kubebuilder:default:=""
-  optional string userName = 2 [(gogoproto.customname) = "Username"];
+  optional string userName = 2;
 
   // +kubebuilder:default:=""
-  optional string ssh = 3 [(gogoproto.customname) = "SSH"];
+  optional string ssh = 3;
 }
 
 message GitlabSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 
   // +kubebuilder:default:=""
-  optional string ssh = 2 [(gogoproto.customname) = "SSH"];
+  optional string ssh = 2;
 }
 
 message GoogleSheetsSpec {
   // +kubebuilder:default:=""
-  optional string scopes = 1 [(gogoproto.customname) = "Scopes"];
+  optional string scopes = 1;
 
   // +kubebuilder:default:= ""
-  optional string id = 2 [(gogoproto.customname) = "ID"];
+  optional string id = 2;
 
   // +kubebuilder:default:=""
-  optional string dataToPull = 3 [(gogoproto.customname) = "DataToPull"];
+  optional string dataToPull = 3;
 }
 
 message GreenPlumSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5432
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message HetznerSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 
   // +kubebuilder:default:=""
-  optional string ssh = 2 [(gogoproto.customname) = "SSH"];
+  optional string ssh = 2;
 }
 
 message HipchatSpec {
   // +kubebuilder:default:=""
-  optional string url = 1 [(gogoproto.customname) = "Url"];
+  optional string url = 1;
 
   // +kubebuilder:default:=""
-  optional string token = 2 [(gogoproto.customname) = "Token"];
+  optional string token = 2;
 
   // +kubebuilder:default:=""
-  optional string room = 3 [(gogoproto.customname) = "Room"];
+  optional string room = 3;
 }
 
 message ImageRegistrySpec {
   // Hostname for the image registry
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // Username for image registry
   // +kubebuilder:default:=""
-  optional string username = 2 [(gogoproto.customname) = "Username"];
+  optional string username = 2;
 
   // +kubebuilder:default:=""
-  optional string password = 3 [(gogoproto.customname) = "Password"];
+  optional string password = 3;
 }
 
 message InformixSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=1526
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message KafkaSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string channel = 3 [(gogoproto.customname) = "Channel"];
+  optional string channel = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 // Lab is a namespace used for training and data analysis operations.
@@ -1479,37 +1469,37 @@ message KafkaSpec {
 // +kubebuilder:resource:path=labs,singular=lab,categories={infra,modela,all}
 // +kubebuilder:subresource:status
 message Lab {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional LabSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional LabSpec spec = 2;
 
-  optional LabStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional LabStatus status = 3;
 }
 
 // LabCondition describes the state of a lab at a certain point.
 message LabCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "LabConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // LabList is a list of labs
 message LabList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Lab items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Lab items = 2;
 }
 
 // LabSpec defines the desired state of a Lab
@@ -1518,43 +1508,43 @@ message LabSpec {
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=256
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // +kubebuilder:validation:Optional
   // TenantRef is a reference to the tenant owning this lab
   // Default to default tenant.
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
   // Specify resource limits
   // +kubebuilder:validation:Optional
-  optional ResourceLimitSpec limits = 3 [(gogoproto.customname) = "Limits", (gogoproto.nullable) = false];
+  optional ResourceLimitSpec limits = 3;
 
   // ClusterName is the name of a remote cluster that is used to execute jobs for this lab
   // If not empty, jobs assigned to this lab should execute on remote cluster
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string clusterName = 4 [(gogoproto.customname) = "ClusterName"];
+  optional string clusterName = 4;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 5 [(gogoproto.customname) = "Owner"];
+  optional string owner = 5;
 }
 
 // LabStatus is the observed state of a Lab
 message LabStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated LabCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -1573,37 +1563,37 @@ message LabStatus {
 // License is an abstraction that represent the cluster wide license
 // as obtained from Modela. The license is store inside a a secret
 message License {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional LicenseSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional LicenseSpec spec = 2;
 
-  optional LicenseStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional LicenseStatus status = 3;
 }
 
 // LicenseCondition describes the state of the license at a certain point.
 message LicenseCondition {
   // Type of condition.
-  optional string type = 1 [(gogoproto.casttype) = "LicenseConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // LicenseList is a list of License
 message LicenseList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated License items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated License items = 2;
 }
 
 // LicenseSpec defines the desired state of License
@@ -1611,161 +1601,161 @@ message LicenseSpec {
   // Reference to the tenant owning this license
   // +kubebuilder:validation:Optional
   // Default to default tenant.
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // The secret containing the license token
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=63
-  optional string secretName = 2 [(gogoproto.customname) = "SecretName"];
+  optional string secretName = 2;
 
   // Owner is the account owning this license
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:="no-one"
-  optional string owner = 3 [(gogoproto.customname) = "Owner"];
+  optional string owner = 3;
 
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string email = 4 [(gogoproto.customname) = "Email"];
+  optional string email = 4;
 
   // TrialStart is the start date for free trial
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5 [(gogoproto.customname) = "TrialStart"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialStart = 5;
 
   // TrialEnd when free trial end
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEnd = 6 [(gogoproto.customname) = "TrialEnd"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trialEnd = 6;
 
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxProducts = 7 [(gogoproto.customname) = "MaxProducts"];
+  optional int32 maxProducts = 7;
 
   // MaxTrainers is max number of trainers
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxTrainers = 8 [(gogoproto.customname) = "MaxTrainers"];
+  optional int32 maxTrainers = 8;
 
   // MaxServers is the max number of worker nodes
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxServers = 9 [(gogoproto.customname) = "MaxServers"];
+  optional int32 maxServers = 9;
 
   // MaxUsers is the max number of active accounts
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxUsers = 10 [(gogoproto.customname) = "MaxUsers"];
+  optional int32 maxUsers = 10;
 
   // max data planes
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxDataPlanes = 11 [(gogoproto.customname) = "MaxDataPlanes"];
+  optional int32 maxDataPlanes = 11;
 
   // Forcast denote if forecast feature supported
   // +kubebuilder:validation:Optional
-  optional bool forecast = 12 [(gogoproto.customname) = "Forecast"];
+  optional bool forecast = 12;
 
   // NLP is nlp feature supported
   // +kubebuilder:validation:Optional
-  optional bool nlp = 13 [(gogoproto.customname) = "NLP"];
+  optional bool nlp = 13;
 
   // Is vision feature supported
   // +kubebuilder:validation:Optional
-  optional bool vision = 14 [(gogoproto.customname) = "Vision"];
+  optional bool vision = 14;
 
   // Is chatbot feature supported
-  optional bool chatbot = 15 [(gogoproto.customname) = "Chatbot"];
+  optional bool chatbot = 15;
 
   // The product name
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string productName = 16 [(gogoproto.customname) = "ProductName"];
+  optional string productName = 16;
 
   // The price name
   // +kubebuilder:validation:Optional
-  optional string priceName = 17 [(gogoproto.customname) = "PriceName"];
+  optional string priceName = 17;
 
   // When the license expire
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time expireAt = 18 [(gogoproto.customname) = "ExpireAt"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time expireAt = 18;
 
   // NotifierName is a reference to a notifier to receive the license expiration notification
   // +kubebuilder:validation:Optional
-  optional string notifierName = 19 [(gogoproto.customname) = "NotifierName"];
+  optional string notifierName = 19;
 }
 
 // LicenseStatus is the observed state of a License
 message LicenseStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LicenseCondition conditions = 3 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated LicenseCondition conditions = 3;
 }
 
 message LinodeSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 }
 
 message MSSqlServerSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=1433
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string instance = 4 [(gogoproto.customname) = "Instance"];
+  optional string instance = 4;
 
   // +kubebuilder:default:=""
-  optional string username = 5 [(gogoproto.customname) = "Username"];
+  optional string username = 5;
 
   // +kubebuilder:default:=""
-  optional string password = 6 [(gogoproto.customname) = "Password"];
+  optional string password = 6;
 
   // URL Override the other
-  optional string url = 7 [(gogoproto.customname) = "URL"];
+  optional string url = 7;
 }
 
 message MSTeamSpec {
   // +kubebuilder:default:=""
-  optional string webhook = 1 [(gogoproto.customname) = "Webhook"];
+  optional string webhook = 1;
 }
 
 message MattermostSpec {
   // +kubebuilder:default:=""
-  optional string url = 1 [(gogoproto.customname) = "Url"];
+  optional string url = 1;
 
   // +kubebuilder:default:=""
-  optional string channel = 2 [(gogoproto.customname) = "Channel"];
+  optional string channel = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 }
 
 message MinioSpec {
   // Access key for minio
   // +kubebuilder:default:=""
-  optional string accessKey = 1 [(gogoproto.customname) = "AccessKey"];
+  optional string accessKey = 1;
 
   // StorageSecret key for minio
   // +kubebuilder:default:=""
-  optional string secretKey = 2 [(gogoproto.customname) = "SecretKey"];
+  optional string secretKey = 2;
 
   // Minio url connection.
   // +kubebuilder:default:=""
-  optional string host = 3 [(gogoproto.customname) = "Host"];
+  optional string host = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -1778,37 +1768,37 @@ message MinioSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=modelasystems,singular=modelasystem,categories={infra,modela}
 message ModelaSystem {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional ModelaSystemSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional ModelaSystemSpec spec = 2;
 
-  optional ModelaSystemStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional ModelaSystemStatus status = 3;
 }
 
 // ModelaSystemCondition describes the state of the license at a certain point.
 message ModelaSystemCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "ModelaSystemConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // ModelaSystemList is a list of ModelaSystems
 message ModelaSystemList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated ModelaSystem items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated ModelaSystem items = 2;
 }
 
 // ModelaSystemSpec defines the desired state of ModelaSystem
@@ -1819,72 +1809,72 @@ message ModelaSystemSpec {
 message ModelaSystemStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelaSystemCondition conditions = 2 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated ModelaSystemCondition conditions = 2;
 }
 
 message MongoDbSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=27017
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message MySqlSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=3306
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message Neo4JSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 7 [(gogoproto.customname) = "URL"];
+  optional string url = 7;
 }
 
 // +kubebuilder:object:root=true
@@ -1897,37 +1887,37 @@ message Neo4JSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modela}
 message Notifier {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional NotifierSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional NotifierSpec spec = 2;
 
-  optional NotifierStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional NotifierStatus status = 3;
 }
 
 // NotifierCondition describes the state of the license at a certain point.
 message NotifierCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "NotifierConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // NotifierList is a list of Notifiers
 message NotifierList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Notifier items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Notifier items = 2;
 }
 
 // NotifierSpec defines the desired state of Notifier
@@ -1935,204 +1925,204 @@ message NotifierSpec {
   // The tenant that own the notifier
   // Default to default tenant.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // User provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 2 [(gogoproto.customname) = "Description"];
+  optional string description = 2;
 
   // Address within the provider to send the notifiaction to.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string to = 3 [(gogoproto.customname) = "To"];
+  optional string to = 3;
 
   // The sender address. For example, from email.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string from = 4 [(gogoproto.customname) = "From"];
+  optional string from = 4;
 
   // +kubebuilder:validation:Required
   // +kubebuilder:default:=""
-  optional string connectionName = 5 [(gogoproto.customname) = "ConnectionName"];
+  optional string connectionName = 5;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 6 [(gogoproto.customname) = "Owner"];
+  optional string owner = 6;
 }
 
 // NotifierStatus is the observed state of a Notifier
 message NotifierStatus {
   // provider is the name of the notifier provider. The name is derived from the connection
-  optional string provider = 1 [(gogoproto.customname) = "Provider", (gogoproto.nullable) = false];
+  optional string provider = 1;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 2 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 2;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
   // +kubebuilder:validation:Optional
-  repeated NotifierCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated NotifierCondition conditions = 4;
 }
 
 message OdbcSpec {
   // +kubebuilder:default:=""
-  optional string conntectionString = 1 [(gogoproto.customname) = "ConnectionString"];
+  optional string conntectionString = 1;
 }
 
 message OpenstackSpec {
   // +kubebuilder:default:=""
-  optional string userName = 1 [(gogoproto.customname) = "Username"];
+  optional string userName = 1;
 
   // +kubebuilder:default:=""
-  optional string tenantName = 2 [(gogoproto.customname) = "Tenantname"];
+  optional string tenantName = 2;
 
   // +kubebuilder:default:=""
-  optional string password = 3 [(gogoproto.customname) = "Password"];
+  optional string password = 3;
 
   // +kubebuilder:default:=""
-  optional string authUrl = 4 [(gogoproto.customname) = "Authurl"];
+  optional string authUrl = 4;
 
   // +kubebuilder:default:=""
-  optional string region = 5 [(gogoproto.customname) = "Region"];
+  optional string region = 5;
 }
 
 message OpsgenieSpec {
   // +kubebuilder:default:=""
-  optional string apiID = 1 [(gogoproto.customname) = "ID"];
+  optional string apiID = 1;
 
   // +kubebuilder:default:=""
-  optional string apiKey = 2 [(gogoproto.customname) = "ApiKey"];
+  optional string apiKey = 2;
 
   // +kubebuilder:default:=""
-  optional string url = 3 [(gogoproto.customname) = "Url"];
+  optional string url = 3;
 }
 
 message OracleSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=1521
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:="XE"
-  optional string sid = 3 [(gogoproto.customname) = "SID"];
+  optional string sid = 3;
 
   // +kubebuilder:default:="thin"
-  optional string driver = 4 [(gogoproto.customname) = "Driver"];
+  optional string driver = 4;
 
   // +kubebuilder:default:=""
-  optional string username = 5 [(gogoproto.customname) = "Username"];
+  optional string username = 5;
 
   // +kubebuilder:default:=""
-  optional string password = 6 [(gogoproto.customname) = "Password"];
+  optional string password = 6;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 7 [(gogoproto.customname) = "URL"];
+  optional string url = 7;
 }
 
 message OvhSpec {
   // +kubebuilder:default:=""
-  optional string endpoint = 1 [(gogoproto.customname) = "Endpoint"];
+  optional string endpoint = 1;
 
   // +kubebuilder:default:=""
-  optional string application = 2 [(gogoproto.customname) = "Application"];
+  optional string application = 2;
 
   // +kubebuilder:default:=""
-  optional string secret = 3 [(gogoproto.customname) = "Secret"];
+  optional string secret = 3;
 
   // +kubebuilder:default:=""
-  optional string consumerkey = 4 [(gogoproto.customname) = "ConsumerKey"];
+  optional string consumerkey = 4;
 }
 
 message PagerDutySpec {
   // +kubebuilder:default:=""
-  optional string apiID = 1 [(gogoproto.customname) = "ID"];
+  optional string apiID = 1;
 
   // +kubebuilder:default:=""
-  optional string apiKey = 2 [(gogoproto.customname) = "ApiKey"];
+  optional string apiKey = 2;
 
   // +kubebuilder:default:=""
-  optional string url = 3 [(gogoproto.customname) = "Url"];
+  optional string url = 3;
 }
 
 message PostgresSQLSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5432
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message PrestoSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=8080
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string catalog = 3 [(gogoproto.customname) = "Catalog"];
+  optional string catalog = 3;
 
   // +kubebuilder:default:=""
-  optional string schema = 4 [(gogoproto.customname) = "Schema"];
+  optional string schema = 4;
 
   // +kubebuilder:default:=""
-  optional string username = 5 [(gogoproto.customname) = "Username"];
+  optional string username = 5;
 
   // +kubebuilder:default:=""
-  optional string password = 6 [(gogoproto.customname) = "Password"];
+  optional string password = 6;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 7 [(gogoproto.customname) = "URL"];
+  optional string url = 7;
 }
 
 message PushoverSpec {
   // +kubebuilder:default:=""
-  optional string apiID = 1 [(gogoproto.customname) = "ID"];
+  optional string apiID = 1;
 
   // +kubebuilder:default:=""
-  optional string apiKey = 2 [(gogoproto.customname) = "ApiKey"];
+  optional string apiKey = 2;
 
   // +kubebuilder:default:=""
-  optional string url = 3 [(gogoproto.customname) = "Url"];
+  optional string url = 3;
 }
 
 message RabbitMQSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 21
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 }
 
 // Defines the resource limits for lab and serving site.
@@ -2140,97 +2130,97 @@ message ResourceLimitSpec {
   // Enabled, set to true if you want to
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=false
-  optional bool enabled = 1 [(gogoproto.customname) = "Enabled"];
+  optional bool enabled = 1;
 
   // High level max memory provider
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity maxMem = 2 [(gogoproto.customname) = "MaxMem"];
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity maxMem = 2;
 
   // High level req.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity maxCpu = 3 [(gogoproto.customname) = "MaxCpu"];
+  optional k8s.io.apimachinery.pkg.api.resource.Quantity maxCpu = 3;
 
   // Max number of pods
   // +kubebuilder:validation:Optional
-  optional int32 maxPods = 4 [(gogoproto.customname) = "MaxPods"];
+  optional int32 maxPods = 4;
 
   // Max number of pvc
   // +kubebuilder:validation:Optional
-  optional int32 maxPvc = 5 [(gogoproto.customname) = "MaxPvc"];
+  optional int32 maxPvc = 5;
 
   // Low level spec.
   // QuotaSpec is quoute specification for the lab namespace.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 6 [(gogoproto.customname) = "QuotaSpec"];
+  optional k8s.io.api.core.v1.ResourceQuotaSpec quota = 6;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 7 [(gogoproto.customname) = "LimitRangeSpec"];
+  optional k8s.io.api.core.v1.LimitRangeSpec limitRange = 7;
 }
 
 message SAPHanaSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=1526
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message SFTPSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string keyspace = 3 [(gogoproto.customname) = "KeySpace"];
+  optional string keyspace = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL override the other settings
   // +kubebuilder:default:=""
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message SFtpSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:= 21
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 }
 
 message Scope {
   // +kubebuilder:validation:Optional
-  optional string name = 1 [(gogoproto.customname) = "Name"];
+  optional string name = 1;
 
   // +kubebuilder:validation:Optional
-  repeated string actions = 2 [(gogoproto.casttype) = "ScopeVerb", (gogoproto.customname) = "Actions"];
+  repeated string actions = 2;
 }
 
 // ServingSite is a namespace used for serving
@@ -2244,207 +2234,207 @@ message Scope {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modela}
 message ServingSite {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional ServingSiteSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional ServingSiteSpec spec = 2;
 
-  optional ServingSiteStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional ServingSiteStatus status = 3;
 }
 
 // ServingSiteCondition describes the state of a servingsite at a certain point.
 message ServingSiteCondition {
   // Type of  condition.
-  optional string type = 1 [(gogoproto.casttype) = "ServingSiteConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // ServingSiteList is a list of ServingSite
 message ServingSiteList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated ServingSite items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated ServingSite items = 2;
 }
 
 message ServingSiteSpec {
   // Description is user provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // Reference to the tenant owning this serving site.
   // Default to default tenant.
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 2;
 
   // Specify resource limits
   // +kubebuilder:validation:Optional
-  optional ResourceLimitSpec limits = 3 [(gogoproto.customname) = "Limits", (gogoproto.nullable) = false];
+  optional ResourceLimitSpec limits = 3;
 
   // IngressName denote the name of the ingress object where the serving site
   // places the external points used to access the predictors
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string ingressName = 4 [(gogoproto.customname) = "IngressName"];
+  optional string ingressName = 4;
 
   // The FDQN for this site. This will register with ingress.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string fdqn = 5 [(gogoproto.customname) = "FDQN"];
+  optional string fdqn = 5;
 
   // ClusterName is  the virtual cluster name in case that the lab is not on the same cluster
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string clusterName = 6 [(gogoproto.customname) = "ClusterName"];
+  optional string clusterName = 6;
 
   // Owner is the owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 7 [(gogoproto.customname) = "Owner"];
+  optional string owner = 7;
 }
 
 message ServingSiteStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // active predictors
-  optional int32 activePredictors = 3 [(gogoproto.customname) = "ActivePredictors", (gogoproto.nullable) = false];
+  optional int32 activePredictors = 3;
 
   // inactive predictors
-  optional int32 inactivePredictors = 4 [(gogoproto.customname) = "InactivePredictors", (gogoproto.nullable) = false];
+  optional int32 inactivePredictors = 4;
 
   // total predictors service failed
-  optional int32 totalPredictorServiceFailed = 5 [(gogoproto.customname) = "TotalPredictorServiceFailed", (gogoproto.nullable) = false];
+  optional int32 totalPredictorServiceFailed = 5;
 
   // total predictors with data drift failed
-  optional int32 totalPredictorDataDriftFailed = 6 [(gogoproto.customname) = "TotalPredictorDataDriftFailed", (gogoproto.nullable) = false];
+  optional int32 totalPredictorDataDriftFailed = 6;
 
   // total predictors accuracy failed
-  optional int32 totalPredictorAccuracyFailed = 7 [(gogoproto.customname) = "TotalPredictorAccuracyFailed", (gogoproto.nullable) = false];
+  optional int32 totalPredictorAccuracyFailed = 7;
 
   // Last 7 days predictions
-  repeated int32 lastDailyPredictions = 8 [(gogoproto.customname) = "LastDailyPredictions"];
+  repeated int32 lastDailyPredictions = 8;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ServingSiteCondition conditions = 9 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated ServingSiteCondition conditions = 9;
 }
 
 message SingleStoreSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
   // +kubebuilder:default:=""
-  optional string url = 7 [(gogoproto.customname) = "URL"];
+  optional string url = 7;
 }
 
 message SlackSpec {
   // +kubebuilder:default:=""
-  optional string webhookUrl = 1 [(gogoproto.customname) = "WebHookUrl"];
+  optional string webhookUrl = 1;
 
   // +kubebuilder:default:=""
-  optional string channel = 2 [(gogoproto.customname) = "Channel"];
+  optional string channel = 2;
 
   // +kubebuilder:default:=""
-  optional string userName = 3 [(gogoproto.customname) = "Username"];
+  optional string userName = 3;
 
   // +kubebuilder:default:=""
-  optional string token = 4 [(gogoproto.customname) = "Token"];
+  optional string token = 4;
 }
 
 message SmtpSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=25
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string userName = 3 [(gogoproto.customname) = "Username"];
+  optional string userName = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 }
 
 message SnowflakeSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=443
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string username = 3 [(gogoproto.customname) = "Username"];
+  optional string username = 3;
 
   // +kubebuilder:default:=""
-  optional string password = 4 [(gogoproto.customname) = "Password"];
+  optional string password = 4;
 
   // +kubebuilder:default:=""
-  optional string database = 5 [(gogoproto.customname) = "Database"];
+  optional string database = 5;
 
   // +kubebuilder:default:=""
-  optional string schema = 6 [(gogoproto.customname) = "Schema"];
+  optional string schema = 6;
 
   // +kubebuilder:default:=""
-  optional string warehouse = 7 [(gogoproto.customname) = "Warehouse"];
+  optional string warehouse = 7;
 
   // URL Override the other
-  optional string url = 8 [(gogoproto.customname) = "URL"];
+  optional string url = 8;
 }
 
 message SqliteSpec {
   // +kubebuilder:default:="general"
-  optional string fileName = 1 [(gogoproto.customname) = "Filename"];
+  optional string fileName = 1;
 }
 
 message SybaseSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5000
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -2456,130 +2446,130 @@ message SybaseSpec {
 // +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modela}
 // Tenant represents root tenant.
 message Tenant {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional TenantSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional TenantSpec spec = 2;
 
-  optional TenantStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional TenantStatus status = 3;
 }
 
 // TenantCondition describes the state of a tenant at a certain point.
 message TenantCondition {
   // Type of tenant condition.
-  optional string type = 1 [(gogoproto.casttype) = "TenantConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // TenantList represent list of tenants.
 message TenantList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated Tenant items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated Tenant items = 2;
 }
 
 // TenantSpec defines the desired state of Tenant
 message TenantSpec {
   // the default lab for this account
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference defaultLab = 1 [(gogoproto.customname) = "DefaultLabRef"];
+  optional k8s.io.api.core.v1.ObjectReference defaultLab = 1;
 
   // the default serving site for this account
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference defaultServingSiteRef = 2 [(gogoproto.customname) = "DefaultServingSiteRef"];
+  optional k8s.io.api.core.v1.ObjectReference defaultServingSiteRef = 2;
 
   // Description is user provided description
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
-  optional string description = 3 [(gogoproto.customname) = "Description"];
+  optional string description = 3;
 
   // Owner is the owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 4 [(gogoproto.customname) = "Owner"];
+  optional string owner = 4;
 }
 
 // TenantStatus defines the actual state of a Tenant
 message TenantStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated TenantCondition conditions = 2 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated TenantCondition conditions = 2;
 }
 
 message TeradataSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=6666
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message TwitterSpec {
   // +kubebuilder:default:=""
-  optional string token = 1 [(gogoproto.customname) = "Token"];
+  optional string token = 1;
 }
 
 message VerticaSpec {
   // +kubebuilder:default:=""
-  optional string host = 1 [(gogoproto.customname) = "Host"];
+  optional string host = 1;
 
   // +kubebuilder:default:=5433
   // +kubebuilder:validation:Minimum=0
-  optional int32 port = 2 [(gogoproto.customname) = "Port"];
+  optional int32 port = 2;
 
   // +kubebuilder:default:=""
-  optional string database = 3 [(gogoproto.customname) = "Database"];
+  optional string database = 3;
 
   // +kubebuilder:default:=""
-  optional string username = 4 [(gogoproto.customname) = "Username"];
+  optional string username = 4;
 
   // +kubebuilder:default:=""
-  optional string password = 5 [(gogoproto.customname) = "Password"];
+  optional string password = 5;
 
   // URL Override the other
-  optional string url = 6 [(gogoproto.customname) = "URL"];
+  optional string url = 6;
 }
 
 message VictorOpSpec {
   // +kubebuilder:default:=""
-  optional string apiID = 1 [(gogoproto.customname) = "ID"];
+  optional string apiID = 1;
 
   // +kubebuilder:default:=""
-  optional string apiKey = 2 [(gogoproto.customname) = "ApiKey"];
+  optional string apiKey = 2;
 
   // +kubebuilder:default:=""
-  optional string url = 3 [(gogoproto.customname) = "Url"];
+  optional string url = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -2591,148 +2581,148 @@ message VictorOpSpec {
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modela,all}
 // VirtualBucket represent a object storage location in the cloud or on-prem
 message VirtualBucket {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional VirtualBucketSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional VirtualBucketSpec spec = 2;
 
-  optional VirtualBucketStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional VirtualBucketStatus status = 3;
 }
 
 // VitualBucketCondition describes the state of a virtual bucket at a certain point.
 message VirtualBucketCondition {
   // Type of bucket condition.
-  optional string type = 1 [(gogoproto.casttype) = "VirtualBucketConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // VirtualBucketList is a list of VirtualBucket
 message VirtualBucketList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated VirtualBucket items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated VirtualBucket items = 2;
 }
 
 // VirtualBucketSpec defines the desired state of Bucket
 message VirtualBucketSpec {
   // The owner of the virtual bucket
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // ConnectionName specify the api connections of this bucket cloud provider.
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:default:=""
-  optional string connectionName = 2 [(gogoproto.customname) = "ConnectionName"];
+  optional string connectionName = 2;
 
   // User provided description
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string description = 3 [(gogoproto.customname) = "Description"];
+  optional string description = 3;
 
   // Owner of the bucket
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 4 [(gogoproto.customname) = "Owner"];
+  optional string owner = 4;
 
   // For cloud based bucket, this is the region of the bucket
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string region = 5 [(gogoproto.customname) = "Region"];
+  optional string region = 5;
 
   // If true support versioning
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool versioning = 6 [(gogoproto.customname) = "Versioning"];
+  optional bool versioning = 6;
 
   // If true support versioning
   // +kubebuilder:validation:Optional
-  optional BucketResourceQuotas quotas = 7 [(gogoproto.customname) = "Quotas", (gogoproto.nullable) = false];
+  optional BucketResourceQuotas quotas = 7;
 }
 
 // VirtualBucketStatus defines the actual state of a VirtualBucket
 message VirtualBucketStatus {
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1 [(gogoproto.customname) = "LastUpdated"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 1;
 
   // Provider is the name of the notifier provider. The name is derived from the connection
-  optional string provider = 2 [(gogoproto.customname) = "Provider", (gogoproto.nullable) = false];
+  optional string provider = 2;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualBucketCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated VirtualBucketCondition conditions = 4;
 }
 
 message VirtualCluster {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional VirtualClusterSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional VirtualClusterSpec spec = 2;
 
-  optional VirtualClusterStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional VirtualClusterStatus status = 3;
 }
 
 // DeploymentCondition describes the state of a deployment at a certain point.
 message VirtualClusterCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "VirtualClusterConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 3;
 
   // The reason for the condition's last transition.
-  optional string reason = 4 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 4;
 
   // A human readable message indicating details about the transition.
-  optional string message = 5 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 5;
 }
 
 // +kubebuilder:object:root=true
 // VirtualClusterList is a list of VirtualCluster
 message VirtualClusterList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated VirtualCluster items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated VirtualCluster items = 2;
 }
 
 message VirtualClusterSpec {
   // Description is the user provided description
   // +kubebuilder:default:=""
   // +optional
-  optional string description = 1 [(gogoproto.customname) = "Description"];
+  optional string description = 1;
 
   // Nodes is the desired number of nodes
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 nodes = 2 [(gogoproto.customname) = "Nodes"];
+  optional int32 nodes = 2;
 
   // +kubebuilder:validation:Optional
   // NodeClassName is the class of nodes or vm
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string nodeClassName = 3 [(gogoproto.customname) = "NodeClassName"];
+  optional string nodeClassName = 3;
 
   // +kubebuilder:validation:Optional
   // Gpus is the desired number of gpus
@@ -2740,13 +2730,13 @@ message VirtualClusterSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 gpus = 4 [(gogoproto.customname) = "Gpus"];
+  optional int32 gpus = 4;
 
   // +kubebuilder:validation:Optional
   // GpuClassName is the The class of gpu.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string gpuClassName = 5 [(gogoproto.customname) = "GpuClassName"];
+  optional string gpuClassName = 5;
 
   // +kubebuilder:validation:Optional
   // VolumeSize is the size of the volume that would be mounted on all the node of the cluster
@@ -2754,46 +2744,46 @@ message VirtualClusterSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 volumeSize = 6 [(gogoproto.customname) = "VolumeSize"];
+  optional int32 volumeSize = 6;
 
   // +kubebuilder:validation:Optional
   // Spot indicate if we should we use spot instances.
   // +kubebuilder:default:=false
   // +optional
-  optional bool spot = 7 [(gogoproto.customname) = "Spot"];
+  optional bool spot = 7;
 
   // ConnectionName refer to the name of the provider connection
   // +kubebuilder:default:=""
-  optional string connectionName = 8 [(gogoproto.customname) = "ConnectionName"];
+  optional string connectionName = 8;
 
   // Owner is the account name of the owner of this cluster
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 9 [(gogoproto.customname) = "Owner"];
+  optional string owner = 9;
 
   // Specify resource limits for the virtual cluster
   // +kubebuilder:validation:Optional
-  optional ResourceLimitSpec limits = 10 [(gogoproto.customname) = "Limits"];
+  optional ResourceLimitSpec limits = 10;
 }
 
 message VirtualClusterStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // +kubebuilder:validation:Minimum=0
   // +optional
-  optional int32 availableNodes = 2 [(gogoproto.customname) = "AvailableNodes"];
+  optional int32 availableNodes = 2;
 
   // Number of available Gpus
   // +kubebuilder:validation:Minimum=0
   // +optional
-  optional int32 availableGpus = 3 [(gogoproto.customname) = "AvailableGpus"];
+  optional int32 availableGpus = 3;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualClusterCondition conditions = 4 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated VirtualClusterCondition conditions = 4;
 }
 
 // +kubebuilder:object:root=true
@@ -2804,74 +2794,74 @@ message VirtualClusterStatus {
 // +kubebuilder:resource:path=virtualvolumes,shortName=vol,singular=virtualvolume,categories={infra,modela,all}
 // VirtualVolume represent a volume api object
 message VirtualVolume {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1 [(gogoproto.customname) = "ObjectMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
-  optional VirtualVolumeSpec spec = 2 [(gogoproto.customname) = "Spec", (gogoproto.nullable) = false];
+  optional VirtualVolumeSpec spec = 2;
 
   // +kubebuilder:validation:Optional
-  optional VirtualVolumeStatus status = 3 [(gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional VirtualVolumeStatus status = 3;
 }
 
 message VirtualVolumeCondition {
   // Type of account condition.
-  optional string type = 1 [(gogoproto.casttype) = "VirtualVolumeConditionType", (gogoproto.customname) = "Type", (gogoproto.nullable) = false];
+  optional string type = 1;
 
   // Status of the condition, one of True, False, Unknown.
-  optional string status = 2 [(gogoproto.casttype) = "k8s.io/api/core/v1.ConditionStatus", (gogoproto.customname) = "Status", (gogoproto.nullable) = false];
+  optional string status = 2;
 
   // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4 [(gogoproto.customname) = "LastTransitionTime"];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 4;
 
   // The reason for the condition's last transition.
-  optional string reason = 5 [(gogoproto.customname) = "Reason", (gogoproto.nullable) = false];
+  optional string reason = 5;
 
   // A human readable message indicating details about the transition.
-  optional string message = 6 [(gogoproto.customname) = "Message", (gogoproto.nullable) = false];
+  optional string message = 6;
 }
 
 // +kubebuilder:object:root=true
 // VirtualVolumeList is a list of mdvolumes
 message VirtualVolumeList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1 [(gogoproto.customname) = "ListMeta", (gogoproto.nullable) = false];
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
 
-  repeated VirtualVolume items = 2 [(gogoproto.customname) = "Items", (gogoproto.nullable) = false];
+  repeated VirtualVolume items = 2;
 }
 
 // VirtualVolumeSpec define the desired state of the mdvolume.
 message VirtualVolumeSpec {
   // The Lab that own the git repository
   // Default to the default volume.
-  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1 [(gogoproto.customname) = "TenantRef"];
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   //  specify the api connections of this mdvolume cloud provider.
   // +kubebuilder:validation:Optional
-  optional string connectionName = 2 [(gogoproto.customname) = "ConnectionName"];
+  optional string connectionName = 2;
 
   // User provided description
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
-  optional string description = 3 [(gogoproto.customname) = "Description"];
+  optional string description = 3;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 4 [(gogoproto.customname) = "Owner"];
+  optional string owner = 4;
 }
 
 message VirtualVolumeStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1 [(gogoproto.customname) = "ObservedGeneration", (gogoproto.nullable) = false];
+  optional int64 observedGeneration = 1;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualVolumeCondition conditions = 2 [(gogoproto.customname) = "Conditions", (gogoproto.nullable) = false];
+  repeated VirtualVolumeCondition conditions = 2;
 }
 
 message WebhookSpec {
   // +kubebuilder:default:=""
-  optional string url = 1 [(gogoproto.customname) = "Url"];
+  optional string url = 1;
 }
 

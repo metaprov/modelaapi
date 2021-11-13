@@ -3261,7 +3261,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     weight: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f,
     reserved: (f = jspb.Message.getBooleanField(msg, 41)) == null ? undefined : f,
     imputer: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
-    scaler: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f
+    scaler: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
+    generated: (f = jspb.Message.getBooleanField(msg, 44)) == null ? undefined : f,
+    formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3465,6 +3467,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 43:
       var value = /** @type {string} */ (reader.readString());
       msg.setScaler(value);
+      break;
+    case 44:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGenerated(value);
+      break;
+    case 45:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFormula(value);
       break;
     default:
       reader.skipField();
@@ -3786,6 +3796,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeString(
       43,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 44));
+  if (f != null) {
+    writer.writeBool(
+      44,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 45));
+  if (f != null) {
+    writer.writeString(
+      45,
       f
     );
   }
@@ -5305,6 +5329,78 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasS
 };
 
 
+/**
+ * optional bool generated = 44;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getGenerated = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 44, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setGenerated = function(value) {
+  return jspb.Message.setField(this, 44, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearGenerated = function() {
+  return jspb.Message.setField(this, 44, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasGenerated = function() {
+  return jspb.Message.getField(this, 44) != null;
+};
+
+
+/**
+ * optional string formula = 45;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getFormula = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 45, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setFormula = function(value) {
+  return jspb.Message.setField(this, 45, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearFormula = function() {
+  return jspb.Message.setField(this, 45, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasFormula = function() {
+  return jspb.Message.getField(this, 45) != null;
+};
+
+
 
 
 
@@ -5375,8 +5471,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.toOb
     completeness: (f = jspb.Message.getOptionalFloatingPointField(msg, 36)) == null ? undefined : f,
     distinctvaluecount: (f = jspb.Message.getOptionalFloatingPointField(msg, 37)) == null ? undefined : f,
     mostfreqvaluesratio: (f = jspb.Message.getOptionalFloatingPointField(msg, 38)) == null ? undefined : f,
-    indexofpeculiarity: (f = jspb.Message.getOptionalFloatingPointField(msg, 39)) == null ? undefined : f,
-    generated: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f
+    indexofpeculiarity: (f = jspb.Message.getOptionalFloatingPointField(msg, 39)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5568,10 +5663,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.dese
     case 39:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setIndexofpeculiarity(value);
-      break;
-    case 40:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setGenerated(value);
       break;
     default:
       reader.skipField();
@@ -5872,13 +5963,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.seri
   if (f != null) {
     writer.writeDouble(
       39,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 40));
-  if (f != null) {
-    writer.writeBool(
-      40,
       f
     );
   }
@@ -7286,42 +7370,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasIndexofpeculiarity = function() {
   return jspb.Message.getField(this, 39) != null;
-};
-
-
-/**
- * optional bool generated = 40;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getGenerated = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 40, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setGenerated = function(value) {
-  return jspb.Message.setField(this, 40, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearGenerated = function() {
-  return jspb.Message.setField(this, 40, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasGenerated = function() {
-  return jspb.Message.getField(this, 40) != null;
 };
 
 
@@ -21465,6 +21513,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.toObjec
     progress: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     hash: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    derivedfromdataset: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition.toObject, includeInstance)
   };
@@ -21563,6 +21612,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.deseria
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
+      break;
+    case 22:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDerivedfromdataset(value);
       break;
     case 16:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetCondition;
@@ -21699,6 +21752,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.seriali
       15,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 22));
+  if (f != null) {
+    writer.writeString(
+      22,
+      f
     );
   }
   f = message.getConditionsList();
@@ -22219,6 +22279,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasLogs = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional string derivedFromDataset = 22;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.getDerivedfromdataset = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.setDerivedfromdataset = function(value) {
+  return jspb.Message.setField(this, 22, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.clearDerivedfromdataset = function() {
+  return jspb.Message.setField(this, 22, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetStatus.prototype.hasDerivedfromdataset = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

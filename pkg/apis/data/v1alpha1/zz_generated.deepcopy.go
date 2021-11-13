@@ -1650,6 +1650,11 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 		**out = **in
 	}
 	in.Logs.DeepCopyInto(&out.Logs)
+	if in.DerivedFromDataset != nil {
+		in, out := &in.DerivedFromDataset, &out.DerivedFromDataset
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DatasetCondition, len(*in))

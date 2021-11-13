@@ -342,10 +342,15 @@ export class FeatureGenerationSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureGenerationSpec;
 
-  getExpressionList(): Array<string>;
-  setExpressionList(value: Array<string>): FeatureGenerationSpec;
-  clearExpressionList(): FeatureGenerationSpec;
-  addExpression(value: string, index?: number): FeatureGenerationSpec;
+  getDerivedList(): Array<GeneratedColumn>;
+  setDerivedList(value: Array<GeneratedColumn>): FeatureGenerationSpec;
+  clearDerivedList(): FeatureGenerationSpec;
+  addDerived(value?: GeneratedColumn, index?: number): GeneratedColumn;
+
+  getCustomList(): Array<GeneratedColumn>;
+  setCustomList(value: Array<GeneratedColumn>): FeatureGenerationSpec;
+  clearCustomList(): FeatureGenerationSpec;
+  addCustom(value?: GeneratedColumn, index?: number): GeneratedColumn;
 
   getExternaldatasetsList(): Array<string>;
   setExternaldatasetsList(value: Array<string>): FeatureGenerationSpec;
@@ -363,16 +368,15 @@ export class FeatureGenerationSpec extends jspb.Message {
 export namespace FeatureGenerationSpec {
   export type AsObject = {
     enabled: boolean,
-    expressionList: Array<string>,
+    derivedList: Array<GeneratedColumn.AsObject>,
+    customList: Array<GeneratedColumn.AsObject>,
     externaldatasetsList: Array<string>,
   }
 }
 
 export class FeatureGenerationStatus extends jspb.Message {
-  getGeneratedList(): Array<FeatureInfo>;
-  setGeneratedList(value: Array<FeatureInfo>): FeatureGenerationStatus;
-  clearGeneratedList(): FeatureGenerationStatus;
-  addGenerated(value?: FeatureInfo, index?: number): FeatureInfo;
+  getGenerateddatasets(): string;
+  setGenerateddatasets(value: string): FeatureGenerationStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureGenerationStatus.AsObject;
@@ -384,7 +388,7 @@ export class FeatureGenerationStatus extends jspb.Message {
 
 export namespace FeatureGenerationStatus {
   export type AsObject = {
-    generatedList: Array<FeatureInfo.AsObject>,
+    generateddatasets: string,
   }
 }
 
@@ -511,6 +515,36 @@ export namespace FloatParameter {
     max: number,
     defaultvalue: number,
     log: boolean,
+  }
+}
+
+export class GeneratedColumn extends jspb.Message {
+  getFirst(): string;
+  setFirst(value: string): GeneratedColumn;
+
+  getSecond(): string;
+  setSecond(value: string): GeneratedColumn;
+
+  getGeneratedname(): string;
+  setGeneratedname(value: string): GeneratedColumn;
+
+  getOriginal(): string;
+  setOriginal(value: string): GeneratedColumn;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GeneratedColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: GeneratedColumn): GeneratedColumn.AsObject;
+  static serializeBinaryToWriter(message: GeneratedColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GeneratedColumn;
+  static deserializeBinaryFromReader(message: GeneratedColumn, reader: jspb.BinaryReader): GeneratedColumn;
+}
+
+export namespace GeneratedColumn {
+  export type AsObject = {
+    first: string,
+    second: string,
+    generatedname: string,
+    original: string,
   }
 }
 

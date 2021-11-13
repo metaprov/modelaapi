@@ -630,7 +630,7 @@ type Column struct {
 	Generated bool `json:"generated,omitempty" protobuf:"varint,44,opt,name=generated"`
 	// The formula used to generate  this column
 	// +kubebuilder:validation:Optionald.
-	Formula string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=generated"`
+	Formula string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=formula"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

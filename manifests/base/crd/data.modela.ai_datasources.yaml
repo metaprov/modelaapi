@@ -389,6 +389,12 @@ spec:
                           - none
                           - unknown
                           type: string
+                        formula:
+                          description: The formula used to generate  this column
+                          type: string
+                        generated:
+                          description: If true this feature is generate
+                          type: boolean
                         ignore:
                           default: false
                           description: Ignore specify if the attribute should be ignored

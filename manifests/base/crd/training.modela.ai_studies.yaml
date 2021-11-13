@@ -193,13 +193,48 @@ spec:
               featureGeneration:
                 description: Specification for feature generation
                 properties:
-                  expression:
+                  custom:
+                    description: Specify custom columns. Custom Columns are specified
+                      by the user
+                    items:
+                      properties:
+                        first:
+                          description: The name of the first original column
+                          type: string
+                        generatedName:
+                          description: The name of the generated column
+                          type: string
+                        original:
+                          description: The expression to apply in order to generate
+                            the new column
+                          type: string
+                        second:
+                          description: The name of the second original column, if
+                            the expression is binary operator
+                          type: string
+                      type: object
+                    type: array
+                  derived:
                     description: List of expression to apply to the existing feature.
                     items:
-                      type: string
+                      properties:
+                        first:
+                          description: The name of the first original column
+                          type: string
+                        generatedName:
+                          description: The name of the generated column
+                          type: string
+                        original:
+                          description: The expression to apply in order to generate
+                            the new column
+                          type: string
+                        second:
+                          description: The name of the second original column, if
+                            the expression is binary operator
+                          type: string
+                      type: object
                     type: array
                   externalDatasets:
-                    description: List of dataset to join to the current dataset
                     items:
                       type: string
                     type: array
@@ -1958,20 +1993,9 @@ spec:
               featureGeneration:
                 description: Holds the status of the feature engineering process
                 properties:
-                  generated:
-                    items:
-                      properties:
-                        name:
-                          default: ""
-                          description: The feature name
-                          type: string
-                        reason:
-                          description: The reason that the feature was dropped
-                          type: string
-                        value:
-                          type: number
-                      type: object
-                    type: array
+                  generatedDataset:
+                    description: The name of the first original column
+                    type: string
                 type: object
               featureSelection:
                 description: Holds the status of the feature engineering process
