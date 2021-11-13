@@ -74,7 +74,6 @@ type SqlQuerySpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The sql template to create.
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Template SqlQueryRunSpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// Schedule for running the sql query

@@ -3183,7 +3183,6 @@ message SqlQuerySpec {
   optional string description = 3;
 
   // The sql template to create.
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional SqlQueryRunSpec template = 4;
 
@@ -3454,7 +3453,6 @@ message WebRequestSpec {
   optional string description = 3;
 
   // The sql template to create.
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional WebRequestRunSpec template = 4;
 
@@ -3474,7 +3472,6 @@ message WebRequestStatus {
   optional int64 observedGeneration = 2;
 
   // Last Time the query run
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 

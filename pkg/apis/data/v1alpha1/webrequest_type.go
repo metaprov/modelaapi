@@ -74,7 +74,6 @@ type WebRequestSpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The sql template to create.
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Template WebRequestRunSpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// Schedule for running the sql query
@@ -91,7 +90,6 @@ type WebRequestStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// Last Time the query run
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,3,opt,name=lastRun"`
 	// +patchMergeKey=type

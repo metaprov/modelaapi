@@ -109,7 +109,6 @@ spec:
                     type: string
                 type: object
               template:
-                default: ""
                 description: The sql template to create.
                 properties:
                   aborted:

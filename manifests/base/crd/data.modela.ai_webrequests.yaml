@@ -109,7 +109,6 @@ spec:
                     type: string
                 type: object
               template:
-                default: ""
                 description: The sql template to create.
                 properties:
                   connectionName:
@@ -196,7 +195,6 @@ spec:
                   type: object
                 type: array
               lastRun:
-                default: ""
                 description: Last Time the query run
                 format: date-time
                 type: string
