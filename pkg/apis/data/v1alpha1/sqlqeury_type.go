@@ -91,7 +91,6 @@ type SqlQueryStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
 	// Last Time the query run
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,3,opt,name=lastRun"`
 	// +patchMergeKey=type
