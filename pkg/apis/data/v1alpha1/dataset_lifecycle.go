@@ -155,7 +155,7 @@ func (dataset *Dataset) IsInCond(ct DatasetConditionType) bool {
 func (dataset *Dataset) MarkSkewColumns() {
 	for _, v := range dataset.Status.Statistics.Columns {
 		if v.Skewness > 0.5 || v.Skewness < -0.5 {
-			v.Skew = true
+			v.Skewed = true
 		}
 	}
 
