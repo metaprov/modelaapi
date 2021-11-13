@@ -949,39 +949,26 @@ const (
 	DatastoreTypeAuto    DatastoreType = "auto"
 )
 
-// +kubebuilder:validation:Enum="boolean";"color";"currency";"date";"datetime";"guid";"hyperlink";"image";"media";"categorical";"number";"text";"json";"path";"file";"time";"record";"embedding";"number-list";"categorical-list";"text-list";"useless";
+// +kubebuilder:validation:Enum="boolean";"datetime";"number";"categorical";"ordinal";"text";"json";"number-list";"categorical-list";"text-list";
 type DataType string
 
 const (
 	DataTypeBoolean         DataType = "boolean"
-	DataTypeColor           DataType = "color"
-	DataTypeCurrency        DataType = "currency"
-	DataTypeDate            DataType = "date"
 	DataTypeDateTime        DataType = "datetime"
-	DataTypeGuid            DataType = "guid"
-	DataTypeHyperlink       DataType = "hyperlink"
-	DataTypeImage           DataType = "image"
-	DataTypeMedia           DataType = "media"
-	DataTypeCategorical     DataType = "categorical"
 	DataTypeNumber          DataType = "number"
+	DataTypeCategorical     DataType = "categorical"
+	DataTypeOrdinal         DataType = "ordinal"
 	DataTypeText            DataType = "text"
 	DataTypeJson            DataType = "json"
-	DataTypePath            DataType = "path"
-	DataTypeFile            DataType = "file"
-	DataTypeTime            DataType = "time"
-	DataTypeEmbedding       DataType = "embedding"
-	DataTypeRecord          DataType = "record"
 	DataTypeNumberList      DataType = "number-list"
 	DataTypeCategoricalList DataType = "categorical-list"
 	DataTypeTextList        DataType = "text-list"
-	DataTypeUseless         DataType = "useless"
 )
 
-// +kubebuilder:validation:Enum="url";"path";"password";"time";"count";"interval";"nominal";"email";"creditCard";"uuid";"uuid5";"uuid";"base64";"latitude";"longtitude";"dns";"ip4";"ip6";"ssn";"alpha";"alphanumeric";"none";"unknown";
+// +kubebuilder:validation:Enum="url";"path";"password";"time";"count";"interval";"nominal";"email";"creditcard";"uuid";"uuid5";"uuid";"base64";"latitude";"longtitude";"dns";"ip4";"ip6";"ssn";"alpha";"alphanumeric";"unknown";"color";"currency";"date";"guid";"hyperlink";"image";"media";"file";"embedding";"record";"useless";"none"
 type DataFormat string
 
 const (
-	DataFormatOrdinal      DataFormat = "ordinal"
 	DataFormatUrl          DataFormat = "url"
 	DataFormatPath         DataFormat = "path"
 	DataFormatPassword     DataFormat = "password"
@@ -1003,8 +990,19 @@ const (
 	DataFormatSsn          DataFormat = "ssn"
 	DataFormatAlpha        DataFormat = "alpha"
 	DataFormatAlphaNumeric DataFormat = "alphanumeric"
-	DataFormatNone         DataFormat = "none"
 	DataFormatUnknown      DataFormat = "unknown"
+	DataFormatColor        DataFormat = "color"
+	DataFormatCurrency     DataFormat = "currency"
+	DataFormatDate         DataFormat = "date"
+	DataFormatGuid         DataFormat = "guid"
+	DataFormatHyperlink    DataFormat = "hyperlink"
+	DataFormatImage        DataFormat = "image"
+	DataFormatMedia        DataFormat = "media"
+	DataFormatFile         DataFormat = "file"
+	DataFormatEmbedding    DataFormat = "embedding"
+	DataFormatRecord       DataFormat = "record"
+	DataFormatUseless      DataFormat = "useless"
+	DataFormatNone         DataFormat = "none"
 )
 
 // +kubebuilder:validation:Enum="email";"hipchat";"pagerduty";"pushover";"slack";"opengenie";"webook";"victorops";"wechat";"msteams"

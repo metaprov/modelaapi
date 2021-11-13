@@ -137,27 +137,15 @@ spec:
                       description: Type is the datatype of the parameter
                       enum:
                       - boolean
-                      - color
-                      - currency
-                      - date
                       - datetime
-                      - guid
-                      - hyperlink
-                      - image
-                      - media
-                      - categorical
                       - number
+                      - categorical
+                      - ordinal
                       - text
                       - json
-                      - path
-                      - file
-                      - time
-                      - record
-                      - embedding
                       - number-list
                       - categorical-list
                       - text-list
-                      - useless
                       type: string
                   type: object
                 type: array

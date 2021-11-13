@@ -299,27 +299,15 @@ spec:
                             required
                           enum:
                           - boolean
-                          - color
-                          - currency
-                          - date
                           - datetime
-                          - guid
-                          - hyperlink
-                          - image
-                          - media
-                          - categorical
                           - number
+                          - categorical
+                          - ordinal
                           - text
                           - json
-                          - path
-                          - file
-                          - time
-                          - record
-                          - embedding
                           - number-list
                           - categorical-list
                           - text-list
-                          - useless
                           type: string
                         description:
                           default: ""
@@ -373,7 +361,7 @@ spec:
                           - interval
                           - nominal
                           - email
-                          - creditCard
+                          - creditcard
                           - uuid
                           - uuid5
                           - uuid
@@ -386,8 +374,19 @@ spec:
                           - ssn
                           - alpha
                           - alphanumeric
-                          - none
                           - unknown
+                          - color
+                          - currency
+                          - date
+                          - guid
+                          - hyperlink
+                          - image
+                          - media
+                          - file
+                          - embedding
+                          - record
+                          - useless
+                          - none
                           type: string
                         formula:
                           description: The formula used to generate  this column
