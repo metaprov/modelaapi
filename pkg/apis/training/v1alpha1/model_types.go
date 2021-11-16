@@ -550,43 +550,40 @@ type FeatureEngineeringSpec struct {
 	// Is the feature filter enabled
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// List of data pipelines
 	// +kubebuilder:validation:Optional
-	Pipelines []DataTypePipeline `json:"pipeline,omitempty" protobuf:"varint,2,rep,name=pipelines"`
-	// Specify custom columns. Custom Columns are specified by the user
-	CustomColumns []GeneratedColumnSpec `json:"customColumns,omitempty" protobuf:"bytes,3,rep,name=customColumns"`
-	// List of dataset to join to the current dataset
+	Pipelines []FeatureEngineeringPipeline `json:"pipelines,omitempty" protobuf:"bytes,2,rep,name=pipelines"`
+	// Spec for feature selection
 	// +kubebuilder:validation:Optional
-	ExternalDatasets []string `json:"externalDatasets,omitempty" protobuf:"bytes,4,rep,name=externalDatasets"`
-	// List of dataset to join to the current dataset
+	FeatureSelection FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,3,opt,name=featureSelection"`
+	// Max models to create during the search for the best feature engineering.
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"bytes,5,opt,name=maxModels"`
-	// Max time in seconds for feature engineering process
+	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
+	// Max time in seconds for the best feature engineering pipeline
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"bytes,6,opt,name=maxTime"`
+	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,5,opt,name=maxTime"`
 	// Number of parallel models
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"bytes,7,opt,name=maxTrainers"`
-	// The sample pct to use when evaluating the feature performance.
+	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,6,opt,name=maxTrainers"`
+	// How much to sample from the dataset when performing the feature engineering search
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,8,opt,name=samplePct"`
-	// Spec for feature selection
-	// +kubebuilder:validation:Optional
-	FeatureSelection FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,9,opt,name=featureSelection"`
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,7,opt,name=samplePct"`
 }
 
-type DataTypePipeline struct {
+// FeatureEngineeringPipeline represent a single pipeline for data transformation.
+// The pipeline includes the column names and the data type.
+type FeatureEngineeringPipeline struct {
 	// The name of this feature engineering pipeline
 	// +kubebuilder:validation:Required
-	Name string `json:"name,omitempty" protobuf:"bytes,1,rep,name=name"`
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The Data type for the feature engineering.
 	// +kubebuilder:validation:Required
-	DataType catalog.DataType `json:"type,omitempty" protobuf:"bytes,2,rep,name=type"`
+	DataType catalog.DataType `json:"datatype,omitempty" protobuf:"bytes,2,opt,name=datatype"`
 	// Columns is the name of the columns from the original file.
 	// All the columns must be from the same type
 	// +kubebuilder:validation:Optional
@@ -595,7 +592,7 @@ type DataTypePipeline struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,4,opt,name=imputer"`
-	// CatEncoder
+	// Encoder
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Encoder *catalog.CatEncoder `json:"encoder,omitempty" protobuf:"bytes,5,opt,name=encoder"`
@@ -611,7 +608,7 @@ type DataTypePipeline struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	NumTransformer *catalog.NumTransformer `json:"numTransformer,omitempty" protobuf:"bytes,8,opt,name=numTransformer"`
-	// For data time data type,
+	// For datetime data type,
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	DatetimeTransformer *catalog.DatatimeTransformer `json:"datatimeTransformer,omitempty" protobuf:"bytes,9,opt,name=datetimeTransformer"`
@@ -631,14 +628,16 @@ type DataTypePipeline struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,14,opt,name=generated"`
+	// Specify custom columns. Custom Columns are specified by the user
+	Custom []GeneratedColumnSpec `json:"custom,omitempty" protobuf:"bytes,15,rep,name=custom"`
 	// If dropped, all the columns in this pipeline will be dropped.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Drop *bool `json:"drop,omitempty" protobuf:"bytes,15,opt,name=drop"`
+	Drop *bool `json:"drop,omitempty" protobuf:"varint,16,opt,name=drop"`
 	// If true, all the features in this pipeline will passtrough, without processing.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Passtrough *bool `json:"passtrough,omitempty" protobuf:"bytes,16,opt,name=passtrough"`
+	Passtrough *bool `json:"passtrough,omitempty" protobuf:"varint,17,opt,name=passtrough"`
 }
 
 type FeatureImportance struct {
@@ -827,7 +826,7 @@ type DataHashes struct {
 
 type FeatureEngineeringStatus struct {
 	// The recommended pipeline after feature engineering was done
-	BestPipeline []DataTypePipeline `json:"bestPipeline,omitempty" protobuf:"bytes,1,opt,name=bestPipeline"`
+	BestPipeline []FeatureEngineeringPipeline `json:"bestPipeline,omitempty" protobuf:"bytes,1,opt,name=bestPipeline"`
 }
 
 type GeneratedColumnSpec struct {
@@ -854,7 +853,7 @@ type FeatureSelectionSpec struct {
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	VarianceTresholdPct *int32 `json:"lowVarTreshold,omitempty" protobuf:"varint,2,opt,name=lowVarTreshold"`
+	VarianceTresholdPct *int32 `json:"lowVarTresholdPct,omitempty" protobuf:"varint,2,opt,name=lowVarTresholdPct"`
 	// Remove Features with high correlations
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional

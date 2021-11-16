@@ -437,82 +437,6 @@ message DataStageSpec {
   optional string dockerImage = 5;
 }
 
-message DataTypePipeline {
-  // The name of this feature engineering pipeline
-  // +kubebuilder:validation:Required
-  optional string name = 1;
-
-  // The Data type for the feature engineering.
-  // +kubebuilder:validation:Required
-  optional string type = 2;
-
-  // Columns is the name of the columns from the original file.
-  // All the columns must be from the same type
-  // +kubebuilder:validation:Optional
-  repeated string columns = 3;
-
-  // imputer
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string imputer = 4;
-
-  // CatEncoder
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string encoder = 5;
-
-  // Numeric var scaler, valid only if the
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string scaler = 6;
-
-  // Convert numerical datatypes to categories. Valid only if the data type is numeric
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string discretizer = 7;
-
-  // For numerical data type.
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string numTransformer = 8;
-
-  // For data time data type,
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string datetimeTransformer = 9;
-
-  // Text specify the column transformation for text columns
-  // +kubebuilder:validation:Optional
-  optional TextPipelineSpec text = 10;
-
-  // Image specify the pipeline for images. Not supported in this release
-  // +kubebuilder:validation:Optional
-  optional ImagePipelineSpec image = 11;
-
-  // Audio specify the pipeline for audio. Not supported in this release
-  // +kubebuilder:validation:Optional
-  optional AudioPipelineSpec audio = 12;
-
-  // Video specify the pipeline for video. Not supported in this release
-  // +kubebuilder:validation:Optional
-  optional VideoPipelineSpec video = 13;
-
-  // Spec to generate one or more columns from existing columns in this pipeline
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  repeated GeneratedColumnSpec generated = 14;
-
-  // If dropped, all the columns in this pipeline will be dropped.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool drop = 15;
-
-  // If true, all the features in this pipeline will passtrough, without processing.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool passtrough = 16;
-}
-
 message DeepEstimatorLayer {
   // Name is the name of the layer
   optional string name = 1;
@@ -603,6 +527,87 @@ message EnsembleSpec {
   repeated string base = 2;
 }
 
+// FeatureEngineeringPipeline represent a single pipeline for data transformation.
+// The pipeline includes the column names and the data type.
+message FeatureEngineeringPipeline {
+  // The name of this feature engineering pipeline
+  // +kubebuilder:validation:Required
+  optional string name = 1;
+
+  // The Data type for the feature engineering.
+  // +kubebuilder:validation:Required
+  optional string datatype = 2;
+
+  // Columns is the name of the columns from the original file.
+  // All the columns must be from the same type
+  // +kubebuilder:validation:Optional
+  repeated string columns = 3;
+
+  // imputer
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string imputer = 4;
+
+  // Encoder
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string encoder = 5;
+
+  // Numeric var scaler, valid only if the
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string scaler = 6;
+
+  // Convert numerical datatypes to categories. Valid only if the data type is numeric
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string discretizer = 7;
+
+  // For numerical data type.
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string numTransformer = 8;
+
+  // For datetime data type,
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string datetimeTransformer = 9;
+
+  // Text specify the column transformation for text columns
+  // +kubebuilder:validation:Optional
+  optional TextPipelineSpec text = 10;
+
+  // Image specify the pipeline for images. Not supported in this release
+  // +kubebuilder:validation:Optional
+  optional ImagePipelineSpec image = 11;
+
+  // Audio specify the pipeline for audio. Not supported in this release
+  // +kubebuilder:validation:Optional
+  optional AudioPipelineSpec audio = 12;
+
+  // Video specify the pipeline for video. Not supported in this release
+  // +kubebuilder:validation:Optional
+  optional VideoPipelineSpec video = 13;
+
+  // Spec to generate one or more columns from existing columns in this pipeline
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  repeated GeneratedColumnSpec generated = 14;
+
+  // Specify custom columns. Custom Columns are specified by the user
+  repeated GeneratedColumnSpec custom = 15;
+
+  // If dropped, all the columns in this pipeline will be dropped.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool drop = 16;
+
+  // If true, all the features in this pipeline will passtrough, without processing.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool passtrough = 17;
+}
+
 message FeatureEngineeringSpec {
   // Is the feature filter enabled
   // +kubebuilder:default:=true
@@ -611,43 +616,36 @@ message FeatureEngineeringSpec {
 
   // List of data pipelines
   // +kubebuilder:validation:Optional
-  repeated DataTypePipeline pipelines = 2;
+  repeated FeatureEngineeringPipeline pipelines = 2;
 
-  // Specify custom columns. Custom Columns are specified by the user
-  repeated GeneratedColumnSpec customColumns = 3;
-
-  // List of dataset to join to the current dataset
+  // Spec for feature selection
   // +kubebuilder:validation:Optional
-  repeated string externalDatasets = 4;
+  optional FeatureSelectionSpec featureSelection = 3;
 
-  // List of dataset to join to the current dataset
+  // Max models to create during the search for the best feature engineering.
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
-  optional int32 maxModels = 5;
+  optional int32 maxModels = 4;
 
-  // Max time in seconds for feature engineering process
+  // Max time in seconds for the best feature engineering pipeline
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 maxTime = 6;
+  optional int32 maxTime = 5;
 
   // Number of parallel models
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 maxTrainers = 7;
+  optional int32 maxTrainers = 6;
 
-  // The sample pct to use when evaluating the feature performance.
+  // How much to sample from the dataset when performing the feature engineering search
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional int32 samplePct = 8;
-
-  // Spec for feature selection
-  // +kubebuilder:validation:Optional
-  optional FeatureSelectionSpec featureSelection = 9;
+  optional int32 samplePct = 7;
 }
 
 message FeatureEngineeringStatus {
   // The recommended pipeline after feature engineering was done
-  repeated DataTypePipeline bestPipeline = 1;
+  repeated FeatureEngineeringPipeline bestPipeline = 1;
 }
 
 message FeatureImportance {
@@ -682,7 +680,7 @@ message FeatureSelectionSpec {
   // Lowvar specify the filter to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 lowVarTreshold = 2;
+  optional int32 lowVarTresholdPct = 2;
 
   // Remove Features with high correlations
   // +kubebuilder:default:=95

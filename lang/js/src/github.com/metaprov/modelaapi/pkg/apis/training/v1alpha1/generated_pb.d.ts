@@ -702,96 +702,6 @@ export namespace DataStageSpec {
   }
 }
 
-export class DataTypePipeline extends jspb.Message {
-  getName(): string;
-  setName(value: string): DataTypePipeline;
-
-  getType(): string;
-  setType(value: string): DataTypePipeline;
-
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): DataTypePipeline;
-  clearColumnsList(): DataTypePipeline;
-  addColumns(value: string, index?: number): DataTypePipeline;
-
-  getImputer(): string;
-  setImputer(value: string): DataTypePipeline;
-
-  getEncoder(): string;
-  setEncoder(value: string): DataTypePipeline;
-
-  getScaler(): string;
-  setScaler(value: string): DataTypePipeline;
-
-  getDiscretizer(): string;
-  setDiscretizer(value: string): DataTypePipeline;
-
-  getNumtransformer(): string;
-  setNumtransformer(value: string): DataTypePipeline;
-
-  getDatetimetransformer(): string;
-  setDatetimetransformer(value: string): DataTypePipeline;
-
-  getText(): TextPipelineSpec | undefined;
-  setText(value?: TextPipelineSpec): DataTypePipeline;
-  hasText(): boolean;
-  clearText(): DataTypePipeline;
-
-  getImage(): ImagePipelineSpec | undefined;
-  setImage(value?: ImagePipelineSpec): DataTypePipeline;
-  hasImage(): boolean;
-  clearImage(): DataTypePipeline;
-
-  getAudio(): AudioPipelineSpec | undefined;
-  setAudio(value?: AudioPipelineSpec): DataTypePipeline;
-  hasAudio(): boolean;
-  clearAudio(): DataTypePipeline;
-
-  getVideo(): VideoPipelineSpec | undefined;
-  setVideo(value?: VideoPipelineSpec): DataTypePipeline;
-  hasVideo(): boolean;
-  clearVideo(): DataTypePipeline;
-
-  getGeneratedList(): Array<GeneratedColumnSpec>;
-  setGeneratedList(value: Array<GeneratedColumnSpec>): DataTypePipeline;
-  clearGeneratedList(): DataTypePipeline;
-  addGenerated(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
-
-  getDrop(): boolean;
-  setDrop(value: boolean): DataTypePipeline;
-
-  getPasstrough(): boolean;
-  setPasstrough(value: boolean): DataTypePipeline;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataTypePipeline.AsObject;
-  static toObject(includeInstance: boolean, msg: DataTypePipeline): DataTypePipeline.AsObject;
-  static serializeBinaryToWriter(message: DataTypePipeline, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataTypePipeline;
-  static deserializeBinaryFromReader(message: DataTypePipeline, reader: jspb.BinaryReader): DataTypePipeline;
-}
-
-export namespace DataTypePipeline {
-  export type AsObject = {
-    name: string,
-    type: string,
-    columnsList: Array<string>,
-    imputer: string,
-    encoder: string,
-    scaler: string,
-    discretizer: string,
-    numtransformer: string,
-    datetimetransformer: string,
-    text?: TextPipelineSpec.AsObject,
-    image?: ImagePipelineSpec.AsObject,
-    audio?: AudioPipelineSpec.AsObject,
-    video?: VideoPipelineSpec.AsObject,
-    generatedList: Array<GeneratedColumnSpec.AsObject>,
-    drop: boolean,
-    passtrough: boolean,
-  }
-}
-
 export class DeepEstimatorLayer extends jspb.Message {
   getName(): string;
   setName(value: string): DeepEstimatorLayer;
@@ -944,24 +854,115 @@ export namespace EnsembleSpec {
   }
 }
 
+export class FeatureEngineeringPipeline extends jspb.Message {
+  getName(): string;
+  setName(value: string): FeatureEngineeringPipeline;
+
+  getDatatype(): string;
+  setDatatype(value: string): FeatureEngineeringPipeline;
+
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): FeatureEngineeringPipeline;
+  clearColumnsList(): FeatureEngineeringPipeline;
+  addColumns(value: string, index?: number): FeatureEngineeringPipeline;
+
+  getImputer(): string;
+  setImputer(value: string): FeatureEngineeringPipeline;
+
+  getEncoder(): string;
+  setEncoder(value: string): FeatureEngineeringPipeline;
+
+  getScaler(): string;
+  setScaler(value: string): FeatureEngineeringPipeline;
+
+  getDiscretizer(): string;
+  setDiscretizer(value: string): FeatureEngineeringPipeline;
+
+  getNumtransformer(): string;
+  setNumtransformer(value: string): FeatureEngineeringPipeline;
+
+  getDatetimetransformer(): string;
+  setDatetimetransformer(value: string): FeatureEngineeringPipeline;
+
+  getText(): TextPipelineSpec | undefined;
+  setText(value?: TextPipelineSpec): FeatureEngineeringPipeline;
+  hasText(): boolean;
+  clearText(): FeatureEngineeringPipeline;
+
+  getImage(): ImagePipelineSpec | undefined;
+  setImage(value?: ImagePipelineSpec): FeatureEngineeringPipeline;
+  hasImage(): boolean;
+  clearImage(): FeatureEngineeringPipeline;
+
+  getAudio(): AudioPipelineSpec | undefined;
+  setAudio(value?: AudioPipelineSpec): FeatureEngineeringPipeline;
+  hasAudio(): boolean;
+  clearAudio(): FeatureEngineeringPipeline;
+
+  getVideo(): VideoPipelineSpec | undefined;
+  setVideo(value?: VideoPipelineSpec): FeatureEngineeringPipeline;
+  hasVideo(): boolean;
+  clearVideo(): FeatureEngineeringPipeline;
+
+  getGeneratedList(): Array<GeneratedColumnSpec>;
+  setGeneratedList(value: Array<GeneratedColumnSpec>): FeatureEngineeringPipeline;
+  clearGeneratedList(): FeatureEngineeringPipeline;
+  addGenerated(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
+
+  getCustomList(): Array<GeneratedColumnSpec>;
+  setCustomList(value: Array<GeneratedColumnSpec>): FeatureEngineeringPipeline;
+  clearCustomList(): FeatureEngineeringPipeline;
+  addCustom(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
+
+  getDrop(): boolean;
+  setDrop(value: boolean): FeatureEngineeringPipeline;
+
+  getPasstrough(): boolean;
+  setPasstrough(value: boolean): FeatureEngineeringPipeline;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureEngineeringPipeline.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureEngineeringPipeline): FeatureEngineeringPipeline.AsObject;
+  static serializeBinaryToWriter(message: FeatureEngineeringPipeline, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringPipeline;
+  static deserializeBinaryFromReader(message: FeatureEngineeringPipeline, reader: jspb.BinaryReader): FeatureEngineeringPipeline;
+}
+
+export namespace FeatureEngineeringPipeline {
+  export type AsObject = {
+    name: string,
+    datatype: string,
+    columnsList: Array<string>,
+    imputer: string,
+    encoder: string,
+    scaler: string,
+    discretizer: string,
+    numtransformer: string,
+    datetimetransformer: string,
+    text?: TextPipelineSpec.AsObject,
+    image?: ImagePipelineSpec.AsObject,
+    audio?: AudioPipelineSpec.AsObject,
+    video?: VideoPipelineSpec.AsObject,
+    generatedList: Array<GeneratedColumnSpec.AsObject>,
+    customList: Array<GeneratedColumnSpec.AsObject>,
+    drop: boolean,
+    passtrough: boolean,
+  }
+}
+
 export class FeatureEngineeringSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureEngineeringSpec;
 
-  getPipelinesList(): Array<DataTypePipeline>;
-  setPipelinesList(value: Array<DataTypePipeline>): FeatureEngineeringSpec;
+  getPipelinesList(): Array<FeatureEngineeringPipeline>;
+  setPipelinesList(value: Array<FeatureEngineeringPipeline>): FeatureEngineeringSpec;
   clearPipelinesList(): FeatureEngineeringSpec;
-  addPipelines(value?: DataTypePipeline, index?: number): DataTypePipeline;
+  addPipelines(value?: FeatureEngineeringPipeline, index?: number): FeatureEngineeringPipeline;
 
-  getCustomcolumnsList(): Array<GeneratedColumnSpec>;
-  setCustomcolumnsList(value: Array<GeneratedColumnSpec>): FeatureEngineeringSpec;
-  clearCustomcolumnsList(): FeatureEngineeringSpec;
-  addCustomcolumns(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
-
-  getExternaldatasetsList(): Array<string>;
-  setExternaldatasetsList(value: Array<string>): FeatureEngineeringSpec;
-  clearExternaldatasetsList(): FeatureEngineeringSpec;
-  addExternaldatasets(value: string, index?: number): FeatureEngineeringSpec;
+  getFeatureselection(): FeatureSelectionSpec | undefined;
+  setFeatureselection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
+  hasFeatureselection(): boolean;
+  clearFeatureselection(): FeatureEngineeringSpec;
 
   getMaxmodels(): number;
   setMaxmodels(value: number): FeatureEngineeringSpec;
@@ -975,11 +976,6 @@ export class FeatureEngineeringSpec extends jspb.Message {
   getSamplepct(): number;
   setSamplepct(value: number): FeatureEngineeringSpec;
 
-  getFeatureselection(): FeatureSelectionSpec | undefined;
-  setFeatureselection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
-  hasFeatureselection(): boolean;
-  clearFeatureselection(): FeatureEngineeringSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureEngineeringSpec): FeatureEngineeringSpec.AsObject;
@@ -991,22 +987,20 @@ export class FeatureEngineeringSpec extends jspb.Message {
 export namespace FeatureEngineeringSpec {
   export type AsObject = {
     enabled: boolean,
-    pipelinesList: Array<DataTypePipeline.AsObject>,
-    customcolumnsList: Array<GeneratedColumnSpec.AsObject>,
-    externaldatasetsList: Array<string>,
+    pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
+    featureselection?: FeatureSelectionSpec.AsObject,
     maxmodels: number,
     maxtime: number,
     maxtrainers: number,
     samplepct: number,
-    featureselection?: FeatureSelectionSpec.AsObject,
   }
 }
 
 export class FeatureEngineeringStatus extends jspb.Message {
-  getBestpipelineList(): Array<DataTypePipeline>;
-  setBestpipelineList(value: Array<DataTypePipeline>): FeatureEngineeringStatus;
+  getBestpipelineList(): Array<FeatureEngineeringPipeline>;
+  setBestpipelineList(value: Array<FeatureEngineeringPipeline>): FeatureEngineeringStatus;
   clearBestpipelineList(): FeatureEngineeringStatus;
-  addBestpipeline(value?: DataTypePipeline, index?: number): DataTypePipeline;
+  addBestpipeline(value?: FeatureEngineeringPipeline, index?: number): FeatureEngineeringPipeline;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringStatus.AsObject;
@@ -1018,7 +1012,7 @@ export class FeatureEngineeringStatus extends jspb.Message {
 
 export namespace FeatureEngineeringStatus {
   export type AsObject = {
-    bestpipelineList: Array<DataTypePipeline.AsObject>,
+    bestpipelineList: Array<FeatureEngineeringPipeline.AsObject>,
   }
 }
 
@@ -1074,8 +1068,8 @@ export class FeatureSelectionSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureSelectionSpec;
 
-  getLowvartreshold(): number;
-  setLowvartreshold(value: number): FeatureSelectionSpec;
+  getLowvartresholdpct(): number;
+  setLowvartresholdpct(value: number): FeatureSelectionSpec;
 
   getCorrtreshold(): number;
   setCorrtreshold(value: number): FeatureSelectionSpec;
@@ -1102,7 +1096,7 @@ export class FeatureSelectionSpec extends jspb.Message {
 export namespace FeatureSelectionSpec {
   export type AsObject = {
     enabled: boolean,
-    lowvartreshold: number,
+    lowvartresholdpct: number,
     corrtreshold: number,
     topn: number,
     cumulativeimportanceprecent: number,

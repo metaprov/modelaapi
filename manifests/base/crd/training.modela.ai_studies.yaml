@@ -855,46 +855,10 @@ spec:
                 description: 'Preprocessing is template for preprocessors for this
                   study Default: all preprocessing is set to auto.'
                 properties:
-                  customColumns:
-                    description: Specify custom columns. Custom Columns are specified
-                      by the user
-                    items:
-                      properties:
-                        datatype:
-                          description: The resulting data type
-                          enum:
-                          - boolean
-                          - datetime
-                          - number
-                          - categorical
-                          - ordinal
-                          - text
-                          - json
-                          - number-list
-                          - categorical-list
-                          - text-list
-                          type: string
-                        first:
-                          description: The name of the first original column
-                          type: string
-                        name:
-                          description: The name of the generated column
-                          type: string
-                        original:
-                          description: The expression to apply in order to generate
-                            the new column
-                          type: string
-                        second:
-                          description: The name of the second original column, if
-                            the expression is binary operator
-                          type: string
-                      type: object
-                    type: array
-                  externalDatasets:
-                    description: List of dataset to join to the current dataset
-                    items:
-                      type: string
-                    type: array
+                  enabled:
+                    default: true
+                    description: Is the feature filter enabled
+                    type: boolean
                   featureSelection:
                     description: Spec for feature selection
                     properties:
@@ -909,7 +873,7 @@ spec:
                           feature to include
                         format: int32
                         type: integer
-                      lowVarTreshold:
+                      lowVarTresholdPct:
                         default: 5
                         description: Lowvar specify the filter to remove low variance
                           features
@@ -934,12 +898,14 @@ spec:
                     type: object
                   maxModels:
                     default: 10
-                    description: List of dataset to join to the current dataset
+                    description: Max models to create during the search for the best
+                      feature engineering.
                     format: int32
                     type: integer
                   maxTime:
                     default: 3600
-                    description: Max time in seconds for feature engineering process
+                    description: Max time in seconds for the best feature engineering
+                      pipeline
                     format: int32
                     type: integer
                   maxTrainers:
@@ -947,13 +913,12 @@ spec:
                     description: Number of parallel models
                     format: int32
                     type: integer
-                  onError:
-                    default: true
-                    description: Is the feature filter enabled
-                    type: boolean
-                  pipeline:
+                  pipelines:
                     description: List of data pipelines
                     items:
+                      description: FeatureEngineeringPipeline represent a single pipeline
+                        for data transformation. The pipeline includes the column
+                        names and the data type.
                       properties:
                         audio:
                           description: Audio specify the pipeline for audio. Not supported
@@ -970,9 +935,44 @@ spec:
                           items:
                             type: string
                           type: array
+                        custom:
+                          description: Specify custom columns. Custom Columns are
+                            specified by the user
+                          items:
+                            properties:
+                              datatype:
+                                description: The resulting data type
+                                enum:
+                                - boolean
+                                - datetime
+                                - number
+                                - categorical
+                                - ordinal
+                                - text
+                                - json
+                                - number-list
+                                - categorical-list
+                                - text-list
+                                type: string
+                              first:
+                                description: The name of the first original column
+                                type: string
+                              name:
+                                description: The name of the generated column
+                                type: string
+                              original:
+                                description: The expression to apply in order to generate
+                                  the new column
+                                type: string
+                              second:
+                                description: The name of the second original column,
+                                  if the expression is binary operator
+                                type: string
+                            type: object
+                          type: array
                         datatimeTransformer:
                           default: auto
-                          description: For data time data type,
+                          description: For datetime data type,
                           enum:
                           - year-month
                           - weak-day
@@ -980,6 +980,20 @@ spec:
                           - elapsed
                           - none
                           - auto
+                          type: string
+                        datatype:
+                          description: The Data type for the feature engineering.
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
                           type: string
                         discretizer:
                           default: auto
@@ -1003,7 +1017,7 @@ spec:
                           type: boolean
                         encoder:
                           default: auto
-                          description: CatEncoder
+                          description: Encoder
                           enum:
                           - one-hot
                           - count-freq
@@ -1157,20 +1171,6 @@ spec:
                               description: Text tokenizer
                               type: string
                           type: object
-                        type:
-                          description: The Data type for the feature engineering.
-                          enum:
-                          - boolean
-                          - datetime
-                          - number
-                          - categorical
-                          - ordinal
-                          - text
-                          - json
-                          - number-list
-                          - categorical-list
-                          - text-list
-                          type: string
                         video:
                           description: Video specify the pipeline for video. Not supported
                             in this release
@@ -1184,8 +1184,8 @@ spec:
                     type: array
                   samplePct:
                     default: 100
-                    description: The sample pct to use when evaluating the feature
-                      performance.
+                    description: How much to sample from the dataset when performing
+                      the feature engineering search
                     format: int32
                     type: integer
                 type: object
@@ -2003,6 +2003,9 @@ spec:
                     description: The recommended pipeline after feature engineering
                       was done
                     items:
+                      description: FeatureEngineeringPipeline represent a single pipeline
+                        for data transformation. The pipeline includes the column
+                        names and the data type.
                       properties:
                         audio:
                           description: Audio specify the pipeline for audio. Not supported
@@ -2019,9 +2022,44 @@ spec:
                           items:
                             type: string
                           type: array
+                        custom:
+                          description: Specify custom columns. Custom Columns are
+                            specified by the user
+                          items:
+                            properties:
+                              datatype:
+                                description: The resulting data type
+                                enum:
+                                - boolean
+                                - datetime
+                                - number
+                                - categorical
+                                - ordinal
+                                - text
+                                - json
+                                - number-list
+                                - categorical-list
+                                - text-list
+                                type: string
+                              first:
+                                description: The name of the first original column
+                                type: string
+                              name:
+                                description: The name of the generated column
+                                type: string
+                              original:
+                                description: The expression to apply in order to generate
+                                  the new column
+                                type: string
+                              second:
+                                description: The name of the second original column,
+                                  if the expression is binary operator
+                                type: string
+                            type: object
+                          type: array
                         datatimeTransformer:
                           default: auto
-                          description: For data time data type,
+                          description: For datetime data type,
                           enum:
                           - year-month
                           - weak-day
@@ -2029,6 +2067,20 @@ spec:
                           - elapsed
                           - none
                           - auto
+                          type: string
+                        datatype:
+                          description: The Data type for the feature engineering.
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
                           type: string
                         discretizer:
                           default: auto
@@ -2052,7 +2104,7 @@ spec:
                           type: boolean
                         encoder:
                           default: auto
-                          description: CatEncoder
+                          description: Encoder
                           enum:
                           - one-hot
                           - count-freq
@@ -2206,20 +2258,6 @@ spec:
                               description: Text tokenizer
                               type: string
                           type: object
-                        type:
-                          description: The Data type for the feature engineering.
-                          enum:
-                          - boolean
-                          - datetime
-                          - number
-                          - categorical
-                          - ordinal
-                          - text
-                          - json
-                          - number-list
-                          - categorical-list
-                          - text-list
-                          type: string
                         video:
                           description: Video specify the pipeline for video. Not supported
                             in this release
