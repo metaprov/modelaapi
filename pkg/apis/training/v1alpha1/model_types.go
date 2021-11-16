@@ -327,6 +327,10 @@ type ModelSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,35,opt,name=ttl"`
+	// Mark this model as feature engineering only.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	FeatureEngineeringOnly *bool `json:"featureEngineeringOnly,omitempty" protobuf:"varint,36,opt,name=featureEngineeringOnly"`
 }
 
 type EnsembleSpec struct {
@@ -507,7 +511,7 @@ type ModelStatus struct {
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,56,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,57,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of
@@ -565,9 +569,6 @@ type PreprocessingSpec struct {
 	// DataTime specify the column transformation for datetime columns
 	// +kubebuilder:validation:Optional
 	DataTime *DateTimePipelineSpec `json:"datatime,omitempty" protobuf:"bytes,7,opt,name=datetime"`
-	// FeaturePipeline selector
-	// +kubebuilder:validation:Optional
-	FeatureEngineering *catalog.FeatureEngineering `json:"featureEngineering,omitempty" protobuf:"bytes,8,opt,name=featureEngineering"`
 	// Balancer is used for imbalanced datasets to fix the imbalance.
 	// +kubebuilder:validation:Optional
 	Balancer *catalog.Balancer `json:"balancer,omitempty" protobuf:"bytes,9,opt,name=balancer"`

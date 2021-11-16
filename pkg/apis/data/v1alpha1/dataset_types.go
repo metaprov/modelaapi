@@ -249,9 +249,9 @@ type ColumnStatistics struct {
 	// FileName is the name of the column
 	// +kubebuilder:validation:Optional
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
-	// Type is the name of the column
+	// DataType is the name of the column
 	// +kubebuilder:validation:Optional
-	Type catalog.DataType `json:"type,omitempty" protobuf:"bytes,2,opt,name=type"`
+	DataType catalog.DataType `json:"datatype,omitempty" protobuf:"bytes,2,opt,name=datatype"`
 	// Number of rows
 	// +kubebuilder:validation:Optional
 	Count float64 `json:"count,omitempty" protobuf:"bytes,3,opt,name=count"`

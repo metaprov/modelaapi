@@ -175,89 +175,6 @@ message DataCenter {
   optional string code = 2;
 }
 
-// Contain the status of the feature engineering process.
-// The status contain the list of generated features and dropped features.
-message FeatureEngineeringStatus {
-  // contains the list of the generated features
-  // +kubebuilder:validation:Optional
-  repeated string generated = 1;
-}
-
-message FeatureGenerationSpec {
-  // Is the feature filter enbled
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // List of expression to apply to the existing feature.
-  // +kubebuilder:validation:Optional
-  repeated GeneratedColumn derived = 2;
-
-  // Specify custom columns. Custom Columns are specified by the user
-  repeated GeneratedColumn custom = 3;
-
-  repeated string externalDatasets = 4;
-}
-
-message FeatureGenerationStatus {
-  // The name of the first original column
-  optional string generatedDatasets = 1;
-}
-
-message FeatureInfo {
-  // The feature name
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string name = 1;
-
-  // The reason that the feature was dropped
-  // +kubebuilder:validation:Optional
-  optional string reason = 2;
-
-  // +kubebuilder:validation:Optional
-  optional double value = 3;
-}
-
-// Feature selection spec defines how to select feature
-message FeatureSelectionSpec {
-  // Is the feature filter enbled
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // Lowvar specify the filter to remove low variance features
-  // +kubebuilder:default:=5
-  // +kubebuilder:validation:Optional
-  optional int32 lowVarTreshold = 2;
-
-  // Remove Features with high correlations
-  // +kubebuilder:default:=95
-  // +kubebuilder:validation:Optional
-  optional int32 corrTreshold = 3;
-
-  // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 topN = 4;
-
-  // The cummulative importance of all the importance feature to include
-  // +kubebuilder:default:=95
-  // +kubebuilder:validation:Optional
-  optional int32 cumulativeImportancePrecent = 5;
-
-  // List of feature names to consider when training , even after filtering
-  // +kubebuilder:validation:Optional
-  repeated string features = 6;
-}
-
-message FeatureSelectionStatus {
-  // +kubebuilder:validation:Optional
-  repeated FeatureInfo selected = 1;
-
-  // +kubebuilder:validation:Optional
-  repeated FeatureInfo removed = 2;
-}
-
 // FloatParameter contain the specification of an float hyper parameter
 message FloatParameter {
   // Name is the name of the hyper parameter
@@ -279,23 +196,6 @@ message FloatParameter {
   // Log specify if this hyper paramer is logartimic
   // +kubebuilder:validation:Optional
   optional bool log = 6;
-}
-
-message GeneratedColumn {
-  // The name of the first original column
-  optional string first = 1;
-
-  // The name of the second original column, if the expression is binary operator
-  // +kubebuilder:validation:Optional
-  optional string second = 2;
-
-  // The name of the generated column
-  // +kubebuilder:validation:Optional
-  optional string generatedName = 3;
-
-  // The expression to apply in order to generate the new column
-  // +kubebuilder:validation:Optional
-  optional string original = 4;
 }
 
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline

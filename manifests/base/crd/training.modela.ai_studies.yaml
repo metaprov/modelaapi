@@ -185,15 +185,15 @@ spec:
                 description: Description is user provided description
                 maxLength: 512
                 type: string
-              featureEngineering:
-                default: false
+              featureEngineered:
+                default: true
                 description: Perform feature generation and selection before the modeling
                   phase
                 type: boolean
-              featureGeneration:
+              featureEngineering:
                 description: Specification for feature generation
                 properties:
-                  custom:
+                  customColumns:
                     description: Specify custom columns. Custom Columns are specified
                       by the user
                     items:
@@ -214,7 +214,7 @@ spec:
                           type: string
                       type: object
                     type: array
-                  derived:
+                  derivedColumns:
                     description: List of expression to apply to the existing feature.
                     items:
                       properties:
@@ -235,48 +235,70 @@ spec:
                       type: object
                     type: array
                   externalDatasets:
+                    description: List of dataset to join to the current dataset
                     items:
                       type: string
                     type: array
+                  featureSelection:
+                    description: Spec for feature selection
+                    properties:
+                      corrTreshold:
+                        default: 95
+                        description: Remove Features with high correlations
+                        format: int32
+                        type: integer
+                      cumulativeImportancePrecent:
+                        default: 95
+                        description: The cummulative importance of all the importance
+                          feature to include
+                        format: int32
+                        type: integer
+                      lowVarTreshold:
+                        default: 5
+                        description: Lowvar specify the filter to remove low variance
+                          features
+                        format: int32
+                        type: integer
+                      onError:
+                        default: false
+                        description: Is the feature filter enbled
+                        type: boolean
+                      reserved:
+                        description: List of feature names to consider when training
+                          , even after filtering
+                        items:
+                          type: string
+                        type: array
+                      topN:
+                        default: 0
+                        description: Select the Top N is the number of feature to
+                          select by importance. If 0, all the features are selected.
+                        format: int32
+                        type: integer
+                    type: object
+                  maxModels:
+                    default: 10
+                    description: List of dataset to join to the current dataset
+                    format: int32
+                    type: integer
+                  maxTime:
+                    default: 3600
+                    description: Max time in seconds for feature engineering process
+                    format: int32
+                    type: integer
+                  maxTrainers:
+                    default: 1
+                    description: Number of parallel models
+                    format: int32
+                    type: integer
                   onError:
                     default: true
                     description: Is the feature filter enbled
                     type: boolean
-                type: object
-              featureSelection:
-                description: Specification for feature selection
-                properties:
-                  corrTreshold:
-                    default: 95
-                    description: Remove Features with high correlations
-                    format: int32
-                    type: integer
-                  cumulativeImportancePrecent:
-                    default: 95
-                    description: The cummulative importance of all the importance
-                      feature to include
-                    format: int32
-                    type: integer
-                  features:
-                    description: List of feature names to consider when training ,
-                      even after filtering
-                    items:
-                      type: string
-                    type: array
-                  lowVarTreshold:
-                    default: 5
-                    description: Lowvar specify the filter to remove low variance
-                      features
-                    format: int32
-                    type: integer
-                  onError:
-                    default: false
-                    description: Is the feature filter enbled
-                    type: boolean
-                  topN:
-                    default: 0
-                    description: Select the Top N is the number of feature to select
-                      by importance. If 0, all the features are selected.
+                  samplePct:
+                    default: 100
+                    description: The sample pct to use when evaluating the feature
+                      preformance.
                     format: int32
                     type: integer
                 type: object
@@ -1046,23 +1068,6 @@ spec:
                         - constant
                         type: string
                     type: object
-                  featureEngineering:
-                    description: FeaturePipeline selector
-                    enum:
-                    - rfe
-                    - select-percentile
-                    - select-kbest
-                    - select-fpr
-                    - select-fdr
-                    - variance-threshold
-                    - pca
-                    - polynomial-features
-                    - rbf-sampler
-                    - fast-ica
-                    - nystroem
-                    - none
-                    - auto
-                    type: string
                   image:
                     description: Image specify the pipeline for images. Not supported
                       in this release
@@ -1982,61 +1987,247 @@ spec:
                 description: models that failed during training.
                 format: int32
                 type: integer
-              featureGenEndTime:
+              featureEngineeringEndTime:
                 description: End of feature generation
                 format: date-time
                 type: string
-              featureGenStartTime:
+              featureEngineeringStartTime:
                 description: Start of feature generation
                 format: date-time
                 type: string
-              featureGeneration:
+              featureEngineeringStatus:
                 description: Holds the status of the feature engineering process
                 properties:
+                  bestPipeline:
+                    description: The recommended pipeline after feature engineering
+                      was done
+                    properties:
+                      audio:
+                        description: Audio specify the pipeline for audio. Not supported
+                          in this release
+                        properties:
+                          columns:
+                            description: Name of the datetime columns
+                            items:
+                              type: string
+                            type: array
+                          featurizer:
+                            default: auto
+                            description: The date time imputer.
+                            type: string
+                        type: object
+                      balancer:
+                        description: Balancer is used for imbalanced datasets to fix
+                          the imbalance.
+                        enum:
+                        - adasyn
+                        - baseline-smote
+                        - kmean-smote
+                        - random-over-sampler
+                        - smote
+                        - smotenc
+                        - svmsmote
+                        - none
+                        - auto
+                        type: string
+                      categorical:
+                        description: One or more categorical pipelines.
+                        properties:
+                          columns:
+                            description: The columns for this pipeline. Use * to denotes
+                              all the columns. Must have at least on value.
+                            items:
+                              type: string
+                            type: array
+                          encoder:
+                            default: auto
+                            description: CatEncoder
+                            enum:
+                            - one-hot
+                            - count-freq
+                            - ordinal-encoder
+                            - mean
+                            - target
+                            - woe
+                            - rare-label
+                            - binary
+                            - label
+                            - none
+                            - auto
+                            type: string
+                          imputer:
+                            default: auto
+                            description: Categorical variable imputer
+                            enum:
+                            - remove-rows-with-missing-values
+                            - mean
+                            - median
+                            - mode
+                            - arbitrary-number
+                            - end-tail
+                            - random-sample
+                            - add-missing-indication
+                            - iterative
+                            - none
+                            - auto
+                            - constant
+                            type: string
+                        type: object
+                      datatime:
+                        description: DataTime specify the column transformation for
+                          datetime columns
+                        properties:
+                          columns:
+                            description: Name of the datetime columns
+                            items:
+                              type: string
+                            type: array
+                          expand:
+                            default: false
+                            type: boolean
+                          imputer:
+                            default: auto
+                            description: The date time imputer.
+                            enum:
+                            - remove-rows-with-missing-values
+                            - mean
+                            - median
+                            - mode
+                            - arbitrary-number
+                            - end-tail
+                            - random-sample
+                            - add-missing-indication
+                            - iterative
+                            - none
+                            - auto
+                            - constant
+                            type: string
+                        type: object
+                      image:
+                        description: Image specify the pipeline for images. Not supported
+                          in this release
+                        properties:
+                          columns:
+                            description: Name of the datetime columns
+                            items:
+                              type: string
+                            type: array
+                          featurizer:
+                            default: auto
+                            description: The date time imputer.
+                            type: string
+                        type: object
+                      imbalanced:
+                        description: Imbalance flag instruct the designer to create
+                          an imbalanced pipeline. Default is false
+                        type: boolean
+                      numeric:
+                        description: Numeric specify the column transformation for
+                          numeric columns
+                        properties:
+                          columns:
+                            items:
+                              type: string
+                            type: array
+                          imputer:
+                            default: auto
+                            description: Numerical var imputer
+                            enum:
+                            - remove-rows-with-missing-values
+                            - mean
+                            - median
+                            - mode
+                            - arbitrary-number
+                            - end-tail
+                            - random-sample
+                            - add-missing-indication
+                            - iterative
+                            - none
+                            - auto
+                            - constant
+                            type: string
+                          scaler:
+                            default: auto
+                            description: Numeric var scaler
+                            enum:
+                            - standard
+                            - max-abs
+                            - min-max
+                            - normalizer
+                            - robust
+                            - none
+                            - auto
+                            type: string
+                        type: object
+                      text:
+                        description: Text specify the column transformation for text
+                          columns
+                        properties:
+                          columns:
+                            description: The list of test columns
+                            items:
+                              type: string
+                            type: array
+                          embedding:
+                            description: If true, the controller will Add word embedding
+                              handling to the text pipeline.
+                            type: string
+                          encoder:
+                            default: auto
+                            description: The text encoder (e.g. tfidf)
+                            type: string
+                          lemma:
+                            default: true
+                            description: If true, the controller will Add lemma handling
+                              to the text pipeline.
+                            type: boolean
+                          maxSvdComponents:
+                            default: 0
+                            description: Max SVD Components to use
+                            format: int32
+                            type: integer
+                          pos:
+                            default: true
+                            description: If true, the controller will Add part of
+                              speech handling to the text pipeline.
+                            type: boolean
+                          stem:
+                            default: true
+                            description: If true, the controller will Add stemmer
+                              handling to the text pipeline.
+                            type: boolean
+                          stopwords:
+                            default: true
+                            description: If true, the controller will Add stop word
+                              handling to the text pipeline.
+                            type: boolean
+                          svd:
+                            default: true
+                            description: Use SVD
+                            type: boolean
+                          tokenizer:
+                            description: Text tokenizer
+                            type: string
+                        type: object
+                      video:
+                        description: Video specify the pipeline for video. Not supported
+                          in this release
+                        properties:
+                          columns:
+                            description: Name of the datetime columns
+                            items:
+                              type: string
+                            type: array
+                          featurizer:
+                            default: auto
+                            description: The date time imputer.
+                            type: string
+                        type: object
+                    type: object
                   generatedDataset:
                     description: The name of the first original column
                     type: string
                 type: object
-              featureSelection:
-                description: Holds the status of the feature engineering process
-                properties:
-                  removed:
-                    items:
-                      properties:
-                        name:
-                          default: ""
-                          description: The feature name
-                          type: string
-                        reason:
-                          description: The reason that the feature was dropped
-                          type: string
-                        value:
-                          type: number
-                      type: object
-                    type: array
-                  selected:
-                    items:
-                      properties:
-                        name:
-                          default: ""
-                          description: The feature name
-                          type: string
-                        reason:
-                          description: The reason that the feature was dropped
-                          type: string
-                        value:
-                          type: number
-                      type: object
-                    type: array
-                type: object
-              featureSelectionEndTime:
-                description: End of feature selection
-                format: date-time
-                type: string
-              featureSelectionStartTime:
-                description: Start of feature selection
-                format: date-time
-                type: string
               lastError:
                 default: ""
                 description: Last error

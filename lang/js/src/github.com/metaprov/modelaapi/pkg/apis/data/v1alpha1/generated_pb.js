@@ -5434,7 +5434,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    type: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    datatype: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     count: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
     distinct: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     missing: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
@@ -5514,7 +5514,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.dese
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      msg.setDatatype(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readDouble());
@@ -6006,10 +6006,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
 
 
 /**
- * optional string type = 2;
+ * optional string datatype = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getDatatype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -6018,7 +6018,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setType = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setDatatype = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -6027,7 +6027,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearDatatype = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -6036,7 +6036,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasType = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasDatatype = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

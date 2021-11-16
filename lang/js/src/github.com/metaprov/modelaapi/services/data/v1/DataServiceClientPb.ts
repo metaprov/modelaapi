@@ -1515,84 +1515,44 @@ export class DataServiceClient {
     this.methodInfoSnapshot);
   }
 
-  methodInfoGenerateFeatures = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesRequest) => {
+  methodInfoEngineerFeatures = new grpcWeb.AbstractClientBase.MethodInfo(
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse.deserializeBinary
   );
 
-  generateFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesResponse>;
+  engineerFeatures(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse>;
 
-  generateFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesRequest,
+  engineerFeatures(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse>;
 
-  generateFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesRequest,
+  engineerFeatures(
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsGenerateFeaturesResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenerateFeatures',
+          '/github.com.metaprov.modelaapi.services.data.v1.DataService/EngineerFeatures',
         request,
         metadata || {},
-        this.methodInfoGenerateFeatures,
+        this.methodInfoEngineerFeatures,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/GenerateFeatures',
+      '/github.com.metaprov.modelaapi.services.data.v1.DataService/EngineerFeatures',
     request,
     metadata || {},
-    this.methodInfoGenerateFeatures);
-  }
-
-  methodInfoSelectFeatures = new grpcWeb.AbstractClientBase.MethodInfo(
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesResponse.deserializeBinary
-  );
-
-  selectFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesResponse>;
-
-  selectFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesResponse>;
-
-  selectFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsSelectFeaturesResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/SelectFeatures',
-        request,
-        metadata || {},
-        this.methodInfoSelectFeatures,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/SelectFeatures',
-    request,
-    metadata || {},
-    this.methodInfoSelectFeatures);
+    this.methodInfoEngineerFeatures);
   }
 
 }

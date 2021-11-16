@@ -429,6 +429,20 @@ spec:
                         count:
                           description: Number of rows
                           type: number
+                        datatype:
+                          description: DataType is the name of the column
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
+                          type: string
                         distinct:
                           description: Count of unique values.
                           format: int32
@@ -557,20 +571,6 @@ spec:
                           description: Is this the target attribute, the value is
                             derived from the data source
                           type: boolean
-                        type:
-                          description: Type is the name of the column
-                          enum:
-                          - boolean
-                          - datetime
-                          - number
-                          - categorical
-                          - ordinal
-                          - text
-                          - json
-                          - number-list
-                          - categorical-list
-                          - text-list
-                          type: string
                         variance:
                           description: Variance
                           type: number

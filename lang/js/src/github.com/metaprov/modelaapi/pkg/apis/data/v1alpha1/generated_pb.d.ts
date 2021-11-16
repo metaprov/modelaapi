@@ -227,8 +227,8 @@ export class ColumnStatistics extends jspb.Message {
   getName(): string;
   setName(value: string): ColumnStatistics;
 
-  getType(): string;
-  setType(value: string): ColumnStatistics;
+  getDatatype(): string;
+  setDatatype(value: string): ColumnStatistics;
 
   getCount(): number;
   setCount(value: number): ColumnStatistics;
@@ -352,7 +352,7 @@ export class ColumnStatistics extends jspb.Message {
 export namespace ColumnStatistics {
   export type AsObject = {
     name: string,
-    type: string,
+    datatype: string,
     count: number,
     distinct: number,
     missing: number,

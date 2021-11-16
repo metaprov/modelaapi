@@ -916,6 +916,88 @@ export namespace EnsembleSpec {
   }
 }
 
+export class FeatureEngineeringSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FeatureEngineeringSpec;
+
+  getDerivedcolumnsList(): Array<GeneratedColumnSpec>;
+  setDerivedcolumnsList(value: Array<GeneratedColumnSpec>): FeatureEngineeringSpec;
+  clearDerivedcolumnsList(): FeatureEngineeringSpec;
+  addDerivedcolumns(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
+
+  getCustomcolumnsList(): Array<GeneratedColumnSpec>;
+  setCustomcolumnsList(value: Array<GeneratedColumnSpec>): FeatureEngineeringSpec;
+  clearCustomcolumnsList(): FeatureEngineeringSpec;
+  addCustomcolumns(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
+
+  getExternaldatasetsList(): Array<string>;
+  setExternaldatasetsList(value: Array<string>): FeatureEngineeringSpec;
+  clearExternaldatasetsList(): FeatureEngineeringSpec;
+  addExternaldatasets(value: string, index?: number): FeatureEngineeringSpec;
+
+  getMaxmodels(): number;
+  setMaxmodels(value: number): FeatureEngineeringSpec;
+
+  getMaxtime(): number;
+  setMaxtime(value: number): FeatureEngineeringSpec;
+
+  getMaxtrainers(): number;
+  setMaxtrainers(value: number): FeatureEngineeringSpec;
+
+  getSamplepct(): number;
+  setSamplepct(value: number): FeatureEngineeringSpec;
+
+  getFeatureselection(): FeatureSelectionSpec | undefined;
+  setFeatureselection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
+  hasFeatureselection(): boolean;
+  clearFeatureselection(): FeatureEngineeringSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureEngineeringSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureEngineeringSpec): FeatureEngineeringSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureEngineeringSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringSpec;
+  static deserializeBinaryFromReader(message: FeatureEngineeringSpec, reader: jspb.BinaryReader): FeatureEngineeringSpec;
+}
+
+export namespace FeatureEngineeringSpec {
+  export type AsObject = {
+    enabled: boolean,
+    derivedcolumnsList: Array<GeneratedColumnSpec.AsObject>,
+    customcolumnsList: Array<GeneratedColumnSpec.AsObject>,
+    externaldatasetsList: Array<string>,
+    maxmodels: number,
+    maxtime: number,
+    maxtrainers: number,
+    samplepct: number,
+    featureselection?: FeatureSelectionSpec.AsObject,
+  }
+}
+
+export class FeatureEngineeringStatus extends jspb.Message {
+  getBestpipeline(): PreprocessingSpec | undefined;
+  setBestpipeline(value?: PreprocessingSpec): FeatureEngineeringStatus;
+  hasBestpipeline(): boolean;
+  clearBestpipeline(): FeatureEngineeringStatus;
+
+  getGenerateddatasets(): string;
+  setGenerateddatasets(value: string): FeatureEngineeringStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureEngineeringStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureEngineeringStatus): FeatureEngineeringStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureEngineeringStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringStatus;
+  static deserializeBinaryFromReader(message: FeatureEngineeringStatus, reader: jspb.BinaryReader): FeatureEngineeringStatus;
+}
+
+export namespace FeatureEngineeringStatus {
+  export type AsObject = {
+    bestpipeline?: PreprocessingSpec.AsObject,
+    generateddatasets: string,
+  }
+}
+
 export class FeatureImportance extends jspb.Message {
   getFeature(): string;
   setFeature(value: string): FeatureImportance;
@@ -935,6 +1017,72 @@ export namespace FeatureImportance {
   export type AsObject = {
     feature: string,
     importance: number,
+  }
+}
+
+export class FeatureInfo extends jspb.Message {
+  getName(): string;
+  setName(value: string): FeatureInfo;
+
+  getReason(): string;
+  setReason(value: string): FeatureInfo;
+
+  getValue(): number;
+  setValue(value: number): FeatureInfo;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureInfo.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureInfo): FeatureInfo.AsObject;
+  static serializeBinaryToWriter(message: FeatureInfo, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureInfo;
+  static deserializeBinaryFromReader(message: FeatureInfo, reader: jspb.BinaryReader): FeatureInfo;
+}
+
+export namespace FeatureInfo {
+  export type AsObject = {
+    name: string,
+    reason: string,
+    value: number,
+  }
+}
+
+export class FeatureSelectionSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FeatureSelectionSpec;
+
+  getLowvartreshold(): number;
+  setLowvartreshold(value: number): FeatureSelectionSpec;
+
+  getCorrtreshold(): number;
+  setCorrtreshold(value: number): FeatureSelectionSpec;
+
+  getTopn(): number;
+  setTopn(value: number): FeatureSelectionSpec;
+
+  getCumulativeimportanceprecent(): number;
+  setCumulativeimportanceprecent(value: number): FeatureSelectionSpec;
+
+  getReservedList(): Array<string>;
+  setReservedList(value: Array<string>): FeatureSelectionSpec;
+  clearReservedList(): FeatureSelectionSpec;
+  addReserved(value: string, index?: number): FeatureSelectionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureSelectionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureSelectionSpec): FeatureSelectionSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureSelectionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureSelectionSpec;
+  static deserializeBinaryFromReader(message: FeatureSelectionSpec, reader: jspb.BinaryReader): FeatureSelectionSpec;
+}
+
+export namespace FeatureSelectionSpec {
+  export type AsObject = {
+    enabled: boolean,
+    lowvartreshold: number,
+    corrtreshold: number,
+    topn: number,
+    cumulativeimportanceprecent: number,
+    reservedList: Array<string>,
   }
 }
 
@@ -1037,6 +1185,36 @@ export class FormatSpec extends jspb.Message {
 
 export namespace FormatSpec {
   export type AsObject = {
+  }
+}
+
+export class GeneratedColumnSpec extends jspb.Message {
+  getFirst(): string;
+  setFirst(value: string): GeneratedColumnSpec;
+
+  getSecond(): string;
+  setSecond(value: string): GeneratedColumnSpec;
+
+  getGeneratedname(): string;
+  setGeneratedname(value: string): GeneratedColumnSpec;
+
+  getOriginal(): string;
+  setOriginal(value: string): GeneratedColumnSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GeneratedColumnSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GeneratedColumnSpec): GeneratedColumnSpec.AsObject;
+  static serializeBinaryToWriter(message: GeneratedColumnSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GeneratedColumnSpec;
+  static deserializeBinaryFromReader(message: GeneratedColumnSpec, reader: jspb.BinaryReader): GeneratedColumnSpec;
+}
+
+export namespace GeneratedColumnSpec {
+  export type AsObject = {
+    first: string,
+    second: string,
+    generatedname: string,
+    original: string,
   }
 }
 
@@ -2596,6 +2774,9 @@ export class ModelSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): ModelSpec;
 
+  getFeatureengineeringonly(): boolean;
+  setFeatureengineeringonly(value: boolean): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2641,6 +2822,7 @@ export namespace ModelSpec {
     activedeadlineseconds: number,
     estimatortype: string,
     ttl: number,
+    featureengineeringonly: boolean,
   }
 }
 
@@ -3610,9 +3792,6 @@ export class PreprocessingSpec extends jspb.Message {
   hasDatetime(): boolean;
   clearDatetime(): PreprocessingSpec;
 
-  getFeatureengineering(): string;
-  setFeatureengineering(value: string): PreprocessingSpec;
-
   getBalancer(): string;
   setBalancer(value: string): PreprocessingSpec;
 
@@ -3636,7 +3815,6 @@ export namespace PreprocessingSpec {
     audio?: AudioPipelineSpec.AsObject,
     video?: VideoPipelineSpec.AsObject,
     datetime?: DateTimePipelineSpec.AsObject,
-    featureengineering: string,
     balancer: string,
     imbalanced: boolean,
   }
@@ -4187,8 +4365,8 @@ export class StudySpec extends jspb.Message {
   getAborted(): boolean;
   setAborted(value: boolean): StudySpec;
 
-  getFeatureengineering(): boolean;
-  setFeatureengineering(value: boolean): StudySpec;
+  getFeatureengineered(): boolean;
+  setFeatureengineered(value: boolean): StudySpec;
 
   getReported(): boolean;
   setReported(value: boolean): StudySpec;
@@ -4243,15 +4421,10 @@ export class StudySpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): StudySpec;
 
-  getFeaturegeneration(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationSpec | undefined;
-  setFeaturegeneration(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationSpec): StudySpec;
-  hasFeaturegeneration(): boolean;
-  clearFeaturegeneration(): StudySpec;
-
-  getFeatureselection(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionSpec | undefined;
-  setFeatureselection(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionSpec): StudySpec;
-  hasFeatureselection(): boolean;
-  clearFeatureselection(): StudySpec;
+  getFeatureengineering(): FeatureEngineeringSpec | undefined;
+  setFeatureengineering(value?: FeatureEngineeringSpec): StudySpec;
+  hasFeatureengineering(): boolean;
+  clearFeatureengineering(): StudySpec;
 
   getDatasetsample(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec | undefined;
   setDatasetsample(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec): StudySpec;
@@ -4285,7 +4458,7 @@ export namespace StudySpec {
     training?: TrainingSpec.AsObject,
     split?: DataSplit.AsObject,
     aborted: boolean,
-    featureengineering: boolean,
+    featureengineered: boolean,
     reported: boolean,
     paused: boolean,
     profiled: boolean,
@@ -4301,8 +4474,7 @@ export namespace StudySpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     ttl: number,
-    featuregeneration?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationSpec.AsObject,
-    featureselection?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionSpec.AsObject,
+    featureengineering?: FeatureEngineeringSpec.AsObject,
     datasetsample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
     forecast?: StudyForecastSpec.AsObject,
   }
@@ -4341,25 +4513,15 @@ export class StudyStatus extends jspb.Message {
   hasStarttime(): boolean;
   clearStarttime(): StudyStatus;
 
-  getFeaturegenstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFeaturegenstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasFeaturegenstarttime(): boolean;
-  clearFeaturegenstarttime(): StudyStatus;
+  getFeatureengineeringstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFeatureengineeringstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasFeatureengineeringstarttime(): boolean;
+  clearFeatureengineeringstarttime(): StudyStatus;
 
-  getFeaturegenendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFeaturegenendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasFeaturegenendtime(): boolean;
-  clearFeaturegenendtime(): StudyStatus;
-
-  getFeatureselectionstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFeatureselectionstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasFeatureselectionstarttime(): boolean;
-  clearFeatureselectionstarttime(): StudyStatus;
-
-  getFeatureselectionendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFeatureselectionendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasFeatureselectionendtime(): boolean;
-  clearFeatureselectionendtime(): StudyStatus;
+  getFeatureengineeringendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setFeatureengineeringendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasFeatureengineeringendtime(): boolean;
+  clearFeatureengineeringendtime(): StudyStatus;
 
   getTrainingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setTrainingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
@@ -4453,15 +4615,10 @@ export class StudyStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): StudyStatus;
 
-  getFeaturegeneration(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus | undefined;
-  setFeaturegeneration(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus): StudyStatus;
-  hasFeaturegeneration(): boolean;
-  clearFeaturegeneration(): StudyStatus;
-
-  getFeatureselection(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus | undefined;
-  setFeatureselection(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus): StudyStatus;
-  hasFeatureselection(): boolean;
-  clearFeatureselection(): StudyStatus;
+  getFeatureengineeringstatus(): FeatureEngineeringStatus | undefined;
+  setFeatureengineeringstatus(value?: FeatureEngineeringStatus): StudyStatus;
+  hasFeatureengineeringstatus(): boolean;
+  clearFeatureengineeringstatus(): StudyStatus;
 
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
@@ -4488,10 +4645,8 @@ export namespace StudyStatus {
     failedtestingmodels: number,
     testedmodels: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    featuregenstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    featuregenendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    featureselectionstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    featureselectionendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    featureengineeringstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    featureengineeringendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     testingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -4516,8 +4671,7 @@ export namespace StudyStatus {
     trainingdatahash?: DataHashes.AsObject,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    featuregeneration?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.AsObject,
-    featureselection?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.AsObject,
+    featureengineeringstatus?: FeatureEngineeringStatus.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

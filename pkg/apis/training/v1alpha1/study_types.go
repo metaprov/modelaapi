@@ -401,9 +401,9 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,13,opt,name=aborted"`
 	// Perform feature generation and selection before the modeling phase
-	// +kubebuilder:default:=false
+	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	FeatureEngineering *bool `json:"featureEngineering,omitempty" protobuf:"varint,14,opt,name=featureEngineering"`
+	FeatureEngineered *bool `json:"featureEngineered,omitempty" protobuf:"varint,14,opt,name=featureEngineered"`
 	// Reported is set when we want to create model report
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -463,10 +463,7 @@ type StudySpec struct {
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,31,opt,name=ttl"`
 	// Specification for feature generation
 	// +kubebuilder:validation:Optional
-	FeatureGeneration *catalog.FeatureGenerationSpec `json:"featureGeneration,omitempty" protobuf:"bytes,32,opt,name=featureGeneration"`
-	// Specification for feature selection
-	// +kubebuilder:validation:Optional
-	FeatureSelection *catalog.FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,33,opt,name=featureSelection"`
+	FeatureEngineering *FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,32,opt,name=featureEngineering"`
 	// Sample spec defines how many rows to use for analysis
 	// +kubebuilder:validation:Optional
 	DatasetSample data.SampleSpec `json:"datasetSample,omitempty" protobuf:"bytes,34,opt,name=datasetSample"`
@@ -509,16 +506,10 @@ type StudyStatus struct {
 	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,13,opt,name=startTime"`
 	// Start of feature generation
 	// +kubebuilder:validation:Optional
-	FeatureGenStartTime *metav1.Time `json:"featureGenStartTime,omitempty" protobuf:"bytes,14,opt,name=featureGenStartTime"`
+	FeatureEngineeringStartTime *metav1.Time `json:"featureEngineeringStartTime,omitempty" protobuf:"bytes,14,opt,name=featureEngineeringStartTime"`
 	// End of feature generation
 	// +kubebuilder:validation:Optional
-	FeatureGenEndTime *metav1.Time `json:"featureGenEndTime,omitempty" protobuf:"bytes,15,opt,name=featureGenEndTime"`
-	// Start of feature selection
-	// +kubebuilder:validation:Optional
-	FeatureSelectionStartTime *metav1.Time `json:"featureSelectionStartTime,omitempty" protobuf:"bytes,16,opt,name=featureSelectionStartTime"`
-	// End of feature selection
-	// +kubebuilder:validation:Optional
-	FeatureSelectionEndTime *metav1.Time `json:"featureSelectionEndTime,omitempty" protobuf:"bytes,17,opt,name=featureSelectionEndTime"`
+	FeatureEngineerinEndTime *metav1.Time `json:"featureEngineeringEndTime,omitempty" protobuf:"bytes,15,opt,name=featureEngineeringEndTime"`
 	// Start of the training phase
 	// +kubebuilder:validation:Optional
 	TrainingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,18,opt,name=trainingStartTime"`
@@ -596,16 +587,13 @@ type StudyStatus struct {
 	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,41,opt,name=logs"`
 	// Holds the status of the feature engineering process
 	//+kubebuilder:validation:Optional
-	FeatureGeneration catalog.FeatureGenerationStatus `json:"featureGeneration,,omitempty" protobuf:"bytes,42,opt,name=featureGeneration"`
-	// Holds the status of the feature engineering process
-	//+kubebuilder:validation:Optional
-	FeatureSelection catalog.FeatureSelectionStatus `json:"featureSelection,,omitempty" protobuf:"bytes,43,opt,name=featureSelection"`
+	FeatureEngineeringStatus FeatureEngineeringStatus `json:"featureEngineeringStatus,,omitempty" protobuf:"bytes,42,opt,name=featureEngineeringStatus"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,44,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,43,rep,name=conditions"`
 }
 
 // model cv results

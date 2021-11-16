@@ -2699,54 +2699,54 @@ export namespace DsSnapshotResponse {
   }
 }
 
-export class DsGenerateFeaturesRequest extends jspb.Message {
+export class DsEngineerFeaturesRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsGenerateFeaturesRequest;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsEngineerFeaturesRequest;
   hasProduct(): boolean;
-  clearProduct(): DsGenerateFeaturesRequest;
+  clearProduct(): DsEngineerFeaturesRequest;
 
   getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsGenerateFeaturesRequest;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsEngineerFeaturesRequest;
   hasVersion(): boolean;
-  clearVersion(): DsGenerateFeaturesRequest;
+  clearVersion(): DsEngineerFeaturesRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsGenerateFeaturesRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsEngineerFeaturesRequest;
   hasBucket(): boolean;
-  clearBucket(): DsGenerateFeaturesRequest;
+  clearBucket(): DsEngineerFeaturesRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsGenerateFeaturesRequest;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsEngineerFeaturesRequest;
   hasDatasource(): boolean;
-  clearDatasource(): DsGenerateFeaturesRequest;
+  clearDatasource(): DsEngineerFeaturesRequest;
 
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsGenerateFeaturesRequest;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsEngineerFeaturesRequest;
   hasDataset(): boolean;
-  clearDataset(): DsGenerateFeaturesRequest;
+  clearDataset(): DsEngineerFeaturesRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsGenerateFeaturesRequest;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsEngineerFeaturesRequest;
   hasStudy(): boolean;
-  clearStudy(): DsGenerateFeaturesRequest;
+  clearStudy(): DsEngineerFeaturesRequest;
 
   getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsGenerateFeaturesRequest;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsEngineerFeaturesRequest;
   hasConnection(): boolean;
-  clearConnection(): DsGenerateFeaturesRequest;
+  clearConnection(): DsEngineerFeaturesRequest;
 
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsGenerateFeaturesRequest;
+  clearSecretMap(): DsEngineerFeaturesRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsGenerateFeaturesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DsGenerateFeaturesRequest): DsGenerateFeaturesRequest.AsObject;
-  static serializeBinaryToWriter(message: DsGenerateFeaturesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsGenerateFeaturesRequest;
-  static deserializeBinaryFromReader(message: DsGenerateFeaturesRequest, reader: jspb.BinaryReader): DsGenerateFeaturesRequest;
+  toObject(includeInstance?: boolean): DsEngineerFeaturesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DsEngineerFeaturesRequest): DsEngineerFeaturesRequest.AsObject;
+  static serializeBinaryToWriter(message: DsEngineerFeaturesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsEngineerFeaturesRequest;
+  static deserializeBinaryFromReader(message: DsEngineerFeaturesRequest, reader: jspb.BinaryReader): DsEngineerFeaturesRequest;
 }
 
-export namespace DsGenerateFeaturesRequest {
+export namespace DsEngineerFeaturesRequest {
   export type AsObject = {
     product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -2759,103 +2759,23 @@ export namespace DsGenerateFeaturesRequest {
   }
 }
 
-export class DsGenerateFeaturesResponse extends jspb.Message {
-  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus): DsGenerateFeaturesResponse;
+export class DsEngineerFeaturesResponse extends jspb.Message {
+  getResult(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringStatus | undefined;
+  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringStatus): DsEngineerFeaturesResponse;
   hasResult(): boolean;
-  clearResult(): DsGenerateFeaturesResponse;
+  clearResult(): DsEngineerFeaturesResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsGenerateFeaturesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DsGenerateFeaturesResponse): DsGenerateFeaturesResponse.AsObject;
-  static serializeBinaryToWriter(message: DsGenerateFeaturesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsGenerateFeaturesResponse;
-  static deserializeBinaryFromReader(message: DsGenerateFeaturesResponse, reader: jspb.BinaryReader): DsGenerateFeaturesResponse;
+  toObject(includeInstance?: boolean): DsEngineerFeaturesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DsEngineerFeaturesResponse): DsEngineerFeaturesResponse.AsObject;
+  static serializeBinaryToWriter(message: DsEngineerFeaturesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DsEngineerFeaturesResponse;
+  static deserializeBinaryFromReader(message: DsEngineerFeaturesResponse, reader: jspb.BinaryReader): DsEngineerFeaturesResponse;
 }
 
-export namespace DsGenerateFeaturesResponse {
+export namespace DsEngineerFeaturesResponse {
   export type AsObject = {
-    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureGenerationStatus.AsObject,
-  }
-}
-
-export class DsSelectFeaturesRequest extends jspb.Message {
-  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): DsSelectFeaturesRequest;
-  hasProduct(): boolean;
-  clearProduct(): DsSelectFeaturesRequest;
-
-  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): DsSelectFeaturesRequest;
-  hasVersion(): boolean;
-  clearVersion(): DsSelectFeaturesRequest;
-
-  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): DsSelectFeaturesRequest;
-  hasBucket(): boolean;
-  clearBucket(): DsSelectFeaturesRequest;
-
-  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): DsSelectFeaturesRequest;
-  hasDatasource(): boolean;
-  clearDatasource(): DsSelectFeaturesRequest;
-
-  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): DsSelectFeaturesRequest;
-  hasDataset(): boolean;
-  clearDataset(): DsSelectFeaturesRequest;
-
-  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): DsSelectFeaturesRequest;
-  hasStudy(): boolean;
-  clearStudy(): DsSelectFeaturesRequest;
-
-  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): DsSelectFeaturesRequest;
-  hasConnection(): boolean;
-  clearConnection(): DsSelectFeaturesRequest;
-
-  getSecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearSecretMap(): DsSelectFeaturesRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsSelectFeaturesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DsSelectFeaturesRequest): DsSelectFeaturesRequest.AsObject;
-  static serializeBinaryToWriter(message: DsSelectFeaturesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsSelectFeaturesRequest;
-  static deserializeBinaryFromReader(message: DsSelectFeaturesRequest, reader: jspb.BinaryReader): DsSelectFeaturesRequest;
-}
-
-export namespace DsSelectFeaturesRequest {
-  export type AsObject = {
-    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
-    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
-    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
-    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
-    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
-    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
-    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
-    secretMap: Array<[string, Uint8Array | string]>,
-  }
-}
-
-export class DsSelectFeaturesResponse extends jspb.Message {
-  getResult(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus | undefined;
-  setResult(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus): DsSelectFeaturesResponse;
-  hasResult(): boolean;
-  clearResult(): DsSelectFeaturesResponse;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DsSelectFeaturesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DsSelectFeaturesResponse): DsSelectFeaturesResponse.AsObject;
-  static serializeBinaryToWriter(message: DsSelectFeaturesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DsSelectFeaturesResponse;
-  static deserializeBinaryFromReader(message: DsSelectFeaturesResponse, reader: jspb.BinaryReader): DsSelectFeaturesResponse;
-}
-
-export namespace DsSelectFeaturesResponse {
-  export type AsObject = {
-    result?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.FeatureSelectionStatus.AsObject,
+    result?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.FeatureEngineeringStatus.AsObject,
   }
 }
 

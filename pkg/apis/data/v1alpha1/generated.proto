@@ -255,9 +255,9 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional string name = 1;
 
-  // Type is the name of the column
+  // DataType is the name of the column
   // +kubebuilder:validation:Optional
-  optional string type = 2;
+  optional string datatype = 2;
 
   // Number of rows
   // +kubebuilder:validation:Optional

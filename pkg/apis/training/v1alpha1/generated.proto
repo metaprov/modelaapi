@@ -562,12 +562,107 @@ message EnsembleSpec {
   repeated string base = 2;
 }
 
+message FeatureEngineeringSpec {
+  // Is the feature filter enbled
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // List of expression to apply to the existing feature.
+  // +kubebuilder:validation:Optional
+  repeated GeneratedColumnSpec derivedColumns = 2;
+
+  // Specify custom columns. Custom Columns are specified by the user
+  repeated GeneratedColumnSpec customColumns = 3;
+
+  // List of dataset to join to the current dataset
+  // +kubebuilder:validation:Optional
+  repeated string externalDatasets = 4;
+
+  // List of dataset to join to the current dataset
+  // +kubebuilder:default:=10
+  // +kubebuilder:validation:Optional
+  optional int32 maxModels = 5;
+
+  // Max time in seconds for feature engineering process
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional int32 maxTime = 6;
+
+  // Number of parallel models
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 maxTrainers = 7;
+
+  // The sample pct to use when evaluating the feature preformance.
+  // +kubebuilder:default:=100
+  // +kubebuilder:validation:Optional
+  optional int32 samplePct = 8;
+
+  // Spec for feature selection
+  optional FeatureSelectionSpec featureSelection = 9;
+}
+
+message FeatureEngineeringStatus {
+  // The recommended pipeline after feature engineering was done
+  optional PreprocessingSpec bestPipeline = 1;
+
+  // The name of the first original column
+  optional string generatedDatasets = 2;
+}
+
 message FeatureImportance {
   optional string feature = 1;
 
   // +kubebuilder:validation:Format=float
   // +kubebuilder:validation:Type=number
   optional double importance = 2;
+}
+
+message FeatureInfo {
+  // The feature name
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string name = 1;
+
+  // The reason that the feature was dropped
+  // +kubebuilder:validation:Optional
+  optional string reason = 2;
+
+  // +kubebuilder:validation:Optional
+  optional double value = 3;
+}
+
+// Feature selection spec defines how to select feature
+message FeatureSelectionSpec {
+  // Is the feature filter enbled
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Lowvar specify the filter to remove low variance features
+  // +kubebuilder:default:=5
+  // +kubebuilder:validation:Optional
+  optional int32 lowVarTreshold = 2;
+
+  // Remove Features with high correlations
+  // +kubebuilder:default:=95
+  // +kubebuilder:validation:Optional
+  optional int32 corrTreshold = 3;
+
+  // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 topN = 4;
+
+  // The cummulative importance of all the importance feature to include
+  // +kubebuilder:default:=95
+  // +kubebuilder:validation:Optional
+  optional int32 cumulativeImportancePrecent = 5;
+
+  // List of feature names to consider when training , even after filtering
+  // +kubebuilder:validation:Optional
+  repeated string reserved = 6;
 }
 
 // A definition for a single forecast
@@ -622,6 +717,23 @@ message ForecastSpec {
 }
 
 message FormatSpec {
+}
+
+message GeneratedColumnSpec {
+  // The name of the first original column
+  optional string first = 1;
+
+  // The name of the second original column, if the expression is binary operator
+  // +kubebuilder:validation:Optional
+  optional string second = 2;
+
+  // The name of the generated column
+  // +kubebuilder:validation:Optional
+  optional string generatedName = 3;
+
+  // The expression to apply in order to generate the new column
+  // +kubebuilder:validation:Optional
+  optional string original = 4;
 }
 
 message Hierarchy {
@@ -1778,6 +1890,11 @@ message ModelSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 35;
+
+  // Mark this model as feature engineering only.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool featureEngineeringOnly = 36;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2006,7 +2123,7 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 56;
+  repeated ModelCondition conditions = 57;
 }
 
 message ModelValidation {
@@ -2423,10 +2540,6 @@ message PreprocessingSpec {
   // +kubebuilder:validation:Optional
   optional DateTimePipelineSpec datetime = 7;
 
-  // FeaturePipeline selector
-  // +kubebuilder:validation:Optional
-  optional string featureEngineering = 8;
-
   // Balancer is used for imbalanced datasets to fix the imbalance.
   // +kubebuilder:validation:Optional
   optional string balancer = 9;
@@ -2812,9 +2925,9 @@ message StudySpec {
   optional bool aborted = 13;
 
   // Perform feature generation and selection before the modeling phase
-  // +kubebuilder:default:=false
+  // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool featureEngineering = 14;
+  optional bool featureEngineered = 14;
 
   // Reported is set when we want to create model report
   // +kubebuilder:default:=true
@@ -2890,11 +3003,7 @@ message StudySpec {
 
   // Specification for feature generation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationSpec featureGeneration = 32;
-
-  // Specification for feature selection
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionSpec featureSelection = 33;
+  optional FeatureEngineeringSpec featureEngineering = 32;
 
   // Sample spec defines how many rows to use for analysis
   // +kubebuilder:validation:Optional
@@ -2949,19 +3058,11 @@ message StudyStatus {
 
   // Start of feature generation
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureGenStartTime = 14;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureEngineeringStartTime = 14;
 
   // End of feature generation
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureGenEndTime = 15;
-
-  // Start of feature selection
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureSelectionStartTime = 16;
-
-  // End of feature selection
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureSelectionEndTime = 17;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureEngineeringEndTime = 15;
 
   // Start of the training phase
   // +kubebuilder:validation:Optional
@@ -3064,18 +3165,14 @@ message StudyStatus {
 
   // Holds the status of the feature engineering process
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus featureGeneration = 42;
-
-  // Holds the status of the feature engineering process
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus featureSelection = 43;
+  optional FeatureEngineeringStatus featureEngineeringStatus = 42;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 44;
+  repeated StudyCondition conditions = 43;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

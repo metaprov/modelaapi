@@ -276,6 +276,10 @@ spec:
                 - chatbot
                 - rl
                 type: string
+              featureEngineeringOnly:
+                default: false
+                description: Mark this model as feature engineering only.
+                type: boolean
               flagged:
                 description: Is this model flagged
                 type: boolean
@@ -811,23 +815,6 @@ spec:
                         - constant
                         type: string
                     type: object
-                  featureEngineering:
-                    description: FeaturePipeline selector
-                    enum:
-                    - rfe
-                    - select-percentile
-                    - select-kbest
-                    - select-fpr
-                    - select-fdr
-                    - variance-threshold
-                    - pca
-                    - polynomial-features
-                    - rbf-sampler
-                    - fast-ica
-                    - nystroem
-                    - none
-                    - auto
-                    type: string
                   image:
                     description: Image specify the pipeline for images. Not supported
                       in this release

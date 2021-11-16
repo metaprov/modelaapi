@@ -582,7 +582,7 @@ message DsSnapshotResponse {
   
 }
 
-message DsGenerateFeaturesRequest {
+message DsEngineerFeaturesRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
@@ -593,30 +593,9 @@ message DsGenerateFeaturesRequest {
     map<string,bytes> secret = 8;
 }
 
-message DsGenerateFeaturesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureGenerationStatus result = 1;
+message DsEngineerFeaturesResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringStatus result = 1;
 }
-
-
-message DsSelectFeaturesRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct product = 1;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version = 2;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket bucket = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 5;
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study   = 6;
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 7;
-    map<string,bytes> secret = 8;
-}
-
-message DsSelectFeaturesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FeatureSelectionStatus result = 1;
-}
-
-
-
-
-
 
 
 service DataService {
@@ -677,25 +656,13 @@ service DataService {
     rpc ValidateModel(ValidateModelRequest) returns (ValidateModelResponse) {}
     // test connection from python presepective
     rpc DsTestConnection(DsTestConnectionRequest) returns (DsTestConnectionResponse) {}
-    
     rpc ShutDown(DsShutdownRequest) returns (DsShutdownResponse) {}
-
     rpc StudyEnded(DsStudyEndedRequest) returns (DsStudyEndedResponse) {}
-
     rpc SaveOptimizerDB(SaveOptimizerDBRequest) returns (SaveOptimizerDBResponse) {} // save the optimizer database in the cloud
-
-
-    rpc GetDatabases(DsGetDatabasesRequest) returns (DsGetDatabasesResponse) {        
-    }
-
+    rpc GetDatabases(DsGetDatabasesRequest) returns (DsGetDatabasesResponse) {}
     rpc GetTables(DsGetTablesRequest)   returns (DsGetTablesResponse) {}
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
-    // Call to generate features    
-    rpc GenerateFeatures(DsGenerateFeaturesRequest) returns (DsGenerateFeaturesResponse) {}
-    // Call to select features
-    rpc SelectFeatures(DsSelectFeaturesRequest) returns (DsSelectFeaturesResponse) {}
-    
-    
+    rpc EngineerFeatures(DsEngineerFeaturesRequest) returns (DsEngineerFeaturesResponse) {}
 
 }
