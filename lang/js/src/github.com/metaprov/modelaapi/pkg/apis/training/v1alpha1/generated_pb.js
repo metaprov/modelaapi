@@ -11387,10 +11387,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     pipelinesList: jspb.Message.toObjectList(msg.getPipelinesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.toObject, includeInstance),
     featureselection: (f = msg.getFeatureselection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
-    maxmodels: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    maxtime: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    maxtrainers: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    samplepct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    estimator: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    maxmodels: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    maxtime: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    maxtrainers: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    samplepct: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11442,18 +11443,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       msg.setFeatureselection(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaxmodels(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEstimator(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaxtime(value);
+      msg.setMaxmodels(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaxtrainers(value);
+      msg.setMaxtime(value);
       break;
     case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaxtrainers(value);
+      break;
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSamplepct(value);
       break;
@@ -11509,9 +11514,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       4,
       f
     );
@@ -11534,6 +11539,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
   if (f != null) {
     writer.writeInt32(
       7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
       f
     );
   }
@@ -11652,19 +11664,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * optional int32 maxModels = 4;
- * @return {number}
+ * optional string estimator = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getMaxmodels = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getEstimator = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setMaxmodels = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setEstimator = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -11673,7 +11685,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearMaxmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearEstimator = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -11682,16 +11694,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasMaxmodels = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasEstimator = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional int32 maxTime = 5;
+ * optional int32 maxModels = 5;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getMaxtime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getMaxmodels = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -11700,7 +11712,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setMaxtime = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setMaxmodels = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -11709,7 +11721,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearMaxtime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearMaxmodels = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -11718,16 +11730,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasMaxtime = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasMaxmodels = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional int32 maxTrainers = 6;
+ * optional int32 maxTime = 6;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getMaxtrainers = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getMaxtime = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -11736,7 +11748,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setMaxtrainers = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setMaxtime = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -11745,7 +11757,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearMaxtrainers = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearMaxtime = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -11754,16 +11766,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasMaxtrainers = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasMaxtime = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 samplePct = 7;
+ * optional int32 maxTrainers = 7;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getSamplepct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getMaxtrainers = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -11772,7 +11784,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setSamplepct = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setMaxtrainers = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -11781,7 +11793,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearSamplepct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearMaxtrainers = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -11790,8 +11802,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasSamplepct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasMaxtrainers = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int32 samplePct = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getSamplepct = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setSamplepct = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearSamplepct = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasSamplepct = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 

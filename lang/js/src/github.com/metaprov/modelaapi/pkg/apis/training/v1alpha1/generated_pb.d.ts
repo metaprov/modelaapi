@@ -968,6 +968,9 @@ export class FeatureEngineeringSpec extends jspb.Message {
   hasFeatureselection(): boolean;
   clearFeatureselection(): FeatureEngineeringSpec;
 
+  getEstimator(): string;
+  setEstimator(value: string): FeatureEngineeringSpec;
+
   getMaxmodels(): number;
   setMaxmodels(value: number): FeatureEngineeringSpec;
 
@@ -993,6 +996,7 @@ export namespace FeatureEngineeringSpec {
     enabled: boolean,
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
     featureselection?: FeatureSelectionSpec.AsObject,
+    estimator: string,
     maxmodels: number,
     maxtime: number,
     maxtrainers: number,

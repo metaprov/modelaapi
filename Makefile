@@ -6,6 +6,10 @@ generate-proto:
 generate-go:
 	hack/generate-go.sh
 
+.PHONY: generate-go
+generate-k8s:
+	hack/k8s/generate.sh
+
 .PHONY: update-codegen
 update-codegen:
 	hack/update-codegen.sh

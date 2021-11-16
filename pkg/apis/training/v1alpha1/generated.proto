@@ -17,7 +17,9 @@ import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
-option go_package = "v1alpha1";
+option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/v1alpha1";
+// PKG
+// PKG
 
 // AudioPipelineSpec is the specification for preprocessing audio data
 message AudioPipelineSpec {
@@ -626,25 +628,28 @@ message FeatureEngineeringSpec {
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec featureSelection = 3;
 
+  // Estimator is the algorithm to use when tunning the feature engineering pipeline
+  optional string estimator = 4;
+
   // Max models to create during the search for the best feature engineering.
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
-  optional int32 maxModels = 4;
+  optional int32 maxModels = 5;
 
   // Max time in seconds for the best feature engineering pipeline
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 maxTime = 5;
+  optional int32 maxTime = 6;
 
   // Number of parallel models
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 maxTrainers = 6;
+  optional int32 maxTrainers = 7;
 
   // How much to sample from the dataset when performing the feature engineering search
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional int32 samplePct = 7;
+  optional int32 samplePct = 8;
 }
 
 message FeatureEngineeringStatus {

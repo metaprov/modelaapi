@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='k8s.io/apimachinery/pkg/runtime/schema/generated.proto',
   package='k8s.io.apimachinery.pkg.runtime.schema',
   syntax='proto2',
-  serialized_options=b'Z\006schema',
+  serialized_options=b'\n\032io.kubernetes.client.protoB\rRuntimeSchemaZ&k8s.io/apimachinery/pkg/runtime/schema',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6k8s.io/apimachinery/pkg/runtime/schema/generated.proto\x12&k8s.io.apimachinery.pkg.runtime.schemaB\x08Z\x06schema'
+  serialized_pb=b'\n6k8s.io/apimachinery/pkg/runtime/schema/generated.proto\x12&k8s.io.apimachinery.pkg.runtime.schemaBS\n\x1aio.kubernetes.client.protoB\rRuntimeSchemaZ&k8s.io/apimachinery/pkg/runtime/schema'
 )
 
 
