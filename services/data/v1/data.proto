@@ -641,6 +641,12 @@ service DataService {
     rpc CreateDatasetReport(CreateDatasetReportRequest) returns (CreateReportResponse) {}
     rpc CreateForecastReport(CreateForecastReportRequest) returns (CreateReportResponse) {}
     rpc CreateSummaryReport(CreateSummaryReportRequest) returns (CreateReportResponse) {}
+    
+    // sample feature engineering pipeline
+    rpc AskFE (AskModelRequest) returns (AskModelResponse) {}
+    // tell the result of the feature engineering search.
+    rpc TellFE (TellModelRequest) returns (TellModelResponse) {}
+    
     // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
     // sample model randomly for a given budget
