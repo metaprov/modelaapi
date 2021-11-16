@@ -40,23 +40,6 @@ func (model *Model) Default() {
 	if model.Spec.Estimator == nil {
 		model.Spec.Estimator = &ClassicalEstimatorSpec{}
 	}
-	if model.Spec.Preprocessing == nil {
-		model.Spec.Preprocessing = &PreprocessingSpec{}
-	}
-
-	if model.Spec.Preprocessing.Text == nil {
-		tfidf := catalog.TfIdf
-		model.Spec.Preprocessing.Text = &TextPipelineSpec{
-			Columns:   []string{},
-			Encoder:   &tfidf,
-			Tokenizer: util.StrPtr(""),
-			StopWords: util.BoolPtr(false),
-			Pos:       util.BoolPtr(false),
-			Lemma:     util.BoolPtr(false),
-			Stem:      util.BoolPtr(false),
-			Embedding: nil,
-		}
-	}
 
 	if model.Spec.Ensemble == nil {
 		model.Spec.Ensemble = &EnsembleSpec{

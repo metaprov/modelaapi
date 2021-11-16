@@ -9,11 +9,6 @@ import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../.
 
 
 export class AudioPipelineSpec extends jspb.Message {
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): AudioPipelineSpec;
-  clearColumnsList(): AudioPipelineSpec;
-  addColumns(value: string, index?: number): AudioPipelineSpec;
-
   getFeaturizer(): string;
   setFeaturizer(value: string): AudioPipelineSpec;
 
@@ -27,7 +22,6 @@ export class AudioPipelineSpec extends jspb.Message {
 
 export namespace AudioPipelineSpec {
   export type AsObject = {
-    columnsList: Array<string>,
     featurizer: string,
   }
 }
@@ -91,34 +85,6 @@ export namespace CapacityStageSpec {
     servingsitename: string,
     validationsList: Array<ModelValidation.AsObject>,
     workloadclassname: string,
-  }
-}
-
-export class CategoricalPipelineSpec extends jspb.Message {
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): CategoricalPipelineSpec;
-  clearColumnsList(): CategoricalPipelineSpec;
-  addColumns(value: string, index?: number): CategoricalPipelineSpec;
-
-  getImputer(): string;
-  setImputer(value: string): CategoricalPipelineSpec;
-
-  getEncoder(): string;
-  setEncoder(value: string): CategoricalPipelineSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CategoricalPipelineSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: CategoricalPipelineSpec): CategoricalPipelineSpec.AsObject;
-  static serializeBinaryToWriter(message: CategoricalPipelineSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CategoricalPipelineSpec;
-  static deserializeBinaryFromReader(message: CategoricalPipelineSpec, reader: jspb.BinaryReader): CategoricalPipelineSpec;
-}
-
-export namespace CategoricalPipelineSpec {
-  export type AsObject = {
-    columnsList: Array<string>,
-    imputer: string,
-    encoder: string,
   }
 }
 
@@ -736,31 +702,93 @@ export namespace DataStageSpec {
   }
 }
 
-export class DateTimePipelineSpec extends jspb.Message {
+export class DataTypePipeline extends jspb.Message {
+  getName(): string;
+  setName(value: string): DataTypePipeline;
+
+  getType(): string;
+  setType(value: string): DataTypePipeline;
+
   getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): DateTimePipelineSpec;
-  clearColumnsList(): DateTimePipelineSpec;
-  addColumns(value: string, index?: number): DateTimePipelineSpec;
+  setColumnsList(value: Array<string>): DataTypePipeline;
+  clearColumnsList(): DataTypePipeline;
+  addColumns(value: string, index?: number): DataTypePipeline;
 
   getImputer(): string;
-  setImputer(value: string): DateTimePipelineSpec;
+  setImputer(value: string): DataTypePipeline;
 
-  getExpand(): boolean;
-  setExpand(value: boolean): DateTimePipelineSpec;
+  getEncoder(): string;
+  setEncoder(value: string): DataTypePipeline;
+
+  getScaler(): string;
+  setScaler(value: string): DataTypePipeline;
+
+  getDiscretizer(): string;
+  setDiscretizer(value: string): DataTypePipeline;
+
+  getNumtransformer(): string;
+  setNumtransformer(value: string): DataTypePipeline;
+
+  getDatetimetransformer(): string;
+  setDatetimetransformer(value: string): DataTypePipeline;
+
+  getText(): TextPipelineSpec | undefined;
+  setText(value?: TextPipelineSpec): DataTypePipeline;
+  hasText(): boolean;
+  clearText(): DataTypePipeline;
+
+  getImage(): ImagePipelineSpec | undefined;
+  setImage(value?: ImagePipelineSpec): DataTypePipeline;
+  hasImage(): boolean;
+  clearImage(): DataTypePipeline;
+
+  getAudio(): AudioPipelineSpec | undefined;
+  setAudio(value?: AudioPipelineSpec): DataTypePipeline;
+  hasAudio(): boolean;
+  clearAudio(): DataTypePipeline;
+
+  getVideo(): VideoPipelineSpec | undefined;
+  setVideo(value?: VideoPipelineSpec): DataTypePipeline;
+  hasVideo(): boolean;
+  clearVideo(): DataTypePipeline;
+
+  getGeneratedList(): Array<GeneratedColumnSpec>;
+  setGeneratedList(value: Array<GeneratedColumnSpec>): DataTypePipeline;
+  clearGeneratedList(): DataTypePipeline;
+  addGenerated(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
+
+  getDrop(): boolean;
+  setDrop(value: boolean): DataTypePipeline;
+
+  getPasstrough(): boolean;
+  setPasstrough(value: boolean): DataTypePipeline;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DateTimePipelineSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: DateTimePipelineSpec): DateTimePipelineSpec.AsObject;
-  static serializeBinaryToWriter(message: DateTimePipelineSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DateTimePipelineSpec;
-  static deserializeBinaryFromReader(message: DateTimePipelineSpec, reader: jspb.BinaryReader): DateTimePipelineSpec;
+  toObject(includeInstance?: boolean): DataTypePipeline.AsObject;
+  static toObject(includeInstance: boolean, msg: DataTypePipeline): DataTypePipeline.AsObject;
+  static serializeBinaryToWriter(message: DataTypePipeline, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataTypePipeline;
+  static deserializeBinaryFromReader(message: DataTypePipeline, reader: jspb.BinaryReader): DataTypePipeline;
 }
 
-export namespace DateTimePipelineSpec {
+export namespace DataTypePipeline {
   export type AsObject = {
+    name: string,
+    type: string,
     columnsList: Array<string>,
     imputer: string,
-    expand: boolean,
+    encoder: string,
+    scaler: string,
+    discretizer: string,
+    numtransformer: string,
+    datetimetransformer: string,
+    text?: TextPipelineSpec.AsObject,
+    image?: ImagePipelineSpec.AsObject,
+    audio?: AudioPipelineSpec.AsObject,
+    video?: VideoPipelineSpec.AsObject,
+    generatedList: Array<GeneratedColumnSpec.AsObject>,
+    drop: boolean,
+    passtrough: boolean,
   }
 }
 
@@ -920,10 +948,10 @@ export class FeatureEngineeringSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureEngineeringSpec;
 
-  getDerivedcolumnsList(): Array<GeneratedColumnSpec>;
-  setDerivedcolumnsList(value: Array<GeneratedColumnSpec>): FeatureEngineeringSpec;
-  clearDerivedcolumnsList(): FeatureEngineeringSpec;
-  addDerivedcolumns(value?: GeneratedColumnSpec, index?: number): GeneratedColumnSpec;
+  getPipelinesList(): Array<DataTypePipeline>;
+  setPipelinesList(value: Array<DataTypePipeline>): FeatureEngineeringSpec;
+  clearPipelinesList(): FeatureEngineeringSpec;
+  addPipelines(value?: DataTypePipeline, index?: number): DataTypePipeline;
 
   getCustomcolumnsList(): Array<GeneratedColumnSpec>;
   setCustomcolumnsList(value: Array<GeneratedColumnSpec>): FeatureEngineeringSpec;
@@ -963,7 +991,7 @@ export class FeatureEngineeringSpec extends jspb.Message {
 export namespace FeatureEngineeringSpec {
   export type AsObject = {
     enabled: boolean,
-    derivedcolumnsList: Array<GeneratedColumnSpec.AsObject>,
+    pipelinesList: Array<DataTypePipeline.AsObject>,
     customcolumnsList: Array<GeneratedColumnSpec.AsObject>,
     externaldatasetsList: Array<string>,
     maxmodels: number,
@@ -975,13 +1003,10 @@ export namespace FeatureEngineeringSpec {
 }
 
 export class FeatureEngineeringStatus extends jspb.Message {
-  getBestpipeline(): PreprocessingSpec | undefined;
-  setBestpipeline(value?: PreprocessingSpec): FeatureEngineeringStatus;
-  hasBestpipeline(): boolean;
-  clearBestpipeline(): FeatureEngineeringStatus;
-
-  getGenerateddatasets(): string;
-  setGenerateddatasets(value: string): FeatureEngineeringStatus;
+  getBestpipelineList(): Array<DataTypePipeline>;
+  setBestpipelineList(value: Array<DataTypePipeline>): FeatureEngineeringStatus;
+  clearBestpipelineList(): FeatureEngineeringStatus;
+  addBestpipeline(value?: DataTypePipeline, index?: number): DataTypePipeline;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringStatus.AsObject;
@@ -993,8 +1018,7 @@ export class FeatureEngineeringStatus extends jspb.Message {
 
 export namespace FeatureEngineeringStatus {
   export type AsObject = {
-    bestpipeline?: PreprocessingSpec.AsObject,
-    generateddatasets: string,
+    bestpipelineList: Array<DataTypePipeline.AsObject>,
   }
 }
 
@@ -1189,14 +1213,17 @@ export namespace FormatSpec {
 }
 
 export class GeneratedColumnSpec extends jspb.Message {
+  getName(): string;
+  setName(value: string): GeneratedColumnSpec;
+
+  getDatatype(): string;
+  setDatatype(value: string): GeneratedColumnSpec;
+
   getFirst(): string;
   setFirst(value: string): GeneratedColumnSpec;
 
   getSecond(): string;
   setSecond(value: string): GeneratedColumnSpec;
-
-  getGeneratedname(): string;
-  setGeneratedname(value: string): GeneratedColumnSpec;
 
   getOriginal(): string;
   setOriginal(value: string): GeneratedColumnSpec;
@@ -1211,9 +1238,10 @@ export class GeneratedColumnSpec extends jspb.Message {
 
 export namespace GeneratedColumnSpec {
   export type AsObject = {
+    name: string,
+    datatype: string,
     first: string,
     second: string,
-    generatedname: string,
     original: string,
   }
 }
@@ -1303,11 +1331,6 @@ export namespace HyperParameterValue {
 }
 
 export class ImagePipelineSpec extends jspb.Message {
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): ImagePipelineSpec;
-  clearColumnsList(): ImagePipelineSpec;
-  addColumns(value: string, index?: number): ImagePipelineSpec;
-
   getFeaturizer(): string;
   setFeaturizer(value: string): ImagePipelineSpec;
 
@@ -1321,7 +1344,6 @@ export class ImagePipelineSpec extends jspb.Message {
 
 export namespace ImagePipelineSpec {
   export type AsObject = {
-    columnsList: Array<string>,
     featurizer: string,
   }
 }
@@ -2673,8 +2695,8 @@ export class ModelSpec extends jspb.Message {
   getObjective(): string;
   setObjective(value: string): ModelSpec;
 
-  getPreprocessing(): PreprocessingSpec | undefined;
-  setPreprocessing(value?: PreprocessingSpec): ModelSpec;
+  getPreprocessing(): FeatureEngineeringSpec | undefined;
+  setPreprocessing(value?: FeatureEngineeringSpec): ModelSpec;
   hasPreprocessing(): boolean;
   clearPreprocessing(): ModelSpec;
 
@@ -2795,7 +2817,7 @@ export namespace ModelSpec {
     datasetname: string,
     task: string,
     objective: string,
-    preprocessing?: PreprocessingSpec.AsObject,
+    preprocessing?: FeatureEngineeringSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
     dnn?: DeepEstimatorSpec.AsObject,
     chatbot?: ChatbotEstimatorSpec.AsObject,
@@ -3676,34 +3698,6 @@ export namespace NotebookVarValue {
   }
 }
 
-export class NumericPipelineSpec extends jspb.Message {
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): NumericPipelineSpec;
-  clearColumnsList(): NumericPipelineSpec;
-  addColumns(value: string, index?: number): NumericPipelineSpec;
-
-  getImputer(): string;
-  setImputer(value: string): NumericPipelineSpec;
-
-  getScaler(): string;
-  setScaler(value: string): NumericPipelineSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NumericPipelineSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: NumericPipelineSpec): NumericPipelineSpec.AsObject;
-  static serializeBinaryToWriter(message: NumericPipelineSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NumericPipelineSpec;
-  static deserializeBinaryFromReader(message: NumericPipelineSpec, reader: jspb.BinaryReader): NumericPipelineSpec;
-}
-
-export namespace NumericPipelineSpec {
-  export type AsObject = {
-    columnsList: Array<string>,
-    imputer: string,
-    scaler: string,
-  }
-}
-
 export class PeriodSeasonalitySpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): PeriodSeasonalitySpec;
@@ -3753,70 +3747,6 @@ export namespace PeriodSpec {
     interval: string,
     start: number,
     end: number,
-  }
-}
-
-export class PreprocessingSpec extends jspb.Message {
-  getCategorical(): CategoricalPipelineSpec | undefined;
-  setCategorical(value?: CategoricalPipelineSpec): PreprocessingSpec;
-  hasCategorical(): boolean;
-  clearCategorical(): PreprocessingSpec;
-
-  getNumeric(): NumericPipelineSpec | undefined;
-  setNumeric(value?: NumericPipelineSpec): PreprocessingSpec;
-  hasNumeric(): boolean;
-  clearNumeric(): PreprocessingSpec;
-
-  getText(): TextPipelineSpec | undefined;
-  setText(value?: TextPipelineSpec): PreprocessingSpec;
-  hasText(): boolean;
-  clearText(): PreprocessingSpec;
-
-  getImage(): ImagePipelineSpec | undefined;
-  setImage(value?: ImagePipelineSpec): PreprocessingSpec;
-  hasImage(): boolean;
-  clearImage(): PreprocessingSpec;
-
-  getAudio(): AudioPipelineSpec | undefined;
-  setAudio(value?: AudioPipelineSpec): PreprocessingSpec;
-  hasAudio(): boolean;
-  clearAudio(): PreprocessingSpec;
-
-  getVideo(): VideoPipelineSpec | undefined;
-  setVideo(value?: VideoPipelineSpec): PreprocessingSpec;
-  hasVideo(): boolean;
-  clearVideo(): PreprocessingSpec;
-
-  getDatetime(): DateTimePipelineSpec | undefined;
-  setDatetime(value?: DateTimePipelineSpec): PreprocessingSpec;
-  hasDatetime(): boolean;
-  clearDatetime(): PreprocessingSpec;
-
-  getBalancer(): string;
-  setBalancer(value: string): PreprocessingSpec;
-
-  getImbalanced(): boolean;
-  setImbalanced(value: boolean): PreprocessingSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PreprocessingSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: PreprocessingSpec): PreprocessingSpec.AsObject;
-  static serializeBinaryToWriter(message: PreprocessingSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PreprocessingSpec;
-  static deserializeBinaryFromReader(message: PreprocessingSpec, reader: jspb.BinaryReader): PreprocessingSpec;
-}
-
-export namespace PreprocessingSpec {
-  export type AsObject = {
-    categorical?: CategoricalPipelineSpec.AsObject,
-    numeric?: NumericPipelineSpec.AsObject,
-    text?: TextPipelineSpec.AsObject,
-    image?: ImagePipelineSpec.AsObject,
-    audio?: AudioPipelineSpec.AsObject,
-    video?: VideoPipelineSpec.AsObject,
-    datetime?: DateTimePipelineSpec.AsObject,
-    balancer: string,
-    imbalanced: boolean,
   }
 }
 
@@ -4347,8 +4277,8 @@ export class StudySpec extends jspb.Message {
   hasSearch(): boolean;
   clearSearch(): StudySpec;
 
-  getPreprocessing(): PreprocessingSpec | undefined;
-  setPreprocessing(value?: PreprocessingSpec): StudySpec;
+  getPreprocessing(): FeatureEngineeringSpec | undefined;
+  setPreprocessing(value?: FeatureEngineeringSpec): StudySpec;
   hasPreprocessing(): boolean;
   clearPreprocessing(): StudySpec;
 
@@ -4421,11 +4351,6 @@ export class StudySpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): StudySpec;
 
-  getFeatureengineering(): FeatureEngineeringSpec | undefined;
-  setFeatureengineering(value?: FeatureEngineeringSpec): StudySpec;
-  hasFeatureengineering(): boolean;
-  clearFeatureengineering(): StudySpec;
-
   getDatasetsample(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec | undefined;
   setDatasetsample(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec): StudySpec;
   hasDatasetsample(): boolean;
@@ -4454,7 +4379,7 @@ export namespace StudySpec {
     objective: string,
     objective2: string,
     search?: ModelSearchSpec.AsObject,
-    preprocessing?: PreprocessingSpec.AsObject,
+    preprocessing?: FeatureEngineeringSpec.AsObject,
     training?: TrainingSpec.AsObject,
     split?: DataSplit.AsObject,
     aborted: boolean,
@@ -4474,7 +4399,6 @@ export namespace StudySpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     ttl: number,
-    featureengineering?: FeatureEngineeringSpec.AsObject,
     datasetsample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
     forecast?: StudyForecastSpec.AsObject,
   }
@@ -4737,11 +4661,6 @@ export namespace SuccessiveHalvingSpec {
 }
 
 export class TextPipelineSpec extends jspb.Message {
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): TextPipelineSpec;
-  clearColumnsList(): TextPipelineSpec;
-  addColumns(value: string, index?: number): TextPipelineSpec;
-
   getEncoder(): string;
   setEncoder(value: string): TextPipelineSpec;
 
@@ -4779,7 +4698,6 @@ export class TextPipelineSpec extends jspb.Message {
 
 export namespace TextPipelineSpec {
   export type AsObject = {
-    columnsList: Array<string>,
     encoder: string,
     tokenizer: string,
     stopwords: boolean,
@@ -5067,11 +4985,6 @@ export namespace UATStageSpec {
 }
 
 export class VideoPipelineSpec extends jspb.Message {
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): VideoPipelineSpec;
-  clearColumnsList(): VideoPipelineSpec;
-  addColumns(value: string, index?: number): VideoPipelineSpec;
-
   getFeaturizer(): string;
   setFeaturizer(value: string): VideoPipelineSpec;
 
@@ -5085,7 +4998,6 @@ export class VideoPipelineSpec extends jspb.Message {
 
 export namespace VideoPipelineSpec {
   export type AsObject = {
-    columnsList: Array<string>,
     featurizer: string,
   }
 }

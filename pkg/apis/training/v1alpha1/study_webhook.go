@@ -48,37 +48,6 @@ func (study *Study) Default() {
 		study.Spec.Training.CheckpointInterval = util.Int32Ptr(0)
 	}
 
-	if study.Spec.Preprocessing == nil {
-		study.Spec.Preprocessing = &PreprocessingSpec{}
-		study.Spec.Preprocessing.Numeric = &NumericPipelineSpec{}
-		study.Spec.Preprocessing.Categorical = &CategoricalPipelineSpec{}
-		study.Spec.Preprocessing.Text = &TextPipelineSpec{}
-	}
-	if study.Spec.Preprocessing.Categorical == nil {
-		study.Spec.Preprocessing.Categorical = &CategoricalPipelineSpec{}
-	}
-
-	if study.Spec.Preprocessing.Categorical.Encoder == nil {
-		auto := catalog.AutoEncoder
-		study.Spec.Preprocessing.Categorical.Encoder = &auto
-	}
-	if study.Spec.Preprocessing.Categorical.Imputer == nil {
-		auto := catalog.AutoImputer
-		study.Spec.Preprocessing.Categorical.Imputer = &auto
-
-	}
-	if study.Spec.Preprocessing.Numeric.Scaler == nil {
-		auto := catalog.AutoScaler
-		study.Spec.Preprocessing.Numeric.Scaler = &auto
-	}
-	if study.Spec.Preprocessing.Numeric.Imputer == nil {
-		auto := catalog.AutoImputer
-		study.Spec.Preprocessing.Numeric.Imputer = &auto
-	}
-	if study.Spec.Preprocessing.Text == nil {
-		study.Spec.Preprocessing.Text = &TextPipelineSpec{}
-	}
-
 	if study.Spec.Objective == nil {
 		o := DefaultObjective(*study.Spec.Task)
 		study.Spec.Objective = &o

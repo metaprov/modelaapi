@@ -21,13 +21,10 @@ option go_package = "v1alpha1";
 
 // AudioPipelineSpec is the specification for preprocessing audio data
 message AudioPipelineSpec {
-  // Name of the datetime columns
-  repeated string columns = 1;
-
   // The date time imputer.
   // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
-  optional string featurizer = 2;
+  optional string featurizer = 1;
 }
 
 // BacktestSpec specify the back test
@@ -73,23 +70,6 @@ message CapacityStageSpec {
   // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 5;
-}
-
-// CategoricalPipelineSpec is the specification for processing categorical columns
-message CategoricalPipelineSpec {
-  // The columns for this pipeline. Use * to denotes all the columns.
-  // Must have at least on value.
-  repeated string columns = 1;
-
-  // Categorical variable imputer
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string imputer = 2;
-
-  // CatEncoder
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string encoder = 3;
 }
 
 message ChangePointSpec {
@@ -457,19 +437,80 @@ message DataStageSpec {
   optional string dockerImage = 5;
 }
 
-// DateTimePipelineSpec is the specification for preprocessing datetime features
-message DateTimePipelineSpec {
-  // Name of the datetime columns
-  repeated string columns = 1;
+message DataTypePipeline {
+  // The name of this feature engineering pipeline
+  // +kubebuilder:validation:Required
+  optional string name = 1;
 
-  // The date time imputer.
-  // +kubebuilder:default:="auto"
+  // The Data type for the feature engineering.
+  // +kubebuilder:validation:Required
+  optional string type = 2;
+
+  // Columns is the name of the columns from the original file.
+  // All the columns must be from the same type
   // +kubebuilder:validation:Optional
-  optional string imputer = 2;
+  repeated string columns = 3;
 
+  // imputer
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string imputer = 4;
+
+  // CatEncoder
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string encoder = 5;
+
+  // Numeric var scaler, valid only if the
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string scaler = 6;
+
+  // Convert numerical datatypes to categories. Valid only if the data type is numeric
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string discretizer = 7;
+
+  // For numerical data type.
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string numTransformer = 8;
+
+  // For data time data type,
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string datetimeTransformer = 9;
+
+  // Text specify the column transformation for text columns
+  // +kubebuilder:validation:Optional
+  optional TextPipelineSpec text = 10;
+
+  // Image specify the pipeline for images. Not supported in this release
+  // +kubebuilder:validation:Optional
+  optional ImagePipelineSpec image = 11;
+
+  // Audio specify the pipeline for audio. Not supported in this release
+  // +kubebuilder:validation:Optional
+  optional AudioPipelineSpec audio = 12;
+
+  // Video specify the pipeline for video. Not supported in this release
+  // +kubebuilder:validation:Optional
+  optional VideoPipelineSpec video = 13;
+
+  // Spec to generate one or more columns from existing columns in this pipeline
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  repeated GeneratedColumnSpec generated = 14;
+
+  // If dropped, all the columns in this pipeline will be dropped.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool expand = 3;
+  optional bool drop = 15;
+
+  // If true, all the features in this pipeline will passtrough, without processing.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool passtrough = 16;
 }
 
 message DeepEstimatorLayer {
@@ -563,14 +604,14 @@ message EnsembleSpec {
 }
 
 message FeatureEngineeringSpec {
-  // Is the feature filter enbled
+  // Is the feature filter enabled
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // List of expression to apply to the existing feature.
+  // List of data pipelines
   // +kubebuilder:validation:Optional
-  repeated GeneratedColumnSpec derivedColumns = 2;
+  repeated DataTypePipeline pipelines = 2;
 
   // Specify custom columns. Custom Columns are specified by the user
   repeated GeneratedColumnSpec customColumns = 3;
@@ -594,21 +635,19 @@ message FeatureEngineeringSpec {
   // +kubebuilder:validation:Optional
   optional int32 maxTrainers = 7;
 
-  // The sample pct to use when evaluating the feature preformance.
+  // The sample pct to use when evaluating the feature performance.
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
   optional int32 samplePct = 8;
 
   // Spec for feature selection
+  // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec featureSelection = 9;
 }
 
 message FeatureEngineeringStatus {
   // The recommended pipeline after feature engineering was done
-  optional PreprocessingSpec bestPipeline = 1;
-
-  // The name of the first original column
-  optional string generatedDatasets = 2;
+  repeated DataTypePipeline bestPipeline = 1;
 }
 
 message FeatureImportance {
@@ -720,20 +759,22 @@ message FormatSpec {
 }
 
 message GeneratedColumnSpec {
+  // The name of the generated column
+  optional string name = 1;
+
+  // The resulting data type
+  optional string datatype = 2;
+
   // The name of the first original column
-  optional string first = 1;
+  optional string first = 3;
 
   // The name of the second original column, if the expression is binary operator
   // +kubebuilder:validation:Optional
-  optional string second = 2;
-
-  // The name of the generated column
-  // +kubebuilder:validation:Optional
-  optional string generatedName = 3;
+  optional string second = 4;
 
   // The expression to apply in order to generate the new column
   // +kubebuilder:validation:Optional
-  optional string original = 4;
+  optional string original = 5;
 }
 
 message Hierarchy {
@@ -777,13 +818,10 @@ message HyperParameterValue {
 
 // ImagePipelineSpec is the specification for preprocessing image data
 message ImagePipelineSpec {
-  // Name of the datetime columns
-  repeated string columns = 1;
-
   // The date time imputer.
   // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
-  optional string featurizer = 2;
+  optional string featurizer = 1;
 }
 
 message Level {
@@ -1768,7 +1806,7 @@ message ModelSpec {
   // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
   // Default: All preprocessing will be created automatically
   // +kubebuilder:validation:Optional
-  optional PreprocessingSpec preprocessing = 9;
+  optional FeatureEngineeringSpec preprocessing = 9;
 
   // Estimator is a specification of the ML algorithm and its hyper parameters.
   // +kubebuilder:validation:Optional
@@ -2462,21 +2500,6 @@ message NotebookVarValue {
   optional string value = 2;
 }
 
-// NumericPipelineSpec is the specification for preprocessing numerical columns
-message NumericPipelineSpec {
-  repeated string columns = 1;
-
-  // Numerical var imputer
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string imputer = 2;
-
-  // Numeric var scaler
-  // +kubebuilder:default:=auto
-  // +kubebuilder:validation:Optional
-  optional string scaler = 3;
-}
-
 // Define the seasonality for a period (yearly / monthly / daily)
 message PeriodSeasonalitySpec {
   // Is this seasonality enabled
@@ -2508,45 +2531,6 @@ message PeriodSpec {
   // The windows end day
   // +kubebuilder:validation:Optional
   optional int32 end = 3;
-}
-
-// PreprocessingSpec of the pre processing pipeline
-message PreprocessingSpec {
-  // One or more categorical pipelines.
-  // +kubebuilder:validation:Optional
-  optional CategoricalPipelineSpec categorical = 1;
-
-  // Numeric specify the column transformation for numeric columns
-  // +kubebuilder:validation:Optional
-  optional NumericPipelineSpec numeric = 2;
-
-  // Text specify the column transformation for text columns
-  // +kubebuilder:validation:Optional
-  optional TextPipelineSpec text = 3;
-
-  // Image specify the pipeline for images. Not supported in this release
-  // +kubebuilder:validation:Optional
-  optional ImagePipelineSpec image = 4;
-
-  // Audio specify the pipeline for audio. Not supported in this release
-  // +kubebuilder:validation:Optional
-  optional AudioPipelineSpec audio = 5;
-
-  // Video specify the pipeline for video. Not supported in this release
-  // +kubebuilder:validation:Optional
-  optional VideoPipelineSpec video = 6;
-
-  // DataTime specify the column transformation for datetime columns
-  // +kubebuilder:validation:Optional
-  optional DateTimePipelineSpec datetime = 7;
-
-  // Balancer is used for imbalanced datasets to fix the imbalance.
-  // +kubebuilder:validation:Optional
-  optional string balancer = 9;
-
-  // Imbalance flag instruct the designer to create an imbalanced pipeline. Default is false
-  // +kubebuilder:validation:Optional
-  optional bool imbalanced = 10;
 }
 
 message PrunerSpec {
@@ -2909,7 +2893,7 @@ message StudySpec {
   // Preprocessing is template for preprocessors for this study
   // Default: all preprocessing is set to auto.
   // +kubebuilder:validation:Optional
-  optional PreprocessingSpec preprocessing = 10;
+  optional FeatureEngineeringSpec preprocessing = 10;
 
   // Training template contain the desired training parameter for the models.
   // +kubebuilder:validation:Optional
@@ -3000,10 +2984,6 @@ message StudySpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 31;
-
-  // Specification for feature generation
-  // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec featureEngineering = 32;
 
   // Sample spec defines how many rows to use for analysis
   // +kubebuilder:validation:Optional
@@ -3234,51 +3214,48 @@ message SuccessiveHalvingSpec {
 
 // TextPipelineSpec is the specification for preprocessing of text columns
 message TextPipelineSpec {
-  // The list of test columns
-  repeated string columns = 1;
-
   // The text encoder (e.g. tfidf)
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string encoder = 2;
+  optional string encoder = 1;
 
   // Text tokenizer
   // +kubebuilder:validation:Optional
-  optional string tokenizer = 3;
+  optional string tokenizer = 2;
 
   // If true, the controller will Add stop word handling to the text pipeline.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool stopwords = 4;
+  optional bool stopwords = 3;
 
   // If true, the controller will Add part of speech handling to the text pipeline.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool pos = 5;
+  optional bool pos = 4;
 
   // If true, the controller will Add lemma handling to the text pipeline.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool lemma = 6;
+  optional bool lemma = 5;
 
   // If true, the controller will Add stemmer handling to the text pipeline.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool stem = 7;
+  optional bool stem = 6;
 
   // If true, the controller will Add word embedding handling to the text pipeline.
   // +kubebuilder:validation:Optional
-  optional string embedding = 8;
+  optional string embedding = 7;
 
   // Use SVD
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool svd = 9;
+  optional bool svd = 8;
 
   // Max SVD Components to use
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 maxSvdComponents = 10;
+  optional int32 maxSvdComponents = 9;
 }
 
 message TimeSeriesDataSpec {
@@ -3503,12 +3480,9 @@ message UATStageSpec {
 
 // VideoPipelineSpec is the specification for preprocessing video data
 message VideoPipelineSpec {
-  // Name of the datetime columns
-  repeated string columns = 1;
-
   // The date time imputer.
   // +kubebuilder:default:="auto"
   // +kubebuilder:validation:Optional
-  optional string featurizer = 2;
+  optional string featurizer = 1;
 }
 

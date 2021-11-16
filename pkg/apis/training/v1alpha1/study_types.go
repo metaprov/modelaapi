@@ -389,7 +389,7 @@ type StudySpec struct {
 	// Preprocessing is template for preprocessors for this study
 	// Default: all preprocessing is set to auto.
 	// +kubebuilder:validation:Optional
-	Preprocessing *PreprocessingSpec `json:"preprocessing,omitempty" protobuf:"bytes,10,opt,name=preprocessing"`
+	FeatureEngineering *FeatureEngineeringSpec `json:"preprocessing,omitempty" protobuf:"bytes,10,opt,name=preprocessing"`
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
 	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,11,opt,name=training"`
@@ -461,9 +461,6 @@ type StudySpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,31,opt,name=ttl"`
-	// Specification for feature generation
-	// +kubebuilder:validation:Optional
-	FeatureEngineering *FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,32,opt,name=featureEngineering"`
 	// Sample spec defines how many rows to use for analysis
 	// +kubebuilder:validation:Optional
 	DatasetSample data.SampleSpec `json:"datasetSample,omitempty" protobuf:"bytes,34,opt,name=datasetSample"`

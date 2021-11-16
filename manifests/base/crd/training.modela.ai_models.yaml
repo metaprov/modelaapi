@@ -714,226 +714,339 @@ spec:
                   a value if you want to customize the model. Default: All preprocessing
                   will be created automatically'
                 properties:
-                  audio:
-                    description: Audio specify the pipeline for audio. Not supported
-                      in this release
-                    properties:
-                      columns:
-                        description: Name of the datetime columns
-                        items:
+                  customColumns:
+                    description: Specify custom columns. Custom Columns are specified
+                      by the user
+                    items:
+                      properties:
+                        datatype:
+                          description: The resulting data type
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
                           type: string
-                        type: array
-                      featurizer:
-                        default: auto
-                        description: The date time imputer.
-                        type: string
-                    type: object
-                  balancer:
-                    description: Balancer is used for imbalanced datasets to fix the
-                      imbalance.
-                    enum:
-                    - adasyn
-                    - baseline-smote
-                    - kmean-smote
-                    - random-over-sampler
-                    - smote
-                    - smotenc
-                    - svmsmote
-                    - none
-                    - auto
-                    type: string
-                  categorical:
-                    description: One or more categorical pipelines.
-                    properties:
-                      columns:
-                        description: The columns for this pipeline. Use * to denotes
-                          all the columns. Must have at least on value.
-                        items:
+                        first:
+                          description: The name of the first original column
                           type: string
-                        type: array
-                      encoder:
-                        default: auto
-                        description: CatEncoder
-                        enum:
-                        - one-hot
-                        - count-freq
-                        - ordinal-encoder
-                        - mean
-                        - target
-                        - woe
-                        - rare-label
-                        - binary
-                        - label
-                        - none
-                        - auto
-                        type: string
-                      imputer:
-                        default: auto
-                        description: Categorical variable imputer
-                        enum:
-                        - remove-rows-with-missing-values
-                        - mean
-                        - median
-                        - mode
-                        - arbitrary-number
-                        - end-tail
-                        - random-sample
-                        - add-missing-indication
-                        - iterative
-                        - none
-                        - auto
-                        - constant
-                        type: string
-                    type: object
-                  datatime:
-                    description: DataTime specify the column transformation for datetime
-                      columns
-                    properties:
-                      columns:
-                        description: Name of the datetime columns
-                        items:
+                        name:
+                          description: The name of the generated column
                           type: string
-                        type: array
-                      expand:
-                        default: false
-                        type: boolean
-                      imputer:
-                        default: auto
-                        description: The date time imputer.
-                        enum:
-                        - remove-rows-with-missing-values
-                        - mean
-                        - median
-                        - mode
-                        - arbitrary-number
-                        - end-tail
-                        - random-sample
-                        - add-missing-indication
-                        - iterative
-                        - none
-                        - auto
-                        - constant
-                        type: string
-                    type: object
-                  image:
-                    description: Image specify the pipeline for images. Not supported
-                      in this release
-                    properties:
-                      columns:
-                        description: Name of the datetime columns
-                        items:
+                        original:
+                          description: The expression to apply in order to generate
+                            the new column
                           type: string
-                        type: array
-                      featurizer:
-                        default: auto
-                        description: The date time imputer.
-                        type: string
-                    type: object
-                  imbalanced:
-                    description: Imbalance flag instruct the designer to create an
-                      imbalanced pipeline. Default is false
-                    type: boolean
-                  numeric:
-                    description: Numeric specify the column transformation for numeric
-                      columns
-                    properties:
-                      columns:
-                        items:
+                        second:
+                          description: The name of the second original column, if
+                            the expression is binary operator
                           type: string
-                        type: array
-                      imputer:
-                        default: auto
-                        description: Numerical var imputer
-                        enum:
-                        - remove-rows-with-missing-values
-                        - mean
-                        - median
-                        - mode
-                        - arbitrary-number
-                        - end-tail
-                        - random-sample
-                        - add-missing-indication
-                        - iterative
-                        - none
-                        - auto
-                        - constant
-                        type: string
-                      scaler:
-                        default: auto
-                        description: Numeric var scaler
-                        enum:
-                        - standard
-                        - max-abs
-                        - min-max
-                        - normalizer
-                        - robust
-                        - none
-                        - auto
-                        type: string
-                    type: object
-                  text:
-                    description: Text specify the column transformation for text columns
+                      type: object
+                    type: array
+                  externalDatasets:
+                    description: List of dataset to join to the current dataset
+                    items:
+                      type: string
+                    type: array
+                  featureSelection:
+                    description: Spec for feature selection
                     properties:
-                      columns:
-                        description: The list of test columns
-                        items:
-                          type: string
-                        type: array
-                      embedding:
-                        description: If true, the controller will Add word embedding
-                          handling to the text pipeline.
-                        type: string
-                      encoder:
-                        default: auto
-                        description: The text encoder (e.g. tfidf)
-                        type: string
-                      lemma:
-                        default: true
-                        description: If true, the controller will Add lemma handling
-                          to the text pipeline.
-                        type: boolean
-                      maxSvdComponents:
-                        default: 0
-                        description: Max SVD Components to use
+                      corrTreshold:
+                        default: 95
+                        description: Remove Features with high correlations
                         format: int32
                         type: integer
-                      pos:
-                        default: true
-                        description: If true, the controller will Add part of speech
-                          handling to the text pipeline.
+                      cumulativeImportancePrecent:
+                        default: 95
+                        description: The cummulative importance of all the importance
+                          feature to include
+                        format: int32
+                        type: integer
+                      lowVarTreshold:
+                        default: 5
+                        description: Lowvar specify the filter to remove low variance
+                          features
+                        format: int32
+                        type: integer
+                      onError:
+                        default: false
+                        description: Is the feature filter enbled
                         type: boolean
-                      stem:
-                        default: true
-                        description: If true, the controller will Add stemmer handling
-                          to the text pipeline.
-                        type: boolean
-                      stopwords:
-                        default: true
-                        description: If true, the controller will Add stop word handling
-                          to the text pipeline.
-                        type: boolean
-                      svd:
-                        default: true
-                        description: Use SVD
-                        type: boolean
-                      tokenizer:
-                        description: Text tokenizer
-                        type: string
-                    type: object
-                  video:
-                    description: Video specify the pipeline for video. Not supported
-                      in this release
-                    properties:
-                      columns:
-                        description: Name of the datetime columns
+                      reserved:
+                        description: List of feature names to consider when training
+                          , even after filtering
                         items:
                           type: string
                         type: array
-                      featurizer:
-                        default: auto
-                        description: The date time imputer.
-                        type: string
+                      topN:
+                        default: 0
+                        description: Select the Top N is the number of feature to
+                          select by importance. If 0, all the features are selected.
+                        format: int32
+                        type: integer
                     type: object
+                  maxModels:
+                    default: 10
+                    description: List of dataset to join to the current dataset
+                    format: int32
+                    type: integer
+                  maxTime:
+                    default: 3600
+                    description: Max time in seconds for feature engineering process
+                    format: int32
+                    type: integer
+                  maxTrainers:
+                    default: 1
+                    description: Number of parallel models
+                    format: int32
+                    type: integer
+                  onError:
+                    default: true
+                    description: Is the feature filter enabled
+                    type: boolean
+                  pipeline:
+                    description: List of data pipelines
+                    items:
+                      properties:
+                        audio:
+                          description: Audio specify the pipeline for audio. Not supported
+                            in this release
+                          properties:
+                            featurizer:
+                              default: auto
+                              description: The date time imputer.
+                              type: string
+                          type: object
+                        columns:
+                          description: Columns is the name of the columns from the
+                            original file. All the columns must be from the same type
+                          items:
+                            type: string
+                          type: array
+                        datatimeTransformer:
+                          default: auto
+                          description: For data time data type,
+                          enum:
+                          - year-month
+                          - weak-day
+                          - hour-min-sec
+                          - elapsed
+                          - none
+                          - auto
+                          type: string
+                        discretizer:
+                          default: auto
+                          description: Convert numerical datatypes to categories.
+                            Valid only if the data type is numeric
+                          enum:
+                          - equal-width
+                          - equal-freq
+                          - kbin
+                          - decision-tree
+                          - kernel-centerer
+                          - label-binarizer
+                          - multi-label-binarizer
+                          - none
+                          - auto
+                          type: string
+                        drop:
+                          default: false
+                          description: If dropped, all the columns in this pipeline
+                            will be dropped.
+                          type: boolean
+                        encoder:
+                          default: auto
+                          description: CatEncoder
+                          enum:
+                          - one-hot
+                          - count-freq
+                          - ordinal-encoder
+                          - mean
+                          - target
+                          - woe
+                          - rare-label
+                          - binary
+                          - label
+                          - none
+                          - auto
+                          type: string
+                        generated:
+                          default: auto
+                          description: Spec to generate one or more columns from existing
+                            columns in this pipeline
+                          items:
+                            properties:
+                              datatype:
+                                description: The resulting data type
+                                enum:
+                                - boolean
+                                - datetime
+                                - number
+                                - categorical
+                                - ordinal
+                                - text
+                                - json
+                                - number-list
+                                - categorical-list
+                                - text-list
+                                type: string
+                              first:
+                                description: The name of the first original column
+                                type: string
+                              name:
+                                description: The name of the generated column
+                                type: string
+                              original:
+                                description: The expression to apply in order to generate
+                                  the new column
+                                type: string
+                              second:
+                                description: The name of the second original column,
+                                  if the expression is binary operator
+                                type: string
+                            type: object
+                          type: array
+                        image:
+                          description: Image specify the pipeline for images. Not
+                            supported in this release
+                          properties:
+                            featurizer:
+                              default: auto
+                              description: The date time imputer.
+                              type: string
+                          type: object
+                        imputer:
+                          default: auto
+                          description: imputer
+                          enum:
+                          - remove-rows-with-missing-values
+                          - mean
+                          - median
+                          - mode
+                          - arbitrary-number
+                          - end-tail
+                          - random-sample
+                          - add-missing-indication
+                          - iterative
+                          - none
+                          - auto
+                          - constant
+                          type: string
+                        name:
+                          description: The name of this feature engineering pipeline
+                          type: string
+                        numTransformer:
+                          default: auto
+                          description: For numerical data type.
+                          enum:
+                          - log
+                          - reciprocal
+                          - sqrt
+                          - power
+                          - box-cox
+                          - yj
+                          - none
+                          - auto
+                          type: string
+                        passtrough:
+                          default: false
+                          description: If true, all the features in this pipeline
+                            will passtrough, without processing.
+                          type: boolean
+                        scaler:
+                          default: auto
+                          description: Numeric var scaler, valid only if the
+                          enum:
+                          - standard
+                          - max-abs
+                          - min-max
+                          - normalizer
+                          - robust
+                          - none
+                          - auto
+                          type: string
+                        text:
+                          description: Text specify the column transformation for
+                            text columns
+                          properties:
+                            embedding:
+                              description: If true, the controller will Add word embedding
+                                handling to the text pipeline.
+                              type: string
+                            encoder:
+                              default: auto
+                              description: The text encoder (e.g. tfidf)
+                              type: string
+                            lemma:
+                              default: true
+                              description: If true, the controller will Add lemma
+                                handling to the text pipeline.
+                              type: boolean
+                            maxSvdComponents:
+                              default: 0
+                              description: Max SVD Components to use
+                              format: int32
+                              type: integer
+                            pos:
+                              default: true
+                              description: If true, the controller will Add part of
+                                speech handling to the text pipeline.
+                              type: boolean
+                            stem:
+                              default: true
+                              description: If true, the controller will Add stemmer
+                                handling to the text pipeline.
+                              type: boolean
+                            stopwords:
+                              default: true
+                              description: If true, the controller will Add stop word
+                                handling to the text pipeline.
+                              type: boolean
+                            svd:
+                              default: true
+                              description: Use SVD
+                              type: boolean
+                            tokenizer:
+                              description: Text tokenizer
+                              type: string
+                          type: object
+                        type:
+                          description: The Data type for the feature engineering.
+                          enum:
+                          - boolean
+                          - datetime
+                          - number
+                          - categorical
+                          - ordinal
+                          - text
+                          - json
+                          - number-list
+                          - categorical-list
+                          - text-list
+                          type: string
+                        video:
+                          description: Video specify the pipeline for video. Not supported
+                            in this release
+                          properties:
+                            featurizer:
+                              default: auto
+                              description: The date time imputer.
+                              type: string
+                          type: object
+                      type: object
+                    type: array
+                  samplePct:
+                    default: 100
+                    description: The sample pct to use when evaluating the feature
+                      performance.
+                    format: int32
+                    type: integer
                 type: object
               profiled:
                 default: false
