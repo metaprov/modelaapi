@@ -557,22 +557,24 @@ type FeatureEngineeringSpec struct {
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
 	FeatureSelection FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,3,opt,name=featureSelection"`
+	// Estimator is the algorithm to use when tunning the feature engineering pipeline
+	Estimator *catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,4,opt,name=estimator"`
 	// Max models to create during the search for the best feature engineering.
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
+	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,5,opt,name=maxModels"`
 	// Max time in seconds for the best feature engineering pipeline
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,5,opt,name=maxTime"`
+	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,6,opt,name=maxTime"`
 	// Number of parallel models
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,6,opt,name=maxTrainers"`
+	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,7,opt,name=maxTrainers"`
 	// How much to sample from the dataset when performing the feature engineering search
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,7,opt,name=samplePct"`
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,8,opt,name=samplePct"`
 }
 
 // FeatureEngineeringPipeline represent a single pipeline for data transformation.
