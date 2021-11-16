@@ -914,7 +914,7 @@ spec:
                     format: int32
                     type: integer
                   pipelines:
-                    description: List of data pipelines
+                    description: List of processing pipelines
                     items:
                       description: FeatureEngineeringPipeline represent a single pipeline
                         for data transformation. The pipeline includes the column
@@ -972,7 +972,7 @@ spec:
                           type: array
                         datatimeTransformer:
                           default: auto
-                          description: For datetime data type,
+                          description: Specify how For datetime data type,
                           enum:
                           - year-month
                           - weak-day
@@ -998,7 +998,7 @@ spec:
                         discretizer:
                           default: auto
                           description: Convert numerical datatypes to categories.
-                            Valid only if the data type is numeric
+                            Valid only if the number data types.
                           enum:
                           - equal-width
                           - equal-freq
@@ -1017,7 +1017,7 @@ spec:
                           type: boolean
                         encoder:
                           default: auto
-                          description: Encoder
+                          description: Encoder. Apply only to categorical variables
                           enum:
                           - one-hot
                           - count-freq
@@ -1106,6 +1106,17 @@ spec:
                           - power
                           - box-cox
                           - yj
+                          - none
+                          - auto
+                          type: string
+                        outliers:
+                          description: Specify how to handle outliers. Apply only
+                            to numeric datatypes.
+                          enum:
+                          - trim
+                          - winsorizer
+                          - cap
+                          - zero-code
                           - none
                           - auto
                           type: string
@@ -2059,7 +2070,7 @@ spec:
                           type: array
                         datatimeTransformer:
                           default: auto
-                          description: For datetime data type,
+                          description: Specify how For datetime data type,
                           enum:
                           - year-month
                           - weak-day
@@ -2085,7 +2096,7 @@ spec:
                         discretizer:
                           default: auto
                           description: Convert numerical datatypes to categories.
-                            Valid only if the data type is numeric
+                            Valid only if the number data types.
                           enum:
                           - equal-width
                           - equal-freq
@@ -2104,7 +2115,7 @@ spec:
                           type: boolean
                         encoder:
                           default: auto
-                          description: Encoder
+                          description: Encoder. Apply only to categorical variables
                           enum:
                           - one-hot
                           - count-freq
@@ -2193,6 +2204,17 @@ spec:
                           - power
                           - box-cox
                           - yj
+                          - none
+                          - auto
+                          type: string
+                        outliers:
+                          description: Specify how to handle outliers. Apply only
+                            to numeric datatypes.
+                          enum:
+                          - trim
+                          - winsorizer
+                          - cap
+                          - zero-code
                           - none
                           - auto
                           type: string

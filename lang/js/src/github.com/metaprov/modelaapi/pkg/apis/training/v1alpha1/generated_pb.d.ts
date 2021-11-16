@@ -881,6 +881,9 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   getNumtransformer(): string;
   setNumtransformer(value: string): FeatureEngineeringPipeline;
 
+  getOutliers(): string;
+  setOutliers(value: string): FeatureEngineeringPipeline;
+
   getDatetimetransformer(): string;
   setDatetimetransformer(value: string): FeatureEngineeringPipeline;
 
@@ -938,6 +941,7 @@ export namespace FeatureEngineeringPipeline {
     scaler: string,
     discretizer: string,
     numtransformer: string,
+    outliers: string,
     datetimetransformer: string,
     text?: TextPipelineSpec.AsObject,
     image?: ImagePipelineSpec.AsObject,
@@ -2689,10 +2693,10 @@ export class ModelSpec extends jspb.Message {
   getObjective(): string;
   setObjective(value: string): ModelSpec;
 
-  getPreprocessing(): FeatureEngineeringSpec | undefined;
-  setPreprocessing(value?: FeatureEngineeringSpec): ModelSpec;
-  hasPreprocessing(): boolean;
-  clearPreprocessing(): ModelSpec;
+  getFeatureengineering(): FeatureEngineeringSpec | undefined;
+  setFeatureengineering(value?: FeatureEngineeringSpec): ModelSpec;
+  hasFeatureengineering(): boolean;
+  clearFeatureengineering(): ModelSpec;
 
   getEstimator(): ClassicalEstimatorSpec | undefined;
   setEstimator(value?: ClassicalEstimatorSpec): ModelSpec;
@@ -2811,7 +2815,7 @@ export namespace ModelSpec {
     datasetname: string,
     task: string,
     objective: string,
-    preprocessing?: FeatureEngineeringSpec.AsObject,
+    featureengineering?: FeatureEngineeringSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
     dnn?: DeepEstimatorSpec.AsObject,
     chatbot?: ChatbotEstimatorSpec.AsObject,
@@ -2918,8 +2922,8 @@ export class ModelStatus extends jspb.Message {
   getWeightsuri(): string;
   setWeightsuri(value: string): ModelStatus;
 
-  getLabelsencoderuri(): string;
-  setLabelsencoderuri(value: string): ModelStatus;
+  getLabelencoderuri(): string;
+  setLabelencoderuri(value: string): ModelStatus;
 
   getLogsuri(): string;
   setLogsuri(value: string): ModelStatus;
@@ -3075,7 +3079,7 @@ export namespace ModelStatus {
     reporturi: string,
     manifesturi: string,
     weightsuri: string,
-    labelsencoderuri: string,
+    labelencoderuri: string,
     logsuri: string,
     profileuri: string,
     misclassuri: string,

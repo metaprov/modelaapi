@@ -548,7 +548,7 @@ message FeatureEngineeringPipeline {
   // +kubebuilder:validation:Optional
   optional string imputer = 4;
 
-  // Encoder
+  // Encoder. Apply only to categorical variables
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string encoder = 5;
@@ -558,7 +558,7 @@ message FeatureEngineeringPipeline {
   // +kubebuilder:validation:Optional
   optional string scaler = 6;
 
-  // Convert numerical datatypes to categories. Valid only if the data type is numeric
+  // Convert numerical datatypes to categories. Valid only if the number data types.
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   optional string discretizer = 7;
@@ -568,44 +568,48 @@ message FeatureEngineeringPipeline {
   // +kubebuilder:validation:Optional
   optional string numTransformer = 8;
 
-  // For datetime data type,
+  // Specify how to handle outliers.
+  // Apply only to numeric datatypes.
+  optional string outliers = 9;
+
+  // Specify how For datetime data type,
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string datetimeTransformer = 9;
+  optional string datetimeTransformer = 10;
 
   // Text specify the column transformation for text columns
   // +kubebuilder:validation:Optional
-  optional TextPipelineSpec text = 10;
+  optional TextPipelineSpec text = 11;
 
   // Image specify the pipeline for images. Not supported in this release
   // +kubebuilder:validation:Optional
-  optional ImagePipelineSpec image = 11;
+  optional ImagePipelineSpec image = 12;
 
   // Audio specify the pipeline for audio. Not supported in this release
   // +kubebuilder:validation:Optional
-  optional AudioPipelineSpec audio = 12;
+  optional AudioPipelineSpec audio = 13;
 
   // Video specify the pipeline for video. Not supported in this release
   // +kubebuilder:validation:Optional
-  optional VideoPipelineSpec video = 13;
+  optional VideoPipelineSpec video = 14;
 
   // Spec to generate one or more columns from existing columns in this pipeline
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  repeated GeneratedColumnSpec generated = 14;
+  repeated GeneratedColumnSpec generated = 15;
 
   // Specify custom columns. Custom Columns are specified by the user
-  repeated GeneratedColumnSpec custom = 15;
+  repeated GeneratedColumnSpec custom = 16;
 
   // If dropped, all the columns in this pipeline will be dropped.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool drop = 16;
+  optional bool drop = 17;
 
   // If true, all the features in this pipeline will passtrough, without processing.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool passtrough = 17;
+  optional bool passtrough = 18;
 }
 
 message FeatureEngineeringSpec {
@@ -614,7 +618,7 @@ message FeatureEngineeringSpec {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // List of data pipelines
+  // List of processing pipelines
   // +kubebuilder:validation:Optional
   repeated FeatureEngineeringPipeline pipelines = 2;
 
@@ -1804,21 +1808,21 @@ message ModelSpec {
   // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
   // Default: All preprocessing will be created automatically
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec preprocessing = 9;
+  optional FeatureEngineeringSpec featureEngineering = 9;
 
   // Estimator is a specification of the ML algorithm and its hyper parameters.
   // +kubebuilder:validation:Optional
   optional ClassicalEstimatorSpec estimator = 10;
 
-  // Dnn is a specification of the DNN estimator specification. Not supported for this release.
+  // Estimator for DNN network, not implemented in this release.
   // +kubebuilder:validation:Optional
   optional DeepEstimatorSpec dnn = 11;
 
-  // Dnn is a specification of the DNN estimator specification. Not supported for this release.
+  // Estimator for chat bot specification. Not implemented for this release.
   // +kubebuilder:validation:Optional
   optional ChatbotEstimatorSpec chatbot = 12;
 
-  // Dnn is a specification of the DNN estimator specification. Not supported for this release.
+  // Estimator for NLP model
   // +kubebuilder:validation:Optional
   optional NLPEstimatorSpec nlpEstimator = 13;
 
@@ -2018,7 +2022,7 @@ message ModelStatus {
 
   // LabelEncoderUri is the URI of the label encoder binary file, if there is one.
   // +kubebuilder:validation:Optional
-  optional string labelsEncoderUri = 20;
+  optional string labelEncoderUri = 20;
 
   // LogsUri is the URI of the log file
   // +kubebuilder:validation:Optional

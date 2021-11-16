@@ -231,17 +231,17 @@ type ModelSpec struct {
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
 	// +kubebuilder:validation:Optional
-	FeatureEngineering *FeatureEngineeringSpec `json:"preprocessing,omitempty" protobuf:"bytes,9,opt,name=preprocessing"`
+	FeatureEngineering *FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,9,opt,name=featureEngineering"`
 	// Estimator is a specification of the ML algorithm and its hyper parameters.
 	// +kubebuilder:validation:Optional
 	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,10,opt,name=estimator"`
-	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
+	// Estimator for DNN network, not implemented in this release.
 	// +kubebuilder:validation:Optional
 	Dnn *DeepEstimatorSpec `json:"dnn,omitempty" protobuf:"bytes,11,opt,name=dnn"`
-	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
+	// Estimator for chat bot specification. Not implemented for this release.
 	// +kubebuilder:validation:Optional
 	Chatbot *ChatbotEstimatorSpec `json:"chatbot,omitempty" protobuf:"bytes,12,opt,name=chatbot"`
-	// Dnn is a specification of the DNN estimator specification. Not supported for this release.
+	// Estimator for NLP model
 	// +kubebuilder:validation:Optional
 	NLPEstimator *NLPEstimatorSpec `json:"nplEstimator,omitempty" protobuf:"bytes,13,opt,name=nlpEstimator"`
 	// If this is an ensemble model, specify the ensemble
@@ -405,7 +405,7 @@ type ModelStatus struct {
 	WeightsUri string `json:"weightsUri,omitempty" protobuf:"bytes,19,opt,name=weightsUri"`
 	// LabelEncoderUri is the URI of the label encoder binary file, if there is one.
 	// +kubebuilder:validation:Optional
-	LabelEncoderUri string `json:"labelsEncoderUri,omitempty" protobuf:"bytes,20,opt,name=labelsEncoderUri"`
+	LabelEncoderUri string `json:"labelEncoderUri,omitempty" protobuf:"bytes,20,opt,name=labelEncoderUri"`
 	// LogsUri is the URI of the log file
 	// +kubebuilder:validation:Optional
 	LogsUri string `json:"logsUri,omitempty" protobuf:"bytes,21,opt,name=logsUri"`
@@ -551,7 +551,7 @@ type FeatureEngineeringSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// List of data pipelines
+	// List of processing pipelines
 	// +kubebuilder:validation:Optional
 	Pipelines []FeatureEngineeringPipeline `json:"pipelines,omitempty" protobuf:"bytes,2,rep,name=pipelines"`
 	// Spec for feature selection
@@ -592,7 +592,7 @@ type FeatureEngineeringPipeline struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,4,opt,name=imputer"`
-	// Encoder
+	// Encoder. Apply only to categorical variables
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Encoder *catalog.CatEncoder `json:"encoder,omitempty" protobuf:"bytes,5,opt,name=encoder"`
@@ -600,7 +600,7 @@ type FeatureEngineeringPipeline struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,6,opt,name=scaler"`
-	// Convert numerical datatypes to categories. Valid only if the data type is numeric
+	// Convert numerical datatypes to categories. Valid only if the number data types.
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Discretizer *catalog.Discretizer `json:"discretizer,omitempty" protobuf:"bytes,7,opt,name=discretizer"`
@@ -608,36 +608,39 @@ type FeatureEngineeringPipeline struct {
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	NumTransformer *catalog.NumTransformer `json:"numTransformer,omitempty" protobuf:"bytes,8,opt,name=numTransformer"`
-	// For datetime data type,
+	// Specify how to handle outliers.
+	// Apply only to numeric datatypes.
+	Outliers *catalog.OutlierFilter `json:"outliers,omitempty" protobuf:"bytes,9,opt,name=outliers"`
+	// Specify how For datetime data type,
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	DatetimeTransformer *catalog.DatatimeTransformer `json:"datatimeTransformer,omitempty" protobuf:"bytes,9,opt,name=datetimeTransformer"`
+	DatetimeTransformer *catalog.DatatimeTransformer `json:"datatimeTransformer,omitempty" protobuf:"bytes,10,opt,name=datetimeTransformer"`
 	// Text specify the column transformation for text columns
 	// +kubebuilder:validation:Optional
-	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,10,opt,name=text"`
+	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,11,opt,name=text"`
 	// Image specify the pipeline for images. Not supported in this release
 	// +kubebuilder:validation:Optional
-	Image *ImagePipelineSpec `json:"image,omitempty" protobuf:"bytes,11,opt,name=image"`
+	Image *ImagePipelineSpec `json:"image,omitempty" protobuf:"bytes,12,opt,name=image"`
 	// Audio specify the pipeline for audio. Not supported in this release
 	// +kubebuilder:validation:Optional
-	Audio *AudioPipelineSpec `json:"audio,omitempty" protobuf:"bytes,12,opt,name=audio"`
+	Audio *AudioPipelineSpec `json:"audio,omitempty" protobuf:"bytes,13,opt,name=audio"`
 	// Video specify the pipeline for video. Not supported in this release
 	// +kubebuilder:validation:Optional
-	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,13,opt,name=video"`
+	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,14,opt,name=video"`
 	// Spec to generate one or more columns from existing columns in this pipeline
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,14,opt,name=generated"`
+	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,15,opt,name=generated"`
 	// Specify custom columns. Custom Columns are specified by the user
-	Custom []GeneratedColumnSpec `json:"custom,omitempty" protobuf:"bytes,15,rep,name=custom"`
+	Custom []GeneratedColumnSpec `json:"custom,omitempty" protobuf:"bytes,16,rep,name=custom"`
 	// If dropped, all the columns in this pipeline will be dropped.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Drop *bool `json:"drop,omitempty" protobuf:"varint,16,opt,name=drop"`
+	Drop *bool `json:"drop,omitempty" protobuf:"varint,17,opt,name=drop"`
 	// If true, all the features in this pipeline will passtrough, without processing.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Passtrough *bool `json:"passtrough,omitempty" protobuf:"varint,17,opt,name=passtrough"`
+	Passtrough *bool `json:"passtrough,omitempty" protobuf:"varint,18,opt,name=passtrough"`
 }
 
 type FeatureImportance struct {
