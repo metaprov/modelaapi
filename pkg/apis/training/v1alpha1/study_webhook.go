@@ -78,10 +78,6 @@ func (study *Study) Default() {
 	if study.Spec.Preprocessing.Text == nil {
 		study.Spec.Preprocessing.Text = &TextPipelineSpec{}
 	}
-	if study.Spec.Preprocessing.FeatureEngineering == nil {
-		none := catalog.NoneFeatureEngineering
-		study.Spec.Preprocessing.FeatureEngineering = &none
-	}
 
 	if study.Spec.Objective == nil {
 		o := DefaultObjective(*study.Spec.Task)
