@@ -35,7 +35,10 @@ export class FeatureHistogramServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListFeatureHistograms = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeatureHistograms = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/ListFeatureHistograms',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsRequest,
     github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsResponse,
     (request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class FeatureHistogramServiceClient {
   listFeatureHistograms(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsResponse>;
 
   listFeatureHistograms(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.ListFeatureHistogramsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class FeatureHistogramServiceClient {
     this.methodInfoListFeatureHistograms);
   }
 
-  methodInfoCreateFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/CreateFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramRequest,
     github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramResponse,
     (request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class FeatureHistogramServiceClient {
   createFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramResponse>;
 
   createFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.CreateFeatureHistogramResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class FeatureHistogramServiceClient {
     this.methodInfoCreateFeatureHistogram);
   }
 
-  methodInfoGetFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/GetFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramRequest,
     github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramResponse,
     (request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class FeatureHistogramServiceClient {
   getFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramResponse>;
 
   getFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.GetFeatureHistogramResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class FeatureHistogramServiceClient {
     this.methodInfoGetFeatureHistogram);
   }
 
-  methodInfoUpdateFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/UpdateFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramRequest,
     github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramResponse,
     (request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class FeatureHistogramServiceClient {
   updateFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramResponse>;
 
   updateFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.UpdateFeatureHistogramResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class FeatureHistogramServiceClient {
     this.methodInfoUpdateFeatureHistogram);
   }
 
-  methodInfoDeleteFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.featurehistogram.v1.FeatureHistogramService/DeleteFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramRequest,
     github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramResponse,
     (request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class FeatureHistogramServiceClient {
   deleteFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramResponse>;
 
   deleteFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_featurehistogram_v1_featurehistogram_pb.DeleteFeatureHistogramResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

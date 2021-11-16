@@ -35,7 +35,10 @@ export class LabServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListLabs = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListLabs = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.lab.v1.LabService/ListLabs',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsRequest,
     github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsResponse,
     (request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class LabServiceClient {
   listLabs(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsResponse>;
 
   listLabs(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.ListLabsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class LabServiceClient {
     this.methodInfoListLabs);
   }
 
-  methodInfoCreateLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.lab.v1.LabService/CreateLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabRequest,
     github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabResponse,
     (request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class LabServiceClient {
   createLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabResponse>;
 
   createLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.CreateLabResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class LabServiceClient {
     this.methodInfoCreateLab);
   }
 
-  methodInfoGetLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.lab.v1.LabService/GetLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabRequest,
     github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabResponse,
     (request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class LabServiceClient {
   getLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabResponse>;
 
   getLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.GetLabResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class LabServiceClient {
     this.methodInfoGetLab);
   }
 
-  methodInfoUpdateLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.lab.v1.LabService/UpdateLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabRequest,
     github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabResponse,
     (request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class LabServiceClient {
   updateLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabResponse>;
 
   updateLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.UpdateLabResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class LabServiceClient {
     this.methodInfoUpdateLab);
   }
 
-  methodInfoDeleteLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.lab.v1.LabService/DeleteLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabRequest,
     github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabResponse,
     (request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class LabServiceClient {
   deleteLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabResponse>;
 
   deleteLab(
     request: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_lab_v1_lab_pb.DeleteLabResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

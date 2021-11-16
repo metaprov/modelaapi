@@ -35,7 +35,10 @@ export class ConnectionServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListConnections = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListConnections = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/ListConnections',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsRequest,
     github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsResponse,
     (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class ConnectionServiceClient {
   listConnections(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsResponse>;
 
   listConnections(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.ListConnectionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class ConnectionServiceClient {
     this.methodInfoListConnections);
   }
 
-  methodInfoCreateConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/CreateConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionRequest,
     github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionResponse,
     (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class ConnectionServiceClient {
   createConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionResponse>;
 
   createConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.CreateConnectionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class ConnectionServiceClient {
     this.methodInfoCreateConnection);
   }
 
-  methodInfoGetConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/GetConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionRequest,
     github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionResponse,
     (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class ConnectionServiceClient {
   getConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionResponse>;
 
   getConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.GetConnectionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class ConnectionServiceClient {
     this.methodInfoGetConnection);
   }
 
-  methodInfoUpdateConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/UpdateConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionRequest,
     github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionResponse,
     (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class ConnectionServiceClient {
   updateConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionResponse>;
 
   updateConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.UpdateConnectionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class ConnectionServiceClient {
     this.methodInfoUpdateConnection);
   }
 
-  methodInfoDeleteConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/DeleteConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionRequest,
     github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionResponse,
     (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class ConnectionServiceClient {
   deleteConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionResponse>;
 
   deleteConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.DeleteConnectionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class ConnectionServiceClient {
     this.methodInfoDeleteConnection);
   }
 
-  methodInfoTestConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoTestConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.connection.v1.ConnectionService/TestConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionRequest,
     github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionResponse,
     (request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class ConnectionServiceClient {
   testConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionResponse>;
 
   testConnection(
     request: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_connection_v1_connection_pb.TestConnectionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -35,7 +35,10 @@ export class ServingSiteServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListServingSites = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListServingSites = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/ListServingSites',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesRequest,
     github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesResponse,
     (request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class ServingSiteServiceClient {
   listServingSites(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesResponse>;
 
   listServingSites(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.ListServingSitesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class ServingSiteServiceClient {
     this.methodInfoListServingSites);
   }
 
-  methodInfoCreateServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/CreateServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteRequest,
     github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteResponse,
     (request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class ServingSiteServiceClient {
   createServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteResponse>;
 
   createServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.CreateServingSiteResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class ServingSiteServiceClient {
     this.methodInfoCreateServingSite);
   }
 
-  methodInfoGetServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/GetServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteRequest,
     github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteResponse,
     (request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class ServingSiteServiceClient {
   getServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteResponse>;
 
   getServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.GetServingSiteResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class ServingSiteServiceClient {
     this.methodInfoGetServingSite);
   }
 
-  methodInfoUpdateServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/UpdateServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteRequest,
     github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteResponse,
     (request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class ServingSiteServiceClient {
   updateServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteResponse>;
 
   updateServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.UpdateServingSiteResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class ServingSiteServiceClient {
     this.methodInfoUpdateServingSite);
   }
 
-  methodInfoDeleteServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.servingsite.v1.ServingSiteService/DeleteServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteRequest,
     github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteResponse,
     (request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class ServingSiteServiceClient {
   deleteServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteResponse>;
 
   deleteServingSite(
     request: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_servingsite_v1_servingsite_pb.DeleteServingSiteResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

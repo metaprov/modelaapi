@@ -35,7 +35,10 @@ export class RunBookServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListRunBooks = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListRunBooks = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/ListRunBooks',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksRequest,
     github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksResponse,
     (request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class RunBookServiceClient {
   listRunBooks(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksResponse>;
 
   listRunBooks(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.ListRunBooksResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class RunBookServiceClient {
     this.methodInfoListRunBooks);
   }
 
-  methodInfoCreateRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/CreateRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookRequest,
     github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookResponse,
     (request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class RunBookServiceClient {
   createRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookResponse>;
 
   createRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.CreateRunBookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class RunBookServiceClient {
     this.methodInfoCreateRunBook);
   }
 
-  methodInfoGetRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/GetRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookRequest,
     github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookResponse,
     (request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class RunBookServiceClient {
   getRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookResponse>;
 
   getRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.GetRunBookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class RunBookServiceClient {
     this.methodInfoGetRunBook);
   }
 
-  methodInfoUpdateRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/UpdateRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookRequest,
     github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookResponse,
     (request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class RunBookServiceClient {
   updateRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookResponse>;
 
   updateRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.UpdateRunBookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class RunBookServiceClient {
     this.methodInfoUpdateRunBook);
   }
 
-  methodInfoDeleteRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.runbook.v1.RunBookService/DeleteRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookRequest,
     github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookResponse,
     (request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class RunBookServiceClient {
   deleteRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookResponse>;
 
   deleteRunBook(
     request: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_runbook_v1_runbook_pb.DeleteRunBookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -35,7 +35,10 @@ export class AccountServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListAccounts = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListAccounts = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ListAccounts',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class AccountServiceClient {
   listAccounts(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse>;
 
   listAccounts(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ListAccountsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class AccountServiceClient {
     this.methodInfoListAccounts);
   }
 
-  methodInfoCreateAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/CreateAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class AccountServiceClient {
   createAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse>;
 
   createAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.CreateAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class AccountServiceClient {
     this.methodInfoCreateAccount);
   }
 
-  methodInfoGetAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class AccountServiceClient {
   getAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse>;
 
   getAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class AccountServiceClient {
     this.methodInfoGetAccount);
   }
 
-  methodInfoUpdateAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UpdateAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class AccountServiceClient {
   updateAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse>;
 
   updateAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UpdateAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class AccountServiceClient {
     this.methodInfoUpdateAccount);
   }
 
-  methodInfoDeleteAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DeleteAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class AccountServiceClient {
   deleteAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse>;
 
   deleteAccount(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DeleteAccountResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class AccountServiceClient {
     this.methodInfoDeleteAccount);
   }
 
-  methodInfoGetAccountNamespaces = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetAccountNamespaces = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/GetAccountNamespaces',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class AccountServiceClient {
   getAccountNamespaces(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse>;
 
   getAccountNamespaces(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.GetAccountNamespacesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class AccountServiceClient {
     this.methodInfoGetAccountNamespaces);
   }
 
-  methodInfoLogin = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoLogin = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Login',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class AccountServiceClient {
   login(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse>;
 
   login(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLoginResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class AccountServiceClient {
     this.methodInfoLogin);
   }
 
-  methodInfoLogout = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoLogout = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/Logout',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class AccountServiceClient {
   logout(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse>;
 
   logout(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.AccountLogoutRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.LogoutResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -355,7 +379,10 @@ export class AccountServiceClient {
     this.methodInfoLogout);
   }
 
-  methodInfoChangePassword = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoChangePassword = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ChangePassword',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest) => {
       return request.serializeBinary();
@@ -370,13 +397,13 @@ export class AccountServiceClient {
   changePassword(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse>;
 
   changePassword(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ChangePasswordResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -395,7 +422,10 @@ export class AccountServiceClient {
     this.methodInfoChangePassword);
   }
 
-  methodInfoResetPassword = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResetPassword = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/ResetPassword',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest) => {
       return request.serializeBinary();
@@ -410,13 +440,13 @@ export class AccountServiceClient {
   resetPassword(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse>;
 
   resetPassword(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.ResetPasswordResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -435,7 +465,10 @@ export class AccountServiceClient {
     this.methodInfoResetPassword);
   }
 
-  methodInfoUploadAvatar = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUploadAvatar = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/UploadAvatar',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest) => {
       return request.serializeBinary();
@@ -450,13 +483,13 @@ export class AccountServiceClient {
   uploadAvatar(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse>;
 
   uploadAvatar(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.UploadAvatarReponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -475,7 +508,10 @@ export class AccountServiceClient {
     this.methodInfoUploadAvatar);
   }
 
-  methodInfoDownloadAvatar = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDownloadAvatar = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.account.v1.AccountService/DownloadAvatar',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest,
     github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse,
     (request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest) => {
       return request.serializeBinary();
@@ -490,13 +526,13 @@ export class AccountServiceClient {
   downloadAvatar(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse>;
 
   downloadAvatar(
     request: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_account_v1_account_pb.DownloadAvatarReponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

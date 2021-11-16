@@ -35,7 +35,10 @@ export class DataProductVersionServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListDataProductVersions = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataProductVersions = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/ListDataProductVersions',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
     github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse,
     (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class DataProductVersionServiceClient {
   listDataProductVersions(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse>;
 
   listDataProductVersions(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.ListDataProductVersionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class DataProductVersionServiceClient {
     this.methodInfoListDataProductVersions);
   }
 
-  methodInfoCreateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/CreateDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
     github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse,
     (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class DataProductVersionServiceClient {
   createDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse>;
 
   createDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.CreateDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class DataProductVersionServiceClient {
     this.methodInfoCreateDataProductVersion);
   }
 
-  methodInfoGetDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/GetDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
     github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse,
     (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class DataProductVersionServiceClient {
   getDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse>;
 
   getDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.GetDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class DataProductVersionServiceClient {
     this.methodInfoGetDataProductVersion);
   }
 
-  methodInfoUpdateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/UpdateDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
     github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse,
     (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class DataProductVersionServiceClient {
   updateDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse>;
 
   updateDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.UpdateDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class DataProductVersionServiceClient {
     this.methodInfoUpdateDataProductVersion);
   }
 
-  methodInfoDeleteDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproductversion.v1.DataProductVersionService/DeleteDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
     github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse,
     (request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class DataProductVersionServiceClient {
   deleteDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse>;
 
   deleteDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproductversion_v1_dataproductversion_pb.DeleteDataProductVersionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

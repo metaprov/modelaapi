@@ -35,7 +35,10 @@ export class CronPredictionServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListCronPredictions = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListCronPredictions = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ListCronPredictions',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class CronPredictionServiceClient {
   listCronPredictions(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse>;
 
   listCronPredictions(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ListCronPredictionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class CronPredictionServiceClient {
     this.methodInfoListCronPredictions);
   }
 
-  methodInfoCreateCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/CreateCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class CronPredictionServiceClient {
   createCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse>;
 
   createCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.CreateCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class CronPredictionServiceClient {
     this.methodInfoCreateCronPrediction);
   }
 
-  methodInfoGetCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/GetCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class CronPredictionServiceClient {
   getCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse>;
 
   getCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.GetCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class CronPredictionServiceClient {
     this.methodInfoGetCronPrediction);
   }
 
-  methodInfoUpdateCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/UpdateCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class CronPredictionServiceClient {
   updateCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse>;
 
   updateCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.UpdateCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class CronPredictionServiceClient {
     this.methodInfoUpdateCronPrediction);
   }
 
-  methodInfoDeleteCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/DeleteCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class CronPredictionServiceClient {
   deleteCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse>;
 
   deleteCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.DeleteCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class CronPredictionServiceClient {
     this.methodInfoDeleteCronPrediction);
   }
 
-  methodInfoPauseCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPauseCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/PauseCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class CronPredictionServiceClient {
   pauseCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse>;
 
   pauseCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.PauseCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class CronPredictionServiceClient {
     this.methodInfoPauseCronPrediction);
   }
 
-  methodInfoResumeCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResumeCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/ResumeCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class CronPredictionServiceClient {
   resumeCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse>;
 
   resumeCronPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.ResumeCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class CronPredictionServiceClient {
     this.methodInfoResumeCronPrediction);
   }
 
-  methodInfoRunPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRunPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cronprediction.v1.CronPredictionService/RunPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
     github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse,
     (request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class CronPredictionServiceClient {
   runPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse>;
 
   runPrediction(
     request: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cronprediction_v1_cronprediction_pb.RunCronPredictionResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

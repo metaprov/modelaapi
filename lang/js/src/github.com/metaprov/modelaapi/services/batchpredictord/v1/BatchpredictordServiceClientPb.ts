@@ -13,8 +13,8 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 import * as github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb from '../../../../../../github.com/metaprov/modelaapi/services/batchpredictord/v1/batchpredictord_pb';
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 
 
 export class BatchClient {
@@ -36,7 +36,10 @@ export class BatchClient {
     this.options_ = options;
   }
 
-  methodInfoBatchPredict = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoBatchPredict = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/BatchPredict',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictRequest,
     github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse,
     (request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictRequest) => {
       return request.serializeBinary();
@@ -51,13 +54,13 @@ export class BatchClient {
   batchPredict(
     request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse>;
 
   batchPredict(
     request: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_batchpredictord_v1_batchpredictord_pb.BatchPredictResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -76,7 +79,10 @@ export class BatchClient {
     this.methodInfoBatchPredict);
   }
 
-  methodInfoShutdown = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoShutdown = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.batchpredictord.v1.Batch/Shutdown',
+    grpcWeb.MethodType.UNARY,
+    google_protobuf_empty_pb.Empty,
     google_protobuf_empty_pb.Empty,
     (request: google_protobuf_empty_pb.Empty) => {
       return request.serializeBinary();
@@ -91,13 +97,13 @@ export class BatchClient {
   shutdown(
     request: google_protobuf_empty_pb.Empty,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   shutdown(
     request: google_protobuf_empty_pb.Empty,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

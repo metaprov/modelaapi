@@ -35,7 +35,10 @@ export class CloudProxyServiceClient {
     this.options_ = options;
   }
 
-  methodInfoDownload = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDownload = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Download',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
     github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse,
     (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class CloudProxyServiceClient {
   download(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse>;
 
   download(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileDownloadResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class CloudProxyServiceClient {
     this.methodInfoDownload);
   }
 
-  methodInfoUpload = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpload = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Upload',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
     github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse,
     (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class CloudProxyServiceClient {
   upload(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse>;
 
   upload(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.FileUploadResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class CloudProxyServiceClient {
     this.methodInfoUpload);
   }
 
-  methodInfoKeyExistInVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoKeyExistInVirtualBucket = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/KeyExistInVirtualBucket',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
     github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse,
     (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class CloudProxyServiceClient {
   keyExistInVirtualBucket(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse>;
 
   keyExistInVirtualBucket(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.KeyExistInVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class CloudProxyServiceClient {
     this.methodInfoKeyExistInVirtualBucket);
   }
 
-  methodInfoVirtualBucketExist = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoVirtualBucketExist = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/VirtualBucketExist',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
     github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse,
     (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class CloudProxyServiceClient {
   virtualBucketExist(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse>;
 
   virtualBucketExist(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.VirtualBucketExistResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class CloudProxyServiceClient {
     this.methodInfoVirtualBucketExist);
   }
 
-  methodInfoCreateVirtualBucketIfNotExist = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateVirtualBucketIfNotExist = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/CreateVirtualBucketIfNotExist',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
     github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse,
     (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class CloudProxyServiceClient {
   createVirtualBucketIfNotExist(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse>;
 
   createVirtualBucketIfNotExist(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.CreateVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class CloudProxyServiceClient {
     this.methodInfoCreateVirtualBucketIfNotExist);
   }
 
-  methodInfoShutdown = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoShutdown = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.cloudproxyd.v1.CloudProxyService/Shutdown',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
     github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse,
     (request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class CloudProxyServiceClient {
   shutdown(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse>;
 
   shutdown(
     request: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_cloudproxyd_v1_cloudproxyd_pb.ShutdownResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

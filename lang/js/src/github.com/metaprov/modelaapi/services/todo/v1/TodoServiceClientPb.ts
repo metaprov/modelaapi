@@ -35,7 +35,10 @@ export class TodoServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListTodos = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListTodos = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/ListTodos',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosRequest,
     github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosResponse,
     (request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class TodoServiceClient {
   listTodos(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosResponse>;
 
   listTodos(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.ListTodosResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class TodoServiceClient {
     this.methodInfoListTodos);
   }
 
-  methodInfoCreateTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/CreateTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoRequest,
     github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoResponse,
     (request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class TodoServiceClient {
   createTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoResponse>;
 
   createTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.CreateTodoResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class TodoServiceClient {
     this.methodInfoCreateTodo);
   }
 
-  methodInfoGetTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/GetTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoRequest,
     github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoResponse,
     (request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class TodoServiceClient {
   getTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoResponse>;
 
   getTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.GetTodoResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class TodoServiceClient {
     this.methodInfoGetTodo);
   }
 
-  methodInfoUpdateTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/UpdateTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoRequest,
     github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoResponse,
     (request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class TodoServiceClient {
   updateTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoResponse>;
 
   updateTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.UpdateTodoResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class TodoServiceClient {
     this.methodInfoUpdateTodo);
   }
 
-  methodInfoDeleteTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.todo.v1.TodoService/DeleteTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoRequest,
     github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoResponse,
     (request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class TodoServiceClient {
   deleteTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoResponse>;
 
   deleteTodo(
     request: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_todo_v1_todo_pb.DeleteTodoResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

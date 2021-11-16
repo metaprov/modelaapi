@@ -35,7 +35,10 @@ export class ModelPipelineServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListModelPipelines = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModelPipelines = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/ListModelPipelines',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class ModelPipelineServiceClient {
   listModelPipelines(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesResponse>;
 
   listModelPipelines(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ListModelPipelinesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class ModelPipelineServiceClient {
     this.methodInfoListModelPipelines);
   }
 
-  methodInfoCreateModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/CreateModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class ModelPipelineServiceClient {
   createModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineResponse>;
 
   createModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.CreateModelPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class ModelPipelineServiceClient {
     this.methodInfoCreateModelPipeline);
   }
 
-  methodInfoGetModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/GetModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class ModelPipelineServiceClient {
   getModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineResponse>;
 
   getModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.GetModelPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class ModelPipelineServiceClient {
     this.methodInfoGetModelPipeline);
   }
 
-  methodInfoUpdateModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/UpdateModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class ModelPipelineServiceClient {
   updateModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineResponse>;
 
   updateModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.UpdateModelPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class ModelPipelineServiceClient {
     this.methodInfoUpdateModelPipeline);
   }
 
-  methodInfoDeleteModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/DeleteModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class ModelPipelineServiceClient {
   deleteModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineResponse>;
 
   deleteModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.DeleteModelPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class ModelPipelineServiceClient {
     this.methodInfoDeleteModelPipeline);
   }
 
-  methodInfoRunModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRunModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/RunModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class ModelPipelineServiceClient {
   runModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse>;
 
   runModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.RunModelPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class ModelPipelineServiceClient {
     this.methodInfoRunModelPipeline);
   }
 
-  methodInfoPauseModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPauseModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/PauseModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class ModelPipelineServiceClient {
   pauseModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineResponse>;
 
   pauseModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.PauseModelPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class ModelPipelineServiceClient {
     this.methodInfoPauseModelPipeline);
   }
 
-  methodInfoResumeModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResumeModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelpipeline.v1.ModelPipelineService/ResumeModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineRequest,
     github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class ModelPipelineServiceClient {
   resumeModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineResponse>;
 
   resumeModelPipeline(
     request: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelpipeline_v1_modelpipeline_pb.ResumeModelPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

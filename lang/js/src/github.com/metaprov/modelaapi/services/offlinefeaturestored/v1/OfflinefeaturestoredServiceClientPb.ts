@@ -35,7 +35,10 @@ export class OfflineFeatureStoreServiceClient {
     this.options_ = options;
   }
 
-  methodInfoCreateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/CreateFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureRequest,
     github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class OfflineFeatureStoreServiceClient {
   createFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureResponse>;
 
   createFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.CreateFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class OfflineFeatureStoreServiceClient {
     this.methodInfoCreateFeature);
   }
 
-  methodInfoDeleteFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/DeleteFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureRequest,
     github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class OfflineFeatureStoreServiceClient {
   deleteFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureResponse>;
 
   deleteFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.DeleteFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class OfflineFeatureStoreServiceClient {
     this.methodInfoDeleteFeature);
   }
 
-  methodInfoUpdateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/UpdateFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureRequest,
     github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class OfflineFeatureStoreServiceClient {
   updateFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureResponse>;
 
   updateFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.UpdateFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class OfflineFeatureStoreServiceClient {
     this.methodInfoUpdateFeature);
   }
 
-  methodInfoListFeatures = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeatures = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/ListFeatures',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesRequest,
     github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesResponse,
     (request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class OfflineFeatureStoreServiceClient {
   listFeatures(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesResponse>;
 
   listFeatures(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.ListFeaturesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class OfflineFeatureStoreServiceClient {
     this.methodInfoListFeatures);
   }
 
-  methodInfoGetFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GetFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureRequest,
     github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class OfflineFeatureStoreServiceClient {
   getFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureResponse>;
 
   getFeature(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GetFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class OfflineFeatureStoreServiceClient {
     this.methodInfoGetFeature);
   }
 
-  methodInfoGenerateTrainingDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGenerateTrainingDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.offlinefeaturestored.v1.OfflineFeatureStoreService/GenerateTrainingDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetRequest,
     github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class OfflineFeatureStoreServiceClient {
   generateTrainingDataset(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetResponse>;
 
   generateTrainingDataset(
     request: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_offlinefeaturestored_v1_offlinefeaturestored_pb.GenerateTrainingDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

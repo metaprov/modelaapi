@@ -35,7 +35,10 @@ export class PredictorServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListPredictors = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPredictors = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/ListPredictors',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsRequest,
     github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsResponse,
     (request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class PredictorServiceClient {
   listPredictors(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsResponse>;
 
   listPredictors(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.ListPredictorsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class PredictorServiceClient {
     this.methodInfoListPredictors);
   }
 
-  methodInfoCreatePredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/CreatePredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorRequest,
     github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorResponse,
     (request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class PredictorServiceClient {
   createPredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorResponse>;
 
   createPredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.CreatePredictorResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class PredictorServiceClient {
     this.methodInfoCreatePredictor);
   }
 
-  methodInfoGetPredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/GetPredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorRequest,
     github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorResponse,
     (request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class PredictorServiceClient {
   getPredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorResponse>;
 
   getPredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.GetPredictorResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class PredictorServiceClient {
     this.methodInfoGetPredictor);
   }
 
-  methodInfoUpdatePredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdatePredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/UpdatePredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorRequest,
     github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorResponse,
     (request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class PredictorServiceClient {
   updatePredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorResponse>;
 
   updatePredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.UpdatePredictorResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class PredictorServiceClient {
     this.methodInfoUpdatePredictor);
   }
 
-  methodInfoRollBack = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRollBack = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/RollBack',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackRequest,
     github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackResponse,
     (request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class PredictorServiceClient {
   rollBack(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackResponse>;
 
   rollBack(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.RollbackResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class PredictorServiceClient {
     this.methodInfoRollBack);
   }
 
-  methodInfoDeletePredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/DeletePredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorRequest,
     github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorResponse,
     (request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class PredictorServiceClient {
   deletePredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorResponse>;
 
   deletePredictor(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.DeletePredictorResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class PredictorServiceClient {
     this.methodInfoDeletePredictor);
   }
 
-  methodInfoPredictOne = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPredictOne = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictor.v1.PredictorService/PredictOne',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneRequest,
     github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneResponse,
     (request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class PredictorServiceClient {
   predictOne(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneResponse>;
 
   predictOne(
     request: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictor_v1_predictor_pb.PredictOneResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

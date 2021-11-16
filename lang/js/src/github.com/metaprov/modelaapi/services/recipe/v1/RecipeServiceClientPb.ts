@@ -35,7 +35,10 @@ export class RecipeServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListRecipes = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListRecipes = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ListRecipes',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesRequest,
     github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesResponse,
     (request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class RecipeServiceClient {
   listRecipes(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesResponse>;
 
   listRecipes(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ListRecipesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class RecipeServiceClient {
     this.methodInfoListRecipes);
   }
 
-  methodInfoCreateRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/CreateRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeRequest,
     github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeResponse,
     (request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class RecipeServiceClient {
   createRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeResponse>;
 
   createRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.CreateRecipeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class RecipeServiceClient {
     this.methodInfoCreateRecipe);
   }
 
-  methodInfoGetRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/GetRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeRequest,
     github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeResponse,
     (request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class RecipeServiceClient {
   getRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeResponse>;
 
   getRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.GetRecipeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class RecipeServiceClient {
     this.methodInfoGetRecipe);
   }
 
-  methodInfoRunRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRunRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/RunRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeRequest,
     github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeResponse,
     (request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class RecipeServiceClient {
   runRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeResponse>;
 
   runRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.RunRecipeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class RecipeServiceClient {
     this.methodInfoRunRecipe);
   }
 
-  methodInfoProfileRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoProfileRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/ProfileRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeRequest,
     github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeResponse,
     (request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class RecipeServiceClient {
   profileRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeResponse>;
 
   profileRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.ProfileRecipeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class RecipeServiceClient {
     this.methodInfoProfileRecipe);
   }
 
-  methodInfoUpdateRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/UpdateRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeRequest,
     github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeResponse,
     (request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class RecipeServiceClient {
   updateRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeResponse>;
 
   updateRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.UpdateRecipeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class RecipeServiceClient {
     this.methodInfoUpdateRecipe);
   }
 
-  methodInfoDeleteRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.recipe.v1.RecipeService/DeleteRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeRequest,
     github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeResponse,
     (request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class RecipeServiceClient {
   deleteRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeResponse>;
 
   deleteRecipe(
     request: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_recipe_v1_recipe_pb.DeleteRecipeResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

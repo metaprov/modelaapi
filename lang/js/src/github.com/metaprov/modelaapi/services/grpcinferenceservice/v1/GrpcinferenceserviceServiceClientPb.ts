@@ -35,7 +35,10 @@ export class GRPCInferenceServiceClient {
     this.options_ = options;
   }
 
-  methodInfoServerLive = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoServerLive = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerLive',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class GRPCInferenceServiceClient {
   serverLive(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveResponse>;
 
   serverLive(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerLiveResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoServerLive);
   }
 
-  methodInfoServerReady = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoServerReady = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerReady',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class GRPCInferenceServiceClient {
   serverReady(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyResponse>;
 
   serverReady(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerReadyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoServerReady);
   }
 
-  methodInfoModelReady = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoModelReady = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelReady',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class GRPCInferenceServiceClient {
   modelReady(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyResponse>;
 
   modelReady(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelReadyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoModelReady);
   }
 
-  methodInfoServerMetadata = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoServerMetadata = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ServerMetadata',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class GRPCInferenceServiceClient {
   serverMetadata(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataResponse>;
 
   serverMetadata(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ServerMetadataResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoServerMetadata);
   }
 
-  methodInfoModelMetadata = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoModelMetadata = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelMetadata',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class GRPCInferenceServiceClient {
   modelMetadata(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataResponse>;
 
   modelMetadata(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelMetadataResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoModelMetadata);
   }
 
-  methodInfoModelInfer = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoModelInfer = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/ModelInfer',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class GRPCInferenceServiceClient {
   modelInfer(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferResponse>;
 
   modelInfer(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.ModelInferResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoModelInfer);
   }
 
-  methodInfoGetPredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetPredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class GRPCInferenceServiceClient {
   getPredictor(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorResponse>;
 
   getPredictor(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetPredictorResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoGetPredictor);
   }
 
-  methodInfoGetModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/GetModel',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class GRPCInferenceServiceClient {
   getModel(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelResponse>;
 
   getModel(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.GetModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -355,7 +379,10 @@ export class GRPCInferenceServiceClient {
     this.methodInfoGetModel);
   }
 
-  methodInfoPredict = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPredict = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GRPCInferenceService/Predict',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictRequest,
     github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictResponse,
     (request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictRequest) => {
       return request.serializeBinary();
@@ -370,13 +397,13 @@ export class GRPCInferenceServiceClient {
   predict(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictResponse>;
 
   predict(
     request: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_grpcinferenceservice_v1_grpcinferenceservice_pb.PredictResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

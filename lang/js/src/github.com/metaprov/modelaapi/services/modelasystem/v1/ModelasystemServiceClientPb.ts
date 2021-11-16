@@ -35,7 +35,10 @@ export class ModelaSystemServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListModelaSystems = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModelaSystems = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/ListModelaSystems',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class ModelaSystemServiceClient {
   listModelaSystems(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsResponse>;
 
   listModelaSystems(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.ListModelaSystemsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class ModelaSystemServiceClient {
     this.methodInfoListModelaSystems);
   }
 
-  methodInfoCreateModelaSystem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateModelaSystem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/CreateModelaSystem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class ModelaSystemServiceClient {
   createModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemResponse>;
 
   createModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.CreateModelaSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class ModelaSystemServiceClient {
     this.methodInfoCreateModelaSystem);
   }
 
-  methodInfoGetModelaSystem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModelaSystem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/GetModelaSystem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class ModelaSystemServiceClient {
   getModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemResponse>;
 
   getModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.GetModelaSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class ModelaSystemServiceClient {
     this.methodInfoGetModelaSystem);
   }
 
-  methodInfoUpdateModelaSystem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateModelaSystem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/UpdateModelaSystem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class ModelaSystemServiceClient {
   updateModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemResponse>;
 
   updateModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.UpdateModelaSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class ModelaSystemServiceClient {
     this.methodInfoUpdateModelaSystem);
   }
 
-  methodInfoDeleteModelaSystem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModelaSystem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DeleteModelaSystem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class ModelaSystemServiceClient {
   deleteModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemResponse>;
 
   deleteModelaSystem(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DeleteModelaSystemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class ModelaSystemServiceClient {
     this.methodInfoDeleteModelaSystem);
   }
 
-  methodInfoDownloadLogfile = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDownloadLogfile = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/DownloadLogfile',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class ModelaSystemServiceClient {
   downloadLogfile(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse>;
 
   downloadLogfile(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.DownloadLogFileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class ModelaSystemServiceClient {
     this.methodInfoDownloadLogfile);
   }
 
-  methodInfoBackupDatabase = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoBackupDatabase = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupDatabase',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class ModelaSystemServiceClient {
   backupDatabase(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse>;
 
   backupDatabase(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupDatabaseResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class ModelaSystemServiceClient {
     this.methodInfoBackupDatabase);
   }
 
-  methodInfoBackupEtcd = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoBackupEtcd = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelasystem.v1.ModelaSystemService/BackupEtcd',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest,
     github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse,
     (request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class ModelaSystemServiceClient {
   backupEtcd(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse>;
 
   backupEtcd(
     request: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelasystem_v1_modelasystem_pb.BackupEtcdResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

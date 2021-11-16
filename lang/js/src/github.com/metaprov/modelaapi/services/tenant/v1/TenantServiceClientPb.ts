@@ -35,7 +35,10 @@ export class TenantServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListTenants = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListTenants = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/ListTenants',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
     github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse,
     (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class TenantServiceClient {
   listTenants(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse>;
 
   listTenants(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.ListTenantsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class TenantServiceClient {
     this.methodInfoListTenants);
   }
 
-  methodInfoCreateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/CreateTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
     github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse,
     (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class TenantServiceClient {
   createTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse>;
 
   createTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.CreateTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class TenantServiceClient {
     this.methodInfoCreateTenant);
   }
 
-  methodInfoGetTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/GetTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest,
     github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse,
     (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class TenantServiceClient {
   getTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse>;
 
   getTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.GetTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class TenantServiceClient {
     this.methodInfoGetTenant);
   }
 
-  methodInfoUpdateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/UpdateTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
     github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse,
     (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class TenantServiceClient {
   updateTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse>;
 
   updateTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.UpdateTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class TenantServiceClient {
     this.methodInfoUpdateTenant);
   }
 
-  methodInfoDeleteTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.tenant.v1.TenantService/DeleteTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
     github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse,
     (request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class TenantServiceClient {
   deleteTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse>;
 
   deleteTenant(
     request: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_tenant_v1_tenant_pb.DeleteTenantResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -35,7 +35,10 @@ export class CatalogServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListAlgorithm = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListAlgorithm = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListAlgorithm',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class CatalogServiceClient {
   listAlgorithm(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsResponse>;
 
   listAlgorithm(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListAlgorithmsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class CatalogServiceClient {
     this.methodInfoListAlgorithm);
   }
 
-  methodInfoGetAlgorithm = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetAlgorithm = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class CatalogServiceClient {
   getAlgorithm(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmResponse>;
 
   getAlgorithm(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetAlgorithmResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class CatalogServiceClient {
     this.methodInfoGetAlgorithm);
   }
 
-  methodInfoListMLFrameworks = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListMLFrameworks = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class CatalogServiceClient {
   listMLFrameworks(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksResponse>;
 
   listMLFrameworks(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListMLFrameworksResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class CatalogServiceClient {
     this.methodInfoListMLFrameworks);
   }
 
-  methodInfoGetMLFramework = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetMLFramework = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetMLFramework',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class CatalogServiceClient {
   getMLFramework(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkResponse>;
 
   getMLFramework(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetMLFrameworkResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class CatalogServiceClient {
     this.methodInfoGetMLFramework);
   }
 
-  methodInfoListClouds = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListClouds = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListClouds',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class CatalogServiceClient {
   listClouds(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsResponse>;
 
   listClouds(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListCloudsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class CatalogServiceClient {
     this.methodInfoListClouds);
   }
 
-  methodInfoGetCloud = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetCloud = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetCloud',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class CatalogServiceClient {
   getCloud(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudResponse>;
 
   getCloud(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetCloudResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class CatalogServiceClient {
     this.methodInfoGetCloud);
   }
 
-  methodInfoListWorkloadClasses = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListWorkloadClasses = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListWorkloadClasses',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class CatalogServiceClient {
   listWorkloadClasses(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesResponse>;
 
   listWorkloadClasses(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListWorkloadClassesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class CatalogServiceClient {
     this.methodInfoListWorkloadClasses);
   }
 
-  methodInfoGetWorkloadClass = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetWorkloadClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetWorkloadClass',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class CatalogServiceClient {
   getWorkloadClass(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassResponse>;
 
   getWorkloadClass(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetWorkloadClassResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -355,7 +379,10 @@ export class CatalogServiceClient {
     this.methodInfoGetWorkloadClass);
   }
 
-  methodInfoListUserRoleClasses = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListUserRoleClasses = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListUserRoleClasses',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest) => {
       return request.serializeBinary();
@@ -370,13 +397,13 @@ export class CatalogServiceClient {
   listUserRoleClasses(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse>;
 
   listUserRoleClasses(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListUserRoleClassesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -395,7 +422,10 @@ export class CatalogServiceClient {
     this.methodInfoListUserRoleClasses);
   }
 
-  methodInfoGetUserRoleClass = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetUserRoleClass = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetUserRoleClass',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest) => {
       return request.serializeBinary();
@@ -410,13 +440,13 @@ export class CatalogServiceClient {
   getUserRoleClass(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse>;
 
   getUserRoleClass(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetUserRoleClassResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -435,7 +465,10 @@ export class CatalogServiceClient {
     this.methodInfoGetUserRoleClass);
   }
 
-  methodInfoListPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPublicDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListPublicDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest) => {
       return request.serializeBinary();
@@ -450,13 +483,13 @@ export class CatalogServiceClient {
   listPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse>;
 
   listPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListPublicDatasetsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -475,7 +508,10 @@ export class CatalogServiceClient {
     this.methodInfoListPublicDataset);
   }
 
-  methodInfoGetPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPublicDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetPublicDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest) => {
       return request.serializeBinary();
@@ -490,13 +526,13 @@ export class CatalogServiceClient {
   getPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse>;
 
   getPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetPublicDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -515,7 +551,10 @@ export class CatalogServiceClient {
     this.methodInfoGetPublicDataset);
   }
 
-  methodInfoDownloadPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDownloadPublicDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/DownloadPublicDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest) => {
       return request.serializeBinary();
@@ -530,13 +569,13 @@ export class CatalogServiceClient {
   downloadPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse>;
 
   downloadPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.DownloadPublicDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -555,7 +594,10 @@ export class CatalogServiceClient {
     this.methodInfoDownloadPublicDataset);
   }
 
-  methodInfoPreviewPublicDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPreviewPublicDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/PreviewPublicDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest) => {
       return request.serializeBinary();
@@ -570,13 +612,13 @@ export class CatalogServiceClient {
   previewPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse>;
 
   previewPublicDataset(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.PreviewPublicDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -595,7 +637,10 @@ export class CatalogServiceClient {
     this.methodInfoPreviewPublicDataset);
   }
 
-  methodInfoApplyPublicDatasetCR = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoApplyPublicDatasetCR = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ApplyPublicDatasetCR',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest,
     github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse,
     (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest) => {
       return request.serializeBinary();
@@ -610,13 +655,13 @@ export class CatalogServiceClient {
   applyPublicDatasetCR(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse>;
 
   applyPublicDatasetCR(
     request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ApplyPublicDatasetCRResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -35,7 +35,10 @@ export class EntityServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListEntities = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListEntities = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/ListEntities',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesRequest,
     github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesResponse,
     (request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class EntityServiceClient {
   listEntities(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesResponse>;
 
   listEntities(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.ListEntitiesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class EntityServiceClient {
     this.methodInfoListEntities);
   }
 
-  methodInfoCreateEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/CreateEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityRequest,
     github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityResponse,
     (request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class EntityServiceClient {
   createEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityResponse>;
 
   createEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.CreateEntityResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class EntityServiceClient {
     this.methodInfoCreateEntity);
   }
 
-  methodInfoGetEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/GetEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityRequest,
     github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityResponse,
     (request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class EntityServiceClient {
   getEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityResponse>;
 
   getEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.GetEntityResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class EntityServiceClient {
     this.methodInfoGetEntity);
   }
 
-  methodInfoUpdateEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/UpdateEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityRequest,
     github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityResponse,
     (request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class EntityServiceClient {
   updateEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityResponse>;
 
   updateEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.UpdateEntityResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class EntityServiceClient {
     this.methodInfoUpdateEntity);
   }
 
-  methodInfoDeleteEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.entity.v1.EntityService/DeleteEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityRequest,
     github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityResponse,
     (request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class EntityServiceClient {
   deleteEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityResponse>;
 
   deleteEntity(
     request: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_entity_v1_entity_pb.DeleteEntityResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -35,7 +35,10 @@ export class ObjectstoreServiceClient {
     this.options_ = options;
   }
 
-  methodInfoIngest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoIngest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Ingest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
     (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class ObjectstoreServiceClient {
   ingest(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   ingest(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class ObjectstoreServiceClient {
     this.methodInfoIngest);
   }
 
-  methodInfoArchive = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoArchive = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Archive',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
     (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class ObjectstoreServiceClient {
   archive(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   archive(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class ObjectstoreServiceClient {
     this.methodInfoArchive);
   }
 
-  methodInfoRecover = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRecover = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/Recover',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse,
     (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class ObjectstoreServiceClient {
   recover(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse>;
 
   recover(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class ObjectstoreServiceClient {
     this.methodInfoRecover);
   }
 
-  methodInfoExistInVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoExistInVirtualBucket = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.objectstored.v1.ObjectstoreService/ExistInVirtualBucket',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse,
     (request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class ObjectstoreServiceClient {
   existInVirtualBucket(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse>;
 
   existInVirtualBucket(
     request: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ObjectRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_objectstored_v1_objectstored_pb.ExistInVirtualBucketResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

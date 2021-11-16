@@ -35,7 +35,10 @@ export class CommitServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListCommits = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListCommits = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/ListCommits',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsRequest,
     github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsResponse,
     (request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class CommitServiceClient {
   listCommits(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsResponse>;
 
   listCommits(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.ListCommitsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class CommitServiceClient {
     this.methodInfoListCommits);
   }
 
-  methodInfoCreateCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/CreateCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitRequest,
     github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitResponse,
     (request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class CommitServiceClient {
   createCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitResponse>;
 
   createCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.CreateCommitResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class CommitServiceClient {
     this.methodInfoCreateCommit);
   }
 
-  methodInfoGetCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/GetCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitRequest,
     github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitResponse,
     (request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class CommitServiceClient {
   getCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitResponse>;
 
   getCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.GetCommitResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class CommitServiceClient {
     this.methodInfoGetCommit);
   }
 
-  methodInfoUpdateCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/UpdateCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitRequest,
     github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitResponse,
     (request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class CommitServiceClient {
   updateCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitResponse>;
 
   updateCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.UpdateCommitResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class CommitServiceClient {
     this.methodInfoUpdateCommit);
   }
 
-  methodInfoDeleteCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.commit.v1.CommitService/DeleteCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitRequest,
     github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitResponse,
     (request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class CommitServiceClient {
   deleteCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitResponse>;
 
   deleteCommit(
     request: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_commit_v1_commit_pb.DeleteCommitResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

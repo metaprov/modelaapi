@@ -35,7 +35,10 @@ export class ApiTokenServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListApiTokens = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListApiTokens = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/ListApiTokens',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensRequest,
     github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensResponse,
     (request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class ApiTokenServiceClient {
   listApiTokens(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensResponse>;
 
   listApiTokens(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.ListApiTokensResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class ApiTokenServiceClient {
     this.methodInfoListApiTokens);
   }
 
-  methodInfoCreateApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/CreateApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenRequest,
     github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenResponse,
     (request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class ApiTokenServiceClient {
   createApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenResponse>;
 
   createApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.CreateApiTokenResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class ApiTokenServiceClient {
     this.methodInfoCreateApiToken);
   }
 
-  methodInfoGetApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/GetApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenRequest,
     github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenResponse,
     (request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class ApiTokenServiceClient {
   getApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenResponse>;
 
   getApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.GetApiTokenResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class ApiTokenServiceClient {
     this.methodInfoGetApiToken);
   }
 
-  methodInfoUpdateApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/UpdateApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenRequest,
     github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenResponse,
     (request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class ApiTokenServiceClient {
   updateApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenResponse>;
 
   updateApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.UpdateApiTokenResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class ApiTokenServiceClient {
     this.methodInfoUpdateApiToken);
   }
 
-  methodInfoDeleteApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenService/DeleteApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenRequest,
     github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenResponse,
     (request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class ApiTokenServiceClient {
   deleteApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenResponse>;
 
   deleteApiToken(
     request: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_apitoken_v1_apitoken_pb.DeleteApiTokenResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -35,7 +35,10 @@ export class MeetingServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListMeetings = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListMeetings = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.meeting.v1.MeetingService/ListMeetings',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsRequest,
     github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsResponse,
     (request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class MeetingServiceClient {
   listMeetings(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsResponse>;
 
   listMeetings(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.ListMeetingsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class MeetingServiceClient {
     this.methodInfoListMeetings);
   }
 
-  methodInfoCreateMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.meeting.v1.MeetingService/CreateMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingRequest,
     github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingResponse,
     (request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class MeetingServiceClient {
   createMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingResponse>;
 
   createMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.CreateMeetingResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class MeetingServiceClient {
     this.methodInfoCreateMeeting);
   }
 
-  methodInfoGetMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.meeting.v1.MeetingService/GetMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingRequest,
     github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingResponse,
     (request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class MeetingServiceClient {
   getMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingResponse>;
 
   getMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.GetMeetingResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class MeetingServiceClient {
     this.methodInfoGetMeeting);
   }
 
-  methodInfoUpdateMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.meeting.v1.MeetingService/UpdateMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingRequest,
     github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingResponse,
     (request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class MeetingServiceClient {
   updateMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingResponse>;
 
   updateMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.UpdateMeetingResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class MeetingServiceClient {
     this.methodInfoUpdateMeeting);
   }
 
-  methodInfoDeleteMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.meeting.v1.MeetingService/DeleteMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingRequest,
     github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingResponse,
     (request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class MeetingServiceClient {
   deleteMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingResponse>;
 
   deleteMeeting(
     request: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_meeting_v1_meeting_pb.DeleteMeetingResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

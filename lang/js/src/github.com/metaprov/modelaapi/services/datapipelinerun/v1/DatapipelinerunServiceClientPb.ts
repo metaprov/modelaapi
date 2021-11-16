@@ -35,7 +35,10 @@ export class DataPipelineRunServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListDataPipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataPipelineRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/ListDataPipelineRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class DataPipelineRunServiceClient {
   listDataPipelineRuns(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunResponse>;
 
   listDataPipelineRuns(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ListDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class DataPipelineRunServiceClient {
     this.methodInfoListDataPipelineRuns);
   }
 
-  methodInfoCreateDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/CreateDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class DataPipelineRunServiceClient {
   createDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunResponse>;
 
   createDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.CreateDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class DataPipelineRunServiceClient {
     this.methodInfoCreateDataPipelineRun);
   }
 
-  methodInfoGetDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/GetDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class DataPipelineRunServiceClient {
   getDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunResponse>;
 
   getDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.GetDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class DataPipelineRunServiceClient {
     this.methodInfoGetDataPipelineRun);
   }
 
-  methodInfoUpdateDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/UpdateDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class DataPipelineRunServiceClient {
   updateDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunResponse>;
 
   updateDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.UpdateDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class DataPipelineRunServiceClient {
     this.methodInfoUpdateDataPipelineRun);
   }
 
-  methodInfoDeleteDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/DeleteDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class DataPipelineRunServiceClient {
   deleteDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunResponse>;
 
   deleteDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.DeleteDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class DataPipelineRunServiceClient {
     this.methodInfoDeleteDataPipelineRun);
   }
 
-  methodInfoAbortDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoAbortDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/AbortDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class DataPipelineRunServiceClient {
   abortDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse>;
 
   abortDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.AbortDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class DataPipelineRunServiceClient {
     this.methodInfoAbortDataPipelineRun);
   }
 
-  methodInfoPauseDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPauseDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/PauseDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class DataPipelineRunServiceClient {
   pauseDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunResponse>;
 
   pauseDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.PauseDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class DataPipelineRunServiceClient {
     this.methodInfoPauseDataPipelineRun);
   }
 
-  methodInfoResumeDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResumeDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.datapipelinerun.v1.DataPipelineRunService/ResumeDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunRequest,
     github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunResponse,
     (request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class DataPipelineRunServiceClient {
   resumeDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunResponse>;
 
   resumeDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_datapipelinerun_v1_datapipelinerun_pb.ResumeDataPipelineRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

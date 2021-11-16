@@ -35,7 +35,10 @@ export class StudyServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListStudies = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListStudies = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ListStudies',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class StudyServiceClient {
   listStudies(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse>;
 
   listStudies(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ListStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class StudyServiceClient {
     this.methodInfoListStudies);
   }
 
-  methodInfoCreateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class StudyServiceClient {
   createStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse>;
 
   createStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class StudyServiceClient {
     this.methodInfoCreateStudy);
   }
 
-  methodInfoGetStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class StudyServiceClient {
   getStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse>;
 
   getStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class StudyServiceClient {
     this.methodInfoGetStudy);
   }
 
-  methodInfoUpdateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/UpdateStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class StudyServiceClient {
   updateStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse>;
 
   updateStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.UpdateStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class StudyServiceClient {
     this.methodInfoUpdateStudy);
   }
 
-  methodInfoDeleteStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/DeleteStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class StudyServiceClient {
   deleteStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse>;
 
   deleteStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.DeleteStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class StudyServiceClient {
     this.methodInfoDeleteStudy);
   }
 
-  methodInfoCreateStudyProfile = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateStudyProfile = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/CreateStudyProfile',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class StudyServiceClient {
   createStudyProfile(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse>;
 
   createStudyProfile(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.CreateStudyProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class StudyServiceClient {
     this.methodInfoCreateStudyProfile);
   }
 
-  methodInfoGetStudyProfile = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetStudyProfile = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/GetStudyProfile',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class StudyServiceClient {
   getStudyProfile(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse>;
 
   getStudyProfile(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.GetStudyProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class StudyServiceClient {
     this.methodInfoGetStudyProfile);
   }
 
-  methodInfoAbortStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoAbortStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/AbortStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class StudyServiceClient {
   abortStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse>;
 
   abortStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.AbortStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -355,7 +379,10 @@ export class StudyServiceClient {
     this.methodInfoAbortStudy);
   }
 
-  methodInfoPauseStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPauseStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/PauseStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest) => {
       return request.serializeBinary();
@@ -370,13 +397,13 @@ export class StudyServiceClient {
   pauseStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse>;
 
   pauseStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.PauseStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -395,7 +422,10 @@ export class StudyServiceClient {
     this.methodInfoPauseStudy);
   }
 
-  methodInfoResumeStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResumeStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.study.v1.StudyService/ResumeStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest,
     github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse,
     (request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest) => {
       return request.serializeBinary();
@@ -410,13 +440,13 @@ export class StudyServiceClient {
   resumeStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse>;
 
   resumeStudy(
     request: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_study_v1_study_pb.ResumeStudyResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

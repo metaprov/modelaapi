@@ -35,7 +35,10 @@ export class PostMortemServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListPostMortems = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPostMortems = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/ListPostMortems',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest,
     github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse,
     (request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class PostMortemServiceClient {
   listPostMortems(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse>;
 
   listPostMortems(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.ListPostMortemsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class PostMortemServiceClient {
     this.methodInfoListPostMortems);
   }
 
-  methodInfoCreatePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/CreatePostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest,
     github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse,
     (request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class PostMortemServiceClient {
   createPostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse>;
 
   createPostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.CreatePostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class PostMortemServiceClient {
     this.methodInfoCreatePostMortem);
   }
 
-  methodInfoGetPostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/GetPostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest,
     github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse,
     (request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class PostMortemServiceClient {
   getPostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse>;
 
   getPostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.GetPostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class PostMortemServiceClient {
     this.methodInfoGetPostMortem);
   }
 
-  methodInfoUpdatePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdatePostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/UpdatePostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest,
     github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse,
     (request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class PostMortemServiceClient {
   updatePostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse>;
 
   updatePostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.UpdatePostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class PostMortemServiceClient {
     this.methodInfoUpdatePostMortem);
   }
 
-  methodInfoDeletePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.postmortem.v1.PostMortemService/DeletePostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest,
     github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse,
     (request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class PostMortemServiceClient {
   deletePostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse>;
 
   deletePostMortem(
     request: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_postmortem_v1_postmortem_pb.DeletePostMortemResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

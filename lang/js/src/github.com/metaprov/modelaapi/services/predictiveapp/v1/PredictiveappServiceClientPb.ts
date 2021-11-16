@@ -35,7 +35,10 @@ export class PredictiveAppServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListPredictiveApps = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPredictiveApps = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictiveapp.v1.PredictiveAppService/ListPredictiveApps',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsRequest,
     github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsResponse,
     (request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class PredictiveAppServiceClient {
   listPredictiveApps(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsResponse>;
 
   listPredictiveApps(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ListPredictiveAppsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class PredictiveAppServiceClient {
     this.methodInfoListPredictiveApps);
   }
 
-  methodInfoCreatePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictiveapp.v1.PredictiveAppService/CreatePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppRequest,
     github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppResponse,
     (request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class PredictiveAppServiceClient {
   createPredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppResponse>;
 
   createPredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.CreatePredictiveAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class PredictiveAppServiceClient {
     this.methodInfoCreatePredictiveApp);
   }
 
-  methodInfoGetPredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictiveapp.v1.PredictiveAppService/GetPredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppRequest,
     github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppResponse,
     (request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class PredictiveAppServiceClient {
   getPredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppResponse>;
 
   getPredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.GetPredictiveAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class PredictiveAppServiceClient {
     this.methodInfoGetPredictiveApp);
   }
 
-  methodInfoUpdatePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdatePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictiveapp.v1.PredictiveAppService/UpdatePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppRequest,
     github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppResponse,
     (request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class PredictiveAppServiceClient {
   updatePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppResponse>;
 
   updatePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.UpdatePredictiveAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class PredictiveAppServiceClient {
     this.methodInfoUpdatePredictiveApp);
   }
 
-  methodInfoDeletePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictiveapp.v1.PredictiveAppService/DeletePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppRequest,
     github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppResponse,
     (request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class PredictiveAppServiceClient {
   deletePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppResponse>;
 
   deletePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.DeletePredictiveAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class PredictiveAppServiceClient {
     this.methodInfoDeletePredictiveApp);
   }
 
-  methodInfoPausePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPausePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictiveapp.v1.PredictiveAppService/PausePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppRequest,
     github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppResponse,
     (request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class PredictiveAppServiceClient {
   pausePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppResponse>;
 
   pausePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.PausePredictiveAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class PredictiveAppServiceClient {
     this.methodInfoPausePredictiveApp);
   }
 
-  methodInfoResumePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResumePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictiveapp.v1.PredictiveAppService/ResumePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppRequest,
     github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppResponse,
     (request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class PredictiveAppServiceClient {
   resumePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppResponse>;
 
   resumePredictiveApp(
     request: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictiveapp_v1_predictiveapp_pb.ResumePredictiveAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

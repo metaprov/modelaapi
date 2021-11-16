@@ -35,7 +35,10 @@ export class DataProductServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListDataProducts = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataProducts = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/ListDataProducts',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsRequest,
     github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsResponse,
     (request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class DataProductServiceClient {
   listDataProducts(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsResponse>;
 
   listDataProducts(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.ListDataProductsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class DataProductServiceClient {
     this.methodInfoListDataProducts);
   }
 
-  methodInfoCreateDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/CreateDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductRequest,
     github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductResponse,
     (request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class DataProductServiceClient {
   createDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductResponse>;
 
   createDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.CreateDataProductResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class DataProductServiceClient {
     this.methodInfoCreateDataProduct);
   }
 
-  methodInfoGetDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/GetDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductRequest,
     github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductResponse,
     (request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class DataProductServiceClient {
   getDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductResponse>;
 
   getDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.GetDataProductResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class DataProductServiceClient {
     this.methodInfoGetDataProduct);
   }
 
-  methodInfoUpdateDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/UpdateDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductRequest,
     github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductResponse,
     (request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class DataProductServiceClient {
   updateDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductResponse>;
 
   updateDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.UpdateDataProductResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class DataProductServiceClient {
     this.methodInfoUpdateDataProduct);
   }
 
-  methodInfoDeleteDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataproduct.v1.DataProductService/DeleteDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductRequest,
     github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductResponse,
     (request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class DataProductServiceClient {
   deleteDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductResponse>;
 
   deleteDataProduct(
     request: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataproduct_v1_dataproduct_pb.DeleteDataProductResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

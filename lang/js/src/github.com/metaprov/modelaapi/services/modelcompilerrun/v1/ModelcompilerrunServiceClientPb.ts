@@ -35,7 +35,10 @@ export class ModelCompilerRunServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListModelCompilerRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModelCompilerRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/ListModelCompilerRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsRequest,
     github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsResponse,
     (request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class ModelCompilerRunServiceClient {
   listModelCompilerRuns(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsResponse>;
 
   listModelCompilerRuns(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.ListModelCompilerRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class ModelCompilerRunServiceClient {
     this.methodInfoListModelCompilerRuns);
   }
 
-  methodInfoCreateModelCompilerRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateModelCompilerRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/CreateModelCompilerRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunRequest,
     github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunResponse,
     (request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class ModelCompilerRunServiceClient {
   createModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunResponse>;
 
   createModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.CreateModelCompilerRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class ModelCompilerRunServiceClient {
     this.methodInfoCreateModelCompilerRun);
   }
 
-  methodInfoGetModelCompilerRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModelCompilerRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/GetModelCompilerRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunRequest,
     github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunResponse,
     (request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class ModelCompilerRunServiceClient {
   getModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunResponse>;
 
   getModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.GetModelCompilerRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class ModelCompilerRunServiceClient {
     this.methodInfoGetModelCompilerRun);
   }
 
-  methodInfoUpdateModelCompilerRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateModelCompilerRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/UpdateModelCompilerRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunRequest,
     github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunResponse,
     (request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class ModelCompilerRunServiceClient {
   updateModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunResponse>;
 
   updateModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.UpdateModelCompilerRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class ModelCompilerRunServiceClient {
     this.methodInfoUpdateModelCompilerRun);
   }
 
-  methodInfoDeleteModelCompilerRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModelCompilerRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ModelCompilerRunService/DeleteModelCompilerRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunRequest,
     github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunResponse,
     (request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class ModelCompilerRunServiceClient {
   deleteModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunResponse>;
 
   deleteModelCompilerRun(
     request: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_modelcompilerrun_v1_modelcompilerrun_pb.DeleteModelCompilerRunResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

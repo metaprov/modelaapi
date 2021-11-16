@@ -35,7 +35,10 @@ export class DatasetServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListDatasets = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDatasets = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ListDatasets',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class DatasetServiceClient {
   listDatasets(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse>;
 
   listDatasets(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ListDatasetsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class DatasetServiceClient {
     this.methodInfoListDatasets);
   }
 
-  methodInfoGetDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class DatasetServiceClient {
   getDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse>;
 
   getDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class DatasetServiceClient {
     this.methodInfoGetDataset);
   }
 
-  methodInfoCreateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class DatasetServiceClient {
   createDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse>;
 
   createDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class DatasetServiceClient {
     this.methodInfoCreateDataset);
   }
 
-  methodInfoUpdateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UpdateDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class DatasetServiceClient {
   updateDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse>;
 
   updateDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UpdateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class DatasetServiceClient {
     this.methodInfoUpdateDataset);
   }
 
-  methodInfoDeleteDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DeleteDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class DatasetServiceClient {
   deleteDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse>;
 
   deleteDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DeleteDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class DatasetServiceClient {
     this.methodInfoDeleteDataset);
   }
 
-  methodInfoCompareDatasets = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCompareDatasets = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CompareDatasets',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class DatasetServiceClient {
   compareDatasets(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse>;
 
   compareDatasets(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CompareDatasetsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class DatasetServiceClient {
     this.methodInfoCompareDatasets);
   }
 
-  methodInfoGetDatasetProfile = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDatasetProfile = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatasetProfile',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class DatasetServiceClient {
   getDatasetProfile(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse>;
 
   getDatasetProfile(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatasetProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -315,7 +336,10 @@ export class DatasetServiceClient {
     this.methodInfoGetDatasetProfile);
   }
 
-  methodInfoCreateDatasetProfile = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDatasetProfile = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateDatasetProfile',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest) => {
       return request.serializeBinary();
@@ -330,13 +354,13 @@ export class DatasetServiceClient {
   createDatasetProfile(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse>;
 
   createDatasetProfile(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateDatasetProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -355,7 +379,10 @@ export class DatasetServiceClient {
     this.methodInfoCreateDatasetProfile);
   }
 
-  methodInfoCreateColumnProfile = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateColumnProfile = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/CreateColumnProfile',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest) => {
       return request.serializeBinary();
@@ -370,13 +397,13 @@ export class DatasetServiceClient {
   createColumnProfile(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse>;
 
   createColumnProfile(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.CreateColumnProfileResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -395,7 +422,10 @@ export class DatasetServiceClient {
     this.methodInfoCreateColumnProfile);
   }
 
-  methodInfoGenerateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGenerateDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GenerateDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest) => {
       return request.serializeBinary();
@@ -410,13 +440,13 @@ export class DatasetServiceClient {
   generateDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse>;
 
   generateDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GenerateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -435,7 +465,10 @@ export class DatasetServiceClient {
     this.methodInfoGenerateDataset);
   }
 
-  methodInfoValidateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoValidateDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ValidateDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest) => {
       return request.serializeBinary();
@@ -450,13 +483,13 @@ export class DatasetServiceClient {
   validateDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse>;
 
   validateDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ValidateDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -475,7 +508,10 @@ export class DatasetServiceClient {
     this.methodInfoValidateDataset);
   }
 
-  methodInfoUploadChunk = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUploadChunk = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/UploadChunk',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest) => {
       return request.serializeBinary();
@@ -490,13 +526,13 @@ export class DatasetServiceClient {
   uploadChunk(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse>;
 
   uploadChunk(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.UploadChunkResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -515,7 +551,10 @@ export class DatasetServiceClient {
     this.methodInfoUploadChunk);
   }
 
-  methodInfoDownloadDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDownloadDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/DownloadDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest) => {
       return request.serializeBinary();
@@ -530,13 +569,13 @@ export class DatasetServiceClient {
   downloadDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse>;
 
   downloadDataset(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.DownloadDatasetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -555,7 +594,10 @@ export class DatasetServiceClient {
     this.methodInfoDownloadDataset);
   }
 
-  methodInfoGetDatabases = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDatabases = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetDatabases',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest) => {
       return request.serializeBinary();
@@ -570,13 +612,13 @@ export class DatasetServiceClient {
   getDatabases(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse>;
 
   getDatabases(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetDatabasesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -595,7 +637,10 @@ export class DatasetServiceClient {
     this.methodInfoGetDatabases);
   }
 
-  methodInfoGetTables = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetTables = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/GetTables',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest) => {
       return request.serializeBinary();
@@ -610,13 +655,13 @@ export class DatasetServiceClient {
   getTables(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse>;
 
   getTables(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.GetTablesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -635,7 +680,10 @@ export class DatasetServiceClient {
     this.methodInfoGetTables);
   }
 
-  methodInfoExecuteSql = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoExecuteSql = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataset.v1.DatasetService/ExecuteSql',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
     github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse,
     (request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest) => {
       return request.serializeBinary();
@@ -650,13 +698,13 @@ export class DatasetServiceClient {
   executeSql(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse>;
 
   executeSql(
     request: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dataset_v1_dataset_pb.ExecuteSqlResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

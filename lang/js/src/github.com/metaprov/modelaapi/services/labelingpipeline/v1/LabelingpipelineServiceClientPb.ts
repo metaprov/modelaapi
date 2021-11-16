@@ -35,7 +35,10 @@ export class LabelingPipelineServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListLabelingPipelines = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListLabelingPipelines = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/ListLabelingPipelines',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineRequest,
     github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class LabelingPipelineServiceClient {
   listLabelingPipelines(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineResponse>;
 
   listLabelingPipelines(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ListLabelingPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class LabelingPipelineServiceClient {
     this.methodInfoListLabelingPipelines);
   }
 
-  methodInfoCreateLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/CreateLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineRequest,
     github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class LabelingPipelineServiceClient {
   createLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineResponse>;
 
   createLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.CreateLabelingPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class LabelingPipelineServiceClient {
     this.methodInfoCreateLabelingPipeline);
   }
 
-  methodInfoGetLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/GetLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineRequest,
     github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class LabelingPipelineServiceClient {
   getLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineResponse>;
 
   getLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.GetLabelingPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class LabelingPipelineServiceClient {
     this.methodInfoGetLabelingPipeline);
   }
 
-  methodInfoUpdateLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/UpdateLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineRequest,
     github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class LabelingPipelineServiceClient {
   updateLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineResponse>;
 
   updateLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.UpdateLabelingPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class LabelingPipelineServiceClient {
     this.methodInfoUpdateLabelingPipeline);
   }
 
-  methodInfoDeleteLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/DeleteLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineRequest,
     github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class LabelingPipelineServiceClient {
   deleteLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineResponse>;
 
   deleteLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.DeleteLabelingPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class LabelingPipelineServiceClient {
     this.methodInfoDeleteLabelingPipeline);
   }
 
-  methodInfoPauseLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoPauseLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/PauseLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest,
     github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class LabelingPipelineServiceClient {
   pauseLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse>;
 
   pauseLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.PauseLabelingPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -275,7 +293,10 @@ export class LabelingPipelineServiceClient {
     this.methodInfoPauseLabelingPipeline);
   }
 
-  methodInfoResumeLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoResumeLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.labelingpipeline.v1.LabelingPipelineService/ResumeLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest,
     github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse,
     (request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -290,13 +311,13 @@ export class LabelingPipelineServiceClient {
   resumeLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse>;
 
   resumeLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_labelingpipeline_v1_labelingpipeline_pb.ResumeLabelingPipelineResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

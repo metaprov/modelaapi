@@ -35,7 +35,10 @@ export class NotifierServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListNotifiers = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListNotifiers = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/ListNotifiers',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersRequest,
     github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersResponse,
     (request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class NotifierServiceClient {
   listNotifiers(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersResponse>;
 
   listNotifiers(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.ListNotifiersResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class NotifierServiceClient {
     this.methodInfoListNotifiers);
   }
 
-  methodInfoCreateNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/CreateNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierRequest,
     github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierResponse,
     (request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class NotifierServiceClient {
   createNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierResponse>;
 
   createNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.CreateNotifierResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class NotifierServiceClient {
     this.methodInfoCreateNotifier);
   }
 
-  methodInfoGetNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/GetNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierRequest,
     github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierResponse,
     (request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class NotifierServiceClient {
   getNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierResponse>;
 
   getNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.GetNotifierResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class NotifierServiceClient {
     this.methodInfoGetNotifier);
   }
 
-  methodInfoUpdateNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/UpdateNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierRequest,
     github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierResponse,
     (request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class NotifierServiceClient {
   updateNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierResponse>;
 
   updateNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.UpdateNotifierResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class NotifierServiceClient {
     this.methodInfoUpdateNotifier);
   }
 
-  methodInfoDeleteNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notifier.v1.NotifierService/DeleteNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierRequest,
     github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierResponse,
     (request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class NotifierServiceClient {
   deleteNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierResponse>;
 
   deleteNotifier(
     request: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notifier_v1_notifier_pb.DeleteNotifierResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

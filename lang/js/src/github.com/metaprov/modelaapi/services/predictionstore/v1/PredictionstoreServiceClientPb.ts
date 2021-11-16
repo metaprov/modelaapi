@@ -35,7 +35,10 @@ export class PredictionStoreServiceClient {
     this.options_ = options;
   }
 
-  methodInfoIngest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoIngest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.predictionstore.v1.PredictionStoreService/Ingest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
     github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse,
     (request: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class PredictionStoreServiceClient {
   ingest(
     request: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse>;
 
   ingest(
     request: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionsIngestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_predictionstore_v1_predictionstore_pb.PredictionIngestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -35,7 +35,10 @@ export class VirtualClusterServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListVirtualClusters = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListVirtualClusters = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/ListVirtualClusters',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersRequest,
     github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersResponse,
     (request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class VirtualClusterServiceClient {
   listVirtualClusters(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersResponse>;
 
   listVirtualClusters(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.ListVirtualClustersResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class VirtualClusterServiceClient {
     this.methodInfoListVirtualClusters);
   }
 
-  methodInfoCreateVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/CreateVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterRequest,
     github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterResponse,
     (request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class VirtualClusterServiceClient {
   createVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterResponse>;
 
   createVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.CreateVirtualClusterResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class VirtualClusterServiceClient {
     this.methodInfoCreateVirtualCluster);
   }
 
-  methodInfoGetVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/GetVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterRequest,
     github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterResponse,
     (request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class VirtualClusterServiceClient {
   getVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterResponse>;
 
   getVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.GetVirtualClusterResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class VirtualClusterServiceClient {
     this.methodInfoGetVirtualCluster);
   }
 
-  methodInfoUpdateVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/UpdateVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterRequest,
     github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterResponse,
     (request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class VirtualClusterServiceClient {
   updateVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterResponse>;
 
   updateVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.UpdateVirtualClusterResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class VirtualClusterServiceClient {
     this.methodInfoUpdateVirtualCluster);
   }
 
-  methodInfoDeleteVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.virtualcluster.v1.VirtualClusterService/DeleteVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterRequest,
     github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterResponse,
     (request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class VirtualClusterServiceClient {
   deleteVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterResponse>;
 
   deleteVirtualCluster(
     request: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_virtualcluster_v1_virtualcluster_pb.DeleteVirtualClusterResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

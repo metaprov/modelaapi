@@ -35,7 +35,10 @@ export class NotebookServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListNotebooks = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListNotebooks = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/ListNotebooks',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksRequest,
     github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksResponse,
     (request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class NotebookServiceClient {
   listNotebooks(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksResponse>;
 
   listNotebooks(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.ListNotebooksResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class NotebookServiceClient {
     this.methodInfoListNotebooks);
   }
 
-  methodInfoCreateNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/CreateNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookRequest,
     github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookResponse,
     (request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class NotebookServiceClient {
   createNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookResponse>;
 
   createNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.CreateNotebookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class NotebookServiceClient {
     this.methodInfoCreateNotebook);
   }
 
-  methodInfoGetNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/GetNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookRequest,
     github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookResponse,
     (request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class NotebookServiceClient {
   getNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookResponse>;
 
   getNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.GetNotebookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class NotebookServiceClient {
     this.methodInfoGetNotebook);
   }
 
-  methodInfoUpdateNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/UpdateNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookRequest,
     github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookResponse,
     (request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class NotebookServiceClient {
   updateNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookResponse>;
 
   updateNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.UpdateNotebookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class NotebookServiceClient {
     this.methodInfoUpdateNotebook);
   }
 
-  methodInfoDeleteNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.notebook.v1.NotebookService/DeleteNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookRequest,
     github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookResponse,
     (request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class NotebookServiceClient {
   deleteNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookResponse>;
 
   deleteNotebook(
     request: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_notebook_v1_notebook_pb.DeleteNotebookResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

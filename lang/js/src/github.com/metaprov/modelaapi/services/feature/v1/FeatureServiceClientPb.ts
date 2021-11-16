@@ -35,7 +35,10 @@ export class FeatureServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListFeatures = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeatures = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/ListFeatures',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesRequest,
     github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesResponse,
     (request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class FeatureServiceClient {
   listFeatures(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesResponse>;
 
   listFeatures(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.ListFeaturesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class FeatureServiceClient {
     this.methodInfoListFeatures);
   }
 
-  methodInfoCreateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/CreateFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureRequest,
     github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class FeatureServiceClient {
   createFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureResponse>;
 
   createFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.CreateFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class FeatureServiceClient {
     this.methodInfoCreateFeature);
   }
 
-  methodInfoGetFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/GetFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureRequest,
     github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class FeatureServiceClient {
   getFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureResponse>;
 
   getFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.GetFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class FeatureServiceClient {
     this.methodInfoGetFeature);
   }
 
-  methodInfoUpdateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/UpdateFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureRequest,
     github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class FeatureServiceClient {
   updateFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureResponse>;
 
   updateFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.UpdateFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class FeatureServiceClient {
     this.methodInfoUpdateFeature);
   }
 
-  methodInfoDeleteFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.feature.v1.FeatureService/DeleteFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureRequest,
     github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureResponse,
     (request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class FeatureServiceClient {
   deleteFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureResponse>;
 
   deleteFeature(
     request: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_feature_v1_feature_pb.DeleteFeatureResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

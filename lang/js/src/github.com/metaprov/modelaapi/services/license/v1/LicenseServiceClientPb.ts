@@ -35,7 +35,10 @@ export class LicenseServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListLicenses = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListLicenses = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.license.v1.LicenseService/ListLicenses',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesRequest,
     github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesResponse,
     (request: github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class LicenseServiceClient {
   listLicenses(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesResponse>;
 
   listLicenses(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.ListLicensesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class LicenseServiceClient {
     this.methodInfoListLicenses);
   }
 
-  methodInfoCreateLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.license.v1.LicenseService/CreateLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseRequest,
     github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse,
     (request: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class LicenseServiceClient {
   createLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse>;
 
   createLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class LicenseServiceClient {
     this.methodInfoCreateLicense);
   }
 
-  methodInfoCreateLicenseFromKey = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLicenseFromKey = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.license.v1.LicenseService/CreateLicenseFromKey',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseFromKeyRequest,
     github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse,
     (request: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseFromKeyRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class LicenseServiceClient {
   createLicenseFromKey(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseFromKeyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse>;
 
   createLicenseFromKey(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseFromKeyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.CreateLicenseResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class LicenseServiceClient {
     this.methodInfoCreateLicenseFromKey);
   }
 
-  methodInfoGetLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.license.v1.LicenseService/GetLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseRequest,
     github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseResponse,
     (request: github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class LicenseServiceClient {
   getLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseResponse>;
 
   getLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.GetLicenseResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class LicenseServiceClient {
     this.methodInfoGetLicense);
   }
 
-  methodInfoUpdateLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.license.v1.LicenseService/UpdateLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseRequest,
     github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseResponse,
     (request: github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class LicenseServiceClient {
   updateLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseResponse>;
 
   updateLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.UpdateLicenseResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class LicenseServiceClient {
     this.methodInfoUpdateLicense);
   }
 
-  methodInfoDeleteLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.license.v1.LicenseService/DeleteLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseRequest,
     github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseResponse,
     (request: github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class LicenseServiceClient {
   deleteLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseResponse>;
 
   deleteLicense(
     request: github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_license_v1_license_pb.DeleteLicenseResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

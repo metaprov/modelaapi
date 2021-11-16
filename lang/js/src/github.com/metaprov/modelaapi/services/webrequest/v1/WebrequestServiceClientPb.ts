@@ -35,7 +35,10 @@ export class WebRequestServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListWebRequests = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListWebRequests = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/ListWebRequests',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsRequest,
     github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsResponse,
     (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsRequest) => {
       return request.serializeBinary();
@@ -50,13 +53,13 @@ export class WebRequestServiceClient {
   listWebRequests(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsResponse>;
 
   listWebRequests(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.ListWebRequestsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -75,7 +78,10 @@ export class WebRequestServiceClient {
     this.methodInfoListWebRequests);
   }
 
-  methodInfoCreateWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/CreateWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestRequest,
     github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestResponse,
     (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestRequest) => {
       return request.serializeBinary();
@@ -90,13 +96,13 @@ export class WebRequestServiceClient {
   createWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestResponse>;
 
   createWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.CreateWebRequestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -115,7 +121,10 @@ export class WebRequestServiceClient {
     this.methodInfoCreateWebRequest);
   }
 
-  methodInfoGetWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/GetWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestRequest,
     github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestResponse,
     (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestRequest) => {
       return request.serializeBinary();
@@ -130,13 +139,13 @@ export class WebRequestServiceClient {
   getWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestResponse>;
 
   getWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.GetWebRequestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -155,7 +164,10 @@ export class WebRequestServiceClient {
     this.methodInfoGetWebRequest);
   }
 
-  methodInfoUpdateWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/UpdateWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestRequest,
     github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestResponse,
     (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestRequest) => {
       return request.serializeBinary();
@@ -170,13 +182,13 @@ export class WebRequestServiceClient {
   updateWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestResponse>;
 
   updateWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.UpdateWebRequestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -195,7 +207,10 @@ export class WebRequestServiceClient {
     this.methodInfoUpdateWebRequest);
   }
 
-  methodInfoDeleteWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/DeleteWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestRequest,
     github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestResponse,
     (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestRequest) => {
       return request.serializeBinary();
@@ -210,13 +225,13 @@ export class WebRequestServiceClient {
   deleteWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestResponse>;
 
   deleteWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.DeleteWebRequestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -235,7 +250,10 @@ export class WebRequestServiceClient {
     this.methodInfoDeleteWebRequest);
   }
 
-  methodInfoRunWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoRunWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.webrequest.v1.WebRequestService/RunWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest,
     github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse,
     (request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest) => {
       return request.serializeBinary();
@@ -250,13 +268,13 @@ export class WebRequestServiceClient {
   runWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse>;
 
   runWebRequest(
     request: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_webrequest_v1_webrequest_pb.RunWebRequestResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(

@@ -13,13 +13,13 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
-import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated_pb';
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
+import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb from '../../../../../../github.com/metaprov/modelaapi/services/dbproxyd/v1/dbproxyd_pb';
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb';
 
 
 export class DatabaseProxyServiceClient {
@@ -41,7 +41,10 @@ export class DatabaseProxyServiceClient {
     this.options_ = options;
   }
 
-  methodInfoListAccounts = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListAccounts = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAccounts',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsRequest) => {
       return request.serializeBinary();
@@ -56,13 +59,13 @@ export class DatabaseProxyServiceClient {
   listAccounts(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsResponse>;
 
   listAccounts(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAccountsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -81,7 +84,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListAccounts);
   }
 
-  methodInfoGetAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAccountRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAccountRequest) => {
       return request.serializeBinary();
@@ -96,13 +102,13 @@ export class DatabaseProxyServiceClient {
   getAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account>;
 
   getAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -121,7 +127,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetAccount);
   }
 
-  methodInfoCreateAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAccountRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAccountRequest) => {
       return request.serializeBinary();
@@ -136,13 +145,13 @@ export class DatabaseProxyServiceClient {
   createAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account>;
 
   createAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -161,7 +170,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateAccount);
   }
 
-  methodInfoUpdateAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAccountRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAccountRequest) => {
       return request.serializeBinary();
@@ -176,13 +188,13 @@ export class DatabaseProxyServiceClient {
   updateAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account>;
 
   updateAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -201,7 +213,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateAccount);
   }
 
-  methodInfoDeleteAccount = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteAccount = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAccount',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAccountRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAccountRequest) => {
       return request.serializeBinary();
@@ -216,13 +231,13 @@ export class DatabaseProxyServiceClient {
   deleteAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteAccount(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAccountRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -241,7 +256,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteAccount);
   }
 
-  methodInfoListAlerts = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListAlerts = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAlerts',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsRequest) => {
       return request.serializeBinary();
@@ -256,13 +274,13 @@ export class DatabaseProxyServiceClient {
   listAlerts(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsResponse>;
 
   listAlerts(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAlertsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -281,7 +299,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListAlerts);
   }
 
-  methodInfoGetAlert = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetAlert = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAlert',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAlertRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAlertRequest) => {
       return request.serializeBinary();
@@ -296,13 +317,13 @@ export class DatabaseProxyServiceClient {
   getAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert>;
 
   getAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -321,7 +342,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetAlert);
   }
 
-  methodInfoCreateAlert = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateAlert = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAlert',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAlertRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAlertRequest) => {
       return request.serializeBinary();
@@ -336,13 +360,13 @@ export class DatabaseProxyServiceClient {
   createAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert>;
 
   createAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -361,7 +385,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateAlert);
   }
 
-  methodInfoUpdateAlert = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateAlert = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAlert',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAlertRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAlertRequest) => {
       return request.serializeBinary();
@@ -376,13 +403,13 @@ export class DatabaseProxyServiceClient {
   updateAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert>;
 
   updateAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -401,7 +428,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateAlert);
   }
 
-  methodInfoDeleteAlert = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteAlert = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAlert',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAlertRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAlertRequest) => {
       return request.serializeBinary();
@@ -416,13 +446,13 @@ export class DatabaseProxyServiceClient {
   deleteAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteAlert(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAlertRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -441,7 +471,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteAlert);
   }
 
-  methodInfoListTodos = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListTodos = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListTodos',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest) => {
       return request.serializeBinary();
@@ -456,13 +489,13 @@ export class DatabaseProxyServiceClient {
   listTodos(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse>;
 
   listTodos(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTodosResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -481,7 +514,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListTodos);
   }
 
-  methodInfoGetTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest) => {
       return request.serializeBinary();
@@ -496,13 +532,13 @@ export class DatabaseProxyServiceClient {
   getTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
   getTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -521,7 +557,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetTodo);
   }
 
-  methodInfoCreateTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest) => {
       return request.serializeBinary();
@@ -536,13 +575,13 @@ export class DatabaseProxyServiceClient {
   createTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
   createTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -561,7 +600,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateTodo);
   }
 
-  methodInfoUpdateTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest) => {
       return request.serializeBinary();
@@ -576,13 +618,13 @@ export class DatabaseProxyServiceClient {
   updateTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo>;
 
   updateTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -601,7 +643,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateTodo);
   }
 
-  methodInfoDeleteTodo = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteTodo = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTodo',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest) => {
       return request.serializeBinary();
@@ -616,13 +661,13 @@ export class DatabaseProxyServiceClient {
   deleteTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteTodo(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTodoRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -641,7 +686,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteTodo);
   }
 
-  methodInfoListMeetings = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListMeetings = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListMeetings',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest) => {
       return request.serializeBinary();
@@ -656,13 +704,13 @@ export class DatabaseProxyServiceClient {
   listMeetings(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse>;
 
   listMeetings(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListMeetingsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -681,7 +729,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListMeetings);
   }
 
-  methodInfoGetMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest) => {
       return request.serializeBinary();
@@ -696,13 +747,13 @@ export class DatabaseProxyServiceClient {
   getMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
 
   getMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -721,7 +772,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetMeeting);
   }
 
-  methodInfoCreateMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest) => {
       return request.serializeBinary();
@@ -736,13 +790,13 @@ export class DatabaseProxyServiceClient {
   createMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
 
   createMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -761,7 +815,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateMeeting);
   }
 
-  methodInfoUpdateMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest) => {
       return request.serializeBinary();
@@ -776,13 +833,13 @@ export class DatabaseProxyServiceClient {
   updateMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting>;
 
   updateMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Meeting) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -801,7 +858,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateMeeting);
   }
 
-  methodInfoDeleteMeeting = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteMeeting = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteMeeting',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest) => {
       return request.serializeBinary();
@@ -816,13 +876,13 @@ export class DatabaseProxyServiceClient {
   deleteMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteMeeting(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteMeetingRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -841,7 +901,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteMeeting);
   }
 
-  methodInfoListAttachments = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListAttachments = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListAttachments',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest) => {
       return request.serializeBinary();
@@ -856,13 +919,13 @@ export class DatabaseProxyServiceClient {
   listAttachments(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse>;
 
   listAttachments(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListAttachmentsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -881,7 +944,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListAttachments);
   }
 
-  methodInfoGetAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetAttachment = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetAttachment',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest) => {
       return request.serializeBinary();
@@ -896,13 +962,13 @@ export class DatabaseProxyServiceClient {
   getAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
 
   getAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -921,7 +987,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetAttachment);
   }
 
-  methodInfoCreateAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateAttachment = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateAttachment',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest) => {
       return request.serializeBinary();
@@ -936,13 +1005,13 @@ export class DatabaseProxyServiceClient {
   createAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
 
   createAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -961,7 +1030,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateAttachment);
   }
 
-  methodInfoUpdateAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateAttachment = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateAttachment',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest) => {
       return request.serializeBinary();
@@ -976,13 +1048,13 @@ export class DatabaseProxyServiceClient {
   updateAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment>;
 
   updateAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Attachment) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1001,7 +1073,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateAttachment);
   }
 
-  methodInfoDeleteAttachment = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteAttachment = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteAttachment',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest) => {
       return request.serializeBinary();
@@ -1016,13 +1091,13 @@ export class DatabaseProxyServiceClient {
   deleteAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteAttachment(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteAttachmentRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1041,7 +1116,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteAttachment);
   }
 
-  methodInfoListCommits = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListCommits = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCommits',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest) => {
       return request.serializeBinary();
@@ -1056,13 +1134,13 @@ export class DatabaseProxyServiceClient {
   listCommits(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse>;
 
   listCommits(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCommitsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1081,7 +1159,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListCommits);
   }
 
-  methodInfoGetCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest) => {
       return request.serializeBinary();
@@ -1096,13 +1177,13 @@ export class DatabaseProxyServiceClient {
   getCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
 
   getCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1121,7 +1202,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetCommit);
   }
 
-  methodInfoCreateCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest) => {
       return request.serializeBinary();
@@ -1136,13 +1220,13 @@ export class DatabaseProxyServiceClient {
   createCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
 
   createCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1161,7 +1245,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateCommit);
   }
 
-  methodInfoUpdateCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest) => {
       return request.serializeBinary();
@@ -1176,13 +1263,13 @@ export class DatabaseProxyServiceClient {
   updateCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit>;
 
   updateCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1201,7 +1288,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateCommit);
   }
 
-  methodInfoDeleteCommit = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteCommit = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCommit',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest) => {
       return request.serializeBinary();
@@ -1216,13 +1306,13 @@ export class DatabaseProxyServiceClient {
   deleteCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteCommit(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCommitRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1241,7 +1331,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteCommit);
   }
 
-  methodInfoListApiTokens = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListApiTokens = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListApiTokens',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensRequest) => {
       return request.serializeBinary();
@@ -1256,13 +1349,13 @@ export class DatabaseProxyServiceClient {
   listApiTokens(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensResponse>;
 
   listApiTokens(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListApiTokensResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1281,7 +1374,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListApiTokens);
   }
 
-  methodInfoGetApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetApiTokenRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetApiTokenRequest) => {
       return request.serializeBinary();
@@ -1296,13 +1392,13 @@ export class DatabaseProxyServiceClient {
   getApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken>;
 
   getApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1321,7 +1417,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetApiToken);
   }
 
-  methodInfoCreateApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateApiTokenRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateApiTokenRequest) => {
       return request.serializeBinary();
@@ -1336,13 +1435,13 @@ export class DatabaseProxyServiceClient {
   createApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken>;
 
   createApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1361,7 +1460,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateApiToken);
   }
 
-  methodInfoUpdateApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateApiTokenRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateApiTokenRequest) => {
       return request.serializeBinary();
@@ -1376,13 +1478,13 @@ export class DatabaseProxyServiceClient {
   updateApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken>;
 
   updateApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiToken) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1401,7 +1503,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateApiToken);
   }
 
-  methodInfoDeleteApiToken = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteApiToken = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteApiToken',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteApiTokenRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteApiTokenRequest) => {
       return request.serializeBinary();
@@ -1416,13 +1521,13 @@ export class DatabaseProxyServiceClient {
   deleteApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteApiToken(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteApiTokenRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1441,7 +1546,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteApiToken);
   }
 
-  methodInfoListConnections = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListConnections = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListConnections',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsRequest) => {
       return request.serializeBinary();
@@ -1456,13 +1564,13 @@ export class DatabaseProxyServiceClient {
   listConnections(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsResponse>;
 
   listConnections(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListConnectionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1481,7 +1589,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListConnections);
   }
 
-  methodInfoGetConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetConnectionRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetConnectionRequest) => {
       return request.serializeBinary();
@@ -1496,13 +1607,13 @@ export class DatabaseProxyServiceClient {
   getConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection>;
 
   getConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1521,7 +1632,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetConnection);
   }
 
-  methodInfoCreateConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateConnectionRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateConnectionRequest) => {
       return request.serializeBinary();
@@ -1536,13 +1650,13 @@ export class DatabaseProxyServiceClient {
   createConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection>;
 
   createConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1561,7 +1675,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateConnection);
   }
 
-  methodInfoUpdateConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateConnectionRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateConnectionRequest) => {
       return request.serializeBinary();
@@ -1576,13 +1693,13 @@ export class DatabaseProxyServiceClient {
   updateConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection>;
 
   updateConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1601,7 +1718,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateConnection);
   }
 
-  methodInfoDeleteConnection = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteConnection = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteConnection',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteConnectionRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteConnectionRequest) => {
       return request.serializeBinary();
@@ -1616,13 +1736,13 @@ export class DatabaseProxyServiceClient {
   deleteConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteConnection(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteConnectionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1641,7 +1761,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteConnection);
   }
 
-  methodInfoListLabs = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListLabs = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabs',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsRequest) => {
       return request.serializeBinary();
@@ -1656,13 +1779,13 @@ export class DatabaseProxyServiceClient {
   listLabs(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsResponse>;
 
   listLabs(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1681,7 +1804,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListLabs);
   }
 
-  methodInfoGetLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabRequest) => {
       return request.serializeBinary();
@@ -1696,13 +1822,13 @@ export class DatabaseProxyServiceClient {
   getLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab>;
 
   getLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1721,7 +1847,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetLab);
   }
 
-  methodInfoCreateLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabRequest) => {
       return request.serializeBinary();
@@ -1736,13 +1865,13 @@ export class DatabaseProxyServiceClient {
   createLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab>;
 
   createLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1761,7 +1890,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateLab);
   }
 
-  methodInfoUpdateLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabRequest) => {
       return request.serializeBinary();
@@ -1776,13 +1908,13 @@ export class DatabaseProxyServiceClient {
   updateLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab>;
 
   updateLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1801,7 +1933,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateLab);
   }
 
-  methodInfoDeleteLab = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteLab = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLab',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabRequest) => {
       return request.serializeBinary();
@@ -1816,13 +1951,13 @@ export class DatabaseProxyServiceClient {
   deleteLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteLab(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1841,7 +1976,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteLab);
   }
 
-  methodInfoListLicenses = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListLicenses = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLicenses',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesRequest) => {
       return request.serializeBinary();
@@ -1856,13 +1994,13 @@ export class DatabaseProxyServiceClient {
   listLicenses(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesResponse>;
 
   listLicenses(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLicensesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1881,7 +2019,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListLicenses);
   }
 
-  methodInfoGetLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLicenseRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLicenseRequest) => {
       return request.serializeBinary();
@@ -1896,13 +2037,13 @@ export class DatabaseProxyServiceClient {
   getLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License>;
 
   getLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1921,7 +2062,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetLicense);
   }
 
-  methodInfoCreateLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLicenseRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLicenseRequest) => {
       return request.serializeBinary();
@@ -1936,13 +2080,13 @@ export class DatabaseProxyServiceClient {
   createLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License>;
 
   createLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -1961,7 +2105,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateLicense);
   }
 
-  methodInfoUpdateLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLicenseRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLicenseRequest) => {
       return request.serializeBinary();
@@ -1976,13 +2123,13 @@ export class DatabaseProxyServiceClient {
   updateLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License>;
 
   updateLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2001,7 +2148,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateLicense);
   }
 
-  methodInfoDeleteLicense = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteLicense = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLicense',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLicenseRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLicenseRequest) => {
       return request.serializeBinary();
@@ -2016,13 +2166,13 @@ export class DatabaseProxyServiceClient {
   deleteLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteLicense(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLicenseRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2041,7 +2191,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteLicense);
   }
 
-  methodInfoListNotifiers = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListNotifiers = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotifiers',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersRequest) => {
       return request.serializeBinary();
@@ -2056,13 +2209,13 @@ export class DatabaseProxyServiceClient {
   listNotifiers(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersResponse>;
 
   listNotifiers(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotifiersResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2081,7 +2234,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListNotifiers);
   }
 
-  methodInfoGetNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotifierRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotifierRequest) => {
       return request.serializeBinary();
@@ -2096,13 +2252,13 @@ export class DatabaseProxyServiceClient {
   getNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier>;
 
   getNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2121,7 +2277,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetNotifier);
   }
 
-  methodInfoCreateNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotifierRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotifierRequest) => {
       return request.serializeBinary();
@@ -2136,13 +2295,13 @@ export class DatabaseProxyServiceClient {
   createNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier>;
 
   createNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2161,7 +2320,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateNotifier);
   }
 
-  methodInfoUpdateNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotifierRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotifierRequest) => {
       return request.serializeBinary();
@@ -2176,13 +2338,13 @@ export class DatabaseProxyServiceClient {
   updateNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier>;
 
   updateNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2201,7 +2363,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateNotifier);
   }
 
-  methodInfoDeleteNotifier = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteNotifier = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotifier',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotifierRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotifierRequest) => {
       return request.serializeBinary();
@@ -2216,13 +2381,13 @@ export class DatabaseProxyServiceClient {
   deleteNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteNotifier(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotifierRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2241,7 +2406,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteNotifier);
   }
 
-  methodInfoListServingSites = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListServingSites = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListServingSites',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesRequest) => {
       return request.serializeBinary();
@@ -2256,13 +2424,13 @@ export class DatabaseProxyServiceClient {
   listServingSites(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesResponse>;
 
   listServingSites(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListServingsitesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2281,7 +2449,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListServingSites);
   }
 
-  methodInfoGetServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetServingsiteRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetServingsiteRequest) => {
       return request.serializeBinary();
@@ -2296,13 +2467,13 @@ export class DatabaseProxyServiceClient {
   getServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite>;
 
   getServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2321,7 +2492,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetServingSite);
   }
 
-  methodInfoCreateServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateServingsiteRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateServingsiteRequest) => {
       return request.serializeBinary();
@@ -2336,13 +2510,13 @@ export class DatabaseProxyServiceClient {
   createServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite>;
 
   createServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2361,7 +2535,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateServingSite);
   }
 
-  methodInfoUpdateServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateServingsiteRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateServingsiteRequest) => {
       return request.serializeBinary();
@@ -2376,13 +2553,13 @@ export class DatabaseProxyServiceClient {
   updateServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite>;
 
   updateServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2401,7 +2578,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateServingSite);
   }
 
-  methodInfoDeleteServingSite = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteServingSite = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteServingSite',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteServingsiteRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteServingsiteRequest) => {
       return request.serializeBinary();
@@ -2416,13 +2596,13 @@ export class DatabaseProxyServiceClient {
   deleteServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteServingSite(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteServingsiteRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2441,7 +2621,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteServingSite);
   }
 
-  methodInfoListTenants = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListTenants = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListTenants',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsRequest) => {
       return request.serializeBinary();
@@ -2456,13 +2639,13 @@ export class DatabaseProxyServiceClient {
   listTenants(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsResponse>;
 
   listTenants(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListTenantsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2481,7 +2664,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListTenants);
   }
 
-  methodInfoGetTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTenantRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTenantRequest) => {
       return request.serializeBinary();
@@ -2496,13 +2682,13 @@ export class DatabaseProxyServiceClient {
   getTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   getTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2521,7 +2707,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetTenant);
   }
 
-  methodInfoCreateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTenantRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTenantRequest) => {
       return request.serializeBinary();
@@ -2536,13 +2725,13 @@ export class DatabaseProxyServiceClient {
   createTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   createTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2561,7 +2750,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateTenant);
   }
 
-  methodInfoUpdateTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTenantRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTenantRequest) => {
       return request.serializeBinary();
@@ -2576,13 +2768,13 @@ export class DatabaseProxyServiceClient {
   updateTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant>;
 
   updateTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2601,7 +2793,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateTenant);
   }
 
-  methodInfoDeleteTenant = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteTenant = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteTenant',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTenantRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTenantRequest) => {
       return request.serializeBinary();
@@ -2616,13 +2811,13 @@ export class DatabaseProxyServiceClient {
   deleteTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteTenant(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteTenantRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2641,7 +2836,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteTenant);
   }
 
-  methodInfoListVirtualBuckets = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListVirtualBuckets = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualBuckets',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsRequest) => {
       return request.serializeBinary();
@@ -2656,13 +2854,13 @@ export class DatabaseProxyServiceClient {
   listVirtualBuckets(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsResponse>;
 
   listVirtualBuckets(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualBucketsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2681,7 +2879,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListVirtualBuckets);
   }
 
-  methodInfoGetVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetVirtualBucket = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualBucket',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualBucketRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualBucketRequest) => {
       return request.serializeBinary();
@@ -2696,13 +2897,13 @@ export class DatabaseProxyServiceClient {
   getVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   getVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2721,7 +2922,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetVirtualBucket);
   }
 
-  methodInfoCreateVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateVirtualBucket = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualBucket',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualBucketRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualBucketRequest) => {
       return request.serializeBinary();
@@ -2736,13 +2940,13 @@ export class DatabaseProxyServiceClient {
   createVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   createVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2761,7 +2965,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateVirtualBucket);
   }
 
-  methodInfoUpdateVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateVirtualBucket = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualBucket',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualBucketRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualBucketRequest) => {
       return request.serializeBinary();
@@ -2776,13 +2983,13 @@ export class DatabaseProxyServiceClient {
   updateVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket>;
 
   updateVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2801,7 +3008,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateVirtualBucket);
   }
 
-  methodInfoDeleteVirtualBucket = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteVirtualBucket = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualBucket',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualBucketRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualBucketRequest) => {
       return request.serializeBinary();
@@ -2816,13 +3026,13 @@ export class DatabaseProxyServiceClient {
   deleteVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualBucket(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualBucketRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2841,7 +3051,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteVirtualBucket);
   }
 
-  methodInfoListVirtualClusters = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListVirtualClusters = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualClusters',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersRequest) => {
       return request.serializeBinary();
@@ -2856,13 +3069,13 @@ export class DatabaseProxyServiceClient {
   listVirtualClusters(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersResponse>;
 
   listVirtualClusters(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualClustersResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2881,7 +3094,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListVirtualClusters);
   }
 
-  methodInfoGetVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualClusterRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -2896,13 +3112,13 @@ export class DatabaseProxyServiceClient {
   getVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   getVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2921,7 +3137,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetVirtualCluster);
   }
 
-  methodInfoCreateVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualClusterRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -2936,13 +3155,13 @@ export class DatabaseProxyServiceClient {
   createVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   createVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -2961,7 +3180,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateVirtualCluster);
   }
 
-  methodInfoUpdateVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualClusterRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -2976,13 +3198,13 @@ export class DatabaseProxyServiceClient {
   updateVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster>;
 
   updateVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3001,7 +3223,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateVirtualCluster);
   }
 
-  methodInfoDeleteVirtualCluster = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteVirtualCluster = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualCluster',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualClusterRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualClusterRequest) => {
       return request.serializeBinary();
@@ -3016,13 +3241,13 @@ export class DatabaseProxyServiceClient {
   deleteVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualCluster(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualClusterRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3041,7 +3266,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteVirtualCluster);
   }
 
-  methodInfoListVirtualVolumes = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListVirtualVolumes = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListVirtualVolumes',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesRequest) => {
       return request.serializeBinary();
@@ -3056,13 +3284,13 @@ export class DatabaseProxyServiceClient {
   listVirtualVolumes(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesResponse>;
 
   listVirtualVolumes(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListVirtualVolumesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3081,7 +3309,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListVirtualVolumes);
   }
 
-  methodInfoGetVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetVirtualVolume = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetVirtualVolume',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualVolumeRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualVolumeRequest) => {
       return request.serializeBinary();
@@ -3096,13 +3327,13 @@ export class DatabaseProxyServiceClient {
   getVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   getVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3121,7 +3352,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetVirtualVolume);
   }
 
-  methodInfoCreateVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateVirtualVolume = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateVirtualVolume',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualVolumeRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualVolumeRequest) => {
       return request.serializeBinary();
@@ -3136,13 +3370,13 @@ export class DatabaseProxyServiceClient {
   createVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   createVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3161,7 +3395,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateVirtualVolume);
   }
 
-  methodInfoUpdateVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateVirtualVolume = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateVirtualVolume',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualVolumeRequest,
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualVolumeRequest) => {
       return request.serializeBinary();
@@ -3176,13 +3413,13 @@ export class DatabaseProxyServiceClient {
   updateVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume>;
 
   updateVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3201,7 +3438,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateVirtualVolume);
   }
 
-  methodInfoDeleteVirtualVolume = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteVirtualVolume = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteVirtualVolume',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualVolumeRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualVolumeRequest) => {
       return request.serializeBinary();
@@ -3216,13 +3456,13 @@ export class DatabaseProxyServiceClient {
   deleteVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteVirtualVolume(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteVirtualVolumeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3241,7 +3481,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteVirtualVolume);
   }
 
-  methodInfoListDataPipelines = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataPipelines = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelines',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesRequest) => {
       return request.serializeBinary();
@@ -3256,13 +3499,13 @@ export class DatabaseProxyServiceClient {
   listDataPipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesResponse>;
 
   listDataPipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelinesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3281,7 +3524,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListDataPipelines);
   }
 
-  methodInfoGetDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRequest) => {
       return request.serializeBinary();
@@ -3296,13 +3542,13 @@ export class DatabaseProxyServiceClient {
   getDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   getDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3321,7 +3567,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetDataPipeline);
   }
 
-  methodInfoCreateDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRequest) => {
       return request.serializeBinary();
@@ -3336,13 +3585,13 @@ export class DatabaseProxyServiceClient {
   createDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   createDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3361,7 +3610,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateDataPipeline);
   }
 
-  methodInfoUpdateDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRequest) => {
       return request.serializeBinary();
@@ -3376,13 +3628,13 @@ export class DatabaseProxyServiceClient {
   updateDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline>;
 
   updateDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3401,7 +3653,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateDataPipeline);
   }
 
-  methodInfoDeleteDataPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRequest) => {
       return request.serializeBinary();
@@ -3416,13 +3671,13 @@ export class DatabaseProxyServiceClient {
   deleteDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3441,7 +3696,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteDataPipeline);
   }
 
-  methodInfoListDataPipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataPipelineRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataPipelineRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsRequest) => {
       return request.serializeBinary();
@@ -3456,13 +3714,13 @@ export class DatabaseProxyServiceClient {
   listDataPipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsResponse>;
 
   listDataPipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataPipelineRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3481,7 +3739,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListDataPipelineRuns);
   }
 
-  methodInfoGetDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -3496,13 +3757,13 @@ export class DatabaseProxyServiceClient {
   getDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   getDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3521,7 +3782,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetDataPipelineRun);
   }
 
-  methodInfoCreateDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -3536,13 +3800,13 @@ export class DatabaseProxyServiceClient {
   createDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   createDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3561,7 +3825,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateDataPipelineRun);
   }
 
-  methodInfoUpdateDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -3576,13 +3843,13 @@ export class DatabaseProxyServiceClient {
   updateDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun>;
 
   updateDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3601,7 +3868,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateDataPipelineRun);
   }
 
-  methodInfoDeleteDataPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRunRequest) => {
       return request.serializeBinary();
@@ -3616,13 +3886,13 @@ export class DatabaseProxyServiceClient {
   deleteDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3641,7 +3911,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteDataPipelineRun);
   }
 
-  methodInfoListDataProducts = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataProducts = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProducts',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsRequest) => {
       return request.serializeBinary();
@@ -3656,13 +3929,13 @@ export class DatabaseProxyServiceClient {
   listDataProducts(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsResponse>;
 
   listDataProducts(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3681,7 +3954,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListDataProducts);
   }
 
-  methodInfoGetDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductRequest) => {
       return request.serializeBinary();
@@ -3696,13 +3972,13 @@ export class DatabaseProxyServiceClient {
   getDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   getDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3721,7 +3997,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetDataProduct);
   }
 
-  methodInfoCreateDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductRequest) => {
       return request.serializeBinary();
@@ -3736,13 +4015,13 @@ export class DatabaseProxyServiceClient {
   createDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   createDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3761,7 +4040,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateDataProduct);
   }
 
-  methodInfoUpdateDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductRequest) => {
       return request.serializeBinary();
@@ -3776,13 +4058,13 @@ export class DatabaseProxyServiceClient {
   updateDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct>;
 
   updateDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3801,7 +4083,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateDataProduct);
   }
 
-  methodInfoDeleteDataProduct = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataProduct = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProduct',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductRequest) => {
       return request.serializeBinary();
@@ -3816,13 +4101,13 @@ export class DatabaseProxyServiceClient {
   deleteDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataProduct(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3841,7 +4126,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteDataProduct);
   }
 
-  methodInfoListDataProductVersions = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataProductVersions = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataProductVersions',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsRequest) => {
       return request.serializeBinary();
@@ -3856,13 +4144,13 @@ export class DatabaseProxyServiceClient {
   listDataProductVersions(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsResponse>;
 
   listDataProductVersions(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataProductVersionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3881,7 +4169,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListDataProductVersions);
   }
 
-  methodInfoGetDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductVersionRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -3896,13 +4187,13 @@ export class DatabaseProxyServiceClient {
   getDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   getDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3921,7 +4212,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetDataProductVersion);
   }
 
-  methodInfoCreateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductVersionRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -3936,13 +4230,13 @@ export class DatabaseProxyServiceClient {
   createDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   createDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -3961,7 +4255,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateDataProductVersion);
   }
 
-  methodInfoUpdateDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductVersionRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -3976,13 +4273,13 @@ export class DatabaseProxyServiceClient {
   updateDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion>;
 
   updateDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4001,7 +4298,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateDataProductVersion);
   }
 
-  methodInfoDeleteDataProductVersion = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataProductVersion = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataProductVersion',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductVersionRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductVersionRequest) => {
       return request.serializeBinary();
@@ -4016,13 +4316,13 @@ export class DatabaseProxyServiceClient {
   deleteDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataProductVersion(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataProductVersionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4041,7 +4341,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteDataProductVersion);
   }
 
-  methodInfoListDatasets = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDatasets = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDatasets',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsRequest) => {
       return request.serializeBinary();
@@ -4056,13 +4359,13 @@ export class DatabaseProxyServiceClient {
   listDatasets(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsResponse>;
 
   listDatasets(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasetsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4081,7 +4384,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListDatasets);
   }
 
-  methodInfoGetDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasetRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasetRequest) => {
       return request.serializeBinary();
@@ -4096,13 +4402,13 @@ export class DatabaseProxyServiceClient {
   getDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   getDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4121,7 +4427,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetDataset);
   }
 
-  methodInfoCreateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasetRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasetRequest) => {
       return request.serializeBinary();
@@ -4136,13 +4445,13 @@ export class DatabaseProxyServiceClient {
   createDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   createDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4161,7 +4470,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateDataset);
   }
 
-  methodInfoUpdateDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasetRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasetRequest) => {
       return request.serializeBinary();
@@ -4176,13 +4488,13 @@ export class DatabaseProxyServiceClient {
   updateDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset>;
 
   updateDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4201,7 +4513,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateDataset);
   }
 
-  methodInfoDeleteDataset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasetRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasetRequest) => {
       return request.serializeBinary();
@@ -4216,13 +4531,13 @@ export class DatabaseProxyServiceClient {
   deleteDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4241,7 +4556,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteDataset);
   }
 
-  methodInfoListDataSources = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListDataSources = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataSources',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesRequest) => {
       return request.serializeBinary();
@@ -4256,13 +4574,13 @@ export class DatabaseProxyServiceClient {
   listDataSources(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesResponse>;
 
   listDataSources(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDatasourcesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4281,7 +4599,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListDataSources);
   }
 
-  methodInfoGetDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetDataSource = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataSource',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasourceRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasourceRequest) => {
       return request.serializeBinary();
@@ -4296,13 +4617,13 @@ export class DatabaseProxyServiceClient {
   getDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   getDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4321,7 +4642,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetDataSource);
   }
 
-  methodInfoCreateDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateDataSource = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataSource',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasourceRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasourceRequest) => {
       return request.serializeBinary();
@@ -4336,13 +4660,13 @@ export class DatabaseProxyServiceClient {
   createDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   createDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4361,7 +4685,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateDataSource);
   }
 
-  methodInfoUpdateDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateDataSource = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataSource',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasourceRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasourceRequest) => {
       return request.serializeBinary();
@@ -4376,13 +4703,13 @@ export class DatabaseProxyServiceClient {
   updateDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource>;
 
   updateDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4401,7 +4728,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateDataSource);
   }
 
-  methodInfoDeleteDataSource = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteDataSource = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataSource',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasourceRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasourceRequest) => {
       return request.serializeBinary();
@@ -4416,13 +4746,13 @@ export class DatabaseProxyServiceClient {
   deleteDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteDataSource(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDatasourceRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4441,7 +4771,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteDataSource);
   }
 
-  methodInfoListEntities = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListEntities = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListEntities',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesRequest) => {
       return request.serializeBinary();
@@ -4456,13 +4789,13 @@ export class DatabaseProxyServiceClient {
   listEntities(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesResponse>;
 
   listEntities(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListEntitiesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4481,7 +4814,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListEntities);
   }
 
-  methodInfoGetEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetEntityRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetEntityRequest) => {
       return request.serializeBinary();
@@ -4496,13 +4832,13 @@ export class DatabaseProxyServiceClient {
   getEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   getEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4521,7 +4857,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetEntity);
   }
 
-  methodInfoCreateEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateEntityRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateEntityRequest) => {
       return request.serializeBinary();
@@ -4536,13 +4875,13 @@ export class DatabaseProxyServiceClient {
   createEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   createEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4561,7 +4900,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateEntity);
   }
 
-  methodInfoUpdateEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateEntityRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateEntityRequest) => {
       return request.serializeBinary();
@@ -4576,13 +4918,13 @@ export class DatabaseProxyServiceClient {
   updateEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity>;
 
   updateEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4601,7 +4943,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateEntity);
   }
 
-  methodInfoDeleteEntity = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteEntity = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteEntity',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteEntityRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteEntityRequest) => {
       return request.serializeBinary();
@@ -4616,13 +4961,13 @@ export class DatabaseProxyServiceClient {
   deleteEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteEntity(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteEntityRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4641,7 +4986,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteEntity);
   }
 
-  methodInfoListFeatures = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeatures = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatures',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesRequest) => {
       return request.serializeBinary();
@@ -4656,13 +5004,13 @@ export class DatabaseProxyServiceClient {
   listFeatures(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesResponse>;
 
   listFeatures(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4681,7 +5029,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListFeatures);
   }
 
-  methodInfoGetFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureRequest) => {
       return request.serializeBinary();
@@ -4696,13 +5047,13 @@ export class DatabaseProxyServiceClient {
   getFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   getFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4721,7 +5072,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetFeature);
   }
 
-  methodInfoCreateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureRequest) => {
       return request.serializeBinary();
@@ -4736,13 +5090,13 @@ export class DatabaseProxyServiceClient {
   createFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   createFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4761,7 +5115,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateFeature);
   }
 
-  methodInfoUpdateFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureRequest) => {
       return request.serializeBinary();
@@ -4776,13 +5133,13 @@ export class DatabaseProxyServiceClient {
   updateFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature>;
 
   updateFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4801,7 +5158,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateFeature);
   }
 
-  methodInfoDeleteFeature = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeature = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeature',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureRequest) => {
       return request.serializeBinary();
@@ -4816,13 +5176,13 @@ export class DatabaseProxyServiceClient {
   deleteFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeature(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4841,7 +5201,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteFeature);
   }
 
-  methodInfoListFeatureHistograms = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeatureHistograms = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeatureHistograms',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsRequest) => {
       return request.serializeBinary();
@@ -4856,13 +5219,13 @@ export class DatabaseProxyServiceClient {
   listFeatureHistograms(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsResponse>;
 
   listFeatureHistograms(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeatureHistogramsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4881,7 +5244,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListFeatureHistograms);
   }
 
-  methodInfoGetFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureHistogramRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -4896,13 +5262,13 @@ export class DatabaseProxyServiceClient {
   getFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
 
   getFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4921,7 +5287,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetFeatureHistogram);
   }
 
-  methodInfoCreateFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureHistogramRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -4936,13 +5305,13 @@ export class DatabaseProxyServiceClient {
   createFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
 
   createFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -4961,7 +5330,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateFeatureHistogram);
   }
 
-  methodInfoUpdateFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureHistogramRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -4976,13 +5348,13 @@ export class DatabaseProxyServiceClient {
   updateFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram>;
 
   updateFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5001,7 +5373,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateFeatureHistogram);
   }
 
-  methodInfoDeleteFeatureHistogram = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeatureHistogram = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureHistogram',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureHistogramRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureHistogramRequest) => {
       return request.serializeBinary();
@@ -5016,13 +5391,13 @@ export class DatabaseProxyServiceClient {
   deleteFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeatureHistogram(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeatureHistogramRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5041,7 +5416,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteFeatureHistogram);
   }
 
-  methodInfoListFeaturePipelines = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeaturePipelines = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelines',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesRequest) => {
       return request.serializeBinary();
@@ -5056,13 +5434,13 @@ export class DatabaseProxyServiceClient {
   listFeaturePipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesResponse>;
 
   listFeaturePipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelinesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5081,7 +5459,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListFeaturePipelines);
   }
 
-  methodInfoGetFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeaturePipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRequest) => {
       return request.serializeBinary();
@@ -5096,13 +5477,13 @@ export class DatabaseProxyServiceClient {
   getFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   getFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5121,7 +5502,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetFeaturePipeline);
   }
 
-  methodInfoCreateFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeaturePipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRequest) => {
       return request.serializeBinary();
@@ -5136,13 +5520,13 @@ export class DatabaseProxyServiceClient {
   createFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   createFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5161,7 +5545,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateFeaturePipeline);
   }
 
-  methodInfoUpdateFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeaturePipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRequest) => {
       return request.serializeBinary();
@@ -5176,13 +5563,13 @@ export class DatabaseProxyServiceClient {
   updateFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline>;
 
   updateFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5201,7 +5588,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateFeaturePipeline);
   }
 
-  methodInfoDeleteFeaturePipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeaturePipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRequest) => {
       return request.serializeBinary();
@@ -5216,13 +5606,13 @@ export class DatabaseProxyServiceClient {
   deleteFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeaturePipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5241,7 +5631,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteFeaturePipeline);
   }
 
-  methodInfoListFeaturePipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeaturePipelineRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturePipelineRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsRequest) => {
       return request.serializeBinary();
@@ -5256,13 +5649,13 @@ export class DatabaseProxyServiceClient {
   listFeaturePipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsResponse>;
 
   listFeaturePipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturePipelineRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5281,7 +5674,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListFeaturePipelineRuns);
   }
 
-  methodInfoGetFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeaturePipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeaturePipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRunRequest) => {
       return request.serializeBinary();
@@ -5296,13 +5692,13 @@ export class DatabaseProxyServiceClient {
   getFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun>;
 
   getFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5321,7 +5717,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetFeaturePipelineRun);
   }
 
-  methodInfoCreateFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeaturePipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeaturePipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRunRequest) => {
       return request.serializeBinary();
@@ -5336,13 +5735,13 @@ export class DatabaseProxyServiceClient {
   createFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun>;
 
   createFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5361,7 +5760,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateFeaturePipelineRun);
   }
 
-  methodInfoUpdateFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeaturePipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeaturePipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRunRequest) => {
       return request.serializeBinary();
@@ -5376,13 +5778,13 @@ export class DatabaseProxyServiceClient {
   updateFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun>;
 
   updateFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5401,7 +5803,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateFeaturePipelineRun);
   }
 
-  methodInfoDeleteFeaturePipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeaturePipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeaturePipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRunRequest) => {
       return request.serializeBinary();
@@ -5416,13 +5821,13 @@ export class DatabaseProxyServiceClient {
   deleteFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeaturePipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturePipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5441,7 +5846,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteFeaturePipelineRun);
   }
 
-  methodInfoListFeaturesets = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListFeaturesets = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListFeaturesets',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsRequest) => {
       return request.serializeBinary();
@@ -5456,13 +5864,13 @@ export class DatabaseProxyServiceClient {
   listFeaturesets(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsResponse>;
 
   listFeaturesets(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListFeaturesetsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5481,7 +5889,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListFeaturesets);
   }
 
-  methodInfoGetFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetFeatureset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturesetRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturesetRequest) => {
       return request.serializeBinary();
@@ -5496,13 +5907,13 @@ export class DatabaseProxyServiceClient {
   getFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   getFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5521,7 +5932,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetFeatureset);
   }
 
-  methodInfoCreateFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateFeatureset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturesetRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturesetRequest) => {
       return request.serializeBinary();
@@ -5536,13 +5950,13 @@ export class DatabaseProxyServiceClient {
   createFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   createFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5561,7 +5975,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateFeatureset);
   }
 
-  methodInfoUpdateFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateFeatureset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturesetRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturesetRequest) => {
       return request.serializeBinary();
@@ -5576,13 +5993,13 @@ export class DatabaseProxyServiceClient {
   updateFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset>;
 
   updateFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5601,7 +6018,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateFeatureset);
   }
 
-  methodInfoDeleteFeatureset = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteFeatureset = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteFeatureset',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturesetRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturesetRequest) => {
       return request.serializeBinary();
@@ -5616,13 +6036,13 @@ export class DatabaseProxyServiceClient {
   deleteFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteFeatureset(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteFeaturesetRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5641,7 +6061,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteFeatureset);
   }
 
-  methodInfoListLabelingPipelines = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListLabelingPipelines = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelines',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesRequest) => {
       return request.serializeBinary();
@@ -5656,13 +6079,13 @@ export class DatabaseProxyServiceClient {
   listLabelingPipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesResponse>;
 
   listLabelingPipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelinesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5681,7 +6104,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListLabelingPipelines);
   }
 
-  methodInfoGetLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -5696,13 +6122,13 @@ export class DatabaseProxyServiceClient {
   getLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   getLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5721,7 +6147,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetLabelingPipeline);
   }
 
-  methodInfoCreateLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -5736,13 +6165,13 @@ export class DatabaseProxyServiceClient {
   createLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   createLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5761,7 +6190,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateLabelingPipeline);
   }
 
-  methodInfoUpdateLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -5776,13 +6208,13 @@ export class DatabaseProxyServiceClient {
   updateLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline>;
 
   updateLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5801,7 +6233,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateLabelingPipeline);
   }
 
-  methodInfoDeleteLabelingPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteLabelingPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRequest) => {
       return request.serializeBinary();
@@ -5816,13 +6251,13 @@ export class DatabaseProxyServiceClient {
   deleteLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteLabelingPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5841,7 +6276,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteLabelingPipeline);
   }
 
-  methodInfoListLabelingPipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListLabelingPipelineRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListLabelingPipelineRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsRequest) => {
       return request.serializeBinary();
@@ -5856,13 +6294,13 @@ export class DatabaseProxyServiceClient {
   listLabelingPipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsResponse>;
 
   listLabelingPipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListLabelingPipelineRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5881,7 +6319,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListLabelingPipelineRuns);
   }
 
-  methodInfoGetLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetLabelingPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetLabelingPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRunRequest) => {
       return request.serializeBinary();
@@ -5896,13 +6337,13 @@ export class DatabaseProxyServiceClient {
   getLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   getLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5921,7 +6362,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetLabelingPipelineRun);
   }
 
-  methodInfoCreateLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateLabelingPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateLabelingPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRunRequest) => {
       return request.serializeBinary();
@@ -5936,13 +6380,13 @@ export class DatabaseProxyServiceClient {
   createLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   createLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -5961,7 +6405,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateLabelingPipelineRun);
   }
 
-  methodInfoUpdateLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateLabelingPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateLabelingPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRunRequest) => {
       return request.serializeBinary();
@@ -5976,13 +6423,13 @@ export class DatabaseProxyServiceClient {
   updateLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun>;
 
   updateLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6001,7 +6448,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateLabelingPipelineRun);
   }
 
-  methodInfoDeleteLabelingPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteLabelingPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteLabelingPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRunRequest) => {
       return request.serializeBinary();
@@ -6016,13 +6466,13 @@ export class DatabaseProxyServiceClient {
   deleteLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteLabelingPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteLabelingPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6041,7 +6491,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteLabelingPipelineRun);
   }
 
-  methodInfoListRecipes = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListRecipes = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipes',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesRequest) => {
       return request.serializeBinary();
@@ -6056,13 +6509,13 @@ export class DatabaseProxyServiceClient {
   listRecipes(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesResponse>;
 
   listRecipes(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6081,7 +6534,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListRecipes);
   }
 
-  methodInfoGetRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRequest) => {
       return request.serializeBinary();
@@ -6096,13 +6552,13 @@ export class DatabaseProxyServiceClient {
   getRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   getRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6121,7 +6577,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetRecipe);
   }
 
-  methodInfoCreateRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRequest) => {
       return request.serializeBinary();
@@ -6136,13 +6595,13 @@ export class DatabaseProxyServiceClient {
   createRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   createRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6161,7 +6620,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateRecipe);
   }
 
-  methodInfoUpdateRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRequest) => {
       return request.serializeBinary();
@@ -6176,13 +6638,13 @@ export class DatabaseProxyServiceClient {
   updateRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe>;
 
   updateRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6201,7 +6663,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateRecipe);
   }
 
-  methodInfoDeleteRecipe = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteRecipe = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipe',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRequest) => {
       return request.serializeBinary();
@@ -6216,13 +6681,13 @@ export class DatabaseProxyServiceClient {
   deleteRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteRecipe(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6241,7 +6706,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteRecipe);
   }
 
-  methodInfoListRecipeRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListRecipeRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRecipeRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsRequest) => {
       return request.serializeBinary();
@@ -6256,13 +6724,13 @@ export class DatabaseProxyServiceClient {
   listRecipeRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsResponse>;
 
   listRecipeRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRecipeRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6281,7 +6749,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListRecipeRuns);
   }
 
-  methodInfoGetRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetRecipeRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRecipeRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRunRequest) => {
       return request.serializeBinary();
@@ -6296,13 +6767,13 @@ export class DatabaseProxyServiceClient {
   getRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   getRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6321,7 +6792,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetRecipeRun);
   }
 
-  methodInfoCreateRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateRecipeRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRecipeRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRunRequest) => {
       return request.serializeBinary();
@@ -6336,13 +6810,13 @@ export class DatabaseProxyServiceClient {
   createRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   createRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6361,7 +6835,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateRecipeRun);
   }
 
-  methodInfoUpdateRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateRecipeRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRecipeRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRunRequest) => {
       return request.serializeBinary();
@@ -6376,13 +6853,13 @@ export class DatabaseProxyServiceClient {
   updateRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun>;
 
   updateRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6401,7 +6878,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateRecipeRun);
   }
 
-  methodInfoDeleteRecipeRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteRecipeRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRecipeRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRunRequest) => {
       return request.serializeBinary();
@@ -6416,13 +6896,13 @@ export class DatabaseProxyServiceClient {
   deleteRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteRecipeRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRecipeRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6441,7 +6921,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteRecipeRun);
   }
 
-  methodInfoListModelAutobuilders = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModelAutobuilders = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelAutobuilders',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersRequest) => {
       return request.serializeBinary();
@@ -6456,13 +6939,13 @@ export class DatabaseProxyServiceClient {
   listModelAutobuilders(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersResponse>;
 
   listModelAutobuilders(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelAutobuildersResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6481,7 +6964,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListModelAutobuilders);
   }
 
-  methodInfoGetModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModelAutobuilder = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelAutobuilder',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelAutobuilderRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelAutobuilderRequest) => {
       return request.serializeBinary();
@@ -6496,13 +6982,13 @@ export class DatabaseProxyServiceClient {
   getModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   getModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6521,7 +7007,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetModelAutobuilder);
   }
 
-  methodInfoCreateModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateModelAutobuilder = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelAutobuilder',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelAutobuilderRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelAutobuilderRequest) => {
       return request.serializeBinary();
@@ -6536,13 +7025,13 @@ export class DatabaseProxyServiceClient {
   createModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   createModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6561,7 +7050,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateModelAutobuilder);
   }
 
-  methodInfoUpdateModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateModelAutobuilder = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelAutobuilder',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelAutobuilderRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelAutobuilderRequest) => {
       return request.serializeBinary();
@@ -6576,13 +7068,13 @@ export class DatabaseProxyServiceClient {
   updateModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder>;
 
   updateModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6601,7 +7093,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateModelAutobuilder);
   }
 
-  methodInfoDeleteModelAutobuilder = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModelAutobuilder = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelAutobuilder',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelAutobuilderRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelAutobuilderRequest) => {
       return request.serializeBinary();
@@ -6616,13 +7111,13 @@ export class DatabaseProxyServiceClient {
   deleteModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteModelAutobuilder(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelAutobuilderRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6641,7 +7136,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteModelAutobuilder);
   }
 
-  methodInfoListModelPipelines = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModelPipelines = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelines',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesRequest) => {
       return request.serializeBinary();
@@ -6656,13 +7154,13 @@ export class DatabaseProxyServiceClient {
   listModelPipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesResponse>;
 
   listModelPipelines(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelinesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6681,7 +7179,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListModelPipelines);
   }
 
-  methodInfoGetModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRequest) => {
       return request.serializeBinary();
@@ -6696,13 +7197,13 @@ export class DatabaseProxyServiceClient {
   getModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   getModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6721,7 +7222,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetModelPipeline);
   }
 
-  methodInfoCreateModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRequest) => {
       return request.serializeBinary();
@@ -6736,13 +7240,13 @@ export class DatabaseProxyServiceClient {
   createModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   createModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6761,7 +7265,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateModelPipeline);
   }
 
-  methodInfoUpdateModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRequest) => {
       return request.serializeBinary();
@@ -6776,13 +7283,13 @@ export class DatabaseProxyServiceClient {
   updateModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline>;
 
   updateModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipeline) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6801,7 +7308,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateModelPipeline);
   }
 
-  methodInfoDeleteModelPipeline = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModelPipeline = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipeline',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRequest) => {
       return request.serializeBinary();
@@ -6816,13 +7326,13 @@ export class DatabaseProxyServiceClient {
   deleteModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteModelPipeline(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6841,7 +7351,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteModelPipeline);
   }
 
-  methodInfoListModelPipelineRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModelPipelineRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModelPipelineRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsRequest) => {
       return request.serializeBinary();
@@ -6856,13 +7369,13 @@ export class DatabaseProxyServiceClient {
   listModelPipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsResponse>;
 
   listModelPipelineRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelPipelineRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6881,7 +7394,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListModelPipelineRuns);
   }
 
-  methodInfoGetModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModelPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModelPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRunRequest) => {
       return request.serializeBinary();
@@ -6896,13 +7412,13 @@ export class DatabaseProxyServiceClient {
   getModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   getModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6921,7 +7437,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetModelPipelineRun);
   }
 
-  methodInfoCreateModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateModelPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModelPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRunRequest) => {
       return request.serializeBinary();
@@ -6936,13 +7455,13 @@ export class DatabaseProxyServiceClient {
   createModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   createModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -6961,7 +7480,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateModelPipelineRun);
   }
 
-  methodInfoUpdateModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateModelPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModelPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRunRequest) => {
       return request.serializeBinary();
@@ -6976,13 +7498,13 @@ export class DatabaseProxyServiceClient {
   updateModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun>;
 
   updateModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelPipelineRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7001,7 +7523,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateModelPipelineRun);
   }
 
-  methodInfoDeleteModelPipelineRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModelPipelineRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModelPipelineRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRunRequest) => {
       return request.serializeBinary();
@@ -7016,13 +7541,13 @@ export class DatabaseProxyServiceClient {
   deleteModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteModelPipelineRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelPipelineRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7041,7 +7566,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteModelPipelineRun);
   }
 
-  methodInfoListNotebooks = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListNotebooks = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebooks',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksRequest) => {
       return request.serializeBinary();
@@ -7056,13 +7584,13 @@ export class DatabaseProxyServiceClient {
   listNotebooks(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksResponse>;
 
   listNotebooks(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebooksResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7081,7 +7609,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListNotebooks);
   }
 
-  methodInfoGetNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRequest) => {
       return request.serializeBinary();
@@ -7096,13 +7627,13 @@ export class DatabaseProxyServiceClient {
   getNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   getNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7121,7 +7652,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetNotebook);
   }
 
-  methodInfoCreateNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRequest) => {
       return request.serializeBinary();
@@ -7136,13 +7670,13 @@ export class DatabaseProxyServiceClient {
   createNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   createNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7161,7 +7695,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateNotebook);
   }
 
-  methodInfoUpdateNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRequest) => {
       return request.serializeBinary();
@@ -7176,13 +7713,13 @@ export class DatabaseProxyServiceClient {
   updateNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook>;
 
   updateNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7201,7 +7738,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateNotebook);
   }
 
-  methodInfoDeleteNotebook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteNotebook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRequest) => {
       return request.serializeBinary();
@@ -7216,13 +7756,13 @@ export class DatabaseProxyServiceClient {
   deleteNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteNotebook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7241,7 +7781,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteNotebook);
   }
 
-  methodInfoListNotebookRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListNotebookRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListNotebookRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsRequest) => {
       return request.serializeBinary();
@@ -7256,13 +7799,13 @@ export class DatabaseProxyServiceClient {
   listNotebookRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsResponse>;
 
   listNotebookRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListNotebookRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7281,7 +7824,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListNotebookRuns);
   }
 
-  methodInfoGetNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetNotebookRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetNotebookRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRunRequest) => {
       return request.serializeBinary();
@@ -7296,13 +7842,13 @@ export class DatabaseProxyServiceClient {
   getNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   getNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7321,7 +7867,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetNotebookRun);
   }
 
-  methodInfoCreateNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateNotebookRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateNotebookRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRunRequest) => {
       return request.serializeBinary();
@@ -7336,13 +7885,13 @@ export class DatabaseProxyServiceClient {
   createNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   createNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7361,7 +7910,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateNotebookRun);
   }
 
-  methodInfoUpdateNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateNotebookRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateNotebookRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRunRequest) => {
       return request.serializeBinary();
@@ -7376,13 +7928,13 @@ export class DatabaseProxyServiceClient {
   updateNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun>;
 
   updateNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7401,7 +7953,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateNotebookRun);
   }
 
-  methodInfoDeleteNotebookRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteNotebookRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteNotebookRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRunRequest) => {
       return request.serializeBinary();
@@ -7416,13 +7971,13 @@ export class DatabaseProxyServiceClient {
   deleteNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteNotebookRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteNotebookRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7441,7 +7996,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteNotebookRun);
   }
 
-  methodInfoListReports = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListReports = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListReports',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsRequest) => {
       return request.serializeBinary();
@@ -7456,13 +8014,13 @@ export class DatabaseProxyServiceClient {
   listReports(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsResponse>;
 
   listReports(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReportsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7481,7 +8039,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListReports);
   }
 
-  methodInfoGetReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReportRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReportRequest) => {
       return request.serializeBinary();
@@ -7496,13 +8057,13 @@ export class DatabaseProxyServiceClient {
   getReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   getReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7521,7 +8082,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetReport);
   }
 
-  methodInfoCreateReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReportRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReportRequest) => {
       return request.serializeBinary();
@@ -7536,13 +8100,13 @@ export class DatabaseProxyServiceClient {
   createReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   createReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7561,7 +8125,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateReport);
   }
 
-  methodInfoUpdateReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReportRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReportRequest) => {
       return request.serializeBinary();
@@ -7576,13 +8143,13 @@ export class DatabaseProxyServiceClient {
   updateReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report>;
 
   updateReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7601,7 +8168,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateReport);
   }
 
-  methodInfoDeleteReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReportRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReportRequest) => {
       return request.serializeBinary();
@@ -7616,13 +8186,13 @@ export class DatabaseProxyServiceClient {
   deleteReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7641,7 +8211,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteReport);
   }
 
-  methodInfoListCronReports = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListCronReports = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronReports',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest) => {
       return request.serializeBinary();
@@ -7656,13 +8229,13 @@ export class DatabaseProxyServiceClient {
   listCronReports(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse>;
 
   listCronReports(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronReportsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7681,7 +8254,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListCronReports);
   }
 
-  methodInfoGetCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetCronReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest) => {
       return request.serializeBinary();
@@ -7696,13 +8272,13 @@ export class DatabaseProxyServiceClient {
   getCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
 
   getCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7721,7 +8297,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetCronReport);
   }
 
-  methodInfoCreateCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateCronReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest) => {
       return request.serializeBinary();
@@ -7736,13 +8315,13 @@ export class DatabaseProxyServiceClient {
   createCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
 
   createCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7761,7 +8340,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateCronReport);
   }
 
-  methodInfoUpdateCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateCronReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest) => {
       return request.serializeBinary();
@@ -7776,13 +8358,13 @@ export class DatabaseProxyServiceClient {
   updateCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport>;
 
   updateCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReport) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7801,7 +8383,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateCronReport);
   }
 
-  methodInfoDeleteCronReport = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteCronReport = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronReport',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest) => {
       return request.serializeBinary();
@@ -7816,13 +8401,13 @@ export class DatabaseProxyServiceClient {
   deleteCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteCronReport(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronReportRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7841,7 +8426,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteCronReport);
   }
 
-  methodInfoListStudies = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListStudies = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListStudies',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesRequest) => {
       return request.serializeBinary();
@@ -7856,13 +8444,13 @@ export class DatabaseProxyServiceClient {
   listStudies(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesResponse>;
 
   listStudies(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListStudiesResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7881,7 +8469,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListStudies);
   }
 
-  methodInfoGetStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetStudyRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetStudyRequest) => {
       return request.serializeBinary();
@@ -7896,13 +8487,13 @@ export class DatabaseProxyServiceClient {
   getStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   getStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7921,7 +8512,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetStudy);
   }
 
-  methodInfoCreateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateStudyRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateStudyRequest) => {
       return request.serializeBinary();
@@ -7936,13 +8530,13 @@ export class DatabaseProxyServiceClient {
   createStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   createStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -7961,7 +8555,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateStudy);
   }
 
-  methodInfoUpdateStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateStudyRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateStudyRequest) => {
       return request.serializeBinary();
@@ -7976,13 +8573,13 @@ export class DatabaseProxyServiceClient {
   updateStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study>;
 
   updateStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8001,7 +8598,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateStudy);
   }
 
-  methodInfoDeleteStudy = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteStudy = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteStudy',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteStudyRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteStudyRequest) => {
       return request.serializeBinary();
@@ -8016,13 +8616,13 @@ export class DatabaseProxyServiceClient {
   deleteStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteStudy(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteStudyRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8041,7 +8641,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteStudy);
   }
 
-  methodInfoListModels = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListModels = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListModels',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsRequest) => {
       return request.serializeBinary();
@@ -8056,13 +8659,13 @@ export class DatabaseProxyServiceClient {
   listModels(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsResponse>;
 
   listModels(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListModelsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8081,7 +8684,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListModels);
   }
 
-  methodInfoGetModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetModel',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelRequest) => {
       return request.serializeBinary();
@@ -8096,13 +8702,13 @@ export class DatabaseProxyServiceClient {
   getModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
 
   getModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8121,7 +8727,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetModel);
   }
 
-  methodInfoCreateModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateModel',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelRequest) => {
       return request.serializeBinary();
@@ -8136,13 +8745,13 @@ export class DatabaseProxyServiceClient {
   createModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
 
   createModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8161,7 +8770,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateModel);
   }
 
-  methodInfoUpdateModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateModel',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelRequest,
     github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelRequest) => {
       return request.serializeBinary();
@@ -8176,13 +8788,13 @@ export class DatabaseProxyServiceClient {
   updateModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
 
   updateModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8201,7 +8813,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateModel);
   }
 
-  methodInfoDeleteModel = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteModel',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelRequest) => {
       return request.serializeBinary();
@@ -8216,13 +8831,13 @@ export class DatabaseProxyServiceClient {
   deleteModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteModel(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteModelRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8241,7 +8856,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteModel);
   }
 
-  methodInfoListCronPredictions = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListCronPredictions = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCronPredictions',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsRequest) => {
       return request.serializeBinary();
@@ -8256,13 +8874,13 @@ export class DatabaseProxyServiceClient {
   listCronPredictions(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsResponse>;
 
   listCronPredictions(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCronPredictionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8281,7 +8899,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListCronPredictions);
   }
 
-  methodInfoGetCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronPredictionRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronPredictionRequest) => {
       return request.serializeBinary();
@@ -8296,13 +8917,13 @@ export class DatabaseProxyServiceClient {
   getCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction>;
 
   getCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8321,7 +8942,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetCronPrediction);
   }
 
-  methodInfoCreateCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronPredictionRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronPredictionRequest) => {
       return request.serializeBinary();
@@ -8336,13 +8960,13 @@ export class DatabaseProxyServiceClient {
   createCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction>;
 
   createCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8361,7 +8985,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateCronPrediction);
   }
 
-  methodInfoUpdateCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronPredictionRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronPredictionRequest) => {
       return request.serializeBinary();
@@ -8376,13 +9003,13 @@ export class DatabaseProxyServiceClient {
   updateCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction>;
 
   updateCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8401,7 +9028,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateCronPrediction);
   }
 
-  methodInfoDeleteCronPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteCronPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCronPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronPredictionRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronPredictionRequest) => {
       return request.serializeBinary();
@@ -8416,13 +9046,13 @@ export class DatabaseProxyServiceClient {
   deleteCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteCronPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCronPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8441,7 +9071,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteCronPrediction);
   }
 
-  methodInfoListPredictions = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPredictions = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictions',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsRequest) => {
       return request.serializeBinary();
@@ -8456,13 +9089,13 @@ export class DatabaseProxyServiceClient {
   listPredictions(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsResponse>;
 
   listPredictions(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictionsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8481,7 +9114,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListPredictions);
   }
 
-  methodInfoGetPrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictionRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictionRequest) => {
       return request.serializeBinary();
@@ -8496,13 +9132,13 @@ export class DatabaseProxyServiceClient {
   getPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction>;
 
   getPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8521,7 +9157,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetPrediction);
   }
 
-  methodInfoCreatePrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictionRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictionRequest) => {
       return request.serializeBinary();
@@ -8536,13 +9175,13 @@ export class DatabaseProxyServiceClient {
   createPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction>;
 
   createPrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8561,7 +9200,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreatePrediction);
   }
 
-  methodInfoUpdatePrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdatePrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictionRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictionRequest) => {
       return request.serializeBinary();
@@ -8576,13 +9218,13 @@ export class DatabaseProxyServiceClient {
   updatePrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction>;
 
   updatePrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Prediction) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8601,7 +9243,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdatePrediction);
   }
 
-  methodInfoDeletePrediction = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePrediction = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePrediction',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictionRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictionRequest) => {
       return request.serializeBinary();
@@ -8616,13 +9261,13 @@ export class DatabaseProxyServiceClient {
   deletePrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deletePrediction(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictionRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8641,7 +9286,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeletePrediction);
   }
 
-  methodInfoListPredictors = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPredictors = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictors',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsRequest) => {
       return request.serializeBinary();
@@ -8656,13 +9304,13 @@ export class DatabaseProxyServiceClient {
   listPredictors(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsResponse>;
 
   listPredictors(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictorsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8681,7 +9329,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListPredictors);
   }
 
-  methodInfoGetPredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictorRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictorRequest) => {
       return request.serializeBinary();
@@ -8696,13 +9347,13 @@ export class DatabaseProxyServiceClient {
   getPredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor>;
 
   getPredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8721,7 +9372,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetPredictor);
   }
 
-  methodInfoCreatePredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictorRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictorRequest) => {
       return request.serializeBinary();
@@ -8736,13 +9390,13 @@ export class DatabaseProxyServiceClient {
   createPredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor>;
 
   createPredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8761,7 +9415,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreatePredictor);
   }
 
-  methodInfoUpdatePredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdatePredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictorRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictorRequest) => {
       return request.serializeBinary();
@@ -8776,13 +9433,13 @@ export class DatabaseProxyServiceClient {
   updatePredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor>;
 
   updatePredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8801,7 +9458,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdatePredictor);
   }
 
-  methodInfoDeletePredictor = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePredictor = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictor',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictorRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictorRequest) => {
       return request.serializeBinary();
@@ -8816,13 +9476,13 @@ export class DatabaseProxyServiceClient {
   deletePredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deletePredictor(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictorRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8841,7 +9501,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeletePredictor);
   }
 
-  methodInfoListCurtains = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListCurtains = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListCurtains',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsRequest) => {
       return request.serializeBinary();
@@ -8856,13 +9519,13 @@ export class DatabaseProxyServiceClient {
   listCurtains(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsResponse>;
 
   listCurtains(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListCurtainsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8881,7 +9544,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListCurtains);
   }
 
-  methodInfoGetCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetCurtain = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetCurtain',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCurtainRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCurtainRequest) => {
       return request.serializeBinary();
@@ -8896,13 +9562,13 @@ export class DatabaseProxyServiceClient {
   getCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain>;
 
   getCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8921,7 +9587,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetCurtain);
   }
 
-  methodInfoCreateCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateCurtain = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateCurtain',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCurtainRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCurtainRequest) => {
       return request.serializeBinary();
@@ -8936,13 +9605,13 @@ export class DatabaseProxyServiceClient {
   createCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain>;
 
   createCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -8961,7 +9630,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateCurtain);
   }
 
-  methodInfoUpdateCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateCurtain = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateCurtain',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCurtainRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCurtainRequest) => {
       return request.serializeBinary();
@@ -8976,13 +9648,13 @@ export class DatabaseProxyServiceClient {
   updateCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain>;
 
   updateCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Curtain) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9001,7 +9673,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateCurtain);
   }
 
-  methodInfoDeleteCurtain = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteCurtain = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteCurtain',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCurtainRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCurtainRequest) => {
       return request.serializeBinary();
@@ -9016,13 +9691,13 @@ export class DatabaseProxyServiceClient {
   deleteCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteCurtain(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteCurtainRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9041,7 +9716,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteCurtain);
   }
 
-  methodInfoListReviews = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListReviews = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListReviews',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsRequest) => {
       return request.serializeBinary();
@@ -9056,13 +9734,13 @@ export class DatabaseProxyServiceClient {
   listReviews(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsResponse>;
 
   listReviews(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListReviewsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9081,7 +9759,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListReviews);
   }
 
-  methodInfoGetReview = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetReview = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetReview',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReviewRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReviewRequest) => {
       return request.serializeBinary();
@@ -9096,13 +9777,13 @@ export class DatabaseProxyServiceClient {
   getReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review>;
 
   getReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9121,7 +9802,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetReview);
   }
 
-  methodInfoCreateReview = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateReview = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateReview',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReviewRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReviewRequest) => {
       return request.serializeBinary();
@@ -9136,13 +9820,13 @@ export class DatabaseProxyServiceClient {
   createReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review>;
 
   createReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9161,7 +9845,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateReview);
   }
 
-  methodInfoUpdateReview = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateReview = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateReview',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReviewRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReviewRequest) => {
       return request.serializeBinary();
@@ -9176,13 +9863,13 @@ export class DatabaseProxyServiceClient {
   updateReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review>;
 
   updateReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9201,7 +9888,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateReview);
   }
 
-  methodInfoDeleteReview = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteReview = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteReview',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReviewRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReviewRequest) => {
       return request.serializeBinary();
@@ -9216,13 +9906,13 @@ export class DatabaseProxyServiceClient {
   deleteReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteReview(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteReviewRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9241,7 +9931,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteReview);
   }
 
-  methodInfoListPostMortems = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPostMortems = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPostMortems',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsRequest) => {
       return request.serializeBinary();
@@ -9256,13 +9949,13 @@ export class DatabaseProxyServiceClient {
   listPostMortems(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsResponse>;
 
   listPostMortems(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPostMortemsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9281,7 +9974,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListPostMortems);
   }
 
-  methodInfoGetPostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPostMortemRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPostMortemRequest) => {
       return request.serializeBinary();
@@ -9296,13 +9992,13 @@ export class DatabaseProxyServiceClient {
   getPostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem>;
 
   getPostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9321,7 +10017,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetPostMortem);
   }
 
-  methodInfoCreatePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePostMortemRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePostMortemRequest) => {
       return request.serializeBinary();
@@ -9336,13 +10035,13 @@ export class DatabaseProxyServiceClient {
   createPostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem>;
 
   createPostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9361,7 +10060,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreatePostMortem);
   }
 
-  methodInfoUpdatePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdatePostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePostMortemRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePostMortemRequest) => {
       return request.serializeBinary();
@@ -9376,13 +10078,13 @@ export class DatabaseProxyServiceClient {
   updatePostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem>;
 
   updatePostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9401,7 +10103,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdatePostMortem);
   }
 
-  methodInfoDeletePostMortem = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePostMortem = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePostMortem',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePostMortemRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePostMortemRequest) => {
       return request.serializeBinary();
@@ -9416,13 +10121,13 @@ export class DatabaseProxyServiceClient {
   deletePostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deletePostMortem(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePostMortemRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9441,7 +10146,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeletePostMortem);
   }
 
-  methodInfoListRunBooks = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListRunBooks = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListRunBooks',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksRequest) => {
       return request.serializeBinary();
@@ -9456,13 +10164,13 @@ export class DatabaseProxyServiceClient {
   listRunBooks(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksResponse>;
 
   listRunBooks(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListRunbooksResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9481,7 +10189,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListRunBooks);
   }
 
-  methodInfoGetRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRunbookRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRunbookRequest) => {
       return request.serializeBinary();
@@ -9496,13 +10207,13 @@ export class DatabaseProxyServiceClient {
   getRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook>;
 
   getRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9521,7 +10232,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetRunBook);
   }
 
-  methodInfoCreateRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRunbookRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRunbookRequest) => {
       return request.serializeBinary();
@@ -9536,13 +10250,13 @@ export class DatabaseProxyServiceClient {
   createRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook>;
 
   createRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9561,7 +10275,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateRunBook);
   }
 
-  methodInfoUpdateRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRunbookRequest,
     github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRunbookRequest) => {
       return request.serializeBinary();
@@ -9576,13 +10293,13 @@ export class DatabaseProxyServiceClient {
   updateRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook>;
 
   updateRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9601,7 +10318,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateRunBook);
   }
 
-  methodInfoDeleteRunBook = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteRunBook = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteRunBook',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRunbookRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRunbookRequest) => {
       return request.serializeBinary();
@@ -9616,13 +10336,13 @@ export class DatabaseProxyServiceClient {
   deleteRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteRunBook(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteRunbookRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9641,7 +10361,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteRunBook);
   }
 
-  methodInfoListSqlQueries = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListSqlQueries = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListSqlQueries',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysRequest) => {
       return request.serializeBinary();
@@ -9656,13 +10379,13 @@ export class DatabaseProxyServiceClient {
   listSqlQueries(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysResponse>;
 
   listSqlQueries(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQuerysResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9681,7 +10404,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListSqlQueries);
   }
 
-  methodInfoGetSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetSqlQuery = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetSqlQuery',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRequest) => {
       return request.serializeBinary();
@@ -9696,13 +10422,13 @@ export class DatabaseProxyServiceClient {
   getSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery>;
 
   getSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9721,7 +10447,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetSqlQuery);
   }
 
-  methodInfoCreateSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateSqlQuery = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateSqlQuery',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRequest) => {
       return request.serializeBinary();
@@ -9736,13 +10465,13 @@ export class DatabaseProxyServiceClient {
   createSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery>;
 
   createSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9761,7 +10490,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateSqlQuery);
   }
 
-  methodInfoUpdateSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateSqlQuery = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateSqlQuery',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRequest) => {
       return request.serializeBinary();
@@ -9776,13 +10508,13 @@ export class DatabaseProxyServiceClient {
   updateSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery>;
 
   updateSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9801,7 +10533,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateSqlQuery);
   }
 
-  methodInfoDeleteSqlQuery = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteSqlQuery = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteSqlQuery',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRequest) => {
       return request.serializeBinary();
@@ -9816,13 +10551,13 @@ export class DatabaseProxyServiceClient {
   deleteSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteSqlQuery(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9841,7 +10576,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteSqlQuery);
   }
 
-  methodInfoListSqlQueryRuns = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListSqlQueryRuns = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListSqlQueryRuns',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsRequest) => {
       return request.serializeBinary();
@@ -9856,13 +10594,13 @@ export class DatabaseProxyServiceClient {
   listSqlQueryRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsResponse>;
 
   listSqlQueryRuns(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListSqlQueryRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9881,7 +10619,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListSqlQueryRuns);
   }
 
-  methodInfoGetSqlQueryRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetSqlQueryRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetSqlQueryRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRunRequest) => {
       return request.serializeBinary();
@@ -9896,13 +10637,13 @@ export class DatabaseProxyServiceClient {
   getSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun>;
 
   getSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9921,7 +10662,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetSqlQueryRun);
   }
 
-  methodInfoCreateSqlQueryRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateSqlQueryRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateSqlQueryRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRunRequest) => {
       return request.serializeBinary();
@@ -9936,13 +10680,13 @@ export class DatabaseProxyServiceClient {
   createSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun>;
 
   createSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -9961,7 +10705,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateSqlQueryRun);
   }
 
-  methodInfoUpdateSqlQueryRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateSqlQueryRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateSqlQueryRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRunRequest) => {
       return request.serializeBinary();
@@ -9976,13 +10723,13 @@ export class DatabaseProxyServiceClient {
   updateSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun>;
 
   updateSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10001,7 +10748,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateSqlQueryRun);
   }
 
-  methodInfoDeleteSqlQueryRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteSqlQueryRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteSqlQueryRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRunRequest) => {
       return request.serializeBinary();
@@ -10016,13 +10766,13 @@ export class DatabaseProxyServiceClient {
   deleteSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteSqlQueryRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteSqlQueryRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10041,7 +10791,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteSqlQueryRun);
   }
 
-  methodInfoListWebRequestRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListWebRequestRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListWebRequestRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest) => {
       return request.serializeBinary();
@@ -10056,13 +10809,13 @@ export class DatabaseProxyServiceClient {
   listWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse>;
 
   listWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestRunsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10081,7 +10834,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListWebRequestRun);
   }
 
-  methodInfoGetWebRequestRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetWebRequestRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetWebRequestRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRunRequest) => {
       return request.serializeBinary();
@@ -10096,13 +10852,13 @@ export class DatabaseProxyServiceClient {
   getWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun>;
 
   getWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10121,7 +10877,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetWebRequestRun);
   }
 
-  methodInfoCreateWebRequestRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateWebRequestRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateWebRequestRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRunRequest) => {
       return request.serializeBinary();
@@ -10136,13 +10895,13 @@ export class DatabaseProxyServiceClient {
   createWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun>;
 
   createWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10161,7 +10920,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateWebRequestRun);
   }
 
-  methodInfoUpdateWebRequestRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateWebRequestRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateWebRequestRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRunRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRunRequest) => {
       return request.serializeBinary();
@@ -10176,13 +10938,13 @@ export class DatabaseProxyServiceClient {
   updateWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun>;
 
   updateWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10201,7 +10963,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateWebRequestRun);
   }
 
-  methodInfoDeleteWebRequestRun = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteWebRequestRun = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteWebRequestRun',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRunRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRunRequest) => {
       return request.serializeBinary();
@@ -10216,13 +10981,13 @@ export class DatabaseProxyServiceClient {
   deleteWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteWebRequestRun(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRunRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10241,7 +11006,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteWebRequestRun);
   }
 
-  methodInfoListWebRequests = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListWebRequests = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListWebRequests',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest) => {
       return request.serializeBinary();
@@ -10256,13 +11024,13 @@ export class DatabaseProxyServiceClient {
   listWebRequests(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsResponse>;
 
   listWebRequests(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListWebRequestsResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10281,7 +11049,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListWebRequests);
   }
 
-  methodInfoGetWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRequest) => {
       return request.serializeBinary();
@@ -10296,13 +11067,13 @@ export class DatabaseProxyServiceClient {
   getWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest>;
 
   getWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10321,7 +11092,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetWebRequest);
   }
 
-  methodInfoCreateWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreateWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRequest) => {
       return request.serializeBinary();
@@ -10336,13 +11110,13 @@ export class DatabaseProxyServiceClient {
   createWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest>;
 
   createWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10361,7 +11135,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreateWebRequest);
   }
 
-  methodInfoUpdateWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdateWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRequest,
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRequest) => {
       return request.serializeBinary();
@@ -10376,13 +11153,13 @@ export class DatabaseProxyServiceClient {
   updateWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest>;
 
   updateWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10401,7 +11178,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdateWebRequest);
   }
 
-  methodInfoDeleteWebRequest = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeleteWebRequest = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteWebRequest',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRequest) => {
       return request.serializeBinary();
@@ -10416,13 +11196,13 @@ export class DatabaseProxyServiceClient {
   deleteWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deleteWebRequest(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteWebRequestRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10441,7 +11221,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteWebRequest);
   }
 
-  methodInfoListPredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoListPredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest,
     github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest) => {
       return request.serializeBinary();
@@ -10456,13 +11239,13 @@ export class DatabaseProxyServiceClient {
   listPredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse>;
 
   listPredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10481,7 +11264,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoListPredictiveApp);
   }
 
-  methodInfoGetPredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoGetPredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest) => {
       return request.serializeBinary();
@@ -10496,13 +11282,13 @@ export class DatabaseProxyServiceClient {
   getPredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
 
   getPredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10521,7 +11307,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoGetPredictiveApp);
   }
 
-  methodInfoCreatePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoCreatePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -10536,13 +11325,13 @@ export class DatabaseProxyServiceClient {
   createPredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
 
   createPredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10561,7 +11350,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoCreatePredictiveApp);
   }
 
-  methodInfoUpdatePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoUpdatePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest,
     github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -10576,13 +11368,13 @@ export class DatabaseProxyServiceClient {
   updatePredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
 
   updatePredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
@@ -10601,7 +11393,10 @@ export class DatabaseProxyServiceClient {
     this.methodInfoUpdatePredictiveApp);
   }
 
-  methodInfoDeletePredictiveApp = new grpcWeb.AbstractClientBase.MethodInfo(
+  methodInfoDeletePredictiveApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictiveApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest,
     google_protobuf_empty_pb.Empty,
     (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest) => {
       return request.serializeBinary();
@@ -10616,13 +11411,13 @@ export class DatabaseProxyServiceClient {
   deletePredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.Error,
+    callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
   deletePredictiveApp(
     request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest,
     metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.Error,
+    callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
