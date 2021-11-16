@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='k8s.io/apimachinery/pkg/util/intstr/generated.proto',
   package='k8s.io.apimachinery.pkg.util.intstr',
   syntax='proto2',
-  serialized_options=b'\n\032io.kubernetes.client.protoB\006IntStrZ\t./;intstr',
+  serialized_options=b'Z#k8s.io/apimachinery/pkg/util/intstr',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3k8s.io/apimachinery/pkg/util/intstr/generated.proto\x12#k8s.io.apimachinery.pkg.util.intstr\";\n\x0bIntOrString\x12\x0c\n\x04type\x18\x01 \x01(\x03\x12\x0e\n\x06intVal\x18\x02 \x01(\x05\x12\x0e\n\x06strVal\x18\x03 \x01(\tB/\n\x1aio.kubernetes.client.protoB\x06IntStrZ\t./;intstr'
+  serialized_pb=b'\n3k8s.io/apimachinery/pkg/util/intstr/generated.proto\x12#k8s.io.apimachinery.pkg.util.intstr\";\n\x0bIntOrString\x12\x0c\n\x04type\x18\x01 \x01(\x03\x12\x0e\n\x06intVal\x18\x02 \x01(\x05\x12\x0e\n\x06strVal\x18\x03 \x01(\tB%Z#k8s.io/apimachinery/pkg/util/intstr'
 )
 
 

@@ -15,9 +15,7 @@ import "k8s.io/apimachinery/pkg/runtime/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
-option go_package = "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/v1alpha1";
-// PKG
-// PKG
+option go_package = "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1";
 
 message CheckListItem {
   // Instruction is the instruction to follow

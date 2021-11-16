@@ -9,7 +9,7 @@ package v1
 import (
 	context "context"
 	_ "github.com/golang/protobuf/ptypes/empty"
-	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"

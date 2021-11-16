@@ -6,10 +6,6 @@ generate-proto:
 generate-go:
 	hack/generate-go.sh
 
-.PHONY: generate-go
-generate-k8s:
-	hack/k8s/generate.sh
-
 .PHONY: update-codegen
 update-codegen:
 	hack/update-codegen.sh
@@ -41,6 +37,11 @@ generate-java:
 .PHONY: generate-csharp
 generate-csharp:
 	hack/generate-csharp.sh
+
+.PHONY: fix-packages
+fix-packages:
+	hack/fix-packages.sh
+
 
 release: build
 
@@ -108,7 +109,7 @@ install-gen:
 	
 
 .PHONY: generate
-generate: install-gen generate-proto generate-go generate-js generate-py generate-crd generate-deepcopy 
+generate: install-gen generate-proto fix-packages generate-go generate-js generate-py generate-crd generate-deepcopy 
 
 
 .PHONY: install-crd

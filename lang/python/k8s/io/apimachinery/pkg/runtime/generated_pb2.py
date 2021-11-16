@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='k8s.io/apimachinery/pkg/runtime/generated.proto',
   package='k8s.io.apimachinery.pkg.runtime',
   syntax='proto2',
-  serialized_options=b'\n\032io.kubernetes.client.protoB\007RuntimeZ\037k8s.io/apimachinery/pkg/runtime',
+  serialized_options=b'Z\037k8s.io/apimachinery/pkg/runtime',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/k8s.io/apimachinery/pkg/runtime/generated.proto\x12\x1fk8s.io.apimachinery.pkg.runtime\"\x1b\n\x0cRawExtension\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\",\n\x08TypeMeta\x12\x12\n\napiVersion\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\"\x81\x01\n\x07Unknown\x12;\n\x08typeMeta\x18\x01 \x01(\x0b\x32).k8s.io.apimachinery.pkg.runtime.TypeMeta\x12\x0b\n\x03raw\x18\x02 \x01(\x0c\x12\x17\n\x0f\x63ontentEncoding\x18\x03 \x01(\t\x12\x13\n\x0b\x63ontentType\x18\x04 \x01(\tBF\n\x1aio.kubernetes.client.protoB\x07RuntimeZ\x1fk8s.io/apimachinery/pkg/runtime'
+  serialized_pb=b'\n/k8s.io/apimachinery/pkg/runtime/generated.proto\x12\x1fk8s.io.apimachinery.pkg.runtime\"\x1b\n\x0cRawExtension\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\",\n\x08TypeMeta\x12\x12\n\napiVersion\x18\x01 \x01(\t\x12\x0c\n\x04kind\x18\x02 \x01(\t\"\x81\x01\n\x07Unknown\x12;\n\x08typeMeta\x18\x01 \x01(\x0b\x32).k8s.io.apimachinery.pkg.runtime.TypeMeta\x12\x0b\n\x03raw\x18\x02 \x01(\x0c\x12\x17\n\x0f\x63ontentEncoding\x18\x03 \x01(\t\x12\x13\n\x0b\x63ontentType\x18\x04 \x01(\tB!Z\x1fk8s.io/apimachinery/pkg/runtime'
 )
 
 

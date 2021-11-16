@@ -65,7 +65,7 @@ files="k8s.io/apimachinery/pkg/api/resource/generated.proto;Resource \
        k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1/generated.proto;V1beta1Apiextensions" 
        
 
-modela_api_files="pkg/apis/catalog/v1alpha1/generated.proto;V1alpha1;catalog \
+modela_api_files="pkg/apis/catalog/v1alpha1/generated.proto;V1alpha1;catalog; \
        pkg/apis/data/v1alpha1/generated.proto;V1alpha1;data \
        pkg/apis/infra/v1alpha1/generated.proto;V1alpha1;infra \
        pkg/apis/team/v1alpha1/generated.proto;V1alpha1;team \
@@ -80,27 +80,29 @@ echo 'Munging proto file packages'
 for info in ${files}; do
   file=$(echo ${info} | cut -d ";" -f 1)
   class=$(echo ${info} | cut -d ";" -f 2)
+  go_package_name=$(dirname "${info}")
+  export go_package_name
   echo ${file}
-  perl -pi -e \
-    's/option go_package = "(.*)";/option go_package = "\.\/\;$1";\n\/\/ PKG/' \
-    ${GIT_ROOT}/${file} 
+  echo ${go_package_name}
+  perl -pi -e 's/option go_package = "(.*)";/option go_package = \"$ENV{'go_package_name'}\";\n/ig' ${GIT_ROOT}/${file} 
   perl -pi -e \
     's/\/\/ PKG/\/\/ PKG\noption java_package = "io.kubernetes.client.proto";/' \
     ${GIT_ROOT}/${file}
   perl -pi -e \
     "s/\/\/ PKG/\/\/ PKG\noption java_outer_classname = \"${class}\";/" \
     ${GIT_ROOT}/${file}
-
 done    
 
-echo 'fixing api proto files'
 
 for info in ${modela_api_files}; do
   file=$(echo ${info} | cut -d ";" -f 1)
-  echo ${file}
-  perl -pi -e \
-    's/option go_package = "(.*)";/option go_package = "github.com/metaprov/modelaapi/pkg/\.\/\;$1";\n\/\/ PKG/' \
-    ${file} 
+  go_name=$(dirname ${info})
+  echo ${go_name}
+  go_package_name="github.com/metaprov/modelaapi/${go_name}"
+  echo ${go_package_name}
+  export go_package_name
+  
+  perl -pi -e 's/option go_package = "(.*)";/option go_package = \"$ENV{'go_package_name'}\";/ig' ${file} 
   
   # Other package declarations can go here.
 done

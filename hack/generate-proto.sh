@@ -33,6 +33,7 @@ APIMACHINERY_PKGS=(
     k8s.io/api/rbac/v1
 )
 
+find  ${PROJECT_ROOT}/services -type f -name '*.pb.go' -delete
 go mod vendor
 mv ${PROJECT_ROOT}/vendor /tmp/includes
 

@@ -8,7 +8,7 @@ package v1
 
 import (
 	context "context"
-	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"

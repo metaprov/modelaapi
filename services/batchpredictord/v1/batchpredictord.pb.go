@@ -9,8 +9,8 @@ package v1
 import (
 	context "context"
 	empty "github.com/golang/protobuf/ptypes/empty"
-	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/v1alpha1"
-	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/v1alpha1"
+	v1alpha1 "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1"
+	v1alpha11 "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

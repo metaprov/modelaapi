@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='k8s.io/apimachinery/pkg/api/resource/generated.proto',
   package='k8s.io.apimachinery.pkg.api.resource',
   syntax='proto2',
-  serialized_options=b'\n\032io.kubernetes.client.protoB\010ResourceZ$k8s.io/apimachinery/pkg/api/resource',
+  serialized_options=b'Z$k8s.io/apimachinery/pkg/api/resource',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4k8s.io/apimachinery/pkg/api/resource/generated.proto\x12$k8s.io.apimachinery.pkg.api.resource\"\x1a\n\x08Quantity\x12\x0e\n\x06string\x18\x01 \x01(\tBL\n\x1aio.kubernetes.client.protoB\x08ResourceZ$k8s.io/apimachinery/pkg/api/resource'
+  serialized_pb=b'\n4k8s.io/apimachinery/pkg/api/resource/generated.proto\x12$k8s.io.apimachinery.pkg.api.resource\"\x1a\n\x08Quantity\x12\x0e\n\x06string\x18\x01 \x01(\tB&Z$k8s.io/apimachinery/pkg/api/resource'
 )
 
 

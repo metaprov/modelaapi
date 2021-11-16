@@ -1021,6 +1021,11 @@ func (in *FeatureEngineeringSpec) DeepCopyInto(out *FeatureEngineeringSpec) {
 		}
 	}
 	in.FeatureSelection.DeepCopyInto(&out.FeatureSelection)
+	if in.Estimator != nil {
+		in, out := &in.Estimator, &out.Estimator
+		*out = new(catalogv1alpha1.ClassicEstimatorName)
+		**out = **in
+	}
 	if in.MaxModels != nil {
 		in, out := &in.MaxModels, &out.MaxModels
 		*out = new(int32)
