@@ -8,6 +8,48 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
+export class AlgorithmSearchSpaceSpec extends jspb.Message {
+  getAllowlistList(): Array<string>;
+  setAllowlistList(value: Array<string>): AlgorithmSearchSpaceSpec;
+  clearAllowlistList(): AlgorithmSearchSpaceSpec;
+  addAllowlist(value: string, index?: number): AlgorithmSearchSpaceSpec;
+
+  getVotingensemble(): boolean;
+  setVotingensemble(value: boolean): AlgorithmSearchSpaceSpec;
+
+  getStackingensemble(): boolean;
+  setStackingensemble(value: boolean): AlgorithmSearchSpaceSpec;
+
+  getFilter(): string;
+  setFilter(value: string): AlgorithmSearchSpaceSpec;
+
+  getBaselinesList(): Array<string>;
+  setBaselinesList(value: Array<string>): AlgorithmSearchSpaceSpec;
+  clearBaselinesList(): AlgorithmSearchSpaceSpec;
+  addBaselines(value: string, index?: number): AlgorithmSearchSpaceSpec;
+
+  getTestall(): boolean;
+  setTestall(value: boolean): AlgorithmSearchSpaceSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AlgorithmSearchSpaceSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: AlgorithmSearchSpaceSpec): AlgorithmSearchSpaceSpec.AsObject;
+  static serializeBinaryToWriter(message: AlgorithmSearchSpaceSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AlgorithmSearchSpaceSpec;
+  static deserializeBinaryFromReader(message: AlgorithmSearchSpaceSpec, reader: jspb.BinaryReader): AlgorithmSearchSpaceSpec;
+}
+
+export namespace AlgorithmSearchSpaceSpec {
+  export type AsObject = {
+    allowlistList: Array<string>,
+    votingensemble: boolean,
+    stackingensemble: boolean,
+    filter: string,
+    baselinesList: Array<string>,
+    testall: boolean,
+  }
+}
+
 export class AudioPipelineSpec extends jspb.Message {
   getFeaturizer(): string;
   setFeaturizer(value: string): AudioPipelineSpec;
@@ -2601,37 +2643,15 @@ export class ModelSearchSpec extends jspb.Message {
   getRetainedfor(): number;
   setRetainedfor(value: number): ModelSearchSpec;
 
-  getResources(): TrainingResourceRequest | undefined;
-  setResources(value?: TrainingResourceRequest): ModelSearchSpec;
-  hasResources(): boolean;
-  clearResources(): ModelSearchSpec;
+  getStudyschedule(): StudyScheduleSpec | undefined;
+  setStudyschedule(value?: StudyScheduleSpec): ModelSearchSpec;
+  hasStudyschedule(): boolean;
+  clearStudyschedule(): ModelSearchSpec;
 
-  getAllowlistList(): Array<string>;
-  setAllowlistList(value: Array<string>): ModelSearchSpec;
-  clearAllowlistList(): ModelSearchSpec;
-  addAllowlist(value: string, index?: number): ModelSearchSpec;
-
-  getVotingensemble(): boolean;
-  setVotingensemble(value: boolean): ModelSearchSpec;
-
-  getStackingensemble(): boolean;
-  setStackingensemble(value: boolean): ModelSearchSpec;
-
-  getStartat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setStartat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelSearchSpec;
-  hasStartat(): boolean;
-  clearStartat(): ModelSearchSpec;
-
-  getFilter(): string;
-  setFilter(value: string): ModelSearchSpec;
-
-  getBaselinesList(): Array<string>;
-  setBaselinesList(value: Array<string>): ModelSearchSpec;
-  clearBaselinesList(): ModelSearchSpec;
-  addBaselines(value: string, index?: number): ModelSearchSpec;
-
-  getTestall(): boolean;
-  setTestall(value: boolean): ModelSearchSpec;
+  getSearchspace(): AlgorithmSearchSpaceSpec | undefined;
+  setSearchspace(value?: AlgorithmSearchSpaceSpec): ModelSearchSpec;
+  hasSearchspace(): boolean;
+  clearSearchspace(): ModelSearchSpec;
 
   getEarlystopafter(): number;
   setEarlystopafter(value: number): ModelSearchSpec;
@@ -2659,14 +2679,8 @@ export namespace ModelSearchSpec {
     test: number,
     retaintop: number,
     retainedfor: number,
-    resources?: TrainingResourceRequest.AsObject,
-    allowlistList: Array<string>,
-    votingensemble: boolean,
-    stackingensemble: boolean,
-    startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    filter: string,
-    baselinesList: Array<string>,
-    testall: boolean,
+    studyschedule?: StudyScheduleSpec.AsObject,
+    searchspace?: AlgorithmSearchSpaceSpec.AsObject,
     earlystopafter: number,
     keeponlytopmodel: boolean,
   }
@@ -4250,6 +4264,30 @@ export namespace StudyList {
   }
 }
 
+export class StudyScheduleSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): StudyScheduleSpec;
+
+  getStartat(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStartat(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyScheduleSpec;
+  hasStartat(): boolean;
+  clearStartat(): StudyScheduleSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StudyScheduleSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyScheduleSpec): StudyScheduleSpec.AsObject;
+  static serializeBinaryToWriter(message: StudyScheduleSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyScheduleSpec;
+  static deserializeBinaryFromReader(message: StudyScheduleSpec, reader: jspb.BinaryReader): StudyScheduleSpec;
+}
+
+export namespace StudyScheduleSpec {
+  export type AsObject = {
+    enabled: boolean,
+    startat?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+  }
+}
+
 export class StudySpec extends jspb.Message {
   getVersionname(): string;
   setVersionname(value: string): StudySpec;
@@ -4284,10 +4322,10 @@ export class StudySpec extends jspb.Message {
   hasPreprocessing(): boolean;
   clearPreprocessing(): StudySpec;
 
-  getTraining(): TrainingSpec | undefined;
-  setTraining(value?: TrainingSpec): StudySpec;
-  hasTraining(): boolean;
-  clearTraining(): StudySpec;
+  getTrainingtemplate(): TrainingSpec | undefined;
+  setTrainingtemplate(value?: TrainingSpec): StudySpec;
+  hasTrainingtemplate(): boolean;
+  clearTrainingtemplate(): StudySpec;
 
   getSplit(): DataSplit | undefined;
   setSplit(value?: DataSplit): StudySpec;
@@ -4353,11 +4391,6 @@ export class StudySpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): StudySpec;
 
-  getDatasetsample(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec | undefined;
-  setDatasetsample(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec): StudySpec;
-  hasDatasetsample(): boolean;
-  clearDatasetsample(): StudySpec;
-
   getForecast(): StudyForecastSpec | undefined;
   setForecast(value?: StudyForecastSpec): StudySpec;
   hasForecast(): boolean;
@@ -4382,7 +4415,7 @@ export namespace StudySpec {
     objective2: string,
     search?: ModelSearchSpec.AsObject,
     preprocessing?: FeatureEngineeringSpec.AsObject,
-    training?: TrainingSpec.AsObject,
+    trainingtemplate?: TrainingSpec.AsObject,
     split?: DataSplit.AsObject,
     aborted: boolean,
     featureengineered: boolean,
@@ -4401,7 +4434,6 @@ export namespace StudySpec {
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
     ttl: number,
-    datasetsample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
     forecast?: StudyForecastSpec.AsObject,
   }
 }
@@ -4813,32 +4845,6 @@ export namespace TimeSeriesDataSpec {
     changepoints?: ChangePointSpec.AsObject,
     intevalwidth: number,
     uncertaintysamples: number,
-  }
-}
-
-export class TrainingResourceRequest extends jspb.Message {
-  getGpu(): string;
-  setGpu(value: string): TrainingResourceRequest;
-
-  getCpu(): string;
-  setCpu(value: string): TrainingResourceRequest;
-
-  getMem(): string;
-  setMem(value: string): TrainingResourceRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TrainingResourceRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TrainingResourceRequest): TrainingResourceRequest.AsObject;
-  static serializeBinaryToWriter(message: TrainingResourceRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TrainingResourceRequest;
-  static deserializeBinaryFromReader(message: TrainingResourceRequest, reader: jspb.BinaryReader): TrainingResourceRequest;
-}
-
-export namespace TrainingResourceRequest {
-  export type AsObject = {
-    gpu: string,
-    cpu: string,
-    mem: string,
   }
 }
 

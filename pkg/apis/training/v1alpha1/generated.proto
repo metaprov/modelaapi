@@ -19,6 +19,33 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
 
+message AlgorithmSearchSpaceSpec {
+  // AllowList contain the list of algorithms that should be tested as part of the search.
+  repeated string allowlist = 12;
+
+  // VotingEnsample - If true, create a voting ensemble of the top 3 models.
+  // +kubebuilder:default:=false
+  optional bool votingEnsemble = 13;
+
+  // StackingEnsemble If true, create a stacking ensemble of the top 3 models.
+  // +kubebuilder:default:=true
+  optional bool stackingEnsemble = 14;
+
+  // set a general filter on the allowed algorithm
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string filter = 16;
+
+  // Baselines holds the name of the base line algorithms to try
+  // +kubebuilder:validation:Optional
+  repeated string baselines = 17;
+
+  // Indicate the all models should be tests
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool testAll = 18;
+}
+
 // AudioPipelineSpec is the specification for preprocessing audio data
 message AudioPipelineSpec {
   // The date time imputer.
@@ -1723,38 +1750,13 @@ message ModelSearchSpec {
   // +kubebuilder:validation:Maximum=2400
   optional int32 retainedFor = 10;
 
-  // Define the general size of the resources needed for each trainer.
+  // Define when the schedule start
   // +kubebuilder:validation:Optional
-  optional TrainingResourceRequest resources = 11;
+  optional StudyScheduleSpec studySchedule = 11;
 
-  // AllowList contain the list of algorithms that should be tested as part of the search.
-  repeated string allowlist = 12;
-
-  // VotingEnsample - If true, create a voting ensemble of the top 3 models.
-  // +kubebuilder:default:=false
-  optional bool votingEnsemble = 13;
-
-  // StackingEnsemble If true, create a stacking ensemble of the top 3 models.
-  // +kubebuilder:default:=true
-  optional bool stackingEnsemble = 14;
-
-  // Set the start time, by default this is set to the start time of the study
+  // Define the algorithm search space.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 15;
-
-  // set a general filter on the allowed algorithm
-  // +kubebuilder:default:="none"
-  // +kubebuilder:validation:Optional
-  optional string filter = 16;
-
-  // Baselines holds the name of the base line algorithms to try
-  // +kubebuilder:validation:Optional
-  repeated string baselines = 17;
-
-  // Indicate the all models should be tests
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool testAll = 18;
+  optional AlgorithmSearchSpaceSpec searchSpace = 12;
 
   // If larget than 0, stop the search if no change in best score occur.
   // +kubebuilder:default:=0
@@ -2854,6 +2856,18 @@ message StudyList {
   repeated Study items = 2;
 }
 
+// Study Schedule is used for cases where the study is scheduled to start at future date time.
+message StudyScheduleSpec {
+  // Indicate the all models should be tests
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Set the start time, by default this is set to the start time of the study
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startAt = 2;
+}
+
 // StudySpec defines the desired state of the study
 message StudySpec {
   // VersionName is the data product version of the study
@@ -2902,7 +2916,7 @@ message StudySpec {
 
   // Training template contain the desired training parameter for the models.
   // +kubebuilder:validation:Optional
-  optional TrainingSpec training = 11;
+  optional TrainingSpec trainingTemplate = 11;
 
   // Split is reference to the split specification
   // +kubebuilder:validation:Optional
@@ -2989,10 +3003,6 @@ message StudySpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 31;
-
-  // Sample spec defines how many rows to use for analysis
-  // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec datasetSample = 34;
 
   // Forecast template
   // +kubebuilder:validation:Optional
@@ -3336,24 +3346,6 @@ message TimeSeriesDataSpec {
   // +kubebuilder:default = 1000
   // +kubebuilder:validation:Optional
   optional int32 uncertaintySamples = 18;
-}
-
-// TrainingResourceRequest specify the desired resources for the training job
-message TrainingResourceRequest {
-  // Gpu specify the desired gpu requirements.  will be compared
-  // +kubebuilder:default:="M"
-  // +kubebuilder:validation:Optional
-  optional string gpu = 1;
-
-  // Cpu specify the cpu requirements will be compared
-  // +kubebuilder:default:="M"
-  // +kubebuilder:validation:Optional
-  optional string cpu = 2;
-
-  // Mem define the memory resource requirements will be compared
-  // +kubebuilder:default:="M"
-  // +kubebuilder:validation:Optional
-  optional string mem = 3;
 }
 
 // TrainingSpec is the specification of the training process

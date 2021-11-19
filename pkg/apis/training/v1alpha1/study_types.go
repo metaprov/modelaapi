@@ -159,36 +159,6 @@ type Study struct {
 	Status            StudyStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// +kubebuilder:validation:Enum="XS";"S";"M";"L";"XL";"XXL";"XXXL";"AutoScaler";
-type ResourceSize string
-
-const (
-	XS               ResourceSize = "XS"
-	S                ResourceSize = "S"
-	M                ResourceSize = "M"
-	L                ResourceSize = "L"
-	XL               ResourceSize = "XL"
-	XXL              ResourceSize = "XXL"
-	XXXL             ResourceSize = "XXXL"
-	AutoResourceSize ResourceSize = "AutoScaler"
-)
-
-// TrainingResourceRequest specify the desired resources for the training job
-type TrainingResourceRequest struct {
-	// Gpu specify the desired gpu requirements.  will be compared
-	// +kubebuilder:default:="M"
-	// +kubebuilder:validation:Optional
-	Gpu ResourceSize `json:"gpu,omitempty" protobuf:"bytes,1,opt,name=gpu"`
-	// Cpu specify the cpu requirements will be compared
-	// +kubebuilder:default:="M"
-	// +kubebuilder:validation:Optional
-	Cpu ResourceSize `json:"cpu,omitempty" protobuf:"bytes,2,opt,name=cpu"`
-	// Mem define the memory resource requirements will be compared
-	// +kubebuilder:default:="M"
-	// +kubebuilder:validation:Optional
-	Mem ResourceSize `json:"mem,omitempty" protobuf:"bytes,3,opt,name=mem"`
-}
-
 //SuccessiveHalvingOptions define the parameters for the successive halving algorithm
 type SuccessiveHalvingOptions struct {
 	// The maximum budget allocated to each model during SH search.
@@ -269,9 +239,23 @@ type ModelSearchSpec struct {
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=2400
 	RetainFor *int32 `json:"retainedFor,omitempty" protobuf:"varint,10,opt,name=retainedFor"`
-	// Define the general size of the resources needed for each trainer.
+	// Define when the schedule start
 	// +kubebuilder:validation:Optional
-	Resources *TrainingResourceRequest `json:"resources,omitempty" protobuf:"bytes,11,opt,name=resources"`
+	StudySchedule StudyScheduleSpec `json:"studySchedule,omitempty" protobuf:"bytes,11,opt,name=studySchedule"`
+	// Define the algorithm search space.
+	// +kubebuilder:validation:Optional
+	SearchSpace AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,12,opt,name=searchSpace"`
+	// If larget than 0, stop the search if no change in best score occur.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,19,opt,name=earlyStopAfter"`
+	// If true, keep only the top model from an algorithm
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	KeepOnlyTopModel *bool `json:"keepOnlyTopModel,omitempty" protobuf:"bytes,20,opt,name=keepOnlyTopModel"`
+}
+
+type AlgorithmSearchSpaceSpec struct {
 	// AllowList contain the list of algorithms that should be tested as part of the search.
 	AllowList []catalog.ClassicEstimatorName `json:"allowlist,omitempty" protobuf:"bytes,12,rep,name=allowlist"`
 	// VotingEnsample - If true, create a voting ensemble of the top 3 models.
@@ -280,9 +264,6 @@ type ModelSearchSpec struct {
 	// StackingEnsemble If true, create a stacking ensemble of the top 3 models.
 	// +kubebuilder:default:=true
 	StackingEnsemble *bool `json:"stackingEnsemble,omitempty" protobuf:"varint,14,opt,name=stackingEnsemble"`
-	// Set the start time, by default this is set to the start time of the study
-	// +kubebuilder:validation:Optional
-	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,15,opt,name=startAt"`
 	// set a general filter on the allowed algorithm
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
@@ -294,14 +275,17 @@ type ModelSearchSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	TestAll *bool `json:"testAll,omitempty" protobuf:"bytes,18,opt,name=testAll"`
-	// If larget than 0, stop the search if no change in best score occur.
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,19,opt,name=earlyStopAfter"`
-	// If true, keep only the top model from an algorithm
+}
+
+// Study Schedule is used for cases where the study is scheduled to start at future date time.
+type StudyScheduleSpec struct {
+	// Indicate the all models should be tests
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	KeepOnlyTopModel *bool `json:"keepOnlyTopModel,omitempty" protobuf:"bytes,20,opt,name=keepOnlyTopModel"`
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Set the start time, by default this is set to the start time of the study
+	// +kubebuilder:validation:Optional
+	StartAt *metav1.Time `json:"startAt,omitempty" protobuf:"bytes,2,opt,name=startAt"`
 }
 
 type PrunerSpec struct {
@@ -392,7 +376,7 @@ type StudySpec struct {
 	FeatureEngineering *FeatureEngineeringSpec `json:"preprocessing,omitempty" protobuf:"bytes,10,opt,name=preprocessing"`
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
-	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,11,opt,name=training"`
+	TrainingTemplate *TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,11,opt,name=trainingTemplate"`
 	// Split is reference to the split specification
 	// +kubebuilder:validation:Optional
 	Split *DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
@@ -461,9 +445,6 @@ type StudySpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,31,opt,name=ttl"`
-	// Sample spec defines how many rows to use for analysis
-	// +kubebuilder:validation:Optional
-	DatasetSample data.SampleSpec `json:"datasetSample,omitempty" protobuf:"bytes,34,opt,name=datasetSample"`
 	// Forecast template
 	// +kubebuilder:validation:Optional
 	ForecastSpec StudyForecastSpec `json:"forecast,omitempty" protobuf:"bytes,35,opt,name=forecast"`
