@@ -40,12 +40,12 @@ var _ webhook.Defaulter = &Study{}
 func (study *Study) Default() {
 
 	// set default to cv
-	if study.Spec.Training == nil {
-		study.Spec.Training = &TrainingSpec{}
+	if study.Spec.TrainingTemplate == nil {
+		study.Spec.TrainingTemplate = &TrainingSpec{}
 	}
 
-	if study.Spec.Training.CheckpointInterval == nil {
-		study.Spec.Training.CheckpointInterval = util.Int32Ptr(0)
+	if study.Spec.TrainingTemplate.CheckpointInterval == nil {
+		study.Spec.TrainingTemplate.CheckpointInterval = util.Int32Ptr(0)
 	}
 
 	if study.Spec.Objective == nil {
@@ -63,22 +63,22 @@ func (study *Study) Default() {
 		study.Spec.Search.Pruner.Default()
 	}
 
-	if study.Spec.Search.VotingEnsemble == nil {
-		study.Spec.Search.VotingEnsemble = util.BoolPtr(false)
+	if study.Spec.Search.SearchSpace.VotingEnsemble == nil {
+		study.Spec.Search.SearchSpace.VotingEnsemble = util.BoolPtr(false)
 	}
 
-	if study.Spec.Search.StackingEnsemble == nil {
-		study.Spec.Search.StackingEnsemble = util.BoolPtr(true)
+	if study.Spec.Search.SearchSpace.StackingEnsemble == nil {
+		study.Spec.Search.SearchSpace.StackingEnsemble = util.BoolPtr(true)
 	}
-	study.Spec.Search.StackingEnsemble = util.BoolPtr(true)
+	study.Spec.Search.SearchSpace.StackingEnsemble = util.BoolPtr(true)
 
 	if study.Spec.Search.Pruner.SHOptions == nil {
 		study.Spec.Search.Pruner.SHOptions = &SuccessiveHalvingOptions{}
 	}
 
-	if study.Spec.Search.StartAt == nil {
+	if study.Spec.Search.StudySchedule.StartAt == nil {
 		now := metav1.Now()
-		study.Spec.Search.StartAt = &now
+		study.Spec.Search.StudySchedule.StartAt = &now
 	}
 
 	if study.Spec.Search.Pruner.SHOptions.MaxBudget == nil {
@@ -89,10 +89,10 @@ func (study *Study) Default() {
 		study.Spec.Search.Pruner.SHOptions.EliminationRate = util.Int32Ptr(3)
 	}
 
-	if study.Spec.Training == nil {
+	if study.Spec.TrainingTemplate == nil {
 		cvtype := catalog.CvTypeStratified
 		pr := catalog.PriorityLevelMedium
-		study.Spec.Training = &TrainingSpec{
+		study.Spec.TrainingTemplate = &TrainingSpec{
 			Priority:           &pr,
 			CvType:             &cvtype,
 			CV:                 util.BoolPtr(true),
@@ -258,8 +258,8 @@ func (ms *ModelSearchSpec) Default() {
 	ms.Test = util.Int32Ptr(1)
 	ms.RetainTop = util.Int32Ptr(10)
 	ms.RetainFor = util.Int32Ptr(60)
-	ms.VotingEnsemble = util.BoolPtr(false)
-	ms.StackingEnsemble = util.BoolPtr(true)
+	ms.SearchSpace.VotingEnsemble = util.BoolPtr(false)
+	ms.SearchSpace.StackingEnsemble = util.BoolPtr(true)
 }
 
 func (pspec *PrunerSpec) Default() {

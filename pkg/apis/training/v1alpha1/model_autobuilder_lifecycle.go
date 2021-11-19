@@ -530,7 +530,7 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 				MaxModels: b.Spec.MaxModels,
 				Trainers:  b.Spec.Trainers,
 			},
-			Training: &TrainingSpec{
+			TrainingTemplate: &TrainingSpec{
 				Priority:    nil,
 				CvType:      nil,
 				CV:          nil,

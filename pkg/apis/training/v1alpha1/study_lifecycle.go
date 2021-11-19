@@ -45,11 +45,11 @@ func NewStudy(ns string, name string, dataset string) *Study {
 }
 
 func (study *Study) CanStart() bool {
-	if study.Spec.Search.StartAt == nil {
+	if study.Spec.Search.StudySchedule.StartAt == nil {
 		return true
 	}
 	now := metav1.Now()
-	return study.Spec.Search.StartAt.Before(&now)
+	return study.Spec.Search.StudySchedule.StartAt.Before(&now)
 }
 
 func (study *Study) PipelineName() string {
@@ -194,17 +194,17 @@ func (study *Study) IsInCond(ct StudyConditionType) bool {
 // use to sort the model by score
 func (study *Study) SetupCv(rows int32) {
 	if rows < 1000 {
-		study.Spec.Training.Folds = util.Int32Ptr(10)
+		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(10)
 	}
 	if rows > 1000 && rows < 10000 {
-		study.Spec.Training.Folds = util.Int32Ptr(5)
+		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(5)
 	}
 	if rows >= 10000 && rows < 20000 {
-		study.Spec.Training.Folds = util.Int32Ptr(3)
+		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(3)
 	}
 	// at this point we woud use validation set
 	if rows >= 20000 {
-		study.Spec.Training.Folds = util.Int32Ptr(0)
+		study.Spec.TrainingTemplate.Folds = util.Int32Ptr(0)
 	}
 
 }

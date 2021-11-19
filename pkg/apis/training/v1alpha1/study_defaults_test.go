@@ -40,8 +40,8 @@ func DefaultStudy() *Study {
 func Test_DefaultValues(t *testing.T) {
 	study := DefaultStudy()
 	study.Default()
-	assert.Equal(t, *study.Spec.Training.Folds, int32(5))
-	assert.Equal(t, *study.Spec.Training.Priority, int32(5))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(5))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Priority, int32(5))
 	assert.Equal(t, *study.Spec.Search.RetainTop, int32(10))
 	// assert default training
 	assert.Equal(t, *study.Spec.Search.MaxCost, int32(999))

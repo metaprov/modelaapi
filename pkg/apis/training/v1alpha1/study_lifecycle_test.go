@@ -74,7 +74,7 @@ func TestTrainTestValidation_CV_Less_Than_1000_(t *testing.T) {
 
 	study.SetupCv(200)
 
-	assert.Equal(t, *study.Spec.Training.Folds, int32(10))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(10))
 
 }
 
@@ -84,7 +84,7 @@ func TestTrainTestValidation_CV_Less_Than_10000_(t *testing.T) {
 	study.Default()
 	study.SetupCv(1200)
 
-	assert.Equal(t, *study.Spec.Training.Folds, int32(5))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(5))
 }
 
 func TestTrainTestValidation_CV_Less_Than_20000_(t *testing.T) {
@@ -93,7 +93,7 @@ func TestTrainTestValidation_CV_Less_Than_20000_(t *testing.T) {
 	study.Default()
 	study.SetupCv(1200)
 
-	assert.Equal(t, *study.Spec.Training.Folds, int32(5))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(5))
 }
 
 func TestTrainTestValidation_CV_More_Than_20000_(t *testing.T) {
@@ -101,7 +101,7 @@ func TestTrainTestValidation_CV_More_Than_20000_(t *testing.T) {
 	study.Default()
 	study.SetupCv(20010)
 
-	assert.Equal(t, *study.Spec.Training.Folds, int32(0))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Folds, int32(0))
 
 }
 

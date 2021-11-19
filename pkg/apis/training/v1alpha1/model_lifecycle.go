@@ -811,7 +811,7 @@ func (model *Model) IsArchived() bool {
 
 func (model *Model) InitModelFromStudy(study *Study) {
 	model.Namespace = study.Namespace
-	*model.Spec.Training = *study.Spec.Training.DeepCopy()
+	*model.Spec.Training = *study.Spec.TrainingTemplate.DeepCopy()
 	model.Spec.StudyName = &study.Name
 	model.Spec.VersionName = study.Spec.VersionName
 	model.Spec.DatasetName = study.Spec.DatasetName
