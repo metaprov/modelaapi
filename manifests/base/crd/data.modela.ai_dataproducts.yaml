@@ -76,6 +76,10 @@ spec:
                 - secret
                 - top-secret
                 type: string
+              color:
+                default: none
+                description: the color assigned to the product
+                type: string
               compilation:
                 description: List of documents attached to the this data product
                 properties:

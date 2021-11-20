@@ -323,7 +323,8 @@ message AmazonRedShiftSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5439
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -347,6 +348,8 @@ message ApacheCassandraSpec {
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -369,7 +372,8 @@ message ApacheDrillSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -392,7 +396,8 @@ message ApacheDruidSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -414,7 +419,8 @@ message ApacheHiveSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=10000
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -435,7 +441,8 @@ message ApacheSparkSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5433
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -639,7 +646,8 @@ message AzureSQLDatabaseSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 1433
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -696,7 +704,8 @@ message ClickHouseSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=8123
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -718,7 +727,8 @@ message CockroachDBSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5432
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1105,7 +1115,8 @@ message CouchbaseSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=8123
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1130,7 +1141,8 @@ message DB2Spec {
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1153,6 +1165,8 @@ message DermioSpec {
 
   // +kubebuilder:default:= 9042
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1201,7 +1215,8 @@ message ElasticSearchSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5432
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1221,7 +1236,8 @@ message ExasolSpec {
   // +kubebuilder:default:=""
   optional string host = 1;
 
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1240,7 +1256,8 @@ message FTPSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1267,7 +1284,8 @@ message FtpSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 21
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1282,7 +1300,8 @@ message GcpBigQuerySpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // UserName
@@ -1369,7 +1388,8 @@ message GreenPlumSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5432
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1423,7 +1443,8 @@ message InformixSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=1526
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1444,6 +1465,8 @@ message KafkaSpec {
   optional string host = 1;
 
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1529,6 +1552,15 @@ message LabSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
+
+  // Stake holders refer to a list of stackholders, which have interest in the product.
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder stakeholders = 6;
+
+  // the color assigned to the product
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string color = 7;
 }
 
 // LabStatus is the observed state of a Lab
@@ -1709,7 +1741,8 @@ message MSSqlServerSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=1433
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1822,7 +1855,8 @@ message MongoDbSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=27017
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -1864,6 +1898,8 @@ message Neo4JSpec {
   optional string host = 1;
 
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2007,7 +2043,8 @@ message OracleSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=1521
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:="XE"
@@ -2057,7 +2094,8 @@ message PostgresSQLSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5432
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2079,7 +2117,8 @@ message PrestoSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=8080
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2115,7 +2154,8 @@ message RabbitMQSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 21
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2162,7 +2202,8 @@ message SAPHanaSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=1526
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2183,7 +2224,8 @@ message SFTPSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 9042
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2205,7 +2247,8 @@ message SFtpSpec {
   optional string host = 1;
 
   // +kubebuilder:default:= 21
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2302,6 +2345,15 @@ message ServingSiteSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 7;
+
+  // Stake holders refer to a list of stackholders, which have interest in this serving site.
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder stakeholders = 8;
+
+  // the color assigned to the product
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string color = 9;
 }
 
 message ServingSiteStatus {
@@ -2342,6 +2394,8 @@ message SingleStoreSpec {
   optional string host = 1;
 
   // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2374,7 +2428,8 @@ message SmtpSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=25
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2389,7 +2444,8 @@ message SnowflakeSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=443
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2421,7 +2477,8 @@ message SybaseSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5000
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2519,7 +2576,8 @@ message TeradataSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=6666
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""
@@ -2545,7 +2603,8 @@ message VerticaSpec {
   optional string host = 1;
 
   // +kubebuilder:default:=5433
-  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
   optional int32 port = 2;
 
   // +kubebuilder:default:=""

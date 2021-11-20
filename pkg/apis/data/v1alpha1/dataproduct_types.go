@@ -54,17 +54,6 @@ type DataProduct struct {
 	Status            DataProductStatus `json:"status,omitempty" protobuf:"bytes,3,opt,name=status"`
 }
 
-// Represent a stack holder in the product.
-// Each stake holder can hove one or more roles.
-type StakeHolder struct {
-	// The account name of the stake holder
-	// +kubebuilder:default:="no-one"
-	// +kubebuilder:validation:Optional
-	AccountName *string `json:"accountName,omitempty" protobuf:"bytes,1,opt,name=accountName"`
-	// The roles assigned to the stake holder
-	Roles []catalog.RoleName `json:"roles,omitempty" protobuf:"bytes,2,rep,name=roles"`
-}
-
 type GitLocation struct {
 	// GitConnectionName
 	// +kubebuilder:default:=""
@@ -108,7 +97,7 @@ type DataProductSpec struct {
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,2,opt,name=tenantRef"`
 	// Stake holders refer to a list of stackholders, which have interest in the product.
 	// +kubebuilder:validation:Optional
-	StakeHolders []StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,3,rep,name=stakeholders"`
+	StakeHolders []catalog.StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,3,rep,name=stakeholders"`
 	// GitLocation is the github repository for all the artifacts for this product
 	// +kubebuilder:validation:Optional
 	GitLocation *GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
@@ -166,6 +155,10 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"
 	DefaultPriority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,21,opt,name=priority"`
+	// the color assigned to the product
+	// +kubebuilder:default:="none"
+	// +kubebuilder:validation:Optional
+	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,22,opt,name=color"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

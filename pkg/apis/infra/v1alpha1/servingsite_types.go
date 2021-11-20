@@ -1,6 +1,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -87,6 +88,13 @@ type ServingSiteSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
+	// Stake holders refer to a list of stackholders, which have interest in this serving site.
+	// +kubebuilder:validation:Optional
+	StakeHolders []catalog.StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,8,rep,name=stakeholders"`
+	// the color assigned to the product
+	// +kubebuilder:default:="none"
+	// +kubebuilder:validation:Optional
+	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,9,opt,name=color"`
 }
 
 type ServingSiteStatus struct {

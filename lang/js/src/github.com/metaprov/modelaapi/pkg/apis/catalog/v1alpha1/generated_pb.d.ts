@@ -1162,6 +1162,30 @@ export namespace RunSchedule {
   }
 }
 
+export class StakeHolder extends jspb.Message {
+  getAccountname(): string;
+  setAccountname(value: string): StakeHolder;
+
+  getRolesList(): Array<string>;
+  setRolesList(value: Array<string>): StakeHolder;
+  clearRolesList(): StakeHolder;
+  addRoles(value: string, index?: number): StakeHolder;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StakeHolder.AsObject;
+  static toObject(includeInstance: boolean, msg: StakeHolder): StakeHolder.AsObject;
+  static serializeBinaryToWriter(message: StakeHolder, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StakeHolder;
+  static deserializeBinaryFromReader(message: StakeHolder, reader: jspb.BinaryReader): StakeHolder;
+}
+
+export namespace StakeHolder {
+  export type AsObject = {
+    accountname: string,
+    rolesList: Array<string>,
+  }
+}
+
 export class UserRoleClass extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): UserRoleClass;

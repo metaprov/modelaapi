@@ -90,7 +90,7 @@ spec:
             properties:
               aborted:
                 default: false
-                description: Aborted indicate the desire to abort the model
+                description: Aborted indicate the desire to abort the model training
                 type: boolean
               activeDeadlineSeconds:
                 default: 600
@@ -103,12 +103,12 @@ spec:
                 description: Archived is true when the model should be archived
                 type: boolean
               baseline:
+                default: false
                 description: Indicate that this model is a baseline
                 type: boolean
               benchmarked:
-                default: true
-                description: Set to true if you want the system to push model image
-                  to remote docker registry
+                default: false
+                description: Set to true if this model is a benchmark model.
                 type: boolean
               chatbot:
                 description: Estimator for chat bot specification. Not implemented
@@ -119,7 +119,8 @@ spec:
                     type: string
                 type: object
               compilation:
-                description: Compilation denotes how to compile the model.
+                description: Compilation denotes how to compile the model. Not supported
+                  in the current release.
                 properties:
                   compiler:
                     default: none
@@ -153,7 +154,7 @@ spec:
                 type: object
               datasetName:
                 description: DatasetName refer to the dataset object for which the
-                  study is for.
+                  model is for.
                 maxLength: 63
                 type: string
               dnn:
@@ -275,7 +276,7 @@ spec:
                 - chatbot
                 - rl
                 type: string
-              featureEngineering:
+              fe:
                 description: 'Represent the preprocessing pipeline of the model. Provide
                   a value if you want to customize the model. Default: All preprocessing
                   will be created automatically'
@@ -690,11 +691,12 @@ spec:
                 description: Mark this model as feature engineering only.
                 type: boolean
               flagged:
-                description: Is this model flagged
+                default: false
+                description: Is this model flagged by the user.
                 type: boolean
               forecast:
                 description: The specification for the forecasting algorithm if this
-                  is a forecast study.
+                  model is part of a forecasting
                 properties:
                   backtest:
                     description: The backtest specification, the system supports back
@@ -991,11 +993,6 @@ spec:
                 default: false
                 description: Forecasted is true when the model should perform a forecast
                 type: boolean
-              id:
-                description: ID is the generate id of the model. It is assigned to
-                  every model within the data product
-                format: int64
-                type: integer
               location:
                 description: Location is the location of the model artifacts (metadata,
                   reports and estimators).
@@ -1035,7 +1032,7 @@ spec:
                     type: string
                 type: object
               modelVersion:
-                description: ModelVersion composed of studyid-modelid.
+                description: ModelVersion is an assigned version to the model.
                 type: string
               nplEstimator:
                 description: Estimator for NLP model
@@ -1119,17 +1116,17 @@ spec:
                 type: boolean
               profiled:
                 default: false
-                description: Profiled is set when we want to create model profile.
+                description: Set to true if you want to create model profile.
                 type: boolean
               published:
                 default: false
                 description: Published indicate that the system should create an docker
-                  image with the container.
+                  image with the model binary.
                 type: boolean
               pushed:
                 default: false
-                description: Pushed indicate if the model image should be pushed into
-                  the remote docker registry.
+                description: Pushed indicate that the system should push the docker
+                  image into the docker registry
                 type: boolean
               released:
                 default: false
@@ -1177,12 +1174,13 @@ spec:
                 type: string
               tested:
                 default: false
-                description: Tested indicate if this model should be testedActual.
-                  Default is false. The study controller will set this to true if
-                  a model is the best model
+                description: Tested indicate if this model should be tested. Default
+                  is false. The study controller will set this to true if a model
+                  is the best model or part of the top models
                 type: boolean
               training:
-                description: TrainingSpec is the desired training settings
+                description: TrainingSpec is the desired training settings for the
+                  model.
                 properties:
                   checkpointInterval:
                     default: 10

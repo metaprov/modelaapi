@@ -206,17 +206,14 @@ type ModelSpec struct {
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
-	// ID is the generate id of the model. It is assigned to every model within the data product
-	// +kubebuilder:validation:Required
-	ID *int64 `json:"id,omitempty" protobuf:"varint,3,opt,name=id"`
-	// ModelVersion composed of studyid-modelid.
+	// ModelVersion is an assigned version to the model.
 	// +kubebuilder:validation:Required
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,4,opt,name=modelVersion"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,5,opt,name=studyName"`
-	// DatasetName refer to the dataset object for which the study is for.
+	// DatasetName refer to the dataset object for which the model is for.
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,6,opt,name=datasetName"`
@@ -231,7 +228,7 @@ type ModelSpec struct {
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
 	// +kubebuilder:validation:Optional
-	FeatureEngineering *FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,9,opt,name=featureEngineering"`
+	FeatureEngineering *FeatureEngineeringSpec `json:"fe,omitempty" protobuf:"bytes,9,opt,name=fe"`
 	// Estimator is a specification of the ML algorithm and its hyper parameters.
 	// +kubebuilder:validation:Optional
 	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,10,opt,name=estimator"`
@@ -248,15 +245,15 @@ type ModelSpec struct {
 	// Default: None
 	// +kubebuilder:validation:Optional
 	Ensemble *EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,14,opt,name=ensemble"`
-	// TrainingSpec is the desired training settings
+	// TrainingSpec is the desired training settings for the model.
 	// +kubebuilder:validation:Optional
 	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,15,opt,name=training"`
-	// Tested indicate if this model should be testedActual. Default is false.
-	// The study controller will set this to true if a model is the best model
+	// Tested indicate if this model should be tested. Default is false.
+	// The study controller will set this to true if a model is the best model or part of the top models
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Tested *bool `json:"tested,omitempty" protobuf:"varint,16,opt,name=tested"`
-	// Aborted indicate the desire to abort the model
+	// Aborted indicate the desire to abort the model training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,17,opt,name=aborted"`
@@ -264,11 +261,11 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Packaged *bool `json:"packaged,omitempty" protobuf:"varint,18,opt,name=packaged"`
-	// Published indicate that the system should create an docker image with the container.
+	// Published indicate that the system should create an docker image with the model binary.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Published *bool `json:"published,omitempty" protobuf:"varint,19,opt,name=published"`
-	// Pushed indicate if the model image should be pushed into the remote docker registry.
+	// Pushed indicate that the system should push the docker image into the docker registry
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Pushed *bool `json:"pushed,omitempty" protobuf:"varint,20,opt,name=pushed"`
@@ -280,7 +277,7 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Paused *bool `json:"paused,omitempty" protobuf:"varint,22,opt,name=paused"`
-	// Profiled is set when we want to create model profile.
+	// Set to true if you want to create model profile.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,23,opt,name=profiled"`
@@ -296,23 +293,25 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Released *bool `json:"released,omitempty" protobuf:"varint,26,opt,name=released"`
-	// Set to true if you want the system to push model image to remote docker registry
-	// +kubebuilder:default:=true
+	// Set to true if this model is a benchmark model.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Benchmarked *bool `json:"benchmarked,omitempty" protobuf:"varint,27,opt,name=benchmarked"`
 	// Indicate that this model is a baseline
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,28,opt,name=baseline"`
-	// Is this model flagged
+	// Is this model flagged by the user.
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,29,opt,name=flagged"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,30,opt,name=location"`
-	// The specification for the forecasting algorithm if this is a forecast study.
+	// The specification for the forecasting algorithm if this model is part of a forecasting
 	// +kubebuilder:validation:Optional
 	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,31,opt,name=forecast"`
-	// Compilation denotes how to compile the model.
+	// Compilation denotes how to compile the model. Not supported in the current release.
 	// +kubebuilder:validation:Optional
 	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,32,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.

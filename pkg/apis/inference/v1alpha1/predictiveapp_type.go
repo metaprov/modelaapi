@@ -90,6 +90,8 @@ type PredictiveAppSpec struct {
 	Replicas *int32 `json:"replicas,omitempty" protobuf:"varint,7,opt,name=replicas"`
 	// The port for the app
 	// +kubebuilder:default:=3000
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	Port *int32 `json:"port,omitempty" protobuf:"varint,8,opt,name=port"`
 	// The workload class to use when running the app pod

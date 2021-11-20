@@ -123,8 +123,10 @@ type PredictorSpec struct {
 	// +kubebuilder:validation:Optional
 	// Service port specify the predictor port.
 	// Default: 8080
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:default:=8080
 	Port *int32 `json:"port,omitempty" protobuf:"varint,9,opt,name=port"`
 	// This is the path relative to the ingress path
 	// +kubebuilder:validation:MaxLength=256
@@ -369,6 +371,8 @@ type AppSpec struct {
 
 	// App port. default port is 8080.
 	// +kubebuilder:default:=8080
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
 }

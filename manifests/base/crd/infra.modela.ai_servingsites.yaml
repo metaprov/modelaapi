@@ -63,6 +63,10 @@ spec:
                 description: ClusterName is  the virtual cluster name in case that
                   the lab is not on the same cluster
                 type: string
+              color:
+                default: none
+                description: the color assigned to the product
+                type: string
               description:
                 default: ""
                 description: Description is user provided description
@@ -249,6 +253,32 @@ spec:
                 default: no-one
                 description: Owner is the owner account name
                 type: string
+              stakeholders:
+                description: Stake holders refer to a list of stackholders, which
+                  have interest in this serving site.
+                items:
+                  description: Represent a stack holder in the product. Each stake
+                    holder can hove one or more roles.
+                  properties:
+                    accountName:
+                      default: no-one
+                      description: The account name of the stake holder
+                      type: string
+                    roles:
+                      description: The roles assigned to the stake holder
+                      items:
+                        description: RoleName is the type of role a user can have
+                        enum:
+                        - administrator
+                        - business-stakeholder
+                        - data-scientist
+                        - data-engineer
+                        - ml-engineer
+                        - sre
+                        type: string
+                      type: array
+                  type: object
+                type: array
               tenantRef:
                 description: Reference to the tenant owning this serving site. Default
                   to default tenant.

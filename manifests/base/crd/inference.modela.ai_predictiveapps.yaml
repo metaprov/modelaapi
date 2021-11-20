@@ -90,6 +90,8 @@ spec:
                 default: 3000
                 description: The port for the app
                 format: int32
+                maximum: 65535
+                minimum: 1
                 type: integer
               productRef:
                 description: The product that this predictor serve.

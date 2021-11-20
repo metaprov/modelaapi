@@ -681,6 +681,18 @@ message RunSchedule {
   optional string type = 5;
 }
 
+// Represent a stack holder in the product.
+// Each stake holder can hove one or more roles.
+message StakeHolder {
+  // The account name of the stake holder
+  // +kubebuilder:default:="no-one"
+  // +kubebuilder:validation:Optional
+  optional string accountName = 1;
+
+  // The roles assigned to the stake holder
+  repeated string roles = 2;
+}
+
 // UserRoleClass specify the RBAC premission for a specific user role.
 // +kubebuilder:resource:path=userroleclasses,singular=userroleclass,categories={catalog,modela,all}
 // +kubebuilder:object:root=true

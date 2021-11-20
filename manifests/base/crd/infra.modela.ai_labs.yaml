@@ -59,6 +59,10 @@ spec:
                   to execute jobs for this lab If not empty, jobs assigned to this
                   lab should execute on remote cluster
                 type: string
+              color:
+                default: none
+                description: the color assigned to the product
+                type: string
               description:
                 default: ""
                 description: Description is a user provided description
@@ -237,6 +241,32 @@ spec:
                 default: no-one
                 description: The owner account name
                 type: string
+              stakeholders:
+                description: Stake holders refer to a list of stackholders, which
+                  have interest in the product.
+                items:
+                  description: Represent a stack holder in the product. Each stake
+                    holder can hove one or more roles.
+                  properties:
+                    accountName:
+                      default: no-one
+                      description: The account name of the stake holder
+                      type: string
+                    roles:
+                      description: The roles assigned to the stake holder
+                      items:
+                        description: RoleName is the type of role a user can have
+                        enum:
+                        - administrator
+                        - business-stakeholder
+                        - data-scientist
+                        - data-engineer
+                        - ml-engineer
+                        - sre
+                        type: string
+                      type: array
+                  type: object
+                type: array
               tenantRef:
                 description: TenantRef is a reference to the tenant owning this lab
                   Default to default tenant.

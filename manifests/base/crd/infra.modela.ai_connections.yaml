@@ -128,7 +128,8 @@ spec:
                   port:
                     default: 1433
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -161,7 +162,8 @@ spec:
                   port:
                     default: 9042
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   projectID:
                     default: ""
@@ -211,7 +213,8 @@ spec:
                   port:
                     default: 9042
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -246,7 +249,8 @@ spec:
                   port:
                     default: 8123
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -270,7 +274,8 @@ spec:
                   port:
                     default: 5432
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     description: URL Override the other
@@ -296,7 +301,8 @@ spec:
                   port:
                     default: 8123
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -320,7 +326,8 @@ spec:
                   port:
                     default: 9042
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -344,7 +351,8 @@ spec:
                   port:
                     default: 9042
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -392,7 +400,8 @@ spec:
                   port:
                     default: 9042
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -423,7 +432,8 @@ spec:
                   port:
                     default: 9042
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -444,7 +454,8 @@ spec:
                   port:
                     default: 5432
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   prefix:
                     default: ""
@@ -466,7 +477,8 @@ spec:
                     type: string
                   port:
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -494,7 +506,8 @@ spec:
                   port:
                     default: 21
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   username:
                     default: ""
@@ -544,7 +557,8 @@ spec:
                   port:
                     default: 5432
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -580,7 +594,8 @@ spec:
                   port:
                     default: 1526
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     description: URL Override the other
@@ -621,7 +636,8 @@ spec:
                   port:
                     default: 10000
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   schema:
                     default: ""
@@ -661,7 +677,8 @@ spec:
                   port:
                     default: 1526
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     description: URL Override the other
@@ -683,7 +700,8 @@ spec:
                     type: string
                   port:
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -740,7 +758,8 @@ spec:
                   port:
                     default: 27017
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -766,7 +785,8 @@ spec:
                   port:
                     default: 1433
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     description: URL Override the other
@@ -814,7 +834,8 @@ spec:
                     type: string
                   port:
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -874,7 +895,8 @@ spec:
                   port:
                     default: 1521
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   sid:
                     default: XE
@@ -931,7 +953,8 @@ spec:
                   port:
                     default: 5432
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -955,7 +978,8 @@ spec:
                   port:
                     default: 8080
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   schema:
                     default: ""
@@ -995,7 +1019,8 @@ spec:
                   port:
                     default: 21
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   username:
                     default: ""
@@ -1015,7 +1040,8 @@ spec:
                   port:
                     default: 5439
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -1040,7 +1066,8 @@ spec:
                   port:
                     default: 21
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   username:
                     default: ""
@@ -1056,7 +1083,8 @@ spec:
                     type: string
                   port:
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     default: ""
@@ -1092,7 +1120,8 @@ spec:
                   port:
                     default: 25
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   userName:
                     default: ""
@@ -1112,7 +1141,8 @@ spec:
                   port:
                     default: 443
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   schema:
                     default: ""
@@ -1159,7 +1189,8 @@ spec:
                   port:
                     default: 5433
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   schema:
                     default: ""
@@ -1191,7 +1222,8 @@ spec:
                   port:
                     default: 5000
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     description: URL Override the other
@@ -1251,7 +1283,8 @@ spec:
                   port:
                     default: 6666
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     description: URL Override the other
@@ -1280,7 +1313,8 @@ spec:
                   port:
                     default: 5433
                     format: int32
-                    minimum: 0
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                   url:
                     description: URL Override the other

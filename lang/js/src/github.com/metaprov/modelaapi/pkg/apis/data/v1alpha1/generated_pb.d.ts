@@ -1140,10 +1140,10 @@ export class DataProductSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): DataProductSpec;
 
-  getStakeholdersList(): Array<StakeHolder>;
-  setStakeholdersList(value: Array<StakeHolder>): DataProductSpec;
+  getStakeholdersList(): Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>;
+  setStakeholdersList(value: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder>): DataProductSpec;
   clearStakeholdersList(): DataProductSpec;
-  addStakeholders(value?: StakeHolder, index?: number): StakeHolder;
+  addStakeholders(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
 
   getGitlocation(): GitLocation | undefined;
   setGitlocation(value?: GitLocation): DataProductSpec;
@@ -1202,6 +1202,9 @@ export class DataProductSpec extends jspb.Message {
   getPriority(): string;
   setPriority(value: string): DataProductSpec;
 
+  getColor(): string;
+  setColor(value: string): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -1214,7 +1217,7 @@ export namespace DataProductSpec {
   export type AsObject = {
     owner: string,
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    stakeholdersList: Array<StakeHolder.AsObject>,
+    stakeholdersList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.AsObject>,
     gitlocation?: GitLocation.AsObject,
     imagelocation?: ImageLocation.AsObject,
     labname: string,
@@ -1230,6 +1233,7 @@ export namespace DataProductSpec {
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
     clearencelevel: string,
     priority: string,
+    color: string,
   }
 }
 
@@ -4884,30 +4888,6 @@ export namespace SqlQueryStatus {
     observedgeneration: number,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<SqlQueryCondition.AsObject>,
-  }
-}
-
-export class StakeHolder extends jspb.Message {
-  getAccountname(): string;
-  setAccountname(value: string): StakeHolder;
-
-  getRolesList(): Array<string>;
-  setRolesList(value: Array<string>): StakeHolder;
-  clearRolesList(): StakeHolder;
-  addRoles(value: string, index?: number): StakeHolder;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): StakeHolder.AsObject;
-  static toObject(includeInstance: boolean, msg: StakeHolder): StakeHolder.AsObject;
-  static serializeBinaryToWriter(message: StakeHolder, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): StakeHolder;
-  static deserializeBinaryFromReader(message: StakeHolder, reader: jspb.BinaryReader): StakeHolder;
-}
-
-export namespace StakeHolder {
-  export type AsObject = {
-    accountname: string,
-    rolesList: Array<string>,
   }
 }
 

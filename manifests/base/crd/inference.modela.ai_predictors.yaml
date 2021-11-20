@@ -89,6 +89,8 @@ spec:
                     default: 8080
                     description: App port. default port is 8080.
                     format: int32
+                    maximum: 65535
+                    minimum: 1
                     type: integer
                 type: object
               artifactsFolder:
@@ -422,11 +424,13 @@ spec:
                 maxLength: 256
                 type: string
               port:
+                default: 8080
                 description: 'set of input channel, the predictor will watch those
                   channels for predictions Service port specify the predictor port.
                   Default: 8080'
                 format: int32
-                minimum: 0
+                maximum: 65535
+                minimum: 1
                 type: integer
               predictionTreshold:
                 description: The prediction treshold
