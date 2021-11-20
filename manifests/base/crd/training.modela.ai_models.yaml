@@ -518,7 +518,6 @@ spec:
                           - auto
                           type: string
                         generated:
-                          default: auto
                           description: Spec to generate one or more columns from existing
                             columns in this pipeline
                           items:

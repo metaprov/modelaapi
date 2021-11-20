@@ -630,7 +630,6 @@ type FeatureEngineeringPipeline struct {
 	// +kubebuilder:validation:Optional
 	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,14,opt,name=video"`
 	// Spec to generate one or more columns from existing columns in this pipeline
-	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
 	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,15,opt,name=generated"`
 	// Specify custom columns. Custom Columns are specified by the user
@@ -831,7 +830,7 @@ type DataHashes struct {
 
 type FeatureEngineeringStatus struct {
 	// The recommended pipeline after feature engineering was done
-	BestPipeline []FeatureEngineeringPipeline `json:"bestPipeline,omitempty" protobuf:"bytes,1,opt,name=bestPipeline"`
+	BestPipeline FeatureEngineeringPipeline `json:"bestPipeline,omitempty" protobuf:"bytes,1,rep,name=bestPipeline"`
 }
 
 type GeneratedColumnSpec struct {

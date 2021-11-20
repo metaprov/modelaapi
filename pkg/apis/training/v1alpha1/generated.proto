@@ -621,7 +621,6 @@ message FeatureEngineeringPipeline {
   optional VideoPipelineSpec video = 14;
 
   // Spec to generate one or more columns from existing columns in this pipeline
-  // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
   repeated GeneratedColumnSpec generated = 15;
 
@@ -679,7 +678,7 @@ message FeatureEngineeringSpec {
 
 message FeatureEngineeringStatus {
   // The recommended pipeline after feature engineering was done
-  repeated FeatureEngineeringPipeline bestPipeline = 1;
+  optional FeatureEngineeringPipeline bestPipeline = 1;
 }
 
 message FeatureImportance {

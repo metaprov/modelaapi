@@ -1047,10 +1047,10 @@ export namespace FeatureEngineeringSpec {
 }
 
 export class FeatureEngineeringStatus extends jspb.Message {
-  getBestpipelineList(): Array<FeatureEngineeringPipeline>;
-  setBestpipelineList(value: Array<FeatureEngineeringPipeline>): FeatureEngineeringStatus;
-  clearBestpipelineList(): FeatureEngineeringStatus;
-  addBestpipeline(value?: FeatureEngineeringPipeline, index?: number): FeatureEngineeringPipeline;
+  getBestpipeline(): FeatureEngineeringPipeline | undefined;
+  setBestpipeline(value?: FeatureEngineeringPipeline): FeatureEngineeringStatus;
+  hasBestpipeline(): boolean;
+  clearBestpipeline(): FeatureEngineeringStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringStatus.AsObject;
@@ -1062,7 +1062,7 @@ export class FeatureEngineeringStatus extends jspb.Message {
 
 export namespace FeatureEngineeringStatus {
   export type AsObject = {
-    bestpipelineList: Array<FeatureEngineeringPipeline.AsObject>,
+    bestpipeline?: FeatureEngineeringPipeline.AsObject,
   }
 }
 
