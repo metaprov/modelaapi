@@ -556,7 +556,7 @@ type FeatureEngineeringSpec struct {
 	Pipelines []FeatureEngineeringPipeline `json:"pipelines,omitempty" protobuf:"bytes,2,rep,name=pipelines"`
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
-	FeatureSelection FeatureSelectionSpec `json:"featureSelection,omitempty" protobuf:"bytes,3,opt,name=featureSelection"`
+	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`
 	// Estimator is the algorithm to use when tunning the feature engineering pipeline
 	Estimator *catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,4,opt,name=estimator"`
 	// Max models to create during the search for the best feature engineering.

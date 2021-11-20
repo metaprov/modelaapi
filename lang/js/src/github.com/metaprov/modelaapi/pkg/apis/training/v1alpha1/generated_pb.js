@@ -11805,7 +11805,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     pipelinesList: jspb.Message.toObjectList(msg.getPipelinesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.toObject, includeInstance),
-    featureselection: (f = msg.getFeatureselection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
+    selection: (f = msg.getSelection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
     estimator: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     maxmodels: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     maxtime: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
@@ -11859,7 +11859,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.deserializeBinaryFromReader);
-      msg.setFeatureselection(value);
+      msg.setSelection(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -11925,7 +11925,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.serializeBinaryToWriter
     );
   }
-  f = message.getFeatureselection();
+  f = message.getSelection();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -12046,10 +12046,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * optional FeatureSelectionSpec featureSelection = 3;
+ * optional FeatureSelectionSpec selection = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getFeatureselection = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getSelection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec, 3));
 };
@@ -12059,7 +12059,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setFeatureselection = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setSelection = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -12068,8 +12068,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearFeatureselection = function() {
-  return this.setFeatureselection(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearSelection = function() {
+  return this.setSelection(undefined);
 };
 
 
@@ -12077,7 +12077,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasFeatureselection = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasSelection = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -42969,7 +42969,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     objective: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     objective2: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     search: (f = msg.getSearch()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.toObject(includeInstance, f),
-    preprocessing: (f = msg.getPreprocessing()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.toObject(includeInstance, f),
+    fe: (f = msg.getFe()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.toObject(includeInstance, f),
     trainingtemplate: (f = msg.getTrainingtemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toObject(includeInstance, f),
     split: (f = msg.getSplit()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplit.toObject(includeInstance, f),
     aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
@@ -43063,7 +43063,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
     case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.deserializeBinaryFromReader);
-      msg.setPreprocessing(value);
+      msg.setFe(value);
       break;
     case 11:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec;
@@ -43239,7 +43239,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSearchSpec.serializeBinaryToWriter
     );
   }
-  f = message.getPreprocessing();
+  f = message.getFe();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -43688,10 +43688,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 
 
 /**
- * optional FeatureEngineeringSpec preprocessing = 10;
+ * optional FeatureEngineeringSpec fe = 10;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getPreprocessing = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getFe = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} */ (
     jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec, 10));
 };
@@ -43701,7 +43701,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setPreprocessing = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setFe = function(value) {
   return jspb.Message.setWrapperField(this, 10, value);
 };
 
@@ -43710,8 +43710,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearPreprocessing = function() {
-  return this.setPreprocessing(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearFe = function() {
+  return this.setFe(undefined);
 };
 
 
@@ -43719,7 +43719,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasPreprocessing = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasFe = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 

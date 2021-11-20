@@ -650,7 +650,7 @@ message FeatureEngineeringSpec {
 
   // Spec for feature selection
   // +kubebuilder:validation:Optional
-  optional FeatureSelectionSpec featureSelection = 3;
+  optional FeatureSelectionSpec selection = 3;
 
   // Estimator is the algorithm to use when tunning the feature engineering pipeline
   optional string estimator = 4;
@@ -2911,7 +2911,7 @@ message StudySpec {
   // Preprocessing is template for preprocessors for this study
   // Default: all preprocessing is set to auto.
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec preprocessing = 10;
+  optional FeatureEngineeringSpec fe = 10;
 
   // Training template contain the desired training parameter for the models.
   // +kubebuilder:validation:Optional

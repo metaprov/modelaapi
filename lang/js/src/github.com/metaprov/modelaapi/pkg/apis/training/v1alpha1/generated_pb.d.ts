@@ -1005,10 +1005,10 @@ export class FeatureEngineeringSpec extends jspb.Message {
   clearPipelinesList(): FeatureEngineeringSpec;
   addPipelines(value?: FeatureEngineeringPipeline, index?: number): FeatureEngineeringPipeline;
 
-  getFeatureselection(): FeatureSelectionSpec | undefined;
-  setFeatureselection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
-  hasFeatureselection(): boolean;
-  clearFeatureselection(): FeatureEngineeringSpec;
+  getSelection(): FeatureSelectionSpec | undefined;
+  setSelection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
+  hasSelection(): boolean;
+  clearSelection(): FeatureEngineeringSpec;
 
   getEstimator(): string;
   setEstimator(value: string): FeatureEngineeringSpec;
@@ -1037,7 +1037,7 @@ export namespace FeatureEngineeringSpec {
   export type AsObject = {
     enabled: boolean,
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
-    featureselection?: FeatureSelectionSpec.AsObject,
+    selection?: FeatureSelectionSpec.AsObject,
     estimator: string,
     maxmodels: number,
     maxtime: number,
@@ -4317,10 +4317,10 @@ export class StudySpec extends jspb.Message {
   hasSearch(): boolean;
   clearSearch(): StudySpec;
 
-  getPreprocessing(): FeatureEngineeringSpec | undefined;
-  setPreprocessing(value?: FeatureEngineeringSpec): StudySpec;
-  hasPreprocessing(): boolean;
-  clearPreprocessing(): StudySpec;
+  getFe(): FeatureEngineeringSpec | undefined;
+  setFe(value?: FeatureEngineeringSpec): StudySpec;
+  hasFe(): boolean;
+  clearFe(): StudySpec;
 
   getTrainingtemplate(): TrainingSpec | undefined;
   setTrainingtemplate(value?: TrainingSpec): StudySpec;
@@ -4414,7 +4414,7 @@ export namespace StudySpec {
     objective: string,
     objective2: string,
     search?: ModelSearchSpec.AsObject,
-    preprocessing?: FeatureEngineeringSpec.AsObject,
+    fe?: FeatureEngineeringSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
     split?: DataSplit.AsObject,
     aborted: boolean,

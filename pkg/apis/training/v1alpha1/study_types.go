@@ -373,7 +373,7 @@ type StudySpec struct {
 	// Preprocessing is template for preprocessors for this study
 	// Default: all preprocessing is set to auto.
 	// +kubebuilder:validation:Optional
-	FeatureEngineering *FeatureEngineeringSpec `json:"preprocessing,omitempty" protobuf:"bytes,10,opt,name=preprocessing"`
+	FeatureEngineering *FeatureEngineeringSpec `json:"fe,omitempty" protobuf:"bytes,10,opt,name=fe"`
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
 	TrainingTemplate *TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,11,opt,name=trainingTemplate"`

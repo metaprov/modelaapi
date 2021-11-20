@@ -345,43 +345,6 @@ spec:
                     - als
                     - bayesian-personalized-ranking
                     type: string
-                  featureSelection:
-                    description: Spec for feature selection
-                    properties:
-                      corrTreshold:
-                        default: 95
-                        description: Remove Features with high correlations
-                        format: int32
-                        type: integer
-                      cumulativeImportancePrecent:
-                        default: 95
-                        description: The cummulative importance of all the importance
-                          feature to include
-                        format: int32
-                        type: integer
-                      lowVarTresholdPct:
-                        default: 5
-                        description: Lowvar specify the filter to remove low variance
-                          features
-                        format: int32
-                        type: integer
-                      onError:
-                        default: false
-                        description: Is the feature filter enbled
-                        type: boolean
-                      reserved:
-                        description: List of feature names to consider when training
-                          , even after filtering
-                        items:
-                          type: string
-                        type: array
-                      topN:
-                        default: 0
-                        description: Select the Top N is the number of feature to
-                          select by importance. If 0, all the features are selected.
-                        format: int32
-                        type: integer
-                    type: object
                   maxModels:
                     default: 10
                     description: Max models to create during the search for the best
@@ -684,6 +647,43 @@ spec:
                       the feature engineering search
                     format: int32
                     type: integer
+                  selection:
+                    description: Spec for feature selection
+                    properties:
+                      corrTreshold:
+                        default: 95
+                        description: Remove Features with high correlations
+                        format: int32
+                        type: integer
+                      cumulativeImportancePrecent:
+                        default: 95
+                        description: The cummulative importance of all the importance
+                          feature to include
+                        format: int32
+                        type: integer
+                      lowVarTresholdPct:
+                        default: 5
+                        description: Lowvar specify the filter to remove low variance
+                          features
+                        format: int32
+                        type: integer
+                      onError:
+                        default: false
+                        description: Is the feature filter enbled
+                        type: boolean
+                      reserved:
+                        description: List of feature names to consider when training
+                          , even after filtering
+                        items:
+                          type: string
+                        type: array
+                      topN:
+                        default: 0
+                        description: Select the Top N is the number of feature to
+                          select by importance. If 0, all the features are selected.
+                        format: int32
+                        type: integer
+                    type: object
                 type: object
               featureEngineeringOnly:
                 default: false
