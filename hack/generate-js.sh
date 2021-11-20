@@ -11,11 +11,20 @@ set -o pipefail
 
 PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
 
+PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
+PATH="${PROJECT_ROOT}/dist:${PATH}"
+GIT_ROOT=$(cd $(dirname ${BASH_SOURCE})/../../../../; pwd)
+
+GOOGLE_PROTO_API_PATH=${PROJECT_ROOT}/common-protos
+GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
+
+
 protoc \
     -I${PROJECT_ROOT}/../../.. \
-    -I${PROJECT_ROOT}/pkg \
-    -I${PROJECT_ROOT}/common-protos \
-    -I${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf \
+    -I${PROJECT_ROOT} \
+    -I${GOOGLE_PROTO_API_PATH} \
+    -I$GOPATH/src \
+    -I${GOGO_PROTOBUF_PATH} \
     --js_out=import_style=commonjs:./lang/js/src \
     --grpc-web_out=import_style=typescript,mode=grpcwebtext:./lang/js/src \
     google/api/annotations.proto \
