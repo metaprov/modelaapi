@@ -1445,6 +1445,24 @@ spec:
                   - type
                   type: object
                 type: array
+              confusionMatrix:
+                description: Confusion matrix
+                properties:
+                  rows:
+                    items:
+                      properties:
+                        count:
+                          format: int32
+                          type: integer
+                        p:
+                          type: string
+                        pct:
+                          type: number
+                        t:
+                          type: string
+                      type: object
+                    type: array
+                type: object
               cost:
                 description: Cost is the cost of training the model
                 type: number
@@ -1598,6 +1616,19 @@ spec:
                 default: Pending
                 description: Phase is the phase of the model
                 type: string
+              prcurve:
+                description: PR curve
+                properties:
+                  values:
+                    items:
+                      properties:
+                        x:
+                          type: number
+                        "y":
+                          type: number
+                      type: object
+                    type: array
+                type: object
               predictorName:
                 description: If the model is released, this is the name of the predictor
                 type: string
@@ -1628,6 +1659,19 @@ spec:
               reportUri:
                 description: ReportURI is the uri of report
                 type: string
+              rocauccurve:
+                description: Roc curve
+                properties:
+                  values:
+                    items:
+                      properties:
+                        x:
+                          type: number
+                        "y":
+                          type: number
+                      type: object
+                    type: array
+                type: object
               sizeInBytes:
                 description: Size of the model size
                 format: int32

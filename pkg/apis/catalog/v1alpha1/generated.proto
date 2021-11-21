@@ -166,6 +166,28 @@ message CompilerSpec {
   repeated string targets = 3;
 }
 
+message ConfusionMatrix {
+  repeated ConfusionMatrixRow rows = 1;
+}
+
+message ConfusionMatrixRow {
+  optional string t = 1;
+
+  // True Label
+  optional string p = 2;
+
+  // Predicated Label
+  optional int32 count = 3;
+
+  optional double pct = 4;
+}
+
+message CurvePoint {
+  optional double x = 1;
+
+  optional double y = 2;
+}
+
 // Datacenter contains the attribute of a specific data center
 message DataCenter {
   // Name is the name of the datacenter
@@ -522,6 +544,10 @@ message NotificationSpec {
   map<string, string> selector = 6;
 }
 
+message PRCurve {
+  repeated CurvePoint values = 1;
+}
+
 // Pretrained model contain the metadata about a pretrained model
 // +kubebuilder:object:root=true
 message PretrainedModel {
@@ -655,6 +681,10 @@ message Region {
 
   // Datacenters if the list of datacenters
   repeated DataCenter datacenters = 5;
+}
+
+message RocAucCurve {
+  repeated CurvePoint values = 1;
 }
 
 // Run Schedule is a specification for job schedule

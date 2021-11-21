@@ -296,6 +296,78 @@ export namespace CompilerSpec {
   }
 }
 
+export class ConfusionMatrix extends jspb.Message {
+  getRowsList(): Array<ConfusionMatrixRow>;
+  setRowsList(value: Array<ConfusionMatrixRow>): ConfusionMatrix;
+  clearRowsList(): ConfusionMatrix;
+  addRows(value?: ConfusionMatrixRow, index?: number): ConfusionMatrixRow;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConfusionMatrix.AsObject;
+  static toObject(includeInstance: boolean, msg: ConfusionMatrix): ConfusionMatrix.AsObject;
+  static serializeBinaryToWriter(message: ConfusionMatrix, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConfusionMatrix;
+  static deserializeBinaryFromReader(message: ConfusionMatrix, reader: jspb.BinaryReader): ConfusionMatrix;
+}
+
+export namespace ConfusionMatrix {
+  export type AsObject = {
+    rowsList: Array<ConfusionMatrixRow.AsObject>,
+  }
+}
+
+export class ConfusionMatrixRow extends jspb.Message {
+  getT(): string;
+  setT(value: string): ConfusionMatrixRow;
+
+  getP(): string;
+  setP(value: string): ConfusionMatrixRow;
+
+  getCount(): number;
+  setCount(value: number): ConfusionMatrixRow;
+
+  getPct(): number;
+  setPct(value: number): ConfusionMatrixRow;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConfusionMatrixRow.AsObject;
+  static toObject(includeInstance: boolean, msg: ConfusionMatrixRow): ConfusionMatrixRow.AsObject;
+  static serializeBinaryToWriter(message: ConfusionMatrixRow, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConfusionMatrixRow;
+  static deserializeBinaryFromReader(message: ConfusionMatrixRow, reader: jspb.BinaryReader): ConfusionMatrixRow;
+}
+
+export namespace ConfusionMatrixRow {
+  export type AsObject = {
+    t: string,
+    p: string,
+    count: number,
+    pct: number,
+  }
+}
+
+export class CurvePoint extends jspb.Message {
+  getX(): number;
+  setX(value: number): CurvePoint;
+
+  getY(): number;
+  setY(value: number): CurvePoint;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CurvePoint.AsObject;
+  static toObject(includeInstance: boolean, msg: CurvePoint): CurvePoint.AsObject;
+  static serializeBinaryToWriter(message: CurvePoint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CurvePoint;
+  static deserializeBinaryFromReader(message: CurvePoint, reader: jspb.BinaryReader): CurvePoint;
+}
+
+export namespace CurvePoint {
+  export type AsObject = {
+    x: number,
+    y: number,
+  }
+}
+
 export class DataCenter extends jspb.Message {
   getName(): string;
   setName(value: string): DataCenter;
@@ -888,6 +960,26 @@ export namespace NotificationSpec {
   }
 }
 
+export class PRCurve extends jspb.Message {
+  getValuesList(): Array<CurvePoint>;
+  setValuesList(value: Array<CurvePoint>): PRCurve;
+  clearValuesList(): PRCurve;
+  addValues(value?: CurvePoint, index?: number): CurvePoint;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PRCurve.AsObject;
+  static toObject(includeInstance: boolean, msg: PRCurve): PRCurve.AsObject;
+  static serializeBinaryToWriter(message: PRCurve, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PRCurve;
+  static deserializeBinaryFromReader(message: PRCurve, reader: jspb.BinaryReader): PRCurve;
+}
+
+export namespace PRCurve {
+  export type AsObject = {
+    valuesList: Array<CurvePoint.AsObject>,
+  }
+}
+
 export class PretrainedModel extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): PretrainedModel;
@@ -1121,6 +1213,26 @@ export namespace Region {
     location: string,
     billingcode: string,
     datacentersList: Array<DataCenter.AsObject>,
+  }
+}
+
+export class RocAucCurve extends jspb.Message {
+  getValuesList(): Array<CurvePoint>;
+  setValuesList(value: Array<CurvePoint>): RocAucCurve;
+  clearValuesList(): RocAucCurve;
+  addValues(value?: CurvePoint, index?: number): CurvePoint;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RocAucCurve.AsObject;
+  static toObject(includeInstance: boolean, msg: RocAucCurve): RocAucCurve.AsObject;
+  static serializeBinaryToWriter(message: RocAucCurve, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RocAucCurve;
+  static deserializeBinaryFromReader(message: RocAucCurve, reader: jspb.BinaryReader): RocAucCurve;
+}
+
+export namespace RocAucCurve {
+  export type AsObject = {
+    valuesList: Array<CurvePoint.AsObject>,
   }
 }
 

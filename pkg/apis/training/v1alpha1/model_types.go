@@ -508,13 +508,21 @@ type ModelStatus struct {
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,55,opt,name=logs"`
 	// Set the trial ID, by the optimizer.
-	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:Optional
 	TrialID *int32 `json:"trialID,omitempty" protobuf:"varint,56,opt,name=trialID"`
+	// Roc curve
+	// +kubebuilder:validation:Optional
+	RocAucCurve catalog.RocAucCurve `json:"rocauccurve,omitempty" protobuf:"varint,57,opt,name=rocauccurve"`
+	// PR curve
+	// +kubebuilder:validation:Optional
+	PRCurve catalog.PRCurve `json:"prcurve,omitempty" protobuf:"varint,58,opt,name=prcurve"`
+	// Confusion matrix
+	// +kubebuilder:validation:Optional
+	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"varint,59,opt,name=confusionMatrix"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,57,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,60,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

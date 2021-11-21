@@ -2733,6 +2733,9 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		*out = new(int32)
 		**out = **in
 	}
+	in.RocAucCurve.DeepCopyInto(&out.RocAucCurve)
+	in.PRCurve.DeepCopyInto(&out.PRCurve)
+	in.ConfusionMatrix.DeepCopyInto(&out.ConfusionMatrix)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))

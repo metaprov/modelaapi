@@ -1756,3 +1756,26 @@ const (
 		Yellowgreen          = color.RGBA{0x9a, 0xcd, 0x32, 0xff} // rgb(154, 205, 50)
 	*/
 )
+
+type CurvePoint struct {
+	X float64 `json:"x,omitempty" protobuf:"bytes,1,opt,name=x"`
+	Y float64 `json:"y,omitempty" protobuf:"bytes,2,opt,name=y"`
+}
+type RocAucCurve struct {
+	Values []CurvePoint `json:"values,omitempty" protobuf:"bytes,1,opt,name=values"`
+}
+
+type PRCurve struct {
+	Values []CurvePoint `json:"values,omitempty" protobuf:"bytes,1,opt,name=values"`
+}
+
+type ConfusionMatrixRow struct {
+	T     string  `json:"t,omitempty" protobuf:"bytes,1,opt,name=t"` // True Label
+	P     string  `json:"p,omitempty" protobuf:"bytes,2,opt,name=p"` // Predicated Label
+	Count int32   `json:"count,omitempty" protobuf:"varint,3,opt,name=count"`
+	Pct   float64 `json:"pct,omitempty" protobuf:"bytes,4,opt,name=pct"`
+}
+
+type ConfusionMatrix struct {
+	Rows []ConfusionMatrixRow `json:"rows,omitempty" protobuf:"bytes,1,opt,name=rows"`
+}

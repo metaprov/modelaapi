@@ -3062,6 +3062,21 @@ export class ModelStatus extends jspb.Message {
   getTrialid(): number;
   setTrialid(value: number): ModelStatus;
 
+  getRocauccurve(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve | undefined;
+  setRocauccurve(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve): ModelStatus;
+  hasRocauccurve(): boolean;
+  clearRocauccurve(): ModelStatus;
+
+  getPrcurve(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve | undefined;
+  setPrcurve(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve): ModelStatus;
+  hasPrcurve(): boolean;
+  clearPrcurve(): ModelStatus;
+
+  getConfusionmatrix(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix | undefined;
+  setConfusionmatrix(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix): ModelStatus;
+  hasConfusionmatrix(): boolean;
+  clearConfusionmatrix(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3132,6 +3147,9 @@ export namespace ModelStatus {
     endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     trialid: number,
+    rocauccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
+    prcurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.AsObject,
+    confusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
