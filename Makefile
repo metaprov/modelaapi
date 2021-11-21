@@ -82,7 +82,7 @@ ifeq (, $(shell which controller-gen))
 	CONTROLLER_GEN_TMP_DIR=$$(mktemp -d) ;\
 	cd $$CONTROLLER_GEN_TMP_DIR ;\
 	go mod init tmp ;\
-	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.6.0 ;\
+	go get sigs.k8s.io/controller-tools/cmd/controller-gen@v0.7.0 ;\
 	rm -rf $$CONTROLLER_GEN_TMP_DIR ;\
 	}
 CONTROLLER_GEN=$(GOBIN)/controller-gen
@@ -131,9 +131,9 @@ update-licenses:
 
 .PHONY: install-protoc
 install-protoc:	 
-	 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.15.5/protoc-3.15.5-linux-x86_64.zip 
-	 mv protoc-3.15.5-linux-x86_64.zip /tmp/protoc-3.15.5-linux-x86_64.zip
-	 unzip /tmp/protoc-3.15.5-linux-x86_64.zip -d $(HOME)/.local
+	 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protoc-3.19.1-linux-x86_64.zip 
+	 mv protoc-3.19.1-linux-x86_64.zip /tmp/protoc-3.19.1-linux-x86_64.zip
+	 unzip /tmp/protoc-3.19.1-linux-x86_64.zip -d $(HOME)/.local
 	 export PATH="$PATH:$HOME/.local/bin"
 
 
