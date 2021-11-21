@@ -1953,6 +1953,10 @@ spec:
                   training.
                 format: date-time
                 type: string
+              trialID:
+                description: Set the trial ID, by the optimizer.
+                format: int32
+                type: integer
               url:
                 description: The URL to the released version
                 type: string

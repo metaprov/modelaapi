@@ -2162,6 +2162,11 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 55;
 
+  // Set the trial ID, by the optimizer.
+  // +kubebuilder:validation:Required
+  // +kubebuilder:validation:Optional
+  optional int32 trialID = 56;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge

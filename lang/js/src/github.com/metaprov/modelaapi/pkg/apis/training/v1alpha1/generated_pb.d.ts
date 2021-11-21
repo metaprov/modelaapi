@@ -3059,6 +3059,9 @@ export class ModelStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): ModelStatus;
 
+  getTrialid(): number;
+  setTrialid(value: number): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3128,6 +3131,7 @@ export namespace ModelStatus {
     trainerimage: string,
     endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    trialid: number,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

@@ -507,6 +507,10 @@ type ModelStatus struct {
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,55,opt,name=logs"`
+	// Set the trial ID, by the optimizer.
+	// +kubebuilder:validation:Required
+	// +kubebuilder:validation:Optional
+	TrialID *int32 `json:"trialID,omitempty" protobuf:"varint,56,opt,name=trialID"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge

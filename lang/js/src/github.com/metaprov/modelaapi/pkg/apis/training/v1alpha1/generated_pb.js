@@ -29495,6 +29495,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     trainerimage: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f,
     endpoint: (f = jspb.Message.getField(msg, 54)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
+    trialid: (f = jspb.Message.getField(msg, 56)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.toObject, includeInstance)
   };
@@ -29768,6 +29769,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
+      break;
+    case 56:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTrialid(value);
       break;
     case 57:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition;
@@ -30194,6 +30199,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       55,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 56));
+  if (f != null) {
+    writer.writeInt32(
+      56,
+      f
     );
   }
   f = message.getConditionsList();
@@ -32156,6 +32168,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLogs = function() {
   return jspb.Message.getField(this, 55) != null;
+};
+
+
+/**
+ * optional int32 trialID = 56;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrialid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 56, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrialid = function(value) {
+  return jspb.Message.setField(this, 56, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrialid = function() {
+  return jspb.Message.setField(this, 56, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrialid = function() {
+  return jspb.Message.getField(this, 56) != null;
 };
 
 

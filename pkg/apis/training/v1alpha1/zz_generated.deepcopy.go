@@ -2728,6 +2728,11 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	out.TrainingResources = in.TrainingResources
 	out.TestingResources = in.TestingResources
 	in.Logs.DeepCopyInto(&out.Logs)
+	if in.TrialID != nil {
+		in, out := &in.TrialID, &out.TrialID
+		*out = new(int32)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))
