@@ -1153,6 +1153,9 @@ spec:
                 - cpu
                 - mem
                 - req-per-sec
+                - maze
+                - gpu
+                - gpu-mem
                 type: string
               objective2:
                 description: Objective2 is the second objective to consider during
@@ -1213,6 +1216,9 @@ spec:
                 - cpu
                 - mem
                 - req-per-sec
+                - maze
+                - gpu
+                - gpu-mem
                 type: string
               owner:
                 default: no-one
@@ -1744,6 +1750,9 @@ spec:
                       - cpu
                       - mem
                       - req-per-sec
+                      - maze
+                      - gpu
+                      - gpu-mem
                       type: string
                     type: array
                   folds:

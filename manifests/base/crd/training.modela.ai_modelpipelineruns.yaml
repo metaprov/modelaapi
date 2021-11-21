@@ -229,6 +229,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -398,6 +401,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -539,6 +545,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -681,6 +690,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -825,6 +837,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -976,6 +991,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1122,6 +1140,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1269,6 +1290,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test

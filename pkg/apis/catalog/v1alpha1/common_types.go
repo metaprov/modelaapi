@@ -443,7 +443,7 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
-// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr";"rmsle";"matthews-corr-coef";"p50-latency";"p95-latency";"p99-latency";"cpu";"mem";"req-per-sec"
+// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr";"rmsle";"matthews-corr-coef";"p50-latency";"p95-latency";"p99-latency";"cpu";"mem";"req-per-sec";"maze";"gpu";"gpu-mem"
 type Metric string
 
 const (
@@ -502,6 +502,7 @@ const (
 
 	// Forecast specific
 	MAPE  Metric = "mape"
+	MAZE  Metric = "maze"
 	MDAPE Metric = "mdape" // median absolute precentage error
 	SMAPE Metric = "smape"
 
@@ -520,7 +521,9 @@ const (
 	P95Latency               Metric = "p95-latency"
 	P99Latency               Metric = "p99-latency"
 	Cpu                      Metric = "cpu"
+	Gpu                      Metric = "gpu"
 	Mem                      Metric = "mem"
+	GpuMem                   Metric = "gpu-mem"
 	ReqSec                   Metric = "req-per-sec"
 	UncrainPredictionPercent Metric = "uncertain-prediction-percent"
 

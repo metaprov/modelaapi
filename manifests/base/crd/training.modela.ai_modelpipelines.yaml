@@ -172,6 +172,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         min:
                           type: number
@@ -337,6 +340,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         min:
                           type: number
@@ -632,6 +638,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         min:
                           type: number
@@ -816,6 +825,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         min:
                           type: number
@@ -939,6 +951,9 @@ spec:
                           - cpu
                           - mem
                           - req-per-sec
+                          - maze
+                          - gpu
+                          - gpu-mem
                           type: string
                         min:
                           type: number

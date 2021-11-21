@@ -991,6 +991,9 @@ spec:
                 - cpu
                 - mem
                 - req-per-sec
+                - maze
+                - gpu
+                - gpu-mem
                 type: string
               owner:
                 default: no-one

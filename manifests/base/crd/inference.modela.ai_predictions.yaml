@@ -299,6 +299,9 @@ spec:
                   - cpu
                   - mem
                   - req-per-sec
+                  - maze
+                  - gpu
+                  - gpu-mem
                   type: string
                 type: array
               ttl:
@@ -433,6 +436,9 @@ spec:
                       - cpu
                       - mem
                       - req-per-sec
+                      - maze
+                      - gpu
+                      - gpu-mem
                       type: string
                     value:
                       description: The value for this model

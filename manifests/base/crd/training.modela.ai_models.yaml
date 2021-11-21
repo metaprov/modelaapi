@@ -1101,6 +1101,9 @@ spec:
                 - cpu
                 - mem
                 - req-per-sec
+                - maze
+                - gpu
+                - gpu-mem
                 type: string
               owner:
                 default: no-one
@@ -1272,6 +1275,9 @@ spec:
                       - cpu
                       - mem
                       - req-per-sec
+                      - maze
+                      - gpu
+                      - gpu-mem
                       type: string
                     type: array
                   folds:
@@ -1506,6 +1512,9 @@ spec:
                       - cpu
                       - mem
                       - req-per-sec
+                      - maze
+                      - gpu
+                      - gpu-mem
                       type: string
                     value:
                       description: The value for this model
@@ -1701,6 +1710,9 @@ spec:
                       - cpu
                       - mem
                       - req-per-sec
+                      - maze
+                      - gpu
+                      - gpu-mem
                       type: string
                     value:
                       description: The value for this model
@@ -1842,6 +1854,9 @@ spec:
                       - cpu
                       - mem
                       - req-per-sec
+                      - maze
+                      - gpu
+                      - gpu-mem
                       type: string
                     value:
                       description: The value for this model
