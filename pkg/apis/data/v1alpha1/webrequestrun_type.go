@@ -103,14 +103,22 @@ type WebRequestRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,8,opt,name=connectionName"`
-	// The SQL statement timeout
+	// The WebRequest statement timeout
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
 	Timeout *int32 `json:"timeout,omitempty" protobuf:"varint,9,opt,name=timeout"`
+	// If true save the query results
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Materialized *bool `json:"materialized,omitempty" protobuf:"varint,10,opt,name=materialized"`
+	// If true generate a report each time the web request is executed
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,11,opt,name=reported"`
 	// A reference to the workload class that is used for training
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,10,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,12,opt,name=workloadClassName"`
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
@@ -136,11 +144,16 @@ type WebRequestRunStatus struct {
 	// +kubebuilder:validation:Optional
 	HttpResultCode int32 `json:"httpResultCode,omitempty" protobuf:"bytes,7,opt,name=httpResultCode"`
 	// The location of the result
-	ResultLocation DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,8,opt,name=resultLocation"`
+	// +kubebuilder:validation:Optional
+	Location DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,8,opt,name=resultLocation"`
+	// The name of the report object.
+	// +kubebuilder:validation:Optional
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,9,rep,name=reportName"`
 	// The last error that occur as a result of the execution
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,9,opt,name=lastError"`
+	// +kubebuilder:validation:Optional
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,10,opt,name=lastError"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+	Conditions []WebRequestRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
 }

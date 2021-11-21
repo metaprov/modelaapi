@@ -329,6 +329,9 @@ export class ColumnStatistics extends jspb.Message {
   getReserved(): boolean;
   setReserved(value: boolean): ColumnStatistics;
 
+  getOutliers(): number;
+  setOutliers(value: number): ColumnStatistics;
+
   getCompleteness(): number;
   setCompleteness(value: number): ColumnStatistics;
 
@@ -386,6 +389,7 @@ export namespace ColumnStatistics {
     constant: boolean,
     duplicate: boolean,
     reserved: boolean,
+    outliers: number,
     completeness: number,
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
@@ -4723,8 +4727,14 @@ export class SqlQueryRunSpec extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): SqlQueryRunSpec;
 
-  getSql(): string;
-  setSql(value: string): SqlQueryRunSpec;
+  getDatabase(): string;
+  setDatabase(value: string): SqlQueryRunSpec;
+
+  getTable(): boolean;
+  setTable(value: boolean): SqlQueryRunSpec;
+
+  getSqlortable(): string;
+  setSqlortable(value: string): SqlQueryRunSpec;
 
   getConnectionname(): string;
   setConnectionname(value: string): SqlQueryRunSpec;
@@ -4741,6 +4751,12 @@ export class SqlQueryRunSpec extends jspb.Message {
   getAborted(): boolean;
   setAborted(value: boolean): SqlQueryRunSpec;
 
+  getMaterialized(): boolean;
+  setMaterialized(value: boolean): SqlQueryRunSpec;
+
+  getReported(): boolean;
+  setReported(value: boolean): SqlQueryRunSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SqlQueryRunSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SqlQueryRunSpec): SqlQueryRunSpec.AsObject;
@@ -4754,12 +4770,16 @@ export namespace SqlQueryRunSpec {
     owner: string,
     versionname: string,
     description: string,
-    sql: string,
+    database: string,
+    table: boolean,
+    sqlortable: string,
     connectionname: string,
     workloadclassname: string,
     activedeadlineseconds: number,
     priority: string,
     aborted: boolean,
+    materialized: boolean,
+    reported: boolean,
   }
 }
 
@@ -4791,6 +4811,19 @@ export class SqlQueryRunStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): SqlQueryRunStatus;
 
+  getValidationresultsList(): Array<DataValidationResult>;
+  setValidationresultsList(value: Array<DataValidationResult>): SqlQueryRunStatus;
+  clearValidationresultsList(): SqlQueryRunStatus;
+  addValidationresults(value?: DataValidationResult, index?: number): DataValidationResult;
+
+  getLocation(): DataLocation | undefined;
+  setLocation(value?: DataLocation): SqlQueryRunStatus;
+  hasLocation(): boolean;
+  clearLocation(): SqlQueryRunStatus;
+
+  getReportname(): string;
+  setReportname(value: string): SqlQueryRunStatus;
+
   getConditionsList(): Array<SqlQueryRunCondition>;
   setConditionsList(value: Array<SqlQueryRunCondition>): SqlQueryRunStatus;
   clearConditionsList(): SqlQueryRunStatus;
@@ -4813,6 +4846,9 @@ export namespace SqlQueryRunStatus {
     rows: number,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    validationresultsList: Array<DataValidationResult.AsObject>,
+    location?: DataLocation.AsObject,
+    reportname: string,
     conditionsList: Array<SqlQueryRunCondition.AsObject>,
   }
 }
@@ -5173,6 +5209,12 @@ export class WebRequestRunSpec extends jspb.Message {
   getTimeout(): number;
   setTimeout(value: number): WebRequestRunSpec;
 
+  getMaterialized(): boolean;
+  setMaterialized(value: boolean): WebRequestRunSpec;
+
+  getReported(): boolean;
+  setReported(value: boolean): WebRequestRunSpec;
+
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): WebRequestRunSpec;
 
@@ -5195,6 +5237,8 @@ export namespace WebRequestRunSpec {
     headersMap: Array<[string, string]>,
     connectionname: string,
     timeout: number,
+    materialized: boolean,
+    reported: boolean,
     workloadclassname: string,
   }
 }
@@ -5230,6 +5274,9 @@ export class WebRequestRunStatus extends jspb.Message {
   hasResultlocation(): boolean;
   clearResultlocation(): WebRequestRunStatus;
 
+  getReportname(): string;
+  setReportname(value: string): WebRequestRunStatus;
+
   getLasterror(): string;
   setLasterror(value: string): WebRequestRunStatus;
 
@@ -5256,6 +5303,7 @@ export namespace WebRequestRunStatus {
     triggeredby: string,
     httpresultcode: number,
     resultlocation?: DataLocation.AsObject,
+    reportname: string,
     lasterror: string,
     conditionsList: Array<WebRequestRunCondition.AsObject>,
   }

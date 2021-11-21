@@ -362,18 +362,21 @@ type ColumnStatistics struct {
 	// The value is derived from the data source.
 	// +kubebuilder:validation:Optional
 	Reserved bool `json:"reserved,omitempty" protobuf:"varint,35,opt,name=reserved"`
+	// Outliers count
+	// +kubebuilder:validation:Optional
+	Outliers *int32 `json:"outliers,omitempty" protobuf:"bytes,36,opt,name=outliers"`
 	// Completeness is the ratio between non null to null
 	// +kubebuilder:validation:Optional
-	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,36,opt,name=completeness"`
+	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,37,opt,name=completeness"`
 	// The ratio between distinct count to total count
 	// +kubebuilder:validation:Optional
-	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,37,opt,name=distinctValueCount"`
+	DistinctValueCount float64 `json:"distinctValueCount,omitempty" protobuf:"bytes,38,opt,name=distinctValueCount"`
 	// The ratio between most freq value to total
 	// +kubebuilder:validation:Optional
-	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,38,opt,name=mostFreqValuesRatio"`
+	MostFreqValuesRatio float64 `json:"mostFreqValuesRatio,omitempty" protobuf:"bytes,39,opt,name=mostFreqValuesRatio"`
 	// Used for text attributes
 	// +kubebuilder:validation:Optional
-	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,39,opt,name=indexOfPeculiarity"`
+	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,40,opt,name=indexOfPeculiarity"`
 }
 
 // DatasetTemplate is  used to generate new datasets

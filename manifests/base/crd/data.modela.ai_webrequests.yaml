@@ -125,6 +125,10 @@ spec:
                       type: string
                     description: The Http headers to use
                     type: object
+                  materialized:
+                    default: false
+                    description: If true save the query results
+                    type: boolean
                   owner:
                     default: no-one
                     description: The webrequest owner
@@ -134,6 +138,11 @@ spec:
                       type: string
                     description: URL Parameters
                     type: object
+                  reported:
+                    default: false
+                    description: If true generate a report each time the web request
+                      is executed
+                    type: boolean
                   text:
                     default: ""
                     description: Type name of the column key, this column is the key
@@ -141,7 +150,7 @@ spec:
                     type: string
                   timeout:
                     default: 3600
-                    description: The SQL statement timeout
+                    description: The WebRequest statement timeout
                     format: int32
                     type: integer
                   verb:

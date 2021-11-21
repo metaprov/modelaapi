@@ -402,21 +402,25 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional bool reserved = 35;
 
+  // Outliers count
+  // +kubebuilder:validation:Optional
+  optional int32 outliers = 36;
+
   // Completeness is the ratio between non null to null
   // +kubebuilder:validation:Optional
-  optional double completeness = 36;
+  optional double completeness = 37;
 
   // The ratio between distinct count to total count
   // +kubebuilder:validation:Optional
-  optional double distinctValueCount = 37;
+  optional double distinctValueCount = 38;
 
   // The ratio between most freq value to total
   // +kubebuilder:validation:Optional
-  optional double mostFreqValuesRatio = 38;
+  optional double mostFreqValuesRatio = 39;
 
   // Used for text attributes
   // +kubebuilder:validation:Optional
-  optional double indexOfPeculiarity = 39;
+  optional double indexOfPeculiarity = 40;
 }
 
 message ColumnValidation {
@@ -3103,36 +3107,56 @@ message SqlQueryRunSpec {
   // +kubebuilder:validation:MaxLength=512
   optional string description = 3;
 
+  // Database
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string database = 4;
+
+  // If true this table
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional bool table = 5;
+
   // Type name of the column key, this column is the key column in the entity.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string sql = 4;
+  optional string sqlOrTable = 6;
 
   // The name of the connection to the SQL data source
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string connectionName = 5;
+  optional string connectionName = 7;
 
   // A reference to the workload class that is used for training
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 6;
+  optional string workloadClassName = 8;
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 7;
+  optional int64 activeDeadlineSeconds = 9;
 
   // The priority of this prediction. The default is medium.
   // +kubebuilder:default:=medium
   // +kubebuilder:validation:Optional
-  optional string priority = 8;
+  optional string priority = 10;
 
   // Aborted is set when we want to abort the prediction
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 9;
+  optional bool aborted = 11;
+
+  // If true save the query results
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool materialized = 12;
+
+  // If true generate a report each time the web request is executed
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool reported = 13;
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -3164,10 +3188,21 @@ message SqlQueryRunStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
 
+  // List of data problems, as reported by the validation process
+  // +kubebuilder:validation:Optional
+  repeated DataValidationResult validationResults = 8;
+
+  // The location of the materialized view
+  // +kubebuilder:validation:Optional
+  optional DataLocation location = 9;
+
+  // The name of the report object.
+  optional string reportName = 10;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryRunCondition conditions = 8;
+  repeated SqlQueryRunCondition conditions = 11;
 }
 
 // SqlQuerySpec contain the desired state of a SqlQuery
@@ -3376,15 +3411,25 @@ message WebRequestRunSpec {
   // +kubebuilder:validation:Optional
   optional string connectionName = 8;
 
-  // The SQL statement timeout
+  // The WebRequest statement timeout
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
   optional int32 timeout = 9;
 
+  // If true save the query results
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool materialized = 10;
+
+  // If true generate a report each time the web request is executed
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool reported = 11;
+
   // A reference to the workload class that is used for training
   // +kubebuilder:default:="default-prediction-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 10;
+  optional string workloadClassName = 12;
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun
@@ -3417,15 +3462,21 @@ message WebRequestRunStatus {
   optional int32 httpResultCode = 7;
 
   // The location of the result
+  // +kubebuilder:validation:Optional
   optional DataLocation resultLocation = 8;
 
+  // The name of the report object.
+  // +kubebuilder:validation:Optional
+  optional string reportName = 9;
+
   // The last error that occur as a result of the execution
-  optional string lastError = 9;
+  // +kubebuilder:validation:Optional
+  optional string lastError = 10;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestRunCondition conditions = 10;
+  repeated WebRequestRunCondition conditions = 11;
 }
 
 // WebRequestSpec contain the desired state of a WebRequest

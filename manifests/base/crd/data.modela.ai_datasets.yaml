@@ -530,6 +530,10 @@ spec:
                           description: Is this column is nullable. This value is derived
                             from the schema.
                           type: boolean
+                        outliers:
+                          description: Outliers count
+                          format: int32
+                          type: integer
                         p25:
                           description: Pct25 is the 25 precent point
                           type: number

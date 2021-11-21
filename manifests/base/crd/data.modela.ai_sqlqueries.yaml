@@ -126,11 +126,19 @@ spec:
                     default: ""
                     description: The name of the connection to the SQL data source
                     type: string
+                  databaser:
+                    default: ""
+                    description: Database
+                    type: string
                   description:
                     default: ""
                     description: Comments is a description of the sqlquery
                     maxLength: 512
                     type: string
+                  materialized:
+                    default: false
+                    description: If true save the query results
+                    type: boolean
                   owner:
                     default: no-one
                     description: The sqlquery owner
@@ -144,7 +152,16 @@ spec:
                     - high
                     - urgent
                     type: string
+                  reported:
+                    default: false
+                    description: If true generate a report each time the web request
+                      is executed
+                    type: boolean
                   sql:
+                    default: ""
+                    description: If true this table
+                    type: boolean
+                  sqlOrTable:
                     default: ""
                     description: Type name of the column key, this column is the key
                       column in the entity.

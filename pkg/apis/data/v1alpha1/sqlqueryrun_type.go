@@ -85,31 +85,47 @@ type SqlQueryRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=512
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
+	// Database
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Database *string `json:"databaser,omitempty" protobuf:"bytes,4,opt,name=database"`
+	// If true this table
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Table *bool `json:"sql,omitempty" protobuf:"varint,5,opt,name=table"`
 	// Type name of the column key, this column is the key column in the entity.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Sql *string `json:"sql,omitempty" protobuf:"bytes,4,opt,name=sql"`
+	SqlOrTable *string `json:"sqlOrTable,omitempty" protobuf:"bytes,6,opt,name=sqlOrTable"`
 	// The name of the connection to the SQL data source
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,5,opt,name=connectionName"`
+	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,7,opt,name=connectionName"`
 	// A reference to the workload class that is used for training
 	// +kubebuilder:default:="default-prediction-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,6,opt,name=workloadClassName"`
+	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
 	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,7,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,9,opt,name=activeDeadlineSeconds"`
 	// The priority of this prediction. The default is medium.
 	// +kubebuilder:default:=medium
 	// +kubebuilder:validation:Optional
-	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,8,opt,name=priority"`
+	Priority *catalog.PriorityLevel `json:"priority,omitempty" protobuf:"bytes,10,opt,name=priority"`
 	// Aborted is set when we want to abort the prediction
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,9,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,11,opt,name=aborted"`
+	// If true save the query results
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Materialized *bool `json:"materialized,omitempty" protobuf:"varint,12,opt,name=materialized"`
+	// If true generate a report each time the web request is executed
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,13,opt,name=reported"`
 }
 
 // SqlQueryRunStatus defines the observed state of SqlQueryRun
@@ -134,8 +150,16 @@ type SqlQueryRunStatus struct {
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,7,opt,name=logs"`
+	// List of data problems, as reported by the validation process
+	//+kubebuilder:validation:Optional
+	ValidationResults []DataValidationResult `json:"validationResults,omitempty" protobuf:"bytes,8,rep,name=validationResults"`
+	// The location of the materialized view
+	//+kubebuilder:validation:Optional
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,9,rep,name=location"`
+	// The name of the report object.
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,10,rep,name=reportName"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
+	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
 }
