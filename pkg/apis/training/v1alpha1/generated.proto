@@ -602,7 +602,7 @@ message FeatureEngineeringPipeline {
   // Specify how For datetime data type,
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string datetimeTransformer = 10;
+  optional string datetimeTransformation = 10;
 
   // Text specify the column transformation for text columns
   // +kubebuilder:validation:Optional

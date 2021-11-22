@@ -599,7 +599,7 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 }
 
 //==============================================================================
-// Imputator
+// Imputation
 //==============================================================================
 
 type Imputation string
@@ -711,7 +711,7 @@ const (
 )
 
 //==============================================================================
-// Discritizer
+// Discretisation
 //==============================================================================
 
 type Discretisation string
@@ -747,55 +747,49 @@ const (
 // Datatime
 //==============================================================================
 
-type DatatimeTransformer string
+type DatatimeTransformation string
 
 const (
-	YearMonth    DatatimeTransformer = "year-month"
-	WeekDay      DatatimeTransformer = "weak-day"
-	HourMinSec   DatatimeTransformer = "hour-min-sec"
-	ElapsedTime  DatatimeTransformer = "elapsed"
-	NoneDatetime DatatimeTransformer = "none"
-	AutoDatetime DatatimeTransformer = "auto"
+	YearMonth    DatatimeTransformation = "year-month"
+	WeekDay      DatatimeTransformation = "weak-day"
+	HourMinSec   DatatimeTransformation = "hour-min-sec"
+	ElapsedTime  DatatimeTransformation = "elapsed"
+	NoneDatetime DatatimeTransformation = "none"
+	AutoDatetime DatatimeTransformation = "auto"
 )
 
 //==============================================================================
 // Balancer
 //==============================================================================
 // +kubebuilder:validation:Enum="adasyn";"baseline-smote";"kmean-smote";"random-over-sampler";"smote";"smotenc";"svmsmote";"none";"auto"
-type Balancer string
+type ImbalanceHandling string
 
 const (
-	ADASYN            Balancer = "adasyn"
-	BorderlineSMOTE   Balancer = "baseline-smote"
-	KMeansSMOTE       Balancer = "kmean-smote"
-	RandomOverSampler Balancer = "random-over-sampler"
-	SMOTE             Balancer = "smote"
-	SMOTENC           Balancer = "smotenc"
-	SVMSMOTE          Balancer = "svmsmote"
-	ImbalanceNone     Balancer = "none"
-	ImbalanceAuto     Balancer = "auto"
+	ADASYN            ImbalanceHandling = "adasyn"
+	BorderlineSMOTE   ImbalanceHandling = "baseline-smote"
+	KMeansSMOTE       ImbalanceHandling = "kmean-smote"
+	RandomOverSampler ImbalanceHandling = "random-over-sampler"
+	SMOTE             ImbalanceHandling = "smote"
+	SMOTENC           ImbalanceHandling = "smotenc"
+	SVMSMOTE          ImbalanceHandling = "svmsmote"
+	ImbalanceNone     ImbalanceHandling = "none"
+	ImbalanceAuto     ImbalanceHandling = "auto"
 )
 
 //==============================================================================
 // Feature Engineering
 //==============================================================================
 
-type FeatureEngineering string
+type DimensionReduction string
 
 const (
-	RFE                    FeatureEngineering = "rfe"
-	SelectPercentile       FeatureEngineering = "select-percentile"
-	SelectKBest            FeatureEngineering = "select-kbest"
-	SelectFpr              FeatureEngineering = "select-fpr"
-	SelectFdr              FeatureEngineering = "select-fdr"
-	VarianceThreshold      FeatureEngineering = "variance-threshold"
-	PCA                    FeatureEngineering = "pca"
-	PolynomialFeatures     FeatureEngineering = "polynomial-features"
-	RBFSampler             FeatureEngineering = "rbf-sampler"
-	FastIca                FeatureEngineering = "fast-ica"
-	Nystroem               FeatureEngineering = "nystroem"
-	NoneFeatureEngineering FeatureEngineering = "none"
-	AutoFeatureEngineering FeatureEngineering = "auto"
+	PCA                    DimensionReduction = "pca"
+	PolynomialFeatures     DimensionReduction = "polynomial-features"
+	RBFSampler             DimensionReduction = "rbf-sampler"
+	FastIca                DimensionReduction = "fast-ica"
+	Nystroem               DimensionReduction = "nystroem"
+	NoneFeatureEngineering DimensionReduction = "none"
+	AutoFeatureEngineering DimensionReduction = "auto"
 )
 
 type TextEncoding string
@@ -821,6 +815,12 @@ const (
 	StepBackwardFeatureSelection     FeatureSelection = "step-backward-feature-selection"
 	LassoRegressionFeatureSelection  FeatureSelection = "lasso-regression-feature-selection"
 	TreeImportanceFeatureSelection   FeatureSelection = "tree-importance-feature-selection"
+	RFE                              FeatureSelection = "rfe"
+	SelectPercentile                 FeatureSelection = "select-percentile"
+	SelectKBest                      FeatureSelection = "select-kbest"
+	SelectFpr                        FeatureSelection = "select-fpr"
+	SelectFdr                        FeatureSelection = "select-fdr"
+	VarianceThreshold                FeatureSelection = "variance-threshold"
 	NoneFeatureSelection             FeatureSelection = "none"
 	AutoFeatureSelection             FeatureSelection = "auto"
 )

@@ -926,8 +926,8 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   getOutlierhandling(): string;
   setOutlierhandling(value: string): FeatureEngineeringPipeline;
 
-  getDatetimetransformer(): string;
-  setDatetimetransformer(value: string): FeatureEngineeringPipeline;
+  getDatetimetransformation(): string;
+  setDatetimetransformation(value: string): FeatureEngineeringPipeline;
 
   getText(): TextPipelineSpec | undefined;
   setText(value?: TextPipelineSpec): FeatureEngineeringPipeline;
@@ -984,7 +984,7 @@ export namespace FeatureEngineeringPipeline {
     discretisation: string,
     variabletransformation: string,
     outlierhandling: string,
-    datetimetransformer: string,
+    datetimetransformation: string,
     text?: TextPipelineSpec.AsObject,
     image?: ImagePipelineSpec.AsObject,
     audio?: AudioPipelineSpec.AsObject,

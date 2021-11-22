@@ -10823,7 +10823,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     discretisation: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     variabletransformation: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     outlierhandling: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    datetimetransformer: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    datetimetransformation: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     text: (f = msg.getText()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TextPipelineSpec.toObject(includeInstance, f),
     image: (f = msg.getImage()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ImagePipelineSpec.toObject(includeInstance, f),
     audio: (f = msg.getAudio()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.AudioPipelineSpec.toObject(includeInstance, f),
@@ -10908,7 +10908,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatetimetransformer(value);
+      msg.setDatetimetransformation(value);
       break;
     case 11:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TextPipelineSpec;
@@ -11438,10 +11438,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * optional string datetimeTransformer = 10;
+ * optional string datetimeTransformation = 10;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getDatetimetransformer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getDatetimetransformation = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
@@ -11450,7 +11450,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setDatetimetransformer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setDatetimetransformation = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -11459,7 +11459,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearDatetimetransformer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearDatetimetransformation = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -11468,7 +11468,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasDatetimetransformer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasDatetimetransformation = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 

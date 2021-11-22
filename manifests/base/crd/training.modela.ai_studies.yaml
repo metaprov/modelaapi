@@ -290,10 +290,6 @@ spec:
                                 type: string
                             type: object
                           type: array
-                        datatimeTransformer:
-                          default: auto
-                          description: Specify how For datetime data type,
-                          type: string
                         datatype:
                           description: The Data type for the feature engineering.
                           enum:
@@ -307,6 +303,10 @@ spec:
                           - number-list
                           - categorical-list
                           - text-list
+                          type: string
+                        datetimeTransformation:
+                          default: auto
+                          description: Specify how For datetime data type,
                           type: string
                         discretisation:
                           default: auto
@@ -1995,10 +1995,6 @@ spec:
                               type: string
                           type: object
                         type: array
-                      datatimeTransformer:
-                        default: auto
-                        description: Specify how For datetime data type,
-                        type: string
                       datatype:
                         description: The Data type for the feature engineering.
                         enum:
@@ -2012,6 +2008,10 @@ spec:
                         - number-list
                         - categorical-list
                         - text-list
+                        type: string
+                      datetimeTransformation:
+                        default: auto
+                        description: Specify how For datetime data type,
                         type: string
                       discretisation:
                         default: auto

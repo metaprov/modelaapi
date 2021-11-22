@@ -627,7 +627,7 @@ type FeatureEngineeringPipeline struct {
 	// Specify how For datetime data type,
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	DatetimeTransformer *catalog.DatatimeTransformer `json:"datatimeTransformer,omitempty" protobuf:"bytes,10,opt,name=datetimeTransformer"`
+	DatetimeTransformation *catalog.DatatimeTransformation `json:"datetimeTransformation,omitempty" protobuf:"bytes,10,opt,name=datetimeTransformation"`
 	// Text specify the column transformation for text columns
 	// +kubebuilder:validation:Optional
 	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,11,opt,name=text"`

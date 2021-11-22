@@ -989,9 +989,9 @@ func (in *FeatureEngineeringPipeline) DeepCopyInto(out *FeatureEngineeringPipeli
 		*out = new(catalogv1alpha1.OutlierHandling)
 		**out = **in
 	}
-	if in.DatetimeTransformer != nil {
-		in, out := &in.DatetimeTransformer, &out.DatetimeTransformer
-		*out = new(catalogv1alpha1.DatatimeTransformer)
+	if in.DatetimeTransformation != nil {
+		in, out := &in.DatetimeTransformation, &out.DatetimeTransformation
+		*out = new(catalogv1alpha1.DatatimeTransformation)
 		**out = **in
 	}
 	if in.Text != nil {
