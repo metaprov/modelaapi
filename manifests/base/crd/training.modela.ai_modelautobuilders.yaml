@@ -448,22 +448,9 @@ spec:
                               description: Ignore specify if the attribute should
                                 be ignored when building the model default is false
                               type: boolean
-                            imputer:
+                            imputation:
                               default: auto
                               description: The recommended imputer for a column.
-                              enum:
-                              - remove-rows-with-missing-values
-                              - mean
-                              - median
-                              - mode
-                              - arbitrary-number
-                              - end-tail
-                              - random-sample
-                              - add-missing-indication
-                              - iterative
-                              - none
-                              - auto
-                              - constant
                               type: string
                             index:
                               default: false
@@ -570,17 +557,9 @@ spec:
                               description: If True indicate that this feature should
                                 always be used in training
                               type: boolean
-                            scaler:
+                            scaling:
                               default: auto
                               description: The recommended scaler for a column.
-                              enum:
-                              - standard
-                              - max-abs
-                              - min-max
-                              - normalizer
-                              - robust
-                              - none
-                              - auto
                               type: string
                             sigma:
                               default: 0

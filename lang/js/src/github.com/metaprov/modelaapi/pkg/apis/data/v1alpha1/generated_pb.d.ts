@@ -154,11 +154,11 @@ export class Column extends jspb.Message {
   getReserved(): boolean;
   setReserved(value: boolean): Column;
 
-  getImputer(): string;
-  setImputer(value: string): Column;
+  getImputation(): string;
+  setImputation(value: string): Column;
 
-  getScaler(): string;
-  setScaler(value: string): Column;
+  getScaling(): string;
+  setScaling(value: string): Column;
 
   getGenerated(): boolean;
   setGenerated(value: boolean): Column;
@@ -216,8 +216,8 @@ export namespace Column {
     fold: boolean,
     weight: boolean,
     reserved: boolean,
-    imputer: string,
-    scaler: string,
+    imputation: string,
+    scaling: string,
     generated: boolean,
     formula: string,
   }

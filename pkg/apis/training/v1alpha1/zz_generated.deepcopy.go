@@ -959,34 +959,34 @@ func (in *FeatureEngineeringPipeline) DeepCopyInto(out *FeatureEngineeringPipeli
 		*out = make([]string, len(*in))
 		copy(*out, *in)
 	}
-	if in.Imputer != nil {
-		in, out := &in.Imputer, &out.Imputer
-		*out = new(catalogv1alpha1.Imputator)
+	if in.Imputation != nil {
+		in, out := &in.Imputation, &out.Imputation
+		*out = new(catalogv1alpha1.Imputation)
 		**out = **in
 	}
-	if in.Encoder != nil {
-		in, out := &in.Encoder, &out.Encoder
-		*out = new(catalogv1alpha1.CatEncoder)
+	if in.Encoding != nil {
+		in, out := &in.Encoding, &out.Encoding
+		*out = new(catalogv1alpha1.CategoricalEncoding)
 		**out = **in
 	}
-	if in.Scaler != nil {
-		in, out := &in.Scaler, &out.Scaler
-		*out = new(catalogv1alpha1.Scaler)
+	if in.Scaling != nil {
+		in, out := &in.Scaling, &out.Scaling
+		*out = new(catalogv1alpha1.Scaling)
 		**out = **in
 	}
-	if in.Discretizer != nil {
-		in, out := &in.Discretizer, &out.Discretizer
-		*out = new(catalogv1alpha1.Discretizer)
+	if in.Discretisation != nil {
+		in, out := &in.Discretisation, &out.Discretisation
+		*out = new(catalogv1alpha1.Discretisation)
 		**out = **in
 	}
-	if in.NumTransformer != nil {
-		in, out := &in.NumTransformer, &out.NumTransformer
-		*out = new(catalogv1alpha1.NumTransformer)
+	if in.VariableTransformation != nil {
+		in, out := &in.VariableTransformation, &out.VariableTransformation
+		*out = new(catalogv1alpha1.VariableTransformation)
 		**out = **in
 	}
-	if in.Outliers != nil {
-		in, out := &in.Outliers, &out.Outliers
-		*out = new(catalogv1alpha1.OutlierFilter)
+	if in.OutlierHandling != nil {
+		in, out := &in.OutlierHandling, &out.OutlierHandling
+		*out = new(catalogv1alpha1.OutlierHandling)
 		**out = **in
 	}
 	if in.DatetimeTransformer != nil {
@@ -4086,7 +4086,7 @@ func (in *TextPipelineSpec) DeepCopyInto(out *TextPipelineSpec) {
 	*out = *in
 	if in.Encoder != nil {
 		in, out := &in.Encoder, &out.Encoder
-		*out = new(catalogv1alpha1.TextTransformer)
+		*out = new(catalogv1alpha1.TextEncoding)
 		**out = **in
 	}
 	if in.Tokenizer != nil {

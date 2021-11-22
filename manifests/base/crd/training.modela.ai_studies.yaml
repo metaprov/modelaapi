@@ -293,13 +293,6 @@ spec:
                         datatimeTransformer:
                           default: auto
                           description: Specify how For datetime data type,
-                          enum:
-                          - year-month
-                          - weak-day
-                          - hour-min-sec
-                          - elapsed
-                          - none
-                          - auto
                           type: string
                         datatype:
                           description: The Data type for the feature engineering.
@@ -315,41 +308,19 @@ spec:
                           - categorical-list
                           - text-list
                           type: string
-                        discretizer:
+                        discretisation:
                           default: auto
                           description: Convert numerical datatypes to categories.
                             Valid only if the number data types.
-                          enum:
-                          - equal-width
-                          - equal-freq
-                          - kbin
-                          - decision-tree
-                          - kernel-centerer
-                          - label-binarizer
-                          - multi-label-binarizer
-                          - none
-                          - auto
                           type: string
                         drop:
                           default: false
                           description: If dropped, all the columns in this pipeline
                             will be dropped.
                           type: boolean
-                        encoder:
+                        encoding:
                           default: auto
                           description: Encoder. Apply only to categorical variables
-                          enum:
-                          - one-hot
-                          - count-freq
-                          - ordinal-encoder
-                          - mean
-                          - target
-                          - woe
-                          - rare-label
-                          - binary
-                          - label
-                          - none
-                          - auto
                           type: string
                         generated:
                           description: Spec to generate one or more columns from existing
@@ -395,66 +366,25 @@ spec:
                               description: The date time imputer.
                               type: string
                           type: object
-                        imputer:
+                        imputation:
                           default: auto
                           description: imputer
-                          enum:
-                          - remove-rows-with-missing-values
-                          - mean
-                          - median
-                          - mode
-                          - arbitrary-number
-                          - end-tail
-                          - random-sample
-                          - add-missing-indication
-                          - iterative
-                          - none
-                          - auto
-                          - constant
                           type: string
                         name:
                           description: The name of this feature engineering pipeline
                           type: string
-                        numTransformer:
-                          default: auto
-                          description: For numerical data type.
-                          enum:
-                          - log
-                          - reciprocal
-                          - sqrt
-                          - power
-                          - box-cox
-                          - yj
-                          - none
-                          - auto
-                          type: string
-                        outliers:
+                        outlierHandling:
                           description: Specify how to handle outliers. Apply only
                             to numeric datatypes.
-                          enum:
-                          - trim
-                          - winsorizer
-                          - cap
-                          - zero-code
-                          - none
-                          - auto
                           type: string
                         passtrough:
                           default: false
                           description: If true, all the features in this pipeline
                             will passtrough, without processing.
                           type: boolean
-                        scaler:
+                        scaling:
                           default: auto
                           description: Numeric var scaler, valid only if the
-                          enum:
-                          - standard
-                          - max-abs
-                          - min-max
-                          - normalizer
-                          - robust
-                          - none
-                          - auto
                           type: string
                         text:
                           description: Text specify the column transformation for
@@ -501,6 +431,10 @@ spec:
                               description: Text tokenizer
                               type: string
                           type: object
+                        variableTransformation:
+                          default: auto
+                          description: For numerical data type.
+                          type: string
                         video:
                           description: Video specify the pipeline for video. Not supported
                             in this release
@@ -2064,13 +1998,6 @@ spec:
                       datatimeTransformer:
                         default: auto
                         description: Specify how For datetime data type,
-                        enum:
-                        - year-month
-                        - weak-day
-                        - hour-min-sec
-                        - elapsed
-                        - none
-                        - auto
                         type: string
                       datatype:
                         description: The Data type for the feature engineering.
@@ -2086,41 +2013,19 @@ spec:
                         - categorical-list
                         - text-list
                         type: string
-                      discretizer:
+                      discretisation:
                         default: auto
                         description: Convert numerical datatypes to categories. Valid
                           only if the number data types.
-                        enum:
-                        - equal-width
-                        - equal-freq
-                        - kbin
-                        - decision-tree
-                        - kernel-centerer
-                        - label-binarizer
-                        - multi-label-binarizer
-                        - none
-                        - auto
                         type: string
                       drop:
                         default: false
                         description: If dropped, all the columns in this pipeline
                           will be dropped.
                         type: boolean
-                      encoder:
+                      encoding:
                         default: auto
                         description: Encoder. Apply only to categorical variables
-                        enum:
-                        - one-hot
-                        - count-freq
-                        - ordinal-encoder
-                        - mean
-                        - target
-                        - woe
-                        - rare-label
-                        - binary
-                        - label
-                        - none
-                        - auto
                         type: string
                       generated:
                         description: Spec to generate one or more columns from existing
@@ -2166,66 +2071,25 @@ spec:
                             description: The date time imputer.
                             type: string
                         type: object
-                      imputer:
+                      imputation:
                         default: auto
                         description: imputer
-                        enum:
-                        - remove-rows-with-missing-values
-                        - mean
-                        - median
-                        - mode
-                        - arbitrary-number
-                        - end-tail
-                        - random-sample
-                        - add-missing-indication
-                        - iterative
-                        - none
-                        - auto
-                        - constant
                         type: string
                       name:
                         description: The name of this feature engineering pipeline
                         type: string
-                      numTransformer:
-                        default: auto
-                        description: For numerical data type.
-                        enum:
-                        - log
-                        - reciprocal
-                        - sqrt
-                        - power
-                        - box-cox
-                        - yj
-                        - none
-                        - auto
-                        type: string
-                      outliers:
+                      outlierHandling:
                         description: Specify how to handle outliers. Apply only to
                           numeric datatypes.
-                        enum:
-                        - trim
-                        - winsorizer
-                        - cap
-                        - zero-code
-                        - none
-                        - auto
                         type: string
                       passtrough:
                         default: false
                         description: If true, all the features in this pipeline will
                           passtrough, without processing.
                         type: boolean
-                      scaler:
+                      scaling:
                         default: auto
                         description: Numeric var scaler, valid only if the
-                        enum:
-                        - standard
-                        - max-abs
-                        - min-max
-                        - normalizer
-                        - robust
-                        - none
-                        - auto
                         type: string
                       text:
                         description: Text specify the column transformation for text
@@ -2272,6 +2136,10 @@ spec:
                             description: Text tokenizer
                             type: string
                         type: object
+                      variableTransformation:
+                        default: auto
+                        description: For numerical data type.
+                        type: string
                       video:
                         description: Video specify the pipeline for video. Not supported
                           in this release

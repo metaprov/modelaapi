@@ -3244,8 +3244,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     fold: (f = jspb.Message.getBooleanField(msg, 39)) == null ? undefined : f,
     weight: (f = jspb.Message.getBooleanField(msg, 40)) == null ? undefined : f,
     reserved: (f = jspb.Message.getBooleanField(msg, 41)) == null ? undefined : f,
-    imputer: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
-    scaler: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
+    imputation: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
+    scaling: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
     generated: (f = jspb.Message.getBooleanField(msg, 44)) == null ? undefined : f,
     formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f
   };
@@ -3446,11 +3446,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
       break;
     case 42:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImputer(value);
+      msg.setImputation(value);
       break;
     case 43:
       var value = /** @type {string} */ (reader.readString());
-      msg.setScaler(value);
+      msg.setScaling(value);
       break;
     case 44:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -5242,10 +5242,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasR
 
 
 /**
- * optional string imputer = 42;
+ * optional string imputation = 42;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getImputer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getImputation = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 42, ""));
 };
 
@@ -5254,7 +5254,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getI
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setImputer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setImputation = function(value) {
   return jspb.Message.setField(this, 42, value);
 };
 
@@ -5263,7 +5263,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setI
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearImputer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearImputation = function() {
   return jspb.Message.setField(this, 42, undefined);
 };
 
@@ -5272,16 +5272,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasImputer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasImputation = function() {
   return jspb.Message.getField(this, 42) != null;
 };
 
 
 /**
- * optional string scaler = 43;
+ * optional string scaling = 43;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getScaler = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getScaling = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 43, ""));
 };
 
@@ -5290,7 +5290,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getS
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setScaler = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setScaling = function(value) {
   return jspb.Message.setField(this, 43, value);
 };
 
@@ -5299,7 +5299,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearScaler = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearScaling = function() {
   return jspb.Message.setField(this, 43, undefined);
 };
 
@@ -5308,7 +5308,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasScaler = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasScaling = function() {
   return jspb.Message.getField(this, 43) != null;
 };
 

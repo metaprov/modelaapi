@@ -908,23 +908,23 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   clearColumnsList(): FeatureEngineeringPipeline;
   addColumns(value: string, index?: number): FeatureEngineeringPipeline;
 
-  getImputer(): string;
-  setImputer(value: string): FeatureEngineeringPipeline;
+  getImputation(): string;
+  setImputation(value: string): FeatureEngineeringPipeline;
 
-  getEncoder(): string;
-  setEncoder(value: string): FeatureEngineeringPipeline;
+  getEncoding(): string;
+  setEncoding(value: string): FeatureEngineeringPipeline;
 
-  getScaler(): string;
-  setScaler(value: string): FeatureEngineeringPipeline;
+  getScaling(): string;
+  setScaling(value: string): FeatureEngineeringPipeline;
 
-  getDiscretizer(): string;
-  setDiscretizer(value: string): FeatureEngineeringPipeline;
+  getDiscretisation(): string;
+  setDiscretisation(value: string): FeatureEngineeringPipeline;
 
-  getNumtransformer(): string;
-  setNumtransformer(value: string): FeatureEngineeringPipeline;
+  getVariabletransformation(): string;
+  setVariabletransformation(value: string): FeatureEngineeringPipeline;
 
-  getOutliers(): string;
-  setOutliers(value: string): FeatureEngineeringPipeline;
+  getOutlierhandling(): string;
+  setOutlierhandling(value: string): FeatureEngineeringPipeline;
 
   getDatetimetransformer(): string;
   setDatetimetransformer(value: string): FeatureEngineeringPipeline;
@@ -978,12 +978,12 @@ export namespace FeatureEngineeringPipeline {
     name: string,
     datatype: string,
     columnsList: Array<string>,
-    imputer: string,
-    encoder: string,
-    scaler: string,
-    discretizer: string,
-    numtransformer: string,
-    outliers: string,
+    imputation: string,
+    encoding: string,
+    scaling: string,
+    discretisation: string,
+    variabletransformation: string,
+    outlierhandling: string,
     datetimetransformer: string,
     text?: TextPipelineSpec.AsObject,
     image?: ImagePipelineSpec.AsObject,

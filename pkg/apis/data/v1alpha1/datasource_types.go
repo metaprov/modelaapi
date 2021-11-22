@@ -620,11 +620,11 @@ type Column struct {
 	// The recommended imputer for a column.
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,42,opt,name=imputer"`
+	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,42,opt,name=imputation"`
 	// The recommended scaler for a column.
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,43,opt,name=scaler"`
+	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,43,opt,name=scaling"`
 	// If true this feature is generate
 	// +kubebuilder:validation:Optionald.
 	Generated bool `json:"generated,omitempty" protobuf:"varint,44,opt,name=generated"`

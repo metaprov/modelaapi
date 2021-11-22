@@ -604,26 +604,26 @@ type FeatureEngineeringPipeline struct {
 	// imputer
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Imputer *catalog.Imputator `json:"imputer,omitempty" protobuf:"bytes,4,opt,name=imputer"`
+	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,4,opt,name=imputation"`
 	// Encoder. Apply only to categorical variables
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Encoder *catalog.CatEncoder `json:"encoder,omitempty" protobuf:"bytes,5,opt,name=encoder"`
+	Encoding *catalog.CategoricalEncoding `json:"encoding,omitempty" protobuf:"bytes,5,opt,name=encoding"`
 	// Numeric var scaler, valid only if the
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Scaler *catalog.Scaler `json:"scaler,omitempty" protobuf:"bytes,6,opt,name=scaler"`
+	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,6,opt,name=scaling"`
 	// Convert numerical datatypes to categories. Valid only if the number data types.
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Discretizer *catalog.Discretizer `json:"discretizer,omitempty" protobuf:"bytes,7,opt,name=discretizer"`
+	Discretisation *catalog.Discretisation `json:"discretisation,omitempty" protobuf:"bytes,7,opt,name=discretisation"`
 	// For numerical data type.
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	NumTransformer *catalog.NumTransformer `json:"numTransformer,omitempty" protobuf:"bytes,8,opt,name=numTransformer"`
+	VariableTransformation *catalog.VariableTransformation `json:"variableTransformation,omitempty" protobuf:"bytes,8,opt,name=variableTransformation"`
 	// Specify how to handle outliers.
 	// Apply only to numeric datatypes.
-	Outliers *catalog.OutlierFilter `json:"outliers,omitempty" protobuf:"bytes,9,opt,name=outliers"`
+	OutlierHandling *catalog.OutlierHandling `json:"outlierHandling,omitempty" protobuf:"bytes,9,opt,name=outlierHandling"`
 	// Specify how For datetime data type,
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
@@ -759,7 +759,7 @@ type TextPipelineSpec struct {
 	// The text encoder (e.g. tfidf)
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Encoder *catalog.TextTransformer `json:"encoder,omitempty" protobuf:"bytes,1,opt,name=encoder"`
+	Encoder *catalog.TextEncoding `json:"encoder,omitempty" protobuf:"bytes,1,opt,name=encoder"`
 	// Text tokenizer
 	// +kubebuilder:validation:Optional
 	Tokenizer *string `json:"tokenizer,omitempty" protobuf:"bytes,2,opt,name=tokenizer"`

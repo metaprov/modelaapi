@@ -232,14 +232,14 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Imputer != nil {
-		in, out := &in.Imputer, &out.Imputer
-		*out = new(catalogv1alpha1.Imputator)
+	if in.Imputation != nil {
+		in, out := &in.Imputation, &out.Imputation
+		*out = new(catalogv1alpha1.Imputation)
 		**out = **in
 	}
-	if in.Scaler != nil {
-		in, out := &in.Scaler, &out.Scaler
-		*out = new(catalogv1alpha1.Scaler)
+	if in.Scaling != nil {
+		in, out := &in.Scaling, &out.Scaling
+		*out = new(catalogv1alpha1.Scaling)
 		**out = **in
 	}
 }

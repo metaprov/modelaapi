@@ -553,34 +553,41 @@ func (metric Metric) Compare(i float64, j float64) bool {
 //==============================================================================
 // CatEncoder
 //==============================================================================
-// +kubebuilder:validation:Enum="one-hot";"count-freq";"ordinal-encoder";"mean";"target";"woe";"rare-label";"binary";"label";"none";"auto"
-type CatEncoder string
+
+type CategoricalEncoding string
 
 const (
-	OneHotEncoder          CatEncoder = "one-hot"
-	CountFrequencyEncoder  CatEncoder = "count-freq"
-	OrdinalEncoder         CatEncoder = "ordinal-encoder"
-	MeanCategoricalEncoder CatEncoder = "mean"
-	TargetEncoder          CatEncoder = "target"
-	WoERatioEncoder        CatEncoder = "woe"
-	RareLabelEncoder       CatEncoder = "rare-label"
-	BinaryEncoder          CatEncoder = "binary"
-	LabelEncoder           CatEncoder = "label"
-	NoEnocoder             CatEncoder = "none"
-	AutoEncoder            CatEncoder = "auto"
+	OneHotEncoding           CategoricalEncoding = "one-hot-encoding"
+	OneHotEncoderTop         CategoricalEncoding = "one-hot-encoding-top-categories"
+	OrdinalEncoding          CategoricalEncoding = "ordinal-encoding"
+	CountEncoding            CategoricalEncoding = "count-encoding"
+	TargetEncoding           CategoricalEncoding = "target-encoding"
+	MeanEncoding             CategoricalEncoding = "mean-encoding"
+	ProbabilityRatioEncoding CategoricalEncoding = "probability-ratio-encoding"
+	WoERatioEncoding         CategoricalEncoding = "weight-of-evidence-encoding"
+	RareLabelEncoding        CategoricalEncoding = "rare-label-encoding"
+	BinaryEncoding           CategoricalEncoding = "binary-encoding"
+	LabelEncoding            CategoricalEncoding = "label-encoding"
+	HashEncoding             CategoricalEncoding = "hash-encoding"
+	NoEncoding               CategoricalEncoding = "no-encoding"
+	AutoEncoding             CategoricalEncoding = "auto"
 )
 
-func ParseCategoricalTransformerName(name string) CatEncoder {
-	names := []CatEncoder{
-		OneHotEncoder,
-		CountFrequencyEncoder,
-		OrdinalEncoder,
-		MeanCategoricalEncoder,
-		TargetEncoder,
-		WoERatioEncoder,
-		RareLabelEncoder,
-		BinaryEncoder,
-		LabelEncoder,
+func ParseCategoricalEncoding(name string) CategoricalEncoding {
+	names := []CategoricalEncoding{
+		OneHotEncoding,
+		OneHotEncoderTop,
+		OrdinalEncoding,
+		CountEncoding,
+		TargetEncoding,
+		MeanEncoding,
+		ProbabilityRatioEncoding,
+		WoERatioEncoding,
+		RareLabelEncoding,
+		BinaryEncoding,
+		LabelEncoding,
+		HashEncoding,
+		NoEncoding,
 	}
 
 	for _, v := range names {
@@ -588,44 +595,42 @@ func ParseCategoricalTransformerName(name string) CatEncoder {
 			return v
 		}
 	}
-	return AutoEncoder
+	return AutoEncoding
 }
 
 //==============================================================================
 // Imputator
 //==============================================================================
-// +kubebuilder:validation:Enum="remove-rows-with-missing-values";"mean";"median";"mode";"arbitrary-number";"end-tail";"random-sample";"add-missing-indication";"iterative";"none";"auto";"constant"
-type Imputator string
+
+type Imputation string
 
 const (
-	RemoveRowsWithMissingValues   Imputator = "remove-rows-with-missing-values"
-	MeanImputation                Imputator = "mean"
-	MedianImputation              Imputator = "median"
-	ModeImputation                Imputator = "mode"
-	ArbitraryNumberImputation     Imputator = "arbitrary-number"
-	EndTailImputation             Imputator = "end-tail"
-	RandomSampleImputation        Imputator = "random-sample"
-	AddMissingIndicatorImputation Imputator = "add-missing-indication"
-	IterativeImputer              Imputator = "iterative"
-	ConstantImputer               Imputator = "constant"
-	NoImputation                  Imputator = "none"
-	AutoImputer                   Imputator = "auto"
+	RemoveRowsWithMissingValues Imputation = "remove-rows-with-missing-values"
+	MeanImputation              Imputation = "mean-imputation"
+	MedianImputation            Imputation = "median-imputation"
+	ArbitraryValueImputation    Imputation = "arbitrary-value-imputation"
+	EndOfTailImputation         Imputation = "end-of-tail-imputation"
+	FreqCategoryImputation      Imputation = "freq-category-imputation"
+	MissingIndicatorImputation  Imputation = "missing-indicator-imputation"
+	KnnImputation               Imputation = "knn-imputation"
+	MICEImputation              Imputation = "mice-imputation"
+	NoImputation                Imputation = "no-imputation"
+	AutoImputer                 Imputation = "auto"
 )
 
-func ParseImputation(name string) Imputator {
-	names := []Imputator{
+func ParseImputation(name string) Imputation {
+	names := []Imputation{
 		RemoveRowsWithMissingValues,
 		MeanImputation,
 		MedianImputation,
-		ModeImputation,
-		ArbitraryNumberImputation,
-		EndTailImputation,
-		RandomSampleImputation,
-		AddMissingIndicatorImputation,
-		IterativeImputer,
+		ArbitraryValueImputation,
+		EndOfTailImputation,
+		FreqCategoryImputation,
+		MissingIndicatorImputation,
+		KnnImputation,
+		MICEImputation,
 		NoImputation,
 		AutoImputer,
-		ConstantImputer,
 	}
 
 	for _, v := range names {
@@ -640,27 +645,27 @@ func ParseImputation(name string) Imputator {
 // Scaler
 //==============================================================================
 
-// +kubebuilder:validation:Enum="standard";"max-abs";"min-max";"normalizer";"robust";"none";"auto"
-type Scaler string
+type Scaling string
 
 const (
-	StandardScaler Scaler = "standard"
-	MaxAbsScaler   Scaler = "max-abs"
-	MinMaxScaler   Scaler = "min-max"
-	Normalizer     Scaler = "normalizer"
-	RobustScaler   Scaler = "robust"
-	NoneScaler     Scaler = "none"
-	AutoScaler     Scaler = "auto"
+	StandardScaling Scaling = "standard-scaling"
+	MaxAbsScaling   Scaling = "max-abs-scaling"
+	MinMaxScaling   Scaling = "min-max-scaling"
+	Normalization   Scaling = "normalizion-scaling"
+	RobustScaling   Scaling = "robust-scaling"
+	NoneScaling     Scaling = "none"
+	AutoScaling     Scaling = "auto"
 )
 
-func ParseScaler(name string) Scaler {
-	names := []Scaler{
-		StandardScaler,
-		MaxAbsScaler,
-		MinMaxScaler,
-		Normalizer,
-		RobustScaler,
-		NoneScaler,
+func ParseScaler(name string) Scaling {
+	names := []Scaling{
+		StandardScaling,
+		MaxAbsScaling,
+		MinMaxScaling,
+		Normalization,
+		RobustScaling,
+		NoneScaling,
+		AutoScaling,
 	}
 
 	for _, v := range names {
@@ -668,7 +673,7 @@ func ParseScaler(name string) Scaler {
 			return v
 		}
 	}
-	return AutoScaler
+	return AutoScaling
 }
 
 //==============================================================================
@@ -691,57 +696,57 @@ type VideoFeaturizer string
 //==============================================================================
 // Numerical Transform
 //==============================================================================
-// +kubebuilder:validation:Enum="log";"reciprocal";"sqrt";"power";"box-cox";"yj";"none";"auto"
-type NumTransformer string
+
+type VariableTransformation string
 
 const (
-	LogTransform        NumTransformer = "log"
-	ReciprocalTransform NumTransformer = "reciprocal"
-	SqrtTransform       NumTransformer = "sqrt"
-	PowerTransform      NumTransformer = "power"
-	BoxCoxTransform     NumTransformer = "box-cox"
-	YeoJohnsonTransform NumTransformer = "yj"
-	NoneTransform       NumTransformer = "none"
-	AutoTransform       NumTransformer = "auto"
+	LogTransformation        VariableTransformation = "log-transformation"
+	ReciprocalTransformation VariableTransformation = "reciprocal-transformation"
+	SqrtTransformation       VariableTransformation = "sqrt-transformation"
+	PowerTransformation      VariableTransformation = "power-transformation"
+	BoxCoxTransformation     VariableTransformation = "box-cox-transformation"
+	YeoJohnsonTransformation VariableTransformation = "yj-transformation"
+	NoneTransform            VariableTransformation = "none"
+	AutoTransform            VariableTransformation = "auto"
 )
 
 //==============================================================================
 // Discritizer
 //==============================================================================
-// +kubebuilder:validation:Enum="equal-width";"equal-freq";"kbin";"decision-tree";"kernel-centerer";"label-binarizer";"multi-label-binarizer";"none";"auto"
-type Discretizer string
+
+type Discretisation string
 
 const (
-	EqualWidth          Discretizer = "equal-width"
-	EqualFreq           Discretizer = "equal-freq"
-	KBins               Discretizer = "kbin"
-	DecisionTree        Discretizer = "decision-tree"
-	KernelCenterer      Discretizer = "kernel-centerer"
-	LabelBinarizer      Discretizer = "label-binarizer"
-	MultiLabelBinarizer Discretizer = "multi-label-binarizer"
-	NoneDiscretizer     Discretizer = "none"
-	AutoDiscretizer     Discretizer = "auto"
+	EqualWidthDiscretisation          Discretisation = "equal-width-discretisation-"
+	EqualFreqDiscretisation           Discretisation = "equal-freq-discretisation"
+	KBinsDiscretisation               Discretisation = "kbin-discretisation"
+	DecisionTreeDiscretisation        Discretisation = "decision-tree-discretisation"
+	KernelCentererDiscretisation      Discretisation = "kernel-centerer-discretisation"
+	LabelBinarizerDiscretisation      Discretisation = "label-binarizer-discretisation"
+	MultiLabelBinarizerDiscretisation Discretisation = "multi-label-binarizer-discretisation"
+	NoneDiscretisation                Discretisation = "none"
+	AutoDiscretisation                Discretisation = "auto"
 )
 
 //==============================================================================
 // Outliers
 //==============================================================================
-// +kubebuilder:validation:Enum="trim";"winsorizer";"cap";"zero-code";"none";"auto"
-type OutlierFilter string
+
+type OutlierHandling string
 
 const (
-	Trim        OutlierFilter = "trim"
-	Winsorizer  OutlierFilter = "winsorizer"
-	Cap         OutlierFilter = "cap"
-	ZeroCode    OutlierFilter = "zero-code"
-	NoneOutlier OutlierFilter = "none"
-	AutoOutlier OutlierFilter = "auto"
+	TrimOutlierHandling       OutlierHandling = "trim-outliers"
+	WinsorizerOutlierHandling OutlierHandling = "winsorizer-outliers"
+	CapOutlierHandling        OutlierHandling = "cap-outliers"
+	ZeroCodeOutlierHandling   OutlierHandling = "zero-code-outliers"
+	NoneOutlier               OutlierHandling = "none"
+	AutoOutlier               OutlierHandling = "auto"
 )
 
 //==============================================================================
 // Datatime
 //==============================================================================
-// +kubebuilder:validation:Enum="year-month";"weak-day";"hour-min-sec";"elapsed";"none";"auto"
+
 type DatatimeTransformer string
 
 const (
@@ -774,7 +779,7 @@ const (
 //==============================================================================
 // Feature Engineering
 //==============================================================================
-// +kubebuilder:validation:Enum="rfe";"select-percentile";"select-kbest";"select-fpr";"select-fdr";"variance-threshold";"pca";"polynomial-features";"rbf-sampler";"fast-ica";"nystroem";"none"; "auto"
+
 type FeatureEngineering string
 
 const (
@@ -793,15 +798,31 @@ const (
 	AutoFeatureEngineering FeatureEngineering = "auto"
 )
 
-// +kubebuilder:validation:Enum"tfidf";"count-vec";"hashing-vec";none";"auto"
-type TextTransformer string
+type TextEncoding string
 
 const (
-	TfIdf             TextTransformer = "tfidf"
-	CountVectorizer   TextTransformer = "count-vec"
-	HashingVectorizer TextTransformer = "hashing-vec"
-	NoneTextTransform TextTransformer = "none"
-	AutoTextTransform TextTransformer = "auto"
+	TfIdf             TextEncoding = "tfidf"
+	CountVectorizer   TextEncoding = "count-vec"
+	HashingVectorizer TextEncoding = "hashing-vec"
+	NoneTextTransform TextEncoding = "none"
+	AutoTextTransform TextEncoding = "auto"
+)
+
+type FeatureSelection string
+
+const (
+	RemoveConstantsFeatureSelection  FeatureSelection = "remove-constant-features"
+	RemoveDuplicateFeatureSelection  FeatureSelection = "remove-deplicated-features"
+	RemoveCorrelatedFeatureSelection FeatureSelection = "remove-correlated-features"
+	MutalInformationFeatureSelection FeatureSelection = "mutal-information-feature-selection"
+	ChiSquareFeatureSelection        FeatureSelection = "chisquare-fearture-selection"
+	AnovaFeatureSelection            FeatureSelection = "anova-feature-selection"
+	StepForwardFeatureSelection      FeatureSelection = "step-forward-feature-selection"
+	StepBackwardFeatureSelection     FeatureSelection = "step-backward-feature-selection"
+	LassoRegressionFeatureSelection  FeatureSelection = "lasso-regression-feature-selection"
+	TreeImportanceFeatureSelection   FeatureSelection = "tree-importance-feature-selection"
+	NoneFeatureSelection             FeatureSelection = "none"
+	AutoFeatureSelection             FeatureSelection = "auto"
 )
 
 //==============================================================================

@@ -233,12 +233,12 @@ message Column {
   // The recommended imputer for a column.
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string imputer = 42;
+  optional string imputation = 42;
 
   // The recommended scaler for a column.
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string scaler = 43;
+  optional string scaling = 43;
 
   // If true this feature is generate
   // +kubebuilder:validation:Optionald.

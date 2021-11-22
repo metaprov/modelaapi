@@ -10817,12 +10817,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     datatype: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     columnsList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    imputer: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    encoder: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    scaler: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    discretizer: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    numtransformer: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    outliers: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    imputation: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    encoding: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    scaling: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    discretisation: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    variabletransformation: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    outlierhandling: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     datetimetransformer: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     text: (f = msg.getText()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TextPipelineSpec.toObject(includeInstance, f),
     image: (f = msg.getImage()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ImagePipelineSpec.toObject(includeInstance, f),
@@ -10884,27 +10884,27 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImputer(value);
+      msg.setImputation(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEncoder(value);
+      msg.setEncoding(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setScaler(value);
+      msg.setScaling(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDiscretizer(value);
+      msg.setDiscretisation(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNumtransformer(value);
+      msg.setVariabletransformation(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOutliers(value);
+      msg.setOutlierhandling(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -11222,10 +11222,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * optional string imputer = 4;
+ * optional string imputation = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getImputer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getImputation = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -11234,7 +11234,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setImputer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setImputation = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -11243,7 +11243,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearImputer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearImputation = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -11252,16 +11252,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasImputer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasImputation = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string encoder = 5;
+ * optional string encoding = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getEncoder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getEncoding = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -11270,7 +11270,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setEncoder = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setEncoding = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -11279,7 +11279,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearEncoder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearEncoding = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -11288,16 +11288,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasEncoder = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasEncoding = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string scaler = 6;
+ * optional string scaling = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getScaler = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getScaling = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -11306,7 +11306,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setScaler = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setScaling = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -11315,7 +11315,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearScaler = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearScaling = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -11324,16 +11324,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasScaler = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasScaling = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string discretizer = 7;
+ * optional string discretisation = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getDiscretizer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getDiscretisation = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -11342,7 +11342,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setDiscretizer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setDiscretisation = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -11351,7 +11351,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearDiscretizer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearDiscretisation = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -11360,16 +11360,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasDiscretizer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasDiscretisation = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string numTransformer = 8;
+ * optional string variableTransformation = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getNumtransformer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getVariabletransformation = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -11378,7 +11378,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setNumtransformer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setVariabletransformation = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -11387,7 +11387,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearNumtransformer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearVariabletransformation = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -11396,16 +11396,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasNumtransformer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasVariabletransformation = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string outliers = 9;
+ * optional string outlierHandling = 9;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getOutliers = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getOutlierhandling = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -11414,7 +11414,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setOutliers = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setOutlierhandling = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -11423,7 +11423,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearOutliers = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearOutlierhandling = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -11432,7 +11432,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasOutliers = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasOutlierhandling = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 

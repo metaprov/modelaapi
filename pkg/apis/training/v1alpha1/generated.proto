@@ -573,31 +573,31 @@ message FeatureEngineeringPipeline {
   // imputer
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string imputer = 4;
+  optional string imputation = 4;
 
   // Encoder. Apply only to categorical variables
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string encoder = 5;
+  optional string encoding = 5;
 
   // Numeric var scaler, valid only if the
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string scaler = 6;
+  optional string scaling = 6;
 
   // Convert numerical datatypes to categories. Valid only if the number data types.
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string discretizer = 7;
+  optional string discretisation = 7;
 
   // For numerical data type.
   // +kubebuilder:default:=auto
   // +kubebuilder:validation:Optional
-  optional string numTransformer = 8;
+  optional string variableTransformation = 8;
 
   // Specify how to handle outliers.
   // Apply only to numeric datatypes.
-  optional string outliers = 9;
+  optional string outlierHandling = 9;
 
   // Specify how For datetime data type,
   // +kubebuilder:default:=auto
