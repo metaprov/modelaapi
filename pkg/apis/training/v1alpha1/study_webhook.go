@@ -266,8 +266,8 @@ func (pspec *PrunerSpec) Default() {
 	name := MedianPruner
 	pspec.Type = &name
 	pspec.StartupTrials = util.Int32Ptr(5)
-	pspec.WramupTrials = util.Int32Ptr(0)
+	pspec.WarmupTrials = util.Int32Ptr(0)
 	pspec.MinimumTrials = util.Int32Ptr(1)
 	pspec.IntervalSteps = util.Int32Ptr(1)
-	pspec.Precentile = util.Int32Ptr(25)
+	pspec.Percentile = util.Int32Ptr(25)
 }
