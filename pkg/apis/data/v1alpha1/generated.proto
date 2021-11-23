@@ -3113,7 +3113,7 @@ message SqlQueryRunSpec {
   optional string database = 4;
 
   // If true this table
-  // +kubebuilder:default:=""
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool table = 5;
 

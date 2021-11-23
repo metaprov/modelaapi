@@ -99,7 +99,7 @@ spec:
                   executed
                 type: boolean
               sql:
-                default: ""
+                default: false
                 description: If true this table
                 type: boolean
               sqlOrTable:

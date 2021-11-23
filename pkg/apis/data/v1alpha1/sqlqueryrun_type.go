@@ -90,7 +90,7 @@ type SqlQueryRunSpec struct {
 	// +kubebuilder:validation:Optional
 	Database *string `json:"databaser,omitempty" protobuf:"bytes,4,opt,name=database"`
 	// If true this table
-	// +kubebuilder:default:=""
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Table *bool `json:"sql,omitempty" protobuf:"varint,5,opt,name=table"`
 	// Type name of the column key, this column is the key column in the entity.
