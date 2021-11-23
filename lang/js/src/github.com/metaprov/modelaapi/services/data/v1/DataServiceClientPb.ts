@@ -1712,48 +1712,5 @@ export class DataServiceClient {
     this.methodInfoSnapshot);
   }
 
-  methodInfoEngineerFeatures = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.data.v1.DataService/EngineerFeatures',
-    grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest) => {
-      return request.serializeBinary();
-    },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse.deserializeBinary
-  );
-
-  engineerFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse>;
-
-  engineerFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse>;
-
-  engineerFeatures(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesRequest,
-    metadata: grpcWeb.Metadata | null,
-    callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.DsEngineerFeaturesResponse) => void) {
-    if (callback !== undefined) {
-      return this.client_.rpcCall(
-        this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.data.v1.DataService/EngineerFeatures',
-        request,
-        metadata || {},
-        this.methodInfoEngineerFeatures,
-        callback);
-    }
-    return this.client_.unaryCall(
-    this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.data.v1.DataService/EngineerFeatures',
-    request,
-    metadata || {},
-    this.methodInfoEngineerFeatures);
-  }
-
 }
 

@@ -281,88 +281,6 @@ spec:
                   a value if you want to customize the model. Default: All preprocessing
                   will be created automatically'
                 properties:
-                  enabled:
-                    default: true
-                    description: Is the feature filter enabled
-                    type: boolean
-                  estimator:
-                    description: Estimator is the algorithm to use when tunning the
-                      feature engineering pipeline
-                    enum:
-                    - knn-regressor
-                    - ridge-regressor
-                    - lasso-regressor
-                    - ada-boost-regressor
-                    - decision-tree-regressor
-                    - extra-tree-regressor
-                    - linear-svr
-                    - svr
-                    - passive-agressive-regressor
-                    - sgd-regressor
-                    - gradient-boosting-regressor
-                    - random-forest-regressor
-                    - xgb-regressor
-                    - catboost-regressor
-                    - sgd-regressor
-                    - gradient-boosting-regressor
-                    - random-forest-regressor
-                    - xgb-regressor
-                    - catboost-regressor
-                    - lightgbm-regressor
-                    - elasticnet-regressor
-                    - dnn-regressor
-                    - elliptic-envelope
-                    - one-class-svm
-                    - isolation-forest
-                    - local-outlier-factor
-                    - prophet
-                    - knn-classifier
-                    - ada-boost-classifier
-                    - bernoulli-nb
-                    - decision-tree-classifier
-                    - extra-tree-classifier
-                    - linear-svc
-                    - svc
-                    - passive-aggressive-classifier
-                    - sgd-classifier
-                    - logistic-regression
-                    - gradient-boosting-classifier
-                    - random-forest-classifier
-                    - xgboost-classifier
-                    - ridge-classifier
-                    - quadratic-discriminant
-                    - linear-discriminant
-                    - lightgbm-classifier
-                    - catboost-classifier
-                    - stacking-ensemble
-                    - none
-                    - arima
-                    - auto-arima
-                    - vrima
-                    - exponential-smoothing
-                    - fast-fourier-transform
-                    - nbeats
-                    - theata-method
-                    - als
-                    - bayesian-personalized-ranking
-                    type: string
-                  maxModels:
-                    default: 10
-                    description: Max models to create during the search for the best
-                      feature engineering.
-                    format: int32
-                    type: integer
-                  maxTime:
-                    default: 3600
-                    description: Max time in seconds for the best feature engineering
-                      pipeline
-                    format: int32
-                    type: integer
-                  maxTrainers:
-                    default: 1
-                    description: Number of parallel models
-                    format: int32
-                    type: integer
                   pipelines:
                     description: List of processing pipelines
                     items:
@@ -576,12 +494,6 @@ spec:
                           type: object
                       type: object
                     type: array
-                  samplePct:
-                    default: 100
-                    description: How much to sample from the dataset when performing
-                      the feature engineering search
-                    format: int32
-                    type: integer
                   selection:
                     description: Spec for feature selection
                     properties:
@@ -602,10 +514,6 @@ spec:
                           features
                         format: int32
                         type: integer
-                      onError:
-                        default: false
-                        description: Is the feature filter enbled
-                        type: boolean
                       reserved:
                         description: List of feature names to consider when training
                           , even after filtering

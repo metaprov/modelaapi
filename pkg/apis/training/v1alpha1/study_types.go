@@ -295,7 +295,7 @@ type PrunerSpec struct {
 	//  Pruning is disabled until the trial exceeds the given number of step
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	WramupTrials *int32 `json:"wramupTrials,omitempty" protobuf:"varint,3,opt,name=wramupTrials"`
+	WarmupTrials *int32 `json:"warmupTrials,omitempty" protobuf:"varint,3,opt,name=warmupTrials"`
 	// Minimum number of reported trials.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
@@ -304,12 +304,12 @@ type PrunerSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,5,opt,name=intervalTrials"`
-	// Keep specific precent of trials. Used only with precential pruner
+	// Keep specific precent of trials. Used only with percentile pruner
 	// +kubebuilder:default:=25
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Optional
-	Precentile *int32 `json:"precentialTrials,omitempty" protobuf:"varint,6,opt,name=precentialTrials"`
+	Percentile *int32 `json:"percentile,omitempty" protobuf:"varint,6,opt,name=percentile"`
 	// A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
 	// +kubebuilder:validation:Optional
 	Lower *int32 `json:"lower,omitempty" protobuf:"varint,7,opt,name=lower"`
@@ -330,6 +330,36 @@ type StudyForecastSpec struct {
 	// The group hierarchy
 	// +kubebuilder:validation:Optional
 	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,23,opt,name=hierarchy"`
+}
+
+// Define the specification for the best feature engineering pipeline
+type FeatureEngineeringSearchSpec struct {
+	// If false, the study will not search for feature engineering.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Estimator is the algorithm to use when tunning the feature engineering pipeline
+	Estimator *catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,2,opt,name=estimator"`
+	// Max models to create during the search for the best feature engineering.
+	// +kubebuilder:default:=10
+	// +kubebuilder:validation:Optional
+	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,3,opt,name=maxModels"`
+	// Max time in seconds for the best feature engineering pipeline
+	// +kubebuilder:default:=3600
+	// +kubebuilder:validation:Optional
+	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,4,opt,name=maxTime"`
+	// Number of parallel models
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,5,opt,name=maxTrainers"`
+	// How much to sample from the dataset when performing the feature engineering search
+	// +kubebuilder:default:=100
+	// +kubebuilder:validation:Optional
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,6,opt,name=samplePct"`
+	// If true, remove all the models that were used for feature engineering, once
+	// +kubebuilder:default:=true
+	// the feature engineering is done.
+	AutoRemove *bool `json:"autoRemove,omitempty" protobuf:"varint,7,opt,name=autoRemove"`
 }
 
 // StudySpec defines the desired state of the study
@@ -368,7 +398,7 @@ type StudySpec struct {
 	// Preprocessing is template for preprocessors for this study
 	// Default: all preprocessing is set to auto.
 	// +kubebuilder:validation:Optional
-	FeatureEngineering *FeatureEngineeringSpec `json:"fe,omitempty" protobuf:"bytes,10,opt,name=fe"`
+	FeatureEngineeringSearch *FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,10,opt,name=feSearch"`
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
 	TrainingTemplate *TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,11,opt,name=trainingTemplate"`
@@ -379,10 +409,6 @@ type StudySpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,13,opt,name=aborted"`
-	// Perform feature generation and selection before the modeling phase
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	FeatureEngineered *bool `json:"featureEngineered,omitempty" protobuf:"varint,14,opt,name=featureEngineered"`
 	// Reported is set when we want to create model report
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
@@ -570,9 +596,9 @@ type StudyStatus struct {
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,41,opt,name=logs"`
-	// Holds the status of the feature engineering process
+	// Holds the result of the feature engineering process
 	//+kubebuilder:validation:Optional
-	FeatureEngineeringStatus FeatureEngineeringStatus `json:"featureEngineeringStatus,,omitempty" protobuf:"bytes,42,opt,name=featureEngineeringStatus"`
+	FeatureEngineeringStatus FeatureEngineeringSearchStatus `json:"featureEngineeringSearchStatus,,omitempty" protobuf:"bytes,42,opt,name=featureEngineeringSearchStatus"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional

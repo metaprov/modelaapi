@@ -564,34 +564,12 @@ type NLPEstimatorSpec struct {
 }
 
 type FeatureEngineeringSpec struct {
-	// Is the feature filter enabled
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// List of processing pipelines
 	// +kubebuilder:validation:Optional
 	Pipelines []FeatureEngineeringPipeline `json:"pipelines,omitempty" protobuf:"bytes,2,rep,name=pipelines"`
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
 	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`
-	// Estimator is the algorithm to use when tunning the feature engineering pipeline
-	Estimator *catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,4,opt,name=estimator"`
-	// Max models to create during the search for the best feature engineering.
-	// +kubebuilder:default:=10
-	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,5,opt,name=maxModels"`
-	// Max time in seconds for the best feature engineering pipeline
-	// +kubebuilder:default:=3600
-	// +kubebuilder:validation:Optional
-	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,6,opt,name=maxTime"`
-	// Number of parallel models
-	// +kubebuilder:default:=1
-	// +kubebuilder:validation:Optional
-	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,7,opt,name=maxTrainers"`
-	// How much to sample from the dataset when performing the feature engineering search
-	// +kubebuilder:default:=100
-	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,8,opt,name=samplePct"`
 }
 
 // FeatureEngineeringPipeline represent a single pipeline for data transformation.
@@ -845,9 +823,9 @@ type DataHashes struct {
 	ValidationHash *string `json:"validationHash,omitempty" protobuf:"bytes,3,opt,name=validationHash"`
 }
 
-type FeatureEngineeringStatus struct {
+type FeatureEngineeringSearchStatus struct {
 	// The recommended pipeline after feature engineering was done
-	BestPipeline FeatureEngineeringPipeline `json:"bestPipeline,omitempty" protobuf:"bytes,1,rep,name=bestPipeline"`
+	Best FeatureEngineeringSpec `json:"best,omitempty" protobuf:"bytes,1,rep,name=best"`
 }
 
 type GeneratedColumnSpec struct {
@@ -867,10 +845,6 @@ type GeneratedColumnSpec struct {
 
 // Feature selection spec defines how to select feature
 type FeatureSelectionSpec struct {
-	// Is the feature filter enbled
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"onError,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional

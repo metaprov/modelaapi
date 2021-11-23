@@ -996,10 +996,69 @@ export namespace FeatureEngineeringPipeline {
   }
 }
 
-export class FeatureEngineeringSpec extends jspb.Message {
+export class FeatureEngineeringSearchSpec extends jspb.Message {
   getEnabled(): boolean;
-  setEnabled(value: boolean): FeatureEngineeringSpec;
+  setEnabled(value: boolean): FeatureEngineeringSearchSpec;
 
+  getEstimator(): string;
+  setEstimator(value: string): FeatureEngineeringSearchSpec;
+
+  getMaxmodels(): number;
+  setMaxmodels(value: number): FeatureEngineeringSearchSpec;
+
+  getMaxtime(): number;
+  setMaxtime(value: number): FeatureEngineeringSearchSpec;
+
+  getMaxtrainers(): number;
+  setMaxtrainers(value: number): FeatureEngineeringSearchSpec;
+
+  getSamplepct(): number;
+  setSamplepct(value: number): FeatureEngineeringSearchSpec;
+
+  getAutoremove(): boolean;
+  setAutoremove(value: boolean): FeatureEngineeringSearchSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureEngineeringSearchSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureEngineeringSearchSpec): FeatureEngineeringSearchSpec.AsObject;
+  static serializeBinaryToWriter(message: FeatureEngineeringSearchSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringSearchSpec;
+  static deserializeBinaryFromReader(message: FeatureEngineeringSearchSpec, reader: jspb.BinaryReader): FeatureEngineeringSearchSpec;
+}
+
+export namespace FeatureEngineeringSearchSpec {
+  export type AsObject = {
+    enabled: boolean,
+    estimator: string,
+    maxmodels: number,
+    maxtime: number,
+    maxtrainers: number,
+    samplepct: number,
+    autoremove: boolean,
+  }
+}
+
+export class FeatureEngineeringSearchStatus extends jspb.Message {
+  getBest(): FeatureEngineeringSpec | undefined;
+  setBest(value?: FeatureEngineeringSpec): FeatureEngineeringSearchStatus;
+  hasBest(): boolean;
+  clearBest(): FeatureEngineeringSearchStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeatureEngineeringSearchStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: FeatureEngineeringSearchStatus): FeatureEngineeringSearchStatus.AsObject;
+  static serializeBinaryToWriter(message: FeatureEngineeringSearchStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringSearchStatus;
+  static deserializeBinaryFromReader(message: FeatureEngineeringSearchStatus, reader: jspb.BinaryReader): FeatureEngineeringSearchStatus;
+}
+
+export namespace FeatureEngineeringSearchStatus {
+  export type AsObject = {
+    best?: FeatureEngineeringSpec.AsObject,
+  }
+}
+
+export class FeatureEngineeringSpec extends jspb.Message {
   getPipelinesList(): Array<FeatureEngineeringPipeline>;
   setPipelinesList(value: Array<FeatureEngineeringPipeline>): FeatureEngineeringSpec;
   clearPipelinesList(): FeatureEngineeringSpec;
@@ -1009,21 +1068,6 @@ export class FeatureEngineeringSpec extends jspb.Message {
   setSelection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
   hasSelection(): boolean;
   clearSelection(): FeatureEngineeringSpec;
-
-  getEstimator(): string;
-  setEstimator(value: string): FeatureEngineeringSpec;
-
-  getMaxmodels(): number;
-  setMaxmodels(value: number): FeatureEngineeringSpec;
-
-  getMaxtime(): number;
-  setMaxtime(value: number): FeatureEngineeringSpec;
-
-  getMaxtrainers(): number;
-  setMaxtrainers(value: number): FeatureEngineeringSpec;
-
-  getSamplepct(): number;
-  setSamplepct(value: number): FeatureEngineeringSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSpec.AsObject;
@@ -1035,34 +1079,8 @@ export class FeatureEngineeringSpec extends jspb.Message {
 
 export namespace FeatureEngineeringSpec {
   export type AsObject = {
-    enabled: boolean,
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
     selection?: FeatureSelectionSpec.AsObject,
-    estimator: string,
-    maxmodels: number,
-    maxtime: number,
-    maxtrainers: number,
-    samplepct: number,
-  }
-}
-
-export class FeatureEngineeringStatus extends jspb.Message {
-  getBestpipeline(): FeatureEngineeringPipeline | undefined;
-  setBestpipeline(value?: FeatureEngineeringPipeline): FeatureEngineeringStatus;
-  hasBestpipeline(): boolean;
-  clearBestpipeline(): FeatureEngineeringStatus;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureEngineeringStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureEngineeringStatus): FeatureEngineeringStatus.AsObject;
-  static serializeBinaryToWriter(message: FeatureEngineeringStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureEngineeringStatus;
-  static deserializeBinaryFromReader(message: FeatureEngineeringStatus, reader: jspb.BinaryReader): FeatureEngineeringStatus;
-}
-
-export namespace FeatureEngineeringStatus {
-  export type AsObject = {
-    bestpipeline?: FeatureEngineeringPipeline.AsObject,
   }
 }
 
@@ -1115,9 +1133,6 @@ export namespace FeatureInfo {
 }
 
 export class FeatureSelectionSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): FeatureSelectionSpec;
-
   getLowvartresholdpct(): number;
   setLowvartresholdpct(value: number): FeatureSelectionSpec;
 
@@ -1145,7 +1160,6 @@ export class FeatureSelectionSpec extends jspb.Message {
 
 export namespace FeatureSelectionSpec {
   export type AsObject = {
-    enabled: boolean,
     lowvartresholdpct: number,
     corrtreshold: number,
     topn: number,
@@ -3803,8 +3817,8 @@ export class PrunerSpec extends jspb.Message {
   getStartuptrials(): number;
   setStartuptrials(value: number): PrunerSpec;
 
-  getWramuptrials(): number;
-  setWramuptrials(value: number): PrunerSpec;
+  getWarmuptrials(): number;
+  setWarmuptrials(value: number): PrunerSpec;
 
   getMintrials(): number;
   setMintrials(value: number): PrunerSpec;
@@ -3812,8 +3826,8 @@ export class PrunerSpec extends jspb.Message {
   getIntervaltrials(): number;
   setIntervaltrials(value: number): PrunerSpec;
 
-  getPrecentialtrials(): number;
-  setPrecentialtrials(value: number): PrunerSpec;
+  getPercentile(): number;
+  setPercentile(value: number): PrunerSpec;
 
   getLower(): number;
   setLower(value: number): PrunerSpec;
@@ -3838,10 +3852,10 @@ export namespace PrunerSpec {
   export type AsObject = {
     type: string,
     startuptrials: number,
-    wramuptrials: number,
+    warmuptrials: number,
     mintrials: number,
     intervaltrials: number,
-    precentialtrials: number,
+    percentile: number,
     lower: number,
     upper: number,
     shoptions?: SuccessiveHalvingOptions.AsObject,
@@ -4347,10 +4361,10 @@ export class StudySpec extends jspb.Message {
   hasSearch(): boolean;
   clearSearch(): StudySpec;
 
-  getFe(): FeatureEngineeringSpec | undefined;
-  setFe(value?: FeatureEngineeringSpec): StudySpec;
-  hasFe(): boolean;
-  clearFe(): StudySpec;
+  getFesearch(): FeatureEngineeringSearchSpec | undefined;
+  setFesearch(value?: FeatureEngineeringSearchSpec): StudySpec;
+  hasFesearch(): boolean;
+  clearFesearch(): StudySpec;
 
   getTrainingtemplate(): TrainingSpec | undefined;
   setTrainingtemplate(value?: TrainingSpec): StudySpec;
@@ -4364,9 +4378,6 @@ export class StudySpec extends jspb.Message {
 
   getAborted(): boolean;
   setAborted(value: boolean): StudySpec;
-
-  getFeatureengineered(): boolean;
-  setFeatureengineered(value: boolean): StudySpec;
 
   getReported(): boolean;
   setReported(value: boolean): StudySpec;
@@ -4444,11 +4455,10 @@ export namespace StudySpec {
     objective: string,
     objective2: string,
     search?: ModelSearchSpec.AsObject,
-    fe?: FeatureEngineeringSpec.AsObject,
+    fesearch?: FeatureEngineeringSearchSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
     split?: DataSplit.AsObject,
     aborted: boolean,
-    featureengineered: boolean,
     reported: boolean,
     paused: boolean,
     profiled: boolean,
@@ -4615,10 +4625,10 @@ export class StudyStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): StudyStatus;
 
-  getFeatureengineeringstatus(): FeatureEngineeringStatus | undefined;
-  setFeatureengineeringstatus(value?: FeatureEngineeringStatus): StudyStatus;
-  hasFeatureengineeringstatus(): boolean;
-  clearFeatureengineeringstatus(): StudyStatus;
+  getFeatureengineeringsearchstatus(): FeatureEngineeringSearchStatus | undefined;
+  setFeatureengineeringsearchstatus(value?: FeatureEngineeringSearchStatus): StudyStatus;
+  hasFeatureengineeringsearchstatus(): boolean;
+  clearFeatureengineeringsearchstatus(): StudyStatus;
 
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
@@ -4675,7 +4685,7 @@ export namespace StudyStatus {
     trainingdatahash?: DataHashes.AsObject,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    featureengineeringstatus?: FeatureEngineeringStatus.AsObject,
+    featureengineeringsearchstatus?: FeatureEngineeringSearchStatus.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

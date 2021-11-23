@@ -638,12 +638,48 @@ message FeatureEngineeringPipeline {
   optional bool passtrough = 18;
 }
 
-message FeatureEngineeringSpec {
-  // Is the feature filter enabled
+// Define the specification for the best feature engineering pipeline
+message FeatureEngineeringSearchSpec {
+  // If false, the study will not search for feature engineering.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
+  // Estimator is the algorithm to use when tunning the feature engineering pipeline
+  optional string estimator = 2;
+
+  // Max models to create during the search for the best feature engineering.
+  // +kubebuilder:default:=10
+  // +kubebuilder:validation:Optional
+  optional int32 maxModels = 3;
+
+  // Max time in seconds for the best feature engineering pipeline
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional int32 maxTime = 4;
+
+  // Number of parallel models
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 maxTrainers = 5;
+
+  // How much to sample from the dataset when performing the feature engineering search
+  // +kubebuilder:default:=100
+  // +kubebuilder:validation:Optional
+  optional int32 samplePct = 6;
+
+  // If true, remove all the models that were used for feature engineering, once
+  // +kubebuilder:default:=true
+  // the feature engineering is done.
+  optional bool autoRemove = 7;
+}
+
+message FeatureEngineeringSearchStatus {
+  // The recommended pipeline after feature engineering was done
+  optional FeatureEngineeringSpec best = 1;
+}
+
+message FeatureEngineeringSpec {
   // List of processing pipelines
   // +kubebuilder:validation:Optional
   repeated FeatureEngineeringPipeline pipelines = 2;
@@ -651,34 +687,6 @@ message FeatureEngineeringSpec {
   // Spec for feature selection
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec selection = 3;
-
-  // Estimator is the algorithm to use when tunning the feature engineering pipeline
-  optional string estimator = 4;
-
-  // Max models to create during the search for the best feature engineering.
-  // +kubebuilder:default:=10
-  // +kubebuilder:validation:Optional
-  optional int32 maxModels = 5;
-
-  // Max time in seconds for the best feature engineering pipeline
-  // +kubebuilder:default:=3600
-  // +kubebuilder:validation:Optional
-  optional int32 maxTime = 6;
-
-  // Number of parallel models
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional int32 maxTrainers = 7;
-
-  // How much to sample from the dataset when performing the feature engineering search
-  // +kubebuilder:default:=100
-  // +kubebuilder:validation:Optional
-  optional int32 samplePct = 8;
-}
-
-message FeatureEngineeringStatus {
-  // The recommended pipeline after feature engineering was done
-  optional FeatureEngineeringPipeline bestPipeline = 1;
 }
 
 message FeatureImportance {
@@ -705,11 +713,6 @@ message FeatureInfo {
 
 // Feature selection spec defines how to select feature
 message FeatureSelectionSpec {
-  // Is the feature filter enbled
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
   // Lowvar specify the filter to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
@@ -2575,7 +2578,7 @@ message PrunerSpec {
   //  Pruning is disabled until the trial exceeds the given number of step
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 wramupTrials = 3;
+  optional int32 warmupTrials = 3;
 
   // Minimum number of reported trials.
   // +kubebuilder:default:=1
@@ -2587,12 +2590,12 @@ message PrunerSpec {
   // +kubebuilder:validation:Optional
   optional int32 intervalTrials = 5;
 
-  // Keep specific precent of trials. Used only with precential pruner
+  // Keep specific precent of trials. Used only with percentile pruner
   // +kubebuilder:default:=25
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:validation:Optional
-  optional int32 precentialTrials = 6;
+  optional int32 percentile = 6;
 
   // A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
   // +kubebuilder:validation:Optional
@@ -2933,7 +2936,7 @@ message StudySpec {
   // Preprocessing is template for preprocessors for this study
   // Default: all preprocessing is set to auto.
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec fe = 10;
+  optional FeatureEngineeringSearchSpec feSearch = 10;
 
   // Training template contain the desired training parameter for the models.
   // +kubebuilder:validation:Optional
@@ -2947,11 +2950,6 @@ message StudySpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool aborted = 13;
-
-  // Perform feature generation and selection before the modeling phase
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool featureEngineered = 14;
 
   // Reported is set when we want to create model report
   // +kubebuilder:default:=true
@@ -3195,9 +3193,9 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 41;
 
-  // Holds the status of the feature engineering process
+  // Holds the result of the feature engineering process
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringStatus featureEngineeringStatus = 42;
+  optional FeatureEngineeringSearchStatus featureEngineeringSearchStatus = 42;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
