@@ -61,12 +61,28 @@ func (study *Study) AddPipelineLable(pipeline string) {
 
 }
 
-// Enabled if we reached max time
-func (study *Study) ReachedMaxTime() bool {
-	if study.Status.StartTime == nil {
+func (study *Study) ReachedMaxFETime() bool {
+	if study.Status.FeatureEngineeringStartTime == nil {
 		return false // not started
 	}
-	duration := metav1.Now().Unix() - study.Status.StartTime.Unix()
+	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStartTime.Unix()
+	return int32(duration/60) >= *study.Spec.FeatureEngineeringSearch.MaxTimeSec
+}
+
+func (study *Study) ReachedMaxFEModels() bool {
+	totalModels :=
+		study.Status.FeatureEngineeringModeFailed +
+			study.Status.FeatureEngineeringModelTrained
+
+	return *study.Spec.FeatureEngineeringSearch.MaxModels > totalModels
+}
+
+// Enabled if we reached max time
+func (study *Study) ReachedMaxTime() bool {
+	if study.Status.SearchingStartTime == nil {
+		return false // not started
+	}
+	duration := metav1.Now().Unix() - study.Status.SearchingStartTime.Unix()
 	return int32(duration/60) >= *study.Spec.Search.MaxTime
 }
 
