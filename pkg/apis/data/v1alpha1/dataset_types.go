@@ -240,8 +240,12 @@ type DatasetStatistics struct {
 	// file size in bytes
 	// +kubebuilder:validation:Optional
 	FileSize int32 `json:"fileSize,omitempty" protobuf:"varint,5,opt,name=fileSize"`
-	// Holds the correlation stats
-	Correlations []FeatureCorr `json:"correlations,omitempty" protobuf:"bytes,6,opt,name=correlations"`
+	// Holds the top correlation with target
+	// +kubebuilder:validation:Optional
+	CorrelationsWithTarget []Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,6,opt,name=correlationsWithTarget"`
+	// Holds the top feature correlation
+	// +kubebuilder:validation:Optional
+	TopCorrelations []Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,7,opt,name=topCorrelations"`
 }
 
 // Hold the statistical parameters about a single attribute
@@ -442,7 +446,7 @@ type DataValidationResult struct {
 }
 
 // Feature corr is used to record a correlation between two features.
-type FeatureCorr struct {
+type Correlation struct {
 	// The first feature name
 	Feature1 string `json:"feature1" protobuf:"bytes,1,opt,name=feature1"`
 	// The second feature name

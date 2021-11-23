@@ -1397,6 +1397,29 @@ spec:
                       type: object
                     type: array
                 type: object
+              correlationsWithTarget:
+                description: Holds the top correlation with target
+                items:
+                  description: Feature corr is used to record a correlation between
+                    two features.
+                  properties:
+                    feature1:
+                      description: The first feature name
+                      type: string
+                    feature2:
+                      description: The second feature name
+                      type: string
+                    method:
+                      description: How the value was calculated
+                      type: string
+                    value:
+                      description: The corr value
+                      type: number
+                  required:
+                  - feature1
+                  - feature2
+                  type: object
+                type: array
               cost:
                 description: Cost is the cost of training the model
                 type: number
@@ -1768,6 +1791,29 @@ spec:
                   and is in UTC.
                 format: date-time
                 type: string
+              topCorrelations:
+                description: Holds the top feature correlation
+                items:
+                  description: Feature corr is used to record a correlation between
+                    two features.
+                  properties:
+                    feature1:
+                      description: The first feature name
+                      type: string
+                    feature2:
+                      description: The second feature name
+                      type: string
+                    method:
+                      description: How the value was calculated
+                      type: string
+                    value:
+                      description: The corr value
+                      type: number
+                  required:
+                  - feature1
+                  - feature2
+                  type: object
+                type: array
               train:
                 description: TrainResult is the results of training the model (pipeline)
                   on the full training set

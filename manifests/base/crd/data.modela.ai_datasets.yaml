@@ -583,8 +583,8 @@ spec:
                           type: number
                       type: object
                     type: array
-                  correlations:
-                    description: Holds the correlation stats
+                  correlationsWithTarget:
+                    description: Holds the top correlation with target
                     items:
                       description: Feature corr is used to record a correlation between
                         two features.
@@ -614,6 +614,29 @@ spec:
                     description: number of rows in the dataset
                     format: int32
                     type: integer
+                  topCorrelations:
+                    description: Holds the top feature correlation
+                    items:
+                      description: Feature corr is used to record a correlation between
+                        two features.
+                      properties:
+                        feature1:
+                          description: The first feature name
+                          type: string
+                        feature2:
+                          description: The second feature name
+                          type: string
+                        method:
+                          description: How the value was calculated
+                          type: string
+                        value:
+                          description: The corr value
+                          type: number
+                      required:
+                      - feature1
+                      - feature2
+                      type: object
+                    type: array
                 type: object
               validationResults:
                 description: List of data problems, as reported by the validation

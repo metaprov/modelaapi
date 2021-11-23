@@ -458,6 +458,21 @@ message ColumnValidation {
   optional bool generated = 9;
 }
 
+// Feature corr is used to record a correlation between two features.
+message Correlation {
+  // The first feature name
+  optional string feature1 = 1;
+
+  // The second feature name
+  optional string feature2 = 2;
+
+  // The corr value
+  optional double value = 3;
+
+  // How the value was calculated
+  optional string method = 4;
+}
+
 // Specify how the correlation should be computed
 message CorrelationSpec {
   // Specify the minimum value of the corr
@@ -1440,8 +1455,13 @@ message DatasetStatistics {
   // +kubebuilder:validation:Optional
   optional int32 fileSize = 5;
 
-  // Holds the correlation stats
-  repeated FeatureCorr correlations = 6;
+  // Holds the top correlation with target
+  // +kubebuilder:validation:Optional
+  repeated Correlation correlationsWithTarget = 6;
+
+  // Holds the top feature correlation
+  // +kubebuilder:validation:Optional
+  repeated Correlation topCorrelations = 7;
 }
 
 // DatasetStatus defines the observed state of Dataset
@@ -1711,21 +1731,6 @@ message FeatureCondition {
 
   // A human readable message indicating details about the transition.
   optional string message = 5;
-}
-
-// Feature corr is used to record a correlation between two features.
-message FeatureCorr {
-  // The first feature name
-  optional string feature1 = 1;
-
-  // The second feature name
-  optional string feature2 = 2;
-
-  // The corr value
-  optional double value = 3;
-
-  // How the value was calculated
-  optional string method = 4;
 }
 
 // FeatureHistogram represent a single feature in the feature store.

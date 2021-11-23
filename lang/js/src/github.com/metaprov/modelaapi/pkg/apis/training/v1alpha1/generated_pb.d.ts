@@ -3077,6 +3077,16 @@ export class ModelStatus extends jspb.Message {
   hasConfusionmatrix(): boolean;
   clearConfusionmatrix(): ModelStatus;
 
+  getCorrelationswithtargetList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation>;
+  setCorrelationswithtargetList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation>): ModelStatus;
+  clearCorrelationswithtargetList(): ModelStatus;
+  addCorrelationswithtarget(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation;
+
+  getTopcorrelationsList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation>;
+  setTopcorrelationsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation>): ModelStatus;
+  clearTopcorrelationsList(): ModelStatus;
+  addTopcorrelations(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3150,6 +3160,8 @@ export namespace ModelStatus {
     rocauccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
     prcurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.AsObject,
     confusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
+    correlationswithtargetList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
+    topcorrelationsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

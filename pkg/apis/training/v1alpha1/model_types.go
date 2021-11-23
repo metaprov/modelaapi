@@ -519,10 +519,16 @@ type ModelStatus struct {
 	// Confusion matrix
 	// +kubebuilder:validation:Optional
 	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"varint,59,opt,name=confusionMatrix"`
+	// Holds the top correlation with target
+	// +kubebuilder:validation:Optional
+	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,60,opt,name=correlationsWithTarget"`
+	// Holds the top feature correlation
+	// +kubebuilder:validation:Optional
+	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,61,opt,name=topCorrelations"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,60,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,62,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

@@ -2736,6 +2736,16 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 	in.RocAucCurve.DeepCopyInto(&out.RocAucCurve)
 	in.PRCurve.DeepCopyInto(&out.PRCurve)
 	in.ConfusionMatrix.DeepCopyInto(&out.ConfusionMatrix)
+	if in.CorrelationsWithTarget != nil {
+		in, out := &in.CorrelationsWithTarget, &out.CorrelationsWithTarget
+		*out = make([]datav1alpha1.Correlation, len(*in))
+		copy(*out, *in)
+	}
+	if in.TopCorrelations != nil {
+		in, out := &in.TopCorrelations, &out.TopCorrelations
+		*out = make([]datav1alpha1.Correlation, len(*in))
+		copy(*out, *in)
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))

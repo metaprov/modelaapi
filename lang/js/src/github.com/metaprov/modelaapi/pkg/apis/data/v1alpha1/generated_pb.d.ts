@@ -449,6 +449,36 @@ export namespace ColumnValidation {
   }
 }
 
+export class Correlation extends jspb.Message {
+  getFeature1(): string;
+  setFeature1(value: string): Correlation;
+
+  getFeature2(): string;
+  setFeature2(value: string): Correlation;
+
+  getValue(): number;
+  setValue(value: number): Correlation;
+
+  getMethod(): string;
+  setMethod(value: string): Correlation;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Correlation.AsObject;
+  static toObject(includeInstance: boolean, msg: Correlation): Correlation.AsObject;
+  static serializeBinaryToWriter(message: Correlation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Correlation;
+  static deserializeBinaryFromReader(message: Correlation, reader: jspb.BinaryReader): Correlation;
+}
+
+export namespace Correlation {
+  export type AsObject = {
+    feature1: string,
+    feature2: string,
+    value: number,
+    method: string,
+  }
+}
+
 export class CorrelationSpec extends jspb.Message {
   getFloat64(): number;
   setFloat64(value: number): CorrelationSpec;
@@ -1886,10 +1916,15 @@ export class DatasetStatistics extends jspb.Message {
   getFilesize(): number;
   setFilesize(value: number): DatasetStatistics;
 
-  getCorrelationsList(): Array<FeatureCorr>;
-  setCorrelationsList(value: Array<FeatureCorr>): DatasetStatistics;
-  clearCorrelationsList(): DatasetStatistics;
-  addCorrelations(value?: FeatureCorr, index?: number): FeatureCorr;
+  getCorrelationswithtargetList(): Array<Correlation>;
+  setCorrelationswithtargetList(value: Array<Correlation>): DatasetStatistics;
+  clearCorrelationswithtargetList(): DatasetStatistics;
+  addCorrelationswithtarget(value?: Correlation, index?: number): Correlation;
+
+  getTopcorrelationsList(): Array<Correlation>;
+  setTopcorrelationsList(value: Array<Correlation>): DatasetStatistics;
+  clearTopcorrelationsList(): DatasetStatistics;
+  addTopcorrelations(value?: Correlation, index?: number): Correlation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetStatistics.AsObject;
@@ -1905,7 +1940,8 @@ export namespace DatasetStatistics {
     rows: number,
     cols: number,
     filesize: number,
-    correlationsList: Array<FeatureCorr.AsObject>,
+    correlationswithtargetList: Array<Correlation.AsObject>,
+    topcorrelationsList: Array<Correlation.AsObject>,
   }
 }
 
@@ -2388,36 +2424,6 @@ export namespace FeatureCondition {
     lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     reason: string,
     message: string,
-  }
-}
-
-export class FeatureCorr extends jspb.Message {
-  getFeature1(): string;
-  setFeature1(value: string): FeatureCorr;
-
-  getFeature2(): string;
-  setFeature2(value: string): FeatureCorr;
-
-  getValue(): number;
-  setValue(value: number): FeatureCorr;
-
-  getMethod(): string;
-  setMethod(value: string): FeatureCorr;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FeatureCorr.AsObject;
-  static toObject(includeInstance: boolean, msg: FeatureCorr): FeatureCorr.AsObject;
-  static serializeBinaryToWriter(message: FeatureCorr, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FeatureCorr;
-  static deserializeBinaryFromReader(message: FeatureCorr, reader: jspb.BinaryReader): FeatureCorr;
-}
-
-export namespace FeatureCorr {
-  export type AsObject = {
-    feature1: string,
-    feature2: string,
-    value: number,
-    method: string,
   }
 }
 
