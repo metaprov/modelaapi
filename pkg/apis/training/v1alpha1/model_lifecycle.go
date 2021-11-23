@@ -335,15 +335,16 @@ func ParseModelYaml(content []byte) (*Model, error) {
 }
 
 const (
-	ReasonFailed         = "Failed"
-	ReasonTesting        = "Testing"
-	ReasonReporting      = "Reporting"
-	ReasonProfiling      = "Profiling"
-	ReasonPublishing     = "Publishing"
-	ReasonTraining       = "Training"
-	ReasonPausing        = "Pausing"
-	ReasonWaitingToTrain = "WaitingToTrain"
-	ReasonWaitingToTest  = "WaitingToTest"
+	ReasonFailed             = "Failed"
+	ReasonTesting            = "Testing"
+	ReasonReporting          = "Reporting"
+	ReasonProfiling          = "Profiling"
+	ReasonPublishing         = "Publishing"
+	ReasonTraining           = "Training"
+	ReasonFeatureEngineering = "FeatureEngineering"
+	ReasonPausing            = "Pausing"
+	ReasonWaitingToTrain     = "WaitingToTrain"
+	ReasonWaitingToTest      = "WaitingToTest"
 )
 
 // ----------------- Training commands

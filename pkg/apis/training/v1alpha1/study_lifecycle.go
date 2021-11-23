@@ -317,39 +317,28 @@ func (study *Study) MarkSearchFailed(err string) {
 	study.RefreshProgress()
 }
 
-// Feature Generated
-
-func (study *Study) FeatureGenerated() bool {
-	cond := study.GetCond(StudySearched)
-	return cond.Status == v1.ConditionTrue
-}
-
-func (study *Study) MarkGeneratingFeatures() {
-	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudySearched,
-		Status: v1.ConditionFalse,
-		Reason: ReasonTraining,
-	})
-	now := metav1.Now()
-	if study.Status.SearchingStartTime == nil {
-		study.Status.SearchingStartTime = &now
-	}
-	study.Status.Phase = StudyPhaseSearching
-	study.RefreshProgress()
-}
-
-// Feature selection
+// Feature engineering
 
 func (study *Study) FeatureEngineered() bool {
 	cond := study.GetCond(StudyFeatureEngineered)
 	return cond.Status == v1.ConditionTrue
 }
 
-func (study *Study) MarkFeatureEngineered() {
+func (study *Study) MarkFeatureEngineering() {
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:   StudyFeatureEngineered,
 		Status: v1.ConditionFalse,
-		Reason: ReasonTraining,
+		Reason: ReasonFeatureEngineering,
+	})
+	now := metav1.Now()
+	study.Status.FeatureEngineeringStartTime = &now
+	study.Status.Phase = StudyPhaseEngineeringFeature
+}
+
+func (study *Study) MarkFeatureEngineered() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudyFeatureEngineered,
+		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
 	if study.Status.FeatureEngineerinEndTime == nil {
