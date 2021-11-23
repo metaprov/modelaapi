@@ -3931,12 +3931,12 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		in, out := &in.FeatureEngineerinEndTime, &out.FeatureEngineerinEndTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TrainingStartTime != nil {
-		in, out := &in.TrainingStartTime, &out.TrainingStartTime
+	if in.SearchingStartTime != nil {
+		in, out := &in.SearchingStartTime, &out.SearchingStartTime
 		*out = (*in).DeepCopy()
 	}
-	if in.TrainingEndTime != nil {
-		in, out := &in.TrainingEndTime, &out.TrainingEndTime
+	if in.SearchingEndTime != nil {
+		in, out := &in.SearchingEndTime, &out.SearchingEndTime
 		*out = (*in).DeepCopy()
 	}
 	if in.TestingStartTime != nil {

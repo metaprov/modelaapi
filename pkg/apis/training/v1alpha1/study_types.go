@@ -450,45 +450,57 @@ type StudyStatus struct {
 	// Total models created for the study
 	// +kubebuilder:validation:Optional
 	Models int32 `json:"models,omitempty" protobuf:"varint,1,opt,name=models"`
+	// models waiting for a feature engineering
+	// +kubebuilder:validation:Optional
+	FeatureEngineeringModelWaiting int32 `json:"featureEngineeringModelWaiting,omitempty" protobuf:"varint,2,opt,name=featureEngineeringModelWaiting"`
+	// models which are currently training for feature engineering
+	// +kubebuilder:validation:Optional
+	FeatureEngineeringModelTraining int32 `json:"featureEngineeringModelTraining,omitempty" protobuf:"varint,3,opt,name=featureEngineeringModelTraining"`
+	// models that failed during feature engineering
+	// +kubebuilder:validation:Optional
+	FeatureEngineeringModeFailed int32 `json:"featureEngineeringModeFailed,omitempty" protobuf:"varint,4,opt,name=featureEngineeringModeFailed"`
+	// models that were successful during feature engineering
+	// +kubebuilder:validation:Optional
+	FeatureEngineeringModelTrained int32 `json:"featureEngineeringModelTrained,omitempty" protobuf:"varint,5,opt,name=featureEngineeringModelTrained"`
 	// models waiting for a trainer
 	// +kubebuilder:validation:Optional
-	WaitingToTrainModels int32 `json:"waitingToTrain,omitempty" protobuf:"varint,2,opt,name=waitingToTrain"`
+	SearchingModelWaiting int32 `json:"searchingModelWaiting,omitempty" protobuf:"varint,6,opt,name=searchingModelWaiting"`
 	// models which are currently training or testing.
 	// +kubebuilder:validation:Optional
-	TrainingModels int32 `json:"trainingModels,omitempty" protobuf:"varint,3,opt,name=trainingModels"`
+	SearchingModelsTraining int32 `json:"searchingModelsTraining,omitempty" protobuf:"varint,7,opt,name=searchingModelsTraining"`
 	// models that failed during training.
 	// +kubebuilder:validation:Optional
-	ModelsFailedTraining int32 `json:"failedTrainingModels,omitempty" protobuf:"varint,4,opt,name=failedTrainingModels"`
+	SearchingModeFailed int32 `json:"searchingModeFailed,omitempty" protobuf:"varint,8,opt,name=searchingModeFailed"`
 	// models that were successful during training
 	// +kubebuilder:validation:Optional
-	TrainedModels int32 `json:"trainedModels,omitempty" protobuf:"varint,5,opt,name=trainedModels"`
+	SearchingModeTrained int32 `json:"searchingModeTrained,omitempty" protobuf:"varint,9,opt,name=searchingModeTrained"`
 	// models waiting testing
 	// +kubebuilder:validation:Optional
-	WaitingToTestModels int32 `json:"waitingToTestModels,omitempty" protobuf:"varint,6,opt,name=waitingToTestModels"`
+	TestingModelWaiting int32 `json:"testingModelWaiting,omitempty" protobuf:"varint,10,opt,name=testingModelWaiting"`
 	// models in testing
 	// +kubebuilder:validation:Optional
-	TestingModels int32 `json:"testingModels,omitempty" protobuf:"varint,7,opt,name=testingModels"`
+	TestingModels int32 `json:"testingModels,omitempty" protobuf:"varint,11,opt,name=testingModels"`
 	// models failed testing.
 	// +kubebuilder:validation:Optional
-	ModelsFailedTesting int32 `json:"failedTestingModels,omitempty" protobuf:"varint,8,opt,name=failedTestingModels"`
+	TestingModeFailed int32 `json:"testingModeFailed,omitempty" protobuf:"varint,12,opt,name=testingModeFailed"`
 	// Tested models
 	// +kubebuilder:validation:Optional
-	TestedModels int32 `json:"testedModels,omitempty" protobuf:"varint,9,opt,name=testedModels"`
+	TestedModels int32 `json:"testedModels,omitempty" protobuf:"varint,13,opt,name=testedModels"`
 	// Study start time
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,13,opt,name=startTime"`
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,14,opt,name=startTime"`
 	// Start of feature generation
 	// +kubebuilder:validation:Optional
-	FeatureEngineeringStartTime *metav1.Time `json:"featureEngineeringStartTime,omitempty" protobuf:"bytes,14,opt,name=featureEngineeringStartTime"`
+	FeatureEngineeringStartTime *metav1.Time `json:"featureEngineeringStartTime,omitempty" protobuf:"bytes,15,opt,name=featureEngineeringStartTime"`
 	// End of feature generation
 	// +kubebuilder:validation:Optional
-	FeatureEngineerinEndTime *metav1.Time `json:"featureEngineeringEndTime,omitempty" protobuf:"bytes,15,opt,name=featureEngineeringEndTime"`
+	FeatureEngineerinEndTime *metav1.Time `json:"featureEngineeringEndTime,omitempty" protobuf:"bytes,16,opt,name=featureEngineeringEndTime"`
 	// Start of the training phase
 	// +kubebuilder:validation:Optional
-	TrainingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,18,opt,name=trainingStartTime"`
+	SearchingStartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,17,opt,name=trainingStartTime"`
 	// End of the training phase.
 	// +kubebuilder:validation:Optional
-	TrainingEndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,19,opt,name=trainingEndTime"`
+	SearchingEndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,19,opt,name=trainingEndTime"`
 	// Start of the testing phase
 	// +kubebuilder:validation:Optional
 	TestingStartTime *metav1.Time `json:"testingStartTime,omitempty" protobuf:"bytes,20,opt,name=testingStartTime"`

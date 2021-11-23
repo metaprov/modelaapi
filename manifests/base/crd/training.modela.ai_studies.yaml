@@ -1922,18 +1922,26 @@ spec:
                 description: The study end time.
                 format: date-time
                 type: string
-              failedTestingModels:
-                description: models failed testing.
-                format: int32
-                type: integer
-              failedTrainingModels:
-                description: models that failed during training.
-                format: int32
-                type: integer
               featureEngineeringEndTime:
                 description: End of feature generation
                 format: date-time
                 type: string
+              featureEngineeringModeFailed:
+                description: models that failed during feature engineering
+                format: int32
+                type: integer
+              featureEngineeringModelTrained:
+                description: models that were successful during feature engineering
+                format: int32
+                type: integer
+              featureEngineeringModelTraining:
+                description: models which are currently training for feature engineering
+                format: int32
+                type: integer
+              featureEngineeringModelWaiting:
+                description: models waiting for a feature engineering
+                format: int32
+                type: integer
               featureEngineeringStartTime:
                 description: Start of feature generation
                 format: date-time
@@ -2195,6 +2203,22 @@ spec:
               reportName:
                 description: The study report name
                 type: string
+              searchingModeFailed:
+                description: models that failed during training.
+                format: int32
+                type: integer
+              searchingModeTrained:
+                description: models that were successful during training
+                format: int32
+                type: integer
+              searchingModelWaiting:
+                description: models waiting for a trainer
+                format: int32
+                type: integer
+              searchingModelsTraining:
+                description: models which are currently training or testing.
+                format: int32
+                type: integer
               startTime:
                 description: Study start time
                 format: date-time
@@ -2246,6 +2270,14 @@ spec:
                   or failure phase. It is not guaranteed to
                 format: date-time
                 type: string
+              testingModeFailed:
+                description: models failed testing.
+                format: int32
+                type: integer
+              testingModelWaiting:
+                description: models waiting testing
+                format: int32
+                type: integer
               testingModels:
                 description: models in testing
                 format: int32
@@ -2295,10 +2327,6 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
-              trainedModels:
-                description: models that were successful during training
-                format: int32
-                type: integer
               trainingDataHash:
                 description: Sha 256 of the data sig
                 properties:
@@ -2319,10 +2347,6 @@ spec:
                 description: End of the training phase.
                 format: date-time
                 type: string
-              trainingModels:
-                description: models which are currently training or testing.
-                format: int32
-                type: integer
               trainingRows:
                 description: TrainingRows is the amount of rows in training
                 format: int32
@@ -2382,14 +2406,6 @@ spec:
               validationRows:
                 description: Validation row contain the number of validation rows
                   for cases that we have validation.
-                format: int32
-                type: integer
-              waitingToTestModels:
-                description: models waiting testing
-                format: int32
-                type: integer
-              waitingToTrain:
-                description: models waiting for a trainer
                 format: int32
                 type: integer
             type: object

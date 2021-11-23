@@ -4460,26 +4460,38 @@ export class StudyStatus extends jspb.Message {
   getModels(): number;
   setModels(value: number): StudyStatus;
 
-  getWaitingtotrain(): number;
-  setWaitingtotrain(value: number): StudyStatus;
+  getFeatureengineeringmodelwaiting(): number;
+  setFeatureengineeringmodelwaiting(value: number): StudyStatus;
 
-  getTrainingmodels(): number;
-  setTrainingmodels(value: number): StudyStatus;
+  getFeatureengineeringmodeltraining(): number;
+  setFeatureengineeringmodeltraining(value: number): StudyStatus;
 
-  getFailedtrainingmodels(): number;
-  setFailedtrainingmodels(value: number): StudyStatus;
+  getFeatureengineeringmodefailed(): number;
+  setFeatureengineeringmodefailed(value: number): StudyStatus;
 
-  getTrainedmodels(): number;
-  setTrainedmodels(value: number): StudyStatus;
+  getFeatureengineeringmodeltrained(): number;
+  setFeatureengineeringmodeltrained(value: number): StudyStatus;
 
-  getWaitingtotestmodels(): number;
-  setWaitingtotestmodels(value: number): StudyStatus;
+  getSearchingmodelwaiting(): number;
+  setSearchingmodelwaiting(value: number): StudyStatus;
+
+  getSearchingmodelstraining(): number;
+  setSearchingmodelstraining(value: number): StudyStatus;
+
+  getSearchingmodefailed(): number;
+  setSearchingmodefailed(value: number): StudyStatus;
+
+  getSearchingmodetrained(): number;
+  setSearchingmodetrained(value: number): StudyStatus;
+
+  getTestingmodelwaiting(): number;
+  setTestingmodelwaiting(value: number): StudyStatus;
 
   getTestingmodels(): number;
   setTestingmodels(value: number): StudyStatus;
 
-  getFailedtestingmodels(): number;
-  setFailedtestingmodels(value: number): StudyStatus;
+  getTestingmodefailed(): number;
+  setTestingmodefailed(value: number): StudyStatus;
 
   getTestedmodels(): number;
   setTestedmodels(value: number): StudyStatus;
@@ -4612,13 +4624,17 @@ export class StudyStatus extends jspb.Message {
 export namespace StudyStatus {
   export type AsObject = {
     models: number,
-    waitingtotrain: number,
-    trainingmodels: number,
-    failedtrainingmodels: number,
-    trainedmodels: number,
-    waitingtotestmodels: number,
+    featureengineeringmodelwaiting: number,
+    featureengineeringmodeltraining: number,
+    featureengineeringmodefailed: number,
+    featureengineeringmodeltrained: number,
+    searchingmodelwaiting: number,
+    searchingmodelstraining: number,
+    searchingmodefailed: number,
+    searchingmodetrained: number,
+    testingmodelwaiting: number,
     testingmodels: number,
-    failedtestingmodels: number,
+    testingmodefailed: number,
     testedmodels: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     featureengineeringstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

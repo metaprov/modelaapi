@@ -3028,53 +3028,69 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional int32 models = 1;
 
+  // models waiting for a feature engineering
+  // +kubebuilder:validation:Optional
+  optional int32 featureEngineeringModelWaiting = 2;
+
+  // models which are currently training for feature engineering
+  // +kubebuilder:validation:Optional
+  optional int32 featureEngineeringModelTraining = 3;
+
+  // models that failed during feature engineering
+  // +kubebuilder:validation:Optional
+  optional int32 featureEngineeringModeFailed = 4;
+
+  // models that were successful during feature engineering
+  // +kubebuilder:validation:Optional
+  optional int32 featureEngineeringModelTrained = 5;
+
   // models waiting for a trainer
   // +kubebuilder:validation:Optional
-  optional int32 waitingToTrain = 2;
+  optional int32 searchingModelWaiting = 6;
 
   // models which are currently training or testing.
   // +kubebuilder:validation:Optional
-  optional int32 trainingModels = 3;
+  optional int32 searchingModelsTraining = 7;
 
   // models that failed during training.
   // +kubebuilder:validation:Optional
-  optional int32 failedTrainingModels = 4;
+  optional int32 searchingModeFailed = 8;
 
   // models that were successful during training
   // +kubebuilder:validation:Optional
-  optional int32 trainedModels = 5;
+  optional int32 searchingModeTrained = 9;
 
   // models waiting testing
   // +kubebuilder:validation:Optional
-  optional int32 waitingToTestModels = 6;
+  optional int32 testingModelWaiting = 10;
 
   // models in testing
   // +kubebuilder:validation:Optional
-  optional int32 testingModels = 7;
+  optional int32 testingModels = 11;
 
   // models failed testing.
   // +kubebuilder:validation:Optional
-  optional int32 failedTestingModels = 8;
+  optional int32 testingModeFailed = 12;
 
   // Tested models
   // +kubebuilder:validation:Optional
-  optional int32 testedModels = 9;
+  optional int32 testedModels = 13;
 
   // Study start time
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 13;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 14;
 
   // Start of feature generation
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureEngineeringStartTime = 14;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureEngineeringStartTime = 15;
 
   // End of feature generation
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureEngineeringEndTime = 15;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time featureEngineeringEndTime = 16;
 
   // Start of the training phase
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 18;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 17;
 
   // End of the training phase.
   // +kubebuilder:validation:Optional
