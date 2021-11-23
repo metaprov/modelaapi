@@ -12,26 +12,24 @@ import (
 type StudyPhase string
 
 const (
-	StudyPhaseModelPending      StudyPhase = "Pending"
-	StudyPhaseSpliting          StudyPhase = "Spliting"
-	StudyPhaseSplitted          StudyPhase = "Splitted"
-	StudyPhaseGeneratingFeature StudyPhase = "GeneratingFeatures"
-	StudyPhaseFeatureGenerated  StudyPhase = "FeatureGenerated"
-	StudyPhaseSelectingFeature  StudyPhase = "SelectingFeatures"
-	StudyPhaseFeaturesSelected  StudyPhase = "FeatureSelected"
-	StudyPhaseBaeline           StudyPhase = "Training Baseline"
-	StudyPhaseSearching         StudyPhase = "Searching"
-	StudyPhaseSearched          StudyPhase = "Searched"
-	StudyPhaseTesting           StudyPhase = "Testing"
-	StudyPhaseTested            StudyPhase = "Tested"
-	StudyPhaseReported          StudyPhase = "Reported"
-	StudyPhaseReporting         StudyPhase = "Reporting"
-	StudyPhaseProfiling         StudyPhase = "Profiling"
-	StudyPhaseProfiled          StudyPhase = "Profiled"
-	StudyPhaseCompleted         StudyPhase = "Completed"
-	StudyPhaseFailed            StudyPhase = "Failed"
-	StudyPhaseAborted           StudyPhase = "Aborted"
-	StudyPhasePaused            StudyPhase = "Paused"
+	StudyPhaseModelPending       StudyPhase = "Pending"
+	StudyPhaseSpliting           StudyPhase = "Spliting"
+	StudyPhaseSplitted           StudyPhase = "Splitted"
+	StudyPhaseEngineeringFeature StudyPhase = "EngineeringFeatures"
+	StudyPhaseFeatureEngineered  StudyPhase = "FeatureEngineered"
+	StudyPhaseBaeline            StudyPhase = "Training Baseline"
+	StudyPhaseSearching          StudyPhase = "Searching"
+	StudyPhaseSearched           StudyPhase = "Searched"
+	StudyPhaseTesting            StudyPhase = "Testing"
+	StudyPhaseTested             StudyPhase = "Tested"
+	StudyPhaseReported           StudyPhase = "Reported"
+	StudyPhaseReporting          StudyPhase = "Reporting"
+	StudyPhaseProfiling          StudyPhase = "Profiling"
+	StudyPhaseProfiled           StudyPhase = "Profiled"
+	StudyPhaseCompleted          StudyPhase = "Completed"
+	StudyPhaseFailed             StudyPhase = "Failed"
+	StudyPhaseAborted            StudyPhase = "Aborted"
+	StudyPhasePaused             StudyPhase = "Paused"
 )
 
 // +kubebuilder:validation:Enum="quick";"linear-only";"tree";"default-hp";"none";
@@ -83,17 +81,14 @@ const (
 	// All the resources needed for training are allocated and ready.
 	StudyInitialized StudyConditionType = "Initialized"
 	// The search the best preprocessor is completed.
-	FeaturesGenerated StudyConditionType = "FeatureGenerated"
-	// Features selected
-	FeaturesSelected StudyConditionType = "FeaturesSelected"
+	StudyFeatureEngineered StudyConditionType = "StudyFeaturesEngineered"
 	// The search the best preprocessor is completed.
 	StudySplitted StudyConditionType = "StudySplitted"
-
 	// The search the best preprocessor is completed.
 	StudyBaselined StudyConditionType = "StudyBaselined"
 	// The search for the best model candidates is completed.
 	// This phase consists mainly of cross validation.
-	StudySearched StudyConditionType = "ModelsTrained"
+	StudySearched StudyConditionType = "StudySearched"
 	// true if we did ensamble training
 	StudyEnsambleTrained StudyConditionType = "ModelsEnsembleTrained"
 	// The best model candidate was tested on the full dataset.

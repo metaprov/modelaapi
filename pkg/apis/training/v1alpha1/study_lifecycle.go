@@ -349,14 +349,14 @@ func (study *Study) MarkFeatureGenerationFailed(err string) {
 
 // Feature selection
 
-func (study *Study) FeatureSelected() bool {
-	cond := study.GetCond(FeaturesSelected)
+func (study *Study) FeatureEngineered() bool {
+	cond := study.GetCond(StudyFeatureEngineered)
 	return cond.Status == v1.ConditionTrue
 }
 
-func (study *Study) MarkSelectingFeatures() {
+func (study *Study) MarkFeatureEngineered() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   FeaturesSelected,
+		Type:   StudyFeatureEngineered,
 		Status: v1.ConditionFalse,
 		Reason: ReasonTraining,
 	})
@@ -364,32 +364,19 @@ func (study *Study) MarkSelectingFeatures() {
 	if study.Status.TrainingStartTime == nil {
 		study.Status.TrainingStartTime = &now
 	}
-	study.Status.Phase = StudyPhaseFeaturesSelected
+	study.Status.Phase = StudyPhaseFeatureEngineered
 	study.RefreshProgress()
 }
 
-func (study *Study) MarkFeatureSelected() {
+func (study *Study) MarkFeatureEngineeringFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   FeaturesSelected,
-		Status: v1.ConditionTrue,
-	})
-	now := metav1.Now()
-	if study.Status.TrainingEndTime == nil {
-		study.Status.TrainingEndTime = &now
-	}
-	study.Status.Phase = StudyPhaseFeaturesSelected
-	study.RefreshProgress()
-}
-
-func (study *Study) MarkFeatureSelectionFailed(err string) {
-	study.CreateOrUpdateCond(StudyCondition{
-		Type:    FeaturesSelected,
+		Type:    StudyFeatureEngineered,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.LastError = util.StrPtr("Failed to select features." + err)
+	study.Status.LastError = util.StrPtr("Failed to engineer features." + err)
 	study.RefreshProgress()
 }
 
