@@ -800,7 +800,7 @@ type AudioPipelineSpec struct {
 	Featurizer *catalog.AudioFeaturizer `json:"featurizer,omitempty" protobuf:"bytes,1,opt,name=featurizer"`
 }
 
-// PreformanceStatus containt the avg resource consumption
+// Represent the feature consumption.
 type ResourceConsumption struct {
 	Cpu float64 `json:"cpu,omitempty" protobuf:"bytes,1,opt,name=cpu"`
 	Mem float64 `json:"mem,omitempty" protobuf:"bytes,2,opt,name=mem"`
@@ -845,6 +845,9 @@ type GeneratedColumnSpec struct {
 
 // Feature selection spec defines how to select feature
 type FeatureSelectionSpec struct {
+	// the Feature selection pipeline.
+	// Steps are applied in the order of the pipeline
+	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"varint,1,opt,name=pipeline"`
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional

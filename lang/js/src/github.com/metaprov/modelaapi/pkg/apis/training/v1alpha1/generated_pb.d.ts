@@ -1133,6 +1133,11 @@ export namespace FeatureInfo {
 }
 
 export class FeatureSelectionSpec extends jspb.Message {
+  getPipelineList(): Array<string>;
+  setPipelineList(value: Array<string>): FeatureSelectionSpec;
+  clearPipelineList(): FeatureSelectionSpec;
+  addPipeline(value: string, index?: number): FeatureSelectionSpec;
+
   getLowvartresholdpct(): number;
   setLowvartresholdpct(value: number): FeatureSelectionSpec;
 
@@ -1160,6 +1165,7 @@ export class FeatureSelectionSpec extends jspb.Message {
 
 export namespace FeatureSelectionSpec {
   export type AsObject = {
+    pipelineList: Array<string>,
     lowvartresholdpct: number,
     corrtreshold: number,
     topn: number,

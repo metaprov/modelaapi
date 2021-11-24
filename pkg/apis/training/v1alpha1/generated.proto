@@ -713,6 +713,10 @@ message FeatureInfo {
 
 // Feature selection spec defines how to select feature
 message FeatureSelectionSpec {
+  // the Feature selection pipeline.
+  // Steps are applied in the order of the pipeline
+  repeated string pipeline = 1;
+
   // Lowvar specify the filter to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
@@ -2802,7 +2806,7 @@ message ReportTemplate {
   optional ReportSpec spec = 1;
 }
 
-// PreformanceStatus containt the avg resource consumption
+// Represent the feature consumption.
 message ResourceConsumption {
   optional double cpu = 1;
 

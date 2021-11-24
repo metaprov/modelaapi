@@ -551,7 +551,7 @@ func (metric Metric) Compare(i float64, j float64) bool {
 }
 
 //==============================================================================
-// CatEncoder
+// CategoricalEncoding
 //==============================================================================
 
 type CategoricalEncoding string
@@ -569,6 +569,8 @@ const (
 	BinaryEncoding           CategoricalEncoding = "binary-encoding"
 	LabelEncoding            CategoricalEncoding = "label-encoding"
 	HashEncoding             CategoricalEncoding = "hash-encoding"
+	CatboostEncoding         CategoricalEncoding = "catboost-encoding"
+	LeaveOneOutEncoding      CategoricalEncoding = "loo-encoding"
 	NoEncoding               CategoricalEncoding = "no-encoding"
 	AutoEncoding             CategoricalEncoding = "auto"
 )
@@ -605,30 +607,33 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 type Imputation string
 
 const (
-	RemoveRowsWithMissingValues Imputation = "remove-rows-with-missing-values"
-	MeanImputation              Imputation = "mean-imputation"
-	MedianImputation            Imputation = "median-imputation"
-	ArbitraryValueImputation    Imputation = "arbitrary-value-imputation"
-	EndOfTailImputation         Imputation = "end-of-tail-imputation"
-	FreqCategoryImputation      Imputation = "freq-category-imputation"
-	MissingIndicatorImputation  Imputation = "missing-indicator-imputation"
-	KnnImputation               Imputation = "knn-imputation"
-	MICEImputation              Imputation = "mice-imputation"
-	NoImputation                Imputation = "no-imputation"
-	AutoImputer                 Imputation = "auto"
+	RemoveRowsWithMissingValues         Imputation = "remove-rows-with-missing-values"
+	ReplaceWithMeanImputation           Imputation = "replace-with-mean"
+	ReplaceWithMedianImputation         Imputation = "replace-with-median"
+	ReplaceWithArbitraryValueImputation Imputation = "replace-with-arbitrary-value"
+	ReplaceWithEndOfTailImputation      Imputation = "replace-with-end-of-tail"
+	ReplaceWithRandomSampleImputation   Imputation = "replace-with-random-sample"
+	FreqCategoryImputation              Imputation = "freq-category-imputation"
+	AddMissingValueIndicatorImputation  Imputation = "add-missing-value-indicator"
+	KnnImputation                       Imputation = "knn"
+	IterativeImputation                 Imputation = "iterative"
+	MICEImputation                      Imputation = "mice"
+	NoImputation                        Imputation = "no-imputation"
+	AutoImputer                         Imputation = "auto"
 )
 
 func ParseImputation(name string) Imputation {
 	names := []Imputation{
 		RemoveRowsWithMissingValues,
-		MeanImputation,
-		MedianImputation,
-		ArbitraryValueImputation,
-		EndOfTailImputation,
+		ReplaceWithMeanImputation,
+		ReplaceWithMedianImputation,
+		ReplaceWithArbitraryValueImputation,
+		ReplaceWithEndOfTailImputation,
 		FreqCategoryImputation,
-		MissingIndicatorImputation,
+		AddMissingValueIndicatorImputation,
 		KnnImputation,
 		MICEImputation,
+		IterativeImputation,
 		NoImputation,
 		AutoImputer,
 	}
@@ -642,7 +647,7 @@ func ParseImputation(name string) Imputation {
 }
 
 //==============================================================================
-// Scaler
+// Scaling
 //==============================================================================
 
 type Scaling string
@@ -653,6 +658,7 @@ const (
 	MinMaxScaling   Scaling = "min-max-scaling"
 	Normalization   Scaling = "normalizion-scaling"
 	RobustScaling   Scaling = "robust-scaling"
+	ScaleToUnitNorm Scaling = "scale-to-unit-norm"
 	NoneScaling     Scaling = "none"
 	AutoScaling     Scaling = "auto"
 )
@@ -664,6 +670,7 @@ func ParseScaler(name string) Scaling {
 		MinMaxScaling,
 		Normalization,
 		RobustScaling,
+		ScaleToUnitNorm,
 		NoneScaling,
 		AutoScaling,
 	}
@@ -694,7 +701,7 @@ type AudioFeaturizer string
 type VideoFeaturizer string
 
 //==============================================================================
-// Numerical Transform
+// Variable Transformation
 //==============================================================================
 
 type VariableTransformation string
@@ -729,7 +736,7 @@ const (
 )
 
 //==============================================================================
-// Outliers
+// Outlier Handling
 //==============================================================================
 
 type OutlierHandling string
@@ -744,22 +751,19 @@ const (
 )
 
 //==============================================================================
-// Datatime
+// Datatime Transformation
 //==============================================================================
 
 type DatatimeTransformation string
 
 const (
-	YearMonth    DatatimeTransformation = "year-month"
-	WeekDay      DatatimeTransformation = "weak-day"
-	HourMinSec   DatatimeTransformation = "hour-min-sec"
-	ElapsedTime  DatatimeTransformation = "elapsed"
-	NoneDatetime DatatimeTransformation = "none"
-	AutoDatetime DatatimeTransformation = "auto"
+	ExtractDateTimeInformation DatatimeTransformation = "extract-datetime-information"
+	NoneDatetime               DatatimeTransformation = "none"
+	AutoDatetime               DatatimeTransformation = "auto"
 )
 
 //==============================================================================
-// Balancer
+// Imbalance Handling
 //==============================================================================
 // +kubebuilder:validation:Enum="adasyn";"baseline-smote";"kmean-smote";"random-over-sampler";"smote";"smotenc";"svmsmote";"none";"auto"
 type ImbalanceHandling string
@@ -805,9 +809,10 @@ const (
 type FeatureSelection string
 
 const (
-	RemoveConstantsFeatureSelection  FeatureSelection = "remove-constant-features"
-	RemoveDuplicateFeatureSelection  FeatureSelection = "remove-deplicated-features"
-	RemoveCorrelatedFeatureSelection FeatureSelection = "remove-correlated-features"
+	DropFeatures                     FeatureSelection = "drop-features"
+	DropConstantFeatures             FeatureSelection = "drop-constant-features"
+	DropDuplicateFeatures            FeatureSelection = "drop-deplicated-features"
+	DropCorrelatedFeatures           FeatureSelection = "drop-correlated-features"
 	MutalInformationFeatureSelection FeatureSelection = "mutal-information-feature-selection"
 	ChiSquareFeatureSelection        FeatureSelection = "chisquare-fearture-selection"
 	AnovaFeatureSelection            FeatureSelection = "anova-feature-selection"
@@ -815,7 +820,8 @@ const (
 	StepBackwardFeatureSelection     FeatureSelection = "step-backward-feature-selection"
 	LassoRegressionFeatureSelection  FeatureSelection = "lasso-regression-feature-selection"
 	TreeImportanceFeatureSelection   FeatureSelection = "tree-importance-feature-selection"
-	RFE                              FeatureSelection = "rfe"
+	RecursiveFeatureElimination      FeatureSelection = "recursive-feature-elimination"
+	RecursiveFeatureAddition         FeatureSelection = "recursive-feature-addition"
 	SelectPercentile                 FeatureSelection = "select-percentile"
 	SelectKBest                      FeatureSelection = "select-kbest"
 	SelectFpr                        FeatureSelection = "select-fpr"

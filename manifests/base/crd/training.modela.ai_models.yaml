@@ -514,6 +514,12 @@ spec:
                           features
                         format: int32
                         type: integer
+                      pipeline:
+                        description: the Feature selection pipeline. Steps are applied
+                          in the order of the pipeline
+                        items:
+                          type: string
+                        type: array
                       reserved:
                         description: List of feature names to consider when training
                           , even after filtering
