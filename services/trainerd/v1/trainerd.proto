@@ -15,7 +15,6 @@ service TrainerdService {
     rpc Train (TrainRequest) returns (TrainResponse) {}
     rpc Forecast (ForecastRequest) returns (ForecastResponse) {}
     rpc Test (TestRequest) returns (TestResponse) {}
-    rpc Compile (CompileRequest) returns (CompileResponse) {}
     rpc TrainEnsemble (TrainEnsembleRequest) returns (TrainResponse) {}
     rpc TestEnsemble (TestEnsembleRequest) returns (TestResponse) {}
     rpc Shutdown(ShutdownRequest) returns (ShutdownResponse) {}
