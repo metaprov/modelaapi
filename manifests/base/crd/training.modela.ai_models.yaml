@@ -1051,9 +1051,21 @@ spec:
                       set, we do not do cv.
                     enum:
                     - none
+                    - group-kfold
+                    - group-shuffle-split
                     - kfold
-                    - loocv
-                    - stratified
+                    - leave-one-group-out
+                    - leave-p-groups-out
+                    - leave-one-out
+                    - leave-p-out
+                    - predefined-split
+                    - repeated-kfold
+                    - repeated-stratified-k-fold
+                    - shuffle-split
+                    - stratified-k-fold
+                    - stratified-shuffle-split
+                    - stratified-group-k-fold
+                    - time-series-split
                     type: string
                   dist:
                     default: false

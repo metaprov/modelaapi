@@ -1175,14 +1175,26 @@ const (
 // CrossValidationType
 //==============================================================================
 
-// +kubebuilder:validation:Enum="none";"kfold";"loocv";"stratified"
+// +kubebuilder:validation:Enum="none";"group-kfold";"group-shuffle-split";"kfold";"leave-one-group-out";"leave-p-groups-out";"leave-one-out";"leave-p-out";"predefined-split";"repeated-kfold";"repeated-stratified-k-fold";"shuffle-split";"stratified-k-fold";"stratified-shuffle-split";"stratified-group-k-fold";"time-series-split"
 type CvType string
 
 const (
-	CvTypeNoCV       CvType = "none"
-	CvTypeKFoldCV    CvType = "kfold"
-	CvTypeLOOCV      CvType = "loocv"
-	CvTypeStratified CvType = "stratified"
+	CvTypeNone                    CvType = "none"
+	CvTypeGroupKFold              CvType = "group-kfold"
+	CvTypeGroupShuffleSplit       CvType = "group-shuffle-split"
+	CVTypeKFold                   CvType = "kfold"
+	CVTypeLeaveOneGroupOut        CvType = "leave-one-group-out"
+	CvTypeLeavePGroupsOut         CvType = "leave-p-groups-out"
+	CvTypeLeaveOneOut             CvType = "leave-one-out"
+	CvTypeLeavePOut               CvType = "leave-p-out"
+	CvTypePredefinedSplit         CvType = "predefined-split"
+	CvTypeRepeatedKFold           CvType = "repeated-kfold"
+	CvTypeRepeatedStratifiedKFold CvType = "repeated-stratified-k-fold"
+	CvTypeShuffleSplit            CvType = "shuffle-split"
+	CvTypeStratifiedKFold         CvType = "stratified-k-fold"
+	CvTypeStratifiedShuffleSplit  CvType = "stratified-shuffle-split"
+	CvTypeStratifiedGroupKFold    CvType = "stratified-group-k-fold"
+	CvTypeTimeSeriesSplit         CvType = "time-series-split"
 )
 
 // Common encoding for flat file
