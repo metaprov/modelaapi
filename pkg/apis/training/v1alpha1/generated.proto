@@ -386,19 +386,14 @@ message DataHashes {
   optional string validationHash = 3;
 }
 
-message DataSplit {
-  // Indicate that this is an automatic split.
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool auto = 1;
-
+message DataSplitSpec {
   // Training is a percent number (0-100) which specify how much of
   // the data will be used for training
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=80
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=100
-  optional int32 train = 2;
+  optional int32 train = 1;
 
   // Validation is percent of dataset rows which would be used to compute the objective during
   // hyper parameter search phase.
@@ -409,29 +404,18 @@ message DataSplit {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Maximum=50
   // +kubebuilder:validation:Optional
-  optional int32 validation = 3;
+  optional int32 validation = 2;
 
   // Test is percent of dataset rows which would be used to compute the objective during
   // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=50
+  // +kubebuilder:validation:Maximum=100
   // +kubebuilder:default:=20
   // +kubebuilder:validation:Optional
-  optional int32 test = 4;
-
-  // Indicate if the dataset split should be stratified.
-  // +kubebuilder:default:="stratified"
-  // +kubebuilder:validation:Optional
-  optional string splitPolicy = 5;
+  optional int32 test = 3;
 
   // The name of the column used to split
   // +kubebuilder:validation:Optional
-  optional string splitColumn = 6;
-
-  // The seed to use for the estimator
-  // Default: 42
-  // +kubebuilder:default:=42
-  // +kubebuilder:validation:Optional
-  optional int32 seed = 7;
+  optional string splitColumn = 4;
 }
 
 // DataStageSpec is the desired state of the data preprocessing step of the pipeline.
@@ -2946,10 +2930,6 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional TrainingSpec trainingTemplate = 11;
 
-  // Split is reference to the split specification
-  // +kubebuilder:validation:Optional
-  optional DataSplit split = 12;
-
   // Aborted is set when we want to abort the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
@@ -3403,28 +3383,32 @@ message TrainingSpec {
   // If true, this is a cross validation using folds. If False, use the validation set.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool cv = 3;
+  optional bool cV = 16;
 
   // The number of folds during cross validation.
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
   optional int32 folds = 4;
 
+  // Data Split define how to split the data into test and train.
+  // +kubebuilder:validation:Optional
+  optional DataSplitSpec split = 5;
+
   // Evaluation metrics are the scores
   // +kubebuilder:validation:Optional
-  repeated string evalMetrics = 5;
+  repeated string evalMetrics = 6;
 
   // Early stopping, stop the training after X models with no improvement.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool earlyStop = 6;
+  optional bool earlyStop = 7;
 
   // Add snapshot interval for long training time in minutes.
   // This is used to checkpoint training model.
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=0
-  optional int32 checkpointInterval = 7;
+  optional int32 checkpointInterval = 8;
 
   // Successive halving represent the configuration for the model training, when running
   // the SuccessiveHalvingSpec model search algorithm
@@ -3451,7 +3435,7 @@ message TrainingSpec {
   // Dist indicate the training should be be distributed
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool dist = 13;
+  optional bool distributed = 13;
 
   // In case of dist node, how many nodes to use.
   // +kubebuilder:default:=1

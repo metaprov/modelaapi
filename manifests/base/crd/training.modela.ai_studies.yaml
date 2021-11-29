@@ -1259,53 +1259,6 @@ spec:
                     minimum: 0
                     type: integer
                 type: object
-              split:
-                description: Split is reference to the split specification
-                properties:
-                  auto:
-                    default: true
-                    description: Indicate that this is an automatic split.
-                    type: boolean
-                  seed:
-                    default: 42
-                    description: 'The seed to use for the estimator Default: 42'
-                    format: int32
-                    type: integer
-                  splitColumn:
-                    description: The name of the column used to split
-                    type: string
-                  splitPolicy:
-                    default: stratified
-                    description: Indicate if the dataset split should be stratified.
-                    type: string
-                  test:
-                    default: 20
-                    description: Test is percent of dataset rows which would be used
-                      to compute the objective during
-                    format: int32
-                    maximum: 50
-                    minimum: 0
-                    type: integer
-                  train:
-                    default: 80
-                    description: Training is a percent number (0-100) which specify
-                      how much of the data will be used for training
-                    format: int32
-                    maximum: 100
-                    minimum: 1
-                    type: integer
-                  validation:
-                    default: 0
-                    description: Validation is percent of dataset rows which would
-                      be used to compute the objective during hyper parameter search
-                      phase. Only used if we do not do cross validation. default is
-                      10% of the data, if we do not have cross validation. default
-                      is 0% of the data, if we do cross validation.
-                    format: int32
-                    maximum: 50
-                    minimum: 0
-                    type: integer
-                type: object
               task:
                 description: Task specify the machine learning task (e.g classification).
                   This must match the task of the data product.
@@ -1378,7 +1331,7 @@ spec:
                     - stratified-group-k-fold
                     - time-series-split
                     type: string
-                  dist:
+                  distributed:
                     default: false
                     description: Dist indicate the training should be be distributed
                     type: boolean
@@ -1559,6 +1512,41 @@ spec:
                         description: The rung of the model
                         format: int32
                         maximum: 128
+                        minimum: 0
+                        type: integer
+                    type: object
+                  split:
+                    description: Data Split define how to split the data into test
+                      and train.
+                    properties:
+                      splitColumn:
+                        description: The name of the column used to split
+                        type: string
+                      test:
+                        default: 20
+                        description: Test is percent of dataset rows which would be
+                          used to compute the objective during
+                        format: int32
+                        maximum: 100
+                        minimum: 0
+                        type: integer
+                      train:
+                        default: 80
+                        description: Training is a percent number (0-100) which specify
+                          how much of the data will be used for training
+                        format: int32
+                        maximum: 100
+                        minimum: 1
+                        type: integer
+                      validation:
+                        default: 0
+                        description: Validation is percent of dataset rows which would
+                          be used to compute the objective during hyper parameter
+                          search phase. Only used if we do not do cross validation.
+                          default is 10% of the data, if we do not have cross validation.
+                          default is 0% of the data, if we do cross validation.
+                        format: int32
+                        maximum: 50
                         minimum: 0
                         type: integer
                     type: object

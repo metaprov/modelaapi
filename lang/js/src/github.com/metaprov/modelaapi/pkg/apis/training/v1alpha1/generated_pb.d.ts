@@ -668,45 +668,33 @@ export namespace DataHashes {
   }
 }
 
-export class DataSplit extends jspb.Message {
-  getAuto(): boolean;
-  setAuto(value: boolean): DataSplit;
-
+export class DataSplitSpec extends jspb.Message {
   getTrain(): number;
-  setTrain(value: number): DataSplit;
+  setTrain(value: number): DataSplitSpec;
 
   getValidation(): number;
-  setValidation(value: number): DataSplit;
+  setValidation(value: number): DataSplitSpec;
 
   getTest(): number;
-  setTest(value: number): DataSplit;
-
-  getSplitpolicy(): string;
-  setSplitpolicy(value: string): DataSplit;
+  setTest(value: number): DataSplitSpec;
 
   getSplitcolumn(): string;
-  setSplitcolumn(value: string): DataSplit;
-
-  getSeed(): number;
-  setSeed(value: number): DataSplit;
+  setSplitcolumn(value: string): DataSplitSpec;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DataSplit.AsObject;
-  static toObject(includeInstance: boolean, msg: DataSplit): DataSplit.AsObject;
-  static serializeBinaryToWriter(message: DataSplit, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DataSplit;
-  static deserializeBinaryFromReader(message: DataSplit, reader: jspb.BinaryReader): DataSplit;
+  toObject(includeInstance?: boolean): DataSplitSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: DataSplitSpec): DataSplitSpec.AsObject;
+  static serializeBinaryToWriter(message: DataSplitSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DataSplitSpec;
+  static deserializeBinaryFromReader(message: DataSplitSpec, reader: jspb.BinaryReader): DataSplitSpec;
 }
 
-export namespace DataSplit {
+export namespace DataSplitSpec {
   export type AsObject = {
-    auto: boolean,
     train: number,
     validation: number,
     test: number,
-    splitpolicy: string,
     splitcolumn: string,
-    seed: number,
   }
 }
 
@@ -4377,11 +4365,6 @@ export class StudySpec extends jspb.Message {
   hasTrainingtemplate(): boolean;
   clearTrainingtemplate(): StudySpec;
 
-  getSplit(): DataSplit | undefined;
-  setSplit(value?: DataSplit): StudySpec;
-  hasSplit(): boolean;
-  clearSplit(): StudySpec;
-
   getAborted(): boolean;
   setAborted(value: boolean): StudySpec;
 
@@ -4463,7 +4446,6 @@ export namespace StudySpec {
     search?: ModelSearchSpec.AsObject,
     fesearch?: FeatureEngineeringSearchSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
-    split?: DataSplit.AsObject,
     aborted: boolean,
     reported: boolean,
     paused: boolean,
@@ -4923,6 +4905,11 @@ export class TrainingSpec extends jspb.Message {
   getFolds(): number;
   setFolds(value: number): TrainingSpec;
 
+  getSplit(): DataSplitSpec | undefined;
+  setSplit(value?: DataSplitSpec): TrainingSpec;
+  hasSplit(): boolean;
+  clearSplit(): TrainingSpec;
+
   getEvalmetricsList(): Array<string>;
   setEvalmetricsList(value: Array<string>): TrainingSpec;
   clearEvalmetricsList(): TrainingSpec;
@@ -4948,8 +4935,8 @@ export class TrainingSpec extends jspb.Message {
   getGpu(): boolean;
   setGpu(value: boolean): TrainingSpec;
 
-  getDist(): boolean;
-  setDist(value: boolean): TrainingSpec;
+  getDistributed(): boolean;
+  setDistributed(value: boolean): TrainingSpec;
 
   getNodecount(): number;
   setNodecount(value: number): TrainingSpec;
@@ -4973,6 +4960,7 @@ export namespace TrainingSpec {
     cvtype: string,
     cv: boolean,
     folds: number,
+    split?: DataSplitSpec.AsObject,
     evalmetricsList: Array<string>,
     earlystop: boolean,
     checkpointinterval: number,
@@ -4980,7 +4968,7 @@ export namespace TrainingSpec {
     seed: number,
     workloadclassname: string,
     gpu: boolean,
-    dist: boolean,
+    distributed: boolean,
     nodecount: number,
     sample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
   }

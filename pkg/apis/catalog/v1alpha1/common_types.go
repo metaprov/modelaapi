@@ -1569,18 +1569,6 @@ const (
 	ModalityTypeEpochs ModalityType = "epochs"
 )
 
-// SplitType defines how the data is splitted between training/testing or training/testing/validation
-type SplitType string
-
-const (
-	SplitTypeRandom         SplitType = "random"
-	SplitTypeParitionColumn SplitType = "partition-column"
-	SplitTypeGroup          SplitType = "group"
-	SplitTypeDatetime       SplitType = "datatime"
-	SplitTypeStratified     SplitType = "stratified"
-	SplitTypeAuto           SplitType = "auto"
-)
-
 type NotificationSpec struct {
 	// Fire when error occur
 	// +kubebuilder:default:=true

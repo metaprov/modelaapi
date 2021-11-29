@@ -402,9 +402,6 @@ type StudySpec struct {
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
 	TrainingTemplate *TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,11,opt,name=trainingTemplate"`
-	// Split is reference to the split specification
-	// +kubebuilder:validation:Optional
-	Split *DataSplit `json:"split,omitempty" protobuf:"bytes,12,opt,name=split"`
 	// Aborted is set when we want to abort the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -630,48 +627,6 @@ type StudyList struct {
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 
 	Items []Study `json:"items" protobuf:"bytes,2,rep,name=items"`
-}
-
-type DataSplit struct {
-	// Indicate that this is an automatic split.
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Auto *bool `json:"auto,omitempty" protobuf:"varint,1,opt,name=auto"`
-	// Training is a percent number (0-100) which specify how much of
-	// the data will be used for training
-	// +kubebuilder:validation:Optional
-	// +kubebuilder:default:=80
-	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:validation:Maximum=100
-	Train *int32 `json:"train,omitempty" protobuf:"varint,2,opt,name=train"`
-	// Validation is percent of dataset rows which would be used to compute the objective during
-	// hyper parameter search phase.
-	// Only used if we do not do cross validation.
-	// default is 10% of the data, if we do not have cross validation.
-	// default is 0% of the data, if we do cross validation.
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Maximum=50
-	// +kubebuilder:validation:Optional
-	Validation *int32 `json:"validation,omitempty" protobuf:"varint,3,opt,name=validation"`
-	// Test is percent of dataset rows which would be used to compute the objective during
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Maximum=50
-	// +kubebuilder:default:=20
-	// +kubebuilder:validation:Optional
-	Test *int32 `json:"test,omitempty" protobuf:"varint,4,opt,name=test"`
-	// Indicate if the dataset split should be stratified.
-	// +kubebuilder:default:="stratified"
-	// +kubebuilder:validation:Optional
-	SplitPolicy *catalog.SplitType `json:"splitPolicy,omitempty" protobuf:"bytes,5,opt,name=splitPolicy"`
-	// The name of the column used to split
-	// +kubebuilder:validation:Optional
-	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,6,opt,name=splitColumn"`
-	// The seed to use for the estimator
-	// Default: 42
-	// +kubebuilder:default:=42
-	// +kubebuilder:validation:Optional
-	Seed *int32 `json:"seed,omitempty" protobuf:"varint,7,opt,name=seed"`
 }
 
 type Level struct {

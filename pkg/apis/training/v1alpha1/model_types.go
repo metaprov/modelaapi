@@ -675,6 +675,35 @@ type SuccessiveHalvingSpec struct {
 	Modality *catalog.ModalityType `json:"modality,omitempty" protobuf:"bytes,26,opt,name=modality"`
 }
 
+type DataSplitSpec struct {
+	// Training is a percent number (0-100) which specify how much of
+	// the data will be used for training
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=80
+	// +kubebuilder:validation:Minimum=1
+	// +kubebuilder:validation:Maximum=100
+	Train *int32 `json:"train,omitempty" protobuf:"varint,1,opt,name=train"`
+	// Validation is percent of dataset rows which would be used to compute the objective during
+	// hyper parameter search phase.
+	// Only used if we do not do cross validation.
+	// default is 10% of the data, if we do not have cross validation.
+	// default is 0% of the data, if we do cross validation.
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Maximum=50
+	// +kubebuilder:validation:Optional
+	Validation *int32 `json:"validation,omitempty" protobuf:"varint,2,opt,name=validation"`
+	// Test is percent of dataset rows which would be used to compute the objective during
+	// +kubebuilder:validation:Minimum=0
+	// +kubebuilder:validation:Maximum=100
+	// +kubebuilder:default:=20
+	// +kubebuilder:validation:Optional
+	Test *int32 `json:"test,omitempty" protobuf:"varint,3,opt,name=test"`
+	// The name of the column used to split
+	// +kubebuilder:validation:Optional
+	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,4,opt,name=splitColumn"`
+}
+
 // TrainingSpec is the specification of the training process
 type TrainingSpec struct {
 	// Priority specify the priority of the model in the training queue.
@@ -689,24 +718,27 @@ type TrainingSpec struct {
 	// If true, this is a cross validation using folds. If False, use the validation set.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	CV *bool `json:"cv,omitempty" protobuf:"varint,3,opt,name=cv"`
+	CV *bool `json:"cv,omitempty" protobuf:"varint,16,opt,name=cV"`
 	// The number of folds during cross validation.
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
 	Folds *int32 `json:"folds,omitempty" protobuf:"varint,4,opt,name=folds"`
+	// Data Split define how to split the data into test and train.
+	// +kubebuilder:validation:Optional
+	Split DataSplitSpec `json:"split,omitempty" protobuf:"bytes,5,opt,name=split"`
 	// Evaluation metrics are the scores
 	// +kubebuilder:validation:Optional
-	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,5,rep,name=evalMetrics"`
+	EvalMetrics []catalog.Metric `json:"evalMetrics,omitempty" protobuf:"bytes,6,rep,name=evalMetrics"`
 	// Early stopping, stop the training after X models with no improvement.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,6,opt,name=earlyStop"`
+	EarlyStop *bool `json:"earlyStop,omitempty" protobuf:"varint,7,opt,name=earlyStop"`
 	// Add snapshot interval for long training time in minutes.
 	// This is used to checkpoint training model.
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
-	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,7,opt,name=checkpointInterval"`
+	CheckpointInterval *int32 `json:"checkpointInterval,omitempty" protobuf:"varint,8,opt,name=checkpointInterval"`
 	// Successive halving represent the configuration for the model training, when running
 	// the SuccessiveHalvingSpec model search algorithm
 	// The metrics are evaluated using the final model, both on the training set
@@ -728,7 +760,7 @@ type TrainingSpec struct {
 	// Dist indicate the training should be be distributed
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Dist *bool `json:"dist,omitempty" protobuf:"varint,13,opt,name=dist"`
+	Distributed *bool `json:"distributed,omitempty" protobuf:"varint,13,opt,name=distributed"`
 	// In case of dist node, how many nodes to use.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
