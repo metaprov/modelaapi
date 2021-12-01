@@ -249,7 +249,7 @@ func (study *Study) MarkSplitted() {
 	testingLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "testing.csv"))
 	study.Status.TestDatasetLocation = testingLocation
 
-	if *study.Spec.Split.Validation > 0 {
+	if *study.Spec.TrainingTemplate.Split.Validation > 0 {
 		valLocation := data.DataLocation{}
 		valLocation.BucketName = study.Spec.Location.BucketName
 		valLocation.Path = util.StrPtr(path.Join(*study.Spec.Location.Path, "data", "validation.csv"))
@@ -630,15 +630,15 @@ func (study *Study) ReachedMaxModels() bool {
 func (study *Study) SetTrainTest(rows int32) {
 
 	if rows <= 20000 {
-		study.Spec.Split.Train = util.Int32Ptr(80)
-		study.Spec.Split.Test = util.Int32Ptr(20)
-		study.Spec.Split.Validation = util.Int32Ptr(0)
+		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
+		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(20)
+		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(0)
 	}
 
 	if rows > 20000 {
-		study.Spec.Split.Train = util.Int32Ptr(80)
-		study.Spec.Split.Test = util.Int32Ptr(10)
-		study.Spec.Split.Validation = util.Int32Ptr(10)
+		study.Spec.TrainingTemplate.Split.Train = util.Int32Ptr(80)
+		study.Spec.TrainingTemplate.Split.Test = util.Int32Ptr(10)
+		study.Spec.TrainingTemplate.Split.Validation = util.Int32Ptr(10)
 	}
 
 }

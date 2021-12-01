@@ -90,7 +90,7 @@ func (study *Study) Default() {
 	}
 
 	if study.Spec.TrainingTemplate == nil {
-		cvtype := catalog.CvTypeStratified
+		cvtype := catalog.CvTypeStratifiedKFold
 		pr := catalog.PriorityLevelMedium
 		study.Spec.TrainingTemplate = &TrainingSpec{
 			Priority:           &pr,
@@ -101,19 +101,6 @@ func (study *Study) Default() {
 			CheckpointInterval: util.Int32Ptr(10),
 			Seed:               util.Float64Ptr(42),
 		}
-	}
-
-	if study.Spec.Split == nil {
-		splitPolicy := catalog.SplitTypeStratified
-		study.Spec.Split = &DataSplit{
-			Auto:        util.BoolPtr(true),
-			Train:       util.Int32Ptr(80),
-			Validation:  util.Int32Ptr(0),
-			Test:        util.Int32Ptr(20),
-			SplitPolicy: &splitPolicy,
-			Seed:        util.Int32Ptr(42),
-		}
-
 	}
 
 	if study.Spec.Aborted == nil {

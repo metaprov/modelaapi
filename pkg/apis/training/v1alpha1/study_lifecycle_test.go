@@ -68,9 +68,9 @@ func TestTrainTestValidation_CV_Less_Than_1000_(t *testing.T) {
 	study := Study{}
 	study.Default()
 
-	assert.Equal(t, *study.Spec.Split.Train, int32(80))
-	assert.Equal(t, *study.Spec.Split.Test, int32(20))
-	assert.Equal(t, *study.Spec.Split.Validation, int32(0))
+	assert.Equal(t, *&study.Spec.TrainingTemplate.Split.Train, int32(80))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Split.Test, int32(20))
+	assert.Equal(t, *study.Spec.TrainingTemplate.Split.Validation, int32(0))
 
 	study.SetupCv(200)
 
