@@ -2852,12 +2852,12 @@ message StudyCondition {
 message StudyForecastSpec {
   // Template to use for each model
   // +kubebuilder:validation:Optional
-  optional ForecastSpec forecast = 35;
+  optional ForecastSpec template = 1;
 
   // for multi level forecast
   // The group hierarchy
   // +kubebuilder:validation:Optional
-  optional Hierarchy hierarchy = 23;
+  optional Hierarchy hierarchy = 2;
 }
 
 // +kubebuilder:object:root=true
@@ -3353,7 +3353,6 @@ message TimeSeriesDataSpec {
   repeated CustomSeasonalitySpec customSeasonalities = 15;
 
   // Set an holiday schedule for a country.
-  // +kubebuilder:validation:Optional
   // Change point specification
   // +kubebuilder:validation:Optional
   optional ChangePointSpec changepoints = 16;

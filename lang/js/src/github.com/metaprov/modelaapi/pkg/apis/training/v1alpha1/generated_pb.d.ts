@@ -4251,10 +4251,10 @@ export namespace StudyCondition {
 }
 
 export class StudyForecastSpec extends jspb.Message {
-  getForecast(): ForecastSpec | undefined;
-  setForecast(value?: ForecastSpec): StudyForecastSpec;
-  hasForecast(): boolean;
-  clearForecast(): StudyForecastSpec;
+  getTemplate(): ForecastSpec | undefined;
+  setTemplate(value?: ForecastSpec): StudyForecastSpec;
+  hasTemplate(): boolean;
+  clearTemplate(): StudyForecastSpec;
 
   getHierarchy(): Hierarchy | undefined;
   setHierarchy(value?: Hierarchy): StudyForecastSpec;
@@ -4271,7 +4271,7 @@ export class StudyForecastSpec extends jspb.Message {
 
 export namespace StudyForecastSpec {
   export type AsObject = {
-    forecast?: ForecastSpec.AsObject,
+    template?: ForecastSpec.AsObject,
     hierarchy?: Hierarchy.AsObject,
   }
 }

@@ -42641,7 +42641,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.toObject(includeInstance, f),
+    template: (f = msg.getTemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.toObject(includeInstance, f),
     hierarchy: (f = msg.getHierarchy()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.toObject(includeInstance, f)
   };
 
@@ -42679,12 +42679,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 35:
+    case 1:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.deserializeBinaryFromReader);
-      msg.setForecast(value);
+      msg.setTemplate(value);
       break;
-    case 23:
+    case 2:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.deserializeBinaryFromReader);
       msg.setHierarchy(value);
@@ -42718,10 +42718,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getForecast();
+  f = message.getTemplate();
   if (f != null) {
     writer.writeMessage(
-      35,
+      1,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec.serializeBinaryToWriter
     );
@@ -42729,7 +42729,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
   f = message.getHierarchy();
   if (f != null) {
     writer.writeMessage(
-      23,
+      2,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy.serializeBinaryToWriter
     );
@@ -42738,12 +42738,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
 
 
 /**
- * optional ForecastSpec forecast = 35;
+ * optional ForecastSpec template = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.getForecast = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.getTemplate = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec, 35));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec, 1));
 };
 
 
@@ -42751,8 +42751,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ForecastSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.setForecast = function(value) {
-  return jspb.Message.setWrapperField(this, 35, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.setTemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -42760,8 +42760,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.clearForecast = function() {
-  return this.setForecast(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.clearTemplate = function() {
+  return this.setTemplate(undefined);
 };
 
 
@@ -42769,18 +42769,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.hasForecast = function() {
-  return jspb.Message.getField(this, 35) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.hasTemplate = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional Hierarchy hierarchy = 23;
+ * optional Hierarchy hierarchy = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.getHierarchy = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy, 23));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Hierarchy, 2));
 };
 
 
@@ -42789,7 +42789,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.setHierarchy = function(value) {
-  return jspb.Message.setWrapperField(this, 23, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -42807,7 +42807,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.prototype.hasHierarchy = function() {
-  return jspb.Message.getField(this, 23) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

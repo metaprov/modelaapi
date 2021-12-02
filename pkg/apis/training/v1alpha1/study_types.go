@@ -236,10 +236,10 @@ type ModelSearchSpec struct {
 	RetainFor *int32 `json:"retainedFor,omitempty" protobuf:"varint,10,opt,name=retainedFor"`
 	// Define when the schedule start
 	// +kubebuilder:validation:Optional
-	StudySchedule StudyScheduleSpec `json:"studySchedule,omitempty" protobuf:"bytes,11,opt,name=studySchedule"`
+	StudySchedule *StudyScheduleSpec `json:"studySchedule,omitempty" protobuf:"bytes,11,opt,name=studySchedule"`
 	// Define the algorithm search space.
 	// +kubebuilder:validation:Optional
-	SearchSpace AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,12,opt,name=searchSpace"`
+	SearchSpace *AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,12,opt,name=searchSpace"`
 	// If larget than 0, stop the search if no change in best score occur.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -325,11 +325,11 @@ type PrunerSpec struct {
 type StudyForecastSpec struct {
 	// Template to use for each model
 	// +kubebuilder:validation:Optional
-	ForecastTemplate *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,35,opt,name=forecast"`
+	Template *ForecastSpec `json:"template,omitempty" protobuf:"bytes,1,opt,name=template"`
 	// for multi level forecast
 	// The group hierarchy
 	// +kubebuilder:validation:Optional
-	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,23,opt,name=hierarchy"`
+	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,2,opt,name=hierarchy"`
 }
 
 // Define the specification for the best feature engineering pipeline

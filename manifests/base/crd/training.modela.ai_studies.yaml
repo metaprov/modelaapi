@@ -251,7 +251,101 @@ spec:
               forecast:
                 description: Forecast template
                 properties:
-                  forecast:
+                  hierarchy:
+                    description: for multi level forecast The group hierarchy
+                    properties:
+                      columns:
+                        description: The columns in the data frame that belongs to
+                          the hierarchy. By default, all the item level column is
+                          the last one. The default aggregate function is sum.
+                        items:
+                          type: string
+                        type: array
+                      groupLevels:
+                        description: The group level columns. For each group level
+                          column specify the horizon and the aggregate function
+                        items:
+                          properties:
+                            aggregate:
+                              description: The aggregate function used to roll up
+                                the lower level
+                              enum:
+                              - min
+                              - max
+                              - avg
+                              - median
+                              type: string
+                            distinc:
+                              description: The distinct values of the column for this
+                                level
+                              items:
+                                type: string
+                              type: array
+                            freq:
+                              description: The freq of the level
+                              enum:
+                              - second
+                              - minute
+                              - hour
+                              - day
+                              - week
+                              - month
+                              - quarter
+                              - year
+                              type: string
+                            horizon:
+                              description: The number of time periods to
+                              format: int32
+                              type: integer
+                            string:
+                              description: The name of the level - the column name
+                              type: string
+                          type: object
+                        type: array
+                      itemLevel:
+                        description: Item level column.
+                        properties:
+                          aggregate:
+                            description: The aggregate function used to roll up the
+                              lower level
+                            enum:
+                            - min
+                            - max
+                            - avg
+                            - median
+                            type: string
+                          distinc:
+                            description: The distinct values of the column for this
+                              level
+                            items:
+                              type: string
+                            type: array
+                          freq:
+                            description: The freq of the level
+                            enum:
+                            - second
+                            - minute
+                            - hour
+                            - day
+                            - week
+                            - month
+                            - quarter
+                            - year
+                            type: string
+                          horizon:
+                            description: The number of time periods to
+                            format: int32
+                            type: integer
+                          string:
+                            description: The name of the level - the column name
+                            type: string
+                        type: object
+                      notifierName:
+                        description: Optional notifier to use when the forecast is
+                          complete.
+                        type: string
+                    type: object
+                  template:
                     description: Template to use for each model
                     properties:
                       backtest:
@@ -544,100 +638,6 @@ spec:
                               and update the forecast connection. Default it true
                             type: boolean
                         type: object
-                    type: object
-                  hierarchy:
-                    description: for multi level forecast The group hierarchy
-                    properties:
-                      columns:
-                        description: The columns in the data frame that belongs to
-                          the hierarchy. By default, all the item level column is
-                          the last one. The default aggregate function is sum.
-                        items:
-                          type: string
-                        type: array
-                      groupLevels:
-                        description: The group level columns. For each group level
-                          column specify the horizon and the aggregate function
-                        items:
-                          properties:
-                            aggregate:
-                              description: The aggregate function used to roll up
-                                the lower level
-                              enum:
-                              - min
-                              - max
-                              - avg
-                              - median
-                              type: string
-                            distinc:
-                              description: The distinct values of the column for this
-                                level
-                              items:
-                                type: string
-                              type: array
-                            freq:
-                              description: The freq of the level
-                              enum:
-                              - second
-                              - minute
-                              - hour
-                              - day
-                              - week
-                              - month
-                              - quarter
-                              - year
-                              type: string
-                            horizon:
-                              description: The number of time periods to
-                              format: int32
-                              type: integer
-                            string:
-                              description: The name of the level - the column name
-                              type: string
-                          type: object
-                        type: array
-                      itemLevel:
-                        description: Item level column.
-                        properties:
-                          aggregate:
-                            description: The aggregate function used to roll up the
-                              lower level
-                            enum:
-                            - min
-                            - max
-                            - avg
-                            - median
-                            type: string
-                          distinc:
-                            description: The distinct values of the column for this
-                              level
-                            items:
-                              type: string
-                            type: array
-                          freq:
-                            description: The freq of the level
-                            enum:
-                            - second
-                            - minute
-                            - hour
-                            - day
-                            - week
-                            - month
-                            - quarter
-                            - year
-                            type: string
-                          horizon:
-                            description: The number of time periods to
-                            format: int32
-                            type: integer
-                          string:
-                            description: The name of the level - the column name
-                            type: string
-                        type: object
-                      notifierName:
-                        description: Optional notifier to use when the forecast is
-                          complete.
-                        type: string
                     type: object
                 type: object
               labRef:
