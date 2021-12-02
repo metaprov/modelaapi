@@ -87,7 +87,7 @@ func (model *Model) DefaultObjective() catalog.Metric {
 	if *model.Spec.Task == catalog.Regression {
 		return catalog.MSLE
 	}
-	return catalog.UnknownMetric
+	return catalog.NoneMetric
 }
 
 func (model *Model) DefaultImageName() string {
