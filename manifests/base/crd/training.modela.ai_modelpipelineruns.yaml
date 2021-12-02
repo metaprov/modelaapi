@@ -232,6 +232,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -404,6 +405,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -548,6 +550,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -693,6 +696,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -840,6 +844,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -994,6 +999,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1143,6 +1149,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test
@@ -1293,6 +1300,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         modelName:
                           description: ModelName is the name of the model under test

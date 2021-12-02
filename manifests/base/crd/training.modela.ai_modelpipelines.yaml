@@ -175,6 +175,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         min:
                           type: number
@@ -343,6 +344,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         min:
                           type: number
@@ -641,6 +643,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         min:
                           type: number
@@ -828,6 +831,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         min:
                           type: number
@@ -954,6 +958,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         min:
                           type: number

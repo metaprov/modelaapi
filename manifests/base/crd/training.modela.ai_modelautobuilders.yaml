@@ -973,6 +973,7 @@ spec:
                 - maze
                 - gpu
                 - gpu-mem
+                - none
                 type: string
               owner:
                 default: no-one

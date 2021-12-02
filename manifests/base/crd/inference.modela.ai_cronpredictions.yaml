@@ -396,6 +396,7 @@ spec:
                           - maze
                           - gpu
                           - gpu-mem
+                          - none
                           type: string
                         type: array
                       ttl:

@@ -840,6 +840,7 @@ spec:
                 - maze
                 - gpu
                 - gpu-mem
+                - none
                 type: string
               objective2:
                 description: Objective2 is the second objective to consider during
@@ -903,6 +904,7 @@ spec:
                 - maze
                 - gpu
                 - gpu-mem
+                - none
                 type: string
               owner:
                 default: no-one
@@ -1402,6 +1404,7 @@ spec:
                       - maze
                       - gpu
                       - gpu-mem
+                      - none
                       type: string
                     type: array
                   folds:

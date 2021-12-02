@@ -952,6 +952,7 @@ spec:
                 - maze
                 - gpu
                 - gpu-mem
+                - none
                 type: string
               owner:
                 default: no-one
@@ -1138,6 +1139,7 @@ spec:
                       - maze
                       - gpu
                       - gpu-mem
+                      - none
                       type: string
                     type: array
                   folds:
@@ -1451,6 +1453,7 @@ spec:
                       - maze
                       - gpu
                       - gpu-mem
+                      - none
                       type: string
                     value:
                       description: The value for this model
@@ -1675,6 +1678,7 @@ spec:
                       - maze
                       - gpu
                       - gpu-mem
+                      - none
                       type: string
                     value:
                       description: The value for this model
@@ -1842,6 +1846,7 @@ spec:
                       - maze
                       - gpu
                       - gpu-mem
+                      - none
                       type: string
                     value:
                       description: The value for this model

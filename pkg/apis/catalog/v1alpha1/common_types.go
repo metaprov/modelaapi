@@ -443,7 +443,7 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
-// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr";"rmsle";"matthews-corr-coef";"p50-latency";"p95-latency";"p99-latency";"cpu";"mem";"req-per-sec";"maze";"gpu";"gpu-mem"
+// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr";"rmsle";"matthews-corr-coef";"p50-latency";"p95-latency";"p99-latency";"cpu";"mem";"req-per-sec";"maze";"gpu";"gpu-mem";"none"
 type Metric string
 
 const (
@@ -527,7 +527,7 @@ const (
 	ReqSec                   Metric = "req-per-sec"
 	UncrainPredictionPercent Metric = "uncertain-prediction-percent"
 
-	UnknownMetric Metric = "unknown"
+	NoneMetric Metric = "none"
 )
 
 // Compare two scores in the metrics
