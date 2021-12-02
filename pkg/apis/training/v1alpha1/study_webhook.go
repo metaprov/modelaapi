@@ -63,6 +63,10 @@ func (study *Study) Default() {
 		study.Spec.Search.Pruner.Default()
 	}
 
+	if study.Spec.Search.SearchSpace == nil {
+		study.Spec.Search.SearchSpace = &AlgorithmSearchSpaceSpec{}
+	}
+
 	if study.Spec.Search.SearchSpace.VotingEnsemble == nil {
 		study.Spec.Search.SearchSpace.VotingEnsemble = util.BoolPtr(false)
 	}
@@ -70,6 +74,7 @@ func (study *Study) Default() {
 	if study.Spec.Search.SearchSpace.StackingEnsemble == nil {
 		study.Spec.Search.SearchSpace.StackingEnsemble = util.BoolPtr(true)
 	}
+
 	study.Spec.Search.SearchSpace.StackingEnsemble = util.BoolPtr(true)
 
 	if study.Spec.Search.Pruner.SHOptions == nil {
