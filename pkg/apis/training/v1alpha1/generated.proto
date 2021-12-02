@@ -2900,7 +2900,6 @@ message StudySpec {
   optional k8s.io.api.core.v1.ObjectReference labRef = 4;
 
   // DatasetName refer to the dataset object for which the study is for.
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Required
   optional string datasetName = 5;
 
@@ -2914,6 +2913,7 @@ message StudySpec {
   optional string objective = 7;
 
   // Objective2 is the second objective to consider during optimization.
+  // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string objective2 = 8;
 

@@ -138,7 +138,6 @@ spec:
                     type: array
                 type: object
               datasetName:
-                default: ""
                 description: DatasetName refer to the dataset object for which the
                   study is for.
                 type: string
@@ -843,6 +842,7 @@ spec:
                 - none
                 type: string
               objective2:
+                default: none
                 description: Objective2 is the second objective to consider during
                   optimization.
                 enum:

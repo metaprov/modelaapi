@@ -379,7 +379,6 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,4,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Required
 	DatasetName *string `json:"datasetName" protobuf:"bytes,5,opt,name=datasetName"`
 	// Task specify the machine learning task (e.g classification).
@@ -390,6 +389,7 @@ type StudySpec struct {
 	// +kubebuilder:validation:Optional
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,7,opt,name=objective"`
 	// Objective2 is the second objective to consider during optimization.
+	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Objective2 *catalog.Metric `json:"objective2,omitempty" protobuf:"bytes,8,opt,name=objective2"`
 	// Search defines the model search
