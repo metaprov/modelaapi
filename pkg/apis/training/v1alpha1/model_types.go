@@ -449,20 +449,20 @@ type ModelStatus struct {
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,35,opt,name=observedGeneration"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
-	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,36,opt,name=trainingRows"`
+	TrainingRows int32 `json:"trainingRows" protobuf:"varint,36,opt,name=trainingRows"`
 	//TestingRows is the amount of rows in testing
 	// +kubebuilder:validation:Optional
-	TestingRows *int32 `json:"testingRows" protobuf:"varint,37,opt,name=testingRows"`
+	TestingRows int32 `json:"testingRows" protobuf:"varint,37,opt,name=testingRows"`
 	//Validation row contain the number of validation rows for cases that we have validation.
 	// +kubebuilder:validation:Optional
-	ValidationRows *int32 `json:"validationRows" protobuf:"varint,38,opt,name=validationRows"`
+	ValidationRows int32 `json:"validationRows" protobuf:"varint,38,opt,name=validationRows"`
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,39,opt,name=lastError"`
 	// Model Progress in precent, the progress takes into account the different stages of the model.
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress,omitempty" protobuf:"varint,40,opt,name=progress"`
+	Progress int32 `json:"progress,omitempty" protobuf:"varint,40,opt,name=progress"`
 	// Size of the model size
 	// +kubebuilder:validation:Optional
 	SizeInBytes int32 `json:"sizeInBytes,omitempty" protobuf:"varint,41,opt,name=sizeInBytes"`
@@ -509,7 +509,7 @@ type ModelStatus struct {
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,55,opt,name=logs"`
 	// Set the trial ID, by the optimizer.
 	// +kubebuilder:validation:Optional
-	TrialID *int32 `json:"trialID,omitempty" protobuf:"varint,56,opt,name=trialID"`
+	TrialID int32 `json:"trialID,omitempty" protobuf:"varint,56,opt,name=trialID"`
 	// Roc curve
 	// +kubebuilder:validation:Optional
 	RocAucCurve catalog.RocAucCurve `json:"rocauccurve,omitempty" protobuf:"varint,57,opt,name=rocauccurve"`
@@ -844,15 +844,15 @@ type DataHashes struct {
 	// Training
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TrainingHash *string `json:"trainingHash,omitempty" protobuf:"bytes,1,opt,name=trainHash"`
+	TrainingHash string `json:"trainingHash,omitempty" protobuf:"bytes,1,opt,name=trainHash"`
 	// Testing hash is a sha 256 of the testing data.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	TestingHash *string `json:"testingHash,omitempty" protobuf:"bytes,2,opt,name=testingHash"`
+	TestingHash string `json:"testingHash,omitempty" protobuf:"bytes,2,opt,name=testingHash"`
 	// Pointer to the validation
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ValidationHash *string `json:"validationHash,omitempty" protobuf:"bytes,3,opt,name=validationHash"`
+	ValidationHash string `json:"validationHash,omitempty" protobuf:"bytes,3,opt,name=validationHash"`
 }
 
 type FeatureEngineeringSearchStatus struct {

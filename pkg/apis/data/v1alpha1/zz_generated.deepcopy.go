@@ -1676,11 +1676,6 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 		in, out := &in.NotificationTime, &out.NotificationTime
 		*out = (*in).DeepCopy()
 	}
-	if in.Progress != nil {
-		in, out := &in.Progress, &out.Progress
-		*out = new(int32)
-		**out = **in
-	}
 	in.Logs.DeepCopyInto(&out.Logs)
 	if in.DerivedFromDataset != nil {
 		in, out := &in.DerivedFromDataset, &out.DerivedFromDataset

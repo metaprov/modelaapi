@@ -569,21 +569,21 @@ type StudyStatus struct {
 	LastError *string `json:"lastError,omitempty" protobuf:"bytes,33,opt,name=lastError"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
-	TrainingRows *int32 `json:"trainingRows" protobuf:"varint,34,opt,name=trainingRows"`
+	TrainingRows int32 `json:"trainingRows" protobuf:"varint,34,opt,name=trainingRows"`
 	//TestingRows is the amount of rows in testing
 	// +kubebuilder:validation:Optional
-	TestingRows *int32 `json:"testingRows" protobuf:"varint,35,opt,name=testingRows"`
+	TestingRows int32 `json:"testingRows" protobuf:"varint,35,opt,name=testingRows"`
 	//Validation row contain the number of validation rows for cases that we have validation.
 	// +kubebuilder:validation:Optional
-	ValidationRows *int32 `json:"validationRows" protobuf:"varint,36,opt,name=validationRows"`
+	ValidationRows int32 `json:"validationRows" protobuf:"varint,36,opt,name=validationRows"`
 	// Study Progress in precent, the progress takes into account the different stages of the study.
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress" protobuf:"varint,37,opt,name=progress"`
+	Progress int32 `json:"progress" protobuf:"varint,37,opt,name=progress"`
 	// define a baseline model that will be the baseline for the search. If not none, the base line is the first model
 	// to be evaluated.
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	BaslineModel *catalog.ClassicEstimatorName `json:"baseline,omitempty" protobuf:"bytes,38,opt,name=baseline"`
+	BaslineModel catalog.ClassicEstimatorName `json:"baseline,omitempty" protobuf:"bytes,38,opt,name=baseline"`
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
 	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,39,opt,name=trainingDataHash"`
