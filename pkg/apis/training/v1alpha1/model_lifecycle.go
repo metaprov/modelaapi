@@ -353,7 +353,7 @@ func (model *Model) MarkWaitingToTrain() {
 	now := metav1.Now()
 	model.Status.StartTime = &now
 	model.Status.Phase = ModelPhasePending
-	model.Status.Progress = util.Int32Ptr(0)
+	model.Status.Progress = 0
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelTrained,
 		Status: v1.ConditionFalse,
@@ -367,7 +367,7 @@ func (model *Model) MarkTraining() {
 	model.Status.StartTime = &now
 	model.Status.TrainingStartTime = &now
 	model.Status.Phase = ModelPhaseTraining
-	model.Status.Progress = util.Int32Ptr(10)
+	model.Status.Progress = 10
 }
 
 func (model *Model) MarkReleasing() {
@@ -408,7 +408,7 @@ func (model *Model) MarkTrained(ms []catalog.Measurement) {
 		Type:   ModelTrained,
 		Status: v1.ConditionTrue,
 	})
-	model.Status.Progress = util.Int32Ptr(50)
+	model.Status.Progress = 50
 }
 
 func (model *Model) MarkFailedToTrain(err string) {
@@ -425,7 +425,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Train = make([]catalog.Measurement, 0)
 	model.Status.LastError = "Failed to train." + err
-	model.Status.Progress = util.Int32Ptr(100)
+	model.Status.Progress = 100
 
 }
 
@@ -471,7 +471,7 @@ func (model *Model) MarkTesting() {
 		Status: v1.ConditionFalse,
 		Reason: ReasonTesting,
 	})
-	model.Status.Progress = util.Int32Ptr(70)
+	model.Status.Progress = 70
 }
 
 func (model *Model) MarkTestingFailed(err string) {
@@ -483,7 +483,7 @@ func (model *Model) MarkTestingFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.LastError = "Failed to test." + err
-	model.Status.Progress = util.Int32Ptr(100)
+	model.Status.Progress = 100
 }
 
 func (model *Model) MarkTested() {
@@ -494,7 +494,7 @@ func (model *Model) MarkTested() {
 	})
 	now := metav1.Now()
 	model.Status.TestingEndTime = &now
-	model.Status.Progress = util.Int32Ptr(80)
+	model.Status.Progress = 80
 }
 
 func (model *Model) TestingFailed() bool {
@@ -524,7 +524,7 @@ func (model *Model) MarkProfiling() {
 		Status: v1.ConditionFalse,
 		Reason: ReasonProfiling,
 	})
-	model.Status.Progress = util.Int32Ptr(85)
+	model.Status.Progress = 85
 }
 
 func (model *Model) MarkProfiled(uri string) {
@@ -534,7 +534,7 @@ func (model *Model) MarkProfiled(uri string) {
 		Status: v1.ConditionTrue,
 	})
 	model.Status.ProfileUri = uri
-	model.Status.Progress = util.Int32Ptr(90)
+	model.Status.Progress = 90
 }
 
 func (model *Model) MarkProfiledFailed(err string) {
@@ -546,7 +546,7 @@ func (model *Model) MarkProfiledFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.LastError = "Failed to profile." + err
-	model.Status.Progress = util.Int32Ptr(100)
+	model.Status.Progress = 100
 }
 
 func (model *Model) Profiled() bool {
@@ -562,7 +562,7 @@ func (model *Model) MarkReporting() {
 		Status: v1.ConditionFalse,
 		Reason: string(ModelPhaseReporting),
 	})
-	model.Status.Progress = util.Int32Ptr(95)
+	model.Status.Progress = 95
 
 }
 
@@ -573,7 +573,7 @@ func (model *Model) MarkReported(name string) {
 		Type:   ModelReported,
 		Status: v1.ConditionTrue,
 	})
-	model.Status.Progress = util.Int32Ptr(96)
+	model.Status.Progress = 96
 }
 
 func (model *Model) MarkReportFailed(err string) {
@@ -585,7 +585,7 @@ func (model *Model) MarkReportFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.LastError = "Failed to report." + err
-	model.Status.Progress = util.Int32Ptr(100)
+	model.Status.Progress = 100
 }
 
 func (model *Model) Reported() bool {
@@ -606,7 +606,7 @@ func (model *Model) MarkForecasted() {
 		Type:   ModelForecasted,
 		Status: v1.ConditionTrue,
 	})
-	model.Status.Progress = util.Int32Ptr(100)
+	model.Status.Progress = 100
 }
 
 func (model *Model) MarkForecastFailed(err string) {
@@ -618,7 +618,7 @@ func (model *Model) MarkForecastFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.LastError = "Failed to forecast." + err
-	model.Status.Progress = util.Int32Ptr(100)
+	model.Status.Progress = 100
 }
 
 func (model *Model) MarkForecasting() {
@@ -628,7 +628,7 @@ func (model *Model) MarkForecasting() {
 		Status: v1.ConditionFalse,
 		Reason: "Forecasting",
 	})
-	model.Status.Progress = util.Int32Ptr(50)
+	model.Status.Progress = 50
 }
 
 ///
@@ -762,7 +762,7 @@ func (model *Model) MarkReady() {
 	now := metav1.Now()
 	model.Status.EndTime = &now
 	model.Status.Phase = ModelPhaseCompleted
-	model.Status.Progress = util.Int32Ptr(100)
+	model.Status.Progress = 100
 }
 
 func (model *Model) IsReady() bool {
@@ -829,9 +829,9 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Status.TrainDatasetLocation = study.Status.TrainDatasetLocation
 	model.Status.TestDatasetLocation = study.Status.TestDatasetLocation
 	model.Status.ValidationDataset = study.Status.ValidationDataset
-	model.Status.TrainingDataHash.TestingHash = util.StrPtr(*study.Status.TrainingDataHash.TestingHash)
-	model.Status.TrainingDataHash.TrainingHash = util.StrPtr(*study.Status.TrainingDataHash.TrainingHash)
-	model.Status.TrainingDataHash.ValidationHash = util.StrPtr(*study.Status.TrainingDataHash.TrainingHash)
+	model.Status.TrainingDataHash.TestingHash = study.Status.TrainingDataHash.TestingHash
+	model.Status.TrainingDataHash.TrainingHash = study.Status.TrainingDataHash.TrainingHash
+	model.Status.TrainingDataHash.ValidationHash = study.Status.TrainingDataHash.TrainingHash
 
 }
 

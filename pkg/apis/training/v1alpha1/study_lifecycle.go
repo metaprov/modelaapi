@@ -688,16 +688,16 @@ func (study *Study) IsFailed() bool {
 func (study *Study) RefreshProgress() {
 	// if we completed the study, or failed or aborted, put progress at 100
 	if study.IsReady() || study.IsFailed() || study.Aborted() {
-		study.Status.Progress = util.Int32Ptr(100)
+		study.Status.Progress = 100
 	} else if study.Reported() {
-		study.Status.Progress = util.Int32Ptr(95)
+		study.Status.Progress = 95
 	} else if study.Profiled() {
-		study.Status.Progress = util.Int32Ptr(90)
+		study.Status.Progress = 90
 	} else if study.Tested() {
-		study.Status.Progress = util.Int32Ptr(80)
+		study.Status.Progress = 80
 	} else if study.Searched() {
-		study.Status.Progress = util.Int32Ptr(50)
+		study.Status.Progress = 50
 	} else if study.Splitted() {
-		study.Status.Progress = util.Int32Ptr(10)
+		study.Status.Progress = 10
 	}
 }
