@@ -1245,6 +1245,9 @@ message DataSourceSpec {
   // The default task for datasets from this data source. If null this will be setup to the data product task
   // +kubebuilder:validation:Optional
   optional string task = 10;
+
+  // List of relationships to other data sources
+  repeated RelationshipSpec relationships = 11;
 }
 
 // FlatFileStatus defines the observed state of CsvFileSpec
@@ -2954,6 +2957,22 @@ message RecommendationSchema {
   // +kubebuilder:default:="rating"
   // +kubebuilder:validation:Optional
   optional string ratingColumn = 3;
+}
+
+message RelationshipSpec {
+  // The name of the relationship
+  // +kubebuilder:validation:Required
+  optional string type = 1;
+
+  // Local columns the holds the fk.
+  optional string column = 2;
+
+  // The relationship arity
+  optional string arity = 3;
+
+  // The name of the other datasource object
+  // +kubebuilder:validation:Required
+  optional string relatesTo = 4;
 }
 
 // The sample spec define how to sample a dataset for analysis

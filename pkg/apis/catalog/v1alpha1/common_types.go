@@ -1559,6 +1559,16 @@ const (
 	OnyxPredictor  PredictorFormat = "onyx"
 )
 
+// +kubebuilder:validation:Enum="one-to-one";"one-to-many";"many-to-many";
+// Relationship type between data sources
+type RelationshipArity string
+
+const (
+	RelationshipArityOneToOne   RelationshipArity = "one-to-one"
+	RelationshipArityOneToMany  RelationshipArity = "one-to-many"
+	RelationshipArityManyToMany RelationshipArity = "many-to-many"
+)
+
 // ModalityType define the way that ASHA algorithm divide the data .
 // Since we are using multi modal alg , this parameter define the modality
 // +kubebuilder:validation:Enum="data";"epochs";

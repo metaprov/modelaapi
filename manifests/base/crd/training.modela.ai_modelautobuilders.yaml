@@ -290,6 +290,28 @@ spec:
                     default: no-one
                     description: The account name of the owner of this dataset
                     type: string
+                  relationships:
+                    description: List of relationships to other data sources
+                    items:
+                      properties:
+                        arity:
+                          description: The relationship arity
+                          enum:
+                          - one-to-one
+                          - one-to-many
+                          - many-to-many
+                          type: string
+                        columns:
+                          description: Local columns the holds the fk.
+                          type: string
+                        name:
+                          description: The name of the relationship
+                          type: string
+                        relatesTo:
+                          description: The name of the other datasource object
+                          type: string
+                      type: object
+                    type: array
                   sample:
                     description: Sample spec defines how many rows to use for analysis
                       for datasets from this datasource.

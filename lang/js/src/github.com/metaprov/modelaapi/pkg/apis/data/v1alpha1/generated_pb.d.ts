@@ -1606,6 +1606,11 @@ export class DataSourceSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): DataSourceSpec;
 
+  getRelationshipsList(): Array<RelationshipSpec>;
+  setRelationshipsList(value: Array<RelationshipSpec>): DataSourceSpec;
+  clearRelationshipsList(): DataSourceSpec;
+  addRelationships(value?: RelationshipSpec, index?: number): RelationshipSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSourceSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSourceSpec): DataSourceSpec.AsObject;
@@ -1626,6 +1631,7 @@ export namespace DataSourceSpec {
     datasettype: string,
     sample?: SampleSpec.AsObject,
     task: string,
+    relationshipsList: Array<RelationshipSpec.AsObject>,
   }
 }
 
@@ -4456,6 +4462,36 @@ export namespace RecommendationSchema {
     useridcolumn: string,
     itemidcolumn: string,
     ratingcolumn: string,
+  }
+}
+
+export class RelationshipSpec extends jspb.Message {
+  getType(): string;
+  setType(value: string): RelationshipSpec;
+
+  getColumn(): string;
+  setColumn(value: string): RelationshipSpec;
+
+  getArity(): string;
+  setArity(value: string): RelationshipSpec;
+
+  getRelatesto(): string;
+  setRelatesto(value: string): RelationshipSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RelationshipSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: RelationshipSpec): RelationshipSpec.AsObject;
+  static serializeBinaryToWriter(message: RelationshipSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RelationshipSpec;
+  static deserializeBinaryFromReader(message: RelationshipSpec, reader: jspb.BinaryReader): RelationshipSpec;
+}
+
+export namespace RelationshipSpec {
+  export type AsObject = {
+    type: string,
+    column: string,
+    arity: string,
+    relatesto: string,
   }
 }
 

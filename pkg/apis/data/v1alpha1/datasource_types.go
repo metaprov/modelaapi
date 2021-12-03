@@ -689,6 +689,8 @@ type DataSourceSpec struct {
 	// The default task for datasets from this data source. If null this will be setup to the data product task
 	// +kubebuilder:validation:Optional
 	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
+	// List of relationships to other data sources
+	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,11,opt,name=relationships"`
 }
 
 // FlatFileStatus defines the observed state of CsvFileSpec
@@ -721,4 +723,17 @@ type DataSourceList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`
 	Items           []DataSource `json:"items" protobuf:"bytes,2,rep,name=items"`
+}
+
+type RelationshipSpec struct {
+	// The name of the relationship
+	// +kubebuilder:validation:Required
+	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=type"`
+	// Local columns the holds the fk.
+	Column string `json:"columns,omitempty" protobuf:"bytes,2,opt,name=column"`
+	// The relationship arity
+	Arity *catalog.RelationshipArity `json:"arity,omitempty" protobuf:"bytes,3,opt,name=arity"`
+	// The name of the other datasource object
+	// +kubebuilder:validation:Required
+	RelatesTo string `json:"relatesTo,omitempty" protobuf:"bytes,4,opt,name=relatesTo"`
 }
