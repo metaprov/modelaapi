@@ -70,11 +70,8 @@ func (study *Study) ReachedMaxFETime() bool {
 }
 
 func (study *Study) ReachedMaxFEModels() bool {
-	totalModels :=
-		study.Status.FeatureEngineeringModeFailed +
-			study.Status.FeatureEngineeringModelTrained
-
-	return *study.Spec.FeatureEngineeringSearch.MaxModels > totalModels
+	totalModels := study.Status.FeatureEngineeringModeFailed + study.Status.FeatureEngineeringModelTrained
+	return *study.Spec.FeatureEngineeringSearch.MaxModels == totalModels
 }
 
 // Enabled if we reached max time
