@@ -94,15 +94,19 @@ type FeatureHistogramSpec struct {
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
 type FeatureHistogramStatus struct {
-	Values []float64 `json:"values,omitempty" protobuf:"bytes,1,opt,name=values"`
+	// ObservedGeneration is the Last generation that was acted on
+	//+kubebuilder:validation:Optional
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
+	// The histogram values
+	Values []float64 `json:"values,omitempty" protobuf:"bytes,2,opt,name=values"`
 	// The number of missing values
 	// +kubebuilder:validation:Minimum=0
-	Missing int32 `json:"missing,omitempty" protobuf:"varint,2,opt,name=missing"`
+	Missing int32 `json:"missing,omitempty" protobuf:"varint,3,opt,name=missing"`
 	// The number of invalid values
 	// +kubebuilder:validation:Minimum=0
-	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,3,opt,name=invalid"`
+	Invalid int32 `json:"invalid,omitempty" protobuf:"varint,4,opt,name=invalid"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []FeatureHistogramCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }

@@ -1821,20 +1821,25 @@ message FeatureHistogramSpec {
 
 // FeatureHistogramStatus defines the observed state of FeatureHistogram
 message FeatureHistogramStatus {
-  repeated double values = 1;
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
+  // The histogram values
+  repeated double values = 2;
 
   // The number of missing values
   // +kubebuilder:validation:Minimum=0
-  optional int32 missing = 2;
+  optional int32 missing = 3;
 
   // The number of invalid values
   // +kubebuilder:validation:Minimum=0
-  optional int32 invalid = 3;
+  optional int32 invalid = 4;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 4;
+  repeated FeatureHistogramCondition conditions = 5;
 }
 
 // +kubebuilder:object:root=true

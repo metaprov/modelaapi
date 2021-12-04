@@ -27653,7 +27653,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramSpec.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [1,4];
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.repeatedFields_ = [2,5];
 
 
 
@@ -27686,9 +27686,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
-    valuesList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
-    missing: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    invalid: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    valuesList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
+    missing: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    invalid: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.toObject, includeInstance)
   };
@@ -27728,20 +27729,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setObservedgeneration(value);
+      break;
+    case 2:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
       for (var i = 0; i < values.length; i++) {
         msg.addValues(values[i]);
       }
       break;
-    case 2:
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMissing(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setInvalid(value);
       break;
-    case 4:
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -27775,16 +27780,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getValuesList();
-  if (f.length > 0) {
-    writer.writeRepeatedDouble(
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt64(
       1,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
+  f = message.getValuesList();
+  if (f.length > 0) {
+    writer.writeRepeatedDouble(
       2,
       f
     );
@@ -27796,10 +27801,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition.serializeBinaryToWriter
     );
@@ -27808,11 +27820,47 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
 
 
 /**
- * repeated double values = 1;
+ * optional int64 observedGeneration = 1;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getObservedgeneration = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setObservedgeneration = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearObservedgeneration = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasObservedgeneration = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated double values = 2;
  * @return {!Array<number>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getValuesList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 1));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 2));
 };
 
 
@@ -27821,7 +27869,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setValuesList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 2, value || []);
 };
 
 
@@ -27831,7 +27879,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.addValues = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
@@ -27845,46 +27893,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
 
 
 /**
- * optional int32 missing = 2;
+ * optional int32 missing = 3;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getMissing = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setMissing = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearMissing = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasMissing = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional int32 invalid = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getInvalid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -27893,7 +27905,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setInvalid = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setMissing = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -27902,7 +27914,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearInvalid = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearMissing = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -27911,18 +27923,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasInvalid = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasMissing = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * repeated FeatureHistogramCondition conditions = 4;
+ * optional int32 invalid = 4;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getInvalid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setInvalid = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.clearInvalid = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.hasInvalid = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * repeated FeatureHistogramCondition conditions = 5;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, 5));
 };
 
 
@@ -27931,7 +27979,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
 };
 
 
@@ -27941,7 +27989,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatu
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramCondition, opt_index);
 };
 
 

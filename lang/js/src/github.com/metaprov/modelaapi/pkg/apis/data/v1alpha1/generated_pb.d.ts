@@ -2570,6 +2570,9 @@ export namespace FeatureHistogramSpec {
 }
 
 export class FeatureHistogramStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): FeatureHistogramStatus;
+
   getValuesList(): Array<number>;
   setValuesList(value: Array<number>): FeatureHistogramStatus;
   clearValuesList(): FeatureHistogramStatus;
@@ -2596,6 +2599,7 @@ export class FeatureHistogramStatus extends jspb.Message {
 
 export namespace FeatureHistogramStatus {
   export type AsObject = {
+    observedgeneration: number,
     valuesList: Array<number>,
     missing: number,
     invalid: number,

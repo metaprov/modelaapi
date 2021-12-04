@@ -135,7 +135,13 @@ spec:
                 format: int32
                 minimum: 0
                 type: integer
+              observedGeneration:
+                description: ObservedGeneration is the Last generation that was acted
+                  on
+                format: int64
+                type: integer
               values:
+                description: The histogram values
                 items:
                   type: number
                 type: array
