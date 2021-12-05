@@ -279,8 +279,13 @@ type ModelPipelineRunStatus struct {
 	// What triggered the run
 	//+kubebuilder:validation:Optional
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,20,opt,name=triggeredBy"`
+
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,21,opt,name=lastUpdated"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,21,rep,name=conditions"`
+	Conditions []ModelPipelineRunCondition `json:"conditions,omitempty" protobuf:"bytes,22,rep,name=conditions"`
 }

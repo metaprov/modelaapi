@@ -118,8 +118,12 @@ type FeaturePipelineRunStatus struct {
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,6,opt,name=logs"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,7,opt,name=lastUpdated"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,7,rep,name=conditions"`
+	Conditions []FeaturePipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

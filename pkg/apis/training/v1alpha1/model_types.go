@@ -525,10 +525,14 @@ type ModelStatus struct {
 	// Holds the top feature correlation
 	// +kubebuilder:validation:Optional
 	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,61,opt,name=topCorrelations"`
+
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,62,opt,name=lastUpdated"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,62,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,63,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of

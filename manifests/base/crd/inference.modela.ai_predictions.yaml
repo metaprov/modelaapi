@@ -353,6 +353,10 @@ spec:
                 description: EndTime is the end time of the prediction.
                 format: date-time
                 type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               logs:
                 description: Holds the location of log paths
                 properties:

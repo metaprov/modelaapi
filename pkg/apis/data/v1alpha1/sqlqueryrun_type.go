@@ -158,8 +158,13 @@ type SqlQueryRunStatus struct {
 	Location DataLocation `json:"location,omitempty" protobuf:"bytes,9,rep,name=location"`
 	// The name of the report object.
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,10,rep,name=reportName"`
+
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
+	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }

@@ -813,10 +813,14 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 10;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineRunCondition conditions = 10;
+  repeated DataPipelineRunCondition conditions = 11;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -1145,12 +1149,16 @@ message DataProductVersionSpec {
 message DataProductVersionStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 3;
+  optional int64 observedGeneration = 1;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductVersionCondition conditions = 2;
+  repeated DataProductVersionCondition conditions = 3;
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema
@@ -1530,12 +1538,16 @@ message DatasetStatus {
 
   // If this dataset is derived, the name of the dataset that this is derived from.
   // +kubebuilder:validation:Optional
-  optional string derivedFromDataset = 22;
+  optional string derivedFromDataset = 16;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 17;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 16;
+  repeated DatasetCondition conditions = 18;
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -1645,10 +1657,14 @@ message EntityStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated EntityCondition conditions = 2;
+  repeated EntityCondition conditions = 3;
 }
 
 message ExcelNotebookSpec {
@@ -1836,10 +1852,14 @@ message FeatureHistogramStatus {
   // +kubebuilder:validation:Minimum=0
   optional int32 invalid = 4;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureHistogramCondition conditions = 5;
+  repeated FeatureHistogramCondition conditions = 6;
 }
 
 // +kubebuilder:object:root=true
@@ -1995,10 +2015,14 @@ message FeaturePipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 6;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 7;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturePipelineRunCondition conditions = 7;
+  repeated FeaturePipelineRunCondition conditions = 8;
 }
 
 // FeaturePipelineSpec contain the desired state of a FeaturePipeline
@@ -2080,10 +2104,14 @@ message FeaturePipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturePipelineCondition conditions = 4;
+  repeated FeaturePipelineCondition conditions = 5;
 }
 
 // FeatureSpec contain the desired state of a Feature
@@ -2216,10 +2244,14 @@ message FeatureStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 28;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 29;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeatureCondition conditions = 29;
+  repeated FeatureCondition conditions = 30;
 }
 
 // Featureset represents a featureset object
@@ -2291,10 +2323,14 @@ message FeaturesetStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated FeaturesetCondition conditions = 2;
+  repeated FeaturesetCondition conditions = 3;
 }
 
 message FileValidation {
@@ -2511,10 +2547,14 @@ message LabelingPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string triggeredBy = 5;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabelingPipelineRunCondition conditions = 6;
+  repeated LabelingPipelineRunCondition conditions = 7;
 }
 
 // LabelingPipelineSpec defines the desired state of a LabelingPipeline
@@ -2578,10 +2618,14 @@ message LabelingPipelineStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LabelingPipelineCondition conditions = 3;
+  repeated LabelingPipelineCondition conditions = 4;
 }
 
 message MaterializationSpec {
@@ -2859,10 +2903,14 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 8;
+  repeated RecipeCondition conditions = 9;
 }
 
 // RecipeSpec defines the desired state of a dataset
@@ -3228,10 +3276,14 @@ message SqlQueryRunStatus {
   // The name of the report object.
   optional string reportName = 10;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryRunCondition conditions = 11;
+  repeated SqlQueryRunCondition conditions = 12;
 }
 
 // SqlQuerySpec contain the desired state of a SqlQuery
@@ -3502,10 +3554,14 @@ message WebRequestRunStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 10;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 12;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestRunCondition conditions = 11;
+  repeated WebRequestRunCondition conditions = 13;
 }
 
 // WebRequestSpec contain the desired state of a WebRequest

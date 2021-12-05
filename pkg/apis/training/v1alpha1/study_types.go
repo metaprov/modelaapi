@@ -596,12 +596,17 @@ type StudyStatus struct {
 	// Holds the result of the feature engineering process
 	//+kubebuilder:validation:Optional
 	FeatureEngineeringStatus FeatureEngineeringSearchStatus `json:"featureEngineeringSearchStatus,,omitempty" protobuf:"bytes,42,opt,name=featureEngineeringSearchStatus"`
+
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,43,opt,name=lastUpdated"`
+
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,43,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,44,rep,name=conditions"`
 }
 
 // model cv results

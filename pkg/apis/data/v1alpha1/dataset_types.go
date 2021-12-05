@@ -219,11 +219,14 @@ type DatasetStatus struct {
 	Logs catalog.Logs `json:"logs" protobuf:"bytes,15,opt,name=logs"`
 	// If this dataset is derived, the name of the dataset that this is derived from.
 	// +kubebuilder:validation:Optional
-	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,22,opt,name=derivedFromDataset"`
+	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,16,opt,name=derivedFromDataset"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,17,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,16,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,18,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

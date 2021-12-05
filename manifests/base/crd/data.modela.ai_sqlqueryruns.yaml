@@ -151,6 +151,10 @@ spec:
                 description: EndTime is the end time of the prediction.
                 format: date-time
                 type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               location:
                 description: The location of the materialized view
                 properties:

@@ -365,6 +365,10 @@ spec:
                 description: Last time a study was done on the dataset.
                 format: date-time
                 type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               logs:
                 description: Holds the location of log paths
                 properties:

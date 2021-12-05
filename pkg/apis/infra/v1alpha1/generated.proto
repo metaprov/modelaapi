@@ -278,10 +278,14 @@ message AlertStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AlertCondition conditions = 4;
+  repeated AlertCondition conditions = 5;
 }
 
 message AliCloudSpec {
@@ -518,10 +522,14 @@ message ApiTokenStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ApiTokenCondition conditions = 2;
+  repeated ApiTokenCondition conditions = 3;
 }
 
 // +kubebuilder:object:root=true
@@ -605,10 +613,14 @@ message AttachmentStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AttachmentCondition conditions = 4;
+  repeated AttachmentCondition conditions = 5;
 }
 
 message AvatarSpec {
@@ -817,10 +829,14 @@ message CommitStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated CommitCondition conditions = 4;
+  repeated CommitCondition conditions = 5;
 }
 
 // Connection define a connection to an external system (e.g. database, public cloud)
@@ -2565,6 +2581,10 @@ message TenantStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
@@ -2839,10 +2859,14 @@ message VirtualClusterStatus {
   // +optional
   optional int32 availableGpus = 3;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualClusterCondition conditions = 4;
+  repeated VirtualClusterCondition conditions = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -2913,10 +2937,14 @@ message VirtualVolumeStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualVolumeCondition conditions = 2;
+  repeated VirtualVolumeCondition conditions = 3;
 }
 
 message WebhookSpec {

@@ -2856,7 +2856,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.repeatedFields_ = [7];
 
 
 
@@ -2894,6 +2894,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.toObjec
     lasterror: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     notes: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     actionitems: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition.toObject, includeInstance)
   };
@@ -2953,6 +2954,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.deseria
       msg.setActionitems(value);
       break;
     case 6:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 7:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -3021,10 +3027,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.seriali
       f
     );
   }
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      7,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition.serializeBinaryToWriter
     );
@@ -3213,12 +3227,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototy
 
 
 /**
- * repeated MeetingCondition conditions = 6;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.clearLastupdated = function() {
+  return this.setLastupdated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.hasLastupdated = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated MeetingCondition conditions = 7;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, 7));
 };
 
 
@@ -3227,7 +3278,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -3237,7 +3288,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingCondition, opt_index);
 };
 
 
@@ -4623,7 +4674,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.repeatedFields_ = [3];
 
 
 
@@ -4657,6 +4708,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition.toObject, includeInstance)
   };
@@ -4700,6 +4752,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.dese
       msg.setObservedgeneration(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -4740,10 +4797,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.seri
       f
     );
   }
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition.serializeBinaryToWriter
     );
@@ -4788,12 +4853,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
 
 
 /**
- * repeated PostMortemCondition conditions = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.clearLastupdated = function() {
+  return this.setLastupdated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.hasLastupdated = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated PostMortemCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition, 3));
 };
 
 
@@ -4802,7 +4904,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -4812,7 +4914,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemCondition, opt_index);
 };
 
 
@@ -7619,7 +7721,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.repeatedFields_ = [3];
 
 
 
@@ -7653,6 +7755,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition.toObject, includeInstance)
   };
@@ -7696,6 +7799,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.deseria
       msg.setObservedgeneration(value);
       break;
     case 2:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
+      break;
+    case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -7736,10 +7844,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.seriali
       f
     );
   }
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      3,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition.serializeBinaryToWriter
     );
@@ -7784,12 +7900,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
 
 
 /**
- * repeated RunBookCondition conditions = 2;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 2));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.clearLastupdated = function() {
+  return this.setLastupdated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.hasLastupdated = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * repeated RunBookCondition conditions = 3;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition, 3));
 };
 
 
@@ -7798,7 +7951,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -7808,7 +7961,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototy
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookCondition, opt_index);
 };
 
 
@@ -9409,6 +9562,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.toObject =
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoCondition.toObject, includeInstance)
   };
@@ -9454,6 +9608,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.deserializ
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
+      break;
+    case 6:
+      var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
+      reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
+      msg.setLastupdated(value);
       break;
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoCondition;
@@ -9501,6 +9660,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.serializeB
     writer.writeInt64(
       2,
       f
+    );
+  }
+  f = message.getLastupdated();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -9583,6 +9750,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.hasObservedgeneration = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
+ * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.getLastupdated = function() {
+  return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 6));
+};
+
+
+/**
+ * @param {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.setLastupdated = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.clearLastupdated = function() {
+  return this.setLastupdated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoStatus.prototype.hasLastupdated = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 

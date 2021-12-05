@@ -1119,10 +1119,14 @@ message ModelAutobuilderStatus {
   // +kubebuilder:validation:Optional
   optional string lastError = 20;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 21;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelAutobuilderCondition conditions = 21;
+  repeated ModelAutobuilderCondition conditions = 22;
 }
 
 // +kubebuilder:object:root=true
@@ -1210,38 +1214,42 @@ message ModelCompilerRunSpec {
 // ModelCompilerRunStatus is the observed state of the ModelCompilerRun resource .
 message ModelCompilerRunStatus {
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 13;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time startTime = 1;
 
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 14;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time completionTime = 2;
 
   // The phase of the pipeline run
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 15;
+  optional string phase = 3;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 16;
+  optional int64 observedGeneration = 4;
 
   // Folder for pipeline run artifacts. This is assigned by the system
   // The folder contains all the pipeline artifacts - metadata, logs
   // +kubebuilder:validation:Optional
-  optional string evalMetrics = 17;
+  optional string evalMetrics = 5;
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 18;
+  optional string lastError = 6;
 
   // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
-  optional int32 progress = 19;
+  optional int32 progress = 7;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelCompilerRunCondition conditions = 20;
+  repeated ModelCompilerRunCondition conditions = 9;
 }
 
 // ModelCondition describes the state of a model at a certain point.
@@ -1546,10 +1554,14 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string triggeredBy = 20;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 21;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineRunCondition conditions = 21;
+  repeated ModelPipelineRunCondition conditions = 22;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
@@ -2177,10 +2189,14 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation topCorrelations = 61;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 62;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 62;
+  repeated ModelCondition conditions = 63;
 }
 
 message ModelValidation {
@@ -2413,10 +2429,14 @@ message NotebookRunStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated NotebookRunCondition conditions = 8;
+  repeated NotebookRunCondition conditions = 9;
 }
 
 // NotebookSpec is the desired state of the notebook resource.
@@ -2506,10 +2526,14 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 4;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated NotebookCondition conditions = 5;
+  repeated NotebookCondition conditions = 6;
 }
 
 // NotebookVarValue is an assignment of value to the notebook var
@@ -2780,10 +2804,14 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ReportCondition conditions = 9;
+  repeated ReportCondition conditions = 10;
 }
 
 message ReportTemplate {
@@ -3181,12 +3209,16 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional FeatureEngineeringSearchStatus featureEngineeringSearchStatus = 42;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 43;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 43;
+  repeated StudyCondition conditions = 44;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

@@ -256,6 +256,11 @@ export class MeetingStatus extends jspb.Message {
   getActionitems(): string;
   setActionitems(value: string): MeetingStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): MeetingStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): MeetingStatus;
+
   getConditionsList(): Array<MeetingCondition>;
   setConditionsList(value: Array<MeetingCondition>): MeetingStatus;
   clearConditionsList(): MeetingStatus;
@@ -276,6 +281,7 @@ export namespace MeetingStatus {
     lasterror: string,
     notes: string,
     actionitems: string,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<MeetingCondition.AsObject>,
   }
 }
@@ -438,6 +444,11 @@ export class PostMortemStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): PostMortemStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): PostMortemStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): PostMortemStatus;
+
   getConditionsList(): Array<PostMortemCondition>;
   setConditionsList(value: Array<PostMortemCondition>): PostMortemStatus;
   clearConditionsList(): PostMortemStatus;
@@ -454,6 +465,7 @@ export class PostMortemStatus extends jspb.Message {
 export namespace PostMortemStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<PostMortemCondition.AsObject>,
   }
 }
@@ -784,6 +796,11 @@ export class RunBookStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): RunBookStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): RunBookStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): RunBookStatus;
+
   getConditionsList(): Array<RunBookCondition>;
   setConditionsList(value: Array<RunBookCondition>): RunBookStatus;
   clearConditionsList(): RunBookStatus;
@@ -800,6 +817,7 @@ export class RunBookStatus extends jspb.Message {
 export namespace RunBookStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<RunBookCondition.AsObject>,
   }
 }
@@ -985,6 +1003,11 @@ export class TodoStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): TodoStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TodoStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): TodoStatus;
+
   getConditionsList(): Array<TodoCondition>;
   setConditionsList(value: Array<TodoCondition>): TodoStatus;
   clearConditionsList(): TodoStatus;
@@ -1002,6 +1025,7 @@ export namespace TodoStatus {
   export type AsObject = {
     phase: string,
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<TodoCondition.AsObject>,
   }
 }

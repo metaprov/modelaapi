@@ -154,6 +154,10 @@ spec:
               kurtosis:
                 description: Kurtosis is the standard deviation value of the attribute
                 type: number
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               max:
                 description: Max is the maximum value of the attribute
                 type: number

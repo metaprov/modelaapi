@@ -1970,6 +1970,10 @@ spec:
                 description: the last model id generated for this study
                 format: int64
                 type: integer
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               logs:
                 description: Holds the location of log paths
                 properties:

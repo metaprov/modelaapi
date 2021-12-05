@@ -1667,6 +1667,10 @@ func (in *ModelAutobuilderStatus) DeepCopyInto(out *ModelAutobuilderStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelAutobuilderCondition, len(*in))
@@ -1829,6 +1833,10 @@ func (in *ModelCompilerRunStatus) DeepCopyInto(out *ModelCompilerRunStatus) {
 		in, out := &in.Progress, &out.Progress
 		*out = new(int32)
 		**out = **in
+	}
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
+		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -2203,6 +2211,10 @@ func (in *ModelPipelineRunStatus) DeepCopyInto(out *ModelPipelineRunStatus) {
 		in, out := &in.Progress, &out.Progress
 		*out = new(int32)
 		**out = **in
+	}
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
+		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -2731,6 +2743,10 @@ func (in *ModelStatus) DeepCopyInto(out *ModelStatus) {
 		*out = make([]datav1alpha1.Correlation, len(*in))
 		copy(*out, *in)
 	}
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ModelCondition, len(*in))
@@ -3092,6 +3108,10 @@ func (in *NotebookRunStatus) DeepCopyInto(out *NotebookRunStatus) {
 		*out = (*in).DeepCopy()
 	}
 	in.Logs.DeepCopyInto(&out.Logs)
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]NotebookRunCondition, len(*in))
@@ -3197,6 +3217,10 @@ func (in *NotebookStatus) DeepCopyInto(out *NotebookStatus) {
 	*out = *in
 	if in.LastRun != nil {
 		in, out := &in.LastRun, &out.LastRun
+		*out = (*in).DeepCopy()
+	}
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
 	if in.Conditions != nil {
@@ -3586,6 +3610,10 @@ func (in *ReportStatus) DeepCopyInto(out *ReportStatus) {
 		*out = (*in).DeepCopy()
 	}
 	in.Logs.DeepCopyInto(&out.Logs)
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]ReportCondition, len(*in))
@@ -3952,6 +3980,10 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 	out.TrainingDataHash = in.TrainingDataHash
 	in.Logs.DeepCopyInto(&out.Logs)
 	in.FeatureEngineeringStatus.DeepCopyInto(&out.FeatureEngineeringStatus)
+	if in.LastUpdated != nil {
+		in, out := &in.LastUpdated, &out.LastUpdated
+		*out = (*in).DeepCopy()
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]StudyCondition, len(*in))

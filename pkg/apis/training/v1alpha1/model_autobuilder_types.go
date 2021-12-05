@@ -226,8 +226,11 @@ type ModelAutobuilderStatus struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,20,opt,name=lastError"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,21,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,21,rep,name=conditions"`
+	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,22,rep,name=conditions"`
 }

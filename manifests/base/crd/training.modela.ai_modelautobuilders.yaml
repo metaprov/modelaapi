@@ -1150,6 +1150,10 @@ spec:
                 default: ""
                 description: Last error
                 type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               models:
                 description: Total models created for the study
                 format: int32

@@ -1722,6 +1722,11 @@ export class ModelAutobuilderStatus extends jspb.Message {
   getLasterror(): string;
   setLasterror(value: string): ModelAutobuilderStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelAutobuilderStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ModelAutobuilderStatus;
+
   getConditionsList(): Array<ModelAutobuilderCondition>;
   setConditionsList(value: Array<ModelAutobuilderCondition>): ModelAutobuilderStatus;
   clearConditionsList(): ModelAutobuilderStatus;
@@ -1756,6 +1761,7 @@ export namespace ModelAutobuilderStatus {
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lasterror: string,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelAutobuilderCondition.AsObject>,
   }
 }
@@ -1922,6 +1928,11 @@ export class ModelCompilerRunStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): ModelCompilerRunStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelCompilerRunStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ModelCompilerRunStatus;
+
   getConditionsList(): Array<ModelCompilerRunCondition>;
   setConditionsList(value: Array<ModelCompilerRunCondition>): ModelCompilerRunStatus;
   clearConditionsList(): ModelCompilerRunStatus;
@@ -1944,6 +1955,7 @@ export namespace ModelCompilerRunStatus {
     evalmetrics: string,
     lasterror: string,
     progress: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelCompilerRunCondition.AsObject>,
   }
 }
@@ -2409,6 +2421,11 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getTriggeredby(): string;
   setTriggeredby(value: string): ModelPipelineRunStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelPipelineRunStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ModelPipelineRunStatus;
+
   getConditionsList(): Array<ModelPipelineRunCondition>;
   setConditionsList(value: Array<ModelPipelineRunCondition>): ModelPipelineRunStatus;
   clearConditionsList(): ModelPipelineRunStatus;
@@ -2444,6 +2461,7 @@ export namespace ModelPipelineRunStatus {
     lasterror: string,
     progress: number,
     triggeredby: string,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelPipelineRunCondition.AsObject>,
   }
 }
@@ -3095,6 +3113,11 @@ export class ModelStatus extends jspb.Message {
   clearTopcorrelationsList(): ModelStatus;
   addTopcorrelations(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3170,6 +3193,7 @@ export namespace ModelStatus {
     confusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,
     correlationswithtargetList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     topcorrelationsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }
@@ -3588,6 +3612,11 @@ export class NotebookRunStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): NotebookRunStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotebookRunStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): NotebookRunStatus;
+
   getConditionsList(): Array<NotebookRunCondition>;
   setConditionsList(value: Array<NotebookRunCondition>): NotebookRunStatus;
   clearConditionsList(): NotebookRunStatus;
@@ -3610,6 +3639,7 @@ export namespace NotebookRunStatus {
     lasterror: string,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<NotebookRunCondition.AsObject>,
   }
 }
@@ -3707,6 +3737,11 @@ export class NotebookStatus extends jspb.Message {
   hasLastrun(): boolean;
   clearLastrun(): NotebookStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): NotebookStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): NotebookStatus;
+
   getConditionsList(): Array<NotebookCondition>;
   setConditionsList(value: Array<NotebookCondition>): NotebookStatus;
   clearConditionsList(): NotebookStatus;
@@ -3726,6 +3761,7 @@ export namespace NotebookStatus {
     uri: string,
     observedgeneration: number,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<NotebookCondition.AsObject>,
   }
 }
@@ -4110,6 +4146,11 @@ export class ReportStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): ReportStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ReportStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ReportStatus;
+
   getConditionsList(): Array<ReportCondition>;
   setConditionsList(value: Array<ReportCondition>): ReportStatus;
   clearConditionsList(): ReportStatus;
@@ -4132,6 +4173,7 @@ export namespace ReportStatus {
     observedgeneration: number,
     lasterror: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ReportCondition.AsObject>,
   }
 }
@@ -4618,6 +4660,11 @@ export class StudyStatus extends jspb.Message {
   hasFeatureengineeringsearchstatus(): boolean;
   clearFeatureengineeringsearchstatus(): StudyStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4674,6 +4721,7 @@ export namespace StudyStatus {
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     featureengineeringsearchstatus?: FeatureEngineeringSearchStatus.AsObject,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

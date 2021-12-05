@@ -193,10 +193,14 @@ message MeetingStatus {
   // +kubebuilder:validation:Optional
   optional string actionItems = 5;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated MeetingCondition conditions = 6;
+  repeated MeetingCondition conditions = 7;
 }
 
 // +kubebuilder:object:root=true
@@ -288,10 +292,14 @@ message PostMortemStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PostMortemCondition conditions = 2;
+  repeated PostMortemCondition conditions = 3;
 }
 
 // Alert is an alert that was raised during the incident
@@ -452,10 +460,14 @@ message RunBookStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RunBookCondition conditions = 2;
+  repeated RunBookCondition conditions = 3;
 }
 
 // TimeLineEvent
@@ -561,6 +573,10 @@ message TodoStatus {
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 6;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

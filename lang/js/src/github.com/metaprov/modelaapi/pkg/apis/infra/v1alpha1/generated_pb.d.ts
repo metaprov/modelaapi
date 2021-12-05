@@ -406,6 +406,11 @@ export class AlertStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AlertStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AlertStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): AlertStatus;
+
   getConditionsList(): Array<AlertCondition>;
   setConditionsList(value: Array<AlertCondition>): AlertStatus;
   clearConditionsList(): AlertStatus;
@@ -424,6 +429,7 @@ export namespace AlertStatus {
     phase: string,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<AlertCondition.AsObject>,
   }
 }
@@ -846,6 +852,11 @@ export class ApiTokenStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ApiTokenStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ApiTokenStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): ApiTokenStatus;
+
   getConditionsList(): Array<ApiTokenCondition>;
   setConditionsList(value: Array<ApiTokenCondition>): ApiTokenStatus;
   clearConditionsList(): ApiTokenStatus;
@@ -862,6 +873,7 @@ export class ApiTokenStatus extends jspb.Message {
 export namespace ApiTokenStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ApiTokenCondition.AsObject>,
   }
 }
@@ -1008,6 +1020,11 @@ export class AttachmentStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AttachmentStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): AttachmentStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): AttachmentStatus;
+
   getConditionsList(): Array<AttachmentCondition>;
   setConditionsList(value: Array<AttachmentCondition>): AttachmentStatus;
   clearConditionsList(): AttachmentStatus;
@@ -1026,6 +1043,7 @@ export namespace AttachmentStatus {
     phase: string,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<AttachmentCondition.AsObject>,
   }
 }
@@ -1416,6 +1434,11 @@ export class CommitStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): CommitStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): CommitStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): CommitStatus;
+
   getConditionsList(): Array<CommitCondition>;
   setConditionsList(value: Array<CommitCondition>): CommitStatus;
   clearConditionsList(): CommitStatus;
@@ -1434,6 +1457,7 @@ export namespace CommitStatus {
     phase: string,
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<CommitCondition.AsObject>,
   }
 }
@@ -4656,6 +4680,11 @@ export class TenantStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): TenantStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): TenantStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): TenantStatus;
+
   getConditionsList(): Array<TenantCondition>;
   setConditionsList(value: Array<TenantCondition>): TenantStatus;
   clearConditionsList(): TenantStatus;
@@ -4672,6 +4701,7 @@ export class TenantStatus extends jspb.Message {
 export namespace TenantStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<TenantCondition.AsObject>,
   }
 }
@@ -5130,6 +5160,11 @@ export class VirtualClusterStatus extends jspb.Message {
   getAvailablegpus(): number;
   setAvailablegpus(value: number): VirtualClusterStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualClusterStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): VirtualClusterStatus;
+
   getConditionsList(): Array<VirtualClusterCondition>;
   setConditionsList(value: Array<VirtualClusterCondition>): VirtualClusterStatus;
   clearConditionsList(): VirtualClusterStatus;
@@ -5148,6 +5183,7 @@ export namespace VirtualClusterStatus {
     observedgeneration: number,
     availablenodes: number,
     availablegpus: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<VirtualClusterCondition.AsObject>,
   }
 }
@@ -5282,6 +5318,11 @@ export class VirtualVolumeStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): VirtualVolumeStatus;
 
+  getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): VirtualVolumeStatus;
+  hasLastupdated(): boolean;
+  clearLastupdated(): VirtualVolumeStatus;
+
   getConditionsList(): Array<VirtualVolumeCondition>;
   setConditionsList(value: Array<VirtualVolumeCondition>): VirtualVolumeStatus;
   clearConditionsList(): VirtualVolumeStatus;
@@ -5298,6 +5339,7 @@ export class VirtualVolumeStatus extends jspb.Message {
 export namespace VirtualVolumeStatus {
   export type AsObject = {
     observedgeneration: number,
+    lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<VirtualVolumeCondition.AsObject>,
   }
 }

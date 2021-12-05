@@ -266,6 +266,10 @@ spec:
                 description: Last run is the last time a run was created
                 format: date-time
                 type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               observedGeneration:
                 description: ObservedGeneration is the Last generation that was acted
                   on

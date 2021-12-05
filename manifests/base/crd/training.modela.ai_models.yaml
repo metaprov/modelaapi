@@ -1503,6 +1503,10 @@ spec:
                 default: ""
                 description: Last error
                 type: string
+              lastUpdated:
+                description: Last time the object was updated
+                format: date-time
+                type: string
               latency:
                 description: Prediction Latency
                 type: number

@@ -117,10 +117,15 @@ type VirtualClusterStatus struct {
 	// +kubebuilder:validation:Minimum=0
 	//+optional
 	AvailableGpus *int32 `json:"availableGpus" protobuf:"varint,3,opt,name=availableGpus"`
+
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,4,opt,name=lastUpdated"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []VirtualClusterCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []VirtualClusterCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,5,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

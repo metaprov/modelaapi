@@ -100,29 +100,33 @@ type ModelCompilerRunSpec struct {
 // ModelCompilerRunStatus is the observed state of the ModelCompilerRun resource .
 type ModelCompilerRunStatus struct {
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,13,opt,name=startTime"`
+	StartTime *metav1.Time `json:"startTime,omitempty" protobuf:"bytes,1,opt,name=startTime"`
 	// +kubebuilder:validation:Optional
-	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,14,opt,name=completionTime"`
+	CompletionTime *metav1.Time `json:"completionTime,omitempty" protobuf:"bytes,2,opt,name=completionTime"`
 	// The phase of the pipeline run
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase CompilerPhase `json:"phase" protobuf:"bytes,15,opt,name=phase"`
+	Phase CompilerPhase `json:"phase" protobuf:"bytes,3,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
-	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,16,opt,name=observedGeneration"`
+	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
 	// Folder for pipeline run artifacts. This is assigned by the system
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
-	Folder string `json:"folder,omitempty" protobuf:"bytes,17,opt,name=evalMetrics"`
+	Folder string `json:"folder,omitempty" protobuf:"bytes,5,opt,name=evalMetrics"`
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,18,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,6,opt,name=lastError"`
 	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress" protobuf:"varint,19,opt,name=progress"`
+	Progress *int32 `json:"progress" protobuf:"varint,7,opt,name=progress"`
+	// Last time the object was updated
+	//+kubebuilder:validation:Optional
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,8,opt,name=lastUpdated"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelCompilerRunCondition `json:"conditions,omitempty" protobuf:"bytes,20,rep,name=conditions"`
+	Conditions []ModelCompilerRunCondition `json:"conditions,omitempty" protobuf:"bytes,9,rep,name=conditions"`
 }
