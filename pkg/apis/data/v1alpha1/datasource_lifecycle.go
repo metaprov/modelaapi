@@ -30,7 +30,7 @@ func (sc *DataSource) AddColumn(
 	a.DataType = dtype
 	a.Format = &dformat
 	a.Ignore = util.BoolPtr(Ignore)
-	a.Label = util.BoolPtr(Target)
+	a.Target = util.BoolPtr(Target)
 	a.Nullable = util.BoolPtr(Nullable)
 	sc.Spec.Schema.Columns = append(sc.Spec.Schema.Columns, a)
 }
@@ -43,14 +43,14 @@ func (sc *DataSource) MarkLastFieldAsTarget() {
 	targets := sc.Spec.Schema.Columns
 	// last column
 	lastCol := targets[len(sc.Spec.Schema.Columns)-1]
-	lastCol.Label = util.BoolPtr(true)
+	lastCol.Target = util.BoolPtr(true)
 	sc.Spec.Schema.Columns[len(sc.Spec.Schema.Columns)-1] = lastCol
 }
 
 func (sc *DataSource) MarkFieldAsTarget(target string) {
 	for v, x := range sc.Spec.Schema.Columns {
 		if x.Name == target {
-			x.Label = util.BoolPtr(true)
+			x.Target = util.BoolPtr(true)
 			sc.Spec.Schema.Columns[v] = x
 			break
 		}
@@ -97,7 +97,7 @@ func (sc DataSource) Validate() (bool, []metav1.StatusCause) {
 
 func (a *Column) ValidateColumn() (bool, []metav1.StatusCause) {
 	var causes []metav1.StatusCause
-	if a.Label != nil && a.Ignore != nil && *a.Label && *a.Ignore {
+	if a.Target != nil && a.Ignore != nil && *a.Target && *a.Ignore {
 		causes = append(causes, metav1.StatusCause{
 			Type:    metav1.CauseTypeFieldValueInvalid,
 			Field:   "FeatureColumn",
@@ -138,7 +138,7 @@ func (sc DataSource) CountActiveAttributes() int {
 func (sc DataSource) CountTargetAttributes() int {
 	count := 0
 	for _, a := range sc.Spec.Schema.Columns {
-		if a.Label != nil && *a.Label {
+		if a.Target != nil && *a.Target {
 			count++
 		}
 	}
@@ -232,7 +232,7 @@ func (schema *DataSource) ToYamlFile() ([]byte, error) {
 func (in *DataSource) ActiveColumns() (string, error) {
 	columns := make([]string, 0)
 	for _, v := range in.Spec.Schema.Columns {
-		if !(v.Ignore != nil && *v.Ignore) && !(v.Label != nil && *v.Label) {
+		if !(v.Ignore != nil && *v.Ignore) && !(v.Target != nil && *v.Target) {
 			columns = append(columns, v.Name)
 		}
 	}
