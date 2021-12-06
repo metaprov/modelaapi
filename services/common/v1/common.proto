@@ -100,7 +100,7 @@ message ColumnProfile {
 	bool      duplicate       = 39;   
 	bool      reserved        = 40;  
     int32     outliers        = 41;	 
-	bool      completeness    = 42;   
+	double    completeness    = 42;   
 	double    distinctValueCount = 43;    
 	double    mostFreqValuesRatio = 44;   
 	double    indexOfPeculiarity = 45;   

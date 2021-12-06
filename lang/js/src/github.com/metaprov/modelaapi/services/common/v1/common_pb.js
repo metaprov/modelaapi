@@ -1741,7 +1741,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     duplicate: jspb.Message.getBooleanFieldWithDefault(msg, 39, false),
     reserved: jspb.Message.getBooleanFieldWithDefault(msg, 40, false),
     outliers: jspb.Message.getFieldWithDefault(msg, 41, 0),
-    completeness: jspb.Message.getBooleanFieldWithDefault(msg, 42, false),
+    completeness: jspb.Message.getFloatingPointFieldWithDefault(msg, 42, 0.0),
     distinctvaluecount: jspb.Message.getFloatingPointFieldWithDefault(msg, 43, 0.0),
     mostfreqvaluesratio: jspb.Message.getFloatingPointFieldWithDefault(msg, 44, 0.0),
     indexofpeculiarity: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0)
@@ -1947,7 +1947,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
       msg.setOutliers(value);
       break;
     case 42:
-      var value = /** @type {boolean} */ (reader.readBool());
+      var value = /** @type {number} */ (reader.readDouble());
       msg.setCompleteness(value);
       break;
     case 43:
@@ -2280,8 +2280,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
     );
   }
   f = message.getCompleteness();
-  if (f) {
-    writer.writeBool(
+  if (f !== 0.0) {
+    writer.writeDouble(
       42,
       f
     );
@@ -3068,20 +3068,20 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.s
 
 
 /**
- * optional bool completeness = 42;
- * @return {boolean}
+ * optional double completeness = 42;
+ * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getCompleteness = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 42, false));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 42, 0.0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setCompleteness = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 42, value);
+  return jspb.Message.setProto3FloatField(this, 42, value);
 };
 
 
