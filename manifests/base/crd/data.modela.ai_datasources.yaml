@@ -367,6 +367,11 @@ spec:
                           default: ""
                           description: External Docs
                           type: string
+                        fk:
+                          default: false
+                          description: FK denotes if this column is part of a foreign  key
+                            to another table.
+                          type: boolean
                         fold:
                           default: false
                           description: If True than this columns holds folds values
@@ -428,11 +433,6 @@ spec:
                         index:
                           default: false
                           description: If True than this is an index column
-                          type: boolean
-                        label:
-                          default: false
-                          description: Label should be true if this attribute is the
-                            predictable target Default is false
                           type: boolean
                         log:
                           default: false
@@ -514,7 +514,7 @@ spec:
                         pk:
                           default: false
                           description: PrimaryKey denotes if this column is part of
-                            the file key.
+                            the table primary key
                           type: boolean
                         protected:
                           default: false
@@ -541,6 +541,11 @@ spec:
                         skewThreshold:
                           description: Skew treshold is the treshold for skew detection.
                           type: number
+                        target:
+                          default: false
+                          description: Label should be true if this attribute is the
+                            predictable target Default is false
+                          type: boolean
                         timeColumn:
                           default: false
                           description: TimeColumn is true if this column is used as

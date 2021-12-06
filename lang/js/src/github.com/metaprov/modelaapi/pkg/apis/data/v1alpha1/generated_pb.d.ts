@@ -50,14 +50,17 @@ export class Column extends jspb.Message {
   getIgnore(): boolean;
   setIgnore(value: boolean): Column;
 
-  getLabel(): boolean;
-  setLabel(value: boolean): Column;
+  getTarget(): boolean;
+  setTarget(value: boolean): Column;
 
   getNullable(): boolean;
   setNullable(value: boolean): Column;
 
   getPk(): boolean;
   setPk(value: boolean): Column;
+
+  getFk(): boolean;
+  setFk(value: boolean): Column;
 
   getMultipleof(): number;
   setMultipleof(value: number): Column;
@@ -182,9 +185,10 @@ export namespace Column {
     format: string,
     description: string,
     ignore: boolean,
-    label: boolean,
+    target: boolean,
     nullable: boolean,
     pk: boolean,
+    fk: boolean,
     multipleof: number,
     maximum: number,
     exclusivemaximum: boolean,
@@ -296,8 +300,8 @@ export class ColumnStatistics extends jspb.Message {
   getTarget(): boolean;
   setTarget(value: boolean): ColumnStatistics;
 
-  getIgnored(): boolean;
-  setIgnored(value: boolean): ColumnStatistics;
+  getIgnore(): boolean;
+  setIgnore(value: boolean): ColumnStatistics;
 
   getNullable(): boolean;
   setNullable(value: boolean): ColumnStatistics;
@@ -378,7 +382,7 @@ export namespace ColumnStatistics {
     invalid: number,
     importance: number,
     target: boolean,
-    ignored: boolean,
+    ignore: boolean,
     nullable: boolean,
     highcardinality: boolean,
     highcorrwithotherfeatures: boolean,

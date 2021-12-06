@@ -85,27 +85,25 @@ message ColumnProfile {
     int32     top             = 24;
     int32     freq            = 25;
     bool      ignore          = 26;
-    bool      label           = 27;
-    Histogram histogram       = 29;
-	int32     invalid         = 32; 
-	double    importance      = 33; 
-	bool      target          = 34; 
-	bool      ignored         = 35; 
-	bool      nullable        = 36; 
-	bool      highCardinality = 37; 
-	bool      highCorrWithOtherFeatures =38;   
-	bool      lowCorrWithTarget =39;   
-	bool      highMissingPct  = 40;   
-	bool      skewed          = 41;   
-	bool      id              = 42;   
-	bool      constant        = 43;   
-	bool      duplicate       = 44;   
-	bool      reserved        = 45;  
-    int32     outliers        = 46;	 
-	bool      completeness    = 47;   
-	double    distinctValueCount = 48;    
-	double    mostFreqValuesRatio = 49;   
-	double    indexOfPeculiarity = 50;   
+    bool      target          = 27;
+    Histogram histogram       = 28;
+	int32     invalid         = 29; 
+	double    importance      = 30; 
+	bool      nullable        = 31; 
+	bool      highCardinality = 32; 
+	bool      highCorrWithOtherFeatures =33;   
+	bool      lowCorrWithTarget =34;   
+	bool      highMissingPct  = 35;   
+	bool      skewed          = 36;   
+	bool      id              = 37;   
+	bool      constant        = 38;   
+	bool      duplicate       = 39;   
+	bool      reserved        = 40;  
+    int32     outliers        = 41;	 
+	bool      completeness    = 42;   
+	double    distinctValueCount = 43;    
+	double    mostFreqValuesRatio = 44;   
+	double    indexOfPeculiarity = 45;   
 
 }
 

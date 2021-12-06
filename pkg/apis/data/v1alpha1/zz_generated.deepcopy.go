@@ -62,8 +62,8 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Label != nil {
-		in, out := &in.Label, &out.Label
+	if in.Target != nil {
+		in, out := &in.Target, &out.Target
 		*out = new(bool)
 		**out = **in
 	}
@@ -74,6 +74,11 @@ func (in *Column) DeepCopyInto(out *Column) {
 	}
 	if in.PK != nil {
 		in, out := &in.PK, &out.PK
+		*out = new(bool)
+		**out = **in
+	}
+	if in.FK != nil {
+		in, out := &in.FK, &out.FK
 		*out = new(bool)
 		**out = **in
 	}

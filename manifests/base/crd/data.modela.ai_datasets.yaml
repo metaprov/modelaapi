@@ -477,7 +477,7 @@ spec:
                           description: This is updated from the data source. If true,
                             the column is an id column
                           type: boolean
-                        ignored:
+                        ignore:
                           description: Should this column be ignored, as specified
                             by the user This value is derived from the datasource
                           type: boolean

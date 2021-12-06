@@ -482,55 +482,59 @@ type Column struct {
 	// Default is false
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Label *bool `json:"label,omitempty" protobuf:"varint,7,opt,name=label"`
+	Target *bool `json:"target,omitempty" protobuf:"varint,7,opt,name=target"`
 	// Nullable indicates if a column can contain string
 	// Default is false
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Nullable *bool `json:"nullable,omitempty" protobuf:"varint,8,opt,name=nullable"`
-	// PrimaryKey denotes if this column is part of the file key.
+	// PrimaryKey denotes if this column is part of the table primary key
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	PK *bool `json:"pk,omitempty" protobuf:"varint,9,opt,name=pk"`
+	// FK denotes if this column is part of a foreign  key to another table.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	FK *bool `json:"fk,omitempty" protobuf:"varint,10,opt,name=fk"`
 	// MultipleOf
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	MultipleOf *int32 `json:"multipleOf,omitempty" protobuf:"varint,10,opt,name=multipleOf"`
+	MultipleOf *int32 `json:"multipleOf,omitempty" protobuf:"varint,11,opt,name=multipleOf"`
 	// MaximumFloat
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,11,opt,name=maximum"`
+	Maximum *float64 `json:"maximum,omitempty" protobuf:"bytes,12,opt,name=maximum"`
 	// ExclusiveMaximum
 	// +kubebuilder:validation:Optional
-	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"varint,12,opt,name=exclusiveMaximum"`
+	ExclusiveMaximum *bool `json:"exclusiveMaximum,omitempty" protobuf:"varint,13,opt,name=exclusiveMaximum"`
 	// MinimumFloat
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Minimum *float64 `json:"minimum,omitempty" protobuf:"bytes,13,opt,name=minimum"`
+	Minimum *float64 `json:"minimum,omitempty" protobuf:"bytes,14,opt,name=minimum"`
 	// ExclusiveMinimum
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"varint,14,opt,name=exclusiveMinimum"`
+	ExclusiveMinimum *bool `json:"exclusiveMinimum,omitempty" protobuf:"varint,15,opt,name=exclusiveMinimum"`
 	// MaxLength
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	MaxLength *int32 `json:"maxLength,omitempty" protobuf:"varint,15,opt,name=maxLength"`
+	MaxLength *int32 `json:"maxLength,omitempty" protobuf:"varint,16,opt,name=maxLength"`
 	// MinLength
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	MinLength *int32 `json:"minLength,omitempty" protobuf:"varint,16,opt,name=minLength"`
+	MinLength *int32 `json:"minLength,omitempty" protobuf:"varint,17,opt,name=minLength"`
 	// Pattern
 	// Default is empty
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Pattern *string `json:"pattern,omitempty" protobuf:"bytes,17,opt,name=pattern"`
+	Pattern *string `json:"pattern,omitempty" protobuf:"bytes,18,opt,name=pattern"`
 	// Required
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Required *bool `json:"required,omitempty" protobuf:"varint,18,opt,name=required"`
+	Required *bool `json:"required,omitempty" protobuf:"varint,19,opt,name=required"`
 	// Example
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional

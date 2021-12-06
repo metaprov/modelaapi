@@ -61,7 +61,7 @@ message Column {
   // Default is false
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool label = 7;
+  optional bool target = 7;
 
   // Nullable indicates if a column can contain string
   // Default is false
@@ -69,58 +69,63 @@ message Column {
   // +kubebuilder:validation:Optional
   optional bool nullable = 8;
 
-  // PrimaryKey denotes if this column is part of the file key.
+  // PrimaryKey denotes if this column is part of the table primary key
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool pk = 9;
+
+  // FK denotes if this column is part of a foreign  key to another table.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool fk = 10;
 
   // MultipleOf
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 multipleOf = 10;
+  optional int32 multipleOf = 11;
 
   // MaximumFloat
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double maximum = 11;
+  optional double maximum = 12;
 
   // ExclusiveMaximum
   // +kubebuilder:validation:Optional
-  optional bool exclusiveMaximum = 12;
+  optional bool exclusiveMaximum = 13;
 
   // MinimumFloat
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional double minimum = 13;
+  optional double minimum = 14;
 
   // ExclusiveMinimum
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool exclusiveMinimum = 14;
+  optional bool exclusiveMinimum = 15;
 
   // MaxLength
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 maxLength = 15;
+  optional int32 maxLength = 16;
 
   // MinLength
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 minLength = 16;
+  optional int32 minLength = 17;
 
   // Pattern
   // Default is empty
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string pattern = 17;
+  optional string pattern = 18;
 
   // Required
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool required = 18;
+  optional bool required = 19;
 
   // Example
   // +kubebuilder:default:=""
@@ -350,7 +355,7 @@ message ColumnStatistics {
   // Should this column be ignored, as specified by the user
   // This value is derived from the datasource
   // +kubebuilder:validation:Optional
-  optional bool ignored = 25;
+  optional bool ignore = 25;
 
   // Is this column is nullable.
   // This value is derived from the schema.

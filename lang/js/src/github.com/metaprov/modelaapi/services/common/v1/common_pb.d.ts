@@ -259,8 +259,8 @@ export class ColumnProfile extends jspb.Message {
   getIgnore(): boolean;
   setIgnore(value: boolean): ColumnProfile;
 
-  getLabel(): boolean;
-  setLabel(value: boolean): ColumnProfile;
+  getTarget(): boolean;
+  setTarget(value: boolean): ColumnProfile;
 
   getHistogram(): Histogram | undefined;
   setHistogram(value?: Histogram): ColumnProfile;
@@ -272,12 +272,6 @@ export class ColumnProfile extends jspb.Message {
 
   getImportance(): number;
   setImportance(value: number): ColumnProfile;
-
-  getTarget(): boolean;
-  setTarget(value: boolean): ColumnProfile;
-
-  getIgnored(): boolean;
-  setIgnored(value: boolean): ColumnProfile;
 
   getNullable(): boolean;
   setNullable(value: boolean): ColumnProfile;
@@ -360,12 +354,10 @@ export namespace ColumnProfile {
     top: number,
     freq: number,
     ignore: boolean,
-    label: boolean,
+    target: boolean,
     histogram?: Histogram.AsObject,
     invalid: number,
     importance: number,
-    target: boolean,
-    ignored: boolean,
     nullable: boolean,
     highcardinality: boolean,
     highcorrwithotherfeatures: boolean,

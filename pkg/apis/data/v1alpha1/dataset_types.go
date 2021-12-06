@@ -328,7 +328,7 @@ type ColumnStatistics struct {
 	// Should this column be ignored, as specified by the user
 	// This value is derived from the datasource
 	// +kubebuilder:validation:Optional
-	Ignored bool `json:"ignored,omitempty" protobuf:"varint,25,opt,name=ignored"`
+	Ignore bool `json:"ignore,omitempty" protobuf:"varint,25,opt,name=ignore"`
 	// Is this column is nullable.
 	// This value is derived from the schema.
 	// +kubebuilder:validation:Optional
