@@ -1742,10 +1742,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     constant: jspb.Message.getBooleanFieldWithDefault(msg, 43, false),
     duplicate: jspb.Message.getBooleanFieldWithDefault(msg, 44, false),
     reserved: jspb.Message.getBooleanFieldWithDefault(msg, 45, false),
-    completeness: jspb.Message.getBooleanFieldWithDefault(msg, 46, false),
-    distinctvaluecount: jspb.Message.getFloatingPointFieldWithDefault(msg, 47, 0.0),
-    mostfreqvaluesratio: jspb.Message.getFloatingPointFieldWithDefault(msg, 48, 0.0),
-    indexofpeculiarity: jspb.Message.getFloatingPointFieldWithDefault(msg, 49, 0.0)
+    outliers: jspb.Message.getFieldWithDefault(msg, 46, 0),
+    completeness: jspb.Message.getBooleanFieldWithDefault(msg, 47, false),
+    distinctvaluecount: jspb.Message.getFloatingPointFieldWithDefault(msg, 48, 0.0),
+    mostfreqvaluesratio: jspb.Message.getFloatingPointFieldWithDefault(msg, 49, 0.0),
+    indexofpeculiarity: jspb.Message.getFloatingPointFieldWithDefault(msg, 50, 0.0)
   };
 
   if (includeInstance) {
@@ -1952,18 +1953,22 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
       msg.setReserved(value);
       break;
     case 46:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOutliers(value);
+      break;
+    case 47:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCompleteness(value);
       break;
-    case 47:
+    case 48:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setDistinctvaluecount(value);
       break;
-    case 48:
+    case 49:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setMostfreqvaluesratio(value);
       break;
-    case 49:
+    case 50:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setIndexofpeculiarity(value);
       break;
@@ -2291,31 +2296,38 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
       f
     );
   }
+  f = message.getOutliers();
+  if (f !== 0) {
+    writer.writeInt32(
+      46,
+      f
+    );
+  }
   f = message.getCompleteness();
   if (f) {
     writer.writeBool(
-      46,
+      47,
       f
     );
   }
   f = message.getDistinctvaluecount();
   if (f !== 0.0) {
     writer.writeDouble(
-      47,
+      48,
       f
     );
   }
   f = message.getMostfreqvaluesratio();
   if (f !== 0.0) {
     writer.writeDouble(
-      48,
+      49,
       f
     );
   }
   f = message.getIndexofpeculiarity();
   if (f !== 0.0) {
     writer.writeDouble(
-      49,
+      50,
       f
     );
   }
@@ -3098,11 +3110,29 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.s
 
 
 /**
- * optional bool completeness = 46;
+ * optional int32 outliers = 46;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getOutliers = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 46, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setOutliers = function(value) {
+  return jspb.Message.setProto3IntField(this, 46, value);
+};
+
+
+/**
+ * optional bool completeness = 47;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getCompleteness = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 46, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 47, false));
 };
 
 
@@ -3111,33 +3141,15 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setCompleteness = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 46, value);
+  return jspb.Message.setProto3BooleanField(this, 47, value);
 };
 
 
 /**
- * optional double distinctValueCount = 47;
+ * optional double distinctValueCount = 48;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getDistinctvaluecount = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 47, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setDistinctvaluecount = function(value) {
-  return jspb.Message.setProto3FloatField(this, 47, value);
-};
-
-
-/**
- * optional double mostFreqValuesRatio = 48;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMostfreqvaluesratio = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 48, 0.0));
 };
 
@@ -3146,16 +3158,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMostfreqvaluesratio = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setDistinctvaluecount = function(value) {
   return jspb.Message.setProto3FloatField(this, 48, value);
 };
 
 
 /**
- * optional double indexOfPeculiarity = 49;
+ * optional double mostFreqValuesRatio = 49;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getIndexofpeculiarity = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getMostfreqvaluesratio = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 49, 0.0));
 };
 
@@ -3164,8 +3176,26 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setIndexofpeculiarity = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setMostfreqvaluesratio = function(value) {
   return jspb.Message.setProto3FloatField(this, 49, value);
+};
+
+
+/**
+ * optional double indexOfPeculiarity = 50;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getIndexofpeculiarity = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 50, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setIndexofpeculiarity = function(value) {
+  return jspb.Message.setProto3FloatField(this, 50, value);
 };
 
 

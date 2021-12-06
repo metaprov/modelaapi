@@ -100,11 +100,12 @@ message ColumnProfile {
 	bool      id              = 42;   
 	bool      constant        = 43;   
 	bool      duplicate       = 44;   
-	bool      reserved        = 45;   
-	bool      completeness    = 46;   
-	double    distinctValueCount = 47;    
-	double    mostFreqValuesRatio = 48;   
-	double    indexOfPeculiarity = 49;   
+	bool      reserved        = 45;  
+    int32     outliers        = 46;	 
+	bool      completeness    = 47;   
+	double    distinctValueCount = 48;    
+	double    mostFreqValuesRatio = 49;   
+	double    indexOfPeculiarity = 50;   
 
 }
 

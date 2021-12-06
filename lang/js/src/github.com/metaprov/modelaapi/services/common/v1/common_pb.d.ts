@@ -309,6 +309,9 @@ export class ColumnProfile extends jspb.Message {
   getReserved(): boolean;
   setReserved(value: boolean): ColumnProfile;
 
+  getOutliers(): number;
+  setOutliers(value: number): ColumnProfile;
+
   getCompleteness(): boolean;
   setCompleteness(value: boolean): ColumnProfile;
 
@@ -373,6 +376,7 @@ export namespace ColumnProfile {
     constant: boolean,
     duplicate: boolean,
     reserved: boolean,
+    outliers: number,
     completeness: boolean,
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
