@@ -1775,11 +1775,11 @@ spec:
                               - text-list
                               type: string
                             datetimeTransformation:
-                              default: auto
+                              default: none
                               description: Specify how For datetime data type,
                               type: string
                             discretisation:
-                              default: auto
+                              default: none
                               description: Convert numerical datatypes to categories.
                                 Valid only if the number data types.
                               type: string
@@ -1789,7 +1789,7 @@ spec:
                                 will be dropped.
                               type: boolean
                             encoding:
-                              default: auto
+                              default: none
                               description: Encoder. Apply only to categorical variables
                               type: string
                             generated:
@@ -1837,13 +1837,14 @@ spec:
                                   type: string
                               type: object
                             imputation:
-                              default: auto
+                              default: none
                               description: imputer
                               type: string
                             name:
                               description: The name of this feature engineering pipeline
                               type: string
                             outlierHandling:
+                              default: none
                               description: Specify how to handle outliers. Apply only
                                 to numeric datatypes.
                               type: string
@@ -1853,10 +1854,11 @@ spec:
                                 will passtrough, without processing.
                               type: boolean
                             scaling:
-                              default: auto
+                              default: none
                               description: Numeric var scaler, valid only if the
                               type: string
                             text:
+                              default: none
                               description: Text specify the column transformation
                                 for text columns
                               properties:
@@ -1902,7 +1904,7 @@ spec:
                                   type: string
                               type: object
                             variableTransformation:
-                              default: auto
+                              default: none
                               description: For numerical data type.
                               type: string
                             video:

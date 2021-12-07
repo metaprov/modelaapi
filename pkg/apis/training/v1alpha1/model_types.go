@@ -590,33 +590,35 @@ type FeatureEngineeringPipeline struct {
 	// +kubebuilder:validation:Optional
 	Columns []string `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
 	// imputer
-	// +kubebuilder:default:=auto
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	Imputation *catalog.Imputation `json:"imputation,omitempty" protobuf:"bytes,4,opt,name=imputation"`
 	// Encoder. Apply only to categorical variables
-	// +kubebuilder:default:=auto
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	Encoding *catalog.CategoricalEncoding `json:"encoding,omitempty" protobuf:"bytes,5,opt,name=encoding"`
 	// Numeric var scaler, valid only if the
-	// +kubebuilder:default:=auto
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	Scaling *catalog.Scaling `json:"scaling,omitempty" protobuf:"bytes,6,opt,name=scaling"`
 	// Convert numerical datatypes to categories. Valid only if the number data types.
-	// +kubebuilder:default:=auto
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	Discretisation *catalog.Discretisation `json:"discretisation,omitempty" protobuf:"bytes,7,opt,name=discretisation"`
 	// For numerical data type.
-	// +kubebuilder:default:=auto
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	VariableTransformation *catalog.VariableTransformation `json:"variableTransformation,omitempty" protobuf:"bytes,8,opt,name=variableTransformation"`
 	// Specify how to handle outliers.
+	// +kubebuilder:default:=none
 	// Apply only to numeric datatypes.
 	OutlierHandling *catalog.OutlierHandling `json:"outlierHandling,omitempty" protobuf:"bytes,9,opt,name=outlierHandling"`
 	// Specify how For datetime data type,
-	// +kubebuilder:default:=auto
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	DatetimeTransformation *catalog.DatatimeTransformation `json:"datetimeTransformation,omitempty" protobuf:"bytes,10,opt,name=datetimeTransformation"`
 	// Text specify the column transformation for text columns
+	// +kubebuilder:default:=none
 	// +kubebuilder:validation:Optional
 	Text *TextPipelineSpec `json:"text,omitempty" protobuf:"bytes,11,opt,name=text"`
 	// Image specify the pipeline for images. Not supported in this release

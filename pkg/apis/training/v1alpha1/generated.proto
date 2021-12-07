@@ -555,40 +555,42 @@ message FeatureEngineeringPipeline {
   repeated string columns = 3;
 
   // imputer
-  // +kubebuilder:default:=auto
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string imputation = 4;
 
   // Encoder. Apply only to categorical variables
-  // +kubebuilder:default:=auto
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string encoding = 5;
 
   // Numeric var scaler, valid only if the
-  // +kubebuilder:default:=auto
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string scaling = 6;
 
   // Convert numerical datatypes to categories. Valid only if the number data types.
-  // +kubebuilder:default:=auto
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string discretisation = 7;
 
   // For numerical data type.
-  // +kubebuilder:default:=auto
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string variableTransformation = 8;
 
   // Specify how to handle outliers.
+  // +kubebuilder:default:=none
   // Apply only to numeric datatypes.
   optional string outlierHandling = 9;
 
   // Specify how For datetime data type,
-  // +kubebuilder:default:=auto
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional string datetimeTransformation = 10;
 
   // Text specify the column transformation for text columns
+  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional TextPipelineSpec text = 11;
 
