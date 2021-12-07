@@ -3270,7 +3270,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     imputation: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
     scaling: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
     generated: (f = jspb.Message.getBooleanField(msg, 44)) == null ? undefined : f,
-    formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f
+    formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
+    id: (f = jspb.Message.getBooleanField(msg, 46)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3486,6 +3487,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 45:
       var value = /** @type {string} */ (reader.readString());
       msg.setFormula(value);
+      break;
+    case 46:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -3828,6 +3833,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeString(
       45,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 46));
+  if (f != null) {
+    writer.writeBool(
+      46,
       f
     );
   }
@@ -5452,6 +5464,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasFormula = function() {
   return jspb.Message.getField(this, 45) != null;
+};
+
+
+/**
+ * optional bool id = 46;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getId = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 46, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setId = function(value) {
+  return jspb.Message.setField(this, 46, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearId = function() {
+  return jspb.Message.setField(this, 46, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasId = function() {
+  return jspb.Message.getField(this, 46) != null;
 };
 
 

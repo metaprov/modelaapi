@@ -169,6 +169,9 @@ export class Column extends jspb.Message {
   getFormula(): string;
   setFormula(value: string): Column;
 
+  getId(): boolean;
+  setId(value: boolean): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -224,6 +227,7 @@ export namespace Column {
     scaling: string,
     generated: boolean,
     formula: string,
+    id: boolean,
   }
 }
 

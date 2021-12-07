@@ -371,7 +371,7 @@ type ColumnStatistics struct {
 	Reserved bool `json:"reserved,omitempty" protobuf:"varint,35,opt,name=reserved"`
 	// Outliers count
 	// +kubebuilder:validation:Optional
-	Outliers *int32 `json:"outliers,omitempty" protobuf:"bytes,36,opt,name=outliers"`
+	Outliers int32 `json:"outliers,omitempty" protobuf:"varint,36,opt,name=outliers"`
 	// Completeness is the ratio between non null to null
 	// +kubebuilder:validation:Optional
 	Completeness float64 `json:"completeness,omitempty" protobuf:"bytes,37,opt,name=completeness"`

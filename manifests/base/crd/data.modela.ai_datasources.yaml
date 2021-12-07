@@ -421,6 +421,10 @@ spec:
                         generated:
                           description: If true this feature is generate
                           type: boolean
+                        id:
+                          description: This is updated from the data source. If true,
+                            the column is an id column
+                          type: boolean
                         ignore:
                           default: false
                           description: Ignore specify if the attribute should be ignored

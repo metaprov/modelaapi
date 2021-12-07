@@ -635,6 +635,9 @@ type Column struct {
 	// The formula used to generate  this column
 	// +kubebuilder:validation:Optionald.
 	Formula string `json:"formula,omitempty" protobuf:"bytes,45,opt,name=formula"`
+	// This is updated from the data source. If true, the column is an id column
+	// +kubebuilder:validation:Optional
+	ID bool `json:"id,omitempty" protobuf:"varint,46,opt,name=id"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema

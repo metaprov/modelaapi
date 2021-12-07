@@ -252,6 +252,10 @@ message Column {
   // The formula used to generate  this column
   // +kubebuilder:validation:Optionald.
   optional string formula = 45;
+
+  // This is updated from the data source. If true, the column is an id column
+  // +kubebuilder:validation:Optional
+  optional bool id = 46;
 }
 
 // Hold the statistical parameters about a single attribute
