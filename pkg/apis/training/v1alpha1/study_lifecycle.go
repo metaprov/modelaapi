@@ -45,11 +45,11 @@ func NewStudy(ns string, name string, dataset string) *Study {
 }
 
 func (study *Study) CanStart() bool {
-	if study.Spec.Search.StudySchedule.StartAt == nil {
+	if study.Spec.Schedule.StartAt == nil {
 		return true
 	}
 	now := metav1.Now()
-	return study.Spec.Search.StudySchedule.StartAt.Before(&now)
+	return study.Spec.Schedule.StartAt.Before(&now)
 }
 
 func (study *Study) PipelineName() string {
@@ -76,7 +76,7 @@ func (study *Study) ReachedMaxFEModels() bool {
 
 // Enabled if we reached max time
 func (study *Study) ReachedMaxTime() bool {
-	if study.Status.SearchingStartTime == nil {
+	if study.Status.SearcStartTime == nil {
 		return false // not started
 	}
 	duration := metav1.Now().Unix() - study.Status.SearchingStartTime.Unix()
@@ -287,34 +287,34 @@ func (study *Study) MarkBaselining() {
 	})
 	now := metav1.Now()
 	if study.Status.BaselineStartTime == nil {
-		study.Status.baselineStartTime = &now
+		study.Status.BaselineStartTime = &now
 	}
-	study.Status.Phase = StudyPhaseSearching
+	study.Status.Phase = StudyPhaseBaelined
 	study.RefreshProgress()
 }
 
-func (study *Study) MarkSearched() {
+func (study *Study) MarkBaselined() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudySearched,
+		Type:   StudyBaselined,
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.SearchingEndTime == nil {
-		study.Status.SearchingEndTime = &now
+	if study.Status.BaselineEndTime == nil {
+		study.Status.BaselineEndTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearched
 	study.RefreshProgress()
 }
 
-func (study *Study) MarkSearchFailed(err string) {
+func (study *Study) MarkBaselineFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:    StudySearched,
+		Type:    StudyBaselined,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.LastError = util.StrPtr("Failed to search models." + err)
+	study.Status.LastError = util.StrPtr("Failed to create baseline models." + err)
 	study.RefreshProgress()
 }
 
@@ -334,8 +334,8 @@ func (study *Study) MarkSearching() {
 		Reason: ReasonTraining,
 	})
 	now := metav1.Now()
-	if study.Status.SearchingStartTime == nil {
-		study.Status.SearchingStartTime = &now
+	if study.Status.SearcStartTime == nil {
+		study.Status.SearcStartTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearching
 	study.RefreshProgress()
@@ -347,8 +347,8 @@ func (study *Study) MarkSearched() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.SearchingEndTime == nil {
-		study.Status.SearchingEndTime = &now
+	if study.Status.SearchEndTime == nil {
+		study.Status.SearchEndTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearched
 	study.RefreshProgress()
@@ -366,7 +366,9 @@ func (study *Study) MarkSearchFailed(err string) {
 	study.RefreshProgress()
 }
 
+////////////////////////////////////////////////
 // Feature engineering
+////////////////////////////////////////////////
 
 func (study *Study) FeatureEngineered() bool {
 	cond := study.GetCond(StudyFeatureEngineered)
@@ -409,7 +411,9 @@ func (study *Study) MarkFeatureEngineeringFailed(err string) {
 	study.RefreshProgress()
 }
 
+//////////////////////////////////////////////////////
 // --------------- Test
+//////////////////////////////////////////////////////
 
 func (study *Study) ModelTested() bool {
 	cond := study.GetCond(StudyTested)
@@ -454,7 +458,9 @@ func (study *Study) Tested() bool {
 	return study.GetCond(StudyTested).Status == v1.ConditionTrue
 }
 
+///////////////////////////////////////////////////////
 // --------------- Profile
+///////////////////////////////////////////////////////
 
 func (study *Study) Profiled() bool {
 	return *study.Spec.Profiled && study.GetCond(StudyProfiled).Status == v1.ConditionTrue
@@ -481,7 +487,9 @@ func (study *Study) MarkProfileFailed(err string) {
 	study.RefreshProgress()
 }
 
+///////////////////////////////////////////////////////////
 // --------------- Report
+///////////////////////////////////////////////////////////
 
 func (study *Study) MarkReporting() {
 	study.CreateOrUpdateCond(StudyCondition{
@@ -535,7 +543,7 @@ func (study *Study) MarkPartitioned() bool {
 }
 
 func (study *Study) EnsembleTrained() bool {
-	return study.GetCond(StudyEnsambleTrained).Status == v1.ConditionTrue
+	return study.GetCond(StudyEnsambleCreated).Status == v1.ConditionTrue
 }
 
 func (study *Study) Ready() bool {
@@ -581,7 +589,7 @@ func (study *Study) MarkReady() {
 
 func (study *Study) MarkEnsembleTrained() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyEnsambleTrained,
+		Type:   StudyEnsambleCreated,
 		Status: v1.ConditionTrue,
 	})
 }

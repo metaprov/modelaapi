@@ -523,12 +523,13 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			},
 			DatasetName: util.StrPtr(b.DatasetName()),
 			Task:        b.Spec.Task,
-			Objective:   b.Spec.Objective,
-			Search: &ModelSearchSpec{
+
+			Search: &SearchSpec{
 				Sampler:   b.Spec.Sampler,
 				MaxTime:   b.Spec.MaxTime,
 				MaxModels: b.Spec.MaxModels,
 				Trainers:  b.Spec.Trainers,
+				Objective: b.Spec.Objective,
 			},
 			TrainingTemplate: &TrainingSpec{
 				Priority:    nil,

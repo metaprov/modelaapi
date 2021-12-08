@@ -341,7 +341,9 @@ const (
 	ReasonProfiling          = "Profiling"
 	ReasonPublishing         = "Publishing"
 	ReasonTraining           = "Training"
+	ReasonBaselining         = "Baselining"
 	ReasonFeatureEngineering = "FeatureEngineering"
+	ReasonCreateEnsemble     = "CreateEnsemble"
 	ReasonPausing            = "Pausing"
 	ReasonWaitingToTrain     = "WaitingToTrain"
 	ReasonWaitingToTest      = "WaitingToTest"
@@ -817,7 +819,7 @@ func (model *Model) InitModelFromStudy(study *Study) {
 	model.Spec.VersionName = study.Spec.VersionName
 	model.Spec.DatasetName = study.Spec.DatasetName
 	model.Spec.Task = study.Spec.Task
-	model.Spec.Objective = study.Spec.Objective
+	model.Spec.Objective = study.Spec.Search.Objective
 	model.ObjectMeta.Labels = study.ObjectMeta.Labels
 	model.ObjectMeta.Labels["study"] = study.Name
 	model.Spec.Pushed = study.Spec.ModelImagePushed
