@@ -27840,7 +27840,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     activedeadlineseconds: (f = jspb.Message.getField(msg, 33)) == null ? undefined : f,
     estimatortype: (f = jspb.Message.getField(msg, 34)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 35)) == null ? undefined : f,
-    featureengineeringonly: (f = jspb.Message.getBooleanField(msg, 36)) == null ? undefined : f
+    featureengineeringonly: (f = jspb.Message.getBooleanField(msg, 36)) == null ? undefined : f,
+    trialid: (f = jspb.Message.getField(msg, 38)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -28026,6 +28027,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 36:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setFeatureengineeringonly(value);
+      break;
+    case 38:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTrialid(value);
       break;
     default:
       reader.skipField();
@@ -28308,6 +28313,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
   if (f != null) {
     writer.writeBool(
       36,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 38));
+  if (f != null) {
+    writer.writeInt32(
+      38,
       f
     );
   }
@@ -29584,6 +29596,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 };
 
 
+/**
+ * optional int32 trialID = 38;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getTrialid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 38, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setTrialid = function(value) {
+  return jspb.Message.setField(this, 38, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearTrialid = function() {
+  return jspb.Message.setField(this, 38, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasTrialid = function() {
+  return jspb.Message.getField(this, 38) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -29681,7 +29729,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     trainerimage: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f,
     endpoint: (f = jspb.Message.getField(msg, 54)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
-    trialid: (f = jspb.Message.getField(msg, 56)) == null ? undefined : f,
     rocauccurve: (f = msg.getRocauccurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.toObject(includeInstance, f),
     prcurve: (f = msg.getPrcurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.toObject(includeInstance, f),
     confusionmatrix: (f = msg.getConfusionmatrix()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.toObject(includeInstance, f),
@@ -29963,10 +30010,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
-      break;
-    case 56:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTrialid(value);
       break;
     case 57:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve;
@@ -30423,13 +30466,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       55,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 56));
-  if (f != null) {
-    writer.writeInt32(
-      56,
-      f
     );
   }
   f = message.getRocauccurve();
@@ -32440,42 +32476,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLogs = function() {
   return jspb.Message.getField(this, 55) != null;
-};
-
-
-/**
- * optional int32 trialID = 56;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrialid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 56, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrialid = function(value) {
-  return jspb.Message.setField(this, 56, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrialid = function() {
-  return jspb.Message.setField(this, 56, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrialid = function() {
-  return jspb.Message.getField(this, 56) != null;
 };
 
 

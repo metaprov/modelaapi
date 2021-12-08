@@ -2838,6 +2838,9 @@ export class ModelSpec extends jspb.Message {
   getFeatureengineeringonly(): boolean;
   setFeatureengineeringonly(value: boolean): ModelSpec;
 
+  getTrialid(): number;
+  setTrialid(value: number): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2883,6 +2886,7 @@ export namespace ModelSpec {
     estimatortype: string,
     ttl: number,
     featureengineeringonly: boolean,
+    trialid: number,
   }
 }
 
@@ -3085,9 +3089,6 @@ export class ModelStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): ModelStatus;
 
-  getTrialid(): number;
-  setTrialid(value: number): ModelStatus;
-
   getRocauccurve(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve | undefined;
   setRocauccurve(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve): ModelStatus;
   hasRocauccurve(): boolean;
@@ -3187,7 +3188,6 @@ export namespace ModelStatus {
     trainerimage: string,
     endpoint: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    trialid: number,
     rocauccurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.AsObject,
     prcurve?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.AsObject,
     confusionmatrix?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ConfusionMatrix.AsObject,

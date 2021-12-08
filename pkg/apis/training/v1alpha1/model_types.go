@@ -330,6 +330,10 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	FeatureEngineeringOnly *bool `json:"featureEngineeringOnly,omitempty" protobuf:"varint,36,opt,name=featureEngineeringOnly"`
+	// Set the trial ID, by the optimizer.
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	TrialID *int32 `json:"trialID,omitempty" protobuf:"varint,38,opt,name=trialID"`
 }
 
 type EnsembleSpec struct {
@@ -507,9 +511,6 @@ type ModelStatus struct {
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,55,opt,name=logs"`
-	// Set the trial ID, by the optimizer.
-	// +kubebuilder:validation:Optional
-	TrialID int32 `json:"trialID,omitempty" protobuf:"varint,56,opt,name=trialID"`
 	// Roc curve
 	// +kubebuilder:validation:Optional
 	RocAucCurve catalog.RocAucCurve `json:"rocauccurve,omitempty" protobuf:"varint,57,opt,name=rocauccurve"`

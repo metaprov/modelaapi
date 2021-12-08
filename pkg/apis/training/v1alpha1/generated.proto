@@ -1941,6 +1941,11 @@ message ModelSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool featureEngineeringOnly = 36;
+
+  // Set the trial ID, by the optimizer.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 trialID = 38;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2165,10 +2170,6 @@ message ModelStatus {
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 55;
-
-  // Set the trial ID, by the optimizer.
-  // +kubebuilder:validation:Optional
-  optional int32 trialID = 56;
 
   // Roc curve
   // +kubebuilder:validation:Optional
