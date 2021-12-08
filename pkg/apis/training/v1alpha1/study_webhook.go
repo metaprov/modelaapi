@@ -48,13 +48,13 @@ func (study *Study) Default() {
 		study.Spec.TrainingTemplate.CheckpointInterval = util.Int32Ptr(0)
 	}
 
-	if study.Spec.Objective == nil {
+	if study.Spec.Search.Objective == nil {
 		o := DefaultObjective(*study.Spec.Task)
-		study.Spec.Objective = &o
+		study.Spec.Search.Objective = &o
 	}
 
 	if study.Spec.Search == nil {
-		study.Spec.Search = &ModelSearchSpec{}
+		study.Spec.Search = &SearchSpec{}
 		study.Spec.Search.Default()
 	}
 
@@ -67,23 +67,23 @@ func (study *Study) Default() {
 		study.Spec.Search.SearchSpace = &AlgorithmSearchSpaceSpec{}
 	}
 
-	if study.Spec.Search.SearchSpace.VotingEnsemble == nil {
-		study.Spec.Search.SearchSpace.VotingEnsemble = util.BoolPtr(false)
+	if study.Spec.Ensemble.VotingEnsemble == nil {
+		study.Spec.Ensemble.VotingEnsemble = util.BoolPtr(false)
 	}
 
-	if study.Spec.Search.SearchSpace.StackingEnsemble == nil {
-		study.Spec.Search.SearchSpace.StackingEnsemble = util.BoolPtr(true)
+	if study.Spec.Ensemble.StackingEnsemble == nil {
+		study.Spec.Ensemble.StackingEnsemble = util.BoolPtr(true)
 	}
 
-	study.Spec.Search.SearchSpace.StackingEnsemble = util.BoolPtr(true)
+	study.Spec.Ensemble.StackingEnsemble = util.BoolPtr(true)
 
 	if study.Spec.Search.Pruner.SHOptions == nil {
 		study.Spec.Search.Pruner.SHOptions = &SuccessiveHalvingOptions{}
 	}
 
-	if study.Spec.Search.StudySchedule.StartAt == nil {
+	if study.Spec.Schedule.StartAt == nil {
 		now := metav1.Now()
-		study.Spec.Search.StudySchedule.StartAt = &now
+		study.Spec.Schedule.StartAt = &now
 	}
 
 	if study.Spec.Search.Pruner.SHOptions.MaxBudget == nil {
@@ -197,29 +197,29 @@ func (study *Study) validateSpec(fldPath *field.Path) field.ErrorList {
 // Validate task checks that the
 func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
-	if *study.Spec.Task == catalog.Regression && !study.Spec.Objective.IsRegression() {
-		err := errors.Errorf("objective %v is not a regression metric", *study.Spec.Objective)
+	if *study.Spec.Task == catalog.Regression && !study.Spec.Search.Objective.IsRegression() {
+		err := errors.Errorf("objective %v is not a regression metric", *study.Spec.Search.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if *study.Spec.Task == catalog.BinaryClassification && !study.Spec.Objective.IsClassification() {
-		err := errors.Errorf("objective %v is not a binary classification metric", *study.Spec.Objective)
+	if *study.Spec.Task == catalog.BinaryClassification && !study.Spec.Search.Objective.IsClassification() {
+		err := errors.Errorf("objective %v is not a binary classification metric", *study.Spec.Search.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if *study.Spec.Task == catalog.MultiClassification && !study.Spec.Objective.IsMultiClass() {
-		err := errors.Errorf("objective %v is not a multi classification metric", *study.Spec.Objective)
+	if *study.Spec.Task == catalog.MultiClassification && !study.Spec.Search.Objective.IsMultiClass() {
+		err := errors.Errorf("objective %v is not a multi classification metric", *study.Spec.Search.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
 			err.Error()))
 	}
-	if *study.Spec.Task == catalog.Clustering && !study.Spec.Objective.IsClustering() {
-		err := errors.Errorf("objective %v is not a clustering metric", *study.Spec.Objective)
+	if *study.Spec.Task == catalog.Clustering && !study.Spec.Search.Objective.IsClustering() {
+		err := errors.Errorf("objective %v is not a clustering metric", *study.Spec.Search.Objective)
 		allErrs = append(allErrs, field.Invalid(
 			fldPath,
 			study.Spec.Task,
@@ -237,7 +237,7 @@ func (svo *SuccessiveHalvingOptions) Default() {
 	svo.EliminationRate = util.Int32Ptr(3)
 }
 
-func (ms *ModelSearchSpec) Default() {
+func (ms *SearchSpec) Default() {
 	name := RandomSearch
 	ms.Sampler = &name
 	ms.Pruner = &PrunerSpec{}
@@ -250,8 +250,7 @@ func (ms *ModelSearchSpec) Default() {
 	ms.Test = util.Int32Ptr(1)
 	ms.RetainTop = util.Int32Ptr(10)
 	ms.RetainFor = util.Int32Ptr(60)
-	ms.SearchSpace.VotingEnsemble = util.BoolPtr(false)
-	ms.SearchSpace.StackingEnsemble = util.BoolPtr(true)
+
 }
 
 func (pspec *PrunerSpec) Default() {

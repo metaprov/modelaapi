@@ -79,7 +79,7 @@ func (study *Study) ReachedMaxTime() bool {
 	if study.Status.SearcStartTime == nil {
 		return false // not started
 	}
-	duration := metav1.Now().Unix() - study.Status.SearchingStartTime.Unix()
+	duration := metav1.Now().Unix() - study.Status.SearcStartTime.Unix()
 	return int32(duration/60) >= *study.Spec.Search.MaxTime
 }
 
