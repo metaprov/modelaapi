@@ -21,29 +21,14 @@ option go_package = "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1";
 
 message AlgorithmSearchSpaceSpec {
   // AllowList contain the list of algorithms that should be tested as part of the search.
-  repeated string allowlist = 12;
-
-  // VotingEnsample - If true, create a voting ensemble of the top 3 models.
-  // +kubebuilder:default:=false
-  optional bool votingEnsemble = 13;
-
-  // StackingEnsemble If true, create a stacking ensemble of the top 3 models.
-  // +kubebuilder:default:=true
-  optional bool stackingEnsemble = 14;
+  // Use this to filter specific algorithm
+  // +kubebuilder:validation:Optional
+  repeated string allowlist = 1;
 
   // set a general filter on the allowed algorithm
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string filter = 16;
-
-  // Baselines holds the name of the base line algorithms to try
-  // +kubebuilder:validation:Optional
-  repeated string baselines = 17;
-
-  // Indicate the all models should be tests
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool testAll = 18;
+  optional string filter = 2;
 }
 
 // AudioPipelineSpec is the specification for preprocessing audio data
@@ -74,6 +59,23 @@ message BacktestSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
   optional int32 slidingSteps = 4;
+}
+
+// Define the baseline phase spec
+message BaselineSpec {
+  // Set to true for baseline
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool testAll = 1;
+
+  // Baselines holds the name of the base line algorithms to try
+  // +kubebuilder:validation:Optional
+  repeated string baselines = 2;
+
+  // Indicate the all alg for the task
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool all = 3;
 }
 
 // CapacityStageSpec is the desired state of the capcity testing.
@@ -530,6 +532,28 @@ message DeploymentStageSpec {
 
 // EnsembleRules is an algorithm class that decide
 message EnsembleRules {
+}
+
+// Define the ensemble spec
+message EnsembleSearchSpec {
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // VotingEnsample - If true, create a voting ensemble of the top 3 models.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool votingEnsemble = 2;
+
+  // StackingEnsemble If true, create a stacking ensemble of the top 3 models.
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool stackingEnsemble = 3;
+
+  // how many models to use for ensemble.
+  // +kubebuilder:default:=3
+  // +kubebuilder:validation:Optional
+  optional int32 top = 4;
 }
 
 message EnsembleSpec {
@@ -1685,93 +1709,6 @@ message ModelResult {
   optional bool error = 4;
 }
 
-// ModelSearchSpec the constraint on the training process.
-// The values are assigned to the model from the study.
-message ModelSearchSpec {
-  // Type specify the hyper parameter optimization search method.
-  // The only supported value is random
-  // +kubebuilder:default:=random
-  // +kubebuilder:validation:Optional
-  optional string sampler = 1;
-
-  // The pruner to use during model search.
-  // +kubebuilder:validation:Optional
-  optional PrunerSpec pruner = 2;
-
-  // MaxCost specify what is the maximum cost incurred before
-  // stopping model creations
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=100
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=1000
-  optional int32 maxCost = 3;
-
-  // MaxTime specify what is the maximum time allocated to a study (in minutes).
-  // the cross validation stage.
-  // +kubebuilder:default:=30
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=10000
-  // +kubebuilder:validation:Optional
-  optional int32 maxTime = 4;
-
-  // Used for random search, the max models sampled.
-  // +kubebuilder:default:=10
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=1000
-  // +kubebuilder:validation:Optional
-  optional int32 maxModels = 5;
-
-  // The minimum score by which the search would stop
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional double minScore = 6;
-
-  // The desired number of trainers running during search.
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:Maximum=50
-  // +kubebuilder:validation:Minimum=0
-  optional int32 trainers = 7;
-
-  // Test indicate the desired number of models that should be passed to the testing phase.
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=5
-  optional int32 test = 8;
-
-  // Indicate the total number of full models that would be retain in etcd.
-  // All other models are garbage collected (archived).
-  // models are sorted by thier objective score.
-  // +kubebuilder:default:=10
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=100
-  optional int32 retainTop = 9;
-
-  // RetainFor measure the time in minutes for modela trained. Default is 60 min (1 H).
-  // +kubebuilder:default:=60
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Maximum=2400
-  optional int32 retainedFor = 10;
-
-  // Define when the schedule start
-  // +kubebuilder:validation:Optional
-  optional StudyScheduleSpec studySchedule = 11;
-
-  // Define the algorithm search space.
-  // +kubebuilder:validation:Optional
-  optional AlgorithmSearchSpaceSpec searchSpace = 12;
-
-  // If larget than 0, stop the search if no change in best score occur.
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional int32 earlyStopAfter = 19;
-
-  // If true, keep only the top model from an algorithm
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool keepOnlyTopModel = 20;
-}
-
 // ModelSpec defines the desired state of the Model resource
 message ModelSpec {
   // Owner is the account name of the owner of this model
@@ -2829,6 +2766,98 @@ message ResourceConsumption {
   optional double gpu = 3;
 }
 
+// ModelSearchSpec the constraint on the training process.
+// The values are assigned to the model from the study.
+message SearchSpec {
+  // Type specify the hyper parameter optimization search method.
+  // The only supported value is random
+  // +kubebuilder:default:=random
+  // +kubebuilder:validation:Optional
+  optional string sampler = 1;
+
+  // The pruner to use during model search.
+  // +kubebuilder:validation:Optional
+  optional PrunerSpec pruner = 2;
+
+  // MaxCost specify what is the maximum cost incurred before
+  // stopping model creations
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=100
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=1000
+  optional int32 maxCost = 3;
+
+  // MaxTime specify what is the maximum time allocated to a study (in minutes).
+  // the cross validation stage.
+  // +kubebuilder:default:=30
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=10000
+  // +kubebuilder:validation:Optional
+  optional int32 maxTime = 4;
+
+  // Used for random search, the max models sampled.
+  // +kubebuilder:default:=10
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=1000
+  // +kubebuilder:validation:Optional
+  optional int32 maxModels = 5;
+
+  // The minimum score by which the search would stop
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double minScore = 6;
+
+  // The desired number of trainers running during search.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Maximum=50
+  // +kubebuilder:validation:Minimum=0
+  optional int32 trainers = 7;
+
+  // Test indicate the desired number of models that should be passed to the testing phase.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=5
+  optional int32 test = 8;
+
+  // Indicate the total number of full models that would be retain in etcd.
+  // All other models are garbage collected (archived).
+  // models are sorted by thier objective score.
+  // +kubebuilder:default:=10
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Maximum=100
+  optional int32 retainTop = 9;
+
+  // RetainFor measure the time in minutes for modela trained. Default is 60 min (1 H).
+  // +kubebuilder:default:=60
+  // +kubebuilder:validation:Minimum=0
+  // +kubebuilder:validation:Maximum=2400
+  optional int32 retainedFor = 10;
+
+  // Define the algorithm search space.
+  // +kubebuilder:validation:Optional
+  optional AlgorithmSearchSpaceSpec searchSpace = 11;
+
+  // If larget than 0, stop the search if no change in best score occur.
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional int32 earlyStopAfter = 12;
+
+  // If true, keep only the top model from an algorithm
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool keepOnlyTopModel = 13;
+
+  // Objective is the objective defined how the study controller will compare model performance.
+  // +kubebuilder:validation:Optional
+  optional string objective = 14;
+
+  // Objective2 is the second objective to consider during optimization.
+  // +kubebuilder:default:="none"
+  // +kubebuilder:validation:Optional
+  optional string objective2 = 15;
+}
+
 // +kubebuilder:subresource:status
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
@@ -2922,43 +2951,50 @@ message StudySpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=512
   // +kubebuilder:validation:Optional
-  optional string description = 3;
+  optional string description = 2;
 
   // LabRef is a reference to the lab where the trainers for this study run.
   // If no value is provided, the lab is taken from the
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference labRef = 4;
+  optional k8s.io.api.core.v1.ObjectReference labRef = 3;
 
   // DatasetName refer to the dataset object for which the study is for.
   // +kubebuilder:validation:Required
-  optional string datasetName = 5;
+  optional string datasetName = 4;
 
   // Task specify the machine learning task (e.g classification).
   // This must match the task of the data product.
   // +kubebuilder:validation:Required
-  optional string task = 6;
+  optional string task = 5;
 
-  // Objective is the objective defined how the study controller will compare model performance.
+  // Specification for feature engineereing
+  // Default: all preprocessing is set to auto.
   // +kubebuilder:validation:Optional
-  optional string objective = 7;
+  optional FeatureEngineeringSearchSpec feSearch = 6;
 
-  // Objective2 is the second objective to consider during optimization.
-  // +kubebuilder:default:="none"
+  // Specification for the baseline phase
   // +kubebuilder:validation:Optional
-  optional string objective2 = 8;
+  optional BaselineSpec baseline = 7;
 
   // Search defines the model search
   // +kubebuilder:validation:Optional
-  optional ModelSearchSpec search = 9;
+  optional SearchSpec search = 8;
 
-  // Preprocessing is template for preprocessors for this study
-  // Default: all preprocessing is set to auto.
+  // Search defines the model search
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSearchSpec feSearch = 10;
+  optional EnsembleSearchSpec ensembleSearchSpec = 9;
 
   // Training template contain the desired training parameter for the models.
   // +kubebuilder:validation:Optional
-  optional TrainingSpec trainingTemplate = 11;
+  optional TrainingSpec trainingTemplate = 10;
+
+  // Forecast template
+  // +kubebuilder:validation:Optional
+  optional StudyForecastSpec forecast = 11;
+
+  // Define when the schedule start
+  // +kubebuilder:validation:Optional
+  optional StudyScheduleSpec schedule = 12;
 
   // Aborted is set when we want to abort the training
   // +kubebuilder:default:=false
@@ -3036,10 +3072,6 @@ message StudySpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 31;
-
-  // Forecast template
-  // +kubebuilder:validation:Optional
-  optional StudyForecastSpec forecast = 35;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -3110,117 +3142,133 @@ message StudyStatus {
 
   // Start of the training phase
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 17;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time baselineStartTime = 17;
 
   // End of the training phase.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 19;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time baselineEndTime = 19;
+
+  // Start of the training phase
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 20;
+
+  // End of the training phase.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 21;
+
+  // Start of the training phase
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time ensembleStartTime = 22;
+
+  // End of the training phase.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time ensembleEndTime = 23;
 
   // Start of the testing phase
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 20;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingStartTime = 24;
 
   // Represents time when the study reached a successful complete or failure phase. It is not guaranteed to
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 21;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time testingEndTime = 25;
 
   // The study end time.
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 22;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time endTime = 26;
 
   // The Best model name.
   // +kubebuilder:validation:Optional
-  optional string bestModel = 23;
+  optional string bestModel = 27;
 
   // The Best model score, so far.
   // +kubebuilder:validation:Optional
-  optional double bestModelScore = 24;
+  optional double bestModelScore = 28;
 
   // A reference to the profile uri which were produce during processing
   // +kubebuilder:validation:Optional
-  optional string profileUri = 25;
+  optional string profileUri = 29;
 
   // The study report name
   // +kubebuilder:validation:Optional
-  optional string reportName = 26;
+  optional string reportName = 30;
 
   // The phase of the study
   // +kubebuilder:default:="Pending"
   // +kubebuilder:validation:Optional
-  optional string phase = 27;
+  optional string phase = 31;
 
   // ObservedGeneration is the Last generation that was acted on
   // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 28;
+  optional int64 observedGeneration = 32;
 
   // TrainDatasetLocation is the location of the train dataset
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 29;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation trainDataset = 33;
 
   // TestDatasetLocation is the location of the test dataset used to test this model
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 30;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation testDataset = 34;
 
   // ValidationDatasetLocation is the location of the dataset used for validation
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 31;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation validationDataset = 35;
 
   // the last model id generated for this study
-  optional int64 lastModelID = 32;
+  optional int64 lastModelID = 36;
 
   // Last error
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string lastError = 33;
+  optional string lastError = 37;
 
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 34;
+  optional int32 trainingRows = 38;
 
   // TestingRows is the amount of rows in testing
   // +kubebuilder:validation:Optional
-  optional int32 testingRows = 35;
+  optional int32 testingRows = 39;
 
   // Validation row contain the number of validation rows for cases that we have validation.
   // +kubebuilder:validation:Optional
-  optional int32 validationRows = 36;
+  optional int32 validationRows = 40;
 
   // Study Progress in precent, the progress takes into account the different stages of the study.
   // +kubebuilder:validation:Optional
-  optional int32 progress = 37;
+  optional int32 progress = 41;
 
   // define a baseline model that will be the baseline for the search. If not none, the base line is the first model
   // to be evaluated.
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string baseline = 38;
+  optional string baseline = 42;
 
   // Sha 256 of the data sig
   // +kubebuilder:validation:Optional
-  optional DataHashes trainingDataHash = 39;
+  optional DataHashes trainingDataHash = 43;
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 40;
+  optional string triggeredBy = 44;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 41;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 45;
 
   // Holds the result of the feature engineering process
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSearchStatus featureEngineeringSearchStatus = 42;
+  optional FeatureEngineeringSearchStatus featureEngineeringSearchStatus = 46;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 43;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 47;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 44;
+  repeated StudyCondition conditions = 48;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

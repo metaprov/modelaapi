@@ -124,7 +124,7 @@ mkdir -p ${PROJECT_ROOT}/lang/python/k8s/io
 cp -r ${PROJECT_ROOT}/lang/python/github.com/gogo/* ${PROJECT_ROOT}/lang/python/github/com/gogo && rm -R ${PROJECT_ROOT}/lang/python/github.com/gogo/*
 cp -r ${PROJECT_ROOT}/lang/python/github.com/metaprov/* ${PROJECT_ROOT}/lang/python/github/com/metaprov && rm -R ${PROJECT_ROOT}/lang/python/github.com/metaprov/*
 cp -r ${PROJECT_ROOT}/lang/python/k8s.io/api/* ${PROJECT_ROOT}/lang/python/k8s/io && rm -R ${PROJECT_ROOT}/lang/python/k8s.io/api/*
-co -r ${PROJECT_ROOT}/lang/python/k8s.io/apimachinery/* ${PROJECT_ROOT}/lang/python/k8s/io && rm -R ${PROJECT_ROOT}/lang/python/k8s.io/apimachinery/*
+cp -r ${PROJECT_ROOT}/lang/python/k8s.io/apimachinery/* ${PROJECT_ROOT}/lang/python/k8s/io && rm -R ${PROJECT_ROOT}/lang/python/k8s.io/apimachinery/*
 
 #remove the grpc dirs
 rm -rf ${PROJECT_ROOT}/lang/python/k8s.io

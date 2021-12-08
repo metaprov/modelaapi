@@ -103,6 +103,81 @@ spec:
                 format: int64
                 minimum: 0
                 type: integer
+              baseline:
+                description: Specification for the baseline phase
+                properties:
+                  all:
+                    default: false
+                    description: Indicate the all alg for the task
+                    type: boolean
+                  baselines:
+                    description: Baselines holds the name of the base line algorithms
+                      to try
+                    items:
+                      enum:
+                      - knn-regressor
+                      - ridge-regressor
+                      - lasso-regressor
+                      - ada-boost-regressor
+                      - decision-tree-regressor
+                      - extra-tree-regressor
+                      - linear-svr
+                      - svr
+                      - passive-agressive-regressor
+                      - sgd-regressor
+                      - gradient-boosting-regressor
+                      - random-forest-regressor
+                      - xgb-regressor
+                      - catboost-regressor
+                      - sgd-regressor
+                      - gradient-boosting-regressor
+                      - random-forest-regressor
+                      - xgb-regressor
+                      - catboost-regressor
+                      - lightgbm-regressor
+                      - elasticnet-regressor
+                      - dnn-regressor
+                      - elliptic-envelope
+                      - one-class-svm
+                      - isolation-forest
+                      - local-outlier-factor
+                      - prophet
+                      - knn-classifier
+                      - ada-boost-classifier
+                      - bernoulli-nb
+                      - decision-tree-classifier
+                      - extra-tree-classifier
+                      - linear-svc
+                      - svc
+                      - passive-aggressive-classifier
+                      - sgd-classifier
+                      - logistic-regression
+                      - gradient-boosting-classifier
+                      - random-forest-classifier
+                      - xgboost-classifier
+                      - ridge-classifier
+                      - quadratic-discriminant
+                      - linear-discriminant
+                      - lightgbm-classifier
+                      - catboost-classifier
+                      - stacking-ensemble
+                      - none
+                      - arima
+                      - auto-arima
+                      - vrima
+                      - exponential-smoothing
+                      - fast-fourier-transform
+                      - nbeats
+                      - theata-method
+                      - als
+                      - bayesian-personalized-ranking
+                      type: string
+                    type: array
+                  testAll:
+                    default: true
+                    description: Set to true for baseline
+                    type: boolean
+                type: object
               compilation:
                 description: This is the compiler spec for models. This spec will
                   act as a template for the models created by the study
@@ -146,9 +221,31 @@ spec:
                 description: Description is user provided description
                 maxLength: 512
                 type: string
+              ensembleSearchSpec:
+                description: Search defines the model search
+                properties:
+                  enabled:
+                    default: true
+                    type: boolean
+                  stackingEnsemble:
+                    default: true
+                    description: StackingEnsemble If true, create a stacking ensemble
+                      of the top 3 models.
+                    type: boolean
+                  top:
+                    default: 3
+                    description: how many models to use for ensemble.
+                    format: int32
+                    type: integer
+                  votingEnsemble:
+                    default: false
+                    description: VotingEnsample - If true, create a voting ensemble
+                      of the top 3 models.
+                    type: boolean
+                type: object
               feSearch:
-                description: 'Preprocessing is template for preprocessors for this
-                  study Default: all preprocessing is set to auto.'
+                description: 'Specification for feature engineereing Default: all
+                  preprocessing is set to auto.'
                 properties:
                   autoRemove:
                     default: true
@@ -777,135 +874,6 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              objective:
-                description: Objective is the objective defined how the study controller
-                  will compare model performance.
-                enum:
-                - accuracy
-                - average-precision
-                - balanced-accuracy
-                - brier-score-loss
-                - f1
-                - f1-macro
-                - f1-micro
-                - f1-weighted
-                - log-loss
-                - precision
-                - precision-micro
-                - precision-macro
-                - precision-weighted
-                - recall
-                - recall-macro
-                - recall-micro
-                - recall-weighted
-                - auc
-                - fp
-                - fn
-                - tn
-                - tp
-                - explained_variance
-                - mae
-                - mse
-                - msle
-                - median-absolute-error
-                - r2
-                - adj-r2
-                - adjusted-mutual-info-score
-                - adjusted-rand-score
-                - completeness-score
-                - fowlkes-mallows-score
-                - homogeneity-score
-                - mutual-info-score
-                - normalized-mutual-info-score
-                - v-measure-score
-                - rmse
-                - unknown
-                - mape
-                - smape
-                - mdape
-                - adjr2
-                - mcc
-                - tpr
-                - fpr
-                - tnr
-                - rmsle
-                - matthews-corr-coef
-                - p50-latency
-                - p95-latency
-                - p99-latency
-                - cpu
-                - mem
-                - req-per-sec
-                - maze
-                - gpu
-                - gpu-mem
-                - none
-                type: string
-              objective2:
-                default: none
-                description: Objective2 is the second objective to consider during
-                  optimization.
-                enum:
-                - accuracy
-                - average-precision
-                - balanced-accuracy
-                - brier-score-loss
-                - f1
-                - f1-macro
-                - f1-micro
-                - f1-weighted
-                - log-loss
-                - precision
-                - precision-micro
-                - precision-macro
-                - precision-weighted
-                - recall
-                - recall-macro
-                - recall-micro
-                - recall-weighted
-                - auc
-                - fp
-                - fn
-                - tn
-                - tp
-                - explained_variance
-                - mae
-                - mse
-                - msle
-                - median-absolute-error
-                - r2
-                - adj-r2
-                - adjusted-mutual-info-score
-                - adjusted-rand-score
-                - completeness-score
-                - fowlkes-mallows-score
-                - homogeneity-score
-                - mutual-info-score
-                - normalized-mutual-info-score
-                - v-measure-score
-                - rmse
-                - unknown
-                - mape
-                - smape
-                - mdape
-                - adjr2
-                - mcc
-                - tpr
-                - fpr
-                - tnr
-                - rmsle
-                - matthews-corr-coef
-                - p50-latency
-                - p95-latency
-                - p99-latency
-                - cpu
-                - mem
-                - req-per-sec
-                - maze
-                - gpu
-                - gpu-mem
-                - none
-                type: string
               owner:
                 default: no-one
                 description: The owner account name
@@ -923,6 +891,19 @@ spec:
                 default: true
                 description: Reported is set when we want to create model report
                 type: boolean
+              schedule:
+                description: Define when the schedule start
+                properties:
+                  enabled:
+                    default: true
+                    description: Indicate the all models should be tests
+                    type: boolean
+                  startAt:
+                    description: Set the start time, by default this is set to the
+                      start time of the study
+                    format: date-time
+                    type: string
+                type: object
               search:
                 description: Search defines the model search
                 properties:
@@ -963,6 +944,135 @@ spec:
                     default: 0
                     description: The minimum score by which the search would stop
                     type: number
+                  objective:
+                    description: Objective is the objective defined how the study
+                      controller will compare model performance.
+                    enum:
+                    - accuracy
+                    - average-precision
+                    - balanced-accuracy
+                    - brier-score-loss
+                    - f1
+                    - f1-macro
+                    - f1-micro
+                    - f1-weighted
+                    - log-loss
+                    - precision
+                    - precision-micro
+                    - precision-macro
+                    - precision-weighted
+                    - recall
+                    - recall-macro
+                    - recall-micro
+                    - recall-weighted
+                    - auc
+                    - fp
+                    - fn
+                    - tn
+                    - tp
+                    - explained_variance
+                    - mae
+                    - mse
+                    - msle
+                    - median-absolute-error
+                    - r2
+                    - adj-r2
+                    - adjusted-mutual-info-score
+                    - adjusted-rand-score
+                    - completeness-score
+                    - fowlkes-mallows-score
+                    - homogeneity-score
+                    - mutual-info-score
+                    - normalized-mutual-info-score
+                    - v-measure-score
+                    - rmse
+                    - unknown
+                    - mape
+                    - smape
+                    - mdape
+                    - adjr2
+                    - mcc
+                    - tpr
+                    - fpr
+                    - tnr
+                    - rmsle
+                    - matthews-corr-coef
+                    - p50-latency
+                    - p95-latency
+                    - p99-latency
+                    - cpu
+                    - mem
+                    - req-per-sec
+                    - maze
+                    - gpu
+                    - gpu-mem
+                    - none
+                    type: string
+                  objective2:
+                    default: none
+                    description: Objective2 is the second objective to consider during
+                      optimization.
+                    enum:
+                    - accuracy
+                    - average-precision
+                    - balanced-accuracy
+                    - brier-score-loss
+                    - f1
+                    - f1-macro
+                    - f1-micro
+                    - f1-weighted
+                    - log-loss
+                    - precision
+                    - precision-micro
+                    - precision-macro
+                    - precision-weighted
+                    - recall
+                    - recall-macro
+                    - recall-micro
+                    - recall-weighted
+                    - auc
+                    - fp
+                    - fn
+                    - tn
+                    - tp
+                    - explained_variance
+                    - mae
+                    - mse
+                    - msle
+                    - median-absolute-error
+                    - r2
+                    - adj-r2
+                    - adjusted-mutual-info-score
+                    - adjusted-rand-score
+                    - completeness-score
+                    - fowlkes-mallows-score
+                    - homogeneity-score
+                    - mutual-info-score
+                    - normalized-mutual-info-score
+                    - v-measure-score
+                    - rmse
+                    - unknown
+                    - mape
+                    - smape
+                    - mdape
+                    - adjr2
+                    - mcc
+                    - tpr
+                    - fpr
+                    - tnr
+                    - rmsle
+                    - matthews-corr-coef
+                    - p50-latency
+                    - p95-latency
+                    - p99-latency
+                    - cpu
+                    - mem
+                    - req-per-sec
+                    - maze
+                    - gpu
+                    - gpu-mem
+                    - none
+                    type: string
                   pruner:
                     description: The pruner to use during model search.
                     properties:
@@ -1083,70 +1193,8 @@ spec:
                     properties:
                       allowlist:
                         description: AllowList contain the list of algorithms that
-                          should be tested as part of the search.
-                        items:
-                          enum:
-                          - knn-regressor
-                          - ridge-regressor
-                          - lasso-regressor
-                          - ada-boost-regressor
-                          - decision-tree-regressor
-                          - extra-tree-regressor
-                          - linear-svr
-                          - svr
-                          - passive-agressive-regressor
-                          - sgd-regressor
-                          - gradient-boosting-regressor
-                          - random-forest-regressor
-                          - xgb-regressor
-                          - catboost-regressor
-                          - sgd-regressor
-                          - gradient-boosting-regressor
-                          - random-forest-regressor
-                          - xgb-regressor
-                          - catboost-regressor
-                          - lightgbm-regressor
-                          - elasticnet-regressor
-                          - dnn-regressor
-                          - elliptic-envelope
-                          - one-class-svm
-                          - isolation-forest
-                          - local-outlier-factor
-                          - prophet
-                          - knn-classifier
-                          - ada-boost-classifier
-                          - bernoulli-nb
-                          - decision-tree-classifier
-                          - extra-tree-classifier
-                          - linear-svc
-                          - svc
-                          - passive-aggressive-classifier
-                          - sgd-classifier
-                          - logistic-regression
-                          - gradient-boosting-classifier
-                          - random-forest-classifier
-                          - xgboost-classifier
-                          - ridge-classifier
-                          - quadratic-discriminant
-                          - linear-discriminant
-                          - lightgbm-classifier
-                          - catboost-classifier
-                          - stacking-ensemble
-                          - none
-                          - arima
-                          - auto-arima
-                          - vrima
-                          - exponential-smoothing
-                          - fast-fourier-transform
-                          - nbeats
-                          - theata-method
-                          - als
-                          - bayesian-personalized-ranking
-                          type: string
-                        type: array
-                      baselines:
-                        description: Baselines holds the name of the base line algorithms
-                          to try
+                          should be tested as part of the search. Use this to filter
+                          specific algorithm
                         items:
                           enum:
                           - knn-regressor
@@ -1216,33 +1264,6 @@ spec:
                         - tree
                         - default-hp
                         - none
-                        type: string
-                      stackingEnsemble:
-                        default: true
-                        description: StackingEnsemble If true, create a stacking ensemble
-                          of the top 3 models.
-                        type: boolean
-                      testAll:
-                        default: true
-                        description: Indicate the all models should be tests
-                        type: boolean
-                      votingEnsemble:
-                        default: false
-                        description: VotingEnsample - If true, create a voting ensemble
-                          of the top 3 models.
-                        type: boolean
-                    type: object
-                  studySchedule:
-                    description: Define when the schedule start
-                    properties:
-                      enabled:
-                        default: true
-                        description: Indicate the all models should be tests
-                        type: boolean
-                      startAt:
-                        description: Set the start time, by default this is set to
-                          the start time of the study
-                        format: date-time
                         type: string
                     type: object
                   test:
@@ -1639,6 +1660,14 @@ spec:
                 - als
                 - bayesian-personalized-ranking
                 type: string
+              baselineEndTime:
+                description: End of the training phase.
+                format: date-time
+                type: string
+              baselineStartTime:
+                description: Start of the training phase
+                format: date-time
+                type: string
               bestModel:
                 description: The Best model name.
                 type: string
@@ -1673,6 +1702,14 @@ spec:
                 type: array
               endTime:
                 description: The study end time.
+                format: date-time
+                type: string
+              ensembleEndTime:
+                description: End of the training phase.
+                format: date-time
+                type: string
+              ensembleStartTime:
+                description: Start of the training phase
                 format: date-time
                 type: string
               featureEngineeringEndTime:

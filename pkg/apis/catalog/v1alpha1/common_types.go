@@ -1504,6 +1504,17 @@ const (
 	Update UpdateStrategy = "update"
 )
 
+// Classify the model per the study phase. for example, feature engineering models, baseline models,
+// +kubebuilder:validation:Enum="feature-engineering";"baseline";"search";"ensemble"
+type ModelStudyPhaseClassType string
+
+const (
+	ModelStudyPhaseClassTypeFE       ModelStudyPhaseClassType = "feature-engineering" // for feature engineering models
+	ModelStudyPhaseClassTypeBaseine  ModelStudyPhaseClassType = "baseline"            // for baseline models
+	ModelStudyPhaseClassTypeSearch   ModelStudyPhaseClassType = "search"              // for search model
+	ModelStudyPhaseClassTypeEnsemble ModelStudyPhaseClassType = "ensemble"            // for ensemble models
+)
+
 // SamplingType defines how the recipe file is sampled.
 // +kubebuilder:validation:Enum="header";"random";"filter";"anomaly";"stratified"
 type SamplingType string

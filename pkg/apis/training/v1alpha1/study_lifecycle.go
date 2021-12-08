@@ -222,7 +222,9 @@ func (study *Study) SetupCv(rows int32) {
 
 }
 
-// --------------- Split
+///////////////////////////////////////////////////////////////
+// Split
+///////////////////////////////////////////////////////////////
 
 func (study *Study) Splitted() bool {
 	cond := study.GetCond(StudySplitted)
@@ -268,7 +270,57 @@ func (study *Study) MarkSplitFailed(err string) {
 	study.RefreshProgress()
 }
 
-// --------------- Training
+///////////////////////////////////////////////////////////////
+// Baselines
+///////////////////////////////////////////////////////////////
+
+func (study *Study) Baselined() bool {
+	cond := study.GetCond(StudyBaselined)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (study *Study) MarkBaselining() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudyBaselined,
+		Status: v1.ConditionFalse,
+		Reason: ReasonBaselining,
+	})
+	now := metav1.Now()
+	if study.Status.BaselineStartTime == nil {
+		study.Status.baselineStartTime = &now
+	}
+	study.Status.Phase = StudyPhaseSearching
+	study.RefreshProgress()
+}
+
+func (study *Study) MarkSearched() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudySearched,
+		Status: v1.ConditionTrue,
+	})
+	now := metav1.Now()
+	if study.Status.SearchingEndTime == nil {
+		study.Status.SearchingEndTime = &now
+	}
+	study.Status.Phase = StudyPhaseSearched
+	study.RefreshProgress()
+}
+
+func (study *Study) MarkSearchFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudySearched,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = util.StrPtr("Failed to search models." + err)
+	study.RefreshProgress()
+}
+
+///////////////////////////////////////////////////////////////
+// Searched
+///////////////////////////////////////////////////////////////
 
 func (study *Study) Searched() bool {
 	cond := study.GetCond(StudySearched)
