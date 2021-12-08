@@ -590,7 +590,6 @@ message FeatureEngineeringPipeline {
   optional string datetimeTransformation = 10;
 
   // Text specify the column transformation for text columns
-  // +kubebuilder:default:=none
   // +kubebuilder:validation:Optional
   optional TextPipelineSpec text = 11;
 

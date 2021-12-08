@@ -1858,7 +1858,6 @@ spec:
                               description: Numeric var scaler, valid only if the
                               type: string
                             text:
-                              default: none
                               description: Text specify the column transformation
                                 for text columns
                               properties:
