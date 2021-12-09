@@ -534,8 +534,14 @@ message DeploymentStageSpec {
 message EnsembleRules {
 }
 
+message EnsembleSpec {
+  // A list of base model to ensemble. The ensemble method is represented as the algorithm name.
+  // +kubebuilder:validation:Optional
+  repeated string base = 2;
+}
+
 // Define the ensemble spec
-message EnsembleSearchSpec {
+message EnsemblesSpec {
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
@@ -554,12 +560,6 @@ message EnsembleSearchSpec {
   // +kubebuilder:default:=3
   // +kubebuilder:validation:Optional
   optional int32 top = 4;
-}
-
-message EnsembleSpec {
-  // A list of base model to ensemble. The ensemble method is represented as the algorithm name.
-  // +kubebuilder:validation:Optional
-  repeated string base = 2;
 }
 
 // FeatureEngineeringPipeline represent a single pipeline for data transformation.
@@ -2982,7 +2982,7 @@ message StudySpec {
 
   // Search defines the model search
   // +kubebuilder:validation:Optional
-  optional EnsembleSearchSpec ensembleSearchSpec = 9;
+  optional EnsemblesSpec ensembles = 9;
 
   // Training template contain the desired training parameter for the models.
   // +kubebuilder:validation:Optional

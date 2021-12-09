@@ -874,36 +874,6 @@ export namespace EnsembleRules {
   }
 }
 
-export class EnsembleSearchSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): EnsembleSearchSpec;
-
-  getVotingensemble(): boolean;
-  setVotingensemble(value: boolean): EnsembleSearchSpec;
-
-  getStackingensemble(): boolean;
-  setStackingensemble(value: boolean): EnsembleSearchSpec;
-
-  getTop(): number;
-  setTop(value: number): EnsembleSearchSpec;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): EnsembleSearchSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: EnsembleSearchSpec): EnsembleSearchSpec.AsObject;
-  static serializeBinaryToWriter(message: EnsembleSearchSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): EnsembleSearchSpec;
-  static deserializeBinaryFromReader(message: EnsembleSearchSpec, reader: jspb.BinaryReader): EnsembleSearchSpec;
-}
-
-export namespace EnsembleSearchSpec {
-  export type AsObject = {
-    enabled: boolean,
-    votingensemble: boolean,
-    stackingensemble: boolean,
-    top: number,
-  }
-}
-
 export class EnsembleSpec extends jspb.Message {
   getBaseList(): Array<string>;
   setBaseList(value: Array<string>): EnsembleSpec;
@@ -921,6 +891,36 @@ export class EnsembleSpec extends jspb.Message {
 export namespace EnsembleSpec {
   export type AsObject = {
     baseList: Array<string>,
+  }
+}
+
+export class EnsemblesSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): EnsemblesSpec;
+
+  getVotingensemble(): boolean;
+  setVotingensemble(value: boolean): EnsemblesSpec;
+
+  getStackingensemble(): boolean;
+  setStackingensemble(value: boolean): EnsemblesSpec;
+
+  getTop(): number;
+  setTop(value: number): EnsemblesSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EnsemblesSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: EnsemblesSpec): EnsemblesSpec.AsObject;
+  static serializeBinaryToWriter(message: EnsemblesSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EnsemblesSpec;
+  static deserializeBinaryFromReader(message: EnsemblesSpec, reader: jspb.BinaryReader): EnsemblesSpec;
+}
+
+export namespace EnsemblesSpec {
+  export type AsObject = {
+    enabled: boolean,
+    votingensemble: boolean,
+    stackingensemble: boolean,
+    top: number,
   }
 }
 
@@ -4443,10 +4443,10 @@ export class StudySpec extends jspb.Message {
   hasSearch(): boolean;
   clearSearch(): StudySpec;
 
-  getEnsemblesearchspec(): EnsembleSearchSpec | undefined;
-  setEnsemblesearchspec(value?: EnsembleSearchSpec): StudySpec;
-  hasEnsemblesearchspec(): boolean;
-  clearEnsemblesearchspec(): StudySpec;
+  getEnsembles(): EnsemblesSpec | undefined;
+  setEnsembles(value?: EnsemblesSpec): StudySpec;
+  hasEnsembles(): boolean;
+  clearEnsembles(): StudySpec;
 
   getTrainingtemplate(): TrainingSpec | undefined;
   setTrainingtemplate(value?: TrainingSpec): StudySpec;
@@ -4537,7 +4537,7 @@ export namespace StudySpec {
     fesearch?: FeatureEngineeringSearchSpec.AsObject,
     baseline?: BaselineSpec.AsObject,
     search?: SearchSpec.AsObject,
-    ensemblesearchspec?: EnsembleSearchSpec.AsObject,
+    ensembles?: EnsemblesSpec.AsObject,
     trainingtemplate?: TrainingSpec.AsObject,
     forecast?: StudyForecastSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,

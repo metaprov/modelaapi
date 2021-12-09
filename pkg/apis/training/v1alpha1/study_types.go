@@ -257,7 +257,7 @@ type SearchSpec struct {
 }
 
 // Define the ensemble spec
-type EnsembleSearchSpec struct {
+type EnsemblesSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
@@ -426,7 +426,7 @@ type StudySpec struct {
 	Search *SearchSpec `json:"search,omitempty" protobuf:"bytes,8,opt,name=search"`
 	// Search defines the model search
 	// +kubebuilder:validation:Optional
-	Ensemble *EnsembleSearchSpec `json:"ensembleSearchSpec,omitempty" protobuf:"bytes,9,opt,name=ensembleSearchSpec"`
+	Ensembles *EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,9,opt,name=ensembles"`
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
 	TrainingTemplate *TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,10,opt,name=trainingTemplate"`

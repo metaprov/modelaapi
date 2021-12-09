@@ -221,7 +221,7 @@ spec:
                 description: Description is user provided description
                 maxLength: 512
                 type: string
-              ensembleSearchSpec:
+              ensembles:
                 description: Search defines the model search
                 properties:
                   enabled:
