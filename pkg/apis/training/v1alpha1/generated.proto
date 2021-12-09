@@ -66,7 +66,7 @@ message BaselineSpec {
   // Set to true for baseline
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool testAll = 1;
+  optional bool enabled = 1;
 
   // Baselines holds the name of the base line algorithms to try
   // +kubebuilder:validation:Optional

@@ -81,8 +81,8 @@ export namespace BacktestSpec {
 }
 
 export class BaselineSpec extends jspb.Message {
-  getTestall(): boolean;
-  setTestall(value: boolean): BaselineSpec;
+  getEnabled(): boolean;
+  setEnabled(value: boolean): BaselineSpec;
 
   getBaselinesList(): Array<string>;
   setBaselinesList(value: Array<string>): BaselineSpec;
@@ -102,7 +102,7 @@ export class BaselineSpec extends jspb.Message {
 
 export namespace BaselineSpec {
   export type AsObject = {
-    testall: boolean,
+    enabled: boolean,
     baselinesList: Array<string>,
     all: boolean,
   }

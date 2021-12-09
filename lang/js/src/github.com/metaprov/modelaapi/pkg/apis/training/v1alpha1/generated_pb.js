@@ -3312,7 +3312,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    testall: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     baselinesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
     all: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f
   };
@@ -3353,7 +3353,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.dese
     switch (field) {
     case 1:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setTestall(value);
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -3417,10 +3417,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.seri
 
 
 /**
- * optional bool testAll = 1;
+ * optional bool enabled = 1;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.getTestall = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.getEnabled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
@@ -3429,7 +3429,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prot
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.setTestall = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -3438,7 +3438,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.clearTestall = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -3447,7 +3447,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.hasTestall = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.BaselineSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -173,7 +173,7 @@ spec:
                       - bayesian-personalized-ranking
                       type: string
                     type: array
-                  testAll:
+                  enabled:
                     default: true
                     description: Set to true for baseline
                     type: boolean
