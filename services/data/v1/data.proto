@@ -179,9 +179,6 @@ message PartitionValues {
 }
 
 
-
-
-
 ///////////////////////////////// Merge Forecast Files
 
 // Send the forecast
@@ -441,6 +438,20 @@ message AskModelResponse {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
+message AskBaselineRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study              = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;    
+}
+
+message AskBaselineResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+}
+
+
+
 // ask all models for task
 
 message AskAllModelsForTaskRequest {
@@ -632,6 +643,14 @@ service DataService {
     rpc AskFE (AskModelRequest) returns (AskModelResponse) {}
     // tell the result of the feature engineering search.
     rpc TellFE (TellModelRequest) returns (TellModelResponse) {}
+    
+    // Ask for baseline modles
+    rpc AskBaseline (AskBaselineRequest) returns (AskBaselineResponse) {}
+
+    // sample feature engineering pipeline
+    rpc AskEnsemble (AskModelRequest) returns (AskModelResponse) {}
+    // tell the result of the feature engineering search.
+    rpc TellEnsemble (TellModelRequest) returns (TellModelResponse) {}
     
     // sample model randomly for a given budget
     rpc AskModel (AskModelRequest) returns (AskModelResponse) {}
