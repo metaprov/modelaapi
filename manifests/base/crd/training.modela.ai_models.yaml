@@ -535,10 +535,6 @@ spec:
                         type: integer
                     type: object
                 type: object
-              featureEngineeringOnly:
-                default: false
-                description: Mark this model as feature engineering only.
-                type: boolean
               flagged:
                 default: false
                 description: Is this model flagged by the user.
@@ -880,6 +876,17 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
+              modelClass:
+                default: false
+                description: Mark the model class. The model class is the origin of
+                  the model
+                enum:
+                - feature-engineering
+                - baseline
+                - search
+                - ensemble
+                - test
+                type: string
               modelVersion:
                 description: ModelVersion is an assigned version to the model.
                 type: string

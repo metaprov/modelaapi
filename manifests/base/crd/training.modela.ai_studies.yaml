@@ -1598,6 +1598,34 @@ spec:
             description: StudyStatus defines the observed state of the Study
             properties:
               baseline:
+                description: Holds the result of the baseline phase training
+                properties:
+                  endTime:
+                    description: End of the phase.
+                    format: date-time
+                    type: string
+                  failed:
+                    description: models that failed
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: Start of the training phase
+                    format: date-time
+                    type: string
+                  trained:
+                    description: models trained
+                    format: int32
+                    type: integer
+                  training:
+                    description: models in training
+                    format: int32
+                    type: integer
+                  waiting:
+                    description: models waiting for processing
+                    format: int32
+                    type: integer
+                type: object
+              baselineModel:
                 default: none
                 description: define a baseline model that will be the baseline for
                   the search. If not none, the base line is the first model to be
@@ -1660,14 +1688,6 @@ spec:
                 - als
                 - bayesian-personalized-ranking
                 type: string
-              baselineEndTime:
-                description: End of the training phase.
-                format: date-time
-                type: string
-              baselineStartTime:
-                description: Start of the training phase
-                format: date-time
-                type: string
               bestModel:
                 description: The Best model name.
                 type: string
@@ -1704,302 +1724,62 @@ spec:
                 description: The study end time.
                 format: date-time
                 type: string
-              ensembleEndTime:
-                description: End of the training phase.
-                format: date-time
-                type: string
-              ensembleStartTime:
-                description: Start of the training phase
-                format: date-time
-                type: string
-              featureEngineeringEndTime:
-                description: End of feature generation
-                format: date-time
-                type: string
-              featureEngineeringModeFailed:
-                description: models that failed during feature engineering
-                format: int32
-                type: integer
-              featureEngineeringModelTrained:
-                description: models that were successful during feature engineering
-                format: int32
-                type: integer
-              featureEngineeringModelTraining:
-                description: models which are currently training for feature engineering
-                format: int32
-                type: integer
-              featureEngineeringModelWaiting:
-                description: models waiting for a feature engineering
-                format: int32
-                type: integer
-              featureEngineeringSearchStatus:
+              ensemble:
+                description: Holds the result of the ensemble phase
+                properties:
+                  endTime:
+                    description: End of the phase.
+                    format: date-time
+                    type: string
+                  failed:
+                    description: models that failed
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: Start of the training phase
+                    format: date-time
+                    type: string
+                  trained:
+                    description: models trained
+                    format: int32
+                    type: integer
+                  training:
+                    description: models in training
+                    format: int32
+                    type: integer
+                  waiting:
+                    description: models waiting for processing
+                    format: int32
+                    type: integer
+                type: object
+              featureEngineering:
                 description: Holds the result of the feature engineering process
                 properties:
-                  best:
-                    description: The recommended pipeline after feature engineering
-                      was done
-                    properties:
-                      pipelines:
-                        description: List of processing pipelines
-                        items:
-                          description: FeatureEngineeringPipeline represent a single
-                            pipeline for data transformation. The pipeline includes
-                            the column names and the data type.
-                          properties:
-                            audio:
-                              description: Audio specify the pipeline for audio. Not
-                                supported in this release
-                              properties:
-                                featurizer:
-                                  default: auto
-                                  description: The date time imputer.
-                                  type: string
-                              type: object
-                            columns:
-                              description: Columns is the name of the columns from
-                                the original file. All the columns must be from the
-                                same type
-                              items:
-                                type: string
-                              type: array
-                            custom:
-                              description: Specify custom columns. Custom Columns
-                                are specified by the user
-                              items:
-                                properties:
-                                  datatype:
-                                    description: The resulting data type
-                                    enum:
-                                    - boolean
-                                    - datetime
-                                    - number
-                                    - categorical
-                                    - ordinal
-                                    - text
-                                    - json
-                                    - number-list
-                                    - categorical-list
-                                    - text-list
-                                    type: string
-                                  first:
-                                    description: The name of the first original column
-                                    type: string
-                                  name:
-                                    description: The name of the generated column
-                                    type: string
-                                  original:
-                                    description: The expression to apply in order
-                                      to generate the new column
-                                    type: string
-                                  second:
-                                    description: The name of the second original column,
-                                      if the expression is binary operator
-                                    type: string
-                                type: object
-                              type: array
-                            datatype:
-                              description: The Data type for the feature engineering.
-                              enum:
-                              - boolean
-                              - datetime
-                              - number
-                              - categorical
-                              - ordinal
-                              - text
-                              - json
-                              - number-list
-                              - categorical-list
-                              - text-list
-                              type: string
-                            datetimeTransformation:
-                              default: none
-                              description: Specify how For datetime data type,
-                              type: string
-                            discretisation:
-                              default: none
-                              description: Convert numerical datatypes to categories.
-                                Valid only if the number data types.
-                              type: string
-                            drop:
-                              default: false
-                              description: If dropped, all the columns in this pipeline
-                                will be dropped.
-                              type: boolean
-                            encoding:
-                              default: none
-                              description: Encoder. Apply only to categorical variables
-                              type: string
-                            generated:
-                              description: Spec to generate one or more columns from
-                                existing columns in this pipeline
-                              items:
-                                properties:
-                                  datatype:
-                                    description: The resulting data type
-                                    enum:
-                                    - boolean
-                                    - datetime
-                                    - number
-                                    - categorical
-                                    - ordinal
-                                    - text
-                                    - json
-                                    - number-list
-                                    - categorical-list
-                                    - text-list
-                                    type: string
-                                  first:
-                                    description: The name of the first original column
-                                    type: string
-                                  name:
-                                    description: The name of the generated column
-                                    type: string
-                                  original:
-                                    description: The expression to apply in order
-                                      to generate the new column
-                                    type: string
-                                  second:
-                                    description: The name of the second original column,
-                                      if the expression is binary operator
-                                    type: string
-                                type: object
-                              type: array
-                            image:
-                              description: Image specify the pipeline for images.
-                                Not supported in this release
-                              properties:
-                                featurizer:
-                                  default: auto
-                                  description: The date time imputer.
-                                  type: string
-                              type: object
-                            imputation:
-                              default: none
-                              description: imputer
-                              type: string
-                            name:
-                              description: The name of this feature engineering pipeline
-                              type: string
-                            outlierHandling:
-                              default: none
-                              description: Specify how to handle outliers. Apply only
-                                to numeric datatypes.
-                              type: string
-                            passtrough:
-                              default: false
-                              description: If true, all the features in this pipeline
-                                will passtrough, without processing.
-                              type: boolean
-                            scaling:
-                              default: none
-                              description: Numeric var scaler, valid only if the
-                              type: string
-                            text:
-                              description: Text specify the column transformation
-                                for text columns
-                              properties:
-                                embedding:
-                                  description: If true, the controller will Add word
-                                    embedding handling to the text pipeline.
-                                  type: string
-                                encoder:
-                                  default: auto
-                                  description: The text encoder (e.g. tfidf)
-                                  type: string
-                                lemma:
-                                  default: true
-                                  description: If true, the controller will Add lemma
-                                    handling to the text pipeline.
-                                  type: boolean
-                                maxSvdComponents:
-                                  default: 0
-                                  description: Max SVD Components to use
-                                  format: int32
-                                  type: integer
-                                pos:
-                                  default: true
-                                  description: If true, the controller will Add part
-                                    of speech handling to the text pipeline.
-                                  type: boolean
-                                stem:
-                                  default: true
-                                  description: If true, the controller will Add stemmer
-                                    handling to the text pipeline.
-                                  type: boolean
-                                stopwords:
-                                  default: true
-                                  description: If true, the controller will Add stop
-                                    word handling to the text pipeline.
-                                  type: boolean
-                                svd:
-                                  default: true
-                                  description: Use SVD
-                                  type: boolean
-                                tokenizer:
-                                  description: Text tokenizer
-                                  type: string
-                              type: object
-                            variableTransformation:
-                              default: none
-                              description: For numerical data type.
-                              type: string
-                            video:
-                              description: Video specify the pipeline for video. Not
-                                supported in this release
-                              properties:
-                                featurizer:
-                                  default: auto
-                                  description: The date time imputer.
-                                  type: string
-                              type: object
-                          type: object
-                        type: array
-                      selection:
-                        description: Spec for feature selection
-                        properties:
-                          corrTreshold:
-                            default: 95
-                            description: Remove Features with high correlations
-                            format: int32
-                            type: integer
-                          cumulativeImportancePrecent:
-                            default: 95
-                            description: The cummulative importance of all the importance
-                              feature to include
-                            format: int32
-                            type: integer
-                          lowVarTresholdPct:
-                            default: 5
-                            description: Lowvar specify the filter to remove low variance
-                              features
-                            format: int32
-                            type: integer
-                          pipeline:
-                            description: the Feature selection pipeline. Steps are
-                              applied in the order of the pipeline
-                            items:
-                              type: string
-                            type: array
-                          reserved:
-                            description: List of feature names to consider when training
-                              , even after filtering
-                            items:
-                              type: string
-                            type: array
-                          topN:
-                            default: 0
-                            description: Select the Top N is the number of feature
-                              to select by importance. If 0, all the features are
-                              selected.
-                            format: int32
-                            type: integer
-                        type: object
-                    type: object
+                  endTime:
+                    description: End of the phase.
+                    format: date-time
+                    type: string
+                  failed:
+                    description: models that failed
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: Start of the training phase
+                    format: date-time
+                    type: string
+                  trained:
+                    description: models trained
+                    format: int32
+                    type: integer
+                  training:
+                    description: models in training
+                    format: int32
+                    type: integer
+                  waiting:
+                    description: models waiting for processing
+                    format: int32
+                    type: integer
                 type: object
-              featureEngineeringStartTime:
-                description: Start of feature generation
-                format: date-time
-                type: string
               lastError:
                 default: ""
                 description: Last error
@@ -2048,26 +1828,66 @@ spec:
               reportName:
                 description: The study report name
                 type: string
-              searchingModeFailed:
-                description: models that failed during training.
-                format: int32
-                type: integer
-              searchingModeTrained:
-                description: models that were successful during training
-                format: int32
-                type: integer
-              searchingModelWaiting:
-                description: models waiting for a trainer
-                format: int32
-                type: integer
-              searchingModelsTraining:
-                description: models which are currently training or testing.
-                format: int32
-                type: integer
+              search:
+                description: Holds the result of the search phase training
+                properties:
+                  endTime:
+                    description: End of the phase.
+                    format: date-time
+                    type: string
+                  failed:
+                    description: models that failed
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: Start of the training phase
+                    format: date-time
+                    type: string
+                  trained:
+                    description: models trained
+                    format: int32
+                    type: integer
+                  training:
+                    description: models in training
+                    format: int32
+                    type: integer
+                  waiting:
+                    description: models waiting for processing
+                    format: int32
+                    type: integer
+                type: object
               startTime:
                 description: Study start time
                 format: date-time
                 type: string
+              test:
+                description: Holds the result of the test phase
+                properties:
+                  endTime:
+                    description: End of the phase.
+                    format: date-time
+                    type: string
+                  failed:
+                    description: models that failed
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: Start of the training phase
+                    format: date-time
+                    type: string
+                  trained:
+                    description: models trained
+                    format: int32
+                    type: integer
+                  training:
+                    description: models in training
+                    format: int32
+                    type: integer
+                  waiting:
+                    description: models waiting for processing
+                    format: int32
+                    type: integer
+                type: object
               testDataset:
                 description: TestDatasetLocation is the location of the test dataset
                   used to test this model
@@ -2106,35 +1926,10 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
-              testedModels:
-                description: Tested models
-                format: int32
-                type: integer
-              testingEndTime:
-                description: Represents time when the study reached a successful complete
-                  or failure phase. It is not guaranteed to
-                format: date-time
-                type: string
-              testingModeFailed:
-                description: models failed testing.
-                format: int32
-                type: integer
-              testingModelWaiting:
-                description: models waiting testing
-                format: int32
-                type: integer
-              testingModels:
-                description: models in testing
-                format: int32
-                type: integer
               testingRows:
                 description: TestingRows is the amount of rows in testing
                 format: int32
                 type: integer
-              testingStartTime:
-                description: Start of the testing phase
-                format: date-time
-                type: string
               trainDataset:
                 description: TrainDatasetLocation is the location of the train dataset
                 properties:
@@ -2188,18 +1983,10 @@ spec:
                     description: Pointer to the validation
                     type: string
                 type: object
-              trainingEndTime:
-                description: End of the training phase.
-                format: date-time
-                type: string
               trainingRows:
                 description: TrainingRows is the amount of rows in training
                 format: int32
                 type: integer
-              trainingStartTime:
-                description: Start of the training phase
-                format: date-time
-                type: string
               triggeredBy:
                 description: What triggered the run
                 enum:

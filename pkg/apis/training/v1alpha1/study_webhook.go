@@ -67,15 +67,15 @@ func (study *Study) Default() {
 		study.Spec.Search.SearchSpace = &AlgorithmSearchSpaceSpec{}
 	}
 
-	if study.Spec.Ensemble.VotingEnsemble == nil {
-		study.Spec.Ensemble.VotingEnsemble = util.BoolPtr(false)
+	if study.Spec.Ensembles.VotingEnsemble == nil {
+		study.Spec.Ensembles.VotingEnsemble = util.BoolPtr(false)
 	}
 
-	if study.Spec.Ensemble.StackingEnsemble == nil {
-		study.Spec.Ensemble.StackingEnsemble = util.BoolPtr(true)
+	if study.Spec.Ensembles.StackingEnsemble == nil {
+		study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)
 	}
 
-	study.Spec.Ensemble.StackingEnsemble = util.BoolPtr(true)
+	study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)
 
 	if study.Spec.Search.Pruner.SHOptions == nil {
 		study.Spec.Search.Pruner.SHOptions = &SuccessiveHalvingOptions{}

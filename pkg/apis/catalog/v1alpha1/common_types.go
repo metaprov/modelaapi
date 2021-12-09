@@ -1505,14 +1505,15 @@ const (
 )
 
 // Classify the model per the study phase. for example, feature engineering models, baseline models,
-// +kubebuilder:validation:Enum="feature-engineering";"baseline";"search";"ensemble"
-type ModelStudyPhaseClassType string
+// +kubebuilder:validation:Enum="feature-engineering";"baseline";"search";"ensemble";"test"
+type ModelClassType string
 
 const (
-	ModelStudyPhaseClassTypeFE       ModelStudyPhaseClassType = "feature-engineering" // for feature engineering models
-	ModelStudyPhaseClassTypeBaseine  ModelStudyPhaseClassType = "baseline"            // for baseline models
-	ModelStudyPhaseClassTypeSearch   ModelStudyPhaseClassType = "search"              // for search model
-	ModelStudyPhaseClassTypeEnsemble ModelStudyPhaseClassType = "ensemble"            // for ensemble models
+	ModelStudyPhaseClassTypeFE       ModelClassType = "feature-engineering" // for feature engineering models
+	ModelStudyPhaseClassTypeBaseine  ModelClassType = "baseline"            // for baseline models
+	ModelStudyPhaseClassTypeSearch   ModelClassType = "search"              // for search model
+	ModelStudyPhaseClassTypeEnsemble ModelClassType = "ensemble"            // for ensemble models
+	ModelStudyPhaseClassTypeTest     ModelClassType = "test"                // for model in the search phase
 )
 
 // SamplingType defines how the recipe file is sampled.

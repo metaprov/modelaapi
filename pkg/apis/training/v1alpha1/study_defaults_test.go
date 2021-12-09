@@ -30,7 +30,6 @@ func DefaultStudy() *Study {
 				Namespace: "modela-infra",
 				Name:      "lab",
 			},
-			Objective:   nil,
 			DatasetName: util.StrPtr("iris"),
 		},
 	}

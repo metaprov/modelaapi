@@ -62,30 +62,30 @@ func (study *Study) AddPipelineLable(pipeline string) {
 }
 
 func (study *Study) ReachedMaxFETime() bool {
-	if study.Status.FeatureEngineeringStartTime == nil {
+	if study.Status.FeatureEngineeringStatus.StartTime == nil {
 		return false // not started
 	}
-	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStartTime.Unix()
+	duration := metav1.Now().Unix() - study.Status.FeatureEngineeringStatus.StartTime.Unix()
 	return int32(duration/60) >= *study.Spec.FeatureEngineeringSearch.MaxTimeSec
 }
 
 func (study *Study) ReachedMaxFEModels() bool {
-	totalModels := study.Status.FeatureEngineeringModeFailed + study.Status.FeatureEngineeringModelTrained
+	totalModels := study.Status.FeatureEngineeringStatus.Failed + study.Status.FeatureEngineeringStatus.Trained
 	return *study.Spec.FeatureEngineeringSearch.MaxModels == totalModels
 }
 
 // Enabled if we reached max time
 func (study *Study) ReachedMaxTime() bool {
-	if study.Status.SearcStartTime == nil {
+	if study.Status.SearchStatus.StartTime == nil {
 		return false // not started
 	}
-	duration := metav1.Now().Unix() - study.Status.SearcStartTime.Unix()
+	duration := metav1.Now().Unix() - study.Status.SearchStatus.StartTime.Unix()
 	return int32(duration/60) >= *study.Spec.Search.MaxTime
 }
 
 // Tru if there are models waiting for test
 func (s *Study) ModelsWaiting() bool {
-	return s.Status.TestingModelWaiting > 0
+	return s.Status.TestStatus.Waiting > 0
 }
 
 // Enabled if we reached max candidates
@@ -286,8 +286,8 @@ func (study *Study) MarkBaselining() {
 		Reason: ReasonBaselining,
 	})
 	now := metav1.Now()
-	if study.Status.BaselineStartTime == nil {
-		study.Status.BaselineStartTime = &now
+	if study.Status.BaselineStatus.StartTime == nil {
+		study.Status.BaselineStatus.StartTime = &now
 	}
 	study.Status.Phase = StudyPhaseBaelined
 	study.RefreshProgress()
@@ -299,8 +299,8 @@ func (study *Study) MarkBaselined() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.BaselineEndTime == nil {
-		study.Status.BaselineEndTime = &now
+	if study.Status.BaselineStatus.EndTime == nil {
+		study.Status.BaselineStatus.EndTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearched
 	study.RefreshProgress()
@@ -334,8 +334,8 @@ func (study *Study) MarkSearching() {
 		Reason: ReasonTraining,
 	})
 	now := metav1.Now()
-	if study.Status.SearcStartTime == nil {
-		study.Status.SearcStartTime = &now
+	if study.Status.SearchStatus.StartTime == nil {
+		study.Status.SearchStatus.StartTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearching
 	study.RefreshProgress()
@@ -347,8 +347,8 @@ func (study *Study) MarkSearched() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.SearchEndTime == nil {
-		study.Status.SearchEndTime = &now
+	if study.Status.SearchStatus.EndTime == nil {
+		study.Status.SearchStatus.EndTime = &now
 	}
 	study.Status.Phase = StudyPhaseSearched
 	study.RefreshProgress()
@@ -382,7 +382,7 @@ func (study *Study) MarkFeatureEngineering() {
 		Reason: ReasonFeatureEngineering,
 	})
 	now := metav1.Now()
-	study.Status.FeatureEngineeringStartTime = &now
+	study.Status.FeatureEngineeringStatus.StartTime = &now
 	study.Status.Phase = StudyPhaseEngineeringFeature
 }
 
@@ -392,8 +392,8 @@ func (study *Study) MarkFeatureEngineered() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	if study.Status.FeatureEngineerinEndTime == nil {
-		study.Status.FeatureEngineerinEndTime = &now
+	if study.Status.FeatureEngineeringStatus.EndTime == nil {
+		study.Status.FeatureEngineeringStatus.EndTime = &now
 	}
 	study.Status.Phase = StudyPhaseFeatureEngineered
 	study.RefreshProgress()
@@ -427,7 +427,7 @@ func (study *Study) MarkTesting() {
 		Reason: ReasonTesting,
 	})
 	now := metav1.Now()
-	study.Status.TestingStartTime = &now
+	study.Status.TestStatus.StartTime = &now
 	study.Status.Phase = StudyPhaseTesting
 }
 
@@ -437,7 +437,7 @@ func (study *Study) MarkTested() {
 		Status: v1.ConditionTrue,
 	})
 	now := metav1.Now()
-	study.Status.TestingEndTime = &now
+	study.Status.TestStatus.EndTime = &now
 	study.Status.Phase = StudyPhaseTested
 	study.RefreshProgress()
 }
@@ -659,7 +659,7 @@ func (study *Study) MaxTimeOrModelReached() bool {
 		timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
 
 		// compare the model. We take the ensemble into consideration
-		modelOver := (study.Status.SearchingModeTrained + study.Status.SearchingModeFailed) >= *study.Spec.Search.MaxModels
+		modelOver := (study.Status.SearchStatus.Trained + study.Status.SearchStatus.Failed) >= *study.Spec.Search.MaxModels
 
 		return timeOver || modelOver
 	}
@@ -678,9 +678,9 @@ func (study *Study) MarkReportFailed(err string) {
 }
 
 func (study *Study) ReachedMaxModels() bool {
-	return study.Status.SearchingModeFailed+
-		study.Status.SearchingModeTrained+
-		study.Status.SearchingModelWaiting >= *study.Spec.Search.MaxModels
+	return study.Status.SearchStatus.Failed+
+		study.Status.SearchStatus.Trained+
+		study.Status.SearchStatus.Waiting >= *study.Spec.Search.MaxModels
 }
 
 // Set the train/test validation based on the number of rows

@@ -326,10 +326,10 @@ type ModelSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,35,opt,name=ttl"`
-	// Mark this model as feature engineering only.
+	// Mark the model class. The model class is the origin of the model
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	FeatureEngineeringOnly *bool `json:"featureEngineeringOnly,omitempty" protobuf:"varint,36,opt,name=featureEngineeringOnly"`
+	ModelClass catalog.ModelClassType `json:"modelClass,omitempty" protobuf:"bytes,36,opt,name=modelClass"`
 	// Set the trial ID, by the optimizer.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

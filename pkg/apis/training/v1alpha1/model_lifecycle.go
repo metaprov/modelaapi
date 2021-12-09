@@ -847,3 +847,23 @@ func (model *Model) Done() bool {
 func (model *Model) OpName() string {
 	return model.Namespace + "-" + model.Name
 }
+
+////////////////////////////////
+// Class Query
+////////////////////////////////
+
+func (model Model) IsFE() bool {
+	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeFE
+}
+
+func (model Model) IsBaseline() bool {
+	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeBaseine
+}
+
+func (model Model) IsSearch() bool {
+	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeSearch
+}
+
+func (model Model) IsTest() bool {
+	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeTest
+}

@@ -2799,8 +2799,8 @@ export class ModelSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): ModelSpec;
 
-  getFeatureengineeringonly(): boolean;
-  setFeatureengineeringonly(value: boolean): ModelSpec;
+  getModelclass(): string;
+  setModelclass(value: string): ModelSpec;
 
   getTrialid(): number;
   setTrialid(value: number): ModelSpec;
@@ -2849,7 +2849,7 @@ export namespace ModelSpec {
     activedeadlineseconds: number,
     estimatortype: string,
     ttl: number,
-    featureengineeringonly: boolean,
+    modelclass: string,
     trialid: number,
   }
 }
@@ -4386,6 +4386,48 @@ export namespace StudyList {
   }
 }
 
+export class StudyPhaseStatus extends jspb.Message {
+  getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
+  hasStarttime(): boolean;
+  clearStarttime(): StudyPhaseStatus;
+
+  getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyPhaseStatus;
+  hasEndtime(): boolean;
+  clearEndtime(): StudyPhaseStatus;
+
+  getWaiting(): number;
+  setWaiting(value: number): StudyPhaseStatus;
+
+  getTraining(): number;
+  setTraining(value: number): StudyPhaseStatus;
+
+  getFailed(): number;
+  setFailed(value: number): StudyPhaseStatus;
+
+  getTrained(): number;
+  setTrained(value: number): StudyPhaseStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): StudyPhaseStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: StudyPhaseStatus): StudyPhaseStatus.AsObject;
+  static serializeBinaryToWriter(message: StudyPhaseStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): StudyPhaseStatus;
+  static deserializeBinaryFromReader(message: StudyPhaseStatus, reader: jspb.BinaryReader): StudyPhaseStatus;
+}
+
+export namespace StudyPhaseStatus {
+  export type AsObject = {
+    starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    waiting: number,
+    training: number,
+    failed: number,
+    trained: number,
+  }
+}
+
 export class StudyScheduleSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): StudyScheduleSpec;
@@ -4564,96 +4606,10 @@ export class StudyStatus extends jspb.Message {
   getModels(): number;
   setModels(value: number): StudyStatus;
 
-  getFeatureengineeringmodelwaiting(): number;
-  setFeatureengineeringmodelwaiting(value: number): StudyStatus;
-
-  getFeatureengineeringmodeltraining(): number;
-  setFeatureengineeringmodeltraining(value: number): StudyStatus;
-
-  getFeatureengineeringmodefailed(): number;
-  setFeatureengineeringmodefailed(value: number): StudyStatus;
-
-  getFeatureengineeringmodeltrained(): number;
-  setFeatureengineeringmodeltrained(value: number): StudyStatus;
-
-  getSearchingmodelwaiting(): number;
-  setSearchingmodelwaiting(value: number): StudyStatus;
-
-  getSearchingmodelstraining(): number;
-  setSearchingmodelstraining(value: number): StudyStatus;
-
-  getSearchingmodefailed(): number;
-  setSearchingmodefailed(value: number): StudyStatus;
-
-  getSearchingmodetrained(): number;
-  setSearchingmodetrained(value: number): StudyStatus;
-
-  getTestingmodelwaiting(): number;
-  setTestingmodelwaiting(value: number): StudyStatus;
-
-  getTestingmodels(): number;
-  setTestingmodels(value: number): StudyStatus;
-
-  getTestingmodefailed(): number;
-  setTestingmodefailed(value: number): StudyStatus;
-
-  getTestedmodels(): number;
-  setTestedmodels(value: number): StudyStatus;
-
   getStarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setStarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
   hasStarttime(): boolean;
   clearStarttime(): StudyStatus;
-
-  getFeatureengineeringstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFeatureengineeringstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasFeatureengineeringstarttime(): boolean;
-  clearFeatureengineeringstarttime(): StudyStatus;
-
-  getFeatureengineeringendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setFeatureengineeringendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasFeatureengineeringendtime(): boolean;
-  clearFeatureengineeringendtime(): StudyStatus;
-
-  getBaselinestarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setBaselinestarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasBaselinestarttime(): boolean;
-  clearBaselinestarttime(): StudyStatus;
-
-  getBaselineendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setBaselineendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasBaselineendtime(): boolean;
-  clearBaselineendtime(): StudyStatus;
-
-  getTrainingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasTrainingstarttime(): boolean;
-  clearTrainingstarttime(): StudyStatus;
-
-  getTrainingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTrainingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasTrainingendtime(): boolean;
-  clearTrainingendtime(): StudyStatus;
-
-  getEnsemblestarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEnsemblestarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasEnsemblestarttime(): boolean;
-  clearEnsemblestarttime(): StudyStatus;
-
-  getEnsembleendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setEnsembleendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasEnsembleendtime(): boolean;
-  clearEnsembleendtime(): StudyStatus;
-
-  getTestingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTestingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasTestingstarttime(): boolean;
-  clearTestingstarttime(): StudyStatus;
-
-  getTestingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
-  setTestingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
-  hasTestingendtime(): boolean;
-  clearTestingendtime(): StudyStatus;
 
   getEndtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setEndtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
@@ -4711,8 +4667,8 @@ export class StudyStatus extends jspb.Message {
   getProgress(): number;
   setProgress(value: number): StudyStatus;
 
-  getBaseline(): string;
-  setBaseline(value: string): StudyStatus;
+  getBaselinemodel(): string;
+  setBaselinemodel(value: string): StudyStatus;
 
   getTrainingdatahash(): DataHashes | undefined;
   setTrainingdatahash(value?: DataHashes): StudyStatus;
@@ -4727,10 +4683,30 @@ export class StudyStatus extends jspb.Message {
   hasLogs(): boolean;
   clearLogs(): StudyStatus;
 
-  getFeatureengineeringsearchstatus(): FeatureEngineeringSearchStatus | undefined;
-  setFeatureengineeringsearchstatus(value?: FeatureEngineeringSearchStatus): StudyStatus;
-  hasFeatureengineeringsearchstatus(): boolean;
-  clearFeatureengineeringsearchstatus(): StudyStatus;
+  getFeatureengineering(): StudyPhaseStatus | undefined;
+  setFeatureengineering(value?: StudyPhaseStatus): StudyStatus;
+  hasFeatureengineering(): boolean;
+  clearFeatureengineering(): StudyStatus;
+
+  getBaseline(): StudyPhaseStatus | undefined;
+  setBaseline(value?: StudyPhaseStatus): StudyStatus;
+  hasBaseline(): boolean;
+  clearBaseline(): StudyStatus;
+
+  getSearch(): StudyPhaseStatus | undefined;
+  setSearch(value?: StudyPhaseStatus): StudyStatus;
+  hasSearch(): boolean;
+  clearSearch(): StudyStatus;
+
+  getEnsemble(): StudyPhaseStatus | undefined;
+  setEnsemble(value?: StudyPhaseStatus): StudyStatus;
+  hasEnsemble(): boolean;
+  clearEnsemble(): StudyStatus;
+
+  getTest(): StudyPhaseStatus | undefined;
+  setTest(value?: StudyPhaseStatus): StudyStatus;
+  hasTest(): boolean;
+  clearTest(): StudyStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
@@ -4753,29 +4729,7 @@ export class StudyStatus extends jspb.Message {
 export namespace StudyStatus {
   export type AsObject = {
     models: number,
-    featureengineeringmodelwaiting: number,
-    featureengineeringmodeltraining: number,
-    featureengineeringmodefailed: number,
-    featureengineeringmodeltrained: number,
-    searchingmodelwaiting: number,
-    searchingmodelstraining: number,
-    searchingmodefailed: number,
-    searchingmodetrained: number,
-    testingmodelwaiting: number,
-    testingmodels: number,
-    testingmodefailed: number,
-    testedmodels: number,
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    featureengineeringstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    featureengineeringendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    baselinestarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    baselineendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    ensemblestarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    ensembleendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    testingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestmodel: string,
     bestmodelscore: number,
@@ -4792,11 +4746,15 @@ export namespace StudyStatus {
     testingrows: number,
     validationrows: number,
     progress: number,
-    baseline: string,
+    baselinemodel: string,
     trainingdatahash?: DataHashes.AsObject,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
-    featureengineeringsearchstatus?: FeatureEngineeringSearchStatus.AsObject,
+    featureengineering?: StudyPhaseStatus.AsObject,
+    baseline?: StudyPhaseStatus.AsObject,
+    search?: StudyPhaseStatus.AsObject,
+    ensemble?: StudyPhaseStatus.AsObject,
+    test?: StudyPhaseStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
