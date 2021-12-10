@@ -146,8 +146,8 @@ class DataServiceStub(object):
                 )
         self.AskEnsemble = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskEnsemble',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelResponse.FromString,
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleResponse.FromString,
                 )
         self.TellEnsemble = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.data.v1.DataService/TellEnsemble',
@@ -646,8 +646,8 @@ def add_DataServiceServicer_to_server(servicer, server):
             ),
             'AskEnsemble': grpc.unary_unary_rpc_method_handler(
                     servicer.AskEnsemble,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelResponse.SerializeToString,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleResponse.SerializeToString,
             ),
             'TellEnsemble': grpc.unary_unary_rpc_method_handler(
                     servicer.TellEnsemble,
@@ -1188,8 +1188,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskEnsemble',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskModelResponse.FromString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_data_dot_v1_dot_data__pb2.AskEnsembleResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

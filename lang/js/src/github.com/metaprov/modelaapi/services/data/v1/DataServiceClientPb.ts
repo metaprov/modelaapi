@@ -1156,29 +1156,29 @@ export class DataServiceClient {
   methodInfoAskEnsemble = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.data.v1.DataService/AskEnsemble',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse,
-    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest) => {
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleRequest,
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleResponse,
+    (request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleResponse.deserializeBinary
   );
 
   askEnsemble(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse>;
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleResponse>;
 
   askEnsemble(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse>;
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleResponse>;
 
   askEnsemble(
-    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelRequest,
+    request: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_data_v1_data_pb.AskEnsembleResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

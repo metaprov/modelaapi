@@ -438,12 +438,31 @@ message AskModelResponse {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
+// Ensemble
+
+message AskEnsembleRequest {
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study              = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models       = 6;    
+}
+
+message AskEnsembleResponse {
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+}
+
+
+
 message AskBaselineRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct  product           = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion version     = 2;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study   study              = 3;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource  datasource         = 4;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;    
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;   
+    repeated string algnames = 6; // ask for a list of algorithms
+    bool all = 7; // ask for all algorithms 
 }
 
 message AskBaselineResponse {
@@ -648,7 +667,7 @@ service DataService {
     rpc AskBaseline (AskBaselineRequest) returns (AskBaselineResponse) {}
 
     // sample feature engineering pipeline
-    rpc AskEnsemble (AskModelRequest) returns (AskModelResponse) {}
+    rpc AskEnsemble (AskEnsembleRequest) returns (AskEnsembleResponse) {}
     // tell the result of the feature engineering search.
     rpc TellEnsemble (TellModelRequest) returns (TellModelResponse) {}
     

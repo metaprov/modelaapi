@@ -2017,6 +2017,76 @@ export namespace AskModelResponse {
   }
 }
 
+export class AskEnsembleRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskEnsembleRequest;
+  hasProduct(): boolean;
+  clearProduct(): AskEnsembleRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): AskEnsembleRequest;
+  hasVersion(): boolean;
+  clearVersion(): AskEnsembleRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): AskEnsembleRequest;
+  hasStudy(): boolean;
+  clearStudy(): AskEnsembleRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): AskEnsembleRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): AskEnsembleRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): AskEnsembleRequest;
+  hasDataset(): boolean;
+  clearDataset(): AskEnsembleRequest;
+
+  getModelsList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setModelsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): AskEnsembleRequest;
+  clearModelsList(): AskEnsembleRequest;
+  addModels(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AskEnsembleRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: AskEnsembleRequest): AskEnsembleRequest.AsObject;
+  static serializeBinaryToWriter(message: AskEnsembleRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AskEnsembleRequest;
+  static deserializeBinaryFromReader(message: AskEnsembleRequest, reader: jspb.BinaryReader): AskEnsembleRequest;
+}
+
+export namespace AskEnsembleRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    modelsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
+  }
+}
+
+export class AskEnsembleResponse extends jspb.Message {
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): AskEnsembleResponse;
+  hasModel(): boolean;
+  clearModel(): AskEnsembleResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AskEnsembleResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: AskEnsembleResponse): AskEnsembleResponse.AsObject;
+  static serializeBinaryToWriter(message: AskEnsembleResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AskEnsembleResponse;
+  static deserializeBinaryFromReader(message: AskEnsembleResponse, reader: jspb.BinaryReader): AskEnsembleResponse;
+}
+
+export namespace AskEnsembleResponse {
+  export type AsObject = {
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+  }
+}
+
 export class AskBaselineRequest extends jspb.Message {
   getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
   setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): AskBaselineRequest;
@@ -2043,6 +2113,14 @@ export class AskBaselineRequest extends jspb.Message {
   hasDataset(): boolean;
   clearDataset(): AskBaselineRequest;
 
+  getAlgnamesList(): Array<string>;
+  setAlgnamesList(value: Array<string>): AskBaselineRequest;
+  clearAlgnamesList(): AskBaselineRequest;
+  addAlgnames(value: string, index?: number): AskBaselineRequest;
+
+  getAll(): boolean;
+  setAll(value: boolean): AskBaselineRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskBaselineRequest.AsObject;
   static toObject(includeInstance: boolean, msg: AskBaselineRequest): AskBaselineRequest.AsObject;
@@ -2058,6 +2136,8 @@ export namespace AskBaselineRequest {
     study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
     dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    algnamesList: Array<string>,
+    all: boolean,
   }
 }
 
