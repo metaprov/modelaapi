@@ -270,6 +270,51 @@ func (study *Study) MarkSplitFailed(err string) {
 	study.RefreshProgress()
 }
 
+////////////////////////////////////////////////
+// Feature engineering
+////////////////////////////////////////////////
+
+func (study *Study) FeatureEngineered() bool {
+	cond := study.GetCond(StudyFeatureEngineered)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (study *Study) MarkFeatureEngineering() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudyFeatureEngineered,
+		Status: v1.ConditionFalse,
+		Reason: ReasonFeatureEngineering,
+	})
+	now := metav1.Now()
+	study.Status.FeatureEngineeringStatus.StartTime = &now
+	study.Status.Phase = StudyPhaseEngineeringFeature
+}
+
+func (study *Study) MarkFeatureEngineered() {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:   StudyFeatureEngineered,
+		Status: v1.ConditionTrue,
+	})
+	now := metav1.Now()
+	if study.Status.FeatureEngineeringStatus.EndTime == nil {
+		study.Status.FeatureEngineeringStatus.EndTime = &now
+	}
+	study.Status.Phase = StudyPhaseFeatureEngineered
+	study.RefreshProgress()
+}
+
+func (study *Study) MarkFeatureEngineeringFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyFeatureEngineered,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = util.StrPtr("Failed to engineer features." + err)
+	study.RefreshProgress()
+}
+
 ///////////////////////////////////////////////////////////////
 // Baselines
 ///////////////////////////////////////////////////////////////
@@ -366,53 +411,56 @@ func (study *Study) MarkSearchFailed(err string) {
 	study.RefreshProgress()
 }
 
-////////////////////////////////////////////////
-// Feature engineering
-////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+// Ensemble
+///////////////////////////////////////////////////////
 
-func (study *Study) FeatureEngineered() bool {
-	cond := study.GetCond(StudyFeatureEngineered)
+func (study *Study) Ensembled() bool {
+	cond := study.GetCond(StudyEnsambleCreated)
 	return cond.Status == v1.ConditionTrue
 }
 
-func (study *Study) MarkFeatureEngineering() {
+func (study *Study) MarkEnsembling() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyFeatureEngineered,
+		Type:   StudyEnsambleCreated,
 		Status: v1.ConditionFalse,
-		Reason: ReasonFeatureEngineering,
+		Reason: ReasonCreateEnsemble,
 	})
 	now := metav1.Now()
-	study.Status.FeatureEngineeringStatus.StartTime = &now
-	study.Status.Phase = StudyPhaseEngineeringFeature
-}
-
-func (study *Study) MarkFeatureEngineered() {
-	study.CreateOrUpdateCond(StudyCondition{
-		Type:   StudyFeatureEngineered,
-		Status: v1.ConditionTrue,
-	})
-	now := metav1.Now()
-	if study.Status.FeatureEngineeringStatus.EndTime == nil {
-		study.Status.FeatureEngineeringStatus.EndTime = &now
+	if study.Status.EnsembleStatus.StartTime == nil {
+		study.Status.EnsembleStatus.StartTime = &now
 	}
-	study.Status.Phase = StudyPhaseFeatureEngineered
+	study.Status.Phase = StudyPhaseCreatingEnsembles
 	study.RefreshProgress()
 }
 
-func (study *Study) MarkFeatureEngineeringFailed(err string) {
+func (study *Study) MarkEnsembled() {
 	study.CreateOrUpdateCond(StudyCondition{
-		Type:    StudyFeatureEngineered,
+		Type:   StudyEnsambleCreated,
+		Status: v1.ConditionTrue,
+	})
+	now := metav1.Now()
+	if study.Status.EnsembleStatus.EndTime == nil {
+		study.Status.EnsembleStatus.EndTime = &now
+	}
+	study.Status.Phase = StudyPhaseCreatedEnsembles
+	study.RefreshProgress()
+}
+
+func (study *Study) MarkEnsembleFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyEnsambleCreated,
 		Status:  v1.ConditionFalse,
 		Reason:  ReasonFailed,
 		Message: err,
 	})
 	study.Status.Phase = StudyPhaseFailed
-	study.Status.LastError = util.StrPtr("Failed to engineer features." + err)
+	study.Status.LastError = util.StrPtr("Failed to ensemble models." + err)
 	study.RefreshProgress()
 }
 
 //////////////////////////////////////////////////////
-// --------------- Test
+// Test
 //////////////////////////////////////////////////////
 
 func (study *Study) ModelTested() bool {
