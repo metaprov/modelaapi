@@ -4041,6 +4041,11 @@ func (in *StudyStatus) DeepCopyInto(out *StudyStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	if in.BestFE != nil {
+		in, out := &in.BestFE, &out.BestFE
+		*out = new(FeatureEngineeringSpec)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]StudyCondition, len(*in))

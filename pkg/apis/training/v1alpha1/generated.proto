@@ -3217,12 +3217,16 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 29;
 
+  // The best feature engineering
+  // +kubebuilder:validation:Optional
+  optional FeatureEngineeringSpec bestFE = 30;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 30;
+  repeated StudyCondition conditions = 31;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

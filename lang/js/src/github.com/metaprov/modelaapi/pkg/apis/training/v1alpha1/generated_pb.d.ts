@@ -4713,6 +4713,11 @@ export class StudyStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): StudyStatus;
 
+  getBestfe(): FeatureEngineeringSpec | undefined;
+  setBestfe(value?: FeatureEngineeringSpec): StudyStatus;
+  hasBestfe(): boolean;
+  clearBestfe(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4756,6 +4761,7 @@ export namespace StudyStatus {
     ensemble?: StudyPhaseStatus.AsObject,
     test?: StudyPhaseStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    bestfe?: FeatureEngineeringSpec.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

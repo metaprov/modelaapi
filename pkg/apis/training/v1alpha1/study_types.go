@@ -573,33 +573,30 @@ type StudyStatus struct {
 	// Holds the result of the feature engineering process
 	//+kubebuilder:validation:Optional
 	FeatureEngineeringStatus StudyPhaseStatus `json:"featureEngineering,,omitempty" protobuf:"bytes,24,opt,name=featureEngineering"`
-
 	// Holds the result of the baseline phase training
 	//+kubebuilder:validation:Optional
 	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,25,opt,name=baseline"`
-
 	// Holds the result of the search phase training
 	//+kubebuilder:validation:Optional
 	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,26,opt,name=search"`
-
 	// Holds the result of the ensemble phase
 	//+kubebuilder:validation:Optional
 	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,27,opt,name=ensemble"`
-
 	// Holds the result of the test phase
 	//+kubebuilder:validation:Optional
 	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,28,opt,name=test"`
-
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,29,opt,name=lastUpdated"`
-
+	// The best feature engineering
+	//+kubebuilder:validation:Optional
+	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,30,opt,name=bestFE"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,30,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,31,rep,name=conditions"`
 }
 
 // model cv results
