@@ -877,7 +877,6 @@ spec:
                     type: string
                 type: object
               modelClass:
-                default: false
                 description: Mark the model class. The model class is the origin of
                   the model
                 enum:

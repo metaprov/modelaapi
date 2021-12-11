@@ -1875,7 +1875,6 @@ message ModelSpec {
   optional int32 ttl = 35;
 
   // Mark the model class. The model class is the origin of the model
-  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional string modelClass = 36;
 

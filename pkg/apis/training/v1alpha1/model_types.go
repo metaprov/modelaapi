@@ -327,7 +327,6 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,35,opt,name=ttl"`
 	// Mark the model class. The model class is the origin of the model
-	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	ModelClass catalog.ModelClassType `json:"modelClass,omitempty" protobuf:"bytes,36,opt,name=modelClass"`
 	// Set the trial ID, by the optimizer.
