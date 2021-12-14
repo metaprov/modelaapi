@@ -652,9 +652,9 @@ func (model *Model) Packaged() bool {
 
 func (model *Model) MarkPackaged(image string) {
 	model.Status.ImageName = image
-	model.Status.Phase = ModelPhasePublished
+	model.Status.Phase = ModelPhasePackaged
 	model.CreateOrUpdateCond(ModelCondition{
-		Type:   ModelPublished,
+		Type:   ModelPackaged,
 		Status: v1.ConditionTrue,
 	})
 }
