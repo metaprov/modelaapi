@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global = Function('return this')();
 
 var github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb);
@@ -27477,7 +27471,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.toObjec
     estimatortype: (f = jspb.Message.getField(msg, 34)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 35)) == null ? undefined : f,
     modelclass: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
-    trialid: (f = jspb.Message.getField(msg, 38)) == null ? undefined : f
+    trialid: (f = jspb.Message.getField(msg, 38)) == null ? undefined : f,
+    governance: (f = msg.getGovernance()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -27667,6 +27662,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.deseria
     case 38:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTrialid(value);
+      break;
+    case 39:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.deserializeBinaryFromReader);
+      msg.setGovernance(value);
       break;
     default:
       reader.skipField();
@@ -27957,6 +27957,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.seriali
     writer.writeInt32(
       38,
       f
+    );
+  }
+  f = message.getGovernance();
+  if (f != null) {
+    writer.writeMessage(
+      39,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.serializeBinaryToWriter
     );
   }
 };
@@ -29268,13 +29276,50 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototy
 };
 
 
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 39;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.getGovernance = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec, 39));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.setGovernance = function(value) {
+  return jspb.Message.setWrapperField(this, 39, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.clearGovernance = function() {
+  return this.setGovernance(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelSpec.prototype.hasGovernance = function() {
+  return jspb.Message.getField(this, 39) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,14,27,60,61,63];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.repeatedFields_ = [12,13,14,27,60,61,64];
 
 
 
@@ -29373,6 +29418,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     topcorrelationsList: jspb.Message.toObjectList(msg.getTopcorrelationsList(),
     github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.toObject, includeInstance),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    governancestatus: (f = msg.getGovernancestatus()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.toObject, includeInstance)
   };
@@ -29678,6 +29724,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       msg.setLastupdated(value);
       break;
     case 63:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.deserializeBinaryFromReader);
+      msg.setGovernancestatus(value);
+      break;
+    case 64:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -30152,10 +30203,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = message.getGovernancestatus();
+  if (f != null) {
+    writer.writeMessage(
+      63,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.serializeBinaryToWriter
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      63,
+      64,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition.serializeBinaryToWriter
     );
@@ -32340,12 +32399,49 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * repeated ModelCondition conditions = 63;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governanceStatus = 63;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getGovernancestatus = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus, 63));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setGovernancestatus = function(value) {
+  return jspb.Message.setWrapperField(this, 63, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearGovernancestatus = function() {
+  return this.setGovernancestatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasGovernancestatus = function() {
+  return jspb.Message.getField(this, 63) != null;
+};
+
+
+/**
+ * repeated ModelCondition conditions = 64;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, 63));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, 64));
 };
 
 
@@ -32354,7 +32450,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 63, value);
+  return jspb.Message.setRepeatedWrapperField(this, 64, value);
 };
 
 
@@ -32364,7 +32460,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 63, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 64, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCondition, opt_index);
 };
 
 

@@ -1253,6 +1253,11 @@ export class DataProductSpec extends jspb.Message {
   getColor(): string;
   setColor(value: string): DataProductSpec;
 
+  getGovernance(): GovernanceSpec | undefined;
+  setGovernance(value?: GovernanceSpec): DataProductSpec;
+  hasGovernance(): boolean;
+  clearGovernance(): DataProductSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataProductSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataProductSpec): DataProductSpec.AsObject;
@@ -1282,6 +1287,7 @@ export namespace DataProductSpec {
     clearencelevel: string,
     priority: string,
     color: string,
+    governance?: GovernanceSpec.AsObject,
   }
 }
 
@@ -3472,6 +3478,96 @@ export namespace GitLocation {
     url: string,
     branch: string,
     pb_private: boolean,
+  }
+}
+
+export class GovernanceReviewStatus extends jspb.Message {
+  getResult(): string;
+  setResult(value: string): GovernanceReviewStatus;
+
+  getApprovaldate(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setApprovaldate(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): GovernanceReviewStatus;
+  hasApprovaldate(): boolean;
+  clearApprovaldate(): GovernanceReviewStatus;
+
+  getNotes(): string;
+  setNotes(value: string): GovernanceReviewStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GovernanceReviewStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: GovernanceReviewStatus): GovernanceReviewStatus.AsObject;
+  static serializeBinaryToWriter(message: GovernanceReviewStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GovernanceReviewStatus;
+  static deserializeBinaryFromReader(message: GovernanceReviewStatus, reader: jspb.BinaryReader): GovernanceReviewStatus;
+}
+
+export namespace GovernanceReviewStatus {
+  export type AsObject = {
+    result: string,
+    approvaldate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    notes: string,
+  }
+}
+
+export class GovernanceSpec extends jspb.Message {
+  getCountry(): string;
+  setCountry(value: string): GovernanceSpec;
+
+  getItreviewer(): string;
+  setItreviewer(value: string): GovernanceSpec;
+
+  getCompliancereviewer(): string;
+  setCompliancereviewer(value: string): GovernanceSpec;
+
+  getBusinessreviewer(): string;
+  setBusinessreviewer(value: string): GovernanceSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GovernanceSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GovernanceSpec): GovernanceSpec.AsObject;
+  static serializeBinaryToWriter(message: GovernanceSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GovernanceSpec;
+  static deserializeBinaryFromReader(message: GovernanceSpec, reader: jspb.BinaryReader): GovernanceSpec;
+}
+
+export namespace GovernanceSpec {
+  export type AsObject = {
+    country: string,
+    itreviewer: string,
+    compliancereviewer: string,
+    businessreviewer: string,
+  }
+}
+
+export class GovernanceStatus extends jspb.Message {
+  getItreviewstatus(): GovernanceReviewStatus | undefined;
+  setItreviewstatus(value?: GovernanceReviewStatus): GovernanceStatus;
+  hasItreviewstatus(): boolean;
+  clearItreviewstatus(): GovernanceStatus;
+
+  getCompliancereviewstatus(): GovernanceReviewStatus | undefined;
+  setCompliancereviewstatus(value?: GovernanceReviewStatus): GovernanceStatus;
+  hasCompliancereviewstatus(): boolean;
+  clearCompliancereviewstatus(): GovernanceStatus;
+
+  getBusinessreviewstatus(): GovernanceReviewStatus | undefined;
+  setBusinessreviewstatus(value?: GovernanceReviewStatus): GovernanceStatus;
+  hasBusinessreviewstatus(): boolean;
+  clearBusinessreviewstatus(): GovernanceStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GovernanceStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: GovernanceStatus): GovernanceStatus.AsObject;
+  static serializeBinaryToWriter(message: GovernanceStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GovernanceStatus;
+  static deserializeBinaryFromReader(message: GovernanceStatus, reader: jspb.BinaryReader): GovernanceStatus;
+}
+
+export namespace GovernanceStatus {
+  export type AsObject = {
+    itreviewstatus?: GovernanceReviewStatus.AsObject,
+    compliancereviewstatus?: GovernanceReviewStatus.AsObject,
+    businessreviewstatus?: GovernanceReviewStatus.AsObject,
   }
 }
 

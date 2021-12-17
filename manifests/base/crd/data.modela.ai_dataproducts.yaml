@@ -183,6 +183,22 @@ spec:
                     maxLength: 256
                     type: string
                 type: object
+              governance:
+                description: The Governance requirements.
+                properties:
+                  businessReviewer:
+                    description: The account name of the business reviewer
+                    type: string
+                  complianceReviewer:
+                    description: The account name of the compliance reviewer.
+                    type: string
+                  country:
+                    description: The model country
+                    type: string
+                  itReviewer:
+                    description: The account name of the IT reviewer
+                    type: string
+                type: object
               imageLocation:
                 description: ImageLocation is the image repository that stores the
                   models images for the product versions

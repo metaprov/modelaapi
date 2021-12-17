@@ -1049,6 +1049,10 @@ message DataProductSpec {
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string color = 22;
+
+  // The Governance requirements.
+  // +kubebuilder:validation:Optional
+  optional GovernanceSpec governance = 23;
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -2398,6 +2402,49 @@ message GitLocation {
 
   // Private is True if the repository is private.
   optional bool private = 4;
+}
+
+message GovernanceReviewStatus {
+  // The approval status
+  optional string result = 1;
+
+  // The date of approval
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time approvalDate = 2;
+
+  // Notes during the review.
+  optional string notes = 3;
+}
+
+message GovernanceSpec {
+  // The model country
+  // +kubebuilder:validation:Optional
+  optional string country = 1;
+
+  // The account name of the IT reviewer
+  // +kubebuilder:validation:Optional
+  optional string itReviewer = 2;
+
+  // The account name of the compliance reviewer.
+  // +kubebuilder:validation:Optional
+  optional string complianceReviewer = 3;
+
+  // The account name of the business reviewer
+  // +kubebuilder:validation:Optional
+  optional string businessReviewer = 4;
+}
+
+message GovernanceStatus {
+  // The review status for IT department
+  // +kubebuilder:validation:Optional
+  optional GovernanceReviewStatus ITReviewStatus = 1;
+
+  // The review status for IT department
+  // +kubebuilder:validation:Optional
+  optional GovernanceReviewStatus complianceReviewStatus = 2;
+
+  // The business review status
+  // +kubebuilder:validation:Optional
+  optional GovernanceReviewStatus businessReviewStatus = 3;
 }
 
 message ImageLocation {

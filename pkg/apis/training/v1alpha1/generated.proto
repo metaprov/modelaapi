@@ -1882,6 +1882,10 @@ message ModelSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 trialID = 38;
+
+  // The Governance requirements.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 39;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2131,10 +2135,14 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 62;
 
+  // The Governance requirements.
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governanceStatus = 63;
+
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 63;
+  repeated ModelCondition conditions = 64;
 }
 
 message ModelValidation {

@@ -159,6 +159,9 @@ type DataProductSpec struct {
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
 	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,22,opt,name=color"`
+	// The Governance requirements.
+	// +kubebuilder:validation:Optional
+	Governance *GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
 }
 
 // DataProductStatus defines the observed state of DataProduct
@@ -199,4 +202,49 @@ type KPI struct {
 	Name *string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// Value is the desired value
 	Value *float64 `json:"value,omitempty" protobuf:"varint,2,opt,name=value"`
+}
+
+// Governance Spec define the governance for models in this data product.
+
+type GovernanceSpec struct {
+	// The model country
+	// +kubebuilder:validation:Optional
+	Country *string `json:"country,omitempty" protobuf:"bytes,1,opt,name=country"`
+	// The account name of the IT reviewer
+	// +kubebuilder:validation:Optional
+	ITReviewer *string `json:"itReviewer,omitempty" protobuf:"bytes,2,opt,name=itReviewer"`
+	// The account name of the compliance reviewer.
+	// +kubebuilder:validation:Optional
+	ComplianceReviewer *string `json:"complianceReviewer,omitempty" protobuf:"bytes,3,opt,name=complianceReviewer"`
+	// The account name of the business reviewer
+	// +kubebuilder:validation:Optional
+	BusinessReviewer *string `json:"businessReviewer,omitempty" protobuf:"bytes,4,opt,name=businessReviewer"`
+}
+
+type ApprovalType string
+
+const (
+	ApprovalTypeApproved ApprovalType = "approved"
+	ApprovalTypeReject   ApprovalType = "reject"
+)
+
+type GovernanceReviewStatus struct {
+	// The approval status
+	Result ApprovalType `json:"result,omitempty" protobuf:"bytes,1,opt,name=result"`
+	// The date of approval
+	ApprovalDate *metav1.Time `json:"approvalDate,omitempty" protobuf:"bytes,2,opt,name=approvalDate"`
+	// Notes during the review.
+	Notes string `json:"notes,omitempty" protobuf:"bytes,3,opt,name=notes"`
+}
+
+type GovernanceStatus struct {
+	// The review status for IT department
+	// +kubebuilder:validation:Optional
+	ITReviewStatus GovernanceReviewStatus `json:"ITReviewStatus,omitempty" protobuf:"bytes,1,opt,name=ITReviewStatus"`
+	// The review status for IT department
+	// +kubebuilder:validation:Optional
+	ComplianceReviewStatus GovernanceReviewStatus `json:"complianceReviewStatus,omitempty" protobuf:"bytes,2,opt,name=complianceReviewStatus"`
+	// The business review status
+	// +kubebuilder:validation:Optional
+	BusinessReviewStatus GovernanceReviewStatus `json:"businessReviewStatus,omitempty" protobuf:"bytes,3,opt,name=businessReviewStatus"`
 }

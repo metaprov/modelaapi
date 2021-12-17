@@ -2805,6 +2805,11 @@ export class ModelSpec extends jspb.Message {
   getTrialid(): number;
   setTrialid(value: number): ModelSpec;
 
+  getGovernance(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec | undefined;
+  setGovernance(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec): ModelSpec;
+  hasGovernance(): boolean;
+  clearGovernance(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2851,6 +2856,7 @@ export namespace ModelSpec {
     ttl: number,
     modelclass: string,
     trialid: number,
+    governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.AsObject,
   }
 }
 
@@ -3083,6 +3089,11 @@ export class ModelStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ModelStatus;
 
+  getGovernancestatus(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus | undefined;
+  setGovernancestatus(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus): ModelStatus;
+  hasGovernancestatus(): boolean;
+  clearGovernancestatus(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3158,6 +3169,7 @@ export namespace ModelStatus {
     correlationswithtargetList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     topcorrelationsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    governancestatus?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

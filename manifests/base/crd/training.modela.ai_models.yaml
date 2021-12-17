@@ -838,6 +838,22 @@ spec:
                 default: false
                 description: Forecasted is true when the model should perform a forecast
                 type: boolean
+              governance:
+                description: The Governance requirements.
+                properties:
+                  businessReviewer:
+                    description: The account name of the business reviewer
+                    type: string
+                  complianceReviewer:
+                    description: The account name of the compliance reviewer.
+                    type: string
+                  country:
+                    description: The model country
+                    type: string
+                  itReviewer:
+                    description: The account name of the IT reviewer
+                    type: string
+                type: object
               location:
                 description: Location is the location of the model artifacts (metadata,
                   reports and estimators).
@@ -1489,6 +1505,52 @@ spec:
               forecastUri:
                 description: ForecastUri is the uri of the forecast
                 type: string
+              governance:
+                description: The Governance requirements.
+                properties:
+                  ITReviewStatus:
+                    description: The review status for IT department
+                    properties:
+                      approvalDate:
+                        description: The date of approval
+                        format: date-time
+                        type: string
+                      notes:
+                        description: Notes during the review.
+                        type: string
+                      result:
+                        description: The approval status
+                        type: string
+                    type: object
+                  businessReviewStatus:
+                    description: The business review status
+                    properties:
+                      approvalDate:
+                        description: The date of approval
+                        format: date-time
+                        type: string
+                      notes:
+                        description: Notes during the review.
+                        type: string
+                      result:
+                        description: The approval status
+                        type: string
+                    type: object
+                  complianceReviewStatus:
+                    description: The review status for IT department
+                    properties:
+                      approvalDate:
+                        description: The date of approval
+                        format: date-time
+                        type: string
+                      notes:
+                        description: Notes during the review.
+                        type: string
+                      result:
+                        description: The approval status
+                        type: string
+                    type: object
+                type: object
               imageHash:
                 description: Sha 256 of the model tar file
                 type: string
