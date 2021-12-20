@@ -11221,219 +11221,219 @@ export class DatabaseProxyServiceClient {
     this.methodInfoDeleteWebRequest);
   }
 
-  methodInfoListPredictiveApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictiveApp',
+  methodInfoListDataApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataApp',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppRequest,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppResponse,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppResponse.deserializeBinary
   );
 
-  listPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse>;
+  listDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppResponse>;
 
-  listPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest,
+  listDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse>;
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppResponse>;
 
-  listPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppRequest,
+  listDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListPredictiveAppResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.ListDataAppResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictiveApp',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataApp',
         request,
         metadata || {},
-        this.methodInfoListPredictiveApp,
+        this.methodInfoListDataApp,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListPredictiveApp',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/ListDataApp',
     request,
     metadata || {},
-    this.methodInfoListPredictiveApp);
+    this.methodInfoListDataApp);
   }
 
-  methodInfoGetPredictiveApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictiveApp',
+  methodInfoGetDataApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataApp',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest,
-    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataAppRequest,
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataAppRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.deserializeBinary
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinary
   );
 
-  getPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
+  getDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataAppRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>;
 
-  getPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest,
+  getDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>;
 
-  getPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetPredictiveAppRequest,
+  getDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.GetDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void) {
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictiveApp',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataApp',
         request,
         metadata || {},
-        this.methodInfoGetPredictiveApp,
+        this.methodInfoGetDataApp,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetPredictiveApp',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/GetDataApp',
     request,
     metadata || {},
-    this.methodInfoGetPredictiveApp);
+    this.methodInfoGetDataApp);
   }
 
-  methodInfoCreatePredictiveApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictiveApp',
+  methodInfoCreateDataApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataApp',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest,
-    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataAppRequest,
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataAppRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.deserializeBinary
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinary
   );
 
-  createPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
+  createDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataAppRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>;
 
-  createPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest,
+  createDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>;
 
-  createPredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreatePredictiveAppRequest,
+  createDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.CreateDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void) {
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictiveApp',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataApp',
         request,
         metadata || {},
-        this.methodInfoCreatePredictiveApp,
+        this.methodInfoCreateDataApp,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreatePredictiveApp',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/CreateDataApp',
     request,
     metadata || {},
-    this.methodInfoCreatePredictiveApp);
+    this.methodInfoCreateDataApp);
   }
 
-  methodInfoUpdatePredictiveApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictiveApp',
+  methodInfoUpdateDataApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataApp',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest,
-    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest) => {
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataAppRequest,
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp,
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataAppRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.deserializeBinary
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinary
   );
 
-  updatePredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
+  updateDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataAppRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>;
 
-  updatePredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest,
+  updateDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>;
 
-  updatePredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdatePredictiveAppRequest,
+  updateDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.UpdateDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp) => void) {
+               response: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictiveApp',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataApp',
         request,
         metadata || {},
-        this.methodInfoUpdatePredictiveApp,
+        this.methodInfoUpdateDataApp,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdatePredictiveApp',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/UpdateDataApp',
     request,
     metadata || {},
-    this.methodInfoUpdatePredictiveApp);
+    this.methodInfoUpdateDataApp);
   }
 
-  methodInfoDeletePredictiveApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictiveApp',
+  methodInfoDeleteDataApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataApp',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest,
+    github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataAppRequest,
     google_protobuf_empty_pb.Empty,
-    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest) => {
+    (request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataAppRequest) => {
       return request.serializeBinary();
     },
     google_protobuf_empty_pb.Empty.deserializeBinary
   );
 
-  deletePredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest,
+  deleteDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataAppRequest,
     metadata: grpcWeb.Metadata | null): Promise<google_protobuf_empty_pb.Empty>;
 
-  deletePredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest,
+  deleteDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void): grpcWeb.ClientReadableStream<google_protobuf_empty_pb.Empty>;
 
-  deletePredictiveApp(
-    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeletePredictiveAppRequest,
+  deleteDataApp(
+    request: github_com_metaprov_modelaapi_services_dbproxyd_v1_dbproxyd_pb.DeleteDataAppRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: google_protobuf_empty_pb.Empty) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictiveApp',
+          '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataApp',
         request,
         metadata || {},
-        this.methodInfoDeletePredictiveApp,
+        this.methodInfoDeleteDataApp,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeletePredictiveApp',
+      '/github.com.metaprov.modelaapi.services.dbproxyd.v1.DatabaseProxyService/DeleteDataApp',
     request,
     metadata || {},
-    this.methodInfoDeletePredictiveApp);
+    this.methodInfoDeleteDataApp);
   }
 
 }

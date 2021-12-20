@@ -71,7 +71,7 @@ python3 -m grpc_tools.protoc \
     github.com/metaprov/modelaapi/services/sqlqueryrun/v1/sqlqueryrun.proto \
     github.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto \
     github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \
-    github.com/metaprov/modelaapi/services/predictiveapp/v1/predictiveapp.proto \
+    github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto \
     github.com/metaprov/modelaapi/services/entity/v1/entity.proto \
     github.com/metaprov/modelaapi/services/feature/v1/feature.proto \
     github.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto \

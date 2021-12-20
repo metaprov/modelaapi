@@ -47,8 +47,8 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&PredictionList{},
 		&CronPrediction{},
 		&CronPredictionList{},
-		&PredictiveApp{},
-		&PredictiveAppList{},
+		&DataApp{},
+		&DataAppList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

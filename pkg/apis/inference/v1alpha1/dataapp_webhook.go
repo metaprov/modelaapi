@@ -13,9 +13,9 @@ import (
 )
 
 // defaulting
-var _ webhook.Defaulter = &PredictiveApp{}
+var _ webhook.Defaulter = &DataApp{}
 
-func (r *PredictiveApp) Default() {
+func (r *DataApp) Default() {
 
 	if r.Spec.Owner == nil {
 		r.Spec.Owner = util.StrPtr("")
@@ -28,22 +28,22 @@ func (r *PredictiveApp) Default() {
 }
 
 // validation
-var _ webhook.Validator = &PredictiveApp{}
+var _ webhook.Validator = &DataApp{}
 
 // ValidateCreate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *PredictiveApp) ValidateCreate() error {
+func (recipe *DataApp) ValidateCreate() error {
 	return recipe.validate()
 }
 
 // ValidateUpdate implements webhook.Validator so a webhook will be registered for the type
-func (recipe *PredictiveApp) ValidateUpdate(old runtime.Object) error {
+func (recipe *DataApp) ValidateUpdate(old runtime.Object) error {
 	return recipe.validate()
 }
 
-func (recipe *PredictiveApp) validate() error {
+func (recipe *DataApp) validate() error {
 	return nil
 }
 
-func (recipe *PredictiveApp) ValidateDelete() error {
+func (recipe *DataApp) ValidateDelete() error {
 	return nil
 }

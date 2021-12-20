@@ -1785,34 +1785,34 @@ message DeleteWebRequestRunRequest {
 
 
 /////////////////////////////////////
-// PredictiveAppRun
+// DataAppRun
 /////////////////////////////////////
 
-message ListPredictiveAppRequest {
+message ListDataAppRequest {
     string namespace   = 1;
     int32 page_size    = 2;
     string page_token  = 3;
 }
 
-message ListPredictiveAppResponse {
-    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp items = 1;
+message ListDataAppResponse {
+    repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp items = 1;
     string next_page_token = 2;
 }
 
-message GetPredictiveAppRequest {
+message GetDataAppRequest {
     string namespace = 1;
     string name = 2;
 }
 
-message CreatePredictiveAppRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+message CreateDataAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
 }
 
-message UpdatePredictiveAppRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
+message UpdateDataAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
 }
 
-message DeletePredictiveAppRequest {
+message DeleteDataAppRequest {
     string namespace = 1;
     string name = 2;
 }
@@ -2151,11 +2151,11 @@ service DatabaseProxyService {
     rpc UpdateWebRequest(UpdateWebRequestRequest) returns (github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest) {}
     rpc DeleteWebRequest(DeleteWebRequestRequest) returns (google.protobuf.Empty) {}
     
-    rpc ListPredictiveApp(ListPredictiveAppRequest) returns (ListPredictiveAppResponse) {}
-    rpc GetPredictiveApp(GetPredictiveAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp) {}
-    rpc CreatePredictiveApp(CreatePredictiveAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp) {}
-    rpc UpdatePredictiveApp(UpdatePredictiveAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp) {}
-    rpc DeletePredictiveApp(DeletePredictiveAppRequest) returns (google.protobuf.Empty) {}
+    rpc ListDataApp(ListDataAppRequest) returns (ListDataAppResponse) {}
+    rpc GetDataApp(GetDataAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp) {}
+    rpc CreateDataApp(CreateDataAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp) {}
+    rpc UpdateDataApp(UpdateDataAppRequest) returns (github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp) {}
+    rpc DeleteDataApp(DeleteDataAppRequest) returns (google.protobuf.Empty) {}
 
 }
 

@@ -1,0 +1,125 @@
+syntax = "proto3";
+
+option go_package = "github.com/metaprov/modelaapi/services/DataApp/v1";
+package github.com.metaprov.modelaapi.services.DataApp.v1;
+
+
+import "google/api/annotations.proto";
+import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
+
+
+message ListDataAppsRequest {
+    string namespace = 1;
+    string name      = 2;
+    map<string,string> labels =3;
+}
+
+message ListDataAppsResponse {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList items = 1;
+}
+
+message CreateDataAppResponse {}
+
+message CreateDataAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+}
+
+message UpdateDataAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+}
+
+message UpdateDataAppResponse {
+
+}
+
+message GetDataAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message GetDataAppResponse {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+    string yaml = 2;
+
+}
+
+message DeleteDataAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message DeleteDataAppResponse {
+
+}
+
+message PauseDataAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message PauseDataAppResponse {
+
+}
+
+message ResumeDataAppRequest {
+    string namespace = 1;
+    string name      = 2;
+}
+
+message ResumeDataAppResponse {
+
+}
+
+
+
+message RunDataAppRequest {
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+}
+
+
+message RunDataAppResponse {
+    
+}
+
+
+service DataAppService {
+
+    rpc ListDataApps(ListDataAppsRequest) returns (ListDataAppsResponse) {
+        option (google.api.http).get = "/v1/webeequests";
+    }
+
+    rpc CreateDataApp(CreateDataAppRequest) returns (CreateDataAppResponse) {
+        option (google.api.http) = {
+			post: "/v1/webeequests"
+			body: "*"
+		};
+    }
+
+    rpc GetDataApp(GetDataAppRequest) returns (GetDataAppResponse) {
+        option (google.api.http).get = "/v1/webeequests/{name}";
+    }
+
+    rpc UpdateDataApp(UpdateDataAppRequest) returns (UpdateDataAppResponse) {
+        option (google.api.http) = {
+			put: "/v1/webeequests/{webeequest.metadata.name}"
+			body: "*"
+		};
+    }
+
+    rpc DeleteDataApp(DeleteDataAppRequest) returns (DeleteDataAppResponse) {
+        option (google.api.http).delete = "/v1/webeequests/{name}";
+    }
+
+
+    rpc PauseDataApp(PauseDataAppRequest) returns (PauseDataAppResponse) {
+        option (google.api.http).post = "/v1/webeequests/{name}:pause";
+    }
+
+    rpc ResumeDataApp(ResumeDataAppRequest) returns (ResumeDataAppResponse) {
+        option (google.api.http).post = "/v1/webeequests/{name}:resume";
+    }
+
+ 
+  
+
+}

@@ -275,6 +275,124 @@ message CurtainTemplateSpec {
   optional CurtainSpec spec = 2;
 }
 
+// DataApp represent a dashboard for business users to use a single model.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=DataApps,singular=DataApp,categories={data,modela}
+// +kubebuilder:subresource:status
+message DataApp {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional DataAppSpec spec = 2;
+
+  // +optional
+  optional DataAppStatus status = 3;
+}
+
+// DataAppCondition describes the state of a deployment at a certain point.
+message DataAppCondition {
+  // Type of account condition.
+  optional string type = 1;
+
+  // Status of the condition, one of True, False, AutoScaler.
+  optional string status = 2;
+
+  // Last time the condition transitioned from one status to another.
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
+
+  // The reason for the condition's last transition.
+  optional string reason = 4;
+
+  // A human readable message indicating details about the transition.
+  optional string message = 5;
+}
+
+// +kubebuilder:object:root=true
+// DataAppList contain a list of webrequest objects
+message DataAppList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated DataApp items = 2;
+}
+
+// DataAppSpec contain the desired state of a DataApp
+message DataAppSpec {
+  // The webrequest owner
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:="no-one"
+  optional string owner = 1;
+
+  // The product version for the webrequest.
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string versionName = 2;
+
+  // Comments is a description of the webrequest
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=""
+  optional string description = 3;
+
+  // The path of the predictive path
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string path = 4;
+
+  // The name of the predictive app model. The model will be used
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string modelName = 5;
+
+  // Number of replicates
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional int32 replicas = 7;
+
+  // The port for the app
+  // +kubebuilder:default:=3000
+  // +kubebuilder:validation:Minimum=1
+  // +kubebuilder:validation:Maximum=65535
+  // +kubebuilder:validation:Optional
+  optional int32 port = 8;
+
+  // The workload class to use when running the app pod
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 9;
+
+  // The access method specified how external clients will access the predictor
+  // Default: ClusterPort
+  // +kubebuilder:default:="cluster-port"
+  // +kubebuilder:validation:Optional
+  optional string accessType = 10;
+
+  // The product that this predictor serve.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference productRef = 11;
+
+  // The serving site that hosts this predictor and the models
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 12;
+}
+
+// DataAppStatus defines the observed state of DataApp
+message DataAppStatus {
+  // ObservedGeneration is the Last generation that was acted on
+  // +kubebuilder:validation:Optional
+  optional int64 observedGeneration = 1;
+
+  // Last time the object was updated
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
+  // +patchMergeKey=type
+  // +patchStrategy=merge
+  // +kubebuilder:validation:Optional
+  repeated DataAppCondition conditions = 3;
+}
+
 // Model Record hold the state of a model that was in production. This support roll back of a model.
 message ModelRecord {
   // Model Name is the name of the model
@@ -527,128 +645,6 @@ message PredictionStatus {
 
 message PredictionTemplate {
   optional PredictionSpec spec = 1;
-}
-
-// PredictiveApp represent a single webrequest in the webrequest store.
-// +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
-// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=predictiveapps,singular=predictiveapp,categories={data,modela}
-// +kubebuilder:subresource:status
-message PredictiveApp {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
-
-  optional PredictiveAppSpec spec = 2;
-
-  // +optional
-  optional PredictiveAppStatus status = 3;
-}
-
-// PredictiveAppCondition describes the state of a deployment at a certain point.
-message PredictiveAppCondition {
-  // Type of account condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, AutoScaler.
-  optional string status = 2;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-// +kubebuilder:object:root=true
-// PredictiveAppList contain a list of webrequest objects
-message PredictiveAppList {
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
-
-  repeated PredictiveApp items = 2;
-}
-
-// PredictiveAppSpec contain the desired state of a PredictiveApp
-message PredictiveAppSpec {
-  // The webrequest owner
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:="no-one"
-  optional string owner = 1;
-
-  // The product version for the webrequest.
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string versionName = 2;
-
-  // Comments is a description of the webrequest
-  // +kubebuilder:validation:Optional
-  // +kubebuilder:default:=""
-  optional string description = 3;
-
-  // The path of the predictive path
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string path = 4;
-
-  // URL Parameters
-  // +kubebuilder:validation:Optional
-  map<string, string> parameters = 5;
-
-  // The name of the time stamp column
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string connectionName = 6;
-
-  // Number of replicates
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional int32 replicas = 7;
-
-  // The port for the app
-  // +kubebuilder:default:=3000
-  // +kubebuilder:validation:Minimum=1
-  // +kubebuilder:validation:Maximum=65535
-  // +kubebuilder:validation:Optional
-  optional int32 port = 8;
-
-  // The workload class to use when running the app pod
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
-
-  // The access method specified how external clients will access the predictor
-  // Default: ClusterPort
-  // +kubebuilder:default:="cluster-port"
-  // +kubebuilder:validation:Optional
-  optional string accessType = 10;
-
-  // The product that this predictor serve.
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference productRef = 11;
-
-  // The serving site that hosts this predictor and the models
-  // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 12;
-}
-
-// PredictiveAppStatus defines the observed state of PredictiveApp
-message PredictiveAppStatus {
-  // ObservedGeneration is the Last generation that was acted on
-  // +kubebuilder:validation:Optional
-  optional int64 observedGeneration = 1;
-
-  // Last time the object was updated
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
-
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  // +kubebuilder:validation:Optional
-  repeated PredictiveAppCondition conditions = 3;
 }
 
 // Predictor represent an PredictorName API object

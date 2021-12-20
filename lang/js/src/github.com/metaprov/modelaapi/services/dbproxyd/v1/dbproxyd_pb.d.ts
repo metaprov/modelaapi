@@ -6977,25 +6977,25 @@ export namespace DeleteWebRequestRunRequest {
   }
 }
 
-export class ListPredictiveAppRequest extends jspb.Message {
+export class ListDataAppRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): ListPredictiveAppRequest;
+  setNamespace(value: string): ListDataAppRequest;
 
   getPageSize(): number;
-  setPageSize(value: number): ListPredictiveAppRequest;
+  setPageSize(value: number): ListDataAppRequest;
 
   getPageToken(): string;
-  setPageToken(value: string): ListPredictiveAppRequest;
+  setPageToken(value: string): ListDataAppRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListPredictiveAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListPredictiveAppRequest): ListPredictiveAppRequest.AsObject;
-  static serializeBinaryToWriter(message: ListPredictiveAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListPredictiveAppRequest;
-  static deserializeBinaryFromReader(message: ListPredictiveAppRequest, reader: jspb.BinaryReader): ListPredictiveAppRequest;
+  toObject(includeInstance?: boolean): ListDataAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDataAppRequest): ListDataAppRequest.AsObject;
+  static serializeBinaryToWriter(message: ListDataAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDataAppRequest;
+  static deserializeBinaryFromReader(message: ListDataAppRequest, reader: jspb.BinaryReader): ListDataAppRequest;
 }
 
-export namespace ListPredictiveAppRequest {
+export namespace ListDataAppRequest {
   export type AsObject = {
     namespace: string,
     pageSize: number,
@@ -7003,108 +7003,108 @@ export namespace ListPredictiveAppRequest {
   }
 }
 
-export class ListPredictiveAppResponse extends jspb.Message {
-  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>;
-  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp>): ListPredictiveAppResponse;
-  clearItemsList(): ListPredictiveAppResponse;
-  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp, index?: number): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp;
+export class ListDataAppResponse extends jspb.Message {
+  getItemsList(): Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>;
+  setItemsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp>): ListDataAppResponse;
+  clearItemsList(): ListDataAppResponse;
+  addItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp, index?: number): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp;
 
   getNextPageToken(): string;
-  setNextPageToken(value: string): ListPredictiveAppResponse;
+  setNextPageToken(value: string): ListDataAppResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListPredictiveAppResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListPredictiveAppResponse): ListPredictiveAppResponse.AsObject;
-  static serializeBinaryToWriter(message: ListPredictiveAppResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListPredictiveAppResponse;
-  static deserializeBinaryFromReader(message: ListPredictiveAppResponse, reader: jspb.BinaryReader): ListPredictiveAppResponse;
+  toObject(includeInstance?: boolean): ListDataAppResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListDataAppResponse): ListDataAppResponse.AsObject;
+  static serializeBinaryToWriter(message: ListDataAppResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListDataAppResponse;
+  static deserializeBinaryFromReader(message: ListDataAppResponse, reader: jspb.BinaryReader): ListDataAppResponse;
 }
 
-export namespace ListPredictiveAppResponse {
+export namespace ListDataAppResponse {
   export type AsObject = {
-    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.AsObject>,
+    itemsList: Array<github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject>,
     nextPageToken: string,
   }
 }
 
-export class GetPredictiveAppRequest extends jspb.Message {
+export class GetDataAppRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): GetPredictiveAppRequest;
+  setNamespace(value: string): GetDataAppRequest;
 
   getName(): string;
-  setName(value: string): GetPredictiveAppRequest;
+  setName(value: string): GetDataAppRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetPredictiveAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetPredictiveAppRequest): GetPredictiveAppRequest.AsObject;
-  static serializeBinaryToWriter(message: GetPredictiveAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetPredictiveAppRequest;
-  static deserializeBinaryFromReader(message: GetPredictiveAppRequest, reader: jspb.BinaryReader): GetPredictiveAppRequest;
+  toObject(includeInstance?: boolean): GetDataAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDataAppRequest): GetDataAppRequest.AsObject;
+  static serializeBinaryToWriter(message: GetDataAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDataAppRequest;
+  static deserializeBinaryFromReader(message: GetDataAppRequest, reader: jspb.BinaryReader): GetDataAppRequest;
 }
 
-export namespace GetPredictiveAppRequest {
+export namespace GetDataAppRequest {
   export type AsObject = {
     namespace: string,
     name: string,
   }
 }
 
-export class CreatePredictiveAppRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp): CreatePredictiveAppRequest;
+export class CreateDataAppRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): CreateDataAppRequest;
   hasItem(): boolean;
-  clearItem(): CreatePredictiveAppRequest;
+  clearItem(): CreateDataAppRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreatePredictiveAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreatePredictiveAppRequest): CreatePredictiveAppRequest.AsObject;
-  static serializeBinaryToWriter(message: CreatePredictiveAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreatePredictiveAppRequest;
-  static deserializeBinaryFromReader(message: CreatePredictiveAppRequest, reader: jspb.BinaryReader): CreatePredictiveAppRequest;
+  toObject(includeInstance?: boolean): CreateDataAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CreateDataAppRequest): CreateDataAppRequest.AsObject;
+  static serializeBinaryToWriter(message: CreateDataAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CreateDataAppRequest;
+  static deserializeBinaryFromReader(message: CreateDataAppRequest, reader: jspb.BinaryReader): CreateDataAppRequest;
 }
 
-export namespace CreatePredictiveAppRequest {
+export namespace CreateDataAppRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
   }
 }
 
-export class UpdatePredictiveAppRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp): UpdatePredictiveAppRequest;
+export class UpdateDataAppRequest extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): UpdateDataAppRequest;
   hasItem(): boolean;
-  clearItem(): UpdatePredictiveAppRequest;
+  clearItem(): UpdateDataAppRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdatePredictiveAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdatePredictiveAppRequest): UpdatePredictiveAppRequest.AsObject;
-  static serializeBinaryToWriter(message: UpdatePredictiveAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdatePredictiveAppRequest;
-  static deserializeBinaryFromReader(message: UpdatePredictiveAppRequest, reader: jspb.BinaryReader): UpdatePredictiveAppRequest;
+  toObject(includeInstance?: boolean): UpdateDataAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UpdateDataAppRequest): UpdateDataAppRequest.AsObject;
+  static serializeBinaryToWriter(message: UpdateDataAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UpdateDataAppRequest;
+  static deserializeBinaryFromReader(message: UpdateDataAppRequest, reader: jspb.BinaryReader): UpdateDataAppRequest;
 }
 
-export namespace UpdatePredictiveAppRequest {
+export namespace UpdateDataAppRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.AsObject,
+    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
   }
 }
 
-export class DeletePredictiveAppRequest extends jspb.Message {
+export class DeleteDataAppRequest extends jspb.Message {
   getNamespace(): string;
-  setNamespace(value: string): DeletePredictiveAppRequest;
+  setNamespace(value: string): DeleteDataAppRequest;
 
   getName(): string;
-  setName(value: string): DeletePredictiveAppRequest;
+  setName(value: string): DeleteDataAppRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeletePredictiveAppRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeletePredictiveAppRequest): DeletePredictiveAppRequest.AsObject;
-  static serializeBinaryToWriter(message: DeletePredictiveAppRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeletePredictiveAppRequest;
-  static deserializeBinaryFromReader(message: DeletePredictiveAppRequest, reader: jspb.BinaryReader): DeletePredictiveAppRequest;
+  toObject(includeInstance?: boolean): DeleteDataAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteDataAppRequest): DeleteDataAppRequest.AsObject;
+  static serializeBinaryToWriter(message: DeleteDataAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteDataAppRequest;
+  static deserializeBinaryFromReader(message: DeleteDataAppRequest, reader: jspb.BinaryReader): DeleteDataAppRequest;
 }
 
-export namespace DeletePredictiveAppRequest {
+export namespace DeleteDataAppRequest {
   export type AsObject = {
     namespace: string,
     name: string,

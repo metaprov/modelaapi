@@ -12,19 +12,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// PredictiveAppConditionType is the condition of the webrequest
-type PredictiveAppConditionType string
+// DataAppConditionType is the condition of the webrequest
+type DataAppConditionType string
 
-/// PredictiveApp Condition
+/// DataApp Condition
 const (
-	PredictiveAppReady PredictiveAppConditionType = "Ready"
-	PredictiveAppSaved PredictiveAppConditionType = "Saved"
+	DataAppReady DataAppConditionType = "Ready"
+	DataAppSaved DataAppConditionType = "Saved"
 )
 
-// PredictiveAppCondition describes the state of a deployment at a certain point.
-type PredictiveAppCondition struct {
+// DataAppCondition describes the state of a deployment at a certain point.
+type DataAppCondition struct {
 	// Type of account condition.
-	Type PredictiveAppConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=PredictiveAppConditionType"`
+	Type DataAppConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=DataAppConditionType"`
 	// Status of the condition, one of True, False, AutoScaler.
 	Status v1.ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status,casttype=k8s.io/api/core/v1.ConditionStatus"`
 	// Last time the condition transitioned from one status to another.
@@ -35,32 +35,32 @@ type PredictiveAppCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// PredictiveApp represent a single webrequest in the webrequest store.
+// DataApp represent a dashboard for business users to use a single model.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=predictiveapps,singular=predictiveapp,categories={data,modela}
+// +kubebuilder:resource:path=DataApps,singular=DataApp,categories={data,modela}
 // +kubebuilder:subresource:status
-type PredictiveApp struct {
+type DataApp struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Spec              PredictiveAppSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
+	Spec              DataAppSpec `json:"spec" protobuf:"bytes,2,opt,name=spec"`
 	//+optional
-	Status PredictiveAppStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
+	Status DataAppStatus `json:"status" protobuf:"bytes,3,opt,name=status"`
 }
 
 // +kubebuilder:object:root=true
-// PredictiveAppList contain a list of webrequest objects
-type PredictiveAppList struct {
+// DataAppList contain a list of webrequest objects
+type DataAppList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
-	Items           []PredictiveApp `json:"items" protobuf:"bytes,2,rep,name=items"`
+	Items           []DataApp `json:"items" protobuf:"bytes,2,rep,name=items"`
 }
 
-// PredictiveAppSpec contain the desired state of a PredictiveApp
-type PredictiveAppSpec struct {
+// DataAppSpec contain the desired state of a DataApp
+type DataAppSpec struct {
 	// The webrequest owner
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"
@@ -77,13 +77,10 @@ type PredictiveAppSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	Path *string `json:"path,omitempty" protobuf:"bytes,4,opt,name=path"`
-	// URL Parameters
-	// +kubebuilder:validation:Optional
-	Parameters map[string]string `json:"parameters,omitempty" protobuf:"bytes,5,opt,name=parameters"`
-	// The name of the time stamp column
+	// The name of the predictive app model. The model will be used
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,6,opt,name=connectionName"`
+	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,5,opt,name=modelName"`
 	// Number of replicates
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
@@ -111,8 +108,8 @@ type PredictiveAppSpec struct {
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,12,opt,name=servingsiteRef"`
 }
 
-// PredictiveAppStatus defines the observed state of PredictiveApp
-type PredictiveAppStatus struct {
+// DataAppStatus defines the observed state of DataApp
+type DataAppStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
@@ -122,5 +119,5 @@ type PredictiveAppStatus struct {
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictiveAppCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
+	Conditions []DataAppCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,3,rep,name=conditions"`
 }

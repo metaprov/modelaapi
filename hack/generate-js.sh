@@ -62,7 +62,7 @@ protoc \
     github.com/metaprov/modelaapi/services/sqlqueryrun/v1/sqlqueryrun.proto \
     github.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto \
     github.com/metaprov/modelaapi/services/webrequest/v1/webrequest.proto \
-    github.com/metaprov/modelaapi/services/predictiveapp/v1/predictiveapp.proto \
+    github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto \
     github.com/metaprov/modelaapi/services/datapipeline/v1/datapipeline.proto \
     github.com/metaprov/modelaapi/services/datapipelinerun/v1/datapipelinerun.proto \
     github.com/metaprov/modelaapi/services/dataproduct/v1/dataproduct.proto \

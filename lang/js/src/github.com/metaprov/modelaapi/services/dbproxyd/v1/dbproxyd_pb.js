@@ -13,7 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = Function('return this')();
+var global = (function() {
+  if (this) { return this; }
+  if (typeof window !== 'undefined') { return window; }
+  if (typeof global !== 'undefined') { return global; }
+  if (typeof self !== 'undefined') { return self; }
+  return Function('return this')();
+}.call(null));
 
 var google_api_annotations_pb = require('../../../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
@@ -38,6 +44,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateCurtainRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataPipelineRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataProductRequest', null, global);
@@ -64,7 +71,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Crea
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePostMortemRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictorRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateRecipeRunRequest', null, global);
@@ -91,6 +97,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteCurtainRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataPipelineRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataProductRequest', null, global);
@@ -117,7 +124,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Dele
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePostMortemRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictorRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteRecipeRunRequest', null, global);
@@ -144,6 +150,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetC
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetCurtainRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataPipelineRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataProductRequest', null, global);
@@ -170,7 +177,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetN
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPostMortemRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictorRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetRecipeRunRequest', null, global);
@@ -206,6 +212,8 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListCronReportsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListCurtainsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListCurtainsResponse', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelineRunsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelineRunsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataPipelinesRequest', null, global);
@@ -258,8 +266,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.List
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPostMortemsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictionsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictionsResponse', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictorsRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictorsResponse', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListRecipeRunsRequest', null, global);
@@ -303,6 +309,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateCronPredictionRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateCronReportRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateCurtainRequest', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataPipelineRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataPipelineRunRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataProductRequest', null, global);
@@ -329,7 +336,6 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.Upda
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateNotifierRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePostMortemRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictionRequest', null, global);
-goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictorRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRecipeRequest', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateRecipeRunRequest', null, global);
@@ -6909,16 +6915,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -6930,16 +6936,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.repeatedFields_, null);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.repeatedFields_, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -6951,16 +6957,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -6972,16 +6978,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -6993,16 +6999,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -7014,16 +7020,16 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest = function(opt_data) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest, jspb.Message);
+goog.inherits(proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest';
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.displayName = 'proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest';
 }
 
 
@@ -59145,8 +59151,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -59155,11 +59161,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0),
@@ -59177,23 +59183,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -59225,9 +59231,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -59235,11 +59241,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -59269,16 +59275,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -59287,16 +59293,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
  * optional int32 page_size = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.getPageSize = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.getPageSize = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
  * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.setPageSize = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.setPageSize = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -59305,16 +59311,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
  * optional string page_token = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.getPageToken = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.getPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRequest.prototype.setPageToken = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppRequest.prototype.setPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -59325,7 +59331,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppReques
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.repeatedFields_ = [1];
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.repeatedFields_ = [1];
 
 
 
@@ -59342,8 +59348,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.toObject(opt_includeInstance, this);
 };
 
 
@@ -59352,14 +59358,14 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRespon
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     itemsList: jspb.Message.toObjectList(msg.getItemsList(),
-    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.toObject, includeInstance),
+    github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject, includeInstance),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -59374,23 +59380,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRespon
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -59398,8 +59404,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRespon
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinaryFromReader);
       msg.addItems(value);
       break;
     case 2:
@@ -59419,9 +59425,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRespon
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -59429,18 +59435,18 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRespon
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItemsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.serializeBinaryToWriter
     );
   }
   f = message.getNextPageToken();
@@ -59454,39 +59460,39 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRespon
 
 
 /**
- * repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp items = 1;
- * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp>}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp items = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp>}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.getItemsList = function() {
-  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp>} */ (
-    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp, 1));
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.getItemsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp, 1));
 };
 
 
 /**
- * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp>} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse} returns this
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.setItemsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.setItemsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp=} opt_value
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp=} opt_value
  * @param {number=} opt_index
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp}
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.addItems = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp, opt_index);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.addItems = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.clearItemsList = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.clearItemsList = function() {
   return this.setItemsList([]);
 };
 
@@ -59495,16 +59501,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppRespon
  * optional string next_page_token = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.getNextPageToken = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.getNextPageToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListPredictiveAppResponse.prototype.setNextPageToken = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.ListDataAppResponse.prototype.setNextPageToken = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -59525,8 +59531,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -59535,11 +59541,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -59556,23 +59562,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -59600,9 +59606,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -59610,11 +59616,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -59637,16 +59643,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -59655,16 +59661,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetPredictiveAppRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.GetDataAppRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -59685,8 +59691,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -59695,13 +59701,13 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequ
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -59715,23 +59721,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -59739,8 +59745,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -59756,9 +59762,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequ
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -59766,47 +59772,47 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequ
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp}
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp, 1));
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -59815,7 +59821,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequ
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreatePredictiveAppRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.CreateDataAppRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -59836,8 +59842,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -59846,13 +59852,13 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequ
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -59866,23 +59872,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -59890,8 +59896,8 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequ
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.deserializeBinaryFromReader);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
     default:
@@ -59907,9 +59913,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequ
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -59917,47 +59923,47 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequ
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
       1,
       f,
-      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp.serializeBinaryToWriter
+      github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp item = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp}
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.prototype.getItem = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictiveApp, 1));
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.prototype.getItem = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictiveApp|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest} returns this
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.prototype.setItem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.prototype.clearItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.prototype.clearItem = function() {
   return this.setItem(undefined);
 };
 
@@ -59966,7 +59972,7 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequ
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdatePredictiveAppRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.UpdateDataAppRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -59987,8 +59993,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.prototype.toObject = function(opt_includeInstance) {
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.toObject(opt_includeInstance, this);
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.toObject(opt_includeInstance, this);
 };
 
 
@@ -59997,11 +60003,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequ
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest} msg The msg instance to transform.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.toObject = function(includeInstance, msg) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
     name: jspb.Message.getFieldWithDefault(msg, 2, "")
@@ -60018,23 +60024,23 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequ
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.deserializeBinary = function(bytes) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest;
-  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest;
+  return proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest} msg The message object to deserialize into.
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest}
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.deserializeBinaryFromReader = function(msg, reader) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -60062,9 +60068,9 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequ
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.prototype.serializeBinary = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.serializeBinaryToWriter(this, writer);
+  proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -60072,11 +60078,11 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequ
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest} message
+ * @param {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.serializeBinaryToWriter = function(message, writer) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getNamespace();
   if (f.length > 0) {
@@ -60099,16 +60105,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequ
  * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.prototype.getNamespace = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.prototype.setNamespace = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -60117,16 +60123,16 @@ proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequ
  * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
  * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest} returns this
+ * @return {!proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeletePredictiveAppRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.dbproxyd.v1.DeleteDataAppRequest.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
