@@ -35,90 +35,90 @@ export class PublisherdServiceClient {
     this.options_ = options;
   }
 
-  methodInfoPublishTar = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishTar',
+  methodInfoPackageModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PackageModel',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelRequest,
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelResponse,
-    (request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelRequest) => {
+    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelRequest,
+    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelResponse,
+    (request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelResponse.deserializeBinary
   );
 
-  publishTar(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelResponse>;
+  packageModel(
+    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelResponse>;
 
-  publishTar(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelRequest,
+  packageModel(
+    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelResponse>;
+               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelResponse>;
 
-  publishTar(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelRequest,
+  packageModel(
+    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.TarModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PackageModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishTar',
+          '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PackageModel',
         request,
         metadata || {},
-        this.methodInfoPublishTar,
+        this.methodInfoPackageModel,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishTar',
+      '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PackageModel',
     request,
     metadata || {},
-    this.methodInfoPublishTar);
+    this.methodInfoPackageModel);
   }
 
-  methodInfoBake = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Bake',
+  methodInfoPublishModel = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishModel',
     grpcWeb.MethodType.UNARY,
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelRequest,
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelResponse,
-    (request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelRequest) => {
+    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
+    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelResponse,
+    (request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelRequest) => {
       return request.serializeBinary();
     },
-    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelResponse.deserializeBinary
+    github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelResponse.deserializeBinary
   );
 
-  bake(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelRequest,
-    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelResponse>;
+  publishModel(
+    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelResponse>;
 
-  bake(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelRequest,
+  publishModel(
+    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelResponse>;
+               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelResponse>;
 
-  bake(
-    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelRequest,
+  publishModel(
+    request: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelRequest,
     metadata: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.BakeModelResponse) => void) {
+               response: github_com_metaprov_modelaapi_services_publisherd_v1_publisherd_pb.PublishModelResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Bake',
+          '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishModel',
         request,
         metadata || {},
-        this.methodInfoBake,
+        this.methodInfoPublishModel,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Bake',
+      '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishModel',
     request,
     metadata || {},
-    this.methodInfoBake);
+    this.methodInfoPublishModel);
   }
 
   methodInfoPublishNotebook = new grpcWeb.MethodDescriptor(

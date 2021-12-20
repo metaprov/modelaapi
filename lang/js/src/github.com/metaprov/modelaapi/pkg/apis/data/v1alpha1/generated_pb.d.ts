@@ -172,6 +172,9 @@ export class Column extends jspb.Message {
   getId(): boolean;
   setId(value: boolean): Column;
 
+  getStep(): number;
+  setStep(value: number): Column;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Column.AsObject;
   static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
@@ -228,6 +231,7 @@ export namespace Column {
     generated: boolean,
     formula: string,
     id: boolean,
+    step: number,
   }
 }
 

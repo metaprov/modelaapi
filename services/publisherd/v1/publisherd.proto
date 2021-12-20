@@ -21,7 +21,7 @@ message PublishNotebookResponse {
     string ImageName     = 1;
 }
 
-message BakeModelRequest {
+message PublishModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model             model               = 3;
@@ -42,12 +42,12 @@ message BakeModelRequest {
 
 
 
-message BakeModelResponse {
+message PublishModelResponse {
     string ImageName     = 1;
     string hash           = 2;
 }
 
-message TarModelRequest {
+message PackageModelRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct           dataproduct         = 1;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion    dataproductversion  = 2;
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model             model               = 3;
@@ -59,7 +59,7 @@ message TarModelRequest {
     map<string,bytes>                                                          cloudSecret         = 9; 
 }
 
-message TarModelResponse {
+message PackageModelResponse {
     string tarUri     = 1; // the uri of the tar file
     string hash       = 2;
 }
@@ -69,9 +69,9 @@ message ShutdownResponse {}
 
 service PublisherdService {
     // publish tar file including the reports
-    rpc PublishTar(TarModelRequest) returns (TarModelResponse) {}
+    rpc PackageModel(PackageModelRequest) returns (PackageModelResponse) {}
 
-    rpc Bake(BakeModelRequest) returns (BakeModelResponse) {}
+    rpc PublishModel(PublishModelRequest) returns (PublishModelResponse) {}
 
     // Publish a notebook.
     rpc PublishNotebook(PublishNotebookRequest) returns (PublishNotebookResponse) {}

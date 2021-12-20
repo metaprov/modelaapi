@@ -3331,7 +3331,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.toObject = fun
     scaling: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
     generated: (f = jspb.Message.getBooleanField(msg, 44)) == null ? undefined : f,
     formula: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
-    id: (f = jspb.Message.getBooleanField(msg, 46)) == null ? undefined : f
+    id: (f = jspb.Message.getBooleanField(msg, 46)) == null ? undefined : f,
+    step: (f = jspb.Message.getOptionalFloatingPointField(msg, 47)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3551,6 +3552,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.deserializeBin
     case 46:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setId(value);
+      break;
+    case 47:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setStep(value);
       break;
     default:
       reader.skipField();
@@ -3900,6 +3905,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.serializeBinar
   if (f != null) {
     writer.writeBool(
       46,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 47));
+  if (f != null) {
+    writer.writeDouble(
+      47,
       f
     );
   }
@@ -5560,6 +5572,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasId = function() {
   return jspb.Message.getField(this, 46) != null;
+};
+
+
+/**
+ * optional double step = 47;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.getStep = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 47, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.setStep = function(value) {
+  return jspb.Message.setField(this, 47, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clearStep = function() {
+  return jspb.Message.setField(this, 47, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasStep = function() {
+  return jspb.Message.getField(this, 47) != null;
 };
 
 

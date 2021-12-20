@@ -14,15 +14,15 @@ class PublisherdServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.PublishTar = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishTar',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelResponse.FromString,
+        self.PackageModel = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PackageModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PackageModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PackageModelResponse.FromString,
                 )
-        self.Bake = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Bake',
-                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.BakeModelRequest.SerializeToString,
-                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.BakeModelResponse.FromString,
+        self.PublishModel = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishModel',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
                 )
         self.PublishNotebook = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishNotebook',
@@ -39,14 +39,14 @@ class PublisherdServiceStub(object):
 class PublisherdServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def PublishTar(self, request, context):
+    def PackageModel(self, request, context):
         """publish tar file including the reports
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Bake(self, request, context):
+    def PublishModel(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -68,15 +68,15 @@ class PublisherdServiceServicer(object):
 
 def add_PublisherdServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'PublishTar': grpc.unary_unary_rpc_method_handler(
-                    servicer.PublishTar,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelResponse.SerializeToString,
+            'PackageModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.PackageModel,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PackageModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PackageModelResponse.SerializeToString,
             ),
-            'Bake': grpc.unary_unary_rpc_method_handler(
-                    servicer.Bake,
-                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.BakeModelRequest.FromString,
-                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.BakeModelResponse.SerializeToString,
+            'PublishModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.PublishModel,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.SerializeToString,
             ),
             'PublishNotebook': grpc.unary_unary_rpc_method_handler(
                     servicer.PublishNotebook,
@@ -99,7 +99,7 @@ class PublisherdService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def PublishTar(request,
+    def PackageModel(request,
             target,
             options=(),
             channel_credentials=None,
@@ -109,14 +109,14 @@ class PublisherdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishTar',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.TarModelResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PackageModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PackageModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PackageModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Bake(request,
+    def PublishModel(request,
             target,
             options=(),
             channel_credentials=None,
@@ -126,9 +126,9 @@ class PublisherdService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/Bake',
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.BakeModelRequest.SerializeToString,
-            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.BakeModelResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.publisherd.v1.PublisherdService/PublishModel',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_publisherd_dot_v1_dot_publisherd__pb2.PublishModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

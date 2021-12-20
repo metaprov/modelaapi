@@ -67,82 +67,82 @@ export namespace PublishNotebookResponse {
   }
 }
 
-export class BakeModelRequest extends jspb.Message {
+export class PublishModelRequest extends jspb.Message {
   getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): BakeModelRequest;
+  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): PublishModelRequest;
   hasDataproduct(): boolean;
-  clearDataproduct(): BakeModelRequest;
+  clearDataproduct(): PublishModelRequest;
 
   getDataproductversion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): BakeModelRequest;
+  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): PublishModelRequest;
   hasDataproductversion(): boolean;
-  clearDataproductversion(): BakeModelRequest;
+  clearDataproductversion(): PublishModelRequest;
 
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): BakeModelRequest;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): PublishModelRequest;
   hasModel(): boolean;
-  clearModel(): BakeModelRequest;
+  clearModel(): PublishModelRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): BakeModelRequest;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): PublishModelRequest;
   hasStudy(): boolean;
-  clearStudy(): BakeModelRequest;
+  clearStudy(): PublishModelRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): BakeModelRequest;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): PublishModelRequest;
   hasDatasource(): boolean;
-  clearDatasource(): BakeModelRequest;
+  clearDatasource(): PublishModelRequest;
 
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): BakeModelRequest;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): PublishModelRequest;
   hasDataset(): boolean;
-  clearDataset(): BakeModelRequest;
+  clearDataset(): PublishModelRequest;
 
   getProvider(): string;
-  setProvider(value: string): BakeModelRequest;
+  setProvider(value: string): PublishModelRequest;
 
   getImagename(): string;
-  setImagename(value: string): BakeModelRequest;
+  setImagename(value: string): PublishModelRequest;
 
   getImagenamewithversion(): string;
-  setImagenamewithversion(value: string): BakeModelRequest;
+  setImagenamewithversion(value: string): PublishModelRequest;
 
   getPush(): boolean;
-  setPush(value: boolean): BakeModelRequest;
+  setPush(value: boolean): PublishModelRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): BakeModelRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): PublishModelRequest;
   hasBucket(): boolean;
-  clearBucket(): BakeModelRequest;
+  clearBucket(): PublishModelRequest;
 
   getCloudconn(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setCloudconn(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): BakeModelRequest;
+  setCloudconn(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): PublishModelRequest;
   hasCloudconn(): boolean;
-  clearCloudconn(): BakeModelRequest;
+  clearCloudconn(): PublishModelRequest;
 
   getCloudsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearCloudsecretMap(): BakeModelRequest;
+  clearCloudsecretMap(): PublishModelRequest;
 
   getDockerconnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setDockerconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): BakeModelRequest;
+  setDockerconnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): PublishModelRequest;
   hasDockerconnection(): boolean;
-  clearDockerconnection(): BakeModelRequest;
+  clearDockerconnection(): PublishModelRequest;
 
   getDockerregistrysecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearDockerregistrysecretMap(): BakeModelRequest;
+  clearDockerregistrysecretMap(): PublishModelRequest;
 
   getKaniko(): boolean;
-  setKaniko(value: boolean): BakeModelRequest;
+  setKaniko(value: boolean): PublishModelRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BakeModelRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: BakeModelRequest): BakeModelRequest.AsObject;
-  static serializeBinaryToWriter(message: BakeModelRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BakeModelRequest;
-  static deserializeBinaryFromReader(message: BakeModelRequest, reader: jspb.BinaryReader): BakeModelRequest;
+  toObject(includeInstance?: boolean): PublishModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishModelRequest): PublishModelRequest.AsObject;
+  static serializeBinaryToWriter(message: PublishModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishModelRequest;
+  static deserializeBinaryFromReader(message: PublishModelRequest, reader: jspb.BinaryReader): PublishModelRequest;
 }
 
-export namespace BakeModelRequest {
+export namespace PublishModelRequest {
   export type AsObject = {
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     dataproductversion?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -163,81 +163,81 @@ export namespace BakeModelRequest {
   }
 }
 
-export class BakeModelResponse extends jspb.Message {
+export class PublishModelResponse extends jspb.Message {
   getImagename(): string;
-  setImagename(value: string): BakeModelResponse;
+  setImagename(value: string): PublishModelResponse;
 
   getHash(): string;
-  setHash(value: string): BakeModelResponse;
+  setHash(value: string): PublishModelResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): BakeModelResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: BakeModelResponse): BakeModelResponse.AsObject;
-  static serializeBinaryToWriter(message: BakeModelResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): BakeModelResponse;
-  static deserializeBinaryFromReader(message: BakeModelResponse, reader: jspb.BinaryReader): BakeModelResponse;
+  toObject(includeInstance?: boolean): PublishModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PublishModelResponse): PublishModelResponse.AsObject;
+  static serializeBinaryToWriter(message: PublishModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PublishModelResponse;
+  static deserializeBinaryFromReader(message: PublishModelResponse, reader: jspb.BinaryReader): PublishModelResponse;
 }
 
-export namespace BakeModelResponse {
+export namespace PublishModelResponse {
   export type AsObject = {
     imagename: string,
     hash: string,
   }
 }
 
-export class TarModelRequest extends jspb.Message {
+export class PackageModelRequest extends jspb.Message {
   getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): TarModelRequest;
+  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): PackageModelRequest;
   hasDataproduct(): boolean;
-  clearDataproduct(): TarModelRequest;
+  clearDataproduct(): PackageModelRequest;
 
   getDataproductversion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): TarModelRequest;
+  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): PackageModelRequest;
   hasDataproductversion(): boolean;
-  clearDataproductversion(): TarModelRequest;
+  clearDataproductversion(): PackageModelRequest;
 
   getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): TarModelRequest;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): PackageModelRequest;
   hasModel(): boolean;
-  clearModel(): TarModelRequest;
+  clearModel(): PackageModelRequest;
 
   getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): TarModelRequest;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): PackageModelRequest;
   hasStudy(): boolean;
-  clearStudy(): TarModelRequest;
+  clearStudy(): PackageModelRequest;
 
   getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
-  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): TarModelRequest;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): PackageModelRequest;
   hasDatasource(): boolean;
-  clearDatasource(): TarModelRequest;
+  clearDatasource(): PackageModelRequest;
 
   getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): TarModelRequest;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): PackageModelRequest;
   hasDataset(): boolean;
-  clearDataset(): TarModelRequest;
+  clearDataset(): PackageModelRequest;
 
   getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): TarModelRequest;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): PackageModelRequest;
   hasBucket(): boolean;
-  clearBucket(): TarModelRequest;
+  clearBucket(): PackageModelRequest;
 
   getCloudconn(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setCloudconn(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): TarModelRequest;
+  setCloudconn(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): PackageModelRequest;
   hasCloudconn(): boolean;
-  clearCloudconn(): TarModelRequest;
+  clearCloudconn(): PackageModelRequest;
 
   getCloudsecretMap(): jspb.Map<string, Uint8Array | string>;
-  clearCloudsecretMap(): TarModelRequest;
+  clearCloudsecretMap(): PackageModelRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TarModelRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TarModelRequest): TarModelRequest.AsObject;
-  static serializeBinaryToWriter(message: TarModelRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TarModelRequest;
-  static deserializeBinaryFromReader(message: TarModelRequest, reader: jspb.BinaryReader): TarModelRequest;
+  toObject(includeInstance?: boolean): PackageModelRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: PackageModelRequest): PackageModelRequest.AsObject;
+  static serializeBinaryToWriter(message: PackageModelRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PackageModelRequest;
+  static deserializeBinaryFromReader(message: PackageModelRequest, reader: jspb.BinaryReader): PackageModelRequest;
 }
 
-export namespace TarModelRequest {
+export namespace PackageModelRequest {
   export type AsObject = {
     dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
     dataproductversion?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
@@ -251,22 +251,22 @@ export namespace TarModelRequest {
   }
 }
 
-export class TarModelResponse extends jspb.Message {
+export class PackageModelResponse extends jspb.Message {
   getTaruri(): string;
-  setTaruri(value: string): TarModelResponse;
+  setTaruri(value: string): PackageModelResponse;
 
   getHash(): string;
-  setHash(value: string): TarModelResponse;
+  setHash(value: string): PackageModelResponse;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TarModelResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TarModelResponse): TarModelResponse.AsObject;
-  static serializeBinaryToWriter(message: TarModelResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TarModelResponse;
-  static deserializeBinaryFromReader(message: TarModelResponse, reader: jspb.BinaryReader): TarModelResponse;
+  toObject(includeInstance?: boolean): PackageModelResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PackageModelResponse): PackageModelResponse.AsObject;
+  static serializeBinaryToWriter(message: PackageModelResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PackageModelResponse;
+  static deserializeBinaryFromReader(message: PackageModelResponse, reader: jspb.BinaryReader): PackageModelResponse;
 }
 
-export namespace TarModelResponse {
+export namespace PackageModelResponse {
   export type AsObject = {
     taruri: string,
     hash: string,

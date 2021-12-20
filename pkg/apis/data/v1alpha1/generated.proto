@@ -256,6 +256,11 @@ message Column {
   // This is updated from the data source. If true, the column is an id column
   // +kubebuilder:validation:Optional
   optional bool id = 46;
+
+  // Used in the dashboard.
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional double step = 47;
 }
 
 // Hold the statistical parameters about a single attribute

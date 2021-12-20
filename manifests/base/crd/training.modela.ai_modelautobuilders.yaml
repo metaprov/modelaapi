@@ -596,6 +596,10 @@ spec:
                               description: Skew treshold is the treshold for skew
                                 detection.
                               type: number
+                            step:
+                              default: 1
+                              description: Used in the dashboard.
+                              type: number
                             target:
                               default: false
                               description: Label should be true if this attribute

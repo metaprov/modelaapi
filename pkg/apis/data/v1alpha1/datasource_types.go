@@ -638,6 +638,10 @@ type Column struct {
 	// This is updated from the data source. If true, the column is an id column
 	// +kubebuilder:validation:Optional
 	ID bool `json:"id,omitempty" protobuf:"varint,46,opt,name=id"`
+	// Used in the dashboard.
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	Step *float64 `json:"step,omitempty" protobuf:"bytes,47,opt,name=step"`
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema
