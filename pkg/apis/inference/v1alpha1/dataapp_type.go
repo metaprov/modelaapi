@@ -41,7 +41,7 @@ type DataAppCondition struct {
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=DataApps,singular=DataApp,categories={data,modela}
+// +kubebuilder:resource:path=dataapps,singular=dataapp,categories={data,modela}
 // +kubebuilder:subresource:status
 type DataApp struct {
 	metav1.TypeMeta   `json:",inline"`
