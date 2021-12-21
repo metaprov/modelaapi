@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.DataApp.v1
+ * @fileoverview gRPC-Web generated client stub for github.com.metaprov.modelaapi.services.dataapp.v1
  * @enhanceable
  * @public
  */
@@ -36,7 +36,7 @@ export class DataAppServiceClient {
   }
 
   methodInfoListDataApps = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ListDataApps',
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.ListDataAppsRequest,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.ListDataAppsResponse,
@@ -64,7 +64,7 @@ export class DataAppServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ListDataApps',
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps',
         request,
         metadata || {},
         this.methodInfoListDataApps,
@@ -72,14 +72,14 @@ export class DataAppServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ListDataApps',
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps',
     request,
     metadata || {},
     this.methodInfoListDataApps);
   }
 
   methodInfoCreateDataApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/CreateDataApp',
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.CreateDataAppRequest,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.CreateDataAppResponse,
@@ -107,7 +107,7 @@ export class DataAppServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/CreateDataApp',
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp',
         request,
         metadata || {},
         this.methodInfoCreateDataApp,
@@ -115,14 +115,14 @@ export class DataAppServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/CreateDataApp',
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp',
     request,
     metadata || {},
     this.methodInfoCreateDataApp);
   }
 
   methodInfoGetDataApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/GetDataApp',
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.GetDataAppRequest,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.GetDataAppResponse,
@@ -150,7 +150,7 @@ export class DataAppServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/GetDataApp',
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp',
         request,
         metadata || {},
         this.methodInfoGetDataApp,
@@ -158,14 +158,14 @@ export class DataAppServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/GetDataApp',
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp',
     request,
     metadata || {},
     this.methodInfoGetDataApp);
   }
 
   methodInfoUpdateDataApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/UpdateDataApp',
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.UpdateDataAppRequest,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.UpdateDataAppResponse,
@@ -193,7 +193,7 @@ export class DataAppServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/UpdateDataApp',
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp',
         request,
         metadata || {},
         this.methodInfoUpdateDataApp,
@@ -201,14 +201,14 @@ export class DataAppServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/UpdateDataApp',
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp',
     request,
     metadata || {},
     this.methodInfoUpdateDataApp);
   }
 
   methodInfoDeleteDataApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/DeleteDataApp',
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.DeleteDataAppRequest,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.DeleteDataAppResponse,
@@ -236,7 +236,7 @@ export class DataAppServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/DeleteDataApp',
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp',
         request,
         metadata || {},
         this.methodInfoDeleteDataApp,
@@ -244,14 +244,14 @@ export class DataAppServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/DeleteDataApp',
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp',
     request,
     metadata || {},
     this.methodInfoDeleteDataApp);
   }
 
   methodInfoPauseDataApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/PauseDataApp',
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.PauseDataAppRequest,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.PauseDataAppResponse,
@@ -279,7 +279,7 @@ export class DataAppServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/PauseDataApp',
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp',
         request,
         metadata || {},
         this.methodInfoPauseDataApp,
@@ -287,14 +287,14 @@ export class DataAppServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/PauseDataApp',
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp',
     request,
     metadata || {},
     this.methodInfoPauseDataApp);
   }
 
   methodInfoResumeDataApp = new grpcWeb.MethodDescriptor(
-    '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ResumeDataApp',
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp',
     grpcWeb.MethodType.UNARY,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.ResumeDataAppRequest,
     github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.ResumeDataAppResponse,
@@ -322,7 +322,7 @@ export class DataAppServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ResumeDataApp',
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp',
         request,
         metadata || {},
         this.methodInfoResumeDataApp,
@@ -330,7 +330,7 @@ export class DataAppServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ResumeDataApp',
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp',
     request,
     metadata || {},
     this.methodInfoResumeDataApp);

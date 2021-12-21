@@ -15,37 +15,37 @@ class DataAppServiceStub(object):
             channel: A grpc.Channel.
         """
         self.ListDataApps = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ListDataApps',
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ListDataAppsRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ListDataAppsResponse.FromString,
                 )
         self.CreateDataApp = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/CreateDataApp',
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.CreateDataAppRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.CreateDataAppResponse.FromString,
                 )
         self.GetDataApp = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/GetDataApp',
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.GetDataAppRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.GetDataAppResponse.FromString,
                 )
         self.UpdateDataApp = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/UpdateDataApp',
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.UpdateDataAppRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.UpdateDataAppResponse.FromString,
                 )
         self.DeleteDataApp = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/DeleteDataApp',
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.DeleteDataAppRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.DeleteDataAppResponse.FromString,
                 )
         self.PauseDataApp = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/PauseDataApp',
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppResponse.FromString,
                 )
         self.ResumeDataApp = channel.unary_unary(
-                '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ResumeDataApp',
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ResumeDataAppRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ResumeDataAppResponse.FromString,
                 )
@@ -136,7 +136,7 @@ def add_DataAppServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService', rpc_method_handlers)
+            'github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -155,7 +155,7 @@ class DataAppService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ListDataApps',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ListDataApps',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ListDataAppsRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ListDataAppsResponse.FromString,
             options, channel_credentials,
@@ -172,7 +172,7 @@ class DataAppService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/CreateDataApp',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/CreateDataApp',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.CreateDataAppRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.CreateDataAppResponse.FromString,
             options, channel_credentials,
@@ -189,7 +189,7 @@ class DataAppService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/GetDataApp',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/GetDataApp',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.GetDataAppRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.GetDataAppResponse.FromString,
             options, channel_credentials,
@@ -206,7 +206,7 @@ class DataAppService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/UpdateDataApp',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/UpdateDataApp',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.UpdateDataAppRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.UpdateDataAppResponse.FromString,
             options, channel_credentials,
@@ -223,7 +223,7 @@ class DataAppService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/DeleteDataApp',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/DeleteDataApp',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.DeleteDataAppRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.DeleteDataAppResponse.FromString,
             options, channel_credentials,
@@ -240,7 +240,7 @@ class DataAppService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/PauseDataApp',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppResponse.FromString,
             options, channel_credentials,
@@ -257,7 +257,7 @@ class DataAppService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService/ResumeDataApp',
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ResumeDataAppRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ResumeDataAppResponse.FromString,
             options, channel_credentials,

@@ -17,11 +17,11 @@ from github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1 import generated_
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto',
-  package='github.com.metaprov.modelaapi.services.DataApp.v1',
+  package='github.com.metaprov.modelaapi.services.dataapp.v1',
   syntax='proto3',
-  serialized_options=b'Z1github.com/metaprov/modelaapi/services/DataApp/v1',
+  serialized_options=b'Z1github.com/metaprov/modelaapi/services/dataapp/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto\x12\x31github.com.metaprov.modelaapi.services.DataApp.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xc9\x01\n\x13ListDataAppsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\x14ListDataAppsResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList\"\x17\n\x15\x43reateDataAppResponse\"h\n\x14\x43reateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"h\n\x14UpdateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x17\n\x15UpdateDataAppResponse\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x12GetDataAppResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDataAppResponse\"6\n\x13PauseDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14PauseDataAppResponse\"7\n\x14ResumeDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15ResumeDataAppResponse\"e\n\x11RunDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x14\n\x12RunDataAppResponse2\xfd\n\n\x0e\x44\x61taAppService\x12\xb8\x01\n\x0cListDataApps\x12\x46.github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest\x1aG.github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/webeequests\x12\xbe\x01\n\rCreateDataApp\x12G.github.com.metaprov.modelaapi.services.DataApp.v1.CreateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.DataApp.v1.CreateDataAppResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/webeequests:\x01*\x12\xb9\x01\n\nGetDataApp\x12\x44.github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/webeequests/{name}\x12\xd9\x01\n\rUpdateDataApp\x12G.github.com.metaprov.modelaapi.services.DataApp.v1.UpdateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.DataApp.v1.UpdateDataAppResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/webeequests/{webeequest.metadata.name}:\x01*\x12\xc2\x01\n\rDeleteDataApp\x12G.github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/webeequests/{name}\x12\xc5\x01\n\x0cPauseDataApp\x12\x46.github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x1c/v1/webeequests/{name}:pause\x12\xc9\x01\n\rResumeDataApp\x12G.github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1d/v1/webeequests/{name}:resumeB3Z1github.com/metaprov/modelaapi/services/DataApp/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/dataapp/v1/dataapp.proto\x12\x31github.com.metaprov.modelaapi.services.dataapp.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xc9\x01\n\x13ListDataAppsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\x14ListDataAppsResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList\"\x17\n\x15\x43reateDataAppResponse\"h\n\x14\x43reateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"h\n\x14UpdateDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x17\n\x15UpdateDataAppResponse\"4\n\x11GetDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x12GetDataAppResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteDataAppResponse\"6\n\x13PauseDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14PauseDataAppResponse\"7\n\x14ResumeDataAppRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15ResumeDataAppResponse\"e\n\x11RunDataAppRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x14\n\x12RunDataAppResponse2\xfd\n\n\x0e\x44\x61taAppService\x12\xb8\x01\n\x0cListDataApps\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/webeequests\x12\xbe\x01\n\rCreateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/webeequests:\x01*\x12\xb9\x01\n\nGetDataApp\x12\x44.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest\x1a\x45.github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/webeequests/{name}\x12\xd9\x01\n\rUpdateDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/webeequests/{webeequest.metadata.name}:\x01*\x12\xc2\x01\n\rDeleteDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/v1/webeequests/{name}\x12\xc5\x01\n\x0cPauseDataApp\x12\x46.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest\x1aG.github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x1c/v1/webeequests/{name}:pause\x12\xc9\x01\n\rResumeDataApp\x12G.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest\x1aH.github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1d/v1/webeequests/{name}:resumeB3Z1github.com/metaprov/modelaapi/services/dataapp/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -30,21 +30,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LISTDATAAPPSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.LabelsEntry',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.LabelsEntry.key', index=0,
+      name='key', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry.key', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.LabelsEntry.value', index=1,
+      name='value', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -68,28 +68,28 @@ _LISTDATAAPPSREQUEST_LABELSENTRY = _descriptor.Descriptor(
 
 _LISTDATAAPPSREQUEST = _descriptor.Descriptor(
   name='ListDataAppsRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.labels', index=2,
+      name='labels', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.labels', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -114,14 +114,14 @@ _LISTDATAAPPSREQUEST = _descriptor.Descriptor(
 
 _LISTDATAAPPSRESPONSE = _descriptor.Descriptor(
   name='ListDataAppsResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsResponse.items', index=0,
+      name='items', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse.items', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -146,7 +146,7 @@ _LISTDATAAPPSRESPONSE = _descriptor.Descriptor(
 
 _CREATEDATAAPPRESPONSE = _descriptor.Descriptor(
   name='CreateDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.CreateDataAppResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -171,14 +171,14 @@ _CREATEDATAAPPRESPONSE = _descriptor.Descriptor(
 
 _CREATEDATAAPPREQUEST = _descriptor.Descriptor(
   name='CreateDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.CreateDataAppRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.CreateDataAppRequest.item', index=0,
+      name='item', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -203,14 +203,14 @@ _CREATEDATAAPPREQUEST = _descriptor.Descriptor(
 
 _UPDATEDATAAPPREQUEST = _descriptor.Descriptor(
   name='UpdateDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.UpdateDataAppRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.UpdateDataAppRequest.item', index=0,
+      name='item', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -235,7 +235,7 @@ _UPDATEDATAAPPREQUEST = _descriptor.Descriptor(
 
 _UPDATEDATAAPPRESPONSE = _descriptor.Descriptor(
   name='UpdateDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.UpdateDataAppResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -260,21 +260,21 @@ _UPDATEDATAAPPRESPONSE = _descriptor.Descriptor(
 
 _GETDATAAPPREQUEST = _descriptor.Descriptor(
   name='GetDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -299,21 +299,21 @@ _GETDATAAPPREQUEST = _descriptor.Descriptor(
 
 _GETDATAAPPRESPONSE = _descriptor.Descriptor(
   name='GetDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppResponse.item', index=0,
+      name='item', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yaml', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppResponse.yaml', index=1,
+      name='yaml', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse.yaml', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -338,21 +338,21 @@ _GETDATAAPPRESPONSE = _descriptor.Descriptor(
 
 _DELETEDATAAPPREQUEST = _descriptor.Descriptor(
   name='DeleteDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -377,7 +377,7 @@ _DELETEDATAAPPREQUEST = _descriptor.Descriptor(
 
 _DELETEDATAAPPRESPONSE = _descriptor.Descriptor(
   name='DeleteDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -402,21 +402,21 @@ _DELETEDATAAPPRESPONSE = _descriptor.Descriptor(
 
 _PAUSEDATAAPPREQUEST = _descriptor.Descriptor(
   name='PauseDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -441,7 +441,7 @@ _PAUSEDATAAPPREQUEST = _descriptor.Descriptor(
 
 _PAUSEDATAAPPRESPONSE = _descriptor.Descriptor(
   name='PauseDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -466,21 +466,21 @@ _PAUSEDATAAPPRESPONSE = _descriptor.Descriptor(
 
 _RESUMEDATAAPPREQUEST = _descriptor.Descriptor(
   name='ResumeDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppRequest.namespace', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppRequest.name', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -505,7 +505,7 @@ _RESUMEDATAAPPREQUEST = _descriptor.Descriptor(
 
 _RESUMEDATAAPPRESPONSE = _descriptor.Descriptor(
   name='ResumeDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -530,14 +530,14 @@ _RESUMEDATAAPPRESPONSE = _descriptor.Descriptor(
 
 _RUNDATAAPPREQUEST = _descriptor.Descriptor(
   name='RunDataAppRequest',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.RunDataAppRequest',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.DataApp.v1.RunDataAppRequest.item', index=0,
+      name='item', full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest.item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -562,7 +562,7 @@ _RUNDATAAPPREQUEST = _descriptor.Descriptor(
 
 _RUNDATAAPPRESPONSE = _descriptor.Descriptor(
   name='RunDataAppResponse',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.RunDataAppResponse',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -614,12 +614,12 @@ ListDataAppsRequest = _reflection.GeneratedProtocolMessageType('ListDataAppsRequ
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _LISTDATAAPPSREQUEST_LABELSENTRY,
     '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest.LabelsEntry)
+    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest.LabelsEntry)
     })
   ,
   'DESCRIPTOR' : _LISTDATAAPPSREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsRequest)
   })
 _sym_db.RegisterMessage(ListDataAppsRequest)
 _sym_db.RegisterMessage(ListDataAppsRequest.LabelsEntry)
@@ -627,105 +627,105 @@ _sym_db.RegisterMessage(ListDataAppsRequest.LabelsEntry)
 ListDataAppsResponse = _reflection.GeneratedProtocolMessageType('ListDataAppsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTDATAAPPSRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.ListDataAppsResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.ListDataAppsResponse)
   })
 _sym_db.RegisterMessage(ListDataAppsResponse)
 
 CreateDataAppResponse = _reflection.GeneratedProtocolMessageType('CreateDataAppResponse', (_message.Message,), {
   'DESCRIPTOR' : _CREATEDATAAPPRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.CreateDataAppResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppResponse)
   })
 _sym_db.RegisterMessage(CreateDataAppResponse)
 
 CreateDataAppRequest = _reflection.GeneratedProtocolMessageType('CreateDataAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEDATAAPPREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.CreateDataAppRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.CreateDataAppRequest)
   })
 _sym_db.RegisterMessage(CreateDataAppRequest)
 
 UpdateDataAppRequest = _reflection.GeneratedProtocolMessageType('UpdateDataAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEDATAAPPREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.UpdateDataAppRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppRequest)
   })
 _sym_db.RegisterMessage(UpdateDataAppRequest)
 
 UpdateDataAppResponse = _reflection.GeneratedProtocolMessageType('UpdateDataAppResponse', (_message.Message,), {
   'DESCRIPTOR' : _UPDATEDATAAPPRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.UpdateDataAppResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.UpdateDataAppResponse)
   })
 _sym_db.RegisterMessage(UpdateDataAppResponse)
 
 GetDataAppRequest = _reflection.GeneratedProtocolMessageType('GetDataAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETDATAAPPREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppRequest)
   })
 _sym_db.RegisterMessage(GetDataAppRequest)
 
 GetDataAppResponse = _reflection.GeneratedProtocolMessageType('GetDataAppResponse', (_message.Message,), {
   'DESCRIPTOR' : _GETDATAAPPRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.GetDataAppResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.GetDataAppResponse)
   })
 _sym_db.RegisterMessage(GetDataAppResponse)
 
 DeleteDataAppRequest = _reflection.GeneratedProtocolMessageType('DeleteDataAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATAAPPREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppRequest)
   })
 _sym_db.RegisterMessage(DeleteDataAppRequest)
 
 DeleteDataAppResponse = _reflection.GeneratedProtocolMessageType('DeleteDataAppResponse', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATAAPPRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.DeleteDataAppResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.DeleteDataAppResponse)
   })
 _sym_db.RegisterMessage(DeleteDataAppResponse)
 
 PauseDataAppRequest = _reflection.GeneratedProtocolMessageType('PauseDataAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _PAUSEDATAAPPREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppRequest)
   })
 _sym_db.RegisterMessage(PauseDataAppRequest)
 
 PauseDataAppResponse = _reflection.GeneratedProtocolMessageType('PauseDataAppResponse', (_message.Message,), {
   'DESCRIPTOR' : _PAUSEDATAAPPRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.PauseDataAppResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.PauseDataAppResponse)
   })
 _sym_db.RegisterMessage(PauseDataAppResponse)
 
 ResumeDataAppRequest = _reflection.GeneratedProtocolMessageType('ResumeDataAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _RESUMEDATAAPPREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppRequest)
   })
 _sym_db.RegisterMessage(ResumeDataAppRequest)
 
 ResumeDataAppResponse = _reflection.GeneratedProtocolMessageType('ResumeDataAppResponse', (_message.Message,), {
   'DESCRIPTOR' : _RESUMEDATAAPPRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.ResumeDataAppResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.ResumeDataAppResponse)
   })
 _sym_db.RegisterMessage(ResumeDataAppResponse)
 
 RunDataAppRequest = _reflection.GeneratedProtocolMessageType('RunDataAppRequest', (_message.Message,), {
   'DESCRIPTOR' : _RUNDATAAPPREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.RunDataAppRequest)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppRequest)
   })
 _sym_db.RegisterMessage(RunDataAppRequest)
 
 RunDataAppResponse = _reflection.GeneratedProtocolMessageType('RunDataAppResponse', (_message.Message,), {
   'DESCRIPTOR' : _RUNDATAAPPRESPONSE,
   '__module__' : 'github.com.metaprov.modelaapi.services.dataapp.v1.dataapp_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.DataApp.v1.RunDataAppResponse)
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.dataapp.v1.RunDataAppResponse)
   })
 _sym_db.RegisterMessage(RunDataAppResponse)
 
@@ -735,7 +735,7 @@ _LISTDATAAPPSREQUEST_LABELSENTRY._options = None
 
 _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   name='DataAppService',
-  full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService',
+  full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
@@ -745,7 +745,7 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataApps',
-    full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService.ListDataApps',
+    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.ListDataApps',
     index=0,
     containing_service=None,
     input_type=_LISTDATAAPPSREQUEST,
@@ -755,7 +755,7 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='CreateDataApp',
-    full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService.CreateDataApp',
+    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.CreateDataApp',
     index=1,
     containing_service=None,
     input_type=_CREATEDATAAPPREQUEST,
@@ -765,7 +765,7 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='GetDataApp',
-    full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService.GetDataApp',
+    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.GetDataApp',
     index=2,
     containing_service=None,
     input_type=_GETDATAAPPREQUEST,
@@ -775,7 +775,7 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='UpdateDataApp',
-    full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService.UpdateDataApp',
+    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.UpdateDataApp',
     index=3,
     containing_service=None,
     input_type=_UPDATEDATAAPPREQUEST,
@@ -785,7 +785,7 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='DeleteDataApp',
-    full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService.DeleteDataApp',
+    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.DeleteDataApp',
     index=4,
     containing_service=None,
     input_type=_DELETEDATAAPPREQUEST,
@@ -795,7 +795,7 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='PauseDataApp',
-    full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService.PauseDataApp',
+    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.PauseDataApp',
     index=5,
     containing_service=None,
     input_type=_PAUSEDATAAPPREQUEST,
@@ -805,7 +805,7 @@ _DATAAPPSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ResumeDataApp',
-    full_name='github.com.metaprov.modelaapi.services.DataApp.v1.DataAppService.ResumeDataApp',
+    full_name='github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService.ResumeDataApp',
     index=6,
     containing_service=None,
     input_type=_RESUMEDATAAPPREQUEST,

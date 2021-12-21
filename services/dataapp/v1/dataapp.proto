@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option go_package = "github.com/metaprov/modelaapi/services/DataApp/v1";
-package github.com.metaprov.modelaapi.services.DataApp.v1;
+option go_package = "github.com/metaprov/modelaapi/services/dataapp/v1";
+package github.com.metaprov.modelaapi.services.dataapp.v1;
 
 
 import "google/api/annotations.proto";
