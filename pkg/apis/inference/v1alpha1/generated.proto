@@ -287,7 +287,6 @@ message CustomAppSpec {
   optional string title = 2;
 
   // The app pages
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec pages = 3;
 }

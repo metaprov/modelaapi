@@ -73,7 +73,6 @@ spec:
                     description: The app title
                     type: string
                   pages:
-                    default: ""
                     description: The app pages
                     items:
                       properties:
