@@ -673,6 +673,30 @@ export namespace DataAppStatus {
   }
 }
 
+export class ForecastSpec extends jspb.Message {
+  getHierarchyvaluesMap(): jspb.Map<string, string>;
+  clearHierarchyvaluesMap(): ForecastSpec;
+
+  getHorizon(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec | undefined;
+  setHorizon(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec): ForecastSpec;
+  hasHorizon(): boolean;
+  clearHorizon(): ForecastSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ForecastSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ForecastSpec): ForecastSpec.AsObject;
+  static serializeBinaryToWriter(message: ForecastSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ForecastSpec;
+  static deserializeBinaryFromReader(message: ForecastSpec, reader: jspb.BinaryReader): ForecastSpec;
+}
+
+export namespace ForecastSpec {
+  export type AsObject = {
+    hierarchyvaluesMap: Array<[string, string]>,
+    horizon?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.PeriodSpec.AsObject,
+  }
+}
+
 export class ModelRecord extends jspb.Message {
   getModelname(): string;
   setModelname(value: string): ModelRecord;
@@ -935,6 +959,9 @@ export class PredictionSpec extends jspb.Message {
   getLabeled(): boolean;
   setLabeled(value: boolean): PredictionSpec;
 
+  getForecast(): boolean;
+  setForecast(value: boolean): PredictionSpec;
+
   getDatasetname(): string;
   setDatasetname(value: string): PredictionSpec;
 
@@ -971,6 +998,11 @@ export class PredictionSpec extends jspb.Message {
   getTtl(): number;
   setTtl(value: number): PredictionSpec;
 
+  getForecastinfo(): ForecastSpec | undefined;
+  setForecastinfo(value?: ForecastSpec): PredictionSpec;
+  hasForecastinfo(): boolean;
+  clearForecastinfo(): PredictionSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredictionSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PredictionSpec): PredictionSpec.AsObject;
@@ -984,6 +1016,7 @@ export namespace PredictionSpec {
     versionname: string,
     predictorname: string,
     labeled: boolean,
+    forecast: boolean,
     datasetname: string,
     input?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
@@ -994,6 +1027,7 @@ export namespace PredictionSpec {
     priority: string,
     aborted: boolean,
     ttl: number,
+    forecastinfo?: ForecastSpec.AsObject,
   }
 }
 

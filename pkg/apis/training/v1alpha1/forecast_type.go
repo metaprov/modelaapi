@@ -54,13 +54,13 @@ type PeriodSpec struct {
 	// The period interval
 	// +kubebuilder:validation:Optional
 	Interval *catalog.Freq `json:"interval,omitempty" protobuf:"bytes,1,opt,name=interval"`
-	// The window start day
+	// The number of intervals to start
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Start *int32 `json:"start,omitempty" protobuf:"varint,2,opt,name=start"`
 	// The windows end day
 	// +kubebuilder:validation:Optional
-	End *int32 `json:"end,omitempty" protobuf:"varint,3,opt,name=end"`
+	Length *int32 `json:"length,omitempty" protobuf:"varint,3,opt,name=length"`
 }
 
 type RegressorSpec struct {
@@ -78,14 +78,35 @@ type RegressorSpec struct {
 }
 
 type HolidaySpec struct {
+	// If true enable holidays
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The name of the holiday column. If the column is empty, no holiday
 	// Column name of the first level of grouping
 	// +kubebuilder:validation:Optional
-	HolidayColumn *string `json:"holidayColumn,omitempty" protobuf:"bytes,1,opt,name=holidayColumn"`
+	HolidayColumn *string `json:"holidayColumn,omitempty" protobuf:"bytes,2,opt,name=holidayColumn"`
 	// +kubebuilder:validation:Optional
-	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
+	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,3,opt,name=country"`
 	// For custom holiday use external dataset
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,3,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
+}
+
+// Define weather an hierarchy exists in the time series
+type HierarchySpec struct {
+	// If true enable
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// Column name of the first level of grouping
+	// +kubebuilder:validation:Optional
+	GroupColumn *string `json:"groupColumn,omitempty" protobuf:"bytes,2,opt,name=groupColumn"`
+	// Column name of the second level of grouping
+	// +kubebuilder:validation:Optional
+	SubGroupColumn *string `json:"subGroupColumn,omitempty" protobuf:"bytes,3,opt,name=subGroupColumn"`
+	// Column name of the third level of grouping
+	// +kubebuilder:validation:Optional
+	SubSubGroupColumn *string `json:"subSubGroupColumn,omitempty" protobuf:"bytes,4,opt,name=subSubGroupColumn"`
 }
 
 type TimeSeriesDataSpec struct {
@@ -100,30 +121,24 @@ type TimeSeriesDataSpec struct {
 	// The format of the datetime column. Used default
 	// +kubebuilder:validation:Optional
 	DateTimeFormat *string `json:"datetimeFormat,omitempty" protobuf:"bytes,3,opt,name=datetimeFormat"`
+	// The Hierarchy spec
+	// +kubebuilder:validation:Optional
+	Hierarchy HierarchySpec `json:"hierarchy,omitempty" protobuf:"bytes,4,opt,name=hierarchy"`
 	// The format of the datetime column. Used default
 	// +kubebuilder:validation:Optional
-	Holiday *HolidaySpec `json:"holiday,omitempty" protobuf:"bytes,4,opt,name=holiday"`
-	// Column name of the first level of grouping
-	// +kubebuilder:validation:Optional
-	GroupColumn *string `json:"groupColumn,omitempty" protobuf:"bytes,5,opt,name=groupColumn"`
-	// Column name of the second level of grouping
-	// +kubebuilder:validation:Optional
-	SubGroupColumn *string `json:"subGroupColumn,omitempty" protobuf:"bytes,6,opt,name=subGroupColumn"`
-	// Column name of the third level of grouping
-	// +kubebuilder:validation:Optional
-	SubSubGroupColumn *string `json:"subSubGroupColumn,omitempty" protobuf:"bytes,7,opt,name=subSubGroupColumn"`
+	Holiday *HolidaySpec `json:"holiday,omitempty" protobuf:"bytes,5,opt,name=holiday"`
 	// The historical periods
 	// +kubebuilder:validation:Optional
-	History *PeriodSpec `json:"history,omitempty" protobuf:"bytes,8,opt,name=history"`
+	History *PeriodSpec `json:"history,omitempty" protobuf:"bytes,6,opt,name=history"`
 	// The forecast periods
 	// +kubebuilder:validation:Optional
-	Forecast *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,9,opt,name=forecast"`
+	Forecast *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,7,opt,name=forecast"`
 	// +kubebuilder:validation:Optional
-	YearlySeasonality *PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,10,opt,name=yearlySeasonality"`
+	YearlySeasonality *PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,8,opt,name=yearlySeasonality"`
 	// +kubebuilder:validation:Optional
-	WeeklySeasonality *PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,11,opt,name=weeklySeasonality"`
+	WeeklySeasonality *PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,9,opt,name=weeklySeasonality"`
 	// +kubebuilder:validation:Optional
-	DailySeasonality *PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,12,opt,name=dailySeasonality"`
+	DailySeasonality *PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,10,opt,name=dailySeasonality"`
 	// +kubebuilder:default = "linear"
 	// +kubebuilder:validation:Optional
 	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,13,opt,name=growth"`
@@ -143,6 +158,10 @@ type TimeSeriesDataSpec struct {
 	// +kubebuilder:default = 1000
 	// +kubebuilder:validation:Optional
 	UncertaintySamples *int32 `json:"uncertaintySamples,omitempty" protobuf:"varint,18,opt,name=uncertaintySamples"`
+	// The generate seasonality mode
+	// +kubebuilder:default = "additive"
+	// +kubebuilder:validation:Optional
+	SeasonalityMode *catalog.SeasonalityMode `json:"seasonality,omitempty" protobuf:"bytes,19,opt,name=seasonality"`
 }
 
 // The Forecast storage spec specify where to store the forecast after prediction.

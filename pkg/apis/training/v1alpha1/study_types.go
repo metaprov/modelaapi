@@ -693,3 +693,15 @@ type StudyPhaseStatus struct {
 	// +kubebuilder:validation:Optional
 	Trained int32 `json:"trained,omitempty" protobuf:"varint,6,opt,name=trained"`
 }
+
+type SegmentSpec struct {
+	// The dataset column name
+	// +kubebuilder:validation:Required
+	ColumnName string `json:"columnName,omitempty" protobuf:"varint,1,opt,name=columnName"`
+	// The segment operation
+	// +kubebuilder:validation:Required
+	OP catalog.Op `json:"op,omitempty" protobuf:"varint,2,opt,name=op"`
+	// The value operation
+	// +kubebuilder:validation:Required
+	Value string `json:"value,omitempty" protobuf:"varint,3,opt,name=value"`
+}

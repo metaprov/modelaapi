@@ -413,6 +413,16 @@ message DataAppStatus {
   repeated DataAppCondition conditions = 3;
 }
 
+// In case of forecast holds the forecast details
+message ForecastSpec {
+  // The Hierarchy spec, map from column to values
+  // +kubebuilder:validation:Optional
+  map<string, string> hierarchyValues = 1;
+
+  // Specify the interval for this forecast, we might need to downsample or upsample
+  optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.PeriodSpec horizon = 2;
+}
+
 // Model Record hold the state of a model that was in production. This support roll back of a model.
 message ModelRecord {
   // Model Name is the name of the model
@@ -574,12 +584,17 @@ message PredictionSpec {
   // Used usually for unit testing
   optional bool labeled = 3;
 
+  // If true, this prediction is a forecast
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool forecast = 4;
+
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=""
-  optional string datasetName = 4;
+  optional string datasetName = 5;
 
   // Input is the location of the input file if not using a dataset
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation input = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation input = 6;
 
   // Output is the location of the output file.
   // +kubebuilder:validation:Optional
@@ -618,6 +633,10 @@ message PredictionSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 ttl = 14;
+
+  // If this is hierarchy forecast, holds the forecast details for each columns
+  // +kubebuilder:validation:Optional
+  optional ForecastSpec forecastInfo = 15;
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

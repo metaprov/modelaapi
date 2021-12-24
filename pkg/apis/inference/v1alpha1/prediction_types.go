@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
+	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -87,11 +88,15 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=false
 	// Used usually for unit testing
 	Labeled *bool `json:"labeled,omitempty" protobuf:"varint,3,opt,name=labeled"`
+	// If true, this prediction is a forecast
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Forecast *bool `json:"forecast,omitempty" protobuf:"varint,4,opt,name=forecast"`
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=""
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,5,opt,name=datasetName"`
 	// Input is the location of the input file if not using a dataset
-	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,5,opt,name=input"`
+	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
 	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
 	Output *data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
@@ -122,6 +127,9 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,14,opt,name=ttl"`
+	// If this is hierarchy forecast, holds the forecast details for each columns
+	// +kubebuilder:validation:Optional
+	ForecastInfo *ForecastSpec `json:"forecastInfo,omitempty" protobuf:"varint,15,opt,name=forecastInfo"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate
@@ -149,7 +157,6 @@ type PredictionStatus struct {
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
 	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,8,opt,name=logs"`
-
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,9,opt,name=lastUpdated"`
@@ -157,4 +164,13 @@ type PredictionStatus struct {
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
 	Conditions []PredictionCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+}
+
+// In case of forecast holds the forecast details
+type ForecastSpec struct {
+	// The Hierarchy spec, map from column to values
+	// +kubebuilder:validation:Optional
+	HierarchyValues map[string]string `json:"hierarchyValues,omitempty" protobuf:"bytes,1,opt,name=hierarchyValues"`
+	// Specify the interval for this forecast, we might need to downsample or upsample
+	Horizon training.PeriodSpec `json:"horizon,omitempty" protobuf:"bytes,2,opt,name=horizon"`
 }

@@ -92,6 +92,46 @@ spec:
               datasetName:
                 default: ""
                 type: string
+              forecast:
+                default: false
+                description: If true, this prediction is a forecast
+                type: boolean
+              forecastInfo:
+                description: If this is hierarchy forecast, holds the forecast details
+                  for each columns
+                properties:
+                  hierarchyValues:
+                    additionalProperties:
+                      type: string
+                    description: The Hierarchy spec, map from column to values
+                    type: object
+                  horizon:
+                    description: Specify the interval for this forecast, we might
+                      need to downsample or upsample
+                    properties:
+                      interval:
+                        description: The period interval
+                        enum:
+                        - second
+                        - minute
+                        - hour
+                        - day
+                        - week
+                        - month
+                        - quarter
+                        - year
+                        type: string
+                      length:
+                        description: The windows end day
+                        format: int32
+                        type: integer
+                      start:
+                        default: 0
+                        description: The number of intervals to start
+                        format: int32
+                        type: integer
+                    type: object
+                type: object
               input:
                 description: Input is the location of the input file if not using
                   a dataset

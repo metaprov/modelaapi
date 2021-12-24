@@ -712,6 +712,9 @@ type DataSplitSpec struct {
 	// The name of the column used to split
 	// +kubebuilder:validation:Optional
 	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,4,opt,name=splitColumn"`
+	// Apply the segments first
+	// +kubebuilder:validation:Optional
+	Segments []SegmentSpec `json:"segments,omitempty" protobuf:"bytes,5,opt,name=segments"`
 }
 
 // TrainingSpec is the specification of the training process

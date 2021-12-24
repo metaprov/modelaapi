@@ -300,6 +300,10 @@ message DataSplitSpec {
   // The name of the column used to split
   // +kubebuilder:validation:Optional
   optional string splitColumn = 4;
+
+  // Apply the segments first
+  // +kubebuilder:validation:Optional
+  repeated SegmentSpec segments = 5;
 }
 
 // DataStageSpec is the desired state of the data preprocessing step of the pipeline.
@@ -718,17 +722,42 @@ message Hierarchy {
   optional string notifierName = 4;
 }
 
+// Define weather an hierarchy exists in the time series
+message HierarchySpec {
+  // If true enable
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Column name of the first level of grouping
+  // +kubebuilder:validation:Optional
+  optional string groupColumn = 2;
+
+  // Column name of the second level of grouping
+  // +kubebuilder:validation:Optional
+  optional string subGroupColumn = 3;
+
+  // Column name of the third level of grouping
+  // +kubebuilder:validation:Optional
+  optional string subSubGroupColumn = 4;
+}
+
 message HolidaySpec {
+  // If true enable holidays
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
   // The name of the holiday column. If the column is empty, no holiday
   // Column name of the first level of grouping
   // +kubebuilder:validation:Optional
-  optional string holidayColumn = 1;
+  optional string holidayColumn = 2;
 
   // +kubebuilder:validation:Optional
-  optional string country = 2;
+  optional string country = 3;
 
   // For custom holiday use external dataset
-  optional string datasetName = 3;
+  optional string datasetName = 4;
 }
 
 // HyperParameterValue represent a specific value of
@@ -2391,14 +2420,14 @@ message PeriodSpec {
   // +kubebuilder:validation:Optional
   optional string interval = 1;
 
-  // The window start day
+  // The number of intervals to start
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 start = 2;
 
   // The windows end day
   // +kubebuilder:validation:Optional
-  optional int32 end = 3;
+  optional int32 length = 3;
 }
 
 message PrunerSpec {
@@ -2742,6 +2771,20 @@ message SearchSpec {
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
   optional string objective2 = 15;
+}
+
+message SegmentSpec {
+  // The dataset column name
+  // +kubebuilder:validation:Required
+  optional string columnName = 1;
+
+  // The segment operation
+  // +kubebuilder:validation:Required
+  optional string op = 2;
+
+  // The value operation
+  // +kubebuilder:validation:Required
+  optional string value = 3;
 }
 
 // +kubebuilder:subresource:status
@@ -3233,38 +3276,30 @@ message TimeSeriesDataSpec {
   // +kubebuilder:validation:Optional
   optional string datetimeFormat = 3;
 
+  // The Hierarchy spec
+  // +kubebuilder:validation:Optional
+  optional HierarchySpec hierarchy = 4;
+
   // The format of the datetime column. Used default
   // +kubebuilder:validation:Optional
-  optional HolidaySpec holiday = 4;
-
-  // Column name of the first level of grouping
-  // +kubebuilder:validation:Optional
-  optional string groupColumn = 5;
-
-  // Column name of the second level of grouping
-  // +kubebuilder:validation:Optional
-  optional string subGroupColumn = 6;
-
-  // Column name of the third level of grouping
-  // +kubebuilder:validation:Optional
-  optional string subSubGroupColumn = 7;
+  optional HolidaySpec holiday = 5;
 
   // The historical periods
   // +kubebuilder:validation:Optional
-  optional PeriodSpec history = 8;
+  optional PeriodSpec history = 6;
 
   // The forecast periods
   // +kubebuilder:validation:Optional
-  optional PeriodSpec forecast = 9;
+  optional PeriodSpec forecast = 7;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec yearlySeasonality = 10;
+  optional PeriodSeasonalitySpec yearlySeasonality = 8;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec weeklySeasonality = 11;
+  optional PeriodSeasonalitySpec weeklySeasonality = 9;
 
   // +kubebuilder:validation:Optional
-  optional PeriodSeasonalitySpec dailySeasonality = 12;
+  optional PeriodSeasonalitySpec dailySeasonality = 10;
 
   // +kubebuilder:default = "linear"
   // +kubebuilder:validation:Optional
@@ -3290,6 +3325,11 @@ message TimeSeriesDataSpec {
   // +kubebuilder:default = 1000
   // +kubebuilder:validation:Optional
   optional int32 uncertaintySamples = 18;
+
+  // The generate seasonality mode
+  // +kubebuilder:default = "additive"
+  // +kubebuilder:validation:Optional
+  optional string seasonality = 19;
 }
 
 // TrainingSpec is the specification of the training process

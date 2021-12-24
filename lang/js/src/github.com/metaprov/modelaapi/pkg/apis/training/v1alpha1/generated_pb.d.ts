@@ -471,6 +471,11 @@ export class DataSplitSpec extends jspb.Message {
   getSplitcolumn(): string;
   setSplitcolumn(value: string): DataSplitSpec;
 
+  getSegmentsList(): Array<SegmentSpec>;
+  setSegmentsList(value: Array<SegmentSpec>): DataSplitSpec;
+  clearSegmentsList(): DataSplitSpec;
+  addSegments(value?: SegmentSpec, index?: number): SegmentSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataSplitSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataSplitSpec): DataSplitSpec.AsObject;
@@ -485,6 +490,7 @@ export namespace DataSplitSpec {
     validation: number,
     test: number,
     splitcolumn: string,
+    segmentsList: Array<SegmentSpec.AsObject>,
   }
 }
 
@@ -1140,7 +1146,40 @@ export namespace Hierarchy {
   }
 }
 
+export class HierarchySpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): HierarchySpec;
+
+  getGroupcolumn(): string;
+  setGroupcolumn(value: string): HierarchySpec;
+
+  getSubgroupcolumn(): string;
+  setSubgroupcolumn(value: string): HierarchySpec;
+
+  getSubsubgroupcolumn(): string;
+  setSubsubgroupcolumn(value: string): HierarchySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HierarchySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: HierarchySpec): HierarchySpec.AsObject;
+  static serializeBinaryToWriter(message: HierarchySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HierarchySpec;
+  static deserializeBinaryFromReader(message: HierarchySpec, reader: jspb.BinaryReader): HierarchySpec;
+}
+
+export namespace HierarchySpec {
+  export type AsObject = {
+    enabled: boolean,
+    groupcolumn: string,
+    subgroupcolumn: string,
+    subsubgroupcolumn: string,
+  }
+}
+
 export class HolidaySpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): HolidaySpec;
+
   getHolidaycolumn(): string;
   setHolidaycolumn(value: string): HolidaySpec;
 
@@ -1160,6 +1199,7 @@ export class HolidaySpec extends jspb.Message {
 
 export namespace HolidaySpec {
   export type AsObject = {
+    enabled: boolean,
     holidaycolumn: string,
     country: string,
     datasetname: string,
@@ -3563,8 +3603,8 @@ export class PeriodSpec extends jspb.Message {
   getStart(): number;
   setStart(value: number): PeriodSpec;
 
-  getEnd(): number;
-  setEnd(value: number): PeriodSpec;
+  getLength(): number;
+  setLength(value: number): PeriodSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PeriodSpec.AsObject;
@@ -3578,7 +3618,7 @@ export namespace PeriodSpec {
   export type AsObject = {
     interval: string,
     start: number,
-    end: number,
+    length: number,
   }
 }
 
@@ -4041,6 +4081,32 @@ export namespace SearchSpec {
     keeponlytopmodel: boolean,
     objective: string,
     objective2: string,
+  }
+}
+
+export class SegmentSpec extends jspb.Message {
+  getColumnname(): string;
+  setColumnname(value: string): SegmentSpec;
+
+  getOp(): string;
+  setOp(value: string): SegmentSpec;
+
+  getValue(): string;
+  setValue(value: string): SegmentSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SegmentSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SegmentSpec): SegmentSpec.AsObject;
+  static serializeBinaryToWriter(message: SegmentSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SegmentSpec;
+  static deserializeBinaryFromReader(message: SegmentSpec, reader: jspb.BinaryReader): SegmentSpec;
+}
+
+export namespace SegmentSpec {
+  export type AsObject = {
+    columnname: string,
+    op: string,
+    value: string,
   }
 }
 
@@ -4664,19 +4730,15 @@ export class TimeSeriesDataSpec extends jspb.Message {
   getDatetimeformat(): string;
   setDatetimeformat(value: string): TimeSeriesDataSpec;
 
+  getHierarchy(): HierarchySpec | undefined;
+  setHierarchy(value?: HierarchySpec): TimeSeriesDataSpec;
+  hasHierarchy(): boolean;
+  clearHierarchy(): TimeSeriesDataSpec;
+
   getHoliday(): HolidaySpec | undefined;
   setHoliday(value?: HolidaySpec): TimeSeriesDataSpec;
   hasHoliday(): boolean;
   clearHoliday(): TimeSeriesDataSpec;
-
-  getGroupcolumn(): string;
-  setGroupcolumn(value: string): TimeSeriesDataSpec;
-
-  getSubgroupcolumn(): string;
-  setSubgroupcolumn(value: string): TimeSeriesDataSpec;
-
-  getSubsubgroupcolumn(): string;
-  setSubsubgroupcolumn(value: string): TimeSeriesDataSpec;
 
   getHistory(): PeriodSpec | undefined;
   setHistory(value?: PeriodSpec): TimeSeriesDataSpec;
@@ -4727,6 +4789,9 @@ export class TimeSeriesDataSpec extends jspb.Message {
   getUncertaintysamples(): number;
   setUncertaintysamples(value: number): TimeSeriesDataSpec;
 
+  getSeasonality(): string;
+  setSeasonality(value: string): TimeSeriesDataSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimeSeriesDataSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TimeSeriesDataSpec): TimeSeriesDataSpec.AsObject;
@@ -4740,10 +4805,8 @@ export namespace TimeSeriesDataSpec {
     timecolumn: string,
     targetcolumn: string,
     datetimeformat: string,
+    hierarchy?: HierarchySpec.AsObject,
     holiday?: HolidaySpec.AsObject,
-    groupcolumn: string,
-    subgroupcolumn: string,
-    subsubgroupcolumn: string,
     history?: PeriodSpec.AsObject,
     forecast?: PeriodSpec.AsObject,
     yearlyseasonality?: PeriodSeasonalitySpec.AsObject,
@@ -4755,6 +4818,7 @@ export namespace TimeSeriesDataSpec {
     changepoints?: ChangePointSpec.AsObject,
     intevalwidth: number,
     uncertaintysamples: number,
+    seasonality: string,
   }
 }
 

@@ -540,10 +540,6 @@ spec:
                           forecast:
                             description: The forecast periods
                             properties:
-                              end:
-                                description: The windows end day
-                                format: int32
-                                type: integer
                               interval:
                                 description: The period interval
                                 enum:
@@ -556,28 +552,42 @@ spec:
                                 - quarter
                                 - year
                                 type: string
+                              length:
+                                description: The windows end day
+                                format: int32
+                                type: integer
                               start:
                                 default: 0
-                                description: The window start day
+                                description: The number of intervals to start
                                 format: int32
                                 type: integer
                             type: object
-                          groupColumn:
-                            description: Column name of the first level of grouping
-                            type: string
                           growth:
                             enum:
                             - linear
                             - logistic
                             - flat
                             type: string
+                          hierarchy:
+                            description: The Hierarchy spec
+                            properties:
+                              enabled:
+                                default: false
+                                description: If true enable
+                                type: boolean
+                              groupColumn:
+                                description: Column name of the first level of grouping
+                                type: string
+                              subGroupColumn:
+                                description: Column name of the second level of grouping
+                                type: string
+                              subSubGroupColumn:
+                                description: Column name of the third level of grouping
+                                type: string
+                            type: object
                           history:
                             description: The historical periods
                             properties:
-                              end:
-                                description: The windows end day
-                                format: int32
-                                type: integer
                               interval:
                                 description: The period interval
                                 enum:
@@ -590,9 +600,13 @@ spec:
                                 - quarter
                                 - year
                                 type: string
+                              length:
+                                description: The windows end day
+                                format: int32
+                                type: integer
                               start:
                                 default: 0
-                                description: The window start day
+                                description: The number of intervals to start
                                 format: int32
                                 type: integer
                             type: object
@@ -623,6 +637,10 @@ spec:
                               datasetName:
                                 description: For custom holiday use external dataset
                                 type: string
+                              enabled:
+                                default: false
+                                description: If true enable holidays
+                                type: boolean
                               holidayColumn:
                                 description: The name of the holiday column. If the
                                   column is empty, no holiday Column name of the first
@@ -649,11 +667,13 @@ spec:
                                   type: boolean
                               type: object
                             type: array
-                          subGroupColumn:
-                            description: Column name of the second level of grouping
-                            type: string
-                          subSubGroupColumn:
-                            description: Column name of the third level of grouping
+                          seasonality:
+                            description: The generate seasonality mode
+                            enum:
+                            - multipicative
+                            - additive
+                            - auto
+                            - none
                             type: string
                           targetColumn:
                             description: The name of the column holding the value.
@@ -1545,6 +1565,28 @@ spec:
                     description: Data Split define how to split the data into test
                       and train.
                     properties:
+                      segments:
+                        description: Apply the segments first
+                        items:
+                          properties:
+                            columnName:
+                              description: The dataset column name
+                              type: string
+                            op:
+                              description: The segment operation
+                              enum:
+                              - lt
+                              - eq
+                              - gt
+                              - ne
+                              - le
+                              - ge
+                              type: string
+                            value:
+                              description: The value operation
+                              type: string
+                          type: object
+                        type: array
                       splitColumn:
                         description: The name of the column used to split
                         type: string
