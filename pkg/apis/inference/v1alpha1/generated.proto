@@ -275,6 +275,23 @@ message CurtainTemplateSpec {
   optional CurtainSpec spec = 2;
 }
 
+// Define the custom pages on the app
+message CustomAppSpec {
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool owner = 1;
+
+  // The app title
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  optional string title = 2;
+
+  // The app pages
+  // +kubebuilder:default:=""
+  // +kubebuilder:validation:Optional
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec pages = 3;
+}
+
 // DataApp represent a dashboard for business users to use a single model.
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -375,6 +392,10 @@ message DataAppSpec {
   // The serving site that hosts this predictor and the models
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference servingsiteRef = 12;
+
+  // Custom application
+  // +kubebuilder:validation:Optional
+  optional CustomAppSpec custom = 13;
 }
 
 // DataAppStatus defines the observed state of DataApp

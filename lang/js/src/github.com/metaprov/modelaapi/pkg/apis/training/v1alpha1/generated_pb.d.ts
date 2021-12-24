@@ -54,14 +54,17 @@ export class BacktestSpec extends jspb.Message {
   getSliding(): boolean;
   setSliding(value: boolean): BacktestSpec;
 
-  getTrainingwindowssize(): number;
-  setTrainingwindowssize(value: number): BacktestSpec;
+  getSplits(): number;
+  setSplits(value: number): BacktestSpec;
 
-  getForecastingwindowssize(): number;
-  setForecastingwindowssize(value: number): BacktestSpec;
+  getMaxtrainsize(): number;
+  setMaxtrainsize(value: number): BacktestSpec;
 
-  getSlidingsteps(): number;
-  setSlidingsteps(value: number): BacktestSpec;
+  getHorizon(): number;
+  setHorizon(value: number): BacktestSpec;
+
+  getGap(): number;
+  setGap(value: number): BacktestSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BacktestSpec.AsObject;
@@ -74,9 +77,10 @@ export class BacktestSpec extends jspb.Message {
 export namespace BacktestSpec {
   export type AsObject = {
     sliding: boolean,
-    trainingwindowssize: number,
-    forecastingwindowssize: number,
-    slidingsteps: number,
+    splits: number,
+    maxtrainsize: number,
+    horizon: number,
+    gap: number,
   }
 }
 
@@ -382,152 +386,11 @@ export namespace CronReportStatus {
   }
 }
 
-export class CustomReportBarChart extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): CustomReportBarChart;
-
-  getX(): string;
-  setX(value: string): CustomReportBarChart;
-
-  getY(): string;
-  setY(value: string): CustomReportBarChart;
-
-  getLegend(): boolean;
-  setLegend(value: boolean): CustomReportBarChart;
-
-  getSort(): boolean;
-  setSort(value: boolean): CustomReportBarChart;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomReportBarChart.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomReportBarChart): CustomReportBarChart.AsObject;
-  static serializeBinaryToWriter(message: CustomReportBarChart, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomReportBarChart;
-  static deserializeBinaryFromReader(message: CustomReportBarChart, reader: jspb.BinaryReader): CustomReportBarChart;
-}
-
-export namespace CustomReportBarChart {
-  export type AsObject = {
-    datasetname: string,
-    x: string,
-    y: string,
-    legend: boolean,
-    sort: boolean,
-  }
-}
-
-export class CustomReportHistogram extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): CustomReportHistogram;
-
-  getX(): string;
-  setX(value: string): CustomReportHistogram;
-
-  getBins(): number;
-  setBins(value: number): CustomReportHistogram;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomReportHistogram.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomReportHistogram): CustomReportHistogram.AsObject;
-  static serializeBinaryToWriter(message: CustomReportHistogram, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomReportHistogram;
-  static deserializeBinaryFromReader(message: CustomReportHistogram, reader: jspb.BinaryReader): CustomReportHistogram;
-}
-
-export namespace CustomReportHistogram {
-  export type AsObject = {
-    datasetname: string,
-    x: string,
-    bins: number,
-  }
-}
-
-export class CustomReportLineChart extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): CustomReportLineChart;
-
-  getX(): string;
-  setX(value: string): CustomReportLineChart;
-
-  getY(): string;
-  setY(value: string): CustomReportLineChart;
-
-  getLegend(): boolean;
-  setLegend(value: boolean): CustomReportLineChart;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomReportLineChart.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomReportLineChart): CustomReportLineChart.AsObject;
-  static serializeBinaryToWriter(message: CustomReportLineChart, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomReportLineChart;
-  static deserializeBinaryFromReader(message: CustomReportLineChart, reader: jspb.BinaryReader): CustomReportLineChart;
-}
-
-export namespace CustomReportLineChart {
-  export type AsObject = {
-    datasetname: string,
-    x: string,
-    y: string,
-    legend: boolean,
-  }
-}
-
-export class CustomReportScatterPlot extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): CustomReportScatterPlot;
-
-  getX(): string;
-  setX(value: string): CustomReportScatterPlot;
-
-  getY(): string;
-  setY(value: string): CustomReportScatterPlot;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomReportScatterPlot.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomReportScatterPlot): CustomReportScatterPlot.AsObject;
-  static serializeBinaryToWriter(message: CustomReportScatterPlot, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomReportScatterPlot;
-  static deserializeBinaryFromReader(message: CustomReportScatterPlot, reader: jspb.BinaryReader): CustomReportScatterPlot;
-}
-
-export namespace CustomReportScatterPlot {
-  export type AsObject = {
-    datasetname: string,
-    x: string,
-    y: string,
-  }
-}
-
 export class CustomReportSpec extends jspb.Message {
-  getValuesList(): Array<CustomReportValue>;
-  setValuesList(value: Array<CustomReportValue>): CustomReportSpec;
-  clearValuesList(): CustomReportSpec;
-  addValues(value?: CustomReportValue, index?: number): CustomReportValue;
-
-  getTablesList(): Array<CustomReportTable>;
-  setTablesList(value: Array<CustomReportTable>): CustomReportSpec;
-  clearTablesList(): CustomReportSpec;
-  addTables(value?: CustomReportTable, index?: number): CustomReportTable;
-
-  getLinechartsList(): Array<CustomReportLineChart>;
-  setLinechartsList(value: Array<CustomReportLineChart>): CustomReportSpec;
-  clearLinechartsList(): CustomReportSpec;
-  addLinecharts(value?: CustomReportLineChart, index?: number): CustomReportLineChart;
-
-  getBarchartsList(): Array<CustomReportBarChart>;
-  setBarchartsList(value: Array<CustomReportBarChart>): CustomReportSpec;
-  clearBarchartsList(): CustomReportSpec;
-  addBarcharts(value?: CustomReportBarChart, index?: number): CustomReportBarChart;
-
-  getHistchartsList(): Array<CustomReportHistogram>;
-  setHistchartsList(value: Array<CustomReportHistogram>): CustomReportSpec;
-  clearHistchartsList(): CustomReportSpec;
-  addHistcharts(value?: CustomReportHistogram, index?: number): CustomReportHistogram;
-
-  getScatterchartsList(): Array<CustomReportHistogram>;
-  setScatterchartsList(value: Array<CustomReportHistogram>): CustomReportSpec;
-  clearScatterchartsList(): CustomReportSpec;
-  addScattercharts(value?: CustomReportHistogram, index?: number): CustomReportHistogram;
+  getPagesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec>;
+  setPagesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec>): CustomReportSpec;
+  clearPagesList(): CustomReportSpec;
+  addPages(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CustomReportSpec.AsObject;
@@ -539,90 +402,7 @@ export class CustomReportSpec extends jspb.Message {
 
 export namespace CustomReportSpec {
   export type AsObject = {
-    valuesList: Array<CustomReportValue.AsObject>,
-    tablesList: Array<CustomReportTable.AsObject>,
-    linechartsList: Array<CustomReportLineChart.AsObject>,
-    barchartsList: Array<CustomReportBarChart.AsObject>,
-    histchartsList: Array<CustomReportHistogram.AsObject>,
-    scatterchartsList: Array<CustomReportHistogram.AsObject>,
-  }
-}
-
-export class CustomReportTable extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): CustomReportTable;
-
-  getColumnsList(): Array<string>;
-  setColumnsList(value: Array<string>): CustomReportTable;
-  clearColumnsList(): CustomReportTable;
-  addColumns(value: string, index?: number): CustomReportTable;
-
-  getFiltersList(): Array<string>;
-  setFiltersList(value: Array<string>): CustomReportTable;
-  clearFiltersList(): CustomReportTable;
-  addFilters(value: string, index?: number): CustomReportTable;
-
-  getGroupbyList(): Array<string>;
-  setGroupbyList(value: Array<string>): CustomReportTable;
-  clearGroupbyList(): CustomReportTable;
-  addGroupby(value: string, index?: number): CustomReportTable;
-
-  getRows(): number;
-  setRows(value: number): CustomReportTable;
-
-  getShowindex(): boolean;
-  setShowindex(value: boolean): CustomReportTable;
-
-  getBorder(): boolean;
-  setBorder(value: boolean): CustomReportTable;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomReportTable.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomReportTable): CustomReportTable.AsObject;
-  static serializeBinaryToWriter(message: CustomReportTable, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomReportTable;
-  static deserializeBinaryFromReader(message: CustomReportTable, reader: jspb.BinaryReader): CustomReportTable;
-}
-
-export namespace CustomReportTable {
-  export type AsObject = {
-    datasetname: string,
-    columnsList: Array<string>,
-    filtersList: Array<string>,
-    groupbyList: Array<string>,
-    rows: number,
-    showindex: boolean,
-    border: boolean,
-  }
-}
-
-export class CustomReportValue extends jspb.Message {
-  getDatasetname(): string;
-  setDatasetname(value: string): CustomReportValue;
-
-  getColumn(): string;
-  setColumn(value: string): CustomReportValue;
-
-  getRow(): number;
-  setRow(value: number): CustomReportValue;
-
-  getScalar(): string;
-  setScalar(value: string): CustomReportValue;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CustomReportValue.AsObject;
-  static toObject(includeInstance: boolean, msg: CustomReportValue): CustomReportValue.AsObject;
-  static serializeBinaryToWriter(message: CustomReportValue, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CustomReportValue;
-  static deserializeBinaryFromReader(message: CustomReportValue, reader: jspb.BinaryReader): CustomReportValue;
-}
-
-export namespace CustomReportValue {
-  export type AsObject = {
-    datasetname: string,
-    column: string,
-    row: number,
-    scalar: string,
+    pagesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec.AsObject>,
   }
 }
 
@@ -1287,20 +1067,6 @@ export namespace ForecastSpec {
     postprocessing?: ForecastPostProcessingSpec.AsObject,
     plot: boolean,
     plotchangepoints: boolean,
-  }
-}
-
-export class FormatSpec extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FormatSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: FormatSpec): FormatSpec.AsObject;
-  static serializeBinaryToWriter(message: FormatSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FormatSpec;
-  static deserializeBinaryFromReader(message: FormatSpec, reader: jspb.BinaryReader): FormatSpec;
-}
-
-export namespace FormatSpec {
-  export type AsObject = {
   }
 }
 

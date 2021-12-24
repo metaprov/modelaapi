@@ -185,18 +185,25 @@ type ForecastSpec struct {
 // BacktestSpec specify the back test
 type BacktestSpec struct {
 	// If true, use sliding windows, else use expanding windows
+	// +kubebuilder:default = false
 	// +kubebuilder:validation:Optional
 	Sliding *bool `json:"sliding,omitempty" protobuf:"varint,1,opt,name=sliding"`
-	// The number of data points in each windows used for training.
-	// +kubebuilder:validation:Minimum=0
+	// Number of splits. Default is 5
+	// +kubebuilder:default = 5
 	// +kubebuilder:validation:Optional
-	TrainingWindowSize *int32 `json:"trainingWindowsSize,omitempty" protobuf:"varint,2,opt,name=trainingWindowsSize"`
+	Splits *int32 `json:"splits,omitempty" protobuf:"varint,2,opt,name=splits"`
+	// Max size for a single training set
+	// +kubebuilder:default = 0
+	// +kubebuilder:validation:Optional
+	MaxTrainSize *int32 `json:"maxTrainSize,omitempty" protobuf:"varint,3,opt,name=maxTrainSize"`
 	// The number of data points to forecast on.
+	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ForecastingWindowSize *int32 `json:"forecastingWindowsSize,omitempty" protobuf:"varint,3,opt,name=forecastingWindowsSize"`
+	TestSize *int32 `json:"Horizon,omitempty" protobuf:"varint,4,opt,name=Horizon"`
 	// The number of data points between each windows
+	// +kubebuilder:default = 0
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	SlidingSteps *int32 `json:"slidingSteps,omitempty" protobuf:"varint,4,opt,name=slidingSteps"`
+	Gap *int32 `json:"gap,omitempty" protobuf:"varint,5,opt,name=gap"`
 }

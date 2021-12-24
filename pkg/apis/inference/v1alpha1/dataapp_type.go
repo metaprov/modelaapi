@@ -8,6 +8,7 @@ package v1alpha1
 
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
+	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -106,6 +107,24 @@ type DataAppSpec struct {
 	// The serving site that hosts this predictor and the models
 	// +kubebuilder:validation:Optional
 	ServingSiteRef *v1.ObjectReference `json:"servingsiteRef" protobuf:"bytes,12,opt,name=servingsiteRef"`
+	// Custom application
+	// +kubebuilder:validation:Optional
+	Custom CustomAppSpec `json:"custom" protobuf:"bytes,13,opt,name=custom"`
+}
+
+// Define the custom pages on the app
+type CustomAppSpec struct {
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"owner,omitempty" protobuf:"bytes,1,opt,name=owner"`
+	// The app title
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Title *string `json:"owner,omitempty" protobuf:"bytes,2,opt,name=title"`
+	// The app pages
+	// +kubebuilder:default:=""
+	// +kubebuilder:validation:Optional
+	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,3,opt,name=pages"`
 }
 
 // DataAppStatus defines the observed state of DataApp

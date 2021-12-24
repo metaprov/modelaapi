@@ -25,6 +25,29 @@ message AggregationSpec {
   repeated FeatureAggrSpec aggregations = 2;
 }
 
+// Bar Chart
+message BarChartSpec {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // Y column
+  // +kubebuilder:validation:Optional
+  optional string y = 3;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool legend = 4;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool sort = 5;
+}
+
 message Column {
   // Name is the name of the raw feature.
   // +kubebuilder:validation:MaxLength=63
@@ -263,6 +286,20 @@ message Column {
   optional double step = 47;
 }
 
+// The spec for a column in the row. A column can span multiple grid based columns
+message ColumnSpec {
+  // If true this column is an empty spacer
+  // +kubebuilder:validation:Optional
+  optional bool spacer = 1;
+
+  // The width in columns, each row is divided into 12 columns
+  // +kubebuilder:validation:Optional
+  optional int32 width = 2;
+
+  // The actual
+  optional ComponentSpec content = 3;
+}
+
 // Hold the statistical parameters about a single attribute
 message ColumnStatistics {
   // FileName is the name of the column
@@ -470,6 +507,36 @@ message ColumnValidation {
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
   optional bool generated = 9;
+}
+
+message ComponentSpec {
+  // +kubebuilder:validation:Optional
+  optional string title = 1;
+
+  // +kubebuilder:validation:Optional
+  optional string subtitle = 2;
+
+  // +kubebuilder:validation:Optional
+  optional string footer = 3;
+
+  optional ComponentView content = 4;
+}
+
+// Represent the view part of a component. Only one part should be specified per component
+message ComponentView {
+  optional MetricSpec metric = 1;
+
+  optional GaugeSpec gauge = 2;
+
+  optional HistogramSpec histogram = 3;
+
+  optional TableSpec table = 4;
+
+  optional LineChartSpec lineChart = 5;
+
+  optional BarChartSpec barChart = 6;
+
+  optional ScatterPlotSpec scatterPlot = 7;
 }
 
 // Feature corr is used to record a correlation between two features.
@@ -2389,6 +2456,24 @@ message FileValidation {
   optional bool generated = 10;
 }
 
+message GaugeSpec {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // Column is the name of the column
+  // +kubebuilder:validation:Optional
+  optional string column = 2;
+
+  // Row is the row number
+  // +kubebuilder:validation:Optional
+  optional int32 row = 3;
+
+  // Scalar the a const value
+  // +kubebuilder:validation:Optional
+  optional string scalar = 4;
+}
+
 message GitLocation {
   // GitConnectionName
   // +kubebuilder:default:=""
@@ -2450,6 +2535,20 @@ message GovernanceStatus {
   // The business review status
   // +kubebuilder:validation:Optional
   optional GovernanceReviewStatus businessReviewStatus = 3;
+}
+
+message HistogramSpec {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional int32 bins = 3;
 }
 
 message ImageLocation {
@@ -2689,6 +2788,23 @@ message LabelingPipelineStatus {
   repeated LabelingPipelineCondition conditions = 4;
 }
 
+message LineChartSpec {
+  // Dataset is the name of the dataset
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // Y column
+  // +kubebuilder:validation:Optional
+  optional string y = 3;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool legend = 4;
+}
+
 message MaterializationSpec {
   // If true, update the online store
   // +kubebuilder:default:=false
@@ -2717,6 +2833,24 @@ message MaterializationSpec {
   // +kubebuilder:default:=21
   // +kubebuilder:validation:Minimum=0
   optional int32 backfill = 6;
+}
+
+message MetricSpec {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // Column is the name of the column
+  // +kubebuilder:validation:Optional
+  optional string column = 2;
+
+  // Row is the row number
+  // +kubebuilder:validation:Optional
+  optional int32 row = 3;
+
+  // Scalar the a const value
+  // +kubebuilder:validation:Optional
+  optional string scalar = 4;
 }
 
 message MultiColumnValidation {
@@ -2764,6 +2898,10 @@ message MultiDatasetValidation {
   // Generated indicate weather this validation rule was automatically generated
   // +kubebuilder:validation:Optional
   optional bool generated = 3;
+}
+
+message PageSpec {
+  repeated RowSpec rows = 1;
 }
 
 // Recipe represents a single batch of data
@@ -3089,6 +3227,10 @@ message RelationshipSpec {
   optional string relatesTo = 4;
 }
 
+message RowSpec {
+  repeated ColumnSpec cols = 1;
+}
+
 // The sample spec define how to sample a dataset for analysis
 message SampleSpec {
   // Enabled specify if the sample is enabled
@@ -3123,6 +3265,20 @@ message SampleSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string column = 6;
+}
+
+message ScatterPlotSpec {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // name of the X column
+  // +kubebuilder:validation:Optional
+  optional string x = 2;
+
+  // name of the Y axis columns
+  // +kubebuilder:validation:Optional
+  optional string y = 3;
 }
 
 message Schema {
@@ -3391,6 +3547,36 @@ message SqlQueryStatus {
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
   repeated SqlQueryCondition conditions = 4;
+}
+
+message TableSpec {
+  // Dataset is the name of the dataset
+  // +kubebuilder:validation:Optional
+  optional string datasetName = 1;
+
+  // List of table columns, if empty use call the columns
+  // +kubebuilder:validation:Optional
+  repeated string columns = 2;
+
+  // one or more filters
+  // +kubebuilder:validation:Optional
+  repeated string filters = 3;
+
+  // Groupby columns
+  // +kubebuilder:validation:Optional
+  repeated string groupby = 4;
+
+  // Row is the row number
+  // +kubebuilder:validation:Optional
+  optional int32 rows = 5;
+
+  // Show index column
+  // +kubebuilder:validation:Optional
+  optional bool showIndex = 6;
+
+  // Show borther
+  // +kubebuilder:validation:Optional
+  optional bool border = 7;
 }
 
 message TimeSeriesSchema {

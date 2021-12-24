@@ -42,23 +42,31 @@ message AudioPipelineSpec {
 // BacktestSpec specify the back test
 message BacktestSpec {
   // If true, use sliding windows, else use expanding windows
+  // +kubebuilder:default = false
   // +kubebuilder:validation:Optional
   optional bool sliding = 1;
 
-  // The number of data points in each windows used for training.
-  // +kubebuilder:validation:Minimum=0
+  // Number of splits. Default is 5
+  // +kubebuilder:default = 5
   // +kubebuilder:validation:Optional
-  optional int32 trainingWindowsSize = 2;
+  optional int32 splits = 2;
+
+  // Max size for a single training set
+  // +kubebuilder:default = 0
+  // +kubebuilder:validation:Optional
+  optional int32 maxTrainSize = 3;
 
   // The number of data points to forecast on.
+  // +kubebuilder:default = 0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 forecastingWindowsSize = 3;
+  optional int32 Horizon = 4;
 
   // The number of data points between each windows
+  // +kubebuilder:default = 0
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int32 slidingSteps = 4;
+  optional int32 gap = 5;
 }
 
 // Define the baseline phase spec
@@ -225,135 +233,9 @@ message CronReportStatus {
   repeated CronReportCondition conditions = 4;
 }
 
-// Bar Chart
-message CustomReportBarChart {
-  // Dataset is the name of the dataset
-  // +kubebuilder:validation:Optional
-  optional string datasetName = 1;
-
-  // name of the X column
-  // +kubebuilder:validation:Optional
-  optional string x = 2;
-
-  // Y column
-  // +kubebuilder:validation:Optional
-  optional string y = 3;
-
-  // Show borther
-  // +kubebuilder:validation:Optional
-  optional bool legend = 4;
-
-  // Show borther
-  // +kubebuilder:validation:Optional
-  optional bool sort = 5;
-}
-
-message CustomReportHistogram {
-  // Dataset is the name of the dataset
-  // +kubebuilder:validation:Optional
-  optional string datasetName = 1;
-
-  // name of the X column
-  // +kubebuilder:validation:Optional
-  optional string x = 2;
-
-  // Show borther
-  // +kubebuilder:validation:Optional
-  optional int32 bins = 3;
-}
-
-message CustomReportLineChart {
-  // Dataset is the name of the dataset
-  optional string datasetName = 1;
-
-  // name of the X column
-  // +kubebuilder:validation:Optional
-  optional string x = 2;
-
-  // Y column
-  // +kubebuilder:validation:Optional
-  optional string y = 3;
-
-  // Show borther
-  // +kubebuilder:validation:Optional
-  optional bool legend = 4;
-}
-
-message CustomReportScatterPlot {
-  // Dataset is the name of the dataset
-  // +kubebuilder:validation:Optional
-  optional string datasetName = 1;
-
-  // name of the X column
-  // +kubebuilder:validation:Optional
-  optional string x = 2;
-
-  // name of the Y axis columns
-  // +kubebuilder:validation:Optional
-  optional string y = 3;
-}
-
-// Container for custom reports.
 message CustomReportSpec {
-  repeated CustomReportValue values = 1;
-
-  repeated CustomReportTable tables = 2;
-
-  repeated CustomReportLineChart lineCharts = 3;
-
-  repeated CustomReportBarChart barCharts = 4;
-
-  repeated CustomReportHistogram histCharts = 5;
-
-  repeated CustomReportHistogram scatterCharts = 6;
-}
-
-message CustomReportTable {
-  // Dataset is the name of the dataset
-  // +kubebuilder:validation:Optional
-  optional string datasetName = 1;
-
-  // List of table columns, if empty use call the columns
-  // +kubebuilder:validation:Optional
-  repeated string columns = 2;
-
-  // one or more filters
-  // +kubebuilder:validation:Optional
-  repeated string filters = 3;
-
-  // Groupby columns
-  // +kubebuilder:validation:Optional
-  repeated string groupby = 4;
-
-  // Row is the row number
-  // +kubebuilder:validation:Optional
-  optional int32 rows = 5;
-
-  // Show index column
-  // +kubebuilder:validation:Optional
-  optional bool showIndex = 6;
-
-  // Show borther
-  // +kubebuilder:validation:Optional
-  optional bool border = 7;
-}
-
-message CustomReportValue {
-  // Dataset is the name of the dataset
-  // +kubebuilder:validation:Optional
-  optional string datasetName = 1;
-
-  // Column is the name of the column
-  // +kubebuilder:validation:Optional
-  optional string column = 2;
-
-  // Row is the row number
-  // +kubebuilder:validation:Optional
-  optional int32 row = 3;
-
-  // Scalar the a const value
-  // +kubebuilder:validation:Optional
-  optional string scalar = 4;
+  // The pages in the report
+  repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec pages = 8;
 }
 
 // SeasonalitySpec defines the custom seasonality
@@ -800,9 +682,6 @@ message ForecastSpec {
   // +kubebuilder:default = true
   // +kubebuilder:validation:Optional
   optional bool plotChangePoints = 6;
-}
-
-message FormatSpec {
 }
 
 message GeneratedColumnSpec {

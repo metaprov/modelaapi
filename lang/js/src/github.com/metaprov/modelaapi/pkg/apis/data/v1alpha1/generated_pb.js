@@ -32,9 +32,13 @@ goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_generated_pb);
 var k8s_io_apimachinery_pkg_runtime_schema_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb.js');
 goog.object.extend(proto, k8s_io_apimachinery_pkg_runtime_schema_generated_pb);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.AggregationSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Correlation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CorrelationSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec', null, global);
@@ -108,10 +112,12 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Fe
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturesetStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FileValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceReviewStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ImageLocation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.KPI', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline', null, global);
@@ -124,9 +130,12 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.La
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineStatus', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiColumnValidation', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeCondition', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeInputSpec', null, global);
@@ -144,7 +153,9 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Re
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStepParam', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecommendationSchema', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RelationshipSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Schema', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryCondition', null, global);
@@ -156,6 +167,7 @@ goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Sq
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunStatus', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuerySpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus', null, global);
+goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TimeSeriesSchema', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ValidationSpec', null, global);
 goog.exportSymbol('proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest', null, global);
@@ -199,6 +211,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.repeatedFields_, null);
 };
@@ -209,6 +242,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -251,6 +305,48 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -1795,6 +1891,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1868,6 +1985,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2131,6 +2269,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -2141,6 +2300,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2183,6 +2363,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2551,6 +2752,27 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -2561,6 +2783,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -2792,6 +3035,27 @@ if (goog.DEBUG && !COMPILED) {
    * @override
    */
   proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.repeatedFields_, null);
+};
+goog.inherits(proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.displayName = 'proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -3250,6 +3514,346 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.AggregationSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.AggregationSpec.prototype.clearAggregationsList = function() {
   return this.setAggregationsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    x: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    y: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    legend: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+    sort: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setX(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setY(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLegend(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSort(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string datasetName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string x = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.getX = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.setX = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.clearX = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.hasX = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string y = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.getY = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.setY = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.clearY = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.hasY = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool legend = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.getLegend = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.setLegend = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.clearLegend = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.hasLegend = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool sort = 5;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.getSort = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.setSort = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.clearSort = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.prototype.hasSort = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -5614,6 +6218,253 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.clea
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Column.prototype.hasStep = function() {
   return jspb.Message.getField(this, 47) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    spacer: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    width: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    content: (f = msg.getContent()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSpacer(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setWidth(value);
+      break;
+    case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.deserializeBinaryFromReader);
+      msg.setContent(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeInt32(
+      2,
+      f
+    );
+  }
+  f = message.getContent();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional bool spacer = 1;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.getSpacer = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.setSpacer = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.clearSpacer = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.hasSpacer = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 width = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.getWidth = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.setWidth = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.clearWidth = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.hasWidth = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ComponentSpec content = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.getContent = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.setContent = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.clearContent = function() {
+  return this.setContent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.prototype.hasContent = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -8174,6 +9025,758 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnValidation.prototype.hasGenerated = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    title: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    subtitle: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    footer: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    content: (f = msg.getContent()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTitle(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubtitle(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFooter(value);
+      break;
+    case 4:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.deserializeBinaryFromReader);
+      msg.setContent(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getContent();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string title = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.getTitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.setTitle = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.clearTitle = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.hasTitle = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string subtitle = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.getSubtitle = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.setSubtitle = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.clearSubtitle = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.hasSubtitle = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string footer = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.getFooter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.setFooter = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.clearFooter = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.hasFooter = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional ComponentView content = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.getContent = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.setContent = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.clearContent = function() {
+  return this.setContent(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentSpec.prototype.hasContent = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    metric: (f = msg.getMetric()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.toObject(includeInstance, f),
+    gauge: (f = msg.getGauge()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.toObject(includeInstance, f),
+    histogram: (f = msg.getHistogram()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.toObject(includeInstance, f),
+    table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.toObject(includeInstance, f),
+    linechart: (f = msg.getLinechart()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.toObject(includeInstance, f),
+    barchart: (f = msg.getBarchart()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.toObject(includeInstance, f),
+    scatterplot: (f = msg.getScatterplot()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.deserializeBinaryFromReader);
+      msg.setMetric(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.deserializeBinaryFromReader);
+      msg.setGauge(value);
+      break;
+    case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.deserializeBinaryFromReader);
+      msg.setHistogram(value);
+      break;
+    case 4:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.deserializeBinaryFromReader);
+      msg.setTable(value);
+      break;
+    case 5:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.deserializeBinaryFromReader);
+      msg.setLinechart(value);
+      break;
+    case 6:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.deserializeBinaryFromReader);
+      msg.setBarchart(value);
+      break;
+    case 7:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.deserializeBinaryFromReader);
+      msg.setScatterplot(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMetric();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getGauge();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getHistogram();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getTable();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getLinechart();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getBarchart();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getScatterplot();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional MetricSpec metric = 1;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.getMetric = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec, 1));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.setMetric = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.clearMetric = function() {
+  return this.setMetric(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.hasMetric = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional GaugeSpec gauge = 2;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.getGauge = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec, 2));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.setGauge = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.clearGauge = function() {
+  return this.setGauge(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.hasGauge = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional HistogramSpec histogram = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.getHistogram = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.setHistogram = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.clearHistogram = function() {
+  return this.setHistogram(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.hasHistogram = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional TableSpec table = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.getTable = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec, 4));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.setTable = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.clearTable = function() {
+  return this.setTable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.hasTable = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional LineChartSpec lineChart = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.getLinechart = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec, 5));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.setLinechart = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.clearLinechart = function() {
+  return this.setLinechart(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.hasLinechart = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional BarChartSpec barChart = 6;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.getBarchart = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec, 6));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.BarChartSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.setBarchart = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.clearBarchart = function() {
+  return this.setBarchart(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.hasBarchart = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional ScatterPlotSpec scatterPlot = 7;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.getScatterplot = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec, 7));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.setScatterplot = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.clearScatterplot = function() {
+  return this.setScatterplot(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ComponentView.prototype.hasScatterplot = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -36132,6 +37735,298 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    row: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    scalar: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumn(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRow(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScalar(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string datasetName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string column = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.getColumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.setColumn = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.clearColumn = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.hasColumn = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 row = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.getRow = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.setRow = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.clearRow = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.hasRow = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string scalar = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.getScalar = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.setScalar = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.clearScalar = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GaugeSpec.prototype.hasScalar = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GitLocation.toObject(opt_includeInstance, this);
 };
@@ -37196,6 +39091,250 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus.prototype.hasBusinessreviewstatus = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    x: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    bins: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setX(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setBins(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string datasetName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string x = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.getX = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.setX = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.clearX = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.hasX = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 bins = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.getBins = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.setBins = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.clearBins = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.HistogramSpec.prototype.hasBins = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -40953,6 +43092,298 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    x: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    y: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    legend: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setX(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setY(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLegend(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string datasetName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string x = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.getX = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.setX = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.clearX = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.hasX = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string y = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.getY = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.setY = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.clearY = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.hasY = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool legend = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.getLegend = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.setLegend = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.clearLegend = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LineChartSpec.prototype.hasLegend = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.toObject = function(opt_includeInstance) {
   return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(opt_includeInstance, this);
 };
@@ -41325,6 +43756,298 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.prototype.hasBackfill = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    column: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    row: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    scalar: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setColumn(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRow(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScalar(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string datasetName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string column = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.getColumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.setColumn = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.clearColumn = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.hasColumn = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional int32 row = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.getRow = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.setRow = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.clearRow = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.hasRow = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string scalar = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.getScalar = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.setScalar = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.clearScalar = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MetricSpec.prototype.hasScalar = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -42118,6 +44841,166 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidatio
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MultiDatasetValidation.prototype.hasGenerated = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    rowsList: jspb.Message.toObjectList(msg.getRowsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.deserializeBinaryFromReader);
+      msg.addRows(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getRowsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated RowSpec rows = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.prototype.getRowsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.prototype.setRowsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.prototype.addRows = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec.prototype.clearRowsList = function() {
+  return this.setRowsList([]);
 };
 
 
@@ -47232,6 +50115,166 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RelationshipSpec.prot
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    colsList: jspb.Message.toObjectList(msg.getColsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.deserializeBinaryFromReader);
+      msg.addCols(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ColumnSpec cols = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.prototype.getColsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.prototype.setColsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.prototype.addCols = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnSpec, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RowSpec.prototype.clearColsList = function() {
+  return this.setColsList([]);
+};
+
+
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -47616,6 +50659,250 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.prototype.hasColumn = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    x: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    y: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setX(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setY(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string datasetName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string x = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.getX = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.setX = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.clearX = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.hasX = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string y = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.getY = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.setY = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.clearY = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ScatterPlotSpec.prototype.hasY = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -51631,6 +54918,452 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryStatus.prototype.clearConditionsList = function() {
   return this.setConditionsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.repeatedFields_ = [2,3,4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.toObject = function(opt_includeInstance) {
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    datasetname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    columnsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+    filtersList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    groupbyList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+    rows: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    showindex: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+    border: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec;
+  return proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatasetname(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addColumns(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFilters(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addGroupby(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRows(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setShowindex(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBorder(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
+  f = message.getFiltersList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      3,
+      f
+    );
+  }
+  f = message.getGroupbyList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string datasetName = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.getDatasetname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.setDatasetname = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.clearDatasetname = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.hasDatasetname = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * repeated string columns = 2;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.getColumnsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.setColumnsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.addColumns = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated string filters = 3;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.getFiltersList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.setFiltersList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.addFilters = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.clearFiltersList = function() {
+  return this.setFiltersList([]);
+};
+
+
+/**
+ * repeated string groupby = 4;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.getGroupbyList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.setGroupbyList = function(value) {
+  return jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.addGroupby = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.clearGroupbyList = function() {
+  return this.setGroupbyList([]);
+};
+
+
+/**
+ * optional int32 rows = 5;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.getRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.setRows = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.clearRows = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.hasRows = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool showIndex = 6;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.getShowindex = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.setShowindex = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.clearShowindex = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.hasShowindex = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool border = 7;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.getBorder = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.setBorder = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.clearBorder = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.TableSpec.prototype.hasBorder = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

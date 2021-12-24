@@ -75,109 +75,167 @@ spec:
                 description: If the report is custom report, this field holds the
                   specification
                 properties:
-                  barCharts:
-                    items:
-                      description: Bar Chart
-                      properties:
-                        datasetName:
-                          description: Dataset is the name of the dataset
-                          type: string
-                        legend:
-                          description: Show borther
-                          type: boolean
-                        sort:
-                          description: Show borther
-                          type: boolean
-                        x:
-                          description: name of the X column
-                          type: string
-                        "y":
-                          description: Y column
-                          type: string
-                      type: object
-                    type: array
-                  histCharts:
+                  pages:
+                    description: The pages in the report
                     items:
                       properties:
-                        bins:
-                          description: Show borther
-                          format: int32
-                          type: integer
-                        datasetName:
-                          description: Dataset is the name of the dataset
-                          type: string
-                        x:
-                          description: name of the X column
-                          type: string
-                      type: object
-                    type: array
-                  lineCharts:
-                    items:
-                      properties:
-                        datasetName:
-                          description: Dataset is the name of the dataset
-                          type: string
-                        legend:
-                          description: Show borther
-                          type: boolean
-                        x:
-                          description: name of the X column
-                          type: string
-                        "y":
-                          description: Y column
-                          type: string
-                      type: object
-                    type: array
-                  tables:
-                    items:
-                      properties:
-                        border:
-                          description: Show borther
-                          type: boolean
-                        columns:
-                          description: List of table columns, if empty use call the
-                            columns
-                          items:
-                            type: string
-                          type: array
-                        datasetName:
-                          description: Dataset is the name of the dataset
-                          type: string
-                        filters:
-                          description: one or more filters
-                          items:
-                            type: string
-                          type: array
-                        groupby:
-                          description: Groupby columns
-                          items:
-                            type: string
-                          type: array
                         rows:
-                          description: Row is the row number
-                          format: int32
-                          type: integer
-                        showIndex:
-                          description: Show index column
-                          type: boolean
-                      type: object
-                    type: array
-                  values:
-                    items:
-                      properties:
-                        column:
-                          description: Column is the name of the column
-                          type: string
-                        datasetName:
-                          description: Dataset is the name of the dataset
-                          type: string
-                        row:
-                          description: Row is the row number
-                          format: int32
-                          type: integer
-                        scalar:
-                          description: Scalar the a const value
-                          type: string
+                          items:
+                            properties:
+                              cols:
+                                items:
+                                  description: The spec for a column in the row. A
+                                    column can span multiple grid based columns
+                                  properties:
+                                    barChart:
+                                      description: Bar Chart
+                                      properties:
+                                        datasetName:
+                                          description: Dataset is the name of the
+                                            dataset
+                                          type: string
+                                        legend:
+                                          description: Show borther
+                                          type: boolean
+                                        sort:
+                                          description: Show borther
+                                          type: boolean
+                                        x:
+                                          description: name of the X column
+                                          type: string
+                                        "y":
+                                          description: Y column
+                                          type: string
+                                      type: object
+                                    footer:
+                                      type: string
+                                    gauge:
+                                      properties:
+                                        column:
+                                          description: Column is the name of the column
+                                          type: string
+                                        datasetName:
+                                          description: Dataset is the name of the
+                                            dataset
+                                          type: string
+                                        row:
+                                          description: Row is the row number
+                                          format: int32
+                                          type: integer
+                                        scalar:
+                                          description: Scalar the a const value
+                                          type: string
+                                      type: object
+                                    histogram:
+                                      properties:
+                                        bins:
+                                          description: Show borther
+                                          format: int32
+                                          type: integer
+                                        datasetName:
+                                          description: Dataset is the name of the
+                                            dataset
+                                          type: string
+                                        x:
+                                          description: name of the X column
+                                          type: string
+                                      type: object
+                                    lineChart:
+                                      properties:
+                                        datasetName:
+                                          description: Dataset is the name of the
+                                            dataset
+                                          type: string
+                                        legend:
+                                          description: Show borther
+                                          type: boolean
+                                        x:
+                                          description: name of the X column
+                                          type: string
+                                        "y":
+                                          description: Y column
+                                          type: string
+                                      type: object
+                                    metric:
+                                      properties:
+                                        column:
+                                          description: Column is the name of the column
+                                          type: string
+                                        datasetName:
+                                          description: Dataset is the name of the
+                                            dataset
+                                          type: string
+                                        row:
+                                          description: Row is the row number
+                                          format: int32
+                                          type: integer
+                                        scalar:
+                                          description: Scalar the a const value
+                                          type: string
+                                      type: object
+                                    scatterPlot:
+                                      properties:
+                                        datasetName:
+                                          description: Dataset is the name of the
+                                            dataset
+                                          type: string
+                                        x:
+                                          description: name of the X column
+                                          type: string
+                                        "y":
+                                          description: name of the Y axis columns
+                                          type: string
+                                      type: object
+                                    spacer:
+                                      description: If true this column is an empty
+                                        spacer
+                                      type: boolean
+                                    subtitle:
+                                      type: string
+                                    table:
+                                      properties:
+                                        border:
+                                          description: Show borther
+                                          type: boolean
+                                        columns:
+                                          description: List of table columns, if empty
+                                            use call the columns
+                                          items:
+                                            type: string
+                                          type: array
+                                        datasetName:
+                                          description: Dataset is the name of the
+                                            dataset
+                                          type: string
+                                        filters:
+                                          description: one or more filters
+                                          items:
+                                            type: string
+                                          type: array
+                                        groupby:
+                                          description: Groupby columns
+                                          items:
+                                            type: string
+                                          type: array
+                                        rows:
+                                          description: Row is the row number
+                                          format: int32
+                                          type: integer
+                                        showIndex:
+                                          description: Show index column
+                                          type: boolean
+                                      type: object
+                                    title:
+                                      type: string
+                                    width:
+                                      description: The width in columns, each row
+                                        is divided into 12 columns
+                                      format: int32
+                                      type: integer
+                                  type: object
+                                type: array
+                            type: object
+                          type: array
                       type: object
                     type: array
                 type: object

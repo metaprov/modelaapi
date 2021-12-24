@@ -31,6 +31,40 @@ export namespace AggregationSpec {
   }
 }
 
+export class BarChartSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): BarChartSpec;
+
+  getX(): string;
+  setX(value: string): BarChartSpec;
+
+  getY(): string;
+  setY(value: string): BarChartSpec;
+
+  getLegend(): boolean;
+  setLegend(value: boolean): BarChartSpec;
+
+  getSort(): boolean;
+  setSort(value: boolean): BarChartSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): BarChartSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: BarChartSpec): BarChartSpec.AsObject;
+  static serializeBinaryToWriter(message: BarChartSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): BarChartSpec;
+  static deserializeBinaryFromReader(message: BarChartSpec, reader: jspb.BinaryReader): BarChartSpec;
+}
+
+export namespace BarChartSpec {
+  export type AsObject = {
+    datasetname: string,
+    x: string,
+    y: string,
+    legend: boolean,
+    sort: boolean,
+  }
+}
+
 export class Column extends jspb.Message {
   getName(): string;
   setName(value: string): Column;
@@ -232,6 +266,34 @@ export namespace Column {
     formula: string,
     id: boolean,
     step: number,
+  }
+}
+
+export class ColumnSpec extends jspb.Message {
+  getSpacer(): boolean;
+  setSpacer(value: boolean): ColumnSpec;
+
+  getWidth(): number;
+  setWidth(value: number): ColumnSpec;
+
+  getContent(): ComponentSpec | undefined;
+  setContent(value?: ComponentSpec): ColumnSpec;
+  hasContent(): boolean;
+  clearContent(): ColumnSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColumnSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ColumnSpec): ColumnSpec.AsObject;
+  static serializeBinaryToWriter(message: ColumnSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColumnSpec;
+  static deserializeBinaryFromReader(message: ColumnSpec, reader: jspb.BinaryReader): ColumnSpec;
+}
+
+export namespace ColumnSpec {
+  export type AsObject = {
+    spacer: boolean,
+    width: number,
+    content?: ComponentSpec.AsObject,
   }
 }
 
@@ -458,6 +520,94 @@ export namespace ColumnValidation {
     strictmin: boolean,
     strictmax: boolean,
     generated: boolean,
+  }
+}
+
+export class ComponentSpec extends jspb.Message {
+  getTitle(): string;
+  setTitle(value: string): ComponentSpec;
+
+  getSubtitle(): string;
+  setSubtitle(value: string): ComponentSpec;
+
+  getFooter(): string;
+  setFooter(value: string): ComponentSpec;
+
+  getContent(): ComponentView | undefined;
+  setContent(value?: ComponentView): ComponentSpec;
+  hasContent(): boolean;
+  clearContent(): ComponentSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComponentSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ComponentSpec): ComponentSpec.AsObject;
+  static serializeBinaryToWriter(message: ComponentSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComponentSpec;
+  static deserializeBinaryFromReader(message: ComponentSpec, reader: jspb.BinaryReader): ComponentSpec;
+}
+
+export namespace ComponentSpec {
+  export type AsObject = {
+    title: string,
+    subtitle: string,
+    footer: string,
+    content?: ComponentView.AsObject,
+  }
+}
+
+export class ComponentView extends jspb.Message {
+  getMetric(): MetricSpec | undefined;
+  setMetric(value?: MetricSpec): ComponentView;
+  hasMetric(): boolean;
+  clearMetric(): ComponentView;
+
+  getGauge(): GaugeSpec | undefined;
+  setGauge(value?: GaugeSpec): ComponentView;
+  hasGauge(): boolean;
+  clearGauge(): ComponentView;
+
+  getHistogram(): HistogramSpec | undefined;
+  setHistogram(value?: HistogramSpec): ComponentView;
+  hasHistogram(): boolean;
+  clearHistogram(): ComponentView;
+
+  getTable(): TableSpec | undefined;
+  setTable(value?: TableSpec): ComponentView;
+  hasTable(): boolean;
+  clearTable(): ComponentView;
+
+  getLinechart(): LineChartSpec | undefined;
+  setLinechart(value?: LineChartSpec): ComponentView;
+  hasLinechart(): boolean;
+  clearLinechart(): ComponentView;
+
+  getBarchart(): BarChartSpec | undefined;
+  setBarchart(value?: BarChartSpec): ComponentView;
+  hasBarchart(): boolean;
+  clearBarchart(): ComponentView;
+
+  getScatterplot(): ScatterPlotSpec | undefined;
+  setScatterplot(value?: ScatterPlotSpec): ComponentView;
+  hasScatterplot(): boolean;
+  clearScatterplot(): ComponentView;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComponentView.AsObject;
+  static toObject(includeInstance: boolean, msg: ComponentView): ComponentView.AsObject;
+  static serializeBinaryToWriter(message: ComponentView, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComponentView;
+  static deserializeBinaryFromReader(message: ComponentView, reader: jspb.BinaryReader): ComponentView;
+}
+
+export namespace ComponentView {
+  export type AsObject = {
+    metric?: MetricSpec.AsObject,
+    gauge?: GaugeSpec.AsObject,
+    histogram?: HistogramSpec.AsObject,
+    table?: TableSpec.AsObject,
+    linechart?: LineChartSpec.AsObject,
+    barchart?: BarChartSpec.AsObject,
+    scatterplot?: ScatterPlotSpec.AsObject,
   }
 }
 
@@ -3455,6 +3605,36 @@ export namespace FileValidation {
   }
 }
 
+export class GaugeSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): GaugeSpec;
+
+  getColumn(): string;
+  setColumn(value: string): GaugeSpec;
+
+  getRow(): number;
+  setRow(value: number): GaugeSpec;
+
+  getScalar(): string;
+  setScalar(value: string): GaugeSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GaugeSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GaugeSpec): GaugeSpec.AsObject;
+  static serializeBinaryToWriter(message: GaugeSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GaugeSpec;
+  static deserializeBinaryFromReader(message: GaugeSpec, reader: jspb.BinaryReader): GaugeSpec;
+}
+
+export namespace GaugeSpec {
+  export type AsObject = {
+    datasetname: string,
+    column: string,
+    row: number,
+    scalar: string,
+  }
+}
+
 export class GitLocation extends jspb.Message {
   getGitconnectionname(): string;
   setGitconnectionname(value: string): GitLocation;
@@ -3572,6 +3752,32 @@ export namespace GovernanceStatus {
     itreviewstatus?: GovernanceReviewStatus.AsObject,
     compliancereviewstatus?: GovernanceReviewStatus.AsObject,
     businessreviewstatus?: GovernanceReviewStatus.AsObject,
+  }
+}
+
+export class HistogramSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): HistogramSpec;
+
+  getX(): string;
+  setX(value: string): HistogramSpec;
+
+  getBins(): number;
+  setBins(value: number): HistogramSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HistogramSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: HistogramSpec): HistogramSpec.AsObject;
+  static serializeBinaryToWriter(message: HistogramSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HistogramSpec;
+  static deserializeBinaryFromReader(message: HistogramSpec, reader: jspb.BinaryReader): HistogramSpec;
+}
+
+export namespace HistogramSpec {
+  export type AsObject = {
+    datasetname: string,
+    x: string,
+    bins: number,
   }
 }
 
@@ -3989,6 +4195,36 @@ export namespace LabelingPipelineStatus {
   }
 }
 
+export class LineChartSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): LineChartSpec;
+
+  getX(): string;
+  setX(value: string): LineChartSpec;
+
+  getY(): string;
+  setY(value: string): LineChartSpec;
+
+  getLegend(): boolean;
+  setLegend(value: boolean): LineChartSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LineChartSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: LineChartSpec): LineChartSpec.AsObject;
+  static serializeBinaryToWriter(message: LineChartSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LineChartSpec;
+  static deserializeBinaryFromReader(message: LineChartSpec, reader: jspb.BinaryReader): LineChartSpec;
+}
+
+export namespace LineChartSpec {
+  export type AsObject = {
+    datasetname: string,
+    x: string,
+    y: string,
+    legend: boolean,
+  }
+}
+
 export class MaterializationSpec extends jspb.Message {
   getOnline(): boolean;
   setOnline(value: boolean): MaterializationSpec;
@@ -4026,6 +4262,36 @@ export namespace MaterializationSpec {
     scheduleinterval: string,
     ttl: number,
     backfill: number,
+  }
+}
+
+export class MetricSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): MetricSpec;
+
+  getColumn(): string;
+  setColumn(value: string): MetricSpec;
+
+  getRow(): number;
+  setRow(value: number): MetricSpec;
+
+  getScalar(): string;
+  setScalar(value: string): MetricSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MetricSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: MetricSpec): MetricSpec.AsObject;
+  static serializeBinaryToWriter(message: MetricSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MetricSpec;
+  static deserializeBinaryFromReader(message: MetricSpec, reader: jspb.BinaryReader): MetricSpec;
+}
+
+export namespace MetricSpec {
+  export type AsObject = {
+    datasetname: string,
+    column: string,
+    row: number,
+    scalar: string,
   }
 }
 
@@ -4108,6 +4374,26 @@ export namespace MultiDatasetValidation {
     type: string,
     datasetsList: Array<string>,
     generated: boolean,
+  }
+}
+
+export class PageSpec extends jspb.Message {
+  getRowsList(): Array<RowSpec>;
+  setRowsList(value: Array<RowSpec>): PageSpec;
+  clearRowsList(): PageSpec;
+  addRows(value?: RowSpec, index?: number): RowSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: PageSpec): PageSpec.AsObject;
+  static serializeBinaryToWriter(message: PageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PageSpec;
+  static deserializeBinaryFromReader(message: PageSpec, reader: jspb.BinaryReader): PageSpec;
+}
+
+export namespace PageSpec {
+  export type AsObject = {
+    rowsList: Array<RowSpec.AsObject>,
   }
 }
 
@@ -4679,6 +4965,26 @@ export namespace RelationshipSpec {
   }
 }
 
+export class RowSpec extends jspb.Message {
+  getColsList(): Array<ColumnSpec>;
+  setColsList(value: Array<ColumnSpec>): RowSpec;
+  clearColsList(): RowSpec;
+  addCols(value?: ColumnSpec, index?: number): ColumnSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RowSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: RowSpec): RowSpec.AsObject;
+  static serializeBinaryToWriter(message: RowSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RowSpec;
+  static deserializeBinaryFromReader(message: RowSpec, reader: jspb.BinaryReader): RowSpec;
+}
+
+export namespace RowSpec {
+  export type AsObject = {
+    colsList: Array<ColumnSpec.AsObject>,
+  }
+}
+
 export class SampleSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): SampleSpec;
@@ -4714,6 +5020,32 @@ export namespace SampleSpec {
     percent: number,
     filter: string,
     column: string,
+  }
+}
+
+export class ScatterPlotSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): ScatterPlotSpec;
+
+  getX(): string;
+  setX(value: string): ScatterPlotSpec;
+
+  getY(): string;
+  setY(value: string): ScatterPlotSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ScatterPlotSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ScatterPlotSpec): ScatterPlotSpec.AsObject;
+  static serializeBinaryToWriter(message: ScatterPlotSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ScatterPlotSpec;
+  static deserializeBinaryFromReader(message: ScatterPlotSpec, reader: jspb.BinaryReader): ScatterPlotSpec;
+}
+
+export namespace ScatterPlotSpec {
+  export type AsObject = {
+    datasetname: string,
+    x: string,
+    y: string,
   }
 }
 
@@ -5156,6 +5488,54 @@ export namespace SqlQueryStatus {
     observedgeneration: number,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<SqlQueryCondition.AsObject>,
+  }
+}
+
+export class TableSpec extends jspb.Message {
+  getDatasetname(): string;
+  setDatasetname(value: string): TableSpec;
+
+  getColumnsList(): Array<string>;
+  setColumnsList(value: Array<string>): TableSpec;
+  clearColumnsList(): TableSpec;
+  addColumns(value: string, index?: number): TableSpec;
+
+  getFiltersList(): Array<string>;
+  setFiltersList(value: Array<string>): TableSpec;
+  clearFiltersList(): TableSpec;
+  addFilters(value: string, index?: number): TableSpec;
+
+  getGroupbyList(): Array<string>;
+  setGroupbyList(value: Array<string>): TableSpec;
+  clearGroupbyList(): TableSpec;
+  addGroupby(value: string, index?: number): TableSpec;
+
+  getRows(): number;
+  setRows(value: number): TableSpec;
+
+  getShowindex(): boolean;
+  setShowindex(value: boolean): TableSpec;
+
+  getBorder(): boolean;
+  setBorder(value: boolean): TableSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TableSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: TableSpec): TableSpec.AsObject;
+  static serializeBinaryToWriter(message: TableSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TableSpec;
+  static deserializeBinaryFromReader(message: TableSpec, reader: jspb.BinaryReader): TableSpec;
+}
+
+export namespace TableSpec {
+  export type AsObject = {
+    datasetname: string,
+    columnsList: Array<string>,
+    filtersList: Array<string>,
+    groupbyList: Array<string>,
+    rows: number,
+    showindex: boolean,
+    border: boolean,
   }
 }
 

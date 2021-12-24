@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z9github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x12\x39github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"(\n\x07\x41ppSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0c\n\x04port\x18\x02 \x01(\x05\"\x1c\n\tAppStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"~\n\x0b\x41utoScaling\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x13\n\x0bminReplicas\x18\x02 \x01(\x05\x12\x13\n\x0bmaxReplicas\x18\x03 \x01(\x05\x12\x19\n\x11\x63puAvgUtilization\x18\x04 \x01(\x05\x12\x19\n\x11memAvgUtilization\x18\x05 \x01(\x05\"\x92\x02\n\x0e\x43ronPrediction\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12[\n\x04spec\x18\x02 \x01(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec\x12_\n\x06status\x18\x03 \x01(\x0b\x32O.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus\"\xa0\x01\n\x17\x43ronPredictionCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xb0\x01\n\x12\x43ronPredictionList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12X\n\x05items\x18\x02 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\"\xf4\x02\n\x12\x43ronPredictionSpec\x12\x13\n\x0bversionName\x18\x01 \x01(\t\x12\r\n\x05owner\x18\x02 \x01(\t\x12V\n\x08schedule\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule\x12_\n\x08template\x18\x04 \x01(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionTemplate\x12\x10\n\x08priority\x18\x05 \x01(\t\x12\x0e\n\x06paused\x18\x06 \x01(\x08\x12_\n\x0cnotification\x18\x07 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec\"\x98\x02\n\x14\x43ronPredictionStatus\x12;\n\x07lastRun\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x66\n\nconditions\x18\x04 \x03(\x0b\x32R.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition\"\xfd\x01\n\x07\x43urtain\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainStatus\"\x99\x01\n\x10\x43urtainCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa2\x01\n\x0b\x43urtainList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"\x9c\x01\n\x0b\x43urtainSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x13\n\x0bversionName\x18\x02 \x01(\t\x12\x17\n\x0fservingsiteName\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12\x10\n\x08question\x18\x06 \x01(\t\x12\x14\n\x0cnotifierName\x18\x07 \x01(\t\x12\r\n\x05owner\x18\x08 \x01(\t\"\xcd\x01\n\rCurtainStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12_\n\nconditions\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainCondition\"\xaf\x01\n\x13\x43urtainTemplateSpec\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec\"\xfd\x01\n\x07\x44\x61taApp\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus\"\x99\x01\n\x10\x44\x61taAppCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa2\x01\n\x0b\x44\x61taAppList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\xac\x02\n\x0b\x44\x61taAppSpec\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bversionName\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\x12\x11\n\tmodelName\x18\x05 \x01(\t\x12\x10\n\x08replicas\x18\x07 \x01(\x05\x12\x0c\n\x04port\x18\x08 \x01(\x05\x12\x19\n\x11workloadClassName\x18\t \x01(\t\x12\x12\n\naccessType\x18\n \x01(\t\x12\x37\n\nproductRef\x18\x0b \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12;\n\x0eservingsiteRef\x18\x0c \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\xcd\x01\n\rDataAppStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12_\n\nconditions\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppCondition\"\xe1\x01\n\x0bModelRecord\x12\x11\n\tmodelName\x18\x01 \x01(\t\x12\x14\n\x0cmodelVersion\x18\x02 \x01(\t\x12:\n\x06liveAt\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12=\n\tretiredAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12\x61vgDailyPrediction\x18\x05 \x01(\x05\x12\x12\n\navgLatency\x18\x06 \x01(\x01\"\xae\x02\n\x0bMonitorSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x15\n\rsamplePrecent\x18\x02 \x01(\x05\x12V\n\x08schedule\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule\x12\x14\n\x0cnotifierName\x18\x04 \x01(\t\x12^\n\x0bvalidations\x18\x05 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation\x12\x13\n\x0blogRequests\x18\x06 \x01(\x08\x12\x14\n\x0clogResponses\x18\x07 \x01(\x08\"\xbf\x01\n\rMonitorStatus\x12\x42\n\x0elastPrediction\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12j\n\x11validationResults\x18\x02 \x03(\x0b\x32O.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult\"=\n\x16OnlineFeaturestoreSpec\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x13\n\x0bserviceName\x18\x02 \x01(\t\"\x86\x02\n\nPrediction\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12W\n\x04spec\x18\x02 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec\x12[\n\x06status\x18\x03 \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus\":\n\x13PredictionCacheSpec\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x13\n\x0bserviceName\x18\x02 \x01(\t\"\x9c\x01\n\x13PredictionCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa8\x01\n\x0ePredictionList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12T\n\x05items\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x93\x03\n\x0ePredictionSpec\x12\x13\n\x0bversionName\x18\x01 \x01(\t\x12\x15\n\rpredictorName\x18\x02 \x01(\t\x12\x0f\n\x07labeled\x18\x03 \x01(\x08\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12Q\n\x05input\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x12T\n\x06output\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec\x12\r\n\x05tests\x18\x08 \x03(\t\x12\r\n\x05owner\x18\t \x01(\t\x12\x19\n\x11workloadClassName\x18\n \x01(\t\x12\x1d\n\x15\x61\x63tiveDeadlineSeconds\x18\x0b \x01(\x03\x12\x10\n\x08priority\x18\x0c \x01(\t\x12\x0f\n\x07\x61\x62orted\x18\r \x01(\x08\x12\x0b\n\x03ttl\x18\x0e \x01(\x05\"\xa5\x04\n\x10PredictionStatus\x12=\n\tstartTime\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12;\n\x07\x65ndTime\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\r\n\x05phase\x18\x03 \x01(\t\x12U\n\x07results\x18\x04 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement\x12\x1a\n\x12observedGeneration\x18\x05 \x01(\x03\x12\x0c\n\x04rows\x18\x06 \x01(\x05\x12\x13\n\x0btriggeredBy\x18\x07 \x01(\t\x12K\n\x04logs\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs\x12?\n\x0blastUpdated\x18\t \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x62\n\nconditions\x18\n \x03(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition\"m\n\x12PredictionTemplate\x12W\n\x04spec\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec\"\x83\x02\n\tPredictor\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus\"$\n\x11PredictorAuthSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"\x9b\x01\n\x12PredictorCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xc6\x01\n\x0fPredictorHealth\x12\x0f\n\x07service\x18\x01 \x01(\x08\x12\x11\n\tdataDrift\x18\x02 \x01(\x08\x12\x14\n\x0c\x63onceptDrift\x18\x03 \x01(\x08\x12\x18\n\x10totalPredictions\x18\x04 \x01(\x05\x12\x0b\n\x03\x61vg\x18\x05 \x01(\x05\x12\x18\n\x10totalP95Requests\x18\x06 \x01(\x05\x12\x1a\n\x12medianResponseTime\x18\x07 \x01(\x05\x12\x1c\n\x14lastDailyPredictions\x18\x08 \x03(\x05\"\xa6\x01\n\rPredictorList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\xb4\t\n\rPredictorSpec\x12\x13\n\x0bversionName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x37\n\nproductRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12;\n\x0eservingsiteRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x31\n\x08template\x18\x05 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.PodTemplate\x12\\\n\x06models\x18\x06 \x03(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec\x12_\n\x0bprogressive\x18\x07 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ProgressiveSpec\x12\x17\n\x0f\x61rtifactsFolder\x18\x08 \x01(\t\x12\x0c\n\x04port\x18\t \x01(\x05\x12\x0c\n\x04path\x18\n \x01(\t\x12\x12\n\naccessType\x18\x0b \x01(\t\x12\x10\n\x08replicas\x18\x0c \x01(\x05\x12[\n\x0b\x61utoScaling\x18\r \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AutoScaling\x12\r\n\x05owner\x18\x0e \x01(\t\x12\x19\n\x11workloadClassName\x18\x0f \x01(\t\x12]\n\x05\x63\x61\x63he\x18\x10 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec\x12`\n\x05store\x18\x11 \x01(\x0b\x32Q.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec\x12\x17\n\x0f\x66orewardCurtain\x18\x12 \x01(\t\x12\x17\n\x0f\x62\x61\x63kwardCurtain\x18\x13 \x01(\t\x12\x0c\n\x04type\x18\x14 \x01(\t\x12\x0c\n\x04task\x18\x15 \x01(\t\x12\x1a\n\x12predictionTreshold\x18\x16 \x01(\x01\x12W\n\x07monitor\x18\x17 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec\x12O\n\x03\x61pp\x18\x18 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AppSpec\x12Z\n\x04\x61uth\x18\x19 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec\"\x80\x07\n\x0fPredictorStatus\x12\x63\n\x0bmodelStatus\x18\x01 \x03(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus\x12M\n\x14monitorLastAttemptAt\x18\x03 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp\x12\x18\n\x10monitorLastScore\x18\x04 \x01(\x01\x12\x1a\n\x12monitorLastLatency\x18\x05 \x01(\x01\x12Z\n\x06health\x18\x06 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorHealth\x12\x1a\n\x12observedGeneration\x18\x07 \x01(\x03\x12W\n\x07history\x18\t \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelRecord\x12_\n\rmonitorStatus\x18\n \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorStatus\x12?\n\x0blastUpdated\x18\x0b \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x14\n\x0ctargetColumn\x18\x0c \x01(\t\x12\x15\n\rpositiveLabel\x18\r \x01(\t\x12\x15\n\rnegativeLabel\x18\x0e \x01(\t\x12W\n\tappStatus\x18\x0f \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AppStatus\x12\x10\n\x08\x65ndPoint\x18\x10 \x01(\t\x12\x61\n\nconditions\x18\x11 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition\"R\n\x0fProgressiveSpec\x12\x0e\n\x06warmup\x18\x01 \x01(\x05\x12\x18\n\x10trafficIncrement\x18\x02 \x01(\x05\x12\x15\n\rcanaryMetrics\x18\x03 \x03(\tB;Z9github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1'
+  serialized_pb=b'\nIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\x12\x39github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"(\n\x07\x41ppSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x0c\n\x04port\x18\x02 \x01(\x05\"\x1c\n\tAppStatus\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"~\n\x0b\x41utoScaling\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x13\n\x0bminReplicas\x18\x02 \x01(\x05\x12\x13\n\x0bmaxReplicas\x18\x03 \x01(\x05\x12\x19\n\x11\x63puAvgUtilization\x18\x04 \x01(\x05\x12\x19\n\x11memAvgUtilization\x18\x05 \x01(\x05\"\x92\x02\n\x0e\x43ronPrediction\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12[\n\x04spec\x18\x02 \x01(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionSpec\x12_\n\x06status\x18\x03 \x01(\x0b\x32O.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionStatus\"\xa0\x01\n\x17\x43ronPredictionCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xb0\x01\n\x12\x43ronPredictionList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12X\n\x05items\x18\x02 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction\"\xf4\x02\n\x12\x43ronPredictionSpec\x12\x13\n\x0bversionName\x18\x01 \x01(\t\x12\r\n\x05owner\x18\x02 \x01(\t\x12V\n\x08schedule\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule\x12_\n\x08template\x18\x04 \x01(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionTemplate\x12\x10\n\x08priority\x18\x05 \x01(\t\x12\x0e\n\x06paused\x18\x06 \x01(\x08\x12_\n\x0cnotification\x18\x07 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec\"\x98\x02\n\x14\x43ronPredictionStatus\x12;\n\x07lastRun\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x66\n\nconditions\x18\x04 \x03(\x0b\x32R.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionCondition\"\xfd\x01\n\x07\x43urtain\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainStatus\"\x99\x01\n\x10\x43urtainCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa2\x01\n\x0b\x43urtainList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"\x9c\x01\n\x0b\x43urtainSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x13\n\x0bversionName\x18\x02 \x01(\t\x12\x17\n\x0fservingsiteName\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12\x10\n\x08question\x18\x06 \x01(\t\x12\x14\n\x0cnotifierName\x18\x07 \x01(\t\x12\r\n\x05owner\x18\x08 \x01(\t\"\xcd\x01\n\rCurtainStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12_\n\nconditions\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainCondition\"\xaf\x01\n\x13\x43urtainTemplateSpec\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainSpec\"|\n\rCustomAppSpec\x12\r\n\x05owner\x18\x01 \x01(\x08\x12\r\n\x05title\x18\x02 \x01(\t\x12M\n\x05pages\x18\x03 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec\"\xfd\x01\n\x07\x44\x61taApp\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus\"\x99\x01\n\x10\x44\x61taAppCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa2\x01\n\x0b\x44\x61taAppList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp\"\x86\x03\n\x0b\x44\x61taAppSpec\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0bversionName\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\x12\x11\n\tmodelName\x18\x05 \x01(\t\x12\x10\n\x08replicas\x18\x07 \x01(\x05\x12\x0c\n\x04port\x18\x08 \x01(\x05\x12\x19\n\x11workloadClassName\x18\t \x01(\t\x12\x12\n\naccessType\x18\n \x01(\t\x12\x37\n\nproductRef\x18\x0b \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12;\n\x0eservingsiteRef\x18\x0c \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12X\n\x06\x63ustom\x18\r \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CustomAppSpec\"\xcd\x01\n\rDataAppStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12_\n\nconditions\x18\x03 \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppCondition\"\xe1\x01\n\x0bModelRecord\x12\x11\n\tmodelName\x18\x01 \x01(\t\x12\x14\n\x0cmodelVersion\x18\x02 \x01(\t\x12:\n\x06liveAt\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12=\n\tretiredAt\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12\x61vgDailyPrediction\x18\x05 \x01(\x05\x12\x12\n\navgLatency\x18\x06 \x01(\x01\"\xae\x02\n\x0bMonitorSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x15\n\rsamplePrecent\x18\x02 \x01(\x05\x12V\n\x08schedule\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.RunSchedule\x12\x14\n\x0cnotifierName\x18\x04 \x01(\t\x12^\n\x0bvalidations\x18\x05 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation\x12\x13\n\x0blogRequests\x18\x06 \x01(\x08\x12\x14\n\x0clogResponses\x18\x07 \x01(\x08\"\xbf\x01\n\rMonitorStatus\x12\x42\n\x0elastPrediction\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12j\n\x11validationResults\x18\x02 \x03(\x0b\x32O.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidationResult\"=\n\x16OnlineFeaturestoreSpec\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x13\n\x0bserviceName\x18\x02 \x01(\t\"\x86\x02\n\nPrediction\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12W\n\x04spec\x18\x02 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec\x12[\n\x06status\x18\x03 \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionStatus\":\n\x13PredictionCacheSpec\x12\x0e\n\x06\x61\x63tive\x18\x01 \x01(\x08\x12\x13\n\x0bserviceName\x18\x02 \x01(\t\"\x9c\x01\n\x13PredictionCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa8\x01\n\x0ePredictionList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12T\n\x05items\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x93\x03\n\x0ePredictionSpec\x12\x13\n\x0bversionName\x18\x01 \x01(\t\x12\x15\n\rpredictorName\x18\x02 \x01(\t\x12\x0f\n\x07labeled\x18\x03 \x01(\x08\x12\x13\n\x0b\x64\x61tasetName\x18\x04 \x01(\t\x12Q\n\x05input\x18\x05 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation\x12T\n\x06output\x18\x07 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataOutputSpec\x12\r\n\x05tests\x18\x08 \x03(\t\x12\r\n\x05owner\x18\t \x01(\t\x12\x19\n\x11workloadClassName\x18\n \x01(\t\x12\x1d\n\x15\x61\x63tiveDeadlineSeconds\x18\x0b \x01(\x03\x12\x10\n\x08priority\x18\x0c \x01(\t\x12\x0f\n\x07\x61\x62orted\x18\r \x01(\x08\x12\x0b\n\x03ttl\x18\x0e \x01(\x05\"\xa5\x04\n\x10PredictionStatus\x12=\n\tstartTime\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12;\n\x07\x65ndTime\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\r\n\x05phase\x18\x03 \x01(\t\x12U\n\x07results\x18\x04 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Measurement\x12\x1a\n\x12observedGeneration\x18\x05 \x01(\x03\x12\x0c\n\x04rows\x18\x06 \x01(\x05\x12\x13\n\x0btriggeredBy\x18\x07 \x01(\t\x12K\n\x04logs\x18\x08 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs\x12?\n\x0blastUpdated\x18\t \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x62\n\nconditions\x18\n \x03(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCondition\"m\n\x12PredictionTemplate\x12W\n\x04spec\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec\"\x83\x02\n\tPredictor\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus\"$\n\x11PredictorAuthSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"\x9b\x01\n\x12PredictorCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xc6\x01\n\x0fPredictorHealth\x12\x0f\n\x07service\x18\x01 \x01(\x08\x12\x11\n\tdataDrift\x18\x02 \x01(\x08\x12\x14\n\x0c\x63onceptDrift\x18\x03 \x01(\x08\x12\x18\n\x10totalPredictions\x18\x04 \x01(\x05\x12\x0b\n\x03\x61vg\x18\x05 \x01(\x05\x12\x18\n\x10totalP95Requests\x18\x06 \x01(\x05\x12\x1a\n\x12medianResponseTime\x18\x07 \x01(\x05\x12\x1c\n\x14lastDailyPredictions\x18\x08 \x03(\x05\"\xa6\x01\n\rPredictorList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\"\xb4\t\n\rPredictorSpec\x12\x13\n\x0bversionName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x37\n\nproductRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12;\n\x0eservingsiteRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x31\n\x08template\x18\x05 \x01(\x0b\x32\x1f.k8s.io.api.core.v1.PodTemplate\x12\\\n\x06models\x18\x06 \x03(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSpec\x12_\n\x0bprogressive\x18\x07 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ProgressiveSpec\x12\x17\n\x0f\x61rtifactsFolder\x18\x08 \x01(\t\x12\x0c\n\x04port\x18\t \x01(\x05\x12\x0c\n\x04path\x18\n \x01(\t\x12\x12\n\naccessType\x18\x0b \x01(\t\x12\x10\n\x08replicas\x18\x0c \x01(\x05\x12[\n\x0b\x61utoScaling\x18\r \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AutoScaling\x12\r\n\x05owner\x18\x0e \x01(\t\x12\x19\n\x11workloadClassName\x18\x0f \x01(\t\x12]\n\x05\x63\x61\x63he\x18\x10 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec\x12`\n\x05store\x18\x11 \x01(\x0b\x32Q.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec\x12\x17\n\x0f\x66orewardCurtain\x18\x12 \x01(\t\x12\x17\n\x0f\x62\x61\x63kwardCurtain\x18\x13 \x01(\t\x12\x0c\n\x04type\x18\x14 \x01(\t\x12\x0c\n\x04task\x18\x15 \x01(\t\x12\x1a\n\x12predictionTreshold\x18\x16 \x01(\x01\x12W\n\x07monitor\x18\x17 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec\x12O\n\x03\x61pp\x18\x18 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AppSpec\x12Z\n\x04\x61uth\x18\x19 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec\"\x80\x07\n\x0fPredictorStatus\x12\x63\n\x0bmodelStatus\x18\x01 \x03(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus\x12M\n\x14monitorLastAttemptAt\x18\x03 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp\x12\x18\n\x10monitorLastScore\x18\x04 \x01(\x01\x12\x1a\n\x12monitorLastLatency\x18\x05 \x01(\x01\x12Z\n\x06health\x18\x06 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorHealth\x12\x1a\n\x12observedGeneration\x18\x07 \x01(\x03\x12W\n\x07history\x18\t \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.ModelRecord\x12_\n\rmonitorStatus\x18\n \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorStatus\x12?\n\x0blastUpdated\x18\x0b \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x14\n\x0ctargetColumn\x18\x0c \x01(\t\x12\x15\n\rpositiveLabel\x18\r \x01(\t\x12\x15\n\rnegativeLabel\x18\x0e \x01(\t\x12W\n\tappStatus\x18\x0f \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AppStatus\x12\x10\n\x08\x65ndPoint\x18\x10 \x01(\t\x12\x61\n\nconditions\x18\x11 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition\"R\n\x0fProgressiveSpec\x12\x0e\n\x06warmup\x18\x01 \x01(\x05\x12\x18\n\x10trafficIncrement\x18\x02 \x01(\x05\x12\x15\n\rcanaryMetrics\x18\x03 \x03(\tB;Z9github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_catalog_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
 
@@ -740,6 +740,52 @@ _CURTAINTEMPLATESPEC = _descriptor.Descriptor(
 )
 
 
+_CUSTOMAPPSPEC = _descriptor.Descriptor(
+  name='CustomAppSpec',
+  full_name='github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CustomAppSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='owner', full_name='github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CustomAppSpec.owner', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='title', full_name='github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CustomAppSpec.title', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pages', full_name='github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CustomAppSpec.pages', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3147,
+  serialized_end=3271,
+)
+
+
 _DATAAPP = _descriptor.Descriptor(
   name='DataApp',
   full_name='github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp',
@@ -781,8 +827,8 @@ _DATAAPP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3148,
-  serialized_end=3401,
+  serialized_start=3274,
+  serialized_end=3527,
 )
 
 
@@ -841,8 +887,8 @@ _DATAAPPCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3404,
-  serialized_end=3557,
+  serialized_start=3530,
+  serialized_end=3683,
 )
 
 
@@ -880,8 +926,8 @@ _DATAAPPLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3560,
-  serialized_end=3722,
+  serialized_start=3686,
+  serialized_end=3848,
 )
 
 
@@ -970,6 +1016,13 @@ _DATAAPPSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='custom', full_name='github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.custom', index=11,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -982,8 +1035,8 @@ _DATAAPPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3725,
-  serialized_end=4025,
+  serialized_start=3851,
+  serialized_end=4241,
 )
 
 
@@ -1028,8 +1081,8 @@ _DATAAPPSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4028,
-  serialized_end=4233,
+  serialized_start=4244,
+  serialized_end=4449,
 )
 
 
@@ -1095,8 +1148,8 @@ _MODELRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4236,
-  serialized_end=4461,
+  serialized_start=4452,
+  serialized_end=4677,
 )
 
 
@@ -1169,8 +1222,8 @@ _MONITORSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4464,
-  serialized_end=4766,
+  serialized_start=4680,
+  serialized_end=4982,
 )
 
 
@@ -1208,8 +1261,8 @@ _MONITORSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4769,
-  serialized_end=4960,
+  serialized_start=4985,
+  serialized_end=5176,
 )
 
 
@@ -1247,8 +1300,8 @@ _ONLINEFEATURESTORESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4962,
-  serialized_end=5023,
+  serialized_start=5178,
+  serialized_end=5239,
 )
 
 
@@ -1293,8 +1346,8 @@ _PREDICTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5026,
-  serialized_end=5288,
+  serialized_start=5242,
+  serialized_end=5504,
 )
 
 
@@ -1332,8 +1385,8 @@ _PREDICTIONCACHESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5290,
-  serialized_end=5348,
+  serialized_start=5506,
+  serialized_end=5564,
 )
 
 
@@ -1392,8 +1445,8 @@ _PREDICTIONCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5351,
-  serialized_end=5507,
+  serialized_start=5567,
+  serialized_end=5723,
 )
 
 
@@ -1431,8 +1484,8 @@ _PREDICTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5510,
-  serialized_end=5678,
+  serialized_start=5726,
+  serialized_end=5894,
 )
 
 
@@ -1547,8 +1600,8 @@ _PREDICTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5681,
-  serialized_end=6084,
+  serialized_start=5897,
+  serialized_end=6300,
 )
 
 
@@ -1642,8 +1695,8 @@ _PREDICTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6087,
-  serialized_end=6636,
+  serialized_start=6303,
+  serialized_end=6852,
 )
 
 
@@ -1674,8 +1727,8 @@ _PREDICTIONTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6638,
-  serialized_end=6747,
+  serialized_start=6854,
+  serialized_end=6963,
 )
 
 
@@ -1720,8 +1773,8 @@ _PREDICTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6750,
-  serialized_end=7009,
+  serialized_start=6966,
+  serialized_end=7225,
 )
 
 
@@ -1752,8 +1805,8 @@ _PREDICTORAUTHSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7011,
-  serialized_end=7047,
+  serialized_start=7227,
+  serialized_end=7263,
 )
 
 
@@ -1812,8 +1865,8 @@ _PREDICTORCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7050,
-  serialized_end=7205,
+  serialized_start=7266,
+  serialized_end=7421,
 )
 
 
@@ -1893,8 +1946,8 @@ _PREDICTORHEALTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7208,
-  serialized_end=7406,
+  serialized_start=7424,
+  serialized_end=7622,
 )
 
 
@@ -1932,8 +1985,8 @@ _PREDICTORLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7409,
-  serialized_end=7575,
+  serialized_start=7625,
+  serialized_end=7791,
 )
 
 
@@ -2132,8 +2185,8 @@ _PREDICTORSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7578,
-  serialized_end=8782,
+  serialized_start=7794,
+  serialized_end=8998,
 )
 
 
@@ -2262,8 +2315,8 @@ _PREDICTORSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8785,
-  serialized_end=9681,
+  serialized_start=9001,
+  serialized_end=9897,
 )
 
 
@@ -2308,8 +2361,8 @@ _PROGRESSIVESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9683,
-  serialized_end=9765,
+  serialized_start=9899,
+  serialized_end=9981,
 )
 
 _CRONPREDICTION.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
@@ -2334,6 +2387,7 @@ _CURTAINSTATUS.fields_by_name['lastUpdated'].message_type = k8s_dot_io_dot_apima
 _CURTAINSTATUS.fields_by_name['conditions'].message_type = _CURTAINCONDITION
 _CURTAINTEMPLATESPEC.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
 _CURTAINTEMPLATESPEC.fields_by_name['spec'].message_type = _CURTAINSPEC
+_CUSTOMAPPSPEC.fields_by_name['pages'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._PAGESPEC
 _DATAAPP.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
 _DATAAPP.fields_by_name['spec'].message_type = _DATAAPPSPEC
 _DATAAPP.fields_by_name['status'].message_type = _DATAAPPSTATUS
@@ -2342,6 +2396,7 @@ _DATAAPPLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachine
 _DATAAPPLIST.fields_by_name['items'].message_type = _DATAAPP
 _DATAAPPSPEC.fields_by_name['productRef'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._OBJECTREFERENCE
 _DATAAPPSPEC.fields_by_name['servingsiteRef'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._OBJECTREFERENCE
+_DATAAPPSPEC.fields_by_name['custom'].message_type = _CUSTOMAPPSPEC
 _DATAAPPSTATUS.fields_by_name['lastUpdated'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
 _DATAAPPSTATUS.fields_by_name['conditions'].message_type = _DATAAPPCONDITION
 _MODELRECORD.fields_by_name['liveAt'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._TIME
@@ -2404,6 +2459,7 @@ DESCRIPTOR.message_types_by_name['CurtainList'] = _CURTAINLIST
 DESCRIPTOR.message_types_by_name['CurtainSpec'] = _CURTAINSPEC
 DESCRIPTOR.message_types_by_name['CurtainStatus'] = _CURTAINSTATUS
 DESCRIPTOR.message_types_by_name['CurtainTemplateSpec'] = _CURTAINTEMPLATESPEC
+DESCRIPTOR.message_types_by_name['CustomAppSpec'] = _CUSTOMAPPSPEC
 DESCRIPTOR.message_types_by_name['DataApp'] = _DATAAPP
 DESCRIPTOR.message_types_by_name['DataAppCondition'] = _DATAAPPCONDITION
 DESCRIPTOR.message_types_by_name['DataAppList'] = _DATAAPPLIST
@@ -2527,6 +2583,13 @@ CurtainTemplateSpec = _reflection.GeneratedProtocolMessageType('CurtainTemplateS
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainTemplateSpec)
   })
 _sym_db.RegisterMessage(CurtainTemplateSpec)
+
+CustomAppSpec = _reflection.GeneratedProtocolMessageType('CustomAppSpec', (_message.Message,), {
+  'DESCRIPTOR' : _CUSTOMAPPSPEC,
+  '__module__' : 'github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.generated_pb2'
+  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CustomAppSpec)
+  })
+_sym_db.RegisterMessage(CustomAppSpec)
 
 DataApp = _reflection.GeneratedProtocolMessageType('DataApp', (_message.Message,), {
   'DESCRIPTOR' : _DATAAPP,

@@ -199,7 +199,7 @@ type ReportStatus struct {
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,7,opt,name=lastError"`
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,8,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,8,opt,name=logs"`
 
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
@@ -211,113 +211,7 @@ type ReportStatus struct {
 	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
 }
 
-// Container for custom reports.
 type CustomReportSpec struct {
-	Values        []CustomReportValue     `json:"values,omitempty" protobuf:"bytes,1,rep,name=values"`
-	Tables        []CustomReportTable     `json:"tables,omitempty" protobuf:"bytes,2,rep,name=tables"`
-	LineCharts    []CustomReportLineChart `json:"lineCharts,omitempty" protobuf:"bytes,3,rep,name=lineCharts"`
-	BarCharts     []CustomReportBarChart  `json:"barCharts,omitempty" protobuf:"bytes,4,rep,name=barCharts"`
-	HistCharts    []CustomReportHistogram `json:"histCharts,omitempty" protobuf:"bytes,5,rep,name=histCharts"`
-	ScatterCharts []CustomReportHistogram `json:"histCharts,omitempty" protobuf:"bytes,6,rep,name=scatterCharts"`
-}
-
-type CustomReportValue struct {
-	// Dataset is the name of the dataset
-	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// Column is the name of the column
-	// +kubebuilder:validation:Optional
-	Column *string `json:"column,omitempty" protobuf:"bytes,2,opt,name=column"`
-	// Row is the row number
-	// +kubebuilder:validation:Optional
-	Row *int32 `json:"row,omitempty" protobuf:"varint,3,opt,name=row"`
-	// Scalar the a const value
-	// +kubebuilder:validation:Optional
-	Scalar *string `json:"scalar,omitempty" protobuf:"bytes,4,opt,name=scalar"`
-}
-
-type CustomReportTable struct {
-	// Dataset is the name of the dataset
-	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// List of table columns, if empty use call the columns
-	// +kubebuilder:validation:Optional
-	Columns []string `json:"columns,omitempty" protobuf:"bytes,2,rep,name=columns"`
-	// one or more filters
-	// +kubebuilder:validation:Optional
-	Filters []string `json:"filters,omitempty" protobuf:"bytes,3,rep,name=filters"`
-	// Groupby columns
-	// +kubebuilder:validation:Optional
-	GroupBy []string `json:"groupby,omitempty" protobuf:"bytes,4,rep,name=groupby"`
-	// Row is the row number
-	// +kubebuilder:validation:Optional
-	Rows *int32 `json:"rows,omitempty" protobuf:"varint,5,opt,name=rows"`
-	// Show index column
-	// +kubebuilder:validation:Optional
-	ShowIndex *bool `json:"showIndex,omitempty" protobuf:"varint,6,opt,name=showIndex"`
-	// Show borther
-	// +kubebuilder:validation:Optional
-	Border *bool `json:"border,omitempty" protobuf:"varint,7,opt,name=border"`
-}
-
-type CustomReportLineChart struct {
-	// Dataset is the name of the dataset
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// name of the X column
-	// +kubebuilder:validation:Optional
-	X *string `json:"x,omitempty" protobuf:"bytes,2,opt,name=x"`
-	// Y column
-	// +kubebuilder:validation:Optional
-	Y *string `json:"y,omitempty" protobuf:"bytes,3,opt,name=y"`
-	// Show borther
-	// +kubebuilder:validation:Optional
-	Legend *bool `json:"legend,omitempty" protobuf:"varint,4,opt,name=legend"`
-}
-
-// Bar Chart
-type CustomReportBarChart struct {
-	// Dataset is the name of the dataset
-	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// name of the X column
-	// +kubebuilder:validation:Optional
-	X *string `json:"x,omitempty" protobuf:"bytes,2,opt,name=x"`
-	// Y column
-	// +kubebuilder:validation:Optional
-	Y *string `json:"y,omitempty" protobuf:"bytes,3,opt,name=y"`
-	// Show borther
-	// +kubebuilder:validation:Optional
-	Legend *bool `json:"legend,omitempty" protobuf:"varint,4,opt,name=legend"`
-	// Show borther
-	// +kubebuilder:validation:Optional
-	Sort *bool `json:"sort,omitempty" protobuf:"varint,5,opt,name=sort"`
-}
-
-// Histogram chart Chart
-
-type CustomReportHistogram struct {
-	// Dataset is the name of the dataset
-	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// name of the X column
-	// +kubebuilder:validation:Optional
-	X *string `json:"x,omitempty" protobuf:"bytes,2,opt,name=x"`
-	// Show borther
-	// +kubebuilder:validation:Optional
-	Bins *int32 `json:"bins,omitempty" protobuf:"varint,3,opt,name=bins"`
-}
-
-type CustomReportScatterPlot struct {
-	// Dataset is the name of the dataset
-	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
-	// name of the X column
-	// +kubebuilder:validation:Optional
-	X *string `json:"x,omitempty" protobuf:"bytes,2,opt,name=x"`
-	// name of the Y axis columns
-	// +kubebuilder:validation:Optional
-	Y *string `json:"y,omitempty" protobuf:"bytes,3,opt,name=y"`
-}
-
-type FormatSpec struct {
+	// The pages in the report
+	Pages []data.PageSpec `json:"pages,omitempty" protobuf:"bytes,8,opt,name=pages"`
 }

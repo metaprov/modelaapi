@@ -448,25 +448,27 @@ spec:
                         description: The backtest specification, the system supports
                           back testing with expanding windows.
                         properties:
-                          forecastingWindowsSize:
+                          Horizon:
                             description: The number of data points to forecast on.
                             format: int32
                             minimum: 0
+                            type: integer
+                          gap:
+                            description: The number of data points between each windows
+                            format: int32
+                            minimum: 0
+                            type: integer
+                          maxTrainSize:
+                            description: Max size for a single training set
+                            format: int32
                             type: integer
                           sliding:
                             description: If true, use sliding windows, else use expanding
                               windows
                             type: boolean
-                          slidingSteps:
-                            description: The number of data points between each windows
+                          splits:
+                            description: Number of splits. Default is 5
                             format: int32
-                            minimum: 0
-                            type: integer
-                          trainingWindowsSize:
-                            description: The number of data points in each windows
-                              used for training.
-                            format: int32
-                            minimum: 0
                             type: integer
                         type: object
                       confidenceIntervals:

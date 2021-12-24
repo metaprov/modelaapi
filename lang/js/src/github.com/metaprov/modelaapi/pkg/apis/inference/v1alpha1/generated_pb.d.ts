@@ -453,6 +453,34 @@ export namespace CurtainTemplateSpec {
   }
 }
 
+export class CustomAppSpec extends jspb.Message {
+  getOwner(): boolean;
+  setOwner(value: boolean): CustomAppSpec;
+
+  getTitle(): string;
+  setTitle(value: string): CustomAppSpec;
+
+  getPagesList(): Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec>;
+  setPagesList(value: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec>): CustomAppSpec;
+  clearPagesList(): CustomAppSpec;
+  addPages(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec, index?: number): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CustomAppSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: CustomAppSpec): CustomAppSpec.AsObject;
+  static serializeBinaryToWriter(message: CustomAppSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CustomAppSpec;
+  static deserializeBinaryFromReader(message: CustomAppSpec, reader: jspb.BinaryReader): CustomAppSpec;
+}
+
+export namespace CustomAppSpec {
+  export type AsObject = {
+    owner: boolean,
+    title: string,
+    pagesList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.PageSpec.AsObject>,
+  }
+}
+
 export class DataApp extends jspb.Message {
   getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
   setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): DataApp;
@@ -585,6 +613,11 @@ export class DataAppSpec extends jspb.Message {
   hasServingsiteref(): boolean;
   clearServingsiteref(): DataAppSpec;
 
+  getCustom(): CustomAppSpec | undefined;
+  setCustom(value?: CustomAppSpec): DataAppSpec;
+  hasCustom(): boolean;
+  clearCustom(): DataAppSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DataAppSpec.AsObject;
   static toObject(includeInstance: boolean, msg: DataAppSpec): DataAppSpec.AsObject;
@@ -606,6 +639,7 @@ export namespace DataAppSpec {
     accesstype: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    custom?: CustomAppSpec.AsObject,
   }
 }
 
