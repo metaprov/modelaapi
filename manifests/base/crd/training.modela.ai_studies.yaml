@@ -1105,6 +1105,7 @@ spec:
                         format: int32
                         type: integer
                       lower:
+                        default: 0
                         description: A minimum value which determines whether pruner
                           prunes or not. Used only for treshold pruner
                         format: int32
@@ -1170,6 +1171,7 @@ spec:
                         - treshold
                         type: string
                       upper:
+                        default: 0
                         description: A maximum value which determines whether pruner
                           prunes or not. Used only for treshold pruner
                         format: int32

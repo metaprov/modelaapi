@@ -2464,10 +2464,12 @@ message PrunerSpec {
   optional int32 percentile = 6;
 
   // A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 lower = 7;
 
   // A maximum value which determines whether pruner prunes or not. Used only for treshold pruner
+  // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 upper = 8;
 

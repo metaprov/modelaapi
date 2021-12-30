@@ -188,7 +188,7 @@ type SearchSpec struct {
 	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,1,opt,name=sampler"`
 	// The pruner to use during model search.
 	// +kubebuilder:validation:Optional
-	Pruner *PrunerSpec `json:"pruner,omitempty" protobuf:"bytes,2,opt,name=pruner"`
+	Pruner PrunerSpec `json:"pruner,omitempty" protobuf:"bytes,2,opt,name=pruner"`
 	// MaxCost specify what is the maximum cost incurred before
 	// stopping model creations
 	// +kubebuilder:validation:Optional
@@ -238,7 +238,7 @@ type SearchSpec struct {
 	RetainFor *int32 `json:"retainedFor,omitempty" protobuf:"varint,10,opt,name=retainedFor"`
 	// Define the algorithm search space.
 	// +kubebuilder:validation:Optional
-	SearchSpace *AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,11,opt,name=searchSpace"`
+	SearchSpace AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,11,opt,name=searchSpace"`
 	// If larget than 0, stop the search if no change in best score occur.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -340,25 +340,27 @@ type PrunerSpec struct {
 	// +kubebuilder:validation:Optional
 	Percentile *int32 `json:"percentile,omitempty" protobuf:"varint,6,opt,name=percentile"`
 	// A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Lower *int32 `json:"lower,omitempty" protobuf:"varint,7,opt,name=lower"`
 	// A maximum value which determines whether pruner prunes or not. Used only for treshold pruner
+	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Upper *int32 `json:"upper,omitempty" protobuf:"varint,8,opt,name=upper"`
 	// SHOptions is the desired options for successive halving search.
 	// All other models are saved into an archive.
 	// +kubebuilder:validation:Optional
-	SHOptions *SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,9,opt,name=shOptions"`
+	SHOptions SuccessiveHalvingOptions `json:"shOptions,omitempty" protobuf:"bytes,9,opt,name=shOptions"`
 }
 
 type StudyForecastSpec struct {
 	// Template to use for each model
 	// +kubebuilder:validation:Optional
-	Template *ForecastSpec `json:"template,omitempty" protobuf:"bytes,1,opt,name=template"`
+	Template ForecastSpec `json:"template,omitempty" protobuf:"bytes,1,opt,name=template"`
 	// for multi level forecast
 	// The group hierarchy
 	// +kubebuilder:validation:Optional
-	Hierarchy *Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,2,opt,name=hierarchy"`
+	Hierarchy Hierarchy `json:"hierarchy,omitempty" protobuf:"bytes,2,opt,name=hierarchy"`
 }
 
 // Define the specification for the best feature engineering pipeline
@@ -417,25 +419,25 @@ type StudySpec struct {
 	// Specification for feature engineereing
 	// Default: all preprocessing is set to auto.
 	// +kubebuilder:validation:Optional
-	FeatureEngineeringSearch *FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,6,opt,name=feSearch"`
+	FeatureEngineeringSearch FeatureEngineeringSearchSpec `json:"feSearch,omitempty" protobuf:"bytes,6,opt,name=feSearch"`
 	// Specification for the baseline phase
 	// +kubebuilder:validation:Optional
-	Baseline *BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,7,opt,name=baseline"`
+	Baseline BaselineSpec `json:"baseline,omitempty" protobuf:"bytes,7,opt,name=baseline"`
 	// Search defines the model search
 	// +kubebuilder:validation:Optional
-	Search *SearchSpec `json:"search,omitempty" protobuf:"bytes,8,opt,name=search"`
+	Search SearchSpec `json:"search,omitempty" protobuf:"bytes,8,opt,name=search"`
 	// Search defines the model search
 	// +kubebuilder:validation:Optional
-	Ensembles *EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,9,opt,name=ensembles"`
+	Ensembles EnsemblesSpec `json:"ensembles,omitempty" protobuf:"bytes,9,opt,name=ensembles"`
 	// Training template contain the desired training parameter for the models.
 	// +kubebuilder:validation:Optional
-	TrainingTemplate *TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,10,opt,name=trainingTemplate"`
+	TrainingTemplate TrainingSpec `json:"trainingTemplate,omitempty" protobuf:"bytes,10,opt,name=trainingTemplate"`
 	// Forecast template
 	// +kubebuilder:validation:Optional
 	ForecastSpec StudyForecastSpec `json:"forecast,omitempty" protobuf:"bytes,11,opt,name=forecast"`
 	// Define when the schedule start
 	// +kubebuilder:validation:Optional
-	Schedule *StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
+	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
 	// Aborted is set when we want to abort the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -467,7 +469,7 @@ type StudySpec struct {
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,21,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,21,opt,name=location"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
@@ -479,7 +481,7 @@ type StudySpec struct {
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,23,opt,name=activeDeadlineSeconds"`
 	// This is the compiler spec for models. This spec will act as a template for the models created by the study
 	//+kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,24,opt,name=compilation"`
+	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,24,opt,name=compilation"`
 	// Set to true if this study is a template
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
@@ -543,7 +545,7 @@ type StudyStatus struct {
 	// Last error
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	LastError *string `json:"lastError,omitempty" protobuf:"bytes,15,opt,name=lastError"`
+	LastError string `json:"lastError,omitempty" protobuf:"bytes,15,opt,name=lastError"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
 	TrainingRows int32 `json:"trainingRows" protobuf:"varint,16,opt,name=trainingRows"`
@@ -606,9 +608,9 @@ type ModelResult struct {
 	// +kubebuilder:validation:Optional
 	Alg string `json:"alg,omitempty" protobuf:"bytes,2,opt,name=alg"`
 	// +kubebuilder:validation:Optional
-	Score *float64 `json:"score,omitempty" protobuf:"bytes,3,opt,name=score"`
+	Score float64 `json:"score,omitempty" protobuf:"bytes,3,opt,name=score"`
 	// +kubebuilder:validation:Optional
-	Error *bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
+	Error bool `json:"error,omitempty" protobuf:"varint,4,opt,name=error"`
 }
 
 //==============================================================================
@@ -626,9 +628,9 @@ type StudyList struct {
 
 type Level struct {
 	// The name of the level - the column name
-	Name string `json:"string,omitempty" protobuf:"bytes,1,opt,name=string"`
+	Name *string `json:"string,omitempty" protobuf:"bytes,1,opt,name=string"`
 	// The number of time periods to
-	Horizon int32 `json:"horizon,omitempty" protobuf:"varint,2,opt,name=horizon"`
+	Horizon *int32 `json:"horizon,omitempty" protobuf:"varint,2,opt,name=horizon"`
 	// The freq of the level
 	Freq *catalog.Freq `json:"freq,omitempty" protobuf:"bytes,3,opt,name=freq"`
 	// The aggregate function used to roll up the lower level
@@ -697,11 +699,11 @@ type StudyPhaseStatus struct {
 type SegmentSpec struct {
 	// The dataset column name
 	// +kubebuilder:validation:Required
-	ColumnName string `json:"columnName,omitempty" protobuf:"varint,1,opt,name=columnName"`
+	ColumnName *string `json:"columnName,omitempty" protobuf:"bytes,1,opt,name=columnName"`
 	// The segment operation
 	// +kubebuilder:validation:Required
-	OP catalog.Op `json:"op,omitempty" protobuf:"varint,2,opt,name=op"`
+	OP *catalog.Op `json:"op,omitempty" protobuf:"bytes,2,opt,name=op"`
 	// The value operation
 	// +kubebuilder:validation:Required
-	Value string `json:"value,omitempty" protobuf:"varint,3,opt,name=value"`
+	Value *string `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
 }
