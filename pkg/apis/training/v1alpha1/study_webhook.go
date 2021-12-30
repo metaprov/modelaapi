@@ -40,9 +40,6 @@ var _ webhook.Defaulter = &Study{}
 func (study *Study) Default() {
 
 	// set default to cv
-	if study.Spec.TrainingTemplate == nil {
-		study.Spec.TrainingTemplate = &TrainingSpec{}
-	}
 
 	if study.Spec.TrainingTemplate.CheckpointInterval == nil {
 		study.Spec.TrainingTemplate.CheckpointInterval = util.Int32Ptr(0)
@@ -53,19 +50,8 @@ func (study *Study) Default() {
 		study.Spec.Search.Objective = &o
 	}
 
-	if study.Spec.Search == nil {
-		study.Spec.Search = &SearchSpec{}
-		study.Spec.Search.Default()
-	}
-
-	if study.Spec.Search.Pruner == nil {
-		study.Spec.Search.Pruner = &PrunerSpec{}
-		study.Spec.Search.Pruner.Default()
-	}
-
-	if study.Spec.Search.SearchSpace == nil {
-		study.Spec.Search.SearchSpace = &AlgorithmSearchSpaceSpec{}
-	}
+	study.Spec.Search = SearchSpec{}
+	study.Spec.Search.Default()
 
 	if study.Spec.Ensembles.VotingEnsemble == nil {
 		study.Spec.Ensembles.VotingEnsemble = util.BoolPtr(false)
@@ -76,10 +62,6 @@ func (study *Study) Default() {
 	}
 
 	study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)
-
-	if study.Spec.Search.Pruner.SHOptions == nil {
-		study.Spec.Search.Pruner.SHOptions = &SuccessiveHalvingOptions{}
-	}
 
 	if study.Spec.Schedule.StartAt == nil {
 		now := metav1.Now()
@@ -92,20 +74,6 @@ func (study *Study) Default() {
 
 	if study.Spec.Search.Pruner.SHOptions.EliminationRate == nil {
 		study.Spec.Search.Pruner.SHOptions.EliminationRate = util.Int32Ptr(3)
-	}
-
-	if study.Spec.TrainingTemplate == nil {
-		cvtype := catalog.CvTypeStratifiedKFold
-		pr := catalog.PriorityLevelMedium
-		study.Spec.TrainingTemplate = &TrainingSpec{
-			Priority:           &pr,
-			CvType:             &cvtype,
-			CV:                 util.BoolPtr(true),
-			Folds:              util.Int32Ptr(5),
-			EarlyStop:          util.BoolPtr(false),
-			CheckpointInterval: util.Int32Ptr(10),
-			Seed:               util.Float64Ptr(42),
-		}
 	}
 
 	if study.Spec.Aborted == nil {
@@ -240,7 +208,7 @@ func (svo *SuccessiveHalvingOptions) Default() {
 func (ms *SearchSpec) Default() {
 	name := RandomSearch
 	ms.Sampler = &name
-	ms.Pruner = &PrunerSpec{}
+	ms.Pruner = PrunerSpec{}
 	ms.Pruner.Default()
 	ms.MaxCost = util.Int32Ptr(100)
 	ms.MaxTime = util.Int32Ptr(30)

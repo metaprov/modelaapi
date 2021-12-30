@@ -524,21 +524,21 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			DatasetName: util.StrPtr(b.DatasetName()),
 			Task:        b.Spec.Task,
 
-			Search: &SearchSpec{
+			Search:SearchSpec{
 				Sampler:   b.Spec.Sampler,
 				MaxTime:   b.Spec.MaxTime,
 				MaxModels: b.Spec.MaxModels,
 				Trainers:  b.Spec.Trainers,
 				Objective: b.Spec.Objective,
 			},
-			TrainingTemplate: &TrainingSpec{
+			TrainingTemplate: TrainingSpec{
 				Priority:    nil,
 				CvType:      nil,
 				CV:          nil,
 				Folds:       nil,
 				EvalMetrics: nil,
 			},
-			Location: &data.DataLocation{
+			Location: data.DataLocation{
 				BucketName: b.Spec.Location.BucketName,
 			},
 			Aborted:          util.BoolPtr(false),

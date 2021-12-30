@@ -145,15 +145,15 @@ func Test_One_Parent_Levels(t *testing.T) {
 	hierarcy := Hierarchy{}
 	hierarcy.GroupLevels = make([]Level, 0)
 	hierarcy.GroupLevels = append(hierarcy.GroupLevels, Level{
-		Name:      "parent", // column name
-		Horizon:   10,
+		Name:      util.StrPtr("parent"), // column name
+		Horizon:   util.Int32Ptr(10),
 		Freq:      nil,
 		Aggregate: nil,
 		Values:    []string{"p1", "p2"},
 	})
 	hierarcy.ItemLevel = &Level{
-		Name:      "child", //column name
-		Horizon:   10,
+		Name:      util.StrPtr("child"), //column name
+		Horizon:   util.Int32Ptr(10),
 		Freq:      nil,
 		Aggregate: nil,
 		Values:    []string{"c1", "c2"},
@@ -176,8 +176,8 @@ func Test_Only_Item_Levels(t *testing.T) {
 	hierarcy := Hierarchy{}
 	hierarcy.GroupLevels = make([]Level, 0)
 	hierarcy.ItemLevel = &Level{
-		Name:      "child", //column name
-		Horizon:   10,
+		Name:      util.StrPtr("child"), //column name
+		Horizon:   util.Int32Ptr(10),
 		Freq:      nil,
 		Aggregate: nil,
 		Values:    []string{"c1", "c2"},
