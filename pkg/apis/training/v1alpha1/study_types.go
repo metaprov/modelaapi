@@ -226,7 +226,7 @@ type SearchSpec struct {
 	Test *int32 `json:"test,omitempty" protobuf:"varint,8,opt,name=test"`
 	// Indicate the total number of full models that would be retain in etcd.
 	// All other models are garbage collected (archived).
-	// models are sorted by thier objective score.
+	// models are sorted by their objective score.
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
@@ -304,7 +304,7 @@ type AlgorithmSearchSpaceSpec struct {
 // Study Schedule is used for cases where the study is scheduled to start at future date time.
 type StudyScheduleSpec struct {
 	// Indicate the all models should be tests
-	// +kubebuilder:default:=true
+	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// Set the start time, by default this is set to the start time of the study
@@ -387,7 +387,7 @@ type FeatureEngineeringSearchSpec struct {
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
 	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,6,opt,name=samplePct"`
-	// If true, remove all the models that were used for feature engineering, once
+	// If true, remove all the models that were used for feature engineering, once the search is over.
 	// +kubebuilder:default:=true
 	// the feature engineering is done.
 	AutoRemove *bool `json:"autoRemove,omitempty" protobuf:"varint,7,opt,name=autoRemove"`

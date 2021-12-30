@@ -524,7 +524,7 @@ func (b *ModelAutobuilder) CreateStudy() *Study {
 			DatasetName: util.StrPtr(b.DatasetName()),
 			Task:        b.Spec.Task,
 
-			Search:SearchSpec{
+			Search: SearchSpec{
 				Sampler:   b.Spec.Sampler,
 				MaxTime:   b.Spec.MaxTime,
 				MaxModels: b.Spec.MaxModels,

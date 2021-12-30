@@ -250,7 +250,8 @@ spec:
                   autoRemove:
                     default: true
                     description: If true, remove all the models that were used for
-                      feature engineering, once the feature engineering is done.
+                      feature engineering, once the search is over. the feature engineering
+                      is done.
                     type: boolean
                   enabled:
                     default: true
@@ -478,7 +479,7 @@ spec:
                         minimum: 0
                         type: integer
                       data:
-                        description: Required, the freq of the time series (daily,weekly)
+                        description: Specification of the forecast data.
                         properties:
                           changepoints:
                             description: Set an holiday schedule for a country. Change
@@ -611,7 +612,7 @@ spec:
                                 type: integer
                             type: object
                           holiday:
-                            description: The format of the datetime column. Used default
+                            description: The spec for the holiday
                             properties:
                               country:
                                 description: / The HolidayCountry unit
@@ -917,7 +918,7 @@ spec:
                 description: Define when the schedule start
                 properties:
                   enabled:
-                    default: true
+                    default: false
                     description: Indicate the all models should be tests
                     type: boolean
                   startAt:
@@ -1187,7 +1188,7 @@ spec:
                     default: 10
                     description: Indicate the total number of full models that would
                       be retain in etcd. All other models are garbage collected (archived).
-                      models are sorted by thier objective score.
+                      models are sorted by their objective score.
                     format: int32
                     maximum: 100
                     minimum: 0

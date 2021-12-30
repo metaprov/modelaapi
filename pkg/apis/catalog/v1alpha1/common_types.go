@@ -900,6 +900,13 @@ const (
 	StackingEnsemble            ClassicEstimatorName = "stacking-ensemble" // for stacking ensemble
 	UnknownEstimatorName        ClassicEstimatorName = "unknown"
 	NoneEstimatorName           ClassicEstimatorName = "none"
+
+	// Clustering
+	SpectralClustering        ClassicEstimatorName = "spectral"
+	AgglomerativeClustering   ClassicEstimatorName = "agglomerative"
+	GaussianMixtureClustering ClassicEstimatorName = "gaussian-mixture"
+	KMeanClustering           ClassicEstimatorName = "kmean"
+	DBSCANClustering          ClassicEstimatorName = "dbscan"
 )
 
 func ParseEstimatorName(name string) ClassicEstimatorName {

@@ -151,7 +151,7 @@ func (study *Study) validateName(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	err := common.ValidateResourceName(study.Name)
 	if err != nil {
-		allErrs = append(allErrs, field.Invalid(fldPath.Child("FileName"), study.Name, err.Error()))
+		allErrs = append(allErrs, field.Invalid(fldPath.Child("Name"), study.Name, err.Error()))
 	}
 	return allErrs
 }
@@ -159,12 +159,38 @@ func (study *Study) validateName(fldPath *field.Path) field.ErrorList {
 func (study *Study) validateSpec(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
 	allErrs = append(allErrs, study.validateTask(fldPath.Child("Task"))...)
+	allErrs = append(allErrs, study.validateDataset(fldPath.Child("Dataset"))...)
+	return allErrs
+}
+
+// Validate task checks that the
+func (study *Study) validateDataset(fldPath *field.Path) field.ErrorList {
+	var allErrs field.ErrorList
+	// Task must be defined.
+	if study.Spec.DatasetName == nil {
+		err := errors.Errorf("dataset name must be defined")
+		allErrs = append(allErrs, field.Invalid(
+			fldPath,
+			study.Spec.Task,
+			err.Error()))
+		return allErrs
+	}
 	return allErrs
 }
 
 // Validate task checks that the
 func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 	var allErrs field.ErrorList
+	// Task must be defined.
+	if study.Spec.Task == nil {
+		err := errors.Errorf("task must be defined")
+		allErrs = append(allErrs, field.Invalid(
+			fldPath,
+			study.Spec.Task,
+			err.Error()))
+		return allErrs
+	}
+
 	if *study.Spec.Task == catalog.Regression && !study.Spec.Search.Objective.IsRegression() {
 		err := errors.Errorf("objective %v is not a regression metric", *study.Spec.Search.Objective)
 		allErrs = append(allErrs, field.Invalid(
@@ -193,6 +219,15 @@ func (study *Study) validateTask(fldPath *field.Path) field.ErrorList {
 			study.Spec.Task,
 			err.Error()))
 	}
+
+	if *study.Spec.Task == catalog.Forecasting && !study.Spec.Search.Objective.IsForecast() {
+		err := errors.Errorf("objective %v is not a forecasting metric", *study.Spec.Search.Objective)
+		allErrs = append(allErrs, field.Invalid(
+			fldPath,
+			study.Spec.Task,
+			err.Error()))
+	}
+
 	return allErrs
 }
 
@@ -207,26 +242,56 @@ func (svo *SuccessiveHalvingOptions) Default() {
 
 func (ms *SearchSpec) Default() {
 	name := RandomSearch
-	ms.Sampler = &name
+	if ms.Sampler == nil {
+		ms.Sampler = &name
+	}
 	ms.Pruner = PrunerSpec{}
 	ms.Pruner.Default()
-	ms.MaxCost = util.Int32Ptr(100)
-	ms.MaxTime = util.Int32Ptr(30)
-	ms.MaxModels = util.Int32Ptr(10)
-	ms.MinScore = util.Float64Ptr(0)
-	ms.Trainers = util.Int32Ptr(1)
-	ms.Test = util.Int32Ptr(1)
-	ms.RetainTop = util.Int32Ptr(10)
-	ms.RetainFor = util.Int32Ptr(60)
+	if ms.MaxCost == nil {
+		ms.MaxCost = util.Int32Ptr(100)
+	}
+	if ms.MaxTime == nil {
+		ms.MaxTime = util.Int32Ptr(30)
+	}
+	if ms.MaxModels == nil {
+		ms.MaxModels = util.Int32Ptr(10)
+	}
+	if ms.MinScore == nil {
+		ms.MinScore = util.Float64Ptr(0)
+	}
+	if ms.Trainers == nil {
+		ms.Trainers = util.Int32Ptr(1)
+	}
+	if ms.Test == nil {
+		ms.Test = util.Int32Ptr(1)
+	}
+	if ms.RetainTop == nil {
+		ms.RetainTop = util.Int32Ptr(10)
+	}
+	if ms.RetainFor == nil {
+		ms.RetainFor = util.Int32Ptr(60)
+	}
 
 }
 
 func (pspec *PrunerSpec) Default() {
 	name := MedianPruner
-	pspec.Type = &name
-	pspec.StartupTrials = util.Int32Ptr(5)
-	pspec.WarmupTrials = util.Int32Ptr(0)
-	pspec.MinimumTrials = util.Int32Ptr(1)
-	pspec.IntervalSteps = util.Int32Ptr(1)
-	pspec.Percentile = util.Int32Ptr(25)
+	if pspec.Type == nil {
+		pspec.Type = &name
+	}
+	if pspec.StartupTrials == nil {
+		pspec.StartupTrials = util.Int32Ptr(5)
+	}
+	if pspec.WarmupTrials == nil {
+		pspec.WarmupTrials = util.Int32Ptr(0)
+	}
+	if pspec.MinimumTrials == nil {
+		pspec.MinimumTrials = util.Int32Ptr(1)
+	}
+	if pspec.IntervalSteps == nil {
+		pspec.IntervalSteps = util.Int32Ptr(1)
+	}
+	if pspec.Percentile == nil {
+		pspec.Percentile = util.Int32Ptr(25)
+	}
 }

@@ -563,7 +563,7 @@ message FeatureEngineeringSearchSpec {
   // +kubebuilder:validation:Optional
   optional int32 samplePct = 6;
 
-  // If true, remove all the models that were used for feature engineering, once
+  // If true, remove all the models that were used for feature engineering, once the search is over.
   // +kubebuilder:default:=true
   // the feature engineering is done.
   optional bool autoRemove = 7;
@@ -661,11 +661,12 @@ message ForecastPostProcessingSpec {
 
 // ForecastingSpec
 message ForecastSpec {
-  // Required, the freq of the time series (daily,weekly)
+  // Specification of the forecast data.
   // +kubebuilder:validation:Optional
   optional TimeSeriesDataSpec data = 1;
 
   // The confidence levels for the forecast, each level must be between 1-100.
+  // +kubebuilder:default = 95
   // +kubebuilder:validation:Optional
   // +kubebuilder:validation:Minimum=0
   optional int32 confidenceInterval = 2;
@@ -757,6 +758,7 @@ message HolidaySpec {
   optional string country = 3;
 
   // For custom holiday use external dataset
+  // +kubebuilder:validation:Optional
   optional string datasetName = 4;
 }
 
@@ -2739,7 +2741,7 @@ message SearchSpec {
 
   // Indicate the total number of full models that would be retain in etcd.
   // All other models are garbage collected (archived).
-  // models are sorted by thier objective score.
+  // models are sorted by their objective score.
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
@@ -2887,7 +2889,7 @@ message StudyPhaseStatus {
 // Study Schedule is used for cases where the study is scheduled to start at future date time.
 message StudyScheduleSpec {
   // Indicate the all models should be tests
-  // +kubebuilder:default:=true
+  // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
@@ -3271,7 +3273,7 @@ message TimeSeriesDataSpec {
 
   // The name of the column holding the value.
   // By default this is the target column from the dataset.
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:validation:Required
   optional string targetColumn = 2;
 
   // The format of the datetime column. Used default
@@ -3282,7 +3284,7 @@ message TimeSeriesDataSpec {
   // +kubebuilder:validation:Optional
   optional HierarchySpec hierarchy = 4;
 
-  // The format of the datetime column. Used default
+  // The spec for the holiday
   // +kubebuilder:validation:Optional
   optional HolidaySpec holiday = 5;
 

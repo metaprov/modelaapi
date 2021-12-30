@@ -577,7 +577,7 @@ spec:
                     minimum: 0
                     type: integer
                   data:
-                    description: Required, the freq of the time series (daily,weekly)
+                    description: Specification of the forecast data.
                     properties:
                       changepoints:
                         description: Set an holiday schedule for a country. Change
@@ -710,7 +710,7 @@ spec:
                             type: integer
                         type: object
                       holiday:
-                        description: The format of the datetime column. Used default
+                        description: The spec for the holiday
                         properties:
                           country:
                             description: / The HolidayCountry unit

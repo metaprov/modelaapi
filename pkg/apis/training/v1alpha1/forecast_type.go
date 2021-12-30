@@ -89,6 +89,7 @@ type HolidaySpec struct {
 	// +kubebuilder:validation:Optional
 	Country *catalog.HolidayCountry `json:"country,omitempty" protobuf:"bytes,3,opt,name=country"`
 	// For custom holiday use external dataset
+	// +kubebuilder:validation:Optional
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 }
 
@@ -116,7 +117,7 @@ type TimeSeriesDataSpec struct {
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,1,opt,name=timeColumn"`
 	// The name of the column holding the value.
 	// By default this is the target column from the dataset.
-	// +kubebuilder:validation:Optional
+	// +kubebuilder:validation:Required
 	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,2,opt,name=targetColumn"`
 	// The format of the datetime column. Used default
 	// +kubebuilder:validation:Optional
@@ -124,21 +125,21 @@ type TimeSeriesDataSpec struct {
 	// The Hierarchy spec
 	// +kubebuilder:validation:Optional
 	Hierarchy HierarchySpec `json:"hierarchy,omitempty" protobuf:"bytes,4,opt,name=hierarchy"`
-	// The format of the datetime column. Used default
+	// The spec for the holiday
 	// +kubebuilder:validation:Optional
-	Holiday *HolidaySpec `json:"holiday,omitempty" protobuf:"bytes,5,opt,name=holiday"`
+	Holiday HolidaySpec `json:"holiday,omitempty" protobuf:"bytes,5,opt,name=holiday"`
 	// The historical periods
 	// +kubebuilder:validation:Optional
-	History *PeriodSpec `json:"history,omitempty" protobuf:"bytes,6,opt,name=history"`
+	History PeriodSpec `json:"history,omitempty" protobuf:"bytes,6,opt,name=history"`
 	// The forecast periods
 	// +kubebuilder:validation:Optional
-	Forecast *PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,7,opt,name=forecast"`
+	Forecast PeriodSpec `json:"forecast,omitempty" protobuf:"bytes,7,opt,name=forecast"`
 	// +kubebuilder:validation:Optional
-	YearlySeasonality *PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,8,opt,name=yearlySeasonality"`
+	YearlySeasonality PeriodSeasonalitySpec `json:"yearlySeasonality,omitempty" protobuf:"bytes,8,opt,name=yearlySeasonality"`
 	// +kubebuilder:validation:Optional
-	WeeklySeasonality *PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,9,opt,name=weeklySeasonality"`
+	WeeklySeasonality PeriodSeasonalitySpec `json:"weeklySeasonality,omitempty" protobuf:"bytes,9,opt,name=weeklySeasonality"`
 	// +kubebuilder:validation:Optional
-	DailySeasonality *PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,10,opt,name=dailySeasonality"`
+	DailySeasonality PeriodSeasonalitySpec `json:"dailySeasonality,omitempty" protobuf:"bytes,10,opt,name=dailySeasonality"`
 	// +kubebuilder:default = "linear"
 	// +kubebuilder:validation:Optional
 	Growth *GrowthMode `json:"growth,omitempty" protobuf:"bytes,13,opt,name=growth"`
@@ -151,7 +152,7 @@ type TimeSeriesDataSpec struct {
 	// Set an holiday schedule for a country.
 	// Change point specification
 	// +kubebuilder:validation:Optional
-	ChangePoints *ChangePointSpec `json:"changepoints,omitempty" protobuf:"bytes,16,opt,name=changepoints"`
+	ChangePoints ChangePointSpec `json:"changepoints,omitempty" protobuf:"bytes,16,opt,name=changepoints"`
 	// +kubebuilder:default = 0.8
 	// +kubebuilder:validation:Optional
 	IntervalWidth *float64 `json:"intevalWidth,omitempty" protobuf:"bytes,17,opt,name=intevalWidth"`
@@ -179,19 +180,20 @@ type ForecastPostProcessingSpec struct {
 
 // ForecastingSpec
 type ForecastSpec struct {
-	// Required, the freq of the time series (daily,weekly)
+	// Specification of the forecast data.
 	// +kubebuilder:validation:Optional
-	Data *TimeSeriesDataSpec `json:"data,omitempty" protobuf:"bytes,1,opt,name=data"`
+	Data TimeSeriesDataSpec `json:"data,omitempty" protobuf:"bytes,1,opt,name=data"`
 	// The confidence levels for the forecast, each level must be between 1-100.
+	// +kubebuilder:default = 95
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:validation:Minimum=0
 	ConfidenceInterval *int32 `json:"confidenceIntervals,omitempty" protobuf:"varint,2,opt,name=confidenceInterval"`
 	// The backtest specification, the system supports back testing with expanding windows.
 	// +kubebuilder:validation:Optional
-	Backtest *BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,3,opt,name=backtest"`
+	Backtest BacktestSpec `json:"backtest,omitempty" protobuf:"bytes,3,opt,name=backtest"`
 	// Post processing
 	// +kubebuilder:validation:Optional
-	PostPrecessing *ForecastPostProcessingSpec `json:"postProcessing,omitempty" protobuf:"bytes,4,opt,name=postProcessing"`
+	PostPrecessing ForecastPostProcessingSpec `json:"postProcessing,omitempty" protobuf:"bytes,4,opt,name=postProcessing"`
 	// If true generate the plots
 	// +kubebuilder:default = true
 	// +kubebuilder:validation:Optional
