@@ -45,12 +45,7 @@ func (study *Study) Default() {
 		study.Spec.TrainingTemplate.CheckpointInterval = util.Int32Ptr(0)
 	}
 
-	if study.Spec.Search.Objective == nil {
-		o := DefaultObjective(*study.Spec.Task)
-		study.Spec.Search.Objective = &o
-	}
-
-	study.Spec.Search.Default()
+	study.Spec.Search.Default(study.Spec.DeepCopy().Task)
 
 	if study.Spec.Ensembles.VotingEnsemble == nil {
 		study.Spec.Ensembles.VotingEnsemble = util.BoolPtr(false)
@@ -239,7 +234,7 @@ func (svo *SuccessiveHalvingOptions) Default() {
 	svo.EliminationRate = util.Int32Ptr(3)
 }
 
-func (ms *SearchSpec) Default(task) {
+func (ms *SearchSpec) Default(task *catalog.MLTask) {
 	name := RandomSearch
 	if ms.Sampler == nil {
 		ms.Sampler = &name
@@ -272,7 +267,7 @@ func (ms *SearchSpec) Default(task) {
 	}
 
 	if ms.Objective == nil {
-		o := DefaultObjective(*study.Spec.Task)
+		o := DefaultObjective(*task)
 		ms.Objective = &o
 	}
 
