@@ -463,5 +463,6 @@ type RecipeOutputSpec struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,2,opt,name=datasetName"`
 	// Location is the data location folder of the actual data resides.
 	// +kubebuilder:validation:Required
+	// +required
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,3,opt,name=location"`
 }

@@ -159,6 +159,7 @@ type TrainingStageSpec struct {
 	// use the dataset created in the data stage.
 	// +kubebuilder:default =""
 	// +kubebuilder:validation:Required
+	// +required
 	StudyTemplateName *string `json:"studyTemplateName,omitempty" protobuf:"bytes,4,opt,name=studyTemplateName"`
 	// Validations defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional

@@ -358,7 +358,6 @@ spec:
                         description: The owner account name
                         type: string
                       predictorName:
-                        default: ""
                         description: PredictorName refer to the predictor which would
                           predict the dataset of this prediction.
                         maxLength: 63

@@ -87,6 +87,7 @@ type AccountSpec struct {
 	// +kubebuilder:validation:MinLength=4
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
+	// +required
 	UserName *string `json:"userName,omitempty" protobuf:"bytes,4,opt,name=username"`
 	// First FileName is the user first name
 	// +kubebuilder:default:=""
@@ -102,6 +103,7 @@ type AccountSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:validation:Required
+	// +required
 	Email *string `json:"email,omitempty" protobuf:"bytes,7,opt,name=email"`
 	// Phone specify the phone of the user
 	// +kubebuilder:default:=""

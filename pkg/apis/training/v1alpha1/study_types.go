@@ -411,10 +411,12 @@ type StudySpec struct {
 	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,3,opt,name=labRef"`
 	// DatasetName refer to the dataset object for which the study is for.
 	// +kubebuilder:validation:Required
+	// +required
 	DatasetName *string `json:"datasetName" protobuf:"bytes,4,opt,name=datasetName"`
 	// Task specify the machine learning task (e.g classification).
 	// This must match the task of the data product.
 	// +kubebuilder:validation:Required
+	// +required
 	Task *catalog.MLTask `json:"task" protobuf:"bytes,5,opt,name=task"`
 	// Specification for feature engineereing
 	// Default: all preprocessing is set to auto.
@@ -699,11 +701,14 @@ type StudyPhaseStatus struct {
 type SegmentSpec struct {
 	// The dataset column name
 	// +kubebuilder:validation:Required
+	// +required
 	ColumnName *string `json:"columnName,omitempty" protobuf:"bytes,1,opt,name=columnName"`
 	// The segment operation
 	// +kubebuilder:validation:Required
+	// +required
 	OP *catalog.Op `json:"op,omitempty" protobuf:"bytes,2,opt,name=op"`
 	// The value operation
 	// +kubebuilder:validation:Required
+	// +required
 	Value *string `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
 }

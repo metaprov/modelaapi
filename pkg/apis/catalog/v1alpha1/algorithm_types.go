@@ -30,6 +30,7 @@ type AlgorithmList struct {
 type AlgorithmSpec struct {
 	// FrameworkName is a reference to library
 	// +kubebuilder:validation:Required
+	// +required
 	FrameworkName string `json:"frameworkName,omitempty" protobuf:"bytes,1,opt,name=frameworkName"`
 	// Description is the description of the algorithm
 	// +kubebuilder:default:=""

@@ -574,9 +574,9 @@ message PredictionSpec {
   optional string versionName = 1;
 
   // PredictorName refer to the predictor which would predict the dataset of this prediction.
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
+  // +required
   optional string predictorName = 2;
 
   // Labeled , true if this is labeled prediction request.

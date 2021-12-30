@@ -65,9 +65,11 @@ type ConnectionSpec struct {
 	Category *catalog.ConnectionCategory `json:"category" protobuf:"bytes,2,opt,name=category"`
 	// Provider specifies the name api provider (E.g. aws)
 	// +kubebuilder:validation:Required
+	// +required
 	Provider *catalog.ProviderName `json:"provider,omitempty" protobuf:"bytes,3,opt,name=provider"`
 	// SecretName is a reference to a secret which holds the connection credentials
 	// +kubebuilder:validation:Required
+	// +required
 	SecretName *string `json:"secretName,omitempty" protobuf:"bytes,4,opt,name=secretName"`
 
 	// Databases

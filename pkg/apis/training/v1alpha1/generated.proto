@@ -242,10 +242,12 @@ message CustomReportSpec {
 message CustomSeasonalitySpec {
   // The name of the custom seasonality
   // +kubebuilder:validation:Required
+  // +required
   optional string name = 1;
 
   // The name of the custom seasonality
   // +kubebuilder:validation:Required
+  // +required
   optional double period = 2;
 
   // +kubebuilder:validation:Optional
@@ -457,6 +459,7 @@ message FeatureEngineeringPipeline {
 
   // The Data type for the feature engineering.
   // +kubebuilder:validation:Required
+  // +required
   optional string datatype = 2;
 
   // Columns is the name of the columns from the original file.
@@ -1630,30 +1633,36 @@ message ModelSpec {
   // +kubebuilder:validation:Required
   // +kubebuilder:default:="latest"
   // +kubebuilder:validation:MaxLength=63
+  // +required
   optional string versionName = 2;
 
   // ModelVersion is an assigned version to the model.
   // +kubebuilder:validation:Required
+  // +required
   optional string modelVersion = 4;
 
   // StudyName reference the study for this model. IF empty, the model is stand alone
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
+  // +required
   optional string studyName = 5;
 
   // DatasetName refer to the dataset object for which the model is for.
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
+  // +required
   optional string datasetName = 6;
 
   // Task is the machine learning task (regression, classification).
   // The task is generated from the study task
   // +kubebuilder:validation:Required
+  // +required
   optional string task = 7;
 
   // Objective is the metric by which the system compare models
   // Default: based on the task. classification is logloss. Regression is rmse
   // +kubebuilder:validation:Required
+  // +required
   optional string objective = 8;
 
   // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
@@ -2595,6 +2604,7 @@ message ReportSpec {
 
   // ReportType specify the report type (e.g. classification / regression)
   // +kubebuilder:validation:Required
+  // +required
   optional string reportType = 5;
 
   // Format specify the report format. default is pdf
@@ -2780,14 +2790,17 @@ message SearchSpec {
 message SegmentSpec {
   // The dataset column name
   // +kubebuilder:validation:Required
+  // +required
   optional string columnName = 1;
 
   // The segment operation
   // +kubebuilder:validation:Required
+  // +required
   optional string op = 2;
 
   // The value operation
   // +kubebuilder:validation:Required
+  // +required
   optional string value = 3;
 }
 
@@ -2919,11 +2932,13 @@ message StudySpec {
 
   // DatasetName refer to the dataset object for which the study is for.
   // +kubebuilder:validation:Required
+  // +required
   optional string datasetName = 4;
 
   // Task specify the machine learning task (e.g classification).
   // This must match the task of the data product.
   // +kubebuilder:validation:Required
+  // +required
   optional string task = 5;
 
   // Specification for feature engineereing
@@ -3269,11 +3284,13 @@ message TimeSeriesDataSpec {
   // General Forecast attributes:
   // The name of the time column
   // +kubebuilder:validation:Required
+  // +required
   optional string timeColumn = 1;
 
   // The name of the column holding the value.
   // By default this is the target column from the dataset.
   // +kubebuilder:validation:Required
+  // +required
   optional string targetColumn = 2;
 
   // The format of the datetime column. Used default
@@ -3437,6 +3454,7 @@ message TrainingStageSpec {
   // use the dataset created in the data stage.
   // +kubebuilder:default =""
   // +kubebuilder:validation:Required
+  // +required
   optional string studyTemplateName = 4;
 
   // Validations defines the machine learning test cases to run against the new trained model.

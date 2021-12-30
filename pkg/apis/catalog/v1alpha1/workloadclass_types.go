@@ -23,15 +23,19 @@ type WorkloadClass struct {
 type WorkloadClassSpec struct {
 	// DataImage is the container image used to data tasks
 	// +kubebuilder:validation:Required
+	// +required
 	DataImage string `json:"dataImage" protobuf:"bytes,1,opt,name=dataImage"`
 	// ControlImage is the container image used for control
 	// +kubebuilder:validation:Required
+	// +required
 	ControlImage string `json:"controlImage" protobuf:"bytes,2,opt,name=controlImage"`
 	// TrainerImage is the image used for training models
 	// +kubebuilder:validation:Required
+	// +required
 	TrainerImage string `json:"trainerImage" protobuf:"bytes,3,opt,name=trainerImage"`
 	// PublisherImage is the image used for publishing models
 	// +kubebuilder:validation:Required
+	// +required
 	PublisherImage string `json:"publisherImage" protobuf:"bytes,4,opt,name=publisherImage"`
 	// Vcpu is the number of cpu
 	// +kubebuilder:validation:Format=float
@@ -47,6 +51,7 @@ type WorkloadClassSpec struct {
 	Gpu *int32 `json:"gpu" protobuf:"varint,7,opt,name=gpu"`
 	// Template is the Pod specification for new trainers from this workload class.
 	// +kubebuilder:validation:Required
+	// +required
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,8,opt,name=podTemplate"`
 	// List of ml frameworks supported by the data container
 	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,9,rep,name=frameworks"`

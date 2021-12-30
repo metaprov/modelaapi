@@ -1443,12 +1443,14 @@ message DatasetSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:validation:Required
+  // +required
   optional string versionName = 2;
 
   // DataSourceName is the name of the data source which created this dataset. For example flat file
   // +kubebuilder:validation:Required
   // +kubebuilder:validation:MaxLength=63
   // +kubebuilder:default:=""
+  // +required
   optional string datasourceName = 3;
 
   // User provided description
@@ -1499,6 +1501,7 @@ message DatasetSpec {
 
   // Folder of the actual data resides.
   // +kubebuilder:validation:Required
+  // +required
   optional DataLocation location = 14;
 
   // A reference to the workload class this is used to analyze the workload
@@ -2978,6 +2981,7 @@ message RecipeOutputSpec {
 
   // Location is the data location folder of the actual data resides.
   // +kubebuilder:validation:Required
+  // +required
   optional DataLocation location = 3;
 }
 
@@ -3214,6 +3218,7 @@ message RecommendationSchema {
 message RelationshipSpec {
   // The name of the relationship
   // +kubebuilder:validation:Required
+  // +required
   optional string type = 1;
 
   // Local columns the holds the fk.
@@ -3224,6 +3229,7 @@ message RelationshipSpec {
 
   // The name of the other datasource object
   // +kubebuilder:validation:Required
+  // +required
   optional string relatesTo = 4;
 }
 

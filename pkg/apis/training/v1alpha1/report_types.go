@@ -146,6 +146,7 @@ type ReportSpec struct {
 	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// ReportType specify the report type (e.g. classification / regression)
 	// +kubebuilder:validation:Required
+	// +required
 	ReportType *ReportType `json:"reportType,omitempty" protobuf:"bytes,5,opt,name=reportType"`
 	// Format specify the report format. default is pdf
 	// +kubebuilder:default:=pdf

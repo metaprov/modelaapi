@@ -80,9 +80,9 @@ type PredictionSpec struct {
 	// +kubebuilder:validation:Optional
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,1,opt,name=versionName"`
 	// PredictorName refer to the predictor which would predict the dataset of this prediction.
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Required
+	// +required
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,2,opt,name=predictorName"`
 	// Labeled , true if this is labeled prediction request.
 	// +kubebuilder:default:=false

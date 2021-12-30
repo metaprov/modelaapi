@@ -50,7 +50,6 @@ func (study *Study) Default() {
 		study.Spec.Search.Objective = &o
 	}
 
-	study.Spec.Search = SearchSpec{}
 	study.Spec.Search.Default()
 
 	if study.Spec.Ensembles.VotingEnsemble == nil {
@@ -240,7 +239,7 @@ func (svo *SuccessiveHalvingOptions) Default() {
 	svo.EliminationRate = util.Int32Ptr(3)
 }
 
-func (ms *SearchSpec) Default() {
+func (ms *SearchSpec) Default(task) {
 	name := RandomSearch
 	if ms.Sampler == nil {
 		ms.Sampler = &name
@@ -270,6 +269,11 @@ func (ms *SearchSpec) Default() {
 	}
 	if ms.RetainFor == nil {
 		ms.RetainFor = util.Int32Ptr(60)
+	}
+
+	if ms.Objective == nil {
+		o := DefaultObjective(*study.Spec.Task)
+		ms.Objective = &o
 	}
 
 }

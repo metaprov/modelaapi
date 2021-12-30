@@ -1338,6 +1338,7 @@ type Measurement struct {
 	Metric *Metric `json:"metric" protobuf:"bytes,1,opt,name=metric"`
 	// The value for this model
 	// +kubebuilder:validation:Required
+	// +required
 	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
 
@@ -1357,6 +1358,7 @@ const (
 type ModelDeploymentSpec struct {
 	// ModelName is the name of the model. The name must be unique within
 	// +kubebuilder:validation:Required
+	// +required
 	ModelName *string `json:"modelName,omitempty" protobuf:"bytes,1,opt,name=modelName"`
 	// The version of the model. Note that a single predictor might serve different models
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,2,opt,name=modelVersion"`

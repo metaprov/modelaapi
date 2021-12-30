@@ -739,6 +739,7 @@ type DataSourceList struct {
 type RelationshipSpec struct {
 	// The name of the relationship
 	// +kubebuilder:validation:Required
+	// +required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=type"`
 	// Local columns the holds the fk.
 	Column string `json:"columns,omitempty" protobuf:"bytes,2,opt,name=column"`
@@ -746,5 +747,6 @@ type RelationshipSpec struct {
 	Arity *catalog.RelationshipArity `json:"arity,omitempty" protobuf:"bytes,3,opt,name=arity"`
 	// The name of the other datasource object
 	// +kubebuilder:validation:Required
+	// +required
 	RelatesTo string `json:"relatesTo,omitempty" protobuf:"bytes,4,opt,name=relatesTo"`
 }

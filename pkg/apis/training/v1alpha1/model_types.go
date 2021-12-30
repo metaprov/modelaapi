@@ -205,25 +205,31 @@ type ModelSpec struct {
 	// +kubebuilder:validation:Required
 	// +kubebuilder:default:="latest"
 	// +kubebuilder:validation:MaxLength=63
+	// +required
 	VersionName *string `json:"versionName,omitempty" protobuf:"bytes,2,opt,name=versionName"`
 	// ModelVersion is an assigned version to the model.
 	// +kubebuilder:validation:Required
+	// +required
 	ModelVersion *string `json:"modelVersion,omitempty" protobuf:"bytes,4,opt,name=modelVersion"`
 	// StudyName reference the study for this model. IF empty, the model is stand alone
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
+	// +required
 	StudyName *string `json:"studyName,omitempty" protobuf:"bytes,5,opt,name=studyName"`
 	// DatasetName refer to the dataset object for which the model is for.
 	// +kubebuilder:validation:Required
 	// +kubebuilder:validation:MaxLength=63
+	// +required
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,6,opt,name=datasetName"`
 	// Task is the machine learning task (regression, classification).
 	// The task is generated from the study task
 	// +kubebuilder:validation:Required
+	// +required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,7,opt,name=task"`
 	// Objective is the metric by which the system compare models
 	// Default: based on the task. classification is logloss. Regression is rmse
 	// +kubebuilder:validation:Required
+	// +required
 	Objective *catalog.Metric `json:"objective,omitempty" protobuf:"bytes,8,opt,name=objective"`
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
@@ -589,6 +595,7 @@ type FeatureEngineeringPipeline struct {
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The Data type for the feature engineering.
 	// +kubebuilder:validation:Required
+	// +required
 	DataType catalog.DataType `json:"datatype,omitempty" protobuf:"bytes,2,opt,name=datatype"`
 	// Columns is the name of the columns from the original file.
 	// All the columns must be from the same type

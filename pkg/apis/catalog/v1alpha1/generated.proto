@@ -45,6 +45,7 @@ message AlgorithmList {
 message AlgorithmSpec {
   // FrameworkName is a reference to library
   // +kubebuilder:validation:Required
+  // +required
   optional string frameworkName = 1;
 
   // Description is the description of the algorithm
@@ -392,6 +393,7 @@ message Measurement {
 
   // The value for this model
   // +kubebuilder:validation:Required
+  // +required
   optional double value = 2;
 }
 
@@ -399,6 +401,7 @@ message Measurement {
 message ModelDeploymentSpec {
   // ModelName is the name of the model. The name must be unique within
   // +kubebuilder:validation:Required
+  // +required
   optional string modelName = 1;
 
   // The version of the model. Note that a single predictor might serve different models
@@ -777,18 +780,22 @@ message WorkloadClassList {
 message WorkloadClassSpec {
   // DataImage is the container image used to data tasks
   // +kubebuilder:validation:Required
+  // +required
   optional string dataImage = 1;
 
   // ControlImage is the container image used for control
   // +kubebuilder:validation:Required
+  // +required
   optional string controlImage = 2;
 
   // TrainerImage is the image used for training models
   // +kubebuilder:validation:Required
+  // +required
   optional string trainerImage = 3;
 
   // PublisherImage is the image used for publishing models
   // +kubebuilder:validation:Required
+  // +required
   optional string publisherImage = 4;
 
   // Vcpu is the number of cpu
@@ -808,6 +815,7 @@ message WorkloadClassSpec {
 
   // Template is the Pod specification for new trainers from this workload class.
   // +kubebuilder:validation:Required
+  // +required
   optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 8;
 
   // List of ml frameworks supported by the data container

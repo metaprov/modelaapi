@@ -87,6 +87,7 @@ message AccountSpec {
   // +kubebuilder:validation:MinLength=4
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
+  // +required
   optional string username = 4;
 
   // First FileName is the user first name
@@ -105,6 +106,7 @@ message AccountSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:MaxLength=64
   // +kubebuilder:validation:Required
+  // +required
   optional string email = 7;
 
   // Phone specify the phone of the user
@@ -896,10 +898,12 @@ message ConnectionSpec {
 
   // Provider specifies the name api provider (E.g. aws)
   // +kubebuilder:validation:Required
+  // +required
   optional string provider = 3;
 
   // SecretName is a reference to a secret which holds the connection credentials
   // +kubebuilder:validation:Required
+  // +required
   optional string secretName = 4;
 
   // +kubebuilder:validation:Optional

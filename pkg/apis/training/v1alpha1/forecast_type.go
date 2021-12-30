@@ -30,9 +30,11 @@ type PeriodSeasonalitySpec struct {
 type CustomSeasonalitySpec struct {
 	// The name of the custom seasonality
 	// +kubebuilder:validation:Required
+	// +required
 	Name string `json:"name,omitempty" protobuf:"bytes,1,opt,name=name"`
 	// The name of the custom seasonality
 	// +kubebuilder:validation:Required
+	// +required
 	Period float64 `json:"period,omitempty" protobuf:"bytes,2,opt,name=period"`
 	// +kubebuilder:validation:Optional
 	FourierOrder *int32 `json:"fourierOrder,omitempty" protobuf:"varint,3,opt,name=fourierOrder"`
@@ -114,10 +116,12 @@ type TimeSeriesDataSpec struct {
 	// General Forecast attributes:
 	// The name of the time column
 	// +kubebuilder:validation:Required
+	// +required
 	TimeColumn *string `json:"timeColumn,omitempty" protobuf:"bytes,1,opt,name=timeColumn"`
 	// The name of the column holding the value.
 	// By default this is the target column from the dataset.
 	// +kubebuilder:validation:Required
+	// +required
 	TargetColumn *string `json:"targetColumn,omitempty" protobuf:"bytes,2,opt,name=targetColumn"`
 	// The format of the datetime column. Used default
 	// +kubebuilder:validation:Optional
