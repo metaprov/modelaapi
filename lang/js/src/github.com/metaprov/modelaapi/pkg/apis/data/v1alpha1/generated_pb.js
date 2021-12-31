@@ -38582,10 +38582,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    country: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    itreviewer: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    compliancereviewer: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    businessreviewer: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    country: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    itreviewer: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    compliancereviewer: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    businessreviewer: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -38623,18 +38624,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.deseri
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCountry(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setItreviewer(value);
+      msg.setCountry(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCompliancereviewer(value);
+      msg.setItreviewer(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCompliancereviewer(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setBusinessreviewer(value);
       break;
@@ -38667,9 +38672,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       1,
       f
     );
@@ -38695,23 +38700,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.serial
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string country = 1;
- * @return {string}
+ * optional bool enabled = 1;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getCountry = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setCountry = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setEnabled = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -38720,7 +38732,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearCountry = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearEnabled = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -38729,16 +38741,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasCountry = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasEnabled = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string itReviewer = 2;
+ * optional string country = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getItreviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getCountry = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -38747,7 +38759,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setItreviewer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setCountry = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -38756,7 +38768,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearItreviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearCountry = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -38765,16 +38777,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasItreviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasCountry = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string complianceReviewer = 3;
+ * optional string itReviewer = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getCompliancereviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getItreviewer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -38783,7 +38795,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setCompliancereviewer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setItreviewer = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -38792,7 +38804,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearCompliancereviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearItreviewer = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -38801,16 +38813,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasCompliancereviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasItreviewer = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string businessReviewer = 4;
+ * optional string complianceReviewer = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getBusinessreviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getCompliancereviewer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -38819,7 +38831,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setBusinessreviewer = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setCompliancereviewer = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -38828,7 +38840,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearBusinessreviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearCompliancereviewer = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -38837,8 +38849,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.protot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasBusinessreviewer = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasCompliancereviewer = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string businessReviewer = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.getBusinessreviewer = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.setBusinessreviewer = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.clearBusinessreviewer = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.prototype.hasBusinessreviewer = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

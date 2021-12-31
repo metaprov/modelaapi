@@ -207,18 +207,22 @@ type KPI struct {
 // Governance Spec define the governance for models in this data product.
 
 type GovernanceSpec struct {
+	// Enabled specify if the sample is enabled
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
 	// The model country
 	// +kubebuilder:validation:Optional
-	Country *string `json:"country,omitempty" protobuf:"bytes,1,opt,name=country"`
+	Country *string `json:"country,omitempty" protobuf:"bytes,2,opt,name=country"`
 	// The account name of the IT reviewer
 	// +kubebuilder:validation:Optional
-	ITReviewer *string `json:"itReviewer,omitempty" protobuf:"bytes,2,opt,name=itReviewer"`
+	ITReviewer *string `json:"itReviewer,omitempty" protobuf:"bytes,3,opt,name=itReviewer"`
 	// The account name of the compliance reviewer.
 	// +kubebuilder:validation:Optional
-	ComplianceReviewer *string `json:"complianceReviewer,omitempty" protobuf:"bytes,3,opt,name=complianceReviewer"`
+	ComplianceReviewer *string `json:"complianceReviewer,omitempty" protobuf:"bytes,4,opt,name=complianceReviewer"`
 	// The account name of the business reviewer
 	// +kubebuilder:validation:Optional
-	BusinessReviewer *string `json:"businessReviewer,omitempty" protobuf:"bytes,4,opt,name=businessReviewer"`
+	BusinessReviewer *string `json:"businessReviewer,omitempty" protobuf:"bytes,5,opt,name=businessReviewer"`
 }
 
 type ApprovalType string

@@ -195,6 +195,10 @@ spec:
                   country:
                     description: The model country
                     type: string
+                  enabled:
+                    default: false
+                    description: Enabled specify if the sample is enabled
+                    type: boolean
                   itReviewer:
                     description: The account name of the IT reviewer
                     type: string

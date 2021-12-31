@@ -3694,6 +3694,9 @@ export namespace GovernanceReviewStatus {
 }
 
 export class GovernanceSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): GovernanceSpec;
+
   getCountry(): string;
   setCountry(value: string): GovernanceSpec;
 
@@ -3716,6 +3719,7 @@ export class GovernanceSpec extends jspb.Message {
 
 export namespace GovernanceSpec {
   export type AsObject = {
+    enabled: boolean,
     country: string,
     itreviewer: string,
     compliancereviewer: string,

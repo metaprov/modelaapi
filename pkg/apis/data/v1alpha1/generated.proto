@@ -2509,21 +2509,26 @@ message GovernanceReviewStatus {
 }
 
 message GovernanceSpec {
+  // Enabled specify if the sample is enabled
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
   // The model country
   // +kubebuilder:validation:Optional
-  optional string country = 1;
+  optional string country = 2;
 
   // The account name of the IT reviewer
   // +kubebuilder:validation:Optional
-  optional string itReviewer = 2;
+  optional string itReviewer = 3;
 
   // The account name of the compliance reviewer.
   // +kubebuilder:validation:Optional
-  optional string complianceReviewer = 3;
+  optional string complianceReviewer = 4;
 
   // The account name of the business reviewer
   // +kubebuilder:validation:Optional
-  optional string businessReviewer = 4;
+  optional string businessReviewer = 5;
 }
 
 message GovernanceStatus {
