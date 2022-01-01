@@ -100,6 +100,7 @@ message Comment {
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=meetings,singular=meeting,categories={infra,modela}
+// +kubebuilder:resource:scope=Cluster
 message Meeting {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -203,12 +204,6 @@ message MeetingStatus {
   repeated MeetingCondition conditions = 7;
 }
 
-// +kubebuilder:object:root=true
-// +kubebuilder:subresource:status
-// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
-// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modela,all}
-// PostMortem represent a post mortem
 message PostMortem {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -319,6 +314,7 @@ message RaisedAlert {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modela}
+// +kubebuilder:resource:scope=Cluster
 // Review represents a comment about any review
 message Review {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -392,6 +388,7 @@ message ReviewStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=runbooks,shortName=rb,singular=runbook,categories={data,modela}
+// +kubebuilder:resource:scope=Cluster
 // RunBook represent a list of instructions for a specific operation
 message RunBook {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -487,6 +484,7 @@ message TimeLineEvent {
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:scope=Cluster
 // +kubebuilder:resource:path=todos,singular=todo,categories={infra,modela}
 message Todo {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;

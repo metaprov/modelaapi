@@ -10,14 +10,11 @@ metadata:
 spec:
   group: team.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: Meeting
     listKind: MeetingList
     plural: meetings
     singular: meeting
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

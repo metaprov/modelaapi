@@ -10,17 +10,11 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
-    - all
     kind: Dataset
     listKind: DatasetList
     plural: datasets
-    shortNames:
-    - dset
     singular: dataset
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

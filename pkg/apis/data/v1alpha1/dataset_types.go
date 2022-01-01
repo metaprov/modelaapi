@@ -71,6 +71,7 @@ type DatasetCondition struct {
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
+// +kubebuilder:resource:scope=Cluster
 // Dataset represents a single batch of data
 type Dataset struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -10,16 +10,11 @@ metadata:
 spec:
   group: team.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: RunBook
     listKind: RunBookList
     plural: runbooks
-    shortNames:
-    - rb
     singular: runbook
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

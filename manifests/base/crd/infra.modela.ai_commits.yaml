@@ -10,14 +10,11 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: Commit
     listKind: CommitList
     plural: commits
     singular: commit
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

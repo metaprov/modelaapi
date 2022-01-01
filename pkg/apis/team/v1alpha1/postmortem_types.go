@@ -42,7 +42,9 @@ type PostMortemCondition struct {
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modela,all}
+// +kubebuilder:resource:scope=Cluster
 // PostMortem represent a post mortem
+
 type PostMortem struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

@@ -148,6 +148,7 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
+// +kubebuilder:resource:scope=Cluster
 // Study represent a search for the best machine learning model using automl.
 type Study struct {
 	metav1.TypeMeta   `json:",inline"`

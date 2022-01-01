@@ -10,16 +10,11 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: Featureset
     listKind: FeaturesetList
     plural: featuresets
-    shortNames:
-    - fset
     singular: featureset
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

@@ -10,14 +10,11 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: ServingSite
     listKind: ServingSiteList
     plural: servingsites
     singular: servingsite
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

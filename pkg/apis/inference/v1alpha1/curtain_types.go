@@ -47,6 +47,7 @@ type CurtainCondition struct {
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=curtains,singular=curtain,categories={inference,modela,all}
+// +kubebuilder:resource:scope=Cluster
 type Curtain struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

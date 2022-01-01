@@ -10,14 +10,11 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: WebRequest
     listKind: WebRequestList
     plural: webrequests
     singular: webrequest
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

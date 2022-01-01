@@ -10,16 +10,11 @@ metadata:
 spec:
   group: training.modela.ai
   names:
-    categories:
-    - training
-    - modela
     kind: CronReport
     listKind: CronReportList
     plural: cronreports
-    shortNames:
-    - crep
     singular: cronreport
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

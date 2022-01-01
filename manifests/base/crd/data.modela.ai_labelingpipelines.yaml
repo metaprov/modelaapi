@@ -10,16 +10,11 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: LabelingPipeline
     listKind: LabelingPipelineList
     plural: labelingpipelines
-    shortNames:
-    - lp
     singular: labelingpipeline
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

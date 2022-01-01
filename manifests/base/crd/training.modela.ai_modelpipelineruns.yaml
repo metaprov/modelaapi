@@ -10,17 +10,11 @@ metadata:
 spec:
   group: training.modela.ai
   names:
-    categories:
-    - train
-    - modela
-    - all
     kind: ModelPipelineRun
     listKind: ModelPipelineRunList
     plural: modelpipelineruns
-    shortNames:
-    - mpr
     singular: modelpipelinerun
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

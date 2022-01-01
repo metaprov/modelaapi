@@ -10,15 +10,11 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
-    - all
     kind: Lab
     listKind: LabList
     plural: labs
     singular: lab
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

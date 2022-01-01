@@ -10,14 +10,11 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
     kind: Attachment
     listKind: AttachmentList
     plural: attachments
     singular: attachment
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

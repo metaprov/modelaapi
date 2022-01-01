@@ -10,17 +10,11 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
-    categories:
-    - infra
-    - modela
-    - all
     kind: VirtualBucket
     listKind: VirtualBucketList
     plural: virtualbuckets
-    shortNames:
-    - vb
     singular: virtualbucket
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

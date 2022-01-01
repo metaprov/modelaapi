@@ -10,17 +10,11 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
-    - all
     kind: DataSource
     listKind: DataSourceList
     plural: datasources
-    shortNames:
-    - dsrc
     singular: datasource
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

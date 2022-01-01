@@ -55,6 +55,7 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="Last Error",type="date",JSONPath=".metadata.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
+// +kubebuilder:resource:scope=Cluster
 // DataPipelineRun represent one execution of the data pipeline
 type DataPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`

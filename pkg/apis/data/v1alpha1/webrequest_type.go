@@ -42,6 +42,7 @@ type WebRequestCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=webrequests,singular=webrequest,categories={data,modela}
+// +kubebuilder:resource:scope=Cluster
 // +kubebuilder:subresource:status
 type WebRequest struct {
 	metav1.TypeMeta   `json:",inline"`

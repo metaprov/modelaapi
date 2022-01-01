@@ -35,6 +35,7 @@ type ModelPipelineCondition struct {
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=modelpipelines,singular=modelpipeline,shortName=pipe,categories={training,modela,all}
+// +kubebuilder:resource:scope=Cluster
 // ModelPipeline represent a CI/CD machine learning pipeline definition
 type ModelPipeline struct {
 	metav1.TypeMeta   `json:",inline"`

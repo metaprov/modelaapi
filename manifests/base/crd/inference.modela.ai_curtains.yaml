@@ -10,15 +10,11 @@ metadata:
 spec:
   group: inference.modela.ai
   names:
-    categories:
-    - inference
-    - modela
-    - all
     kind: Curtain
     listKind: CurtainList
     plural: curtains
     singular: curtain
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

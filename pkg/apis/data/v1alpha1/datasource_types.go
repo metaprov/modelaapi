@@ -655,6 +655,7 @@ type Column struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modela,all}
+// +kubebuilder:resource:scope=Cluster
 type DataSource struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

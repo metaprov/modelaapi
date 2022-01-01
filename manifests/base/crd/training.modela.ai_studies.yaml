@@ -10,16 +10,11 @@ metadata:
 spec:
   group: training.modela.ai
   names:
-    categories:
-    - training
-    - modela
     kind: Study
     listKind: StudyList
     plural: studies
-    shortNames:
-    - sd
     singular: study
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

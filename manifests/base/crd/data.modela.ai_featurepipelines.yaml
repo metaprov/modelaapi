@@ -10,16 +10,11 @@ metadata:
 spec:
   group: data.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: FeaturePipeline
     listKind: FeaturePipelineList
     plural: featurepipelines
-    shortNames:
-    - fp
     singular: featurepipeline
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

@@ -10,17 +10,11 @@ metadata:
 spec:
   group: team.modela.ai
   names:
-    categories:
-    - team
-    - modela
-    - all
     kind: PostMortem
     listKind: PostMortemList
     plural: postmortems
-    shortNames:
-    - pt
     singular: postmortem
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
@@ -32,7 +26,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PostMortem represent a post mortem
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

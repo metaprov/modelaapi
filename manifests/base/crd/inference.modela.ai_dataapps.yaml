@@ -10,14 +10,11 @@ metadata:
 spec:
   group: inference.modela.ai
   names:
-    categories:
-    - data
-    - modela
     kind: DataApp
     listKind: DataAppList
     plural: dataapps
     singular: dataapp
-  scope: Namespaced
+  scope: Cluster
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
