@@ -14,7 +14,7 @@ spec:
     listKind: ModelList
     plural: models
     singular: model
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

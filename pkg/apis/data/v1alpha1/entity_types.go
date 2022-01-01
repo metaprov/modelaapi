@@ -47,7 +47,7 @@ type EntityCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=entities,singular=entity,shortName=et,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 
 type Entity struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -14,7 +14,7 @@ spec:
     listKind: CronReportList
     plural: cronreports
     singular: cronreport
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

@@ -14,7 +14,7 @@ spec:
     listKind: VirtualClusterList
     plural: virtualclusters
     singular: virtualcluster
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

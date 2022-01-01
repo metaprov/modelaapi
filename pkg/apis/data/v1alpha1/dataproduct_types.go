@@ -47,7 +47,7 @@ type DataProductCondition struct {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 type DataProduct struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`

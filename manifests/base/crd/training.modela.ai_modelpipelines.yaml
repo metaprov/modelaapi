@@ -14,7 +14,7 @@ spec:
     listKind: ModelPipelineList
     plural: modelpipelines
     singular: modelpipeline
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

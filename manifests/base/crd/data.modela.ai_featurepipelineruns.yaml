@@ -14,7 +14,7 @@ spec:
     listKind: FeaturePipelineRunList
     plural: featurepipelineruns
     singular: featurepipelinerun
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

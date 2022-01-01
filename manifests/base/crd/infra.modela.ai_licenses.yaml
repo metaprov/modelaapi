@@ -14,7 +14,7 @@ spec:
     listKind: LicenseList
     plural: licenses
     singular: license
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Valid")].status

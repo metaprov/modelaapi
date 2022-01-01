@@ -14,7 +14,7 @@ spec:
     listKind: DatasetList
     plural: datasets
     singular: dataset
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

@@ -66,7 +66,7 @@ type ModelAutobuilderCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=modelautobuilders,singular=modelautobuilder,shortName=ar,categories={training,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // ModelAutobuilder represent an automatic run of all the phases needed to create a model
 type ModelAutobuilder struct {
 	metav1.TypeMeta   `json:",inline"`

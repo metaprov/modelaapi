@@ -14,7 +14,7 @@ spec:
     listKind: CommitList
     plural: commits
     singular: commit
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

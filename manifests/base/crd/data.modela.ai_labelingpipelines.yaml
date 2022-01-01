@@ -14,7 +14,7 @@ spec:
     listKind: LabelingPipelineList
     plural: labelingpipelines
     singular: labelingpipeline
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

@@ -14,7 +14,7 @@ spec:
     listKind: LabList
     plural: labs
     singular: lab
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

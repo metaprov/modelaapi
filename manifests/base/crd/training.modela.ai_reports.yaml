@@ -14,7 +14,7 @@ spec:
     listKind: ReportList
     plural: reports
     singular: report
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

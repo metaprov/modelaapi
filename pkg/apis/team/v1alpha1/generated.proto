@@ -100,7 +100,7 @@ message Comment {
 // +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=meetings,singular=meeting,categories={infra,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 message Meeting {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -314,7 +314,7 @@ message RaisedAlert {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // Review represents a comment about any review
 message Review {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -388,7 +388,7 @@ message ReviewStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=runbooks,shortName=rb,singular=runbook,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // RunBook represent a list of instructions for a specific operation
 message RunBook {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -484,7 +484,7 @@ message TimeLineEvent {
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:resource:path=todos,singular=todo,categories={infra,modela}
 message Todo {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;

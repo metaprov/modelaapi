@@ -735,7 +735,7 @@ message DataOutputSpec {
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 message DataPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -781,7 +781,7 @@ message DataPipelineList {
 // +kubebuilder:printcolumn:name="Last Error",type="date",JSONPath=".metadata.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // DataPipelineRun represent one execution of the data pipeline
 message DataPipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -997,7 +997,7 @@ message DataPipelineStatus {
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproducts,shortName=prod,singular=dataproduct,shortName="prod",categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 message DataProduct {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1166,7 +1166,7 @@ message DataProductStatus {
 // +kubebuilder:printcolumn:name="Base",type="boolean",JSONPath=".spec.baseline",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=dataproductversions,shortName=dpv,singular=dataproductversion,categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // DataProductVersion represent a version of the data product. A version is usually created when a new
 // data was gathered for the same product.
 message DataProductVersion {
@@ -1261,7 +1261,7 @@ message DataProductVersionStatus {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=datasources,singular=datasource,shortName="dsrc",categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 message DataSource {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1399,7 +1399,7 @@ message DataValidationResult {
 // +kubebuilder:printcolumn:name="Size",type="integer",JSONPath=".status.statistics.fileSize"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=datasets,shortName=dset,singular=dataset,categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // Dataset represents a single batch of data
 message Dataset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1807,7 +1807,7 @@ message ExcelSheetArea {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=features,singular=feature,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message Feature {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1857,7 +1857,7 @@ message FeatureCondition {
 // +kubebuilder:printcolumn:name="Bins",type="number",JSONPath=".spec.bins"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurehistograms,singular=featurehistogram,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message FeatureHistogram {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1974,7 +1974,7 @@ message FeatureList {
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurepipelines,singular=featurepipeline,shortName="fp",categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message FeaturePipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -2020,7 +2020,7 @@ message FeaturePipelineList {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featurepipelineruns,shortName=fpr,singular=featurepipelinerun,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message FeaturePipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -2358,7 +2358,7 @@ message FeatureStatus {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=featuresets,singular=featureset,shortName=fset,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message Featureset {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -2601,7 +2601,7 @@ message KPI {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=labelingpipelines,singular=labelingpipeline,shortName=lp,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 message LabelingPipeline {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2647,7 +2647,7 @@ message LabelingPipelineList {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=labelingpipelineruns,singular=labelingpipelinerun,shortName=lpr,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message LabelingPipelineRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -2934,7 +2934,7 @@ message PageSpec {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=recipes,shortName=rc,singular=recipe,categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 message Recipe {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -3023,7 +3023,7 @@ message RecipePartSpec {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // Recipe run represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 message RecipeRun {
@@ -3330,7 +3330,7 @@ message Schema {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message SqlQuery {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -3374,7 +3374,7 @@ message SqlQueryList {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=sqlqueryruns,singular=sqlqueryrun,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message SqlQueryRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -3647,7 +3647,7 @@ message ValidationSpec {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=webrequests,singular=webrequest,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message WebRequest {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -3691,7 +3691,7 @@ message WebRequestList {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=webrequestruns,singular=webrequestrun,categories={data,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:subresource:status
 message WebRequestRun {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;

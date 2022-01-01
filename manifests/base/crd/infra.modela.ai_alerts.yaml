@@ -14,7 +14,7 @@ spec:
     listKind: AlertList
     plural: alerts
     singular: alert
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

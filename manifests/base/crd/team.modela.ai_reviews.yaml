@@ -14,7 +14,7 @@ spec:
     listKind: ReviewList
     plural: reviews
     singular: review
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .spec.entityRef.kind

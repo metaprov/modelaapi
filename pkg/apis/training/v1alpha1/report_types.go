@@ -116,7 +116,7 @@ type ReportCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.endTime"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=reports,singular=report,categories={training,modela,all}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // ReportName represent a report object. A report is a pdf report which contain images and tables about another
 // object
 type Report struct {

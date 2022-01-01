@@ -78,7 +78,7 @@ type ReviewCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // Review represents a comment about any review
 type Review struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -14,7 +14,7 @@ spec:
     listKind: RecipeRunList
     plural: reciperuns
     singular: reciperun
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

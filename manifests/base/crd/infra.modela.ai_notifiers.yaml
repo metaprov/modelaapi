@@ -14,7 +14,7 @@ spec:
     listKind: NotifierList
     plural: notifiers
     singular: notifier
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

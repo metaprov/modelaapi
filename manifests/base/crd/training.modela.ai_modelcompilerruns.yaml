@@ -14,7 +14,7 @@ spec:
     listKind: ModelCompilerRunList
     plural: modelcompilerruns
     singular: modelcompilerrun
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

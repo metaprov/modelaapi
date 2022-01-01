@@ -39,7 +39,7 @@ type CronPredictionCondition struct {
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=cronpredictions,shortName=cpred,singular=cronprediction,categories={inference,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 // CronPrediction represents a single run of the Prediction Pipeline
 type CronPrediction struct {
 	metav1.TypeMeta   `json:",inline"`

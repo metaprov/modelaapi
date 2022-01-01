@@ -14,7 +14,7 @@ spec:
     listKind: ModelAutobuilderList
     plural: modelautobuilders
     singular: modelautobuilder
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

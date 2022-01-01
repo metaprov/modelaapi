@@ -14,7 +14,7 @@ spec:
     listKind: ModelPipelineRunList
     plural: modelpipelineruns
     singular: modelpipelinerun
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

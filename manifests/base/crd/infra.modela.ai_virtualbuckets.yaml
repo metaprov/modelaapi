@@ -14,7 +14,7 @@ spec:
     listKind: VirtualBucketList
     plural: virtualbuckets
     singular: virtualbucket
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

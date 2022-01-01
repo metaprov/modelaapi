@@ -14,7 +14,7 @@ spec:
     listKind: NotebookRunList
     plural: notebookruns
     singular: notebookrun
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.phase

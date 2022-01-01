@@ -14,7 +14,7 @@ spec:
     listKind: SqlQueryRunList
     plural: sqlqueryruns
     singular: sqlqueryrun
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status

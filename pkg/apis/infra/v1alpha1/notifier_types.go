@@ -37,7 +37,7 @@ type NotifierCondition struct {
 // +kubebuilder:printcolumn:name="To",type="string",JSONPath=".spec.to",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modela}
-// +kubebuilder:resource:scope=Cluster
+// +kubebuilder:resource:scope=Namespaced
 type Notifier struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty" protobuf:"bytes,1,opt,name=metadata"`

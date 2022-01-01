@@ -14,7 +14,7 @@ spec:
     listKind: DataProductVersionList
     plural: dataproductversions
     singular: dataproductversion
-  scope: Cluster
+  scope: Namespaced
   versions:
   - additionalPrinterColumns:
     - jsonPath: .status.conditions[?(@.type=="Ready")].status
