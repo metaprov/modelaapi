@@ -10,9 +10,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: DataSource
     listKind: DataSourceList
     plural: datasources
+    shortNames:
+    - dsrc
     singular: datasource
   scope: Namespaced
   versions:
@@ -41,8 +47,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DataSource represent source of the data in the system. The spec
-          consist of schema
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

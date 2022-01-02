@@ -10,9 +10,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: Recipe
     listKind: RecipeList
     plural: recipes
+    shortNames:
+    - rc
     singular: recipe
   scope: Namespaced
   versions:
@@ -35,7 +41,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Recipe represents a single batch of data
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

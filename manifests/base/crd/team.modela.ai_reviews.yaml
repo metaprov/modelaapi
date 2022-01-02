@@ -10,9 +10,14 @@ metadata:
 spec:
   group: team.modela.ai
   names:
+    categories:
+    - team
+    - modela
     kind: Review
     listKind: ReviewList
     plural: reviews
+    shortNames:
+    - cv
     singular: review
   scope: Namespaced
   versions:

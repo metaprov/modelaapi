@@ -41,7 +41,7 @@ type RunBookCondition struct {
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=runbooks,shortName=rb,singular=runbook,categories={data,modela}
-// +kubebuilder:resource:scope=Namespaced
+
 // RunBook represent a list of instructions for a specific operation
 type RunBook struct {
 	metav1.TypeMeta   `json:",inline"`

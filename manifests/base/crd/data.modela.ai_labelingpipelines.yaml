@@ -10,9 +10,14 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
     kind: LabelingPipeline
     listKind: LabelingPipelineList
     plural: labelingpipelines
+    shortNames:
+    - lp
     singular: labelingpipeline
   scope: Namespaced
   versions:
@@ -26,8 +31,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: LabelingPipeline represents the ETL flow from the data sources
-          to a processed dataset, ready for training.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

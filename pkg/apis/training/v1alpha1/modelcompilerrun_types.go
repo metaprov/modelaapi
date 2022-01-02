@@ -50,7 +50,7 @@ type ModelCompilerRunCondition struct {
 // +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=modelcompilerruns,shortName=mcr,singular=modelcompilerrun,categories={train,modela,all}
-// +kubebuilder:resource:scope=Namespaced
+
 // ModelCompilerRun represent a single compilation of a model into a target hardware.
 type ModelCompilerRun struct {
 	metav1.TypeMeta   `json:",inline"`

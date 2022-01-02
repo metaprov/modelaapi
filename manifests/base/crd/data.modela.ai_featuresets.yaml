@@ -10,9 +10,14 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
     kind: Featureset
     listKind: FeaturesetList
     plural: featuresets
+    shortNames:
+    - fset
     singular: featureset
   scope: Namespaced
   versions:
@@ -29,7 +34,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Featureset represents a featureset object
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

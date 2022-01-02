@@ -10,9 +10,14 @@ metadata:
 spec:
   group: team.modela.ai
   names:
+    categories:
+    - data
+    - modela
     kind: RunBook
     listKind: RunBookList
     plural: runbooks
+    shortNames:
+    - rb
     singular: runbook
   scope: Namespaced
   versions:

@@ -54,7 +54,7 @@ type LicenseCondition struct {
 // +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".status.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
-// +kubebuilder:resource:scope=Namespaced
+
 // License is an abstraction that represent the cluster wide license
 // as obtained from Modela. The license is store inside a a secret
 type License struct {

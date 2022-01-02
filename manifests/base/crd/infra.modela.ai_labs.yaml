@@ -10,6 +10,10 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
+    categories:
+    - infra
+    - modela
+    - all
     kind: Lab
     listKind: LabList
     plural: labs
@@ -32,7 +36,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Lab is a namespace used for training and data analysis operations.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

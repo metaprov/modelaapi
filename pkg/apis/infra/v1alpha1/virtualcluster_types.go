@@ -44,7 +44,7 @@ type VirtualClusterCondition struct {
 // +kubebuilder:printcolumn:name="Gpu Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:resource:path=virtualclusters,singular=virtualcluster,categories={infra,modela}
-// +kubebuilder:resource:scope=Namespaced
+
 //A VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
 //The study can create or destroy virtual clusters during training.
 

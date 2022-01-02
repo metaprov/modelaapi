@@ -10,9 +10,15 @@ metadata:
 spec:
   group: training.modela.ai
   names:
+    categories:
+    - training
+    - modela
+    - all
     kind: Model
     listKind: ModelList
     plural: models
+    shortNames:
+    - md
     singular: model
   scope: Namespaced
   versions:

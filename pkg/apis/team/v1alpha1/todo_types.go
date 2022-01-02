@@ -44,7 +44,7 @@ type TodoCondition struct {
 // +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
 // +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
-// +kubebuilder:resource:scope=Namespaced
+
 // +kubebuilder:resource:path=todos,singular=todo,categories={infra,modela}
 type Todo struct {
 	metav1.TypeMeta   `json:",inline"`

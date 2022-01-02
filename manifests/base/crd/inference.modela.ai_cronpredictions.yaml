@@ -10,9 +10,14 @@ metadata:
 spec:
   group: inference.modela.ai
   names:
+    categories:
+    - inference
+    - modela
     kind: CronPrediction
     listKind: CronPredictionList
     plural: cronpredictions
+    shortNames:
+    - cpred
     singular: cronprediction
   scope: Namespaced
   versions:

@@ -16,35 +16,7 @@ spec:
     singular: virtualcluster
   scope: Namespaced
   versions:
-  - additionalPrinterColumns:
-    - jsonPath: .status.conditions[?(@.type=="Ready")].status
-      name: Ready
-      type: string
-    - description: cluster owner account
-      jsonPath: .spec.ownerName
-      name: Owner
-      type: string
-    - description: virtual bucket connections
-      jsonPath: .spec.connectionName
-      name: Nodes
-      type: integer
-    - description: virtual bucket connections
-      jsonPath: .spec.connectionName
-      name: Node Class
-      type: string
-    - description: virtual bucket connections
-      jsonPath: .spec.connectionName
-      name: Gpus
-      type: integer
-    - description: virtual bucket connections
-      jsonPath: .spec.connectionName
-      name: Gpu Class
-      type: string
-    - description: virtual bucket connections
-      jsonPath: .spec.connectionName
-      name: Connection
-      type: string
-    name: v1alpha1
+  - name: v1alpha1
     schema:
       openAPIV3Schema:
         properties:
@@ -334,8 +306,6 @@ spec:
         type: object
     served: true
     storage: true
-    subresources:
-      status: {}
 status:
   acceptedNames:
     kind: ""

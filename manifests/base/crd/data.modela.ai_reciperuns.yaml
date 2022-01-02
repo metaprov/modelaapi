@@ -10,9 +10,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: RecipeRun
     listKind: RecipeRunList
     plural: reciperuns
+    shortNames:
+    - rcr
     singular: reciperun
   scope: Namespaced
   versions:

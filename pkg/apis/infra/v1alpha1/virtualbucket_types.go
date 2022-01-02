@@ -35,7 +35,7 @@ type VirtualBucketCondition struct {
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modela,all}
-// +kubebuilder:resource:scope=Namespaced
+
 // VirtualBucket represent a object storage location in the cloud or on-prem
 type VirtualBucket struct {
 	metav1.TypeMeta   `json:",inline"`

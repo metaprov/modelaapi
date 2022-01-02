@@ -10,9 +10,14 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
     kind: FeaturePipeline
     listKind: FeaturePipelineList
     plural: featurepipelines
+    shortNames:
+    - fp
     singular: featurepipeline
   scope: Namespaced
   versions:
@@ -35,7 +40,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: FeaturePipeline represent the processing of feature in the store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

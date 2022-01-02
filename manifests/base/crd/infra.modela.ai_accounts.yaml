@@ -10,9 +10,14 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
+    categories:
+    - infra
+    - modela
     kind: Account
     listKind: AccountList
     plural: accounts
+    shortNames:
+    - acct
     singular: account
   scope: Namespaced
   versions:
@@ -41,7 +46,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Account represents a user or team in the system
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

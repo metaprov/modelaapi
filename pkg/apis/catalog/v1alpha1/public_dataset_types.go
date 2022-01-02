@@ -12,7 +12,7 @@ import (
 
 // PublicDataset represent the metadata about a public dataset
 // +kubebuilder:object:root=true
-// +kubebuilder:resource:scope=Namespaced
+
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description=""
 // +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""

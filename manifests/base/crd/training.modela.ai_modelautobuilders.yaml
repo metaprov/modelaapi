@@ -10,9 +10,15 @@ metadata:
 spec:
   group: training.modela.ai
   names:
+    categories:
+    - training
+    - modela
+    - all
     kind: ModelAutobuilder
     listKind: ModelAutobuilderList
     plural: modelautobuilders
+    shortNames:
+    - ar
     singular: modelautobuilder
   scope: Namespaced
   versions:

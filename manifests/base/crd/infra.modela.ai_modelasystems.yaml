@@ -10,6 +10,9 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
+    categories:
+    - infra
+    - modela
     kind: ModelaSystem
     listKind: ModelaSystemList
     plural: modelasystems

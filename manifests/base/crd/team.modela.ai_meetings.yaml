@@ -10,6 +10,9 @@ metadata:
 spec:
   group: team.modela.ai
   names:
+    categories:
+    - infra
+    - modela
     kind: Meeting
     listKind: MeetingList
     plural: meetings

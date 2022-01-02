@@ -10,6 +10,9 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
+    categories:
+    - infra
+    - modela
     kind: ServingSite
     listKind: ServingSiteList
     plural: servingsites
@@ -39,7 +42,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: ServingSite is a namespace used for serving
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

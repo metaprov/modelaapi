@@ -10,9 +10,15 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
+    categories:
+    - infra
+    - modela
+    - all
     kind: VirtualVolume
     listKind: VirtualVolumeList
     plural: virtualvolumes
+    shortNames:
+    - vol
     singular: virtualvolume
   scope: Namespaced
   versions:

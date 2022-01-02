@@ -41,7 +41,7 @@ type DataPipelineCondition struct {
 // +kubebuilder:printcolumn:name="Last Run",type="date",JSONPath=".status.lastRun",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=datapipelines,singular=datapipeline,shortName="dpl",categories={data,modela}
-// +kubebuilder:resource:scope=Namespaced
+
 // DataPipeline represents the ETL flow from the data sources to a processed dataset, ready for training.
 type DataPipeline struct {
 	metav1.TypeMeta   `json:",inline"`

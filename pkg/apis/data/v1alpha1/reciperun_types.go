@@ -50,7 +50,7 @@ type RecipeRunCondition struct {
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:subresource:status
 // +kubebuilder:resource:path=reciperuns,shortName=rcr,singular=reciperun,categories={data,modela,all}
-// +kubebuilder:resource:scope=Namespaced
+
 // Recipe run represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
 type RecipeRun struct {

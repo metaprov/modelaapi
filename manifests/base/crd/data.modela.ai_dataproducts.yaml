@@ -10,9 +10,15 @@ metadata:
 spec:
   group: data.modela.ai
   names:
+    categories:
+    - data
+    - modela
+    - all
     kind: DataProduct
     listKind: DataProductList
     plural: dataproducts
+    shortNames:
+    - prod
     singular: dataproduct
   scope: Namespaced
   versions:
@@ -44,7 +50,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: DataProduct represent a single data product in the system
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

@@ -10,9 +10,15 @@ metadata:
 spec:
   group: training.modela.ai
   names:
+    categories:
+    - train
+    - modela
+    - all
     kind: ModelCompilerRun
     listKind: ModelCompilerRunList
     plural: modelcompilerruns
+    shortNames:
+    - mcr
     singular: modelcompilerrun
   scope: Namespaced
   versions:

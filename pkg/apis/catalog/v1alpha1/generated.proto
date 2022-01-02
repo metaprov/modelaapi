@@ -19,9 +19,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1";
 
-// Algorithm define the metadata about a machine learning algorithm.
-// +kubebuilder:object:root=true
-// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:resource:path=algorithms,singular=algorithm,shortName="alg",categories={catalog,modela,all}
 // +kubebuilder:printcolumn:name="Framework",type="string",JSONPath=".spec.frameworkName",description="ML Framework name"
 // +kubebuilder:printcolumn:name="Docs",type="string",JSONPath=".spec.url",description=""
@@ -573,9 +570,6 @@ message PretrainedModelSpec {
   optional string image = 1;
 }
 
-// PublicDataset represent the metadata about a public dataset
-// +kubebuilder:object:root=true
-// +kubebuilder:resource:scope=Namespaced
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description=""
 // +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""

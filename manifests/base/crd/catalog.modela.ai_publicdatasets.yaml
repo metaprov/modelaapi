@@ -46,7 +46,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: PublicDataset represent the metadata about a public dataset
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

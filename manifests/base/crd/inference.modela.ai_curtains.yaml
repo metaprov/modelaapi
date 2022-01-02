@@ -10,6 +10,10 @@ metadata:
 spec:
   group: inference.modela.ai
   names:
+    categories:
+    - inference
+    - modela
+    - all
     kind: Curtain
     listKind: CurtainList
     plural: curtains
@@ -32,8 +36,6 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Curtain represent an object which can be placed before or after
-          predictor
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
