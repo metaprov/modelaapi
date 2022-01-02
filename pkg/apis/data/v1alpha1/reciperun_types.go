@@ -41,9 +41,8 @@ type RecipeRunCondition struct {
 	Message string `json:"message,omitempty" protobuf:"bytes,5,opt,name=message"`
 }
 
-// Recipe run represent one execution of the recipe.
+// RecipeRun represent one execution of the recipe.
 // Execution is performed by creating a Kubernetes job.
-
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"

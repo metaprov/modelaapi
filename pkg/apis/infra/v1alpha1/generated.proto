@@ -2750,6 +2750,8 @@ message VirtualBucketStatus {
   repeated VirtualBucketCondition conditions = 4;
 }
 
+// VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
+// The study can create or destroy virtual clusters during training.
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -2760,8 +2762,6 @@ message VirtualBucketStatus {
 // +kubebuilder:printcolumn:name="Gpu Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:resource:path=virtualclusters,singular=virtualcluster,categories={infra,modela}
-// A VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
-// The study can create or destroy virtual clusters during training.
 message VirtualCluster {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 

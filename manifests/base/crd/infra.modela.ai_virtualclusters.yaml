@@ -50,8 +50,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: A VirtualCluster defined a running kubernetes cluster with N
-          nodes and GPU. The study can create or destroy virtual clusters during training.
+        description: VirtualCluster defined a running kubernetes cluster with N nodes
+          and GPU. The study can create or destroy virtual clusters during training.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

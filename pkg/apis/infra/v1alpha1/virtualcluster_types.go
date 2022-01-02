@@ -34,6 +34,8 @@ type VirtualClusterCondition struct {
 	// Represents the latest available observations of a serving site state.
 }
 
+// VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
+//The study can create or destroy virtual clusters during training.
 // +kubebuilder:object:root=true
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
@@ -44,8 +46,6 @@ type VirtualClusterCondition struct {
 // +kubebuilder:printcolumn:name="Gpu Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
 // +kubebuilder:resource:path=virtualclusters,singular=virtualcluster,categories={infra,modela}
-//A VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
-//The study can create or destroy virtual clusters during training.
 type VirtualCluster struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata" protobuf:"bytes,1,opt,name=metadata"`
