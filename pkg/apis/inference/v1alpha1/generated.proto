@@ -160,6 +160,14 @@ message CronPredictionStatus {
   repeated CronPredictionCondition conditions = 4;
 }
 
+// Curtain represent an object which can be placed before or after predictor
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name"
+// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetRef.name"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=curtains,singular=curtain,categories={inference,modela,all}
 message Curtain {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -274,6 +282,13 @@ message CustomAppSpec {
   repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.PageSpec pages = 3;
 }
 
+// DataApp represent a dashboard for business users to use a single model.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=dataapps,singular=dataapp,categories={data,modela}
 // +kubebuilder:subresource:status
 message DataApp {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -480,6 +495,20 @@ message OnlineFeaturestoreSpec {
   optional string serviceName = 2;
 }
 
+// PredictionTemplate represents a prediction object
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status"
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Predictor",type="string",JSONPath=".spec.predictorName"
+// +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
+// +kubebuilder:printcolumn:name="Labeled",type="string",JSONPath=".spec.labeled"
+// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.output.bucketName",priority=1
+// +kubebuilder:printcolumn:name="Key",type="string",JSONPath=".spec.output.path",priority=1
+// +kubebuilder:printcolumn:name="Score",type="string",JSONPath=".status.score"
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase"
+// +kubebuilder:printcolumn:name="Rows",type="string",JSONPath=".status.rows"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 // +kubebuilder:resource:path=predictions,shortName=pred,singular=prediction,categories={inference,modela}
 message Prediction {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -648,6 +677,18 @@ message PredictionTemplate {
   optional PredictionSpec spec = 1;
 }
 
+// Predictor represent an PredictorName API object
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",priority=1
+// +kubebuilder:printcolumn:name="Serving Site",type="string",JSONPath=".spec.servingsiteRef.name",description=""
+// +kubebuilder:printcolumn:name="Port",type="integer",JSONPath=".spec.port",description=""
+// +kubebuilder:printcolumn:name="Access",type="string",JSONPath=".spec.accessType",description=""
+// +kubebuilder:printcolumn:name="Replicas",type="integer",JSONPath=".spec.replicas",description=""
+// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=predictors,singular=predictor,shortName=pdr,categories={inference,modela}
 message Predictor {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 

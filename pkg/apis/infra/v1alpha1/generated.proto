@@ -19,6 +19,17 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1";
 
+// Account represents a user or team in the system
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Type",type="string",JSONPath=".spec.type",description=""
+// +kubebuilder:printcolumn:name="Username",type="string",JSONPath=".spec.userName",description=""
+// +kubebuilder:printcolumn:name="Team",type="string",JSONPath=".spec.memberOf",description=""
+// +kubebuilder:printcolumn:name="Phone",type="string",JSONPath=".spec.phone",description=""
+// +kubebuilder:printcolumn:name="Email",type="string",JSONPath=".spec.email",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=accounts,shortName=acct,singular=account,categories={infra,modela}
 message Account {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -171,6 +182,17 @@ message AccountStatus {
   repeated AccountCondition conditions = 3;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Level",type="string",JSONPath=".spec.level",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Notifier",type="string",JSONPath=".spec.notifierName",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=alerts,singular=alert,categories={infra,modela}
 message Alert {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -442,6 +464,11 @@ message ApacheSparkSpec {
   optional string url = 6;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=apitokens,singular=apitoken,categories={infra,modela}
 message ApiToken {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -507,6 +534,15 @@ message ApiTokenStatus {
   repeated ApiTokenCondition conditions = 3;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Bucket",type="string",JSONPath=".spec.bucketName",description=""
+// +kubebuilder:printcolumn:name="Path",type="string",JSONPath=".spec.path",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=attachments,singular=attachment,categories={infra,modela}
 message Attachment {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -722,6 +758,15 @@ message CockroachDBSpec {
   optional string url = 6;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.subject",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.Name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.Namespace",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=commits,singular=commit,categories={infra,modela}
 message Commit {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -796,6 +841,15 @@ message CommitStatus {
   repeated CommitCondition conditions = 5;
 }
 
+// Connection define a connection to an external system (e.g. database, public cloud)
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Provider",type="string",JSONPath=".spec.provider",description=""
+// +kubebuilder:printcolumn:name="Category",type="string",JSONPath=".spec.category",description=""
+// +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretName",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=connections,shortName=conn,singular=connection,categories={infra,modela}
 message Connection {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1449,6 +1503,13 @@ message KafkaSpec {
   optional string url = 6;
 }
 
+// Lab is a namespace used for training and data analysis operations.
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner"
+// +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
+// +kubebuilder:resource:path=labs,singular=lab,categories={infra,modela,all}
 // +kubebuilder:subresource:status
 message Lab {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -1538,6 +1599,19 @@ message LabStatus {
   repeated LabCondition conditions = 3;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
+// +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretName",description=""
+// +kubebuilder:printcolumn:name="Trial Start",type="string",JSONPath=".spec.trialStart",description=""
+// +kubebuilder:printcolumn:name="Trial End",type="string",JSONPath=".spec.trialEnd",description=""
+// +kubebuilder:printcolumn:name="Max Trainers",type="string",JSONPath=".spec.maxTrainers",description=""
+// +kubebuilder:printcolumn:name="Max Nodes",type="string",JSONPath=".spec.maxServers",description=""
+// +kubebuilder:printcolumn:name="Max Users",type="string",JSONPath=".spec.maxUsers",description=""
+// +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".status.expireAt",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
 // License is an abstraction that represent the cluster wide license
 // as obtained from Modela. The license is store inside a a secret
 message License {
@@ -1737,6 +1811,11 @@ message MinioSpec {
   optional string host = 3;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=modelasystems,singular=modelasystem,categories={infra,modela}
 message ModelaSystem {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -1850,6 +1929,15 @@ message Neo4JSpec {
   optional string url = 7;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
+// +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description=""
+// +kubebuilder:printcolumn:name="From",type="string",JSONPath=".spec.from",description=""
+// +kubebuilder:printcolumn:name="To",type="string",JSONPath=".spec.to",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=notifiers,singular=notifier,categories={infra,modela}
 message Notifier {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2194,6 +2282,16 @@ message Scope {
   repeated string actions = 2;
 }
 
+// ServingSite is a namespace used for serving
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
+// +kubebuilder:printcolumn:name="FDQN",type="string",JSONPath=".spec.fdqn",description=""
+// +kubebuilder:printcolumn:name="Ingress",type="string",JSONPath=".spec.ingressName",description=""
+// +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modela}
 message ServingSite {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2412,6 +2510,13 @@ message SybaseSpec {
   optional string url = 6;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Default Lab",type="string",JSONPath=".spec.defaultLabRef.Name",description=""
+// +kubebuilder:printcolumn:name="Default Serving Site",type="string",JSONPath=".spec.defaultServingSiteRef.Name",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=tenants,singular=tenant,categories={infra,modela}
 // Tenant represents root tenant.
 message Tenant {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -2546,6 +2651,13 @@ message VictorOpSpec {
   optional string url = 3;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description="owner"
+// +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=virtualbuckets,shortName=vb,singular=virtualbucket,categories={infra,modela,all}
 // VirtualBucket represent a object storage location in the cloud or on-prem
 message VirtualBucket {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -2638,6 +2750,18 @@ message VirtualBucketStatus {
   repeated VirtualBucketCondition conditions = 4;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.ownerName",description="cluster owner account"
+// +kubebuilder:printcolumn:name="Nodes",type="integer",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Node Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Gpus",type="integer",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Gpu Class",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Connection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:resource:path=virtualclusters,singular=virtualcluster,categories={infra,modela}
+// A VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
+// The study can create or destroy virtual clusters during training.
 message VirtualCluster {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -2757,6 +2881,12 @@ message VirtualClusterStatus {
   repeated VirtualClusterCondition conditions = 5;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="StorageConnection",type="string",JSONPath=".spec.connectionName",description="virtual bucket connections"
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=virtualvolumes,shortName=vol,singular=virtualvolume,categories={infra,modela,all}
 // VirtualVolume represent a volume api object
 message VirtualVolume {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;

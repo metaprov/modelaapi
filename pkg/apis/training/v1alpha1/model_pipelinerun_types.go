@@ -92,7 +92,6 @@ type ModelPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=modelpipelineruns,shortName=mpr,singular=modelpipelinerun,categories={train,modela,all}
-
 // ModelPipelineRun represent a execution of a pipeline
 type ModelPipelineRun struct {
 	metav1.TypeMeta   `json:",inline"`

@@ -61,6 +61,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: PredictionTemplate represents a prediction object
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

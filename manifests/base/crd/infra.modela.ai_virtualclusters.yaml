@@ -10,15 +10,48 @@ metadata:
 spec:
   group: infra.modela.ai
   names:
+    categories:
+    - infra
+    - modela
     kind: VirtualCluster
     listKind: VirtualClusterList
     plural: virtualclusters
     singular: virtualcluster
   scope: Namespaced
   versions:
-  - name: v1alpha1
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=="Ready")].status
+      name: Ready
+      type: string
+    - description: cluster owner account
+      jsonPath: .spec.ownerName
+      name: Owner
+      type: string
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Nodes
+      type: integer
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Node Class
+      type: string
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Gpus
+      type: integer
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Gpu Class
+      type: string
+    - description: virtual bucket connections
+      jsonPath: .spec.connectionName
+      name: Connection
+      type: string
+    name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: A VirtualCluster defined a running kubernetes cluster with N
+          nodes and GPU. The study can create or destroy virtual clusters during training.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -306,6 +339,8 @@ spec:
         type: object
     served: true
     storage: true
+    subresources:
+      status: {}
 status:
   acceptedNames:
     kind: ""

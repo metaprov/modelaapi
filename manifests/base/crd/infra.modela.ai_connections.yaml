@@ -40,6 +40,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Connection define a connection to an external system (e.g. database,
+          public cloud)
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

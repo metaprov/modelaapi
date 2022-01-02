@@ -48,6 +48,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: LabelingPipeline represent a feature set object in the feature
+          store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

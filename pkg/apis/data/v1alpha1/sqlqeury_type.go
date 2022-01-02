@@ -42,7 +42,6 @@ type SqlQueryCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=sqlqueries,singular=sqlquery,categories={data,modela}
-
 // +kubebuilder:subresource:status
 type SqlQuery struct {
 	metav1.TypeMeta   `json:",inline"`

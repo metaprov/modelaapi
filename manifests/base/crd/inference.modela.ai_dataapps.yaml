@@ -35,6 +35,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: DataApp represent a dashboard for business users to use a single
+          model.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

@@ -91,6 +91,15 @@ message Comment {
   optional string accountMentionID = 10;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="At",type="date",JSONPath=".status.at",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=meetings,singular=meeting,categories={infra,modela}
 message Meeting {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -194,6 +203,12 @@ message MeetingStatus {
   repeated MeetingCondition conditions = 7;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:resource:path=postmortems,shortName=pt,singular=postmortem,categories={team,modela,all}
+// PostMortem represent a post mortem
 message PostMortem {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
 
@@ -296,6 +311,14 @@ message RaisedAlert {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Entity Kind",type="string",JSONPath=".spec.entityRef.kind",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=reviews,shortName=cv,singular=review,categories={team,modela}
 // Review represents a comment about any review
 message Review {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -364,6 +387,11 @@ message ReviewStatus {
   repeated ReviewCondition conditions = 3;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Ready\")].status",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
+// +kubebuilder:subresource:status
+// +kubebuilder:resource:path=runbooks,shortName=rb,singular=runbook,categories={data,modela}
 // RunBook represent a list of instructions for a specific operation
 message RunBook {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -452,6 +480,13 @@ message TimeLineEvent {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time at = 2;
 }
 
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
+// +kubebuilder:printcolumn:name="Status",type="string",JSONPath=".status.phase",description=""
+// +kubebuilder:printcolumn:name="Subject",type="string",JSONPath=".spec.task",description=""
+// +kubebuilder:printcolumn:name="Entity Namespace",type="string",JSONPath=".spec.entityRef.namespace",description=""
+// +kubebuilder:printcolumn:name="Entity Name",type="string",JSONPath=".spec.entityRef.name",description=""
+// +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=todos,singular=todo,categories={infra,modela}
 message Todo {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;

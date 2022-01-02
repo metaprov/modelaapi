@@ -36,6 +36,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Lab is a namespace used for training and data analysis operations.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

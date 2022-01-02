@@ -50,6 +50,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: DataProduct represent a single data product in the system
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

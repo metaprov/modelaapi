@@ -34,6 +34,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: Featureset represents a featureset object
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

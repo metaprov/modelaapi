@@ -40,6 +40,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
+        description: FeaturePipeline represent the processing of feature in the store.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation

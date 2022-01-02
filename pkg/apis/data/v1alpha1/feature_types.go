@@ -41,7 +41,6 @@ type FeatureCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=features,singular=feature,categories={data,modela}
-
 // +kubebuilder:subresource:status
 type Feature struct {
 	metav1.TypeMeta   `json:",inline"`
