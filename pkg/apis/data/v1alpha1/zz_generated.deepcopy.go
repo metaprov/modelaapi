@@ -889,11 +889,7 @@ func (in *DataPipelineRunSpec) DeepCopyInto(out *DataPipelineRunSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
 		*out = new(catalogv1alpha1.PriorityLevel)
@@ -1002,11 +998,7 @@ func (in *DataPipelineSpec) DeepCopyInto(out *DataPipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.Priority != nil {
 		in, out := &in.Priority, &out.Priority
 		*out = new(catalogv1alpha1.PriorityLevel)
@@ -1194,11 +1186,7 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 	}
 	in.DataLocation.DeepCopyInto(&out.DataLocation)
 	in.Notification.DeepCopyInto(&out.Notification)
-	if in.DefaultWorkloadClassName != nil {
-		in, out := &in.DefaultWorkloadClassName, &out.DefaultWorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.DefaultResources.DeepCopyInto(&out.DefaultResources)
 	if in.RetriesOnFailure != nil {
 		in, out := &in.RetriesOnFailure, &out.RetriesOnFailure
 		*out = new(int32)
@@ -1763,11 +1751,7 @@ func (in *DatasetSpec) DeepCopyInto(out *DatasetSpec) {
 		*out = new(DataLocation)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -2597,11 +2581,7 @@ func (in *FeaturePipelineRunSpec) DeepCopyInto(out *FeaturePipelineRunSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
 		*out = new(int32)
@@ -2694,11 +2674,7 @@ func (in *FeaturePipelineSpec) DeepCopyInto(out *FeaturePipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	in.Schedule.DeepCopyInto(&out.Schedule)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
@@ -3443,11 +3419,7 @@ func (in *LabelingPipelineRunSpec) DeepCopyInto(out *LabelingPipelineRunSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
 		*out = new(int32)
@@ -3535,11 +3507,7 @@ func (in *LabelingPipelineSpec) DeepCopyInto(out *LabelingPipelineSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -4083,11 +4051,7 @@ func (in *RecipeRunSpec) DeepCopyInto(out *RecipeRunSpec) {
 		**out = **in
 	}
 	in.Output.DeepCopyInto(&out.Output)
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
 		*out = new(int32)
@@ -4172,11 +4136,7 @@ func (in *RecipeSpec) DeepCopyInto(out *RecipeSpec) {
 		*out = new(SampleSpec)
 		(*in).DeepCopyInto(*out)
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -4643,11 +4603,7 @@ func (in *SqlQueryRunSpec) DeepCopyInto(out *SqlQueryRunSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -5126,11 +5082,7 @@ func (in *WebRequestRunSpec) DeepCopyInto(out *WebRequestRunSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 }
 
 // DeepCopy is an autogenerated deepcopy function, copying the receiver, creating a new WebRequestRunSpec.

@@ -151,11 +151,6 @@ spec:
                     description: data location type is the type of the data location
                     type: string
                 type: object
-              defaultWorkloadClassName:
-                default: nano-cpu-250m-mem-256mi
-                description: DefaultWorkloadClassName is reference to the workload
-                  class used for running product tasks.
-                type: string
               description:
                 default: ""
                 description: User provided description
@@ -287,6 +282,30 @@ spec:
                 - high
                 - urgent
                 type: string
+              resources:
+                description: DefaultWorkloadClassName is reference to the workload
+                  class used for running product tasks.
+                properties:
+                  cpu:
+                    default: 1
+                    description: Cpu requirment in terms of cpu units
+                    type: number
+                  gpu:
+                    default: 0
+                    description: Gpu requirment
+                    type: number
+                  memory:
+                    default: 1000
+                    description: Memory requirment in terms of megabytes
+                    type: number
+                  storage:
+                    default: 3600
+                    description: Storage requirment in megabytes
+                    type: number
+                  workloadClassName:
+                    description: Workload class name
+                    type: string
+                type: object
               retriesOnFailure:
                 default: 3
                 description: Denote how many time a job is retry after failure

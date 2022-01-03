@@ -1837,3 +1837,26 @@ type ConfusionMatrixRow struct {
 type ConfusionMatrix struct {
 	Rows []ConfusionMatrixRow `json:"rows,omitempty" protobuf:"bytes,1,opt,name=rows"`
 }
+
+// Specification for resource
+type ResourceSpec struct {
+	// Workload class name
+	// +kubebuilder:validation:Optional
+	WorkloadClassName string `json:"workloadClassName,omitempty" protobuf:"bytes,1,opt,name=workloadClassName"`
+	// Memory requirment in terms of megabytes
+	// +kubebuilder:default:=1000
+	// +kubebuilder:validation:Optional
+	Memory *float64 `json:"memory,omitempty" protobuf:"bytes,2,opt,name=memory"`
+	// Cpu requirment in terms of cpu units
+	// +kubebuilder:default:=1
+	// +kubebuilder:validation:Optional
+	Cpu *float64 `json:"cpu,omitempty" protobuf:"bytes,3,opt,name=cpu"`
+	// Gpu requirment
+	// +kubebuilder:default:=0
+	// +kubebuilder:validation:Optional
+	Gpu *float64 `json:"gpu,omitempty" protobuf:"bytes,4,opt,name=gpu"`
+	// Storage requirment in megabytes
+	// +kubebuilder:default:=3600
+	// +kubebuilder:validation:Optional
+	Storage *float64 `json:"storage,omitempty" protobuf:"bytes,5,opt,name=storage"`
+}

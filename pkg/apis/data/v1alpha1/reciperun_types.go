@@ -84,11 +84,9 @@ type RecipeRunSpec struct {
 	// The location of the data output.
 	// +required.
 	Output DataLocation `json:"output,omitempty" protobuf:"bytes,4,opt,name=output"`
-	// WorkloadClassName is the name of the workload used to execute this recipe run,
-	// The value is set from the Recipe definition.
-	// +kubebuilder:default:=""
+	// Resources are hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,5,opt,name=resources"`
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

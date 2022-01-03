@@ -148,10 +148,9 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
-	// A reference to the workload class this is used to analyze the workload
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,15,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,15,opt,name=resources"`
 	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional

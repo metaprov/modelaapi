@@ -983,8 +983,10 @@ export class PredictionSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): PredictionSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): PredictionSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): PredictionSpec;
+  hasResources(): boolean;
+  clearResources(): PredictionSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): PredictionSpec;
@@ -1022,7 +1024,7 @@ export namespace PredictionSpec {
     output?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.AsObject,
     testsList: Array<string>,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     priority: string,
     aborted: boolean,
@@ -1332,8 +1334,10 @@ export class PredictorSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): PredictorSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): PredictorSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): PredictorSpec;
+  hasResources(): boolean;
+  clearResources(): PredictorSpec;
 
   getCache(): PredictionCacheSpec | undefined;
   setCache(value?: PredictionCacheSpec): PredictorSpec;
@@ -1399,7 +1403,7 @@ export namespace PredictorSpec {
     replicas: number,
     autoscaling?: AutoScaling.AsObject,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     cache?: PredictionCacheSpec.AsObject,
     store?: OnlineFeaturestoreSpec.AsObject,
     forewardcurtain: string,

@@ -928,11 +928,7 @@ func (in *PredictionSpec) DeepCopyInto(out *PredictionSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -1217,11 +1213,7 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.Cache != nil {
 		in, out := &in.Cache, &out.Cache
 		*out = new(PredictionCacheSpec)

@@ -599,10 +599,9 @@ message PredictionSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 9;
 
-  // A reference to the workload class that is used for training
-  // +kubebuilder:default:="default-prediction-workload-class"
+  // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
@@ -830,10 +829,9 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 14;
 
-  // A reference to the workload class for this predictor deployment
-  // +kubebuilder:default:=""
+  // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
 
   // Cache is the specification of prediction cache
   // +kubebuilder:validation:Optional

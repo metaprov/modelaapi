@@ -1029,8 +1029,10 @@ export class DataPipelineRunSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataPipelineRunSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): DataPipelineRunSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataPipelineRunSpec;
+  hasResources(): boolean;
+  clearResources(): DataPipelineRunSpec;
 
   getPriority(): string;
   setPriority(value: string): DataPipelineRunSpec;
@@ -1054,7 +1056,7 @@ export namespace DataPipelineRunSpec {
     versionname: string,
     datapipelinename: string,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     priority: string,
     paused: boolean,
     aborted: boolean,
@@ -1166,8 +1168,10 @@ export class DataPipelineSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): DataPipelineSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): DataPipelineSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataPipelineSpec;
+  hasResources(): boolean;
+  clearResources(): DataPipelineSpec;
 
   getPriority(): string;
   setPriority(value: string): DataPipelineSpec;
@@ -1196,7 +1200,7 @@ export namespace DataPipelineSpec {
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     priority: string,
     paused: boolean,
     ttl: number,
@@ -1379,8 +1383,10 @@ export class DataProductSpec extends jspb.Message {
   hasNotification(): boolean;
   clearNotification(): DataProductSpec;
 
-  getDefaultworkloadclassname(): string;
-  setDefaultworkloadclassname(value: string): DataProductSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataProductSpec;
+  hasResources(): boolean;
+  clearResources(): DataProductSpec;
 
   getRetriesonfailure(): number;
   setRetriesonfailure(value: number): DataProductSpec;
@@ -1433,7 +1439,7 @@ export namespace DataProductSpec {
     description: string,
     datalocation?: DataLocation.AsObject,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
-    defaultworkloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     retriesonfailure: number,
     kpisList: Array<KPI.AsObject>,
     oncallaccountname: string,
@@ -2027,8 +2033,10 @@ export class DatasetSpec extends jspb.Message {
   hasLocation(): boolean;
   clearLocation(): DatasetSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): DatasetSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DatasetSpec;
+  hasResources(): boolean;
+  clearResources(): DatasetSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): DatasetSpec;
@@ -2077,7 +2085,7 @@ export namespace DatasetSpec {
     syntacticrows: number,
     origin?: DataLocation.AsObject,
     location?: DataLocation.AsObject,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     type: string,
     sample?: SampleSpec.AsObject,
@@ -3029,8 +3037,10 @@ export class FeaturePipelineRunSpec extends jspb.Message {
   getFeaturepipelinename(): string;
   setFeaturepipelinename(value: string): FeaturePipelineRunSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): FeaturePipelineRunSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): FeaturePipelineRunSpec;
+  hasResources(): boolean;
+  clearResources(): FeaturePipelineRunSpec;
 
   getTtl(): number;
   setTtl(value: number): FeaturePipelineRunSpec;
@@ -3048,7 +3058,7 @@ export namespace FeaturePipelineRunSpec {
     owner: string,
     versionname: string,
     featurepipelinename: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
   }
 }
@@ -3138,8 +3148,10 @@ export class FeaturePipelineSpec extends jspb.Message {
   getEntityname(): string;
   setEntityname(value: string): FeaturePipelineSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): FeaturePipelineSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): FeaturePipelineSpec;
+  hasResources(): boolean;
+  clearResources(): FeaturePipelineSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): FeaturePipelineSpec;
@@ -3173,7 +3185,7 @@ export namespace FeaturePipelineSpec {
     materialization?: MaterializationSpec.AsObject,
     family: string,
     entityname: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     activedeadlineseconds: number,
     paused: boolean,
@@ -4027,8 +4039,10 @@ export class LabelingPipelineRunSpec extends jspb.Message {
   getLabelpipelinename(): string;
   setLabelpipelinename(value: string): LabelingPipelineRunSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): LabelingPipelineRunSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): LabelingPipelineRunSpec;
+  hasResources(): boolean;
+  clearResources(): LabelingPipelineRunSpec;
 
   getTtl(): number;
   setTtl(value: number): LabelingPipelineRunSpec;
@@ -4046,7 +4060,7 @@ export namespace LabelingPipelineRunSpec {
     owner: string,
     versionname: string,
     labelpipelinename: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
   }
 }
@@ -4127,8 +4141,10 @@ export class LabelingPipelineSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): LabelingPipelineSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): LabelingPipelineSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): LabelingPipelineSpec;
+  hasResources(): boolean;
+  clearResources(): LabelingPipelineSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): LabelingPipelineSpec;
@@ -4156,7 +4172,7 @@ export namespace LabelingPipelineSpec {
     outputlabelset: string,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     paused: boolean,
     ttl: number,
@@ -4684,8 +4700,10 @@ export class RecipeRunSpec extends jspb.Message {
   hasOutput(): boolean;
   clearOutput(): RecipeRunSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): RecipeRunSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): RecipeRunSpec;
+  hasResources(): boolean;
+  clearResources(): RecipeRunSpec;
 
   getTtl(): number;
   setTtl(value: number): RecipeRunSpec;
@@ -4704,7 +4722,7 @@ export namespace RecipeRunSpec {
     recipename: string,
     labname: string,
     output?: DataLocation.AsObject,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
   }
 }
@@ -4799,8 +4817,10 @@ export class RecipeSpec extends jspb.Message {
   hasSample(): boolean;
   clearSample(): RecipeSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): RecipeSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): RecipeSpec;
+  hasResources(): boolean;
+  clearResources(): RecipeSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): RecipeSpec;
@@ -4825,7 +4845,7 @@ export namespace RecipeSpec {
     stepsList: Array<RecipeStep.AsObject>,
     output?: RecipeOutputSpec.AsObject,
     sample?: SampleSpec.AsObject,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     ttl: number,
   }
@@ -5301,8 +5321,10 @@ export class SqlQueryRunSpec extends jspb.Message {
   getConnectionname(): string;
   setConnectionname(value: string): SqlQueryRunSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): SqlQueryRunSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): SqlQueryRunSpec;
+  hasResources(): boolean;
+  clearResources(): SqlQueryRunSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): SqlQueryRunSpec;
@@ -5336,7 +5358,7 @@ export namespace SqlQueryRunSpec {
     table: boolean,
     sqlortable: string,
     connectionname: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     priority: string,
     aborted: boolean,
@@ -5831,8 +5853,10 @@ export class WebRequestRunSpec extends jspb.Message {
   getReported(): boolean;
   setReported(value: boolean): WebRequestRunSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): WebRequestRunSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): WebRequestRunSpec;
+  hasResources(): boolean;
+  clearResources(): WebRequestRunSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): WebRequestRunSpec.AsObject;
@@ -5855,7 +5879,7 @@ export namespace WebRequestRunSpec {
     timeout: number,
     materialized: boolean,
     reported: boolean,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 

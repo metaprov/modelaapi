@@ -834,9 +834,8 @@ message DataPipelineRunSpec {
   optional string owner = 4;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipelineeun
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 
   // The priority of this data pipeline. The default is medium.
   // +kubebuilder:default:=medium
@@ -942,10 +941,9 @@ message DataPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 8;
 
-  // WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipeline
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resources are hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
 
   // The priority of this data pipeline. The default is medium.
   // +kubebuilder:default:="medium"
@@ -1084,9 +1082,8 @@ message DataProductSpec {
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
 
   // DefaultWorkloadClassName is reference to the workload class used for running product tasks.
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string defaultWorkloadClassName = 13;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 13;
 
   // Denote how many time a job is retry after failure
   // +kubebuilder:default:=3
@@ -1492,10 +1489,9 @@ message DatasetSpec {
   // +required
   optional DataLocation location = 14;
 
-  // A reference to the workload class this is used to analyze the workload
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
@@ -2062,9 +2058,8 @@ message FeaturePipelineRunSpec {
   optional string featurePipelineName = 3;
 
   // A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 
   // TTL.
   // +kubebuilder:default:=0
@@ -2149,10 +2144,9 @@ message FeaturePipelineSpec {
   // +kubebuilder:validation:Optional
   optional string entityName = 8;
 
-  // A reference to the workload class that is used for running the workload class
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
 
   // Schedule for running the pipeline
   // +kubebuilder:validation:Optional
@@ -2681,9 +2675,8 @@ message LabelingPipelineRunSpec {
   optional string labelPipelineName = 3;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline.
-  // +kubebuilder:default:="default-workload-class"
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 
   // TTL.
   // +kubebuilder:default:=0
@@ -2752,10 +2745,9 @@ message LabelingPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 7;
 
-  // WorkloadClassName is the name of the workload class used to run this pipeline.
-  // +kubebuilder:default:="default-workload-class"
+  // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
   // +kubebuilder:default:=600
@@ -3055,11 +3047,9 @@ message RecipeRunSpec {
   // +required.
   optional DataLocation output = 4;
 
-  // WorkloadClassName is the name of the workload used to execute this recipe run,
-  // The value is set from the Recipe definition.
-  // +kubebuilder:default:=""
+  // Resources are hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 
   // TTL.
   // +kubebuilder:default:=0
@@ -3140,10 +3130,9 @@ message RecipeSpec {
   // +kubebuilder:validation:Optional
   optional SampleSpec sample = 7;
 
-  // WorkloadClassName is the name of the workload used to execute this recipe
-  // +kubebuilder:default:=""
+  // Resource define the resource requirements
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
 
   // ActiveDeadlineSeconds is the deadline setup on jobs for this recipe.
   // +kubebuilder:default:=600
@@ -3419,10 +3408,9 @@ message SqlQueryRunSpec {
   // +kubebuilder:validation:Optional
   optional string connectionName = 7;
 
-  // A reference to the workload class that is used for training
-  // +kubebuilder:default:="default-prediction-workload-class"
+  // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
 
   // ActiveDeadlineSeconds is the deadline of a job for this dataset.
   // +kubebuilder:default:=600
@@ -3752,10 +3740,9 @@ message WebRequestRunSpec {
   // +kubebuilder:validation:Optional
   optional bool reported = 11;
 
-  // A reference to the workload class that is used for training
-  // +kubebuilder:default:="default-prediction-workload-class"
+  // Resources is the hardware resource req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 12;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12;
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun

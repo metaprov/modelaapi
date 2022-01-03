@@ -1051,10 +1051,19 @@ spec:
                     default: ""
                     type: string
                 type: object
-              secretName:
+              secretRef:
                 description: SecretName is a reference to a secret which holds the
                   connection credentials
-                type: string
+                properties:
+                  name:
+                    description: Name is unique within a namespace to reference a
+                      secret resource.
+                    type: string
+                  namespace:
+                    description: Namespace defines the space within which the secret
+                      name must be unique.
+                    type: string
+                type: object
               sftp:
                 properties:
                   host:

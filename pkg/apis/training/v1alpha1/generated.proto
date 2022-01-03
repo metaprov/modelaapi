@@ -967,9 +967,8 @@ message ModelAutobuilderSpec {
   optional string owner = 17;
 
   // WorkloadClassName is the name of the workload class used to run this pipeline.
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
   // +kubebuilder:validation:Optional
-  optional string workload = 18;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 18;
 
   // LabRef is a reference to the lab where the trainers for this study run.
   // If no value is provided, the lab is taken from the
@@ -2232,10 +2231,9 @@ message NotebookRunSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
-  // WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resources are hardware req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 
   // TTL.
   // +kubebuilder:default:=0
@@ -2328,10 +2326,9 @@ message NotebookSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 9;
 
-  // WorkloadClassName is the name of the workload class used to run this pipeline.
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resource are the hardware req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 10;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
 
   // ActiveDeadlineSeconds is the deadline of a job for this notebook.
   // +kubebuilder:default:=600
@@ -2602,10 +2599,9 @@ message ReportSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 8;
 
-  // WorkloadClassName is the name of the workload class used to run this report
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resources are hardware req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
 
   // ActiveDeadlineSeconds is the deadline of a job for this report.
   // +kubebuilder:default:=600
@@ -3371,10 +3367,9 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional double seed = 10;
 
-  // WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 11;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 11;
 
   // Gpu indicate that training should be done on a gpu.
   // +kubebuilder:default:=false
@@ -3442,8 +3437,7 @@ message UATStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 3;
 
-  // WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resources are hardware req.
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 4;
 }

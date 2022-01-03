@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	corev1 "k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -70,7 +71,7 @@ type ConnectionSpec struct {
 	// SecretName is a reference to a secret which holds the connection credentials
 	// +kubebuilder:validation:Required
 	// +required
-	SecretName *string `json:"secretName,omitempty" protobuf:"bytes,4,opt,name=secretName"`
+	SecretRef v1.SecretReference `json:"secretRef,omitempty" protobuf:"bytes,4,opt,name=secretRef"`
 
 	// Databases
 

@@ -164,9 +164,8 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
 	// WorkloadClassName is the name of the workload class used to run this pipeline.
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
-	Workload *string `json:"workload,omitempty" protobuf:"bytes,18,opt,name=workload"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,18,opt,name=resources"`
 	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
 	// +kubebuilder:validation:Optional

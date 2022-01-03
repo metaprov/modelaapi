@@ -1216,6 +1216,40 @@ export namespace Region {
   }
 }
 
+export class ResourceSpec extends jspb.Message {
+  getWorkloadclassname(): string;
+  setWorkloadclassname(value: string): ResourceSpec;
+
+  getMemory(): number;
+  setMemory(value: number): ResourceSpec;
+
+  getCpu(): number;
+  setCpu(value: number): ResourceSpec;
+
+  getGpu(): number;
+  setGpu(value: number): ResourceSpec;
+
+  getStorage(): number;
+  setStorage(value: number): ResourceSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ResourceSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ResourceSpec): ResourceSpec.AsObject;
+  static serializeBinaryToWriter(message: ResourceSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ResourceSpec;
+  static deserializeBinaryFromReader(message: ResourceSpec, reader: jspb.BinaryReader): ResourceSpec;
+}
+
+export namespace ResourceSpec {
+  export type AsObject = {
+    workloadclassname: string,
+    memory: number,
+    cpu: number,
+    gpu: number,
+    storage: number,
+  }
+}
+
 export class RocAucCurve extends jspb.Message {
   getValuesList(): Array<CurvePoint>;
   setValuesList(value: Array<CurvePoint>): RocAucCurve;

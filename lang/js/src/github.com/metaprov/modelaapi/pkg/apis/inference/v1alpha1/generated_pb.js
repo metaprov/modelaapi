@@ -9359,7 +9359,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.t
     output: (f = msg.getOutput()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataOutputSpec.toObject(includeInstance, f),
     testsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
@@ -9440,8 +9440,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.d
       msg.setOwner(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readInt64());
@@ -9558,11 +9559,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.s
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       10,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 11));
@@ -9932,29 +9934,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
 
 
 /**
- * optional string workloadClassName = 10;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 10));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 10, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 10, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -9962,7 +9965,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -12411,7 +12414,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     replicas: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     autoscaling: (f = msg.getAutoscaling()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.AutoScaling.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     cache: (f = msg.getCache()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec.toObject(includeInstance, f),
     store: (f = msg.getStore()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.OnlineFeaturestoreSpec.toObject(includeInstance, f),
     forewardcurtain: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
@@ -12521,8 +12524,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
       msg.setOwner(value);
       break;
     case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 16:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionCacheSpec;
@@ -12702,11 +12706,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.se
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       15,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = message.getCache();
@@ -13299,29 +13304,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
 
 
 /**
- * optional string workloadClassName = 15;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 15));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 15, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 15, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -13329,7 +13335,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 

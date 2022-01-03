@@ -146,6 +146,29 @@ spec:
                 default: false
                 description: Set to true to pause the data pipeline
                 type: boolean
+              resources:
+                description: Resources is the hardware resource req.
+                properties:
+                  cpu:
+                    default: 1
+                    description: Cpu requirment in terms of cpu units
+                    type: number
+                  gpu:
+                    default: 0
+                    description: Gpu requirment
+                    type: number
+                  memory:
+                    default: 1000
+                    description: Memory requirment in terms of megabytes
+                    type: number
+                  storage:
+                    default: 3600
+                    description: Storage requirment in megabytes
+                    type: number
+                  workloadClassName:
+                    description: Workload class name
+                    type: string
+                type: object
               schedule:
                 description: Schedule for running the pipeline
                 properties:
@@ -202,11 +225,6 @@ spec:
               versionName:
                 default: ""
                 description: Version name is the the product version for the feature.
-                type: string
-              workloadClassName:
-                default: nano-cpu-250m-mem-256mi
-                description: A reference to the workload class that is used for running
-                  the workload class
                 type: string
             type: object
           status:

@@ -1015,6 +1015,30 @@ spec:
                 description: The owner account name
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
+              resources:
+                description: WorkloadClassName is the name of the workload class used
+                  to run this pipeline.
+                properties:
+                  cpu:
+                    default: 1
+                    description: Cpu requirment in terms of cpu units
+                    type: number
+                  gpu:
+                    default: 0
+                    description: Gpu requirment
+                    type: number
+                  memory:
+                    default: 1000
+                    description: Memory requirment in terms of megabytes
+                    type: number
+                  storage:
+                    default: 3600
+                    description: Storage requirment in megabytes
+                    type: number
+                  workloadClassName:
+                    description: Workload class name
+                    type: string
+                type: object
               sampler:
                 default: random
                 description: Specify the search method
@@ -1065,11 +1089,6 @@ spec:
                 description: Specify the number of trainers. Default 1 trainer.
                 format: int32
                 type: integer
-              workload:
-                default: nano-cpu-250m-mem-256mi
-                description: WorkloadClassName is the name of the workload class used
-                  to run this pipeline.
-                type: string
             type: object
           status:
             description: ModelAutobuilderStatus define the observed state of the pipeline

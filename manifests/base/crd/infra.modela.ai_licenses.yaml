@@ -126,11 +126,18 @@ spec:
                 default: ""
                 description: The product name
                 type: string
-              secretName:
-                default: ""
+              secretRef:
                 description: The secret containing the license token
-                maxLength: 63
-                type: string
+                properties:
+                  name:
+                    description: Name is unique within a namespace to reference a
+                      secret resource.
+                    type: string
+                  namespace:
+                    description: Namespace defines the space within which the secret
+                      name must be unique.
+                    type: string
+                type: object
               tenantRef:
                 description: Reference to the tenant owning this license Default to
                   default tenant.

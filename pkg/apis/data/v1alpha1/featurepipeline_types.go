@@ -94,10 +94,9 @@ type FeaturePipelineSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	EntityName *string `json:"entityName,omitempty" protobuf:"bytes,8,opt,name=entityName"`
-	// A reference to the workload class that is used for running the workload class
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,10,opt,name=schedule"`

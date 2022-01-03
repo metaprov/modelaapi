@@ -80,10 +80,9 @@ type LabelingPipelineSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
-	// WorkloadClassName is the name of the workload class used to run this pipeline.
-	// +kubebuilder:default:="default-workload-class"
+	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional

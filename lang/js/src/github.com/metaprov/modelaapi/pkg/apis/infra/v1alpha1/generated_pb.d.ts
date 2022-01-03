@@ -1568,8 +1568,10 @@ export class ConnectionSpec extends jspb.Message {
   getProvider(): string;
   setProvider(value: string): ConnectionSpec;
 
-  getSecretname(): string;
-  setSecretname(value: string): ConnectionSpec;
+  getSecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
+  setSecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): ConnectionSpec;
+  hasSecretref(): boolean;
+  clearSecretref(): ConnectionSpec;
 
   getAthena(): AmazonAthenaSpec | undefined;
   setAthena(value?: AmazonAthenaSpec): ConnectionSpec;
@@ -1922,7 +1924,7 @@ export namespace ConnectionSpec {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     category: string,
     provider: string,
-    secretname: string,
+    secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
     athena?: AmazonAthenaSpec.AsObject,
     drill?: ApacheDrillSpec.AsObject,
     druid?: ApacheDruidSpec.AsObject,
@@ -2992,8 +2994,10 @@ export class LicenseSpec extends jspb.Message {
   hasTenantref(): boolean;
   clearTenantref(): LicenseSpec;
 
-  getSecretname(): string;
-  setSecretname(value: string): LicenseSpec;
+  getSecretref(): k8s_io_api_core_v1_generated_pb.SecretReference | undefined;
+  setSecretref(value?: k8s_io_api_core_v1_generated_pb.SecretReference): LicenseSpec;
+  hasSecretref(): boolean;
+  clearSecretref(): LicenseSpec;
 
   getOwner(): string;
   setOwner(value: string): LicenseSpec;
@@ -3063,7 +3067,7 @@ export class LicenseSpec extends jspb.Message {
 export namespace LicenseSpec {
   export type AsObject = {
     tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
-    secretname: string,
+    secretref?: k8s_io_api_core_v1_generated_pb.SecretReference.AsObject,
     owner: string,
     email: string,
     trialstart?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -5095,6 +5099,11 @@ export namespace VirtualClusterList {
 }
 
 export class VirtualClusterSpec extends jspb.Message {
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): VirtualClusterSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): VirtualClusterSpec;
+
   getDescription(): string;
   setDescription(value: string): VirtualClusterSpec;
 
@@ -5137,6 +5146,7 @@ export class VirtualClusterSpec extends jspb.Message {
 
 export namespace VirtualClusterSpec {
   export type AsObject = {
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     description: string,
     nodes: number,
     nodeclassname: string,

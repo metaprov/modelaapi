@@ -904,7 +904,7 @@ message ConnectionSpec {
   // SecretName is a reference to a secret which holds the connection credentials
   // +kubebuilder:validation:Required
   // +required
-  optional string secretName = 4;
+  optional k8s.io.api.core.v1.SecretReference secretRef = 4;
 
   // +kubebuilder:validation:Optional
   optional AmazonAthenaSpec athena = 5;
@@ -1656,10 +1656,8 @@ message LicenseSpec {
   optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
 
   // The secret containing the license token
-  // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  // +kubebuilder:validation:MaxLength=63
-  optional string secretName = 2;
+  optional k8s.io.api.core.v1.SecretReference secretRef = 2;
 
   // Owner is the account owning this license
   // +kubebuilder:validation:Optional
@@ -2797,23 +2795,27 @@ message VirtualClusterList {
 }
 
 message VirtualClusterSpec {
+  // The owner of the virtual bucket
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+
   // Description is the user provided description
   // +kubebuilder:default:=""
   // +optional
-  optional string description = 1;
+  optional string description = 2;
 
   // Nodes is the desired number of nodes
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 nodes = 2;
+  optional int32 nodes = 3;
 
   // +kubebuilder:validation:Optional
   // NodeClassName is the class of nodes or vm
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string nodeClassName = 3;
+  optional string nodeClassName = 4;
 
   // +kubebuilder:validation:Optional
   // Gpus is the desired number of gpus
@@ -2821,13 +2823,13 @@ message VirtualClusterSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 gpus = 4;
+  optional int32 gpus = 5;
 
   // +kubebuilder:validation:Optional
   // GpuClassName is the The class of gpu.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string gpuClassName = 5;
+  optional string gpuClassName = 6;
 
   // +kubebuilder:validation:Optional
   // VolumeSize is the size of the volume that would be mounted on all the node of the cluster
@@ -2835,26 +2837,26 @@ message VirtualClusterSpec {
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=10
   // +kubebuilder:validation:Optional
-  optional int32 volumeSize = 6;
+  optional int32 volumeSize = 7;
 
   // +kubebuilder:validation:Optional
   // Spot indicate if we should we use spot instances.
   // +kubebuilder:default:=false
   // +optional
-  optional bool spot = 7;
+  optional bool spot = 8;
 
   // ConnectionName refer to the name of the provider connection
   // +kubebuilder:default:=""
-  optional string connectionName = 8;
+  optional string connectionName = 9;
 
   // Owner is the account name of the owner of this cluster
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 9;
+  optional string owner = 10;
 
   // Specify resource limits for the virtual cluster
   // +kubebuilder:validation:Optional
-  optional ResourceLimitSpec limits = 10;
+  optional ResourceLimitSpec limits = 11;
 }
 
 message VirtualClusterStatus {

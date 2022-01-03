@@ -1453,11 +1453,7 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.Workload != nil {
-		in, out := &in.Workload, &out.Workload
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.LabRef != nil {
 		in, out := &in.LabRef, &out.LabRef
 		*out = new(v1.ObjectReference)
@@ -2809,11 +2805,7 @@ func (in *NotebookRunSpec) DeepCopyInto(out *NotebookRunSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.TTL != nil {
 		in, out := &in.TTL, &out.TTL
 		*out = new(int32)
@@ -2914,11 +2906,7 @@ func (in *NotebookSpec) DeepCopyInto(out *NotebookSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -3302,11 +3290,7 @@ func (in *ReportSpec) DeepCopyInto(out *ReportSpec) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.ActiveDeadlineSeconds != nil {
 		in, out := &in.ActiveDeadlineSeconds, &out.ActiveDeadlineSeconds
 		*out = new(int64)
@@ -4065,11 +4049,7 @@ func (in *TrainingSpec) DeepCopyInto(out *TrainingSpec) {
 		*out = new(float64)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.Gpu != nil {
 		in, out := &in.Gpu, &out.Gpu
 		*out = new(bool)

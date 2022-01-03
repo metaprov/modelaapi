@@ -974,9 +974,7 @@ spec:
                       type: object
                     type: array
                   workloadClassName:
-                    default: nano-cpu-250m-mem-256mi
-                    description: WorkloadClassName is a reference to the workload
-                      class that is used for running the tests in the serving site.
+                    description: Resources are hardware req.
                     type: string
                 type: object
               versionName:

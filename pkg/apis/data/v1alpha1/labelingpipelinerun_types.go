@@ -86,9 +86,8 @@ type LabelingPipelineRunSpec struct {
 	// +kubebuilder:default:=""
 	LabelPipelineName *string `json:"labelPipelineName" protobuf:"bytes,3,opt,name=labelPipelineName"`
 	// WorkloadClassName is the name of the workload class used to run this pipeline.
-	// +kubebuilder:default:="default-workload-class"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,4,opt,name=resources"`
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

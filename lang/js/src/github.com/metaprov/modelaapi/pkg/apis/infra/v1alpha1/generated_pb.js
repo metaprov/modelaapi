@@ -17638,7 +17638,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.toObj
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     provider: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    secretname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    secretref: (f = msg.getSecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f),
     athena: (f = msg.getAthena()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonAthenaSpec.toObject(includeInstance, f),
     drill: (f = msg.getDrill()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec.toObject(includeInstance, f),
     druid: (f = msg.getDruid()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec.toObject(includeInstance, f),
@@ -17757,8 +17757,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.deser
       msg.setProvider(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSecretname(value);
+      var value = new k8s_io_api_core_v1_generated_pb.SecretReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.SecretReference.deserializeBinaryFromReader);
+      msg.setSecretref(value);
       break;
     case 5:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonAthenaSpec;
@@ -18150,11 +18151,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.seria
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = message.getSecretref();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       4,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.SecretReference.serializeBinaryToWriter
     );
   }
   f = message.getAthena();
@@ -18813,29 +18815,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
 
 
 /**
- * optional string secretName = 4;
- * @return {string}
+ * optional k8s.io.api.core.v1.SecretReference secretRef = 4;
+ * @return {?proto.k8s.io.api.core.v1.SecretReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSecretname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.getSecretref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.SecretReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.SecretReference, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.SecretReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSecretname = function(value) {
-  return jspb.Message.setField(this, 4, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.setSecretref = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearSecretname = function() {
-  return jspb.Message.setField(this, 4, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.clearSecretref = function() {
+  return this.setSecretref(undefined);
 };
 
 
@@ -18843,7 +18846,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSecretname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec.prototype.hasSecretref = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -30838,7 +30841,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    secretname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    secretref: (f = msg.getSecretref()) && k8s_io_api_core_v1_generated_pb.SecretReference.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     email: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     trialstart: (f = msg.getTrialstart()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -30898,8 +30901,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.deserial
       msg.setTenantref(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSecretname(value);
+      var value = new k8s_io_api_core_v1_generated_pb.SecretReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.SecretReference.deserializeBinaryFromReader);
+      msg.setSecretref(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -31009,11 +31013,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.serializ
       k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = message.getSecretref();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       2,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.SecretReference.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 3));
@@ -31179,29 +31184,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
 
 
 /**
- * optional string secretName = 2;
- * @return {string}
+ * optional k8s.io.api.core.v1.SecretReference secretRef = 2;
+ * @return {?proto.k8s.io.api.core.v1.SecretReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getSecretname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.getSecretref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.SecretReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.SecretReference, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.SecretReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setSecretname = function(value) {
-  return jspb.Message.setField(this, 2, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.setSecretref = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearSecretname = function() {
-  return jspb.Message.setField(this, 2, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.clearSecretref = function() {
+  return this.setSecretref(undefined);
 };
 
 
@@ -31209,7 +31215,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototyp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasSecretname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec.prototype.hasSecretref = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -50607,15 +50613,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    description: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    nodes: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    nodeclassname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    gpus: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    gpuclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    volumesize: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    spot: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
-    connectionname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    nodes: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    nodeclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    gpus: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    gpuclassname: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    volumesize: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    spot: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+    connectionname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    owner: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     limits: (f = msg.getLimits()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.toObject(includeInstance, f)
   };
 
@@ -50654,42 +50661,47 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setDescription(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setNodes(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setNodeclassname(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setGpus(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setGpuclassname(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setVolumesize(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSpot(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setConnectionname(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
       break;
-    case 10:
+    case 11:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.deserializeBinaryFromReader);
       msg.setLimits(value);
@@ -50723,58 +50735,59 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = message.getTenantref();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       1,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = /** @type {number} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       3,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       4,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       5,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       6,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
-    writer.writeBool(
+    writer.writeInt32(
       7,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       8,
       f
     );
@@ -50786,10 +50799,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.s
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
   f = message.getLimits();
   if (f != null) {
     writer.writeMessage(
-      10,
+      11,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec.serializeBinaryToWriter
     );
@@ -50798,11 +50818,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.s
 
 
 /**
- * optional string description = 1;
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 1;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 1));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string description = 2;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getDescription = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -50811,42 +50868,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setDescription = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearDescription = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasDescription = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional int32 nodes = 2;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getNodes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setNodes = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -50855,7 +50876,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearNodes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearDescription = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -50864,25 +50885,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasNodes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasDescription = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string nodeClassName = 3;
- * @return {string}
+ * optional int32 nodes = 3;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getNodeclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getNodes = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setNodeclassname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setNodes = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -50891,7 +50912,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearNodeclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearNodes = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -50900,25 +50921,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasNodeclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasNodes = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional int32 gpus = 4;
- * @return {number}
+ * optional string nodeClassName = 4;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getGpus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getNodeclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setGpus = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setNodeclassname = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -50927,7 +50948,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearGpus = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearNodeclassname = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -50936,25 +50957,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasGpus = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasNodeclassname = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string gpuClassName = 5;
- * @return {string}
+ * optional int32 gpus = 5;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getGpuclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getGpus = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setGpuclassname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setGpus = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -50963,7 +50984,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearGpuclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearGpus = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -50972,25 +50993,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasGpuclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasGpus = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional int32 volumeSize = 6;
- * @return {number}
+ * optional string gpuClassName = 6;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getVolumesize = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getGpuclassname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setVolumesize = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setGpuclassname = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -50999,7 +51020,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearVolumesize = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearGpuclassname = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -51008,25 +51029,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasVolumesize = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasGpuclassname = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional bool spot = 7;
- * @return {boolean}
+ * optional int32 volumeSize = 7;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getSpot = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getVolumesize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setSpot = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setVolumesize = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -51035,7 +51056,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearSpot = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearVolumesize = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -51044,25 +51065,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasSpot = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasVolumesize = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string connectionName = 8;
- * @return {string}
+ * optional bool spot = 8;
+ * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getConnectionname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getSpot = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setConnectionname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setSpot = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -51071,7 +51092,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearConnectionname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearSpot = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -51080,16 +51101,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasConnectionname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasSpot = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string owner = 9;
+ * optional string connectionName = 9;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getConnectionname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -51098,7 +51119,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setOwner = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setConnectionname = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -51107,7 +51128,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearConnectionname = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -51116,18 +51137,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasOwner = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasConnectionname = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional ResourceLimitSpec limits = 10;
+ * optional string owner = 10;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getOwner = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setOwner = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.clearOwner = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasOwner = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional ResourceLimitSpec limits = 11;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.getLimits = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec, 10));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec, 11));
 };
 
 
@@ -51136,7 +51193,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.setLimits = function(value) {
-  return jspb.Message.setWrapperField(this, 10, value);
+  return jspb.Message.setWrapperField(this, 11, value);
 };
 
 
@@ -51154,7 +51211,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec.prototype.hasLimits = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 

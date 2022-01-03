@@ -79,10 +79,8 @@ type LicenseSpec struct {
 	// Default to default tenant.
 	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,1,opt,name=tenantRef"`
 	// The secret containing the license token
-	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	// +kubebuilder:validation:MaxLength=63
-	SecretName *string `json:"secretName" protobuf:"bytes,2,opt,name=secretName"`
+	SecretRef v1.SecretReference `json:"secretRef" protobuf:"bytes,2,opt,name=secretRef"`
 	// Owner is the account owning this license
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="no-one"

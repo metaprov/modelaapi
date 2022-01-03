@@ -157,6 +157,29 @@ spec:
                     description: If true generate a report each time the web request
                       is executed
                     type: boolean
+                  resources:
+                    description: Resources is the hardware resource req.
+                    properties:
+                      cpu:
+                        default: 1
+                        description: Cpu requirment in terms of cpu units
+                        type: number
+                      gpu:
+                        default: 0
+                        description: Gpu requirment
+                        type: number
+                      memory:
+                        default: 1000
+                        description: Memory requirment in terms of megabytes
+                        type: number
+                      storage:
+                        default: 3600
+                        description: Storage requirment in megabytes
+                        type: number
+                      workloadClassName:
+                        description: Workload class name
+                        type: string
+                    type: object
                   sql:
                     default: false
                     description: If true this table
@@ -169,11 +192,6 @@ spec:
                   versionName:
                     default: ""
                     description: The product version for the sqlquery.
-                    type: string
-                  workloadClassName:
-                    default: default-prediction-workload-class
-                    description: A reference to the workload class that is used for
-                      training
                     type: string
                 type: object
               versionName:

@@ -129,9 +129,8 @@ type DataProductSpec struct {
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
 	// DefaultWorkloadClassName is reference to the workload class used for running product tasks.
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
-	DefaultWorkloadClassName *string `json:"defaultWorkloadClassName,omitempty" protobuf:"bytes,13,opt,name=defaultWorkloadClassName"`
+	DefaultResources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,13,opt,name=resources"`
 	// Denote how many time a job is retry after failure
 	// +kubebuilder:default:=3
 	// +kubebuilder:validation:Minimum=0

@@ -769,10 +769,9 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=42
 	// +kubebuilder:validation:Optional
 	Seed *float64 `json:"seed,omitempty" protobuf:"bytes,10,opt,name=seed"`
-	// WorkloadClassName is the name of the workload class used to run this model. This is assigned by the study
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,11,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,11,opt,name=resources"`
 	// Gpu indicate that training should be done on a gpu.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

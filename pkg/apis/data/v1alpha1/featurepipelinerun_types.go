@@ -88,9 +88,8 @@ type FeaturePipelineRunSpec struct {
 	// +kubebuilder:validation:MaxLength=64
 	FeaturePipelineName *string `json:"featurePipelineName,omitempty" protobuf:"bytes,3,opt,name=featurePipelineName"`
 	// A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,4,opt,name=resources"`
 	// TTL.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

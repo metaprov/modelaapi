@@ -150,10 +150,9 @@ type PredictorSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,14,opt,name=owner"`
-	// A reference to the workload class for this predictor deployment
-	// +kubebuilder:default:=""
+	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,15,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,15,opt,name=resources"`
 	// Cache is the specification of prediction cache
 	// +kubebuilder:validation:Optional
 	Cache *PredictionCacheSpec `json:"cache,omitempty" protobuf:"bytes,16,opt,name=cache"`

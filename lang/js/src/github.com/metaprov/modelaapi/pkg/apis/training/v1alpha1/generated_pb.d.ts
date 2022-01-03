@@ -1464,8 +1464,10 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ModelAutobuilderSpec;
 
-  getWorkload(): string;
-  setWorkload(value: string): ModelAutobuilderSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ModelAutobuilderSpec;
+  hasResources(): boolean;
+  clearResources(): ModelAutobuilderSpec;
 
   getLabref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
   setLabref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelAutobuilderSpec;
@@ -1499,7 +1501,7 @@ export namespace ModelAutobuilderSpec {
     sampler: string,
     aborted: boolean,
     owner: string,
-    workload: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     labref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
@@ -3341,8 +3343,10 @@ export class NotebookRunSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): NotebookRunSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): NotebookRunSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): NotebookRunSpec;
+  hasResources(): boolean;
+  clearResources(): NotebookRunSpec;
 
   getTtl(): number;
   setTtl(value: number): NotebookRunSpec;
@@ -3361,7 +3365,7 @@ export namespace NotebookRunSpec {
     notebookname: string,
     valuesList: Array<NotebookVarValue.AsObject>,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     ttl: number,
   }
 }
@@ -3460,8 +3464,10 @@ export class NotebookSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): NotebookSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): NotebookSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): NotebookSpec;
+  hasResources(): boolean;
+  clearResources(): NotebookSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): NotebookSpec;
@@ -3496,7 +3502,7 @@ export namespace NotebookSpec {
     varsList: Array<string>,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     priority: string,
@@ -3866,8 +3872,10 @@ export class ReportSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): ReportSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): ReportSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ReportSpec;
+  hasResources(): boolean;
+  clearResources(): ReportSpec;
 
   getActivedeadlineseconds(): number;
   setActivedeadlineseconds(value: number): ReportSpec;
@@ -3894,7 +3902,7 @@ export namespace ReportSpec {
     format: string,
     notifiername: string,
     owner: string,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     activedeadlineseconds: number,
     custom?: CustomReportSpec.AsObject,
   }
@@ -4859,8 +4867,10 @@ export class TrainingSpec extends jspb.Message {
   getSeed(): number;
   setSeed(value: number): TrainingSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): TrainingSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): TrainingSpec;
+  hasResources(): boolean;
+  clearResources(): TrainingSpec;
 
   getGpu(): boolean;
   setGpu(value: boolean): TrainingSpec;
@@ -4896,7 +4906,7 @@ export namespace TrainingSpec {
     checkpointinterval: number,
     sh?: SuccessiveHalvingSpec.AsObject,
     seed: number,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     gpu: boolean,
     distributed: boolean,
     nodecount: number,

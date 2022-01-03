@@ -106,10 +106,9 @@ type PredictionSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,9,opt,name=owner"`
-	// A reference to the workload class that is used for training
-	// +kubebuilder:default:="default-prediction-workload-class"
+	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,10,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,10,opt,name=resources"`
 	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0

@@ -13708,7 +13708,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.t
     versionname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     datapipelinename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     priority: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
@@ -13761,8 +13761,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.d
       msg.setOwner(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -13826,11 +13827,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.s
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       5,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 6));
@@ -13966,29 +13968,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
 
 
 /**
- * optional string workloadClassName = 5;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 5, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 5, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -13996,7 +13999,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -14813,7 +14816,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.toOb
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     priority: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
@@ -14892,8 +14895,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.dese
       msg.setOwner(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -14993,11 +14997,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       9,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 10));
@@ -15304,29 +15309,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
 
 
 /**
- * optional string workloadClassName = 9;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 9));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 9, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 9, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -15334,7 +15340,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -16615,7 +16621,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     description: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     datalocation: (f = msg.getDatalocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     notification: (f = msg.getNotification()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.toObject(includeInstance, f),
-    defaultworkloadclassname: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     retriesonfailure: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     kpisList: jspb.Message.toObjectList(msg.getKpisList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.KPI.toObject, includeInstance),
@@ -16712,8 +16718,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       msg.setNotification(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDefaultworkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 14:
       var value = /** @type {number} */ (reader.readInt32());
@@ -16862,11 +16869,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.seria
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 13));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       13,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 14));
@@ -17335,29 +17343,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
 
 
 /**
- * optional string defaultWorkloadClassName = 13;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 13;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getDefaultworkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 13));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setDefaultworkloadclassname = function(value) {
-  return jspb.Message.setField(this, 13, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearDefaultworkloadclassname = function() {
-  return jspb.Message.setField(this, 13, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -17365,7 +17374,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasDefaultworkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
@@ -22492,7 +22501,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.toObject 
     syntacticrows: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     origin: (f = msg.getOrigin()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    workloadclassname: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
@@ -22590,8 +22599,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.deseriali
       msg.setLocation(value);
       break;
     case 15:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 16:
       var value = /** @type {number} */ (reader.readInt64());
@@ -22742,11 +22752,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.serialize
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 15));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       15,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 16));
@@ -23268,29 +23279,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
 
 
 /**
- * optional string workloadClassName = 15;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 15;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 15));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 15, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 15, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 15, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -23298,7 +23310,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
@@ -31981,7 +31993,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     featurepipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     ttl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
@@ -32032,8 +32044,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
       msg.setFeaturepipelinename(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -32089,11 +32102,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       4,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 5));
@@ -32215,29 +32229,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
 
 
 /**
- * optional string workloadClassName = 4;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 4, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 4, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -32245,7 +32260,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -32834,7 +32849,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.t
     materialization: (f = msg.getMaterialization()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.MaterializationSpec.toObject(includeInstance, f),
     family: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     entityname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
@@ -32912,8 +32927,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.d
       msg.setEntityname(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 10:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
@@ -33016,11 +33032,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.s
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       9,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = message.getSchedule();
@@ -33332,29 +33349,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
 
 
 /**
- * optional string workloadClassName = 9;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 9));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 9, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 9, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -33362,7 +33380,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -41428,7 +41446,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
     owner: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     versionname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     labelpipelinename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     ttl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
@@ -41479,8 +41497,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
       msg.setLabelpipelinename(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -41536,11 +41555,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       4,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 5));
@@ -41662,29 +41682,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
 
 
 /**
- * optional string workloadClassName = 4;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 4));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 4, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 4, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -41692,7 +41713,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineRunSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -42236,7 +42257,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
     outputlabelset: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     paused: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
@@ -42308,8 +42329,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
       msg.setOwner(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readInt64());
@@ -42399,11 +42421,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       8,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 9));
@@ -42671,29 +42694,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
 
 
 /**
- * optional string workloadClassName = 8;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 8));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 8, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 8, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -42701,7 +42725,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -47400,7 +47424,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.toObjec
     recipename: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     labname: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     output: (f = msg.getOutput()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.toObject(includeInstance, f),
-    workloadclassname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     ttl: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
@@ -47456,8 +47480,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.deseria
       msg.setOutput(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
@@ -47521,11 +47546,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       5,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 6));
@@ -47684,29 +47710,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototy
 
 
 /**
- * optional string workloadClassName = 5;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 5, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 5, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -47714,7 +47741,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -48358,7 +48385,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.toObject =
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeStep.toObject, includeInstance),
     output: (f = msg.getOutput()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeOutputSpec.toObject(includeInstance, f),
     sample: (f = msg.getSample()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.toObject(includeInstance, f),
-    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f
   };
@@ -48429,9 +48456,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.deserializ
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.deserializeBinaryFromReader);
       msg.setSample(value);
       break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+    case 8:
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 10:
       var value = /** @type {number} */ (reader.readInt64());
@@ -48523,11 +48551,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.serializeB
       proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
-      9,
-      f
+    writer.writeMessage(
+      8,
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 10));
@@ -48805,29 +48834,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.
 
 
 /**
- * optional string workloadClassName = 9;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 8));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 9, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 9, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -48835,8 +48865,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.hasWorkloadclassname = function() {
-  return jspb.Message.getField(this, 9) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec.prototype.hasResources = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -52920,7 +52950,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.toObj
     table: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     sqlortable: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     connectionname: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     activedeadlineseconds: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     aborted: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
@@ -52991,8 +53021,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.deser
       msg.setConnectionname(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readInt64());
@@ -53092,11 +53123,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.seria
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       8,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 9));
@@ -53390,29 +53422,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.proto
 
 
 /**
- * optional string workloadClassName = 8;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 8));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 8, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 8, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -53420,7 +53453,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -57640,7 +57673,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.toO
     timeout: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     materialized: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
     reported: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -57726,8 +57759,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.des
       msg.setReported(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     default:
       reader.skipField();
@@ -57829,11 +57863,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.ser
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 12));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       12,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
 };
@@ -58208,29 +58243,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
 
 
 /**
- * optional string workloadClassName = 12;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 12;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 12));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 12, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 12, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -58238,7 +58274,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 

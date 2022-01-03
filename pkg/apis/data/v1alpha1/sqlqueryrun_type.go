@@ -101,10 +101,9 @@ type SqlQueryRunSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ConnectionName *string `json:"connectionName,omitempty" protobuf:"bytes,7,opt,name=connectionName"`
-	// A reference to the workload class that is used for training
-	// +kubebuilder:default:="default-prediction-workload-class"
+	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,8,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`
 	// ActiveDeadlineSeconds is the deadline of a job for this dataset.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0

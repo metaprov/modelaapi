@@ -115,10 +115,9 @@ type WebRequestRunSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Reported *bool `json:"reported,omitempty" protobuf:"varint,11,opt,name=reported"`
-	// A reference to the workload class that is used for training
-	// +kubebuilder:default:="default-prediction-workload-class"
+	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,12,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,12,opt,name=resources"`
 }
 
 // WebRequestRunStatus defines the observed state of WebRequestRun

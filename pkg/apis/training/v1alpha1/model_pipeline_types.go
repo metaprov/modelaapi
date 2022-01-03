@@ -180,8 +180,7 @@ type UATStageSpec struct {
 	// Validations defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,3,rep,name=validations"`
-	// WorkloadClassName is a reference to the workload class that is used for running the tests in the serving site.
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+	// Resources are hardware req.
 	// +kubebuilder:validation:Optional
 	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
 }

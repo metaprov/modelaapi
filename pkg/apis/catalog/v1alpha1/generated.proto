@@ -684,6 +684,33 @@ message Region {
   repeated DataCenter datacenters = 5;
 }
 
+// Specification for resource
+message ResourceSpec {
+  // Workload class name
+  // +kubebuilder:validation:Optional
+  optional string workloadClassName = 1;
+
+  // Memory requirment in terms of megabytes
+  // +kubebuilder:default:=1000
+  // +kubebuilder:validation:Optional
+  optional double memory = 2;
+
+  // Cpu requirment in terms of cpu units
+  // +kubebuilder:default:=1
+  // +kubebuilder:validation:Optional
+  optional double cpu = 3;
+
+  // Gpu requirment
+  // +kubebuilder:default:=0
+  // +kubebuilder:validation:Optional
+  optional double gpu = 4;
+
+  // Storage requirment in megabytes
+  // +kubebuilder:default:=3600
+  // +kubebuilder:validation:Optional
+  optional double storage = 5;
+}
+
 message RocAucCurve {
   repeated CurvePoint values = 1;
 }
