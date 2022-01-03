@@ -145,8 +145,8 @@ func (connection *Connection) MarkArchived() {
 // currently we place all the fields in the connection.
 func (connection *Connection) CreateSecret() *v1.Secret {
 	secretName := connection.Name
-	if *connection.Spec.SecretName != "" {
-		secretName = *connection.Spec.SecretName
+	if connection.Spec.SecretRef.Name != "" {
+		secretName = *&connection.Spec.SecretRef.Name
 	}
 	result := &v1.Secret{
 		ObjectMeta: meta_v1.ObjectMeta{
