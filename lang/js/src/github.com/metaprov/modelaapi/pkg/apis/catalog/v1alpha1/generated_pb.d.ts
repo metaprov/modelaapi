@@ -1,6 +1,5 @@
 import * as jspb from 'google-protobuf'
 
-import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_api_rbac_v1_generated_pb from '../../../../../../../k8s.io/api/rbac/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_api_resource_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
@@ -1484,11 +1483,6 @@ export class WorkloadClassSpec extends jspb.Message {
   hasResourcestemplate(): boolean;
   clearResourcestemplate(): WorkloadClassSpec;
 
-  getPodtemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
-  setPodtemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): WorkloadClassSpec;
-  hasPodtemplate(): boolean;
-  clearPodtemplate(): WorkloadClassSpec;
-
   getFrameworksList(): Array<string>;
   setFrameworksList(value: Array<string>): WorkloadClassSpec;
   clearFrameworksList(): WorkloadClassSpec;
@@ -1516,7 +1510,6 @@ export class WorkloadClassSpec extends jspb.Message {
 export namespace WorkloadClassSpec {
   export type AsObject = {
     resourcestemplate?: ResourceSpec.AsObject,
-    podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
     frameworksList: Array<string>,
     libsList: Array<Lib.AsObject>,
     os: string,

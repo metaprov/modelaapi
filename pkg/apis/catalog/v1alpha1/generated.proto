@@ -9,7 +9,6 @@ syntax = "proto2";
 
 package github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1;
 
-import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/api/rbac/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/api/resource/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
@@ -804,10 +803,6 @@ message WorkloadClassList {
 // WorkloadClassSpec defines the specification of  a workload class.
 message WorkloadClassSpec {
   optional ResourceSpec resourcesTemplate = 1;
-
-  // +kubebuilder:validation:Required
-  // +required
-  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 2;
 
   // List of ml frameworks supported by the data container
   repeated string frameworks = 3;

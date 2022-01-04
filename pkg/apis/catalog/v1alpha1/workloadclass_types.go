@@ -1,7 +1,6 @@
 package v1alpha1
 
 import (
-	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -21,9 +20,6 @@ type WorkloadClass struct {
 //WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
 	ResourcesTemplate *ResourceSpec `json:"resourcesTemplate,omitempty" protobuf:"bytes,1,opt,name=resourcesTemplate"`
-	// +kubebuilder:validation:Required
-	// +required
-	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,2,opt,name=podTemplate"`
 	// List of ml frameworks supported by the data container
 	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,3,rep,name=frameworks"`
 	// Libs is the list of python library supported by the data container

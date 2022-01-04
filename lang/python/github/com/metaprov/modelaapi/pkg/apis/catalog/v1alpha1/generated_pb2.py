@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from k8s.io.api.core.v1 import generated_pb2 as k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2
 from k8s.io.api.rbac.v1 import generated_pb2 as k8s_dot_io_dot_api_dot_rbac_dot_v1_dot_generated__pb2
 from k8s.io.apimachinery.pkg.api.resource import generated_pb2 as k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2
 from k8s.io.apimachinery.pkg.apis.meta.v1 import generated_pb2 as k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2
@@ -25,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z7github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x12\x37github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1\x1a\"k8s.io/api/core/v1/generated.proto\x1a\"k8s.io/api/rbac/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xa5\x01\n\tAlgorithm\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec\"\xa4\x01\n\rAlgorithmList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"\x98\x03\n\rAlgorithmSpec\x12\x15\n\rframeworkName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x0c\n\x04task\x18\x04 \x01(\t\x12\x0e\n\x06sparse\x18\x05 \x01(\x08\x12`\n\x11integerParameters\x18\x06 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.IntParameter\x12`\n\x0f\x66loatParameters\x18\x07 \x03(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FloatParameter\x12l\n\x15\x63\x61tegoricalParameters\x18\x08 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CategoricalParameter\"I\n\x14\x43\x61tegoricalParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x02 \x01(\t\x12\r\n\x05\x65nums\x18\x03 \x03(\t\"\xf3\x01\n\x05\x43loud\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudStatus\"\x9c\x01\n\tCloudList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud\"\xec\x02\n\tCloudSpec\x12\x19\n\x11\x64\x65\x66\x61ultRegionName\x18\x01 \x01(\t\x12\x1f\n\x17\x64\x65\x66\x61ultMachineClassName\x18\x02 \x01(\t\x12\x1b\n\x13\x64\x65\x66\x61ultGpuClassName\x18\x03 \x01(\t\x12]\n\x0emachineClasses\x18\x04 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MachineClass\x12U\n\ngpuClasses\x18\x05 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.GpuClass\x12P\n\x07regions\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Region\"\xc7\x01\n\x0b\x43loudStatus\x12_\n\x0cmachineCosts\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MachineClassCost\x12W\n\x08gpuCosts\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.GpuClassCost\"A\n\x0c\x43ompilerSpec\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12\x10\n\x08\x63ompiler\x18\x02 \x01(\t\x12\x0f\n\x07targets\x18\x03 \x03(\t\"l\n\x0f\x43onfusionMatrix\x12Y\n\x04rows\x18\x01 \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrixRow\"F\n\x12\x43onfusionMatrixRow\x12\t\n\x01t\x18\x01 \x01(\t\x12\t\n\x01p\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x05\x12\x0b\n\x03pct\x18\x04 \x01(\x01\"\"\n\nCurvePoint\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\"(\n\nDataCenter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"[\n\x0e\x46loatParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x01\x12\x0b\n\x03max\x18\x04 \x01(\x01\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x05 \x01(\x01\x12\x0b\n\x03log\x18\x06 \x01(\x08\"t\n\x0cGithubEvents\x12\x19\n\x11gitConnectionName\x18\x01 \x01(\t\x12\x12\n\nrepository\x18\x02 \x01(\t\x12\x0e\n\x06\x62ranch\x18\x03 \x01(\t\x12\x15\n\rblobNameRegex\x18\x04 \x01(\t\x12\x0e\n\x06\x65vents\x18\x05 \x03(\t\"z\n\x08GpuClass\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x12\n\nregionName\x18\x02 \x01(\t\x12\x0c\n\x04vcpu\x18\x03 \x01(\x05\x12>\n\x06gpumem\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"\xb5\x01\n\x0cGpuClassCost\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x45\n\rcostPerMinute\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"Z\n\x0cIntParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x05\x12\x0b\n\x03max\x18\x04 \x01(\x05\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x06 \x01(\x05\"*\n\x03Lib\x12\x12\n\nframeworks\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\")\n\x04Logs\x12\x12\n\nbucketName\x18\x01 \x01(\t\x12\r\n\x05paths\x18\x02 \x03(\t\"\xa9\x01\n\x0bMLFramework\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec\"\xa8\x01\n\x0fMLFrameworkList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework\"R\n\x0fMLFrameworkSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x0c\n\x04lang\x18\x04 \x01(\t\"\x8c\x01\n\x0cMachineClass\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x12\n\nregionName\x18\x02 \x01(\t\x12;\n\x03mem\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0c\n\x04vcpu\x18\x04 \x01(\x05\x12\x0f\n\x07storage\x18\x05 \x01(\t\"\xb9\x01\n\x10MachineClassCost\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x45\n\rcostPerMinute\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\",\n\x0bMeasurement\x12\x0e\n\x06metric\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\"\xe9\x01\n\x13ModelDeploymentSpec\x12\x11\n\tmodelName\x18\x01 \x01(\t\x12\x14\n\x0cmodelVersion\x18\x02 \x01(\t\x12\x12\n\nmaxTraffic\x18\x03 \x01(\x05\x12\x0f\n\x07traffic\x18\x04 \x01(\x05\x12\x0e\n\x06\x63\x61nary\x18\x05 \x01(\x08\x12\x0e\n\x06shadow\x18\x06 \x01(\x08\x12\x10\n\x08released\x18\x07 \x01(\x08\x12\x10\n\x08\x64\x65ployed\x18\x08 \x01(\x08\x12\x10\n\x08mountTar\x18\t \x01(\x08\x12\x17\n\x0ftrafficSelector\x18\n \x01(\t\x12\x15\n\rcanaryMetrics\x18\x0b \x03(\t\"\x87\x04\n\x15ModelDeploymentStatus\x12\x11\n\timageName\x18\x01 \x01(\t\x12\x16\n\x0e\x64\x65ploymentName\x18\x02 \x01(\t\x12\x13\n\x0bserviceName\x18\x03 \x01(\t\x12\x0f\n\x07hpaName\x18\x04 \x01(\t\x12\x11\n\tcurrent95\x18\x05 \x01(\x01\x12\x11\n\tcurrent99\x18\x06 \x01(\x01\x12\x46\n\x12lastPredictionTime\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12\x64\x61ilyPredictionAvg\x18\x08 \x01(\x05\x12\x13\n\x0blastFailure\x18\t \x01(\t\x12\r\n\x05phase\x18\n \x01(\t\x12>\n\ndeployedAt\x18\x0b \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12>\n\nreleasedAt\x18\x0c \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1b\n\x13trainingDatasetName\x18\r \x01(\t\x12\x12\n\napprovedBy\x18\x0e \x01(\t\x12>\n\napprovedAt\x18\x0f \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\x8e\x02\n\x10NotificationSpec\x12\x0f\n\x07onError\x18\x01 \x01(\x08\x12\x10\n\x08\x65rrorTTL\x18\x02 \x01(\x05\x12\x11\n\tonSuccess\x18\x03 \x01(\x08\x12\x12\n\nsuccessTTL\x18\x04 \x01(\x05\x12\x14\n\x0cnotifierName\x18\x05 \x01(\t\x12i\n\x08selector\x18\x06 \x03(\x0b\x32W.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"^\n\x07PRCurve\x12S\n\x06values\x18\x01 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CurvePoint\"\xb1\x01\n\x0fPretrainedModel\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Z\n\x04spec\x18\x02 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelSpec\"\xb0\x01\n\x13PretrainedModelList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12W\n\x05items\x18\x02 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel\"$\n\x13PretrainedModelSpec\x12\r\n\x05image\x18\x01 \x01(\t\"\xad\x01\n\rPublicDataset\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec\"\xac\x01\n\x11PublicDatasetList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset\"\xb6\x02\n\x11PublicDatasetSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04task\x18\x03 \x01(\t\x12\x10\n\x08openmlID\x18\x04 \x01(\t\x12\x0f\n\x07\x64\x61taUrl\x18\x05 \x01(\t\x12\x10\n\x08\x63itation\x18\x06 \x01(\t\x12\x0c\n\x04rows\x18\x07 \x01(\x05\x12\x0f\n\x07\x63olumns\x18\x08 \x01(\x05\x12\x10\n\x08\x66ileSize\x18\t \x01(\x05\x12\x14\n\x0ctargetColumn\x18\n \x01(\t\x12\x10\n\x08industry\x18\x0b \x01(\t\x12\x12\n\nimbalanced\x18\x0c \x01(\x08\x12\x14\n\x0c\x64\x61tasourceCR\x18\r \x01(\t\x12\x11\n\tdatasetCR\x18\x0e \x01(\t\x12\x0f\n\x07studyCR\x18\x0f \x01(\t\x12\x15\n\rdataProductCR\x18\x10 \x01(\t\"\xb6\x01\n\x06Region\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65\x66\x61ultDatacenterName\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x13\n\x0b\x62illingCode\x18\x04 \x01(\t\x12X\n\x0b\x64\x61tacenters\x18\x05 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataCenter\"d\n\x0cResourceSpec\x12\x19\n\x11workloadClassName\x18\x01 \x01(\t\x12\x0e\n\x06memory\x18\x02 \x01(\x01\x12\x0b\n\x03\x63pu\x18\x03 \x01(\x01\x12\x0b\n\x03gpu\x18\x04 \x01(\x01\x12\x0f\n\x07storage\x18\x05 \x01(\x01\"b\n\x0bRocAucCurve\x12S\n\x06values\x18\x01 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CurvePoint\"\xbb\x01\n\x0bRunSchedule\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12=\n\tstartTime\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12@\n\x07\x65ndTime\x18\x03 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp\x12\x0c\n\x04\x63ron\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\"1\n\x0bStakeHolder\x12\x13\n\x0b\x61\x63\x63ountName\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\xad\x01\n\rUserRoleClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec\"\xac\x01\n\x11UserRoleClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass\"B\n\x11UserRoleClassSpec\x12-\n\x05rules\x18\x01 \x03(\x0b\x32\x1e.k8s.io.api.rbac.v1.PolicyRule\"#\n\x06VizUri\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\"\xad\x01\n\rWorkloadClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec\"\xac\x01\n\x11WorkloadClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass\"\xae\x02\n\x11WorkloadClassSpec\x12`\n\x11resourcesTemplate\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec\x12\x38\n\x0bpodTemplate\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\x12\x12\n\nframeworks\x18\x03 \x03(\t\x12J\n\x04libs\x18\x04 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Lib\x12\n\n\x02os\x18\x05 \x01(\t\x12\x11\n\tosVersion\x18\x06 \x01(\tB9Z7github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1'
+  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x12\x37github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1\x1a\"k8s.io/api/rbac/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xa5\x01\n\tAlgorithm\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmSpec\"\xa4\x01\n\rAlgorithmList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"\x98\x03\n\rAlgorithmSpec\x12\x15\n\rframeworkName\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x0c\n\x04task\x18\x04 \x01(\t\x12\x0e\n\x06sparse\x18\x05 \x01(\x08\x12`\n\x11integerParameters\x18\x06 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.IntParameter\x12`\n\x0f\x66loatParameters\x18\x07 \x03(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.FloatParameter\x12l\n\x15\x63\x61tegoricalParameters\x18\x08 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CategoricalParameter\"I\n\x14\x43\x61tegoricalParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x02 \x01(\t\x12\r\n\x05\x65nums\x18\x03 \x03(\t\"\xf3\x01\n\x05\x43loud\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudStatus\"\x9c\x01\n\tCloudList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud\"\xec\x02\n\tCloudSpec\x12\x19\n\x11\x64\x65\x66\x61ultRegionName\x18\x01 \x01(\t\x12\x1f\n\x17\x64\x65\x66\x61ultMachineClassName\x18\x02 \x01(\t\x12\x1b\n\x13\x64\x65\x66\x61ultGpuClassName\x18\x03 \x01(\t\x12]\n\x0emachineClasses\x18\x04 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MachineClass\x12U\n\ngpuClasses\x18\x05 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.GpuClass\x12P\n\x07regions\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Region\"\xc7\x01\n\x0b\x43loudStatus\x12_\n\x0cmachineCosts\x18\x01 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MachineClassCost\x12W\n\x08gpuCosts\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.GpuClassCost\"A\n\x0c\x43ompilerSpec\x12\x0e\n\x06\x65nable\x18\x01 \x01(\x08\x12\x10\n\x08\x63ompiler\x18\x02 \x01(\t\x12\x0f\n\x07targets\x18\x03 \x03(\t\"l\n\x0f\x43onfusionMatrix\x12Y\n\x04rows\x18\x01 \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ConfusionMatrixRow\"F\n\x12\x43onfusionMatrixRow\x12\t\n\x01t\x18\x01 \x01(\t\x12\t\n\x01p\x18\x02 \x01(\t\x12\r\n\x05\x63ount\x18\x03 \x01(\x05\x12\x0b\n\x03pct\x18\x04 \x01(\x01\"\"\n\nCurvePoint\x12\t\n\x01x\x18\x01 \x01(\x01\x12\t\n\x01y\x18\x02 \x01(\x01\"(\n\nDataCenter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"[\n\x0e\x46loatParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x01\x12\x0b\n\x03max\x18\x04 \x01(\x01\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x05 \x01(\x01\x12\x0b\n\x03log\x18\x06 \x01(\x08\"t\n\x0cGithubEvents\x12\x19\n\x11gitConnectionName\x18\x01 \x01(\t\x12\x12\n\nrepository\x18\x02 \x01(\t\x12\x0e\n\x06\x62ranch\x18\x03 \x01(\t\x12\x15\n\rblobNameRegex\x18\x04 \x01(\t\x12\x0e\n\x06\x65vents\x18\x05 \x03(\t\"z\n\x08GpuClass\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x12\n\nregionName\x18\x02 \x01(\t\x12\x0c\n\x04vcpu\x18\x03 \x01(\x05\x12>\n\x06gpumem\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"\xb5\x01\n\x0cGpuClassCost\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x45\n\rcostPerMinute\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"Z\n\x0cIntParameter\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0b\n\x03min\x18\x03 \x01(\x05\x12\x0b\n\x03max\x18\x04 \x01(\x05\x12\x14\n\x0c\x64\x65\x66\x61ultValue\x18\x06 \x01(\x05\"*\n\x03Lib\x12\x12\n\nframeworks\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\")\n\x04Logs\x12\x12\n\nbucketName\x18\x01 \x01(\t\x12\r\n\x05paths\x18\x02 \x03(\t\"\xa9\x01\n\x0bMLFramework\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkSpec\"\xa8\x01\n\x0fMLFrameworkList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework\"R\n\x0fMLFrameworkSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x0c\n\x04lang\x18\x04 \x01(\t\"\x8c\x01\n\x0cMachineClass\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x12\n\nregionName\x18\x02 \x01(\t\x12;\n\x03mem\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0c\n\x04vcpu\x18\x04 \x01(\x05\x12\x0f\n\x07storage\x18\x05 \x01(\t\"\xb9\x01\n\x10MachineClassCost\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\x12\x45\n\rcostPerMinute\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12@\n\x08\x63ostSpot\x18\x04 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\",\n\x0bMeasurement\x12\x0e\n\x06metric\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\"\xe9\x01\n\x13ModelDeploymentSpec\x12\x11\n\tmodelName\x18\x01 \x01(\t\x12\x14\n\x0cmodelVersion\x18\x02 \x01(\t\x12\x12\n\nmaxTraffic\x18\x03 \x01(\x05\x12\x0f\n\x07traffic\x18\x04 \x01(\x05\x12\x0e\n\x06\x63\x61nary\x18\x05 \x01(\x08\x12\x0e\n\x06shadow\x18\x06 \x01(\x08\x12\x10\n\x08released\x18\x07 \x01(\x08\x12\x10\n\x08\x64\x65ployed\x18\x08 \x01(\x08\x12\x10\n\x08mountTar\x18\t \x01(\x08\x12\x17\n\x0ftrafficSelector\x18\n \x01(\t\x12\x15\n\rcanaryMetrics\x18\x0b \x03(\t\"\x87\x04\n\x15ModelDeploymentStatus\x12\x11\n\timageName\x18\x01 \x01(\t\x12\x16\n\x0e\x64\x65ploymentName\x18\x02 \x01(\t\x12\x13\n\x0bserviceName\x18\x03 \x01(\t\x12\x0f\n\x07hpaName\x18\x04 \x01(\t\x12\x11\n\tcurrent95\x18\x05 \x01(\x01\x12\x11\n\tcurrent99\x18\x06 \x01(\x01\x12\x46\n\x12lastPredictionTime\x18\x07 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12\x64\x61ilyPredictionAvg\x18\x08 \x01(\x05\x12\x13\n\x0blastFailure\x18\t \x01(\t\x12\r\n\x05phase\x18\n \x01(\t\x12>\n\ndeployedAt\x18\x0b \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12>\n\nreleasedAt\x18\x0c \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1b\n\x13trainingDatasetName\x18\r \x01(\t\x12\x12\n\napprovedBy\x18\x0e \x01(\t\x12>\n\napprovedAt\x18\x0f \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\"\x8e\x02\n\x10NotificationSpec\x12\x0f\n\x07onError\x18\x01 \x01(\x08\x12\x10\n\x08\x65rrorTTL\x18\x02 \x01(\x05\x12\x11\n\tonSuccess\x18\x03 \x01(\x08\x12\x12\n\nsuccessTTL\x18\x04 \x01(\x05\x12\x14\n\x0cnotifierName\x18\x05 \x01(\t\x12i\n\x08selector\x18\x06 \x03(\x0b\x32W.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec.SelectorEntry\x1a/\n\rSelectorEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"^\n\x07PRCurve\x12S\n\x06values\x18\x01 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CurvePoint\"\xb1\x01\n\x0fPretrainedModel\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Z\n\x04spec\x18\x02 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelSpec\"\xb0\x01\n\x13PretrainedModelList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12W\n\x05items\x18\x02 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel\"$\n\x13PretrainedModelSpec\x12\r\n\x05image\x18\x01 \x01(\t\"\xad\x01\n\rPublicDataset\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetSpec\"\xac\x01\n\x11PublicDatasetList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset\"\xb6\x02\n\x11PublicDatasetSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04task\x18\x03 \x01(\t\x12\x10\n\x08openmlID\x18\x04 \x01(\t\x12\x0f\n\x07\x64\x61taUrl\x18\x05 \x01(\t\x12\x10\n\x08\x63itation\x18\x06 \x01(\t\x12\x0c\n\x04rows\x18\x07 \x01(\x05\x12\x0f\n\x07\x63olumns\x18\x08 \x01(\x05\x12\x10\n\x08\x66ileSize\x18\t \x01(\x05\x12\x14\n\x0ctargetColumn\x18\n \x01(\t\x12\x10\n\x08industry\x18\x0b \x01(\t\x12\x12\n\nimbalanced\x18\x0c \x01(\x08\x12\x14\n\x0c\x64\x61tasourceCR\x18\r \x01(\t\x12\x11\n\tdatasetCR\x18\x0e \x01(\t\x12\x0f\n\x07studyCR\x18\x0f \x01(\t\x12\x15\n\rdataProductCR\x18\x10 \x01(\t\"\xb6\x01\n\x06Region\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x1d\n\x15\x64\x65\x66\x61ultDatacenterName\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x13\n\x0b\x62illingCode\x18\x04 \x01(\t\x12X\n\x0b\x64\x61tacenters\x18\x05 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.DataCenter\"d\n\x0cResourceSpec\x12\x19\n\x11workloadClassName\x18\x01 \x01(\t\x12\x0e\n\x06memory\x18\x02 \x01(\x01\x12\x0b\n\x03\x63pu\x18\x03 \x01(\x01\x12\x0b\n\x03gpu\x18\x04 \x01(\x01\x12\x0f\n\x07storage\x18\x05 \x01(\x01\"b\n\x0bRocAucCurve\x12S\n\x06values\x18\x01 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CurvePoint\"\xbb\x01\n\x0bRunSchedule\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12=\n\tstartTime\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12@\n\x07\x65ndTime\x18\x03 \x01(\x0b\x32/.k8s.io.apimachinery.pkg.apis.meta.v1.Timestamp\x12\x0c\n\x04\x63ron\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\"1\n\x0bStakeHolder\x12\x13\n\x0b\x61\x63\x63ountName\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\xad\x01\n\rUserRoleClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassSpec\"\xac\x01\n\x11UserRoleClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass\"B\n\x11UserRoleClassSpec\x12-\n\x05rules\x18\x01 \x03(\x0b\x32\x1e.k8s.io.api.rbac.v1.PolicyRule\"#\n\x06VizUri\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\"\xad\x01\n\rWorkloadClass\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12X\n\x04spec\x18\x02 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec\"\xac\x01\n\x11WorkloadClassList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12U\n\x05items\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass\"\xf4\x01\n\x11WorkloadClassSpec\x12`\n\x11resourcesTemplate\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec\x12\x12\n\nframeworks\x18\x03 \x03(\t\x12J\n\x04libs\x18\x04 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Lib\x12\n\n\x02os\x18\x05 \x01(\t\x12\x11\n\tosVersion\x18\x06 \x01(\tB9Z7github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1'
   ,
-  dependencies=[k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_rbac_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[k8s_dot_io_dot_api_dot_rbac_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -66,8 +65,8 @@ _ALGORITHM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=418,
-  serialized_end=583,
+  serialized_start=382,
+  serialized_end=547,
 )
 
 
@@ -105,8 +104,8 @@ _ALGORITHMLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=586,
-  serialized_end=750,
+  serialized_start=550,
+  serialized_end=714,
 )
 
 
@@ -186,8 +185,8 @@ _ALGORITHMSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=753,
-  serialized_end=1161,
+  serialized_start=717,
+  serialized_end=1125,
 )
 
 
@@ -232,8 +231,8 @@ _CATEGORICALPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1163,
-  serialized_end=1236,
+  serialized_start=1127,
+  serialized_end=1200,
 )
 
 
@@ -278,8 +277,8 @@ _CLOUD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1239,
-  serialized_end=1482,
+  serialized_start=1203,
+  serialized_end=1446,
 )
 
 
@@ -317,8 +316,8 @@ _CLOUDLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1485,
-  serialized_end=1641,
+  serialized_start=1449,
+  serialized_end=1605,
 )
 
 
@@ -384,8 +383,8 @@ _CLOUDSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1644,
-  serialized_end=2008,
+  serialized_start=1608,
+  serialized_end=1972,
 )
 
 
@@ -423,8 +422,8 @@ _CLOUDSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2011,
-  serialized_end=2210,
+  serialized_start=1975,
+  serialized_end=2174,
 )
 
 
@@ -469,8 +468,8 @@ _COMPILERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2212,
-  serialized_end=2277,
+  serialized_start=2176,
+  serialized_end=2241,
 )
 
 
@@ -501,8 +500,8 @@ _CONFUSIONMATRIX = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2279,
-  serialized_end=2387,
+  serialized_start=2243,
+  serialized_end=2351,
 )
 
 
@@ -554,8 +553,8 @@ _CONFUSIONMATRIXROW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2389,
-  serialized_end=2459,
+  serialized_start=2353,
+  serialized_end=2423,
 )
 
 
@@ -593,8 +592,8 @@ _CURVEPOINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2461,
-  serialized_end=2495,
+  serialized_start=2425,
+  serialized_end=2459,
 )
 
 
@@ -632,8 +631,8 @@ _DATACENTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2497,
-  serialized_end=2537,
+  serialized_start=2461,
+  serialized_end=2501,
 )
 
 
@@ -692,8 +691,8 @@ _FLOATPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2539,
-  serialized_end=2630,
+  serialized_start=2503,
+  serialized_end=2594,
 )
 
 
@@ -752,8 +751,8 @@ _GITHUBEVENTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2632,
-  serialized_end=2748,
+  serialized_start=2596,
+  serialized_end=2712,
 )
 
 
@@ -805,8 +804,8 @@ _GPUCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2750,
-  serialized_end=2872,
+  serialized_start=2714,
+  serialized_end=2836,
 )
 
 
@@ -858,8 +857,8 @@ _GPUCLASSCOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2875,
-  serialized_end=3056,
+  serialized_start=2839,
+  serialized_end=3020,
 )
 
 
@@ -918,8 +917,8 @@ _INTPARAMETER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3058,
-  serialized_end=3148,
+  serialized_start=3022,
+  serialized_end=3112,
 )
 
 
@@ -957,8 +956,8 @@ _LIB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3150,
-  serialized_end=3192,
+  serialized_start=3114,
+  serialized_end=3156,
 )
 
 
@@ -996,8 +995,8 @@ _LOGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3194,
-  serialized_end=3235,
+  serialized_start=3158,
+  serialized_end=3199,
 )
 
 
@@ -1035,8 +1034,8 @@ _MLFRAMEWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3238,
-  serialized_end=3407,
+  serialized_start=3202,
+  serialized_end=3371,
 )
 
 
@@ -1074,8 +1073,8 @@ _MLFRAMEWORKLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3410,
-  serialized_end=3578,
+  serialized_start=3374,
+  serialized_end=3542,
 )
 
 
@@ -1127,8 +1126,8 @@ _MLFRAMEWORKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3580,
-  serialized_end=3662,
+  serialized_start=3544,
+  serialized_end=3626,
 )
 
 
@@ -1187,8 +1186,8 @@ _MACHINECLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3665,
-  serialized_end=3805,
+  serialized_start=3629,
+  serialized_end=3769,
 )
 
 
@@ -1240,8 +1239,8 @@ _MACHINECLASSCOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3808,
-  serialized_end=3993,
+  serialized_start=3772,
+  serialized_end=3957,
 )
 
 
@@ -1279,8 +1278,8 @@ _MEASUREMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3995,
-  serialized_end=4039,
+  serialized_start=3959,
+  serialized_end=4003,
 )
 
 
@@ -1381,8 +1380,8 @@ _MODELDEPLOYMENTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4042,
-  serialized_end=4275,
+  serialized_start=4006,
+  serialized_end=4239,
 )
 
 
@@ -1511,8 +1510,8 @@ _MODELDEPLOYMENTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4278,
-  serialized_end=4797,
+  serialized_start=4242,
+  serialized_end=4761,
 )
 
 
@@ -1550,8 +1549,8 @@ _NOTIFICATIONSPEC_SELECTORENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5023,
-  serialized_end=5070,
+  serialized_start=4987,
+  serialized_end=5034,
 )
 
 _NOTIFICATIONSPEC = _descriptor.Descriptor(
@@ -1616,8 +1615,8 @@ _NOTIFICATIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4800,
-  serialized_end=5070,
+  serialized_start=4764,
+  serialized_end=5034,
 )
 
 
@@ -1648,8 +1647,8 @@ _PRCURVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5072,
-  serialized_end=5166,
+  serialized_start=5036,
+  serialized_end=5130,
 )
 
 
@@ -1687,8 +1686,8 @@ _PRETRAINEDMODEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5169,
-  serialized_end=5346,
+  serialized_start=5133,
+  serialized_end=5310,
 )
 
 
@@ -1726,8 +1725,8 @@ _PRETRAINEDMODELLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5349,
-  serialized_end=5525,
+  serialized_start=5313,
+  serialized_end=5489,
 )
 
 
@@ -1758,8 +1757,8 @@ _PRETRAINEDMODELSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5527,
-  serialized_end=5563,
+  serialized_start=5491,
+  serialized_end=5527,
 )
 
 
@@ -1797,8 +1796,8 @@ _PUBLICDATASET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5566,
-  serialized_end=5739,
+  serialized_start=5530,
+  serialized_end=5703,
 )
 
 
@@ -1836,8 +1835,8 @@ _PUBLICDATASETLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5742,
-  serialized_end=5914,
+  serialized_start=5706,
+  serialized_end=5878,
 )
 
 
@@ -1973,8 +1972,8 @@ _PUBLICDATASETSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5917,
-  serialized_end=6227,
+  serialized_start=5881,
+  serialized_end=6191,
 )
 
 
@@ -2033,8 +2032,8 @@ _REGION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6230,
-  serialized_end=6412,
+  serialized_start=6194,
+  serialized_end=6376,
 )
 
 
@@ -2093,8 +2092,8 @@ _RESOURCESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6414,
-  serialized_end=6514,
+  serialized_start=6378,
+  serialized_end=6478,
 )
 
 
@@ -2125,8 +2124,8 @@ _ROCAUCCURVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6516,
-  serialized_end=6614,
+  serialized_start=6480,
+  serialized_end=6578,
 )
 
 
@@ -2185,8 +2184,8 @@ _RUNSCHEDULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6617,
-  serialized_end=6804,
+  serialized_start=6581,
+  serialized_end=6768,
 )
 
 
@@ -2224,8 +2223,8 @@ _STAKEHOLDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6806,
-  serialized_end=6855,
+  serialized_start=6770,
+  serialized_end=6819,
 )
 
 
@@ -2263,8 +2262,8 @@ _USERROLECLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6858,
-  serialized_end=7031,
+  serialized_start=6822,
+  serialized_end=6995,
 )
 
 
@@ -2302,8 +2301,8 @@ _USERROLECLASSLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7034,
-  serialized_end=7206,
+  serialized_start=6998,
+  serialized_end=7170,
 )
 
 
@@ -2334,8 +2333,8 @@ _USERROLECLASSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7208,
-  serialized_end=7274,
+  serialized_start=7172,
+  serialized_end=7238,
 )
 
 
@@ -2373,8 +2372,8 @@ _VIZURI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7276,
-  serialized_end=7311,
+  serialized_start=7240,
+  serialized_end=7275,
 )
 
 
@@ -2412,8 +2411,8 @@ _WORKLOADCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7314,
-  serialized_end=7487,
+  serialized_start=7278,
+  serialized_end=7451,
 )
 
 
@@ -2451,8 +2450,8 @@ _WORKLOADCLASSLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7490,
-  serialized_end=7662,
+  serialized_start=7454,
+  serialized_end=7626,
 )
 
 
@@ -2472,35 +2471,28 @@ _WORKLOADCLASSSPEC = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='podTemplate', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.podTemplate', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='frameworks', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.frameworks', index=2,
+      name='frameworks', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.frameworks', index=1,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='libs', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.libs', index=3,
+      name='libs', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.libs', index=2,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='os', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.os', index=4,
+      name='os', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.os', index=3,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='osVersion', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.osVersion', index=5,
+      name='osVersion', full_name='github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.osVersion', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -2518,8 +2510,8 @@ _WORKLOADCLASSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7665,
-  serialized_end=7967,
+  serialized_start=7629,
+  serialized_end=7873,
 )
 
 _ALGORITHM.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA
@@ -2579,7 +2571,6 @@ _WORKLOADCLASS.fields_by_name['spec'].message_type = _WORKLOADCLASSSPEC
 _WORKLOADCLASSLIST.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._LISTMETA
 _WORKLOADCLASSLIST.fields_by_name['items'].message_type = _WORKLOADCLASS
 _WORKLOADCLASSSPEC.fields_by_name['resourcesTemplate'].message_type = _RESOURCESPEC
-_WORKLOADCLASSSPEC.fields_by_name['podTemplate'].message_type = k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2._PODTEMPLATESPEC
 _WORKLOADCLASSSPEC.fields_by_name['libs'].message_type = _LIB
 DESCRIPTOR.message_types_by_name['Algorithm'] = _ALGORITHM
 DESCRIPTOR.message_types_by_name['AlgorithmList'] = _ALGORITHMLIST

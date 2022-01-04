@@ -21,8 +21,6 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
-goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
 var k8s_io_api_rbac_v1_generated_pb = require('../../../../../../../k8s.io/api/rbac/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_rbac_v1_generated_pb);
 var k8s_io_apimachinery_pkg_api_resource_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb.js');
@@ -14473,7 +14471,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     resourcestemplate: (f = msg.getResourcestemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.toObject(includeInstance, f),
-    podtemplate: (f = msg.getPodtemplate()) && k8s_io_api_core_v1_generated_pb.PodTemplateSpec.toObject(includeInstance, f),
     frameworksList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
     libsList: jspb.Message.toObjectList(msg.getLibsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Lib.toObject, includeInstance),
@@ -14519,11 +14516,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.deserializeBinaryFromReader);
       msg.setResourcestemplate(value);
-      break;
-    case 2:
-      var value = new k8s_io_api_core_v1_generated_pb.PodTemplateSpec;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.PodTemplateSpec.deserializeBinaryFromReader);
-      msg.setPodtemplate(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -14577,14 +14569,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
       1,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.serializeBinaryToWriter
-    );
-  }
-  f = message.getPodtemplate();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      k8s_io_api_core_v1_generated_pb.PodTemplateSpec.serializeBinaryToWriter
     );
   }
   f = message.getFrameworksList();
@@ -14653,43 +14637,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasResourcestemplate = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 2;
- * @return {?proto.k8s.io.api.core.v1.PodTemplateSpec}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.getPodtemplate = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.PodTemplateSpec} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.PodTemplateSpec, 2));
-};
-
-
-/**
- * @param {?proto.k8s.io.api.core.v1.PodTemplateSpec|undefined} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.setPodtemplate = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.clearPodtemplate = function() {
-  return this.setPodtemplate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassSpec.prototype.hasPodtemplate = function() {
-  return jspb.Message.getField(this, 2) != null;
 };
 
 
