@@ -42,6 +42,7 @@ resources:
   - infra.modela.ai_connections.yaml
   - infra.modela.ai_labs.yaml
   - infra.modela.ai_licenses.yaml  
+  - infra.modela.ai_modelasystems.yaml  
   - infra.modela.ai_notifiers.yaml
   - infra.modela.ai_servingsites.yaml
   - infra.modela.ai_tenants.yaml
