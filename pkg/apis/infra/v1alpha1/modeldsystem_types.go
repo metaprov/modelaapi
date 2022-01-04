@@ -61,6 +61,14 @@ type ModelaSystemSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Images SystemImagesSpec `json:"images" protobuf:"bytes,3,opt,name=images"`
+
+	// +kubebuilder:validation:Required
+	// +required
+	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,4,opt,name=podTemplate"`
+
+	// +kubebuilder:validation:Required
+	// +required
+	PublisherTemplate *v1.PodTemplateSpec `json:"publisherTemplate,omitempty" protobuf:"bytes,5,opt,name=publisherTemplate"`
 }
 
 type SystemImagesSpec struct {

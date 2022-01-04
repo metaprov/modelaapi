@@ -3354,6 +3354,16 @@ export class ModelaSystemSpec extends jspb.Message {
   hasImages(): boolean;
   clearImages(): ModelaSystemSpec;
 
+  getPodtemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
+  setPodtemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): ModelaSystemSpec;
+  hasPodtemplate(): boolean;
+  clearPodtemplate(): ModelaSystemSpec;
+
+  getPublishertemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
+  setPublishertemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): ModelaSystemSpec;
+  hasPublishertemplate(): boolean;
+  clearPublishertemplate(): ModelaSystemSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelaSystemSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelaSystemSpec): ModelaSystemSpec.AsObject;
@@ -3367,6 +3377,8 @@ export namespace ModelaSystemSpec {
     dataimage: string,
     active: boolean,
     images?: SystemImagesSpec.AsObject,
+    podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
+    publishertemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
   }
 }
 
