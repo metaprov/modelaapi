@@ -2,7 +2,6 @@ package v1alpha1
 
 import (
 	v1 "k8s.io/api/core/v1"
-	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -21,46 +20,18 @@ type WorkloadClass struct {
 
 //WorkloadClassSpec defines the specification of  a workload class.
 type WorkloadClassSpec struct {
-	// DataImage is the container image used to data tasks
+	ResourcesTemplate *ResourceSpec `json:"resourcesTemplate,omitempty" protobuf:"bytes,1,opt,name=resourcesTemplate"`
 	// +kubebuilder:validation:Required
 	// +required
-	DataImage string `json:"dataImage" protobuf:"bytes,1,opt,name=dataImage"`
-	// ControlImage is the container image used for control
-	// +kubebuilder:validation:Required
-	// +required
-	ControlImage string `json:"controlImage" protobuf:"bytes,2,opt,name=controlImage"`
-	// TrainerImage is the image used for training models
-	// +kubebuilder:validation:Required
-	// +required
-	TrainerImage string `json:"trainerImage" protobuf:"bytes,3,opt,name=trainerImage"`
-	// PublisherImage is the image used for publishing models
-	// +kubebuilder:validation:Required
-	// +required
-	PublisherImage string `json:"publisherImage" protobuf:"bytes,4,opt,name=publisherImage"`
-	// Vcpu is the number of cpu
-	// +kubebuilder:validation:Format=float
-	// +kubebuilder:validation:Type=number
-	// +kubebuilder:validation:Optional
-	Vcpu *float64 `json:"vcpu" protobuf:"bytes,5,opt,name=vcpu"`
-	// Memory is the amount of memory offered by thie template
-	// +kubebuilder:validation:Optional
-	Mem *resource.Quantity `json:"mem" protobuf:"bytes,6,opt,name=mem"`
-	// Number of gpus of this workload
-	// +kubebuilder:validation:Minimum=0
-	// +kubebuilder:validation:Optional
-	Gpu *int32 `json:"gpu" protobuf:"varint,7,opt,name=gpu"`
-	// Template is the Pod specification for new trainers from this workload class.
-	// +kubebuilder:validation:Required
-	// +required
-	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,8,opt,name=podTemplate"`
+	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,2,opt,name=podTemplate"`
 	// List of ml frameworks supported by the data container
-	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,9,rep,name=frameworks"`
+	Frameworks []string `json:"frameworks,omitempty" protobuf:"bytes,3,rep,name=frameworks"`
 	// Libs is the list of python library supported by the data container
-	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,10,rep,name=libs"`
+	Libs []Lib `json:"libs,omitempty" protobuf:"bytes,4,rep,name=libs"`
 	// OS is the name of the os
-	OS string `json:"os,omitempty" protobuf:"bytes,11,opt,name=os"`
+	OS string `json:"os,omitempty" protobuf:"bytes,5,opt,name=os"`
 	// OSVersion is the version of the os
-	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,12,opt,name=osVersion"`
+	OSVersion string `json:"osVersion,omitempty" protobuf:"bytes,6,opt,name=osVersion"`
 }
 
 //==============================================================================

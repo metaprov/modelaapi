@@ -148,7 +148,7 @@ type AccountSpec struct {
 	Avatar *AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
 	// List of favorite data product
 	// +kubebuilder:validation:Optional
-	Favorites []string `json:"favorites,omitempty" protobuf:"bytes,19,opt,name=favorites"`
+	FavoritesProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,opt,name=favoriteProducts"`
 }
 
 // AccountStatus defines the actual state of the api object

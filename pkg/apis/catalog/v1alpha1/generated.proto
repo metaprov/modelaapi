@@ -803,56 +803,22 @@ message WorkloadClassList {
 
 // WorkloadClassSpec defines the specification of  a workload class.
 message WorkloadClassSpec {
-  // DataImage is the container image used to data tasks
+  optional ResourceSpec resourcesTemplate = 1;
+
   // +kubebuilder:validation:Required
   // +required
-  optional string dataImage = 1;
-
-  // ControlImage is the container image used for control
-  // +kubebuilder:validation:Required
-  // +required
-  optional string controlImage = 2;
-
-  // TrainerImage is the image used for training models
-  // +kubebuilder:validation:Required
-  // +required
-  optional string trainerImage = 3;
-
-  // PublisherImage is the image used for publishing models
-  // +kubebuilder:validation:Required
-  // +required
-  optional string publisherImage = 4;
-
-  // Vcpu is the number of cpu
-  // +kubebuilder:validation:Format=float
-  // +kubebuilder:validation:Type=number
-  // +kubebuilder:validation:Optional
-  optional double vcpu = 5;
-
-  // Memory is the amount of memory offered by thie template
-  // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.api.resource.Quantity mem = 6;
-
-  // Number of gpus of this workload
-  // +kubebuilder:validation:Minimum=0
-  // +kubebuilder:validation:Optional
-  optional int32 gpu = 7;
-
-  // Template is the Pod specification for new trainers from this workload class.
-  // +kubebuilder:validation:Required
-  // +required
-  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 8;
+  optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 2;
 
   // List of ml frameworks supported by the data container
-  repeated string frameworks = 9;
+  repeated string frameworks = 3;
 
   // Libs is the list of python library supported by the data container
-  repeated Lib libs = 10;
+  repeated Lib libs = 4;
 
   // OS is the name of the os
-  optional string os = 11;
+  optional string os = 5;
 
   // OSVersion is the version of the os
-  optional string osVersion = 12;
+  optional string osVersion = 6;
 }
 

@@ -85,6 +85,7 @@ type ModelAutobuilderList struct {
 
 // ModelAutobuilderSpec define the desired state of the ModelAutobuilder resource.
 type ModelAutobuilderSpec struct {
+
 	// DataProductName is the name of the data product
 	// +kubebuilder:validation:MaxLength=63
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"

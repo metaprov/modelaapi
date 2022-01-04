@@ -54,22 +54,11 @@ spec:
             description: WorkloadClassSpec defines the specification of  a workload
               class.
             properties:
-              controlImage:
-                description: ControlImage is the container image used for control
-                type: string
-              dataImage:
-                description: DataImage is the container image used to data tasks
-                type: string
               frameworks:
                 description: List of ml frameworks supported by the data container
                 items:
                   type: string
                 type: array
-              gpu:
-                description: Number of gpus of this workload
-                format: int32
-                minimum: 0
-                type: integer
               libs:
                 description: Libs is the list of python library supported by the data
                   container
@@ -81,13 +70,6 @@ spec:
                       type: string
                   type: object
                 type: array
-              mem:
-                anyOf:
-                - type: integer
-                - type: string
-                description: Memory is the amount of memory offered by thie template
-                pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
-                x-kubernetes-int-or-string: true
               os:
                 description: OS is the name of the os
                 type: string
@@ -95,8 +77,8 @@ spec:
                 description: OSVersion is the version of the os
                 type: string
               podTemplate:
-                description: Template is the Pod specification for new trainers from
-                  this workload class.
+                description: PodTemplateSpec describes the data a pod should have
+                  when created from a template
                 properties:
                   metadata:
                     description: 'Standard object''s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata'
@@ -6891,21 +6873,29 @@ spec:
                     - containers
                     type: object
                 type: object
-              publisherImage:
-                description: PublisherImage is the image used for publishing models
-                type: string
-              trainerImage:
-                description: TrainerImage is the image used for training models
-                type: string
-              vcpu:
-                description: Vcpu is the number of cpu
-                format: float
-                type: number
-            required:
-            - controlImage
-            - dataImage
-            - publisherImage
-            - trainerImage
+              resourcesTemplate:
+                description: Specification for resource
+                properties:
+                  cpu:
+                    default: 1
+                    description: Cpu requirment in terms of cpu units
+                    type: number
+                  gpu:
+                    default: 0
+                    description: Gpu requirment
+                    type: number
+                  memory:
+                    default: 1000
+                    description: Memory requirment in terms of megabytes
+                    type: number
+                  storage:
+                    default: 3600
+                    description: Storage requirment in megabytes
+                    type: number
+                  workloadClassName:
+                    description: Workload class name
+                    type: string
+                type: object
             type: object
         required:
         - spec

@@ -1479,28 +1479,10 @@ export namespace WorkloadClassList {
 }
 
 export class WorkloadClassSpec extends jspb.Message {
-  getDataimage(): string;
-  setDataimage(value: string): WorkloadClassSpec;
-
-  getControlimage(): string;
-  setControlimage(value: string): WorkloadClassSpec;
-
-  getTrainerimage(): string;
-  setTrainerimage(value: string): WorkloadClassSpec;
-
-  getPublisherimage(): string;
-  setPublisherimage(value: string): WorkloadClassSpec;
-
-  getVcpu(): number;
-  setVcpu(value: number): WorkloadClassSpec;
-
-  getMem(): k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity | undefined;
-  setMem(value?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity): WorkloadClassSpec;
-  hasMem(): boolean;
-  clearMem(): WorkloadClassSpec;
-
-  getGpu(): number;
-  setGpu(value: number): WorkloadClassSpec;
+  getResourcestemplate(): ResourceSpec | undefined;
+  setResourcestemplate(value?: ResourceSpec): WorkloadClassSpec;
+  hasResourcestemplate(): boolean;
+  clearResourcestemplate(): WorkloadClassSpec;
 
   getPodtemplate(): k8s_io_api_core_v1_generated_pb.PodTemplateSpec | undefined;
   setPodtemplate(value?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec): WorkloadClassSpec;
@@ -1533,13 +1515,7 @@ export class WorkloadClassSpec extends jspb.Message {
 
 export namespace WorkloadClassSpec {
   export type AsObject = {
-    dataimage: string,
-    controlimage: string,
-    trainerimage: string,
-    publisherimage: string,
-    vcpu: number,
-    mem?: k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject,
-    gpu: number,
+    resourcestemplate?: ResourceSpec.AsObject,
     podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
     frameworksList: Array<string>,
     libsList: Array<Lib.AsObject>,

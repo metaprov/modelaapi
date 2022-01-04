@@ -44,6 +44,86 @@ spec:
             type: object
           spec:
             description: ModelaSystemSpec defines the desired state of ModelaSystem
+            properties:
+              active:
+                description: Set the release to active
+                type: boolean
+              dataImage:
+                description: The current software version of modela
+                type: string
+              images:
+                description: DataImage is the container image used to data tasks
+                properties:
+                  apiGatewayImage:
+                    type: string
+                  apiproxyImage:
+                    description: TrainerImage is the container image used for control
+                    type: string
+                  batchPredictorImage:
+                    description: BatchPredictorImage is used when running batch prediction.
+                    type: string
+                  cloudproxyImage:
+                    description: TrainerImage is the container image used for control
+                    type: string
+                  controlPlaneImage:
+                    description: ControlPlaneImage is the image of the main control
+                      plane. the control plane contain all the modela operators
+                    type: string
+                  databaseProxyImage:
+                    description: Database proxy image is a service the translate from
+                      kubernetes objects to data base tables.
+                    type: string
+                  datadockImage:
+                    description: Data dock image contain the data ingest service
+                    type: string
+                  dataplaneImage:
+                    description: TrainerImage is the container image used for control
+                    type: string
+                  frontendImage:
+                    description: Frontend image is the image of the frontend web user
+                      interface
+                    type: string
+                  modelaDashboardServerImage:
+                    description: The image for the data app dashboard.
+                    type: string
+                  modelaPredictionServerImage:
+                    description: The image used for the prediction server.
+                    type: string
+                  modelaSystemImage:
+                    description: The image for the modela system controller.
+                    type: string
+                  predictionRouterImage:
+                    description: Prediction router image.
+                    type: string
+                  publisherImage:
+                    description: Publisher image defines the image of the publisher.
+                      The publisher service is used the package models to tar file
+                      or publish them as docker containers.
+                    type: string
+                  trainerImage:
+                    description: TrainerImage is the container image of the trainer
+                      service. The trainer is used to train and test models
+                    type: string
+                required:
+                - apiGatewayImage
+                - apiproxyImage
+                - batchPredictorImage
+                - cloudproxyImage
+                - controlPlaneImage
+                - databaseProxyImage
+                - datadockImage
+                - dataplaneImage
+                - frontendImage
+                - modelaDashboardServerImage
+                - modelaPredictionServerImage
+                - modelaSystemImage
+                - predictionRouterImage
+                - publisherImage
+                - trainerImage
+                type: object
+            required:
+            - dataImage
+            - images
             type: object
           status:
             description: ModelaSystemStatus is the observed state of a ModelaSystem

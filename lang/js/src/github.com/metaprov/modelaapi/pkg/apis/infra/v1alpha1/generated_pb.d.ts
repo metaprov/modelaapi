@@ -186,10 +186,10 @@ export class AccountSpec extends jspb.Message {
   hasAvatar(): boolean;
   clearAvatar(): AccountSpec;
 
-  getFavoritesList(): Array<string>;
-  setFavoritesList(value: Array<string>): AccountSpec;
-  clearFavoritesList(): AccountSpec;
-  addFavorites(value: string, index?: number): AccountSpec;
+  getFavoriteproductsList(): Array<string>;
+  setFavoriteproductsList(value: Array<string>): AccountSpec;
+  clearFavoriteproductsList(): AccountSpec;
+  addFavoriteproducts(value: string, index?: number): AccountSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AccountSpec.AsObject;
@@ -218,7 +218,7 @@ export namespace AccountSpec {
     sitebindingsList: Array<AccountRoleBinding.AsObject>,
     clearencelevel: string,
     avatar?: AvatarSpec.AsObject,
-    favoritesList: Array<string>,
+    favoriteproductsList: Array<string>,
   }
 }
 
@@ -3343,6 +3343,17 @@ export namespace ModelaSystemList {
 }
 
 export class ModelaSystemSpec extends jspb.Message {
+  getDataimage(): string;
+  setDataimage(value: string): ModelaSystemSpec;
+
+  getActive(): boolean;
+  setActive(value: boolean): ModelaSystemSpec;
+
+  getImages(): SystemImagesSpec | undefined;
+  setImages(value?: SystemImagesSpec): ModelaSystemSpec;
+  hasImages(): boolean;
+  clearImages(): ModelaSystemSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelaSystemSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelaSystemSpec): ModelaSystemSpec.AsObject;
@@ -3353,6 +3364,9 @@ export class ModelaSystemSpec extends jspb.Message {
 
 export namespace ModelaSystemSpec {
   export type AsObject = {
+    dataimage: string,
+    active: boolean,
+    images?: SystemImagesSpec.AsObject,
   }
 }
 
@@ -4549,6 +4563,80 @@ export namespace SybaseSpec {
     username: string,
     password: string,
     url: string,
+  }
+}
+
+export class SystemImagesSpec extends jspb.Message {
+  getApigatewayimage(): string;
+  setApigatewayimage(value: string): SystemImagesSpec;
+
+  getControlplaneimage(): string;
+  setControlplaneimage(value: string): SystemImagesSpec;
+
+  getDatadockimage(): string;
+  setDatadockimage(value: string): SystemImagesSpec;
+
+  getFrontendimage(): string;
+  setFrontendimage(value: string): SystemImagesSpec;
+
+  getPublisherimage(): string;
+  setPublisherimage(value: string): SystemImagesSpec;
+
+  getTrainerimage(): string;
+  setTrainerimage(value: string): SystemImagesSpec;
+
+  getBatchpredictorimage(): string;
+  setBatchpredictorimage(value: string): SystemImagesSpec;
+
+  getApiproxyimage(): string;
+  setApiproxyimage(value: string): SystemImagesSpec;
+
+  getDataplaneimage(): string;
+  setDataplaneimage(value: string): SystemImagesSpec;
+
+  getCloudproxyimage(): string;
+  setCloudproxyimage(value: string): SystemImagesSpec;
+
+  getDatabaseproxyimage(): string;
+  setDatabaseproxyimage(value: string): SystemImagesSpec;
+
+  getPredictionrouterimage(): string;
+  setPredictionrouterimage(value: string): SystemImagesSpec;
+
+  getModelasystemimage(): string;
+  setModelasystemimage(value: string): SystemImagesSpec;
+
+  getModelapredictionserverimage(): string;
+  setModelapredictionserverimage(value: string): SystemImagesSpec;
+
+  getModeladashboardserverimage(): string;
+  setModeladashboardserverimage(value: string): SystemImagesSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SystemImagesSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: SystemImagesSpec): SystemImagesSpec.AsObject;
+  static serializeBinaryToWriter(message: SystemImagesSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SystemImagesSpec;
+  static deserializeBinaryFromReader(message: SystemImagesSpec, reader: jspb.BinaryReader): SystemImagesSpec;
+}
+
+export namespace SystemImagesSpec {
+  export type AsObject = {
+    apigatewayimage: string,
+    controlplaneimage: string,
+    datadockimage: string,
+    frontendimage: string,
+    publisherimage: string,
+    trainerimage: string,
+    batchpredictorimage: string,
+    apiproxyimage: string,
+    dataplaneimage: string,
+    cloudproxyimage: string,
+    databaseproxyimage: string,
+    predictionrouterimage: string,
+    modelasystemimage: string,
+    modelapredictionserverimage: string,
+    modeladashboardserverimage: string,
   }
 }
 

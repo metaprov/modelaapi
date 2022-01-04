@@ -50,6 +50,93 @@ type ModelaSystemList struct {
 
 // ModelaSystemSpec defines the desired state of ModelaSystem
 type ModelaSystemSpec struct {
+	// The current software version of modela
+	// +kubebuilder:validation:Required
+	// +required
+	Release string `json:"dataImage" protobuf:"bytes,1,opt,name=dataImage"`
+	// Set the release to active
+	// +kubebuilder:validation:Optional
+	Active *bool `json:"active" protobuf:"bytes,2,opt,name=active"`
+	// DataImage is the container image used to data tasks
+	// +kubebuilder:validation:Required
+	// +required
+	Images SystemImagesSpec `json:"images" protobuf:"bytes,3,opt,name=images"`
+}
+
+type SystemImagesSpec struct {
+	ApiGatewayImage string `json:"apiGatewayImage" protobuf:"bytes,1,opt,name=apiGatewayImage"`
+	// ControlPlaneImage is the image of the main control plane. the control plane contain all the modela operators
+	// +kubebuilder:validation:Required
+	// +required
+	ControlPlaneImage string `json:"controlPlaneImage" protobuf:"bytes,2,opt,name=controlPlaneImage"`
+
+	// Data dock image contain the data ingest service
+	// +kubebuilder:validation:Required
+	// +required
+	DataDockImage string `json:"datadockImage" protobuf:"bytes,3,opt,name=datadockImage"`
+
+	// Frontend image is the image of the frontend web user interface
+	// +kubebuilder:validation:Required
+	// +required
+	FrontendImage string `json:"frontendImage" protobuf:"bytes,4,opt,name=frontendImage"`
+
+	// Publisher image defines the image of the publisher. The publisher service is used
+	// the package models to tar file or publish them as docker containers.
+	// +kubebuilder:validation:Required
+	// +required
+	PublisherImage string `json:"publisherImage" protobuf:"bytes,5,opt,name=publisherImage"`
+
+	// TrainerImage is the container image of the trainer service. The trainer is used
+	// to train and test models
+	// +kubebuilder:validation:Required
+	// +required
+	TrainerImage string `json:"trainerImage" protobuf:"bytes,6,opt,name=trainerImage"`
+
+	// BatchPredictorImage is used when running batch prediction.
+	// +kubebuilder:validation:Required
+	// +required
+	BatchPredictorImage string `json:"batchPredictorImage" protobuf:"bytes,7,opt,name=batchPredictorImage"`
+
+	// TrainerImage is the container image used for control
+	// +kubebuilder:validation:Required
+	// +required
+	ApiProxyImage string `json:"apiproxyImage" protobuf:"bytes,8,opt,name=apiproxyImage"`
+
+	// TrainerImage is the container image used for control
+	// +kubebuilder:validation:Required
+	// +required
+	DataPlaneImage string `json:"dataplaneImage" protobuf:"bytes,9,opt,name=dataplaneImage"`
+
+	// TrainerImage is the container image used for control
+	// +kubebuilder:validation:Required
+	// +required
+	CloudProxyImage string `json:"cloudproxyImage" protobuf:"bytes,10,opt,name=cloudproxyImage"`
+
+	// Database proxy image is a service the translate from kubernetes objects to
+	// data base tables.
+	// +kubebuilder:validation:Required
+	// +required
+	DatabaseProxyImage string `json:"databaseProxyImage" protobuf:"bytes,11,opt,name=databaseProxyImage"`
+
+	// Prediction router image.
+	// +kubebuilder:validation:Required
+	// +required
+	PredictionRouterImage string `json:"predictionRouterImage" protobuf:"bytes,12,opt,name=predictionRouterImage"`
+
+	// The image for the modela system controller.
+	// +kubebuilder:validation:Required
+	// +required
+	ModelaSystemImage string `json:"modelaSystemImage" protobuf:"bytes,13,opt,name=modelaSystemImage"`
+
+	// The image used for the prediction server.
+	// +kubebuilder:validation:Required
+	// +required
+	ModelaPredictionServerImage string `json:"modelaPredictionServerImage" protobuf:"bytes,14,opt,name=modelaPredictionServerImage"`
+
+	// The image for the data app dashboard.
+	// +kubebuilder:validation:Required
+	// +required
+	ModelaDashboardServerImage string `json:"modelaDashboardServerImage" protobuf:"bytes,15,opt,name=modelaDashboardServerImage"`
 }
 
 // ModelaSystemStatus is the observed state of a ModelaSystem
