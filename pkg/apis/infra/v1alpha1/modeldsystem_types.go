@@ -137,6 +137,10 @@ type SystemImagesSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	ModelaDashboardServerImage string `json:"modelaDashboardServerImage" protobuf:"bytes,15,opt,name=modelaDashboardServerImage"`
+	// The image for the data app dashboard.
+	// +kubebuilder:validation:Required
+	// +required
+	ModelaWorkloadControllerImage string `json:"modelaWorkerControlImage" protobuf:"bytes,16,opt,name=modelaWorkerControlImage"`
 }
 
 // ModelaSystemStatus is the observed state of a ModelaSystem

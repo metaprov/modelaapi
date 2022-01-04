@@ -92,6 +92,9 @@ spec:
                   modelaSystemImage:
                     description: The image for the modela system controller.
                     type: string
+                  modelaWorkerControlImage:
+                    description: The image for the data app dashboard.
+                    type: string
                   predictionRouterImage:
                     description: Prediction router image.
                     type: string
@@ -117,6 +120,7 @@ spec:
                 - modelaDashboardServerImage
                 - modelaPredictionServerImage
                 - modelaSystemImage
+                - modelaWorkerControlImage
                 - predictionRouterImage
                 - publisherImage
                 - trainerImage

@@ -4612,6 +4612,9 @@ export class SystemImagesSpec extends jspb.Message {
   getModeladashboardserverimage(): string;
   setModeladashboardserverimage(value: string): SystemImagesSpec;
 
+  getModelaworkercontrolimage(): string;
+  setModelaworkercontrolimage(value: string): SystemImagesSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SystemImagesSpec.AsObject;
   static toObject(includeInstance: boolean, msg: SystemImagesSpec): SystemImagesSpec.AsObject;
@@ -4637,6 +4640,7 @@ export namespace SystemImagesSpec {
     modelasystemimage: string,
     modelapredictionserverimage: string,
     modeladashboardserverimage: string,
+    modelaworkercontrolimage: string,
   }
 }
 

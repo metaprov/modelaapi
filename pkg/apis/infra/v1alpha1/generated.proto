@@ -2596,6 +2596,11 @@ message SystemImagesSpec {
   // +kubebuilder:validation:Required
   // +required
   optional string modelaDashboardServerImage = 15;
+
+  // The image for the data app dashboard.
+  // +kubebuilder:validation:Required
+  // +required
+  optional string modelaWorkerControlImage = 16;
 }
 
 // +kubebuilder:object:root=true

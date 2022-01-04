@@ -45900,7 +45900,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.toO
     predictionrouterimage: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
     modelasystemimage: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     modelapredictionserverimage: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    modeladashboardserverimage: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
+    modeladashboardserverimage: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    modelaworkercontrolimage: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -45996,6 +45997,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.des
     case 15:
       var value = /** @type {string} */ (reader.readString());
       msg.setModeladashboardserverimage(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setModelaworkercontrolimage(value);
       break;
     default:
       reader.skipField();
@@ -46128,6 +46133,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.ser
   if (f != null) {
     writer.writeString(
       15,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
+    writer.writeString(
+      16,
       f
     );
   }
@@ -46671,6 +46683,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModeladashboardserverimage = function() {
   return jspb.Message.getField(this, 15) != null;
+};
+
+
+/**
+ * optional string modelaWorkerControlImage = 16;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModelaworkercontrolimage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModelaworkercontrolimage = function(value) {
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModelaworkercontrolimage = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModelaworkercontrolimage = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
