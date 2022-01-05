@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	"fmt"
 
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -1843,20 +1844,7 @@ type ResourceSpec struct {
 	// Workload class name
 	// +kubebuilder:validation:Optional
 	WorkloadClassName string `json:"workloadClassName,omitempty" protobuf:"bytes,1,opt,name=workloadClassName"`
-	// Memory requirment in terms of megabytes
-	// +kubebuilder:default:=1000
+	// Custom resource requirments
 	// +kubebuilder:validation:Optional
-	Memory *float64 `json:"memory,omitempty" protobuf:"bytes,2,opt,name=memory"`
-	// Cpu requirment in terms of cpu units
-	// +kubebuilder:default:=1
-	// +kubebuilder:validation:Optional
-	Cpu *float64 `json:"cpu,omitempty" protobuf:"bytes,3,opt,name=cpu"`
-	// Gpu requirment
-	// +kubebuilder:default:=0
-	// +kubebuilder:validation:Optional
-	Gpu *float64 `json:"gpu,omitempty" protobuf:"bytes,4,opt,name=gpu"`
-	// Storage requirment in megabytes
-	// +kubebuilder:default:=3600
-	// +kubebuilder:validation:Optional
-	Storage *float64 `json:"storage,omitempty" protobuf:"bytes,5,opt,name=storage"`
+	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,2,opt,name=requirements"`
 }

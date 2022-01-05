@@ -1,5 +1,6 @@
 import * as jspb from 'google-protobuf'
 
+import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_api_rbac_v1_generated_pb from '../../../../../../../k8s.io/api/rbac/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_api_resource_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
@@ -1219,17 +1220,10 @@ export class ResourceSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): ResourceSpec;
 
-  getMemory(): number;
-  setMemory(value: number): ResourceSpec;
-
-  getCpu(): number;
-  setCpu(value: number): ResourceSpec;
-
-  getGpu(): number;
-  setGpu(value: number): ResourceSpec;
-
-  getStorage(): number;
-  setStorage(value: number): ResourceSpec;
+  getRequirements(): k8s_io_api_core_v1_generated_pb.ResourceRequirements | undefined;
+  setRequirements(value?: k8s_io_api_core_v1_generated_pb.ResourceRequirements): ResourceSpec;
+  hasRequirements(): boolean;
+  clearRequirements(): ResourceSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ResourceSpec.AsObject;
@@ -1242,10 +1236,7 @@ export class ResourceSpec extends jspb.Message {
 export namespace ResourceSpec {
   export type AsObject = {
     workloadclassname: string,
-    memory: number,
-    cpu: number,
-    gpu: number,
-    storage: number,
+    requirements?: k8s_io_api_core_v1_generated_pb.ResourceRequirements.AsObject,
   }
 }
 

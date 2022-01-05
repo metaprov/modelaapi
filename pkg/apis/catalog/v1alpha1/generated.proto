@@ -9,6 +9,7 @@ syntax = "proto2";
 
 package github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1;
 
+import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/api/rbac/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/api/resource/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
@@ -689,25 +690,9 @@ message ResourceSpec {
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 1;
 
-  // Memory requirment in terms of megabytes
-  // +kubebuilder:default:=1000
+  // Custom resource requirments
   // +kubebuilder:validation:Optional
-  optional double memory = 2;
-
-  // Cpu requirment in terms of cpu units
-  // +kubebuilder:default:=1
-  // +kubebuilder:validation:Optional
-  optional double cpu = 3;
-
-  // Gpu requirment
-  // +kubebuilder:default:=0
-  // +kubebuilder:validation:Optional
-  optional double gpu = 4;
-
-  // Storage requirment in megabytes
-  // +kubebuilder:default:=3600
-  // +kubebuilder:validation:Optional
-  optional double storage = 5;
+  optional k8s.io.api.core.v1.ResourceRequirements requirements = 2;
 }
 
 message RocAucCurve {

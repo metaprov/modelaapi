@@ -21,6 +21,8 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
+var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
+goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
 var k8s_io_api_rbac_v1_generated_pb = require('../../../../../../../k8s.io/api/rbac/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_rbac_v1_generated_pb);
 var k8s_io_apimachinery_pkg_api_resource_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/api/resource/generated_pb.js');
@@ -12232,10 +12234,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     workloadclassname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    memory: (f = jspb.Message.getOptionalFloatingPointField(msg, 2)) == null ? undefined : f,
-    cpu: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefined : f,
-    gpu: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
-    storage: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f
+    requirements: (f = msg.getRequirements()) && k8s_io_api_core_v1_generated_pb.ResourceRequirements.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12277,20 +12276,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.deser
       msg.setWorkloadclassname(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setMemory(value);
-      break;
-    case 3:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setCpu(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setGpu(value);
-      break;
-    case 5:
-      var value = /** @type {number} */ (reader.readDouble());
-      msg.setStorage(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ResourceRequirements;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ResourceRequirements.deserializeBinaryFromReader);
+      msg.setRequirements(value);
       break;
     default:
       reader.skipField();
@@ -12328,32 +12316,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.seria
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = message.getRequirements();
   if (f != null) {
-    writer.writeDouble(
+    writer.writeMessage(
       2,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeDouble(
-      3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeDouble(
-      4,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
-  if (f != null) {
-    writer.writeDouble(
-      5,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ResourceRequirements.serializeBinaryToWriter
     );
   }
 };
@@ -12396,29 +12364,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
 
 
 /**
- * optional double memory = 2;
- * @return {number}
+ * optional k8s.io.api.core.v1.ResourceRequirements requirements = 2;
+ * @return {?proto.k8s.io.api.core.v1.ResourceRequirements}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getMemory = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getRequirements = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ResourceRequirements} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceRequirements, 2));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.k8s.io.api.core.v1.ResourceRequirements|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setMemory = function(value) {
-  return jspb.Message.setField(this, 2, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setRequirements = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.clearMemory = function() {
-  return jspb.Message.setField(this, 2, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.clearRequirements = function() {
+  return this.setRequirements(undefined);
 };
 
 
@@ -12426,116 +12395,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasMemory = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasRequirements = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional double cpu = 3;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getCpu = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setCpu = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.clearCpu = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasCpu = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional double gpu = 4;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getGpu = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 4, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setGpu = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.clearGpu = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasGpu = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional double storage = 5;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getStorage = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setStorage = function(value) {
-  return jspb.Message.setField(this, 5, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.clearStorage = function() {
-  return jspb.Message.setField(this, 5, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasStorage = function() {
-  return jspb.Message.getField(this, 5) != null;
 };
 
 
