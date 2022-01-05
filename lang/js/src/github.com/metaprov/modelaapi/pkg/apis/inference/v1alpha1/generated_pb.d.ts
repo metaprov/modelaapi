@@ -597,8 +597,10 @@ export class DataAppSpec extends jspb.Message {
   getPort(): number;
   setPort(value: number): DataAppSpec;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): DataAppSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DataAppSpec;
+  hasResources(): boolean;
+  clearResources(): DataAppSpec;
 
   getAccesstype(): string;
   setAccesstype(value: string): DataAppSpec;
@@ -635,7 +637,7 @@ export namespace DataAppSpec {
     modelname: string,
     replicas: number,
     port: number,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
     accesstype: string,
     productref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servingsiteref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,

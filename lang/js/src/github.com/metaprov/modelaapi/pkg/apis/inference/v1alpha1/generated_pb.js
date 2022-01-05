@@ -5967,7 +5967,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.toOb
     modelname: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     replicas: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     port: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    workloadclassname: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    resources: (f = msg.getResources()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.toObject(includeInstance, f),
     accesstype: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     productref: (f = msg.getProductref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     servingsiteref: (f = msg.getServingsiteref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
@@ -6037,8 +6037,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.dese
       msg.setPort(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setWorkloadclassname(value);
+      var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec;
+      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.deserializeBinaryFromReader);
+      msg.setResources(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -6137,11 +6138,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.seri
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
+  f = message.getResources();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       9,
-      f
+      f,
+      github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 10));
@@ -6431,29 +6433,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
 
 
 /**
- * optional string workloadClassName = 9;
- * @return {string}
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getWorkloadclassname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.getResources = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} */ (
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec, 9));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setWorkloadclassname = function(value) {
-  return jspb.Message.setField(this, 9, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.setResources = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearWorkloadclassname = function() {
-  return jspb.Message.setField(this, 9, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.clearResources = function() {
+  return this.setResources(undefined);
 };
 
 
@@ -6461,7 +6464,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasWorkloadclassname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppSpec.prototype.hasResources = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 

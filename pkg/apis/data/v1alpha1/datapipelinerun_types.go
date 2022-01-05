@@ -86,7 +86,7 @@ type DataPipelineRunSpec struct {
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,4,opt,name=owner"`
-	// WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipelineeun
+	// Specify the resources for the data pipeline run
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,5,opt,name=resources"`
 	// The priority of this data pipeline. The default is medium.

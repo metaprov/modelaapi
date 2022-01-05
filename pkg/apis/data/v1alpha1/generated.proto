@@ -833,7 +833,7 @@ message DataPipelineRunSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 4;
 
-  // WorkloadClassName is the name of the workload class used to run this pipeline. This is assigned by the datapipelineeun
+  // Specify the resources for the data pipeline run
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 
@@ -2674,7 +2674,7 @@ message LabelingPipelineRunSpec {
   // +kubebuilder:default:=""
   optional string labelPipelineName = 3;
 
-  // WorkloadClassName is the name of the workload class used to run this pipeline.
+  // Resources is the hardware resource req to run the labeling pipeline
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 
@@ -2745,7 +2745,7 @@ message LabelingPipelineSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 7;
 
-  // Resources is the hardware resource req.
+  // Resources is the hardware resource req to run the labeling pipeline
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
 
@@ -3047,7 +3047,7 @@ message RecipeRunSpec {
   // +required.
   optional DataLocation output = 4;
 
-  // Resources are hardware resource req.
+  // Resources are hardware resource req for a recipe run.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 
@@ -3130,7 +3130,7 @@ message RecipeSpec {
   // +kubebuilder:validation:Optional
   optional SampleSpec sample = 7;
 
-  // Resource define the resource requirements
+  // Resource define the resource requirements to run the recipe
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 8;
 

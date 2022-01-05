@@ -1016,8 +1016,8 @@ spec:
                 pattern: '[a-z0-9]([-a-z0-9]*[a-z0-9])?(\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*'
                 type: string
               resources:
-                description: WorkloadClassName is the name of the workload class used
-                  to run this pipeline.
+                description: Resource spec specify the resources needed for running
+                  the model pipeline job
                 properties:
                   requirements:
                     description: Custom resource requirments

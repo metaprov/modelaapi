@@ -84,7 +84,7 @@ type RecipeRunSpec struct {
 	// The location of the data output.
 	// +required.
 	Output DataLocation `json:"output,omitempty" protobuf:"bytes,4,opt,name=output"`
-	// Resources are hardware resource req.
+	// Resources are hardware resource req for a recipe run.
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,5,opt,name=resources"`
 	// TTL.

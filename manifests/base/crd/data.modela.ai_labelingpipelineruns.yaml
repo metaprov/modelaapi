@@ -76,8 +76,8 @@ spec:
                 description: The owner of the LabelingPipelineRunSpec
                 type: string
               resources:
-                description: WorkloadClassName is the name of the workload class used
-                  to run this pipeline.
+                description: Resources is the hardware resource req to run the labeling
+                  pipeline
                 properties:
                   requirements:
                     description: Custom resource requirments

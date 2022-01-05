@@ -80,7 +80,7 @@ type LabelingPipelineSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,7,opt,name=owner"`
-	// Resources is the hardware resource req.
+	// Resources is the hardware resource req to run the labeling pipeline
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`
 	// ActiveDeadlineSeconds is the deadline setup on jobs for this labeling pipeline.

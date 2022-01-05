@@ -573,11 +573,7 @@ func (in *DataAppSpec) DeepCopyInto(out *DataAppSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.WorkloadClassName != nil {
-		in, out := &in.WorkloadClassName, &out.WorkloadClassName
-		*out = new(string)
-		**out = **in
-	}
+	in.Resources.DeepCopyInto(&out.Resources)
 	if in.AccessType != nil {
 		in, out := &in.AccessType, &out.AccessType
 		*out = new(catalogv1alpha1.AccessType)

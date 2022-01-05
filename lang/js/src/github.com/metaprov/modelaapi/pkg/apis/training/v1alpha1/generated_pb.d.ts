@@ -124,8 +124,10 @@ export class CapacityStageSpec extends jspb.Message {
   clearValidationsList(): CapacityStageSpec;
   addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): CapacityStageSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): CapacityStageSpec;
+  hasResources(): boolean;
+  clearResources(): CapacityStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CapacityStageSpec.AsObject;
@@ -140,7 +142,7 @@ export namespace CapacityStageSpec {
     enabled: boolean,
     servingsitename: string,
     validationsList: Array<ModelValidation.AsObject>,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 
@@ -625,8 +627,10 @@ export class DeploymentStageSpec extends jspb.Message {
   clearValidationsList(): DeploymentStageSpec;
   addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): DeploymentStageSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): DeploymentStageSpec;
+  hasResources(): boolean;
+  clearResources(): DeploymentStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeploymentStageSpec.AsObject;
@@ -642,7 +646,7 @@ export namespace DeploymentStageSpec {
     servingsitename: string,
     manualapproval: boolean,
     validationsList: Array<ModelValidation.AsObject>,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 
@@ -3729,8 +3733,10 @@ export class ReleaseStageSpec extends jspb.Message {
   clearValidationsList(): ReleaseStageSpec;
   addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): ReleaseStageSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ReleaseStageSpec;
+  hasResources(): boolean;
+  clearResources(): ReleaseStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReleaseStageSpec.AsObject;
@@ -3748,7 +3754,7 @@ export namespace ReleaseStageSpec {
     template?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ModelDeploymentSpec.AsObject,
     manualapproval: boolean,
     validationsList: Array<ModelValidation.AsObject>,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 
@@ -4962,8 +4968,10 @@ export class UATStageSpec extends jspb.Message {
   clearValidationsList(): UATStageSpec;
   addValidations(value?: ModelValidation, index?: number): ModelValidation;
 
-  getWorkloadclassname(): string;
-  setWorkloadclassname(value: string): UATStageSpec;
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): UATStageSpec;
+  hasResources(): boolean;
+  clearResources(): UATStageSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UATStageSpec.AsObject;
@@ -4978,7 +4986,7 @@ export namespace UATStageSpec {
     enabled: boolean,
     servingsitename: string,
     validationsList: Array<ModelValidation.AsObject>,
-    workloadclassname: string,
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 

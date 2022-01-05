@@ -71,6 +71,40 @@ spec:
                     default: false
                     description: Enabled indicates that the stage is enabled
                     type: boolean
+                  resources:
+                    description: Resource define the hardware resources req.
+                    properties:
+                      requirements:
+                        description: Custom resource requirments
+                        properties:
+                          limits:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Limits describes the maximum amount of compute
+                              resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                          requests:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Requests describes the minimum amount of
+                              compute resources required. If Requests is omitted for
+                              a container, it defaults to Limits if that is explicitly
+                              specified, otherwise to an implementation-defined value.
+                              More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                        type: object
+                      workloadClassName:
+                        description: Workload class name
+                        type: string
+                    type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the testing
                       during the capacity stage If the serving site is empty or null,
@@ -190,11 +224,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  workloadClassName:
-                    default: nano-cpu-250m-mem-256mi
-                    description: A reference to the workload class that is used for
-                      running the prediction
-                    type: string
                 type: object
               data:
                 description: Datastage build new dataset from the data sources.
@@ -241,6 +270,40 @@ spec:
                       before advancing from deployed to released By default a user
                       is needed to approve the release to production
                     type: boolean
+                  resources:
+                    description: Resource define the hardware resources req.
+                    properties:
+                      requirements:
+                        description: Custom resource requirments
+                        properties:
+                          limits:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Limits describes the maximum amount of compute
+                              resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                          requests:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Requests describes the minimum amount of
+                              compute resources required. If Requests is omitted for
+                              a container, it defaults to Limits if that is explicitly
+                              specified, otherwise to an implementation-defined value.
+                              More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                        type: object
+                      workloadClassName:
+                        description: Workload class name
+                        type: string
+                    type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release,
                       if empty, the system will use the default serving site name
@@ -359,11 +422,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  workloadClassName:
-                    default: nano-cpu-250m-mem-256mi
-                    description: A reference to the workload class that is used for
-                      running the test prediction
-                    type: string
                 type: object
               description:
                 description: User provided description
@@ -473,6 +531,40 @@ spec:
                     description: PredictorName is the release predictor. The predictor
                       will be created if it does not exist.
                     type: string
+                  resources:
+                    description: Resource define the hardware resources req.
+                    properties:
+                      requirements:
+                        description: Custom resource requirments
+                        properties:
+                          limits:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Limits describes the maximum amount of compute
+                              resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                          requests:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Requests describes the minimum amount of
+                              compute resources required. If Requests is omitted for
+                              a container, it defaults to Limits if that is explicitly
+                              specified, otherwise to an implementation-defined value.
+                              More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                        type: object
+                      workloadClassName:
+                        description: Workload class name
+                        type: string
+                    type: object
                   servingSiteName:
                     description: ServingSiteName is the serving site for the release,
                       if empty, the system will use the default serving site name
@@ -658,11 +750,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  workloadClassName:
-                    default: nano-cpu-250m-mem-256mi
-                    description: A reference to the workload class that is used for
-                      running the release
-                    type: string
                 type: object
               schedule:
                 description: Schedule for running the pipeline
@@ -854,6 +941,40 @@ spec:
                     default: false
                     description: Enabled indicates that the stage is enabled
                     type: boolean
+                  resources:
+                    description: Resource define the hardware resources req.
+                    properties:
+                      requirements:
+                        description: Custom resource requirments
+                        properties:
+                          limits:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Limits describes the maximum amount of compute
+                              resources allowed. More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                          requests:
+                            additionalProperties:
+                              anyOf:
+                              - type: integer
+                              - type: string
+                              pattern: ^(\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))(([KMGTPE]i)|[numkMGTPE]|([eE](\+|-)?(([0-9]+(\.[0-9]*)?)|(\.[0-9]+))))?$
+                              x-kubernetes-int-or-string: true
+                            description: 'Requests describes the minimum amount of
+                              compute resources required. If Requests is omitted for
+                              a container, it defaults to Limits if that is explicitly
+                              specified, otherwise to an implementation-defined value.
+                              More info: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/'
+                            type: object
+                        type: object
+                      workloadClassName:
+                        description: Workload class name
+                        type: string
+                    type: object
                   servingSiteName:
                     description: The serving site (name space) used for running the
                       uat tests. If the serving site is empty, the system will skip
@@ -973,9 +1094,6 @@ spec:
                           type: string
                       type: object
                     type: array
-                  workloadClassName:
-                    description: Resources are hardware req.
-                    type: string
                 type: object
               versionName:
                 description: The product version of the resource

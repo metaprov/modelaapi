@@ -364,10 +364,9 @@ message DataAppSpec {
   // +kubebuilder:validation:Optional
   optional int32 port = 8;
 
-  // The workload class to use when running the app pod
-  // +kubebuilder:default:=""
+  // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 9;
 
   // The access method specified how external clients will access the predictor
   // Default: ClusterPort

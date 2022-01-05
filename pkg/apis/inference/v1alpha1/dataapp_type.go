@@ -92,10 +92,9 @@ type DataAppSpec struct {
 	// +kubebuilder:validation:Maximum=65535
 	// +kubebuilder:validation:Optional
 	Port *int32 `json:"port,omitempty" protobuf:"varint,8,opt,name=port"`
-	// The workload class to use when running the app pod
-	// +kubebuilder:default:=""
+	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,9,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,9,opt,name=resources"`
 	// The access method specified how external clients will access the predictor
 	// Default: ClusterPort
 	// +kubebuilder:default:="cluster-port"

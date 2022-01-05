@@ -85,7 +85,7 @@ type LabelingPipelineRunSpec struct {
 	// +kubebuilder:validation:MaxLength=64
 	// +kubebuilder:default:=""
 	LabelPipelineName *string `json:"labelPipelineName" protobuf:"bytes,3,opt,name=labelPipelineName"`
-	// WorkloadClassName is the name of the workload class used to run this pipeline.
+	// Resources is the hardware resource req to run the labeling pipeline
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,4,opt,name=resources"`
 	// TTL.

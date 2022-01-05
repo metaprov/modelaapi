@@ -103,10 +103,9 @@ message CapacityStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 3;
 
-  // A reference to the workload class that is used for running the prediction
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 }
 
 message ChangePointSpec {
@@ -404,10 +403,9 @@ message DeploymentStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 4;
 
-  // A reference to the workload class that is used for running the test prediction
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 5;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 5;
 }
 
 // EnsembleRules is an algorithm class that decide
@@ -966,7 +964,7 @@ message ModelAutobuilderSpec {
   // +kubebuilder:validation:Optional
   optional string owner = 17;
 
-  // WorkloadClassName is the name of the workload class used to run this pipeline.
+  // Resource spec specify the resources needed for running the model pipeline job
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 18;
 
@@ -2514,10 +2512,9 @@ message ReleaseStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 6;
 
-  // A reference to the workload class that is used for running the release
-  // +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+  // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 7;
 }
 
 // +kubebuilder:object:root=true
@@ -3437,9 +3434,9 @@ message UATStageSpec {
   // +kubebuilder:validation:Optional
   repeated ModelValidation validations = 3;
 
-  // Resources are hardware req.
+  // Resource define the hardware resources req.
   // +kubebuilder:validation:Optional
-  optional string workloadClassName = 4;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 }
 
 // VideoPipelineSpec is the specification for preprocessing video data

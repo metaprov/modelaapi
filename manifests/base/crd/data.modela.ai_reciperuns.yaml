@@ -110,7 +110,7 @@ spec:
                 description: The name of the recipe that execute this run
                 type: string
               resources:
-                description: Resources are hardware resource req.
+                description: Resources are hardware resource req for a recipe run.
                 properties:
                   requirements:
                     description: Custom resource requirments

@@ -186,7 +186,8 @@ spec:
                 description: Owner is the owner of the recipe
                 type: string
               resources:
-                description: Resource define the resource requirements
+                description: Resource define the resource requirements to run the
+                  recipe
                 properties:
                   requirements:
                     description: Custom resource requirments

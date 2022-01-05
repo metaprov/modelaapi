@@ -93,8 +93,7 @@ spec:
                 - urgent
                 type: string
               resources:
-                description: WorkloadClassName is the name of the workload class used
-                  to run this pipeline. This is assigned by the datapipelineeun
+                description: Specify the resources for the data pipeline run
                 properties:
                   requirements:
                     description: Custom resource requirments

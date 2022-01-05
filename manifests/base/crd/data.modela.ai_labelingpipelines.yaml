@@ -82,7 +82,8 @@ spec:
                   type: string
                 type: array
               resources:
-                description: Resources is the hardware resource req.
+                description: Resources is the hardware resource req to run the labeling
+                  pipeline
                 properties:
                   requirements:
                     description: Custom resource requirments

@@ -180,9 +180,9 @@ type UATStageSpec struct {
 	// Validations defines the machine learning test cases to run against the new trained model.
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,3,rep,name=validations"`
-	// Resources are hardware req.
+	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,4,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,4,opt,name=resources"`
 }
 
 // CapacityStageSpec is the desired state of the capcity testing.
@@ -199,10 +199,9 @@ type CapacityStageSpec struct {
 	// Validations is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,3,rep,name=validations"`
-	// A reference to the workload class that is used for running the prediction
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,4,opt,name=resources"`
 }
 
 //DeploymentStageSpec define the testing and releasing the resulting model to production.
@@ -223,10 +222,9 @@ type DeploymentStageSpec struct {
 	// Validations is the specification of tests to run in this stage
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,4,rep,name=validations"`
-	// A reference to the workload class that is used for running the test prediction
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,5,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,5,opt,name=resources"`
 }
 
 type ReleaseStageSpec struct {
@@ -253,10 +251,9 @@ type ReleaseStageSpec struct {
 	// Validations is the List of expectation run against the deployed model before moving production traffic to the model
 	// +kubebuilder:validation:Optional
 	Validations []ModelValidation `json:"validations,omitempty" protobuf:"bytes,6,rep,name=validations"`
-	// A reference to the workload class that is used for running the release
-	// +kubebuilder:default:="nano-cpu-250m-mem-256mi"
+	// Resource define the hardware resources req.
 	// +kubebuilder:validation:Optional
-	WorkloadClassName *string `json:"workloadClassName,omitempty" protobuf:"bytes,7,opt,name=workloadClassName"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,7,opt,name=resources"`
 }
 
 // ModelPipelineStatus define the observed state of the pipeline
