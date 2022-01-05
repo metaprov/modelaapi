@@ -686,13 +686,18 @@ message Region {
 
 // Specification for resource
 message ResourceSpec {
-  // Workload class name
+  // Workload class name. Predefined resources
   // +kubebuilder:validation:Optional
   optional string workloadClassName = 1;
 
+  // If true, use custom req
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool enable = 2;
+
   // Custom resource requirments
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ResourceRequirements requirements = 2;
+  optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
 }
 
 message RocAucCurve {

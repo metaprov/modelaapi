@@ -1081,7 +1081,7 @@ message DataProductSpec {
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 12;
 
-  // DefaultWorkloadClassName is reference to the workload class used for running product tasks.
+  // DefaultResource will be used if the resources are not specified.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 13;
 
@@ -2057,7 +2057,7 @@ message FeaturePipelineRunSpec {
   // +kubebuilder:validation:MaxLength=64
   optional string featurePipelineName = 3;
 
-  // A reference to the workload class that is used for running the workload class. this is setup based on the feature pipeline
+  // A reference to the resource class.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 4;
 

@@ -1220,6 +1220,9 @@ export class ResourceSpec extends jspb.Message {
   getWorkloadclassname(): string;
   setWorkloadclassname(value: string): ResourceSpec;
 
+  getEnable(): boolean;
+  setEnable(value: boolean): ResourceSpec;
+
   getRequirements(): k8s_io_api_core_v1_generated_pb.ResourceRequirements | undefined;
   setRequirements(value?: k8s_io_api_core_v1_generated_pb.ResourceRequirements): ResourceSpec;
   hasRequirements(): boolean;
@@ -1236,6 +1239,7 @@ export class ResourceSpec extends jspb.Message {
 export namespace ResourceSpec {
   export type AsObject = {
     workloadclassname: string,
+    enable: boolean,
     requirements?: k8s_io_api_core_v1_generated_pb.ResourceRequirements.AsObject,
   }
 }

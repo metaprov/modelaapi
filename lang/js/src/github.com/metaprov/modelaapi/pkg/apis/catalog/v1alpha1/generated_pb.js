@@ -12234,6 +12234,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     workloadclassname: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    enable: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     requirements: (f = msg.getRequirements()) && k8s_io_api_core_v1_generated_pb.ResourceRequirements.toObject(includeInstance, f)
   };
 
@@ -12276,6 +12277,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.deser
       msg.setWorkloadclassname(value);
       break;
     case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnable(value);
+      break;
+    case 3:
       var value = new k8s_io_api_core_v1_generated_pb.ResourceRequirements;
       reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ResourceRequirements.deserializeBinaryFromReader);
       msg.setRequirements(value);
@@ -12316,10 +12321,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.seria
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
   f = message.getRequirements();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       k8s_io_api_core_v1_generated_pb.ResourceRequirements.serializeBinaryToWriter
     );
@@ -12364,12 +12376,48 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
 
 
 /**
- * optional k8s.io.api.core.v1.ResourceRequirements requirements = 2;
+ * optional bool enable = 2;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getEnable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setEnable = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.clearEnable = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasEnable = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ResourceRequirements requirements = 3;
  * @return {?proto.k8s.io.api.core.v1.ResourceRequirements}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.getRequirements = function() {
   return /** @type{?proto.k8s.io.api.core.v1.ResourceRequirements} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceRequirements, 2));
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ResourceRequirements, 3));
 };
 
 
@@ -12378,7 +12426,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.setRequirements = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -12396,7 +12444,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec.prototype.hasRequirements = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

@@ -1841,10 +1841,14 @@ type ConfusionMatrix struct {
 
 // Specification for resource
 type ResourceSpec struct {
-	// Workload class name
+	// Workload class name. Predefined resources
 	// +kubebuilder:validation:Optional
 	WorkloadClassName string `json:"workloadClassName,omitempty" protobuf:"bytes,1,opt,name=workloadClassName"`
+	// If true, use custom req
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Custom *bool `json:"enable,omitempty" protobuf:"bytes,2,opt,name=enable"`
 	// Custom resource requirments
 	// +kubebuilder:validation:Optional
-	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,2,opt,name=requirements"`
+	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,3,opt,name=requirements"`
 }

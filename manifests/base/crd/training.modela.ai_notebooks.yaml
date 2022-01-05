@@ -131,6 +131,10 @@ spec:
               resources:
                 description: Resource are the hardware req.
                 properties:
+                  enable:
+                    default: false
+                    description: If true, use custom req
+                    type: boolean
                   requirements:
                     description: Custom resource requirments
                     properties:
@@ -158,7 +162,7 @@ spec:
                         type: object
                     type: object
                   workloadClassName:
-                    description: Workload class name
+                    description: Workload class name. Predefined resources
                     type: string
                 type: object
               schedule:

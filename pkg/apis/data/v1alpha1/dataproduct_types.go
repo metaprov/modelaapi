@@ -128,7 +128,7 @@ type DataProductSpec struct {
 	// the notifier selector select the notifier for events that occur in the product life cycle.
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,12,opt,name=notification"`
-	// DefaultWorkloadClassName is reference to the workload class used for running product tasks.
+	// DefaultResource will be used if the resources are not specified.
 	// +kubebuilder:validation:Optional
 	DefaultResources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,13,opt,name=resources"`
 	// Denote how many time a job is retry after failure
