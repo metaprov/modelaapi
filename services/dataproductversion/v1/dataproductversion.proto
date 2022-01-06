@@ -37,7 +37,6 @@ message GetDataProductVersionRequest {
     string name      = 2;
 }
 
-
 message GetDataProductVersionResponse {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
     string yaml = 2;
@@ -55,27 +54,28 @@ message DeleteDataProductVersionResponse {
 
 service DataProductVersionService {
     rpc ListDataProductVersions(ListDataProductVersionsRequest) returns (ListDataProductVersionsResponse) {
-        option (google.api.http).get = "/v1/dataproductversions";
+        option (google.api.http).get = "/v1/dataproductversions/{namespace}";
     }
+
     rpc CreateDataProductVersion(CreateDataProductVersionRequest) returns (CreateDataProductVersionResponse) {
         option (google.api.http) = {
 			post: "/v1/dataproductversions"
 			body: "*"
 		};
     }
+
     rpc GetDataProductVersion(GetDataProductVersionRequest) returns (GetDataProductVersionResponse) {
-        option (google.api.http).get = "/v1/dataproductversions/{name}";
+        option (google.api.http).get = "/v1/dataproductversions/{namespace}/{name}";
     }
+
     rpc UpdateDataProductVersion(UpdateDataProductVersionRequest) returns (UpdateDataProductVersionResponse) {
         option (google.api.http) = {
-			put: "/v1/dataproductversions/{dataproductversion.metadata.name}"
+			put: "/v1/dataproductversions/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteDataProductVersion(DeleteDataProductVersionRequest) returns (DeleteDataProductVersionResponse) {
-        option (google.api.http).delete = "/api/v1/dataproductversions/{namespace}/{name}";
+        option (google.api.http).delete = "/v1/dataproductversions/{namespace}/{name}";
     }
-
-
 }

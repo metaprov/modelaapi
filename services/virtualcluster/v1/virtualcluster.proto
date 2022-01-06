@@ -8,7 +8,7 @@ import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListVirtualClustersRequest {
     string namespace = 1;
-    map<string,string> virtualclusterels =3;
+    map<string,string> virtualclusters = 3;
 }
 
 message ListVirtualClustersResponse {
@@ -60,7 +60,7 @@ message DeleteVirtualClusterResponse {
 
 service VirtualClusterService {
     rpc ListVirtualClusters(ListVirtualClustersRequest) returns (ListVirtualClustersResponse) {
-        option (google.api.http).get = "/api/v1/virtualclusters";
+        option (google.api.http).get = "/v1/virtualclusters/{namespace}";
     }
 
     rpc CreateVirtualCluster(CreateVirtualClusterRequest) returns (CreateVirtualClusterResponse) {
@@ -71,19 +71,19 @@ service VirtualClusterService {
     }
 
     rpc GetVirtualCluster(GetVirtualClusterRequest) returns (GetVirtualClusterResponse) {
-        option (google.api.http).get = "/api/v1/virtualclusters/{name}";
+        option (google.api.http).get = "/v1/virtualclusters/{namespace}/{name}";
     }
 
     rpc UpdateVirtualCluster(UpdateVirtualClusterRequest) returns (UpdateVirtualClusterResponse) {
         option (google.api.http) = {
-			put: "/v1/virtualclusters/{name}"
+			put: "/v1/virtualclusters/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteVirtualCluster(DeleteVirtualClusterRequest) returns (DeleteVirtualClusterResponse) {
         option (google.api.http) = {
-			delete: "/v1/virtualclusters/{name}"
+			delete: "/v1/virtualclusters/{namespace}/{name}"
 		};
     }
 

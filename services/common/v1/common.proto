@@ -58,7 +58,6 @@ message Plot {
 
 
 message ColumnProfile {
-	
     string    name            = 1;
     int32     count           = 2;
     string    type            = 3;

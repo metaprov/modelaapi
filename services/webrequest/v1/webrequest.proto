@@ -63,9 +63,8 @@ message RunWebRequestResponse {
 
 
 service WebRequestService {
-
     rpc ListWebRequests(ListWebRequestsRequest) returns (ListWebRequestsResponse) {
-        option (google.api.http).get = "/v1/webrequests";
+        option (google.api.http).get = "/v1/webrequests/{namespace}";
     }
 
     rpc CreateWebRequest(CreateWebRequestRequest) returns (CreateWebRequestResponse) {
@@ -76,23 +75,22 @@ service WebRequestService {
     }
 
     rpc GetWebRequest(GetWebRequestRequest) returns (GetWebRequestResponse) {
-        option (google.api.http).get = "/v1/webrequests/{name}";
+        option (google.api.http).get = "/v1/webrequests/{namespace}/{name}";
     }
 
     rpc UpdateWebRequest(UpdateWebRequestRequest) returns (UpdateWebRequestResponse) {
         option (google.api.http) = {
-			put: "/v1/webrequests/{prediction.metadata.name}"
+			put: "/v1/webrequests/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteWebRequest(DeleteWebRequestRequest) returns (DeleteWebRequestResponse) {
-        option (google.api.http).delete = "/v1/webrequests/{name}";
+        option (google.api.http).delete = "/v1/webrequests/{namespace}/{name}";
     }
 
-    
     rpc RunWebRequest(RunWebRequestRequest) returns (RunWebRequestResponse) {
-        option (google.api.http).post = "/v1/webrequests/{name}:run";
+        option (google.api.http).post = "/v1/webrequests/{item.metadata.namespace}/{item.metadata.name}:run";
     }
 
     

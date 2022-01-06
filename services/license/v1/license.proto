@@ -75,7 +75,7 @@ message DeleteLicenseResponse {
 
 service LicenseService {
     rpc ListLicenses(ListLicensesRequest) returns (ListLicensesResponse) {
-        option (google.api.http).get = "v1/licenses";
+        option (google.api.http).get = "/v1/licenses/{namespace}";
     }
 
     rpc CreateLicense(CreateLicenseRequest) returns (CreateLicenseResponse) {
@@ -92,21 +92,20 @@ service LicenseService {
 		};
     }
 
-
     rpc GetLicense(GetLicenseRequest) returns (GetLicenseResponse) {
-        option (google.api.http).get = "v1/licenses/{license.metadata.name}";
+        option (google.api.http).get = "/v1/licenses/{namespace}/{name}";
     }
 
     rpc UpdateLicense(UpdateLicenseRequest) returns (UpdateLicenseResponse) {
         option (google.api.http) = {
-			put: "/v1/licenses/{license_name}"
+			put: "/v1/licenses/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteLicense(DeleteLicenseRequest) returns (DeleteLicenseResponse) {
         option (google.api.http) = {
-			delete: "/v1/licenses/{license_name}"
+			delete: "/v1/licenses/{namespace}/{name}"
 		};
     }
 

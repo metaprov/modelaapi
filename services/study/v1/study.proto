@@ -108,7 +108,7 @@ message UpdateStudyResponse {
 service StudyService {
 
     rpc ListStudies(ListStudyRequest) returns (ListStudyResponse) {
-        option (google.api.http).get = "/v1/studies";
+        option (google.api.http).get = "/v1/studies/{namespace}";
     }
 
     rpc CreateStudy(CreateStudyRequest) returns (CreateStudyResponse) {
@@ -119,12 +119,12 @@ service StudyService {
     }
 
     rpc GetStudy(GetStudyRequest) returns (GetStudyResponse) {
-        option (google.api.http).get = "/v1/studies/{name}";
+        option (google.api.http).get = "/v1/studies/{namespace}/{name}";
     }
 
     rpc UpdateStudy(UpdateStudyRequest) returns (UpdateStudyResponse) {
         option (google.api.http) = {
-			put: "/v1/studies/{study.metadata.namespace}/{study.metadata.name}"
+			put: "/v1/studies/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
@@ -133,9 +133,8 @@ service StudyService {
         option (google.api.http).delete = "/v1/studies/{namespace}/{name}";
     }
 
-
     rpc CreateStudyProfile(CreateStudyProfileRequest) returns (CreateStudyProfileResponse) {
-        option (google.api.http).post = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}/profile";
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}/profile";
     }
 
     rpc GetStudyProfile(GetStudyProfileRequest) returns (GetStudyProfileResponse) {
@@ -143,17 +142,14 @@ service StudyService {
     }
 
     rpc AbortStudy(AbortStudyRequest) returns (AbortStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}/abort";
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}:abort";
     }
 
     rpc PauseStudy(PauseStudyRequest) returns (PauseStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}/pause";
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}:pause";
     }
 
     rpc ResumeStudy(ResumeStudyRequest) returns (ResumeStudyResponse) {
-        option (google.api.http).post = "/v1/studies/{study.metadata.namespace}/{study.metadata.name}/resume";
+        option (google.api.http).post = "/v1/studies/{namespace}/{name}:resume";
     }
-
-    
-
 }

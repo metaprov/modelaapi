@@ -209,92 +209,92 @@ message TestModelResponse {
 
 service ModelService {
     rpc ListModels(ListModelsRequest) returns (ListModelsResponse) {
-        option (google.api.http).get = "/api/v1/model";
+        option (google.api.http).get = "/v1/model/{namespace}";
     }
 
     rpc CreateModel(CreateModelRequest) returns (CreateModelResponse) {
         option (google.api.http) = {
-			post: "/api/v1/models"
+			post: "/v1/models"
 			body: "*"
 		};
     }
 
     rpc GetModel(GetModelRequest) returns (GetModelResponse) {
-        option (google.api.http).get = "/api/v1/models/{model.metadata.name}";
+        option (google.api.http).get = "/v1/models/{namespace}/{name}";
     }
 
     rpc UpdateModel(UpdateModelRequest) returns (UpdateModelResponse) {
         option (google.api.http) = {
-			put: "/api/v1/models/{model.metadata.name}"
+			put: "/v1/models/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteModel(DeleteModelRequest) returns (DeleteModelResponse) {
-        option (google.api.http).delete = "/api/v1/models/{model.metadata.name}";
+        option (google.api.http).delete = "/v1/models/{namespace}/{name}";
     }
 
     rpc DeployModel(DeployModelRequest) returns (DeployModelResponse) {
         option (google.api.http) = {
-			post: "/api/v1/models/{model.metadata.name}:deploy"
+			post: "/v1/models/{namespace}/{name}:deploy"
 			body: "*"
 		};
     }
 
     rpc PublishModel(PublishModelRequest) returns (PublishModelResponse) {
         option (google.api.http) = {
-			post: "/api/v1/models/{model.metadata.name}:publish"
+			post: "/v1/models/{namespace}/{name}:publish"
 			body: "*"
 		};
     }
 
     rpc CreateModelProfile(CreateModelProfileRequest) returns (CreateModelProfileResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:profile";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:profile";
     }
 
     rpc GetModelProfile(GetModelProfileRequest) returns (GetModelProfileResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:profile";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:profile";
     }
 
     rpc GetModelMisclass(GetMisclassRequest) returns (GetMisclassResponse) {
-        option (google.api.http).get = "/api/v1/models/{model.metadata.name}:misclass";
+        option (google.api.http).get = "/v1/models/{namespace}/{name}:misclass";
     }
 
     rpc GetModelLogs(GetModelLogsRequest) returns (GetModelLogsResponse) {
-        option (google.api.http).get = "/api/v1/models/{model.metadata.name}:logs";
+        option (google.api.http).get = "/v1/models/{namespace}/{name}:logs";
     }
 
     rpc AbortModel(AbortModelRequest) returns (AbortModelResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:abort";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:abort";
     }
 
     rpc PauseModel(PauseModelRequest) returns (PauseModelResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:pause";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:pause";
     }
 
     rpc ResumeModel(ResumeModelRequest) returns (ResumeModelResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:resume";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:resume";
     }
 
     rpc CompareModels(CompareModelsRequest) returns (CompareModelsResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:compare";
+        option (google.api.http).post = "/v1/models/{namespace}/{names}:compare";
     }
 
     rpc CompileModel(CompileModelRequest) returns (CompileModelResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:compile";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:compile";
     }
 
     rpc DownloadModel(DownloadModelRequest) returns (DownloadModelResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:download";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:download";
     }
     
     // Flag model 
     rpc FlagModel(FlagModelRequest) returns (FlagModelResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:flag";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:flag";
     }
 
     // Mark the model to test
     rpc TestModel(TestModelRequest) returns (TestModelResponse) {
-        option (google.api.http).post = "/api/v1/models/{model.metadata.name}:test";
+        option (google.api.http).post = "/v1/models/{namespace}/{name}:test";
     }
 }

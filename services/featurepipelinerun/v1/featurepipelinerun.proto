@@ -54,7 +54,7 @@ message DeleteFeaturePipelineRunResponse {
 
 service FeaturePipelineRunService {
     rpc ListFeaturePipelineRuns(ListFeaturePipelineRunRequest) returns (ListFeaturePipelineRunResponse) {
-        option (google.api.http).get = "/v1/featurepipelineruns";
+        option (google.api.http).get = "/v1/featurepipelineruns/{namespace}";
     }
     rpc CreateFeaturePipelineRun(CreateFeaturePipelineRunRequest) returns (CreateFeaturePipelineRunResponse) {
         option (google.api.http) = {
@@ -63,16 +63,18 @@ service FeaturePipelineRunService {
 		};
     }
     rpc GetFeaturePipelineRun(GetFeaturePipelineRunRequest) returns (GetFeaturePipelineRunResponse) {
-        option (google.api.http).get = "/v1/featurepipelineruns/{name}";
+        option (google.api.http).get = "/v1/featurepipelineruns/{namespace}/{name}";
     }
     rpc UpdateFeaturePipelineRun(UpdateFeaturePipelineRunRequest) returns (UpdateFeaturePipelineRunResponse) {
         option (google.api.http) = {
-			put: "/v1/featurepipelines/{feature.metadata.name}"
+			put: "/v1/featurepipelines/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteFeaturePipelineRun(DeleteFeaturePipelineRunRequest) returns (DeleteFeaturePipelineRunResponse) {}
+    rpc DeleteFeaturePipelineRun(DeleteFeaturePipelineRunRequest) returns (DeleteFeaturePipelineRunResponse) {
+        option (google.api.http).delete = "/v1/featurepipeline/{namespace}/{name}";
+    }
 
 
 

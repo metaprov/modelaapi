@@ -72,7 +72,7 @@ message ResumeLabelingPipelineRequest {
 
 service LabelingPipelineService {
     rpc ListLabelingPipelines(ListLabelingPipelineRequest) returns (ListLabelingPipelineResponse) {
-        option (google.api.http).get = "/v1/labelpipelines";
+        option (google.api.http).get = "/v1/labelpipelines/{namespace}";
     }
 
     rpc CreateLabelingPipeline(CreateLabelingPipelineRequest) returns (CreateLabelingPipelineResponse) {
@@ -83,28 +83,30 @@ service LabelingPipelineService {
     }
 
     rpc GetLabelingPipeline(GetLabelingPipelineRequest) returns (GetLabelingPipelineResponse) {
-        option (google.api.http).get = "/v1/labelpipelines/{name}";
+        option (google.api.http).get = "/v1/labelpipelines/{namespace}/{name}";
     }
 
     rpc UpdateLabelingPipeline(UpdateLabelingPipelineRequest) returns (UpdateLabelingPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/labelpipelines/{label.metadata.name}"
+			put: "/v1/labelpipelines/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteLabelingPipeline(DeleteLabelingPipelineRequest) returns (DeleteLabelingPipelineResponse) {}
+    rpc DeleteLabelingPipeline(DeleteLabelingPipelineRequest) returns (DeleteLabelingPipelineResponse) {
+        option (google.api.http).delete = "/v1/labelingpipelines/{namespace}/{name}";
+    }
 
     rpc PauseLabelingPipeline(PauseLabelingPipelineRequest) returns (PauseLabelingPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/labelpipelines/{label.metadata.name}:pause"
+			post: "/v1/labelpipelines/{namespace}/{name}:pause"
 			body: "*"
 		};
     }
 
     rpc ResumeLabelingPipeline(ResumeLabelingPipelineRequest) returns (ResumeLabelingPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/labelpipelines/{label.metadata.name}:resume"
+			post: "/v1/labelpipelines/{namespace}/{name}:resume"
 			body: "*"
 		};
     }

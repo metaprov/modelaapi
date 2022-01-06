@@ -40,7 +40,6 @@ message GetCronPredictionRequest {
 message GetCronPredictionResponse {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
     string yaml = 2;
-
 }
 
 message DeleteCronPredictionRequest {
@@ -85,7 +84,7 @@ message RunCronPredictionResponse {
 service CronPredictionService {
 
     rpc ListCronPredictions(ListCronPredictionsRequest) returns (ListCronPredictionsResponse) {
-        option (google.api.http).get = "/v1/cronpredictions";
+        option (google.api.http).get = "/v1/cronpredictions/{namespace}";
     }
 
     rpc CreateCronPrediction(CreateCronPredictionRequest) returns (CreateCronPredictionResponse) {
@@ -101,7 +100,7 @@ service CronPredictionService {
 
     rpc UpdateCronPrediction(UpdateCronPredictionRequest) returns (UpdateCronPredictionResponse) {
         option (google.api.http) = {
-			put: "/v1/cronpredictions/{cronprediction.metadata.name}"
+			put: "/v1/cronpredictions/{item.metadata.name}"
 			body: "*"
 		};
     }
@@ -118,14 +117,7 @@ service CronPredictionService {
         option (google.api.http).post = "/v1/cronpredictions/{name}:resume";
     }
 
-
     rpc RunPrediction(RunCronPredictionRequest) returns (RunCronPredictionResponse) {
-        option (google.api.http).post = "/v1/cronpredictions/{name}:run";
+        option (google.api.http).post = "/v1/cronpredictions/{item.metadata.name}:run";
     }
-
-    
-
-    
-  
-
 }

@@ -58,17 +58,14 @@ message DeleteDataPipelineRequest {
     string name      = 2;
 }
 
-
-
 message DeleteDataPipelineResponse {
 }
 
-
-
 service DataPipelineService {
     rpc ListDataPipelines(ListDataPipelinesRequest) returns (ListDataPipelinesResponse) {
-        option (google.api.http).get = "/v1/datapipelines";
+        option (google.api.http).get = "/v1/datapipelines/{namespace}";
     }
+
     rpc CreateDataPipeline(CreateDataPipelineRequest) returns (CreateDataPipelineResponse) {
         option (google.api.http) = {
 			post: "/v1/datapipelines"
@@ -82,19 +79,16 @@ service DataPipelineService {
 
     rpc UpdateDataPipeline(UpdateDataPipelineRequest) returns (UpdateDataPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}"
+			put: "/v1/datapipelines/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteDataPipeline(DeleteDataPipelineRequest) returns (DeleteDataPipelineResponse) {
-        option (google.api.http).delete = "/api/v1/datapipelines/{namespace}/{name}";
+        option (google.api.http).delete = "/v1/datapipelines/{namespace}/{name}";
     }
-    
-    
-    
 
     rpc RunDataPipeline(RunDataPipelineRequest) returns (RunDataPipelineResponse) {
-        option (google.api.http).post = "/api/v1/datapipelines/{namespace}/{name}:run";
+        option (google.api.http).post = "/v1/datapipelines/{namespace}/{name}:run";
     }
 }

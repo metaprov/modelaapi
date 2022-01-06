@@ -52,7 +52,7 @@ message DeleteLabelingPipelineRunResponse {
 
 service LabelingPipelineRunService {
     rpc ListLabelingPipelineRuns(ListLabelingPipelineRunRequest) returns (ListLabelingPipelineRunResponse) {
-        option (google.api.http).get = "/v1/labelingpipelineruns";
+        option (google.api.http).get = "/v1/labelingpipelineruns/{namespace}";
     }
     rpc CreateLabelingPipelineRun(CreateLabelingPipelineRunRequest) returns (CreateLabelingPipelineRunResponse) {
         option (google.api.http) = {
@@ -61,17 +61,16 @@ service LabelingPipelineRunService {
 		};
     }
     rpc GetLabelingPipelineRun(GetLabelingPipelineRunRequest) returns (GetLabelingPipelineRunResponse) {
-        option (google.api.http).get = "/v1/labelingpipelineruns/{name}";
+        option (google.api.http).get = "/v1/labelingpipelineruns/{namespace}/{name}";
     }
     rpc UpdateLabelingPipelineRun(UpdateLabelingPipelineRunRequest) returns (UpdateLabelingPipelineRunResponse) {
         option (google.api.http) = {
-			put: "/v1/labelingpipelines/{label.metadata.name}"
+			put: "/v1/labelingpipelineruns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteLabelingPipelineRun(DeleteLabelingPipelineRunRequest) returns (DeleteLabelingPipelineRunResponse) {}
-
-
-
+    rpc DeleteLabelingPipelineRun(DeleteLabelingPipelineRunRequest) returns (DeleteLabelingPipelineRunResponse) {
+        option (google.api.http).delete = "/v1/labelingpipelineruns/{namespace}/{name}";
+    }
 }

@@ -79,7 +79,7 @@ message DeleteRecipeResponse {
 
 service RecipeService {
     rpc ListRecipes(ListRecipesRequest) returns (ListRecipesResponse) {
-        option (google.api.http).get = "/v1/recipes";
+        option (google.api.http).get = "/v1/recipes/{namespace}";
     }
     rpc CreateRecipe(CreateRecipeRequest) returns (CreateRecipeResponse) {
         option (google.api.http) = {
@@ -88,23 +88,25 @@ service RecipeService {
 		};
     }
     rpc GetRecipe(GetRecipeRequest) returns (GetRecipeResponse) {
-        option (google.api.http).get = "/v1/recipes/{name}";
+        option (google.api.http).get = "/v1/recipes/{namespace}/{name}";
     }
     rpc RunRecipe(RunRecipeRequest) returns (RunRecipeResponse) {
-        option (google.api.http).get = "/v1/recipes/{name}:run";
+        option (google.api.http).get = "/v1/recipes/{namespace}/{name}:run";
     }
     // profile the recipe based on the sample
     rpc ProfileRecipe(ProfileRecipeRequest) returns (ProfileRecipeResponse) {
-        option (google.api.http).get = "/v1/recipes/{name}:profile";
+        option (google.api.http).get = "/v1/recipes/{namespace}/{name}:profile";
     }
 
 
     rpc UpdateRecipe(UpdateRecipeRequest) returns (UpdateRecipeResponse) {
         option (google.api.http) = {
-			put: "/v1/recipes/{recipe.metadata.name}"
+			put: "/v1/recipes/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteRecipe(DeleteRecipeRequest) returns (DeleteRecipeResponse) {}
+    rpc DeleteRecipe(DeleteRecipeRequest) returns (DeleteRecipeResponse) {
+        option (google.api.http).delete = "/v1/recipes/{namespace}/{name}";
+    }
 }

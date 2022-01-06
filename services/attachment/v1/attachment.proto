@@ -45,19 +45,14 @@ message GetAttachmentResponse {
 }
 
 
-
 message GetAttachmentNamespacesRequest {
     string namespace = 1;
     string name      = 2;
 }
 
-
 message GetAttachmentNamespacesResponse {
     repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
 }
-
-
-
 
 message DeleteAttachmentRequest {
     string namespace = 1;
@@ -70,46 +65,31 @@ message DeleteAttachmentResponse {}
 message AttachmentCreateResponse {}
 
 
-
-
-message AttachmentGetByNameRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message AttachmentLogoutRequest {
-    string token = 1; // jwt token
-}
-
-
-
-
-
-
-
-
 service AttachmentService {
     rpc ListAttachments(ListAttachmentsRequest) returns (ListAttachmentsResponse) {
-        option (google.api.http).get = "/v1/attachments";
+        option (google.api.http).get = "/v1/attachments/{namespace}";
     }
+
     rpc CreateAttachment(CreateAttachmentRequest) returns (CreateAttachmentResponse) {
         option (google.api.http) = {
 			post: "/v1/attachments"
-			body: "attachment"
+			body: "*"
 		};
     }
+
     rpc GetAttachment(GetAttachmentRequest) returns (GetAttachmentResponse) {
-        option (google.api.http).get = "/v1/{namespace}/attachments/{name}";
+        option (google.api.http).get = "/v1/attachments/{namespace}/{name}";
     }
+
     rpc UpdateAttachment(UpdateAttachmentRequest) returns (UpdateAttachmentResponse) {
         option (google.api.http) = {
-			put: "/v1/{attachment.metadata.namespace}/attachments//{attachment.metadata.name}"
-			body: "attachment"
+			put: "/v1/attachments/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteAttachment(DeleteAttachmentRequest) returns (DeleteAttachmentResponse) {
-        option (google.api.http).delete = "/api/{namespace}/v1/attachments/{name}";
+        option (google.api.http).delete = "/v1/attachments/{namespace}/{name}";
     }
 
 }

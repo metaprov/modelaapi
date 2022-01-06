@@ -7,7 +7,7 @@ import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListRecipeRunsRequest {
     string namespace = 1;
-    map<string,string> labels =3;
+    map<string,string> labels = 3;
 }
 
 message ListRecipeRunsResponse {
@@ -54,7 +54,7 @@ message DeleteRecipeRunResponse {
 
 service RecipeRunService {
     rpc ListRecipeRuns(ListRecipeRunsRequest) returns (ListRecipeRunsResponse) {
-        option (google.api.http).get = "/v1/reciperuns";
+        option (google.api.http).get = "/v1/reciperuns/{namespace}";
     }
     rpc CreateRecipeRun(CreateRecipeRunRequest) returns (CreateRecipeRunResponse) {
         option (google.api.http) = {
@@ -63,14 +63,17 @@ service RecipeRunService {
 		};
     }
     rpc GetRecipeRun(GetRecipeRunRequest) returns (GetRecipeRunResponse) {
-        option (google.api.http).get = "/v1/reciperuns/{name}";
+        option (google.api.http).get = "/v1/reciperuns/{namespace}/{name}";
     }
     rpc UpdateRecipeRun(UpdateRecipeRunRequest) returns (UpdateRecipeRunResponse) {
         option (google.api.http) = {
-			put: "/v1/reciperuns/{reciperun.metadata.name}"
+			put: "/v1/reciperuns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteRecipeRun(DeleteRecipeRunRequest) returns (DeleteRecipeRunResponse) {}
+    rpc DeleteRecipeRun(DeleteRecipeRunRequest) returns (DeleteRecipeRunResponse) {
+        option (google.api.http).delete = "/v1/reciperuns/{namespace}/{name}";
+
+    }
 }

@@ -38,29 +38,22 @@ message GetVirtualVolumeRequest {
     string name      = 2;
 }
 
-
 message GetVirtualVolumeResponse {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
     string yaml = 2;
 }
-
-
 
 message DeleteVirtualVolumeRequest {
     string namespace = 1;
     string name      = 2;
 }
 
-message DeleteVirtualVolumeResponse {
-
-}
-
-
+message DeleteVirtualVolumeResponse {}
 
 
 service VirtualVolumeService {
     rpc ListVirtualVolumes(ListVirtualVolumesRequest) returns (ListVirtualVolumesResponse) {
-        option (google.api.http).get = "/api/v1/virtualvolumes";
+        option (google.api.http).get = "/v1/virtualvolumes/{namespace}";
     }
 
     rpc CreateVirtualVolume(CreateVirtualVolumeRequest) returns (CreateVirtualVolumeResponse) {
@@ -71,19 +64,19 @@ service VirtualVolumeService {
     }
 
     rpc GetVirtualVolume(GetVirtualVolumeRequest) returns (GetVirtualVolumeResponse) {
-        option (google.api.http).get = "/api/v1/virtualvolumes/{name}";
+        option (google.api.http).get = "/v1/virtualvolumes/{namespace}/{name}";
     }
 
     rpc UpdateVirtualVolume(UpdateVirtualVolumeRequest) returns (UpdateVirtualVolumeResponse) {
         option (google.api.http) = {
-			put: "/v1/virtualvolumes/{name}"
+			put: "/v1/virtualvolumes/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteVirtualVolume(DeleteVirtualVolumeRequest) returns (DeleteVirtualVolumeResponse) {
         option (google.api.http) = {
-			delete: "/v1/virtualvolumes/{name}"
+			delete: "/v1/virtualvolumes/{namespace}/{name}"
 		};
     }
 

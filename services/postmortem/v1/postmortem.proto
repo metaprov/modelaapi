@@ -54,7 +54,7 @@ message DeletePostMortemResponse {
 
 service PostMortemService {
     rpc ListPostMortems(ListPostMortemsRequest) returns (ListPostMortemsResponse) {
-        option (google.api.http).get = "/v1/postmortems";
+        option (google.api.http).get = "/v1/postmortems/{namespace}";
     }
     rpc CreatePostMortem(CreatePostMortemRequest) returns (CreatePostMortemResponse) {
         option (google.api.http) = {
@@ -63,18 +63,18 @@ service PostMortemService {
 		};
     }
     rpc GetPostMortem(GetPostMortemRequest) returns (GetPostMortemResponse) {
-        option (google.api.http).get = "/v1/postmortems/{name}";
+        option (google.api.http).get = "/v1/postmortems/{namespace}/{name}";
     }
     rpc UpdatePostMortem(UpdatePostMortemRequest) returns (UpdatePostMortemResponse) {
         option (google.api.http) = {
-			put: "/v1/postmortems/{postmortem.metadata.name}"
+			put: "/v1/postmortems/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeletePostMortem(DeletePostMortemRequest) returns (DeletePostMortemResponse) {
         option (google.api.http) = {
-			delete: "/api/v1alpha1/postmortems/{postmortem.metadata.name}"
+			delete: "/v1/postmortems/{namespace}/{name}"
 		};
     }
 

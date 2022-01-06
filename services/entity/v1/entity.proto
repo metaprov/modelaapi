@@ -54,7 +54,7 @@ message DeleteEntityResponse {
 
 service EntityService {
     rpc ListEntities(ListEntitiesRequest) returns (ListEntitiesResponse) {
-        option (google.api.http).get = "/v1/entities";
+        option (google.api.http).get = "/v1/entities/{namespace}";
     }
     rpc CreateEntity(CreateEntityRequest) returns (CreateEntityResponse) {
         option (google.api.http) = {
@@ -67,12 +67,15 @@ service EntityService {
     }
     rpc UpdateEntity(UpdateEntityRequest) returns (UpdateEntityResponse) {
         option (google.api.http) = {
-			put: "/v1/entities/{name}"
+			put: "/v1/entities/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteEntity(DeleteEntityRequest) returns (DeleteEntityResponse) {}
+    rpc DeleteEntity(DeleteEntityRequest) returns (DeleteEntityResponse) {
+        option (google.api.http).delete = "/v1/entities/{namespace}/{name}";
+    }
+
 
 
 

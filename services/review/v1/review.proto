@@ -24,8 +24,6 @@ message CreateReviewRequest {
 message CreateReviewResponse {
 }
 
-
-
 message UpdateReviewRequest {
     github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
 }
@@ -59,28 +57,25 @@ message ListReviewResponse {
 
 service ReviewService {
     rpc ListReviews(ListReviewRequest) returns (ListReviewResponse) {
-        option (google.api.http).get = "/api/v1alpha1/reviews/{namespace}";
+        option (google.api.http).get = "/v1/reviews/{namespace}";
     }
     rpc CreateReview(CreateReviewRequest) returns (CreateReviewResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/reviews"
+			post: "/v1/reviews"
 			body: "*"
 		};
     }
     rpc GetReview(GetReviewRequest) returns (GetReviewResponse) {
-        option (google.api.http).get = "/api/v1alpha1/reviews/{namespace}/{name}";
+        option (google.api.http).get = "/v1/reviews/{namespace}/{name}";
     }
     rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/reviews/{review.metadata.namespace}/{review.metadata.name}"
+			put: "/v1/reviews/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteReview(DeleteReviewRequest) returns (DeleteReviewResponse) {
-        option (google.api.http).delete = "/api/v1/reviews/{namespace}/{name}";
+        option (google.api.http).delete = "/v1/reviews/{namespace}/{name}";
     }
-
-
-
 }

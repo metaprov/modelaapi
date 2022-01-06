@@ -87,14 +87,12 @@ service GRPCInferenceService
   rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
     option (google.api.http) = {
       get: "/v1/predictors/{name}"
-      body: "*"
     };
   }
 
   rpc GetModel(GetModelRequest) returns (GetModelResponse) {
     option (google.api.http) = {
-      get: "/v1/predictors/{predictor}/models/{name}"
-      body: "*"
+      get: "/v1/predictors/{predictorName}/models/{name}"
     };
   }
 

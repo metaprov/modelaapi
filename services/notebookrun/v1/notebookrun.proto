@@ -39,13 +39,10 @@ message GetNotebookRunRequest {
     string name      = 2;
 }
 
-
 message GetNotebookRunResponse {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun item = 1;
     string yaml = 2;
 }
-
-
 
 message DeleteNotebookRunRequest {
     string namespace = 1;
@@ -56,32 +53,29 @@ message DeleteNotebookRunResponse {
 
 }
 
-
-
-
 service NotebookRunService {
     rpc ListNotebookRuns(ListNotebookRunsRequest) returns (ListNotebookRunsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/notebookruns";
+        option (google.api.http).get = "/v1/notebookruns/{namespace}";
     }
     rpc CreateNotebookRun(CreateNotebookRunRequest) returns (CreateNotebookRunResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/notebookruns"
+			post: "/v1/notebookruns"
 			body: "*"
 		};
     }
     rpc GetNotebookRun(GetNotebookRunRequest) returns (GetNotebookRunResponse) {
-        option (google.api.http).get = "/api/v1alpha1/notebookruns/{name}";
+        option (google.api.http).get = "/v1/notebookruns/{namespace}/{name}";
     }
     rpc UpdateNotebookRun(UpdateNotebookRunRequest) returns (UpdateNotebookRunResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/notebookruns/{notebookrun.metadata.name}"
+			put: "/v1/notebookruns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteNotebookRun(DeleteNotebookRunRequest) returns (DeleteNotebookRunResponse) {
         option (google.api.http) = {
-			delete: "/api/v1alpha1/notebookruns/{notebookrun.metadata.name}"
+			delete: "/v1/notebookruns/{namespace}/{name}"
 		};
     }
 

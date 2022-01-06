@@ -18,7 +18,7 @@ message ListApiTokensResponse {
 message ApiTokenResponse {}
 
 message CreateApiTokenRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken item = 1;
     string password = 2;    
 }
 
@@ -54,11 +54,8 @@ message GetApiTokenNamespacesRequest {
 
 
 message GetApiTokenNamespacesResponse {
-    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces = 1;
 }
-
-
-
 
 message DeleteApiTokenRequest {
     string namespace = 1;
@@ -66,11 +63,7 @@ message DeleteApiTokenRequest {
 }
 
 message DeleteApiTokenResponse {}
-
-
 message ApiTokenCreateResponse {}
-message LogoutResponse {}
-message ResetPasswordResponse {}
 
 message ApiTokenLoginRequest {
     string namespace = 1;
@@ -83,66 +76,31 @@ message ApiTokenLoginResponse {
 }
 
 
-message ApiTokenGetByNameRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message ApiTokenLogoutRequest {
-    string token = 1; // jwt token
-}
-
-
-
-
-
-message ChangePasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string old       = 3;
-    string new       = 4;
-    string confirmedNew = 5;
-}
-
-message ChangePasswordResponse {}
-
-message ResetPasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string new       = 3;
-    string confirmedNew = 4;
-}
-
-message ResetPasswordReponse {
-
-}
-
-
-
-
-
 service ApiTokenService {
     rpc ListApiTokens(ListApiTokensRequest) returns (ListApiTokensResponse) {
-        option (google.api.http).get = "/v1/apitokens";
+        option (google.api.http).get = "/v1/apitokens/{namespace}";
     }
+
     rpc CreateApiToken(CreateApiTokenRequest) returns (CreateApiTokenResponse) {
         option (google.api.http) = {
 			post: "/v1/apitokens"
-			body: "apitoken"
+			body: "*"
 		};
     }
+
     rpc GetApiToken(GetApiTokenRequest) returns (GetApiTokenResponse) {
-        option (google.api.http).get = "/v1/{namespace}/apitokens/{name}";
+        option (google.api.http).get = "/v1/apitokens/{namespace}/{name}";
     }
+
     rpc UpdateApiToken(UpdateApiTokenRequest) returns (UpdateApiTokenResponse) {
         option (google.api.http) = {
-			put: "/v1/{apitoken.metadata.namespace}/apitokens//{apitoken.metadata.name}"
-			body: "apitoken"
+			put: "/v1/apitokens/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteApiToken(DeleteApiTokenRequest) returns (DeleteApiTokenResponse) {
-        option (google.api.http).delete = "/api/{namespace}/v1/apitokens/{name}";
+        option (google.api.http).delete = "/v1/apitokens/{namespace}/{name}";
     }
 
 }

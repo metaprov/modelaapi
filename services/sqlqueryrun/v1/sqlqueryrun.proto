@@ -66,7 +66,7 @@ message RunSqlQueryRunResponse {
 service SqlQueryRunService {
 
     rpc ListSqlQuerieRuns(ListSqlQueryRunsRequest) returns (ListSqlQueryRunsResponse) {
-        option (google.api.http).get = "/v1/sqlqueryruns";
+        option (google.api.http).get = "/v1/sqlqueryruns/{namespace}";
     }
 
     rpc CreateSqlQueryRun(CreateSqlQueryRunRequest) returns (CreateSqlQueryRunResponse) {
@@ -77,23 +77,23 @@ service SqlQueryRunService {
     }
 
     rpc GetSqlQueryRun(GetSqlQueryRunRequest) returns (GetSqlQueryRunResponse) {
-        option (google.api.http).get = "/v1/sqlqueryruns/{name}";
+        option (google.api.http).get = "/v1/sqlqueryruns/{namespace}/{name}";
     }
 
     rpc UpdateSqlQueryRun(UpdateSqlQueryRunRequest) returns (UpdateSqlQueryRunResponse) {
         option (google.api.http) = {
-			put: "/v1/sqlqueryruns/{webrequest.metadata.name}"
+			put: "/v1/sqlqueryruns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteSqlQueryRun(DeleteSqlQueryRunRequest) returns (DeleteSqlQueryRunResponse) {
-        option (google.api.http).delete = "/v1/sqlqueryruns/{name}";
+        option (google.api.http).delete = "/v1/sqlqueryruns/{namespace}/{name}";
     }
 
 
     rpc RunSqlQueryRun(RunSqlQueryRunRequest) returns (RunSqlQueryRunResponse) {
-        option (google.api.http).post = "/v1/sqlqueryruns/{name}:run";
+        option (google.api.http).post = "/v1/sqlqueryruns/{item.metadata.namespace}/{item.metadata.name}:run";
     }
 
     

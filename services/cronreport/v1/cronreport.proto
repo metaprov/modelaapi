@@ -83,9 +83,8 @@ message RunCronReportResponse {
 
 
 service CronReportService {
-
     rpc ListCronReports(ListCronReportsRequest) returns (ListCronReportsResponse) {
-        option (google.api.http).get = "/v1/cronreports";
+        option (google.api.http).get = "/v1/cronreports/{namespace}";
     }
 
     rpc CreateCronReport(CreateCronReportRequest) returns (CreateCronReportResponse) {
@@ -96,33 +95,29 @@ service CronReportService {
     }
 
     rpc GetCronReport(GetCronReportRequest) returns (GetCronReportResponse) {
-        option (google.api.http).get = "/v1/cronreports/{name}";
+        option (google.api.http).get = "/v1/cronreports/{namespace}/{name}";
     }
 
     rpc UpdateCronReport(UpdateCronReportRequest) returns (UpdateCronReportResponse) {
         option (google.api.http) = {
-			put: "/v1/cronreports/{cronreport.metadata.name}"
+			put: "/v1/cronreports/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteCronReport(DeleteCronReportRequest) returns (DeleteCronReportResponse) {
-        option (google.api.http).delete = "/v1/cronreports/{name}";
+        option (google.api.http).delete = "/v1/cronreports/{namespace}/{name}";
     }
 
     rpc RunReport(RunCronReportRequest) returns (RunCronReportResponse) {
-        option (google.api.http).post = "/v1/cronreports/{name}:run";
+        option (google.api.http).post = "/v1/cronreports/{item.metadata.namespace}/{item.metadata.name}:run";
     }
 
     rpc PauseCronReport(PauseCronReportRequest) returns (PauseCronReportResponse) {
-        option (google.api.http).post = "/v1/cronreports/{name}:pause";
+        option (google.api.http).post = "/v1/cronreports/{namespace}/{name}:pause";
     }
 
     rpc ResumeCronReport(ResumeCronReportRequest) returns (ResumeCronReportResponse) {
-        option (google.api.http).post = "/v1/cronreports/{name}:resume";
+        option (google.api.http).post = "/v1/cronreports/{namespace}/{name}:resume";
     }
-
- 
-  
-
 }

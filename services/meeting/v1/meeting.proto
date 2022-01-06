@@ -45,21 +45,6 @@ message GetMeetingResponse {
     string yaml = 2;
 }
 
-
-
-message GetMeetingNamespacesRequest {
-    string namespace = 1;
-    string name      = 2;
-}
-
-
-message GetMeetingNamespacesResponse {
-    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
-}
-
-
-
-
 message DeleteMeetingRequest {
     string namespace = 1;
     string name      = 2;
@@ -68,39 +53,28 @@ message DeleteMeetingRequest {
 message DeleteMeetingResponse {}
 
 
-message MeetingCreateResponse {}
-
-message MeetingGetByNameRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message MeetingLogoutRequest {
-    string token = 1; // jwt token
-}
-
 service MeetingService {
     rpc ListMeetings(ListMeetingsRequest) returns (ListMeetingsResponse) {
-        option (google.api.http).get = "/v1/meetings";
+        option (google.api.http).get = "/v1/meetings/{namespace}";
     }
     rpc CreateMeeting(CreateMeetingRequest) returns (CreateMeetingResponse) {
         option (google.api.http) = {
 			post: "/v1/meetings"
-			body: "meeting"
+			body: "*"
 		};
     }
     rpc GetMeeting(GetMeetingRequest) returns (GetMeetingResponse) {
-        option (google.api.http).get = "/v1/{namespace}/meetings/{name}";
+        option (google.api.http).get = "/v1/meetings/{namespace}/{name}";
     }
     rpc UpdateMeeting(UpdateMeetingRequest) returns (UpdateMeetingResponse) {
         option (google.api.http) = {
-			put: "/v1/{meeting.metadata.namespace}/meetings//{meeting.metadata.name}"
-			body: "meeting"
+			put: "/v1/meetings/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteMeeting(DeleteMeetingRequest) returns (DeleteMeetingResponse) {
-        option (google.api.http).delete = "/api/{namespace}/v1/meetings/{name}";
+        option (google.api.http).delete = "/v1/meetings/{namespace}/{name}";
     }
 
 }

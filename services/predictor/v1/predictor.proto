@@ -10,13 +10,12 @@ import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.prot
 
 message ListPredictorsRequest {
     string namespace = 1;
-    map<string,string> labels =2;
+    map<string,string> labels = 2;
 }
 
 message ListPredictorsResponse {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorList items = 1;
 }
-
 
 message CreatePredictorResponse {}
 
@@ -79,9 +78,8 @@ message PredictOneResponse {
 }
 
 service PredictorService {
-
     rpc ListPredictors(ListPredictorsRequest) returns (ListPredictorsResponse) {
-        option (google.api.http).get = "/v1/predictors";
+        option (google.api.http).get = "/v1/predictors/{namespace}";
     }
 
     rpc CreatePredictor(CreatePredictorRequest) returns (CreatePredictorResponse) {
@@ -92,30 +90,30 @@ service PredictorService {
     }
 
     rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
-        option (google.api.http).get = "/v1/predictors/{name}";
+        option (google.api.http).get = "/v1/predictors/{namespace}/{name}";
     }
 
     rpc UpdatePredictor(UpdatePredictorRequest) returns (UpdatePredictorResponse) {
         option (google.api.http) = {
-			put: "/v1/predictors/{predictor.metadata.name}"
+			put: "/v1/predictors/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc RollBack(RollbackRequest) returns (RollbackResponse) {
         option (google.api.http) = {
-			post: "/v1/predictors/{predictor.metadata.name}:rollback"
+			post: "/v1/predictors/{namespace}/{name}:rollback"
 			body: "*"
 		};
     }
 
 
     rpc DeletePredictor(DeletePredictorRequest) returns (DeletePredictorResponse) {
-        option (google.api.http).delete = "/v1/predictors/{name}";
+        option (google.api.http).delete = "/v1/predictors/{namespace}/{name}";
     }
 
     rpc PredictOne(PredictOneRequest) returns (PredictOneResponse) {
-        option (google.api.http).post = "/v1/predictors/{name}:predictone";
+        option (google.api.http).post = "/v1/predictors/{namespace}/{name}:predictone";
     }
 
 }

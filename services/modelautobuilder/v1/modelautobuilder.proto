@@ -55,7 +55,7 @@ message DeleteModelAutobuilderResponse {
 
 service ModelAutobuilderService {
     rpc ListModelAutobuilders(ListModelAutobuildersRequest) returns (ListModelAutobuildersResponse) {
-        option (google.api.http).get = "/v1/modelautobuilders";
+        option (google.api.http).get = "/v1/modelautobuilders/{namespace}";
     }
     rpc CreateModelAutobuilder(CreateModelAutobuilderRequest) returns (CreateModelAutobuilderResponse) {
         option (google.api.http) = {
@@ -64,17 +64,17 @@ service ModelAutobuilderService {
 		};
     }
     rpc GetModelAutobuilder(GetModelAutobuilderRequest) returns (GetModelAutobuilderResponse) {
-        option (google.api.http).get = "/v1/modelautobuilders/{name}";
+        option (google.api.http).get = "/v1/modelautobuilders/{namespace}/{name}";
     }
     rpc UpdateModelAutobuilder(UpdateModelAutobuilderRequest) returns (UpdateModelAutobuilderResponse) {
         option (google.api.http) = {
-			put: "/v1/modelautobuilders/{modelautobuilders.metadata.name}"
+			put: "/v1/modelautobuilders/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteModelAutobuilder(DeleteModelAutobuilderRequest) returns (DeleteModelAutobuilderResponse) {
-        option (google.api.http).delete = "/api/v1/modelautobuilders/{modelautobuilder.metadata.name}";
+        option (google.api.http).delete = "/v1/modelautobuilders/{namespace}/{name}";
     }
 
 

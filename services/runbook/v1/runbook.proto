@@ -54,7 +54,7 @@ message DeleteRunBookResponse {
 
 service RunBookService {
     rpc ListRunBooks(ListRunBooksRequest) returns (ListRunBooksResponse) {
-        option (google.api.http).get = "/v1/runbooks";
+        option (google.api.http).get = "/v1/runbooks/{namespace}";
     }
     rpc CreateRunBook(CreateRunBookRequest) returns (CreateRunBookResponse) {
         option (google.api.http) = {
@@ -63,17 +63,16 @@ service RunBookService {
 		};
     }
     rpc GetRunBook(GetRunBookRequest) returns (GetRunBookResponse) {
-        option (google.api.http).get = "/v1/runbooks/{name}";
+        option (google.api.http).get = "/v1/runbooks/{namespace}/{name}";
     }
     rpc UpdateRunBook(UpdateRunBookRequest) returns (UpdateRunBookResponse) {
         option (google.api.http) = {
-			put: "/v1/runbooks/{runbook.metadata.name}"
+			put: "/v1/runbooks/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteRunBook(DeleteRunBookRequest) returns (DeleteRunBookResponse) {}
-
-
-
+    rpc DeleteRunBook(DeleteRunBookRequest) returns (DeleteRunBookResponse) {
+        option (google.api.http).delete = "/v1/runbooks/{namespace}/{name}";
+    }
 }

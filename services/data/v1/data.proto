@@ -693,6 +693,4 @@ service DataService {
     rpc GetTables(DsGetTablesRequest)   returns (DsGetTablesResponse) {}
     rpc ExecuteSql(DsExecuteSqlRequest) returns (DsExecuteSqlResponse) {}
     rpc Snapshot(DsSnapshotRequest) returns (DsSnapshotResponse) {}
-   
-
 }

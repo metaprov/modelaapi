@@ -53,8 +53,6 @@ message DeleteModelPipelineResponse {
 
 }
 
-
-
 message RunModelPipelineRequest {
     github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
 }
@@ -62,8 +60,6 @@ message RunModelPipelineRequest {
 message RunModelPipelineResponse {
     
 }
-
-
 
 message PauseModelPipelineResponse {
 }
@@ -100,19 +96,17 @@ service ModelPipelineService {
     }
     rpc UpdateModelPipeline(UpdateModelPipelineRequest) returns (UpdateModelPipelineResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/modelpipelines/{modelpipeline.metadata.name}"
+			put: "/api/v1alpha1/modelpipelines/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteModelPipeline(DeleteModelPipelineRequest) returns (DeleteModelPipelineResponse) {
-        option (google.api.http).delete = "/api/v1/modelpipelines/{modelpipeline.metadata.name}";
+        option (google.api.http).delete = "/api/v1/modelpipelines/{name}";
     }
 
- 
-
     rpc RunModelPipeline(RunModelPipelineRequest) returns (RunModelPipelineResponse) {
-        option (google.api.http).post = "/api/v1/modelpipelines/{namespace}/{name}:run";
+        option (google.api.http).post = "/api/v1/modelpipelines/{item.metadata.namespace}/{item.metadata.name}:run";
     }
 
         

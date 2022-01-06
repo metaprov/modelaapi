@@ -9,7 +9,7 @@ import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListNotifiersRequest {
     string namespace = 1;
-    map<string,string> labels =3;
+    map<string,string> labels = 3;
 }
 
 message ListNotifiersResponse {
@@ -45,9 +45,6 @@ message GetNotifierResponse {
     string yaml = 2;
 }
 
-
-
-
 message DeleteNotifierRequest {
     string namespace = 1;
     string name      = 2;
@@ -57,32 +54,29 @@ message DeleteNotifierResponse {
 
 }
 
-
-
-
 service NotifierService {
     rpc ListNotifiers(ListNotifiersRequest) returns (ListNotifiersResponse) {
-        option (google.api.http).get = "/api/v1alpha1/notifiers";
+        option (google.api.http).get = "/v1/notifiers/{namespace}";
     }
     rpc CreateNotifier(CreateNotifierRequest) returns (CreateNotifierResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/notifiers"
+			post: "/v1/notifiers"
 			body: "*"
 		};
     }
     rpc GetNotifier(GetNotifierRequest) returns (GetNotifierResponse) {
-        option (google.api.http).get = "/api/v1alpha1/notifiers/{name}";
+        option (google.api.http).get = "/v1/notifiers/{namespace}/{name}";
     }
     rpc UpdateNotifier(UpdateNotifierRequest) returns (UpdateNotifierResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/notifiers/{notifier.metadata.name}"
+			put: "/v1/notifiers/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteNotifier(DeleteNotifierRequest) returns (DeleteNotifierResponse) {
         option (google.api.http) = {
-			delete: "/api/v1alpha1/notifiers/{notifier.metadata.name}"
+			delete: "/v1/notifiers/{namespace}/{name}"
 		};
     }
 

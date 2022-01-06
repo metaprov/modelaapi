@@ -7,7 +7,7 @@ import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
 message ListFeaturePipelineRequest {
     string namespace = 1;
-    map<string,string> labels =2;
+    map<string,string> labels = 2;
 }
 
 message ListFeaturePipelineResponse {
@@ -23,7 +23,7 @@ message CreateFeaturePipelineResponse {
 }
 
 message UpdateFeaturePipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 5;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
 }
 
 message UpdateFeaturePipelineResponse {
@@ -72,7 +72,7 @@ message ResumeFeaturePipelineRequest {
 
 service FeaturePipelineService {
     rpc ListFeaturePipelines(ListFeaturePipelineRequest) returns (ListFeaturePipelineResponse) {
-        option (google.api.http).get = "/v1/featurepipelines";
+        option (google.api.http).get = "/v1/featurepipelines/{namespace}";
     }
 
     rpc CreateFeaturePipeline(CreateFeaturePipelineRequest) returns (CreateFeaturePipelineResponse) {
@@ -83,26 +83,26 @@ service FeaturePipelineService {
     }
 
     rpc GetFeaturePipeline(GetFeaturePipelineRequest) returns (GetFeaturePipelineResponse) {
-        option (google.api.http).get = "/v1/featurepipelines/{name}";
+        option (google.api.http).get = "/v1/featurepipelines/{namespace}/{name}";
     }
 
     rpc UpdateFeaturePipeline(UpdateFeaturePipelineRequest) returns (UpdateFeaturePipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/featurepipelines/{feature.metadata.name}"
+			put: "/v1/featurepipelines/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
-    rpc DeleteFeaturePipeline(DeleteFeaturePipelineRequest) returns (DeleteFeaturePipelineResponse) {}
-
-        
+    rpc DeleteFeaturePipeline(DeleteFeaturePipelineRequest) returns (DeleteFeaturePipelineResponse) {
+        option (google.api.http).delete = "/v1/featurepipelines/{namespace}/{name}";
+    }
     
     rpc PauseFeaturePipeline(PauseFeaturePipelineRequest) returns (PauseFeaturePipelineResponse) {
-        option (google.api.http).post = "/v1/featurepipelines/{name}:pause";
+        option (google.api.http).post = "/v1/featurepipelines/{namespace}/{name}:pause";
     }
 
     rpc ResumeFeaturePipeline(ResumeFeaturePipelineRequest) returns (ResumeFeaturePipelineResponse) {
-        option (google.api.http).post = "/v1/featurepipelines/{name}:pause";
+        option (google.api.http).post = "/v1/featurepipelines/{namespace}/{name}:pause";
     }
     
 

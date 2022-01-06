@@ -54,33 +54,29 @@ message DeleteWebRequestRunResponse {
 
 
 service WebRequestRunService {
-
     rpc ListWebRequestRuns(ListWebRequestRunsRequest) returns (ListWebRequestRunsResponse) {
-        option (google.api.http).get = "/v1/webeequestruns";
+        option (google.api.http).get = "/v1/webrequestruns/{namespace}";
     }
 
     rpc CreateWebRequestRun(CreateWebRequestRunRequest) returns (CreateWebRequestRunResponse) {
         option (google.api.http) = {
-			post: "/v1/webeequestruns"
+			post: "/v1/webrequestruns"
 			body: "*"
 		};
     }
 
     rpc GetWebRequestRun(GetWebRequestRunRequest) returns (GetWebRequestRunResponse) {
-        option (google.api.http).get = "/v1/webeequestruns/{name}";
+        option (google.api.http).get = "/v1/webrequestruns/{name}";
     }
 
     rpc UpdateWebRequestRun(UpdateWebRequestRunRequest) returns (UpdateWebRequestRunResponse) {
         option (google.api.http) = {
-			put: "/v1/webeequestruns/{webeequestrun.metadata.name}"
+			put: "/v1/webrequestruns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteWebRequestRun(DeleteWebRequestRunRequest) returns (DeleteWebRequestRunResponse) {
-        option (google.api.http).delete = "/v1/webeequestruns/{name}";
+        option (google.api.http).delete = "/v1/webrequestruns/{namespace}/{name}";
     }
-
-   
-
 }
