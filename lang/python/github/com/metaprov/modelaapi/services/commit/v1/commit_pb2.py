@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/commit/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/commit/v1/commit.proto\x12\x30github.com.metaprov.modelaapi.services.commit.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xb8\x01\n\x12ListCommitsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListCommitsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitList\"\x10\n\x0e\x43ommitResponse\"t\n\x13\x43reateCommitRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\x12\x10\n\x08password\x18\x02 \x01(\t\"\x16\n\x14\x43reateCommitResponse\"b\n\x13UpdateCommitRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\"\x16\n\x14UpdateCommitResponse\"3\n\x10GetCommitRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x11GetCommitResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1aGetCommitNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x1bGetCommitNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"6\n\x13\x44\x65leteCommitRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteCommitResponse\"\x16\n\x14\x43ommitCreateResponse2\xfa\x07\n\rCommitService\x12\xaf\x01\n\x0bListCommits\x12\x44.github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest\x1a\x45.github.com.metaprov.modelaapi.services.commit.v1.ListCommitsResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/commits\x12\xba\x01\n\x0c\x43reateCommit\x12\x45.github.com.metaprov.modelaapi.services.commit.v1.CreateCommitRequest\x1a\x46.github.com.metaprov.modelaapi.services.commit.v1.CreateCommitResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x0b/v1/commits:\x06\x63ommit\x12\xbc\x01\n\tGetCommit\x12\x42.github.com.metaprov.modelaapi.services.commit.v1.GetCommitRequest\x1a\x43.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{namespace}/commits/{name}\x12\xee\x01\n\x0cUpdateCommit\x12\x45.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest\x1a\x46.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitResponse\"O\x82\xd3\xe4\x93\x02I\x1a?/v1/{commit.metadata.namespace}/commits//{commit.metadata.name}:\x06\x63ommit\x12\xc9\x01\n\x0c\x44\x65leteCommit\x12\x45.github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitRequest\x1a\x46.github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitResponse\"*\x82\xd3\xe4\x93\x02$*\"/api/{namespace}/v1/commits/{name}B2Z0github.com/metaprov/modelaapi/services/commit/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/commit/v1/commit.proto\x12\x30github.com.metaprov.modelaapi.services.commit.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xb8\x01\n\x12ListCommitsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListCommitsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitList\"\x10\n\x0e\x43ommitResponse\"t\n\x13\x43reateCommitRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\x12\x10\n\x08password\x18\x02 \x01(\t\"\x16\n\x14\x43reateCommitResponse\"b\n\x13UpdateCommitRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\"\x16\n\x14UpdateCommitResponse\"3\n\x10GetCommitRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"n\n\x11GetCommitResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1aGetCommitNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x1bGetCommitNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"6\n\x13\x44\x65leteCommitRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteCommitResponse\"\x16\n\x14\x43ommitCreateResponse2\xf3\x07\n\rCommitService\x12\xbb\x01\n\x0bListCommits\x12\x44.github.com.metaprov.modelaapi.services.commit.v1.ListCommitsRequest\x1a\x45.github.com.metaprov.modelaapi.services.commit.v1.ListCommitsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/commits/{namespace}\x12\xb5\x01\n\x0c\x43reateCommit\x12\x45.github.com.metaprov.modelaapi.services.commit.v1.CreateCommitRequest\x1a\x46.github.com.metaprov.modelaapi.services.commit.v1.CreateCommitResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/commits:\x01*\x12\xbc\x01\n\tGetCommit\x12\x42.github.com.metaprov.modelaapi.services.commit.v1.GetCommitRequest\x1a\x43.github.com.metaprov.modelaapi.services.commit.v1.GetCommitResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/commits/{namespace}/{name}\x12\xe4\x01\n\x0cUpdateCommit\x12\x45.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitRequest\x1a\x46.github.com.metaprov.modelaapi.services.commit.v1.UpdateCommitResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/commits/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc5\x01\n\x0c\x44\x65leteCommit\x12\x45.github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitRequest\x1a\x46.github.com.metaprov.modelaapi.services.commit.v1.DeleteCommitResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/commits/{namespace}/{name}B2Z0github.com/metaprov/modelaapi/services/commit/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -662,7 +662,7 @@ _COMMITSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1304,
-  serialized_end=2322,
+  serialized_end=2315,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListCommits',
@@ -671,7 +671,7 @@ _COMMITSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTCOMMITSREQUEST,
     output_type=_LISTCOMMITSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\r\022\013/v1/commits',
+    serialized_options=b'\202\323\344\223\002\031\022\027/v1/commits/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -681,7 +681,7 @@ _COMMITSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATECOMMITREQUEST,
     output_type=_CREATECOMMITRESPONSE,
-    serialized_options=b'\202\323\344\223\002\025\"\013/v1/commits:\006commit',
+    serialized_options=b'\202\323\344\223\002\020\"\013/v1/commits:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -691,7 +691,7 @@ _COMMITSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETCOMMITREQUEST,
     output_type=_GETCOMMITRESPONSE,
-    serialized_options=b'\202\323\344\223\002 \022\036/v1/{namespace}/commits/{name}',
+    serialized_options=b'\202\323\344\223\002 \022\036/v1/commits/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -701,7 +701,7 @@ _COMMITSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATECOMMITREQUEST,
     output_type=_UPDATECOMMITRESPONSE,
-    serialized_options=b'\202\323\344\223\002I\032?/v1/{commit.metadata.namespace}/commits//{commit.metadata.name}:\006commit',
+    serialized_options=b'\202\323\344\223\002?\032:/v1/commits/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -711,7 +711,7 @@ _COMMITSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETECOMMITREQUEST,
     output_type=_DELETECOMMITRESPONSE,
-    serialized_options=b'\202\323\344\223\002$*\"/api/{namespace}/v1/commits/{name}',
+    serialized_options=b'\202\323\344\223\002 *\036/v1/commits/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

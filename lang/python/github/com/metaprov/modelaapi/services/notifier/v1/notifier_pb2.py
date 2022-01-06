@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modelaapi/services/notifier/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/notifier/v1/notifier.proto\x12\x32github.com.metaprov.modelaapi.services.notifier.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xbe\x01\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x03 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x15ListNotifiersResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList\"\x12\n\x10NotifierResponse\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x18\n\x16\x43reateNotifierResponse\"f\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x18\n\x16UpdateNotifierResponse\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x13GetNotifierResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteNotifierResponse2\xbb\x08\n\x0fNotifierService\x12\xc5\x01\n\rListNotifiers\x12H.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/api/v1alpha1/notifiers\x12\xcb\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/api/v1alpha1/notifiers:\x01*\x12\xc6\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierRequest\x1aG.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/api/v1alpha1/notifiers/{name}\x12\xe4\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierResponse\";\x82\xd3\xe4\x93\x02\x35\x1a\x30/api/v1alpha1/notifiers/{notifier.metadata.name}:\x01*\x12\xe1\x01\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierResponse\"8\x82\xd3\xe4\x93\x02\x32*0/api/v1alpha1/notifiers/{notifier.metadata.name}B4Z2github.com/metaprov/modelaapi/services/notifier/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/notifier/v1/notifier.proto\x12\x32github.com.metaprov.modelaapi.services.notifier.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xbe\x01\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x03 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x15ListNotifiersResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList\"\x12\n\x10NotifierResponse\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x18\n\x16\x43reateNotifierResponse\"f\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x18\n\x16UpdateNotifierResponse\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x13GetNotifierResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteNotifierResponse2\xb1\x08\n\x0fNotifierService\x12\xc7\x01\n\rListNotifiers\x12H.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/notifiers/{namespace}\x12\xc1\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/notifiers:\x01*\x12\xc8\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierRequest\x1aG.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/notifiers/{namespace}/{name}\x12\xf0\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a</v1/notifiers/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/notifiers/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/notifier/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -534,7 +534,7 @@ _NOTIFIERSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1123,
-  serialized_end=2206,
+  serialized_end=2196,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListNotifiers',
@@ -543,7 +543,7 @@ _NOTIFIERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTNOTIFIERSREQUEST,
     output_type=_LISTNOTIFIERSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\031\022\027/api/v1alpha1/notifiers',
+    serialized_options=b'\202\323\344\223\002\033\022\031/v1/notifiers/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -553,7 +553,7 @@ _NOTIFIERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATENOTIFIERREQUEST,
     output_type=_CREATENOTIFIERRESPONSE,
-    serialized_options=b'\202\323\344\223\002\034\"\027/api/v1alpha1/notifiers:\001*',
+    serialized_options=b'\202\323\344\223\002\022\"\r/v1/notifiers:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -563,7 +563,7 @@ _NOTIFIERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETNOTIFIERREQUEST,
     output_type=_GETNOTIFIERRESPONSE,
-    serialized_options=b'\202\323\344\223\002 \022\036/api/v1alpha1/notifiers/{name}',
+    serialized_options=b'\202\323\344\223\002\"\022 /v1/notifiers/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -573,7 +573,7 @@ _NOTIFIERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATENOTIFIERREQUEST,
     output_type=_UPDATENOTIFIERRESPONSE,
-    serialized_options=b'\202\323\344\223\0025\0320/api/v1alpha1/notifiers/{notifier.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002A\032</v1/notifiers/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -583,7 +583,7 @@ _NOTIFIERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETENOTIFIERREQUEST,
     output_type=_DELETENOTIFIERRESPONSE,
-    serialized_options=b'\202\323\344\223\0022*0/api/v1alpha1/notifiers/{notifier.metadata.name}',
+    serialized_options=b'\202\323\344\223\002\"* /v1/notifiers/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modelaapi/services/connection/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/connection/v1/connection.proto\x12\x34github.com.metaprov.modelaapi.services.connection.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xc4\x01\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x17ListConnectionsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList\"\x84\x02\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateConnectionResponse\"\x84\x02\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateConnectionResponse\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x15GetConnectionResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionResponse\"8\n\x15TestConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"5\n\x16TestConnectionResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t2\xbc\n\n\x11\x43onnectionService\x12\xc7\x01\n\x0fListConnections\x12L.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest\x1aM.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/connections\x12\xd6\x01\n\x10\x43reateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionResponse\"#\x82\xd3\xe4\x93\x02\x1d\"\x0f/v1/connections:\nconnection\x12\xc8\x01\n\rGetConnection\x12J.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionRequest\x1aK.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/connections/{name}\x12\xf1\x01\n\x10UpdateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionResponse\">\x82\xd3\xe4\x93\x02\x38\x1a*/v1/connections/{connection.metadata.name}:\nconnection\x12\xe1\x01\n\x10\x44\x65leteConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/connections/{namespace}/{name}\x12\xe0\x01\n\x0eTestConnection\x12K.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionRequest\x1aL.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionResponse\"3\x82\xd3\xe4\x93\x02-\x12+/api/v1/connections/{namespace}/{name}:testB6Z4github.com/metaprov/modelaapi/services/connection/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/connection/v1/connection.proto\x12\x34github.com.metaprov.modelaapi.services.connection.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xc4\x01\n\x16ListConnectionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x17ListConnectionsResponse\x12T\n\x05items\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList\"\x84\x02\n\x17\x43reateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x05 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18\x43reateConnectionResponse\"\x84\x02\n\x17UpdateConnectionRequest\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12i\n\x06secret\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x18UpdateConnectionResponse\"7\n\x14GetConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"v\n\x15GetConnectionResponse\x12O\n\x04item\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65leteConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65leteConnectionResponse\"8\n\x15TestConnectionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"5\n\x16TestConnectionResponse\x12\x0e\n\x06status\x18\x01 \x01(\x08\x12\x0b\n\x03msg\x18\x02 \x01(\t2\xd6\n\n\x11\x43onnectionService\x12\xd3\x01\n\x0fListConnections\x12L.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRequest\x1aM.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/connections/{namespace}\x12\xcd\x01\n\x10\x43reateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/connections:\x01*\x12\xd4\x01\n\rGetConnection\x12J.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionRequest\x1aK.github.com.metaprov.modelaapi.services.connection.v1.GetConnectionResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/connections/{namespace}/{name}\x12\xfc\x01\n\x10UpdateConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.UpdateConnectionResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/connections/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xe1\x01\n\x10\x44\x65leteConnection\x12M.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionRequest\x1aN.github.com.metaprov.modelaapi.services.connection.v1.DeleteConnectionResponse\".\x82\xd3\xe4\x93\x02(*&/api/v1/connections/{namespace}/{name}\x12\xe0\x01\n\x0eTestConnection\x12K.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionRequest\x1aL.github.com.metaprov.modelaapi.services.connection.v1.TestConnectionResponse\"3\x82\xd3\xe4\x93\x02-\x12+/api/v1/connections/{namespace}/{name}:testB6Z4github.com/metaprov/modelaapi/services/connection/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -706,7 +706,7 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1501,
-  serialized_end=2841,
+  serialized_end=2867,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListConnections',
@@ -715,7 +715,7 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTCONNECTIONSREQUEST,
     output_type=_LISTCONNECTIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\021\022\017/v1/connections',
+    serialized_options=b'\202\323\344\223\002\035\022\033/v1/connections/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -725,7 +725,7 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATECONNECTIONREQUEST,
     output_type=_CREATECONNECTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002\035\"\017/v1/connections:\nconnection',
+    serialized_options=b'\202\323\344\223\002\024\"\017/v1/connections:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -735,7 +735,7 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETCONNECTIONREQUEST,
     output_type=_GETCONNECTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\022\026/v1/connections/{name}',
+    serialized_options=b'\202\323\344\223\002$\022\"/v1/connections/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -745,7 +745,7 @@ _CONNECTIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATECONNECTIONREQUEST,
     output_type=_UPDATECONNECTIONRESPONSE,
-    serialized_options=b'\202\323\344\223\0028\032*/v1/connections/{connection.metadata.name}:\nconnection',
+    serialized_options=b'\202\323\344\223\002C\032>/v1/connections/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(

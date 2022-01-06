@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/meeting/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/meeting/v1/meeting.proto\x12\x31github.com.metaprov.modelaapi.services.meeting.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xbb\x01\n\x13ListMeetingsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListMeetingsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList\"\x11\n\x0fMeetingResponse\"u\n\x14\x43reateMeetingRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\x12\x10\n\x08password\x18\x02 \x01(\t\"\x17\n\x15\x43reateMeetingResponse\"c\n\x14UpdateMeetingRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\"\x17\n\x15UpdateMeetingResponse\"4\n\x11GetMeetingRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetMeetingResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1bGetMeetingNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1cGetMeetingNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"7\n\x14\x44\x65leteMeetingRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteMeetingResponse\"\x17\n\x15MeetingCreateResponse\":\n\x17MeetingGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n\x14MeetingLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t2\x9d\x08\n\x0eMeetingService\x12\xb5\x01\n\x0cListMeetings\x12\x46.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsRequest\x1aG.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/meetings\x12\xc1\x01\n\rCreateMeeting\x12G.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest\x1aH.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x0c/v1/meetings:\x07meeting\x12\xc2\x01\n\nGetMeeting\x12\x44.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingRequest\x1a\x45.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/{namespace}/meetings/{name}\x12\xf7\x01\n\rUpdateMeeting\x12G.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest\x1aH.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingResponse\"S\x82\xd3\xe4\x93\x02M\x1a\x42/v1/{meeting.metadata.namespace}/meetings//{meeting.metadata.name}:\x07meeting\x12\xcf\x01\n\rDeleteMeeting\x12G.github.com.metaprov.modelaapi.services.meeting.v1.DeleteMeetingRequest\x1aH.github.com.metaprov.modelaapi.services.meeting.v1.DeleteMeetingResponse\"+\x82\xd3\xe4\x93\x02%*#/api/{namespace}/v1/meetings/{name}B3Z1github.com/metaprov/modelaapi/services/meeting/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/meeting/v1/meeting.proto\x12\x31github.com.metaprov.modelaapi.services.meeting.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xbb\x01\n\x13ListMeetingsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListMeetingsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList\"\x11\n\x0fMeetingResponse\"u\n\x14\x43reateMeetingRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\x12\x10\n\x08password\x18\x02 \x01(\t\"\x17\n\x15\x43reateMeetingResponse\"c\n\x14UpdateMeetingRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\"\x17\n\x15UpdateMeetingResponse\"4\n\x11GetMeetingRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetMeetingResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Meeting\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteMeetingRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteMeetingResponse2\x92\x08\n\x0eMeetingService\x12\xc1\x01\n\x0cListMeetings\x12\x46.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsRequest\x1aG.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/meetings/{namespace}\x12\xbb\x01\n\rCreateMeeting\x12G.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingRequest\x1aH.github.com.metaprov.modelaapi.services.meeting.v1.CreateMeetingResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/meetings:\x01*\x12\xc2\x01\n\nGetMeeting\x12\x44.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingRequest\x1a\x45.github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/meetings/{namespace}/{name}\x12\xea\x01\n\rUpdateMeeting\x12G.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingRequest\x1aH.github.com.metaprov.modelaapi.services.meeting.v1.UpdateMeetingResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/meetings/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteMeeting\x12G.github.com.metaprov.modelaapi.services.meeting.v1.DeleteMeetingRequest\x1aH.github.com.metaprov.modelaapi.services.meeting.v1.DeleteMeetingResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/meetings/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/meeting/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -362,77 +362,6 @@ _GETMEETINGRESPONSE = _descriptor.Descriptor(
 )
 
 
-_GETMEETINGNAMESPACESREQUEST = _descriptor.Descriptor(
-  name='GetMeetingNamespacesRequest',
-  full_name='github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingNamespacesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingNamespacesRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingNamespacesRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1033,
-  serialized_end=1095,
-)
-
-
-_GETMEETINGNAMESPACESRESPONSE = _descriptor.Descriptor(
-  name='GetMeetingNamespacesResponse',
-  full_name='github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingNamespacesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespaces', full_name='github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingNamespacesResponse.namespaces', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1097,
-  serialized_end=1212,
-)
-
-
 _DELETEMEETINGREQUEST = _descriptor.Descriptor(
   name='DeleteMeetingRequest',
   full_name='github.com.metaprov.modelaapi.services.meeting.v1.DeleteMeetingRequest',
@@ -467,8 +396,8 @@ _DELETEMEETINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1214,
-  serialized_end=1269,
+  serialized_start=1033,
+  serialized_end=1088,
 )
 
 
@@ -492,104 +421,8 @@ _DELETEMEETINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1271,
-  serialized_end=1294,
-)
-
-
-_MEETINGCREATERESPONSE = _descriptor.Descriptor(
-  name='MeetingCreateResponse',
-  full_name='github.com.metaprov.modelaapi.services.meeting.v1.MeetingCreateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1296,
-  serialized_end=1319,
-)
-
-
-_MEETINGGETBYNAMEREQUEST = _descriptor.Descriptor(
-  name='MeetingGetByNameRequest',
-  full_name='github.com.metaprov.modelaapi.services.meeting.v1.MeetingGetByNameRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.meeting.v1.MeetingGetByNameRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.meeting.v1.MeetingGetByNameRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1321,
-  serialized_end=1379,
-)
-
-
-_MEETINGLOGOUTREQUEST = _descriptor.Descriptor(
-  name='MeetingLogoutRequest',
-  full_name='github.com.metaprov.modelaapi.services.meeting.v1.MeetingLogoutRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.meeting.v1.MeetingLogoutRequest.token', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1381,
-  serialized_end=1418,
+  serialized_start=1090,
+  serialized_end=1113,
 )
 
 _LISTMEETINGSREQUEST_LABELSENTRY.containing_type = _LISTMEETINGSREQUEST
@@ -598,7 +431,6 @@ _LISTMEETINGSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_
 _CREATEMEETINGREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._MEETING
 _UPDATEMEETINGREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._MEETING
 _GETMEETINGRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._MEETING
-_GETMEETINGNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
 DESCRIPTOR.message_types_by_name['ListMeetingsRequest'] = _LISTMEETINGSREQUEST
 DESCRIPTOR.message_types_by_name['ListMeetingsResponse'] = _LISTMEETINGSRESPONSE
 DESCRIPTOR.message_types_by_name['MeetingResponse'] = _MEETINGRESPONSE
@@ -608,13 +440,8 @@ DESCRIPTOR.message_types_by_name['UpdateMeetingRequest'] = _UPDATEMEETINGREQUEST
 DESCRIPTOR.message_types_by_name['UpdateMeetingResponse'] = _UPDATEMEETINGRESPONSE
 DESCRIPTOR.message_types_by_name['GetMeetingRequest'] = _GETMEETINGREQUEST
 DESCRIPTOR.message_types_by_name['GetMeetingResponse'] = _GETMEETINGRESPONSE
-DESCRIPTOR.message_types_by_name['GetMeetingNamespacesRequest'] = _GETMEETINGNAMESPACESREQUEST
-DESCRIPTOR.message_types_by_name['GetMeetingNamespacesResponse'] = _GETMEETINGNAMESPACESRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteMeetingRequest'] = _DELETEMEETINGREQUEST
 DESCRIPTOR.message_types_by_name['DeleteMeetingResponse'] = _DELETEMEETINGRESPONSE
-DESCRIPTOR.message_types_by_name['MeetingCreateResponse'] = _MEETINGCREATERESPONSE
-DESCRIPTOR.message_types_by_name['MeetingGetByNameRequest'] = _MEETINGGETBYNAMEREQUEST
-DESCRIPTOR.message_types_by_name['MeetingLogoutRequest'] = _MEETINGLOGOUTREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListMeetingsRequest = _reflection.GeneratedProtocolMessageType('ListMeetingsRequest', (_message.Message,), {
@@ -688,20 +515,6 @@ GetMeetingResponse = _reflection.GeneratedProtocolMessageType('GetMeetingRespons
   })
 _sym_db.RegisterMessage(GetMeetingResponse)
 
-GetMeetingNamespacesRequest = _reflection.GeneratedProtocolMessageType('GetMeetingNamespacesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETMEETINGNAMESPACESREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.meeting.v1.meeting_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingNamespacesRequest)
-  })
-_sym_db.RegisterMessage(GetMeetingNamespacesRequest)
-
-GetMeetingNamespacesResponse = _reflection.GeneratedProtocolMessageType('GetMeetingNamespacesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETMEETINGNAMESPACESRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.meeting.v1.meeting_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.meeting.v1.GetMeetingNamespacesResponse)
-  })
-_sym_db.RegisterMessage(GetMeetingNamespacesResponse)
-
 DeleteMeetingRequest = _reflection.GeneratedProtocolMessageType('DeleteMeetingRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEMEETINGREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.meeting.v1.meeting_pb2'
@@ -716,27 +529,6 @@ DeleteMeetingResponse = _reflection.GeneratedProtocolMessageType('DeleteMeetingR
   })
 _sym_db.RegisterMessage(DeleteMeetingResponse)
 
-MeetingCreateResponse = _reflection.GeneratedProtocolMessageType('MeetingCreateResponse', (_message.Message,), {
-  'DESCRIPTOR' : _MEETINGCREATERESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.meeting.v1.meeting_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.meeting.v1.MeetingCreateResponse)
-  })
-_sym_db.RegisterMessage(MeetingCreateResponse)
-
-MeetingGetByNameRequest = _reflection.GeneratedProtocolMessageType('MeetingGetByNameRequest', (_message.Message,), {
-  'DESCRIPTOR' : _MEETINGGETBYNAMEREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.meeting.v1.meeting_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.meeting.v1.MeetingGetByNameRequest)
-  })
-_sym_db.RegisterMessage(MeetingGetByNameRequest)
-
-MeetingLogoutRequest = _reflection.GeneratedProtocolMessageType('MeetingLogoutRequest', (_message.Message,), {
-  'DESCRIPTOR' : _MEETINGLOGOUTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.meeting.v1.meeting_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.meeting.v1.MeetingLogoutRequest)
-  })
-_sym_db.RegisterMessage(MeetingLogoutRequest)
-
 
 DESCRIPTOR._options = None
 _LISTMEETINGSREQUEST_LABELSENTRY._options = None
@@ -748,8 +540,8 @@ _MEETINGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1421,
-  serialized_end=2474,
+  serialized_start=1116,
+  serialized_end=2158,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListMeetings',
@@ -758,7 +550,7 @@ _MEETINGSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTMEETINGSREQUEST,
     output_type=_LISTMEETINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\016\022\014/v1/meetings',
+    serialized_options=b'\202\323\344\223\002\032\022\030/v1/meetings/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -768,7 +560,7 @@ _MEETINGSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEMEETINGREQUEST,
     output_type=_CREATEMEETINGRESPONSE,
-    serialized_options=b'\202\323\344\223\002\027\"\014/v1/meetings:\007meeting',
+    serialized_options=b'\202\323\344\223\002\021\"\014/v1/meetings:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -778,7 +570,7 @@ _MEETINGSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETMEETINGREQUEST,
     output_type=_GETMEETINGRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/v1/{namespace}/meetings/{name}',
+    serialized_options=b'\202\323\344\223\002!\022\037/v1/meetings/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -788,7 +580,7 @@ _MEETINGSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEMEETINGREQUEST,
     output_type=_UPDATEMEETINGRESPONSE,
-    serialized_options=b'\202\323\344\223\002M\032B/v1/{meeting.metadata.namespace}/meetings//{meeting.metadata.name}:\007meeting',
+    serialized_options=b'\202\323\344\223\002@\032;/v1/meetings/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -798,7 +590,7 @@ _MEETINGSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEMEETINGREQUEST,
     output_type=_DELETEMEETINGRESPONSE,
-    serialized_options=b'\202\323\344\223\002%*#/api/{namespace}/v1/meetings/{name}',
+    serialized_options=b'\202\323\344\223\002!*\037/v1/meetings/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

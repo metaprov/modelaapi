@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/metaprov/modelaapi/services/modelcompilerrun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/modelcompilerrun/v1/modelcompilerrun.proto\x12:github.com.metaprov.modelaapi.services.modelcompilerrun.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\xd6\x01\n\x1cListModelCompilerRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x03 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1dListModelCompilerRunsResponse\x12]\n\x05items\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList\"\x1a\n\x18ModelCompilerRunResponse\"y\n\x1d\x43reateModelCompilerRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun\" \n\x1e\x43reateModelCompilerRunResponse\"y\n\x1dUpdateModelCompilerRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun\" \n\x1eUpdateModelCompilerRunResponse\"=\n\x1aGetModelCompilerRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelCompilerRunResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelCompilerRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelCompilerRunResponse2\xbd\n\n\x17ModelCompilerRunService\x12\xf5\x01\n\x15ListModelCompilerRuns\x12X.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest\x1aY.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/api/v1alpha1/modelcompilerruns\x12\xfb\x01\n\x16\x43reateModelCompilerRun\x12Y.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunResponse\"*\x82\xd3\xe4\x93\x02$\"\x1f/api/v1alpha1/modelcompilerruns:\x01*\x12\xf6\x01\n\x13GetModelCompilerRun\x12V.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunRequest\x1aW.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse\".\x82\xd3\xe4\x93\x02(\x12&/api/v1alpha1/modelcompilerruns/{name}\x12\x9c\x02\n\x16UpdateModelCompilerRun\x12Y.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunResponse\"K\x82\xd3\xe4\x93\x02\x45\x1a@/api/v1alpha1/modelcompilerruns/{modelcompilerrun.metadata.name}:\x01*\x12\x93\x02\n\x16\x44\x65leteModelCompilerRun\x12Y.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunResponse\"B\x82\xd3\xe4\x93\x02<*:/api/v1/modelcompilerruns/{modelcompilerrun.metadata.name}B<Z:github.com/metaprov/modelaapi/services/modelcompilerrun/v1b\x06proto3'
+  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/modelcompilerrun/v1/modelcompilerrun.proto\x12:github.com.metaprov.modelaapi.services.modelcompilerrun.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\xd6\x01\n\x1cListModelCompilerRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x03 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1dListModelCompilerRunsResponse\x12]\n\x05items\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList\"\x1a\n\x18ModelCompilerRunResponse\"y\n\x1d\x43reateModelCompilerRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun\" \n\x1e\x43reateModelCompilerRunResponse\"y\n\x1dUpdateModelCompilerRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun\" \n\x1eUpdateModelCompilerRunResponse\"=\n\x1aGetModelCompilerRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelCompilerRunResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelCompilerRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelCompilerRunResponse2\xa9\n\n\x17ModelCompilerRunService\x12\xf7\x01\n\x15ListModelCompilerRuns\x12X.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsRequest\x1aY.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.ListModelCompilerRunsResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/modelcompilerruns/{namespace}\x12\xf1\x01\n\x16\x43reateModelCompilerRun\x12Y.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.CreateModelCompilerRunResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/modelcompilerruns:\x01*\x12\xf8\x01\n\x13GetModelCompilerRun\x12V.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunRequest\x1aW.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.GetModelCompilerRunResponse\"0\x82\xd3\xe4\x93\x02*\x12(/v1/modelcompilerruns/{namespace}/{name}\x12\xa0\x02\n\x16UpdateModelCompilerRun\x12Y.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.UpdateModelCompilerRunResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/modelcompilerruns/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x81\x02\n\x16\x44\x65leteModelCompilerRun\x12Y.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelcompilerrun.v1.DeleteModelCompilerRunResponse\"0\x82\xd3\xe4\x93\x02**(/v1/modelcompilerruns/{namespace}/{name}B<Z:github.com/metaprov/modelaapi/services/modelcompilerrun/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -533,7 +533,7 @@ _MODELCOMPILERRUNSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1236,
-  serialized_end=2577,
+  serialized_end=2557,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListModelCompilerRuns',
@@ -542,7 +542,7 @@ _MODELCOMPILERRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTMODELCOMPILERRUNSREQUEST,
     output_type=_LISTMODELCOMPILERRUNSRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/api/v1alpha1/modelcompilerruns',
+    serialized_options=b'\202\323\344\223\002#\022!/v1/modelcompilerruns/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -552,7 +552,7 @@ _MODELCOMPILERRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEMODELCOMPILERRUNREQUEST,
     output_type=_CREATEMODELCOMPILERRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002$\"\037/api/v1alpha1/modelcompilerruns:\001*',
+    serialized_options=b'\202\323\344\223\002\032\"\025/v1/modelcompilerruns:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -562,7 +562,7 @@ _MODELCOMPILERRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETMODELCOMPILERRUNREQUEST,
     output_type=_GETMODELCOMPILERRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002(\022&/api/v1alpha1/modelcompilerruns/{name}',
+    serialized_options=b'\202\323\344\223\002*\022(/v1/modelcompilerruns/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -572,7 +572,7 @@ _MODELCOMPILERRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEMODELCOMPILERRUNREQUEST,
     output_type=_UPDATEMODELCOMPILERRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002E\032@/api/v1alpha1/modelcompilerruns/{modelcompilerrun.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002I\032D/v1/modelcompilerruns/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -582,7 +582,7 @@ _MODELCOMPILERRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEMODELCOMPILERRUNREQUEST,
     output_type=_DELETEMODELCOMPILERRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002<*:/api/v1/modelcompilerruns/{modelcompilerrun.metadata.name}',
+    serialized_options=b'\202\323\344\223\002**(/v1/modelcompilerruns/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

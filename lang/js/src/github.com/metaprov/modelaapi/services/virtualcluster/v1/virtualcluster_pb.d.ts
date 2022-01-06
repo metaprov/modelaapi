@@ -9,8 +9,8 @@ export class ListVirtualClustersRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListVirtualClustersRequest;
 
-  getVirtualclusterelsMap(): jspb.Map<string, string>;
-  clearVirtualclusterelsMap(): ListVirtualClustersRequest;
+  getVirtualclustersMap(): jspb.Map<string, string>;
+  clearVirtualclustersMap(): ListVirtualClustersRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListVirtualClustersRequest.AsObject;
@@ -23,7 +23,7 @@ export class ListVirtualClustersRequest extends jspb.Message {
 export namespace ListVirtualClustersRequest {
   export type AsObject = {
     namespace: string,
-    virtualclusterelsMap: Array<[string, string]>,
+    virtualclustersMap: Array<[string, string]>,
   }
 }
 

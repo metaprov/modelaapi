@@ -3157,7 +3157,8 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.prototype.toObject = fu
 proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
     dryrunList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    fieldmanager: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    fieldmanager: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    fieldvalidation: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3202,6 +3203,10 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.deserializeBinaryFromRe
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldmanager(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFieldvalidation(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -3242,6 +3247,13 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.serializeBinaryToWriter
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -3318,6 +3330,42 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.prototype.clearFieldman
  */
 proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.prototype.hasFieldmanager = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string fieldValidation = 4;
+ * @return {string}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.prototype.getFieldvalidation = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.prototype.setFieldvalidation = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.prototype.clearFieldvalidation = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.CreateOptions.prototype.hasFieldvalidation = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -9284,7 +9332,8 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.toObject = function(incl
   var f, obj = {
     dryrunList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     force: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
-    fieldmanager: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    fieldmanager: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    fieldvalidation: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9333,6 +9382,10 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.deserializeBinaryFromRea
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldmanager(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFieldvalidation(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -9380,6 +9433,13 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.serializeBinaryToWriter 
   if (f != null) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -9492,6 +9552,42 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.prototype.clearFieldmana
  */
 proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.prototype.hasFieldmanager = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string fieldValidation = 4;
+ * @return {string}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.prototype.getFieldvalidation = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.prototype.setFieldvalidation = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.prototype.clearFieldvalidation = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.PatchOptions.prototype.hasFieldvalidation = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -11857,7 +11953,8 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.prototype.toObject = fu
 proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
     dryrunList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    fieldmanager: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+    fieldmanager: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    fieldvalidation: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11902,6 +11999,10 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.deserializeBinaryFromRe
       var value = /** @type {string} */ (reader.readString());
       msg.setFieldmanager(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFieldvalidation(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -11942,6 +12043,13 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.serializeBinaryToWriter
   if (f != null) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -12018,6 +12126,42 @@ proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.prototype.clearFieldman
  */
 proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.prototype.hasFieldmanager = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string fieldValidation = 3;
+ * @return {string}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.prototype.getFieldvalidation = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.prototype.setFieldvalidation = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions} returns this
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.prototype.clearFieldvalidation = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.k8s.io.apimachinery.pkg.apis.meta.v1.UpdateOptions.prototype.hasFieldvalidation = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

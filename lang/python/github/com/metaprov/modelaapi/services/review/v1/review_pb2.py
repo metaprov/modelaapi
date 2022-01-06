@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/review/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/review/v1/review.proto\x12\x30github.com.metaprov.modelaapi.services.review.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1cgoogle/api/annotations.proto\"\xc2\x01\n\x10GetReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\x11GetReviewResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"a\n\x13\x43reateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x16\n\x14\x43reateReviewResponse\"a\n\x13UpdateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x16\n\x14UpdateReviewResponse\"\xc8\x01\n\x13\x44\x65leteReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14\x44\x65leteReviewResponse\"\xdd\x01\n\x11ListReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12_\n\x06labels\x18\x02 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x12ListReviewResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa1\x08\n\rReviewService\x12\xc3\x01\n\x0bListReviews\x12\x43.github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest\x1a\x44.github.com.metaprov.modelaapi.services.review.v1.ListReviewResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1alpha1/reviews/{namespace}\x12\xbf\x01\n\x0c\x43reateReview\x12\x45.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest\x1a\x46.github.com.metaprov.modelaapi.services.review.v1.CreateReviewResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/api/v1alpha1/reviews:\x01*\x12\xc6\x01\n\tGetReview\x12\x42.github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest\x1a\x43.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse\"0\x82\xd3\xe4\x93\x02*\x12(/api/v1alpha1/reviews/{namespace}/{name}\x12\xf2\x01\n\x0cUpdateReview\x12\x45.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest\x1a\x46.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewResponse\"S\x82\xd3\xe4\x93\x02M\x1aH/api/v1alpha1/reviews/{review.metadata.namespace}/{review.metadata.name}:\x01*\x12\xc9\x01\n\x0c\x44\x65leteReview\x12\x45.github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest\x1a\x46.github.com.metaprov.modelaapi.services.review.v1.DeleteReviewResponse\"*\x82\xd3\xe4\x93\x02$*\"/api/v1/reviews/{namespace}/{name}B2Z0github.com/metaprov/modelaapi/services/review/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/review/v1/review.proto\x12\x30github.com.metaprov.modelaapi.services.review.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a\x1cgoogle/api/annotations.proto\"\xc2\x01\n\x10GetReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12^\n\x06labels\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\x11GetReviewResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"a\n\x13\x43reateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x16\n\x14\x43reateReviewResponse\"a\n\x13UpdateReviewRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review\"\x16\n\x14UpdateReviewResponse\"\xc8\x01\n\x13\x44\x65leteReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x61\n\x06labels\x18\x03 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x16\n\x14\x44\x65leteReviewResponse\"\xdd\x01\n\x11ListReviewRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12_\n\x06labels\x18\x02 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x12ListReviewResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf1\x07\n\rReviewService\x12\xb9\x01\n\x0bListReviews\x12\x43.github.com.metaprov.modelaapi.services.review.v1.ListReviewRequest\x1a\x44.github.com.metaprov.modelaapi.services.review.v1.ListReviewResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/reviews/{namespace}\x12\xb5\x01\n\x0c\x43reateReview\x12\x45.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest\x1a\x46.github.com.metaprov.modelaapi.services.review.v1.CreateReviewResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/reviews:\x01*\x12\xbc\x01\n\tGetReview\x12\x42.github.com.metaprov.modelaapi.services.review.v1.GetReviewRequest\x1a\x43.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/reviews/{namespace}/{name}\x12\xe4\x01\n\x0cUpdateReview\x12\x45.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest\x1a\x46.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/reviews/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc5\x01\n\x0c\x44\x65leteReview\x12\x45.github.com.metaprov.modelaapi.services.review.v1.DeleteReviewRequest\x1a\x46.github.com.metaprov.modelaapi.services.review.v1.DeleteReviewResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/reviews/{namespace}/{name}B2Z0github.com/metaprov/modelaapi/services/review/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -634,7 +634,7 @@ _REVIEWSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1378,
-  serialized_end=2435,
+  serialized_end=2387,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListReviews',
@@ -643,7 +643,7 @@ _REVIEWSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTREVIEWREQUEST,
     output_type=_LISTREVIEWRESPONSE,
-    serialized_options=b'\202\323\344\223\002#\022!/api/v1alpha1/reviews/{namespace}',
+    serialized_options=b'\202\323\344\223\002\031\022\027/v1/reviews/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -653,7 +653,7 @@ _REVIEWSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEREVIEWREQUEST,
     output_type=_CREATEREVIEWRESPONSE,
-    serialized_options=b'\202\323\344\223\002\032\"\025/api/v1alpha1/reviews:\001*',
+    serialized_options=b'\202\323\344\223\002\020\"\013/v1/reviews:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -663,7 +663,7 @@ _REVIEWSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETREVIEWREQUEST,
     output_type=_GETREVIEWRESPONSE,
-    serialized_options=b'\202\323\344\223\002*\022(/api/v1alpha1/reviews/{namespace}/{name}',
+    serialized_options=b'\202\323\344\223\002 \022\036/v1/reviews/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -673,7 +673,7 @@ _REVIEWSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEREVIEWREQUEST,
     output_type=_UPDATEREVIEWRESPONSE,
-    serialized_options=b'\202\323\344\223\002M\032H/api/v1alpha1/reviews/{review.metadata.namespace}/{review.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002?\032:/v1/reviews/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -683,7 +683,7 @@ _REVIEWSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEREVIEWREQUEST,
     output_type=_DELETEREVIEWRESPONSE,
-    serialized_options=b'\202\323\344\223\002$*\"/api/v1/reviews/{namespace}/{name}',
+    serialized_options=b'\202\323\344\223\002 *\036/v1/reviews/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

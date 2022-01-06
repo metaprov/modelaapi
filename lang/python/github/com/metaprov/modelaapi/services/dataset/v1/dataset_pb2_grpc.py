@@ -170,7 +170,8 @@ class DatasetServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UploadChunk(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

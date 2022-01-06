@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/metaprov/modelaapi/services/notebookrun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/notebookrun/v1/notebookrun.proto\x12\x35github.com.metaprov.modelaapi.services.notebookrun.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xc7\x01\n\x17ListNotebookRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.notebookrun.v1.ListNotebookRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x18ListNotebookRunsResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunList\"\x15\n\x13NotebookRunResponse\"o\n\x18\x43reateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun\"\x1b\n\x19\x43reateNotebookRunResponse\"o\n\x18UpdateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun\"\x1b\n\x19UpdateNotebookRunResponse\"8\n\x15GetNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n\x16GetNotebookRunResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteNotebookRunResponse2\x9e\t\n\x12NotebookRunService\x12\xd7\x01\n\x10ListNotebookRuns\x12N.github.com.metaprov.modelaapi.services.notebookrun.v1.ListNotebookRunsRequest\x1aO.github.com.metaprov.modelaapi.services.notebookrun.v1.ListNotebookRunsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/api/v1alpha1/notebookruns\x12\xdd\x01\n\x11\x43reateNotebookRun\x12O.github.com.metaprov.modelaapi.services.notebookrun.v1.CreateNotebookRunRequest\x1aP.github.com.metaprov.modelaapi.services.notebookrun.v1.CreateNotebookRunResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/api/v1alpha1/notebookruns:\x01*\x12\xd8\x01\n\x0eGetNotebookRun\x12L.github.com.metaprov.modelaapi.services.notebookrun.v1.GetNotebookRunRequest\x1aM.github.com.metaprov.modelaapi.services.notebookrun.v1.GetNotebookRunResponse\")\x82\xd3\xe4\x93\x02#\x12!/api/v1alpha1/notebookruns/{name}\x12\xf9\x01\n\x11UpdateNotebookRun\x12O.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest\x1aP.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunResponse\"A\x82\xd3\xe4\x93\x02;\x1a\x36/api/v1alpha1/notebookruns/{notebookrun.metadata.name}:\x01*\x12\xf6\x01\n\x11\x44\x65leteNotebookRun\x12O.github.com.metaprov.modelaapi.services.notebookrun.v1.DeleteNotebookRunRequest\x1aP.github.com.metaprov.modelaapi.services.notebookrun.v1.DeleteNotebookRunResponse\">\x82\xd3\xe4\x93\x02\x38*6/api/v1alpha1/notebookruns/{notebookrun.metadata.name}B7Z5github.com/metaprov/modelaapi/services/notebookrun/v1b\x06proto3'
+  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/notebookrun/v1/notebookrun.proto\x12\x35github.com.metaprov.modelaapi.services.notebookrun.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xc7\x01\n\x17ListNotebookRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x03 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.notebookrun.v1.ListNotebookRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x18ListNotebookRunsResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunList\"\x15\n\x13NotebookRunResponse\"o\n\x18\x43reateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun\"\x1b\n\x19\x43reateNotebookRunResponse\"o\n\x18UpdateNotebookRunRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun\"\x1b\n\x19UpdateNotebookRunResponse\"8\n\x15GetNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n\x16GetNotebookRunResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteNotebookRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteNotebookRunResponse2\x8e\t\n\x12NotebookRunService\x12\xd9\x01\n\x10ListNotebookRuns\x12N.github.com.metaprov.modelaapi.services.notebookrun.v1.ListNotebookRunsRequest\x1aO.github.com.metaprov.modelaapi.services.notebookrun.v1.ListNotebookRunsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/notebookruns/{namespace}\x12\xd3\x01\n\x11\x43reateNotebookRun\x12O.github.com.metaprov.modelaapi.services.notebookrun.v1.CreateNotebookRunRequest\x1aP.github.com.metaprov.modelaapi.services.notebookrun.v1.CreateNotebookRunResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/notebookruns:\x01*\x12\xda\x01\n\x0eGetNotebookRun\x12L.github.com.metaprov.modelaapi.services.notebookrun.v1.GetNotebookRunRequest\x1aM.github.com.metaprov.modelaapi.services.notebookrun.v1.GetNotebookRunResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/notebookruns/{namespace}/{name}\x12\x82\x02\n\x11UpdateNotebookRun\x12O.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunRequest\x1aP.github.com.metaprov.modelaapi.services.notebookrun.v1.UpdateNotebookRunResponse\"J\x82\xd3\xe4\x93\x02\x44\x1a?/v1/notebookruns/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xe3\x01\n\x11\x44\x65leteNotebookRun\x12O.github.com.metaprov.modelaapi.services.notebookrun.v1.DeleteNotebookRunRequest\x1aP.github.com.metaprov.modelaapi.services.notebookrun.v1.DeleteNotebookRunResponse\"+\x82\xd3\xe4\x93\x02%*#/v1/notebookruns/{namespace}/{name}B7Z5github.com/metaprov/modelaapi/services/notebookrun/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -534,7 +534,7 @@ _NOTEBOOKRUNSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1198,
-  serialized_end=2380,
+  serialized_end=2364,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListNotebookRuns',
@@ -543,7 +543,7 @@ _NOTEBOOKRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTNOTEBOOKRUNSREQUEST,
     output_type=_LISTNOTEBOOKRUNSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\034\022\032/api/v1alpha1/notebookruns',
+    serialized_options=b'\202\323\344\223\002\036\022\034/v1/notebookruns/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -553,7 +553,7 @@ _NOTEBOOKRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATENOTEBOOKRUNREQUEST,
     output_type=_CREATENOTEBOOKRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002\037\"\032/api/v1alpha1/notebookruns:\001*',
+    serialized_options=b'\202\323\344\223\002\025\"\020/v1/notebookruns:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -563,7 +563,7 @@ _NOTEBOOKRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETNOTEBOOKRUNREQUEST,
     output_type=_GETNOTEBOOKRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002#\022!/api/v1alpha1/notebookruns/{name}',
+    serialized_options=b'\202\323\344\223\002%\022#/v1/notebookruns/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -573,7 +573,7 @@ _NOTEBOOKRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATENOTEBOOKRUNREQUEST,
     output_type=_UPDATENOTEBOOKRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002;\0326/api/v1alpha1/notebookruns/{notebookrun.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002D\032?/v1/notebookruns/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -583,7 +583,7 @@ _NOTEBOOKRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETENOTEBOOKRUNREQUEST,
     output_type=_DELETENOTEBOOKRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\0028*6/api/v1alpha1/notebookruns/{notebookrun.metadata.name}',
+    serialized_options=b'\202\323\344\223\002%*#/v1/notebookruns/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

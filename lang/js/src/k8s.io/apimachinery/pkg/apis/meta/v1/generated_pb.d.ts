@@ -247,6 +247,9 @@ export class CreateOptions extends jspb.Message {
   getFieldmanager(): string;
   setFieldmanager(value: string): CreateOptions;
 
+  getFieldvalidation(): string;
+  setFieldvalidation(value: string): CreateOptions;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateOptions.AsObject;
   static toObject(includeInstance: boolean, msg: CreateOptions): CreateOptions.AsObject;
@@ -259,6 +262,7 @@ export namespace CreateOptions {
   export type AsObject = {
     dryrunList: Array<string>,
     fieldmanager: string,
+    fieldvalidation: string,
   }
 }
 
@@ -920,6 +924,9 @@ export class PatchOptions extends jspb.Message {
   getFieldmanager(): string;
   setFieldmanager(value: string): PatchOptions;
 
+  getFieldvalidation(): string;
+  setFieldvalidation(value: string): PatchOptions;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PatchOptions.AsObject;
   static toObject(includeInstance: boolean, msg: PatchOptions): PatchOptions.AsObject;
@@ -933,6 +940,7 @@ export namespace PatchOptions {
     dryrunList: Array<string>,
     force: boolean,
     fieldmanager: string,
+    fieldvalidation: string,
   }
 }
 
@@ -1201,6 +1209,9 @@ export class UpdateOptions extends jspb.Message {
   getFieldmanager(): string;
   setFieldmanager(value: string): UpdateOptions;
 
+  getFieldvalidation(): string;
+  setFieldvalidation(value: string): UpdateOptions;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateOptions.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateOptions): UpdateOptions.AsObject;
@@ -1213,6 +1224,7 @@ export namespace UpdateOptions {
   export type AsObject = {
     dryrunList: Array<string>,
     fieldmanager: string,
+    fieldvalidation: string,
   }
 }
 

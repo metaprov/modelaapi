@@ -302,7 +302,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualCluste
 proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    virtualclusterelsMap: (f = msg.getVirtualclusterelsMap()) ? f.toObject(includeInstance, undefined) : []
+    virtualclustersMap: (f = msg.getVirtualclustersMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -344,7 +344,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualCluste
       msg.setNamespace(value);
       break;
     case 3:
-      var value = msg.getVirtualclusterelsMap();
+      var value = msg.getVirtualclustersMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
@@ -385,7 +385,7 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualCluste
       f
     );
   }
-  f = message.getVirtualclusterelsMap(true);
+  f = message.getVirtualclustersMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
@@ -411,12 +411,12 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualCluste
 
 
 /**
- * map<string, string> virtualclusterels = 3;
+ * map<string, string> virtualclusters = 3;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.prototype.getVirtualclusterelsMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.prototype.getVirtualclustersMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 3, opt_noLazyCreate,
       null));
@@ -427,8 +427,8 @@ proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualCluste
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.prototype.clearVirtualclusterelsMap = function() {
-  this.getVirtualclusterelsMap().clear();
+proto.github.com.metaprov.modelaapi.services.virtualcluster.v1.ListVirtualClustersRequest.prototype.clearVirtualclustersMap = function() {
+  this.getVirtualclustersMap().clear();
   return this;};
 
 

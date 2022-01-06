@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z<github.com/metaprov/modelaapi/services/dataproductversion/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nUgithub.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto\x12<github.com.metaprov.modelaapi.services.dataproductversion.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xdc\x01\n\x1eListDataProductVersionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12x\n\x06labels\x18\x03 \x03(\x0b\x32h.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1fListDataProductVersionsResponse\x12[\n\x05items\x18\x01 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList\"y\n\x1f\x43reateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\"\n CreateDataProductVersionResponse\"y\n\x1fUpdateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\"\n UpdateDataProductVersionResponse\"?\n\x1cGetDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1dGetDataProductVersionResponse\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"B\n\x1f\x44\x65leteDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n DeleteDataProductVersionResponse2\xc7\n\n\x19\x44\x61taProductVersionService\x12\xf7\x01\n\x17ListDataProductVersions\x12\\.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest\x1a].github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/dataproductversions\x12\xfd\x01\n\x18\x43reateDataProductVersion\x12].github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest\x1a^.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/dataproductversions:\x01*\x12\xf8\x01\n\x15GetDataProductVersion\x12Z.github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionRequest\x1a[.github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/dataproductversions/{name}\x12\xa0\x02\n\x18UpdateDataProductVersion\x12].github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionRequest\x1a^.github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/dataproductversions/{dataproductversion.metadata.name}:\x01*\x12\x91\x02\n\x18\x44\x65leteDataProductVersion\x12].github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionRequest\x1a^.github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionResponse\"6\x82\xd3\xe4\x93\x02\x30*./api/v1/dataproductversions/{namespace}/{name}B>Z<github.com/metaprov/modelaapi/services/dataproductversion/v1b\x06proto3'
+  serialized_pb=b'\nUgithub.com/metaprov/modelaapi/services/dataproductversion/v1/dataproductversion.proto\x12<github.com.metaprov.modelaapi.services.dataproductversion.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xdc\x01\n\x1eListDataProductVersionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12x\n\x06labels\x18\x03 \x03(\x0b\x32h.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1fListDataProductVersionsResponse\x12[\n\x05items\x18\x01 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList\"y\n\x1f\x43reateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\"\n CreateDataProductVersionResponse\"y\n\x1fUpdateDataProductVersionRequest\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\"\"\n UpdateDataProductVersionResponse\"?\n\x1cGetDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1dGetDataProductVersionResponse\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"B\n\x1f\x44\x65leteDataProductVersionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n DeleteDataProductVersionResponse2\xe7\n\n\x19\x44\x61taProductVersionService\x12\x83\x02\n\x17ListDataProductVersions\x12\\.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsRequest\x1a].github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/dataproductversions/{namespace}\x12\xfd\x01\n\x18\x43reateDataProductVersion\x12].github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest\x1a^.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/dataproductversions:\x01*\x12\x84\x02\n\x15GetDataProductVersion\x12Z.github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionRequest\x1a[.github.com.metaprov.modelaapi.services.dataproductversion.v1.GetDataProductVersionResponse\"2\x82\xd3\xe4\x93\x02,\x12*/v1/dataproductversions/{namespace}/{name}\x12\xac\x02\n\x18UpdateDataProductVersion\x12].github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionRequest\x1a^.github.com.metaprov.modelaapi.services.dataproductversion.v1.UpdateDataProductVersionResponse\"Q\x82\xd3\xe4\x93\x02K\x1a\x46/v1/dataproductversions/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x8d\x02\n\x18\x44\x65leteDataProductVersion\x12].github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionRequest\x1a^.github.com.metaprov.modelaapi.services.dataproductversion.v1.DeleteDataProductVersionResponse\"2\x82\xd3\xe4\x93\x02,**/v1/dataproductversions/{namespace}/{name}B>Z<github.com/metaprov/modelaapi/services/dataproductversion/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -501,7 +501,7 @@ _DATAPRODUCTVERSIONSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1289,
-  serialized_end=2640,
+  serialized_end=2672,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListDataProductVersions',
@@ -510,7 +510,7 @@ _DATAPRODUCTVERSIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTDATAPRODUCTVERSIONSREQUEST,
     output_type=_LISTDATAPRODUCTVERSIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\031\022\027/v1/dataproductversions',
+    serialized_options=b'\202\323\344\223\002%\022#/v1/dataproductversions/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -530,7 +530,7 @@ _DATAPRODUCTVERSIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETDATAPRODUCTVERSIONREQUEST,
     output_type=_GETDATAPRODUCTVERSIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002 \022\036/v1/dataproductversions/{name}',
+    serialized_options=b'\202\323\344\223\002,\022*/v1/dataproductversions/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -540,7 +540,7 @@ _DATAPRODUCTVERSIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEDATAPRODUCTVERSIONREQUEST,
     output_type=_UPDATEDATAPRODUCTVERSIONRESPONSE,
-    serialized_options=b'\202\323\344\223\002?\032:/v1/dataproductversions/{dataproductversion.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002K\032F/v1/dataproductversions/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -550,7 +550,7 @@ _DATAPRODUCTVERSIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEDATAPRODUCTVERSIONREQUEST,
     output_type=_DELETEDATAPRODUCTVERSIONRESPONSE,
-    serialized_options=b'\202\323\344\223\0020*./api/v1/dataproductversions/{namespace}/{name}',
+    serialized_options=b'\202\323\344\223\002,**/v1/dataproductversions/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

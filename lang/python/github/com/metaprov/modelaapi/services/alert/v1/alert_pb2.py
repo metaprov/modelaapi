@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z/github.com/metaprov/modelaapi/services/alert/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/alert/v1/alert.proto\x12/github.com.metaprov.modelaapi.services.alert.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xb5\x01\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x12ListAlertsResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList\"\x0f\n\rAlertResponse\"r\n\x12\x43reateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12\x10\n\x08password\x18\x02 \x01(\t\"\x15\n\x13\x43reateAlertResponse\"`\n\x12UpdateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x15\n\x13UpdateAlertResponse\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x10GetAlertResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19GetAlertNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"q\n\x1aGetAlertNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteAlertResponse\"\x15\n\x13\x41lertCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"F\n\x11\x41lertLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"#\n\x12\x41lertLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\"8\n\x15\x41lertGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"#\n\x12\x41lertLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse2\xd7\x07\n\x0c\x41lertService\x12\xa9\x01\n\nListAlerts\x12\x42.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest\x1a\x43.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/v1/alerts\x12\xb3\x01\n\x0b\x43reateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\n/v1/alerts:\x05\x61lert\x12\xb6\x01\n\x08GetAlert\x12@.github.com.metaprov.modelaapi.services.alert.v1.GetAlertRequest\x1a\x41.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/{namespace}/alerts/{name}\x12\xe5\x01\n\x0bUpdateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertResponse\"K\x82\xd3\xe4\x93\x02\x45\x1a</v1/{alert.metadata.namespace}/alerts//{alert.metadata.name}:\x05\x61lert\x12\xc3\x01\n\x0b\x44\x65leteAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertResponse\")\x82\xd3\xe4\x93\x02#*!/api/{namespace}/v1/alerts/{name}B1Z/github.com/metaprov/modelaapi/services/alert/v1b\x06proto3'
+  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/alert/v1/alert.proto\x12/github.com.metaprov.modelaapi.services.alert.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xb5\x01\n\x11ListAlertsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x12ListAlertsResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList\"\x0f\n\rAlertResponse\"`\n\x12\x43reateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x15\n\x13\x43reateAlertResponse\"`\n\x12UpdateAlertRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\x15\n\x13UpdateAlertResponse\"2\n\x0fGetAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x10GetAlertResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"<\n\x19GetAlertNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"q\n\x1aGetAlertNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"5\n\x12\x44\x65leteAlertRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteAlertResponse2\xd4\x07\n\x0c\x41lertService\x12\xb5\x01\n\nListAlerts\x12\x42.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsRequest\x1a\x43.github.com.metaprov.modelaapi.services.alert.v1.ListAlertsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/alerts/{namespace}\x12\xaf\x01\n\x0b\x43reateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.CreateAlertResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/alerts:\x01*\x12\xb6\x01\n\x08GetAlert\x12@.github.com.metaprov.modelaapi.services.alert.v1.GetAlertRequest\x1a\x41.github.com.metaprov.modelaapi.services.alert.v1.GetAlertResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/alerts/{namespace}/{name}\x12\xde\x01\n\x0bUpdateAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.UpdateAlertResponse\"D\x82\xd3\xe4\x93\x02>\x1a\x39/v1/alerts/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xbf\x01\n\x0b\x44\x65leteAlert\x12\x43.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertRequest\x1a\x44.github.com.metaprov.modelaapi.services.alert.v1.DeleteAlertResponse\"%\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/alerts/{namespace}/{name}B1Z/github.com/metaprov/modelaapi/services/alert/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -178,13 +178,6 @@ _CREATEALERTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='github.com.metaprov.modelaapi.services.alert.v1.CreateAlertRequest.password', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -198,7 +191,7 @@ _CREATEALERTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=580,
-  serialized_end=694,
+  serialized_end=676,
 )
 
 
@@ -222,8 +215,8 @@ _CREATEALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=696,
-  serialized_end=717,
+  serialized_start=678,
+  serialized_end=699,
 )
 
 
@@ -254,8 +247,8 @@ _UPDATEALERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=719,
-  serialized_end=815,
+  serialized_start=701,
+  serialized_end=797,
 )
 
 
@@ -279,8 +272,8 @@ _UPDATEALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=817,
-  serialized_end=838,
+  serialized_start=799,
+  serialized_end=820,
 )
 
 
@@ -318,8 +311,8 @@ _GETALERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=840,
-  serialized_end=890,
+  serialized_start=822,
+  serialized_end=872,
 )
 
 
@@ -357,8 +350,8 @@ _GETALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=892,
-  serialized_end=1000,
+  serialized_start=874,
+  serialized_end=982,
 )
 
 
@@ -396,8 +389,8 @@ _GETALERTNAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1002,
-  serialized_end=1062,
+  serialized_start=984,
+  serialized_end=1044,
 )
 
 
@@ -428,8 +421,8 @@ _GETALERTNAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1064,
-  serialized_end=1177,
+  serialized_start=1046,
+  serialized_end=1159,
 )
 
 
@@ -467,8 +460,8 @@ _DELETEALERTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1179,
-  serialized_end=1232,
+  serialized_start=1161,
+  serialized_end=1214,
 )
 
 
@@ -492,395 +485,8 @@ _DELETEALERTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1234,
-  serialized_end=1255,
-)
-
-
-_ALERTCREATERESPONSE = _descriptor.Descriptor(
-  name='AlertCreateResponse',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertCreateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1257,
-  serialized_end=1278,
-)
-
-
-_LOGOUTRESPONSE = _descriptor.Descriptor(
-  name='LogoutResponse',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.LogoutResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1280,
-  serialized_end=1296,
-)
-
-
-_RESETPASSWORDRESPONSE = _descriptor.Descriptor(
-  name='ResetPasswordResponse',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1298,
-  serialized_end=1321,
-)
-
-
-_ALERTLOGINREQUEST = _descriptor.Descriptor(
-  name='AlertLoginRequest',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLoginRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLoginRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLoginRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='password', full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLoginRequest.password', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1323,
-  serialized_end=1393,
-)
-
-
-_ALERTLOGINRESPONSE = _descriptor.Descriptor(
-  name='AlertLoginResponse',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLoginResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLoginResponse.token', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1395,
-  serialized_end=1430,
-)
-
-
-_ALERTGETBYNAMEREQUEST = _descriptor.Descriptor(
-  name='AlertGetByNameRequest',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertGetByNameRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertGetByNameRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertGetByNameRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1432,
-  serialized_end=1488,
-)
-
-
-_ALERTLOGOUTREQUEST = _descriptor.Descriptor(
-  name='AlertLogoutRequest',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLogoutRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.alert.v1.AlertLogoutRequest.token', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1490,
-  serialized_end=1525,
-)
-
-
-_CHANGEPASSWORDREQUEST = _descriptor.Descriptor(
-  name='ChangePasswordRequest',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='old', full_name='github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest.old', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='new', full_name='github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest.new', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='confirmedNew', full_name='github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest.confirmedNew', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1527,
-  serialized_end=1631,
-)
-
-
-_CHANGEPASSWORDRESPONSE = _descriptor.Descriptor(
-  name='ChangePasswordResponse',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1633,
-  serialized_end=1657,
-)
-
-
-_RESETPASSWORDREQUEST = _descriptor.Descriptor(
-  name='ResetPasswordRequest',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='new', full_name='github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordRequest.new', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='confirmedNew', full_name='github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordRequest.confirmedNew', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1659,
-  serialized_end=1749,
-)
-
-
-_RESETPASSWORDREPONSE = _descriptor.Descriptor(
-  name='ResetPasswordReponse',
-  full_name='github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordReponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1751,
-  serialized_end=1773,
+  serialized_start=1216,
+  serialized_end=1237,
 )
 
 _LISTALERTSREQUEST_LABELSENTRY.containing_type = _LISTALERTSREQUEST
@@ -903,17 +509,6 @@ DESCRIPTOR.message_types_by_name['GetAlertNamespacesRequest'] = _GETALERTNAMESPA
 DESCRIPTOR.message_types_by_name['GetAlertNamespacesResponse'] = _GETALERTNAMESPACESRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteAlertRequest'] = _DELETEALERTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteAlertResponse'] = _DELETEALERTRESPONSE
-DESCRIPTOR.message_types_by_name['AlertCreateResponse'] = _ALERTCREATERESPONSE
-DESCRIPTOR.message_types_by_name['LogoutResponse'] = _LOGOUTRESPONSE
-DESCRIPTOR.message_types_by_name['ResetPasswordResponse'] = _RESETPASSWORDRESPONSE
-DESCRIPTOR.message_types_by_name['AlertLoginRequest'] = _ALERTLOGINREQUEST
-DESCRIPTOR.message_types_by_name['AlertLoginResponse'] = _ALERTLOGINRESPONSE
-DESCRIPTOR.message_types_by_name['AlertGetByNameRequest'] = _ALERTGETBYNAMEREQUEST
-DESCRIPTOR.message_types_by_name['AlertLogoutRequest'] = _ALERTLOGOUTREQUEST
-DESCRIPTOR.message_types_by_name['ChangePasswordRequest'] = _CHANGEPASSWORDREQUEST
-DESCRIPTOR.message_types_by_name['ChangePasswordResponse'] = _CHANGEPASSWORDRESPONSE
-DESCRIPTOR.message_types_by_name['ResetPasswordRequest'] = _RESETPASSWORDREQUEST
-DESCRIPTOR.message_types_by_name['ResetPasswordReponse'] = _RESETPASSWORDREPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAlertsRequest = _reflection.GeneratedProtocolMessageType('ListAlertsRequest', (_message.Message,), {
@@ -1015,83 +610,6 @@ DeleteAlertResponse = _reflection.GeneratedProtocolMessageType('DeleteAlertRespo
   })
 _sym_db.RegisterMessage(DeleteAlertResponse)
 
-AlertCreateResponse = _reflection.GeneratedProtocolMessageType('AlertCreateResponse', (_message.Message,), {
-  'DESCRIPTOR' : _ALERTCREATERESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.AlertCreateResponse)
-  })
-_sym_db.RegisterMessage(AlertCreateResponse)
-
-LogoutResponse = _reflection.GeneratedProtocolMessageType('LogoutResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LOGOUTRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.LogoutResponse)
-  })
-_sym_db.RegisterMessage(LogoutResponse)
-
-ResetPasswordResponse = _reflection.GeneratedProtocolMessageType('ResetPasswordResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESETPASSWORDRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordResponse)
-  })
-_sym_db.RegisterMessage(ResetPasswordResponse)
-
-AlertLoginRequest = _reflection.GeneratedProtocolMessageType('AlertLoginRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ALERTLOGINREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.AlertLoginRequest)
-  })
-_sym_db.RegisterMessage(AlertLoginRequest)
-
-AlertLoginResponse = _reflection.GeneratedProtocolMessageType('AlertLoginResponse', (_message.Message,), {
-  'DESCRIPTOR' : _ALERTLOGINRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.AlertLoginResponse)
-  })
-_sym_db.RegisterMessage(AlertLoginResponse)
-
-AlertGetByNameRequest = _reflection.GeneratedProtocolMessageType('AlertGetByNameRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ALERTGETBYNAMEREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.AlertGetByNameRequest)
-  })
-_sym_db.RegisterMessage(AlertGetByNameRequest)
-
-AlertLogoutRequest = _reflection.GeneratedProtocolMessageType('AlertLogoutRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ALERTLOGOUTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.AlertLogoutRequest)
-  })
-_sym_db.RegisterMessage(AlertLogoutRequest)
-
-ChangePasswordRequest = _reflection.GeneratedProtocolMessageType('ChangePasswordRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CHANGEPASSWORDREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordRequest)
-  })
-_sym_db.RegisterMessage(ChangePasswordRequest)
-
-ChangePasswordResponse = _reflection.GeneratedProtocolMessageType('ChangePasswordResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CHANGEPASSWORDRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.ChangePasswordResponse)
-  })
-_sym_db.RegisterMessage(ChangePasswordResponse)
-
-ResetPasswordRequest = _reflection.GeneratedProtocolMessageType('ResetPasswordRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESETPASSWORDREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordRequest)
-  })
-_sym_db.RegisterMessage(ResetPasswordRequest)
-
-ResetPasswordReponse = _reflection.GeneratedProtocolMessageType('ResetPasswordReponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESETPASSWORDREPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.alert.v1.alert_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.alert.v1.ResetPasswordReponse)
-  })
-_sym_db.RegisterMessage(ResetPasswordReponse)
-
 
 DESCRIPTOR._options = None
 _LISTALERTSREQUEST_LABELSENTRY._options = None
@@ -1103,8 +621,8 @@ _ALERTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1776,
-  serialized_end=2759,
+  serialized_start=1240,
+  serialized_end=2220,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAlerts',
@@ -1113,7 +631,7 @@ _ALERTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTALERTSREQUEST,
     output_type=_LISTALERTSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\014\022\n/v1/alerts',
+    serialized_options=b'\202\323\344\223\002\030\022\026/v1/alerts/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1123,7 +641,7 @@ _ALERTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEALERTREQUEST,
     output_type=_CREATEALERTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\023\"\n/v1/alerts:\005alert',
+    serialized_options=b'\202\323\344\223\002\017\"\n/v1/alerts:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1133,7 +651,7 @@ _ALERTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETALERTREQUEST,
     output_type=_GETALERTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\037\022\035/v1/{namespace}/alerts/{name}',
+    serialized_options=b'\202\323\344\223\002\037\022\035/v1/alerts/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1143,7 +661,7 @@ _ALERTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEALERTREQUEST,
     output_type=_UPDATEALERTRESPONSE,
-    serialized_options=b'\202\323\344\223\002E\032</v1/{alert.metadata.namespace}/alerts//{alert.metadata.name}:\005alert',
+    serialized_options=b'\202\323\344\223\002>\0329/v1/alerts/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1153,7 +671,7 @@ _ALERTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEALERTREQUEST,
     output_type=_DELETEALERTRESPONSE,
-    serialized_options=b'\202\323\344\223\002#*!/api/{namespace}/v1/alerts/{name}',
+    serialized_options=b'\202\323\344\223\002\037*\035/v1/alerts/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

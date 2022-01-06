@@ -179,48 +179,6 @@ export namespace GetMeetingResponse {
   }
 }
 
-export class GetMeetingNamespacesRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): GetMeetingNamespacesRequest;
-
-  getName(): string;
-  setName(value: string): GetMeetingNamespacesRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetMeetingNamespacesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetMeetingNamespacesRequest): GetMeetingNamespacesRequest.AsObject;
-  static serializeBinaryToWriter(message: GetMeetingNamespacesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetMeetingNamespacesRequest;
-  static deserializeBinaryFromReader(message: GetMeetingNamespacesRequest, reader: jspb.BinaryReader): GetMeetingNamespacesRequest;
-}
-
-export namespace GetMeetingNamespacesRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class GetMeetingNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>): GetMeetingNamespacesResponse;
-  clearNamespacesList(): GetMeetingNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetMeetingNamespacesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetMeetingNamespacesResponse): GetMeetingNamespacesResponse.AsObject;
-  static serializeBinaryToWriter(message: GetMeetingNamespacesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetMeetingNamespacesResponse;
-  static deserializeBinaryFromReader(message: GetMeetingNamespacesResponse, reader: jspb.BinaryReader): GetMeetingNamespacesResponse;
-}
-
-export namespace GetMeetingNamespacesResponse {
-  export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
-  }
-}
-
 export class DeleteMeetingRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeleteMeetingRequest;
@@ -254,60 +212,6 @@ export class DeleteMeetingResponse extends jspb.Message {
 
 export namespace DeleteMeetingResponse {
   export type AsObject = {
-  }
-}
-
-export class MeetingCreateResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MeetingCreateResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: MeetingCreateResponse): MeetingCreateResponse.AsObject;
-  static serializeBinaryToWriter(message: MeetingCreateResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MeetingCreateResponse;
-  static deserializeBinaryFromReader(message: MeetingCreateResponse, reader: jspb.BinaryReader): MeetingCreateResponse;
-}
-
-export namespace MeetingCreateResponse {
-  export type AsObject = {
-  }
-}
-
-export class MeetingGetByNameRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): MeetingGetByNameRequest;
-
-  getName(): string;
-  setName(value: string): MeetingGetByNameRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MeetingGetByNameRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: MeetingGetByNameRequest): MeetingGetByNameRequest.AsObject;
-  static serializeBinaryToWriter(message: MeetingGetByNameRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MeetingGetByNameRequest;
-  static deserializeBinaryFromReader(message: MeetingGetByNameRequest, reader: jspb.BinaryReader): MeetingGetByNameRequest;
-}
-
-export namespace MeetingGetByNameRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class MeetingLogoutRequest extends jspb.Message {
-  getToken(): string;
-  setToken(value: string): MeetingLogoutRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MeetingLogoutRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: MeetingLogoutRequest): MeetingLogoutRequest.AsObject;
-  static serializeBinaryToWriter(message: MeetingLogoutRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MeetingLogoutRequest;
-  static deserializeBinaryFromReader(message: MeetingLogoutRequest, reader: jspb.BinaryReader): MeetingLogoutRequest;
-}
-
-export namespace MeetingLogoutRequest {
-  export type AsObject = {
-    token: string,
   }
 }
 

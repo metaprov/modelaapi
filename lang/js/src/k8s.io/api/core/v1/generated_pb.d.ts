@@ -2045,6 +2045,28 @@ export namespace GCEPersistentDiskVolumeSource {
   }
 }
 
+export class GRPCAction extends jspb.Message {
+  getPort(): number;
+  setPort(value: number): GRPCAction;
+
+  getService(): string;
+  setService(value: string): GRPCAction;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GRPCAction.AsObject;
+  static toObject(includeInstance: boolean, msg: GRPCAction): GRPCAction.AsObject;
+  static serializeBinaryToWriter(message: GRPCAction, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GRPCAction;
+  static deserializeBinaryFromReader(message: GRPCAction, reader: jspb.BinaryReader): GRPCAction;
+}
+
+export namespace GRPCAction {
+  export type AsObject = {
+    port: number,
+    service: string,
+  }
+}
+
 export class GitRepoVolumeSource extends jspb.Message {
   getRepository(): string;
   setRepository(value: string): GitRepoVolumeSource;
@@ -2184,38 +2206,6 @@ export namespace HTTPHeader {
   export type AsObject = {
     name: string,
     value: string,
-  }
-}
-
-export class Handler extends jspb.Message {
-  getExec(): ExecAction | undefined;
-  setExec(value?: ExecAction): Handler;
-  hasExec(): boolean;
-  clearExec(): Handler;
-
-  getHttpget(): HTTPGetAction | undefined;
-  setHttpget(value?: HTTPGetAction): Handler;
-  hasHttpget(): boolean;
-  clearHttpget(): Handler;
-
-  getTcpsocket(): TCPSocketAction | undefined;
-  setTcpsocket(value?: TCPSocketAction): Handler;
-  hasTcpsocket(): boolean;
-  clearTcpsocket(): Handler;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Handler.AsObject;
-  static toObject(includeInstance: boolean, msg: Handler): Handler.AsObject;
-  static serializeBinaryToWriter(message: Handler, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Handler;
-  static deserializeBinaryFromReader(message: Handler, reader: jspb.BinaryReader): Handler;
-}
-
-export namespace Handler {
-  export type AsObject = {
-    exec?: ExecAction.AsObject,
-    httpget?: HTTPGetAction.AsObject,
-    tcpsocket?: TCPSocketAction.AsObject,
   }
 }
 
@@ -2416,13 +2406,13 @@ export namespace KeyToPath {
 }
 
 export class Lifecycle extends jspb.Message {
-  getPoststart(): Handler | undefined;
-  setPoststart(value?: Handler): Lifecycle;
+  getPoststart(): LifecycleHandler | undefined;
+  setPoststart(value?: LifecycleHandler): Lifecycle;
   hasPoststart(): boolean;
   clearPoststart(): Lifecycle;
 
-  getPrestop(): Handler | undefined;
-  setPrestop(value?: Handler): Lifecycle;
+  getPrestop(): LifecycleHandler | undefined;
+  setPrestop(value?: LifecycleHandler): Lifecycle;
   hasPrestop(): boolean;
   clearPrestop(): Lifecycle;
 
@@ -2436,8 +2426,40 @@ export class Lifecycle extends jspb.Message {
 
 export namespace Lifecycle {
   export type AsObject = {
-    poststart?: Handler.AsObject,
-    prestop?: Handler.AsObject,
+    poststart?: LifecycleHandler.AsObject,
+    prestop?: LifecycleHandler.AsObject,
+  }
+}
+
+export class LifecycleHandler extends jspb.Message {
+  getExec(): ExecAction | undefined;
+  setExec(value?: ExecAction): LifecycleHandler;
+  hasExec(): boolean;
+  clearExec(): LifecycleHandler;
+
+  getHttpget(): HTTPGetAction | undefined;
+  setHttpget(value?: HTTPGetAction): LifecycleHandler;
+  hasHttpget(): boolean;
+  clearHttpget(): LifecycleHandler;
+
+  getTcpsocket(): TCPSocketAction | undefined;
+  setTcpsocket(value?: TCPSocketAction): LifecycleHandler;
+  hasTcpsocket(): boolean;
+  clearTcpsocket(): LifecycleHandler;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): LifecycleHandler.AsObject;
+  static toObject(includeInstance: boolean, msg: LifecycleHandler): LifecycleHandler.AsObject;
+  static serializeBinaryToWriter(message: LifecycleHandler, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): LifecycleHandler;
+  static deserializeBinaryFromReader(message: LifecycleHandler, reader: jspb.BinaryReader): LifecycleHandler;
+}
+
+export namespace LifecycleHandler {
+  export type AsObject = {
+    exec?: ExecAction.AsObject,
+    httpget?: HTTPGetAction.AsObject,
+    tcpsocket?: TCPSocketAction.AsObject,
   }
 }
 
@@ -3608,6 +3630,12 @@ export class PersistentVolumeClaimStatus extends jspb.Message {
   clearConditionsList(): PersistentVolumeClaimStatus;
   addConditions(value?: PersistentVolumeClaimCondition, index?: number): PersistentVolumeClaimCondition;
 
+  getAllocatedresourcesMap(): jspb.Map<string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity>;
+  clearAllocatedresourcesMap(): PersistentVolumeClaimStatus;
+
+  getResizestatus(): string;
+  setResizestatus(value: string): PersistentVolumeClaimStatus;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PersistentVolumeClaimStatus.AsObject;
   static toObject(includeInstance: boolean, msg: PersistentVolumeClaimStatus): PersistentVolumeClaimStatus.AsObject;
@@ -3622,6 +3650,8 @@ export namespace PersistentVolumeClaimStatus {
     accessmodesList: Array<string>,
     capacityMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     conditionsList: Array<PersistentVolumeClaimCondition.AsObject>,
+    allocatedresourcesMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
+    resizestatus: string,
   }
 }
 
@@ -4339,6 +4369,24 @@ export namespace PodLogOptions {
   }
 }
 
+export class PodOS extends jspb.Message {
+  getName(): string;
+  setName(value: string): PodOS;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PodOS.AsObject;
+  static toObject(includeInstance: boolean, msg: PodOS): PodOS.AsObject;
+  static serializeBinaryToWriter(message: PodOS, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PodOS;
+  static deserializeBinaryFromReader(message: PodOS, reader: jspb.BinaryReader): PodOS;
+}
+
+export namespace PodOS {
+  export type AsObject = {
+    name: string,
+  }
+}
+
 export class PodPortForwardOptions extends jspb.Message {
   getPortsList(): Array<number>;
   setPortsList(value: Array<number>): PodPortForwardOptions;
@@ -4609,6 +4657,11 @@ export class PodSpec extends jspb.Message {
   getSethostnameasfqdn(): boolean;
   setSethostnameasfqdn(value: boolean): PodSpec;
 
+  getOs(): PodOS | undefined;
+  setOs(value?: PodOS): PodSpec;
+  hasOs(): boolean;
+  clearOs(): PodSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PodSpec): PodSpec.AsObject;
@@ -4654,6 +4707,7 @@ export namespace PodSpec {
     overheadMap: Array<[string, k8s_io_apimachinery_pkg_api_resource_generated_pb.Quantity.AsObject]>,
     topologyspreadconstraintsList: Array<TopologySpreadConstraint.AsObject>,
     sethostnameasfqdn: boolean,
+    os?: PodOS.AsObject,
   }
 }
 
@@ -4968,8 +5022,8 @@ export namespace PreferredSchedulingTerm {
 }
 
 export class Probe extends jspb.Message {
-  getHandler(): Handler | undefined;
-  setHandler(value?: Handler): Probe;
+  getHandler(): ProbeHandler | undefined;
+  setHandler(value?: ProbeHandler): Probe;
   hasHandler(): boolean;
   clearHandler(): Probe;
 
@@ -5001,13 +5055,51 @@ export class Probe extends jspb.Message {
 
 export namespace Probe {
   export type AsObject = {
-    handler?: Handler.AsObject,
+    handler?: ProbeHandler.AsObject,
     initialdelayseconds: number,
     timeoutseconds: number,
     periodseconds: number,
     successthreshold: number,
     failurethreshold: number,
     terminationgraceperiodseconds: number,
+  }
+}
+
+export class ProbeHandler extends jspb.Message {
+  getExec(): ExecAction | undefined;
+  setExec(value?: ExecAction): ProbeHandler;
+  hasExec(): boolean;
+  clearExec(): ProbeHandler;
+
+  getHttpget(): HTTPGetAction | undefined;
+  setHttpget(value?: HTTPGetAction): ProbeHandler;
+  hasHttpget(): boolean;
+  clearHttpget(): ProbeHandler;
+
+  getTcpsocket(): TCPSocketAction | undefined;
+  setTcpsocket(value?: TCPSocketAction): ProbeHandler;
+  hasTcpsocket(): boolean;
+  clearTcpsocket(): ProbeHandler;
+
+  getGrpc(): GRPCAction | undefined;
+  setGrpc(value?: GRPCAction): ProbeHandler;
+  hasGrpc(): boolean;
+  clearGrpc(): ProbeHandler;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProbeHandler.AsObject;
+  static toObject(includeInstance: boolean, msg: ProbeHandler): ProbeHandler.AsObject;
+  static serializeBinaryToWriter(message: ProbeHandler, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProbeHandler;
+  static deserializeBinaryFromReader(message: ProbeHandler, reader: jspb.BinaryReader): ProbeHandler;
+}
+
+export namespace ProbeHandler {
+  export type AsObject = {
+    exec?: ExecAction.AsObject,
+    httpget?: HTTPGetAction.AsObject,
+    tcpsocket?: TCPSocketAction.AsObject,
+    grpc?: GRPCAction.AsObject,
   }
 }
 

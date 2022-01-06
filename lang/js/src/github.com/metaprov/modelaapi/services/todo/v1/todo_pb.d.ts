@@ -47,20 +47,6 @@ export namespace ListTodosResponse {
   }
 }
 
-export class TodoResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TodoResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TodoResponse): TodoResponse.AsObject;
-  static serializeBinaryToWriter(message: TodoResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TodoResponse;
-  static deserializeBinaryFromReader(message: TodoResponse, reader: jspb.BinaryReader): TodoResponse;
-}
-
-export namespace TodoResponse {
-  export type AsObject = {
-  }
-}
-
 export class CreateTodoRequest extends jspb.Message {
   getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
   setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): CreateTodoRequest;
@@ -179,48 +165,6 @@ export namespace GetTodoResponse {
   }
 }
 
-export class GetTodoNamespacesRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): GetTodoNamespacesRequest;
-
-  getName(): string;
-  setName(value: string): GetTodoNamespacesRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTodoNamespacesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTodoNamespacesRequest): GetTodoNamespacesRequest.AsObject;
-  static serializeBinaryToWriter(message: GetTodoNamespacesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTodoNamespacesRequest;
-  static deserializeBinaryFromReader(message: GetTodoNamespacesRequest, reader: jspb.BinaryReader): GetTodoNamespacesRequest;
-}
-
-export namespace GetTodoNamespacesRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class GetTodoNamespacesResponse extends jspb.Message {
-  getNamespacesList(): Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>;
-  setNamespacesList(value: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo>): GetTodoNamespacesResponse;
-  clearNamespacesList(): GetTodoNamespacesResponse;
-  addNamespaces(value?: github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo, index?: number): github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetTodoNamespacesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: GetTodoNamespacesResponse): GetTodoNamespacesResponse.AsObject;
-  static serializeBinaryToWriter(message: GetTodoNamespacesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetTodoNamespacesResponse;
-  static deserializeBinaryFromReader(message: GetTodoNamespacesResponse, reader: jspb.BinaryReader): GetTodoNamespacesResponse;
-}
-
-export namespace GetTodoNamespacesResponse {
-  export type AsObject = {
-    namespacesList: Array<github_com_metaprov_modelaapi_services_common_v1_common_pb.NamespaceInfo.AsObject>,
-  }
-}
-
 export class DeleteTodoRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): DeleteTodoRequest;
@@ -254,60 +198,6 @@ export class DeleteTodoResponse extends jspb.Message {
 
 export namespace DeleteTodoResponse {
   export type AsObject = {
-  }
-}
-
-export class TodoCreateResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TodoCreateResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TodoCreateResponse): TodoCreateResponse.AsObject;
-  static serializeBinaryToWriter(message: TodoCreateResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TodoCreateResponse;
-  static deserializeBinaryFromReader(message: TodoCreateResponse, reader: jspb.BinaryReader): TodoCreateResponse;
-}
-
-export namespace TodoCreateResponse {
-  export type AsObject = {
-  }
-}
-
-export class TodoGetByNameRequest extends jspb.Message {
-  getNamespace(): string;
-  setNamespace(value: string): TodoGetByNameRequest;
-
-  getName(): string;
-  setName(value: string): TodoGetByNameRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TodoGetByNameRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TodoGetByNameRequest): TodoGetByNameRequest.AsObject;
-  static serializeBinaryToWriter(message: TodoGetByNameRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TodoGetByNameRequest;
-  static deserializeBinaryFromReader(message: TodoGetByNameRequest, reader: jspb.BinaryReader): TodoGetByNameRequest;
-}
-
-export namespace TodoGetByNameRequest {
-  export type AsObject = {
-    namespace: string,
-    name: string,
-  }
-}
-
-export class TodoLogoutRequest extends jspb.Message {
-  getToken(): string;
-  setToken(value: string): TodoLogoutRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TodoLogoutRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TodoLogoutRequest): TodoLogoutRequest.AsObject;
-  static serializeBinaryToWriter(message: TodoLogoutRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TodoLogoutRequest;
-  static deserializeBinaryFromReader(message: TodoLogoutRequest, reader: jspb.BinaryReader): TodoLogoutRequest;
-}
-
-export namespace TodoLogoutRequest {
-  export type AsObject = {
-    token: string,
   }
 }
 

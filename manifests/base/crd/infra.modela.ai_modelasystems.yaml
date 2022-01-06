@@ -1,10 +1,9 @@
-
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.7.0
+    controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
   name: modelasystems.infra.modela.ai
 spec:
@@ -1278,9 +1277,7 @@ spec:
                                     info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -1345,10 +1342,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -1373,20 +1371,17 @@ spec:
                                     or management event such as liveness/startup probe
                                     failure, preemption, resource contention, etc.
                                     The handler is not called if the container crashes
-                                    or exits. The reason for termination is passed
-                                    to the handler. The Pod''s termination grace period
-                                    countdown begins before the PreStop hooked is
-                                    executed. Regardless of the outcome of the handler,
-                                    the container will eventually terminate within
-                                    the Pod''s termination grace period. Other management
-                                    of the container blocks until the hook completes
-                                    or until the termination grace period is reached.
-                                    More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
+                                    or exits. The Pod''s termination grace period
+                                    countdown begins before the PreStop hook is executed.
+                                    Regardless of the outcome of the handler, the
+                                    container will eventually terminate within the
+                                    Pod''s termination grace period (unless delayed
+                                    by finalizers). Other management of the container
+                                    blocks until the hook completes or until the termination
+                                    grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -1451,10 +1446,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -1480,8 +1476,7 @@ spec:
                                 be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -1503,6 +1498,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -1568,9 +1583,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -1674,8 +1688,7 @@ spec:
                                 the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -1697,6 +1710,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -1762,9 +1795,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -1848,12 +1880,14 @@ spec:
                                     if the no_new_privs flag will be set on the container
                                     process. AllowPrivilegeEscalation is true always
                                     when the container is: 1) run as Privileged 2)
-                                    has CAP_SYS_ADMIN'
+                                    has CAP_SYS_ADMIN Note that this field cannot
+                                    be set when spec.os.name is windows.'
                                   type: boolean
                                 capabilities:
                                   description: The capabilities to add/drop when running
                                     containers. Defaults to the default set of capabilities
-                                    granted by the container runtime.
+                                    granted by the container runtime. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     add:
                                       description: Added capabilities
@@ -1873,7 +1907,9 @@ spec:
                                 privileged:
                                   description: Run container in privileged mode. Processes
                                     in privileged containers are essentially equivalent
-                                    to root on the host. Defaults to false.
+                                    to root on the host. Defaults to false. Note that
+                                    this field cannot be set when spec.os.name is
+                                    windows.
                                   type: boolean
                                 procMount:
                                   description: procMount denotes the type of proc
@@ -1881,11 +1917,13 @@ spec:
                                     DefaultProcMount which uses the container runtime
                                     defaults for readonly paths and masked paths.
                                     This requires the ProcMountType feature flag to
-                                    be enabled.
+                                    be enabled. Note that this field cannot be set
+                                    when spec.os.name is windows.
                                   type: string
                                 readOnlyRootFilesystem:
                                   description: Whether this container has a read-only
-                                    root filesystem. Default is false.
+                                    root filesystem. Default is false. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   type: boolean
                                 runAsGroup:
                                   description: The GID to run the entrypoint of the
@@ -1893,6 +1931,8 @@ spec:
                                     May also be set in PodSecurityContext.  If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   format: int64
                                   type: integer
                                 runAsNonRoot:
@@ -1912,7 +1952,8 @@ spec:
                                     in image metadata if unspecified. May also be
                                     set in PodSecurityContext.  If set in both SecurityContext
                                     and PodSecurityContext, the value specified in
-                                    SecurityContext takes precedence.
+                                    SecurityContext takes precedence. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   format: int64
                                   type: integer
                                 seLinuxOptions:
@@ -1922,6 +1963,8 @@ spec:
                                     container.  May also be set in PodSecurityContext.  If
                                     set in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   properties:
                                     level:
                                       description: Level is SELinux level label that
@@ -1944,7 +1987,8 @@ spec:
                                   description: The seccomp options to use by this
                                     container. If seccomp options are provided at
                                     both the pod & container level, the container
-                                    options override the pod options.
+                                    options override the pod options. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     localhostProfile:
                                       description: localhostProfile indicates a profile
@@ -1972,6 +2016,8 @@ spec:
                                     from the PodSecurityContext will be used. If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is linux.
                                   properties:
                                     gmsaCredentialSpec:
                                       description: GMSACredentialSpec is where the
@@ -2020,8 +2066,7 @@ spec:
                                 operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -2043,6 +2088,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -2108,9 +2173,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -2334,21 +2398,21 @@ spec:
                           be specified when creating a pod, and it cannot be modified
                           by updating the pod spec. In order to add an ephemeral container
                           to an existing pod, use the pod's ephemeralcontainers subresource.
-                          This field is alpha-level and is only honored by servers
-                          that enable the EphemeralContainers feature.
+                          This field is beta-level and available on clusters that
+                          haven't disabled the EphemeralContainers feature gate.
                         items:
-                          description: An EphemeralContainer is a container that may
-                            be added temporarily to an existing pod for user-initiated
+                          description: "An EphemeralContainer is a temporary container
+                            that you may add to an existing Pod for user-initiated
                             activities such as debugging. Ephemeral containers have
                             no resource or scheduling guarantees, and they will not
-                            be restarted when they exit or when a pod is removed or
-                            restarted. If an ephemeral container causes a pod to exceed
-                            its resource allocation, the pod may be evicted. Ephemeral
-                            containers may not be added by directly updating the pod
-                            spec. They must be added via the pod's ephemeralcontainers
-                            subresource, and they will appear in the pod spec once
-                            added. This is an alpha feature enabled by the EphemeralContainers
-                            feature flag.
+                            be restarted when they exit or when a Pod is removed or
+                            restarted. The kubelet may evict a Pod if an ephemeral
+                            container causes the Pod to exceed its resource allocation.
+                            \n To add an ephemeral container, use the ephemeralcontainers
+                            subresource of an existing Pod. Ephemeral containers may
+                            not be removed or restarted. \n This is a beta feature
+                            available on clusters that haven't disabled the EphemeralContainers
+                            feature gate."
                           properties:
                             args:
                               description: 'Arguments to the entrypoint. The docker
@@ -2568,9 +2632,7 @@ spec:
                                     info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -2635,10 +2697,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -2663,20 +2726,17 @@ spec:
                                     or management event such as liveness/startup probe
                                     failure, preemption, resource contention, etc.
                                     The handler is not called if the container crashes
-                                    or exits. The reason for termination is passed
-                                    to the handler. The Pod''s termination grace period
-                                    countdown begins before the PreStop hooked is
-                                    executed. Regardless of the outcome of the handler,
-                                    the container will eventually terminate within
-                                    the Pod''s termination grace period. Other management
-                                    of the container blocks until the hook completes
-                                    or until the termination grace period is reached.
-                                    More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
+                                    or exits. The Pod''s termination grace period
+                                    countdown begins before the PreStop hook is executed.
+                                    Regardless of the outcome of the handler, the
+                                    container will eventually terminate within the
+                                    Pod''s termination grace period (unless delayed
+                                    by finalizers). Other management of the container
+                                    blocks until the hook completes or until the termination
+                                    grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -2741,10 +2801,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -2768,8 +2829,7 @@ spec:
                               description: Probes are not allowed for ephemeral containers.
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -2791,6 +2851,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -2856,9 +2936,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -2945,12 +3024,15 @@ spec:
                                 - containerPort
                                 type: object
                               type: array
+                              x-kubernetes-list-map-keys:
+                              - containerPort
+                              - protocol
+                              x-kubernetes-list-type: map
                             readinessProbe:
                               description: Probes are not allowed for ephemeral containers.
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -2972,6 +3054,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -3037,9 +3139,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -3124,12 +3225,14 @@ spec:
                                     if the no_new_privs flag will be set on the container
                                     process. AllowPrivilegeEscalation is true always
                                     when the container is: 1) run as Privileged 2)
-                                    has CAP_SYS_ADMIN'
+                                    has CAP_SYS_ADMIN Note that this field cannot
+                                    be set when spec.os.name is windows.'
                                   type: boolean
                                 capabilities:
                                   description: The capabilities to add/drop when running
                                     containers. Defaults to the default set of capabilities
-                                    granted by the container runtime.
+                                    granted by the container runtime. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     add:
                                       description: Added capabilities
@@ -3149,7 +3252,9 @@ spec:
                                 privileged:
                                   description: Run container in privileged mode. Processes
                                     in privileged containers are essentially equivalent
-                                    to root on the host. Defaults to false.
+                                    to root on the host. Defaults to false. Note that
+                                    this field cannot be set when spec.os.name is
+                                    windows.
                                   type: boolean
                                 procMount:
                                   description: procMount denotes the type of proc
@@ -3157,11 +3262,13 @@ spec:
                                     DefaultProcMount which uses the container runtime
                                     defaults for readonly paths and masked paths.
                                     This requires the ProcMountType feature flag to
-                                    be enabled.
+                                    be enabled. Note that this field cannot be set
+                                    when spec.os.name is windows.
                                   type: string
                                 readOnlyRootFilesystem:
                                   description: Whether this container has a read-only
-                                    root filesystem. Default is false.
+                                    root filesystem. Default is false. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   type: boolean
                                 runAsGroup:
                                   description: The GID to run the entrypoint of the
@@ -3169,6 +3276,8 @@ spec:
                                     May also be set in PodSecurityContext.  If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   format: int64
                                   type: integer
                                 runAsNonRoot:
@@ -3188,7 +3297,8 @@ spec:
                                     in image metadata if unspecified. May also be
                                     set in PodSecurityContext.  If set in both SecurityContext
                                     and PodSecurityContext, the value specified in
-                                    SecurityContext takes precedence.
+                                    SecurityContext takes precedence. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   format: int64
                                   type: integer
                                 seLinuxOptions:
@@ -3198,6 +3308,8 @@ spec:
                                     container.  May also be set in PodSecurityContext.  If
                                     set in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   properties:
                                     level:
                                       description: Level is SELinux level label that
@@ -3220,7 +3332,8 @@ spec:
                                   description: The seccomp options to use by this
                                     container. If seccomp options are provided at
                                     both the pod & container level, the container
-                                    options override the pod options.
+                                    options override the pod options. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     localhostProfile:
                                       description: localhostProfile indicates a profile
@@ -3248,6 +3361,8 @@ spec:
                                     from the PodSecurityContext will be used. If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is linux.
                                   properties:
                                     gmsaCredentialSpec:
                                       description: GMSACredentialSpec is where the
@@ -3288,8 +3403,7 @@ spec:
                               description: Probes are not allowed for ephemeral containers.
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -3311,6 +3425,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -3376,9 +3510,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -3441,13 +3574,15 @@ spec:
                                 will never receive an EOF. Default is false
                               type: boolean
                             targetContainerName:
-                              description: If set, the name of the container from
+                              description: "If set, the name of the container from
                                 PodSpec that this ephemeral container targets. The
                                 ephemeral container will be run in the namespaces
                                 (IPC, PID, etc) of this container. If not set then
-                                the ephemeral container is run in whatever namespaces
-                                are shared for the pod. Note that the container runtime
-                                must support this feature.
+                                the ephemeral container uses the namespaces configured
+                                in the Pod spec. \n The container runtime must implement
+                                support for this feature. If the runtime does not
+                                support namespace targeting then the result of setting
+                                this field is undefined."
                               type: string
                             terminationMessagePath:
                               description: 'Optional: Path at which the file to which
@@ -3499,7 +3634,8 @@ spec:
                               type: array
                             volumeMounts:
                               description: Pod volumes to mount into the container's
-                                filesystem. Cannot be updated.
+                                filesystem. Subpath mounts are not allowed for ephemeral
+                                containers. Cannot be updated.
                               items:
                                 description: VolumeMount describes a mounting of a
                                   Volume within a container.
@@ -3847,9 +3983,7 @@ spec:
                                     info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -3914,10 +4048,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -3942,20 +4077,17 @@ spec:
                                     or management event such as liveness/startup probe
                                     failure, preemption, resource contention, etc.
                                     The handler is not called if the container crashes
-                                    or exits. The reason for termination is passed
-                                    to the handler. The Pod''s termination grace period
-                                    countdown begins before the PreStop hooked is
-                                    executed. Regardless of the outcome of the handler,
-                                    the container will eventually terminate within
-                                    the Pod''s termination grace period. Other management
-                                    of the container blocks until the hook completes
-                                    or until the termination grace period is reached.
-                                    More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
+                                    or exits. The Pod''s termination grace period
+                                    countdown begins before the PreStop hook is executed.
+                                    Regardless of the outcome of the handler, the
+                                    container will eventually terminate within the
+                                    Pod''s termination grace period (unless delayed
+                                    by finalizers). Other management of the container
+                                    blocks until the hook completes or until the termination
+                                    grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -4020,10 +4152,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -4049,8 +4182,7 @@ spec:
                                 be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -4072,6 +4204,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -4137,9 +4289,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -4243,8 +4394,7 @@ spec:
                                 the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -4266,6 +4416,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -4331,9 +4501,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -4417,12 +4586,14 @@ spec:
                                     if the no_new_privs flag will be set on the container
                                     process. AllowPrivilegeEscalation is true always
                                     when the container is: 1) run as Privileged 2)
-                                    has CAP_SYS_ADMIN'
+                                    has CAP_SYS_ADMIN Note that this field cannot
+                                    be set when spec.os.name is windows.'
                                   type: boolean
                                 capabilities:
                                   description: The capabilities to add/drop when running
                                     containers. Defaults to the default set of capabilities
-                                    granted by the container runtime.
+                                    granted by the container runtime. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     add:
                                       description: Added capabilities
@@ -4442,7 +4613,9 @@ spec:
                                 privileged:
                                   description: Run container in privileged mode. Processes
                                     in privileged containers are essentially equivalent
-                                    to root on the host. Defaults to false.
+                                    to root on the host. Defaults to false. Note that
+                                    this field cannot be set when spec.os.name is
+                                    windows.
                                   type: boolean
                                 procMount:
                                   description: procMount denotes the type of proc
@@ -4450,11 +4623,13 @@ spec:
                                     DefaultProcMount which uses the container runtime
                                     defaults for readonly paths and masked paths.
                                     This requires the ProcMountType feature flag to
-                                    be enabled.
+                                    be enabled. Note that this field cannot be set
+                                    when spec.os.name is windows.
                                   type: string
                                 readOnlyRootFilesystem:
                                   description: Whether this container has a read-only
-                                    root filesystem. Default is false.
+                                    root filesystem. Default is false. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   type: boolean
                                 runAsGroup:
                                   description: The GID to run the entrypoint of the
@@ -4462,6 +4637,8 @@ spec:
                                     May also be set in PodSecurityContext.  If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   format: int64
                                   type: integer
                                 runAsNonRoot:
@@ -4481,7 +4658,8 @@ spec:
                                     in image metadata if unspecified. May also be
                                     set in PodSecurityContext.  If set in both SecurityContext
                                     and PodSecurityContext, the value specified in
-                                    SecurityContext takes precedence.
+                                    SecurityContext takes precedence. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   format: int64
                                   type: integer
                                 seLinuxOptions:
@@ -4491,6 +4669,8 @@ spec:
                                     container.  May also be set in PodSecurityContext.  If
                                     set in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   properties:
                                     level:
                                       description: Level is SELinux level label that
@@ -4513,7 +4693,8 @@ spec:
                                   description: The seccomp options to use by this
                                     container. If seccomp options are provided at
                                     both the pod & container level, the container
-                                    options override the pod options.
+                                    options override the pod options. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     localhostProfile:
                                       description: localhostProfile indicates a profile
@@ -4541,6 +4722,8 @@ spec:
                                     from the PodSecurityContext will be used. If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is linux.
                                   properties:
                                     gmsaCredentialSpec:
                                       description: GMSACredentialSpec is where the
@@ -4589,8 +4772,7 @@ spec:
                                 operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -4612,6 +4794,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -4677,9 +4879,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -4859,6 +5060,35 @@ spec:
                           More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/'
                         type: object
                         x-kubernetes-map-type: atomic
+                      os:
+                        description: "Specifies the OS of the containers in the pod.
+                          Some pod and container fields are restricted if this is
+                          set. \n If the OS field is set to linux, the following fields
+                          must be unset: -securityContext.windowsOptions \n If the
+                          OS field is set to windows, following fields must be unset:
+                          - spec.hostPID - spec.hostIPC - spec.securityContext.seLinuxOptions
+                          - spec.securityContext.seccompProfile - spec.securityContext.fsGroup
+                          - spec.securityContext.fsGroupChangePolicy - spec.securityContext.sysctls
+                          - spec.shareProcessNamespace - spec.securityContext.runAsUser
+                          - spec.securityContext.runAsGroup - spec.securityContext.supplementalGroups
+                          - spec.containers[*].securityContext.seLinuxOptions - spec.containers[*].securityContext.seccompProfile
+                          - spec.containers[*].securityContext.capabilities - spec.containers[*].securityContext.readOnlyRootFilesystem
+                          - spec.containers[*].securityContext.privileged - spec.containers[*].securityContext.allowPrivilegeEscalation
+                          - spec.containers[*].securityContext.procMount - spec.containers[*].securityContext.runAsUser
+                          - spec.containers[*].securityContext.runAsGroup This is
+                          an alpha field and requires the IdentifyPodOS feature"
+                        properties:
+                          name:
+                            description: 'Name is the name of the operating system.
+                              The currently supported values are linux and windows.
+                              Additional value may be defined in future and can be
+                              one of: https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration
+                              Clients should expect to handle additional values and
+                              treat unrecognized values in this field as os: null'
+                            type: string
+                        required:
+                        - name
+                        type: object
                       overhead:
                         additionalProperties:
                           anyOf:
@@ -4955,7 +5185,8 @@ spec:
                               in the volume will be owned by FSGroup) 3. The permission
                               bits are OR'd with rw-rw---- \n If unset, the Kubelet
                               will not modify the ownership and permissions of any
-                              volume."
+                              volume. Note that this field cannot be set when spec.os.name
+                              is windows."
                             format: int64
                             type: integer
                           fsGroupChangePolicy:
@@ -4966,14 +5197,16 @@ spec:
                               permissions). It will have no effect on ephemeral volume
                               types such as: secret, configmaps and emptydir. Valid
                               values are "OnRootMismatch" and "Always". If not specified,
-                              "Always" is used.'
+                              "Always" is used. Note that this field cannot be set
+                              when spec.os.name is windows.'
                             type: string
                           runAsGroup:
                             description: The GID to run the entrypoint of the container
                               process. Uses runtime default if unset. May also be
                               set in SecurityContext.  If set in both SecurityContext
                               and PodSecurityContext, the value specified in SecurityContext
-                              takes precedence for that container.
+                              takes precedence for that container. Note that this
+                              field cannot be set when spec.os.name is windows.
                             format: int64
                             type: integer
                           runAsNonRoot:
@@ -4992,7 +5225,8 @@ spec:
                               if unspecified. May also be set in SecurityContext.  If
                               set in both SecurityContext and PodSecurityContext,
                               the value specified in SecurityContext takes precedence
-                              for that container.
+                              for that container. Note that this field cannot be set
+                              when spec.os.name is windows.
                             format: int64
                             type: integer
                           seLinuxOptions:
@@ -5001,7 +5235,8 @@ spec:
                               allocate a random SELinux context for each container.  May
                               also be set in SecurityContext.  If set in both SecurityContext
                               and PodSecurityContext, the value specified in SecurityContext
-                              takes precedence for that container.
+                              takes precedence for that container. Note that this
+                              field cannot be set when spec.os.name is windows.
                             properties:
                               level:
                                 description: Level is SELinux level label that applies
@@ -5022,7 +5257,8 @@ spec:
                             type: object
                           seccompProfile:
                             description: The seccomp options to use by the containers
-                              in this pod.
+                              in this pod. Note that this field cannot be set when
+                              spec.os.name is windows.
                             properties:
                               localhostProfile:
                                 description: localhostProfile indicates a profile
@@ -5047,7 +5283,8 @@ spec:
                             description: A list of groups applied to the first process
                               run in each container, in addition to the container's
                               primary GID.  If unspecified, no groups will be added
-                              to any container.
+                              to any container. Note that this field cannot be set
+                              when spec.os.name is windows.
                             items:
                               format: int64
                               type: integer
@@ -5055,7 +5292,8 @@ spec:
                           sysctls:
                             description: Sysctls hold a list of namespaced sysctls
                               used for the pod. Pods with unsupported sysctls (by
-                              the container runtime) might fail to launch.
+                              the container runtime) might fail to launch. Note that
+                              this field cannot be set when spec.os.name is windows.
                             items:
                               description: Sysctl defines a kernel parameter to be
                                 set
@@ -5076,7 +5314,8 @@ spec:
                               all containers. If unspecified, the options within a
                               container's SecurityContext will be used. If set in
                               both SecurityContext and PodSecurityContext, the value
-                              specified in SecurityContext takes precedence.
+                              specified in SecurityContext takes precedence. Note
+                              that this field cannot be set when spec.os.name is linux.
                             properties:
                               gmsaCredentialSpec:
                                 description: GMSACredentialSpec is where the GMSA
@@ -5289,13 +5528,13 @@ spec:
                                 with a pod if it doesn''t satisfy the spread constraint.
                                 - DoNotSchedule (default) tells the scheduler not
                                 to schedule it. - ScheduleAnyway tells the scheduler
-                                to schedule the pod in any location,   but giving
-                                higher precedence to topologies that would help reduce
-                                the   skew. A constraint is considered "Unsatisfiable"
-                                for an incoming pod if and only if every possible
-                                node assigment for that pod would violate "MaxSkew"
-                                on some topology. For example, in a 3-zone cluster,
-                                MaxSkew is set to 1, and pods with the same labelSelector
+                                to schedule the pod in any location, but giving higher
+                                precedence to topologies that would help reduce the
+                                skew. A constraint is considered "Unsatisfiable" for
+                                an incoming pod if and only if every possible node
+                                assignment for that pod would violate "MaxSkew" on
+                                some topology. For example, in a 3-zone cluster, MaxSkew
+                                is set to 1, and pods with the same labelSelector
                                 spread as 3/1/1: | zone1 | zone2 | zone3 | | P P P
                                 |   P   |   P   | If WhenUnsatisfiable is set to DoNotSchedule,
                                 incoming pod can only be scheduled to zone2(zone3)
@@ -5732,22 +5971,19 @@ spec:
                                 when the pod is removed. \n Use this if: a) the volume
                                 is only needed while the pod runs, b) features of
                                 normal volumes like restoring from snapshot or capacity
-                                \   tracking are needed, c) the storage driver is
-                                specified through a storage class, and d) the storage
-                                driver supports dynamic volume provisioning through
-                                \   a PersistentVolumeClaim (see EphemeralVolumeSource
-                                for more    information on the connection between
-                                this volume type    and PersistentVolumeClaim). \n
-                                Use PersistentVolumeClaim or one of the vendor-specific
+                                tracking are needed, c) the storage driver is specified
+                                through a storage class, and d) the storage driver
+                                supports dynamic volume provisioning through a PersistentVolumeClaim
+                                (see EphemeralVolumeSource for more information on
+                                the connection between this volume type and PersistentVolumeClaim).
+                                \n Use PersistentVolumeClaim or one of the vendor-specific
                                 APIs for volumes that persist for longer than the
                                 lifecycle of an individual pod. \n Use CSI for light-weight
                                 local ephemeral volumes if the CSI driver is meant
                                 to be used that way - see the documentation of the
                                 driver for more information. \n A pod can use both
                                 types of ephemeral volumes and persistent volumes
-                                at the same time. \n This is a beta feature and only
-                                available when the GenericEphemeralVolume feature
-                                gate is enabled."
+                                at the same time."
                               properties:
                                 volumeClaimTemplate:
                                   description: "Will be used to create a stand-alone
@@ -5848,14 +6084,15 @@ spec:
                                             are two important differences between
                                             DataSource and DataSourceRef: * While
                                             DataSource only allows two specific types
-                                            of objects, DataSourceRef   allows any
-                                            non-core object, as well as PersistentVolumeClaim
+                                            of objects, DataSourceRef allows any non-core
+                                            object, as well as PersistentVolumeClaim
                                             objects. * While DataSource ignores disallowed
-                                            values (dropping them), DataSourceRef   preserves
-                                            all values, and generates an error if
-                                            a disallowed value is   specified. (Alpha)
-                                            Using this field requires the AnyVolumeDataSource
-                                            feature gate to be enabled.'
+                                            values (dropping them), DataSourceRef
+                                            preserves all values, and generates an
+                                            error if a disallowed value is specified.
+                                            (Alpha) Using this field requires the
+                                            AnyVolumeDataSource feature gate to be
+                                            enabled.'
                                           properties:
                                             apiGroup:
                                               description: APIGroup is the group for
@@ -5879,8 +6116,13 @@ spec:
                                           type: object
                                         resources:
                                           description: 'Resources represents the minimum
-                                            resources the volume should have. More
-                                            info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
+                                            resources the volume should have. If RecoverVolumeExpansionFailure
+                                            feature is enabled users are allowed to
+                                            specify resource requirements that are
+                                            lower than previous value but must still
+                                            be higher than capacity recorded in the
+                                            status field of the claim. More info:
+                                            https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                                           properties:
                                             limits:
                                               additionalProperties:
@@ -8075,9 +8317,7 @@ spec:
                                     info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -8142,10 +8382,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -8170,20 +8411,17 @@ spec:
                                     or management event such as liveness/startup probe
                                     failure, preemption, resource contention, etc.
                                     The handler is not called if the container crashes
-                                    or exits. The reason for termination is passed
-                                    to the handler. The Pod''s termination grace period
-                                    countdown begins before the PreStop hooked is
-                                    executed. Regardless of the outcome of the handler,
-                                    the container will eventually terminate within
-                                    the Pod''s termination grace period. Other management
-                                    of the container blocks until the hook completes
-                                    or until the termination grace period is reached.
-                                    More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
+                                    or exits. The Pod''s termination grace period
+                                    countdown begins before the PreStop hook is executed.
+                                    Regardless of the outcome of the handler, the
+                                    container will eventually terminate within the
+                                    Pod''s termination grace period (unless delayed
+                                    by finalizers). Other management of the container
+                                    blocks until the hook completes or until the termination
+                                    grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -8248,10 +8486,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -8277,8 +8516,7 @@ spec:
                                 be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -8300,6 +8538,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -8365,9 +8623,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -8471,8 +8728,7 @@ spec:
                                 the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -8494,6 +8750,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -8559,9 +8835,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -8645,12 +8920,14 @@ spec:
                                     if the no_new_privs flag will be set on the container
                                     process. AllowPrivilegeEscalation is true always
                                     when the container is: 1) run as Privileged 2)
-                                    has CAP_SYS_ADMIN'
+                                    has CAP_SYS_ADMIN Note that this field cannot
+                                    be set when spec.os.name is windows.'
                                   type: boolean
                                 capabilities:
                                   description: The capabilities to add/drop when running
                                     containers. Defaults to the default set of capabilities
-                                    granted by the container runtime.
+                                    granted by the container runtime. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     add:
                                       description: Added capabilities
@@ -8670,7 +8947,9 @@ spec:
                                 privileged:
                                   description: Run container in privileged mode. Processes
                                     in privileged containers are essentially equivalent
-                                    to root on the host. Defaults to false.
+                                    to root on the host. Defaults to false. Note that
+                                    this field cannot be set when spec.os.name is
+                                    windows.
                                   type: boolean
                                 procMount:
                                   description: procMount denotes the type of proc
@@ -8678,11 +8957,13 @@ spec:
                                     DefaultProcMount which uses the container runtime
                                     defaults for readonly paths and masked paths.
                                     This requires the ProcMountType feature flag to
-                                    be enabled.
+                                    be enabled. Note that this field cannot be set
+                                    when spec.os.name is windows.
                                   type: string
                                 readOnlyRootFilesystem:
                                   description: Whether this container has a read-only
-                                    root filesystem. Default is false.
+                                    root filesystem. Default is false. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   type: boolean
                                 runAsGroup:
                                   description: The GID to run the entrypoint of the
@@ -8690,6 +8971,8 @@ spec:
                                     May also be set in PodSecurityContext.  If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   format: int64
                                   type: integer
                                 runAsNonRoot:
@@ -8709,7 +8992,8 @@ spec:
                                     in image metadata if unspecified. May also be
                                     set in PodSecurityContext.  If set in both SecurityContext
                                     and PodSecurityContext, the value specified in
-                                    SecurityContext takes precedence.
+                                    SecurityContext takes precedence. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   format: int64
                                   type: integer
                                 seLinuxOptions:
@@ -8719,6 +9003,8 @@ spec:
                                     container.  May also be set in PodSecurityContext.  If
                                     set in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   properties:
                                     level:
                                       description: Level is SELinux level label that
@@ -8741,7 +9027,8 @@ spec:
                                   description: The seccomp options to use by this
                                     container. If seccomp options are provided at
                                     both the pod & container level, the container
-                                    options override the pod options.
+                                    options override the pod options. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     localhostProfile:
                                       description: localhostProfile indicates a profile
@@ -8769,6 +9056,8 @@ spec:
                                     from the PodSecurityContext will be used. If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is linux.
                                   properties:
                                     gmsaCredentialSpec:
                                       description: GMSACredentialSpec is where the
@@ -8817,8 +9106,7 @@ spec:
                                 operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -8840,6 +9128,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -8905,9 +9213,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -9131,21 +9438,21 @@ spec:
                           be specified when creating a pod, and it cannot be modified
                           by updating the pod spec. In order to add an ephemeral container
                           to an existing pod, use the pod's ephemeralcontainers subresource.
-                          This field is alpha-level and is only honored by servers
-                          that enable the EphemeralContainers feature.
+                          This field is beta-level and available on clusters that
+                          haven't disabled the EphemeralContainers feature gate.
                         items:
-                          description: An EphemeralContainer is a container that may
-                            be added temporarily to an existing pod for user-initiated
+                          description: "An EphemeralContainer is a temporary container
+                            that you may add to an existing Pod for user-initiated
                             activities such as debugging. Ephemeral containers have
                             no resource or scheduling guarantees, and they will not
-                            be restarted when they exit or when a pod is removed or
-                            restarted. If an ephemeral container causes a pod to exceed
-                            its resource allocation, the pod may be evicted. Ephemeral
-                            containers may not be added by directly updating the pod
-                            spec. They must be added via the pod's ephemeralcontainers
-                            subresource, and they will appear in the pod spec once
-                            added. This is an alpha feature enabled by the EphemeralContainers
-                            feature flag.
+                            be restarted when they exit or when a Pod is removed or
+                            restarted. The kubelet may evict a Pod if an ephemeral
+                            container causes the Pod to exceed its resource allocation.
+                            \n To add an ephemeral container, use the ephemeralcontainers
+                            subresource of an existing Pod. Ephemeral containers may
+                            not be removed or restarted. \n This is a beta feature
+                            available on clusters that haven't disabled the EphemeralContainers
+                            feature gate."
                           properties:
                             args:
                               description: 'Arguments to the entrypoint. The docker
@@ -9365,9 +9672,7 @@ spec:
                                     info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -9432,10 +9737,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -9460,20 +9766,17 @@ spec:
                                     or management event such as liveness/startup probe
                                     failure, preemption, resource contention, etc.
                                     The handler is not called if the container crashes
-                                    or exits. The reason for termination is passed
-                                    to the handler. The Pod''s termination grace period
-                                    countdown begins before the PreStop hooked is
-                                    executed. Regardless of the outcome of the handler,
-                                    the container will eventually terminate within
-                                    the Pod''s termination grace period. Other management
-                                    of the container blocks until the hook completes
-                                    or until the termination grace period is reached.
-                                    More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
+                                    or exits. The Pod''s termination grace period
+                                    countdown begins before the PreStop hook is executed.
+                                    Regardless of the outcome of the handler, the
+                                    container will eventually terminate within the
+                                    Pod''s termination grace period (unless delayed
+                                    by finalizers). Other management of the container
+                                    blocks until the hook completes or until the termination
+                                    grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -9538,10 +9841,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -9565,8 +9869,7 @@ spec:
                               description: Probes are not allowed for ephemeral containers.
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -9588,6 +9891,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -9653,9 +9976,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -9742,12 +10064,15 @@ spec:
                                 - containerPort
                                 type: object
                               type: array
+                              x-kubernetes-list-map-keys:
+                              - containerPort
+                              - protocol
+                              x-kubernetes-list-type: map
                             readinessProbe:
                               description: Probes are not allowed for ephemeral containers.
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -9769,6 +10094,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -9834,9 +10179,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -9921,12 +10265,14 @@ spec:
                                     if the no_new_privs flag will be set on the container
                                     process. AllowPrivilegeEscalation is true always
                                     when the container is: 1) run as Privileged 2)
-                                    has CAP_SYS_ADMIN'
+                                    has CAP_SYS_ADMIN Note that this field cannot
+                                    be set when spec.os.name is windows.'
                                   type: boolean
                                 capabilities:
                                   description: The capabilities to add/drop when running
                                     containers. Defaults to the default set of capabilities
-                                    granted by the container runtime.
+                                    granted by the container runtime. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     add:
                                       description: Added capabilities
@@ -9946,7 +10292,9 @@ spec:
                                 privileged:
                                   description: Run container in privileged mode. Processes
                                     in privileged containers are essentially equivalent
-                                    to root on the host. Defaults to false.
+                                    to root on the host. Defaults to false. Note that
+                                    this field cannot be set when spec.os.name is
+                                    windows.
                                   type: boolean
                                 procMount:
                                   description: procMount denotes the type of proc
@@ -9954,11 +10302,13 @@ spec:
                                     DefaultProcMount which uses the container runtime
                                     defaults for readonly paths and masked paths.
                                     This requires the ProcMountType feature flag to
-                                    be enabled.
+                                    be enabled. Note that this field cannot be set
+                                    when spec.os.name is windows.
                                   type: string
                                 readOnlyRootFilesystem:
                                   description: Whether this container has a read-only
-                                    root filesystem. Default is false.
+                                    root filesystem. Default is false. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   type: boolean
                                 runAsGroup:
                                   description: The GID to run the entrypoint of the
@@ -9966,6 +10316,8 @@ spec:
                                     May also be set in PodSecurityContext.  If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   format: int64
                                   type: integer
                                 runAsNonRoot:
@@ -9985,7 +10337,8 @@ spec:
                                     in image metadata if unspecified. May also be
                                     set in PodSecurityContext.  If set in both SecurityContext
                                     and PodSecurityContext, the value specified in
-                                    SecurityContext takes precedence.
+                                    SecurityContext takes precedence. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   format: int64
                                   type: integer
                                 seLinuxOptions:
@@ -9995,6 +10348,8 @@ spec:
                                     container.  May also be set in PodSecurityContext.  If
                                     set in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   properties:
                                     level:
                                       description: Level is SELinux level label that
@@ -10017,7 +10372,8 @@ spec:
                                   description: The seccomp options to use by this
                                     container. If seccomp options are provided at
                                     both the pod & container level, the container
-                                    options override the pod options.
+                                    options override the pod options. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     localhostProfile:
                                       description: localhostProfile indicates a profile
@@ -10045,6 +10401,8 @@ spec:
                                     from the PodSecurityContext will be used. If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is linux.
                                   properties:
                                     gmsaCredentialSpec:
                                       description: GMSACredentialSpec is where the
@@ -10085,8 +10443,7 @@ spec:
                               description: Probes are not allowed for ephemeral containers.
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -10108,6 +10465,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -10173,9 +10550,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -10238,13 +10614,15 @@ spec:
                                 will never receive an EOF. Default is false
                               type: boolean
                             targetContainerName:
-                              description: If set, the name of the container from
+                              description: "If set, the name of the container from
                                 PodSpec that this ephemeral container targets. The
                                 ephemeral container will be run in the namespaces
                                 (IPC, PID, etc) of this container. If not set then
-                                the ephemeral container is run in whatever namespaces
-                                are shared for the pod. Note that the container runtime
-                                must support this feature.
+                                the ephemeral container uses the namespaces configured
+                                in the Pod spec. \n The container runtime must implement
+                                support for this feature. If the runtime does not
+                                support namespace targeting then the result of setting
+                                this field is undefined."
                               type: string
                             terminationMessagePath:
                               description: 'Optional: Path at which the file to which
@@ -10296,7 +10674,8 @@ spec:
                               type: array
                             volumeMounts:
                               description: Pod volumes to mount into the container's
-                                filesystem. Cannot be updated.
+                                filesystem. Subpath mounts are not allowed for ephemeral
+                                containers. Cannot be updated.
                               items:
                                 description: VolumeMount describes a mounting of a
                                   Volume within a container.
@@ -10644,9 +11023,7 @@ spec:
                                     info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -10711,10 +11088,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -10739,20 +11117,17 @@ spec:
                                     or management event such as liveness/startup probe
                                     failure, preemption, resource contention, etc.
                                     The handler is not called if the container crashes
-                                    or exits. The reason for termination is passed
-                                    to the handler. The Pod''s termination grace period
-                                    countdown begins before the PreStop hooked is
-                                    executed. Regardless of the outcome of the handler,
-                                    the container will eventually terminate within
-                                    the Pod''s termination grace period. Other management
-                                    of the container blocks until the hook completes
-                                    or until the termination grace period is reached.
-                                    More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
+                                    or exits. The Pod''s termination grace period
+                                    countdown begins before the PreStop hook is executed.
+                                    Regardless of the outcome of the handler, the
+                                    container will eventually terminate within the
+                                    Pod''s termination grace period (unless delayed
+                                    by finalizers). Other management of the container
+                                    blocks until the hook completes or until the termination
+                                    grace period is reached. More info: https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/#container-hooks'
                                   properties:
                                     exec:
-                                      description: One and only one of the following
-                                        should be specified. Exec specifies the action
-                                        to take.
+                                      description: Exec specifies the action to take.
                                       properties:
                                         command:
                                           description: Command is the command line
@@ -10817,10 +11192,11 @@ spec:
                                       - port
                                       type: object
                                     tcpSocket:
-                                      description: 'TCPSocket specifies an action
-                                        involving a TCP port. TCP hooks not yet supported
-                                        TODO: implement a realistic TCP lifecycle
-                                        hook'
+                                      description: Deprecated. TCPSocket is NOT supported
+                                        as a LifecycleHandler and kept for the backward
+                                        compatibility. There are no validation of
+                                        this field and lifecycle hooks will fail in
+                                        runtime when tcp handler is specified.
                                       properties:
                                         host:
                                           description: 'Optional: Host name to connect
@@ -10846,8 +11222,7 @@ spec:
                                 be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -10869,6 +11244,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -10934,9 +11329,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -11040,8 +11434,7 @@ spec:
                                 the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -11063,6 +11456,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -11128,9 +11541,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -11214,12 +11626,14 @@ spec:
                                     if the no_new_privs flag will be set on the container
                                     process. AllowPrivilegeEscalation is true always
                                     when the container is: 1) run as Privileged 2)
-                                    has CAP_SYS_ADMIN'
+                                    has CAP_SYS_ADMIN Note that this field cannot
+                                    be set when spec.os.name is windows.'
                                   type: boolean
                                 capabilities:
                                   description: The capabilities to add/drop when running
                                     containers. Defaults to the default set of capabilities
-                                    granted by the container runtime.
+                                    granted by the container runtime. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     add:
                                       description: Added capabilities
@@ -11239,7 +11653,9 @@ spec:
                                 privileged:
                                   description: Run container in privileged mode. Processes
                                     in privileged containers are essentially equivalent
-                                    to root on the host. Defaults to false.
+                                    to root on the host. Defaults to false. Note that
+                                    this field cannot be set when spec.os.name is
+                                    windows.
                                   type: boolean
                                 procMount:
                                   description: procMount denotes the type of proc
@@ -11247,11 +11663,13 @@ spec:
                                     DefaultProcMount which uses the container runtime
                                     defaults for readonly paths and masked paths.
                                     This requires the ProcMountType feature flag to
-                                    be enabled.
+                                    be enabled. Note that this field cannot be set
+                                    when spec.os.name is windows.
                                   type: string
                                 readOnlyRootFilesystem:
                                   description: Whether this container has a read-only
-                                    root filesystem. Default is false.
+                                    root filesystem. Default is false. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   type: boolean
                                 runAsGroup:
                                   description: The GID to run the entrypoint of the
@@ -11259,6 +11677,8 @@ spec:
                                     May also be set in PodSecurityContext.  If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   format: int64
                                   type: integer
                                 runAsNonRoot:
@@ -11278,7 +11698,8 @@ spec:
                                     in image metadata if unspecified. May also be
                                     set in PodSecurityContext.  If set in both SecurityContext
                                     and PodSecurityContext, the value specified in
-                                    SecurityContext takes precedence.
+                                    SecurityContext takes precedence. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   format: int64
                                   type: integer
                                 seLinuxOptions:
@@ -11288,6 +11709,8 @@ spec:
                                     container.  May also be set in PodSecurityContext.  If
                                     set in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is windows.
                                   properties:
                                     level:
                                       description: Level is SELinux level label that
@@ -11310,7 +11733,8 @@ spec:
                                   description: The seccomp options to use by this
                                     container. If seccomp options are provided at
                                     both the pod & container level, the container
-                                    options override the pod options.
+                                    options override the pod options. Note that this
+                                    field cannot be set when spec.os.name is windows.
                                   properties:
                                     localhostProfile:
                                       description: localhostProfile indicates a profile
@@ -11338,6 +11762,8 @@ spec:
                                     from the PodSecurityContext will be used. If set
                                     in both SecurityContext and PodSecurityContext,
                                     the value specified in SecurityContext takes precedence.
+                                    Note that this field cannot be set when spec.os.name
+                                    is linux.
                                   properties:
                                     gmsaCredentialSpec:
                                       description: GMSACredentialSpec is where the
@@ -11386,8 +11812,7 @@ spec:
                                 operation. This cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
                                 exec:
-                                  description: One and only one of the following should
-                                    be specified. Exec specifies the action to take.
+                                  description: Exec specifies the action to take.
                                   properties:
                                     command:
                                       description: Command is the command line to
@@ -11409,6 +11834,26 @@ spec:
                                     Defaults to 3. Minimum value is 1.
                                   format: int32
                                   type: integer
+                                grpc:
+                                  description: GRPC specifies an action involving
+                                    a GRPC port. This is an alpha field and requires
+                                    enabling GRPCContainerProbe feature gate.
+                                  properties:
+                                    port:
+                                      description: Port number of the gRPC service.
+                                        Number must be in the range 1 to 65535.
+                                      format: int32
+                                      type: integer
+                                    service:
+                                      description: "Service is the name of the service
+                                        to place in the gRPC HealthCheckRequest (see
+                                        https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
+                                        \n If this is not specified, the default behavior
+                                        is defined by gRPC."
+                                      type: string
+                                  required:
+                                  - port
+                                  type: object
                                 httpGet:
                                   description: HTTPGet specifies the http request
                                     to perform.
@@ -11474,9 +11919,8 @@ spec:
                                   format: int32
                                   type: integer
                                 tcpSocket:
-                                  description: 'TCPSocket specifies an action involving
-                                    a TCP port. TCP hooks not yet supported TODO:
-                                    implement a realistic TCP lifecycle hook'
+                                  description: TCPSocket specifies an action involving
+                                    a TCP port.
                                   properties:
                                     host:
                                       description: 'Optional: Host name to connect
@@ -11656,6 +12100,35 @@ spec:
                           More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/'
                         type: object
                         x-kubernetes-map-type: atomic
+                      os:
+                        description: "Specifies the OS of the containers in the pod.
+                          Some pod and container fields are restricted if this is
+                          set. \n If the OS field is set to linux, the following fields
+                          must be unset: -securityContext.windowsOptions \n If the
+                          OS field is set to windows, following fields must be unset:
+                          - spec.hostPID - spec.hostIPC - spec.securityContext.seLinuxOptions
+                          - spec.securityContext.seccompProfile - spec.securityContext.fsGroup
+                          - spec.securityContext.fsGroupChangePolicy - spec.securityContext.sysctls
+                          - spec.shareProcessNamespace - spec.securityContext.runAsUser
+                          - spec.securityContext.runAsGroup - spec.securityContext.supplementalGroups
+                          - spec.containers[*].securityContext.seLinuxOptions - spec.containers[*].securityContext.seccompProfile
+                          - spec.containers[*].securityContext.capabilities - spec.containers[*].securityContext.readOnlyRootFilesystem
+                          - spec.containers[*].securityContext.privileged - spec.containers[*].securityContext.allowPrivilegeEscalation
+                          - spec.containers[*].securityContext.procMount - spec.containers[*].securityContext.runAsUser
+                          - spec.containers[*].securityContext.runAsGroup This is
+                          an alpha field and requires the IdentifyPodOS feature"
+                        properties:
+                          name:
+                            description: 'Name is the name of the operating system.
+                              The currently supported values are linux and windows.
+                              Additional value may be defined in future and can be
+                              one of: https://github.com/opencontainers/runtime-spec/blob/master/config.md#platform-specific-configuration
+                              Clients should expect to handle additional values and
+                              treat unrecognized values in this field as os: null'
+                            type: string
+                        required:
+                        - name
+                        type: object
                       overhead:
                         additionalProperties:
                           anyOf:
@@ -11752,7 +12225,8 @@ spec:
                               in the volume will be owned by FSGroup) 3. The permission
                               bits are OR'd with rw-rw---- \n If unset, the Kubelet
                               will not modify the ownership and permissions of any
-                              volume."
+                              volume. Note that this field cannot be set when spec.os.name
+                              is windows."
                             format: int64
                             type: integer
                           fsGroupChangePolicy:
@@ -11763,14 +12237,16 @@ spec:
                               permissions). It will have no effect on ephemeral volume
                               types such as: secret, configmaps and emptydir. Valid
                               values are "OnRootMismatch" and "Always". If not specified,
-                              "Always" is used.'
+                              "Always" is used. Note that this field cannot be set
+                              when spec.os.name is windows.'
                             type: string
                           runAsGroup:
                             description: The GID to run the entrypoint of the container
                               process. Uses runtime default if unset. May also be
                               set in SecurityContext.  If set in both SecurityContext
                               and PodSecurityContext, the value specified in SecurityContext
-                              takes precedence for that container.
+                              takes precedence for that container. Note that this
+                              field cannot be set when spec.os.name is windows.
                             format: int64
                             type: integer
                           runAsNonRoot:
@@ -11789,7 +12265,8 @@ spec:
                               if unspecified. May also be set in SecurityContext.  If
                               set in both SecurityContext and PodSecurityContext,
                               the value specified in SecurityContext takes precedence
-                              for that container.
+                              for that container. Note that this field cannot be set
+                              when spec.os.name is windows.
                             format: int64
                             type: integer
                           seLinuxOptions:
@@ -11798,7 +12275,8 @@ spec:
                               allocate a random SELinux context for each container.  May
                               also be set in SecurityContext.  If set in both SecurityContext
                               and PodSecurityContext, the value specified in SecurityContext
-                              takes precedence for that container.
+                              takes precedence for that container. Note that this
+                              field cannot be set when spec.os.name is windows.
                             properties:
                               level:
                                 description: Level is SELinux level label that applies
@@ -11819,7 +12297,8 @@ spec:
                             type: object
                           seccompProfile:
                             description: The seccomp options to use by the containers
-                              in this pod.
+                              in this pod. Note that this field cannot be set when
+                              spec.os.name is windows.
                             properties:
                               localhostProfile:
                                 description: localhostProfile indicates a profile
@@ -11844,7 +12323,8 @@ spec:
                             description: A list of groups applied to the first process
                               run in each container, in addition to the container's
                               primary GID.  If unspecified, no groups will be added
-                              to any container.
+                              to any container. Note that this field cannot be set
+                              when spec.os.name is windows.
                             items:
                               format: int64
                               type: integer
@@ -11852,7 +12332,8 @@ spec:
                           sysctls:
                             description: Sysctls hold a list of namespaced sysctls
                               used for the pod. Pods with unsupported sysctls (by
-                              the container runtime) might fail to launch.
+                              the container runtime) might fail to launch. Note that
+                              this field cannot be set when spec.os.name is windows.
                             items:
                               description: Sysctl defines a kernel parameter to be
                                 set
@@ -11873,7 +12354,8 @@ spec:
                               all containers. If unspecified, the options within a
                               container's SecurityContext will be used. If set in
                               both SecurityContext and PodSecurityContext, the value
-                              specified in SecurityContext takes precedence.
+                              specified in SecurityContext takes precedence. Note
+                              that this field cannot be set when spec.os.name is linux.
                             properties:
                               gmsaCredentialSpec:
                                 description: GMSACredentialSpec is where the GMSA
@@ -12086,13 +12568,13 @@ spec:
                                 with a pod if it doesn''t satisfy the spread constraint.
                                 - DoNotSchedule (default) tells the scheduler not
                                 to schedule it. - ScheduleAnyway tells the scheduler
-                                to schedule the pod in any location,   but giving
-                                higher precedence to topologies that would help reduce
-                                the   skew. A constraint is considered "Unsatisfiable"
-                                for an incoming pod if and only if every possible
-                                node assigment for that pod would violate "MaxSkew"
-                                on some topology. For example, in a 3-zone cluster,
-                                MaxSkew is set to 1, and pods with the same labelSelector
+                                to schedule the pod in any location, but giving higher
+                                precedence to topologies that would help reduce the
+                                skew. A constraint is considered "Unsatisfiable" for
+                                an incoming pod if and only if every possible node
+                                assignment for that pod would violate "MaxSkew" on
+                                some topology. For example, in a 3-zone cluster, MaxSkew
+                                is set to 1, and pods with the same labelSelector
                                 spread as 3/1/1: | zone1 | zone2 | zone3 | | P P P
                                 |   P   |   P   | If WhenUnsatisfiable is set to DoNotSchedule,
                                 incoming pod can only be scheduled to zone2(zone3)
@@ -12529,22 +13011,19 @@ spec:
                                 when the pod is removed. \n Use this if: a) the volume
                                 is only needed while the pod runs, b) features of
                                 normal volumes like restoring from snapshot or capacity
-                                \   tracking are needed, c) the storage driver is
-                                specified through a storage class, and d) the storage
-                                driver supports dynamic volume provisioning through
-                                \   a PersistentVolumeClaim (see EphemeralVolumeSource
-                                for more    information on the connection between
-                                this volume type    and PersistentVolumeClaim). \n
-                                Use PersistentVolumeClaim or one of the vendor-specific
+                                tracking are needed, c) the storage driver is specified
+                                through a storage class, and d) the storage driver
+                                supports dynamic volume provisioning through a PersistentVolumeClaim
+                                (see EphemeralVolumeSource for more information on
+                                the connection between this volume type and PersistentVolumeClaim).
+                                \n Use PersistentVolumeClaim or one of the vendor-specific
                                 APIs for volumes that persist for longer than the
                                 lifecycle of an individual pod. \n Use CSI for light-weight
                                 local ephemeral volumes if the CSI driver is meant
                                 to be used that way - see the documentation of the
                                 driver for more information. \n A pod can use both
                                 types of ephemeral volumes and persistent volumes
-                                at the same time. \n This is a beta feature and only
-                                available when the GenericEphemeralVolume feature
-                                gate is enabled."
+                                at the same time."
                               properties:
                                 volumeClaimTemplate:
                                   description: "Will be used to create a stand-alone
@@ -12645,14 +13124,15 @@ spec:
                                             are two important differences between
                                             DataSource and DataSourceRef: * While
                                             DataSource only allows two specific types
-                                            of objects, DataSourceRef   allows any
-                                            non-core object, as well as PersistentVolumeClaim
+                                            of objects, DataSourceRef allows any non-core
+                                            object, as well as PersistentVolumeClaim
                                             objects. * While DataSource ignores disallowed
-                                            values (dropping them), DataSourceRef   preserves
-                                            all values, and generates an error if
-                                            a disallowed value is   specified. (Alpha)
-                                            Using this field requires the AnyVolumeDataSource
-                                            feature gate to be enabled.'
+                                            values (dropping them), DataSourceRef
+                                            preserves all values, and generates an
+                                            error if a disallowed value is specified.
+                                            (Alpha) Using this field requires the
+                                            AnyVolumeDataSource feature gate to be
+                                            enabled.'
                                           properties:
                                             apiGroup:
                                               description: APIGroup is the group for
@@ -12676,8 +13156,13 @@ spec:
                                           type: object
                                         resources:
                                           description: 'Resources represents the minimum
-                                            resources the volume should have. More
-                                            info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
+                                            resources the volume should have. If RecoverVolumeExpansionFailure
+                                            feature is enabled users are allowed to
+                                            specify resource requirements that are
+                                            lower than previous value but must still
+                                            be higher than capacity recorded in the
+                                            status field of the claim. More info:
+                                            https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                                           properties:
                                             limits:
                                               additionalProperties:

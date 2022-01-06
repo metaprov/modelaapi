@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modelaapi/services/postmortem/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/postmortem/v1/postmortem.proto\x12\x34github.com.metaprov.modelaapi.services.postmortem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\"\xc4\x01\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListPostMortemsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList\"i\n\x17\x43reatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x1a\n\x18\x43reatePostMortemResponse\"i\n\x17UpdatePostMortemRequest\x12N\n\x04item\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x1a\n\x18UpdatePostMortemResponse\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetPostMortemResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65letePostMortemResponse2\xd5\x08\n\x11PostMortemService\x12\xc7\x01\n\x0fListPostMortems\x12L.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest\x1aM.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/postmortems\x12\xcd\x01\n\x10\x43reatePostMortem\x12M.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest\x1aN.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/postmortems:\x01*\x12\xc8\x01\n\rGetPostMortem\x12J.github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemRequest\x1aK.github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/postmortems/{name}\x12\xe8\x01\n\x10UpdatePostMortem\x12M.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest\x1aN.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemResponse\"5\x82\xd3\xe4\x93\x02/\x1a*/v1/postmortems/{postmortem.metadata.name}:\x01*\x12\xef\x01\n\x10\x44\x65letePostMortem\x12M.github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemRequest\x1aN.github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemResponse\"<\x82\xd3\xe4\x93\x02\x36*4/api/v1alpha1/postmortems/{postmortem.metadata.name}B6Z4github.com/metaprov/modelaapi/services/postmortem/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/postmortem/v1/postmortem.proto\x12\x34github.com.metaprov.modelaapi.services.postmortem.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\"\xc4\x01\n\x16ListPostMortemsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListPostMortemsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList\"i\n\x17\x43reatePostMortemRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x1a\n\x18\x43reatePostMortemResponse\"i\n\x17UpdatePostMortemRequest\x12N\n\x04item\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\"\x1a\n\x18UpdatePostMortemResponse\"7\n\x14GetPostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"u\n\x15GetPostMortemResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65letePostMortemRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65letePostMortemResponse2\xef\x08\n\x11PostMortemService\x12\xd3\x01\n\x0fListPostMortems\x12L.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRequest\x1aM.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/postmortems/{namespace}\x12\xcd\x01\n\x10\x43reatePostMortem\x12M.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest\x1aN.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/postmortems:\x01*\x12\xd4\x01\n\rGetPostMortem\x12J.github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemRequest\x1aK.github.com.metaprov.modelaapi.services.postmortem.v1.GetPostMortemResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/postmortems/{namespace}/{name}\x12\xfc\x01\n\x10UpdatePostMortem\x12M.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest\x1aN.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/postmortems/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xdd\x01\n\x10\x44\x65letePostMortem\x12M.github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemRequest\x1aN.github.com.metaprov.modelaapi.services.postmortem.v1.DeletePostMortemResponse\"*\x82\xd3\xe4\x93\x02$*\"/v1/postmortems/{namespace}/{name}B6Z4github.com/metaprov/modelaapi/services/postmortem/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _POSTMORTEMSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1073,
-  serialized_end=2182,
+  serialized_end=2208,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListPostMortems',
@@ -509,7 +509,7 @@ _POSTMORTEMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTPOSTMORTEMSREQUEST,
     output_type=_LISTPOSTMORTEMSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\021\022\017/v1/postmortems',
+    serialized_options=b'\202\323\344\223\002\035\022\033/v1/postmortems/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -529,7 +529,7 @@ _POSTMORTEMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETPOSTMORTEMREQUEST,
     output_type=_GETPOSTMORTEMRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\022\026/v1/postmortems/{name}',
+    serialized_options=b'\202\323\344\223\002$\022\"/v1/postmortems/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _POSTMORTEMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEPOSTMORTEMREQUEST,
     output_type=_UPDATEPOSTMORTEMRESPONSE,
-    serialized_options=b'\202\323\344\223\002/\032*/v1/postmortems/{postmortem.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002C\032>/v1/postmortems/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -549,7 +549,7 @@ _POSTMORTEMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEPOSTMORTEMREQUEST,
     output_type=_DELETEPOSTMORTEMRESPONSE,
-    serialized_options=b'\202\323\344\223\0026*4/api/v1alpha1/postmortems/{postmortem.metadata.name}',
+    serialized_options=b'\202\323\344\223\002$*\"/v1/postmortems/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

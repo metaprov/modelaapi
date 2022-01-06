@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z$k8s.io/apimachinery/pkg/api/resource',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4k8s.io/apimachinery/pkg/api/resource/generated.proto\x12$k8s.io.apimachinery.pkg.api.resource\"\x1a\n\x08Quantity\x12\x0e\n\x06string\x18\x01 \x01(\tB&Z$k8s.io/apimachinery/pkg/api/resource'
+  serialized_pb=b'\n4k8s.io/apimachinery/pkg/api/resource/generated.proto\x12$k8s.io.apimachinery.pkg.api.resource\"\x1a\n\x08Quantity\x12\x0e\n\x06string\x18\x01 \x01(\t\"\x1f\n\rQuantityValue\x12\x0e\n\x06string\x18\x01 \x01(\tB&Z$k8s.io/apimachinery/pkg/api/resource'
 )
 
 
@@ -56,7 +56,40 @@ _QUANTITY = _descriptor.Descriptor(
   serialized_end=120,
 )
 
+
+_QUANTITYVALUE = _descriptor.Descriptor(
+  name='QuantityValue',
+  full_name='k8s.io.apimachinery.pkg.api.resource.QuantityValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='string', full_name='k8s.io.apimachinery.pkg.api.resource.QuantityValue.string', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=122,
+  serialized_end=153,
+)
+
 DESCRIPTOR.message_types_by_name['Quantity'] = _QUANTITY
+DESCRIPTOR.message_types_by_name['QuantityValue'] = _QUANTITYVALUE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Quantity = _reflection.GeneratedProtocolMessageType('Quantity', (_message.Message,), {
@@ -65,6 +98,13 @@ Quantity = _reflection.GeneratedProtocolMessageType('Quantity', (_message.Messag
   # @@protoc_insertion_point(class_scope:k8s.io.apimachinery.pkg.api.resource.Quantity)
   })
 _sym_db.RegisterMessage(Quantity)
+
+QuantityValue = _reflection.GeneratedProtocolMessageType('QuantityValue', (_message.Message,), {
+  'DESCRIPTOR' : _QUANTITYVALUE,
+  '__module__' : 'k8s.io.apimachinery.pkg.api.resource.generated_pb2'
+  # @@protoc_insertion_point(class_scope:k8s.io.apimachinery.pkg.api.resource.QuantityValue)
+  })
+_sym_db.RegisterMessage(QuantityValue)
 
 
 DESCRIPTOR._options = None

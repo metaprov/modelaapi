@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/metaprov/modelaapi/services/modelautobuilder/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto\x12:github.com.metaprov.modelaapi.services.modelautobuilder.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\xd6\x01\n\x1cListModelAutobuildersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1dListModelAutobuildersResponse\x12]\n\x05items\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList\"y\n\x1d\x43reateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder\" \n\x1e\x43reateModelAutobuilderResponse\"y\n\x1dUpdateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder\" \n\x1eUpdateModelAutobuilderResponse\"=\n\x1aGetModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelAutobuilderResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelAutobuilderResponse2\x96\n\n\x17ModelAutobuilderService\x12\xeb\x01\n\x15ListModelAutobuilders\x12X.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest\x1aY.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/modelautobuilders\x12\xf1\x01\n\x16\x43reateModelAutobuilder\x12Y.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest\x1aZ.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/modelautobuilders:\x01*\x12\xec\x01\n\x13GetModelAutobuilder\x12V.github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderRequest\x1aW.github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/modelautobuilders/{name}\x12\x93\x02\n\x16UpdateModelAutobuilder\x12Y.github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest\x1aZ.github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse\"B\x82\xd3\xe4\x93\x02<\x1a\x37/v1/modelautobuilders/{modelautobuilders.metadata.name}:\x01*\x12\x93\x02\n\x16\x44\x65leteModelAutobuilder\x12Y.github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest\x1aZ.github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse\"B\x82\xd3\xe4\x93\x02<*:/api/v1/modelautobuilders/{modelautobuilder.metadata.name}B<Z:github.com/metaprov/modelaapi/services/modelautobuilder/v1b\x06proto3'
+  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/modelautobuilder/v1/modelautobuilder.proto\x12:github.com.metaprov.modelaapi.services.modelautobuilder.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\xd6\x01\n\x1cListModelAutobuildersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1dListModelAutobuildersResponse\x12]\n\x05items\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList\"y\n\x1d\x43reateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder\" \n\x1e\x43reateModelAutobuilderResponse\"y\n\x1dUpdateModelAutobuilderRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder\" \n\x1eUpdateModelAutobuilderResponse\"=\n\x1aGetModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelAutobuilderResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelAutobuilderRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelAutobuilderResponse2\xa9\n\n\x17ModelAutobuilderService\x12\xf7\x01\n\x15ListModelAutobuilders\x12X.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersRequest\x1aY.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/modelautobuilders/{namespace}\x12\xf1\x01\n\x16\x43reateModelAutobuilder\x12Y.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest\x1aZ.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/modelautobuilders:\x01*\x12\xf8\x01\n\x13GetModelAutobuilder\x12V.github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderRequest\x1aW.github.com.metaprov.modelaapi.services.modelautobuilder.v1.GetModelAutobuilderResponse\"0\x82\xd3\xe4\x93\x02*\x12(/v1/modelautobuilders/{namespace}/{name}\x12\xa0\x02\n\x16UpdateModelAutobuilder\x12Y.github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderRequest\x1aZ.github.com.metaprov.modelaapi.services.modelautobuilder.v1.UpdateModelAutobuilderResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/modelautobuilders/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x81\x02\n\x16\x44\x65leteModelAutobuilder\x12Y.github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderRequest\x1aZ.github.com.metaprov.modelaapi.services.modelautobuilder.v1.DeleteModelAutobuilderResponse\"0\x82\xd3\xe4\x93\x02**(/v1/modelautobuilders/{namespace}/{name}B<Z:github.com/metaprov/modelaapi/services/modelautobuilder/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1208,
-  serialized_end=2510,
+  serialized_end=2529,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListModelAutobuilders',
@@ -509,7 +509,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTMODELAUTOBUILDERSREQUEST,
     output_type=_LISTMODELAUTOBUILDERSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\027\022\025/v1/modelautobuilders',
+    serialized_options=b'\202\323\344\223\002#\022!/v1/modelautobuilders/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -529,7 +529,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETMODELAUTOBUILDERREQUEST,
     output_type=_GETMODELAUTOBUILDERRESPONSE,
-    serialized_options=b'\202\323\344\223\002\036\022\034/v1/modelautobuilders/{name}',
+    serialized_options=b'\202\323\344\223\002*\022(/v1/modelautobuilders/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEMODELAUTOBUILDERREQUEST,
     output_type=_UPDATEMODELAUTOBUILDERRESPONSE,
-    serialized_options=b'\202\323\344\223\002<\0327/v1/modelautobuilders/{modelautobuilders.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002I\032D/v1/modelautobuilders/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -549,7 +549,7 @@ _MODELAUTOBUILDERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEMODELAUTOBUILDERREQUEST,
     output_type=_DELETEMODELAUTOBUILDERRESPONSE,
-    serialized_options=b'\202\323\344\223\002<*:/api/v1/modelautobuilders/{modelautobuilder.metadata.name}',
+    serialized_options=b'\202\323\344\223\002**(/v1/modelautobuilders/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

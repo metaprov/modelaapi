@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/metaprov/modelaapi/services/featurehistogram/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto\x12:github.com.metaprov.modelaapi.services.featurehistogram.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd6\x01\n\x1cListFeatureHistogramsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"z\n\x1dListFeatureHistogramsResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList\"u\n\x1d\x43reateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\" \n\x1e\x43reateFeatureHistogramResponse\"u\n\x1dUpdateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\" \n\x1eUpdateFeatureHistogramResponse\"=\n\x1aGetFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x81\x01\n\x1bGetFeatureHistogramResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteFeatureHistogramResponse2\xd3\t\n\x17\x46\x65\x61tureHistogramService\x12\xeb\x01\n\x15ListFeatureHistograms\x12X.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest\x1aY.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/featurehistograms\x12\xf1\x01\n\x16\x43reateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/featurehistograms:\x01*\x12\xec\x01\n\x13GetFeatureHistogram\x12V.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramRequest\x1aW.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/featurehistograms/{name}\x12\x92\x02\n\x16UpdateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse\"A\x82\xd3\xe4\x93\x02;\x1a\x36/v1/featurehistograms/{featurehistogram.metadata.name}:\x01*\x12\xd1\x01\n\x16\x44\x65leteFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse\"\x00\x42<Z:github.com/metaprov/modelaapi/services/featurehistogram/v1b\x06proto3'
+  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/featurehistogram/v1/featurehistogram.proto\x12:github.com.metaprov.modelaapi.services.featurehistogram.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xd6\x01\n\x1cListFeatureHistogramsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"z\n\x1dListFeatureHistogramsResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList\"u\n\x1d\x43reateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\" \n\x1e\x43reateFeatureHistogramResponse\"u\n\x1dUpdateFeatureHistogramRequest\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\" \n\x1eUpdateFeatureHistogramResponse\"=\n\x1aGetFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x81\x01\n\x1bGetFeatureHistogramResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteFeatureHistogramRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteFeatureHistogramResponse2\xa9\n\n\x17\x46\x65\x61tureHistogramService\x12\xf7\x01\n\x15ListFeatureHistograms\x12X.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsRequest\x1aY.github.com.metaprov.modelaapi.services.featurehistogram.v1.ListFeatureHistogramsResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/featurehistograms/{namespace}\x12\xf1\x01\n\x16\x43reateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.CreateFeatureHistogramResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/featurehistograms:\x01*\x12\xf8\x01\n\x13GetFeatureHistogram\x12V.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramRequest\x1aW.github.com.metaprov.modelaapi.services.featurehistogram.v1.GetFeatureHistogramResponse\"0\x82\xd3\xe4\x93\x02*\x12(/v1/featurehistograms/{namespace}/{name}\x12\xa0\x02\n\x16UpdateFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.UpdateFeatureHistogramResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/featurehistograms/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x81\x02\n\x16\x44\x65leteFeatureHistogram\x12Y.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramRequest\x1aZ.github.com.metaprov.modelaapi.services.featurehistogram.v1.DeleteFeatureHistogramResponse\"0\x82\xd3\xe4\x93\x02**(/v1/featurehistograms/{namespace}/{name}B<Z:github.com/metaprov/modelaapi/services/featurehistogram/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _FEATUREHISTOGRAMSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1188,
-  serialized_end=2423,
+  serialized_end=2509,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListFeatureHistograms',
@@ -509,7 +509,7 @@ _FEATUREHISTOGRAMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTFEATUREHISTOGRAMSREQUEST,
     output_type=_LISTFEATUREHISTOGRAMSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\027\022\025/v1/featurehistograms',
+    serialized_options=b'\202\323\344\223\002#\022!/v1/featurehistograms/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -529,7 +529,7 @@ _FEATUREHISTOGRAMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETFEATUREHISTOGRAMREQUEST,
     output_type=_GETFEATUREHISTOGRAMRESPONSE,
-    serialized_options=b'\202\323\344\223\002\036\022\034/v1/featurehistograms/{name}',
+    serialized_options=b'\202\323\344\223\002*\022(/v1/featurehistograms/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _FEATUREHISTOGRAMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEFEATUREHISTOGRAMREQUEST,
     output_type=_UPDATEFEATUREHISTOGRAMRESPONSE,
-    serialized_options=b'\202\323\344\223\002;\0326/v1/featurehistograms/{featurehistogram.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002I\032D/v1/featurehistograms/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -549,7 +549,7 @@ _FEATUREHISTOGRAMSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEFEATUREHISTOGRAMREQUEST,
     output_type=_DELETEFEATUREHISTOGRAMRESPONSE,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002**(/v1/featurehistograms/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

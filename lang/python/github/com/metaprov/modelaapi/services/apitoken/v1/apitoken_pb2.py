@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modelaapi/services/apitoken/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto\x12\x32github.com.metaprov.modelaapi.services.apitoken.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xbe\x01\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x15ListApiTokensResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList\"\x12\n\x10\x41piTokenResponse\"x\n\x15\x43reateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x10\n\x08password\x18\x02 \x01(\t\"\x18\n\x16\x43reateApiTokenResponse\"f\n\x15UpdateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"\x18\n\x16UpdateApiTokenResponse\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x13GetApiTokenResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1cGetApiTokenNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1dGetApiTokenNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteApiTokenResponse\"\x18\n\x16\x41piTokenCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"I\n\x14\x41piTokenLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"&\n\x15\x41piTokenLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\";\n\x18\x41piTokenGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"&\n\x15\x41piTokenLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse2\xc0\x08\n\x0f\x41piTokenService\x12\xbb\x01\n\rListApiTokens\x12H.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/v1/apitokens\x12\xc8\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\r/v1/apitokens:\x08\x61pitoken\x12\xc8\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest\x1aG.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/{namespace}/apitokens/{name}\x12\x80\x02\n\x0eUpdateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse\"W\x82\xd3\xe4\x93\x02Q\x1a\x45/v1/{apitoken.metadata.namespace}/apitokens//{apitoken.metadata.name}:\x08\x61pitoken\x12\xd5\x01\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse\",\x82\xd3\xe4\x93\x02&*$/api/{namespace}/v1/apitokens/{name}B4Z2github.com/metaprov/modelaapi/services/apitoken/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/apitoken/v1/apitoken.proto\x12\x32github.com.metaprov.modelaapi.services.apitoken.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xbe\x01\n\x14ListApiTokensRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x15ListApiTokensResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList\"\x12\n\x10\x41piTokenResponse\"x\n\x15\x43reateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x10\n\x08password\x18\x02 \x01(\t\"\x18\n\x16\x43reateApiTokenResponse\"f\n\x15UpdateApiTokenRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"\x18\n\x16UpdateApiTokenResponse\"5\n\x12GetApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x13GetApiTokenResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1cGetApiTokenNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1dGetApiTokenNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"8\n\x15\x44\x65leteApiTokenRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteApiTokenResponse\"\x18\n\x16\x41piTokenCreateResponse\"I\n\x14\x41piTokenLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"&\n\x15\x41piTokenLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t2\xb1\x08\n\x0f\x41piTokenService\x12\xc7\x01\n\rListApiTokens\x12H.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensRequest\x1aI.github.com.metaprov.modelaapi.services.apitoken.v1.ListApiTokensResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/apitokens/{namespace}\x12\xc1\x01\n\x0e\x43reateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.CreateApiTokenResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/apitokens:\x01*\x12\xc8\x01\n\x0bGetApiToken\x12\x46.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenRequest\x1aG.github.com.metaprov.modelaapi.services.apitoken.v1.GetApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/apitokens/{namespace}/{name}\x12\xf0\x01\n\x0eUpdateApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.UpdateApiTokenResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a</v1/apitokens/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteApiToken\x12I.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenRequest\x1aJ.github.com.metaprov.modelaapi.services.apitoken.v1.DeleteApiTokenResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/apitokens/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/apitoken/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -522,56 +522,6 @@ _APITOKENCREATERESPONSE = _descriptor.Descriptor(
 )
 
 
-_LOGOUTRESPONSE = _descriptor.Descriptor(
-  name='LogoutResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.LogoutResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1349,
-  serialized_end=1365,
-)
-
-
-_RESETPASSWORDRESPONSE = _descriptor.Descriptor(
-  name='ResetPasswordResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1367,
-  serialized_end=1390,
-)
-
-
 _APITOKENLOGINREQUEST = _descriptor.Descriptor(
   name='ApiTokenLoginRequest',
   full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLoginRequest',
@@ -613,8 +563,8 @@ _APITOKENLOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1392,
-  serialized_end=1465,
+  serialized_start=1349,
+  serialized_end=1422,
 )
 
 
@@ -645,242 +595,8 @@ _APITOKENLOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1467,
-  serialized_end=1505,
-)
-
-
-_APITOKENGETBYNAMEREQUEST = _descriptor.Descriptor(
-  name='ApiTokenGetByNameRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenGetByNameRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenGetByNameRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenGetByNameRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1507,
-  serialized_end=1566,
-)
-
-
-_APITOKENLOGOUTREQUEST = _descriptor.Descriptor(
-  name='ApiTokenLogoutRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLogoutRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLogoutRequest.token', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1568,
-  serialized_end=1606,
-)
-
-
-_CHANGEPASSWORDREQUEST = _descriptor.Descriptor(
-  name='ChangePasswordRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='old', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest.old', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='new', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest.new', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='confirmedNew', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest.confirmedNew', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1608,
-  serialized_end=1712,
-)
-
-
-_CHANGEPASSWORDRESPONSE = _descriptor.Descriptor(
-  name='ChangePasswordResponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1714,
-  serialized_end=1738,
-)
-
-
-_RESETPASSWORDREQUEST = _descriptor.Descriptor(
-  name='ResetPasswordRequest',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='new', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordRequest.new', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='confirmedNew', full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordRequest.confirmedNew', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1740,
-  serialized_end=1830,
-)
-
-
-_RESETPASSWORDREPONSE = _descriptor.Descriptor(
-  name='ResetPasswordReponse',
-  full_name='github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordReponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1832,
-  serialized_end=1854,
+  serialized_start=1424,
+  serialized_end=1462,
 )
 
 _LISTAPITOKENSREQUEST_LABELSENTRY.containing_type = _LISTAPITOKENSREQUEST
@@ -904,16 +620,8 @@ DESCRIPTOR.message_types_by_name['GetApiTokenNamespacesResponse'] = _GETAPITOKEN
 DESCRIPTOR.message_types_by_name['DeleteApiTokenRequest'] = _DELETEAPITOKENREQUEST
 DESCRIPTOR.message_types_by_name['DeleteApiTokenResponse'] = _DELETEAPITOKENRESPONSE
 DESCRIPTOR.message_types_by_name['ApiTokenCreateResponse'] = _APITOKENCREATERESPONSE
-DESCRIPTOR.message_types_by_name['LogoutResponse'] = _LOGOUTRESPONSE
-DESCRIPTOR.message_types_by_name['ResetPasswordResponse'] = _RESETPASSWORDRESPONSE
 DESCRIPTOR.message_types_by_name['ApiTokenLoginRequest'] = _APITOKENLOGINREQUEST
 DESCRIPTOR.message_types_by_name['ApiTokenLoginResponse'] = _APITOKENLOGINRESPONSE
-DESCRIPTOR.message_types_by_name['ApiTokenGetByNameRequest'] = _APITOKENGETBYNAMEREQUEST
-DESCRIPTOR.message_types_by_name['ApiTokenLogoutRequest'] = _APITOKENLOGOUTREQUEST
-DESCRIPTOR.message_types_by_name['ChangePasswordRequest'] = _CHANGEPASSWORDREQUEST
-DESCRIPTOR.message_types_by_name['ChangePasswordResponse'] = _CHANGEPASSWORDRESPONSE
-DESCRIPTOR.message_types_by_name['ResetPasswordRequest'] = _RESETPASSWORDREQUEST
-DESCRIPTOR.message_types_by_name['ResetPasswordReponse'] = _RESETPASSWORDREPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListApiTokensRequest = _reflection.GeneratedProtocolMessageType('ListApiTokensRequest', (_message.Message,), {
@@ -1022,20 +730,6 @@ ApiTokenCreateResponse = _reflection.GeneratedProtocolMessageType('ApiTokenCreat
   })
 _sym_db.RegisterMessage(ApiTokenCreateResponse)
 
-LogoutResponse = _reflection.GeneratedProtocolMessageType('LogoutResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LOGOUTRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.LogoutResponse)
-  })
-_sym_db.RegisterMessage(LogoutResponse)
-
-ResetPasswordResponse = _reflection.GeneratedProtocolMessageType('ResetPasswordResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESETPASSWORDRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordResponse)
-  })
-_sym_db.RegisterMessage(ResetPasswordResponse)
-
 ApiTokenLoginRequest = _reflection.GeneratedProtocolMessageType('ApiTokenLoginRequest', (_message.Message,), {
   'DESCRIPTOR' : _APITOKENLOGINREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
@@ -1050,48 +744,6 @@ ApiTokenLoginResponse = _reflection.GeneratedProtocolMessageType('ApiTokenLoginR
   })
 _sym_db.RegisterMessage(ApiTokenLoginResponse)
 
-ApiTokenGetByNameRequest = _reflection.GeneratedProtocolMessageType('ApiTokenGetByNameRequest', (_message.Message,), {
-  'DESCRIPTOR' : _APITOKENGETBYNAMEREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenGetByNameRequest)
-  })
-_sym_db.RegisterMessage(ApiTokenGetByNameRequest)
-
-ApiTokenLogoutRequest = _reflection.GeneratedProtocolMessageType('ApiTokenLogoutRequest', (_message.Message,), {
-  'DESCRIPTOR' : _APITOKENLOGOUTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.ApiTokenLogoutRequest)
-  })
-_sym_db.RegisterMessage(ApiTokenLogoutRequest)
-
-ChangePasswordRequest = _reflection.GeneratedProtocolMessageType('ChangePasswordRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CHANGEPASSWORDREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordRequest)
-  })
-_sym_db.RegisterMessage(ChangePasswordRequest)
-
-ChangePasswordResponse = _reflection.GeneratedProtocolMessageType('ChangePasswordResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CHANGEPASSWORDRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.ChangePasswordResponse)
-  })
-_sym_db.RegisterMessage(ChangePasswordResponse)
-
-ResetPasswordRequest = _reflection.GeneratedProtocolMessageType('ResetPasswordRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESETPASSWORDREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordRequest)
-  })
-_sym_db.RegisterMessage(ResetPasswordRequest)
-
-ResetPasswordReponse = _reflection.GeneratedProtocolMessageType('ResetPasswordReponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESETPASSWORDREPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.apitoken.v1.apitoken_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.apitoken.v1.ResetPasswordReponse)
-  })
-_sym_db.RegisterMessage(ResetPasswordReponse)
-
 
 DESCRIPTOR._options = None
 _LISTAPITOKENSREQUEST_LABELSENTRY._options = None
@@ -1103,8 +755,8 @@ _APITOKENSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1857,
-  serialized_end=2945,
+  serialized_start=1465,
+  serialized_end=2538,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListApiTokens',
@@ -1113,7 +765,7 @@ _APITOKENSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTAPITOKENSREQUEST,
     output_type=_LISTAPITOKENSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\017\022\r/v1/apitokens',
+    serialized_options=b'\202\323\344\223\002\033\022\031/v1/apitokens/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1123,7 +775,7 @@ _APITOKENSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEAPITOKENREQUEST,
     output_type=_CREATEAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002\031\"\r/v1/apitokens:\010apitoken',
+    serialized_options=b'\202\323\344\223\002\022\"\r/v1/apitokens:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1133,7 +785,7 @@ _APITOKENSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETAPITOKENREQUEST,
     output_type=_GETAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002\"\022 /v1/{namespace}/apitokens/{name}',
+    serialized_options=b'\202\323\344\223\002\"\022 /v1/apitokens/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1143,7 +795,7 @@ _APITOKENSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEAPITOKENREQUEST,
     output_type=_UPDATEAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002Q\032E/v1/{apitoken.metadata.namespace}/apitokens//{apitoken.metadata.name}:\010apitoken',
+    serialized_options=b'\202\323\344\223\002A\032</v1/apitokens/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1153,7 +805,7 @@ _APITOKENSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEAPITOKENREQUEST,
     output_type=_DELETEAPITOKENRESPONSE,
-    serialized_options=b'\202\323\344\223\002&*$/api/{namespace}/v1/apitokens/{name}',
+    serialized_options=b'\202\323\344\223\002\"* /v1/apitokens/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

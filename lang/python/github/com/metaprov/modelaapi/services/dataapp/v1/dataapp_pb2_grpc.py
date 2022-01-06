@@ -44,6 +44,11 @@ class DataAppServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppResponse.FromString,
                 )
+        self.RunDataApp = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.RunDataAppRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.RunDataAppResponse.FromString,
+                )
         self.ResumeDataApp = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.ResumeDataAppRequest.SerializeToString,
@@ -90,6 +95,12 @@ class DataAppServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RunDataApp(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ResumeDataApp(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -128,6 +139,11 @@ def add_DataAppServiceServicer_to_server(servicer, server):
                     servicer.PauseDataApp,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppResponse.SerializeToString,
+            ),
+            'RunDataApp': grpc.unary_unary_rpc_method_handler(
+                    servicer.RunDataApp,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.RunDataAppRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.RunDataAppResponse.SerializeToString,
             ),
             'ResumeDataApp': grpc.unary_unary_rpc_method_handler(
                     servicer.ResumeDataApp,
@@ -243,6 +259,23 @@ class DataAppService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/PauseDataApp',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.PauseDataAppResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RunDataApp(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.RunDataAppRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_dataapp_dot_v1_dot_dataapp__pb2.RunDataAppResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

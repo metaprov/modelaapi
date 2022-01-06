@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z.github.com/metaprov/modelaapi/services/todo/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n9github.com/metaprov/modelaapi/services/todo/v1/todo.proto\x12.github.com.metaprov.modelaapi.services.todo.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xb2\x01\n\x10ListTodosRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x06labels\x18\x02 \x03(\x0b\x32L.github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"b\n\x11ListTodosResponse\x12M\n\x05items\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList\"\x0e\n\x0cTodoResponse\"o\n\x11\x43reateTodoRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\x12\x10\n\x08password\x18\x02 \x01(\t\"\x14\n\x12\x43reateTodoResponse\"]\n\x11UpdateTodoRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x14\n\x12UpdateTodoResponse\"1\n\x0eGetTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x0fGetTodoResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18GetTodoNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x19GetTodoNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"4\n\x11\x44\x65leteTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x44\x65leteTodoResponse\"\x14\n\x12TodoCreateResponse\"7\n\x14TodoGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\"\n\x11TodoLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t2\xb4\x07\n\x0bTodoService\x12\xa3\x01\n\tListTodos\x12@.github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest\x1a\x41.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/todos\x12\xac\x01\n\nCreateTodo\x12\x41.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest\x1a\x42.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\t/v1/todos:\x04todo\x12\xb0\x01\n\x07GetTodo\x12>.github.com.metaprov.modelaapi.services.todo.v1.GetTodoRequest\x1a?.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/{namespace}/todos/{name}\x12\xdc\x01\n\nUpdateTodo\x12\x41.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest\x1a\x42.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a\x39/v1/{todo.metadata.namespace}/todos//{todo.metadata.name}:\x04todo\x12\xbd\x01\n\nDeleteTodo\x12\x41.github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoRequest\x1a\x42.github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoResponse\"(\x82\xd3\xe4\x93\x02\"* /api/{namespace}/v1/todos/{name}B0Z.github.com/metaprov/modelaapi/services/todo/v1b\x06proto3'
+  serialized_pb=b'\n9github.com/metaprov/modelaapi/services/todo/v1/todo.proto\x12.github.com.metaprov.modelaapi.services.todo.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xb2\x01\n\x10ListTodosRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\\\n\x06labels\x18\x02 \x03(\x0b\x32L.github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"b\n\x11ListTodosResponse\x12M\n\x05items\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList\"o\n\x11\x43reateTodoRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\x12\x10\n\x08password\x18\x02 \x01(\t\"\x14\n\x12\x43reateTodoResponse\"]\n\x11UpdateTodoRequest\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\"\x14\n\x12UpdateTodoResponse\"1\n\x0eGetTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"i\n\x0fGetTodoResponse\x12H\n\x04item\x18\x01 \x01(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"4\n\x11\x44\x65leteTodoRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x44\x65leteTodoResponse2\xb5\x07\n\x0bTodoService\x12\xaf\x01\n\tListTodos\x12@.github.com.metaprov.modelaapi.services.todo.v1.ListTodosRequest\x1a\x41.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/todos/{namespace}\x12\xa9\x01\n\nCreateTodo\x12\x41.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest\x1a\x42.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\t/v1/todos:\x01*\x12\xb0\x01\n\x07GetTodo\x12>.github.com.metaprov.modelaapi.services.todo.v1.GetTodoRequest\x1a?.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/todos/{namespace}/{name}\x12\xd8\x01\n\nUpdateTodo\x12\x41.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoRequest\x1a\x42.github.com.metaprov.modelaapi.services.todo.v1.UpdateTodoResponse\"C\x82\xd3\xe4\x93\x02=\x1a\x38/v1/todos/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xb9\x01\n\nDeleteTodo\x12\x41.github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoRequest\x1a\x42.github.com.metaprov.modelaapi.services.todo.v1.DeleteTodoResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1/todos/{namespace}/{name}B0Z.github.com/metaprov/modelaapi/services/todo/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -138,31 +138,6 @@ _LISTTODOSRESPONSE = _descriptor.Descriptor(
 )
 
 
-_TODORESPONSE = _descriptor.Descriptor(
-  name='TodoResponse',
-  full_name='github.com.metaprov.modelaapi.services.todo.v1.TodoResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=553,
-  serialized_end=567,
-)
-
-
 _CREATETODOREQUEST = _descriptor.Descriptor(
   name='CreateTodoRequest',
   full_name='github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest',
@@ -197,8 +172,8 @@ _CREATETODOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=569,
-  serialized_end=680,
+  serialized_start=553,
+  serialized_end=664,
 )
 
 
@@ -222,8 +197,8 @@ _CREATETODORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=682,
-  serialized_end=702,
+  serialized_start=666,
+  serialized_end=686,
 )
 
 
@@ -254,8 +229,8 @@ _UPDATETODOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=704,
-  serialized_end=797,
+  serialized_start=688,
+  serialized_end=781,
 )
 
 
@@ -279,8 +254,8 @@ _UPDATETODORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=799,
-  serialized_end=819,
+  serialized_start=783,
+  serialized_end=803,
 )
 
 
@@ -318,8 +293,8 @@ _GETTODOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=821,
-  serialized_end=870,
+  serialized_start=805,
+  serialized_end=854,
 )
 
 
@@ -357,79 +332,8 @@ _GETTODORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=872,
-  serialized_end=977,
-)
-
-
-_GETTODONAMESPACESREQUEST = _descriptor.Descriptor(
-  name='GetTodoNamespacesRequest',
-  full_name='github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=979,
-  serialized_end=1038,
-)
-
-
-_GETTODONAMESPACESRESPONSE = _descriptor.Descriptor(
-  name='GetTodoNamespacesResponse',
-  full_name='github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespaces', full_name='github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesResponse.namespaces', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1040,
-  serialized_end=1152,
+  serialized_start=856,
+  serialized_end=961,
 )
 
 
@@ -467,8 +371,8 @@ _DELETETODOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1154,
-  serialized_end=1206,
+  serialized_start=963,
+  serialized_end=1015,
 )
 
 
@@ -492,104 +396,8 @@ _DELETETODORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1208,
-  serialized_end=1228,
-)
-
-
-_TODOCREATERESPONSE = _descriptor.Descriptor(
-  name='TodoCreateResponse',
-  full_name='github.com.metaprov.modelaapi.services.todo.v1.TodoCreateResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1230,
-  serialized_end=1250,
-)
-
-
-_TODOGETBYNAMEREQUEST = _descriptor.Descriptor(
-  name='TodoGetByNameRequest',
-  full_name='github.com.metaprov.modelaapi.services.todo.v1.TodoGetByNameRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='github.com.metaprov.modelaapi.services.todo.v1.TodoGetByNameRequest.namespace', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.todo.v1.TodoGetByNameRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1252,
-  serialized_end=1307,
-)
-
-
-_TODOLOGOUTREQUEST = _descriptor.Descriptor(
-  name='TodoLogoutRequest',
-  full_name='github.com.metaprov.modelaapi.services.todo.v1.TodoLogoutRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='token', full_name='github.com.metaprov.modelaapi.services.todo.v1.TodoLogoutRequest.token', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1309,
-  serialized_end=1343,
+  serialized_start=1017,
+  serialized_end=1037,
 )
 
 _LISTTODOSREQUEST_LABELSENTRY.containing_type = _LISTTODOSREQUEST
@@ -598,23 +406,16 @@ _LISTTODOSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_met
 _CREATETODOREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._TODO
 _UPDATETODOREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._TODO
 _GETTODORESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_team_dot_v1alpha1_dot_generated__pb2._TODO
-_GETTODONAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._NAMESPACEINFO
 DESCRIPTOR.message_types_by_name['ListTodosRequest'] = _LISTTODOSREQUEST
 DESCRIPTOR.message_types_by_name['ListTodosResponse'] = _LISTTODOSRESPONSE
-DESCRIPTOR.message_types_by_name['TodoResponse'] = _TODORESPONSE
 DESCRIPTOR.message_types_by_name['CreateTodoRequest'] = _CREATETODOREQUEST
 DESCRIPTOR.message_types_by_name['CreateTodoResponse'] = _CREATETODORESPONSE
 DESCRIPTOR.message_types_by_name['UpdateTodoRequest'] = _UPDATETODOREQUEST
 DESCRIPTOR.message_types_by_name['UpdateTodoResponse'] = _UPDATETODORESPONSE
 DESCRIPTOR.message_types_by_name['GetTodoRequest'] = _GETTODOREQUEST
 DESCRIPTOR.message_types_by_name['GetTodoResponse'] = _GETTODORESPONSE
-DESCRIPTOR.message_types_by_name['GetTodoNamespacesRequest'] = _GETTODONAMESPACESREQUEST
-DESCRIPTOR.message_types_by_name['GetTodoNamespacesResponse'] = _GETTODONAMESPACESRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteTodoRequest'] = _DELETETODOREQUEST
 DESCRIPTOR.message_types_by_name['DeleteTodoResponse'] = _DELETETODORESPONSE
-DESCRIPTOR.message_types_by_name['TodoCreateResponse'] = _TODOCREATERESPONSE
-DESCRIPTOR.message_types_by_name['TodoGetByNameRequest'] = _TODOGETBYNAMEREQUEST
-DESCRIPTOR.message_types_by_name['TodoLogoutRequest'] = _TODOLOGOUTREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListTodosRequest = _reflection.GeneratedProtocolMessageType('ListTodosRequest', (_message.Message,), {
@@ -638,13 +439,6 @@ ListTodosResponse = _reflection.GeneratedProtocolMessageType('ListTodosResponse'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse)
   })
 _sym_db.RegisterMessage(ListTodosResponse)
-
-TodoResponse = _reflection.GeneratedProtocolMessageType('TodoResponse', (_message.Message,), {
-  'DESCRIPTOR' : _TODORESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.todo.v1.todo_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.todo.v1.TodoResponse)
-  })
-_sym_db.RegisterMessage(TodoResponse)
 
 CreateTodoRequest = _reflection.GeneratedProtocolMessageType('CreateTodoRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATETODOREQUEST,
@@ -688,20 +482,6 @@ GetTodoResponse = _reflection.GeneratedProtocolMessageType('GetTodoResponse', (_
   })
 _sym_db.RegisterMessage(GetTodoResponse)
 
-GetTodoNamespacesRequest = _reflection.GeneratedProtocolMessageType('GetTodoNamespacesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETTODONAMESPACESREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.todo.v1.todo_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesRequest)
-  })
-_sym_db.RegisterMessage(GetTodoNamespacesRequest)
-
-GetTodoNamespacesResponse = _reflection.GeneratedProtocolMessageType('GetTodoNamespacesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETTODONAMESPACESRESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.todo.v1.todo_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.todo.v1.GetTodoNamespacesResponse)
-  })
-_sym_db.RegisterMessage(GetTodoNamespacesResponse)
-
 DeleteTodoRequest = _reflection.GeneratedProtocolMessageType('DeleteTodoRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETETODOREQUEST,
   '__module__' : 'github.com.metaprov.modelaapi.services.todo.v1.todo_pb2'
@@ -716,27 +496,6 @@ DeleteTodoResponse = _reflection.GeneratedProtocolMessageType('DeleteTodoRespons
   })
 _sym_db.RegisterMessage(DeleteTodoResponse)
 
-TodoCreateResponse = _reflection.GeneratedProtocolMessageType('TodoCreateResponse', (_message.Message,), {
-  'DESCRIPTOR' : _TODOCREATERESPONSE,
-  '__module__' : 'github.com.metaprov.modelaapi.services.todo.v1.todo_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.todo.v1.TodoCreateResponse)
-  })
-_sym_db.RegisterMessage(TodoCreateResponse)
-
-TodoGetByNameRequest = _reflection.GeneratedProtocolMessageType('TodoGetByNameRequest', (_message.Message,), {
-  'DESCRIPTOR' : _TODOGETBYNAMEREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.todo.v1.todo_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.todo.v1.TodoGetByNameRequest)
-  })
-_sym_db.RegisterMessage(TodoGetByNameRequest)
-
-TodoLogoutRequest = _reflection.GeneratedProtocolMessageType('TodoLogoutRequest', (_message.Message,), {
-  'DESCRIPTOR' : _TODOLOGOUTREQUEST,
-  '__module__' : 'github.com.metaprov.modelaapi.services.todo.v1.todo_pb2'
-  # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.todo.v1.TodoLogoutRequest)
-  })
-_sym_db.RegisterMessage(TodoLogoutRequest)
-
 
 DESCRIPTOR._options = None
 _LISTTODOSREQUEST_LABELSENTRY._options = None
@@ -748,8 +507,8 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1346,
-  serialized_end=2294,
+  serialized_start=1040,
+  serialized_end=1989,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListTodos',
@@ -758,7 +517,7 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTTODOSREQUEST,
     output_type=_LISTTODOSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\013\022\t/v1/todos',
+    serialized_options=b'\202\323\344\223\002\027\022\025/v1/todos/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -768,7 +527,7 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATETODOREQUEST,
     output_type=_CREATETODORESPONSE,
-    serialized_options=b'\202\323\344\223\002\021\"\t/v1/todos:\004todo',
+    serialized_options=b'\202\323\344\223\002\016\"\t/v1/todos:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -778,7 +537,7 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETTODOREQUEST,
     output_type=_GETTODORESPONSE,
-    serialized_options=b'\202\323\344\223\002\036\022\034/v1/{namespace}/todos/{name}',
+    serialized_options=b'\202\323\344\223\002\036\022\034/v1/todos/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -788,7 +547,7 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATETODOREQUEST,
     output_type=_UPDATETODORESPONSE,
-    serialized_options=b'\202\323\344\223\002A\0329/v1/{todo.metadata.namespace}/todos//{todo.metadata.name}:\004todo',
+    serialized_options=b'\202\323\344\223\002=\0328/v1/todos/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -798,7 +557,7 @@ _TODOSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETETODOREQUEST,
     output_type=_DELETETODORESPONSE,
-    serialized_options=b'\202\323\344\223\002\"* /api/{namespace}/v1/todos/{name}',
+    serialized_options=b'\202\323\344\223\002\036*\034/v1/todos/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

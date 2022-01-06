@@ -20,3 +20,21 @@ export namespace Quantity {
   }
 }
 
+export class QuantityValue extends jspb.Message {
+  getString(): string;
+  setString(value: string): QuantityValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): QuantityValue.AsObject;
+  static toObject(includeInstance: boolean, msg: QuantityValue): QuantityValue.AsObject;
+  static serializeBinaryToWriter(message: QuantityValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): QuantityValue;
+  static deserializeBinaryFromReader(message: QuantityValue, reader: jspb.BinaryReader): QuantityValue;
+}
+
+export namespace QuantityValue {
+  export type AsObject = {
+    string: string,
+  }
+}
+

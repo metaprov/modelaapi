@@ -968,7 +968,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 5:
+    case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.deserializeBinaryFromReader);
       msg.setItem(value);
@@ -1005,7 +1005,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.serializeBinaryToWriter
     );
@@ -1014,12 +1014,12 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline}
  */
 proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.getItem = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline, 1));
 };
 
 
@@ -1028,7 +1028,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.setItem = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -1046,7 +1046,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePip
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest.prototype.hasItem = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

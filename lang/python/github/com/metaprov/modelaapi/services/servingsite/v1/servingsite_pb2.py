@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z5github.com/metaprov/modelaapi/services/servingsite/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/servingsite/v1/servingsite.proto\x12\x35github.com.metaprov.modelaapi.services.servingsite.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xc7\x01\n\x17ListServingSitesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x02 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x18ListServingSitesResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList\"l\n\x18\x43reateServingSiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x1b\n\x19\x43reateServingSiteResponse\"l\n\x18UpdateServingSiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x1b\n\x19UpdateServingSiteResponse\"8\n\x15GetServingSiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n\x16GetServingSiteResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteServingSiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteServingSiteResponse2\xec\x08\n\x12ServingSiteService\x12\xcd\x01\n\x10ListServingSites\x12N.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest\x1aO.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/servingsites\x12\xd3\x01\n\x11\x43reateServingSite\x12O.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest\x1aP.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/servingsites:\x01*\x12\xce\x01\n\x0eGetServingSite\x12L.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRequest\x1aM.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/servingsites/{name}\x12\xef\x01\n\x11UpdateServingSite\x12O.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest\x1aP.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteResponse\"7\x82\xd3\xe4\x93\x02\x31\x1a,/v1/servingsites/{servingsite.metadata.name}:\x01*\x12\xec\x01\n\x11\x44\x65leteServingSite\x12O.github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteRequest\x1aP.github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteResponse\"4\x82\xd3\xe4\x93\x02.*,/v1/servingsites/{servingsite.metadata.name}B7Z5github.com/metaprov/modelaapi/services/servingsite/v1b\x06proto3'
+  serialized_pb=b'\nGgithub.com/metaprov/modelaapi/services/servingsite/v1/servingsite.proto\x12\x35github.com.metaprov.modelaapi.services.servingsite.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xc7\x01\n\x17ListServingSitesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x02 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x18ListServingSitesResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList\"l\n\x18\x43reateServingSiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x1b\n\x19\x43reateServingSiteResponse\"l\n\x18UpdateServingSiteRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\x1b\n\x19UpdateServingSiteResponse\"8\n\x15GetServingSiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"x\n\x16GetServingSiteResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\x12\x0c\n\x04yaml\x18\x02 \x01(\t\";\n\x18\x44\x65leteServingSiteRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1b\n\x19\x44\x65leteServingSiteResponse2\x8e\t\n\x12ServingSiteService\x12\xd9\x01\n\x10ListServingSites\x12N.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesRequest\x1aO.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/servingsites/{namespace}\x12\xd3\x01\n\x11\x43reateServingSite\x12O.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest\x1aP.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/servingsites:\x01*\x12\xda\x01\n\x0eGetServingSite\x12L.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRequest\x1aM.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse\"+\x82\xd3\xe4\x93\x02%\x12#/v1/servingsites/{namespace}/{name}\x12\x82\x02\n\x11UpdateServingSite\x12O.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteRequest\x1aP.github.com.metaprov.modelaapi.services.servingsite.v1.UpdateServingSiteResponse\"J\x82\xd3\xe4\x93\x02\x44\x1a?/v1/servingsites/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xe3\x01\n\x11\x44\x65leteServingSite\x12O.github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteRequest\x1aP.github.com.metaprov.modelaapi.services.servingsite.v1.DeleteServingSiteResponse\"+\x82\xd3\xe4\x93\x02%*#/v1/servingsites/{namespace}/{name}B7Z5github.com/metaprov/modelaapi/services/servingsite/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -500,7 +500,7 @@ _SERVINGSITESERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1097,
-  serialized_end=2229,
+  serialized_end=2263,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListServingSites',
@@ -509,7 +509,7 @@ _SERVINGSITESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTSERVINGSITESREQUEST,
     output_type=_LISTSERVINGSITESRESPONSE,
-    serialized_options=b'\202\323\344\223\002\022\022\020/v1/servingsites',
+    serialized_options=b'\202\323\344\223\002\036\022\034/v1/servingsites/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -529,7 +529,7 @@ _SERVINGSITESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETSERVINGSITEREQUEST,
     output_type=_GETSERVINGSITERESPONSE,
-    serialized_options=b'\202\323\344\223\002\031\022\027/v1/servingsites/{name}',
+    serialized_options=b'\202\323\344\223\002%\022#/v1/servingsites/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -539,7 +539,7 @@ _SERVINGSITESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATESERVINGSITEREQUEST,
     output_type=_UPDATESERVINGSITERESPONSE,
-    serialized_options=b'\202\323\344\223\0021\032,/v1/servingsites/{servingsite.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002D\032?/v1/servingsites/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -549,7 +549,7 @@ _SERVINGSITESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETESERVINGSITEREQUEST,
     output_type=_DELETESERVINGSITERESPONSE,
-    serialized_options=b'\202\323\344\223\002.*,/v1/servingsites/{servingsite.metadata.name}',
+    serialized_options=b'\202\323\344\223\002%*#/v1/servingsites/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

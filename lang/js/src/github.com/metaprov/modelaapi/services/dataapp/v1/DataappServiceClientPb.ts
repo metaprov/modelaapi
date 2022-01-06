@@ -293,6 +293,49 @@ export class DataAppServiceClient {
     this.methodInfoPauseDataApp);
   }
 
+  methodInfoRunDataApp = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppRequest,
+    github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppResponse,
+    (request: github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppResponse.deserializeBinary
+  );
+
+  runDataApp(
+    request: github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppResponse>;
+
+  runDataApp(
+    request: github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppResponse>;
+
+  runDataApp(
+    request: github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_dataapp_v1_dataapp_pb.RunDataAppResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp',
+        request,
+        metadata || {},
+        this.methodInfoRunDataApp,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/RunDataApp',
+    request,
+    metadata || {},
+    this.methodInfoRunDataApp);
+  }
+
   methodInfoResumeDataApp = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.dataapp.v1.DataAppService/ResumeDataApp',
     grpcWeb.MethodType.UNARY,

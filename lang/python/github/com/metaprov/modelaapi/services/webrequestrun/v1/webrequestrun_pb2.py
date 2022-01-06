@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z7github.com/metaprov/modelaapi/services/webrequestrun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto\x12\x37github.com.metaprov.modelaapi.services.webrequestrun.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xdb\x01\n\x19ListWebRequestRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x1aListWebRequestRunsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunList\"\x1d\n\x1b\x43reateWebRequestRunResponse\"o\n\x1a\x43reateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\"o\n\x1aUpdateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\"\x1d\n\x1bUpdateWebRequestRunResponse\":\n\x17GetWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n\x18GetWebRequestRunResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteWebRequestRunResponse2\x97\t\n\x14WebRequestRunService\x12\xd9\x01\n\x12ListWebRequestRuns\x12R.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest\x1aS.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/webeequestruns\x12\xdf\x01\n\x13\x43reateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/webeequestruns:\x01*\x12\xda\x01\n\x10GetWebRequestRun\x12P.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRequest\x1aQ.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/webeequestruns/{name}\x12\xfd\x01\n\x13UpdateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunResponse\";\x82\xd3\xe4\x93\x02\x35\x1a\x30/v1/webeequestruns/{webeequestrun.metadata.name}:\x01*\x12\xe3\x01\n\x13\x44\x65leteWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunResponse\"!\x82\xd3\xe4\x93\x02\x1b*\x19/v1/webeequestruns/{name}B9Z7github.com/metaprov/modelaapi/services/webrequestrun/v1b\x06proto3'
+  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto\x12\x37github.com.metaprov.modelaapi.services.webrequestrun.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xdb\x01\n\x19ListWebRequestRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x1aListWebRequestRunsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunList\"\x1d\n\x1b\x43reateWebRequestRunResponse\"o\n\x1a\x43reateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\"o\n\x1aUpdateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\"\x1d\n\x1bUpdateWebRequestRunResponse\":\n\x17GetWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n\x18GetWebRequestRunResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteWebRequestRunResponse2\xc0\t\n\x14WebRequestRunService\x12\xe5\x01\n\x12ListWebRequestRuns\x12R.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest\x1aS.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/webrequestruns/{namespace}\x12\xdf\x01\n\x13\x43reateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/webrequestruns:\x01*\x12\xda\x01\n\x10GetWebRequestRun\x12P.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRequest\x1aQ.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/webrequestruns/{name}\x12\x8e\x02\n\x13UpdateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/webrequestruns/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xef\x01\n\x13\x44\x65leteWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/webrequestruns/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/webrequestrun/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -507,7 +507,7 @@ _WEBREQUESTRUNSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1144,
-  serialized_end=2319,
+  serialized_end=2360,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListWebRequestRuns',
@@ -516,7 +516,7 @@ _WEBREQUESTRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTWEBREQUESTRUNSREQUEST,
     output_type=_LISTWEBREQUESTRUNSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\024\022\022/v1/webeequestruns',
+    serialized_options=b'\202\323\344\223\002 \022\036/v1/webrequestruns/{namespace}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -526,7 +526,7 @@ _WEBREQUESTRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEWEBREQUESTRUNREQUEST,
     output_type=_CREATEWEBREQUESTRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002\027\"\022/v1/webeequestruns:\001*',
+    serialized_options=b'\202\323\344\223\002\027\"\022/v1/webrequestruns:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -536,7 +536,7 @@ _WEBREQUESTRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETWEBREQUESTRUNREQUEST,
     output_type=_GETWEBREQUESTRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002\033\022\031/v1/webeequestruns/{name}',
+    serialized_options=b'\202\323\344\223\002\033\022\031/v1/webrequestruns/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -546,7 +546,7 @@ _WEBREQUESTRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEWEBREQUESTRUNREQUEST,
     output_type=_UPDATEWEBREQUESTRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\0025\0320/v1/webeequestruns/{webeequestrun.metadata.name}:\001*',
+    serialized_options=b'\202\323\344\223\002F\032A/v1/webrequestruns/{item.metadata.namespace}/{item.metadata.name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -556,7 +556,7 @@ _WEBREQUESTRUNSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEWEBREQUESTRUNREQUEST,
     output_type=_DELETEWEBREQUESTRUNRESPONSE,
-    serialized_options=b'\202\323\344\223\002\033*\031/v1/webeequestruns/{name}',
+    serialized_options=b'\202\323\344\223\002\'*%/v1/webrequestruns/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
 ])
