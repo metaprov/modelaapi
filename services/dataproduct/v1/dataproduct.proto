@@ -62,7 +62,7 @@ message DeleteDataProductResponse {
 
 service DataProductService {
     rpc ListDataProducts(ListDataProductsRequest) returns (ListDataProductsResponse) {
-        option (google.api.http).get = "/v1/dataproducts";
+        option (google.api.http).get = "/v1/dataproducts/{namespace}";
     }
     rpc CreateDataProduct(CreateDataProductRequest) returns (CreateDataProductResponse) {
         option (google.api.http) = {
@@ -71,19 +71,15 @@ service DataProductService {
 		};
     }
     rpc GetDataProduct(GetDataProductRequest) returns (GetDataProductResponse) {
-        option (google.api.http).get = "/v1/{namespace}/dataproducts/{name}";
+        option (google.api.http).get = "/v1/dataproducts/{namespace}/{name}";
     }
     rpc UpdateDataProduct(UpdateDataProductRequest) returns (UpdateDataProductResponse) {
         option (google.api.http) = {
-			put: "/v1/{dataproduct.metadata.namespace}/dataproducts/{dataproduct.metadata.name}"
+			put: "/v1/dataproducts/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
-
     rpc DeleteDataProduct(DeleteDataProductRequest) returns (DeleteDataProductResponse) {
-        option (google.api.http).delete = "/api/v1/{namespace}/dataproducts/{name}";
+        option (google.api.http).delete = "/v1/dataproducts/{namespace}/{name}";
     }
-
-
-
 }

@@ -74,26 +74,26 @@ message CommitCreateResponse {}
 
 service CommitService {
     rpc ListCommits(ListCommitsRequest) returns (ListCommitsResponse) {
-        option (google.api.http).get = "/v1/commits";
+        option (google.api.http).get = "/v1/commits/{namespace}";
     }
     rpc CreateCommit(CreateCommitRequest) returns (CreateCommitResponse) {
         option (google.api.http) = {
 			post: "/v1/commits"
-			body: "commit"
+			body: "*"
 		};
     }
     rpc GetCommit(GetCommitRequest) returns (GetCommitResponse) {
-        option (google.api.http).get = "/v1/{namespace}/commits/{name}";
+        option (google.api.http).get = "/v1/commits/{namespace}/{name}";
     }
     rpc UpdateCommit(UpdateCommitRequest) returns (UpdateCommitResponse) {
         option (google.api.http) = {
-			put: "/v1/{commit.metadata.namespace}/commits//{commit.metadata.name}"
-			body: "commit"
+			put: "/v1/commits/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteCommit(DeleteCommitRequest) returns (DeleteCommitResponse) {
-        option (google.api.http).delete = "/api/{namespace}/v1/commits/{name}";
+        option (google.api.http).delete = "/v1/commits/{namespace}/{name}";
     }
 
 }

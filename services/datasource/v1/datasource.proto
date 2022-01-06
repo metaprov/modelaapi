@@ -55,11 +55,11 @@ message InferSchemaRequest {
     string namespace = 1;
     string name      = 2;
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSource datasource = 3;    
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation   location = 4; 
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 4; 
 }
 
 message InferSchemaResponse {
-    repeated github.com.metaprov.modelaapi.services.common.v1.ColumnProfile   columns   =1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.ColumnProfile  columns = 1;
 
 }
 
@@ -70,7 +70,7 @@ message GetTableViewRequest {
 }
 
 message GetTableViewResponse {
-    github.com.metaprov.modelaapi.services.common.v1.TableView   table   =1;
+    github.com.metaprov.modelaapi.services.common.v1.TableView table   =1;
 }
 
 
@@ -78,38 +78,36 @@ message GetTableViewResponse {
 
 service DataSourceService {
     rpc ListDataSources(ListDataSourceRequest) returns (ListDataSourceResponse) {
-        option (google.api.http).get = "/api/v1/datasources";
+        option (google.api.http).get = "/v1/datasources/{namespace}";
     }
 
     rpc CreateDataSource(CreateDataSourceRequest) returns (CreateDataSourceResponse) {
         option (google.api.http) = {
-			post: "v1/datasources"
-			body: "datasource"
+			post: "/v1/datasources"
+			body: "*"
 		};
     }
     rpc GetDataSource(GetDataSourceRequest) returns (GetDataSourceResponse) {
-        option (google.api.http).get = "v1/datasources/{datasource.metadata.name}";
+        option (google.api.http).get = "/v1/datasources/{namespace}/{name}";
     }
 
     rpc UpdateDataSource(UpdateDataSourceRequest) returns (UpdateDataSourceResponse) {
         option (google.api.http) = {
-			put: "/v1/datasources/{datasource_name}"
-			body: "datasource"
+			put: "/v1/datasources/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteDataSource(DeleteDataSourceRequest) returns (DeleteDataSourceResponse) {
-        option (google.api.http).delete = "v1/datasources/{namespace}/{name}";
+        option (google.api.http).delete = "/v1/datasources/{namespace}/{name}";
     }
 
     rpc InferSchema(InferSchemaRequest) returns (InferSchemaResponse) {
-        option (google.api.http).post = "v1/datasources/{datasource.metadata.name}:infer";
+        option (google.api.http).post = "/v1/datasources/{namespace}/{name}:infer";
     }
 
     // get the table view from the data source. used to present table view.
-    rpc GetTableView(GetTableViewRequest) returns (GetTableViewResponse) {
-        option (google.api.http).get = "v1/datasources/{datasource.metadata.name}:table";
-    }
+    rpc GetTableView(GetTableViewRequest) returns (GetTableViewResponse) {}
 
 
 

@@ -134,7 +134,7 @@ install-protoc:
 	 wget https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protoc-3.19.1-linux-x86_64.zip 
 	 mv protoc-3.19.1-linux-x86_64.zip /tmp/protoc-3.19.1-linux-x86_64.zip
 	 unzip /tmp/protoc-3.19.1-linux-x86_64.zip -d $(HOME)/.local
-	 export PATH="$PATH:$HOME/.local/bin"
+	 export PATH=$PATH:$HOME/.local/bin
 
 
 .PHONY: set-default

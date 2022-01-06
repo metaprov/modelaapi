@@ -83,40 +83,42 @@ message RunDataAppResponse {
 
 
 service DataAppService {
-
     rpc ListDataApps(ListDataAppsRequest) returns (ListDataAppsResponse) {
-        option (google.api.http).get = "/v1/webeequests";
+        option (google.api.http).get = "/v1/dataapps/{namespace}";
     }
 
     rpc CreateDataApp(CreateDataAppRequest) returns (CreateDataAppResponse) {
         option (google.api.http) = {
-			post: "/v1/webeequests"
+			post: "/v1/dataapps"
 			body: "*"
 		};
     }
 
     rpc GetDataApp(GetDataAppRequest) returns (GetDataAppResponse) {
-        option (google.api.http).get = "/v1/webeequests/{name}";
+        option (google.api.http).get = "/v1/dataapps/{namespace}/{name}";
     }
 
     rpc UpdateDataApp(UpdateDataAppRequest) returns (UpdateDataAppResponse) {
         option (google.api.http) = {
-			put: "/v1/webeequests/{webeequest.metadata.name}"
+			put: "/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteDataApp(DeleteDataAppRequest) returns (DeleteDataAppResponse) {
-        option (google.api.http).delete = "/v1/webeequests/{name}";
+        option (google.api.http).delete = "/v1/dataapps/{namespace}/{name}";
     }
 
-
     rpc PauseDataApp(PauseDataAppRequest) returns (PauseDataAppResponse) {
-        option (google.api.http).post = "/v1/webeequests/{name}:pause";
+        option (google.api.http).post = "/v1/dataapps/{namespace}/{name}:pause";
+    }
+
+    rpc RunDataApp(RunDataAppRequest) returns (RunDataAppResponse) {
+        option (google.api.http).post = "/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}:run";
     }
 
     rpc ResumeDataApp(ResumeDataAppRequest) returns (ResumeDataAppResponse) {
-        option (google.api.http).post = "/v1/webeequests/{name}:resume";
+        option (google.api.http).post = "/v1/dataapps/{namespace}/{name}:resume";
     }
 
  

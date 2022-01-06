@@ -9,7 +9,7 @@ import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListNotebooksRequest {
     string namespace = 1;
-    map<string,string> labels =3;
+    map<string,string> labels = 3;
 }
 
 message ListNotebooksResponse {
@@ -45,8 +45,6 @@ message GetNotebookResponse {
     string yaml = 2;
 }
 
-
-
 message DeleteNotebookRequest {
     string namespace = 1;
     string name      = 2;
@@ -56,31 +54,28 @@ message DeleteNotebookResponse {
 
 }
 
-
-
-
 service NotebookService {
     rpc ListNotebooks(ListNotebooksRequest) returns (ListNotebooksResponse) {
-        option (google.api.http).get = "/api/v1alpha1/notebooks";
+        option (google.api.http).get = "/v1/notebooks";
     }
     rpc CreateNotebook(CreateNotebookRequest) returns (CreateNotebookResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/notebooks"
+			post: "/v1/notebooks"
 			body: "*"
 		};
     }
     rpc GetNotebook(GetNotebookRequest) returns (GetNotebookResponse) {
-        option (google.api.http).get = "/api/v1alpha1/notebooks/{name}";
+        option (google.api.http).get = "/v1/notebooks/{namespace}/{name}";
     }
     rpc UpdateNotebook(UpdateNotebookRequest) returns (UpdateNotebookResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/notebooks/{notebook.metadata.name}"
+			put: "/v1/notebooks/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteNotebook(DeleteNotebookRequest) returns (DeleteNotebookResponse) {
-        option (google.api.http).delete = "/api/v1/notebooks/{notebook.metadata.name}";
+        option (google.api.http).delete = "/v1/notebooks/{namespace}/{name}";
     }
 
 }

@@ -162,52 +162,52 @@ service CoreK8sService {
 
     ////////////////// secret
     rpc ListK8sSecrets(ListSecretsRequest) returns (ListSecretResponse) {
-        option (google.api.http).get = "/api/v1alpha1/secrets";
+        option (google.api.http).get = "/v1/secrets/{namespace}";
     }
     rpc GetK8sSecret(GetSecretRequest) returns (GetSecretResponse) {
-        option (google.api.http).get = "/api/v1alpha1/secrets/{name}";
+        option (google.api.http).get = "/v1/secrets/{namespace}/{name}";
     }
 
     ////////////////// service
     rpc ListK8sServices(ListServicesRequest) returns (ListServicesResponse) {
-        option (google.api.http).get = "/api/v1alpha1/services";
+        option (google.api.http).get = "/v1/services/{namespace}";
     }
     rpc GetK8sService(GetServiceRequest) returns (GetServiceResponse) {
-        option (google.api.http).get = "/api/v1alpha1/services/{name}";
+        option (google.api.http).get = "/v1/services/{namespace}/{name}";
     }
 
     ////////////////// deployment
     rpc ListK8sDeployments(ListDeploymentsRequest) returns (ListDeploymentsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/deployments";
+        option (google.api.http).get = "/v1/deployments/{namespace}";
     }
 
     rpc GetK8sDeployment(GetDeploymentRequest) returns (GetDeploymentResponse) {
-        option (google.api.http).get = "/api/v1alpha1/deployments/{name}";
+        option (google.api.http).get = "/v1/deployments/{namespace}/{name}";
     }
 
     ////////////////// pod
     rpc ListK8sPods(ListPodsRequest) returns (ListPodsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/pods";
+        option (google.api.http).get = "/v1/pods/{namespace}";
     }
 
     rpc GetK8sPod(GetPodRequest) returns (GetPodResponse) {
-        option (google.api.http).get = "/api/v1alpha1/pods/{name}";
+        option (google.api.http).get = "/v1/pods/{namespace}/{name}";
     }
 
      
     //////////////// jobs
     rpc ListK8sJobs(ListJobsRequest) returns (ListJobsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/jobs";
+        option (google.api.http).get = "/v1/jobs/{namespace}";
     }
 
     rpc GetK8sJob(GetJobRequest) returns (GetJobResponse) {
-        option (google.api.http).get = "/api/v1alpha1/jobs/{name}";
+        option (google.api.http).get = "/v1/jobs/{namespace}/{name}";
     }
 
     // Events
 
     rpc ListEvents(ListEventsRequest) returns (ListEventsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/events";
+        option (google.api.http).get = "/v1/events/{namespace}";
     }
 
 

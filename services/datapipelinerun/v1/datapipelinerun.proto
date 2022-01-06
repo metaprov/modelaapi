@@ -79,7 +79,7 @@ message ResumeDataPipelineRunRequest {
 
 service DataPipelineRunService {
     rpc ListDataPipelineRuns(ListDataPipelineRunRequest) returns (ListDataPipelineRunResponse) {
-        option (google.api.http).get = "/v1/datapipelineruns";
+        option (google.api.http).get = "/v1/datapipelineruns/{namespace}";
     }
     rpc CreateDataPipelineRun(CreateDataPipelineRunRequest) returns (CreateDataPipelineRunResponse) {
         option (google.api.http) = {
@@ -89,12 +89,12 @@ service DataPipelineRunService {
     }
 
     rpc GetDataPipelineRun(GetDataPipelineRunRequest) returns (GetDataPipelineRunResponse) {
-        option (google.api.http).get = "/v1/datapipelineruns/{name}";
+        option (google.api.http).get = "/v1/datapipelineruns/{namespace}/{name}";
     }
 
     rpc UpdateDataPipelineRun(UpdateDataPipelineRunRequest) returns (UpdateDataPipelineRunResponse) {
         option (google.api.http) = {
-			put: "/v1/datapipelineruns/{datapipelinerun.metadata.name}"
+			put: "/v1/datapipelineruns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
@@ -104,15 +104,15 @@ service DataPipelineRunService {
     }
 
     rpc AbortDataPipelineRun(AbortDataPipelineRunRequest) returns (AbortDataPipelineRunResponse) {
-        option (google.api.http).post = "/v1/datapipelineruns/{name}:abort";
+        option (google.api.http).post = "/v1/datapipelineruns/{namespace}/{name}:abort";
     }
 
     rpc PauseDataPipelineRun(PauseDataPipelineRunRequest) returns (PauseDataPipelineRunResponse) {
-        option (google.api.http).post = "/v1/datapipelines/{name}:pause";
+        option (google.api.http).post = "/v1/datapipelines/{namespace}/{name}:pause";
     }
 
     rpc ResumeDataPipelineRun(ResumeDataPipelineRunRequest) returns (ResumeDataPipelineRunResponse) {
-        option (google.api.http).post = "/v1/datapipelines/{name}:resume";
+        option (google.api.http).post = "/v1/datapipelines/{namespace}/{name}:resume";
     }
  
 

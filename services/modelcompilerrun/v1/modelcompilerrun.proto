@@ -45,8 +45,6 @@ message GetModelCompilerRunResponse {
     string yaml = 2;
 }
 
-
-
 message DeleteModelCompilerRunRequest {
     string namespace = 1;
     string name      = 2;
@@ -59,26 +57,26 @@ message DeleteModelCompilerRunResponse {
 
 service ModelCompilerRunService {
     rpc ListModelCompilerRuns(ListModelCompilerRunsRequest) returns (ListModelCompilerRunsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/modelcompilerruns";
+        option (google.api.http).get = "/v1/modelcompilerruns/{namespace}";
     }
     rpc CreateModelCompilerRun(CreateModelCompilerRunRequest) returns (CreateModelCompilerRunResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/modelcompilerruns"
+			post: "/v1/modelcompilerruns"
 			body: "*"
 		};
     }
     rpc GetModelCompilerRun(GetModelCompilerRunRequest) returns (GetModelCompilerRunResponse) {
-        option (google.api.http).get = "/api/v1alpha1/modelcompilerruns/{name}";
+        option (google.api.http).get = "/v1/modelcompilerruns/{namespace}/{name}";
     }
     rpc UpdateModelCompilerRun(UpdateModelCompilerRunRequest) returns (UpdateModelCompilerRunResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/modelcompilerruns/{modelcompilerrun.metadata.name}"
+			put: "/v1/modelcompilerruns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteModelCompilerRun(DeleteModelCompilerRunRequest) returns (DeleteModelCompilerRunResponse) {
-        option (google.api.http).delete = "/api/v1/modelcompilerruns/{modelcompilerrun.metadata.name}";
+        option (google.api.http).delete = "/v1/modelcompilerruns/{namespace}/{name}";
     }
 
 }

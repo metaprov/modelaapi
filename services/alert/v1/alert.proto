@@ -18,8 +18,7 @@ message ListAlertsResponse {
 message AlertResponse {}
 
 message CreateAlertRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert  item = 1;
-    string password = 2;    
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
 }
 
 message CreateAlertResponse {
@@ -45,8 +44,6 @@ message GetAlertResponse {
     string yaml = 2;
 }
 
-
-
 message GetAlertNamespacesRequest {
     string namespace = 1;
     string name      = 2;
@@ -54,10 +51,8 @@ message GetAlertNamespacesRequest {
 
 
 message GetAlertNamespacesResponse {
-    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces = 1;
 }
-
-
 
 
 message DeleteAlertRequest {
@@ -68,81 +63,31 @@ message DeleteAlertRequest {
 message DeleteAlertResponse {}
 
 
-message AlertCreateResponse {}
-message LogoutResponse {}
-message ResetPasswordResponse {}
-
-message AlertLoginRequest {
-    string namespace = 1;
-    string name      = 2;
-    string password  = 3;
-}
-
-message AlertLoginResponse {
-    string token = 1; // jwt token
-}
-
-
-message AlertGetByNameRequest {
-    string namespace = 1;
-    string name = 2;
-}
-
-message AlertLogoutRequest {
-    string token = 1; // jwt token
-}
-
-
-
-
-
-message ChangePasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string old       = 3;
-    string new       = 4;
-    string confirmedNew = 5;
-}
-
-message ChangePasswordResponse {}
-
-message ResetPasswordRequest {
-    string namespace = 1;
-    string name      = 2;
-    string new       = 3;
-    string confirmedNew = 4;
-}
-
-message ResetPasswordReponse {
-
-}
-
-
-
-
-
 service AlertService {
     rpc ListAlerts(ListAlertsRequest) returns (ListAlertsResponse) {
-        option (google.api.http).get = "/v1/alerts";
+        option (google.api.http).get = "/v1/alerts/{namespace}";
     }
+
     rpc CreateAlert(CreateAlertRequest) returns (CreateAlertResponse) {
         option (google.api.http) = {
 			post: "/v1/alerts"
-			body: "alert"
+			body: "*"
 		};
     }
+    
     rpc GetAlert(GetAlertRequest) returns (GetAlertResponse) {
-        option (google.api.http).get = "/v1/{namespace}/alerts/{name}";
+        option (google.api.http).get = "/v1/alerts/{namespace}/{name}";
     }
+
     rpc UpdateAlert(UpdateAlertRequest) returns (UpdateAlertResponse) {
         option (google.api.http) = {
-			put: "/v1/{alert.metadata.namespace}/alerts//{alert.metadata.name}"
-			body: "alert"
+			put: "/v1/alerts/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteAlert(DeleteAlertRequest) returns (DeleteAlertResponse) {
-        option (google.api.http).delete = "/api/{namespace}/v1/alerts/{name}";
+        option (google.api.http).delete = "/v1/alerts/{namespace}/{name}";
     }
 
 }

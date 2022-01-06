@@ -66,12 +66,9 @@ message DeleteLabResponse {
 
 }
 
-
-
-
 service LabService {
     rpc ListLabs(ListLabsRequest) returns (ListLabsResponse) {
-        option (google.api.http).get = "/api/v1/labs";
+        option (google.api.http).get = "/v1/labs/{namespace}";
     }
 
     rpc CreateLab(CreateLabRequest) returns (CreateLabResponse) {
@@ -82,19 +79,19 @@ service LabService {
     }
 
     rpc GetLab(GetLabRequest) returns (GetLabResponse) {
-        option (google.api.http).get = "/api/v1/labs/{lab.metadata.name}";
+        option (google.api.http).get = "/v1/labs/{namespace}/{name}";
     }
 
     rpc UpdateLab(UpdateLabRequest) returns (UpdateLabResponse) {
         option (google.api.http) = {
-			put: "/v1/labs/{name}"
+			put: "/v1/labs/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteLab(DeleteLabRequest) returns (DeleteLabResponse) {
         option (google.api.http) = {
-			delete: "/v1/labs/{name}"
+			delete: "/v1/labs/{namespace}/{name}"
 		};
     }
 

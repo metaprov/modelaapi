@@ -18,7 +18,7 @@ message ListAccountsResponse {
 message AccountResponse {}
 
 message CreateAccountRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 1;
     string password = 2;    
 }
 
@@ -45,20 +45,14 @@ message GetAccountResponse {
     string yaml = 2;
 }
 
-
-
 message GetAccountNamespacesRequest {
     string namespace = 1;
     string name      = 2;
 }
 
-
 message GetAccountNamespacesResponse {
-    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces= 1;
+    repeated github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo namespaces = 1;
 }
-
-
-
 
 message DeleteAccountRequest {
     string namespace = 1;
@@ -82,7 +76,6 @@ message AccountLoginResponse {
     string token = 1; // jwt token
 }
 
-
 message AccountGetByNameRequest {
     string namespace = 1;
     string name = 2;
@@ -91,7 +84,6 @@ message AccountGetByNameRequest {
 message AccountLogoutRequest {
     string token = 1; // jwt token
 }
-
 
 message ChangePasswordRequest {
     string namespace = 1;
@@ -126,7 +118,6 @@ message UploadAvatarReponse {
 
 }
 
-
 message DownloadAvatarRequest {
     string namespace  = 1;
     string name       = 2;        
@@ -136,38 +127,32 @@ message DownloadAvatarReponse {
     bytes  avatar = 1;
 }
 
-
-
-
-
-
 service AccountService {
     rpc ListAccounts(ListAccountsRequest) returns (ListAccountsResponse) {
-        option (google.api.http).get = "/v1/accounts";
+        option (google.api.http).get = "/v1/accounts/{namespace}";
     }
     rpc CreateAccount(CreateAccountRequest) returns (CreateAccountResponse) {
         option (google.api.http) = {
 			post: "/v1/accounts"
-			body: "account"
+			body: "*"
 		};
     }
     rpc GetAccount(GetAccountRequest) returns (GetAccountResponse) {
-        option (google.api.http).get = "/v1/{namespace}/accounts/{name}";
+        option (google.api.http).get = "/v1/accounts/{namespace}/{name}";
     }
     rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
         option (google.api.http) = {
-			put: "/v1/{account.metadata.namespace}/accounts//{account.metadata.name}"
-			body: "account"
+			put: "/v1/accounts/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteAccount(DeleteAccountRequest) returns (DeleteAccountResponse) {
-        option (google.api.http).delete = "/api/{namespace}/v1/accounts/{name}";
+        option (google.api.http).delete = "/v1/accounts/{namespace}/{name}";
     }
 
-
     rpc GetAccountNamespaces(GetAccountNamespacesRequest) returns (GetAccountNamespacesResponse) {
-        option (google.api.http).get = "/api/{namespace}/v1/accounts/{name}:namespaces";
+        option (google.api.http).get = "/v1/accounts/{namespace}/{name}:namespaces";
     }
 
     rpc Login          (AccountLoginRequest)        returns (AccountLoginResponse) {}
@@ -176,5 +161,4 @@ service AccountService {
     rpc ResetPassword  (ResetPasswordRequest)       returns (ResetPasswordResponse)   {}
     rpc UploadAvatar   (UploadAvatarRequest)        returns (UploadAvatarReponse)   {}
     rpc DownloadAvatar (DownloadAvatarRequest)      returns (DownloadAvatarReponse)   {}
-
 }

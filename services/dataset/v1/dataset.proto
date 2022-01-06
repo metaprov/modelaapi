@@ -218,80 +218,75 @@ message SnapshotResponse {
 service DatasetService {
     // Datasets
     rpc ListDatasets(ListDatasetsRequest) returns (ListDatasetsResponse) {
-        option (google.api.http).get = "/api/v1/datasets";
+        option (google.api.http).get = "/v1/datasets/{namespace}";
     }
 
     rpc GetDataset(GetDatasetRequest) returns (GetDatasetResponse) {
-        option (google.api.http).get = "/api/v1/datasets/{name}";
+        option (google.api.http).get = "/v1/datasets/{namespace}/{name}";
     }
 
     rpc CreateDataset(CreateDatasetRequest) returns (CreateDatasetResponse) {
         option (google.api.http) = {
-			post: "/api/v1/datasets"
-			body: "dataset"
+			post: "/v1/datasets"
+			body: "*"
 		};
     }
 
     rpc UpdateDataset(UpdateDatasetRequest) returns (UpdateDatasetResponse) {
         option (google.api.http) = {
-			put: "/api/v1/datasets/{dataset.metadata.name}"
-			body: "dataset"
+			put: "/v1/datasets/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
     rpc DeleteDataset(DeleteDatasetRequest) returns (DeleteDatasetResponse) {
-        option (google.api.http).delete = "/api/v1/datasets/{name}";
+        option (google.api.http).delete = "/v1/datasets/{name}";
     }
 
     // compare one or more datasets
     rpc CompareDatasets(CompareDatasetsRequest) returns (CompareDatasetsResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:compare";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{names}:compare";
     }
 
     rpc GetDatasetProfile(GetDatasetProfileRequest) returns (GetDatasetProfileResponse) {
-        option (google.api.http).get = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile";
+        option (google.api.http).get = "/v1/datasets/{namespace}/{name}:profile";
     }
 
     rpc CreateDatasetProfile(CreateDatasetProfileRequest) returns (CreateDatasetProfileResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:profile";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{name}:profile";
     }
 
     // Get a single column viz, we do that since we want to parallelize the computation of the viz
     rpc CreateColumnProfile(CreateColumnProfileRequest) returns (CreateColumnProfileResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}/columnplot";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{name}/columnplot";
     }
 
     // generate a syntatic dataset
     rpc GenerateDataset(GenerateDatasetRequest) returns (GenerateDatasetResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:generate";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{names}:generate";
     }
 
     rpc ValidateDataset(ValidateDatasetRequest) returns (ValidateDatasetResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{names}:validate";
     }
 
     rpc UploadChunk(UploadChunkRequest) returns (UploadChunkResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:validate";
+    //    option (google.api.http).post = "/v1/datasets/{namespace}/{name}:upload";
     }
 
     rpc DownloadDataset(DownloadDatasetRequest) returns (DownloadDatasetResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:download";
+        option (google.api.http).post = "/v1/datasets/{namespace}/{name}:download";
     }
 
     rpc GetDatabases(GetDatabasesRequest) returns (GetDatabasesResponse) {
-        option (google.api.http).get = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:databases";
+        option (google.api.http).get = "/v1/datasets/{connectionNamespace}/{connectionName}:databases";
     }
 
     rpc GetTables(GetTablesRequest) returns (GetTablesResponse) {
-        option (google.api.http).get = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:tables";
+        option (google.api.http).get = "/v1/datasets/{connectionNamespace}/{connectionName}:tables";
     }
 
     rpc ExecuteSql(ExecuteSqlRequest) returns (ExecuteSqlResponse) {
-        option (google.api.http).post = "/api/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}:executesql";
+        option (google.api.http).post = "/v1/datasets/{connectionNamespace}/{connectionName}:executesql";
     }
-
-
-
-
-
 }

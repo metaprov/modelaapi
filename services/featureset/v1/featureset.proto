@@ -54,7 +54,7 @@ message DeleteFeaturesetResponse {
 
 service FeaturesetService {
     rpc ListFeaturesets(ListFeaturesetRequest) returns (ListFeaturesetResponse) {
-        option (google.api.http).get = "/v1/featuresets";
+        option (google.api.http).get = "/v1/featuresets/{namespace}";
     }
     rpc CreateFeatureset(CreateFeaturesetRequest) returns (CreateFeaturesetResponse) {
         option (google.api.http) = {
@@ -63,13 +63,15 @@ service FeaturesetService {
 		};
     }
     rpc GetFeatureset(GetFeaturesetRequest) returns (GetFeaturesetResponse) {
-        option (google.api.http).get = "/v1/featuresets/{name}";
+        option (google.api.http).get = "/v1/featuresets/{namespace}/{name}";
     }
     rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (UpdateFeaturesetResponse) {
         option (google.api.http) = {
-			put: "/v1/featuresets/{featureset.metadata.name}"
+			put: "/v1/featuresets/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
-    rpc DeleteFeatureset(DeleteFeaturesetRequest) returns (DeleteFeaturesetResponse) {}
+    rpc DeleteFeatureset(DeleteFeaturesetRequest) returns (DeleteFeaturesetResponse) {
+        option (google.api.http).delete = "/v1/featuresets/{namespace}/{name}";
+    }
 }

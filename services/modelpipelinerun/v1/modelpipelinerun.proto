@@ -106,55 +106,48 @@ message AbortModelPipelineRunRequest {
     string name      = 2;
 }
 
-
-
-
-
-
-
-
 service ModelPipelineRunService {
     rpc ListModelPipelineRuns(ListModelPipelineRunsRequest) returns (ListModelPipelineRunsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/modelpipelineruns";
+        option (google.api.http).get = "/v1/modelpipelineruns/{namespace}";
     }
     rpc CreateModelPipelineRun(CreateModelPipelineRunRequest) returns (CreateModelPipelineRunResponse) {
         option (google.api.http) = {
-			post: "/api/v1alpha1/modelpipelineruns"
+			post: "/v1/modelpipelineruns"
 			body: "*"
 		};
     }
     rpc GetModelPipelineRun(GetModelPipelineRunRequest) returns (GetModelPipelineRunResponse) {
-        option (google.api.http).get = "/api/v1alpha1/modelpipelineruns/{name}";
+        option (google.api.http).get = "/v1/modelpipelineruns/{namespace}/{name}";
     }
     rpc UpdateModelPipelineRun(UpdateModelPipelineRunRequest) returns (UpdateModelPipelineRunResponse) {
         option (google.api.http) = {
-			put: "/api/v1alpha1/modelpipelineruns/{modelpipelinerun.metadata.name}"
+			put: "/v1/modelpipelineruns/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteModelPipelineRun(DeleteModelPipelineRunRequest) returns (DeleteModelPipelineRunResponse) {
-        option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}";
+        option (google.api.http).delete = "/v1/modelpipelineruns/{namespace}/{name}";
     }
 
     rpc ApproveModelPipelineRun(ApproveModelPipelineRunRequest) returns (ApproveModelPipelineRunResponse) {
-        option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}:approve";
+        option (google.api.http).delete = "/v1/modelpipelineruns/{namespace}/{name}:approve";
     }
 
     rpc DenyModelPipelineRun(DenyModelPipelineRunRequest) returns (DenyModelPipelineRunResponse) {
-        option (google.api.http).delete = "/api/v1/modelpipelineruns/{modelpipelinerun.metadata.name}:approve";
+        option (google.api.http).delete = "/v1/modelpipelineruns/{namespace}/{name}:approve";
     }
 
     rpc AbortModelPipelineRun(AbortModelPipelineRunRequest) returns (AbortModelPipelineRunResponse) {
-        option (google.api.http).post = "/v1/modelpipelineruns/{name}:abort";
+        option (google.api.http).post = "/v1/modelpipelineruns/{namespace}/{name}:abort";
     }
  
     rpc PauseModelPipelineRun(PauseModelPipelineRunRequest) returns (PauseModelPipelineRunResponse) {
-        option (google.api.http).post = "/v1/modelpipelineruns/{name}:pause";
+        option (google.api.http).post = "/v1/modelpipelineruns/{namespace}/{name}:pause";
     }
 
     rpc ResumeModelPipelineRun(ResumeModelPipelineRunRequest) returns (ResumeModelPipelineRunResponse) {
-        option (google.api.http).post = "/v1/modelpipelineruns/{name}:resume";
+        option (google.api.http).post = "/v1/modelpipelineruns/{namespace}/{name}:resume";
     }
 
 }

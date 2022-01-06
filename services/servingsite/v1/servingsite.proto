@@ -52,12 +52,9 @@ message DeleteServingSiteResponse {
 
 }
 
-
-
-
 service ServingSiteService {
     rpc ListServingSites(ListServingSitesRequest) returns (ListServingSitesResponse) {
-        option (google.api.http).get = "/v1/servingsites";
+        option (google.api.http).get = "/v1/servingsites/{namespace}";
     }
     rpc CreateServingSite(CreateServingSiteRequest) returns (CreateServingSiteResponse) {
         option (google.api.http) = {
@@ -66,18 +63,18 @@ service ServingSiteService {
 		};
     }
     rpc GetServingSite(GetServingSiteRequest) returns (GetServingSiteResponse) {
-        option (google.api.http).get = "/v1/servingsites/{name}";
+        option (google.api.http).get = "/v1/servingsites/{namespace}/{name}";
     }
     rpc UpdateServingSite(UpdateServingSiteRequest) returns (UpdateServingSiteResponse) {
         option (google.api.http) = {
-			put: "/v1/servingsites/{servingsite.metadata.name}"
+			put: "/v1/servingsites/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteServingSite(DeleteServingSiteRequest) returns (DeleteServingSiteResponse) {
         option (google.api.http) = {
-			delete: "/v1/servingsites/{servingsite.metadata.name}"
+			delete: "/v1/servingsites/{namespace}/{name}"
 		};
     }
 

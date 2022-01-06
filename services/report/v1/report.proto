@@ -11,7 +11,7 @@ import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto
 message ListReportsRequest {
     string namespace = 1;
     string name      = 2;
-    map<string,string> labels =3;
+    map<string,string> labels = 3;
 }
 
 message ListReportsResponse {
@@ -65,12 +65,10 @@ message DownloadReportResponse {
 
 }
 
-
-
 service ReportService {
 
     rpc ListReports(ListReportsRequest) returns (ListReportsResponse) {
-        option (google.api.http).get = "/api/v1alpha1/reports";
+        option (google.api.http).get = "/v1/reports/{namespace}";
     }
 
     rpc CreateReport(CreateReportRequest) returns (CreateReportResponse) {
@@ -81,24 +79,21 @@ service ReportService {
     }
 
     rpc GetReport(GetReportRequest) returns (GetReportResponse) {
-        option (google.api.http).get = "/v1/reports/{report.metadata.name}";
+        option (google.api.http).get = "/v1/reports/{namespace}/{name}";
     }
 
     rpc UpdateReport(UpdateReportRequest) returns (UpdateReportResponse) {
         option (google.api.http) = {
-			put: "/v1/reports/{report.metadata.name}"
+			put: "/v1/reports/{item.metadata.namespace}/{item.metadata.name}"
 			body: "*"
 		};
     }
 
     rpc DeleteReport(DeleteReportRequest) returns (DeleteReportResponse) {
-        option (google.api.http).delete = "/v1/reports/{report.metadata.name}";
+        option (google.api.http).delete = "/v1/reports/{namespace}/{name}";
     }
-
 
     rpc Download(DownloadReportRequest) returns (DownloadReportResponse) {
-        option (google.api.http).delete = "/api/v1alpha1/reports/{name}";
+        option (google.api.http).delete = "/v1/reports/{name}";
     }
-
-
 }

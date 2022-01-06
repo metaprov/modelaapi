@@ -58,15 +58,14 @@ message DeleteCurtainResponse {
 
 
 service CurtainService {
-
     rpc ListCurtains(ListCurtainsRequest) returns (ListCurtainsResponse) {
-        option (google.api.http).get = "/v1/curtains";        
+        option (google.api.http).get = "/v1/curtains/{namespace}";        
     }
 
     rpc CreateCurtain(CreateCurtainRequest) returns (CreateCurtainResponse) {
         option (google.api.http) = {
 			post: "/v1/curtains"
-			body: "curtain"
+			body: "*"
 		};
     }
 
@@ -76,8 +75,8 @@ service CurtainService {
 
     rpc UpdateCurtain(UpdateCurtainRequest) returns (UpdateCurtainResponse) {
         option (google.api.http) = {
-			put: "/v1/curtains/{curtain.metadata.namespace}/{curtain.metadata.name}"
-			body: "curtain"
+			put: "/v1/curtains/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 

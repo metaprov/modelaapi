@@ -36,14 +36,10 @@ message GetConnectionRequest {
     string name      = 2;
 }
 
-
 message GetConnectionResponse {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection item = 1;
     string yaml = 2;
 }
-
-
-
 
 message DeleteConnectionRequest {
     string namespace = 1;
@@ -68,21 +64,21 @@ message TestConnectionResponse {
 
 service ConnectionService {
     rpc ListConnections(ListConnectionsRequest) returns (ListConnectionsResponse) {
-        option (google.api.http).get = "/v1/connections";
+        option (google.api.http).get = "/v1/connections/{namespace}";
     }
     rpc CreateConnection(CreateConnectionRequest) returns (CreateConnectionResponse) {
         option (google.api.http) = {
 			post: "/v1/connections"
-			body: "connection"
+			body: "*"
 		};
     }
     rpc GetConnection(GetConnectionRequest) returns (GetConnectionResponse) {
-        option (google.api.http).get = "/v1/connections/{name}";
+        option (google.api.http).get = "/v1/connections/{namespace}/{name}";
     }
     rpc UpdateConnection(UpdateConnectionRequest) returns (UpdateConnectionResponse) {
         option (google.api.http) = {
-			put: "/v1/connections/{connection.metadata.name}"
-			body: "connection"
+			put: "/v1/connections/{item.metadata.namespace}/{item.metadata.name}"
+			body: "*"
 		};
     }
 
