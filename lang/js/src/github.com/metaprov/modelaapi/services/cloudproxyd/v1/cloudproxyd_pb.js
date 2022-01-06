@@ -1438,7 +1438,8 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
     path: jspb.Message.getFieldWithDefault(msg, 2, ""),
     bucket: (f = msg.getBucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
-    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
+    secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : [],
+    tenant: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -1498,6 +1499,10 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBytes, null, "", "");
          });
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenant(value);
       break;
     default:
       reader.skipField();
@@ -1561,6 +1566,13 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
   f = message.getSecretMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBytes);
+  }
+  f = message.getTenant();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
   }
 };
 
@@ -1695,6 +1707,24 @@ proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.
 proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.clearSecretMap = function() {
   this.getSecretMap().clear();
   return this;};
+
+
+/**
+ * optional string tenant = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.getTenant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.cloudproxyd.v1.FileDownloadRequest.prototype.setTenant = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
 
 
 

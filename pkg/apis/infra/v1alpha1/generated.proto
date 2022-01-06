@@ -263,6 +263,10 @@ message AlertSpec {
   // The actual information about the alerts
   // +kubebuilder:validation:Optional
   map<string, string> fields = 8;
+
+  // TenantRef is the commit tenant
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 9;
 }
 
 // AlertStatus is the observed state of a Alert
@@ -598,6 +602,10 @@ message AttachmentSpec {
   // Path to the full data file (e.g. csv file).
   // +kubebuilder:validation:Optional
   optional string path = 5;
+
+  // TenantRef is the commit tenant
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 6;
 }
 
 // AttachmentStatus is the observed state of a Attachment
@@ -814,6 +822,10 @@ message CommitSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 3;
+
+  // TenantRef is the commit tenant
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 4;
 }
 
 // CommitStatus is the observed state of a Commit

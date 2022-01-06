@@ -6434,7 +6434,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.toObject =
     notifiername: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     ttl: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, undefined) : []
+    fieldsMap: (f = msg.getFieldsMap()) ? f.toObject(includeInstance, undefined) : [],
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6505,6 +6506,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.deserializ
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 9:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -6588,6 +6594,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.serializeB
   f = message.getFieldsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
+    );
   }
 };
 
@@ -6865,6 +6879,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.clearFieldsMap = function() {
   this.getFieldsMap().clear();
   return this;};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 9;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 9));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
 
 
 
@@ -12350,7 +12401,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.toObj
     description: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     bucketname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    path: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    path: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12407,6 +12459,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.deser
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setPath(value);
+      break;
+    case 6:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -12471,6 +12528,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.seria
     writer.writeString(
       5,
       f
+    );
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -12654,6 +12719,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.proto
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.prototype.hasPath = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 6;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 6));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -16247,7 +16349,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.toObject 
   var f, obj = {
     message: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     entityref: (f = msg.getEntityref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
-    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16296,6 +16399,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.deseriali
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 4:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -16346,6 +16454,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.serialize
     writer.writeString(
       3,
       f
+    );
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -16457,6 +16573,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 4;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 4));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

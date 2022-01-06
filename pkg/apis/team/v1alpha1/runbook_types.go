@@ -76,6 +76,9 @@ type RunBookSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,5,opt,name=owner"`
+	// TenantRef is the run book tenant
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,6,opt,name=tenantRef"`
 }
 
 // RunBookStatus defines the actual state of a RunBook

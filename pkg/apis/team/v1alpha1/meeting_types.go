@@ -87,6 +87,9 @@ type MeetingSpec struct {
 	// Reminder is the time to send a reminder
 	// +kubebuilder:validation:Optional
 	Reminder *metav1.Time `json:"reminder,omitempty" protobuf:"bytes,7,opt,name=reminder"`
+	// TenantRef is the commit tenant
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,8,opt,name=tenantRef"`
 }
 
 // MeetingStatus is the observed state of a Meeting

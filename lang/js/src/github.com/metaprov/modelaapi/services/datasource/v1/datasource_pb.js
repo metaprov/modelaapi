@@ -2211,6 +2211,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
+    tenant: jspb.Message.getFieldWithDefault(msg, 1, ""),
     flatfilespec: (f = msg.getFlatfilespec()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.toObject(includeInstance, f),
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f)
   };
@@ -2250,11 +2251,15 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.d
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenant(value);
+      break;
+    case 2:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.deserializeBinaryFromReader);
       msg.setFlatfilespec(value);
       break;
-    case 2:
+    case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.deserializeBinaryFromReader);
       msg.setLocation(value);
@@ -2288,10 +2293,17 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getTenant();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = message.getFlatfilespec();
   if (f != null) {
     writer.writeMessage(
-      1,
+      2,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.serializeBinaryToWriter
     );
@@ -2299,7 +2311,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.s
   f = message.getLocation();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.serializeBinaryToWriter
     );
@@ -2308,12 +2320,30 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec flatfilespec = 1;
+ * optional string tenant = 1;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.getTenant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.setTenant = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec flatfilespec = 2;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.getFlatfilespec = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.CsvFileSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec, 1));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec, 2));
 };
 
 
@@ -2322,7 +2352,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.setFlatfilespec = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
@@ -2340,17 +2370,17 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.hasFlatfilespec = function() {
-  return jspb.Message.getField(this, 1) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 2;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 3;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.getLocation = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 2));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation, 3));
 };
 
 
@@ -2359,7 +2389,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.setLocation = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -2377,7 +2407,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.p
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.GetTableViewRequest.prototype.hasLocation = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

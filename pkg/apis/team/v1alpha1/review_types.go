@@ -108,6 +108,9 @@ type ReviewSpec struct {
 	// +kubebuilder:default:="default-slack-notifier"
 	// +kubebuilder:validation:Optional
 	NotifierName *string `json:"notifierName,omitempty" protobuf:"bytes,4,opt,name=notifierName"`
+	// TenantRef is the review tenant.
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,5,opt,name=tenantRef"`
 }
 
 //ReviewStatus is the current status of the review

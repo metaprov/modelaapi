@@ -169,6 +169,9 @@ export class FileDownloadRequest extends jspb.Message {
   getSecretMap(): jspb.Map<string, Uint8Array | string>;
   clearSecretMap(): FileDownloadRequest;
 
+  getTenant(): string;
+  setTenant(value: string): FileDownloadRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileDownloadRequest.AsObject;
   static toObject(includeInstance: boolean, msg: FileDownloadRequest): FileDownloadRequest.AsObject;
@@ -184,6 +187,7 @@ export namespace FileDownloadRequest {
     bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, Uint8Array | string]>,
+    tenant: string,
   }
 }
 

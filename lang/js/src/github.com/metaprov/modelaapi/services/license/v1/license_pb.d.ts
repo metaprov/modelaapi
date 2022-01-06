@@ -85,6 +85,9 @@ export class CreateLicenseFromKeyRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): CreateLicenseFromKeyRequest;
 
+  getTenant(): string;
+  setTenant(value: string): CreateLicenseFromKeyRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLicenseFromKeyRequest.AsObject;
   static toObject(includeInstance: boolean, msg: CreateLicenseFromKeyRequest): CreateLicenseFromKeyRequest.AsObject;
@@ -96,6 +99,7 @@ export class CreateLicenseFromKeyRequest extends jspb.Message {
 export namespace CreateLicenseFromKeyRequest {
   export type AsObject = {
     key: string,
+    tenant: string,
   }
 }
 

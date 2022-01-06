@@ -167,6 +167,10 @@ message MeetingSpec {
   // Reminder is the time to send a reminder
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time reminder = 7;
+
+  // TenantRef is the commit tenant
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 8;
 }
 
 // MeetingStatus is the observed state of a Meeting
@@ -284,6 +288,10 @@ message PostMortemSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 9;
+
+  // TenantRef is the commit tenant
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
 }
 
 // PostMortemStatus defines the actual state of a PostMortem
@@ -369,6 +377,10 @@ message ReviewSpec {
   // +kubebuilder:default:="default-slack-notifier"
   // +kubebuilder:validation:Optional
   optional string notifierName = 4;
+
+  // TenantRef is the review tenant.
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 5;
 }
 
 // ReviewStatus is the current status of the review
@@ -452,6 +464,10 @@ message RunBookSpec {
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
   optional string owner = 5;
+
+  // TenantRef is the run book tenant
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 6;
 }
 
 // RunBookStatus defines the actual state of a RunBook
@@ -561,6 +577,10 @@ message TodoSpec {
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
   optional string parentTask = 9;
+
+  // TenantRef is the todo tenant
+  // +kubebuilder:validation:Optional
+  optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
 }
 
 // TodoStatus is the observed state of a Todo

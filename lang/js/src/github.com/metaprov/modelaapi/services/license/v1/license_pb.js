@@ -933,7 +933,8 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequ
  */
 proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: jspb.Message.getFieldWithDefault(msg, 1, "")
+    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    tenant: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -974,6 +975,10 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequ
       var value = /** @type {string} */ (reader.readString());
       msg.setKey(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTenant(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1010,6 +1015,13 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequ
       f
     );
   }
+  f = message.getTenant();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
@@ -1028,6 +1040,24 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequ
  */
 proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest.prototype.setKey = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string tenant = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest.prototype.getTenant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest.prototype.setTenant = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

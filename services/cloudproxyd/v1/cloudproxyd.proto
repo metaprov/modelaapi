@@ -50,6 +50,7 @@ message FileDownloadRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket    bucket = 3;
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection       connection = 4;
     map<string,bytes>  secret    = 5;
+    string tenant   = 6; // local path
 }
 
 message FileDownloadResponse {}

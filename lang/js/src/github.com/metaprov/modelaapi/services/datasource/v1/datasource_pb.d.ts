@@ -253,6 +253,9 @@ export namespace InferSchemaResponse {
 }
 
 export class GetTableViewRequest extends jspb.Message {
+  getTenant(): string;
+  setTenant(value: string): GetTableViewRequest;
+
   getFlatfilespec(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec | undefined;
   setFlatfilespec(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec): GetTableViewRequest;
   hasFlatfilespec(): boolean;
@@ -273,6 +276,7 @@ export class GetTableViewRequest extends jspb.Message {
 
 export namespace GetTableViewRequest {
   export type AsObject = {
+    tenant: string,
     flatfilespec?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.CsvFileSpec.AsObject,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
   }

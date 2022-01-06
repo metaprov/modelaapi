@@ -102,6 +102,9 @@ type AlertSpec struct {
 	// The actual information about the alerts
 	// +kubebuilder:validation:Optional
 	Fields map[string]string `json:"fields,omitempty" protobuf:"bytes,8,opt,name=fields"`
+	// TenantRef is the commit tenant
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,9,opt,name=tenantRef"`
 }
 
 // AlertStatus is the observed state of a Alert

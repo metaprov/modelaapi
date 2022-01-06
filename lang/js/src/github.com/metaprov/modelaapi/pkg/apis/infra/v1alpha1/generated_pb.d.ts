@@ -373,6 +373,11 @@ export class AlertSpec extends jspb.Message {
   getFieldsMap(): jspb.Map<string, string>;
   clearFieldsMap(): AlertSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AlertSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): AlertSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AlertSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AlertSpec): AlertSpec.AsObject;
@@ -391,6 +396,7 @@ export namespace AlertSpec {
     owner: string,
     ttl: number,
     fieldsMap: Array<[string, string]>,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -990,6 +996,11 @@ export class AttachmentSpec extends jspb.Message {
   getPath(): string;
   setPath(value: string): AttachmentSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): AttachmentSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): AttachmentSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AttachmentSpec.AsObject;
   static toObject(includeInstance: boolean, msg: AttachmentSpec): AttachmentSpec.AsObject;
@@ -1005,6 +1016,7 @@ export namespace AttachmentSpec {
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     bucketname: string,
     path: string,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -1406,6 +1418,11 @@ export class CommitSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): CommitSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): CommitSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): CommitSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CommitSpec.AsObject;
   static toObject(includeInstance: boolean, msg: CommitSpec): CommitSpec.AsObject;
@@ -1419,6 +1436,7 @@ export namespace CommitSpec {
     message: string,
     entityref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     owner: string,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

@@ -91,6 +91,9 @@ type TodoSpec struct {
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
 	ParentTask *string `json:"parentTask,omitempty" protobuf:"bytes,9,opt,name=parentTask"`
+	// TenantRef is the todo tenant
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,10,opt,name=tenantRef"`
 }
 
 // TodoStatus is the observed state of a Todo

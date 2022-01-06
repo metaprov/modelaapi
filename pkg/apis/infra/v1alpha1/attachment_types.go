@@ -79,6 +79,9 @@ type AttachmentSpec struct {
 	// Path to the full data file (e.g. csv file).
 	// +kubebuilder:validation:Optional
 	Path string `json:"path" protobuf:"bytes,5,opt,name=path"`
+	// TenantRef is the commit tenant
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,6,opt,name=tenantRef"`
 }
 
 // AttachmentStatus is the observed state of a Attachment

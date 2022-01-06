@@ -72,6 +72,9 @@ type CommitSpec struct {
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
 	Owner *string `json:"owner,omitempty" protobuf:"bytes,3,opt,name=owner"`
+	// TenantRef is the commit tenant
+	// +kubebuilder:validation:Optional
+	TenantRef *v1.ObjectReference `json:"tenantRef,omitempty" protobuf:"bytes,4,opt,name=tenantRef"`
 }
 
 // CommitStatus is the observed state of a Commit

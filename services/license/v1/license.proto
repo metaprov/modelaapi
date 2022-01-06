@@ -25,6 +25,7 @@ message CreateLicenseRequest {
 
 message CreateLicenseFromKeyRequest {
     string key = 1;
+    string tenant = 2;
 }
 
 

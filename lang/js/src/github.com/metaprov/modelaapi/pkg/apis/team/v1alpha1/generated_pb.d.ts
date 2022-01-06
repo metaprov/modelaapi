@@ -220,6 +220,11 @@ export class MeetingSpec extends jspb.Message {
   hasReminder(): boolean;
   clearReminder(): MeetingSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): MeetingSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): MeetingSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MeetingSpec.AsObject;
   static toObject(includeInstance: boolean, msg: MeetingSpec): MeetingSpec.AsObject;
@@ -237,6 +242,7 @@ export namespace MeetingSpec {
     participantsList: Array<string>,
     flagged: boolean,
     reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -418,6 +424,11 @@ export class PostMortemSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): PostMortemSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PostMortemSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): PostMortemSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PostMortemSpec.AsObject;
   static toObject(includeInstance: boolean, msg: PostMortemSpec): PostMortemSpec.AsObject;
@@ -437,6 +448,7 @@ export namespace PostMortemSpec {
     rootcause: string,
     summary: string,
     owner: string,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -605,6 +617,11 @@ export class ReviewSpec extends jspb.Message {
   getNotifiername(): string;
   setNotifiername(value: string): ReviewSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ReviewSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): ReviewSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReviewSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ReviewSpec): ReviewSpec.AsObject;
@@ -619,6 +636,7 @@ export namespace ReviewSpec {
     messagesList: Array<Comment.AsObject>,
     owner: string,
     notifiername: string,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -774,6 +792,11 @@ export class RunBookSpec extends jspb.Message {
   getOwner(): string;
   setOwner(value: string): RunBookSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): RunBookSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): RunBookSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunBookSpec.AsObject;
   static toObject(includeInstance: boolean, msg: RunBookSpec): RunBookSpec.AsObject;
@@ -789,6 +812,7 @@ export namespace RunBookSpec {
     authorref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     checklistList: Array<CheckListItem.AsObject>,
     owner: string,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 
@@ -974,6 +998,11 @@ export class TodoSpec extends jspb.Message {
   getParenttask(): string;
   setParenttask(value: string): TodoSpec;
 
+  getTenantref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setTenantref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): TodoSpec;
+  hasTenantref(): boolean;
+  clearTenantref(): TodoSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TodoSpec.AsObject;
   static toObject(includeInstance: boolean, msg: TodoSpec): TodoSpec.AsObject;
@@ -993,6 +1022,7 @@ export namespace TodoSpec {
     reminder?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     duedate?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     parenttask: string,
+    tenantref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
   }
 }
 

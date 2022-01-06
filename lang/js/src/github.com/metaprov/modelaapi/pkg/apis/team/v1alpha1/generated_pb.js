@@ -2445,7 +2445,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.toObject 
     notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     participantsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
     flagged: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
-    reminder: (f = msg.getReminder()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f)
+    reminder: (f = msg.getReminder()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2511,6 +2512,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.deseriali
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setReminder(value);
+      break;
+    case 8:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -2590,6 +2596,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.serialize
       7,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
+    );
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -2847,6 +2861,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.hasReminder = function() {
   return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 8;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 8));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
@@ -4158,7 +4209,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.toObje
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TimeLineEvent.toObject, includeInstance),
     rootcause: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     summary: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4235,6 +4287,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.deseri
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 10:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -4331,6 +4388,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.serial
     writer.writeString(
       9,
       f
+    );
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -4665,6 +4730,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.protot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 10));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -5976,7 +6078,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.toObject =
     messagesList: jspb.Message.toObjectList(msg.getMessagesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Comment.toObject, includeInstance),
     owner: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+    notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6030,6 +6133,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.deserializ
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setNotifiername(value);
+      break;
+    case 5:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -6088,6 +6196,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.serializeB
     writer.writeString(
       4,
       f
+    );
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -6237,6 +6353,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.prototype.
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.prototype.hasNotifiername = function() {
   return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 5;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 5));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.ReviewSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -7401,7 +7554,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.toObject 
     authorref: (f = msg.getAuthorref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     checklistList: jspb.Message.toObjectList(msg.getChecklistList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.CheckListItem.toObject, includeInstance),
-    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+    owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7460,6 +7614,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.deseriali
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setOwner(value);
+      break;
+    case 6:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -7526,6 +7685,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.serialize
     writer.writeString(
       5,
       f
+    );
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -7712,6 +7879,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.hasOwner = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 6;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 6));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
@@ -9020,7 +9224,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.toObject = f
     flagged: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
     reminder: (f = msg.getReminder()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     duedate: (f = msg.getDuedate()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    parenttask: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    parenttask: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    tenantref: (f = msg.getTenantref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -9095,6 +9300,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.deserializeB
     case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setParenttask(value);
+      break;
+    case 10:
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setTenantref(value);
       break;
     default:
       reader.skipField();
@@ -9189,6 +9399,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.serializeBin
     writer.writeString(
       9,
       f
+    );
+  }
+  f = message.getTenantref();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
 };
@@ -9518,6 +9736,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.cl
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasParenttask = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional k8s.io.api.core.v1.ObjectReference tenantRef = 10;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.getTenantref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 10));
+};
+
+
+/**
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.setTenantref = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.clearTenantref = function() {
+  return this.setTenantref(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoSpec.prototype.hasTenantref = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
