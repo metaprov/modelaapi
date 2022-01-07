@@ -802,6 +802,10 @@ func (study *Study) RefreshProgress() {
 		study.Status.Progress = 80
 	} else if study.Searched() {
 		study.Status.Progress = 50
+	} else if study.Baselined() {
+		study.Status.Progress = 35
+	} else if study.FeatureEngineered() {
+		study.Status.Progress = 20
 	} else if study.Splitted() {
 		study.Status.Progress = 10
 	}
