@@ -47,9 +47,6 @@ spec:
               active:
                 description: Set the release to active
                 type: boolean
-              dataImage:
-                description: The current software version of modela
-                type: string
               images:
                 description: DataImage is the container image used to data tasks
                 properties:
@@ -14204,9 +14201,12 @@ spec:
                     - containers
                     type: object
                 type: object
+              release:
+                description: The current software version of modela
+                type: string
             required:
-            - dataImage
             - images
+            - release
             type: object
           status:
             description: ModelaSystemStatus is the observed state of a ModelaSystem

@@ -53,7 +53,7 @@ type ModelaSystemSpec struct {
 	// The current software version of modela
 	// +kubebuilder:validation:Required
 	// +required
-	Release string `json:"dataImage" protobuf:"bytes,1,opt,name=dataImage"`
+	Release string `json:"release" protobuf:"bytes,1,opt,name=release"`
 	// Set the release to active
 	// +kubebuilder:validation:Optional
 	Active *bool `json:"active" protobuf:"bytes,2,opt,name=active"`
@@ -61,13 +61,11 @@ type ModelaSystemSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Images SystemImagesSpec `json:"images" protobuf:"bytes,3,opt,name=images"`
-
-	// +kubebuilder:validation:Required
-	// +required
+	// +kubebuilder:validation:Optional
+	// +optional
 	Template *v1.PodTemplateSpec `json:"podTemplate,omitempty" protobuf:"bytes,4,opt,name=podTemplate"`
-
-	// +kubebuilder:validation:Required
-	// +required
+	// +kubebuilder:validation:Optional
+	// +optional
 	PublisherTemplate *v1.PodTemplateSpec `json:"publisherTemplate,omitempty" protobuf:"bytes,5,opt,name=publisherTemplate"`
 }
 

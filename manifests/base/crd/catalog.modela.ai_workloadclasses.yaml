@@ -20,18 +20,9 @@ spec:
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
-    - jsonPath: .spec.image
-      name: Image
-      type: string
-    - jsonPath: .spec.vcpu
-      name: vCpu
-      type: string
-    - jsonPath: .spec.mem
-      name: Memory
-      type: string
-    - jsonPath: .spec.gpu
-      name: Gpu
-      type: integer
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
     name: v1alpha1
     schema:
       openAPIV3Schema:

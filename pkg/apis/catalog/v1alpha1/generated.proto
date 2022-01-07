@@ -311,6 +311,7 @@ message Logs {
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modela,all}
 message MLFramework {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
@@ -575,11 +576,11 @@ message PretrainedModelSpec {
 // PublicDataset represent the metadata about a public dataset
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
-// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description=""
+// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description="",priority=1
 // +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""
 // +kubebuilder:printcolumn:name="Columns",type="number",JSONPath=".spec.columns",description=""
-// +kubebuilder:printcolumn:name="Target Column",type="string",JSONPath=".spec.targetColumn",description=""
-// +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description=""
+// +kubebuilder:printcolumn:name="Target",type="string",JSONPath=".spec.targetColumn",description=""
+// +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description="",priority=1
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modela,all}
 message PublicDataset {
@@ -771,10 +772,7 @@ message VizUri {
 
 // WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
-// +kubebuilder:printcolumn:name="vCpu",type="string",JSONPath=".spec.vcpu"
-// +kubebuilder:printcolumn:name="Memory",type="string",JSONPath=".spec.mem"
-// +kubebuilder:printcolumn:name="Gpu",type="integer",JSONPath=".spec.gpu"
+// +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modela,all}
 message WorkloadClass {
   optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;

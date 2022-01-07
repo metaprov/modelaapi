@@ -34328,7 +34328,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataimage: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    release: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     active: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
     images: (f = msg.getImages()) && proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.toObject(includeInstance, f),
     podtemplate: (f = msg.getPodtemplate()) && k8s_io_api_core_v1_generated_pb.PodTemplateSpec.toObject(includeInstance, f),
@@ -34371,7 +34371,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.des
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDataimage(value);
+      msg.setRelease(value);
       break;
     case 2:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -34463,10 +34463,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.ser
 
 
 /**
- * optional string dataImage = 1;
+ * optional string release = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getDataimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.getRelease = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -34475,7 +34475,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setDataimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.setRelease = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -34484,7 +34484,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearDataimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.clearRelease = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -34493,7 +34493,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasDataimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec.prototype.hasRelease = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

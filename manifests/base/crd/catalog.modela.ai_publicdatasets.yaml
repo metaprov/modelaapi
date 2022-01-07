@@ -26,6 +26,7 @@ spec:
       type: string
     - jsonPath: .spec.url
       name: URL
+      priority: 1
       type: string
     - jsonPath: .spec.rows
       name: Rows
@@ -34,10 +35,11 @@ spec:
       name: Columns
       type: number
     - jsonPath: .spec.targetColumn
-      name: Target Column
+      name: Target
       type: string
     - jsonPath: .spec.imbalanced
       name: Imbalanced
+      priority: 1
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age

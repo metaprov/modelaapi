@@ -26,6 +26,9 @@ spec:
     - jsonPath: .spec.version
       name: Version
       type: string
+    - jsonPath: .spec.description
+      name: Description
+      type: string
     name: v1alpha1
     schema:
       openAPIV3Schema:

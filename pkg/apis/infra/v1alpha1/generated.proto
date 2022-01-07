@@ -1865,7 +1865,7 @@ message ModelaSystemSpec {
   // The current software version of modela
   // +kubebuilder:validation:Required
   // +required
-  optional string dataImage = 1;
+  optional string release = 1;
 
   // Set the release to active
   // +kubebuilder:validation:Optional
@@ -1876,12 +1876,12 @@ message ModelaSystemSpec {
   // +required
   optional SystemImagesSpec images = 3;
 
-  // +kubebuilder:validation:Required
-  // +required
+  // +kubebuilder:validation:Optional
+  // +optional
   optional k8s.io.api.core.v1.PodTemplateSpec podTemplate = 4;
 
-  // +kubebuilder:validation:Required
-  // +required
+  // +kubebuilder:validation:Optional
+  // +optional
   optional k8s.io.api.core.v1.PodTemplateSpec publisherTemplate = 5;
 }
 

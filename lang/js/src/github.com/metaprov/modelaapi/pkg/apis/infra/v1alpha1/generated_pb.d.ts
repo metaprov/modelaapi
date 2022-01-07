@@ -3361,8 +3361,8 @@ export namespace ModelaSystemList {
 }
 
 export class ModelaSystemSpec extends jspb.Message {
-  getDataimage(): string;
-  setDataimage(value: string): ModelaSystemSpec;
+  getRelease(): string;
+  setRelease(value: string): ModelaSystemSpec;
 
   getActive(): boolean;
   setActive(value: boolean): ModelaSystemSpec;
@@ -3392,7 +3392,7 @@ export class ModelaSystemSpec extends jspb.Message {
 
 export namespace ModelaSystemSpec {
   export type AsObject = {
-    dataimage: string,
+    release: string,
     active: boolean,
     images?: SystemImagesSpec.AsObject,
     podtemplate?: k8s_io_api_core_v1_generated_pb.PodTemplateSpec.AsObject,
