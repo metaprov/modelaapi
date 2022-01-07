@@ -13,11 +13,11 @@ import (
 // PublicDataset represent the metadata about a public dataset
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task",description="ML task name"
-// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description=""
+// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url",description="",priority=1
 // +kubebuilder:printcolumn:name="Rows",type="number",JSONPath=".spec.rows",description=""
 // +kubebuilder:printcolumn:name="Columns",type="number",JSONPath=".spec.columns",description=""
-// +kubebuilder:printcolumn:name="Target Column",type="string",JSONPath=".spec.targetColumn",description=""
-// +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description=""
+// +kubebuilder:printcolumn:name="Target",type="string",JSONPath=".spec.targetColumn",description=""
+// +kubebuilder:printcolumn:name="Imbalanced",type="string",JSONPath=".spec.imbalanced",description="",priority=1
 // +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=publicdatasets,singular=publicdataset,categories={catalog,modela,all}
 type PublicDataset struct {

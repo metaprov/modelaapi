@@ -20,6 +20,7 @@ const (
 // +kubebuilder:object:root=true
 // +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
 // +kubebuilder:resource:path=mlframeworks,singular=mlframework,categories={catalog,modela,all}
 type MLFramework struct {
 	metav1.TypeMeta   `json:",inline"`

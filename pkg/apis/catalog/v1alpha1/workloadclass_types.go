@@ -6,10 +6,7 @@ import (
 
 // WorkloadClass define a template for a job.
 // +kubebuilder:object:root=true
-// +kubebuilder:printcolumn:name="Image",type="string",JSONPath=".spec.image"
-// +kubebuilder:printcolumn:name="vCpu",type="string",JSONPath=".spec.vcpu"
-// +kubebuilder:printcolumn:name="Memory",type="string",JSONPath=".spec.mem"
-// +kubebuilder:printcolumn:name="Gpu",type="integer",JSONPath=".spec.gpu"
+// +kubebuilder:printcolumn:name="Age",type=date,JSONPath=`.metadata.creationTimestamp`
 // +kubebuilder:resource:path=workloadclasses,singular=workloadclass,categories={catalog,modela,all}
 type WorkloadClass struct {
 	metav1.TypeMeta   `json:",inline"`
