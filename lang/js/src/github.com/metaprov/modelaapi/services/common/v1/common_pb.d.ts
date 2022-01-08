@@ -318,6 +318,11 @@ export class ColumnProfile extends jspb.Message {
   getIndexofpeculiarity(): number;
   setIndexofpeculiarity(value: number): ColumnProfile;
 
+  getValuesList(): Array<string>;
+  setValuesList(value: Array<string>): ColumnProfile;
+  clearValuesList(): ColumnProfile;
+  addValues(value: string, index?: number): ColumnProfile;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnProfile): ColumnProfile.AsObject;
@@ -373,6 +378,7 @@ export namespace ColumnProfile {
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
     indexofpeculiarity: number,
+    valuesList: Array<string>,
   }
 }
 

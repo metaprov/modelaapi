@@ -103,6 +103,8 @@ message ColumnProfile {
 	double    distinctValueCount = 43;    
 	double    mostFreqValuesRatio = 44;   
 	double    indexOfPeculiarity = 45;   
+    repeated string values       = 46; // Enum set of values
+
 
 }
 

@@ -149,7 +149,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1669,6 +1669,13 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Plot.prototype.setUrl = f
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.repeatedFields_ = [46];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1744,7 +1751,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     completeness: jspb.Message.getFloatingPointFieldWithDefault(msg, 42, 0.0),
     distinctvaluecount: jspb.Message.getFloatingPointFieldWithDefault(msg, 43, 0.0),
     mostfreqvaluesratio: jspb.Message.getFloatingPointFieldWithDefault(msg, 44, 0.0),
-    indexofpeculiarity: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0)
+    indexofpeculiarity: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0),
+    valuesList: (f = jspb.Message.getRepeatedField(msg, 46)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1961,6 +1969,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
     case 45:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setIndexofpeculiarity(value);
+      break;
+    case 46:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addValues(value);
       break;
     default:
       reader.skipField();
@@ -2304,6 +2316,13 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
   if (f !== 0.0) {
     writer.writeDouble(
       45,
+      f
+    );
+  }
+  f = message.getValuesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      46,
       f
     );
   }
@@ -3136,6 +3155,43 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.g
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setIndexofpeculiarity = function(value) {
   return jspb.Message.setProto3FloatField(this, 45, value);
+};
+
+
+/**
+ * repeated string values = 46;
+ * @return {!Array<string>}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getValuesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 46));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setValuesList = function(value) {
+  return jspb.Message.setField(this, 46, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.addValues = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 46, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.clearValuesList = function() {
+  return this.setValuesList([]);
 };
 
 
