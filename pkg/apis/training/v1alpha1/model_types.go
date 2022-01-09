@@ -307,38 +307,42 @@ type ModelSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Benchmarked *bool `json:"benchmarked,omitempty" protobuf:"varint,27,opt,name=benchmarked"`
+	// Explained indicate weather this model should be explained
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Explained *bool `json:"explained,omitempty" protobuf:"varint,28,opt,name=explained"`
 	// Indicate that this model is a baseline
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,28,opt,name=baseline"`
+	Baseline *bool `json:"baseline,omitempty" protobuf:"varint,29,opt,name=baseline"`
 	// Is this model flagged by the user.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,29,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,30,opt,name=flagged"`
 	// Location is the location of the model artifacts (metadata, reports and estimators).
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,30,opt,name=location"`
+	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,31,opt,name=location"`
 	// The specification for the forecasting algorithm if this model is part of a forecasting
 	// +kubebuilder:validation:Optional
-	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,31,opt,name=forecast"`
+	Forecasting *ForecastSpec `json:"forecast,omitempty" protobuf:"bytes,32,opt,name=forecast"`
 	// Compilation denotes how to compile the model. Not supported in the current release.
 	// +kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,32,opt,name=compilation"`
+	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,33,opt,name=compilation"`
 	// ActiveDeadlineSeconds is the deadline of a job for this model.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,33,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,34,opt,name=activeDeadlineSeconds"`
 	// ModelType is the type of model for this estimator
 	// +kubebuilder:default:=classical
 	// +kubebuilder:validation:Optional
-	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,34,opt,name=estimatorType"`
+	EstimatorType *catalog.ModelType `json:"estimatorType,omitempty" protobuf:"bytes,35,opt,name=estimatorType"`
 	// TTL
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,35,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,36,opt,name=ttl"`
 	// Mark the model class. The model class is the origin of the model
 	// +kubebuilder:validation:Optional
-	ModelClass catalog.ModelClassType `json:"modelClass,omitempty" protobuf:"bytes,36,opt,name=modelClass"`
+	ModelClass catalog.ModelClassType `json:"modelClass,omitempty" protobuf:"bytes,37,opt,name=modelClass"`
 	// Set the trial ID, by the optimizer.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
@@ -346,6 +350,9 @@ type ModelSpec struct {
 	// The Governance requirements.
 	// +kubebuilder:validation:Optional
 	Governance *data.GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,39,opt,name=governance"`
+	// The Interpretability requirements.
+	// +kubebuilder:validation:Optional
+	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,40,opt,name=interpretability"`
 }
 
 type EnsembleSpec struct {
@@ -541,13 +548,16 @@ type ModelStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,62,opt,name=lastUpdated"`
-	// The Governance requirements.
+	// The Governance status for this model
 	// +kubebuilder:validation:Optional
-	GovernanceStatus data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,63,opt,name=governanceStatus"`
+	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,63,opt,name=governanceStatus"`
+	// The Interpretability status for this model
+	// +kubebuilder:validation:Optional
+	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,64,opt,name=Interpretability"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,64,rep,name=conditions"`
+	Conditions []ModelCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,65,rep,name=conditions"`
 }
 
 // HyperParameterValue represent a specific value of
@@ -929,16 +939,19 @@ type FeatureSelectionSpec struct {
 }
 
 type InterpretabilitySpec struct {
-	// If true, Perform the interpretability
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
-	// +kubebuilder:default:=true
-	// +kubebuilder:validation:Optional
-	Shap *bool `json:"shap,omitempty" protobuf:"varint,2,opt,name=shap"`
+	Shap *bool `json:"shap,omitempty" protobuf:"varint,1,opt,name=shap"`
 }
 
 type InterpretabilityStatus struct {
+	// StartTime represents time when the model interpretability started
+	// +kubebuilder:validation:Optional
+	StartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,2,opt,name=trainingStartTime"`
+	// EndTime represents time when the model interpretability ended
+	// +kubebuilder:validation:Optional
+	EndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,3,opt,name=trainingEndTime"`
+
 	// The URL of the interpretbility model
-	ModelURL string `json:"modelUrl,omitempty" protobuf:"bytes,1,opt,name=modelUrl"`
+	InterpretabilityModelURL string `json:"interpretabilityUrl,omitempty" protobuf:"bytes,1,opt,name=interpretabilityUrl"`
 }

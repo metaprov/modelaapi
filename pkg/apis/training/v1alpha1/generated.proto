@@ -780,19 +780,22 @@ message ImagePipelineSpec {
 }
 
 message InterpretabilitySpec {
-  // If true, Perform the interpretability
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool enabled = 1;
-
-  // +kubebuilder:default:=true
-  // +kubebuilder:validation:Optional
-  optional bool shap = 2;
+  optional bool shap = 1;
 }
 
 message InterpretabilityStatus {
+  // StartTime represents time when the model interpretability started
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 2;
+
+  // EndTime represents time when the model interpretability ended
+  // +kubebuilder:validation:Optional
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 3;
+
   // The URL of the interpretbility model
-  optional string modelUrl = 1;
+  optional string interpretabilityUrl = 1;
 }
 
 message Level {
@@ -1755,46 +1758,51 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional bool benchmarked = 27;
 
+  // Explained indicate weather this model should be explained
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool explained = 28;
+
   // Indicate that this model is a baseline
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool baseline = 28;
+  optional bool baseline = 29;
 
   // Is this model flagged by the user.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool flagged = 29;
+  optional bool flagged = 30;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 30;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 31;
 
   // The specification for the forecasting algorithm if this model is part of a forecasting
   // +kubebuilder:validation:Optional
-  optional ForecastSpec forecast = 31;
+  optional ForecastSpec forecast = 32;
 
   // Compilation denotes how to compile the model. Not supported in the current release.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 32;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 33;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 33;
+  optional int64 activeDeadlineSeconds = 34;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 34;
+  optional string estimatorType = 35;
 
   // TTL
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 35;
+  optional int32 ttl = 36;
 
   // Mark the model class. The model class is the origin of the model
   // +kubebuilder:validation:Optional
-  optional string modelClass = 36;
+  optional string modelClass = 37;
 
   // Set the trial ID, by the optimizer.
   // +kubebuilder:default:=0
@@ -1804,6 +1812,10 @@ message ModelSpec {
   // The Governance requirements.
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 39;
+
+  // The Interpretability requirements.
+  // +kubebuilder:validation:Optional
+  optional InterpretabilitySpec interpretability = 40;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2053,14 +2065,18 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 62;
 
-  // The Governance requirements.
+  // The Governance status for this model
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceStatus governanceStatus = 63;
+
+  // The Interpretability status for this model
+  // +kubebuilder:validation:Optional
+  optional InterpretabilityStatus Interpretability = 64;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated ModelCondition conditions = 64;
+  repeated ModelCondition conditions = 65;
 }
 
 message ModelValidation {

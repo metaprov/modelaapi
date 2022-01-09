@@ -1255,9 +1255,6 @@ export namespace ImagePipelineSpec {
 }
 
 export class InterpretabilitySpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): InterpretabilitySpec;
-
   getShap(): boolean;
   setShap(value: boolean): InterpretabilitySpec;
 
@@ -1271,14 +1268,23 @@ export class InterpretabilitySpec extends jspb.Message {
 
 export namespace InterpretabilitySpec {
   export type AsObject = {
-    enabled: boolean,
     shap: boolean,
   }
 }
 
 export class InterpretabilityStatus extends jspb.Message {
-  getModelurl(): string;
-  setModelurl(value: string): InterpretabilityStatus;
+  getTrainingstarttime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrainingstarttime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): InterpretabilityStatus;
+  hasTrainingstarttime(): boolean;
+  clearTrainingstarttime(): InterpretabilityStatus;
+
+  getTrainingendtime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setTrainingendtime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): InterpretabilityStatus;
+  hasTrainingendtime(): boolean;
+  clearTrainingendtime(): InterpretabilityStatus;
+
+  getInterpretabilityurl(): string;
+  setInterpretabilityurl(value: string): InterpretabilityStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InterpretabilityStatus.AsObject;
@@ -1290,7 +1296,9 @@ export class InterpretabilityStatus extends jspb.Message {
 
 export namespace InterpretabilityStatus {
   export type AsObject = {
-    modelurl: string,
+    trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    interpretabilityurl: string,
   }
 }
 
@@ -2625,6 +2633,9 @@ export class ModelSpec extends jspb.Message {
   getBenchmarked(): boolean;
   setBenchmarked(value: boolean): ModelSpec;
 
+  getExplained(): boolean;
+  setExplained(value: boolean): ModelSpec;
+
   getBaseline(): boolean;
   setBaseline(value: boolean): ModelSpec;
 
@@ -2666,6 +2677,11 @@ export class ModelSpec extends jspb.Message {
   hasGovernance(): boolean;
   clearGovernance(): ModelSpec;
 
+  getInterpretability(): InterpretabilitySpec | undefined;
+  setInterpretability(value?: InterpretabilitySpec): ModelSpec;
+  hasInterpretability(): boolean;
+  clearInterpretability(): ModelSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ModelSpec): ModelSpec.AsObject;
@@ -2702,6 +2718,7 @@ export namespace ModelSpec {
     forecasted: boolean,
     released: boolean,
     benchmarked: boolean,
+    explained: boolean,
     baseline: boolean,
     flagged: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
@@ -2713,6 +2730,7 @@ export namespace ModelSpec {
     modelclass: string,
     trialid: number,
     governance?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceSpec.AsObject,
+    interpretability?: InterpretabilitySpec.AsObject,
   }
 }
 
@@ -2950,6 +2968,11 @@ export class ModelStatus extends jspb.Message {
   hasGovernancestatus(): boolean;
   clearGovernancestatus(): ModelStatus;
 
+  getInterpretability(): InterpretabilityStatus | undefined;
+  setInterpretability(value?: InterpretabilityStatus): ModelStatus;
+  hasInterpretability(): boolean;
+  clearInterpretability(): ModelStatus;
+
   getConditionsList(): Array<ModelCondition>;
   setConditionsList(value: Array<ModelCondition>): ModelStatus;
   clearConditionsList(): ModelStatus;
@@ -3026,6 +3049,7 @@ export namespace ModelStatus {
     topcorrelationsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Correlation.AsObject>,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     governancestatus?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.GovernanceStatus.AsObject,
+    interpretability?: InterpretabilityStatus.AsObject,
     conditionsList: Array<ModelCondition.AsObject>,
   }
 }

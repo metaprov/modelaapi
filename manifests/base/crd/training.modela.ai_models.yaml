@@ -275,6 +275,10 @@ spec:
                 - chatbot
                 - rl
                 type: string
+              explained:
+                default: false
+                description: Explained indicate weather this model should be explained
+                type: boolean
               fe:
                 description: 'Represent the preprocessing pipeline of the model. Provide
                   a value if you want to customize the model. Default: All preprocessing
@@ -986,6 +990,13 @@ spec:
                   itReviewer:
                     description: The account name of the IT reviewer
                     type: string
+                type: object
+              interpretability:
+                description: The Interpretability requirements.
+                properties:
+                  shap:
+                    default: true
+                    type: boolean
                 type: object
               location:
                 description: Location is the location of the model artifacts (metadata,
@@ -1741,7 +1752,7 @@ spec:
                 description: ForecastUri is the uri of the forecast
                 type: string
               governance:
-                description: The Governance requirements.
+                description: The Governance status for this model
                 properties:
                   ITReviewStatus:
                     description: The review status for IT department
@@ -1804,6 +1815,23 @@ spec:
                       type: number
                   type: object
                 type: array
+              interpretability:
+                description: The Interpretability status for this model
+                properties:
+                  interpretabilityUrl:
+                    description: The URL of the interpretbility model
+                    type: string
+                  trainingEndTime:
+                    description: EndTime represents time when the model interpretability
+                      ended
+                    format: date-time
+                    type: string
+                  trainingStartTime:
+                    description: StartTime represents time when the model interpretability
+                      started
+                    format: date-time
+                    type: string
+                type: object
               labelEncoderUri:
                 description: LabelEncoderUri is the URI of the label encoder binary
                   file, if there is one.
