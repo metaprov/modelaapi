@@ -554,7 +554,7 @@ func (metric Metric) Compare(i float64, j float64) bool {
 //==============================================================================
 // CategoricalEncoding
 //==============================================================================
-// +kubebuilder:validation:Enum="one-hot-encoding";"one-hot-encoding-top-categories";"ordinal-encoding";"count-encoding";"target-encoding";"mean-encoding";"probability-ratio-encoding";"weight-of-evidence-encoding";"rare-label-encoding";"binary-encoding";"label-encoding";"hash-encoding";"catboost-encoding";"loo-encoding";"no-encoding";"auto"
+// +kubebuilder:validation:Enum="one-hot-encoding";"one-hot-encoding-top-categories";"ordinal-encoding";"count-encoding";"target-encoding";"mean-encoding";"probability-ratio-encoding";"weight-of-evidence-encoding";"rare-label-encoding";"binary-encoding";"label-encoding";"hash-encoding";"catboost-encoding";"loo-encoding";"no-encoding";"auto";"none"
 type CategoricalEncoding string
 
 const (
@@ -574,6 +574,7 @@ const (
 	LeaveOneOutEncoding      CategoricalEncoding = "loo-encoding"
 	NoEncoding               CategoricalEncoding = "no-encoding"
 	AutoEncoding             CategoricalEncoding = "auto"
+	NoneEncoding             CategoricalEncoding = "none"
 )
 
 func ParseCategoricalEncoding(name string) CategoricalEncoding {

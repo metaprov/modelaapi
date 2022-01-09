@@ -413,6 +413,7 @@ spec:
                           - loo-encoding
                           - no-encoding
                           - auto
+                          - none
                           type: string
                         generated:
                           description: Spec to generate one or more columns from existing
