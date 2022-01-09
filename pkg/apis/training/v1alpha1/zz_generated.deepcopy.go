@@ -890,6 +890,11 @@ func (in *FeatureEngineeringSpec) DeepCopyInto(out *FeatureEngineeringSpec) {
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.Imbalance != nil {
+		in, out := &in.Imbalance, &out.Imbalance
+		*out = new(catalogv1alpha1.ImbalanceHandling)
+		**out = **in
+	}
 	in.FeatureSelection.DeepCopyInto(&out.FeatureSelection)
 }
 

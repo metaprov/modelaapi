@@ -10538,7 +10538,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.repeatedFields_ = [1];
 
 
 
@@ -10573,6 +10573,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
   var f, obj = {
     pipelinesList: jspb.Message.toObjectList(msg.getPipelinesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.toObject, includeInstance),
+    imbalance: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     selection: (f = msg.getSelection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f)
   };
 
@@ -10610,10 +10611,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.deserializeBinaryFromReader);
       msg.addPipelines(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImbalance(value);
       break;
     case 3:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec;
@@ -10652,9 +10657,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
   f = message.getPipelinesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      2,
+      1,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
     );
   }
   f = message.getSelection();
@@ -10669,12 +10681,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * repeated FeatureEngineeringPipeline pipelines = 2;
+ * repeated FeatureEngineeringPipeline pipelines = 1;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getPipelinesList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline, 2));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline, 1));
 };
 
 
@@ -10683,7 +10695,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setPipelinesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -10693,7 +10705,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.addPipelines = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline, opt_index);
 };
 
 
@@ -10703,6 +10715,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearPipelinesList = function() {
   return this.setPipelinesList([]);
+};
+
+
+/**
+ * optional string imbalance = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getImbalance = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setImbalance = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearImbalance = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasImbalance = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

@@ -481,6 +481,20 @@ spec:
                             imputation:
                               default: auto
                               description: The recommended imputer for a column.
+                              enum:
+                              - remove-rows-with-missing-values
+                              - replace-with-mean
+                              - replace-with-median
+                              - replace-with-arbitrary-value
+                              - replace-with-end-of-tail
+                              - replace-with-random-sample
+                              - freq-category-imputation
+                              - add-missing-value-indicator
+                              - knn
+                              - iterative
+                              - mice
+                              - no-imputation
+                              - auto
                               type: string
                             index:
                               default: false
@@ -585,6 +599,15 @@ spec:
                             scaling:
                               default: auto
                               description: The recommended scaler for a column.
+                              enum:
+                              - standard-scaling
+                              - max-abs-scaling
+                              - min-max-scaling
+                              - normalizion-scaling
+                              - robust-scaling
+                              - scale-to-unit-norm
+                              - none
+                              - auto
                               type: string
                             sigma:
                               default: 0
@@ -952,32 +975,56 @@ spec:
                 - accuracy
                 - average-precision
                 - balanced-accuracy
-                - brier-score-loss
                 - f1
-                - f1-macro
                 - f1-micro
+                - f1-macro
                 - f1-weighted
-                - log-loss
+                - f1-samples
                 - precision
                 - precision-micro
                 - precision-macro
                 - precision-weighted
+                - precision-samples
                 - recall
                 - recall-macro
                 - recall-micro
                 - recall-weighted
+                - recall-samples
+                - log-loss
                 - auc
+                - auc-micro
+                - auc-macro
+                - auc-weighted
+                - zero-one
+                - hamming-loss
+                - hinge-loss
+                - jacquard-loss
+                - mcc
                 - fp
                 - fn
                 - tn
                 - tp
-                - explained_variance
+                - tpr
+                - fpr
+                - tnr
+                - matthews-corr-coef
+                - explained-variance
+                - max-error
                 - mae
                 - mse
                 - msle
+                - rmse
+                - rmsle
                 - median-absolute-error
                 - r2
                 - adj-r2
+                - mean_poisson_deviance
+                - mean-gamma-deviance
+                - mean-tweedie-deviance
+                - mape
+                - maze
+                - mdape
+                - smape
                 - adjusted-mutual-info-score
                 - adjusted-rand-score
                 - completeness-score
@@ -986,27 +1033,15 @@ spec:
                 - mutual-info-score
                 - normalized-mutual-info-score
                 - v-measure-score
-                - rmse
-                - unknown
-                - mape
-                - smape
-                - mdape
-                - adjr2
-                - mcc
-                - tpr
-                - fpr
-                - tnr
-                - rmsle
-                - matthews-corr-coef
                 - p50-latency
                 - p95-latency
                 - p99-latency
                 - cpu
-                - mem
-                - req-per-sec
-                - maze
                 - gpu
+                - mem
                 - gpu-mem
+                - req-per-sec
+                - uncertain-prediction-percent
                 - none
                 type: string
               owner:
@@ -1071,31 +1106,42 @@ spec:
                 description: Task is the machine learning task (regression/classification)
                   required
                 enum:
-                - forecasting
                 - binary-classification
                 - multi-classification
                 - multi-label-classification
-                - text-classification
-                - regression
                 - forecasting
+                - regression
                 - clustering
                 - recommendation
                 - outlier-detection
                 - novelty-detection
                 - topic-modeling
-                - auto
-                - unknown
                 - video-action-recognition
                 - video-classification
                 - video-object-tracking
-                - text-classification
-                - text-multi-label-classification
-                - text-entity-extraction
-                - text-sentiment-analysis
                 - image-classification
                 - image-multi-classification
                 - image-object-detection
                 - image-segmentation
+                - auto
+                - text-ner
+                - text-classification
+                - text-summarization
+                - text-qa
+                - text-sentiment-analysis
+                - text-generation
+                - text-code-generation
+                - text-translation
+                - text-lang-detection
+                - text-grammer-correction
+                - text-paraphrasing
+                - text-intent-classification
+                - text-semantic-similarity
+                - text-keyword-extraction
+                - text-pos
+                - text-tokenization
+                - text-lemma
+                - unknown
                 type: string
               trainers:
                 default: 1

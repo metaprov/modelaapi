@@ -581,7 +581,11 @@ type NLPEstimatorSpec struct {
 type FeatureEngineeringSpec struct {
 	// List of processing pipelines
 	// +kubebuilder:validation:Optional
-	Pipelines []FeatureEngineeringPipeline `json:"pipelines,omitempty" protobuf:"bytes,2,rep,name=pipelines"`
+	Pipelines []FeatureEngineeringPipeline `json:"pipelines,omitempty" protobuf:"bytes,1,rep,name=pipelines"`
+	// Define how to handle imbalance
+	// +kubebuilder:default:=auto
+	// +kubebuilder:validation:Optional
+	Imbalance *catalog.ImbalanceHandling `json:"imbalance,omitempty" protobuf:"bytes,2,rep,name=imbalance"`
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
 	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`

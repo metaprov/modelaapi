@@ -432,6 +432,20 @@ spec:
                         imputation:
                           default: auto
                           description: The recommended imputer for a column.
+                          enum:
+                          - remove-rows-with-missing-values
+                          - replace-with-mean
+                          - replace-with-median
+                          - replace-with-arbitrary-value
+                          - replace-with-end-of-tail
+                          - replace-with-random-sample
+                          - freq-category-imputation
+                          - add-missing-value-indicator
+                          - knn
+                          - iterative
+                          - mice
+                          - no-imputation
+                          - auto
                           type: string
                         index:
                           default: false
@@ -536,6 +550,15 @@ spec:
                         scaling:
                           default: auto
                           description: The recommended scaler for a column.
+                          enum:
+                          - standard-scaling
+                          - max-abs-scaling
+                          - min-max-scaling
+                          - normalizion-scaling
+                          - robust-scaling
+                          - scale-to-unit-norm
+                          - none
+                          - auto
                           type: string
                         sigma:
                           default: 0

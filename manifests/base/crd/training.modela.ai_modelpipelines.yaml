@@ -157,32 +157,56 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
-                          - brier-score-loss
                           - f1
-                          - f1-macro
                           - f1-micro
+                          - f1-macro
                           - f1-weighted
-                          - log-loss
+                          - f1-samples
                           - precision
                           - precision-micro
                           - precision-macro
                           - precision-weighted
+                          - precision-samples
                           - recall
                           - recall-macro
                           - recall-micro
                           - recall-weighted
+                          - recall-samples
+                          - log-loss
                           - auc
+                          - auc-micro
+                          - auc-macro
+                          - auc-weighted
+                          - zero-one
+                          - hamming-loss
+                          - hinge-loss
+                          - jacquard-loss
+                          - mcc
                           - fp
                           - fn
                           - tn
                           - tp
-                          - explained_variance
+                          - tpr
+                          - fpr
+                          - tnr
+                          - matthews-corr-coef
+                          - explained-variance
+                          - max-error
                           - mae
                           - mse
                           - msle
+                          - rmse
+                          - rmsle
                           - median-absolute-error
                           - r2
                           - adj-r2
+                          - mean_poisson_deviance
+                          - mean-gamma-deviance
+                          - mean-tweedie-deviance
+                          - mape
+                          - maze
+                          - mdape
+                          - smape
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -191,27 +215,15 @@ spec:
                           - mutual-info-score
                           - normalized-mutual-info-score
                           - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
-                          - adjr2
-                          - mcc
-                          - tpr
-                          - fpr
-                          - tnr
-                          - rmsle
-                          - matthews-corr-coef
                           - p50-latency
                           - p95-latency
                           - p99-latency
                           - cpu
-                          - mem
-                          - req-per-sec
-                          - maze
                           - gpu
+                          - mem
                           - gpu-mem
+                          - req-per-sec
+                          - uncertain-prediction-percent
                           - none
                           type: string
                         min:
@@ -359,32 +371,56 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
-                          - brier-score-loss
                           - f1
-                          - f1-macro
                           - f1-micro
+                          - f1-macro
                           - f1-weighted
-                          - log-loss
+                          - f1-samples
                           - precision
                           - precision-micro
                           - precision-macro
                           - precision-weighted
+                          - precision-samples
                           - recall
                           - recall-macro
                           - recall-micro
                           - recall-weighted
+                          - recall-samples
+                          - log-loss
                           - auc
+                          - auc-micro
+                          - auc-macro
+                          - auc-weighted
+                          - zero-one
+                          - hamming-loss
+                          - hinge-loss
+                          - jacquard-loss
+                          - mcc
                           - fp
                           - fn
                           - tn
                           - tp
-                          - explained_variance
+                          - tpr
+                          - fpr
+                          - tnr
+                          - matthews-corr-coef
+                          - explained-variance
+                          - max-error
                           - mae
                           - mse
                           - msle
+                          - rmse
+                          - rmsle
                           - median-absolute-error
                           - r2
                           - adj-r2
+                          - mean_poisson_deviance
+                          - mean-gamma-deviance
+                          - mean-tweedie-deviance
+                          - mape
+                          - maze
+                          - mdape
+                          - smape
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -393,27 +429,15 @@ spec:
                           - mutual-info-score
                           - normalized-mutual-info-score
                           - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
-                          - adjr2
-                          - mcc
-                          - tpr
-                          - fpr
-                          - tnr
-                          - rmsle
-                          - matthews-corr-coef
                           - p50-latency
                           - p95-latency
                           - p99-latency
                           - cpu
-                          - mem
-                          - req-per-sec
-                          - maze
                           - gpu
+                          - mem
                           - gpu-mem
+                          - req-per-sec
+                          - uncertain-prediction-percent
                           - none
                           type: string
                         min:
@@ -691,32 +715,56 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
-                          - brier-score-loss
                           - f1
-                          - f1-macro
                           - f1-micro
+                          - f1-macro
                           - f1-weighted
-                          - log-loss
+                          - f1-samples
                           - precision
                           - precision-micro
                           - precision-macro
                           - precision-weighted
+                          - precision-samples
                           - recall
                           - recall-macro
                           - recall-micro
                           - recall-weighted
+                          - recall-samples
+                          - log-loss
                           - auc
+                          - auc-micro
+                          - auc-macro
+                          - auc-weighted
+                          - zero-one
+                          - hamming-loss
+                          - hinge-loss
+                          - jacquard-loss
+                          - mcc
                           - fp
                           - fn
                           - tn
                           - tp
-                          - explained_variance
+                          - tpr
+                          - fpr
+                          - tnr
+                          - matthews-corr-coef
+                          - explained-variance
+                          - max-error
                           - mae
                           - mse
                           - msle
+                          - rmse
+                          - rmsle
                           - median-absolute-error
                           - r2
                           - adj-r2
+                          - mean_poisson_deviance
+                          - mean-gamma-deviance
+                          - mean-tweedie-deviance
+                          - mape
+                          - maze
+                          - mdape
+                          - smape
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -725,27 +773,15 @@ spec:
                           - mutual-info-score
                           - normalized-mutual-info-score
                           - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
-                          - adjr2
-                          - mcc
-                          - tpr
-                          - fpr
-                          - tnr
-                          - rmsle
-                          - matthews-corr-coef
                           - p50-latency
                           - p95-latency
                           - p99-latency
                           - cpu
-                          - mem
-                          - req-per-sec
-                          - maze
                           - gpu
+                          - mem
                           - gpu-mem
+                          - req-per-sec
+                          - uncertain-prediction-percent
                           - none
                           type: string
                         min:
@@ -874,32 +910,56 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
-                          - brier-score-loss
                           - f1
-                          - f1-macro
                           - f1-micro
+                          - f1-macro
                           - f1-weighted
-                          - log-loss
+                          - f1-samples
                           - precision
                           - precision-micro
                           - precision-macro
                           - precision-weighted
+                          - precision-samples
                           - recall
                           - recall-macro
                           - recall-micro
                           - recall-weighted
+                          - recall-samples
+                          - log-loss
                           - auc
+                          - auc-micro
+                          - auc-macro
+                          - auc-weighted
+                          - zero-one
+                          - hamming-loss
+                          - hinge-loss
+                          - jacquard-loss
+                          - mcc
                           - fp
                           - fn
                           - tn
                           - tp
-                          - explained_variance
+                          - tpr
+                          - fpr
+                          - tnr
+                          - matthews-corr-coef
+                          - explained-variance
+                          - max-error
                           - mae
                           - mse
                           - msle
+                          - rmse
+                          - rmsle
                           - median-absolute-error
                           - r2
                           - adj-r2
+                          - mean_poisson_deviance
+                          - mean-gamma-deviance
+                          - mean-tweedie-deviance
+                          - mape
+                          - maze
+                          - mdape
+                          - smape
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -908,27 +968,15 @@ spec:
                           - mutual-info-score
                           - normalized-mutual-info-score
                           - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
-                          - adjr2
-                          - mcc
-                          - tpr
-                          - fpr
-                          - tnr
-                          - rmsle
-                          - matthews-corr-coef
                           - p50-latency
                           - p95-latency
                           - p99-latency
                           - cpu
-                          - mem
-                          - req-per-sec
-                          - maze
                           - gpu
+                          - mem
                           - gpu-mem
+                          - req-per-sec
+                          - uncertain-prediction-percent
                           - none
                           type: string
                         min:
@@ -1039,32 +1087,56 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
-                          - brier-score-loss
                           - f1
-                          - f1-macro
                           - f1-micro
+                          - f1-macro
                           - f1-weighted
-                          - log-loss
+                          - f1-samples
                           - precision
                           - precision-micro
                           - precision-macro
                           - precision-weighted
+                          - precision-samples
                           - recall
                           - recall-macro
                           - recall-micro
                           - recall-weighted
+                          - recall-samples
+                          - log-loss
                           - auc
+                          - auc-micro
+                          - auc-macro
+                          - auc-weighted
+                          - zero-one
+                          - hamming-loss
+                          - hinge-loss
+                          - jacquard-loss
+                          - mcc
                           - fp
                           - fn
                           - tn
                           - tp
-                          - explained_variance
+                          - tpr
+                          - fpr
+                          - tnr
+                          - matthews-corr-coef
+                          - explained-variance
+                          - max-error
                           - mae
                           - mse
                           - msle
+                          - rmse
+                          - rmsle
                           - median-absolute-error
                           - r2
                           - adj-r2
+                          - mean_poisson_deviance
+                          - mean-gamma-deviance
+                          - mean-tweedie-deviance
+                          - mape
+                          - maze
+                          - mdape
+                          - smape
                           - adjusted-mutual-info-score
                           - adjusted-rand-score
                           - completeness-score
@@ -1073,27 +1145,15 @@ spec:
                           - mutual-info-score
                           - normalized-mutual-info-score
                           - v-measure-score
-                          - rmse
-                          - unknown
-                          - mape
-                          - smape
-                          - mdape
-                          - adjr2
-                          - mcc
-                          - tpr
-                          - fpr
-                          - tnr
-                          - rmsle
-                          - matthews-corr-coef
                           - p50-latency
                           - p95-latency
                           - p99-latency
                           - cpu
-                          - mem
-                          - req-per-sec
-                          - maze
                           - gpu
+                          - mem
                           - gpu-mem
+                          - req-per-sec
+                          - uncertain-prediction-percent
                           - none
                           type: string
                         min:

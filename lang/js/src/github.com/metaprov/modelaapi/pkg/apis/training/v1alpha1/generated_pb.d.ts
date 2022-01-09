@@ -882,6 +882,9 @@ export class FeatureEngineeringSpec extends jspb.Message {
   clearPipelinesList(): FeatureEngineeringSpec;
   addPipelines(value?: FeatureEngineeringPipeline, index?: number): FeatureEngineeringPipeline;
 
+  getImbalance(): string;
+  setImbalance(value: string): FeatureEngineeringSpec;
+
   getSelection(): FeatureSelectionSpec | undefined;
   setSelection(value?: FeatureSelectionSpec): FeatureEngineeringSpec;
   hasSelection(): boolean;
@@ -898,6 +901,7 @@ export class FeatureEngineeringSpec extends jspb.Message {
 export namespace FeatureEngineeringSpec {
   export type AsObject = {
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
+    imbalance: string,
     selection?: FeatureSelectionSpec.AsObject,
   }
 }

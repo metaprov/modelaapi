@@ -157,31 +157,42 @@ spec:
                 description: Task is the machine learning task (binary classification
                   / regression)
                 enum:
-                - forecasting
                 - binary-classification
                 - multi-classification
                 - multi-label-classification
-                - text-classification
-                - regression
                 - forecasting
+                - regression
                 - clustering
                 - recommendation
                 - outlier-detection
                 - novelty-detection
                 - topic-modeling
-                - auto
-                - unknown
                 - video-action-recognition
                 - video-classification
                 - video-object-tracking
-                - text-classification
-                - text-multi-label-classification
-                - text-entity-extraction
-                - text-sentiment-analysis
                 - image-classification
                 - image-multi-classification
                 - image-object-detection
                 - image-segmentation
+                - auto
+                - text-ner
+                - text-classification
+                - text-summarization
+                - text-qa
+                - text-sentiment-analysis
+                - text-generation
+                - text-code-generation
+                - text-translation
+                - text-lang-detection
+                - text-grammer-correction
+                - text-paraphrasing
+                - text-intent-classification
+                - text-semantic-similarity
+                - text-keyword-extraction
+                - text-pos
+                - text-tokenization
+                - text-lemma
+                - unknown
                 type: string
               url:
                 default: ""

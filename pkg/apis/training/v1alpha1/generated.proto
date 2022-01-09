@@ -570,7 +570,12 @@ message FeatureEngineeringSearchStatus {
 message FeatureEngineeringSpec {
   // List of processing pipelines
   // +kubebuilder:validation:Optional
-  repeated FeatureEngineeringPipeline pipelines = 2;
+  repeated FeatureEngineeringPipeline pipelines = 1;
+
+  // Define how to handle imbalance
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string imbalance = 2;
 
   // Spec for feature selection
   // +kubebuilder:validation:Optional

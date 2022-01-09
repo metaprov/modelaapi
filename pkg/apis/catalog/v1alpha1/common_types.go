@@ -116,7 +116,7 @@ func (ak ApiKeyName) AsCliOption() string {
 }
 
 // MLTask is the machine learning task name
-// +kubebuilder:validation:Enum="forecasting";"binary-classification";"multi-classification";"multi-label-classification";"text-classification";"regression";"forecasting";"clustering";"recommendation";"outlier-detection";"novelty-detection";"topic-modeling";"auto";"unknown";"video-action-recognition";"video-classification";"video-object-tracking";"text-classification";"text-multi-label-classification";"text-entity-extraction";"text-sentiment-analysis";"image-classification";"image-multi-classification";"image-object-detection";"image-segmentation"
+// +kubebuilder:validation:Enum="binary-classification";"multi-classification";"multi-label-classification";"forecasting";"regression";"clustering";"recommendation";"outlier-detection";"novelty-detection";"topic-modeling";"video-action-recognition";"video-classification";"video-object-tracking";"image-classification";"image-multi-classification";"image-object-detection";"image-segmentation";"auto";"text-ner";"text-classification";"text-summarization";"text-qa";"text-sentiment-analysis";"text-generation";"text-code-generation";"text-translation";"text-lang-detection";"text-grammer-correction";"text-paraphrasing";"text-intent-classification";"text-semantic-similarity";"text-keyword-extraction";"text-pos";"text-tokenization";"text-lemma";"unknown"
 type MLTask string
 
 const (
@@ -444,7 +444,7 @@ func (metric Metric) IsClustering() bool {
 	return false
 }
 
-// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"brier-score-loss";"f1";"f1-macro";"f1-micro";"f1-weighted";"log-loss";"precision";"precision-micro";"precision-macro";"precision-weighted";"recall";"recall-macro";"recall-micro";"recall-weighted";"auc";"fp";"fn";"tn";"tp";"explained_variance";"mae";"mse";"msle";"median-absolute-error";"r2";"adj-r2";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"rmse";"unknown";"mape";"smape";"mdape";"adjr2";"mcc";"tpr";"fpr";"tnr";"rmsle";"matthews-corr-coef";"p50-latency";"p95-latency";"p99-latency";"cpu";"mem";"req-per-sec";"maze";"gpu";"gpu-mem";"none"
+// +kubebuilder:validation:Enum="accuracy";"average-precision";"balanced-accuracy";"f1";"f1-micro";"f1-macro";"f1-weighted";"f1-samples";"precision";"precision-micro";"precision-macro";"precision-weighted";	"precision-samples";"recall";"recall-macro";"recall-micro";"recall-weighted";"recall-samples";"log-loss";"auc";"auc-micro";"auc-macro";"auc-weighted";"zero-one";"hamming-loss";"hinge-loss";"jacquard-loss";"mcc";"fp";"fn";"tn";"tp";"tpr";"fpr";"tnr";"matthews-corr-coef";"explained-variance";"max-error";"mae";"mse";"msle";"rmse";"rmsle";"median-absolute-error";"r2";"adj-r2";"mean_poisson_deviance";"mean-gamma-deviance";"mean-tweedie-deviance";"mape";"maze";"mdape";"smape";"adjusted-mutual-info-score";"adjusted-rand-score";"completeness-score";"fowlkes-mallows-score";"homogeneity-score";"mutual-info-score";"normalized-mutual-info-score";"v-measure-score";"p50-latency";"p95-latency";"p99-latency";"cpu";"gpu";"mem";"gpu-mem";"req-per-sec";"uncertain-prediction-percent";"none";
 type Metric string
 
 const (
@@ -554,7 +554,7 @@ func (metric Metric) Compare(i float64, j float64) bool {
 //==============================================================================
 // CategoricalEncoding
 //==============================================================================
-
+// +kubebuilder:validation:Enum="one-hot-encoding";"one-hot-encoding-top-categories";"ordinal-encoding";"count-encoding";"target-encoding";"mean-encoding";"probability-ratio-encoding";"weight-of-evidence-encoding";"rare-label-encoding";"binary-encoding";"label-encoding";"hash-encoding";"catboost-encoding";"loo-encoding";"no-encoding";"auto"
 type CategoricalEncoding string
 
 const (
@@ -604,7 +604,7 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 //==============================================================================
 // Imputation
 //==============================================================================
-
+// +kubebuilder:validation:Enum="remove-rows-with-missing-values";"replace-with-mean";"replace-with-median";"replace-with-arbitrary-value";"replace-with-end-of-tail";"replace-with-random-sample";"freq-category-imputation";"add-missing-value-indicator";"knn";"iterative";"mice";"no-imputation";"auto";
 type Imputation string
 
 const (
@@ -650,7 +650,7 @@ func ParseImputation(name string) Imputation {
 //==============================================================================
 // Scaling
 //==============================================================================
-
+// +kubebuilder:validation:Enum="standard-scaling";"max-abs-scaling";"min-max-scaling";"normalizion-scaling";"robust-scaling";"scale-to-unit-norm";"none";"auto";
 type Scaling string
 
 const (
@@ -705,6 +705,7 @@ type VideoFeaturizer string
 // Variable Transformation
 //==============================================================================
 
+// +kubebuilder:validation:Enum="log-transformation";"reciprocal-transformation";"sqrt-transformation";"power-transformation";"box-cox-transformation";"yj-transformation";"none";"auto"
 type VariableTransformation string
 
 const (
@@ -721,7 +722,7 @@ const (
 //==============================================================================
 // Discretisation
 //==============================================================================
-
+// +kubebuilder:validation:Enum="equal-width-discretisation-";"equal-freq-discretisation";"kbin-discretisation";"decision-tree-discretisation";"kernel-centerer-discretisation";"label-binarizer-discretisation";"multi-label-binarizer-discretisation";"none";"auto"
 type Discretisation string
 
 const (
@@ -739,7 +740,7 @@ const (
 //==============================================================================
 // Outlier Handling
 //==============================================================================
-
+// +kubebuilder:validation:Enum="trim-outliers";"winsorizer-outliers";"cap-outliers";"zero-code-outliers";"none";"auto"
 type OutlierHandling string
 
 const (
@@ -754,7 +755,7 @@ const (
 //==============================================================================
 // Datatime Transformation
 //==============================================================================
-
+// +kubebuilder:validation:Enum="extract-datetime-information";"none";"auto"
 type DatatimeTransformation string
 
 const (
@@ -784,7 +785,7 @@ const (
 //==============================================================================
 // Feature Engineering
 //==============================================================================
-
+// +kubebuilder:validation:Enum="pca";"polynomial-features";"rbf-sampler";"fast-ica";"nystroem";"none";"auto"
 type DimensionReduction string
 
 const (
@@ -807,6 +808,7 @@ const (
 	AutoTextTransform TextEncoding = "auto"
 )
 
+// +kubebuilder:validation:Enum="drop-features";"drop-constant-features";"drop-deplicated-features";"drop-correlated-features";"mutal-information-feature-selection";"chisquare-fearture-selection";"anova-feature-selection";"step-forward-feature-selection";"step-backward-feature-selection";"lasso-regression-feature-selection";"tree-importance-feature-selection";"recursive-feature-elimination";"recursive-feature-addition";"select-percentile";"select-kbest";"select-fpr";"select-fdr";"variance-threshold";"none";"auto"
 type FeatureSelection string
 
 const (
