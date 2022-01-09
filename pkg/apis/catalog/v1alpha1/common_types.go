@@ -605,7 +605,7 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 //==============================================================================
 // Imputation
 //==============================================================================
-// +kubebuilder:validation:Enum="remove-rows-with-missing-values";"replace-with-mean";"replace-with-median";"replace-with-arbitrary-value";"replace-with-end-of-tail";"replace-with-random-sample";"freq-category-imputation";"add-missing-value-indicator";"knn";"iterative";"mice";"no-imputation";"auto";
+// +kubebuilder:validation:Enum="remove-rows-with-missing-values";"replace-with-mean";"replace-with-median";"replace-with-arbitrary-value";"replace-with-end-of-tail";"replace-with-random-sample";"freq-category-imputation";"add-missing-value-indicator";"knn";"iterative";"mice";"no-imputation";"auto";"none"
 type Imputation string
 
 const (
@@ -622,6 +622,7 @@ const (
 	MICEImputation                      Imputation = "mice"
 	NoImputation                        Imputation = "no-imputation"
 	AutoImputer                         Imputation = "auto"
+	NoneImputer                         Imputation = "none"
 )
 
 func ParseImputation(name string) Imputation {

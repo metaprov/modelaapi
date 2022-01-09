@@ -2013,6 +2013,7 @@ spec:
                           - mice
                           - no-imputation
                           - auto
+                          - none
                           type: string
                         name:
                           description: The name of this feature engineering pipeline
