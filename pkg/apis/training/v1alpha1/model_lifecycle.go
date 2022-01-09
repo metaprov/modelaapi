@@ -633,7 +633,9 @@ func (model *Model) MarkForecasting() {
 	model.Status.Progress = 50
 }
 
-///
+// =========================================
+// Packaging
+// =========================================
 
 func (model *Model) MarkPackaging() {
 	model.Status.Phase = ModelPhasePackaging
@@ -668,6 +670,45 @@ func (model *Model) MarkPackgedFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.LastError = "Failed to package." + err
+}
+
+// =========================================
+// Explaining
+// =========================================
+
+func (model *Model) MarkExplaining() {
+	model.Status.Phase = ModelPhaseExplaining
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelExplained,
+		Status: v1.ConditionFalse,
+		Reason: "Explaining",
+	})
+
+}
+
+func (model *Model) Explained() bool {
+	cond := model.GetCond(ModelExplained)
+	return cond.Status == v1.ConditionTrue
+}
+
+func (model *Model) MarkExplained(image string) {
+	model.Status.ImageName = image
+	model.Status.Phase = ModelPhaseExplained
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelExplained,
+		Status: v1.ConditionTrue,
+	})
+}
+
+func (model *Model) MarkExplainedFailed(err string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelExplained,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	model.Status.Phase = ModelPhaseExplained
+	model.Status.LastError = "Failed to explain." + err
 }
 
 // ---------------------- baking

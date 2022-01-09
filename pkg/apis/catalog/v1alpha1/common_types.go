@@ -81,6 +81,7 @@ const (
 	SplitDatasetToRungs   TaskName = "split-dataset-to-rungs"
 	CompileTask           TaskName = "compile-model"
 	PackageModelTask      TaskName = "package-model"
+	ExplainModelTask      TaskName = "explain-model"
 	FeatureGenTask        TaskName = "feature-gen"
 	FeatureSelectTask     TaskName = "feature-select"
 	RunSqlQueryTask       TaskName = "run-sql-query"
