@@ -78,6 +78,49 @@ export class TrainerdServiceClient {
     this.methodInfoTrain);
   }
 
+  methodInfoExplain = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Explain',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainRequest,
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainResponse,
+    (request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainResponse.deserializeBinary
+  );
+
+  explain(
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainResponse>;
+
+  explain(
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainResponse>;
+
+  explain(
+    request: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_trainerd_v1_trainerd_pb.ExplainResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Explain',
+        request,
+        metadata || {},
+        this.methodInfoExplain,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Explain',
+    request,
+    metadata || {},
+    this.methodInfoExplain);
+  }
+
   methodInfoForecast = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Forecast',
     grpcWeb.MethodType.UNARY,

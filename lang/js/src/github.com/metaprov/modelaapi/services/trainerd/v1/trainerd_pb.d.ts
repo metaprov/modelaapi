@@ -603,3 +603,99 @@ export namespace ShutdownResponse {
   }
 }
 
+export class ExplainRequest extends jspb.Message {
+  getProduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setProduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): ExplainRequest;
+  hasProduct(): boolean;
+  clearProduct(): ExplainRequest;
+
+  getVersion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setVersion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): ExplainRequest;
+  hasVersion(): boolean;
+  clearVersion(): ExplainRequest;
+
+  getBucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setBucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): ExplainRequest;
+  hasBucket(): boolean;
+  clearBucket(): ExplainRequest;
+
+  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
+  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): ExplainRequest;
+  hasModel(): boolean;
+  clearModel(): ExplainRequest;
+
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): ExplainRequest;
+  hasStudy(): boolean;
+  clearStudy(): ExplainRequest;
+
+  getDatasource(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource | undefined;
+  setDatasource(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource): ExplainRequest;
+  hasDatasource(): boolean;
+  clearDatasource(): ExplainRequest;
+
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): ExplainRequest;
+  hasDataset(): boolean;
+  clearDataset(): ExplainRequest;
+
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): ExplainRequest;
+  hasConnection(): boolean;
+  clearConnection(): ExplainRequest;
+
+  getSecretMap(): jspb.Map<string, Uint8Array | string>;
+  clearSecretMap(): ExplainRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExplainRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ExplainRequest): ExplainRequest.AsObject;
+  static serializeBinaryToWriter(message: ExplainRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExplainRequest;
+  static deserializeBinaryFromReader(message: ExplainRequest, reader: jspb.BinaryReader): ExplainRequest;
+}
+
+export namespace ExplainRequest {
+  export type AsObject = {
+    product?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    version?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    bucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    datasource?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSource.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    secretMap: Array<[string, Uint8Array | string]>,
+  }
+}
+
+export class ExplainResponse extends jspb.Message {
+  getWeightsclouduri(): string;
+  setWeightsclouduri(value: string): ExplainResponse;
+
+  getManifestclouduri(): string;
+  setManifestclouduri(value: string): ExplainResponse;
+
+  getLogsclouduri(): string;
+  setLogsclouduri(value: string): ExplainResponse;
+
+  getFeaturesimportanceMap(): jspb.Map<string, number>;
+  clearFeaturesimportanceMap(): ExplainResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExplainResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ExplainResponse): ExplainResponse.AsObject;
+  static serializeBinaryToWriter(message: ExplainResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExplainResponse;
+  static deserializeBinaryFromReader(message: ExplainResponse, reader: jspb.BinaryReader): ExplainResponse;
+}
+
+export namespace ExplainResponse {
+  export type AsObject = {
+    weightsclouduri: string,
+    manifestclouduri: string,
+    logsclouduri: string,
+    featuresimportanceMap: Array<[string, number]>,
+  }
+}
+

@@ -1254,6 +1254,46 @@ export namespace ImagePipelineSpec {
   }
 }
 
+export class InterpretabilitySpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): InterpretabilitySpec;
+
+  getShap(): boolean;
+  setShap(value: boolean): InterpretabilitySpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InterpretabilitySpec.AsObject;
+  static toObject(includeInstance: boolean, msg: InterpretabilitySpec): InterpretabilitySpec.AsObject;
+  static serializeBinaryToWriter(message: InterpretabilitySpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InterpretabilitySpec;
+  static deserializeBinaryFromReader(message: InterpretabilitySpec, reader: jspb.BinaryReader): InterpretabilitySpec;
+}
+
+export namespace InterpretabilitySpec {
+  export type AsObject = {
+    enabled: boolean,
+    shap: boolean,
+  }
+}
+
+export class InterpretabilityStatus extends jspb.Message {
+  getModelurl(): string;
+  setModelurl(value: string): InterpretabilityStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InterpretabilityStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: InterpretabilityStatus): InterpretabilityStatus.AsObject;
+  static serializeBinaryToWriter(message: InterpretabilityStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InterpretabilityStatus;
+  static deserializeBinaryFromReader(message: InterpretabilityStatus, reader: jspb.BinaryReader): InterpretabilityStatus;
+}
+
+export namespace InterpretabilityStatus {
+  export type AsObject = {
+    modelurl: string,
+  }
+}
+
 export class Level extends jspb.Message {
   getString(): string;
   setString(value: string): Level;
@@ -4570,6 +4610,11 @@ export class StudyStatus extends jspb.Message {
   hasTest(): boolean;
   clearTest(): StudyStatus;
 
+  getExplain(): StudyPhaseStatus | undefined;
+  setExplain(value?: StudyPhaseStatus): StudyStatus;
+  hasExplain(): boolean;
+  clearExplain(): StudyStatus;
+
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): StudyStatus;
   hasLastupdated(): boolean;
@@ -4622,6 +4667,7 @@ export namespace StudyStatus {
     search?: StudyPhaseStatus.AsObject,
     ensemble?: StudyPhaseStatus.AsObject,
     test?: StudyPhaseStatus.AsObject,
+    explain?: StudyPhaseStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
