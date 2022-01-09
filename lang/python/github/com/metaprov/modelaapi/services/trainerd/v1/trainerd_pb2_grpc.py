@@ -19,6 +19,11 @@ class TrainerdServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
                 )
+        self.Explain = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Explain',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ExplainRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ExplainResponse.FromString,
+                )
         self.Forecast = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Forecast',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ForecastRequest.SerializeToString,
@@ -50,6 +55,12 @@ class TrainerdServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Train(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Explain(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -92,6 +103,11 @@ def add_TrainerdServiceServicer_to_server(servicer, server):
                     servicer.Train,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.SerializeToString,
+            ),
+            'Explain': grpc.unary_unary_rpc_method_handler(
+                    servicer.Explain,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ExplainRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ExplainResponse.SerializeToString,
             ),
             'Forecast': grpc.unary_unary_rpc_method_handler(
                     servicer.Forecast,
@@ -142,6 +158,23 @@ class TrainerdService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Train',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.TrainResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Explain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.trainerd.v1.TrainerdService/Explain',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ExplainRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_trainerd_dot_v1_dot_trainerd__pb2.ExplainResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

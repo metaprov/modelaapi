@@ -779,6 +779,22 @@ message ImagePipelineSpec {
   optional string featurizer = 1;
 }
 
+message InterpretabilitySpec {
+  // If true, Perform the interpretability
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool shap = 2;
+}
+
+message InterpretabilityStatus {
+  // The URL of the interpretbility model
+  optional string modelUrl = 1;
+}
+
 message Level {
   // The name of the level - the column name
   optional string string = 1;
@@ -3122,20 +3138,24 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional StudyPhaseStatus test = 28;
 
+  // Hold the result of running model interpretability
+  // +kubebuilder:validation:Optional
+  optional StudyPhaseStatus explain = 29;
+
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 29;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 30;
 
   // The best feature engineering
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec bestFE = 30;
+  optional FeatureEngineeringSpec bestFE = 31;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 31;
+  repeated StudyCondition conditions = 32;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

@@ -29,6 +29,8 @@ const (
 	StudyPhaseReporting          StudyPhase = "Reporting"
 	StudyPhaseProfiling          StudyPhase = "Profiling"
 	StudyPhaseProfiled           StudyPhase = "Profiled"
+	StudyPhaseExplaining         StudyPhase = "Explaining"
+	StudyPhaseExplained          StudyPhase = "Explained"
 	StudyPhaseCompleted          StudyPhase = "Completed"
 	StudyPhaseFailed             StudyPhase = "Failed"
 	StudyPhaseAborted            StudyPhase = "Aborted"
@@ -99,6 +101,8 @@ const (
 	StudyReported StudyConditionType = "Reported"
 	// True after we profiled the study
 	StudyProfiled StudyConditionType = "Profiled"
+	// True after we profiled the study
+	StudyExplained StudyConditionType = "Explained"
 	// True after we profiled the study
 	StudyAborted StudyConditionType = "Aborted"
 	// True after we profiled the study
@@ -590,18 +594,21 @@ type StudyStatus struct {
 	// Holds the result of the test phase
 	//+kubebuilder:validation:Optional
 	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,28,opt,name=test"`
+	// Hold the result of running model interpretability
+	//+kubebuilder:validation:Optional
+	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,29,opt,name=explain"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,29,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,30,opt,name=lastUpdated"`
 	// The best feature engineering
 	//+kubebuilder:validation:Optional
-	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,30,opt,name=bestFE"`
+	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,31,opt,name=bestFE"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,31,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,32,rep,name=conditions"`
 }
 
 // model cv results

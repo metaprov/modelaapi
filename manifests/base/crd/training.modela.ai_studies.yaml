@@ -1830,6 +1830,7 @@ spec:
                     - svmsmote
                     - none
                     - auto
+                    - class-weights
                     type: string
                   pipelines:
                     description: List of processing pipelines
@@ -2216,6 +2217,34 @@ spec:
                 type: string
               ensemble:
                 description: Holds the result of the ensemble phase
+                properties:
+                  endTime:
+                    description: End of the phase.
+                    format: date-time
+                    type: string
+                  failed:
+                    description: models that failed
+                    format: int32
+                    type: integer
+                  startTime:
+                    description: Start of the training phase
+                    format: date-time
+                    type: string
+                  trained:
+                    description: models trained
+                    format: int32
+                    type: integer
+                  training:
+                    description: models in training
+                    format: int32
+                    type: integer
+                  waiting:
+                    description: models waiting for processing
+                    format: int32
+                    type: integer
+                type: object
+              explain:
+                description: Hold the result of running model interpretability
                 properties:
                   endTime:
                     description: End of the phase.

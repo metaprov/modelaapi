@@ -293,6 +293,7 @@ spec:
                     - svmsmote
                     - none
                     - auto
+                    - class-weights
                     type: string
                   pipelines:
                     description: List of processing pipelines

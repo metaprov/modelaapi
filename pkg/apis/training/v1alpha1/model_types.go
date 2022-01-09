@@ -89,6 +89,8 @@ const (
 	ModelPhasePackaged    ModelPhase = "Packaged"
 	ModelPhaseProfiling   ModelPhase = "Profiling"
 	ModelPhaseProfiled    ModelPhase = "Profiled"
+	ModelPhaseExplaining  ModelPhase = "Explaining"
+	ModelPhaseExplained   ModelPhase = "Explained"
 	ModelPhaseAborted     ModelPhase = "Aborted"
 	ModelPhaseForecasting ModelPhase = "Forecasting"
 	ModelPhaseForecasted  ModelPhase = "Forecasted"
@@ -125,6 +127,8 @@ const (
 	ModelSaved ModelConditionType = "Saved"
 	// The model artifact were archived in the bucket.
 	ModelArchived ModelConditionType = "Archived"
+	// The model was explained by computing shap values
+	ModelExplained ModelConditionType = "Explained"
 	// True if the model is active and serving prediction
 	ModelReleased ModelConditionType = "Released"
 	// Training was aborted
@@ -922,4 +926,19 @@ type FeatureSelectionSpec struct {
 	// List of feature names to consider when training , even after filtering
 	// +kubebuilder:validation:Optional
 	Reserved []string `json:"reserved,omitempty" protobuf:"bytes,6,rep,name=reserved"`
+}
+
+type InterpretabilitySpec struct {
+	// If true, Perform the interpretability
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Shap *bool `json:"shap,omitempty" protobuf:"varint,2,opt,name=shap"`
+}
+
+type InterpretabilityStatus struct {
+	// The URL of the interpretbility model
+	ModelURL string `json:"modelUrl,omitempty" protobuf:"bytes,1,opt,name=modelUrl"`
 }

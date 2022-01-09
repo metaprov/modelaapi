@@ -769,7 +769,7 @@ const (
 //==============================================================================
 // Imbalance Handling
 //==============================================================================
-// +kubebuilder:validation:Enum="adasyn";"baseline-smote";"kmean-smote";"random-over-sampler";"smote";"smotenc";"svmsmote";"none";"auto"
+// +kubebuilder:validation:Enum="adasyn";"baseline-smote";"kmean-smote";"random-over-sampler";"smote";"smotenc";"svmsmote";"none";"auto";class-weights;
 type ImbalanceHandling string
 
 const (
@@ -780,6 +780,7 @@ const (
 	SMOTE             ImbalanceHandling = "smote"
 	SMOTENC           ImbalanceHandling = "smotenc"
 	SVMSMOTE          ImbalanceHandling = "svmsmote"
+	ClassWeights      ImbalanceHandling = "class-weights"
 	ImbalanceNone     ImbalanceHandling = "none"
 	ImbalanceAuto     ImbalanceHandling = "auto"
 )
