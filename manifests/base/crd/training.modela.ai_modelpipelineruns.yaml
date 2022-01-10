@@ -176,6 +176,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro
@@ -361,6 +365,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro
@@ -518,6 +526,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro
@@ -676,6 +688,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro
@@ -840,6 +856,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro
@@ -1007,6 +1027,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro
@@ -1169,6 +1193,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro
@@ -1332,6 +1360,10 @@ spec:
                           - accuracy
                           - average-precision
                           - balanced-accuracy
+                          - pr-auc
+                          - pr-auc-micro
+                          - pr-auc-macro
+                          - pr-auc-weighted
                           - f1
                           - f1-micro
                           - f1-macro

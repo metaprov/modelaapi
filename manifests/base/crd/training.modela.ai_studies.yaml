@@ -952,7 +952,7 @@ spec:
                   earlyStopAfter:
                     default: 0
                     description: If larget than 0, stop the search if no change in
-                      best score occur.
+                      best score occur. By default we do not early stop.
                     format: int32
                     type: integer
                   keepOnlyTopModel:
@@ -993,6 +993,10 @@ spec:
                     - accuracy
                     - average-precision
                     - balanced-accuracy
+                    - pr-auc
+                    - pr-auc-micro
+                    - pr-auc-macro
+                    - pr-auc-weighted
                     - f1
                     - f1-micro
                     - f1-macro
@@ -1070,6 +1074,10 @@ spec:
                     - accuracy
                     - average-precision
                     - balanced-accuracy
+                    - pr-auc
+                    - pr-auc-micro
+                    - pr-auc-macro
+                    - pr-auc-weighted
                     - f1
                     - f1-micro
                     - f1-macro
@@ -1449,6 +1457,10 @@ spec:
                       - accuracy
                       - average-precision
                       - balanced-accuracy
+                      - pr-auc
+                      - pr-auc-micro
+                      - pr-auc-macro
+                      - pr-auc-weighted
                       - f1
                       - f1-micro
                       - f1-macro

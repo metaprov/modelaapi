@@ -2787,7 +2787,7 @@ message SearchSpec {
   // +kubebuilder:validation:Optional
   optional AlgorithmSearchSpaceSpec searchSpace = 11;
 
-  // If larget than 0, stop the search if no change in best score occur.
+  // If larget than 0, stop the search if no change in best score occur. By default we do not early stop.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 earlyStopAfter = 12;

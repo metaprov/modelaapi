@@ -244,7 +244,7 @@ type SearchSpec struct {
 	// Define the algorithm search space.
 	// +kubebuilder:validation:Optional
 	SearchSpace AlgorithmSearchSpaceSpec `json:"searchSpace,omitempty" protobuf:"bytes,11,opt,name=searchSpace"`
-	// If larget than 0, stop the search if no change in best score occur.
+	// If larget than 0, stop the search if no change in best score occur. By default we do not early stop.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	EarlyStopAfter *int32 `json:"earlyStopAfter,omitempty" protobuf:"varint,12,opt,name=earlyStopAfter"`
