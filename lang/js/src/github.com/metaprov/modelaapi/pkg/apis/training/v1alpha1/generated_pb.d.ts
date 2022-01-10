@@ -4452,6 +4452,9 @@ export class StudySpec extends jspb.Message {
   getModelbenchmarked(): boolean;
   setModelbenchmarked(value: boolean): StudySpec;
 
+  getModelexplained(): boolean;
+  setModelexplained(value: boolean): StudySpec;
+
   getLocation(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation | undefined;
   setLocation(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation): StudySpec;
   hasLocation(): boolean;
@@ -4516,6 +4519,7 @@ export namespace StudySpec {
     modelpublished: boolean,
     modelimagepushed: boolean,
     modelbenchmarked: boolean,
+    modelexplained: boolean,
     location?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     owner: string,
     activedeadlineseconds: number,
