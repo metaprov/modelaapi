@@ -162,6 +162,10 @@ func (model *Model) WeightsUri() string {
 	return fmt.Sprintf("%s/bin/model.joblib", model.RootUri())
 }
 
+func (model *Model) ExplainModelUri() string {
+	return fmt.Sprintf("%s/bin/explain-model.joblib", model.RootUri())
+}
+
 //    dataproducts/*/models/*/metadata/model.json
 func (model *Model) ModelJsonUri() string {
 	return fmt.Sprintf("%s/metadata/model.json", model.RootUri())
