@@ -63,7 +63,7 @@ type ModelPipelineSpec struct {
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// DatasetSelector is used to select dataset for training
 	// +kubebuilder:validation:Optional
-	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,4,rep,name=datasetSelector"`
+	DatasetSelector map[string]string `json:"datasetSelector,omitempty" protobuf:"bytes,4,opt,name=datasetSelector"`
 	// Datastage build new dataset from the data sources.
 	// +kubebuilder:validation:Optional
 	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`

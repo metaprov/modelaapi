@@ -183,7 +183,7 @@ type ModelValidationResult struct {
 	// At is the time the validation was performed.
 	At *metav1.Time `json:"at" protobuf:"bytes,9,opt,name=at"`
 	// The amount of time it took to compute this result
-	DurationInSec int32 `json:"durationInSec" protobuf:"bytes,10,opt,name=durationInSec"`
+	DurationInSec int32 `json:"durationInSec" protobuf:"varint,10,opt,name=durationInSec"`
 }
 
 // ModelPipelineRunStageStatus is the observed state of the PipelineRunStage.

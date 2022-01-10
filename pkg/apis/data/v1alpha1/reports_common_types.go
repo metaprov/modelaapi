@@ -15,7 +15,7 @@ type ColumnSpec struct {
 	Spacer *bool `json:"spacer,omitempty" protobuf:"varint,1,opt,name=spacer"`
 	// The width in columns, each row is divided into 12 columns
 	// +kubebuilder:validation:Optional
-	Width *int32 `json:"width,omitempty" protobuf:"bytes,2,opt,name=width"`
+	Width *int32 `json:"width,omitempty" protobuf:"varint,2,opt,name=width"`
 	// The actual
 	Content ComponentSpec `json:",omitempty" protobuf:"bytes,3,opt,name=content"`
 }

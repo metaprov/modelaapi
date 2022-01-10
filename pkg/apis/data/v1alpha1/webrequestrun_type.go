@@ -141,13 +141,13 @@ type WebRequestRunStatus struct {
 	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,6,opt,name=triggeredBy"`
 	// The result of the HTTP execution
 	// +kubebuilder:validation:Optional
-	HttpResultCode int32 `json:"httpResultCode,omitempty" protobuf:"bytes,7,opt,name=httpResultCode"`
+	HttpResultCode int32 `json:"httpResultCode,omitempty" protobuf:"varint,7,opt,name=httpResultCode"`
 	// The location of the result
 	// +kubebuilder:validation:Optional
 	Location DataLocation `json:"resultLocation,omitempty" protobuf:"bytes,8,opt,name=resultLocation"`
 	// The name of the report object.
 	// +kubebuilder:validation:Optional
-	ReportName string `json:"reportName,omitempty" protobuf:"bytes,9,rep,name=reportName"`
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,9,opt,name=reportName"`
 	// The last error that occur as a result of the execution
 	// +kubebuilder:validation:Optional
 	LastError string `json:"lastError,omitempty" protobuf:"bytes,10,opt,name=lastError"`

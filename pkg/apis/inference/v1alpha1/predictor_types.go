@@ -356,7 +356,7 @@ type ModelRecord struct {
 	RetiredAt *metav1.Time `json:"retiredAt,omitempty" protobuf:"bytes,4,opt,name=retiredAt"`
 	// Retried at is the time that the model was retired from production.
 	// +kubebuilder:validation:Optional
-	AvgDailyPrediction int32 `json:"avgDailyPrediction,omitempty" protobuf:"bytes,5,opt,name=avgDailyPrediction"`
+	AvgDailyPrediction int32 `json:"avgDailyPrediction,omitempty" protobuf:"varint,5,opt,name=avgDailyPrediction"`
 	// Retried at is the time that the model was retired from production.
 	// +kubebuilder:validation:Optional
 	AvgLatency float64 `json:"avgLatency,omitempty" protobuf:"bytes,6,opt,name=avgLatency"`
