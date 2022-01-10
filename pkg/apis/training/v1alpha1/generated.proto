@@ -533,33 +533,39 @@ message FeatureEngineeringSearchSpec {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
+  // The imbalanced handler algorithm
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string imbalancedHandler = 2;
+
   // Estimator is the algorithm to use when tunning the feature engineering pipeline
-  optional string estimator = 2;
+  // +kubebuilder:validation:Optional
+  optional string estimator = 3;
 
   // Max models to create during the search for the best feature engineering.
   // +kubebuilder:default:=10
   // +kubebuilder:validation:Optional
-  optional int32 maxModels = 3;
+  optional int32 maxModels = 4;
 
   // Max time in seconds for the best feature engineering pipeline
   // +kubebuilder:default:=3600
   // +kubebuilder:validation:Optional
-  optional int32 maxTime = 4;
+  optional int32 maxTime = 5;
 
   // Number of parallel models
   // +kubebuilder:default:=1
   // +kubebuilder:validation:Optional
-  optional int32 maxTrainers = 5;
+  optional int32 maxTrainers = 6;
 
   // How much to sample from the dataset when performing the feature engineering search
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional int32 samplePct = 6;
+  optional int32 samplePct = 7;
 
   // If true, remove all the models that were used for feature engineering, once the search is over.
   // +kubebuilder:default:=true
   // the feature engineering is done.
-  optional bool autoRemove = 7;
+  optional bool autoRemove = 8;
 }
 
 message FeatureEngineeringSearchStatus {
@@ -2998,47 +3004,52 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional bool modelBenchmarked = 20;
 
+  // Set to true if you want the system to create model explentation for the final models
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool modelExplained = 21;
+
   // The location of the study artifacts
   // By default the bucket is the data product bucket.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 21;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 22;
 
   // The owner account name
   // +kubebuilder:default:="no-one"
   // +kubebuilder:validation:Optional
-  optional string owner = 22;
+  optional string owner = 23;
 
   // ActiveDeadlineSeconds is the deadline of a job for this study.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 23;
+  optional int64 activeDeadlineSeconds = 24;
 
   // This is the compiler spec for models. This spec will act as a template for the models created by the study
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 24;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 25;
 
   // Set to true if this study is a template
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool template = 25;
+  optional bool template = 26;
 
   // Is this model flagged
   // +kubebuilder:validation:Optional
-  optional bool flagged = 26;
+  optional bool flagged = 27;
 
   // Notification specification.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 27;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.NotificationSpec notification = 28;
 
   // Model Image specification.
   // +kubebuilder:validation:Optional
-  optional ModelImageSpec modelImage = 28;
+  optional ModelImageSpec modelImage = 29;
 
   // TTL for models.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 29;
+  optional int32 ttl = 30;
 }
 
 // StudyStatus defines the observed state of the Study

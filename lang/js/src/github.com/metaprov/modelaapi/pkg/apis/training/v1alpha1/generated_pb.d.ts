@@ -818,6 +818,9 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): FeatureEngineeringSearchSpec;
 
+  getImbalancedhandler(): string;
+  setImbalancedhandler(value: string): FeatureEngineeringSearchSpec;
+
   getEstimator(): string;
   setEstimator(value: string): FeatureEngineeringSearchSpec;
 
@@ -847,6 +850,7 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
 export namespace FeatureEngineeringSearchSpec {
   export type AsObject = {
     enabled: boolean,
+    imbalancedhandler: string,
     estimator: string,
     maxmodels: number,
     maxtime: number,

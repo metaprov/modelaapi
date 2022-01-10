@@ -317,6 +317,21 @@ spec:
                     - als
                     - bayesian-personalized-ranking
                     type: string
+                  imbalanceHandler:
+                    default: auto
+                    description: The imbalanced handler algorithm
+                    enum:
+                    - adasyn
+                    - baseline-smote
+                    - kmean-smote
+                    - random-over-sampler
+                    - smote
+                    - smotenc
+                    - svmsmote
+                    - none
+                    - auto
+                    - class-weights
+                    type: string
                   maxModels:
                     default: 10
                     description: Max models to create during the search for the best
@@ -837,6 +852,11 @@ spec:
                 default: true
                 description: Set to true if you want the system to push model image
                   to remote docker registry
+                type: boolean
+              modelExplained:
+                default: true
+                description: Set to true if you want the system to create model explentation
+                  for the final models
                 type: boolean
               modelImage:
                 description: Model Image specification.

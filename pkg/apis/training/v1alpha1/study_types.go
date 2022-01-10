@@ -374,28 +374,33 @@ type FeatureEngineeringSearchSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,opt,name=enabled"`
+	// The imbalanced handler algorithm
+	// +kubebuilder:default:=auto
+	// +kubebuilder:validation:Optional
+	ImbalanceHandler *catalog.ImbalanceHandling `json:"imbalanceHandler,omitempty" protobuf:"bytes,2,opt,name=imbalancedHandler"`
 	// Estimator is the algorithm to use when tunning the feature engineering pipeline
-	Estimator *catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,2,opt,name=estimator"`
+	// +kubebuilder:validation:Optional
+	Estimator *catalog.ClassicEstimatorName `json:"estimator,omitempty" protobuf:"bytes,3,opt,name=estimator"`
 	// Max models to create during the search for the best feature engineering.
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
-	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,3,opt,name=maxModels"`
+	MaxModels *int32 `json:"maxModels,omitempty" protobuf:"varint,4,opt,name=maxModels"`
 	// Max time in seconds for the best feature engineering pipeline
 	// +kubebuilder:default:=3600
 	// +kubebuilder:validation:Optional
-	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,4,opt,name=maxTime"`
+	MaxTimeSec *int32 `json:"maxTime,omitempty" protobuf:"varint,5,opt,name=maxTime"`
 	// Number of parallel models
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,5,opt,name=maxTrainers"`
+	MaxTrainers *int32 `json:"maxTrainers,omitempty" protobuf:"varint,6,opt,name=maxTrainers"`
 	// How much to sample from the dataset when performing the feature engineering search
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,6,opt,name=samplePct"`
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,7,opt,name=samplePct"`
 	// If true, remove all the models that were used for feature engineering, once the search is over.
 	// +kubebuilder:default:=true
 	// the feature engineering is done.
-	AutoRemove *bool `json:"autoRemove,omitempty" protobuf:"varint,7,opt,name=autoRemove"`
+	AutoRemove *bool `json:"autoRemove,omitempty" protobuf:"varint,8,opt,name=autoRemove"`
 }
 
 // StudySpec defines the desired state of the study
@@ -473,39 +478,43 @@ type StudySpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	ModelBenchmarked *bool `json:"modelBenchmarked,omitempty" protobuf:"varint,20,opt,name=modelBenchmarked"`
+	// Set to true if you want the system to create model explentation for the final models
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	ModelExplained *bool `json:"modelExplained,omitempty" protobuf:"varint,21,opt,name=modelExplained"`
 	// The location of the study artifacts
 	// By default the bucket is the data product bucket.
 	// +kubebuilder:validation:Optional
-	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,21,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,22,opt,name=location"`
 	// The owner account name
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,22,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,23,opt,name=owner"`
 	// ActiveDeadlineSeconds is the deadline of a job for this study.
 	// +kubebuilder:default:=600
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Optional
-	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,23,opt,name=activeDeadlineSeconds"`
+	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,24,opt,name=activeDeadlineSeconds"`
 	// This is the compiler spec for models. This spec will act as a template for the models created by the study
 	//+kubebuilder:validation:Optional
-	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,24,opt,name=compilation"`
+	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,25,opt,name=compilation"`
 	// Set to true if this study is a template
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Template *bool `json:"template,omitempty" protobuf:"varint,25,opt,name=template"`
+	Template *bool `json:"template,omitempty" protobuf:"varint,26,opt,name=template"`
 	// Is this model flagged
 	// +kubebuilder:validation:Optional
-	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,26,opt,name=flagged"`
+	Flagged *bool `json:"flagged,omitempty" protobuf:"varint,27,opt,name=flagged"`
 	// Notification specification.
 	//+kubebuilder:validation:Optional
-	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,27,opt,name=notification"`
+	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,28,opt,name=notification"`
 	// Model Image specification.
 	//+kubebuilder:validation:Optional
-	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,28,opt,name=modelImage"`
+	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,29,opt,name=modelImage"`
 	// TTL for models.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,29,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,30,opt,name=ttl"`
 }
 
 // StudyStatus defines the observed state of the Study

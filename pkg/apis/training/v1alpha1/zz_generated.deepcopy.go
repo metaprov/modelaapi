@@ -822,6 +822,11 @@ func (in *FeatureEngineeringSearchSpec) DeepCopyInto(out *FeatureEngineeringSear
 		*out = new(bool)
 		**out = **in
 	}
+	if in.ImbalanceHandler != nil {
+		in, out := &in.ImbalanceHandler, &out.ImbalanceHandler
+		*out = new(catalogv1alpha1.ImbalanceHandling)
+		**out = **in
+	}
 	if in.Estimator != nil {
 		in, out := &in.Estimator, &out.Estimator
 		*out = new(catalogv1alpha1.ClassicEstimatorName)
@@ -3744,6 +3749,11 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	}
 	if in.ModelBenchmarked != nil {
 		in, out := &in.ModelBenchmarked, &out.ModelBenchmarked
+		*out = new(bool)
+		**out = **in
+	}
+	if in.ModelExplained != nil {
+		in, out := &in.ModelExplained, &out.ModelExplained
 		*out = new(bool)
 		**out = **in
 	}
