@@ -6604,7 +6604,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.repeatedFields_ = [5];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.repeatedFields_ = [6];
 
 
 
@@ -6637,10 +6637,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    train: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    validation: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    test: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    splitcolumn: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    method: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    train: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    validation: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    test: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    splitcolumn: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     segmentsList: jspb.Message.toObjectList(msg.getSegmentsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec.toObject, includeInstance)
   };
@@ -6680,22 +6681,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.des
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTrain(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMethod(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setValidation(value);
+      msg.setTrain(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTest(value);
+      msg.setValidation(value);
       break;
     case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTest(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setSplitcolumn(value);
       break;
-    case 5:
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec.deserializeBinaryFromReader);
       msg.addSegments(value);
@@ -6729,9 +6734,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       1,
       f
     );
@@ -6750,17 +6755,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.ser
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
   f = message.getSegmentsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec.serializeBinaryToWriter
     );
@@ -6769,19 +6781,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.ser
 
 
 /**
- * optional int32 train = 1;
- * @return {number}
+ * optional string method = 1;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getTrain = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getMethod = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setTrain = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setMethod = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -6790,7 +6802,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearTrain = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearMethod = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -6799,16 +6811,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasTrain = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasMethod = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional int32 validation = 2;
+ * optional int32 train = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getValidation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getTrain = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -6817,7 +6829,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setValidation = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setTrain = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -6826,7 +6838,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearValidation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearTrain = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -6835,16 +6847,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasValidation = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasTrain = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 test = 3;
+ * optional int32 validation = 3;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getTest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getValidation = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -6853,7 +6865,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setTest = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setValidation = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -6862,7 +6874,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearTest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearValidation = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -6871,25 +6883,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasTest = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasValidation = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string splitColumn = 4;
- * @return {string}
+ * optional int32 test = 4;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getSplitcolumn = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getTest = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setSplitcolumn = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setTest = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -6898,7 +6910,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearSplitcolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearTest = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -6907,18 +6919,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasSplitcolumn = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasTest = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated SegmentSpec segments = 5;
+ * optional string splitColumn = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getSplitcolumn = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setSplitcolumn = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.clearSplitcolumn = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.hasSplitcolumn = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated SegmentSpec segments = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.getSegmentsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec, 6));
 };
 
 
@@ -6927,7 +6975,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.setSegmentsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -6937,7 +6985,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.pro
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataSplitSpec.prototype.addSegments = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.SegmentSpec, opt_index);
 };
 
 

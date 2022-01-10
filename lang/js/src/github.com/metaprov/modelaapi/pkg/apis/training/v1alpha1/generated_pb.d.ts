@@ -461,6 +461,9 @@ export namespace DataHashes {
 }
 
 export class DataSplitSpec extends jspb.Message {
+  getMethod(): string;
+  setMethod(value: string): DataSplitSpec;
+
   getTrain(): number;
   setTrain(value: number): DataSplitSpec;
 
@@ -488,6 +491,7 @@ export class DataSplitSpec extends jspb.Message {
 
 export namespace DataSplitSpec {
   export type AsObject = {
+    method: string,
     train: number,
     validation: number,
     test: number,

@@ -1211,7 +1211,10 @@ const (
 	CvTypeTimeSeriesSplit         CvType = "time-series-split"
 )
 
-// Common encoding for flat file
+//==============================================================================
+// File Encoding Type
+//==============================================================================
+
 // +kubebuilder:validation:Enum="utf-8";"latin-1";"utf-16";
 type FileEncoding string
 
@@ -1221,6 +1224,10 @@ const (
 	FileEncodingLating1 FileEncoding = "latin-1"
 	FileEncodingUtf16   FileEncoding = "utf-16"
 )
+
+//==============================================================================
+// Connection Categoty Type
+//==============================================================================
 
 // +kubebuilder:validation:Enum="general";"cloud";"docker-image-registry";"database";"git";"messaging";
 type ConnectionCategory string
@@ -1238,8 +1245,9 @@ const (
 )
 
 //==============================================================================
-// PipelineName TriggerName
+// Trigger Schedule
 //==============================================================================
+
 // +kubebuilder:validation:Enum="now";"once";"hourly";"daily";"weekly";"monthly";"yearly";"cron"
 type TriggerScheduleEventType string
 
@@ -1252,6 +1260,83 @@ const (
 	TriggerScheduleEventTypeMonthly TriggerScheduleEventType = "monthly"
 	TriggerScheduleEventTypeYearly  TriggerScheduleEventType = "yearly"
 	TriggerScheduleEventTypeCron    TriggerScheduleEventType = "cron"
+)
+
+//==============================================================================
+// Trigger Type
+//==============================================================================
+
+// +kubebuilder:validation:Enum="on-demand";"on-schedule";"on-new-data";"on-github-event";"on-concept-drift";"on-pref-degradation"
+type TriggerType string
+
+const (
+	TriggerTypeOnDemand        TriggerType = "on-demand"
+	TriggerTypeSchedule        TriggerType = "on-schedule"
+	TriggerTypeNewData         TriggerType = "on-new-data"
+	TriggerTypeGithubEvent     TriggerType = "on-github-event"
+	TriggerTypeConceptDrift    TriggerType = "on-concept-drift"
+	TriggerTypePrefDegragation TriggerType = "on-pref-degradation"
+)
+
+//==============================================================================
+// Condition Reason
+//==============================================================================
+
+type ConditionReason string
+
+const (
+	Failed             ConditionReason = "Failed"
+	Success            ConditionReason = "Success"
+	Running            ConditionReason = "Running"
+	WaitingForApproval ConditionReason = "WaitingForApproval"
+	Approved           ConditionReason = "Approved"
+	Denied             ConditionReason = "Denied"
+)
+
+//==============================================================================
+// Hardware Target
+//==============================================================================
+
+// +kubebuilder:validation:Enum="amd-epyc-2";"arma-53";"arma-72";"intel-cascade-lake";"intel-broadwell";"intel-skylake";"tesla-v100";"tesla-k80";"t4";"raspberry-pi8-modela-b";
+type HardwareTarget string
+
+const (
+	HardwareTargetAMDEPYC2           HardwareTarget = "amd-epyc-2"
+	HardwareTargetARMA53             HardwareTarget = "arma-53"
+	HardwareTargetARMA72             HardwareTarget = "arma-72"
+	HardwareTargetIntelCascadeLake   HardwareTarget = "intel-cascade-lake"
+	HardwareTargetIntelBroadwell     HardwareTarget = "intel-broadwell"
+	HardwareTargetIntelSkylake       HardwareTarget = "intel-skylake"
+	HardwareTargetTeslaV100          HardwareTarget = "tesla-v100"
+	HardwareTargetTeslaK80           HardwareTarget = "tesla-k80"
+	HardwareTargetT4                 HardwareTarget = "t4"
+	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modela-b"
+)
+
+//==============================================================================
+// Compiler Name
+//==============================================================================
+
+// +kubebuilder:validation:Enum="tvm";"onyx";"xla";"none"
+type CompilerName string
+
+const (
+	CompilerNameTVM  CompilerName = "tvm"
+	CompilerNameOnyx CompilerName = "onyx"
+	CompilerNameXla  CompilerName = "xla"
+	CompilerNameNone CompilerName = "none"
+)
+
+// CanaryMetric is used when testing the canary
+// +kubebuilder:validation:Enum="cpu";"mem";"latency";"crash"
+type CanaryMetric string
+
+const (
+	// Use cluster port if the predictor is an internal micro service
+	CpuCanaryMetric     CanaryMetric = "cpu"
+	MemCanaryMetric     CanaryMetric = "mem"
+	LatencyCanaryMetric CanaryMetric = "latency"
+	CrashCanaryMetric   CanaryMetric = "crash"
 )
 
 // GithubEvents specify repo and the events to listen in order ot fire the pipeline
@@ -1289,55 +1374,6 @@ type RunSchedule struct {
 	Type TriggerScheduleEventType `json:"type,omitempty" protobuf:"bytes,5,opt,name=type"`
 }
 
-// +kubebuilder:validation:Enum="on-demand";"on-schedule";"on-new-data";"on-github-event";"on-concept-drift";"on-pref-degradation"
-type TriggerType string
-
-const (
-	TriggerTypeOnDemand        TriggerType = "on-demand"
-	TriggerTypeSchedule        TriggerType = "on-schedule"
-	TriggerTypeNewData         TriggerType = "on-new-data"
-	TriggerTypeGithubEvent     TriggerType = "on-github-event"
-	TriggerTypeConceptDrift    TriggerType = "on-concept-drift"
-	TriggerTypePrefDegragation TriggerType = "on-pref-degradation"
-)
-
-type ConditionReason string
-
-const (
-	Failed             ConditionReason = "Failed"
-	Success            ConditionReason = "Success"
-	Running            ConditionReason = "Running"
-	WaitingForApproval ConditionReason = "WaitingForApproval"
-	Approved           ConditionReason = "Approved"
-	Denied             ConditionReason = "Denied"
-)
-
-// +kubebuilder:validation:Enum="amd-epyc-2";"arma-53";"arma-72";"intel-cascade-lake";"intel-broadwell";"intel-skylake";"tesla-v100";"tesla-k80";"t4";"raspberry-pi8-modela-b";
-type HardwareTarget string
-
-const (
-	HardwareTargetAMDEPYC2           HardwareTarget = "amd-epyc-2"
-	HardwareTargetARMA53             HardwareTarget = "arma-53"
-	HardwareTargetARMA72             HardwareTarget = "arma-72"
-	HardwareTargetIntelCascadeLake   HardwareTarget = "intel-cascade-lake"
-	HardwareTargetIntelBroadwell     HardwareTarget = "intel-broadwell"
-	HardwareTargetIntelSkylake       HardwareTarget = "intel-skylake"
-	HardwareTargetTeslaV100          HardwareTarget = "tesla-v100"
-	HardwareTargetTeslaK80           HardwareTarget = "tesla-k80"
-	HardwareTargetT4                 HardwareTarget = "t4"
-	HardwareTargetRaspberryPi8MODELB HardwareTarget = "raspberry-pi8-modela-b"
-)
-
-// +kubebuilder:validation:Enum="tvm";"onyx";"xla";"none"
-type CompilerName string
-
-const (
-	CompilerNameTVM  CompilerName = "tvm"
-	CompilerNameOnyx CompilerName = "onyx"
-	CompilerNameXla  CompilerName = "xla"
-	CompilerNameNone CompilerName = "none"
-)
-
 // Measurement is a value for a specific metric
 type Measurement struct {
 	// The metric type name (e.g. F1 / Accuracy)
@@ -1348,18 +1384,6 @@ type Measurement struct {
 	// +required
 	Value *float64 `json:"value" protobuf:"bytes,2,opt,name=value"`
 }
-
-// CanaryMetric is used when testing the canary
-// +kubebuilder:validation:Enum="cpu";"mem";"latency";"crash"
-type CanaryMetric string
-
-const (
-	// Use cluster port if the predictor is an internal micro service
-	CpuCanaryMetric     CanaryMetric = "cpu"
-	MemCanaryMetric     CanaryMetric = "mem"
-	LatencyCanaryMetric CanaryMetric = "latency"
-	CrashCanaryMetric   CanaryMetric = "crash"
-)
 
 // The desired state of the model.
 type ModelDeploymentSpec struct {
@@ -1858,3 +1882,12 @@ type ResourceSpec struct {
 	// +kubebuilder:validation:Optional
 	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,3,opt,name=requirements"`
 }
+
+// +kubebuilder:validation:Enum="random";"split-column";"time";
+type DataSplitMethod string
+
+const (
+	DataSplitMethodRandom      = "random"
+	DataSplitMethodSplitColumn = "split-column"
+	DataSplitMethodTime        = "time"
+)

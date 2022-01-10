@@ -33,7 +33,7 @@ type PublicDatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,2,opt,name=description"`
 	// Task is the machine learning task of the public dataset
-	Task *MLTask `json:"task" protobuf:"bytes,3,rep,name=task"`
+	Task *MLTask `json:"task" protobuf:"bytes,3,opt,name=task"`
 	// The open ml id of the dataset
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default =""

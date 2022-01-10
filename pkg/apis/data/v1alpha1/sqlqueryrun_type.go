@@ -136,7 +136,7 @@ type SqlQueryRunStatus struct {
 	// Phase is the current phase of the prediction
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase SqlQueryRunPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
+	Phase SqlQueryRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`
@@ -154,9 +154,9 @@ type SqlQueryRunStatus struct {
 	ValidationResults []DataValidationResult `json:"validationResults,omitempty" protobuf:"bytes,8,rep,name=validationResults"`
 	// The location of the materialized view
 	//+kubebuilder:validation:Optional
-	Location DataLocation `json:"location,omitempty" protobuf:"bytes,9,rep,name=location"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,9,opt,name=location"`
 	// The name of the report object.
-	ReportName string `json:"reportName,omitempty" protobuf:"bytes,10,rep,name=reportName"`
+	ReportName string `json:"reportName,omitempty" protobuf:"bytes,10,opt,name=reportName"`
 
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional

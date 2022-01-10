@@ -126,7 +126,7 @@ type DataOutputSpec struct {
 	// DatasetName is the name of the dataset that will be created. if nil, the system will not create the dataset.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,rep,name=datasetName"`
+	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,1,opt,name=datasetName"`
 	// Location of the generated data
 	// +kubebuilder:validation:Optional
 	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,2,opt,name=location"`

@@ -27,7 +27,7 @@ type MultiDatasetValidation struct {
 	Datasets []string `json:"datasets,omitempty" protobuf:"bytes,2,rep,name=datasets"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,3,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,3,opt,name=generated"`
 }
 
 type DatasetValidationName string
@@ -64,7 +64,7 @@ type DatasetValidation struct {
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,7,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,8,opt,name=generated"`
 }
 
 const (
@@ -97,7 +97,7 @@ type MultiColumnValidation struct {
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,8,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,opt,name=generated"`
 }
 
 type ColumnValidationName string
@@ -168,7 +168,7 @@ type ColumnValidation struct {
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,8,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,9,opt,name=generated"`
 }
 
 type FileValidation struct {
@@ -197,7 +197,7 @@ type FileValidation struct {
 	StrictMax *bool `json:"strictMax,omitempty" protobuf:"varint,9,opt,name=strictMax"`
 	// Generated indicate weather this validation rule was automatically generated
 	// +kubebuilder:validation:Optional
-	Generated *bool `json:"generated,omitempty" protobuf:"varint,10,rep,name=generated"`
+	Generated *bool `json:"generated,omitempty" protobuf:"varint,10,opt,name=generated"`
 }
 
 // Condition on the dataset
@@ -399,19 +399,19 @@ type ExcelSheetArea struct {
 type ValidationSpec struct {
 	// MultiDatasetValidation contains validations for multi datasets
 	// +kubebuilder:validation:Optional
-	MultiDatasetValidations []MultiDatasetValidation `json:"multiDatasetValidations,omitempty" protobuf:"bytes,1,opt,name=multiDatasetValidations"`
+	MultiDatasetValidations []MultiDatasetValidation `json:"multiDatasetValidations,omitempty" protobuf:"bytes,1,rep,name=multiDatasetValidations"`
 	// DatasetValidations contains validations for the whole dataset
 	// +kubebuilder:validation:Optional
-	DatasetValidations []DatasetValidation `json:"datasetValidations,omitempty" protobuf:"bytes,2,opt,name=datasetValidations"`
+	DatasetValidations []DatasetValidation `json:"datasetValidations,omitempty" protobuf:"bytes,2,rep,name=datasetValidations"`
 	// MultiColumnValidations defines validations for combined columns from the dataset
 	// +kubebuilder:validation:Optional
-	MultiColumnValidations []MultiColumnValidation `json:"multiColumnValidations,omitempty" protobuf:"bytes,3,opt,name=multiColumnValidations"`
+	MultiColumnValidations []MultiColumnValidation `json:"multiColumnValidations,omitempty" protobuf:"bytes,3,rep,name=multiColumnValidations"`
 	// Column Validations defines assertions for columns from the dataset
 	// +kubebuilder:validation:Optional
-	ColumnValidations []ColumnValidation `json:"columnValidations,omitempty" protobuf:"bytes,4,opt,name=columnValidations"`
+	ColumnValidations []ColumnValidation `json:"columnValidations,omitempty" protobuf:"bytes,4,rep,name=columnValidations"`
 	// File Validations defines assertions for actual files
 	// +kubebuilder:validation:Optional
-	FileValidations []FileValidation `json:"fileValidations,omitempty" protobuf:"bytes,5,opt,name=fileValidations"`
+	FileValidations []FileValidation `json:"fileValidations,omitempty" protobuf:"bytes,5,rep,name=fileValidations"`
 }
 
 type Schema struct {
@@ -701,7 +701,7 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:Optional
 	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// List of relationships to other data sources
-	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,11,opt,name=relationships"`
+	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,11,rep,name=relationships"`
 }
 
 // FlatFileStatus defines the observed state of CsvFileSpec

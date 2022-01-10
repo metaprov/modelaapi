@@ -121,7 +121,7 @@ type FeaturePipelineStatus struct {
 	//+kubebuilder:validation:Optional
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,1,opt,name=lastRun"`
 	// Store the avg cost of running this pipeline
-	AverageCost float64 `json:"averageCost,omitempty" protobuf:"bytes,2,rep,name=averageCost"`
+	AverageCost float64 `json:"averageCost,omitempty" protobuf:"bytes,2,opt,name=averageCost"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`

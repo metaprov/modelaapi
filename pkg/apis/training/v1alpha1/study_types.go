@@ -288,7 +288,7 @@ type BaselineSpec struct {
 	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 	// Baselines holds the name of the base line algorithms to try
 	// +kubebuilder:validation:Optional
-	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,2,opt,name=baselines"`
+	Baselines []catalog.ClassicEstimatorName `json:"baselines,omitempty" protobuf:"bytes,2,rep,name=baselines"`
 	// Indicate the all alg for the task
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

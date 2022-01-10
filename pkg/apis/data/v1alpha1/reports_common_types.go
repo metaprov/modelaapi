@@ -12,21 +12,21 @@ type RowSpec struct {
 type ColumnSpec struct {
 	// If true this column is an empty spacer
 	// +kubebuilder:validation:Optional
-	Spacer *bool `json:"spacer,omitempty" protobuf:"bytes,1,rep,name=spacer"`
+	Spacer *bool `json:"spacer,omitempty" protobuf:"varint,1,opt,name=spacer"`
 	// The width in columns, each row is divided into 12 columns
 	// +kubebuilder:validation:Optional
-	Width *int32 `json:"width,omitempty" protobuf:"bytes,2,rep,name=width"`
+	Width *int32 `json:"width,omitempty" protobuf:"bytes,2,opt,name=width"`
 	// The actual
-	Content ComponentSpec `json:",omitempty" protobuf:"bytes,3,rep,name=content"`
+	Content ComponentSpec `json:",omitempty" protobuf:"bytes,3,opt,name=content"`
 }
 
 type ComponentSpec struct {
 	// +kubebuilder:validation:Optional
-	Title *string `json:"title,omitempty" protobuf:"bytes,1,rep,name=title"`
+	Title *string `json:"title,omitempty" protobuf:"bytes,1,opt,name=title"`
 	// +kubebuilder:validation:Optional
-	SubTitle *string `json:"subtitle,omitempty" protobuf:"bytes,2,rep,name=subtitle"`
+	SubTitle *string `json:"subtitle,omitempty" protobuf:"bytes,2,opt,name=subtitle"`
 	// +kubebuilder:validation:Optional
-	Footer        *string `json:"footer,omitempty" protobuf:"bytes,3,rep,name=footer"`
+	Footer        *string `json:"footer,omitempty" protobuf:"bytes,3,opt,name=footer"`
 	ComponentView `json:",inline" protobuf:"bytes,4,opt,name=content"`
 	// only one
 }

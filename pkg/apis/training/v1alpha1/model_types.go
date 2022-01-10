@@ -541,10 +541,10 @@ type ModelStatus struct {
 	ConfusionMatrix catalog.ConfusionMatrix `json:"confusionMatrix,omitempty" protobuf:"varint,59,opt,name=confusionMatrix"`
 	// Holds the top correlation with target
 	// +kubebuilder:validation:Optional
-	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,60,opt,name=correlationsWithTarget"`
+	CorrelationsWithTarget []data.Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,60,rep,name=correlationsWithTarget"`
 	// Holds the top feature correlation
 	// +kubebuilder:validation:Optional
-	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,61,opt,name=topCorrelations"`
+	TopCorrelations []data.Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,61,rep,name=topCorrelations"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,62,opt,name=lastUpdated"`
@@ -582,14 +582,14 @@ type ClassicalEstimatorSpec struct {
 type ChatbotEstimatorSpec struct {
 	// The name of the base model
 	// +kubebuilder:validation:Optional
-	Base *string `json:"base,omitempty" protobuf:"bytes,1,rep,name=base"`
+	Base *string `json:"base,omitempty" protobuf:"bytes,1,opt,name=base"`
 }
 
 //TransformerEstimatorSpec is an transformer. This is not implemented yet.
 type NLPEstimatorSpec struct {
 	// The name of the base model
 	// +kubebuilder:validation:Optional
-	Base *string `json:"base,omitempty" protobuf:"bytes,1,rep,name=base"`
+	Base *string `json:"base,omitempty" protobuf:"bytes,1,opt,name=base"`
 }
 
 type FeatureEngineeringSpec struct {
@@ -599,7 +599,7 @@ type FeatureEngineeringSpec struct {
 	// Define how to handle imbalance
 	// +kubebuilder:default:=auto
 	// +kubebuilder:validation:Optional
-	Imbalance *catalog.ImbalanceHandling `json:"imbalance,omitempty" protobuf:"bytes,2,rep,name=imbalance"`
+	Imbalance *catalog.ImbalanceHandling `json:"imbalance,omitempty" protobuf:"bytes,2,opt,name=imbalance"`
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
 	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`
@@ -661,7 +661,7 @@ type FeatureEngineeringPipeline struct {
 	Video *VideoPipelineSpec `json:"video,omitempty" protobuf:"bytes,14,opt,name=video"`
 	// Spec to generate one or more columns from existing columns in this pipeline
 	// +kubebuilder:validation:Optional
-	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,15,opt,name=generated"`
+	Genereted []GeneratedColumnSpec `json:"generated,omitempty" protobuf:"bytes,15,rep,name=generated"`
 	// Specify custom columns. Custom Columns are specified by the user
 	Custom []GeneratedColumnSpec `json:"custom,omitempty" protobuf:"bytes,16,rep,name=custom"`
 	// If dropped, all the columns in this pipeline will be dropped.
@@ -711,13 +711,15 @@ type SuccessiveHalvingSpec struct {
 }
 
 type DataSplitSpec struct {
+	// Define the split type.
+	Method catalog.DataSplitMethod `json:"method,omitempty" protobuf:"bytes,1,opt,name=method"`
 	// Training is a percent number (0-100) which specify how much of
 	// the data will be used for training
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:=80
 	// +kubebuilder:validation:Minimum=1
 	// +kubebuilder:validation:Maximum=100
-	Train *int32 `json:"train,omitempty" protobuf:"varint,1,opt,name=train"`
+	Train *int32 `json:"train,omitempty" protobuf:"varint,2,opt,name=train"`
 	// Validation is percent of dataset rows which would be used to compute the objective during
 	// hyper parameter search phase.
 	// Only used if we do not do cross validation.
@@ -727,19 +729,19 @@ type DataSplitSpec struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Maximum=50
 	// +kubebuilder:validation:Optional
-	Validation *int32 `json:"validation,omitempty" protobuf:"varint,2,opt,name=validation"`
+	Validation *int32 `json:"validation,omitempty" protobuf:"varint,3,opt,name=validation"`
 	// Test is percent of dataset rows which would be used to compute the objective during
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:default:=20
 	// +kubebuilder:validation:Optional
-	Test *int32 `json:"test,omitempty" protobuf:"varint,3,opt,name=test"`
+	Test *int32 `json:"test,omitempty" protobuf:"varint,4,opt,name=test"`
 	// The name of the column used to split
 	// +kubebuilder:validation:Optional
-	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,4,opt,name=splitColumn"`
+	SplitColumn *string `json:"splitColumn,omitempty" protobuf:"bytes,5,opt,name=splitColumn"`
 	// Apply the segments first
 	// +kubebuilder:validation:Optional
-	Segments []SegmentSpec `json:"segments,omitempty" protobuf:"bytes,5,opt,name=segments"`
+	Segments []SegmentSpec `json:"segments,omitempty" protobuf:"bytes,6,rep,name=segments"`
 }
 
 // TrainingSpec is the specification of the training process
@@ -894,7 +896,7 @@ type DataHashes struct {
 
 type FeatureEngineeringSearchStatus struct {
 	// The recommended pipeline after feature engineering was done
-	Best FeatureEngineeringSpec `json:"best,omitempty" protobuf:"bytes,1,rep,name=best"`
+	Best FeatureEngineeringSpec `json:"best,omitempty" protobuf:"bytes,1,opt,name=best"`
 }
 
 type GeneratedColumnSpec struct {
@@ -916,7 +918,7 @@ type GeneratedColumnSpec struct {
 type FeatureSelectionSpec struct {
 	// the Feature selection pipeline.
 	// Steps are applied in the order of the pipeline
-	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"varint,1,opt,name=pipeline"`
+	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"varint,1,rep,name=pipeline"`
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional

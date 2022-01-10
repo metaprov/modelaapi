@@ -140,7 +140,7 @@ type PredictionStatus struct {
 	// Phase is the current phase of the prediction
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
+	Phase PredictionPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	// Results is the results of running the prediction with a labeled dataset
 	// +kubebuilder:validation:Optional
 	Results []catalog.Measurement `json:"results,omitempty" protobuf:"bytes,4,rep,name=results"`

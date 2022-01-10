@@ -129,7 +129,7 @@ type WebRequestRunStatus struct {
 	// Phase is the current phase of the prediction
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase WebRequestRunPhase `json:"phase,omitempty" protobuf:"bytes,3,rep,name=phase"`
+	Phase WebRequestRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`

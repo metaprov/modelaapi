@@ -264,13 +264,16 @@ message DataHashes {
 }
 
 message DataSplitSpec {
+  // Define the split type.
+  optional string method = 1;
+
   // Training is a percent number (0-100) which specify how much of
   // the data will be used for training
   // +kubebuilder:validation:Optional
   // +kubebuilder:default:=80
   // +kubebuilder:validation:Minimum=1
   // +kubebuilder:validation:Maximum=100
-  optional int32 train = 1;
+  optional int32 train = 2;
 
   // Validation is percent of dataset rows which would be used to compute the objective during
   // hyper parameter search phase.
@@ -281,22 +284,22 @@ message DataSplitSpec {
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Maximum=50
   // +kubebuilder:validation:Optional
-  optional int32 validation = 2;
+  optional int32 validation = 3;
 
   // Test is percent of dataset rows which would be used to compute the objective during
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
   // +kubebuilder:default:=20
   // +kubebuilder:validation:Optional
-  optional int32 test = 3;
+  optional int32 test = 4;
 
   // The name of the column used to split
   // +kubebuilder:validation:Optional
-  optional string splitColumn = 4;
+  optional string splitColumn = 5;
 
   // Apply the segments first
   // +kubebuilder:validation:Optional
-  repeated SegmentSpec segments = 5;
+  repeated SegmentSpec segments = 6;
 }
 
 // DataStageSpec is the desired state of the data preprocessing step of the pipeline.

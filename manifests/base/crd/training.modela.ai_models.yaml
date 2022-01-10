@@ -1497,6 +1497,13 @@ spec:
                     description: Data Split define how to split the data into test
                       and train.
                     properties:
+                      method:
+                        description: Define the split type.
+                        enum:
+                        - random
+                        - split-column
+                        - time
+                        type: string
                       segments:
                         description: Apply the segments first
                         items:

@@ -251,7 +251,7 @@ type DatasetStatistics struct {
 	CorrelationsWithTarget []Correlation `json:"correlationsWithTarget,omitempty" protobuf:"bytes,6,opt,name=correlationsWithTarget"`
 	// Holds the top feature correlation
 	// +kubebuilder:validation:Optional
-	TopCorrelations []Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,7,opt,name=topCorrelations"`
+	TopCorrelations []Correlation `json:"topCorrelations,omitempty" protobuf:"bytes,7,rep,name=topCorrelations"`
 }
 
 // Hold the statistical parameters about a single attribute
@@ -476,5 +476,5 @@ type CorrelationSpec struct {
 	// Specify the top number of correlation to include in the status.
 	// +kubebuilder:default:=10
 	// +kubebuilder:validation:Optional
-	Top *int32 `json:"top,omitempty" protobuf:"bytes,3,opt,name=top"`
+	Top *int32 `json:"top,omitempty" protobuf:"varint,3,opt,name=top"`
 }

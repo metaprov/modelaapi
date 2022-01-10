@@ -91,7 +91,7 @@ type CronReportSpec struct {
 	// Set to true to pause the cron report
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"bytes,6,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,6,opt,name=paused"`
 	// Notification specification.
 	//+kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,7,opt,name=notification"`
