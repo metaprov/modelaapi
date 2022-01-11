@@ -24,9 +24,6 @@ func (model *Model) Default() {
 		model.Spec.Owner = util.StrPtr("")
 	}
 	// Objective
-	if model.Spec.Training == nil {
-		model.Spec.Training = &TrainingSpec{}
-	}
 
 	if model.Spec.Training.Priority == nil {
 		p := catalog.PriorityLevelMedium
@@ -39,12 +36,6 @@ func (model *Model) Default() {
 	}
 	if model.Spec.Estimator == nil {
 		model.Spec.Estimator = &ClassicalEstimatorSpec{}
-	}
-
-	if model.Spec.Ensemble == nil {
-		model.Spec.Ensemble = &EnsembleSpec{
-			Base: make([]string, 0),
-		}
 	}
 
 	if model.Spec.Tested == nil {

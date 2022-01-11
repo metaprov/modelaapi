@@ -1,7 +1,6 @@
 package v1alpha1
 
 import (
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
@@ -14,16 +13,6 @@ var _ webhook.Defaulter = &Prediction{}
 
 func (pre *Prediction) Default() {
 	// if no input bucket defined,
-
-	if pre.Spec.Output == nil {
-		pre.Spec.Output = &data.DataOutputSpec{}
-		pre.Spec.Output.Location = &data.DataLocation{}
-	}
-
-	if pre.Spec.Output == nil {
-		pre.Spec.Output = &data.DataOutputSpec{}
-		pre.Spec.Output.Location = &data.DataLocation{}
-	}
 
 }
 

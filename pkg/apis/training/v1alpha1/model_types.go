@@ -238,7 +238,7 @@ type ModelSpec struct {
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
 	// +kubebuilder:validation:Optional
-	FeatureEngineering *FeatureEngineeringSpec `json:"fe,omitempty" protobuf:"bytes,9,opt,name=fe"`
+	FeatureEngineering FeatureEngineeringSpec `json:"fe,omitempty" protobuf:"bytes,9,opt,name=fe"`
 	// Estimator is a specification of the ML algorithm and its hyper parameters.
 	// +kubebuilder:validation:Optional
 	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,10,opt,name=estimator"`
@@ -254,10 +254,10 @@ type ModelSpec struct {
 	// If this is an ensemble model, specify the ensemble
 	// Default: None
 	// +kubebuilder:validation:Optional
-	Ensemble *EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,14,opt,name=ensemble"`
+	Ensemble EnsembleSpec `json:"ensemble,omitempty" protobuf:"bytes,14,opt,name=ensemble"`
 	// TrainingSpec is the desired training settings for the model.
 	// +kubebuilder:validation:Optional
-	Training *TrainingSpec `json:"training,omitempty" protobuf:"bytes,15,opt,name=training"`
+	Training TrainingSpec `json:"training,omitempty" protobuf:"bytes,15,opt,name=training"`
 	// Tested indicate if this model should be tested. Default is false.
 	// The study controller will set this to true if a model is the best model or part of the top models
 	// +kubebuilder:default:=false

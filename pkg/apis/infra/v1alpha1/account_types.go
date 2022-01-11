@@ -145,7 +145,7 @@ type AccountSpec struct {
 	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,17,opt,name=clearenceLevel"`
 	// The avatar location
 	// +kubebuilder:validation:Optional
-	Avatar *AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
+	Avatar AvatarSpec `json:"avatar,omitempty" protobuf:"bytes,18,opt,name=avatar"`
 	// List of favorite data product
 	// +kubebuilder:validation:Optional
 	FavoritesProducts []string `json:"favoriteProducts,omitempty" protobuf:"bytes,19,opt,name=favoriteProducts"`

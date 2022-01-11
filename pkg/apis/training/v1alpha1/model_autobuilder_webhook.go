@@ -8,7 +8,6 @@ package v1alpha1
 
 import (
 	"github.com/metaprov/modelaapi/pkg/apis/common"
-	data "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1"
 	"github.com/metaprov/modelaapi/pkg/util"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -38,13 +37,6 @@ func (b *ModelAutobuilder) Default() {
 	}
 	if b.Spec.Trainers == nil {
 		b.Spec.Trainers = util.Int32Ptr(1)
-	}
-	if b.Spec.DataSourceSpec == nil {
-		b.Spec.DataSourceSpec = &data.DataSourceSpec{
-			Schema: &data.Schema{
-				Columns: []data.Column{},
-			},
-		}
 	}
 	if b.Spec.Sampler == nil {
 		sm := RandomSearch

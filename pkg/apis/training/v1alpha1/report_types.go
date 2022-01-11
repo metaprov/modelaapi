@@ -143,7 +143,7 @@ type ReportSpec struct {
 	EntityRef v1.ObjectReference `json:"entityRef,omitempty" protobuf:"bytes,2,opt,name=entityRef"`
 	// Location is the report location in storage.
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,4,opt,name=location"`
 	// ReportType specify the report type (e.g. classification / regression)
 	// +kubebuilder:validation:Required
 	// +required
@@ -168,7 +168,7 @@ type ReportSpec struct {
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty" protobuf:"varint,10,opt,name=activeDeadlineSeconds"`
 	// If the report is custom report, this field holds the specification
 	// +kubebuilder:validation:Optional
-	Custom *CustomReportSpec `json:"custom,omitempty" protobuf:"varint,11,opt,name=custom"`
+	Custom CustomReportSpec `json:"custom,omitempty" protobuf:"bytes,11,opt,name=custom"`
 }
 
 // ReportStatus defines the observed state of the report.

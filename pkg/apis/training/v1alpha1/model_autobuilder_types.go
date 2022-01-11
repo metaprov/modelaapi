@@ -108,7 +108,7 @@ type ModelAutobuilderSpec struct {
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,4,opt,name=datasetName"`
 	// Location is the location of the data in the cloud
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,5,opt,name=location"`
 	// Task is the machine learning task (regression/classification)
 	// required
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,6,opt,name=task"`
@@ -145,7 +145,7 @@ type ModelAutobuilderSpec struct {
 	AutoScale *bool `json:"autoScale,omitempty" protobuf:"varint,12,opt,name=autoScale"`
 	// The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
 	// +kubebuilder:validation:Optional
-	DataSourceSpec *datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,13,opt,name=dataSourceSpec"`
+	DataSourceSpec datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,13,opt,name=dataSourceSpec"`
 	// Specify the number of trainers.
 	// Default 1 trainer.
 	// +kubebuilder:default:=1

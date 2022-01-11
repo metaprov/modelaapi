@@ -88,7 +88,7 @@ func NewReport(
 	result.Default()
 	result.ObjectMeta.Name = name
 	result.ObjectMeta.Namespace = ns
-	result.Spec.Location = &data.DataLocation{
+	result.Spec.Location = data.DataLocation{
 		Path:       util.StrPtr(key),
 		BucketName: util.StrPtr(bucketName)}
 	result.Spec.EntityRef.Name = entity

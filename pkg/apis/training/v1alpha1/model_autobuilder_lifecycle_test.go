@@ -24,19 +24,18 @@ func autoBuilder() *ModelAutobuilder {
 		Spec: ModelAutobuilderSpec{
 			DataProductName:        util.StrPtr("iris-product"),
 			DataProductVersionName: util.StrPtr("v0.0.1"),
-			Location: &data.DataLocation{
+			Location: data.DataLocation{
 				Path:       util.StrPtr("modela/depot/iris.csv"),
 				BucketName: util.StrPtr("default-digitalocean-bucket"),
 			},
-			Task:           &task,
-			Objective:      nil,
-			TargetColumn:   nil,
-			MaxTime:        util.Int32Ptr(4),
-			MaxModels:      nil,
-			AccessMethod:   nil,
-			AutoScale:      nil,
-			DataSourceSpec: nil,
-			Trainers:       util.Int32Ptr(1),
+			Task:         &task,
+			Objective:    nil,
+			TargetColumn: nil,
+			MaxTime:      util.Int32Ptr(4),
+			MaxModels:    nil,
+			AccessMethod: nil,
+			AutoScale:    nil,
+			Trainers:     util.Int32Ptr(1),
 		},
 	}
 }

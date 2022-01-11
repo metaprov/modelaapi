@@ -69,23 +69,23 @@ type ModelPipelineSpec struct {
 	Data *DataStageSpec `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`
 	// TrainingSpec stage
 	// +kubebuilder:validation:Optional
-	Training *TrainingStageSpec `json:"training,omitempty" protobuf:"bytes,6,opt,name=training"`
+	Training TrainingStageSpec `json:"training,omitempty" protobuf:"bytes,6,opt,name=training"`
 	// Acceptance stage is used for further testing
 	// +kubebuilder:validation:Optional
 	UAT *UATStageSpec `json:"uat,omitempty" protobuf:"bytes,7,opt,name=uat"`
 	// Capacity stage for capacity
 	// +kubebuilder:validation:Optional
-	Capacity *CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
+	Capacity CapacityStageSpec `json:"capacity,omitempty" protobuf:"bytes,8,opt,name=capacity"`
 	// Deployment stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
-	Deployment *DeploymentStageSpec `json:"deployment,omitempty" protobuf:"bytes,9,opt,name=deployment"`
+	Deployment DeploymentStageSpec `json:"deployment,omitempty" protobuf:"bytes,9,opt,name=deployment"`
 	// Deployment stage define how to place the model into production.
 	// +kubebuilder:validation:Optional
-	Release *ReleaseStageSpec `json:"release,omitempty" protobuf:"bytes,10,opt,name=release"`
+	Release ReleaseStageSpec `json:"release,omitempty" protobuf:"bytes,10,opt,name=release"`
 	// Folder for the pipeline and pipeline run artifacts.
 	// The folder contains all the study artifacts - metadata, reports, profile,models
 	// +kubebuilder:validation:Optional
-	Location *data.DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
+	Location data.DataLocation `json:"location,omitempty" protobuf:"bytes,13,opt,name=location"`
 	// Schedule for running the pipeline
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,14,opt,name=schedule"`
@@ -242,7 +242,7 @@ type ReleaseStageSpec struct {
 	PredictorName *string `json:"predictorName,omitempty" protobuf:"bytes,3,opt,name=predictorName"`
 	// Template defines the default model deployment for this model
 	// +kubebuilder:validation:Optional
-	Template *catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
+	Template catalog.ModelDeploymentSpec `json:"template,omitempty" protobuf:"bytes,4,opt,name=template"`
 	// ManualApproval dentoes if we need manual approval before advancing from deployed to released
 	// By default a user is needed to approve the release to production
 	// +kubebuilder:default:=true

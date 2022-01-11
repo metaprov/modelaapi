@@ -96,10 +96,10 @@ type PredictionSpec struct {
 	// +kubebuilder:default:=""
 	DatasetName *string `json:"datasetName,omitempty" protobuf:"bytes,5,opt,name=datasetName"`
 	// Input is the location of the input file if not using a dataset
-	Input *data.DataLocation `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
+	Input data.DataLocation `json:"input,omitempty" protobuf:"bytes,6,opt,name=input"`
 	// Output is the location of the output file.
 	// +kubebuilder:validation:Optional
-	Output *data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
+	Output data.DataOutputSpec `json:"output,omitempty" protobuf:"bytes,7,opt,name=output"`
 	// Tests is the list of metrics that we need to measure if we are running a labeled prediction
 	Tests []catalog.Metric `json:"tests,omitempty" protobuf:"bytes,8,rep,name=tests"`
 	// The owner account name
@@ -128,7 +128,7 @@ type PredictionSpec struct {
 	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,14,opt,name=ttl"`
 	// If this is hierarchy forecast, holds the forecast details for each columns
 	// +kubebuilder:validation:Optional
-	ForecastInfo *ForecastSpec `json:"forecastInfo,omitempty" protobuf:"varint,15,opt,name=forecastInfo"`
+	ForecastInfo ForecastSpec `json:"forecastInfo,omitempty" protobuf:"varint,15,opt,name=forecastInfo"`
 }
 
 // PredictionStatus is the observed state of a PredictionTemplate

@@ -180,13 +180,13 @@ type PredictorSpec struct {
 	PredictionTreshold *float64 `json:"predictionTreshold,omitempty" protobuf:"bytes,22,opt,name=predictionTreshold"`
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
-	Monitor *MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,23,opt,name=monitor"`
+	Monitor MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,23,opt,name=monitor"`
 	// specification for dash app
 	// +kubebuilder:validation:Optional
-	AppSpec *AppSpec `json:"app,omitempty" protobuf:"bytes,24,opt,name=app"`
+	AppSpec AppSpec `json:"app,omitempty" protobuf:"bytes,24,opt,name=app"`
 	// specify the predictor authentication
 	// +kubebuilder:validation:Optional
-	Auth *PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
+	Auth PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
 }
 
 // A prediction cache specify the connection information to a cache (e.g. redis) that can store the prediction.

@@ -143,11 +143,11 @@ type DatasetSpec struct {
 	// Define the data location. The operator will copy the data from this location into the live location.
 	// The datafiles are initially uploaded to this location.
 	// +kubebuilder:validation:Optional
-	Origin *DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
+	Origin DataLocation `json:"origin,omitempty" protobuf:"bytes,13,opt,name=origin"`
 	// Folder of the actual data resides.
 	// +kubebuilder:validation:Required
 	// +required
-	Location *DataLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
+	Location DataLocation `json:"location,omitempty" protobuf:"bytes,14,opt,name=location"`
 	// Resources is the hardware resource req.
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,15,opt,name=resources"`

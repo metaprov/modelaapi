@@ -18,9 +18,6 @@ var _ webhook.Defaulter = &Dataset{}
 func (dataset *Dataset) Default() {
 
 	// if not row, we assume is 0
-	if dataset.Spec.Origin == nil {
-		dataset.Spec.Origin = &DataLocation{}
-	}
 
 	// if we read from a database, we must snapshot the data. by default we do not snapshot
 	if *dataset.Spec.Origin.Type == DataLocationSQLTable || *dataset.Spec.Origin.Type == DataLocationSQLView {

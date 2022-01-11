@@ -193,11 +193,7 @@ func (in *AccountSpec) DeepCopyInto(out *AccountSpec) {
 		*out = new(catalogv1alpha1.SecurityClearanceLevel)
 		**out = **in
 	}
-	if in.Avatar != nil {
-		in, out := &in.Avatar, &out.Avatar
-		*out = new(AvatarSpec)
-		(*in).DeepCopyInto(*out)
-	}
+	in.Avatar.DeepCopyInto(&out.Avatar)
 	if in.FavoritesProducts != nil {
 		in, out := &in.FavoritesProducts, &out.FavoritesProducts
 		*out = make([]string, len(*in))

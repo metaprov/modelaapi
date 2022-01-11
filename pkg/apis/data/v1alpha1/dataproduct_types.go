@@ -100,7 +100,7 @@ type DataProductSpec struct {
 	StakeHolders []catalog.StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,3,rep,name=stakeholders"`
 	// GitLocation is the github repository for all the artifacts for this product
 	// +kubebuilder:validation:Optional
-	GitLocation *GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
+	GitLocation GitLocation `json:"gitLocation,omitempty" protobuf:"bytes,4,opt,name=gitLocation"`
 	// ImageLocation is the image repository that stores the models images for the product versions
 	// +kubebuilder:validation:Optional
 	ImageLocation *ImageLocation `json:"imageLocation,omitempty" protobuf:"bytes,5,opt,name=imageLocation"`
@@ -145,7 +145,7 @@ type DataProductSpec struct {
 	OnCallAccountName string `json:"onCallAccountName,omitempty" protobuf:"bytes,17,opt,name=onCallAccountName"`
 	// List of documents attached to the this data product
 	//+kubebuilder:validation:Optional
-	Compilation *catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
+	Compilation catalog.CompilerSpec `json:"compilation,omitempty" protobuf:"bytes,19,opt,name=compilation"`
 	// The clearance level of this data product
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
@@ -160,7 +160,7 @@ type DataProductSpec struct {
 	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,22,opt,name=color"`
 	// The Governance requirements.
 	// +kubebuilder:validation:Optional
-	Governance *GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
+	Governance GovernanceSpec `json:"governance,omitempty" protobuf:"bytes,23,opt,name=governance"`
 }
 
 // DataProductStatus defines the observed state of DataProduct

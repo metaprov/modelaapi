@@ -80,7 +80,7 @@ type RecipeSpec struct {
 	Output RecipeOutputSpec `json:"output,omitempty" protobuf:"bytes,6,opt,name=output"`
 	// Sample specify the sampling paramters when viewing the recipe
 	// +kubebuilder:validation:Optional
-	Sample *SampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
+	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,7,opt,name=sample"`
 	// Resource define the resource requirements to run the recipe
 	// +kubebuilder:validation:Optional
 	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,8,opt,name=resources"`

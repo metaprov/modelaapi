@@ -109,7 +109,7 @@ func ParsePipelineYaml(content []byte) (*ModelPipeline, error) {
 }
 
 func (pl *ModelPipeline) HasTrainingStage() bool {
-	return pl.Spec.Training != nil && pl.Spec.Training.StudyTemplateName != nil
+	return pl.Spec.Training.StudyTemplateName != nil
 }
 
 func (pl *ModelPipeline) HasDataStage() bool {
@@ -117,11 +117,11 @@ func (pl *ModelPipeline) HasDataStage() bool {
 }
 
 func (pl *ModelPipeline) HasTrainingNotebook() bool {
-	return pl.Spec.Training != nil && pl.Spec.Training.NotebookName != nil && *pl.Spec.Training.NotebookName != ""
+	return pl.Spec.Training.NotebookName != nil && *pl.Spec.Training.NotebookName != ""
 }
 
 func (pl *ModelPipeline) HasTrainingStudy() bool {
-	return pl.Spec.Training != nil && pl.Spec.Training.StudyTemplateName != nil && *pl.Spec.Training.StudyTemplateName != ""
+	return pl.Spec.Training.StudyTemplateName != nil && *pl.Spec.Training.StudyTemplateName != ""
 }
 
 func (pl *ModelPipeline) MarkReady() {

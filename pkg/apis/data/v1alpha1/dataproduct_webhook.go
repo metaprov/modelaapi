@@ -36,9 +36,6 @@ func (r *DataProduct) Default() {
 	}
 
 	r.Status.Conditions = make([]DataProductCondition, 0)
-	if r.Spec.GitLocation == nil {
-		r.Spec.GitLocation = &GitLocation{}
-	}
 	if r.Spec.ImageLocation.Name == nil {
 		r.Spec.ImageLocation.Name = util.StrPtr(r.Name)
 		r.Spec.ImageLocation.RegistryConnectionName = util.StrPtr("")
