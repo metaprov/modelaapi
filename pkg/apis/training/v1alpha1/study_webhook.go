@@ -35,11 +35,31 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	return catalog.Accuracy
 }
 
+func (study *Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
+	if task == catalog.BinaryClassification {
+		return catalog.DecisionTreeClassifier
+	}
+	if task == catalog.MultiClassification {
+		return catalog.DecisionTreeClassifier
+	}
+	if task == catalog.Regression {
+		return catalog.DecisionTreeRegressor
+	}
+	if task == catalog.Forecasting {
+		return catalog.AutoARIMA
+	}
+	return catalog.UnknownEstimatorName
+}
+
 var _ webhook.Defaulter = &Study{}
 
 func (study *Study) Default() {
 
-	// set default to cv
+	if study.Spec.FeatureEngineeringSearch.Estimator == nil || string(*study.Spec.FeatureEngineeringSearch.Estimator) == "" {
+		estimator := study.DefaultFESearchEstimator(*study.Spec.Task)
+		study.Spec.FeatureEngineeringSearch.Estimator = &estimator
+	}
+	// set default
 
 	if study.Spec.TrainingTemplate.CheckpointInterval == nil {
 		study.Spec.TrainingTemplate.CheckpointInterval = util.Int32Ptr(0)
