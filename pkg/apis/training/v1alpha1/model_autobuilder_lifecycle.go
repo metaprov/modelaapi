@@ -588,3 +588,7 @@ func (b *ModelAutobuilder) MarkDataAppReady() {
 		Status: v1.ConditionTrue,
 	})
 }
+
+func (b *ModelAutobuilder) DataAppReady() bool {
+	return b.GetCond(ModelAutobuilderDataAppReady).Status == v1.ConditionTrue
+}
