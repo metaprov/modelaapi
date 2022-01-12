@@ -51,6 +51,22 @@ func (study *Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.Classi
 	return catalog.UnknownEstimatorName
 }
 
+func (study *Study) DefaultBaselineEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
+	if task == catalog.BinaryClassification {
+		return catalog.RandomForestClassifier
+	}
+	if task == catalog.MultiClassification {
+		return catalog.RandomForestClassifier
+	}
+	if task == catalog.Regression {
+		return catalog.RandomForestRegressor
+	}
+	if task == catalog.Forecasting {
+		return catalog.AutoARIMA
+	}
+	return catalog.UnknownEstimatorName
+}
+
 var _ webhook.Defaulter = &Study{}
 
 func (study *Study) Default() {
@@ -73,6 +89,12 @@ func (study *Study) Default() {
 
 	if study.Spec.Ensembles.StackingEnsemble == nil {
 		study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)
+	}
+
+	if *study.Spec.Baseline.Enabled {
+		if len(study.Spec.Baseline.Baselines) == 0 {
+			study.Spec.Baseline.Baselines = append(study.Spec.Baseline.Baselines, study.DefaultBaselineEstimator(*study.Spec.Task))
+		}
 	}
 
 	study.Spec.Ensembles.StackingEnsemble = util.BoolPtr(true)
