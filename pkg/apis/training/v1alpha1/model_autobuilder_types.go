@@ -21,6 +21,8 @@ const (
 	ModelAutobuilderPhaseStudyCompleted     ModelAutobuilderPhase = "StudyCompleted"
 	ModelAutobuilderPhasePredictorRunning   ModelAutobuilderPhase = "PredictorRunning"
 	ModelAutobuilderPhasePredictorCompleted ModelAutobuilderPhase = "PredictorCompleted"
+	ModelAutobuilderPhaseDataAppRunning     ModelAutobuilderPhase = "DataAppRunning"
+	ModelAutobuilderPhaseDataAppCompleted   ModelAutobuilderPhase = "DataAppCompleted"
 	ModelAutobuilderPhaseCompleted          ModelAutobuilderPhase = "Completed"
 	ModelAutobuilderPhaseAborted            ModelAutobuilderPhase = "Aborted"
 	ModelAutobuilderPhaseFailed             ModelAutobuilderPhase = "Failed"
@@ -37,6 +39,7 @@ const (
 	ModelAutobuilderDatasetCompleted        ModelAutobuilderConditionType = "DatasetCompleted"
 	ModelAutobuilderStudyCompleted          ModelAutobuilderConditionType = "StudyCompleted"
 	ModelAutobuilderPredictorReady          ModelAutobuilderConditionType = "PredictorReady"
+	ModelAutobuilderDataAppReady            ModelAutobuilderConditionType = "DataAppReady"
 	ModelAutobuilderSaved                   ModelAutobuilderConditionType = "Saved"
 )
 
@@ -143,34 +146,40 @@ type ModelAutobuilderSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	AutoScale *bool `json:"autoScale,omitempty" protobuf:"varint,12,opt,name=autoScale"`
+	// Specify if we should create a data app as part of the autobuilder.
+	// Default : false
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	DataApp *bool `json:"dataapp,omitempty" protobuf:"varint,13,opt,name=dataapp"`
+
 	// The spec of the data source, if none, the runner will infer the schema, and will create a new schema with
 	// +kubebuilder:validation:Optional
-	DataSourceSpec datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,13,opt,name=dataSourceSpec"`
+	DataSourceSpec datav1.DataSourceSpec `json:"dataSourceSpec,omitempty" protobuf:"bytes,14,opt,name=dataSourceSpec"`
 	// Specify the number of trainers.
 	// Default 1 trainer.
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
-	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,14,opt,name=trainers"`
+	Trainers *int32 `json:"trainers,omitempty" protobuf:"varint,15,opt,name=trainers"`
 	// Specify the search method
 	// +kubebuilder:default:="random"
 	// +kubebuilder:validation:Optional
-	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,15,opt,name=sampler"`
+	Sampler *SamplerName `json:"sampler,omitempty" protobuf:"bytes,16,opt,name=sampler"`
 	// Set the true to abort the model auto builder
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,16,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,17,opt,name=aborted"`
 	// The owner account name
 	// +kubebuilder:validation:Pattern="[a-z0-9]([-a-z0-9]*[a-z0-9])?(\\.[a-z0-9]([-a-z0-9]*[a-z0-9])?)*"
 	// +kubebuilder:default:="no-one"
 	// +kubebuilder:validation:Optional
-	Owner *string `json:"owner,omitempty" protobuf:"bytes,17,opt,name=owner"`
+	Owner *string `json:"owner,omitempty" protobuf:"bytes,18,opt,name=owner"`
 	// Resource spec specify the resources needed for running the model pipeline job
 	// +kubebuilder:validation:Optional
-	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,18,opt,name=resources"`
+	Resources catalog.ResourceSpec `json:"resources,omitempty" protobuf:"bytes,19,opt,name=resources"`
 	// LabRef is a reference to the lab where the trainers for this study run.
 	// If no value is provided, the lab is taken from the
 	// +kubebuilder:validation:Optional
-	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,19,opt,name=labRef"`
+	LabRef *v1.ObjectReference `json:"labRef,omitempty" protobuf:"bytes,20,opt,name=labRef"`
 }
 
 // ModelAutobuilderStatus define the observed state of the pipeline

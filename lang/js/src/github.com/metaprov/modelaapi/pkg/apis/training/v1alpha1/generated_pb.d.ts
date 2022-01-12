@@ -1511,6 +1511,9 @@ export class ModelAutobuilderSpec extends jspb.Message {
   getAutoscale(): boolean;
   setAutoscale(value: boolean): ModelAutobuilderSpec;
 
+  getDataapp(): boolean;
+  setDataapp(value: boolean): ModelAutobuilderSpec;
+
   getDatasourcespec(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec | undefined;
   setDatasourcespec(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec): ModelAutobuilderSpec;
   hasDatasourcespec(): boolean;
@@ -1560,6 +1563,7 @@ export namespace ModelAutobuilderSpec {
     maxmodels: number,
     accessmethod: string,
     autoscale: boolean,
+    dataapp: boolean,
     datasourcespec?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceSpec.AsObject,
     trainers: number,
     sampler: string,

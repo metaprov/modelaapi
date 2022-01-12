@@ -1470,6 +1470,11 @@ func (in *ModelAutobuilderSpec) DeepCopyInto(out *ModelAutobuilderSpec) {
 		*out = new(bool)
 		**out = **in
 	}
+	if in.DataApp != nil {
+		in, out := &in.DataApp, &out.DataApp
+		*out = new(bool)
+		**out = **in
+	}
 	in.DataSourceSpec.DeepCopyInto(&out.DataSourceSpec)
 	if in.Trainers != nil {
 		in, out := &in.Trainers, &out.Trainers

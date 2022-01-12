@@ -206,8 +206,8 @@ func (b *ModelAutobuilder) MarkStudyFailed(err error) {
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
 		Type:    ModelAutobuilderStudyCompleted,
 		Status:  v1.ConditionFalse,
-		Reason:  "StudyFailed",
 		Message: err.Error(),
+		Reason:  "StudyFailed",
 	})
 }
 
@@ -247,11 +247,12 @@ func (b *ModelAutobuilder) PredictorReady() bool {
 }
 
 func (b *ModelAutobuilder) MarkPredictorFailed(err error) {
-	b.Status.Phase = ModelAutobuilderPhasePredictorRunning
+	b.Status.Phase = ModelAutobuilderPhaseFailed
 	b.CreateOrUpdateCond(ModelAutobuilderCondition{
 		Type:    ModelAutobuilderPredictorReady,
 		Status:  v1.ConditionFalse,
 		Message: string(ModelAutobuilderPhasePredictorRunning),
+		Reason:  err.Error(),
 	})
 }
 
@@ -415,6 +416,10 @@ func (b *ModelAutobuilder) PredictorName() string {
 	return b.Name
 }
 
+func (b *ModelAutobuilder) DataAppName() string {
+	return b.Name
+}
+
 func (b *ModelAutobuilder) CreateDataSource(columns []data.Column) *data.DataSource {
 	csv := data.FlatFileTypeCsv
 	del := data.DelimiterComma
@@ -556,5 +561,30 @@ func (b *ModelAutobuilder) StudyName() string {
 	return b.Name
 }
 
-// create study
-//
+// Data App
+func (b *ModelAutobuilder) MarkDataAppRunning() {
+	b.Status.Phase = ModelAutobuilderPhaseDataAppRunning
+	b.CreateOrUpdateCond(ModelAutobuilderCondition{
+		Type:    ModelAutobuilderDataAppReady,
+		Status:  v1.ConditionFalse,
+		Message: string(ModelAutobuilderPhaseDataAppRunning),
+	})
+}
+
+func (b *ModelAutobuilder) MarkDataAppFailed(err error) {
+	b.Status.Phase = ModelAutobuilderPhaseFailed
+	b.CreateOrUpdateCond(ModelAutobuilderCondition{
+		Type:    ModelAutobuilderDataAppReady,
+		Status:  v1.ConditionFalse,
+		Message: string(ModelAutobuilderPhaseFailed),
+		Reason:  err.Error(),
+	})
+}
+
+func (b *ModelAutobuilder) MarkDataAppReady() {
+	b.Status.Phase = ModelAutobuilderPhaseCompleted
+	b.CreateOrUpdateCond(ModelAutobuilderCondition{
+		Type:   ModelAutobuilderDataAppReady,
+		Status: v1.ConditionTrue,
+	})
+}

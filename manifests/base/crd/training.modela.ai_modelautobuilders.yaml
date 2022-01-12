@@ -867,6 +867,11 @@ spec:
                     maxLength: 63
                     type: string
                 type: object
+              dataapp:
+                default: false
+                description: 'Specify if we should create a data app as part of the
+                  autobuilder. Default : false'
+                type: boolean
               datasetName:
                 description: DatasetName is the name of existing dataset, if empty
                   the dataset object will be created otherwise, a dataset will be
