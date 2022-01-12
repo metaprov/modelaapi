@@ -163,8 +163,8 @@ type DatasetSpec struct {
 	// +kubebuilder:validation:Optional
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,18,opt,name=sample"`
 	// DatasetType is the type of dataset
-	// +kubebuilder:validation:Optional
-	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,19,opt,name=task"`
+	// +kubebuilder:vali dation:Optional
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,19,opt,name=task"`
 	// Specification for notification for events that occur during processing
 	// +kubebuilder:validation:Optional
 	Notification catalog.NotificationSpec `json:"notification,omitempty" protobuf:"bytes,20,opt,name=notification"`

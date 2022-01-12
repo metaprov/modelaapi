@@ -478,6 +478,7 @@ func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 			},
 		},
 		Spec: data.DatasetSpec{
+			Owner:          b.Spec.Owner,
 			VersionName:    util.StrPtr(b.DataProductVersionName()),
 			DataSourceName: util.StrPtr(b.DatasourceName()),
 			Description:    util.StrPtr(""),
@@ -485,13 +486,16 @@ func (b *ModelAutobuilder) CreateDataset() *data.Dataset {
 			Validated:      util.BoolPtr(true),
 			Labeled:        util.BoolPtr(true),
 			Origin:         b.Spec.Location,
+			Task:           b.Spec.Task,
 			Location: data.DataLocation{
 				Path:       util.StrPtr(rawPath),
 				BucketName: b.Spec.Location.BucketName,
 			},
+			Resources: *b.Spec.Resources.DeepCopy(),
 		},
 	}
 	return dataset
+
 }
 
 func (b *ModelAutobuilder) DatasetName() string {

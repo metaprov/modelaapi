@@ -1508,7 +1508,7 @@ message DatasetSpec {
   optional SampleSpec sample = 18;
 
   // DatasetType is the type of dataset
-  // +kubebuilder:validation:Optional
+  // +kubebuilder:vali dation:Optional
   optional string task = 19;
 
   // Specification for notification for events that occur during processing
