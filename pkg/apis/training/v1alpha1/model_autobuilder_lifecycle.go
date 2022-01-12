@@ -454,10 +454,6 @@ func (b *ModelAutobuilder) SchemaName() string {
 
 // Answer the last component in the path
 func (b *ModelAutobuilder) FileName() string {
-	if b.Spec.Location.Path != nil {
-		return ""
-
-	}
 	return *b.Spec.Location.Path
 }
 
