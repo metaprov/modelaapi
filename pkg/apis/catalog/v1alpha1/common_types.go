@@ -846,7 +846,7 @@ const (
 // Estimators
 //==============================================================================
 
-// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking"
+// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor"
 type ClassicEstimatorName string
 
 const (
@@ -918,6 +918,12 @@ const (
 	GaussianMixtureClustering ClassicEstimatorName = "gaussian-mixture"
 	KMeanClustering           ClassicEstimatorName = "kmean"
 	DBSCANClustering          ClassicEstimatorName = "dbscan"
+
+	// Meta Estimators
+	VotingClassifier   ClassicEstimatorName = "voting-classifier"
+	VotingRegressor    ClassicEstimatorName = "voting-regressor"
+	StackingClassifier ClassicEstimatorName = "stacking-classifier"
+	StackingRegressor  ClassicEstimatorName = "stacking-regressor"
 )
 
 func ParseEstimatorName(name string) ClassicEstimatorName {

@@ -170,6 +170,10 @@ spec:
                       - theata-method
                       - als
                       - bayesian-personalized-ranking
+                      - voting-classifier
+                      - voting-regressor
+                      - stacking-classifier
+                      - stacking-regressor
                       type: string
                     type: array
                   enabled:
@@ -316,6 +320,10 @@ spec:
                     - theata-method
                     - als
                     - bayesian-personalized-ranking
+                    - voting-classifier
+                    - voting-regressor
+                    - stacking-classifier
+                    - stacking-regressor
                     type: string
                   imbalanceHandler:
                     default: auto
@@ -1329,6 +1337,10 @@ spec:
                           - theata-method
                           - als
                           - bayesian-personalized-ranking
+                          - voting-classifier
+                          - voting-regressor
+                          - stacking-classifier
+                          - stacking-regressor
                           type: string
                         type: array
                       filter:
@@ -1852,6 +1864,10 @@ spec:
                 - theata-method
                 - als
                 - bayesian-personalized-ranking
+                - voting-classifier
+                - voting-regressor
+                - stacking-classifier
+                - stacking-regressor
                 type: string
               bestFE:
                 description: The best feature engineering
