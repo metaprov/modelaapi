@@ -2883,7 +2883,7 @@ message VirtualCluster {
   optional VirtualClusterStatus status = 3;
 }
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// VirtualClusterCondition describes the state of a virtual cluster at a certain point.
 message VirtualClusterCondition {
   // Type of account condition.
   optional string type = 1;

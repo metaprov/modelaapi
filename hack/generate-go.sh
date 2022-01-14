@@ -14,6 +14,10 @@ CODEGEN_PKG=${CODEGEN_PKG:-$(cd ${PROJECT_ROOT}; ls -d -1 ./vendor/k8s.io/code-g
 PATH="${PROJECT_ROOT}/dist:${PATH}"
 GIT_ROOT=$(cd $(dirname ${BASH_SOURCE})/../../../../; pwd)
 
+go mod vendor
+mv ${PROJECT_ROOT}/vendor /tmp/includes
+
+
 echo $PROJECT_ROOT
 echo $GIT_ROOT
 # Generate server/<service>/(<service>.pb.go|<service>.pb.gw.go)
@@ -28,6 +32,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
      protoc \
         -I${PROJECT_ROOT}/../../.. \
         -I${PROJECT_ROOT} \
+        -I/tmp/includes \
         -I${GOOGLE_PROTO_API_PATH} \
         -I$GOPATH/src \
         -I${GOGO_PROTOBUF_PATH} \
@@ -38,6 +43,7 @@ GOGO_PROTOBUF_PATH=${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf
          k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \
          k8s.io/apimachinery/pkg/util/intstr/generated.proto \
          k8s.io/api/core/v1/generated.proto \
+         k8s.io/api/apps/v1/generated.proto \
          k8s.io/api/rbac/v1/generated.proto \
          k8s.io/apimachinery/pkg/api/resource/generated.proto \
          k8s.io/apimachinery/pkg/runtime/schema/generated.proto \

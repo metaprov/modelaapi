@@ -331,8 +331,8 @@ spec:
                 type: integer
               conditions:
                 items:
-                  description: DeploymentCondition describes the state of a deployment
-                    at a certain point.
+                  description: VirtualClusterCondition describes the state of a virtual
+                    cluster at a certain point.
                   properties:
                     lastTransitionTime:
                       description: Last time the condition transitioned from one status

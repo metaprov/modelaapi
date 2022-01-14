@@ -19,7 +19,7 @@ const (
 	VirtualClusterSaved VirtualClusterConditionType = "Saved"
 )
 
-// DeploymentCondition describes the state of a deployment at a certain point.
+// VirtualClusterCondition describes the state of a virtual cluster at a certain point.
 type VirtualClusterCondition struct {
 	// Type of account condition.
 	Type VirtualClusterConditionType `json:"type" protobuf:"bytes,1,opt,name=type,casttype=VirtualClusterConditionType"`
