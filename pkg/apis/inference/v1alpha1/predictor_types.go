@@ -3,6 +3,7 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
+	appsv1 "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -181,9 +182,6 @@ type PredictorSpec struct {
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
 	Monitor MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,23,opt,name=monitor"`
-	// specification for dash app
-	// +kubebuilder:validation:Optional
-	AppSpec AppSpec `json:"app,omitempty" protobuf:"bytes,24,opt,name=app"`
 	// specify the predictor authentication
 	// +kubebuilder:validation:Optional
 	Auth PredictorAuthSpec `json:"auth,omitempty" protobuf:"bytes,25,opt,name=auth"`
@@ -274,16 +272,19 @@ type PredictorStatus struct {
 	// For binary classification, the name of the negative class
 	//+kubebuilder:validation:Optional
 	NegativeLabel string `json:"negativeLabel,omitempty" protobuf:"bytes,14,opt,name=negativeLabel"`
-	// The predictor app status
-	//+kubebuilder:validation:Optional
-	AppStatus AppStatus `json:"appStatus,omitempty" protobuf:"bytes,15,opt,name=appStatus"`
 	// the end point url of the predictor
 	//+kubebuilder:validation:Optional
 	EndPoint string `json:"endPoint,omitempty" protobuf:"bytes,16,opt,name=endPoint"`
+	// The data app deployment proxy status
+	//+kubebuilder:validation:Optional
+	ProxyDeploymentStatus appsv1.DeploymentStatus `json:"proxyDeploymentStatus,omitempty" protobuf:"bytes,17,opt,name=proxyDeploymentStatus"`
+	// The status of the proxy data app service.
+	//+kubebuilder:validation:Optional
+	ProxyServiceStatus v1.ServiceStatus `json:"proxyServiceStatus,omitempty" protobuf:"bytes,18,opt,name=proxyServicestStatus"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,17,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,19,rep,name=conditions"`
 }
 
 type PredictorHealth struct {
@@ -360,26 +361,6 @@ type ModelRecord struct {
 	// Retried at is the time that the model was retired from production.
 	// +kubebuilder:validation:Optional
 	AvgLatency float64 `json:"avgLatency,omitempty" protobuf:"bytes,6,opt,name=avgLatency"`
-}
-
-// Dash App specification, the app is created based on the model schema.
-type AppSpec struct {
-	// Retried at is the time that the model was retired from production.
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
-
-	// App port. default port is 8080.
-	// +kubebuilder:default:=8080
-	// +kubebuilder:validation:Minimum=1
-	// +kubebuilder:validation:Maximum=65535
-	// +kubebuilder:validation:Optional
-	Port *int32 `json:"port,omitempty" protobuf:"varint,2,opt,name=port"`
-}
-
-type AppStatus struct {
-	//
-	// +kubebuilder:validation:Optional
-	Enabled *bool `json:"enabled,omitempty" protobuf:"bytes,1,opt,name=enabled"`
 }
 
 type PredictorAuthSpec struct {

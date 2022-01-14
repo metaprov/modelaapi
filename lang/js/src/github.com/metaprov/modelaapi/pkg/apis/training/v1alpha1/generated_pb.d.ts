@@ -669,10 +669,23 @@ export namespace EnsembleRules {
 }
 
 export class EnsembleSpec extends jspb.Message {
-  getBaseList(): Array<string>;
-  setBaseList(value: Array<string>): EnsembleSpec;
-  clearBaseList(): EnsembleSpec;
-  addBase(value: string, index?: number): EnsembleSpec;
+  getModelsList(): Array<string>;
+  setModelsList(value: Array<string>): EnsembleSpec;
+  clearModelsList(): EnsembleSpec;
+  addModels(value: string, index?: number): EnsembleSpec;
+
+  getEstimatorsList(): Array<ClassicalEstimatorSpec>;
+  setEstimatorsList(value: Array<ClassicalEstimatorSpec>): EnsembleSpec;
+  clearEstimatorsList(): EnsembleSpec;
+  addEstimators(value?: ClassicalEstimatorSpec, index?: number): ClassicalEstimatorSpec;
+
+  getBase(): ClassicalEstimatorSpec | undefined;
+  setBase(value?: ClassicalEstimatorSpec): EnsembleSpec;
+  hasBase(): boolean;
+  clearBase(): EnsembleSpec;
+
+  getType(): string;
+  setType(value: string): EnsembleSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnsembleSpec.AsObject;
@@ -684,7 +697,10 @@ export class EnsembleSpec extends jspb.Message {
 
 export namespace EnsembleSpec {
   export type AsObject = {
-    baseList: Array<string>,
+    modelsList: Array<string>,
+    estimatorsList: Array<ClassicalEstimatorSpec.AsObject>,
+    base?: ClassicalEstimatorSpec.AsObject,
+    type: string,
   }
 }
 

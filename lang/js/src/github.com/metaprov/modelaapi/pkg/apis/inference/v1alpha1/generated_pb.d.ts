@@ -9,43 +9,93 @@ import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../..
 import * as k8s_io_apimachinery_pkg_runtime_schema_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/schema/generated_pb';
 
 
-export class AppSpec extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): AppSpec;
+export class DeploymentCondition extends jspb.Message {
+  getType(): string;
+  setType(value: string): DeploymentCondition;
 
-  getPort(): number;
-  setPort(value: number): AppSpec;
+  getStatus(): string;
+  setStatus(value: string): DeploymentCondition;
+
+  getLastupdatetime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLastupdatetime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DeploymentCondition;
+  hasLastupdatetime(): boolean;
+  clearLastupdatetime(): DeploymentCondition;
+
+  getLasttransitiontime(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
+  setLasttransitiontime(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): DeploymentCondition;
+  hasLasttransitiontime(): boolean;
+  clearLasttransitiontime(): DeploymentCondition;
+
+  getReason(): string;
+  setReason(value: string): DeploymentCondition;
+
+  getMessage(): string;
+  setMessage(value: string): DeploymentCondition;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppSpec.AsObject;
-  static toObject(includeInstance: boolean, msg: AppSpec): AppSpec.AsObject;
-  static serializeBinaryToWriter(message: AppSpec, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppSpec;
-  static deserializeBinaryFromReader(message: AppSpec, reader: jspb.BinaryReader): AppSpec;
+  toObject(includeInstance?: boolean): DeploymentCondition.AsObject;
+  static toObject(includeInstance: boolean, msg: DeploymentCondition): DeploymentCondition.AsObject;
+  static serializeBinaryToWriter(message: DeploymentCondition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeploymentCondition;
+  static deserializeBinaryFromReader(message: DeploymentCondition, reader: jspb.BinaryReader): DeploymentCondition;
 }
 
-export namespace AppSpec {
+export namespace DeploymentCondition {
   export type AsObject = {
-    enabled: boolean,
-    port: number,
+    type: string,
+    status: string,
+    lastupdatetime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    lasttransitiontime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    reason: string,
+    message: string,
   }
 }
 
-export class AppStatus extends jspb.Message {
-  getEnabled(): boolean;
-  setEnabled(value: boolean): AppStatus;
+export class DeploymentStatus extends jspb.Message {
+  getObservedgeneration(): number;
+  setObservedgeneration(value: number): DeploymentStatus;
+
+  getReplicas(): number;
+  setReplicas(value: number): DeploymentStatus;
+
+  getUpdatedreplicas(): number;
+  setUpdatedreplicas(value: number): DeploymentStatus;
+
+  getReadyreplicas(): number;
+  setReadyreplicas(value: number): DeploymentStatus;
+
+  getAvailablereplicas(): number;
+  setAvailablereplicas(value: number): DeploymentStatus;
+
+  getUnavailablereplicas(): number;
+  setUnavailablereplicas(value: number): DeploymentStatus;
+
+  getConditionsList(): Array<DeploymentCondition>;
+  setConditionsList(value: Array<DeploymentCondition>): DeploymentStatus;
+  clearConditionsList(): DeploymentStatus;
+  addConditions(value?: DeploymentCondition, index?: number): DeploymentCondition;
+
+  getCollisioncount(): number;
+  setCollisioncount(value: number): DeploymentStatus;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AppStatus.AsObject;
-  static toObject(includeInstance: boolean, msg: AppStatus): AppStatus.AsObject;
-  static serializeBinaryToWriter(message: AppStatus, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AppStatus;
-  static deserializeBinaryFromReader(message: AppStatus, reader: jspb.BinaryReader): AppStatus;
+  toObject(includeInstance?: boolean): DeploymentStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: DeploymentStatus): DeploymentStatus.AsObject;
+  static serializeBinaryToWriter(message: DeploymentStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeploymentStatus;
+  static deserializeBinaryFromReader(message: DeploymentStatus, reader: jspb.BinaryReader): DeploymentStatus;
 }
 
-export namespace AppStatus {
+export namespace DeploymentStatus {
   export type AsObject = {
-    enabled: boolean,
+    observedgeneration: number,
+    replicas: number,
+    updatedreplicas: number,
+    readyreplicas: number,
+    availablereplicas: number,
+    unavailablereplicas: number,
+    conditionsList: Array<DeploymentCondition.AsObject>,
+    collisioncount: number,
   }
 }
 
@@ -654,6 +704,16 @@ export class DataAppStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): DataAppStatus;
 
+  getDeploymentstatus(): DeploymentStatus | undefined;
+  setDeploymentstatus(value?: DeploymentStatus): DataAppStatus;
+  hasDeploymentstatus(): boolean;
+  clearDeploymentstatus(): DataAppStatus;
+
+  getServicetstatus(): k8s_io_api_core_v1_generated_pb.ServiceStatus | undefined;
+  setServicetstatus(value?: k8s_io_api_core_v1_generated_pb.ServiceStatus): DataAppStatus;
+  hasServicetstatus(): boolean;
+  clearServicetstatus(): DataAppStatus;
+
   getConditionsList(): Array<DataAppCondition>;
   setConditionsList(value: Array<DataAppCondition>): DataAppStatus;
   clearConditionsList(): DataAppStatus;
@@ -671,6 +731,8 @@ export namespace DataAppStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    deploymentstatus?: DeploymentStatus.AsObject,
+    servicetstatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
     conditionsList: Array<DataAppCondition.AsObject>,
   }
 }
@@ -1371,11 +1433,6 @@ export class PredictorSpec extends jspb.Message {
   hasMonitor(): boolean;
   clearMonitor(): PredictorSpec;
 
-  getApp(): AppSpec | undefined;
-  setApp(value?: AppSpec): PredictorSpec;
-  hasApp(): boolean;
-  clearApp(): PredictorSpec;
-
   getAuth(): PredictorAuthSpec | undefined;
   setAuth(value?: PredictorAuthSpec): PredictorSpec;
   hasAuth(): boolean;
@@ -1414,7 +1471,6 @@ export namespace PredictorSpec {
     task: string,
     predictiontreshold: number,
     monitor?: MonitorSpec.AsObject,
-    app?: AppSpec.AsObject,
     auth?: PredictorAuthSpec.AsObject,
   }
 }
@@ -1468,13 +1524,18 @@ export class PredictorStatus extends jspb.Message {
   getNegativelabel(): string;
   setNegativelabel(value: string): PredictorStatus;
 
-  getAppstatus(): AppStatus | undefined;
-  setAppstatus(value?: AppStatus): PredictorStatus;
-  hasAppstatus(): boolean;
-  clearAppstatus(): PredictorStatus;
-
   getEndpoint(): string;
   setEndpoint(value: string): PredictorStatus;
+
+  getProxydeploymentstatus(): DeploymentStatus | undefined;
+  setProxydeploymentstatus(value?: DeploymentStatus): PredictorStatus;
+  hasProxydeploymentstatus(): boolean;
+  clearProxydeploymentstatus(): PredictorStatus;
+
+  getProxyserviceststatus(): k8s_io_api_core_v1_generated_pb.ServiceStatus | undefined;
+  setProxyserviceststatus(value?: k8s_io_api_core_v1_generated_pb.ServiceStatus): PredictorStatus;
+  hasProxyserviceststatus(): boolean;
+  clearProxyserviceststatus(): PredictorStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1503,8 +1564,9 @@ export namespace PredictorStatus {
     targetcolumn: string,
     positivelabel: string,
     negativelabel: string,
-    appstatus?: AppStatus.AsObject,
     endpoint: string,
+    proxydeploymentstatus?: DeploymentStatus.AsObject,
+    proxyserviceststatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

@@ -356,9 +356,18 @@ type ModelSpec struct {
 }
 
 type EnsembleSpec struct {
-	// A list of base model to ensemble. The ensemble method is represented as the algorithm name.
+	// Names of the models that were used for the estimators.
 	// +kubebuilder:validation:Optional
-	Base []string `json:"base,omitempty" protobuf:"bytes,2,rep,name=base"`
+	Models []string `json:"models,omitempty" protobuf:"bytes,1,rep,name=models"`
+	// A list of estimators to ensemble. The ensemble method is represented as the algorithm name.
+	// +kubebuilder:validation:Optional
+	Estimators []ClassicalEstimatorSpec `json:"estimators,omitempty" protobuf:"bytes,2,rep,name=estimators"`
+	// The meta estimator (e.g. Voting classifier)
+	// +kubebuilder:validation:Optional
+	BaseEstimator *ClassicalEstimatorSpec `json:"base,omitempty" protobuf:"bytes,3,rep,name=base"`
+	// The ensempling method type
+	// +kubebuilder:validation:Optional
+	Type *catalog.EnsembleType `json:"type,omitempty" protobuf:"bytes,4,rep,name=type"`
 }
 
 // ModelStatus defines the observed state of the Model

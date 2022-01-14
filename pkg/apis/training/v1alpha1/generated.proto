@@ -416,9 +416,21 @@ message EnsembleRules {
 }
 
 message EnsembleSpec {
-  // A list of base model to ensemble. The ensemble method is represented as the algorithm name.
+  // Names of the models that were used for the estimators.
   // +kubebuilder:validation:Optional
-  repeated string base = 2;
+  repeated string models = 1;
+
+  // A list of estimators to ensemble. The ensemble method is represented as the algorithm name.
+  // +kubebuilder:validation:Optional
+  repeated ClassicalEstimatorSpec estimators = 2;
+
+  // The meta estimator (e.g. Voting classifier)
+  // +kubebuilder:validation:Optional
+  optional ClassicalEstimatorSpec base = 3;
+
+  // The ensempling method type
+  // +kubebuilder:validation:Optional
+  optional string type = 4;
 }
 
 // Define the ensemble spec

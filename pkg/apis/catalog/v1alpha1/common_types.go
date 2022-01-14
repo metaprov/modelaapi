@@ -1248,6 +1248,13 @@ const (
 	ConnectionSocialMedia                 ConnectionCategory = "social-media"
 )
 
+type EnsembleType string
+
+const (
+	VotingEnsembleType EnsembleType = "voting"
+	StackEnsembleType  EnsembleType = "stacking"
+)
+
 //==============================================================================
 // Trigger Schedule
 //==============================================================================
@@ -1482,6 +1489,7 @@ type ModelDeploymentStatus struct {
 	// The time of approval
 	// +kubebuilder:validation:Optional
 	ApprovedAt *metav1.Time `json:"approvedAt,omitempty" protobuf:"bytes,15,opt,name=approvedAt"`
+	// Holds the actual deployment and service
 }
 
 type ModelDeploymentPhase string

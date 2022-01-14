@@ -231,11 +231,73 @@ spec:
                   None'
                 properties:
                   base:
-                    description: A list of base model to ensemble. The ensemble method
+                    description: The meta estimator (e.g. Voting classifier)
+                    properties:
+                      algorithmName:
+                        description: AlgorithmName is a reference to the algorithm
+                          in the catalog
+                        type: string
+                      parameters:
+                        description: Parameters is a list of the algorithm hyper parameters
+                        items:
+                          description: HyperParameterValue represent a specific value
+                            of the learning algorithm hyper-parameter. The value is
+                            chosen by the planner
+                          properties:
+                            name:
+                              description: Reference to the name of the hyper parameter.
+                              type: string
+                            value:
+                              description: Value hold the value if  the hyper paramer
+                                type is string
+                              type: string
+                          required:
+                          - name
+                          - value
+                          type: object
+                        type: array
+                    type: object
+                  estimators:
+                    description: A list of estimators to ensemble. The ensemble method
                       is represented as the algorithm name.
+                    items:
+                      description: ClassicalEstimatorSpec is the specification for
+                        an algorithm and the actual value fof the hyper parameters
+                      properties:
+                        algorithmName:
+                          description: AlgorithmName is a reference to the algorithm
+                            in the catalog
+                          type: string
+                        parameters:
+                          description: Parameters is a list of the algorithm hyper
+                            parameters
+                          items:
+                            description: HyperParameterValue represent a specific
+                              value of the learning algorithm hyper-parameter. The
+                              value is chosen by the planner
+                            properties:
+                              name:
+                                description: Reference to the name of the hyper parameter.
+                                type: string
+                              value:
+                                description: Value hold the value if  the hyper paramer
+                                  type is string
+                                type: string
+                            required:
+                            - name
+                            - value
+                            type: object
+                          type: array
+                      type: object
+                    type: array
+                  models:
+                    description: Names of the models that were used for the estimators.
                     items:
                       type: string
                     type: array
+                  type:
+                    description: The ensempling method type
+                    type: string
                 type: object
               estimator:
                 description: Estimator is a specification of the ML algorithm and

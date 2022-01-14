@@ -8601,7 +8601,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleRules.ser
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.repeatedFields_ = [1,2];
 
 
 
@@ -8634,7 +8634,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    baseList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+    modelsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    estimatorsList: jspb.Message.toObjectList(msg.getEstimatorsList(),
+    proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject, includeInstance),
+    base: (f = msg.getBase()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.toObject(includeInstance, f),
+    type: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8671,9 +8675,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.dese
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.addBase(value);
+      msg.addModels(value);
+      break;
+    case 2:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.deserializeBinaryFromReader);
+      msg.addEstimators(value);
+      break;
+    case 3:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.deserializeBinaryFromReader);
+      msg.setBase(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setType(value);
       break;
     default:
       reader.skipField();
@@ -8704,10 +8722,33 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBaseList();
+  f = message.getModelsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
+  f = message.getEstimatorsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       2,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.serializeBinaryToWriter
+    );
+  }
+  f = message.getBase();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -8715,11 +8756,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.seri
 
 
 /**
- * repeated string base = 2;
+ * repeated string models = 1;
  * @return {!Array<string>}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.getBaseList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.getModelsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
@@ -8727,8 +8768,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  * @param {!Array<string>} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.setBaseList = function(value) {
-  return jspb.Message.setField(this, 2, value || []);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.setModelsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
 };
 
 
@@ -8737,8 +8778,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.addBase = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.addModels = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
@@ -8746,8 +8787,119 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.clearBaseList = function() {
-  return this.setBaseList([]);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.clearModelsList = function() {
+  return this.setModelsList([]);
+};
+
+
+/**
+ * repeated ClassicalEstimatorSpec estimators = 2;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.getEstimatorsList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec>} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.setEstimatorsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.addEstimators = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.clearEstimatorsList = function() {
+  return this.setEstimatorsList([]);
+};
+
+
+/**
+ * optional ClassicalEstimatorSpec base = 3;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.getBase = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec, 3));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ClassicalEstimatorSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.setBase = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.clearBase = function() {
+  return this.setBase(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.hasBase = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string type = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.getType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.setType = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.clearType = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.EnsembleSpec.prototype.hasType = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
