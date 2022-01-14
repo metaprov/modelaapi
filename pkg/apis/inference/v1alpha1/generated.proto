@@ -12,6 +12,7 @@ package github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1;
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
+import "k8s.io/api/apps/v1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
@@ -19,65 +20,6 @@ import "k8s.io/apimachinery/pkg/runtime/schema/generated.proto";
 
 // Package-wide variables from generator "generated".
 option go_package = "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1";
-
-message DeploymentCondition {
-  // Type of deployment condition.
-  optional string type = 1;
-
-  // Status of the condition, one of True, False, Unknown.
-  optional string status = 2;
-
-  // The last time this condition was updated.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdateTime = 6;
-
-  // Last time the condition transitioned from one status to another.
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastTransitionTime = 7;
-
-  // The reason for the condition's last transition.
-  optional string reason = 4;
-
-  // A human readable message indicating details about the transition.
-  optional string message = 5;
-}
-
-message DeploymentStatus {
-  // The generation observed by the deployment controller.
-  // +optional
-  optional int64 observedGeneration = 1;
-
-  // Total number of non-terminated pods targeted by this deployment (their labels match the selector).
-  // +optional
-  optional int32 replicas = 2;
-
-  // Total number of non-terminated pods targeted by this deployment that have the desired template spec.
-  // +optional
-  optional int32 updatedReplicas = 3;
-
-  // readyReplicas is the number of pods targeted by this Deployment with a Ready Condition.
-  // +optional
-  optional int32 readyReplicas = 7;
-
-  // Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.
-  // +optional
-  optional int32 availableReplicas = 4;
-
-  // Total number of unavailable pods targeted by this deployment. This is the total number of
-  // pods that are still required for the deployment to have 100% available capacity. They may
-  // either be pods that are running but not yet available or pods that still have not been created.
-  // +optional
-  optional int32 unavailableReplicas = 5;
-
-  // Represents the latest available observations of a deployment's current state.
-  // +patchMergeKey=type
-  // +patchStrategy=merge
-  repeated DeploymentCondition conditions = 6;
-
-  // Count of hash collisions for the Deployment. The Deployment controller uses this
-  // field as a collision avoidance mechanism when it needs to create the name for the
-  // newest ReplicaSet.
-  // +optional
-  optional int32 collisionCount = 8;
-}
 
 // AutoScaling defines the configuration for auto scaling
 message AutoScaling {
@@ -439,7 +381,7 @@ message DataAppStatus {
 
   // The data app deployment status
   // +kubebuilder:validation:Optional
-  optional DeploymentStatus deploymentStatus = 3;
+  optional k8s.io.api.apps.v1.DeploymentStatus deploymentStatus = 3;
 
   // The status of the data app service.
   // +kubebuilder:validation:Optional
@@ -973,7 +915,7 @@ message PredictorStatus {
 
   // The data app deployment proxy status
   // +kubebuilder:validation:Optional
-  optional DeploymentStatus proxyDeploymentStatus = 17;
+  optional k8s.io.api.apps.v1.DeploymentStatus proxyDeploymentStatus = 17;
 
   // The status of the proxy data app service.
   // +kubebuilder:validation:Optional
