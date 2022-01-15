@@ -104,7 +104,7 @@ func (model *Model) ReportName() string {
 }
 
 func (model *Model) IsEnsemble() bool {
-	return model.Spec.Estimator.AlgorithmName == string(catalog.StackingEnsemble)
+	return len(model.Spec.Ensemble.Models) > 0
 }
 
 func (model *Model) ReportType() ReportType {
