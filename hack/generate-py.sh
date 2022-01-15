@@ -17,6 +17,10 @@ PROJECT_ROOT=$(cd $(dirname ${BASH_SOURCE})/..; pwd)
 #rm -rf ${PROJECT_ROOT}/lang/python/k8s
 #rm -rf ${PROJECT_ROOT}/lang/python/k8s.io
 
+go mod vendor
+mv ${PROJECT_ROOT}/vendor /tmp/includes
+
+
 
 
 # Generate the grpc first, since it would be generated under github.com and not github/com
@@ -25,6 +29,7 @@ python3 -m pip install grpcio-tools
 python3 -m grpc_tools.protoc \
     -I${PROJECT_ROOT}/../../.. \
     -I${PROJECT_ROOT}/pkg \
+    -I/tmp/includes \
     -I${PROJECT_ROOT}/common-protos \
     -I${PROJECT_ROOT}/common-protos/github.com/gogo/protobuf \
     --grpc_python_out=${PROJECT_ROOT}/lang/python \
@@ -34,6 +39,7 @@ python3 -m grpc_tools.protoc \
     k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto \
     k8s.io/apimachinery/pkg/util/intstr/generated.proto \
     k8s.io/api/core/v1/generated.proto \
+    k8s.io/api/apps/v1/generated.proto \
     k8s.io/api/rbac/v1/generated.proto \
     k8s.io/apimachinery/pkg/api/resource/generated.proto \
     k8s.io/apimachinery/pkg/runtime/schema/generated.proto \
