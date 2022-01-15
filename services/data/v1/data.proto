@@ -448,9 +448,9 @@ message AskEnsembleRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset     dataset            = 5;
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model models       = 6;    
 }
-
+// Return one or more ensembles
 message AskEnsembleResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+    repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
 }
 
 

@@ -2068,10 +2068,10 @@ export namespace AskEnsembleRequest {
 }
 
 export class AskEnsembleResponse extends jspb.Message {
-  getModel(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model | undefined;
-  setModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model): AskEnsembleResponse;
-  hasModel(): boolean;
-  clearModel(): AskEnsembleResponse;
+  getModelList(): Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>;
+  setModelList(value: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model>): AskEnsembleResponse;
+  clearModelList(): AskEnsembleResponse;
+  addModel(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, index?: number): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AskEnsembleResponse.AsObject;
@@ -2083,7 +2083,7 @@ export class AskEnsembleResponse extends jspb.Message {
 
 export namespace AskEnsembleResponse {
   export type AsObject = {
-    model?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject,
+    modelList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.AsObject>,
   }
 }
 

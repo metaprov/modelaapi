@@ -1215,7 +1215,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.repeatedFields_, null);
 };
 goog.inherits(proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -18176,6 +18176,13 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleRequest.prototyp
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -18207,7 +18214,8 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    model: (f = msg.getModel()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject(includeInstance, f)
+    modelList: jspb.Message.toObjectList(msg.getModelList(),
+    github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -18247,7 +18255,7 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.deserializeBinaryFromReader);
-      msg.setModel(value);
+      msg.addModel(value);
       break;
     default:
       reader.skipField();
@@ -18278,9 +18286,9 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getModel();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getModelList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model.serializeBinaryToWriter
@@ -18290,39 +18298,40 @@ proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
+ * repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model model = 1;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model>}
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.getModel = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 1));
+proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.getModelList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model>} */ (
+    jspb.Message.getRepeatedWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Model, 1));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model|undefined} value
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.setModel = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
+proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.setModelList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model}
+ */
+proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.addModel = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.clearModel = function() {
-  return this.setModel(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.hasModel = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.github.com.metaprov.modelaapi.services.data.v1.AskEnsembleResponse.prototype.clearModelList = function() {
+  return this.setModelList([]);
 };
 
 
