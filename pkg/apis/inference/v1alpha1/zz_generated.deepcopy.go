@@ -565,7 +565,7 @@ func (in *DataAppStatus) DeepCopyInto(out *DataAppStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
-	in.DeploymentStatus.DeepCopyInto(&out.DeploymentStatus)
+	out.DeploymentRef = in.DeploymentRef
 	in.ServiceStatus.DeepCopyInto(&out.ServiceStatus)
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -1229,8 +1229,8 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
-	in.ProxyDeploymentStatus.DeepCopyInto(&out.ProxyDeploymentStatus)
-	in.ProxyServiceStatus.DeepCopyInto(&out.ProxyServiceStatus)
+	out.ProxyDeploymentRef = in.ProxyDeploymentRef
+	out.ProxyServiceRef = in.ProxyServiceRef
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictorCondition, len(*in))

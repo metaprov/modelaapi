@@ -3,7 +3,6 @@ import * as jspb from 'google-protobuf'
 import * as github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
-import * as k8s_io_api_apps_v1_generated_pb from '../../../../../../../k8s.io/api/apps/v1/generated_pb';
 import * as k8s_io_api_core_v1_generated_pb from '../../../../../../../k8s.io/api/core/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb';
 import * as k8s_io_apimachinery_pkg_runtime_generated_pb from '../../../../../../../k8s.io/apimachinery/pkg/runtime/generated_pb';
@@ -615,8 +614,8 @@ export class DataAppStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): DataAppStatus;
 
-  getDeploymentstatus(): k8s_io_api_apps_v1_generated_pb.DeploymentStatus | undefined;
-  setDeploymentstatus(value?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus): DataAppStatus;
+  getDeploymentstatus(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDeploymentstatus(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): DataAppStatus;
   hasDeploymentstatus(): boolean;
   clearDeploymentstatus(): DataAppStatus;
 
@@ -642,7 +641,7 @@ export namespace DataAppStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    deploymentstatus?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus.AsObject,
+    deploymentstatus?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servicetstatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
     conditionsList: Array<DataAppCondition.AsObject>,
   }
@@ -1438,15 +1437,15 @@ export class PredictorStatus extends jspb.Message {
   getEndpoint(): string;
   setEndpoint(value: string): PredictorStatus;
 
-  getProxydeploymentstatus(): k8s_io_api_apps_v1_generated_pb.DeploymentStatus | undefined;
-  setProxydeploymentstatus(value?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus): PredictorStatus;
-  hasProxydeploymentstatus(): boolean;
-  clearProxydeploymentstatus(): PredictorStatus;
+  getProxydeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setProxydeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorStatus;
+  hasProxydeploymentref(): boolean;
+  clearProxydeploymentref(): PredictorStatus;
 
-  getProxyserviceststatus(): k8s_io_api_core_v1_generated_pb.ServiceStatus | undefined;
-  setProxyserviceststatus(value?: k8s_io_api_core_v1_generated_pb.ServiceStatus): PredictorStatus;
-  hasProxyserviceststatus(): boolean;
-  clearProxyserviceststatus(): PredictorStatus;
+  getProxyserviceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setProxyserviceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): PredictorStatus;
+  hasProxyserviceref(): boolean;
+  clearProxyserviceref(): PredictorStatus;
 
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
@@ -1476,8 +1475,8 @@ export namespace PredictorStatus {
     positivelabel: string,
     negativelabel: string,
     endpoint: string,
-    proxydeploymentstatus?: k8s_io_api_apps_v1_generated_pb.DeploymentStatus.AsObject,
-    proxyserviceststatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
+    proxydeploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    proxyserviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

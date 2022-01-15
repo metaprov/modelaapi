@@ -463,11 +463,11 @@ message ModelDeploymentStatus {
 
   // The deployment name that serves this model
   // +kubebuilder:validation:Optional
-  optional string deploymentName = 2;
+  optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
 
   // The service name that serves this model
   // +kubebuilder:validation:Optional
-  optional string serviceName = 3;
+  optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
 
   // the name of the horizonal pod autoscaler, if autoscaling is true
   // +kubebuilder:validation:Optional

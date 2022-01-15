@@ -3,7 +3,6 @@ package v1alpha1
 import (
 	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	training "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1"
-	appsv1 "k8s.io/api/apps/v1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -275,12 +274,13 @@ type PredictorStatus struct {
 	// the end point url of the predictor
 	//+kubebuilder:validation:Optional
 	EndPoint string `json:"endPoint,omitempty" protobuf:"bytes,16,opt,name=endPoint"`
-	// The data app deployment proxy status
-	//+kubebuilder:validation:Optional
-	ProxyDeploymentStatus appsv1.DeploymentStatus `json:"proxyDeploymentStatus,omitempty" protobuf:"bytes,17,opt,name=proxyDeploymentStatus"`
-	// The status of the proxy data app service.
-	//+kubebuilder:validation:Optional
-	ProxyServiceStatus v1.ServiceStatus `json:"proxyServiceStatus,omitempty" protobuf:"bytes,18,opt,name=proxyServicestStatus"`
+	// The deployment name for the proxy
+	// +kubebuilder:validation:Optional
+	ProxyDeploymentRef v1.ObjectReference `json:"proxyDeploymentRef,omitempty" protobuf:"bytes,17,opt,name=proxyDeploymentRef"`
+	// The service name that serves this model
+	// +kubebuilder:validation:Optional
+	ProxyServiceRef v1.ObjectReference `json:"proxyServiceRef,omitempty" protobuf:"bytes,18,opt,name=proxyServiceRef"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional

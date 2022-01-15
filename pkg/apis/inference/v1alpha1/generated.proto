@@ -12,7 +12,6 @@ package github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1;
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
-import "k8s.io/api/apps/v1/generated.proto";
 import "k8s.io/api/core/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto";
 import "k8s.io/apimachinery/pkg/runtime/generated.proto";
@@ -381,7 +380,7 @@ message DataAppStatus {
 
   // The data app deployment status
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.apps.v1.DeploymentStatus deploymentStatus = 3;
+  optional k8s.io.api.core.v1.ObjectReference deploymentStatus = 3;
 
   // The status of the data app service.
   // +kubebuilder:validation:Optional
@@ -913,13 +912,13 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional string endPoint = 16;
 
-  // The data app deployment proxy status
+  // The deployment name for the proxy
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.apps.v1.DeploymentStatus proxyDeploymentStatus = 17;
+  optional k8s.io.api.core.v1.ObjectReference proxyDeploymentRef = 17;
 
-  // The status of the proxy data app service.
+  // The service name that serves this model
   // +kubebuilder:validation:Optional
-  optional k8s.io.api.core.v1.ServiceStatus proxyServicestStatus = 18;
+  optional k8s.io.api.core.v1.ObjectReference proxyServiceRef = 18;
 
   // +patchMergeKey=type
   // +patchStrategy=merge

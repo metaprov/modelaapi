@@ -8675,8 +8675,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSta
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.toObject = function(includeInstance, msg) {
   var f, obj = {
     imagename: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    deploymentname: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    servicename: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    deploymentref: (f = msg.getDeploymentref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    serviceref: (f = msg.getServiceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     hpaname: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     current95: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
     current99: (f = jspb.Message.getOptionalFloatingPointField(msg, 6)) == null ? undefined : f,
@@ -8730,12 +8730,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSta
       msg.setImagename(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setDeploymentname(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setDeploymentref(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setServicename(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setServiceref(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -8825,18 +8827,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSta
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = message.getDeploymentref();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       2,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  f = message.getServiceref();
   if (f != null) {
-    writer.writeString(
+    writer.writeMessage(
       3,
-      f
+      f,
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 4));
@@ -8967,29 +8971,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSta
 
 
 /**
- * optional string deploymentName = 2;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference deploymentRef = 2;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.getDeploymentname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.getDeploymentref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.setDeploymentname = function(value) {
-  return jspb.Message.setField(this, 2, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.setDeploymentref = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.clearDeploymentname = function() {
-  return jspb.Message.setField(this, 2, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.clearDeploymentref = function() {
+  return this.setDeploymentref(undefined);
 };
 
 
@@ -8997,35 +9002,36 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSta
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.hasDeploymentname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.hasDeploymentref = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string serviceName = 3;
- * @return {string}
+ * optional k8s.io.api.core.v1.ObjectReference serviceRef = 3;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.getServicename = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.getServiceref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.setServicename = function(value) {
-  return jspb.Message.setField(this, 3, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.setServiceref = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.clearServicename = function() {
-  return jspb.Message.setField(this, 3, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.clearServiceref = function() {
+  return this.setServiceref(undefined);
 };
 
 
@@ -9033,7 +9039,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentSta
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.hasServicename = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ModelDeploymentStatus.prototype.hasServiceref = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

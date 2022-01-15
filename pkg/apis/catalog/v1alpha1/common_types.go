@@ -1457,10 +1457,10 @@ type ModelDeploymentStatus struct {
 	ImageName string `json:"imageName,omitempty" protobuf:"bytes,1,opt,name=imageName"`
 	// The deployment name that serves this model
 	// +kubebuilder:validation:Optional
-	DeploymentName string `json:"deploymentName,omitempty" protobuf:"bytes,2,opt,name=deploymentName"`
+	DeploymentRef v1.ObjectReference `json:"deploymentRef,omitempty" protobuf:"bytes,2,opt,name=deploymentRef"`
 	// The service name that serves this model
 	// +kubebuilder:validation:Optional
-	ServiceName string `json:"serviceName,omitempty" protobuf:"bytes,3,opt,name=serviceName"`
+	ServiceRef v1.ObjectReference `json:"serviceRef,omitempty" protobuf:"bytes,3,opt,name=serviceRef"`
 	// the name of the horizonal pod autoscaler, if autoscaling is true
 	// +kubebuilder:validation:Optional
 	HPAName string `json:"hpaName,omitempty" protobuf:"bytes,4,opt,name=hpaName"`

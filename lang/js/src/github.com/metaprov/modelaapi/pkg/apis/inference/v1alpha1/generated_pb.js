@@ -27,8 +27,6 @@ var github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb = require(
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb);
 var github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb = require('../../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb);
-var k8s_io_api_apps_v1_generated_pb = require('../../../../../../../k8s.io/api/apps/v1/generated_pb.js');
-goog.object.extend(proto, k8s_io_api_apps_v1_generated_pb);
 var k8s_io_api_core_v1_generated_pb = require('../../../../../../../k8s.io/api/core/v1/generated_pb.js');
 goog.object.extend(proto, k8s_io_api_core_v1_generated_pb);
 var k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb = require('../../../../../../../k8s.io/apimachinery/pkg/apis/meta/v1/generated_pb.js');
@@ -6271,7 +6269,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.to
   var f, obj = {
     observedgeneration: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    deploymentstatus: (f = msg.getDeploymentstatus()) && k8s_io_api_apps_v1_generated_pb.DeploymentStatus.toObject(includeInstance, f),
+    deploymentstatus: (f = msg.getDeploymentstatus()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     servicetstatus: (f = msg.getServicetstatus()) && k8s_io_api_core_v1_generated_pb.ServiceStatus.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppCondition.toObject, includeInstance)
@@ -6321,8 +6319,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.de
       msg.setLastupdated(value);
       break;
     case 3:
-      var value = new k8s_io_api_apps_v1_generated_pb.DeploymentStatus;
-      reader.readMessage(value,k8s_io_api_apps_v1_generated_pb.DeploymentStatus.deserializeBinaryFromReader);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
       msg.setDeploymentstatus(value);
       break;
     case 4:
@@ -6384,7 +6382,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.se
     writer.writeMessage(
       3,
       f,
-      k8s_io_api_apps_v1_generated_pb.DeploymentStatus.serializeBinaryToWriter
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = message.getServicetstatus();
@@ -6480,17 +6478,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.pr
 
 
 /**
- * optional k8s.io.api.apps.v1.DeploymentStatus deploymentStatus = 3;
- * @return {?proto.k8s.io.api.apps.v1.DeploymentStatus}
+ * optional k8s.io.api.core.v1.ObjectReference deploymentStatus = 3;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.prototype.getDeploymentstatus = function() {
-  return /** @type{?proto.k8s.io.api.apps.v1.DeploymentStatus} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_apps_v1_generated_pb.DeploymentStatus, 3));
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 3));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.apps.v1.DeploymentStatus|undefined} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppStatus.prototype.setDeploymentstatus = function(value) {
@@ -13427,8 +13425,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
     positivelabel: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
     negativelabel: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
     endpoint: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
-    proxydeploymentstatus: (f = msg.getProxydeploymentstatus()) && k8s_io_api_apps_v1_generated_pb.DeploymentStatus.toObject(includeInstance, f),
-    proxyserviceststatus: (f = msg.getProxyserviceststatus()) && k8s_io_api_core_v1_generated_pb.ServiceStatus.toObject(includeInstance, f),
+    proxydeploymentref: (f = msg.getProxydeploymentref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
+    proxyserviceref: (f = msg.getProxyserviceref()) && k8s_io_api_core_v1_generated_pb.ObjectReference.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition.toObject, includeInstance)
   };
@@ -13526,14 +13524,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       msg.setEndpoint(value);
       break;
     case 17:
-      var value = new k8s_io_api_apps_v1_generated_pb.DeploymentStatus;
-      reader.readMessage(value,k8s_io_api_apps_v1_generated_pb.DeploymentStatus.deserializeBinaryFromReader);
-      msg.setProxydeploymentstatus(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setProxydeploymentref(value);
       break;
     case 18:
-      var value = new k8s_io_api_core_v1_generated_pb.ServiceStatus;
-      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ServiceStatus.deserializeBinaryFromReader);
-      msg.setProxyserviceststatus(value);
+      var value = new k8s_io_api_core_v1_generated_pb.ObjectReference;
+      reader.readMessage(value,k8s_io_api_core_v1_generated_pb.ObjectReference.deserializeBinaryFromReader);
+      msg.setProxyserviceref(value);
       break;
     case 19:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorCondition;
@@ -13666,20 +13664,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
       f
     );
   }
-  f = message.getProxydeploymentstatus();
+  f = message.getProxydeploymentref();
   if (f != null) {
     writer.writeMessage(
       17,
       f,
-      k8s_io_api_apps_v1_generated_pb.DeploymentStatus.serializeBinaryToWriter
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
-  f = message.getProxyserviceststatus();
+  f = message.getProxyserviceref();
   if (f != null) {
     writer.writeMessage(
       18,
       f,
-      k8s_io_api_core_v1_generated_pb.ServiceStatus.serializeBinaryToWriter
+      k8s_io_api_core_v1_generated_pb.ObjectReference.serializeBinaryToWriter
     );
   }
   f = message.getConditionsList();
@@ -14170,20 +14168,20 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
 
 
 /**
- * optional k8s.io.api.apps.v1.DeploymentStatus proxyDeploymentStatus = 17;
- * @return {?proto.k8s.io.api.apps.v1.DeploymentStatus}
+ * optional k8s.io.api.core.v1.ObjectReference proxyDeploymentRef = 17;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getProxydeploymentstatus = function() {
-  return /** @type{?proto.k8s.io.api.apps.v1.DeploymentStatus} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_apps_v1_generated_pb.DeploymentStatus, 17));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getProxydeploymentref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 17));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.apps.v1.DeploymentStatus|undefined} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setProxydeploymentstatus = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setProxydeploymentref = function(value) {
   return jspb.Message.setWrapperField(this, 17, value);
 };
 
@@ -14192,8 +14190,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearProxydeploymentstatus = function() {
-  return this.setProxydeploymentstatus(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearProxydeploymentref = function() {
+  return this.setProxydeploymentref(undefined);
 };
 
 
@@ -14201,26 +14199,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasProxydeploymentstatus = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasProxydeploymentref = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional k8s.io.api.core.v1.ServiceStatus proxyServicestStatus = 18;
- * @return {?proto.k8s.io.api.core.v1.ServiceStatus}
+ * optional k8s.io.api.core.v1.ObjectReference proxyServiceRef = 18;
+ * @return {?proto.k8s.io.api.core.v1.ObjectReference}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getProxyserviceststatus = function() {
-  return /** @type{?proto.k8s.io.api.core.v1.ServiceStatus} */ (
-    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ServiceStatus, 18));
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.getProxyserviceref = function() {
+  return /** @type{?proto.k8s.io.api.core.v1.ObjectReference} */ (
+    jspb.Message.getWrapperField(this, k8s_io_api_core_v1_generated_pb.ObjectReference, 18));
 };
 
 
 /**
- * @param {?proto.k8s.io.api.core.v1.ServiceStatus|undefined} value
+ * @param {?proto.k8s.io.api.core.v1.ObjectReference|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
 */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setProxyserviceststatus = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.setProxyserviceref = function(value) {
   return jspb.Message.setWrapperField(this, 18, value);
 };
 
@@ -14229,8 +14227,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearProxyserviceststatus = function() {
-  return this.setProxyserviceststatus(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.clearProxyserviceref = function() {
+  return this.setProxyserviceref(undefined);
 };
 
 
@@ -14238,7 +14236,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasProxyserviceststatus = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorStatus.prototype.hasProxyserviceref = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 

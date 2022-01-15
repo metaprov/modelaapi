@@ -844,11 +844,15 @@ export class ModelDeploymentStatus extends jspb.Message {
   getImagename(): string;
   setImagename(value: string): ModelDeploymentStatus;
 
-  getDeploymentname(): string;
-  setDeploymentname(value: string): ModelDeploymentStatus;
+  getDeploymentref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setDeploymentref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
+  hasDeploymentref(): boolean;
+  clearDeploymentref(): ModelDeploymentStatus;
 
-  getServicename(): string;
-  setServicename(value: string): ModelDeploymentStatus;
+  getServiceref(): k8s_io_api_core_v1_generated_pb.ObjectReference | undefined;
+  setServiceref(value?: k8s_io_api_core_v1_generated_pb.ObjectReference): ModelDeploymentStatus;
+  hasServiceref(): boolean;
+  clearServiceref(): ModelDeploymentStatus;
 
   getHpaname(): string;
   setHpaname(value: string): ModelDeploymentStatus;
@@ -905,8 +909,8 @@ export class ModelDeploymentStatus extends jspb.Message {
 export namespace ModelDeploymentStatus {
   export type AsObject = {
     imagename: string,
-    deploymentname: string,
-    servicename: string,
+    deploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    serviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     hpaname: string,
     current95: number,
     current99: number,
