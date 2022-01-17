@@ -809,22 +809,23 @@ message InterpretabilitySpec {
 message InterpretabilityStatus {
   // StartTime represents time when the model interpretability started
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 2;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingStartTime = 1;
 
   // EndTime represents time when the model interpretability ended
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 3;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 2;
 
   // The URI for the explainer
-  optional string explainerURI = 4;
+  optional string explainerURI = 3;
 
   // The location of the train shap value uri
-  optional string trainShapValuesURI = 5;
+  optional string trainShapValuesURI = 4;
 
   // The location of the test shap value uri
-  optional string testShapValuesURI = 6;
+  optional string testShapValuesURI = 5;
 
-  map<string, double> shapFeatureImportance = 7;
+  // Shap based feature importance
+  repeated FeatureImportance importance = 6;
 }
 
 message Level {

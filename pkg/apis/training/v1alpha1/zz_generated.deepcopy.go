@@ -1271,12 +1271,10 @@ func (in *InterpretabilityStatus) DeepCopyInto(out *InterpretabilityStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
-	if in.ShapFeatureImportance != nil {
-		in, out := &in.ShapFeatureImportance, &out.ShapFeatureImportance
-		*out = make(map[string]float64, len(*in))
-		for key, val := range *in {
-			(*out)[key] = val
-		}
+	if in.Importance != nil {
+		in, out := &in.Importance, &out.Importance
+		*out = make([]FeatureImportance, len(*in))
+		copy(*out, *in)
 	}
 }
 

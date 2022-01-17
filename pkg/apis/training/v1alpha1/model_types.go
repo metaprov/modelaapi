@@ -958,19 +958,20 @@ type InterpretabilitySpec struct {
 type InterpretabilityStatus struct {
 	// StartTime represents time when the model interpretability started
 	// +kubebuilder:validation:Optional
-	StartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,2,opt,name=trainingStartTime"`
+	StartTime *metav1.Time `json:"trainingStartTime,omitempty" protobuf:"bytes,1,opt,name=trainingStartTime"`
 	// EndTime represents time when the model interpretability ended
 	// +kubebuilder:validation:Optional
-	EndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,3,opt,name=trainingEndTime"`
+	EndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,2,opt,name=trainingEndTime"`
 
 	// The URI for the explainer
-	ExplainerURI string `json:"explainerURI,omitempty" protobuf:"bytes,4,opt,name=explainerURI"`
+	ExplainerURI string `json:"explainerURI,omitempty" protobuf:"bytes,3,opt,name=explainerURI"`
 
 	// The location of the train shap value uri
-	TrainShapValuesURI string `json:"trainShapValuesURI,omitempty" protobuf:"bytes,5,opt,name=trainShapValuesURI"`
+	TrainShapValuesURI string `json:"trainShapValuesURI,omitempty" protobuf:"bytes,4,opt,name=trainShapValuesURI"`
 
 	// The location of the test shap value uri
-	TestShapValuesURI string `json:"testShapValuesURI,omitempty" protobuf:"bytes,6,opt,name=testShapValuesURI"`
+	TestShapValuesURI string `json:"testShapValuesURI,omitempty" protobuf:"bytes,5,opt,name=testShapValuesURI"`
 
-	ShapFeatureImportance map[string]float64 `json:"shapFeatureImportance,omitempty" protobuf:"bytes,7,opt,name=shapFeatureImportance"`
+	// Shap based feature importance
+	Importance []FeatureImportance `json:"importance,omitempty" protobuf:"bytes,6,rep,name=importance"`
 }

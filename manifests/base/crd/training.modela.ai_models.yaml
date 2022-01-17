@@ -1902,10 +1902,17 @@ spec:
                   explainerURI:
                     description: The URI for the explainer
                     type: string
-                  shapFeatureImportance:
-                    additionalProperties:
-                      type: number
-                    type: object
+                  importance:
+                    description: Shap based feature importance
+                    items:
+                      properties:
+                        feature:
+                          type: string
+                        importance:
+                          format: float
+                          type: number
+                      type: object
+                    type: array
                   testShapValuesURI:
                     description: The location of the test shap value uri
                     type: string

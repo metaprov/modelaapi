@@ -1316,8 +1316,10 @@ export class InterpretabilityStatus extends jspb.Message {
   getTestshapvaluesuri(): string;
   setTestshapvaluesuri(value: string): InterpretabilityStatus;
 
-  getShapfeatureimportanceMap(): jspb.Map<string, number>;
-  clearShapfeatureimportanceMap(): InterpretabilityStatus;
+  getImportanceList(): Array<FeatureImportance>;
+  setImportanceList(value: Array<FeatureImportance>): InterpretabilityStatus;
+  clearImportanceList(): InterpretabilityStatus;
+  addImportance(value?: FeatureImportance, index?: number): FeatureImportance;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InterpretabilityStatus.AsObject;
@@ -1334,7 +1336,7 @@ export namespace InterpretabilityStatus {
     explaineruri: string,
     trainshapvaluesuri: string,
     testshapvaluesuri: string,
-    shapfeatureimportanceMap: Array<[string, number]>,
+    importanceList: Array<FeatureImportance.AsObject>,
   }
 }
 
