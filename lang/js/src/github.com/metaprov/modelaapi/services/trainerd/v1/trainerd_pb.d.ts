@@ -670,17 +670,17 @@ export namespace ExplainRequest {
 }
 
 export class ExplainResponse extends jspb.Message {
-  getWeightsclouduri(): string;
-  setWeightsclouduri(value: string): ExplainResponse;
+  getExplaineruri(): string;
+  setExplaineruri(value: string): ExplainResponse;
 
-  getManifestclouduri(): string;
-  setManifestclouduri(value: string): ExplainResponse;
+  getTrainshapvaluesuri(): string;
+  setTrainshapvaluesuri(value: string): ExplainResponse;
 
-  getLogsclouduri(): string;
-  setLogsclouduri(value: string): ExplainResponse;
+  getTestshapvaluesuri(): string;
+  setTestshapvaluesuri(value: string): ExplainResponse;
 
-  getFeaturesimportanceMap(): jspb.Map<string, number>;
-  clearFeaturesimportanceMap(): ExplainResponse;
+  getShapfeaturesimportanceMap(): jspb.Map<string, number>;
+  clearShapfeaturesimportanceMap(): ExplainResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExplainResponse.AsObject;
@@ -692,10 +692,10 @@ export class ExplainResponse extends jspb.Message {
 
 export namespace ExplainResponse {
   export type AsObject = {
-    weightsclouduri: string,
-    manifestclouduri: string,
-    logsclouduri: string,
-    featuresimportanceMap: Array<[string, number]>,
+    explaineruri: string,
+    trainshapvaluesuri: string,
+    testshapvaluesuri: string,
+    shapfeaturesimportanceMap: Array<[string, number]>,
   }
 }
 

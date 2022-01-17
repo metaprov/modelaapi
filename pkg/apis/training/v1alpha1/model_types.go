@@ -963,6 +963,14 @@ type InterpretabilityStatus struct {
 	// +kubebuilder:validation:Optional
 	EndTime *metav1.Time `json:"trainingEndTime,omitempty" protobuf:"bytes,3,opt,name=trainingEndTime"`
 
-	// The URL of the interpretbility model
-	InterpretabilityModelURL string `json:"interpretabilityUrl,omitempty" protobuf:"bytes,1,opt,name=interpretabilityUrl"`
+	// The URI for the explainer
+	ExplainerURI string `json:"explainerURI,omitempty" protobuf:"bytes,4,opt,name=explainerURI"`
+
+	// The location of the train shap value uri
+	TrainShapValuesURI string `json:"trainShapValuesURI,omitempty" protobuf:"bytes,5,opt,name=trainShapValuesURI"`
+
+	// The location of the test shap value uri
+	TestShapValuesURI string `json:"testShapValuesURI,omitempty" protobuf:"bytes,6,opt,name=testShapValuesURI"`
+
+	ShapFeatureImportance map[string]float64 `json:"shapFeatureImportance,omitempty" protobuf:"bytes,7,opt,name=shapFeatureImportance"`
 }

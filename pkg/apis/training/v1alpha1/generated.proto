@@ -815,8 +815,16 @@ message InterpretabilityStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time trainingEndTime = 3;
 
-  // The URL of the interpretbility model
-  optional string interpretabilityUrl = 1;
+  // The URI for the explainer
+  optional string explainerURI = 4;
+
+  // The location of the train shap value uri
+  optional string trainShapValuesURI = 5;
+
+  // The location of the test shap value uri
+  optional string testShapValuesURI = 6;
+
+  map<string, double> shapFeatureImportance = 7;
 }
 
 message Level {

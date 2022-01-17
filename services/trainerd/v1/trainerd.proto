@@ -197,12 +197,12 @@ message ExplainRequest {
 
 message ExplainResponse {
     // The location in the bucket of the trained bin model
-    string weightsCloudUri = 2;
+    string explainerUri = 1;
     // The location in the bucket of the cloud manifest.
-    string manifestCloudUri = 3;
+    string trainShapValuesUri = 2;
     // The location in the bucket of the logs.
-    string logsCloudUri = 4;
+    string testShapValuesUri = 3;
     // feature importance
-    map<string,float> featuresImportance = 8;
+    map<string,float> shapFeaturesImportance = 4;
 }
 

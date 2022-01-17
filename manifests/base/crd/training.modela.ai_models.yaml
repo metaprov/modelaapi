@@ -1899,8 +1899,18 @@ spec:
               interpretability:
                 description: The Interpretability status for this model
                 properties:
-                  interpretabilityUrl:
-                    description: The URL of the interpretbility model
+                  explainerURI:
+                    description: The URI for the explainer
+                    type: string
+                  shapFeatureImportance:
+                    additionalProperties:
+                      type: number
+                    type: object
+                  testShapValuesURI:
+                    description: The location of the test shap value uri
+                    type: string
+                  trainShapValuesURI:
+                    description: The location of the train shap value uri
                     type: string
                   trainingEndTime:
                     description: EndTime represents time when the model interpretability

@@ -1307,8 +1307,17 @@ export class InterpretabilityStatus extends jspb.Message {
   hasTrainingendtime(): boolean;
   clearTrainingendtime(): InterpretabilityStatus;
 
-  getInterpretabilityurl(): string;
-  setInterpretabilityurl(value: string): InterpretabilityStatus;
+  getExplaineruri(): string;
+  setExplaineruri(value: string): InterpretabilityStatus;
+
+  getTrainshapvaluesuri(): string;
+  setTrainshapvaluesuri(value: string): InterpretabilityStatus;
+
+  getTestshapvaluesuri(): string;
+  setTestshapvaluesuri(value: string): InterpretabilityStatus;
+
+  getShapfeatureimportanceMap(): jspb.Map<string, number>;
+  clearShapfeatureimportanceMap(): InterpretabilityStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InterpretabilityStatus.AsObject;
@@ -1322,7 +1331,10 @@ export namespace InterpretabilityStatus {
   export type AsObject = {
     trainingstarttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     trainingendtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    interpretabilityurl: string,
+    explaineruri: string,
+    trainshapvaluesuri: string,
+    testshapvaluesuri: string,
+    shapfeatureimportanceMap: Array<[string, number]>,
   }
 }
 

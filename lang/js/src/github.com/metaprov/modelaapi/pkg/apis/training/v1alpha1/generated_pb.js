@@ -14467,7 +14467,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
   var f, obj = {
     trainingstarttime: (f = msg.getTrainingstarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     trainingendtime: (f = msg.getTrainingendtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    interpretabilityurl: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
+    explaineruri: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    trainshapvaluesuri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    testshapvaluesuri: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    shapfeatureimportanceMap: (f = msg.getShapfeatureimportanceMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -14514,9 +14517,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setTrainingendtime(value);
       break;
-    case 1:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInterpretabilityurl(value);
+      msg.setExplaineruri(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTrainshapvaluesuri(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTestshapvaluesuri(value);
+      break;
+    case 7:
+      var value = msg.getShapfeatureimportanceMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readDouble, null, "", 0.0);
+         });
       break;
     default:
       reader.skipField();
@@ -14563,12 +14580,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeString(
-      1,
+      4,
       f
     );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getShapfeatureimportanceMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeDouble);
   }
 };
 
@@ -14648,11 +14683,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
 
 
 /**
- * optional string interpretabilityUrl = 1;
+ * optional string explainerURI = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.getInterpretabilityurl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.getExplaineruri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -14660,8 +14695,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.setInterpretabilityurl = function(value) {
-  return jspb.Message.setField(this, 1, value);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.setExplaineruri = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -14669,8 +14704,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.clearInterpretabilityurl = function() {
-  return jspb.Message.setField(this, 1, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.clearExplaineruri = function() {
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -14678,9 +14713,103 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.hasInterpretabilityurl = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.hasExplaineruri = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
+
+
+/**
+ * optional string trainShapValuesURI = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.getTrainshapvaluesuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.setTrainshapvaluesuri = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.clearTrainshapvaluesuri = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.hasTrainshapvaluesuri = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string testShapValuesURI = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.getTestshapvaluesuri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.setTestshapvaluesuri = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.clearTestshapvaluesuri = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.hasTestshapvaluesuri = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * map<string, double> shapFeatureImportance = 7;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,number>}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.getShapfeatureimportanceMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,number>} */ (
+      jspb.Message.getMapField(this, 7, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus.prototype.clearShapfeatureimportanceMap = function() {
+  this.getShapfeatureimportanceMap().clear();
+  return this;};
 
 
 

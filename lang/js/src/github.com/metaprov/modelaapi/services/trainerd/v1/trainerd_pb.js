@@ -5718,10 +5718,10 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    weightsclouduri: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    manifestclouduri: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    logsclouduri: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    featuresimportanceMap: (f = msg.getFeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : []
+    explaineruri: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    trainshapvaluesuri: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    testshapvaluesuri: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    shapfeaturesimportanceMap: (f = msg.getShapfeaturesimportanceMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -5758,20 +5758,20 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.deseria
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExplaineruri(value);
+      break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWeightsclouduri(value);
+      msg.setTrainshapvaluesuri(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setManifestclouduri(value);
+      msg.setTestshapvaluesuri(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLogsclouduri(value);
-      break;
-    case 8:
-      var value = msg.getFeaturesimportanceMap();
+      var value = msg.getShapfeaturesimportanceMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
          });
@@ -5805,39 +5805,57 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getWeightsclouduri();
+  f = message.getExplaineruri();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTrainshapvaluesuri();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getManifestclouduri();
+  f = message.getTestshapvaluesuri();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getLogsclouduri();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
-  f = message.getFeaturesimportanceMap(true);
+  f = message.getShapfeaturesimportanceMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
 };
 
 
 /**
- * optional string weightsCloudUri = 2;
+ * optional string explainerUri = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getWeightsclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getExplaineruri = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.setExplaineruri = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string trainShapValuesUri = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getTrainshapvaluesuri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -5846,16 +5864,16 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.setWeightsclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.setTrainshapvaluesuri = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string manifestCloudUri = 3;
+ * optional string testShapValuesUri = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getManifestclouduri = function() {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getTestshapvaluesuri = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -5864,38 +5882,20 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototy
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.setManifestclouduri = function(value) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.setTestshapvaluesuri = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string logsCloudUri = 4;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getLogsclouduri = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse} returns this
- */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.setLogsclouduri = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * map<string, float> featuresImportance = 8;
+ * map<string, float> shapFeaturesImportance = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,number>}
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getFeaturesimportanceMap = function(opt_noLazyCreate) {
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.getShapfeaturesimportanceMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
       null));
 };
 
@@ -5904,8 +5904,8 @@ proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototy
  * Clears values from the map. The map will be non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.clearFeaturesimportanceMap = function() {
-  this.getFeaturesimportanceMap().clear();
+proto.github.com.metaprov.modelaapi.services.trainerd.v1.ExplainResponse.prototype.clearShapfeaturesimportanceMap = function() {
+  this.getShapfeaturesimportanceMap().clear();
   return this;};
 
 
