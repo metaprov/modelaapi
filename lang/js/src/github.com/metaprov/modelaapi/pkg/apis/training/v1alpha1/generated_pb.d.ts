@@ -2639,6 +2639,11 @@ export class ModelSpec extends jspb.Message {
   hasTraining(): boolean;
   clearTraining(): ModelSpec;
 
+  getServing(): ServingSpec | undefined;
+  setServing(value?: ServingSpec): ModelSpec;
+  hasServing(): boolean;
+  clearServing(): ModelSpec;
+
   getTested(): boolean;
   setTested(value: boolean): ModelSpec;
 
@@ -2748,6 +2753,7 @@ export namespace ModelSpec {
     nlpestimator?: NLPEstimatorSpec.AsObject,
     ensemble?: EnsembleSpec.AsObject,
     training?: TrainingSpec.AsObject,
+    serving?: ServingSpec.AsObject,
     tested: boolean,
     aborted: boolean,
     packaged: boolean,
@@ -4231,6 +4237,26 @@ export namespace SegmentSpec {
     columnname: string,
     op: string,
     value: string,
+  }
+}
+
+export class ServingSpec extends jspb.Message {
+  getResources(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec | undefined;
+  setResources(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec): ServingSpec;
+  hasResources(): boolean;
+  clearResources(): ServingSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ServingSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ServingSpec): ServingSpec.AsObject;
+  static serializeBinaryToWriter(message: ServingSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ServingSpec;
+  static deserializeBinaryFromReader(message: ServingSpec, reader: jspb.BinaryReader): ServingSpec;
+}
+
+export namespace ServingSpec {
+  export type AsObject = {
+    resources?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ResourceSpec.AsObject,
   }
 }
 

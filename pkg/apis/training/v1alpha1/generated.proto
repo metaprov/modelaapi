@@ -1733,125 +1733,129 @@ message ModelSpec {
   // +kubebuilder:validation:Optional
   optional TrainingSpec training = 15;
 
+  // Specification for serving the model
+  // +kubebuilder:validation:Optional
+  optional ServingSpec serving = 16;
+
   // Tested indicate if this model should be tested. Default is false.
   // The study controller will set this to true if a model is the best model or part of the top models
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool tested = 16;
+  optional bool tested = 17;
 
   // Aborted indicate the desire to abort the model training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 17;
+  optional bool aborted = 18;
 
   // Packaged the model into tar file
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool packaged = 18;
+  optional bool packaged = 19;
 
   // Published indicate that the system should create an docker image with the model binary.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool published = 19;
+  optional bool published = 20;
 
   // Pushed indicate that the system should push the docker image into the docker registry
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool pushed = 20;
+  optional bool pushed = 21;
 
   // Reported is set when a report should be created for this model
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool reported = 21;
+  optional bool reported = 22;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 22;
+  optional bool paused = 23;
 
   // Set to true if you want to create model profile.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool profiled = 23;
+  optional bool profiled = 24;
 
   // Archived is true when the model should be archived
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool archived = 24;
+  optional bool archived = 25;
 
   // Forecasted is true when the model should perform a forecast
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool forecasted = 25;
+  optional bool forecasted = 26;
 
   // Indicates that the model should be released to production
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool released = 26;
+  optional bool released = 27;
 
   // Set to true if this model is a benchmark model.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool benchmarked = 27;
+  optional bool benchmarked = 28;
 
   // Explained indicate weather this model should be explained
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool explained = 28;
+  optional bool explained = 29;
 
   // Indicate that this model is a baseline
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool baseline = 29;
+  optional bool baseline = 30;
 
   // Is this model flagged by the user.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool flagged = 30;
+  optional bool flagged = 31;
 
   // Location is the location of the model artifacts (metadata, reports and estimators).
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 31;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataLocation location = 32;
 
   // The specification for the forecasting algorithm if this model is part of a forecasting
   // +kubebuilder:validation:Optional
-  optional ForecastSpec forecast = 32;
+  optional ForecastSpec forecast = 33;
 
   // Compilation denotes how to compile the model. Not supported in the current release.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 33;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CompilerSpec compilation = 34;
 
   // ActiveDeadlineSeconds is the deadline of a job for this model.
   // +kubebuilder:default:=600
   // +kubebuilder:validation:Optional
-  optional int64 activeDeadlineSeconds = 34;
+  optional int64 activeDeadlineSeconds = 35;
 
   // ModelType is the type of model for this estimator
   // +kubebuilder:default:=classical
   // +kubebuilder:validation:Optional
-  optional string estimatorType = 35;
+  optional string estimatorType = 36;
 
   // TTL
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 36;
+  optional int32 ttl = 37;
 
   // Mark the model class. The model class is the origin of the model
   // +kubebuilder:validation:Optional
-  optional string modelClass = 37;
+  optional string modelClass = 38;
 
   // Set the trial ID, by the optimizer.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 trialID = 38;
+  optional int32 trialID = 39;
 
   // The Governance requirements.
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 39;
+  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec governance = 40;
 
   // The Interpretability requirements.
   // +kubebuilder:validation:Optional
-  optional InterpretabilitySpec interpretability = 40;
+  optional InterpretabilitySpec interpretability = 41;
 }
 
 // ModelStatus defines the observed state of the Model
@@ -2849,6 +2853,11 @@ message SegmentSpec {
   // +kubebuilder:validation:Required
   // +required
   optional string value = 3;
+}
+
+// Specification for serving this model
+message ServingSpec {
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ResourceSpec resources = 1;
 }
 
 // Study represent a search for the best machine learning model using automl.
