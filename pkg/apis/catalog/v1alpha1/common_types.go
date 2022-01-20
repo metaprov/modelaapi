@@ -1331,6 +1331,25 @@ const (
 )
 
 //==============================================================================
+// Shap methods
+//==============================================================================
+// +kubebuilder:validation:Enum="permutation";"partition";"tree";"kernel";"sampling";"linear";"deep";"gradient";"auto";"none"
+type ShapType string
+
+const (
+	ShapTypePermutation = "permutation"
+	ShapTypePaartition  = "partition"
+	ShapTypeTree        = "tree"
+	ShapTypeKernel      = "kernel"
+	ShapTypeSampling    = "sampling"
+	ShapTypeLinear      = "linear"
+	ShapTypeDeep        = "deep"
+	ShapTypeGradient    = "gradient"
+	ShapTypeAuto        = "auto"
+	ShapTypeNone        = "none"
+)
+
+//==============================================================================
 // Compiler Name
 //==============================================================================
 

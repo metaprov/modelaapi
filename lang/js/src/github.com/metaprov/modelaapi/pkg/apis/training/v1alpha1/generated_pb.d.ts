@@ -978,6 +978,28 @@ export namespace FeatureInfo {
   }
 }
 
+export class FeaturePair extends jspb.Message {
+  getX(): string;
+  setX(value: string): FeaturePair;
+
+  getY(): string;
+  setY(value: string): FeaturePair;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FeaturePair.AsObject;
+  static toObject(includeInstance: boolean, msg: FeaturePair): FeaturePair.AsObject;
+  static serializeBinaryToWriter(message: FeaturePair, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FeaturePair;
+  static deserializeBinaryFromReader(message: FeaturePair, reader: jspb.BinaryReader): FeaturePair;
+}
+
+export namespace FeaturePair {
+  export type AsObject = {
+    x: string,
+    y: string,
+  }
+}
+
 export class FeatureSelectionSpec extends jspb.Message {
   getPipelineList(): Array<string>;
   setPipelineList(value: Array<string>): FeatureSelectionSpec;
@@ -1279,8 +1301,30 @@ export namespace ImagePipelineSpec {
 }
 
 export class InterpretabilitySpec extends jspb.Message {
-  getShap(): boolean;
-  setShap(value: boolean): InterpretabilitySpec;
+  getIce(): boolean;
+  setIce(value: boolean): InterpretabilitySpec;
+
+  getIcepairsList(): Array<FeaturePair>;
+  setIcepairsList(value: Array<FeaturePair>): InterpretabilitySpec;
+  clearIcepairsList(): InterpretabilitySpec;
+  addIcepairs(value?: FeaturePair, index?: number): FeaturePair;
+
+  getLime(): boolean;
+  setLime(value: boolean): InterpretabilitySpec;
+
+  getShap(): string;
+  setShap(value: string): InterpretabilitySpec;
+
+  getShappairsList(): Array<FeaturePair>;
+  setShappairsList(value: Array<FeaturePair>): InterpretabilitySpec;
+  clearShappairsList(): InterpretabilitySpec;
+  addShappairs(value?: FeaturePair, index?: number): FeaturePair;
+
+  getCounterfactual(): boolean;
+  setCounterfactual(value: boolean): InterpretabilitySpec;
+
+  getAnchor(): boolean;
+  setAnchor(value: boolean): InterpretabilitySpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): InterpretabilitySpec.AsObject;
@@ -1292,7 +1336,13 @@ export class InterpretabilitySpec extends jspb.Message {
 
 export namespace InterpretabilitySpec {
   export type AsObject = {
-    shap: boolean,
+    ice: boolean,
+    icepairsList: Array<FeaturePair.AsObject>,
+    lime: boolean,
+    shap: string,
+    shappairsList: Array<FeaturePair.AsObject>,
+    counterfactual: boolean,
+    anchor: boolean,
   }
 }
 

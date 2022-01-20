@@ -625,6 +625,13 @@ message FeatureInfo {
   optional double value = 3;
 }
 
+message FeaturePair {
+  // The name of feature A
+  optional string x = 1;
+
+  optional string y = 2;
+}
+
 // Feature selection spec defines how to select feature
 message FeatureSelectionSpec {
   // the Feature selection pipeline.
@@ -801,9 +808,38 @@ message ImagePipelineSpec {
 }
 
 message InterpretabilitySpec {
+  // If true generate ice plots for each feature.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool shap = 1;
+  optional bool ice = 1;
+
+  // Define one or more feature pairs. The system will generate ice scatter diagram for each pair.
+  repeated FeaturePair icepairs = 2;
+
+  // If true generate lime plot
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool lime = 3;
+
+  // Set the shap type. Set to none for not shap value. This is set automatically by the system based on the model type.
+  // Due to high compute time, currently only two types are supported : linear and tree.
+  // +kubebuilder:default:=auto
+  // +kubebuilder:validation:Optional
+  optional string shap = 4;
+
+  // Generate scatter shap diagram for each pair.
+  // +kubebuilder:validation:Optional
+  repeated FeaturePair shappairs = 5;
+
+  // If true generate counter factual
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool counterfactual = 6;
+
+  // If true generate anchor explentation.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool anchor = 7;
 }
 
 message InterpretabilityStatus {

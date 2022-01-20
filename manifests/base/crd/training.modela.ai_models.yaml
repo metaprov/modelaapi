@@ -1056,9 +1056,63 @@ spec:
               interpretability:
                 description: The Interpretability requirements.
                 properties:
-                  shap:
-                    default: true
+                  anchor:
+                    default: false
+                    description: If true generate anchor explentation.
                     type: boolean
+                  counterfactual:
+                    default: false
+                    description: If true generate counter factual
+                    type: boolean
+                  ice:
+                    default: true
+                    description: If true generate ice plots for each feature.
+                    type: boolean
+                  icepairs:
+                    description: Define one or more feature pairs. The system will
+                      generate ice scatter diagram for each pair.
+                    items:
+                      properties:
+                        x:
+                          description: The name of feature A
+                          type: string
+                        "y":
+                          type: string
+                      type: object
+                    type: array
+                  lime:
+                    default: false
+                    description: If true generate lime plot
+                    type: boolean
+                  shap:
+                    default: auto
+                    description: 'Set the shap type. Set to none for not shap value.
+                      This is set automatically by the system based on the model type.
+                      Due to high compute time, currently only two types are supported
+                      : linear and tree.'
+                    enum:
+                    - permutation
+                    - partition
+                    - tree
+                    - kernel
+                    - sampling
+                    - linear
+                    - deep
+                    - gradient
+                    - auto
+                    - none
+                    type: string
+                  shappairs:
+                    description: Generate scatter shap diagram for each pair.
+                    items:
+                      properties:
+                        x:
+                          description: The name of feature A
+                          type: string
+                        "y":
+                          type: string
+                      type: object
+                    type: array
                 type: object
               location:
                 description: Location is the location of the model artifacts (metadata,

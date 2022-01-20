@@ -958,9 +958,38 @@ type FeatureSelectionSpec struct {
 }
 
 type InterpretabilitySpec struct {
+	// If true generate ice plots for each feature.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Shap *bool `json:"shap,omitempty" protobuf:"varint,1,opt,name=shap"`
+	ICE *bool `json:"ice,omitempty" protobuf:"varint,1,opt,name=ice"`
+	// Define one or more feature pairs. The system will generate ice scatter diagram for each pair.
+	ICEPairs []FeaturePair `json:"icepairs,omitempty" protobuf:"bytes,2,rep,name=icepairs"`
+	// If true generate lime plot
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Lime *bool `json:"lime,omitempty" protobuf:"varint,3,opt,name=lime"`
+	// Set the shap type. Set to none for not shap value. This is set automatically by the system based on the model type.
+	// Due to high compute time, currently only two types are supported : linear and tree.
+	// +kubebuilder:default:=auto
+	// +kubebuilder:validation:Optional
+	Shap *catalog.ShapType `json:"shap,omitempty" protobuf:"bytes,4,opt,name=shap"`
+	// Generate scatter shap diagram for each pair.
+	// +kubebuilder:validation:Optional
+	ShapPairs []FeaturePair `json:"shappairs,omitempty" protobuf:"varint,5,rep,name=shappairs"`
+	// If true generate counter factual
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	CounterFactual *bool `json:"counterfactual,omitempty" protobuf:"varint,6,opt,name=counterfactual"`
+	// If true generate anchor explentation.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Anchor *bool `json:"anchor,omitempty" protobuf:"varint,7,opt,name=anchor"`
+}
+
+type FeaturePair struct {
+	// The name of feature A
+	X string `json:"x,omitempty" protobuf:"bytes,1,opt,name=x"`
+	Y string `json:"y,omitempty" protobuf:"bytes,2,opt,name=y"`
 }
 
 type InterpretabilityStatus struct {
