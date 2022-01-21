@@ -44798,12 +44798,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.toObjec
     trainingtemplate: (f = msg.getTrainingtemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toObject(includeInstance, f),
     forecast: (f = msg.getForecast()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyForecastSpec.toObject(includeInstance, f),
     schedule: (f = msg.getSchedule()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyScheduleSpec.toObject(includeInstance, f),
-    aborted: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
-    reported: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
-    paused: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
-    profiled: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
-    modelpublished: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
-    modelimagepushed: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
+    interpretability: (f = msg.getInterpretability()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec.toObject(includeInstance, f),
+    aborted: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
+    reported: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+    paused: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
+    profiled: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
+    modelpublished: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
+    modelimagepushed: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
     modelbenchmarked: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
     modelexplained: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
     location: (f = msg.getLocation()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
@@ -44908,26 +44909,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.deseria
       msg.setSchedule(value);
       break;
     case 13:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setAborted(value);
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec.deserializeBinaryFromReader);
+      msg.setInterpretability(value);
       break;
     case 14:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setReported(value);
+      msg.setAborted(value);
       break;
     case 15:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPaused(value);
+      msg.setReported(value);
       break;
     case 16:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setProfiled(value);
+      msg.setPaused(value);
       break;
     case 17:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setModelpublished(value);
+      msg.setProfiled(value);
       break;
     case 18:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setModelpublished(value);
+      break;
+    case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setModelimagepushed(value);
       break;
@@ -45100,11 +45106,12 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyScheduleSpec.serializeBinaryToWriter
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  f = message.getInterpretability();
   if (f != null) {
-    writer.writeBool(
+    writer.writeMessage(
       13,
-      f
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec.serializeBinaryToWriter
     );
   }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 14));
@@ -45139,6 +45146,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.seriali
   if (f != null) {
     writer.writeBool(
       18,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeBool(
+      19,
       f
     );
   }
@@ -45667,29 +45681,30 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
 
 
 /**
- * optional bool aborted = 13;
- * @return {boolean}
+ * optional InterpretabilitySpec interpretability = 13;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getAborted = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getInterpretability = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec, 13));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilitySpec|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setAborted = function(value) {
-  return jspb.Message.setField(this, 13, value);
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setInterpretability = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearAborted = function() {
-  return jspb.Message.setField(this, 13, undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearInterpretability = function() {
+  return this.setInterpretability(undefined);
 };
 
 
@@ -45697,16 +45712,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasAborted = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasInterpretability = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool reported = 14;
+ * optional bool aborted = 14;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getReported = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getAborted = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
@@ -45715,7 +45730,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setReported = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setAborted = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -45724,7 +45739,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearReported = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearAborted = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -45733,16 +45748,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasReported = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasAborted = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional bool paused = 15;
+ * optional bool reported = 15;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getPaused = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getReported = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
@@ -45751,7 +45766,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setPaused = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setReported = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -45760,7 +45775,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearPaused = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearReported = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -45769,16 +45784,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasPaused = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasReported = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional bool profiled = 16;
+ * optional bool paused = 16;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getProfiled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getPaused = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
@@ -45787,7 +45802,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setProfiled = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setPaused = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -45796,7 +45811,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearProfiled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearPaused = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -45805,16 +45820,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasProfiled = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasPaused = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional bool modelPublished = 17;
+ * optional bool profiled = 17;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelpublished = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getProfiled = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
@@ -45823,7 +45838,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelpublished = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setProfiled = function(value) {
   return jspb.Message.setField(this, 17, value);
 };
 
@@ -45832,7 +45847,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelpublished = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearProfiled = function() {
   return jspb.Message.setField(this, 17, undefined);
 };
 
@@ -45841,16 +45856,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelpublished = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasProfiled = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional bool modelImagePushed = 18;
+ * optional bool modelPublished = 18;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelimagepushed = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelpublished = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
@@ -45859,7 +45874,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelimagepushed = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelpublished = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -45868,7 +45883,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelimagepushed = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelpublished = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -45877,8 +45892,44 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelimagepushed = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelpublished = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional bool modelImagePushed = 19;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.getModelimagepushed = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.setModelimagepushed = function(value) {
+  return jspb.Message.setField(this, 19, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.clearModelimagepushed = function() {
+  return jspb.Message.setField(this, 19, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototype.hasModelimagepushed = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

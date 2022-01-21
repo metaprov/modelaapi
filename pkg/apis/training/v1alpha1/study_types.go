@@ -450,30 +450,33 @@ type StudySpec struct {
 	// Define when the schedule start
 	// +kubebuilder:validation:Optional
 	Schedule StudyScheduleSpec `json:"schedule,omitempty" protobuf:"bytes,12,opt,name=schedule"`
+	// Define interpretability
+	// +kubebuilder:validation:Optional
+	Interpretability InterpretabilitySpec `json:"interpretability,omitempty" protobuf:"bytes,13,opt,name=interpretability"`
 	// Aborted is set when we want to abort the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,13,opt,name=aborted"`
+	Aborted *bool `json:"aborted,omitempty" protobuf:"varint,14,opt,name=aborted"`
 	// Reported is set when we want to create model report
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Reported *bool `json:"reported,omitempty" protobuf:"varint,14,opt,name=reported"`
+	Reported *bool `json:"reported,omitempty" protobuf:"varint,15,opt,name=reported"`
 	// Paused is set when we want to pause the training
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Paused *bool `json:"paused,omitempty" protobuf:"varint,15,opt,name=paused"`
+	Paused *bool `json:"paused,omitempty" protobuf:"varint,16,opt,name=paused"`
 	// Profiled is set when we want to create model profile and study profile.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,16,opt,name=profiled"`
+	Profiled *bool `json:"profiled,omitempty" protobuf:"varint,17,opt,name=profiled"`
 	// Set to true if you want the system to create a docker model image, at the end of training.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,17,opt,name=modelPublished"`
+	ModelPublished *bool `json:"modelPublished,omitempty" protobuf:"varint,18,opt,name=modelPublished"`
 	// Set to true if you want the system to push model image to remote docker registry
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,18,opt,name=modelImagePushed"`
+	ModelImagePushed *bool `json:"modelImagePushed,omitempty" protobuf:"varint,19,opt,name=modelImagePushed"`
 	// Set to true if you want the system to push model image to remote docker registry
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional

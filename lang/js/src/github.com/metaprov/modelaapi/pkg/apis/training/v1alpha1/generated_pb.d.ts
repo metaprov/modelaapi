@@ -4549,6 +4549,11 @@ export class StudySpec extends jspb.Message {
   hasSchedule(): boolean;
   clearSchedule(): StudySpec;
 
+  getInterpretability(): InterpretabilitySpec | undefined;
+  setInterpretability(value?: InterpretabilitySpec): StudySpec;
+  hasInterpretability(): boolean;
+  clearInterpretability(): StudySpec;
+
   getAborted(): boolean;
   setAborted(value: boolean): StudySpec;
 
@@ -4630,6 +4635,7 @@ export namespace StudySpec {
     trainingtemplate?: TrainingSpec.AsObject,
     forecast?: StudyForecastSpec.AsObject,
     schedule?: StudyScheduleSpec.AsObject,
+    interpretability?: InterpretabilitySpec.AsObject,
     aborted: boolean,
     reported: boolean,
     paused: boolean,

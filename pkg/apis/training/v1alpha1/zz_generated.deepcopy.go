@@ -3754,6 +3754,7 @@ func (in *StudySpec) DeepCopyInto(out *StudySpec) {
 	in.TrainingTemplate.DeepCopyInto(&out.TrainingTemplate)
 	in.ForecastSpec.DeepCopyInto(&out.ForecastSpec)
 	in.Schedule.DeepCopyInto(&out.Schedule)
+	in.Interpretability.DeepCopyInto(&out.Interpretability)
 	if in.Aborted != nil {
 		in, out := &in.Aborted, &out.Aborted
 		*out = new(bool)

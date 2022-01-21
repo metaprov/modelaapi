@@ -3044,35 +3044,39 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional StudyScheduleSpec schedule = 12;
 
+  // Define interpretability
+  // +kubebuilder:validation:Optional
+  optional InterpretabilitySpec interpretability = 13;
+
   // Aborted is set when we want to abort the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool aborted = 13;
+  optional bool aborted = 14;
 
   // Reported is set when we want to create model report
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool reported = 14;
+  optional bool reported = 15;
 
   // Paused is set when we want to pause the training
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool paused = 15;
+  optional bool paused = 16;
 
   // Profiled is set when we want to create model profile and study profile.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool profiled = 16;
+  optional bool profiled = 17;
 
   // Set to true if you want the system to create a docker model image, at the end of training.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelPublished = 17;
+  optional bool modelPublished = 18;
 
   // Set to true if you want the system to push model image to remote docker registry
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool modelImagePushed = 18;
+  optional bool modelImagePushed = 19;
 
   // Set to true if you want the system to push model image to remote docker registry
   // +kubebuilder:default:=true
