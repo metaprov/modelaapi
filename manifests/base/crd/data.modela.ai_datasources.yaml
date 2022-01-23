@@ -437,8 +437,6 @@ spec:
                           - replace-with-mean
                           - replace-with-median
                           - replace-with-arbitrary-value
-                          - replace-with-end-of-tail
-                          - replace-with-random-sample
                           - freq-category-imputation
                           - add-missing-value-indicator
                           - knn

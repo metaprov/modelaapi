@@ -914,6 +914,9 @@ export class FeatureEngineeringSpec extends jspb.Message {
   hasSelection(): boolean;
   clearSelection(): FeatureEngineeringSpec;
 
+  getUsefromlaststudy(): boolean;
+  setUsefromlaststudy(value: boolean): FeatureEngineeringSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureEngineeringSpec): FeatureEngineeringSpec.AsObject;
@@ -927,6 +930,7 @@ export namespace FeatureEngineeringSpec {
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
     imbalance: string,
     selection?: FeatureSelectionSpec.AsObject,
+    usefromlaststudy: boolean,
   }
 }
 

@@ -10910,7 +10910,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     pipelinesList: jspb.Message.toObjectList(msg.getPipelinesList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.toObject, includeInstance),
     imbalance: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    selection: (f = msg.getSelection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f)
+    selection: (f = msg.getSelection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
+    usefromlaststudy: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10960,6 +10961,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.deserializeBinaryFromReader);
       msg.setSelection(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setUsefromlaststudy(value);
       break;
     default:
       reader.skipField();
@@ -11011,6 +11016,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       3,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
+      f
     );
   }
 };
@@ -11124,6 +11136,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasSelection = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool useFromLastStudy = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getUsefromlaststudy = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setUsefromlaststudy = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearUsefromlaststudy = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasUsefromlaststudy = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

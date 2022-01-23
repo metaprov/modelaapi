@@ -601,6 +601,9 @@ message FeatureEngineeringSpec {
   // Spec for feature selection
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec selection = 3;
+
+  // If true, use feature engineering from last completed study for this dataset
+  optional bool useFromLastStudy = 4;
 }
 
 message FeatureImportance {

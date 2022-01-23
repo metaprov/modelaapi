@@ -559,27 +559,24 @@ func (metric Metric) Compare(i float64, j float64) bool {
 //==============================================================================
 // CategoricalEncoding
 //==============================================================================
-// +kubebuilder:validation:Enum="one-hot-encoding";"one-hot-encoding-top-categories";"ordinal-encoding";"count-encoding";"target-encoding";"mean-encoding";"probability-ratio-encoding";"weight-of-evidence-encoding";"rare-label-encoding";"binary-encoding";"label-encoding";"hash-encoding";"catboost-encoding";"loo-encoding";"no-encoding";"auto";"none"
+// +kubebuilder:validation:Enum="one-hot-encoding";"one-hot-encoding-top-categories";"ordinal-encoding";"count-encoding";"target-encoding";"weight-of-evidence-encoding";"binary-encoding";"label-encoding";"hash-encoding";"catboost-encoding";"loo-encoding";"no-encoding";"auto";"none"
 type CategoricalEncoding string
 
 const (
-	OneHotEncoding           CategoricalEncoding = "one-hot-encoding"
-	OneHotEncoderTop         CategoricalEncoding = "one-hot-encoding-top-categories"
-	OrdinalEncoding          CategoricalEncoding = "ordinal-encoding"
-	CountEncoding            CategoricalEncoding = "count-encoding"
-	TargetEncoding           CategoricalEncoding = "target-encoding"
-	MeanEncoding             CategoricalEncoding = "mean-encoding"
-	ProbabilityRatioEncoding CategoricalEncoding = "probability-ratio-encoding"
-	WoERatioEncoding         CategoricalEncoding = "weight-of-evidence-encoding"
-	RareLabelEncoding        CategoricalEncoding = "rare-label-encoding"
-	BinaryEncoding           CategoricalEncoding = "binary-encoding"
-	LabelEncoding            CategoricalEncoding = "label-encoding"
-	HashEncoding             CategoricalEncoding = "hash-encoding"
-	CatboostEncoding         CategoricalEncoding = "catboost-encoding"
-	LeaveOneOutEncoding      CategoricalEncoding = "loo-encoding"
-	NoEncoding               CategoricalEncoding = "no-encoding"
-	AutoEncoding             CategoricalEncoding = "auto"
-	NoneEncoding             CategoricalEncoding = "none"
+	OneHotEncoding      CategoricalEncoding = "one-hot-encoding"
+	OneHotEncoderTop    CategoricalEncoding = "one-hot-encoding-top-categories"
+	OrdinalEncoding     CategoricalEncoding = "ordinal-encoding"
+	CountEncoding       CategoricalEncoding = "count-encoding"
+	TargetEncoding      CategoricalEncoding = "target-encoding"
+	WoERatioEncoding    CategoricalEncoding = "weight-of-evidence-encoding"
+	BinaryEncoding      CategoricalEncoding = "binary-encoding"
+	LabelEncoding       CategoricalEncoding = "label-encoding"
+	HashEncoding        CategoricalEncoding = "hash-encoding"
+	CatboostEncoding    CategoricalEncoding = "catboost-encoding"
+	LeaveOneOutEncoding CategoricalEncoding = "loo-encoding"
+	NoEncoding          CategoricalEncoding = "no-encoding"
+	AutoEncoding        CategoricalEncoding = "auto"
+	NoneEncoding        CategoricalEncoding = "none"
 )
 
 func ParseCategoricalEncoding(name string) CategoricalEncoding {
@@ -610,7 +607,7 @@ func ParseCategoricalEncoding(name string) CategoricalEncoding {
 //==============================================================================
 // Imputation
 //==============================================================================
-// +kubebuilder:validation:Enum="remove-rows-with-missing-values";"replace-with-mean";"replace-with-median";"replace-with-arbitrary-value";"replace-with-end-of-tail";"replace-with-random-sample";"freq-category-imputation";"add-missing-value-indicator";"knn";"iterative";"mice";"no-imputation";"auto";"none"
+// +kubebuilder:validation:Enum="remove-rows-with-missing-values";"replace-with-mean";"replace-with-median";"replace-with-arbitrary-value";"freq-category-imputation";"add-missing-value-indicator";"knn";"iterative";"mice";"no-imputation";"auto";"none"
 type Imputation string
 
 const (
@@ -618,8 +615,6 @@ const (
 	ReplaceWithMeanImputation           Imputation = "replace-with-mean"
 	ReplaceWithMedianImputation         Imputation = "replace-with-median"
 	ReplaceWithArbitraryValueImputation Imputation = "replace-with-arbitrary-value"
-	ReplaceWithEndOfTailImputation      Imputation = "replace-with-end-of-tail"
-	ReplaceWithRandomSampleImputation   Imputation = "replace-with-random-sample"
 	FreqCategoryImputation              Imputation = "freq-category-imputation"
 	AddMissingValueIndicatorImputation  Imputation = "add-missing-value-indicator"
 	KnnImputation                       Imputation = "knn"
@@ -729,14 +724,13 @@ const (
 //==============================================================================
 // Discretisation
 //==============================================================================
-// +kubebuilder:validation:Enum="equal-width-discretisation-";"equal-freq-discretisation";"kbin-discretisation";"decision-tree-discretisation";"kernel-centerer-discretisation";"label-binarizer-discretisation";"multi-label-binarizer-discretisation";"none";"auto"
+// +kubebuilder:validation:Enum="equal-width-discretisation-";"equal-freq-discretisation";"kbin-discretisation";"kernel-centerer-discretisation";"label-binarizer-discretisation";"multi-label-binarizer-discretisation";"none";"auto"
 type Discretisation string
 
 const (
 	EqualWidthDiscretisation          Discretisation = "equal-width-discretisation-"
 	EqualFreqDiscretisation           Discretisation = "equal-freq-discretisation"
 	KBinsDiscretisation               Discretisation = "kbin-discretisation"
-	DecisionTreeDiscretisation        Discretisation = "decision-tree-discretisation"
 	KernelCentererDiscretisation      Discretisation = "kernel-centerer-discretisation"
 	LabelBinarizerDiscretisation      Discretisation = "label-binarizer-discretisation"
 	MultiLabelBinarizerDiscretisation Discretisation = "multi-label-binarizer-discretisation"

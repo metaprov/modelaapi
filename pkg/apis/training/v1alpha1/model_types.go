@@ -615,6 +615,8 @@ type FeatureEngineeringSpec struct {
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
 	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`
+	// If true, use feature engineering from last completed study for this dataset
+	UseFromLastStudy *bool `json:"useFromLastStudy,omitempty" protobuf:"bytes,4,opt,name=useFromLastStudy"`
 }
 
 // FeatureEngineeringPipeline represent a single pipeline for data transformation.
