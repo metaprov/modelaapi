@@ -10911,7 +10911,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.toObject, includeInstance),
     imbalance: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     selection: (f = msg.getSelection()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f),
-    usefromlaststudy: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
+    reuse: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -10964,7 +10964,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUsefromlaststudy(value);
+      msg.setReuse(value);
       break;
     default:
       reader.skipField();
@@ -11140,10 +11140,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * optional bool useFromLastStudy = 4;
+ * optional bool reuse = 4;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getUsefromlaststudy = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.getReuse = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -11152,7 +11152,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setUsefromlaststudy = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.setReuse = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -11161,7 +11161,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearUsefromlaststudy = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.clearReuse = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -11170,7 +11170,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasUsefromlaststudy = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.prototype.hasReuse = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -11817,7 +11817,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeaturePair.proto
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.repeatedFields_ = [1,6];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.repeatedFields_ = [6,11];
 
 
 
@@ -11850,12 +11850,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    pipelineList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    lowvartresholdpct: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    corrtreshold: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    topn: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    cumulativeimportanceprecent: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    reservedList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+    enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+    samplepct: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    sampleembeddingmethods: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    samplestatisticalmethods: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+    samplewrappermethods: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    pipelineList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+    lowvartresholdpct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    corrtreshold: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    topn: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    cumulativeimportanceprecent: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    reservedList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11893,26 +11898,46 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addPipeline(value);
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setEnabled(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setLowvartresholdpct(value);
+      msg.setSamplepct(value);
       break;
     case 3:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSampleembeddingmethods(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSamplestatisticalmethods(value);
+      break;
+    case 5:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSamplewrappermethods(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPipeline(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setLowvartresholdpct(value);
+      break;
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCorrtreshold(value);
       break;
-    case 4:
+    case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setTopn(value);
       break;
-    case 5:
+    case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setCumulativeimportanceprecent(value);
       break;
-    case 6:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.addReserved(value);
       break;
@@ -11945,9 +11970,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPipelineList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeBool(
       1,
       f
     );
@@ -11959,31 +11984,66 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeBool(
       3,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeBool(
       4,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeBool(
+      5,
+      f
+    );
+  }
+  f = message.getPipelineList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      6,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 7));
   if (f != null) {
     writer.writeInt32(
-      5,
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt32(
+      8,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeInt32(
+      9,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeInt32(
+      10,
       f
     );
   }
   f = message.getReservedList();
   if (f.length > 0) {
     writer.writeRepeatedString(
-      6,
+      11,
       f
     );
   }
@@ -11991,11 +12051,191 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * repeated string pipeline = 1;
+ * optional bool enabled = 1;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getEnabled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setEnabled = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearEnabled = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasEnabled = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional int32 samplePct = 2;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSamplepct = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSamplepct = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSamplepct = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSamplepct = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional bool sampleEmbeddingMethods = 3;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSampleembeddingmethods = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSampleembeddingmethods = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSampleembeddingmethods = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSampleembeddingmethods = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool sampleStatisticalMethods = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSamplestatisticalmethods = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSamplestatisticalmethods = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSamplestatisticalmethods = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSamplestatisticalmethods = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional bool sampleWrapperMethods = 5;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSamplewrappermethods = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSamplewrappermethods = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSamplewrappermethods = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSamplewrappermethods = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated string pipeline = 6;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getPipelineList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
@@ -12004,7 +12244,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setPipelineList = function(value) {
-  return jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 6, value || []);
 };
 
 
@@ -12014,7 +12254,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.addPipeline = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
 };
 
 
@@ -12028,11 +12268,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * optional int32 lowVarTresholdPct = 2;
+ * optional int32 lowVarTresholdPct = 7;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getLowvartresholdpct = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
 
@@ -12041,7 +12281,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setLowvartresholdpct = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setField(this, 7, value);
 };
 
 
@@ -12050,7 +12290,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearLowvartresholdpct = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setField(this, 7, undefined);
 };
 
 
@@ -12059,16 +12299,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasLowvartresholdpct = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional int32 corrTreshold = 3;
+ * optional int32 corrTreshold = 8;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getCorrtreshold = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
 
@@ -12077,7 +12317,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setCorrtreshold = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
@@ -12086,7 +12326,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearCorrtreshold = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -12095,16 +12335,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasCorrtreshold = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional int32 topN = 4;
+ * optional int32 topN = 9;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getTopn = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
 
@@ -12113,7 +12353,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setTopn = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setField(this, 9, value);
 };
 
 
@@ -12122,7 +12362,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearTopn = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setField(this, 9, undefined);
 };
 
 
@@ -12131,16 +12371,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasTopn = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional int32 cumulativeImportancePrecent = 5;
+ * optional int32 cumulativeImportancePrecent = 10;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getCumulativeimportanceprecent = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
 
@@ -12149,7 +12389,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setCumulativeimportanceprecent = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
@@ -12158,7 +12398,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearCumulativeimportanceprecent = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -12167,16 +12407,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasCumulativeimportanceprecent = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * repeated string reserved = 6;
+ * repeated string reserved = 11;
  * @return {!Array<string>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getReservedList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 11));
 };
 
 
@@ -12185,7 +12425,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setReservedList = function(value) {
-  return jspb.Message.setField(this, 6, value || []);
+  return jspb.Message.setField(this, 11, value || []);
 };
 
 
@@ -12195,7 +12435,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.addReserved = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 11, value, opt_index);
 };
 
 

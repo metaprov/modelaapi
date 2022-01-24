@@ -914,8 +914,8 @@ export class FeatureEngineeringSpec extends jspb.Message {
   hasSelection(): boolean;
   clearSelection(): FeatureEngineeringSpec;
 
-  getUsefromlaststudy(): boolean;
-  setUsefromlaststudy(value: boolean): FeatureEngineeringSpec;
+  getReuse(): boolean;
+  setReuse(value: boolean): FeatureEngineeringSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSpec.AsObject;
@@ -930,7 +930,7 @@ export namespace FeatureEngineeringSpec {
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
     imbalance: string,
     selection?: FeatureSelectionSpec.AsObject,
-    usefromlaststudy: boolean,
+    reuse: boolean,
   }
 }
 
@@ -1005,6 +1005,21 @@ export namespace FeaturePair {
 }
 
 export class FeatureSelectionSpec extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): FeatureSelectionSpec;
+
+  getSamplepct(): number;
+  setSamplepct(value: number): FeatureSelectionSpec;
+
+  getSampleembeddingmethods(): boolean;
+  setSampleembeddingmethods(value: boolean): FeatureSelectionSpec;
+
+  getSamplestatisticalmethods(): boolean;
+  setSamplestatisticalmethods(value: boolean): FeatureSelectionSpec;
+
+  getSamplewrappermethods(): boolean;
+  setSamplewrappermethods(value: boolean): FeatureSelectionSpec;
+
   getPipelineList(): Array<string>;
   setPipelineList(value: Array<string>): FeatureSelectionSpec;
   clearPipelineList(): FeatureSelectionSpec;
@@ -1037,6 +1052,11 @@ export class FeatureSelectionSpec extends jspb.Message {
 
 export namespace FeatureSelectionSpec {
   export type AsObject = {
+    enabled: boolean,
+    samplepct: number,
+    sampleembeddingmethods: boolean,
+    samplestatisticalmethods: boolean,
+    samplewrappermethods: boolean,
     pipelineList: Array<string>,
     lowvartresholdpct: number,
     corrtreshold: number,

@@ -602,8 +602,11 @@ message FeatureEngineeringSpec {
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec selection = 3;
 
-  // If true, use feature engineering from last completed study for this dataset
-  optional bool useFromLastStudy = 4;
+  // If true, the system will try to reuse the best feature engineering pipeline from the last
+  // successful study.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool reuse = 4;
 }
 
 message FeatureImportance {
@@ -637,33 +640,61 @@ message FeaturePair {
 
 // Feature selection spec defines how to select feature
 message FeatureSelectionSpec {
+  // Enable the feature selection.
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool enabled = 1;
+
+  // Precent of data to sample while preforming the feature engineering search
+  // +kubebuilder:default:=100
+  // +kubebuilder:validation:Optional
+  optional int32 samplePct = 2;
+
+  // If true, sample embedding methods as part of candidate algorithms for feature selection
+  // Example of embedded method are tree based selection
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool sampleEmbeddingMethods = 3;
+
+  // If true, sample statistical methods as part of candidate algorithms for feature selection,
+  // For example, chi square and anova tests.
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool sampleStatisticalMethods = 4;
+
+  // If true, sample wrapper methods
+  // for example , step forward and step backward.
+  // +kubebuilder:default:=true
+  // +kubebuilder:validation:Optional
+  optional bool sampleWrapperMethods = 5;
+
   // the Feature selection pipeline.
   // Steps are applied in the order of the pipeline
-  repeated string pipeline = 1;
+  repeated string pipeline = 6;
 
   // Lowvar specify the filter to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 lowVarTresholdPct = 2;
+  optional int32 lowVarTresholdPct = 7;
 
   // Remove Features with high correlations
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  optional int32 corrTreshold = 3;
+  optional int32 corrTreshold = 8;
 
   // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 topN = 4;
+  optional int32 topN = 9;
 
   // The cummulative importance of all the importance feature to include
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  optional int32 cumulativeImportancePrecent = 5;
+  optional int32 cumulativeImportancePrecent = 10;
 
   // List of feature names to consider when training , even after filtering
   // +kubebuilder:validation:Optional
-  repeated string reserved = 6;
+  repeated string reserved = 11;
 }
 
 // A definition for a single forecast

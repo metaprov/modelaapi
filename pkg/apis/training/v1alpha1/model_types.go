@@ -615,8 +615,11 @@ type FeatureEngineeringSpec struct {
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
 	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`
-	// If true, use feature engineering from last completed study for this dataset
-	UseFromLastStudy *bool `json:"useFromLastStudy,omitempty" protobuf:"bytes,4,opt,name=useFromLastStudy"`
+	// If true, the system will try to reuse the best feature engineering pipeline from the last
+	// successful study.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Reuse *bool `json:"reuse,omitempty" protobuf:"bytes,4,opt,name=reuse"`
 }
 
 // FeatureEngineeringPipeline represent a single pipeline for data transformation.
@@ -935,28 +938,51 @@ type GeneratedColumnSpec struct {
 
 // Feature selection spec defines how to select feature
 type FeatureSelectionSpec struct {
+	// Enable the feature selection.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,rep,name=enabled"`
+	// Precent of data to sample while preforming the feature engineering search
+	// +kubebuilder:default:=100
+	// +kubebuilder:validation:Optional
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,2,rep,name=samplePct"`
+	// If true, sample embedding methods as part of candidate algorithms for feature selection
+	// Example of embedded method are tree based selection
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	SampleEmbeddingMethods *bool `json:"sampleEmbeddingMethods,omitempty" protobuf:"varint,3,rep,name=sampleEmbeddingMethods"`
+	// If true, sample statistical methods as part of candidate algorithms for feature selection,
+	// For example, chi square and anova tests.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	SampleStatisticalMethods *bool `json:"sampleStatisticalMethods,omitempty" protobuf:"varint,4,rep,name=sampleStatisticalMethods"`
+	// If true, sample wrapper methods
+	// for example , step forward and step backward.
+	// +kubebuilder:default:=true
+	// +kubebuilder:validation:Optional
+	SampleWrapperMethods *bool `json:"sampleWrapperMethods,omitempty" protobuf:"varint,5,rep,name=sampleWrapperMethods"`
 	// the Feature selection pipeline.
 	// Steps are applied in the order of the pipeline
-	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"varint,1,rep,name=pipeline"`
+	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"varint,6,rep,name=pipeline"`
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	VarianceTresholdPct *int32 `json:"lowVarTresholdPct,omitempty" protobuf:"varint,2,opt,name=lowVarTresholdPct"`
+	VarianceTresholdPct *int32 `json:"lowVarTresholdPct,omitempty" protobuf:"varint,7,opt,name=lowVarTresholdPct"`
 	// Remove Features with high correlations
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	CorrTreshold *int32 `json:"corrTreshold,omitempty" protobuf:"varint,3,opt,name=corrTreshold"`
+	CorrTreshold *int32 `json:"corrTreshold,omitempty" protobuf:"varint,8,opt,name=corrTreshold"`
 	// Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TopN *int32 `json:"topN,omitempty" protobuf:"varint,4,opt,name=topN"`
+	TopN *int32 `json:"topN,omitempty" protobuf:"varint,9,opt,name=topN"`
 	// The cummulative importance of all the importance feature to include
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	CumulativeImportancePrecent *int32 `json:"cumulativeImportancePrecent,omitempty" protobuf:"varint,5,opt,name=cumulativeImportancePrecent"`
+	CumulativeImportancePrecent *int32 `json:"cumulativeImportancePrecent,omitempty" protobuf:"varint,10,opt,name=cumulativeImportancePrecent"`
 	// List of feature names to consider when training , even after filtering
 	// +kubebuilder:validation:Optional
-	Reserved []string `json:"reserved,omitempty" protobuf:"bytes,6,rep,name=reserved"`
+	Reserved []string `json:"reserved,omitempty" protobuf:"bytes,11,rep,name=reserved"`
 }
 
 type InterpretabilitySpec struct {

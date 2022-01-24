@@ -2228,6 +2228,11 @@ spec:
                           type: object
                       type: object
                     type: array
+                  reuse:
+                    default: false
+                    description: If true, the system will try to reuse the best feature
+                      engineering pipeline from the last successful study.
+                    type: boolean
                   selection:
                     description: Spec for feature selection
                     properties:
@@ -2242,6 +2247,10 @@ spec:
                           feature to include
                         format: int32
                         type: integer
+                      enabled:
+                        default: true
+                        description: Enable the feature selection.
+                        type: boolean
                       lowVarTresholdPct:
                         default: 5
                         description: Lowvar specify the filter to remove low variance
@@ -2281,6 +2290,29 @@ spec:
                         items:
                           type: string
                         type: array
+                      sampleEmbeddingMethods:
+                        default: true
+                        description: If true, sample embedding methods as part of
+                          candidate algorithms for feature selection Example of embedded
+                          method are tree based selection
+                        type: boolean
+                      samplePct:
+                        default: 100
+                        description: Precent of data to sample while preforming the
+                          feature engineering search
+                        format: int32
+                        type: integer
+                      sampleStatisticalMethods:
+                        default: true
+                        description: If true, sample statistical methods as part of
+                          candidate algorithms for feature selection, For example,
+                          chi square and anova tests.
+                        type: boolean
+                      sampleWrapperMethods:
+                        default: true
+                        description: If true, sample wrapper methods for example ,
+                          step forward and step backward.
+                        type: boolean
                       topN:
                         default: 0
                         description: Select the Top N is the number of feature to
@@ -2288,10 +2320,6 @@ spec:
                         format: int32
                         type: integer
                     type: object
-                  useFromLastStudy:
-                    description: If true, use feature engineering from last completed
-                      study for this dataset
-                    type: boolean
                 type: object
               bestModel:
                 description: The Best model name.
