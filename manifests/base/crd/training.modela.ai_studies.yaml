@@ -357,6 +357,11 @@ spec:
                     description: Number of parallel models
                     format: int32
                     type: integer
+                  reuse:
+                    default: false
+                    description: If true, the system will try to reuse the best feature
+                      engineering pipeline from the last successful study.
+                    type: boolean
                   samplePct:
                     default: 100
                     description: How much to sample from the dataset when performing
@@ -2228,11 +2233,6 @@ spec:
                           type: object
                       type: object
                     type: array
-                  reuse:
-                    default: false
-                    description: If true, the system will try to reuse the best feature
-                      engineering pipeline from the last successful study.
-                    type: boolean
                   selection:
                     description: Spec for feature selection
                     properties:

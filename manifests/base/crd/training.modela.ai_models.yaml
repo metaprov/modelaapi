@@ -641,11 +641,6 @@ spec:
                           type: object
                       type: object
                     type: array
-                  reuse:
-                    default: false
-                    description: If true, the system will try to reuse the best feature
-                      engineering pipeline from the last successful study.
-                    type: boolean
                   selection:
                     description: Spec for feature selection
                     properties:

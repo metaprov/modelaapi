@@ -615,11 +615,6 @@ type FeatureEngineeringSpec struct {
 	// Spec for feature selection
 	// +kubebuilder:validation:Optional
 	FeatureSelection FeatureSelectionSpec `json:"selection,omitempty" protobuf:"bytes,3,opt,name=selection"`
-	// If true, the system will try to reuse the best feature engineering pipeline from the last
-	// successful study.
-	// +kubebuilder:default:=false
-	// +kubebuilder:validation:Optional
-	Reuse *bool `json:"reuse,omitempty" protobuf:"bytes,4,opt,name=reuse"`
 }
 
 // FeatureEngineeringPipeline represent a single pipeline for data transformation.

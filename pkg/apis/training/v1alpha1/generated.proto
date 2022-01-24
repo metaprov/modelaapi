@@ -581,6 +581,12 @@ message FeatureEngineeringSearchSpec {
   // +kubebuilder:default:=true
   // the feature engineering is done.
   optional bool autoRemove = 8;
+
+  // If true, the system will try to reuse the best feature engineering pipeline from the last
+  // successful study.
+  // +kubebuilder:default:=false
+  // +kubebuilder:validation:Optional
+  optional bool reuse = 9;
 }
 
 message FeatureEngineeringSearchStatus {
@@ -601,12 +607,6 @@ message FeatureEngineeringSpec {
   // Spec for feature selection
   // +kubebuilder:validation:Optional
   optional FeatureSelectionSpec selection = 3;
-
-  // If true, the system will try to reuse the best feature engineering pipeline from the last
-  // successful study.
-  // +kubebuilder:default:=false
-  // +kubebuilder:validation:Optional
-  optional bool reuse = 4;
 }
 
 message FeatureImportance {

@@ -401,6 +401,11 @@ type FeatureEngineeringSearchSpec struct {
 	// +kubebuilder:default:=true
 	// the feature engineering is done.
 	AutoRemove *bool `json:"autoRemove,omitempty" protobuf:"varint,8,opt,name=autoRemove"`
+	// If true, the system will try to reuse the best feature engineering pipeline from the last
+	// successful study.
+	// +kubebuilder:default:=false
+	// +kubebuilder:validation:Optional
+	Reuse *bool `json:"reuse,omitempty" protobuf:"bytes,9,opt,name=reuse"`
 }
 
 // StudySpec defines the desired state of the study

@@ -859,6 +859,9 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
   getAutoremove(): boolean;
   setAutoremove(value: boolean): FeatureEngineeringSearchSpec;
 
+  getReuse(): boolean;
+  setReuse(value: boolean): FeatureEngineeringSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureEngineeringSearchSpec): FeatureEngineeringSearchSpec.AsObject;
@@ -877,6 +880,7 @@ export namespace FeatureEngineeringSearchSpec {
     maxtrainers: number,
     samplepct: number,
     autoremove: boolean,
+    reuse: boolean,
   }
 }
 
@@ -914,9 +918,6 @@ export class FeatureEngineeringSpec extends jspb.Message {
   hasSelection(): boolean;
   clearSelection(): FeatureEngineeringSpec;
 
-  getReuse(): boolean;
-  setReuse(value: boolean): FeatureEngineeringSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureEngineeringSpec): FeatureEngineeringSpec.AsObject;
@@ -930,7 +931,6 @@ export namespace FeatureEngineeringSpec {
     pipelinesList: Array<FeatureEngineeringPipeline.AsObject>,
     imbalance: string,
     selection?: FeatureSelectionSpec.AsObject,
-    reuse: boolean,
   }
 }
 
