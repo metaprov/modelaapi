@@ -945,17 +945,16 @@ type FeatureSelectionSpec struct {
 	// Example of embedded method are tree based selection
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	SampleEmbeddingMethods *bool `json:"sampleEmbeddingMethods,omitempty" protobuf:"varint,3,rep,name=sampleEmbeddingMethods"`
-	// If true, sample statistical methods as part of candidate algorithms for feature selection,
+	Embedding *bool `json:"embedding,omitempty" protobuf:"varint,3,rep,name=embedding"`
+	// If true, sample filter methods. Filter method are based on statistical tests.
 	// For example, chi square and anova tests.
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	SampleStatisticalMethods *bool `json:"sampleStatisticalMethods,omitempty" protobuf:"varint,4,rep,name=sampleStatisticalMethods"`
-	// If true, sample wrapper methods
-	// for example , step forward and step backward.
+	Filter *bool `json:"filter,omitempty" protobuf:"varint,4,rep,name=filter"`
+	// If true, sample wrapper methods,
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
-	SampleWrapperMethods *bool `json:"sampleWrapperMethods,omitempty" protobuf:"varint,5,rep,name=sampleWrapperMethods"`
+	Wrapper *bool `json:"wrapper,omitempty" protobuf:"varint,5,rep,name=wrapper"`
 	// the Feature selection pipeline.
 	// Steps are applied in the order of the pipeline
 	Pipeline []catalog.FeatureSelection `json:"pipeline,omitempty" protobuf:"varint,6,rep,name=pipeline"`

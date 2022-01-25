@@ -1017,14 +1017,14 @@ export class FeatureSelectionSpec extends jspb.Message {
   getSamplepct(): number;
   setSamplepct(value: number): FeatureSelectionSpec;
 
-  getSampleembeddingmethods(): boolean;
-  setSampleembeddingmethods(value: boolean): FeatureSelectionSpec;
+  getEmbedding(): boolean;
+  setEmbedding(value: boolean): FeatureSelectionSpec;
 
-  getSamplestatisticalmethods(): boolean;
-  setSamplestatisticalmethods(value: boolean): FeatureSelectionSpec;
+  getFilter(): boolean;
+  setFilter(value: boolean): FeatureSelectionSpec;
 
-  getSamplewrappermethods(): boolean;
-  setSamplewrappermethods(value: boolean): FeatureSelectionSpec;
+  getWrapper(): boolean;
+  setWrapper(value: boolean): FeatureSelectionSpec;
 
   getPipelineList(): Array<string>;
   setPipelineList(value: Array<string>): FeatureSelectionSpec;
@@ -1060,9 +1060,9 @@ export namespace FeatureSelectionSpec {
   export type AsObject = {
     enabled: boolean,
     samplepct: number,
-    sampleembeddingmethods: boolean,
-    samplestatisticalmethods: boolean,
-    samplewrappermethods: boolean,
+    embedding: boolean,
+    filter: boolean,
+    wrapper: boolean,
     pipelineList: Array<string>,
     variancetresholdpct: number,
     corrtreshold: number,

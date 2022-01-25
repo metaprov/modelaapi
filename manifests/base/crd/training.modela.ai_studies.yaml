@@ -339,9 +339,21 @@ spec:
                           feature to include
                         format: int32
                         type: integer
+                      embedding:
+                        default: true
+                        description: If true, sample embedding methods as part of
+                          candidate algorithms for feature selection Example of embedded
+                          method are tree based selection
+                        type: boolean
                       enabled:
                         default: true
                         description: Enable the feature selection.
+                        type: boolean
+                      filter:
+                        default: true
+                        description: If true, sample filter methods. Filter method
+                          are based on statistical tests. For example, chi square
+                          and anova tests.
                         type: boolean
                       pipeline:
                         description: the Feature selection pipeline. Steps are applied
@@ -376,29 +388,12 @@ spec:
                         items:
                           type: string
                         type: array
-                      sampleEmbeddingMethods:
-                        default: true
-                        description: If true, sample embedding methods as part of
-                          candidate algorithms for feature selection Example of embedded
-                          method are tree based selection
-                        type: boolean
                       samplePct:
                         default: 100
                         description: Precent of data to sample while preforming the
                           feature engineering search
                         format: int32
                         type: integer
-                      sampleStatisticalMethods:
-                        default: true
-                        description: If true, sample statistical methods as part of
-                          candidate algorithms for feature selection, For example,
-                          chi square and anova tests.
-                        type: boolean
-                      sampleWrapperMethods:
-                        default: true
-                        description: If true, sample wrapper methods for example ,
-                          step forward and step backward.
-                        type: boolean
                       topN:
                         default: 0
                         description: Select the Top N is the number of feature to
@@ -411,6 +406,10 @@ spec:
                           features
                         format: int32
                         type: integer
+                      wrapper:
+                        default: true
+                        description: If true, sample wrapper methods,
+                        type: boolean
                     type: object
                   imbalanceHandler:
                     default: auto
@@ -2334,9 +2333,21 @@ spec:
                           feature to include
                         format: int32
                         type: integer
+                      embedding:
+                        default: true
+                        description: If true, sample embedding methods as part of
+                          candidate algorithms for feature selection Example of embedded
+                          method are tree based selection
+                        type: boolean
                       enabled:
                         default: true
                         description: Enable the feature selection.
+                        type: boolean
+                      filter:
+                        default: true
+                        description: If true, sample filter methods. Filter method
+                          are based on statistical tests. For example, chi square
+                          and anova tests.
                         type: boolean
                       pipeline:
                         description: the Feature selection pipeline. Steps are applied
@@ -2371,29 +2382,12 @@ spec:
                         items:
                           type: string
                         type: array
-                      sampleEmbeddingMethods:
-                        default: true
-                        description: If true, sample embedding methods as part of
-                          candidate algorithms for feature selection Example of embedded
-                          method are tree based selection
-                        type: boolean
                       samplePct:
                         default: 100
                         description: Precent of data to sample while preforming the
                           feature engineering search
                         format: int32
                         type: integer
-                      sampleStatisticalMethods:
-                        default: true
-                        description: If true, sample statistical methods as part of
-                          candidate algorithms for feature selection, For example,
-                          chi square and anova tests.
-                        type: boolean
-                      sampleWrapperMethods:
-                        default: true
-                        description: If true, sample wrapper methods for example ,
-                          step forward and step backward.
-                        type: boolean
                       topN:
                         default: 0
                         description: Select the Top N is the number of feature to
@@ -2406,6 +2400,10 @@ spec:
                           features
                         format: int32
                         type: integer
+                      wrapper:
+                        default: true
+                        description: If true, sample wrapper methods,
+                        type: boolean
                     type: object
                 type: object
               bestModel:

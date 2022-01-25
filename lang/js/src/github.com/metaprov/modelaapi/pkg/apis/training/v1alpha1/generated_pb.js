@@ -11903,9 +11903,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
     samplepct: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    sampleembeddingmethods: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-    samplestatisticalmethods: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
-    samplewrappermethods: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+    embedding: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+    filter: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+    wrapper: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     pipelineList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
     variancetresholdpct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     corrtreshold: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
@@ -11958,15 +11958,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSampleembeddingmethods(value);
+      msg.setEmbedding(value);
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSamplestatisticalmethods(value);
+      msg.setFilter(value);
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSamplewrappermethods(value);
+      msg.setWrapper(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
@@ -12174,10 +12174,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * optional bool sampleEmbeddingMethods = 3;
+ * optional bool embedding = 3;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSampleembeddingmethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getEmbedding = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -12186,7 +12186,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSampleembeddingmethods = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setEmbedding = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -12195,7 +12195,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSampleembeddingmethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearEmbedding = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -12204,16 +12204,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSampleembeddingmethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasEmbedding = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional bool sampleStatisticalMethods = 4;
+ * optional bool filter = 4;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSamplestatisticalmethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getFilter = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -12222,7 +12222,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSamplestatisticalmethods = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setFilter = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -12231,7 +12231,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSamplestatisticalmethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearFilter = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -12240,16 +12240,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSamplestatisticalmethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasFilter = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional bool sampleWrapperMethods = 5;
+ * optional bool wrapper = 5;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getSamplewrappermethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getWrapper = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -12258,7 +12258,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setSamplewrappermethods = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setWrapper = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -12267,7 +12267,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearSamplewrappermethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearWrapper = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -12276,7 +12276,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasSamplewrappermethods = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasWrapper = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 

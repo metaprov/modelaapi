@@ -659,19 +659,18 @@ message FeatureSelectionSpec {
   // Example of embedded method are tree based selection
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool sampleEmbeddingMethods = 3;
+  optional bool embedding = 3;
 
-  // If true, sample statistical methods as part of candidate algorithms for feature selection,
+  // If true, sample filter methods. Filter method are based on statistical tests.
   // For example, chi square and anova tests.
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool sampleStatisticalMethods = 4;
+  optional bool filter = 4;
 
-  // If true, sample wrapper methods
-  // for example , step forward and step backward.
+  // If true, sample wrapper methods,
   // +kubebuilder:default:=true
   // +kubebuilder:validation:Optional
-  optional bool sampleWrapperMethods = 5;
+  optional bool wrapper = 5;
 
   // the Feature selection pipeline.
   // Steps are applied in the order of the pipeline

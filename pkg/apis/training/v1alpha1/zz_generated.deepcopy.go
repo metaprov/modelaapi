@@ -994,18 +994,18 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.SampleEmbeddingMethods != nil {
-		in, out := &in.SampleEmbeddingMethods, &out.SampleEmbeddingMethods
+	if in.Embedding != nil {
+		in, out := &in.Embedding, &out.Embedding
 		*out = new(bool)
 		**out = **in
 	}
-	if in.SampleStatisticalMethods != nil {
-		in, out := &in.SampleStatisticalMethods, &out.SampleStatisticalMethods
+	if in.Filter != nil {
+		in, out := &in.Filter, &out.Filter
 		*out = new(bool)
 		**out = **in
 	}
-	if in.SampleWrapperMethods != nil {
-		in, out := &in.SampleWrapperMethods, &out.SampleWrapperMethods
+	if in.Wrapper != nil {
+		in, out := &in.Wrapper, &out.Wrapper
 		*out = new(bool)
 		**out = **in
 	}
