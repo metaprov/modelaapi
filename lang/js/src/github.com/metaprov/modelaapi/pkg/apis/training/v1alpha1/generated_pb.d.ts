@@ -862,6 +862,11 @@ export class FeatureEngineeringSearchSpec extends jspb.Message {
   getReuse(): boolean;
   setReuse(value: boolean): FeatureEngineeringSearchSpec;
 
+  getFeatureselectiontemplate(): FeatureSelectionSpec | undefined;
+  setFeatureselectiontemplate(value?: FeatureSelectionSpec): FeatureEngineeringSearchSpec;
+  hasFeatureselectiontemplate(): boolean;
+  clearFeatureselectiontemplate(): FeatureEngineeringSearchSpec;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringSearchSpec.AsObject;
   static toObject(includeInstance: boolean, msg: FeatureEngineeringSearchSpec): FeatureEngineeringSearchSpec.AsObject;
@@ -881,6 +886,7 @@ export namespace FeatureEngineeringSearchSpec {
     samplepct: number,
     autoremove: boolean,
     reuse: boolean,
+    featureselectiontemplate?: FeatureSelectionSpec.AsObject,
   }
 }
 

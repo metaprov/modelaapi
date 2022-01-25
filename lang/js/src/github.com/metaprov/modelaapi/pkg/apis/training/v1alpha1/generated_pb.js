@@ -10273,7 +10273,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     maxtrainers: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     samplepct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     autoremove: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
-    reuse: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f
+    reuse: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
+    featureselectiontemplate: (f = msg.getFeatureselectiontemplate()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10345,6 +10346,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setReuse(value);
+      break;
+    case 10:
+      var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.deserializeBinaryFromReader);
+      msg.setFeatureselectiontemplate(value);
       break;
     default:
       reader.skipField();
@@ -10436,6 +10442,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     writer.writeBool(
       9,
       f
+    );
+  }
+  f = message.getFeatureselectiontemplate();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.serializeBinaryToWriter
     );
   }
 };
@@ -10762,6 +10776,43 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.hasReuse = function() {
   return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional FeatureSelectionSpec featureSelectionTemplate = 10;
+ * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.getFeatureselectiontemplate = function() {
+  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} */ (
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec, 10));
+};
+
+
+/**
+ * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec} returns this
+*/
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.setFeatureselectiontemplate = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.clearFeatureselectiontemplate = function() {
+  return this.setFeatureselectiontemplate(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSearchSpec.prototype.hasFeatureselectiontemplate = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
