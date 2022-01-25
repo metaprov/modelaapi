@@ -962,7 +962,7 @@ type FeatureSelectionSpec struct {
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	VarianceTresholdPct *int32 `json:"lowVarTresholdPct,omitempty" protobuf:"varint,7,opt,name=lowVarTresholdPct"`
+	VarianceTresholdPct *int32 `json:"varianceTresholdPct,omitempty" protobuf:"varint,7,opt,name=varianceTresholdPct"`
 	// Remove Features with high correlations
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional

@@ -659,12 +659,6 @@ spec:
                         default: true
                         description: Enable the feature selection.
                         type: boolean
-                      lowVarTresholdPct:
-                        default: 5
-                        description: Lowvar specify the filter to remove low variance
-                          features
-                        format: int32
-                        type: integer
                       pipeline:
                         description: the Feature selection pipeline. Steps are applied
                           in the order of the pipeline
@@ -725,6 +719,12 @@ spec:
                         default: 0
                         description: Select the Top N is the number of feature to
                           select by importance. If 0, all the features are selected.
+                        format: int32
+                        type: integer
+                      varianceTresholdPct:
+                        default: 5
+                        description: Lowvar specify the filter to remove low variance
+                          features
                         format: int32
                         type: integer
                     type: object

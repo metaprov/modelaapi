@@ -1031,8 +1031,8 @@ export class FeatureSelectionSpec extends jspb.Message {
   clearPipelineList(): FeatureSelectionSpec;
   addPipeline(value: string, index?: number): FeatureSelectionSpec;
 
-  getLowvartresholdpct(): number;
-  setLowvartresholdpct(value: number): FeatureSelectionSpec;
+  getVariancetresholdpct(): number;
+  setVariancetresholdpct(value: number): FeatureSelectionSpec;
 
   getCorrtreshold(): number;
   setCorrtreshold(value: number): FeatureSelectionSpec;
@@ -1064,7 +1064,7 @@ export namespace FeatureSelectionSpec {
     samplestatisticalmethods: boolean,
     samplewrappermethods: boolean,
     pipelineList: Array<string>,
-    lowvartresholdpct: number,
+    variancetresholdpct: number,
     corrtreshold: number,
     topn: number,
     cumulativeimportanceprecent: number,
