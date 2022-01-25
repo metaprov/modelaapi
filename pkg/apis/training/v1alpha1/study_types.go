@@ -406,6 +406,10 @@ type FeatureEngineeringSearchSpec struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Reuse *bool `json:"reuse,omitempty" protobuf:"bytes,9,opt,name=reuse"`
+	// Specification for feature selection.
+	// successful study.
+	// +kubebuilder:validation:Optional
+	FeatureSelectionTemplate FeatureSelectionSpec `json:"featureSelectionTemplate,omitempty" protobuf:"bytes,10,opt,name=featureSelectionTemplate"`
 }
 
 // StudySpec defines the desired state of the study

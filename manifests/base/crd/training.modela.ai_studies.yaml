@@ -325,6 +325,93 @@ spec:
                     - stacking-classifier
                     - stacking-regressor
                     type: string
+                  featureSelectionTemplate:
+                    description: Specification for feature selection. successful study.
+                    properties:
+                      corrTreshold:
+                        default: 95
+                        description: Remove Features with high correlations
+                        format: int32
+                        type: integer
+                      cumulativeImportancePrecent:
+                        default: 95
+                        description: The cummulative importance of all the importance
+                          feature to include
+                        format: int32
+                        type: integer
+                      enabled:
+                        default: true
+                        description: Enable the feature selection.
+                        type: boolean
+                      lowVarTresholdPct:
+                        default: 5
+                        description: Lowvar specify the filter to remove low variance
+                          features
+                        format: int32
+                        type: integer
+                      pipeline:
+                        description: the Feature selection pipeline. Steps are applied
+                          in the order of the pipeline
+                        items:
+                          enum:
+                          - drop-features
+                          - drop-constant-features
+                          - drop-deplicated-features
+                          - drop-correlated-features
+                          - mutal-information-feature-selection
+                          - chisquare-fearture-selection
+                          - anova-feature-selection
+                          - step-forward-feature-selection
+                          - step-backward-feature-selection
+                          - lasso-regression-feature-selection
+                          - tree-importance-feature-selection
+                          - recursive-feature-elimination
+                          - recursive-feature-addition
+                          - select-percentile
+                          - select-kbest
+                          - select-fpr
+                          - select-fdr
+                          - variance-threshold
+                          - none
+                          - auto
+                          type: string
+                        type: array
+                      reserved:
+                        description: List of feature names to consider when training
+                          , even after filtering
+                        items:
+                          type: string
+                        type: array
+                      sampleEmbeddingMethods:
+                        default: true
+                        description: If true, sample embedding methods as part of
+                          candidate algorithms for feature selection Example of embedded
+                          method are tree based selection
+                        type: boolean
+                      samplePct:
+                        default: 100
+                        description: Precent of data to sample while preforming the
+                          feature engineering search
+                        format: int32
+                        type: integer
+                      sampleStatisticalMethods:
+                        default: true
+                        description: If true, sample statistical methods as part of
+                          candidate algorithms for feature selection, For example,
+                          chi square and anova tests.
+                        type: boolean
+                      sampleWrapperMethods:
+                        default: true
+                        description: If true, sample wrapper methods for example ,
+                          step forward and step backward.
+                        type: boolean
+                      topN:
+                        default: 0
+                        description: Select the Top N is the number of feature to
+                          select by importance. If 0, all the features are selected.
+                        format: int32
+                        type: integer
+                    type: object
                   imbalanceHandler:
                     default: auto
                     description: The imbalanced handler algorithm

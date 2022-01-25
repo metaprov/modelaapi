@@ -587,6 +587,11 @@ message FeatureEngineeringSearchSpec {
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
   optional bool reuse = 9;
+
+  // Specification for feature selection.
+  // successful study.
+  // +kubebuilder:validation:Optional
+  optional FeatureSelectionSpec featureSelectionTemplate = 10;
 }
 
 message FeatureEngineeringSearchStatus {
