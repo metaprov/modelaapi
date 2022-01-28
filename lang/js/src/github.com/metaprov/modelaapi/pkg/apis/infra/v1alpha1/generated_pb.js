@@ -46141,22 +46141,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    apigatewayimage: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
-    controlplaneimage: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    datadockimage: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    frontendimage: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    publisherimage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    trainerimage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    batchpredictorimage: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    apiproxyimage: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
-    dataplaneimage: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    cloudproxyimage: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
-    databaseproxyimage: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-    predictionrouterimage: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
-    modelasystemimage: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
-    modelapredictionserverimage: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    modeladashboardserverimage: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    modelaworkercontrolimage: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
+    apigateway: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+    controlplane: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    datadock: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    frontend: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    publisher: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    trainer: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    batchpredictor: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    apiproxy: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    dataplane: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+    cloudproxy: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    databaseproxy: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+    predictionrouter: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+    modelasystem: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+    modelapredictionserver: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+    modeladashboardserver: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    modelaworkercontrol: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -46195,67 +46195,67 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.des
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setApigatewayimage(value);
+      msg.setApigateway(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setControlplaneimage(value);
+      msg.setControlplane(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatadockimage(value);
+      msg.setDatadock(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFrontendimage(value);
+      msg.setFrontend(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPublisherimage(value);
+      msg.setPublisher(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTrainerimage(value);
+      msg.setTrainer(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBatchpredictorimage(value);
+      msg.setBatchpredictor(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setApiproxyimage(value);
+      msg.setApiproxy(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDataplaneimage(value);
+      msg.setDataplane(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCloudproxyimage(value);
+      msg.setCloudproxy(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDatabaseproxyimage(value);
+      msg.setDatabaseproxy(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPredictionrouterimage(value);
+      msg.setPredictionrouter(value);
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelasystemimage(value);
+      msg.setModelasystem(value);
       break;
     case 14:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelapredictionserverimage(value);
+      msg.setModelapredictionserver(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModeladashboardserverimage(value);
+      msg.setModeladashboardserver(value);
       break;
     case 16:
       var value = /** @type {string} */ (reader.readString());
-      msg.setModelaworkercontrolimage(value);
+      msg.setModelaworkercontrol(value);
       break;
     default:
       reader.skipField();
@@ -46402,10 +46402,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.ser
 
 
 /**
- * optional string apiGatewayImage = 1;
+ * optional string apiGateway = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getApigatewayimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getApigateway = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -46414,7 +46414,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setApigatewayimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setApigateway = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -46423,7 +46423,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearApigatewayimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearApigateway = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -46432,16 +46432,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasApigatewayimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasApigateway = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional string controlPlaneImage = 2;
+ * optional string controlPlane = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getControlplaneimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getControlplane = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -46450,7 +46450,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setControlplaneimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setControlplane = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -46459,7 +46459,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearControlplaneimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearControlplane = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -46468,16 +46468,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasControlplaneimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasControlplane = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional string datadockImage = 3;
+ * optional string datadock = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getDatadockimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getDatadock = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -46486,7 +46486,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setDatadockimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setDatadock = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -46495,7 +46495,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearDatadockimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearDatadock = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -46504,16 +46504,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasDatadockimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasDatadock = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string frontendImage = 4;
+ * optional string frontend = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getFrontendimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getFrontend = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -46522,7 +46522,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setFrontendimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setFrontend = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -46531,7 +46531,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearFrontendimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearFrontend = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -46540,16 +46540,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasFrontendimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasFrontend = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string publisherImage = 5;
+ * optional string publisher = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getPublisherimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getPublisher = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -46558,7 +46558,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setPublisherimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setPublisher = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -46567,7 +46567,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearPublisherimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearPublisher = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -46576,16 +46576,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasPublisherimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasPublisher = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string trainerImage = 6;
+ * optional string trainer = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getTrainer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -46594,7 +46594,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setTrainerimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setTrainer = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -46603,7 +46603,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearTrainer = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -46612,16 +46612,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasTrainer = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string batchPredictorImage = 7;
+ * optional string batchPredictor = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getBatchpredictorimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getBatchpredictor = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -46630,7 +46630,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setBatchpredictorimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setBatchpredictor = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -46639,7 +46639,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearBatchpredictorimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearBatchpredictor = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -46648,16 +46648,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasBatchpredictorimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasBatchpredictor = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string apiproxyImage = 8;
+ * optional string apiproxy = 8;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getApiproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getApiproxy = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -46666,7 +46666,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setApiproxyimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setApiproxy = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -46675,7 +46675,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearApiproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearApiproxy = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -46684,16 +46684,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasApiproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasApiproxy = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string dataplaneImage = 9;
+ * optional string dataplane = 9;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getDataplaneimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getDataplane = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -46702,7 +46702,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setDataplaneimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setDataplane = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -46711,7 +46711,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearDataplaneimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearDataplane = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -46720,16 +46720,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasDataplaneimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasDataplane = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional string cloudproxyImage = 10;
+ * optional string cloudproxy = 10;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getCloudproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getCloudproxy = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
@@ -46738,7 +46738,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setCloudproxyimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setCloudproxy = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -46747,7 +46747,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearCloudproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearCloudproxy = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -46756,16 +46756,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasCloudproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasCloudproxy = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional string databaseProxyImage = 11;
+ * optional string databaseProxy = 11;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getDatabaseproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getDatabaseproxy = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
@@ -46774,7 +46774,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setDatabaseproxyimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setDatabaseproxy = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -46783,7 +46783,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearDatabaseproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearDatabaseproxy = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -46792,16 +46792,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasDatabaseproxyimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasDatabaseproxy = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional string predictionRouterImage = 12;
+ * optional string predictionRouter = 12;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getPredictionrouterimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getPredictionrouter = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -46810,7 +46810,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setPredictionrouterimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setPredictionrouter = function(value) {
   return jspb.Message.setField(this, 12, value);
 };
 
@@ -46819,7 +46819,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearPredictionrouterimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearPredictionrouter = function() {
   return jspb.Message.setField(this, 12, undefined);
 };
 
@@ -46828,16 +46828,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasPredictionrouterimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasPredictionrouter = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional string modelaSystemImage = 13;
+ * optional string modelaSystem = 13;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModelasystemimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModelasystem = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
@@ -46846,7 +46846,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModelasystemimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModelasystem = function(value) {
   return jspb.Message.setField(this, 13, value);
 };
 
@@ -46855,7 +46855,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModelasystemimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModelasystem = function() {
   return jspb.Message.setField(this, 13, undefined);
 };
 
@@ -46864,16 +46864,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModelasystemimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModelasystem = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional string modelaPredictionServerImage = 14;
+ * optional string modelaPredictionServer = 14;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModelapredictionserverimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModelapredictionserver = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
 };
 
@@ -46882,7 +46882,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModelapredictionserverimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModelapredictionserver = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -46891,7 +46891,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModelapredictionserverimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModelapredictionserver = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -46900,16 +46900,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModelapredictionserverimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModelapredictionserver = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional string modelaDashboardServerImage = 15;
+ * optional string modelaDashboardServer = 15;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModeladashboardserverimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModeladashboardserver = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -46918,7 +46918,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModeladashboardserverimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModeladashboardserver = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -46927,7 +46927,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModeladashboardserverimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModeladashboardserver = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -46936,16 +46936,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModeladashboardserverimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModeladashboardserver = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional string modelaWorkerControlImage = 16;
+ * optional string modelaWorkerControl = 16;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModelaworkercontrolimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.getModelaworkercontrol = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
@@ -46954,7 +46954,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModelaworkercontrolimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.setModelaworkercontrol = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -46963,7 +46963,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModelaworkercontrolimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.clearModelaworkercontrol = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -46972,7 +46972,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModelaworkercontrolimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec.prototype.hasModelaworkercontrol = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 

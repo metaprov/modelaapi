@@ -50,76 +50,76 @@ spec:
               images:
                 description: DataImage is the container image used to data tasks
                 properties:
-                  apiGatewayImage:
+                  apiGateway:
                     type: string
-                  apiproxyImage:
+                  apiproxy:
                     description: TrainerImage is the container image used for control
                     type: string
-                  batchPredictorImage:
+                  batchPredictor:
                     description: BatchPredictorImage is used when running batch prediction.
                     type: string
-                  cloudproxyImage:
+                  cloudproxy:
                     description: TrainerImage is the container image used for control
                     type: string
-                  controlPlaneImage:
+                  controlPlane:
                     description: ControlPlaneImage is the image of the main control
                       plane. the control plane contain all the modela operators
                     type: string
-                  databaseProxyImage:
+                  databaseProxy:
                     description: Database proxy image is a service the translate from
                       kubernetes objects to data base tables.
                     type: string
-                  datadockImage:
+                  datadock:
                     description: Data dock image contain the data ingest service
                     type: string
-                  dataplaneImage:
+                  dataplane:
                     description: TrainerImage is the container image used for control
                     type: string
-                  frontendImage:
+                  frontend:
                     description: Frontend image is the image of the frontend web user
                       interface
                     type: string
-                  modelaDashboardServerImage:
+                  modelaDashboardServer:
                     description: The image for the data app dashboard.
                     type: string
-                  modelaPredictionServerImage:
+                  modelaPredictionServer:
                     description: The image used for the prediction server.
                     type: string
-                  modelaSystemImage:
+                  modelaSystem:
                     description: The image for the modela system controller.
                     type: string
-                  modelaWorkerControlImage:
+                  modelaWorkerControl:
                     description: The image for the data app dashboard.
                     type: string
-                  predictionRouterImage:
+                  predictionRouter:
                     description: Prediction router image.
                     type: string
-                  publisherImage:
+                  publisher:
                     description: Publisher image defines the image of the publisher.
                       The publisher service is used the package models to tar file
                       or publish them as docker containers.
                     type: string
-                  trainerImage:
+                  trainer:
                     description: TrainerImage is the container image of the trainer
                       service. The trainer is used to train and test models
                     type: string
                 required:
-                - apiGatewayImage
-                - apiproxyImage
-                - batchPredictorImage
-                - cloudproxyImage
-                - controlPlaneImage
-                - databaseProxyImage
-                - datadockImage
-                - dataplaneImage
-                - frontendImage
-                - modelaDashboardServerImage
-                - modelaPredictionServerImage
-                - modelaSystemImage
-                - modelaWorkerControlImage
-                - predictionRouterImage
-                - publisherImage
-                - trainerImage
+                - apiGateway
+                - apiproxy
+                - batchPredictor
+                - cloudproxy
+                - controlPlane
+                - databaseProxy
+                - datadock
+                - dataplane
+                - frontend
+                - modelaDashboardServer
+                - modelaPredictionServer
+                - modelaSystem
+                - modelaWorkerControl
+                - predictionRouter
+                - publisher
+                - trainer
                 type: object
               podTemplate:
                 description: PodTemplateSpec describes the data a pod should have

@@ -4597,53 +4597,53 @@ export namespace SybaseSpec {
 }
 
 export class SystemImagesSpec extends jspb.Message {
-  getApigatewayimage(): string;
-  setApigatewayimage(value: string): SystemImagesSpec;
+  getApigateway(): string;
+  setApigateway(value: string): SystemImagesSpec;
 
-  getControlplaneimage(): string;
-  setControlplaneimage(value: string): SystemImagesSpec;
+  getControlplane(): string;
+  setControlplane(value: string): SystemImagesSpec;
 
-  getDatadockimage(): string;
-  setDatadockimage(value: string): SystemImagesSpec;
+  getDatadock(): string;
+  setDatadock(value: string): SystemImagesSpec;
 
-  getFrontendimage(): string;
-  setFrontendimage(value: string): SystemImagesSpec;
+  getFrontend(): string;
+  setFrontend(value: string): SystemImagesSpec;
 
-  getPublisherimage(): string;
-  setPublisherimage(value: string): SystemImagesSpec;
+  getPublisher(): string;
+  setPublisher(value: string): SystemImagesSpec;
 
-  getTrainerimage(): string;
-  setTrainerimage(value: string): SystemImagesSpec;
+  getTrainer(): string;
+  setTrainer(value: string): SystemImagesSpec;
 
-  getBatchpredictorimage(): string;
-  setBatchpredictorimage(value: string): SystemImagesSpec;
+  getBatchpredictor(): string;
+  setBatchpredictor(value: string): SystemImagesSpec;
 
-  getApiproxyimage(): string;
-  setApiproxyimage(value: string): SystemImagesSpec;
+  getApiproxy(): string;
+  setApiproxy(value: string): SystemImagesSpec;
 
-  getDataplaneimage(): string;
-  setDataplaneimage(value: string): SystemImagesSpec;
+  getDataplane(): string;
+  setDataplane(value: string): SystemImagesSpec;
 
-  getCloudproxyimage(): string;
-  setCloudproxyimage(value: string): SystemImagesSpec;
+  getCloudproxy(): string;
+  setCloudproxy(value: string): SystemImagesSpec;
 
-  getDatabaseproxyimage(): string;
-  setDatabaseproxyimage(value: string): SystemImagesSpec;
+  getDatabaseproxy(): string;
+  setDatabaseproxy(value: string): SystemImagesSpec;
 
-  getPredictionrouterimage(): string;
-  setPredictionrouterimage(value: string): SystemImagesSpec;
+  getPredictionrouter(): string;
+  setPredictionrouter(value: string): SystemImagesSpec;
 
-  getModelasystemimage(): string;
-  setModelasystemimage(value: string): SystemImagesSpec;
+  getModelasystem(): string;
+  setModelasystem(value: string): SystemImagesSpec;
 
-  getModelapredictionserverimage(): string;
-  setModelapredictionserverimage(value: string): SystemImagesSpec;
+  getModelapredictionserver(): string;
+  setModelapredictionserver(value: string): SystemImagesSpec;
 
-  getModeladashboardserverimage(): string;
-  setModeladashboardserverimage(value: string): SystemImagesSpec;
+  getModeladashboardserver(): string;
+  setModeladashboardserver(value: string): SystemImagesSpec;
 
-  getModelaworkercontrolimage(): string;
-  setModelaworkercontrolimage(value: string): SystemImagesSpec;
+  getModelaworkercontrol(): string;
+  setModelaworkercontrol(value: string): SystemImagesSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SystemImagesSpec.AsObject;
@@ -4655,22 +4655,22 @@ export class SystemImagesSpec extends jspb.Message {
 
 export namespace SystemImagesSpec {
   export type AsObject = {
-    apigatewayimage: string,
-    controlplaneimage: string,
-    datadockimage: string,
-    frontendimage: string,
-    publisherimage: string,
-    trainerimage: string,
-    batchpredictorimage: string,
-    apiproxyimage: string,
-    dataplaneimage: string,
-    cloudproxyimage: string,
-    databaseproxyimage: string,
-    predictionrouterimage: string,
-    modelasystemimage: string,
-    modelapredictionserverimage: string,
-    modeladashboardserverimage: string,
-    modelaworkercontrolimage: string,
+    apigateway: string,
+    controlplane: string,
+    datadock: string,
+    frontend: string,
+    publisher: string,
+    trainer: string,
+    batchpredictor: string,
+    apiproxy: string,
+    dataplane: string,
+    cloudproxy: string,
+    databaseproxy: string,
+    predictionrouter: string,
+    modelasystem: string,
+    modelapredictionserver: string,
+    modeladashboardserver: string,
+    modelaworkercontrol: string,
   }
 }
 
