@@ -374,6 +374,12 @@ func (model *Model) MarkTraining() {
 	model.Status.TrainingStartTime = &now
 	model.Status.Phase = ModelPhaseTraining
 	model.Status.Progress = 10
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:   ModelTrained,
+		Status: v1.ConditionFalse,
+		Reason: ReasonTraining,
+	})
+
 }
 
 func (model *Model) MarkReleasing() {
