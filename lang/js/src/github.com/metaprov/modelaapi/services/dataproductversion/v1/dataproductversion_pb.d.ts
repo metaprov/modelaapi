@@ -12,6 +12,15 @@ export class ListDataProductVersionsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListDataProductVersionsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListDataProductVersionsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListDataProductVersionsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListDataProductVersionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataProductVersionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDataProductVersionsRequest): ListDataProductVersionsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListDataProductVersionsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

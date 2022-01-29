@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/license/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/license/v1/license.proto\x12\x31github.com.metaprov.modelaapi.services.license.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xbb\x01\n\x13ListLicensesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x03 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"i\n\x14ListLicensesResponse\x12Q\n\x05items\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList\"\x11\n\x0fLicenseResponse\"d\n\x14\x43reateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\":\n\x1b\x43reateLicenseFromKeyRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06tenant\x18\x02 \x01(\t\"\x17\n\x15\x43reateLicenseResponse\"d\n\x14UpdateLicenseRequest\x12L\n\x04item\x18\x05 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x17\n\x15UpdateLicenseResponse\"4\n\x11GetLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x12GetLicenseResponse\x12O\n\x07license\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1bGetLicenseNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1cGetLicenseNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"7\n\x14\x44\x65leteLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteLicenseResponse2\xde\t\n\x0eLicenseService\x12\xc1\x01\n\x0cListLicenses\x12\x46.github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest\x1aG.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/licenses/{namespace}\x12\xbb\x01\n\rCreateLicense\x12G.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/licenses:\x01*\x12\xc9\x01\n\x14\x43reateLicenseFromKey\x12N.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/licenses:\x01*\x12\xc2\x01\n\nGetLicense\x12\x44.github.com.metaprov.modelaapi.services.license.v1.GetLicenseRequest\x1a\x45.github.com.metaprov.modelaapi.services.license.v1.GetLicenseResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/licenses/{namespace}/{name}\x12\xea\x01\n\rUpdateLicense\x12G.github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/licenses/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteLicense\x12G.github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/licenses/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/license/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/license/v1/license.proto\x12\x31github.com.metaprov.modelaapi.services.license.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xf4\x01\n\x13ListLicensesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"i\n\x14ListLicensesResponse\x12Q\n\x05items\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList\"\x11\n\x0fLicenseResponse\"d\n\x14\x43reateLicenseRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\":\n\x1b\x43reateLicenseFromKeyRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x0e\n\x06tenant\x18\x02 \x01(\t\"\x17\n\x15\x43reateLicenseResponse\"d\n\x14UpdateLicenseRequest\x12L\n\x04item\x18\x05 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\x17\n\x15UpdateLicenseResponse\"4\n\x11GetLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x12GetLicenseResponse\x12O\n\x07license\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1bGetLicenseNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1cGetLicenseNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"7\n\x14\x44\x65leteLicenseRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteLicenseResponse2\xde\t\n\x0eLicenseService\x12\xc1\x01\n\x0cListLicenses\x12\x46.github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest\x1aG.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/licenses/{namespace}\x12\xbb\x01\n\rCreateLicense\x12G.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/licenses:\x01*\x12\xc9\x01\n\x14\x43reateLicenseFromKey\x12N.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseFromKeyRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/licenses:\x01*\x12\xc2\x01\n\nGetLicense\x12\x44.github.com.metaprov.modelaapi.services.license.v1.GetLicenseRequest\x1a\x45.github.com.metaprov.modelaapi.services.license.v1.GetLicenseResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/licenses/{namespace}/{name}\x12\xea\x01\n\rUpdateLicense\x12G.github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.UpdateLicenseResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/licenses/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteLicense\x12G.github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseRequest\x1aH.github.com.metaprov.modelaapi.services.license.v1.DeleteLicenseResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/licenses/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/license/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -63,8 +63,8 @@ _LISTLICENSESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=425,
-  serialized_end=470,
+  serialized_start=482,
+  serialized_end=527,
 )
 
 _LISTLICENSESREQUEST = _descriptor.Descriptor(
@@ -84,8 +84,29 @@ _LISTLICENSESREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.labels', index=1,
-      number=3, type=11, cpp_type=10, label=3,
+      number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.page_size', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.page_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='order_by', full_name='github.com.metaprov.modelaapi.services.license.v1.ListLicensesRequest.order_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -102,7 +123,7 @@ _LISTLICENSESREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=283,
-  serialized_end=470,
+  serialized_end=527,
 )
 
 
@@ -133,8 +154,8 @@ _LISTLICENSESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=472,
-  serialized_end=577,
+  serialized_start=529,
+  serialized_end=634,
 )
 
 
@@ -158,8 +179,8 @@ _LICENSERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=579,
-  serialized_end=596,
+  serialized_start=636,
+  serialized_end=653,
 )
 
 
@@ -190,8 +211,8 @@ _CREATELICENSEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=598,
-  serialized_end=698,
+  serialized_start=655,
+  serialized_end=755,
 )
 
 
@@ -229,8 +250,8 @@ _CREATELICENSEFROMKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=700,
-  serialized_end=758,
+  serialized_start=757,
+  serialized_end=815,
 )
 
 
@@ -254,8 +275,8 @@ _CREATELICENSERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=760,
-  serialized_end=783,
+  serialized_start=817,
+  serialized_end=840,
 )
 
 
@@ -286,8 +307,8 @@ _UPDATELICENSEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=785,
-  serialized_end=885,
+  serialized_start=842,
+  serialized_end=942,
 )
 
 
@@ -311,8 +332,8 @@ _UPDATELICENSERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=887,
-  serialized_end=910,
+  serialized_start=944,
+  serialized_end=967,
 )
 
 
@@ -350,8 +371,8 @@ _GETLICENSEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=912,
-  serialized_end=964,
+  serialized_start=969,
+  serialized_end=1021,
 )
 
 
@@ -389,8 +410,8 @@ _GETLICENSERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=966,
-  serialized_end=1081,
+  serialized_start=1023,
+  serialized_end=1138,
 )
 
 
@@ -428,8 +449,8 @@ _GETLICENSENAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1083,
-  serialized_end=1145,
+  serialized_start=1140,
+  serialized_end=1202,
 )
 
 
@@ -460,8 +481,8 @@ _GETLICENSENAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1147,
-  serialized_end=1262,
+  serialized_start=1204,
+  serialized_end=1319,
 )
 
 
@@ -499,8 +520,8 @@ _DELETELICENSEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1264,
-  serialized_end=1319,
+  serialized_start=1321,
+  serialized_end=1376,
 )
 
 
@@ -524,8 +545,8 @@ _DELETELICENSERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1321,
-  serialized_end=1344,
+  serialized_start=1378,
+  serialized_end=1401,
 )
 
 _LISTLICENSESREQUEST_LABELSENTRY.containing_type = _LISTLICENSESREQUEST
@@ -668,8 +689,8 @@ _LICENSESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1347,
-  serialized_end=2593,
+  serialized_start=1404,
+  serialized_end=2650,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListLicenses',

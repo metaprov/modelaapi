@@ -17,6 +17,9 @@ export class ListCurtainsRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): ListCurtainsRequest;
 
+  getOrderBy(): string;
+  setOrderBy(value: string): ListCurtainsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCurtainsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListCurtainsRequest): ListCurtainsRequest.AsObject;
@@ -31,6 +34,7 @@ export namespace ListCurtainsRequest {
     labelsMap: Array<[string, string]>,
     pageSize: number,
     pageToken: string,
+    orderBy: string,
   }
 }
 

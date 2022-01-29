@@ -12,6 +12,15 @@ export class ListAttachmentsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListAttachmentsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListAttachmentsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListAttachmentsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListAttachmentsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAttachmentsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAttachmentsRequest): ListAttachmentsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListAttachmentsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

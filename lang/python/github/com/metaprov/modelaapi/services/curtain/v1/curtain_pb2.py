@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/curtain/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto\x12\x31github.com.metaprov.modelaapi.services.curtain.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xe2\x01\n\x13ListCurtainsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x86\x01\n\x14ListCurtainsResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateCurtainResponse\"h\n\x14\x43reateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"h\n\x14UpdateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"\x17\n\x15UpdateCurtainResponse\"4\n\x11GetCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x12GetCurtainResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteCurtainResponse2\x92\x08\n\x0e\x43urtainService\x12\xc1\x01\n\x0cListCurtains\x12\x46.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest\x1aG.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/curtains/{namespace}\x12\xbb\x01\n\rCreateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/curtains:\x01*\x12\xc2\x01\n\nGetCurtain\x12\x44.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainRequest\x1a\x45.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/curtains/{namespace}/{name}\x12\xea\x01\n\rUpdateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/curtains/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/curtains/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/curtain/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/curtain/v1/curtain.proto\x12\x31github.com.metaprov.modelaapi.services.curtain.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xf4\x01\n\x13ListCurtainsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x86\x01\n\x14ListCurtainsResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x17\n\x15\x43reateCurtainResponse\"h\n\x14\x43reateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"h\n\x14UpdateCurtainRequest\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\"\x17\n\x15UpdateCurtainResponse\"4\n\x11GetCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x12GetCurtainResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteCurtainRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteCurtainResponse2\x92\x08\n\x0e\x43urtainService\x12\xc1\x01\n\x0cListCurtains\x12\x46.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest\x1aG.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/curtains/{namespace}\x12\xbb\x01\n\rCreateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.CreateCurtainResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/curtains:\x01*\x12\xc2\x01\n\nGetCurtain\x12\x44.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainRequest\x1a\x45.github.com.metaprov.modelaapi.services.curtain.v1.GetCurtainResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/curtains/{namespace}/{name}\x12\xea\x01\n\rUpdateCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.UpdateCurtainResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/curtains/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteCurtain\x12G.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainRequest\x1aH.github.com.metaprov.modelaapi.services.curtain.v1.DeleteCurtainResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/curtains/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/curtain/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -62,8 +62,8 @@ _LISTCURTAINSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=405,
-  serialized_end=450,
+  serialized_start=423,
+  serialized_end=468,
 )
 
 _LISTCURTAINSREQUEST = _descriptor.Descriptor(
@@ -102,6 +102,13 @@ _LISTCURTAINSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='order_by', full_name='github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsRequest.order_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -115,7 +122,7 @@ _LISTCURTAINSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=224,
-  serialized_end=450,
+  serialized_end=468,
 )
 
 
@@ -153,8 +160,8 @@ _LISTCURTAINSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=453,
-  serialized_end=587,
+  serialized_start=471,
+  serialized_end=605,
 )
 
 
@@ -178,8 +185,8 @@ _CREATECURTAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=589,
-  serialized_end=612,
+  serialized_start=607,
+  serialized_end=630,
 )
 
 
@@ -210,8 +217,8 @@ _CREATECURTAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=614,
-  serialized_end=718,
+  serialized_start=632,
+  serialized_end=736,
 )
 
 
@@ -242,8 +249,8 @@ _UPDATECURTAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=720,
-  serialized_end=824,
+  serialized_start=738,
+  serialized_end=842,
 )
 
 
@@ -267,8 +274,8 @@ _UPDATECURTAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=826,
-  serialized_end=849,
+  serialized_start=844,
+  serialized_end=867,
 )
 
 
@@ -306,8 +313,8 @@ _GETCURTAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=851,
-  serialized_end=903,
+  serialized_start=869,
+  serialized_end=921,
 )
 
 
@@ -345,8 +352,8 @@ _GETCURTAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=905,
-  serialized_end=1021,
+  serialized_start=923,
+  serialized_end=1039,
 )
 
 
@@ -384,8 +391,8 @@ _DELETECURTAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1023,
-  serialized_end=1078,
+  serialized_start=1041,
+  serialized_end=1096,
 )
 
 
@@ -409,8 +416,8 @@ _DELETECURTAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1080,
-  serialized_end=1103,
+  serialized_start=1098,
+  serialized_end=1121,
 )
 
 _LISTCURTAINSREQUEST_LABELSENTRY.containing_type = _LISTCURTAINSREQUEST
@@ -520,8 +527,8 @@ _CURTAINSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1106,
-  serialized_end=2148,
+  serialized_start=1124,
+  serialized_end=2166,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListCurtains',

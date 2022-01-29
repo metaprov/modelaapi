@@ -11,6 +11,15 @@ export class ListLabelingPipelineRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListLabelingPipelineRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListLabelingPipelineRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListLabelingPipelineRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListLabelingPipelineRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLabelingPipelineRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListLabelingPipelineRequest): ListLabelingPipelineRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListLabelingPipelineRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

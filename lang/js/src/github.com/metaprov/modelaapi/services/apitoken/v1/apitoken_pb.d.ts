@@ -12,6 +12,15 @@ export class ListApiTokensRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListApiTokensRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListApiTokensRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListApiTokensRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListApiTokensRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListApiTokensRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListApiTokensRequest): ListApiTokensRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListApiTokensRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

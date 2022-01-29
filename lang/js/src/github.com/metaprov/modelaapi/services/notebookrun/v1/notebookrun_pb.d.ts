@@ -12,6 +12,15 @@ export class ListNotebookRunsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListNotebookRunsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListNotebookRunsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListNotebookRunsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListNotebookRunsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNotebookRunsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListNotebookRunsRequest): ListNotebookRunsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListNotebookRunsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

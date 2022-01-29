@@ -8,11 +8,17 @@ export class ListDataAppsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListDataAppsRequest;
 
-  getName(): string;
-  setName(value: string): ListDataAppsRequest;
-
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListDataAppsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListDataAppsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListDataAppsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListDataAppsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataAppsRequest.AsObject;
@@ -25,8 +31,10 @@ export class ListDataAppsRequest extends jspb.Message {
 export namespace ListDataAppsRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

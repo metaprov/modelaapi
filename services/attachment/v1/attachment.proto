@@ -7,8 +7,11 @@ import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListAttachmentsRequest {
-    string             namespace = 1;
-    map<string,string> labels    = 2;   
+    string             namespace  = 1;
+    map<string,string> labels     = 2; 
+    int32              page_size  = 3;
+    string             page_token = 4;
+    string             order_by   = 5;  
 }
 
 message ListAttachmentsResponse {

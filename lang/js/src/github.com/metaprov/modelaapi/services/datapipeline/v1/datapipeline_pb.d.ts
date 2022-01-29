@@ -17,6 +17,9 @@ export class ListDataPipelinesRequest extends jspb.Message {
   getPageToken(): string;
   setPageToken(value: string): ListDataPipelinesRequest;
 
+  getOrderBy(): string;
+  setOrderBy(value: string): ListDataPipelinesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataPipelinesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDataPipelinesRequest): ListDataPipelinesRequest.AsObject;
@@ -31,6 +34,7 @@ export namespace ListDataPipelinesRequest {
     labelsMap: Array<[string, string]>,
     pageSize: number,
     pageToken: string,
+    orderBy: string,
   }
 }
 

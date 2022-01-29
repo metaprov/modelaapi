@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/recipe/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/recipe/v1/recipe.proto\x12\x30github.com.metaprov.modelaapi.services.recipe.v1\x1a\x1cgoogle/api/annotations.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xb8\x01\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"f\n\x13ListRecipesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeList\"a\n\x13\x43reateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x16\n\x14\x43reateRecipeResponse\"a\n\x13UpdateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x16\n\x14UpdateRecipeResponse\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x87\x01\n\x14ProfileRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec\"c\n\x15ProfileRecipeResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\x83\x01\n\x10RunRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec\"o\n\x11RunRecipeResponse\x12L\n\x06recipe\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"m\n\x11GetRecipeResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteRecipeResponse2\x89\x0b\n\rRecipeService\x12\xbb\x01\n\x0bListRecipes\x12\x44.github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest\x1a\x45.github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/recipes/{namespace}\x12\xb5\x01\n\x0c\x43reateRecipe\x12\x45.github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeRequest\x1a\x46.github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/recipes:\x01*\x12\xbc\x01\n\tGetRecipe\x12\x42.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeRequest\x1a\x43.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/recipes/{namespace}/{name}\x12\xc0\x01\n\tRunRecipe\x12\x42.github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeRequest\x1a\x43.github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/recipes/{namespace}/{name}:run\x12\xd0\x01\n\rProfileRecipe\x12\x46.github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeRequest\x1aG.github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/recipes/{namespace}/{name}:profile\x12\xe4\x01\n\x0cUpdateRecipe\x12\x45.github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeRequest\x1a\x46.github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/recipes/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc5\x01\n\x0c\x44\x65leteRecipe\x12\x45.github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeRequest\x1a\x46.github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/recipes/{namespace}/{name}B2Z0github.com/metaprov/modelaapi/services/recipe/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/recipe/v1/recipe.proto\x12\x30github.com.metaprov.modelaapi.services.recipe.v1\x1a\x1cgoogle/api/annotations.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xf1\x01\n\x12ListRecipesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"f\n\x13ListRecipesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeList\"a\n\x13\x43reateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x16\n\x14\x43reateRecipeResponse\"a\n\x13UpdateRecipeRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\"\x16\n\x14UpdateRecipeResponse\"3\n\x10GetRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x87\x01\n\x14ProfileRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec\"c\n\x15ProfileRecipeResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"\x83\x01\n\x10RunRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12N\n\x04spec\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeSpec\"o\n\x11RunRecipeResponse\x12L\n\x06recipe\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"m\n\x11GetRecipeResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteRecipeRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteRecipeResponse2\x89\x0b\n\rRecipeService\x12\xbb\x01\n\x0bListRecipes\x12\x44.github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest\x1a\x45.github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/recipes/{namespace}\x12\xb5\x01\n\x0c\x43reateRecipe\x12\x45.github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeRequest\x1a\x46.github.com.metaprov.modelaapi.services.recipe.v1.CreateRecipeResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/recipes:\x01*\x12\xbc\x01\n\tGetRecipe\x12\x42.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeRequest\x1a\x43.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/recipes/{namespace}/{name}\x12\xc0\x01\n\tRunRecipe\x12\x42.github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeRequest\x1a\x43.github.com.metaprov.modelaapi.services.recipe.v1.RunRecipeResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/recipes/{namespace}/{name}:run\x12\xd0\x01\n\rProfileRecipe\x12\x46.github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeRequest\x1aG.github.com.metaprov.modelaapi.services.recipe.v1.ProfileRecipeResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/recipes/{namespace}/{name}:profile\x12\xe4\x01\n\x0cUpdateRecipe\x12\x45.github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeRequest\x1a\x46.github.com.metaprov.modelaapi.services.recipe.v1.UpdateRecipeResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/recipes/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc5\x01\n\x0c\x44\x65leteRecipe\x12\x45.github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeRequest\x1a\x46.github.com.metaprov.modelaapi.services.recipe.v1.DeleteRecipeResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/recipes/{namespace}/{name}B2Z0github.com/metaprov/modelaapi/services/recipe/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -63,8 +63,8 @@ _LISTRECIPESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=418,
-  serialized_end=463,
+  serialized_start=475,
+  serialized_end=520,
 )
 
 _LISTRECIPESREQUEST = _descriptor.Descriptor(
@@ -84,8 +84,29 @@ _LISTRECIPESREQUEST = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.labels', index=1,
-      number=3, type=11, cpp_type=10, label=3,
+      number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.page_size', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.page_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='order_by', full_name='github.com.metaprov.modelaapi.services.recipe.v1.ListRecipesRequest.order_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -102,7 +123,7 @@ _LISTRECIPESREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=279,
-  serialized_end=463,
+  serialized_end=520,
 )
 
 
@@ -133,8 +154,8 @@ _LISTRECIPESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=567,
+  serialized_start=522,
+  serialized_end=624,
 )
 
 
@@ -165,8 +186,8 @@ _CREATERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=569,
-  serialized_end=666,
+  serialized_start=626,
+  serialized_end=723,
 )
 
 
@@ -190,8 +211,8 @@ _CREATERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=668,
-  serialized_end=690,
+  serialized_start=725,
+  serialized_end=747,
 )
 
 
@@ -222,8 +243,8 @@ _UPDATERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=692,
-  serialized_end=789,
+  serialized_start=749,
+  serialized_end=846,
 )
 
 
@@ -247,8 +268,8 @@ _UPDATERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=791,
-  serialized_end=813,
+  serialized_start=848,
+  serialized_end=870,
 )
 
 
@@ -286,8 +307,8 @@ _GETRECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=815,
-  serialized_end=866,
+  serialized_start=872,
+  serialized_end=923,
 )
 
 
@@ -332,8 +353,8 @@ _PROFILERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=869,
-  serialized_end=1004,
+  serialized_start=926,
+  serialized_end=1061,
 )
 
 
@@ -364,8 +385,8 @@ _PROFILERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1006,
-  serialized_end=1105,
+  serialized_start=1063,
+  serialized_end=1162,
 )
 
 
@@ -410,8 +431,8 @@ _RUNRECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1108,
-  serialized_end=1239,
+  serialized_start=1165,
+  serialized_end=1296,
 )
 
 
@@ -449,8 +470,8 @@ _RUNRECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1241,
-  serialized_end=1352,
+  serialized_start=1298,
+  serialized_end=1409,
 )
 
 
@@ -488,8 +509,8 @@ _GETRECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1354,
-  serialized_end=1463,
+  serialized_start=1411,
+  serialized_end=1520,
 )
 
 
@@ -527,8 +548,8 @@ _DELETERECIPEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1465,
-  serialized_end=1519,
+  serialized_start=1522,
+  serialized_end=1576,
 )
 
 
@@ -552,8 +573,8 @@ _DELETERECIPERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1521,
-  serialized_end=1543,
+  serialized_start=1578,
+  serialized_end=1600,
 )
 
 _LISTRECIPESREQUEST_LABELSENTRY.containing_type = _LISTRECIPESREQUEST
@@ -699,8 +720,8 @@ _RECIPESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1546,
-  serialized_end=2963,
+  serialized_start=1603,
+  serialized_end=3020,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListRecipes',

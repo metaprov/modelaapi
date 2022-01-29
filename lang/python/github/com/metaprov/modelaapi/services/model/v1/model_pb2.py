@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z/github.com/metaprov/modelaapi/services/model/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/model/v1/model.proto\x12/github.com.metaprov.modelaapi.services.model.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\")\n\x1a\x43reateModelProfileResponse\x12\x0b\n\x03uri\x18\x03 \x01(\t\"<\n\x19\x43reateModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\":\n\x17ListModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"F\n\x16GetModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"j\n\x17GetModelProfileResponse\x12O\n\x07profile\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\"\xa2\x01\n\x14GetModelLogsResponse\x12]\n\x04logs\x18\x01 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse.LogsEntry\x1a+\n\tLogsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x13GetModelLogsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13\x43reateModelResponse\"c\n\x12UpdateModelRequest\x12M\n\x04item\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13UpdateModelResponse\"o\n\x10GetModelResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"4\n\x11\x41\x62ortModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x41\x62ortModelResponse\"4\n\x11PauseModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12PauseModelResponse\"5\n\x12ResumeModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13ResumeModelResponse\"8\n\x14\x43ompareModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8b\x01\n\x15\x43ompareModelsResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12P\n\x08profiles\x18\x03 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\"X\n\x13\x43ompileModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x01(\t\x12\x10\n\x08\x63ompiler\x18\x04 \x01(\t\"8\n\x14\x43ompileModelResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x01(\t\"y\n\x12\x44\x65ployModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tpredictor\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x0f\n\x07traffic\x18\x05 \x01(\x05\x12\x0c\n\x04role\x18\x06 \x01(\t\"6\n\x13PublishModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65ployModelResponse\"\xb5\x01\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x12ListModelsResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11UpdateModelResult\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteModelResponse\",\n\x14PublishModelResponse\x12\x14\n\x0cmodelTarHash\x18\x01 \x01(\t\"5\n\x12GetMisclassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13GetMisclassResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"7\n\x14\x44ownloadModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"$\n\x15\x44ownloadModelResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"3\n\x10\x46lagModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11\x46lagModelResponse\"3\n\x10TestModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11TestModelResponse2\x82\x1e\n\x0cModelService\x12\xb4\x01\n\nListModels\x12\x42.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest\x1a\x43.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/model/{namespace}\x12\xaf\x01\n\x0b\x43reateModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.CreateModelResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/models:\x01*\x12\xb6\x01\n\x08GetModel\x12@.github.com.metaprov.modelaapi.services.model.v1.GetModelRequest\x1a\x41.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/models/{namespace}/{name}\x12\xde\x01\n\x0bUpdateModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.UpdateModelResponse\"D\x82\xd3\xe4\x93\x02>\x1a\x39/v1/models/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xbf\x01\n\x0b\x44\x65leteModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.DeleteModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.DeleteModelResponse\"%\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/models/{namespace}/{name}\x12\xc9\x01\n\x0b\x44\x65ployModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.DeployModelResponse\"/\x82\xd3\xe4\x93\x02)\"$/v1/models/{namespace}/{name}:deploy:\x01*\x12\xcd\x01\n\x0cPublishModel\x12\x44.github.com.metaprov.modelaapi.services.model.v1.PublishModelRequest\x1a\x45.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse\"0\x82\xd3\xe4\x93\x02*\"%/v1/models/{namespace}/{name}:publish:\x01*\x12\xdc\x01\n\x12\x43reateModelProfile\x12J.github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileRequest\x1aK.github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/models/{namespace}/{name}:profile\x12\xd3\x01\n\x0fGetModelProfile\x12G.github.com.metaprov.modelaapi.services.model.v1.GetModelProfileRequest\x1aH.github.com.metaprov.modelaapi.services.model.v1.GetModelProfileResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/models/{namespace}/{name}:profile\x12\xcd\x01\n\x10GetModelMisclass\x12\x43.github.com.metaprov.modelaapi.services.model.v1.GetMisclassRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.GetMisclassResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/models/{namespace}/{name}:misclass\x12\xc7\x01\n\x0cGetModelLogs\x12\x44.github.com.metaprov.modelaapi.services.model.v1.GetModelLogsRequest\x1a\x45.github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/models/{namespace}/{name}:logs\x12\xc2\x01\n\nAbortModel\x12\x42.github.com.metaprov.modelaapi.services.model.v1.AbortModelRequest\x1a\x43.github.com.metaprov.modelaapi.services.model.v1.AbortModelResponse\"+\x82\xd3\xe4\x93\x02%\"#/v1/models/{namespace}/{name}:abort\x12\xc2\x01\n\nPauseModel\x12\x42.github.com.metaprov.modelaapi.services.model.v1.PauseModelRequest\x1a\x43.github.com.metaprov.modelaapi.services.model.v1.PauseModelResponse\"+\x82\xd3\xe4\x93\x02%\"#/v1/models/{namespace}/{name}:pause\x12\xc6\x01\n\x0bResumeModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.ResumeModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.ResumeModelResponse\",\x82\xd3\xe4\x93\x02&\"$/v1/models/{namespace}/{name}:resume\x12\xce\x01\n\rCompareModels\x12\x45.github.com.metaprov.modelaapi.services.model.v1.CompareModelsRequest\x1a\x46.github.com.metaprov.modelaapi.services.model.v1.CompareModelsResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/models/{namespace}/{names}:compare\x12\xca\x01\n\x0c\x43ompileModel\x12\x44.github.com.metaprov.modelaapi.services.model.v1.CompileModelRequest\x1a\x45.github.com.metaprov.modelaapi.services.model.v1.CompileModelResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/models/{namespace}/{name}:compile\x12\xce\x01\n\rDownloadModel\x12\x45.github.com.metaprov.modelaapi.services.model.v1.DownloadModelRequest\x1a\x46.github.com.metaprov.modelaapi.services.model.v1.DownloadModelResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/models/{namespace}/{name}:download\x12\xbe\x01\n\tFlagModel\x12\x41.github.com.metaprov.modelaapi.services.model.v1.FlagModelRequest\x1a\x42.github.com.metaprov.modelaapi.services.model.v1.FlagModelResponse\"*\x82\xd3\xe4\x93\x02$\"\"/v1/models/{namespace}/{name}:flag\x12\xbe\x01\n\tTestModel\x12\x41.github.com.metaprov.modelaapi.services.model.v1.TestModelRequest\x1a\x42.github.com.metaprov.modelaapi.services.model.v1.TestModelResponse\"*\x82\xd3\xe4\x93\x02$\"\"/v1/models/{namespace}/{name}:testB1Z/github.com/metaprov/modelaapi/services/model/v1b\x06proto3'
+  serialized_pb=b'\n;github.com/metaprov/modelaapi/services/model/v1/model.proto\x12/github.com.metaprov.modelaapi.services.model.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\")\n\x1a\x43reateModelProfileResponse\x12\x0b\n\x03uri\x18\x03 \x01(\t\"<\n\x19\x43reateModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\":\n\x17ListModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"F\n\x16GetModelProfileRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03uri\x18\x03 \x01(\t\"j\n\x17GetModelProfileResponse\x12O\n\x07profile\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\"\xa2\x01\n\x14GetModelLogsResponse\x12]\n\x04logs\x18\x01 \x03(\x0b\x32O.github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse.LogsEntry\x1a+\n\tLogsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x13GetModelLogsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"c\n\x12\x43reateModelRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13\x43reateModelResponse\"c\n\x12UpdateModelRequest\x12M\n\x04item\x18\x05 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\"\x15\n\x13UpdateModelResponse\"o\n\x10GetModelResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"4\n\x11\x41\x62ortModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12\x41\x62ortModelResponse\"4\n\x11PauseModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x14\n\x12PauseModelResponse\"5\n\x12ResumeModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13ResumeModelResponse\"8\n\x14\x43ompareModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\"\x8b\x01\n\x15\x43ompareModelsResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x03(\t\x12P\n\x08profiles\x18\x03 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\"X\n\x13\x43ompileModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x01(\t\x12\x10\n\x08\x63ompiler\x18\x04 \x01(\t\"8\n\x14\x43ompileModelResponse\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05names\x18\x02 \x01(\t\"y\n\x12\x44\x65ployModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tpredictor\x18\x03 \x01(\t\x12\x10\n\x08replicas\x18\x04 \x01(\x05\x12\x0f\n\x07traffic\x18\x05 \x01(\x05\x12\x0c\n\x04role\x18\x06 \x01(\t\"6\n\x13PublishModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65ployModelResponse\"\xee\x01\n\x11ListModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12^\n\x06labels\x18\x02 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x12ListModelsResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelList\"2\n\x0fGetModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11UpdateModelResult\"5\n\x12\x44\x65leteModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x15\n\x13\x44\x65leteModelResponse\",\n\x14PublishModelResponse\x12\x14\n\x0cmodelTarHash\x18\x01 \x01(\t\"5\n\x12GetMisclassRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x13GetMisclassResponse\x12J\n\x05table\x18\x01 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\"7\n\x14\x44ownloadModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"$\n\x15\x44ownloadModelResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"3\n\x10\x46lagModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11\x46lagModelResponse\"3\n\x10TestModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x13\n\x11TestModelResponse2\x82\x1e\n\x0cModelService\x12\xb4\x01\n\nListModels\x12\x42.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest\x1a\x43.github.com.metaprov.modelaapi.services.model.v1.ListModelsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/model/{namespace}\x12\xaf\x01\n\x0b\x43reateModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.CreateModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.CreateModelResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/models:\x01*\x12\xb6\x01\n\x08GetModel\x12@.github.com.metaprov.modelaapi.services.model.v1.GetModelRequest\x1a\x41.github.com.metaprov.modelaapi.services.model.v1.GetModelResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/models/{namespace}/{name}\x12\xde\x01\n\x0bUpdateModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.UpdateModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.UpdateModelResponse\"D\x82\xd3\xe4\x93\x02>\x1a\x39/v1/models/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xbf\x01\n\x0b\x44\x65leteModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.DeleteModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.DeleteModelResponse\"%\x82\xd3\xe4\x93\x02\x1f*\x1d/v1/models/{namespace}/{name}\x12\xc9\x01\n\x0b\x44\x65ployModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.DeployModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.DeployModelResponse\"/\x82\xd3\xe4\x93\x02)\"$/v1/models/{namespace}/{name}:deploy:\x01*\x12\xcd\x01\n\x0cPublishModel\x12\x44.github.com.metaprov.modelaapi.services.model.v1.PublishModelRequest\x1a\x45.github.com.metaprov.modelaapi.services.model.v1.PublishModelResponse\"0\x82\xd3\xe4\x93\x02*\"%/v1/models/{namespace}/{name}:publish:\x01*\x12\xdc\x01\n\x12\x43reateModelProfile\x12J.github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileRequest\x1aK.github.com.metaprov.modelaapi.services.model.v1.CreateModelProfileResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/models/{namespace}/{name}:profile\x12\xd3\x01\n\x0fGetModelProfile\x12G.github.com.metaprov.modelaapi.services.model.v1.GetModelProfileRequest\x1aH.github.com.metaprov.modelaapi.services.model.v1.GetModelProfileResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/models/{namespace}/{name}:profile\x12\xcd\x01\n\x10GetModelMisclass\x12\x43.github.com.metaprov.modelaapi.services.model.v1.GetMisclassRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.GetMisclassResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/models/{namespace}/{name}:misclass\x12\xc7\x01\n\x0cGetModelLogs\x12\x44.github.com.metaprov.modelaapi.services.model.v1.GetModelLogsRequest\x1a\x45.github.com.metaprov.modelaapi.services.model.v1.GetModelLogsResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/models/{namespace}/{name}:logs\x12\xc2\x01\n\nAbortModel\x12\x42.github.com.metaprov.modelaapi.services.model.v1.AbortModelRequest\x1a\x43.github.com.metaprov.modelaapi.services.model.v1.AbortModelResponse\"+\x82\xd3\xe4\x93\x02%\"#/v1/models/{namespace}/{name}:abort\x12\xc2\x01\n\nPauseModel\x12\x42.github.com.metaprov.modelaapi.services.model.v1.PauseModelRequest\x1a\x43.github.com.metaprov.modelaapi.services.model.v1.PauseModelResponse\"+\x82\xd3\xe4\x93\x02%\"#/v1/models/{namespace}/{name}:pause\x12\xc6\x01\n\x0bResumeModel\x12\x43.github.com.metaprov.modelaapi.services.model.v1.ResumeModelRequest\x1a\x44.github.com.metaprov.modelaapi.services.model.v1.ResumeModelResponse\",\x82\xd3\xe4\x93\x02&\"$/v1/models/{namespace}/{name}:resume\x12\xce\x01\n\rCompareModels\x12\x45.github.com.metaprov.modelaapi.services.model.v1.CompareModelsRequest\x1a\x46.github.com.metaprov.modelaapi.services.model.v1.CompareModelsResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/models/{namespace}/{names}:compare\x12\xca\x01\n\x0c\x43ompileModel\x12\x44.github.com.metaprov.modelaapi.services.model.v1.CompileModelRequest\x1a\x45.github.com.metaprov.modelaapi.services.model.v1.CompileModelResponse\"-\x82\xd3\xe4\x93\x02\'\"%/v1/models/{namespace}/{name}:compile\x12\xce\x01\n\rDownloadModel\x12\x45.github.com.metaprov.modelaapi.services.model.v1.DownloadModelRequest\x1a\x46.github.com.metaprov.modelaapi.services.model.v1.DownloadModelResponse\".\x82\xd3\xe4\x93\x02(\"&/v1/models/{namespace}/{name}:download\x12\xbe\x01\n\tFlagModel\x12\x41.github.com.metaprov.modelaapi.services.model.v1.FlagModelRequest\x1a\x42.github.com.metaprov.modelaapi.services.model.v1.FlagModelResponse\"*\x82\xd3\xe4\x93\x02$\"\"/v1/models/{namespace}/{name}:flag\x12\xbe\x01\n\tTestModel\x12\x41.github.com.metaprov.modelaapi.services.model.v1.TestModelRequest\x1a\x42.github.com.metaprov.modelaapi.services.model.v1.TestModelResponse\"*\x82\xd3\xe4\x93\x02$\"\"/v1/models/{namespace}/{name}:testB1Z/github.com/metaprov/modelaapi/services/model/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -1013,8 +1013,8 @@ _LISTMODELSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2123,
-  serialized_end=2168,
+  serialized_start=2180,
+  serialized_end=2225,
 )
 
 _LISTMODELSREQUEST = _descriptor.Descriptor(
@@ -1039,6 +1039,27 @@ _LISTMODELSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.page_size', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.page_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='order_by', full_name='github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.order_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1052,7 +1073,7 @@ _LISTMODELSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1987,
-  serialized_end=2168,
+  serialized_end=2225,
 )
 
 
@@ -1083,8 +1104,8 @@ _LISTMODELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2170,
-  serialized_end=2274,
+  serialized_start=2227,
+  serialized_end=2331,
 )
 
 
@@ -1122,8 +1143,8 @@ _GETMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2276,
-  serialized_end=2326,
+  serialized_start=2333,
+  serialized_end=2383,
 )
 
 
@@ -1147,8 +1168,8 @@ _UPDATEMODELRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2328,
-  serialized_end=2347,
+  serialized_start=2385,
+  serialized_end=2404,
 )
 
 
@@ -1186,8 +1207,8 @@ _DELETEMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2349,
-  serialized_end=2402,
+  serialized_start=2406,
+  serialized_end=2459,
 )
 
 
@@ -1211,8 +1232,8 @@ _DELETEMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2404,
-  serialized_end=2425,
+  serialized_start=2461,
+  serialized_end=2482,
 )
 
 
@@ -1243,8 +1264,8 @@ _PUBLISHMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2427,
-  serialized_end=2471,
+  serialized_start=2484,
+  serialized_end=2528,
 )
 
 
@@ -1282,8 +1303,8 @@ _GETMISCLASSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2473,
-  serialized_end=2526,
+  serialized_start=2530,
+  serialized_end=2583,
 )
 
 
@@ -1314,8 +1335,8 @@ _GETMISCLASSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2528,
-  serialized_end=2625,
+  serialized_start=2585,
+  serialized_end=2682,
 )
 
 
@@ -1353,8 +1374,8 @@ _DOWNLOADMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2627,
-  serialized_end=2682,
+  serialized_start=2684,
+  serialized_end=2739,
 )
 
 
@@ -1385,8 +1406,8 @@ _DOWNLOADMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2684,
-  serialized_end=2720,
+  serialized_start=2741,
+  serialized_end=2777,
 )
 
 
@@ -1424,8 +1445,8 @@ _FLAGMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2722,
-  serialized_end=2773,
+  serialized_start=2779,
+  serialized_end=2830,
 )
 
 
@@ -1449,8 +1470,8 @@ _FLAGMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2775,
-  serialized_end=2794,
+  serialized_start=2832,
+  serialized_end=2851,
 )
 
 
@@ -1488,8 +1509,8 @@ _TESTMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2796,
-  serialized_end=2847,
+  serialized_start=2853,
+  serialized_end=2904,
 )
 
 
@@ -1513,8 +1534,8 @@ _TESTMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2849,
-  serialized_end=2868,
+  serialized_start=2906,
+  serialized_end=2925,
 )
 
 _GETMODELPROFILERESPONSE.fields_by_name['profile'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2._MODELPROFILE
@@ -1878,8 +1899,8 @@ _MODELSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2871,
-  serialized_end=6713,
+  serialized_start=2928,
+  serialized_end=6770,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListModels',

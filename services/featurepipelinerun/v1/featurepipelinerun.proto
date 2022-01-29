@@ -8,6 +8,9 @@ import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 message ListFeaturePipelineRunRequest {
     string namespace = 1;
     map<string,string> labels =2;
+    int32              page_size  = 3;
+    string             page_token = 4;
+    string             order_by   = 5;
 }
 
 message ListFeaturePipelineRunResponse {

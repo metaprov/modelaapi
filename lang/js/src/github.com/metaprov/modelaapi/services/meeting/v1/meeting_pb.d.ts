@@ -12,6 +12,15 @@ export class ListMeetingsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListMeetingsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListMeetingsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListMeetingsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListMeetingsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListMeetingsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListMeetingsRequest): ListMeetingsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListMeetingsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

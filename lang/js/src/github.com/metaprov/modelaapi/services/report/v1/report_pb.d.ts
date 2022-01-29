@@ -8,11 +8,17 @@ export class ListReportsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListReportsRequest;
 
-  getName(): string;
-  setName(value: string): ListReportsRequest;
-
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListReportsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListReportsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListReportsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListReportsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReportsRequest.AsObject;
@@ -25,8 +31,10 @@ export class ListReportsRequest extends jspb.Message {
 export namespace ListReportsRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

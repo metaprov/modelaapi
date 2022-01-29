@@ -12,6 +12,15 @@ export class ListAccountsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListAccountsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListAccountsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListAccountsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListAccountsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAccountsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAccountsRequest): ListAccountsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListAccountsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

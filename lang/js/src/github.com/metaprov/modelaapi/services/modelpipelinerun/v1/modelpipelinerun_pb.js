@@ -520,7 +520,10 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipeli
 proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
+    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    orderBy: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -561,11 +564,23 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipeli
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
-    case 3:
+    case 2:
       var value = msg.getLabelsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderBy(value);
       break;
     default:
       reader.skipField();
@@ -605,7 +620,28 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipeli
   }
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getOrderBy();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
   }
 };
 
@@ -629,14 +665,14 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipeli
 
 
 /**
- * map<string, string> labels = 3;
+ * map<string, string> labels = 2;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.getLabelsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 3, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 2, opt_noLazyCreate,
       null));
 };
 
@@ -648,6 +684,60 @@ proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipeli
 proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
+
+
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string order_by = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.getOrderBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.prototype.setOrderBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
 
 
 

@@ -9,9 +9,11 @@ import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto
 
 
 message ListReportsRequest {
-    string namespace = 1;
-    string name      = 2;
-    map<string,string> labels = 3;
+    string namespace = 1;    
+    map<string,string> labels = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
+    string             order_by   = 5;
 }
 
 message ListReportsResponse {

@@ -11,6 +11,15 @@ export class ListFeatureHistogramsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListFeatureHistogramsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListFeatureHistogramsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListFeatureHistogramsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListFeatureHistogramsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeatureHistogramsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListFeatureHistogramsRequest): ListFeatureHistogramsRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListFeatureHistogramsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

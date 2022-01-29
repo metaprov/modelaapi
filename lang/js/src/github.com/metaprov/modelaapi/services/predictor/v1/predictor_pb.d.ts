@@ -11,6 +11,15 @@ export class ListPredictorsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListPredictorsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListPredictorsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListPredictorsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListPredictorsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPredictorsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPredictorsRequest): ListPredictorsRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListPredictorsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

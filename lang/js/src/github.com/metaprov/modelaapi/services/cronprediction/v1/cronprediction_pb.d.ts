@@ -8,11 +8,17 @@ export class ListCronPredictionsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListCronPredictionsRequest;
 
-  getName(): string;
-  setName(value: string): ListCronPredictionsRequest;
-
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListCronPredictionsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListCronPredictionsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListCronPredictionsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListCronPredictionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCronPredictionsRequest.AsObject;
@@ -25,8 +31,10 @@ export class ListCronPredictionsRequest extends jspb.Message {
 export namespace ListCronPredictionsRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

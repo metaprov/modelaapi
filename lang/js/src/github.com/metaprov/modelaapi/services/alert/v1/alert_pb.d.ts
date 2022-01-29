@@ -12,6 +12,15 @@ export class ListAlertsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListAlertsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListAlertsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListAlertsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListAlertsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAlertsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAlertsRequest): ListAlertsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListAlertsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

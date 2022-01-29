@@ -11,6 +11,15 @@ export class ListConnectionsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListConnectionsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListConnectionsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListConnectionsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListConnectionsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConnectionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListConnectionsRequest): ListConnectionsRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListConnectionsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

@@ -12,6 +12,15 @@ export class ListCommitsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListCommitsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListCommitsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListCommitsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListCommitsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCommitsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListCommitsRequest): ListCommitsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListCommitsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

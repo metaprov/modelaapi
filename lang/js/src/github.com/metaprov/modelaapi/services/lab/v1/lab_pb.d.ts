@@ -12,6 +12,15 @@ export class ListLabsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListLabsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListLabsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListLabsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListLabsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLabsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListLabsRequest): ListLabsRequest.AsObject;
@@ -24,6 +33,9 @@ export namespace ListLabsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

@@ -8,11 +8,17 @@ export class ListPredictionsRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListPredictionsRequest;
 
-  getName(): string;
-  setName(value: string): ListPredictionsRequest;
-
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListPredictionsRequest;
+
+  getPageSize(): number;
+  setPageSize(value: number): ListPredictionsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListPredictionsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListPredictionsRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPredictionsRequest.AsObject;
@@ -25,8 +31,10 @@ export class ListPredictionsRequest extends jspb.Message {
 export namespace ListPredictionsRequest {
   export type AsObject = {
     namespace: string,
-    name: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

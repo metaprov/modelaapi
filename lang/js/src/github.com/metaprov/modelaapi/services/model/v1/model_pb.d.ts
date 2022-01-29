@@ -540,6 +540,15 @@ export class ListModelsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListModelsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListModelsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListModelsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListModelsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListModelsRequest): ListModelsRequest.AsObject;
@@ -552,6 +561,9 @@ export namespace ListModelsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

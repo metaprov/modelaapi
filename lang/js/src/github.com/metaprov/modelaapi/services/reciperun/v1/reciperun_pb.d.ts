@@ -11,6 +11,15 @@ export class ListRecipeRunsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListRecipeRunsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListRecipeRunsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListRecipeRunsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListRecipeRunsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecipeRunsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRecipeRunsRequest): ListRecipeRunsRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListRecipeRunsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

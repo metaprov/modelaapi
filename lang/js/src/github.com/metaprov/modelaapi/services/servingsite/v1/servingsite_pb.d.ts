@@ -11,6 +11,15 @@ export class ListServingSitesRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListServingSitesRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListServingSitesRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListServingSitesRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListServingSitesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListServingSitesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListServingSitesRequest): ListServingSitesRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListServingSitesRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

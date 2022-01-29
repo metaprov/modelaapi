@@ -10,6 +10,7 @@ message ListDataPipelinesRequest {
     map<string,string> labels     = 2;
     int32              page_size  = 3;
     string             page_token = 4;
+    string             order_by   = 5;
 }
 
 message ListDataPipelinesResponse {

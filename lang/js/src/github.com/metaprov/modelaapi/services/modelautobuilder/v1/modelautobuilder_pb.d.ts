@@ -11,6 +11,15 @@ export class ListModelAutobuildersRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListModelAutobuildersRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListModelAutobuildersRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListModelAutobuildersRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListModelAutobuildersRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelAutobuildersRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListModelAutobuildersRequest): ListModelAutobuildersRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListModelAutobuildersRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

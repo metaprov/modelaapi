@@ -11,6 +11,15 @@ export class ListPostMortemsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListPostMortemsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListPostMortemsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListPostMortemsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListPostMortemsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPostMortemsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListPostMortemsRequest): ListPostMortemsRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListPostMortemsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

@@ -11,6 +11,15 @@ export class ListEntitiesRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListEntitiesRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListEntitiesRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListEntitiesRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListEntitiesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEntitiesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListEntitiesRequest): ListEntitiesRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListEntitiesRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

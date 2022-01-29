@@ -11,6 +11,15 @@ export class ListFeaturePipelineRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListFeaturePipelineRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListFeaturePipelineRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListFeaturePipelineRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListFeaturePipelineRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeaturePipelineRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListFeaturePipelineRequest): ListFeaturePipelineRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListFeaturePipelineRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

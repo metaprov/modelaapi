@@ -11,6 +11,15 @@ export class ListModelCompilerRunsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListModelCompilerRunsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListModelCompilerRunsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListModelCompilerRunsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListModelCompilerRunsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelCompilerRunsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListModelCompilerRunsRequest): ListModelCompilerRunsRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListModelCompilerRunsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

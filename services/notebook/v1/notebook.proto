@@ -9,7 +9,10 @@ import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
 
 message ListNotebooksRequest {
     string namespace = 1;
-    map<string,string> labels = 3;
+    map<string,string> labels = 2;
+    int32              page_size  = 3;
+    string             page_token = 4;
+    string             order_by   = 5;
 }
 
 message ListNotebooksResponse {

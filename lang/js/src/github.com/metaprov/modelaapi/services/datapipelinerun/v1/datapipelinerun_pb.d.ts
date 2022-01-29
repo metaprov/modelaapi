@@ -11,6 +11,15 @@ export class ListDataPipelineRunRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListDataPipelineRunRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListDataPipelineRunRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListDataPipelineRunRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListDataPipelineRunRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataPipelineRunRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDataPipelineRunRequest): ListDataPipelineRunRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListDataPipelineRunRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

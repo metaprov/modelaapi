@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z4github.com/metaprov/modelaapi/services/prediction/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/prediction/v1/prediction.proto\x12\x34github.com.metaprov.modelaapi.services.prediction.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xd2\x01\n\x16ListPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12h\n\x06labels\x18\x03 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x17ListPredictionsResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionList\"\x1a\n\x18\x43reatePredictionResponse\"n\n\x17\x43reatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"n\n\x17UpdatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x1a\n\x18UpdatePredictionResponse\"7\n\x14GetPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"z\n\x15GetPredictionResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65letePredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65letePredictionResponse\"<\n\x19\x44ownloadPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\")\n\x1a\x44ownloadPredictionResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"9\n\x16\x41\x62ortPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17\x41\x62ortPredictionResponse2\xad\x0c\n\x11PredictionService\x12\xd3\x01\n\x0fListPredictions\x12L.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest\x1aM.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/predictions/{namespace}\x12\xcd\x01\n\x10\x43reatePrediction\x12M.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/predictions:\x01*\x12\xd4\x01\n\rGetPrediction\x12J.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRequest\x1aK.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/predictions/{namespace}/{name}\x12\xfc\x01\n\x10UpdatePrediction\x12M.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/predictions/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xdd\x01\n\x10\x44\x65letePrediction\x12M.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionResponse\"*\x82\xd3\xe4\x93\x02$*\"/v1/predictions/{namespace}/{name}\x12\xe2\x01\n\x08\x44ownload\x12O.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionRequest\x1aP.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionResponse\"3\x82\xd3\xe4\x93\x02-\x12+/v1/predictions/{namespace}/{name}:download\x12\xd6\x01\n\x05\x41\x62ort\x12L.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionRequest\x1aM.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/predictions/{namespace}/{name}:abortB6Z4github.com/metaprov/modelaapi/services/prediction/v1b\x06proto3'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/services/prediction/v1/prediction.proto\x12\x34github.com.metaprov.modelaapi.services.prediction.v1\x1a\x1cgoogle/api/annotations.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xfd\x01\n\x16ListPredictionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x17ListPredictionsResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionList\"\x1a\n\x18\x43reatePredictionResponse\"n\n\x17\x43reatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"n\n\x17UpdatePredictionRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\"\x1a\n\x18UpdatePredictionResponse\"7\n\x14GetPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"z\n\x15GetPredictionResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction\x12\x0c\n\x04yaml\x18\x02 \x01(\t\":\n\x17\x44\x65letePredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1a\n\x18\x44\x65letePredictionResponse\"<\n\x19\x44ownloadPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\")\n\x1a\x44ownloadPredictionResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"9\n\x16\x41\x62ortPredictionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x19\n\x17\x41\x62ortPredictionResponse2\xad\x0c\n\x11PredictionService\x12\xd3\x01\n\x0fListPredictions\x12L.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest\x1aM.github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/predictions/{namespace}\x12\xcd\x01\n\x10\x43reatePrediction\x12M.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.CreatePredictionResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/predictions:\x01*\x12\xd4\x01\n\rGetPrediction\x12J.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionRequest\x1aK.github.com.metaprov.modelaapi.services.prediction.v1.GetPredictionResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/predictions/{namespace}/{name}\x12\xfc\x01\n\x10UpdatePrediction\x12M.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.UpdatePredictionResponse\"I\x82\xd3\xe4\x93\x02\x43\x1a>/v1/predictions/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xdd\x01\n\x10\x44\x65letePrediction\x12M.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionRequest\x1aN.github.com.metaprov.modelaapi.services.prediction.v1.DeletePredictionResponse\"*\x82\xd3\xe4\x93\x02$*\"/v1/predictions/{namespace}/{name}\x12\xe2\x01\n\x08\x44ownload\x12O.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionRequest\x1aP.github.com.metaprov.modelaapi.services.prediction.v1.DownloadPredictionResponse\"3\x82\xd3\xe4\x93\x02-\x12+/v1/predictions/{namespace}/{name}:download\x12\xd6\x01\n\x05\x41\x62ort\x12L.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionRequest\x1aM.github.com.metaprov.modelaapi.services.prediction.v1.AbortPredictionResponse\"0\x82\xd3\xe4\x93\x02*\"(/v1/predictions/{namespace}/{name}:abortB6Z4github.com/metaprov/modelaapi/services/prediction/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -62,8 +62,8 @@ _LISTPREDICTIONSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=398,
-  serialized_end=443,
+  serialized_start=441,
+  serialized_end=486,
 )
 
 _LISTPREDICTIONSREQUEST = _descriptor.Descriptor(
@@ -82,16 +82,30 @@ _LISTPREDICTIONSREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
+      name='labels', full_name='github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.labels', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.page_size', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.page_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='order_by', full_name='github.com.metaprov.modelaapi.services.prediction.v1.ListPredictionsRequest.order_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -108,7 +122,7 @@ _LISTPREDICTIONSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=233,
-  serialized_end=443,
+  serialized_end=486,
 )
 
 
@@ -139,8 +153,8 @@ _LISTPREDICTIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=445,
-  serialized_end=560,
+  serialized_start=488,
+  serialized_end=603,
 )
 
 
@@ -164,8 +178,8 @@ _CREATEPREDICTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=562,
-  serialized_end=588,
+  serialized_start=605,
+  serialized_end=631,
 )
 
 
@@ -196,8 +210,8 @@ _CREATEPREDICTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=590,
-  serialized_end=700,
+  serialized_start=633,
+  serialized_end=743,
 )
 
 
@@ -228,8 +242,8 @@ _UPDATEPREDICTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=702,
-  serialized_end=812,
+  serialized_start=745,
+  serialized_end=855,
 )
 
 
@@ -253,8 +267,8 @@ _UPDATEPREDICTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=814,
-  serialized_end=840,
+  serialized_start=857,
+  serialized_end=883,
 )
 
 
@@ -292,8 +306,8 @@ _GETPREDICTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=842,
-  serialized_end=897,
+  serialized_start=885,
+  serialized_end=940,
 )
 
 
@@ -331,8 +345,8 @@ _GETPREDICTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=1021,
+  serialized_start=942,
+  serialized_end=1064,
 )
 
 
@@ -370,8 +384,8 @@ _DELETEPREDICTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1023,
-  serialized_end=1081,
+  serialized_start=1066,
+  serialized_end=1124,
 )
 
 
@@ -395,8 +409,8 @@ _DELETEPREDICTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1083,
-  serialized_end=1109,
+  serialized_start=1126,
+  serialized_end=1152,
 )
 
 
@@ -434,8 +448,8 @@ _DOWNLOADPREDICTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1111,
-  serialized_end=1171,
+  serialized_start=1154,
+  serialized_end=1214,
 )
 
 
@@ -466,8 +480,8 @@ _DOWNLOADPREDICTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1173,
-  serialized_end=1214,
+  serialized_start=1216,
+  serialized_end=1257,
 )
 
 
@@ -505,8 +519,8 @@ _ABORTPREDICTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1216,
-  serialized_end=1273,
+  serialized_start=1259,
+  serialized_end=1316,
 )
 
 
@@ -530,8 +544,8 @@ _ABORTPREDICTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1275,
-  serialized_end=1300,
+  serialized_start=1318,
+  serialized_end=1343,
 )
 
 _LISTPREDICTIONSREQUEST_LABELSENTRY.containing_type = _LISTPREDICTIONSREQUEST
@@ -673,8 +687,8 @@ _PREDICTIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1303,
-  serialized_end=2884,
+  serialized_start=1346,
+  serialized_end=2927,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListPredictions',

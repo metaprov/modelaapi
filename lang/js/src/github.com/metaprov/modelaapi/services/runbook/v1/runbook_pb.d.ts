@@ -11,6 +11,15 @@ export class ListRunBooksRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListRunBooksRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListRunBooksRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListRunBooksRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListRunBooksRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRunBooksRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListRunBooksRequest): ListRunBooksRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListRunBooksRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

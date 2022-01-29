@@ -14,6 +14,15 @@ export class ListDataProductsRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListDataProductsRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListDataProductsRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListDataProductsRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListDataProductsRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataProductsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListDataProductsRequest): ListDataProductsRequest.AsObject;
@@ -26,6 +35,9 @@ export namespace ListDataProductsRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 

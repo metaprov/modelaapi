@@ -4838,7 +4838,10 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototyp
 proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : []
+    labelsMap: (f = msg.getLabelsMap()) ? f.toObject(includeInstance, undefined) : [],
+    pageSize: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    pageToken: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    orderBy: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -4885,6 +4888,18 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.deserial
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPageSize(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPageToken(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderBy(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4924,6 +4939,27 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.serializ
   f = message.getLabelsMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(2, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getPageSize();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+  f = message.getPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getOrderBy();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
   }
 };
 
@@ -4966,6 +5002,60 @@ proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototyp
 proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototype.clearLabelsMap = function() {
   this.getLabelsMap().clear();
   return this;};
+
+
+/**
+ * optional int32 page_size = 3;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototype.getPageSize = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototype.setPageSize = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string page_token = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototype.getPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototype.setPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string order_by = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototype.getOrderBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.model.v1.ListModelsRequest.prototype.setOrderBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
 
 
 

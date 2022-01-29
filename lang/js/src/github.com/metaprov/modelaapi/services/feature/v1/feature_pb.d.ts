@@ -11,6 +11,15 @@ export class ListFeaturesRequest extends jspb.Message {
   getLabelsMap(): jspb.Map<string, string>;
   clearLabelsMap(): ListFeaturesRequest;
 
+  getPageSize(): number;
+  setPageSize(value: number): ListFeaturesRequest;
+
+  getPageToken(): string;
+  setPageToken(value: string): ListFeaturesRequest;
+
+  getOrderBy(): string;
+  setOrderBy(value: string): ListFeaturesRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeaturesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListFeaturesRequest): ListFeaturesRequest.AsObject;
@@ -23,6 +32,9 @@ export namespace ListFeaturesRequest {
   export type AsObject = {
     namespace: string,
     labelsMap: Array<[string, string]>,
+    pageSize: number,
+    pageToken: string,
+    orderBy: string,
   }
 }
 
