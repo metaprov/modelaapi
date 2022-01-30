@@ -3288,7 +3288,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.deserializeBina
       }
       break;
     case 2:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
       for (var i = 0; i < values.length; i++) {
         msg.addBins(values[i]);
       }
@@ -3335,7 +3335,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.serializeBinary
   }
   f = message.getBinsList();
   if (f.length > 0) {
-    writer.writePackedFloat(
+    writer.writePackedDouble(
       2,
       f
     );
@@ -3388,7 +3388,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.prototype.clear
 
 
 /**
- * repeated float bins = 2;
+ * repeated double bins = 2;
  * @return {!Array<number>}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.prototype.getBinsList = function() {

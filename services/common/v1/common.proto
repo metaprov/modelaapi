@@ -111,7 +111,7 @@ message ColumnProfile {
 
 message Histogram {
     repeated double values = 1;
-    repeated float  bins   = 2;
+    repeated double bins   = 2;
     repeated string categories = 3; // for categorical variables those are the cateogries.
 }
 
