@@ -7,6 +7,7 @@
 package v1alpha1
 
 import (
+	catalog "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1"
 	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -98,7 +99,7 @@ type FeatureHistogramStatus struct {
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,1,opt,name=observedGeneration"`
 	// The histogram values
-	Values []float64 `json:"values,omitempty" protobuf:"bytes,2,opt,name=values"`
+	Data catalog.HistogramData `json:"data,omitempty" protobuf:"bytes,2,opt,name=data"`
 	// The number of missing values
 	// +kubebuilder:validation:Minimum=0
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,3,opt,name=missing"`

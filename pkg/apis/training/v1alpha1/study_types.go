@@ -523,10 +523,13 @@ type StudySpec struct {
 	// Model Image specification.
 	//+kubebuilder:validation:Optional
 	ModelImage ModelImageSpec `json:"modelImage,omitempty" protobuf:"bytes,29,opt,name=modelImage"`
+	// Garbage Collection Spec
+	//+kubebuilder:validation:Optional
+	GC GarbageCollectionSpec `json:"gc,omitempty" protobuf:"bytes,30,opt,name=gc"`
 	// TTL for models.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,30,opt,name=ttl"`
+	TTL *int32 `json:"ttl,omitempty" protobuf:"varint,31,opt,name=ttl"`
 }
 
 // StudyStatus defines the observed state of the Study
@@ -624,12 +627,14 @@ type StudyStatus struct {
 	// The best feature engineering
 	//+kubebuilder:validation:Optional
 	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,31,opt,name=bestFE"`
+	// GC algorithm
+	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,32,opt,name=gc"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,32,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,33,rep,name=conditions"`
 }
 
 // model cv results
@@ -740,4 +745,19 @@ type SegmentSpec struct {
 	// +kubebuilder:validation:Required
 	// +required
 	Value *string `json:"value,omitempty" protobuf:"bytes,3,opt,name=value"`
+}
+
+// Garbage collection
+type GarbageCollectionSpec struct {
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=true
+	CollectAtStudyEnd *bool `json:"collectAtStudyEnd,omitempty" protobuf:"varint,1,opt,name=collectAtStudyEnd"`
+	// +kubebuilder:validation:Optional
+	// +kubebuilder:default:=true
+	KeepOnlyBestModelPerAlgorithm *bool `json:"keepOnlyBestModelPerAlgorithm,omitempty" protobuf:"varint,2,opt,name=keepOnlyBestModelPerAlgorithm"`
+}
+
+type GarbageCollectionStatus struct {
+	// +kubebuilder:validation:Optional
+	Collected int32 `json:"collected,omitempty" protobuf:"varint,1,opt,name=collected"`
 }

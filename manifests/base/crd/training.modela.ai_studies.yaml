@@ -872,6 +872,16 @@ spec:
                         type: object
                     type: object
                 type: object
+              gc:
+                description: Garbage Collection Spec
+                properties:
+                  collectAtStudyEnd:
+                    default: true
+                    type: boolean
+                  keepOnlyBestModelPerAlgorithm:
+                    default: true
+                    type: boolean
+                type: object
               interpretability:
                 description: Define interpretability
                 properties:
@@ -2523,6 +2533,13 @@ spec:
                     type: integer
                   waiting:
                     description: models waiting for processing
+                    format: int32
+                    type: integer
+                type: object
+              gc:
+                description: GC algorithm
+                properties:
+                  collected:
                     format: int32
                     type: integer
                 type: object

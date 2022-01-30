@@ -753,6 +753,22 @@ message ForecastSpec {
   optional bool plotChangePoints = 6;
 }
 
+// Garbage collection
+message GarbageCollectionSpec {
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=true
+  optional bool collectAtStudyEnd = 1;
+
+  // +kubebuilder:validation:Optional
+  // +kubebuilder:default:=true
+  optional bool keepOnlyBestModelPerAlgorithm = 2;
+}
+
+message GarbageCollectionStatus {
+  // +kubebuilder:validation:Optional
+  optional int32 collected = 1;
+}
+
 message GeneratedColumnSpec {
   // The name of the generated column
   optional string name = 1;
@@ -3163,10 +3179,14 @@ message StudySpec {
   // +kubebuilder:validation:Optional
   optional ModelImageSpec modelImage = 29;
 
+  // Garbage Collection Spec
+  // +kubebuilder:validation:Optional
+  optional GarbageCollectionSpec gc = 30;
+
   // TTL for models.
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 ttl = 30;
+  optional int32 ttl = 31;
 }
 
 // StudyStatus defines the observed state of the Study
@@ -3294,12 +3314,15 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional FeatureEngineeringSpec bestFE = 31;
 
+  // GC algorithm
+  optional GarbageCollectionStatus gc = 32;
+
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 32;
+  repeated StudyCondition conditions = 33;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

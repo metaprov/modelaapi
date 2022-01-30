@@ -124,6 +124,27 @@ spec:
                   - type
                   type: object
                 type: array
+              data:
+                description: The histogram values
+                properties:
+                  bins:
+                    description: The bins if this histogram describe conitunous variables
+                    items:
+                      format: int32
+                      type: integer
+                    type: array
+                  categories:
+                    description: The name of the categories, one per bin is this a
+                      categorical histogram Empty is this is not a categorical variable.
+                    items:
+                      type: string
+                    type: array
+                  values:
+                    description: The set of values per beans
+                    items:
+                      type: number
+                    type: array
+                type: object
               invalid:
                 description: The number of invalid values
                 format: int32
@@ -143,11 +164,6 @@ spec:
                   on
                 format: int64
                 type: integer
-              values:
-                description: The histogram values
-                items:
-                  type: number
-                type: array
             type: object
         required:
         - metadata

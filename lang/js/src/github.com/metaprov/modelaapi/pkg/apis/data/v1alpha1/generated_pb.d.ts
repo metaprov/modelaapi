@@ -418,6 +418,11 @@ export class ColumnStatistics extends jspb.Message {
   getIndexofpeculiarity(): number;
   setIndexofpeculiarity(value: number): ColumnStatistics;
 
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): ColumnStatistics;
+  hasHistogram(): boolean;
+  clearHistogram(): ColumnStatistics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnStatistics): ColumnStatistics.AsObject;
@@ -468,6 +473,7 @@ export namespace ColumnStatistics {
     distinctvaluecount: number,
     mostfreqvaluesratio: number,
     indexofpeculiarity: number,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
   }
 }
 
@@ -2773,10 +2779,10 @@ export class FeatureHistogramStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): FeatureHistogramStatus;
 
-  getValuesList(): Array<number>;
-  setValuesList(value: Array<number>): FeatureHistogramStatus;
-  clearValuesList(): FeatureHistogramStatus;
-  addValues(value: number, index?: number): FeatureHistogramStatus;
+  getData(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData | undefined;
+  setData(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData): FeatureHistogramStatus;
+  hasData(): boolean;
+  clearData(): FeatureHistogramStatus;
 
   getMissing(): number;
   setMissing(value: number): FeatureHistogramStatus;
@@ -2805,7 +2811,7 @@ export class FeatureHistogramStatus extends jspb.Message {
 export namespace FeatureHistogramStatus {
   export type AsObject = {
     observedgeneration: number,
-    valuesList: Array<number>,
+    data?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
     missing: number,
     invalid: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,

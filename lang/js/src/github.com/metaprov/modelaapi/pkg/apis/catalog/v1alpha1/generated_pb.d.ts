@@ -526,6 +526,38 @@ export namespace GpuClassCost {
   }
 }
 
+export class HistogramData extends jspb.Message {
+  getBinsList(): Array<number>;
+  setBinsList(value: Array<number>): HistogramData;
+  clearBinsList(): HistogramData;
+  addBins(value: number, index?: number): HistogramData;
+
+  getValuesList(): Array<number>;
+  setValuesList(value: Array<number>): HistogramData;
+  clearValuesList(): HistogramData;
+  addValues(value: number, index?: number): HistogramData;
+
+  getCategoriesList(): Array<string>;
+  setCategoriesList(value: Array<string>): HistogramData;
+  clearCategoriesList(): HistogramData;
+  addCategories(value: string, index?: number): HistogramData;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HistogramData.AsObject;
+  static toObject(includeInstance: boolean, msg: HistogramData): HistogramData.AsObject;
+  static serializeBinaryToWriter(message: HistogramData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HistogramData;
+  static deserializeBinaryFromReader(message: HistogramData, reader: jspb.BinaryReader): HistogramData;
+}
+
+export namespace HistogramData {
+  export type AsObject = {
+    binsList: Array<number>,
+    valuesList: Array<number>,
+    categoriesList: Array<string>,
+  }
+}
+
 export class IntParameter extends jspb.Message {
   getName(): string;
   setName(value: string): IntParameter;

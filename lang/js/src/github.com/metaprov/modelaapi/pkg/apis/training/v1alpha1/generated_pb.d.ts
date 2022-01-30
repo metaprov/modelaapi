@@ -1160,6 +1160,46 @@ export namespace ForecastSpec {
   }
 }
 
+export class GarbageCollectionSpec extends jspb.Message {
+  getCollectatstudyend(): boolean;
+  setCollectatstudyend(value: boolean): GarbageCollectionSpec;
+
+  getKeeponlybestmodelperalgorithm(): boolean;
+  setKeeponlybestmodelperalgorithm(value: boolean): GarbageCollectionSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GarbageCollectionSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: GarbageCollectionSpec): GarbageCollectionSpec.AsObject;
+  static serializeBinaryToWriter(message: GarbageCollectionSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GarbageCollectionSpec;
+  static deserializeBinaryFromReader(message: GarbageCollectionSpec, reader: jspb.BinaryReader): GarbageCollectionSpec;
+}
+
+export namespace GarbageCollectionSpec {
+  export type AsObject = {
+    collectatstudyend: boolean,
+    keeponlybestmodelperalgorithm: boolean,
+  }
+}
+
+export class GarbageCollectionStatus extends jspb.Message {
+  getCollected(): number;
+  setCollected(value: number): GarbageCollectionStatus;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GarbageCollectionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: GarbageCollectionStatus): GarbageCollectionStatus.AsObject;
+  static serializeBinaryToWriter(message: GarbageCollectionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GarbageCollectionStatus;
+  static deserializeBinaryFromReader(message: GarbageCollectionStatus, reader: jspb.BinaryReader): GarbageCollectionStatus;
+}
+
+export namespace GarbageCollectionStatus {
+  export type AsObject = {
+    collected: number,
+  }
+}
+
 export class GeneratedColumnSpec extends jspb.Message {
   getName(): string;
   setName(value: string): GeneratedColumnSpec;
@@ -4640,6 +4680,11 @@ export class StudySpec extends jspb.Message {
   hasModelimage(): boolean;
   clearModelimage(): StudySpec;
 
+  getGc(): GarbageCollectionSpec | undefined;
+  setGc(value?: GarbageCollectionSpec): StudySpec;
+  hasGc(): boolean;
+  clearGc(): StudySpec;
+
   getTtl(): number;
   setTtl(value: number): StudySpec;
 
@@ -4682,6 +4727,7 @@ export namespace StudySpec {
     flagged: boolean,
     notification?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.NotificationSpec.AsObject,
     modelimage?: ModelImageSpec.AsObject,
+    gc?: GarbageCollectionSpec.AsObject,
     ttl: number,
   }
 }
@@ -4807,6 +4853,11 @@ export class StudyStatus extends jspb.Message {
   hasBestfe(): boolean;
   clearBestfe(): StudyStatus;
 
+  getGc(): GarbageCollectionStatus | undefined;
+  setGc(value?: GarbageCollectionStatus): StudyStatus;
+  hasGc(): boolean;
+  clearGc(): StudyStatus;
+
   getConditionsList(): Array<StudyCondition>;
   setConditionsList(value: Array<StudyCondition>): StudyStatus;
   clearConditionsList(): StudyStatus;
@@ -4852,6 +4903,7 @@ export namespace StudyStatus {
     explain?: StudyPhaseStatus.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     bestfe?: FeatureEngineeringSpec.AsObject,
+    gc?: GarbageCollectionStatus.AsObject,
     conditionsList: Array<StudyCondition.AsObject>,
   }
 }

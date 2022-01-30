@@ -387,6 +387,9 @@ type ColumnStatistics struct {
 	// Used for text attributes
 	// +kubebuilder:validation:Optional
 	IndexOfPeculiarity float64 `json:"indexOfPeculiarity,omitempty" protobuf:"bytes,40,opt,name=indexOfPeculiarity"`
+	// The column histogram
+	// +kubebuilder:validation:Optional
+	Histogram catalog.HistogramData `json:"historgram,omitempty" protobuf:"bytes,41,opt,name=histogram"`
 }
 
 // DatasetTemplate is  used to generate new datasets

@@ -268,6 +268,18 @@ message GpuClassCost {
   optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4;
 }
 
+message HistogramData {
+  // The bins if this histogram describe conitunous variables
+  repeated int32 bins = 1;
+
+  // The set of values per beans
+  repeated double values = 2;
+
+  // The name of the categories, one per bin is this a categorical histogram
+  // Empty is this is not a categorical variable.
+  repeated string categories = 3;
+}
+
 // IntParameter contain the specification of an integer hyper parameter
 message IntParameter {
   // Name is the name of the hyper parameter

@@ -472,6 +472,10 @@ message ColumnStatistics {
   // Used for text attributes
   // +kubebuilder:validation:Optional
   optional double indexOfPeculiarity = 40;
+
+  // The column histogram
+  // +kubebuilder:validation:Optional
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData histogram = 41;
 }
 
 message ColumnValidation {
@@ -1922,7 +1926,7 @@ message FeatureHistogramStatus {
   optional int64 observedGeneration = 1;
 
   // The histogram values
-  repeated double values = 2;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData data = 2;
 
   // The number of missing values
   // +kubebuilder:validation:Minimum=0
