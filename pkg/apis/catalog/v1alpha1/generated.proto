@@ -270,7 +270,7 @@ message GpuClassCost {
 
 message HistogramData {
   // The bins if this histogram describe conitunous variables
-  repeated int32 bins = 1;
+  repeated double bins = 1;
 
   // The set of values per beans
   repeated double values = 2;

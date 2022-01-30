@@ -5785,7 +5785,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.toObject = function(includeInstance, msg) {
   var f, obj = {
-    binsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+    binsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
     valuesList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
     categoriesList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
@@ -5825,7 +5825,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.dese
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
       for (var i = 0; i < values.length; i++) {
         msg.addBins(values[i]);
       }
@@ -5871,7 +5871,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.seri
   var f = undefined;
   f = message.getBinsList();
   if (f.length > 0) {
-    writer.writeRepeatedInt32(
+    writer.writeRepeatedDouble(
       1,
       f
     );
@@ -5894,11 +5894,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.seri
 
 
 /**
- * repeated int32 bins = 1;
+ * repeated double bins = 1;
  * @return {!Array<number>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData.prototype.getBinsList = function() {
-  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 1));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 1));
 };
 
 

@@ -467,7 +467,7 @@ func (in *HistogramData) DeepCopyInto(out *HistogramData) {
 	*out = *in
 	if in.Bins != nil {
 		in, out := &in.Bins, &out.Bins
-		*out = make([]int32, len(*in))
+		*out = make([]float64, len(*in))
 		copy(*out, *in)
 	}
 	if in.Values != nil {

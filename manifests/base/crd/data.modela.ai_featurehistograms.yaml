@@ -130,8 +130,7 @@ spec:
                   bins:
                     description: The bins if this histogram describe conitunous variables
                     items:
-                      format: int32
-                      type: integer
+                      type: number
                     type: array
                   categories:
                     description: The name of the categories, one per bin is this a
