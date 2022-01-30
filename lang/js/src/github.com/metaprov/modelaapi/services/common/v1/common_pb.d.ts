@@ -382,33 +382,21 @@ export namespace ColumnProfile {
   }
 }
 
-export class HistogramValue extends jspb.Message {
-  getName(): string;
-  setName(value: string): HistogramValue;
-
-  getV(): number;
-  setV(value: number): HistogramValue;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): HistogramValue.AsObject;
-  static toObject(includeInstance: boolean, msg: HistogramValue): HistogramValue.AsObject;
-  static serializeBinaryToWriter(message: HistogramValue, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): HistogramValue;
-  static deserializeBinaryFromReader(message: HistogramValue, reader: jspb.BinaryReader): HistogramValue;
-}
-
-export namespace HistogramValue {
-  export type AsObject = {
-    name: string,
-    v: number,
-  }
-}
-
 export class Histogram extends jspb.Message {
-  getValuesList(): Array<HistogramValue>;
-  setValuesList(value: Array<HistogramValue>): Histogram;
+  getValuesList(): Array<number>;
+  setValuesList(value: Array<number>): Histogram;
   clearValuesList(): Histogram;
-  addValues(value?: HistogramValue, index?: number): HistogramValue;
+  addValues(value: number, index?: number): Histogram;
+
+  getBinsList(): Array<number>;
+  setBinsList(value: Array<number>): Histogram;
+  clearBinsList(): Histogram;
+  addBins(value: number, index?: number): Histogram;
+
+  getCategoriesList(): Array<string>;
+  setCategoriesList(value: Array<string>): Histogram;
+  clearCategoriesList(): Histogram;
+  addCategories(value: string, index?: number): Histogram;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Histogram.AsObject;
@@ -420,7 +408,9 @@ export class Histogram extends jspb.Message {
 
 export namespace Histogram {
   export type AsObject = {
-    valuesList: Array<HistogramValue.AsObject>,
+    valuesList: Array<number>,
+    binsList: Array<number>,
+    categoriesList: Array<string>,
   }
 }
 

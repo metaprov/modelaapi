@@ -108,13 +108,10 @@ message ColumnProfile {
 
 }
 
-message HistogramValue {
-    string name = 1;
-    float  v    = 2;
-}
-
 message Histogram {
-    repeated HistogramValue values = 1;
+    repeated float  values = 1;
+    repeated float  bins   = 2;
+    repeated string categories = 3; // for categorical variables those are the cateogries.
 }
 
 
