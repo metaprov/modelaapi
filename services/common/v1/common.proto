@@ -103,13 +103,14 @@ message ColumnProfile {
 	double    distinctValueCount = 43;    
 	double    mostFreqValuesRatio = 44;   
 	double    indexOfPeculiarity = 45;   
-    repeated string values       = 46; // Enum set of values
+    repeated  string values       = 46; // Enum set of values
+    double    corrToTarget          = 47;
 
 
 }
 
 message Histogram {
-    repeated float  values = 1;
+    repeated double values = 1;
     repeated float  bins   = 2;
     repeated string categories = 3; // for categorical variables those are the cateogries.
 }

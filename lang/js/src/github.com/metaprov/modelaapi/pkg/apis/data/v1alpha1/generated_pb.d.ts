@@ -423,6 +423,9 @@ export class ColumnStatistics extends jspb.Message {
   hasHistogram(): boolean;
   clearHistogram(): ColumnStatistics;
 
+  getCorrtotarget(): number;
+  setCorrtotarget(value: number): ColumnStatistics;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnStatistics.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnStatistics): ColumnStatistics.AsObject;
@@ -474,6 +477,7 @@ export namespace ColumnStatistics {
     mostfreqvaluesratio: number,
     indexofpeculiarity: number,
     histogram?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.AsObject,
+    corrtotarget: number,
   }
 }
 

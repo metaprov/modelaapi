@@ -6540,7 +6540,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.toOb
     distinctvaluecount: (f = jspb.Message.getOptionalFloatingPointField(msg, 38)) == null ? undefined : f,
     mostfreqvaluesratio: (f = jspb.Message.getOptionalFloatingPointField(msg, 39)) == null ? undefined : f,
     indexofpeculiarity: (f = jspb.Message.getOptionalFloatingPointField(msg, 40)) == null ? undefined : f,
-    histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.toObject(includeInstance, f)
+    histogram: (f = msg.getHistogram()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.toObject(includeInstance, f),
+    corrtotarget: (f = jspb.Message.getOptionalFloatingPointField(msg, 42)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6741,6 +6742,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.dese
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.deserializeBinaryFromReader);
       msg.setHistogram(value);
+      break;
+    case 42:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setCorrtotarget(value);
       break;
     default:
       reader.skipField();
@@ -7057,6 +7062,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.seri
       41,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.HistogramData.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 42));
+  if (f != null) {
+    writer.writeDouble(
+      42,
+      f
     );
   }
 };
@@ -8536,6 +8548,42 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasHistogram = function() {
   return jspb.Message.getField(this, 41) != null;
+};
+
+
+/**
+ * optional double corrToTarget = 42;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.getCorrtotarget = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 42, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.setCorrtotarget = function(value) {
+  return jspb.Message.setField(this, 42, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.clearCorrtotarget = function() {
+  return jspb.Message.setField(this, 42, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.ColumnStatistics.prototype.hasCorrtotarget = function() {
+  return jspb.Message.getField(this, 42) != null;
 };
 
 

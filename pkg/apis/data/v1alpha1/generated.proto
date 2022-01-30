@@ -476,6 +476,10 @@ message ColumnStatistics {
   // The column histogram
   // +kubebuilder:validation:Optional
   optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.HistogramData histogram = 41;
+
+  // Correlation to target
+  // +kubebuilder:validation:Optional
+  optional double corrToTarget = 42;
 }
 
 message ColumnValidation {

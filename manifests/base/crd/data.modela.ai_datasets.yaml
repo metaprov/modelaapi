@@ -498,6 +498,9 @@ spec:
                             feature and should be dropped. The value is set during
                             the profile process.
                           type: boolean
+                        corrToTarget:
+                          description: Correlation to target
+                          type: number
                         count:
                           description: Number of rows
                           type: number

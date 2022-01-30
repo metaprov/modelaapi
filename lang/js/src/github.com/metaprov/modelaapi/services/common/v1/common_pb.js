@@ -1730,7 +1730,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject = 
     distinctvaluecount: jspb.Message.getFloatingPointFieldWithDefault(msg, 43, 0.0),
     mostfreqvaluesratio: jspb.Message.getFloatingPointFieldWithDefault(msg, 44, 0.0),
     indexofpeculiarity: jspb.Message.getFloatingPointFieldWithDefault(msg, 45, 0.0),
-    valuesList: (f = jspb.Message.getRepeatedField(msg, 46)) == null ? undefined : f
+    valuesList: (f = jspb.Message.getRepeatedField(msg, 46)) == null ? undefined : f,
+    corrtotarget: jspb.Message.getFloatingPointFieldWithDefault(msg, 47, 0.0)
   };
 
   if (includeInstance) {
@@ -1951,6 +1952,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.deserialize
     case 46:
       var value = /** @type {string} */ (reader.readString());
       msg.addValues(value);
+      break;
+    case 47:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setCorrtotarget(value);
       break;
     default:
       reader.skipField();
@@ -2301,6 +2306,13 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.serializeBi
   if (f.length > 0) {
     writer.writeRepeatedString(
       46,
+      f
+    );
+  }
+  f = message.getCorrtotarget();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      47,
       f
     );
   }
@@ -3173,6 +3185,24 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.c
 };
 
 
+/**
+ * optional double corrToTarget = 47;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.getCorrtotarget = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 47, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.prototype.setCorrtotarget = function(value) {
+  return jspb.Message.setProto3FloatField(this, 47, value);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -3252,7 +3282,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.deserializeBina
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
       for (var i = 0; i < values.length; i++) {
         msg.addValues(values[i]);
       }
@@ -3298,7 +3328,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.serializeBinary
   var f = undefined;
   f = message.getValuesList();
   if (f.length > 0) {
-    writer.writePackedFloat(
+    writer.writePackedDouble(
       1,
       f
     );
@@ -3321,7 +3351,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.serializeBinary
 
 
 /**
- * repeated float values = 1;
+ * repeated double values = 1;
  * @return {!Array<number>}
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.Histogram.prototype.getValuesList = function() {
