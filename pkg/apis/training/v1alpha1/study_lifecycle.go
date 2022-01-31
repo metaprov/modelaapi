@@ -143,6 +143,10 @@ func (study *Study) GetCond(t StudyConditionType) StudyCondition {
 
 }
 
+func (r *Study) IsSearching() bool {
+	return r.Status.Phase == StudyPhaseSearching
+}
+
 func (r *Study) IsReady() bool {
 	return r.GetCond(StudyCompleted).Status == v1.ConditionTrue
 }
