@@ -816,9 +816,11 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,14,opt,name=nodeCount"`
-	// Set the precent of dataset to use during training.
+	// Set the precent of dataset to use during training. This is usually assigned
+	// by the optimizer.
+	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
-	Sample data.SampleSpec `json:"sample,omitempty" protobuf:"bytes,15,opt,name=sample"`
+	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"bytes,15,opt,name=samplePct"`
 }
 
 // Specification for serving this model

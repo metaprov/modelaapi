@@ -5171,10 +5171,8 @@ export class TrainingSpec extends jspb.Message {
   getNodecount(): number;
   setNodecount(value: number): TrainingSpec;
 
-  getSample(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec | undefined;
-  setSample(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec): TrainingSpec;
-  hasSample(): boolean;
-  clearSample(): TrainingSpec;
+  getSamplepct(): number;
+  setSamplepct(value: number): TrainingSpec;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TrainingSpec.AsObject;
@@ -5200,7 +5198,7 @@ export namespace TrainingSpec {
     gpu: boolean,
     distributed: boolean,
     nodecount: number,
-    sample?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.AsObject,
+    samplepct: number,
   }
 }
 

@@ -3575,9 +3575,11 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional int32 nodeCount = 14;
 
-  // Set the precent of dataset to use during training.
+  // Set the precent of dataset to use during training. This is usually assigned
+  // by the optimizer.
+  // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 15;
+  optional int32 samplePct = 15;
 }
 
 // TrainingStageSpec is the desired state of the training step of the pipeline

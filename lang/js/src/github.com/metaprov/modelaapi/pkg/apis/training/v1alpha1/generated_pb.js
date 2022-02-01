@@ -50933,7 +50933,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.toOb
     gpu: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
     distributed: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
     nodecount: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    sample: (f = msg.getSample()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.toObject(includeInstance, f)
+    samplepct: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -51030,9 +51030,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.dese
       msg.setNodecount(value);
       break;
     case 15:
-      var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec;
-      reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.deserializeBinaryFromReader);
-      msg.setSample(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSamplepct(value);
       break;
     default:
       reader.skipField();
@@ -51164,12 +51163,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.seri
       f
     );
   }
-  f = message.getSample();
+  f = /** @type {number} */ (jspb.Message.getField(message, 15));
   if (f != null) {
-    writer.writeMessage(
+    writer.writeInt32(
       15,
-      f,
-      github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -51684,30 +51682,29 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec sample = 15;
- * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec}
+ * optional int32 samplePct = 15;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSample = function() {
-  return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SampleSpec, 15));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.getSamplepct = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
 
 /**
- * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SampleSpec|undefined} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
-*/
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSample = function(value) {
-  return jspb.Message.setWrapperField(this, 15, value);
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.setSamplepct = function(value) {
+  return jspb.Message.setField(this, 15, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearSample = function() {
-  return this.setSample(undefined);
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.clearSamplepct = function() {
+  return jspb.Message.setField(this, 15, undefined);
 };
 
 
@@ -51715,7 +51712,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSample = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.TrainingSpec.prototype.hasSamplepct = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 

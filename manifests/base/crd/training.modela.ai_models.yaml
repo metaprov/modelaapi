@@ -1592,45 +1592,12 @@ spec:
                         description: Workload class name. Predefined resources
                         type: string
                     type: object
-                  sample:
+                  samplePct:
+                    default: 100
                     description: Set the precent of dataset to use during training.
-                    properties:
-                      column:
-                        default: ""
-                        description: Column is used for stratified sampling.
-                        type: string
-                      enabled:
-                        default: false
-                        description: Enabled specify if the sample is enabled
-                        type: boolean
-                      filter:
-                        default: ""
-                        description: Filter formula. Valid only if the sample is a
-                          filter.
-                        type: string
-                      percent:
-                        default: 100
-                        description: Pct is the percent of rows to use for analysis.
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      rows:
-                        default: 500
-                        description: Rows is the number of rows. Default is 500
-                        format: int32
-                        minimum: 0
-                        type: integer
-                      type:
-                        default: random
-                        description: Type is the sampling type Default is random
-                        enum:
-                        - header
-                        - random
-                        - filter
-                        - anomaly
-                        - stratified
-                        type: string
-                    type: object
+                      This is usually assigned by the optimizer.
+                    format: int32
+                    type: integer
                   seed:
                     default: 42
                     description: Used as the random state for an estimator if needed
