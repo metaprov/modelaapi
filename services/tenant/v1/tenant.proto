@@ -3,6 +3,7 @@ option go_package = "github.com/metaprov/modelaapi/services/tenant/v1";
 package github.com.metaprov.modelaapi.services.tenant.v1;
 
 import "google/api/annotations.proto";
+import "google/protobuf/field_mask.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
@@ -26,7 +27,8 @@ message CreateTenantResponse {
 }
 
 message UpdateTenantRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 5;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateTenantResponse {

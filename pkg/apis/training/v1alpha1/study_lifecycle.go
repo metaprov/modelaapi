@@ -140,7 +140,6 @@ func (study *Study) GetCond(t StudyConditionType) StudyCondition {
 		Reason:  "",
 		Message: "",
 	}
-
 }
 
 func (r *Study) IsSearching() bool {

@@ -2,6 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/datapipeline/v1";
 package github.com.metaprov.modelaapi.services.datapipeline.v1;
 
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
@@ -25,7 +26,8 @@ message CreateDataPipelineResponse {
 }
 
 message UpdateDataPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;    
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipeline item = 1;  
+    google.protobuf.FieldMask field_mask = 2;  
 }
 
 message UpdateDataPipelineResponse {
@@ -34,6 +36,7 @@ message UpdateDataPipelineResponse {
 message GetDataPipelineRequest {
     string namespace = 1;
     string name      = 2;
+    
 }
 
 

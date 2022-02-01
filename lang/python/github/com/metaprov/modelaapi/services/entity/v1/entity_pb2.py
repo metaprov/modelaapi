@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/entity/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/entity/v1/entity.proto\x12\x30github.com.metaprov.modelaapi.services.entity.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xf3\x01\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x02 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x14ListEntitiesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x16\n\x14\x43reateEntityResponse\"a\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x16\n\x14UpdateEntityResponse\"3\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n\x11GetEntityResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteEntityResponse2\xef\x07\n\rEntityService\x12\xbf\x01\n\x0cListEntities\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/entities/{namespace}\x12\xb6\x01\n\x0c\x43reateEntity\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/entities:\x01*\x12\xb1\x01\n\tGetEntity\x12\x42.github.com.metaprov.modelaapi.services.entity.v1.GetEntityRequest\x1a\x43.github.com.metaprov.modelaapi.services.entity.v1.GetEntityResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/entities/{name}\x12\xe5\x01\n\x0cUpdateEntity\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/entities/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc6\x01\n\x0c\x44\x65leteEntity\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/entities/{namespace}/{name}B2Z0github.com/metaprov/modelaapi/services/entity/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/entity/v1/entity.proto\x12\x30github.com.metaprov.modelaapi.services.entity.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xf3\x01\n\x13ListEntitiesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x61\n\x06labels\x18\x02 \x03(\x0b\x32Q.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x14ListEntitiesResponse\x12O\n\x05items\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList\"a\n\x13\x43reateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\"\x16\n\x14\x43reateEntityResponse\"\x91\x01\n\x13UpdateEntityRequest\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x16\n\x14UpdateEntityResponse\"c\n\x10GetEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12.\n\nfield_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"m\n\x11GetEntityResponse\x12J\n\x04item\x18\x01 \x01(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteEntityRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteEntityResponse2\xef\x07\n\rEntityService\x12\xbf\x01\n\x0cListEntities\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/entities/{namespace}\x12\xb6\x01\n\x0c\x43reateEntity\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/entities:\x01*\x12\xb1\x01\n\tGetEntity\x12\x42.github.com.metaprov.modelaapi.services.entity.v1.GetEntityRequest\x1a\x43.github.com.metaprov.modelaapi.services.entity.v1.GetEntityResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/entities/{name}\x12\xe5\x01\n\x0cUpdateEntity\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/entities/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc6\x01\n\x0c\x44\x65leteEntity\x12\x45.github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityRequest\x1a\x46.github.com.metaprov.modelaapi.services.entity.v1.DeleteEntityResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/entities/{namespace}/{name}B2Z0github.com/metaprov/modelaapi/services/entity/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _LISTENTITIESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=414,
-  serialized_end=459,
+  serialized_start=448,
+  serialized_end=493,
 )
 
 _LISTENTITIESREQUEST = _descriptor.Descriptor(
@@ -121,8 +122,8 @@ _LISTENTITIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=459,
+  serialized_start=250,
+  serialized_end=493,
 )
 
 
@@ -153,8 +154,8 @@ _LISTENTITIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=461,
-  serialized_end=564,
+  serialized_start=495,
+  serialized_end=598,
 )
 
 
@@ -185,8 +186,8 @@ _CREATEENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=566,
-  serialized_end=663,
+  serialized_start=600,
+  serialized_end=697,
 )
 
 
@@ -210,8 +211,8 @@ _CREATEENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=665,
-  serialized_end=687,
+  serialized_start=699,
+  serialized_end=721,
 )
 
 
@@ -230,6 +231,13 @@ _UPDATEENTITYREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_mask', full_name='github.com.metaprov.modelaapi.services.entity.v1.UpdateEntityRequest.field_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -242,8 +250,8 @@ _UPDATEENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=689,
-  serialized_end=786,
+  serialized_start=724,
+  serialized_end=869,
 )
 
 
@@ -267,8 +275,8 @@ _UPDATEENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=788,
-  serialized_end=810,
+  serialized_start=871,
+  serialized_end=893,
 )
 
 
@@ -294,6 +302,13 @@ _GETENTITYREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_mask', full_name='github.com.metaprov.modelaapi.services.entity.v1.GetEntityRequest.field_mask', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -306,8 +321,8 @@ _GETENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=812,
-  serialized_end=863,
+  serialized_start=895,
+  serialized_end=994,
 )
 
 
@@ -345,8 +360,8 @@ _GETENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=865,
-  serialized_end=974,
+  serialized_start=996,
+  serialized_end=1105,
 )
 
 
@@ -384,8 +399,8 @@ _DELETEENTITYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=976,
-  serialized_end=1030,
+  serialized_start=1107,
+  serialized_end=1161,
 )
 
 
@@ -409,8 +424,8 @@ _DELETEENTITYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1032,
-  serialized_end=1054,
+  serialized_start=1163,
+  serialized_end=1185,
 )
 
 _LISTENTITIESREQUEST_LABELSENTRY.containing_type = _LISTENTITIESREQUEST
@@ -418,6 +433,8 @@ _LISTENTITIESREQUEST.fields_by_name['labels'].message_type = _LISTENTITIESREQUES
 _LISTENTITIESRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._ENTITYLIST
 _CREATEENTITYREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._ENTITY
 _UPDATEENTITYREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._ENTITY
+_UPDATEENTITYREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_GETENTITYREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETENTITYRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._ENTITY
 DESCRIPTOR.message_types_by_name['ListEntitiesRequest'] = _LISTENTITIESREQUEST
 DESCRIPTOR.message_types_by_name['ListEntitiesResponse'] = _LISTENTITIESRESPONSE
@@ -520,8 +537,8 @@ _ENTITYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1057,
-  serialized_end=2064,
+  serialized_start=1188,
+  serialized_end=2195,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListEntities',

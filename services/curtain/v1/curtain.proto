@@ -3,7 +3,7 @@ option go_package = "github.com/metaprov/modelaapi/services/curtain/v1";
 
 package github.com.metaprov.modelaapi.services.curtain.v1;
 
-
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
@@ -31,6 +31,7 @@ message CreateCurtainRequest {
 
 message UpdateCurtainRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Curtain item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateCurtainResponse {
@@ -40,6 +41,7 @@ message UpdateCurtainResponse {
 message GetCurtainRequest {
     string namespace = 1;
     string name      = 2;
+    
 }
 
 message GetCurtainResponse {

@@ -3,6 +3,7 @@ import * as jspb from 'google-protobuf'
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 
 
 export class ListCommitsRequest extends jspb.Message {
@@ -117,6 +118,11 @@ export class UpdateCommitRequest extends jspb.Message {
   hasItem(): boolean;
   clearItem(): UpdateCommitRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateCommitRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateCommitRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateCommitRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateCommitRequest): UpdateCommitRequest.AsObject;
@@ -128,6 +134,7 @@ export class UpdateCommitRequest extends jspb.Message {
 export namespace UpdateCommitRequest {
   export type AsObject = {
     item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

@@ -1,5 +1,6 @@
 import * as jspb from 'google-protobuf'
 
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_services_common_v1_common_pb from '../../../../../../github.com/metaprov/modelaapi/services/common/v1/common_pb';
@@ -113,6 +114,11 @@ export class UpdateNotebookRequest extends jspb.Message {
   hasItem(): boolean;
   clearItem(): UpdateNotebookRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateNotebookRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateNotebookRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateNotebookRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateNotebookRequest): UpdateNotebookRequest.AsObject;
@@ -124,6 +130,7 @@ export class UpdateNotebookRequest extends jspb.Message {
 export namespace UpdateNotebookRequest {
   export type AsObject = {
     item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

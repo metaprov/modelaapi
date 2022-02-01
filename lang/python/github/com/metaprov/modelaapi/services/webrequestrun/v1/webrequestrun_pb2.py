@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z7github.com/metaprov/modelaapi/services/webrequestrun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto\x12\x37github.com.metaprov.modelaapi.services.webrequestrun.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xdb\x01\n\x19ListWebRequestRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x1aListWebRequestRunsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunList\"\x1d\n\x1b\x43reateWebRequestRunResponse\"o\n\x1a\x43reateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\"o\n\x1aUpdateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\"\x1d\n\x1bUpdateWebRequestRunResponse\":\n\x17GetWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n\x18GetWebRequestRunResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteWebRequestRunResponse2\xc0\t\n\x14WebRequestRunService\x12\xe5\x01\n\x12ListWebRequestRuns\x12R.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest\x1aS.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/webrequestruns/{namespace}\x12\xdf\x01\n\x13\x43reateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/webrequestruns:\x01*\x12\xda\x01\n\x10GetWebRequestRun\x12P.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRequest\x1aQ.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/webrequestruns/{name}\x12\x8e\x02\n\x13UpdateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/webrequestruns/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xef\x01\n\x13\x44\x65leteWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/webrequestruns/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/webrequestrun/v1b\x06proto3'
+  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/webrequestrun/v1/webrequestrun.proto\x12\x37github.com.metaprov.modelaapi.services.webrequestrun.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xdb\x01\n\x19ListWebRequestRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12n\n\x06labels\x18\x03 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x1aListWebRequestRunsResponse\x12V\n\x05items\x18\x01 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunList\"\x1d\n\x1b\x43reateWebRequestRunResponse\"o\n\x1a\x43reateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\"\x9f\x01\n\x1aUpdateWebRequestRunRequest\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdateWebRequestRunResponse\":\n\x17GetWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"{\n\x18GetWebRequestRunResponse\x12Q\n\x04item\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteWebRequestRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteWebRequestRunResponse2\xc0\t\n\x14WebRequestRunService\x12\xe5\x01\n\x12ListWebRequestRuns\x12R.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsRequest\x1aS.github.com.metaprov.modelaapi.services.webrequestrun.v1.ListWebRequestRunsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/webrequestruns/{namespace}\x12\xdf\x01\n\x13\x43reateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.CreateWebRequestRunResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/webrequestruns:\x01*\x12\xda\x01\n\x10GetWebRequestRun\x12P.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunRequest\x1aQ.github.com.metaprov.modelaapi.services.webrequestrun.v1.GetWebRequestRunResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/webrequestruns/{name}\x12\x8e\x02\n\x13UpdateWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/webrequestruns/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xef\x01\n\x13\x44\x65leteWebRequestRun\x12S.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunRequest\x1aT.github.com.metaprov.modelaapi.services.webrequestrun.v1.DeleteWebRequestRunResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/webrequestruns/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/webrequestrun/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _LISTWEBREQUESTRUNSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=411,
-  serialized_end=456,
+  serialized_start=445,
+  serialized_end=490,
 )
 
 _LISTWEBREQUESTRUNSREQUEST = _descriptor.Descriptor(
@@ -107,8 +108,8 @@ _LISTWEBREQUESTRUNSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=237,
-  serialized_end=456,
+  serialized_start=271,
+  serialized_end=490,
 )
 
 
@@ -139,8 +140,8 @@ _LISTWEBREQUESTRUNSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=458,
-  serialized_end=574,
+  serialized_start=492,
+  serialized_end=608,
 )
 
 
@@ -164,8 +165,8 @@ _CREATEWEBREQUESTRUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=576,
-  serialized_end=605,
+  serialized_start=610,
+  serialized_end=639,
 )
 
 
@@ -196,8 +197,8 @@ _CREATEWEBREQUESTRUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=607,
-  serialized_end=718,
+  serialized_start=641,
+  serialized_end=752,
 )
 
 
@@ -216,6 +217,13 @@ _UPDATEWEBREQUESTRUNREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_mask', full_name='github.com.metaprov.modelaapi.services.webrequestrun.v1.UpdateWebRequestRunRequest.field_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -228,8 +236,8 @@ _UPDATEWEBREQUESTRUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=720,
-  serialized_end=831,
+  serialized_start=755,
+  serialized_end=914,
 )
 
 
@@ -253,8 +261,8 @@ _UPDATEWEBREQUESTRUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=833,
-  serialized_end=862,
+  serialized_start=916,
+  serialized_end=945,
 )
 
 
@@ -292,8 +300,8 @@ _GETWEBREQUESTRUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=864,
-  serialized_end=922,
+  serialized_start=947,
+  serialized_end=1005,
 )
 
 
@@ -331,8 +339,8 @@ _GETWEBREQUESTRUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=924,
-  serialized_end=1047,
+  serialized_start=1007,
+  serialized_end=1130,
 )
 
 
@@ -370,8 +378,8 @@ _DELETEWEBREQUESTRUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1049,
-  serialized_end=1110,
+  serialized_start=1132,
+  serialized_end=1193,
 )
 
 
@@ -395,8 +403,8 @@ _DELETEWEBREQUESTRUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1112,
-  serialized_end=1141,
+  serialized_start=1195,
+  serialized_end=1224,
 )
 
 _LISTWEBREQUESTRUNSREQUEST_LABELSENTRY.containing_type = _LISTWEBREQUESTRUNSREQUEST
@@ -404,6 +412,7 @@ _LISTWEBREQUESTRUNSREQUEST.fields_by_name['labels'].message_type = _LISTWEBREQUE
 _LISTWEBREQUESTRUNSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._WEBREQUESTRUNLIST
 _CREATEWEBREQUESTRUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._WEBREQUESTRUN
 _UPDATEWEBREQUESTRUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._WEBREQUESTRUN
+_UPDATEWEBREQUESTRUNREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETWEBREQUESTRUNRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._WEBREQUESTRUN
 DESCRIPTOR.message_types_by_name['ListWebRequestRunsRequest'] = _LISTWEBREQUESTRUNSREQUEST
 DESCRIPTOR.message_types_by_name['ListWebRequestRunsResponse'] = _LISTWEBREQUESTRUNSRESPONSE
@@ -506,8 +515,8 @@ _WEBREQUESTRUNSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1144,
-  serialized_end=2360,
+  serialized_start=1227,
+  serialized_end=2443,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListWebRequestRuns',

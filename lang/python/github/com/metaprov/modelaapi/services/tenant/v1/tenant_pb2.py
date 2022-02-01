@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/tenant/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto\x12\x30github.com.metaprov.modelaapi.services.tenant.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xb8\x01\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListTenantsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x16\n\x14\x43reateTenantResponse\"b\n\x13UpdateTenantRequest\x12K\n\x04item\x18\x05 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x16\n\x14UpdateTenantResponse\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x8a\x04\n\x11GetTenantResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\x12L\n\x06\x61lerts\x18\x02 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12O\n\x08\x64\x61tasets\x18\x03 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12P\n\x07studies\x18\x04 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12O\n\x06models\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12X\n\npredictors\x18\x06 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\x12\x0c\n\x04yaml\x18\x07 \x01(\t\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTenantResponse2\xcd\x07\n\rTenantService\x12\xbb\x01\n\x0bListTenants\x12\x44.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest\x1a\x45.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/tenants/{namespace}\x12\xb5\x01\n\x0c\x43reateTenant\x12\x45.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest\x1a\x46.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/tenants:\x01*\x12\xbc\x01\n\tGetTenant\x12\x42.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantRequest\x1a\x43.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/tenants/{namespace}/{name}\x12\xe4\x01\n\x0cUpdateTenant\x12\x45.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest\x1a\x46.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/tenants/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x9f\x01\n\x0c\x44\x65leteTenant\x12\x45.github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantRequest\x1a\x46.github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantResponse\"\x00\x42\x32Z0github.com/metaprov/modelaapi/services/tenant/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/tenant/v1/tenant.proto\x12\x30github.com.metaprov.modelaapi.services.tenant.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\x1aIgithub.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto\"\xb8\x01\n\x12ListTenantsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x03 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x13ListTenantsResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList\"b\n\x13\x43reateTenantRequest\x12K\n\x04item\x18\x04 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\x16\n\x14\x43reateTenantResponse\"\x92\x01\n\x13UpdateTenantRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x16\n\x14UpdateTenantResponse\"3\n\x10GetTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x8a\x04\n\x11GetTenantResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\x12L\n\x06\x61lerts\x18\x02 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\x12O\n\x08\x64\x61tasets\x18\x03 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset\x12P\n\x07studies\x18\x04 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study\x12O\n\x06models\x18\x05 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Model\x12X\n\npredictors\x18\x06 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor\x12\x0c\n\x04yaml\x18\x07 \x01(\t\"6\n\x13\x44\x65leteTenantRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteTenantResponse2\xcd\x07\n\rTenantService\x12\xbb\x01\n\x0bListTenants\x12\x44.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsRequest\x1a\x45.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/tenants/{namespace}\x12\xb5\x01\n\x0c\x43reateTenant\x12\x45.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest\x1a\x46.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/tenants:\x01*\x12\xbc\x01\n\tGetTenant\x12\x42.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantRequest\x1a\x43.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/tenants/{namespace}/{name}\x12\xe4\x01\n\x0cUpdateTenant\x12\x45.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest\x1a\x46.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/tenants/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x9f\x01\n\x0c\x44\x65leteTenant\x12\x45.github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantRequest\x1a\x46.github.com.metaprov.modelaapi.services.tenant.v1.DeleteTenantResponse\"\x00\x42\x32Z0github.com/metaprov/modelaapi/services/tenant/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_inference_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -65,8 +66,8 @@ _LISTTENANTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=575,
-  serialized_end=620,
+  serialized_start=609,
+  serialized_end=654,
 )
 
 _LISTTENANTSREQUEST = _descriptor.Descriptor(
@@ -103,8 +104,8 @@ _LISTTENANTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=436,
-  serialized_end=620,
+  serialized_start=470,
+  serialized_end=654,
 )
 
 
@@ -135,8 +136,8 @@ _LISTTENANTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=622,
-  serialized_end=725,
+  serialized_start=656,
+  serialized_end=759,
 )
 
 
@@ -167,8 +168,8 @@ _CREATETENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=727,
-  serialized_end=825,
+  serialized_start=761,
+  serialized_end=859,
 )
 
 
@@ -192,8 +193,8 @@ _CREATETENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=827,
-  serialized_end=849,
+  serialized_start=861,
+  serialized_end=883,
 )
 
 
@@ -207,7 +208,14 @@ _UPDATETENANTREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='item', full_name='github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.item', index=0,
-      number=5, type=11, cpp_type=10, label=1,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_mask', full_name='github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.field_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -224,8 +232,8 @@ _UPDATETENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=851,
-  serialized_end=949,
+  serialized_start=886,
+  serialized_end=1032,
 )
 
 
@@ -249,8 +257,8 @@ _UPDATETENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=951,
-  serialized_end=973,
+  serialized_start=1034,
+  serialized_end=1056,
 )
 
 
@@ -288,8 +296,8 @@ _GETTENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=975,
-  serialized_end=1026,
+  serialized_start=1058,
+  serialized_end=1109,
 )
 
 
@@ -362,8 +370,8 @@ _GETTENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1029,
-  serialized_end=1551,
+  serialized_start=1112,
+  serialized_end=1634,
 )
 
 
@@ -401,8 +409,8 @@ _DELETETENANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1553,
-  serialized_end=1607,
+  serialized_start=1636,
+  serialized_end=1690,
 )
 
 
@@ -426,8 +434,8 @@ _DELETETENANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1609,
-  serialized_end=1631,
+  serialized_start=1692,
+  serialized_end=1714,
 )
 
 _LISTTENANTSREQUEST_LABELSENTRY.containing_type = _LISTTENANTSREQUEST
@@ -435,6 +443,7 @@ _LISTTENANTSREQUEST.fields_by_name['labels'].message_type = _LISTTENANTSREQUEST_
 _LISTTENANTSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANTLIST
 _CREATETENANTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANT
 _UPDATETENANTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANT
+_UPDATETENANTREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETTENANTRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._TENANT
 _GETTENANTRESPONSE.fields_by_name['alerts'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ALERT
 _GETTENANTRESPONSE.fields_by_name['datasets'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._DATASET
@@ -542,8 +551,8 @@ _TENANTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1634,
-  serialized_end=2607,
+  serialized_start=1717,
+  serialized_end=2690,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListTenants',

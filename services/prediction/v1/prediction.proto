@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/prediction/v1";
 package github.com.metaprov.modelaapi.services.prediction.v1;
 
-
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
@@ -29,6 +29,7 @@ message CreatePredictionRequest {
 
 message UpdatePredictionRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdatePredictionResponse {

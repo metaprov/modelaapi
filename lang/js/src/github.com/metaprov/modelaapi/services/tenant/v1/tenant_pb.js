@@ -23,6 +23,8 @@ var global = (function() {
 
 var google_api_annotations_pb = require('../../../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
+goog.object.extend(proto, google_protobuf_field_mask_pb);
 var github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb.js');
 goog.object.extend(proto, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb);
 var github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb.js');
@@ -849,7 +851,8 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f),
+    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -886,10 +889,15 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.deser
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 5:
+    case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinaryFromReader);
       msg.setItem(value);
+      break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
       break;
     default:
       reader.skipField();
@@ -923,21 +931,29 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.seria
   f = message.getItem();
   if (f != null) {
     writer.writeMessage(
-      5,
+      1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.serializeBinaryToWriter
+    );
+  }
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 5;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant}
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.getItem = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant, 5));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant, 1));
 };
 
 
@@ -946,7 +962,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest} returns this
 */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.setItem = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
@@ -964,7 +980,44 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.hasItem = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.UpdateTenantRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

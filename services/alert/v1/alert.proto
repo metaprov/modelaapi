@@ -1,5 +1,6 @@
 syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/alert/v1";
+import "google/protobuf/field_mask.proto";
 
 package github.com.metaprov.modelaapi.services.alert.v1;
 import "google/api/annotations.proto";
@@ -30,6 +31,7 @@ message CreateAlertResponse {
 
 message UpdateAlertRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateAlertResponse {

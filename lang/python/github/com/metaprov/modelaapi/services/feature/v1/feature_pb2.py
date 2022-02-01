@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/feature/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/feature/v1/feature.proto\x12\x31github.com.metaprov.modelaapi.services.feature.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xf4\x01\n\x13ListFeaturesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListFeaturesResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList\"c\n\x14\x43reateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\"\x17\n\x15\x43reateFeatureResponse\"c\n\x14UpdateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\"\x17\n\x15UpdateFeatureResponse\"4\n\x11GetFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetFeatureResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse2\x92\x08\n\x0e\x46\x65\x61tureService\x12\xc1\x01\n\x0cListFeatures\x12\x46.github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest\x1aG.github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/features/{namespace}\x12\xbb\x01\n\rCreateFeature\x12G.github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureRequest\x1aH.github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/features:\x01*\x12\xc2\x01\n\nGetFeature\x12\x44.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureRequest\x1a\x45.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/features/{namespace}/{name}\x12\xea\x01\n\rUpdateFeature\x12G.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest\x1aH.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/features/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteFeature\x12G.github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureRequest\x1aH.github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/features/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/feature/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/feature/v1/feature.proto\x12\x31github.com.metaprov.modelaapi.services.feature.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xf4\x01\n\x13ListFeaturesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"h\n\x14ListFeaturesResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList\"c\n\x14\x43reateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\"\x17\n\x15\x43reateFeatureResponse\"\x93\x01\n\x14UpdateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateFeatureResponse\"4\n\x11GetFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"o\n\x12GetFeatureResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"7\n\x14\x44\x65leteFeatureRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse2\x92\x08\n\x0e\x46\x65\x61tureService\x12\xc1\x01\n\x0cListFeatures\x12\x46.github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesRequest\x1aG.github.com.metaprov.modelaapi.services.feature.v1.ListFeaturesResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/features/{namespace}\x12\xbb\x01\n\rCreateFeature\x12G.github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureRequest\x1aH.github.com.metaprov.modelaapi.services.feature.v1.CreateFeatureResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/features:\x01*\x12\xc2\x01\n\nGetFeature\x12\x44.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureRequest\x1a\x45.github.com.metaprov.modelaapi.services.feature.v1.GetFeatureResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/features/{namespace}/{name}\x12\xea\x01\n\rUpdateFeature\x12G.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest\x1aH.github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/features/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteFeature\x12G.github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureRequest\x1aH.github.com.metaprov.modelaapi.services.feature.v1.DeleteFeatureResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/features/{namespace}/{name}B3Z1github.com/metaprov/modelaapi/services/feature/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _LISTFEATURESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=418,
-  serialized_end=463,
+  serialized_start=452,
+  serialized_end=497,
 )
 
 _LISTFEATURESREQUEST = _descriptor.Descriptor(
@@ -121,8 +122,8 @@ _LISTFEATURESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=219,
-  serialized_end=463,
+  serialized_start=253,
+  serialized_end=497,
 )
 
 
@@ -153,8 +154,8 @@ _LISTFEATURESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=569,
+  serialized_start=499,
+  serialized_end=603,
 )
 
 
@@ -185,8 +186,8 @@ _CREATEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=571,
-  serialized_end=670,
+  serialized_start=605,
+  serialized_end=704,
 )
 
 
@@ -210,8 +211,8 @@ _CREATEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=672,
-  serialized_end=695,
+  serialized_start=706,
+  serialized_end=729,
 )
 
 
@@ -230,6 +231,13 @@ _UPDATEFEATUREREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_mask', full_name='github.com.metaprov.modelaapi.services.feature.v1.UpdateFeatureRequest.field_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -242,8 +250,8 @@ _UPDATEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=697,
-  serialized_end=796,
+  serialized_start=732,
+  serialized_end=879,
 )
 
 
@@ -267,8 +275,8 @@ _UPDATEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=798,
-  serialized_end=821,
+  serialized_start=881,
+  serialized_end=904,
 )
 
 
@@ -306,8 +314,8 @@ _GETFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=823,
-  serialized_end=875,
+  serialized_start=906,
+  serialized_end=958,
 )
 
 
@@ -345,8 +353,8 @@ _GETFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=877,
-  serialized_end=988,
+  serialized_start=960,
+  serialized_end=1071,
 )
 
 
@@ -384,8 +392,8 @@ _DELETEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=990,
-  serialized_end=1045,
+  serialized_start=1073,
+  serialized_end=1128,
 )
 
 
@@ -409,8 +417,8 @@ _DELETEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1047,
-  serialized_end=1070,
+  serialized_start=1130,
+  serialized_end=1153,
 )
 
 _LISTFEATURESREQUEST_LABELSENTRY.containing_type = _LISTFEATURESREQUEST
@@ -418,6 +426,7 @@ _LISTFEATURESREQUEST.fields_by_name['labels'].message_type = _LISTFEATURESREQUES
 _LISTFEATURESRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURELIST
 _CREATEFEATUREREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
 _UPDATEFEATUREREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
+_UPDATEFEATUREREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETFEATURERESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
 DESCRIPTOR.message_types_by_name['ListFeaturesRequest'] = _LISTFEATURESREQUEST
 DESCRIPTOR.message_types_by_name['ListFeaturesResponse'] = _LISTFEATURESRESPONSE
@@ -520,8 +529,8 @@ _FEATURESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1073,
-  serialized_end=2115,
+  serialized_start=1156,
+  serialized_end=2198,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListFeatures',

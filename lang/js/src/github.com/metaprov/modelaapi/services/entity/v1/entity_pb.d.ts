@@ -1,5 +1,6 @@
 import * as jspb from 'google-protobuf'
 
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
@@ -98,6 +99,11 @@ export class UpdateEntityRequest extends jspb.Message {
   hasItem(): boolean;
   clearItem(): UpdateEntityRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateEntityRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateEntityRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateEntityRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateEntityRequest): UpdateEntityRequest.AsObject;
@@ -109,6 +115,7 @@ export class UpdateEntityRequest extends jspb.Message {
 export namespace UpdateEntityRequest {
   export type AsObject = {
     item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 
@@ -133,6 +140,11 @@ export class GetEntityRequest extends jspb.Message {
   getName(): string;
   setName(value: string): GetEntityRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): GetEntityRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): GetEntityRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetEntityRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetEntityRequest): GetEntityRequest.AsObject;
@@ -145,6 +157,7 @@ export namespace GetEntityRequest {
   export type AsObject = {
     namespace: string,
     name: string,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

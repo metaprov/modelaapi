@@ -2,6 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/todo/v1";
 
 package github.com.metaprov.modelaapi.services.todo.v1;
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
@@ -26,6 +27,7 @@ message CreateTodoResponse {
 
 message UpdateTodoRequest {
     github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateTodoResponse {

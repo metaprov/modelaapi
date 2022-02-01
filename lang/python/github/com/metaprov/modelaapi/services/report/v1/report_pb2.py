@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/report/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/report/v1/report.proto\x12\x30github.com.metaprov.modelaapi.services.report.v1\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\xf1\x01\n\x12ListReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"j\n\x13ListReportsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportList\"e\n\x13\x43reateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x16\n\x14\x43reateReportResponse\"e\n\x13UpdateReportRequest\x12N\n\x04item\x18\x05 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x16\n\x14UpdateReportResponse\"3\n\x10GetReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"q\n\x11GetReportResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteReportResponse\"8\n\x15\x44ownloadReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n\x16\x44ownloadReportResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\x32\xaf\t\n\rReportService\x12\xbb\x01\n\x0bListReports\x12\x44.github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest\x1a\x45.github.com.metaprov.modelaapi.services.report.v1.ListReportsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/reports/{namespace}\x12\xb5\x01\n\x0c\x43reateReport\x12\x45.github.com.metaprov.modelaapi.services.report.v1.CreateReportRequest\x1a\x46.github.com.metaprov.modelaapi.services.report.v1.CreateReportResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/reports:\x01*\x12\xbc\x01\n\tGetReport\x12\x42.github.com.metaprov.modelaapi.services.report.v1.GetReportRequest\x1a\x43.github.com.metaprov.modelaapi.services.report.v1.GetReportResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/reports/{namespace}/{name}\x12\xe4\x01\n\x0cUpdateReport\x12\x45.github.com.metaprov.modelaapi.services.report.v1.UpdateReportRequest\x1a\x46.github.com.metaprov.modelaapi.services.report.v1.UpdateReportResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/reports/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc5\x01\n\x0c\x44\x65leteReport\x12\x45.github.com.metaprov.modelaapi.services.report.v1.DeleteReportRequest\x1a\x46.github.com.metaprov.modelaapi.services.report.v1.DeleteReportResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/reports/{namespace}/{name}\x12\xb9\x01\n\x08\x44ownload\x12G.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest\x1aH.github.com.metaprov.modelaapi.services.report.v1.DownloadReportResponse\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/v1/reports/{name}B2Z0github.com/metaprov/modelaapi/services/report/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/report/v1/report.proto\x12\x30github.com.metaprov.modelaapi.services.report.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\xf1\x01\n\x12ListReportsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"j\n\x13ListReportsResponse\x12S\n\x05items\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportList\"e\n\x13\x43reateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\"\x16\n\x14\x43reateReportResponse\"\x95\x01\n\x13UpdateReportRequest\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x16\n\x14UpdateReportResponse\"3\n\x10GetReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"q\n\x11GetReportResponse\x12N\n\x04item\x18\x01 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"6\n\x13\x44\x65leteReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x16\n\x14\x44\x65leteReportResponse\"8\n\x15\x44ownloadReportRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n\x16\x44ownloadReportResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\x32\xaf\t\n\rReportService\x12\xbb\x01\n\x0bListReports\x12\x44.github.com.metaprov.modelaapi.services.report.v1.ListReportsRequest\x1a\x45.github.com.metaprov.modelaapi.services.report.v1.ListReportsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/reports/{namespace}\x12\xb5\x01\n\x0c\x43reateReport\x12\x45.github.com.metaprov.modelaapi.services.report.v1.CreateReportRequest\x1a\x46.github.com.metaprov.modelaapi.services.report.v1.CreateReportResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/reports:\x01*\x12\xbc\x01\n\tGetReport\x12\x42.github.com.metaprov.modelaapi.services.report.v1.GetReportRequest\x1a\x43.github.com.metaprov.modelaapi.services.report.v1.GetReportResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/reports/{namespace}/{name}\x12\xe4\x01\n\x0cUpdateReport\x12\x45.github.com.metaprov.modelaapi.services.report.v1.UpdateReportRequest\x1a\x46.github.com.metaprov.modelaapi.services.report.v1.UpdateReportResponse\"E\x82\xd3\xe4\x93\x02?\x1a:/v1/reports/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xc5\x01\n\x0c\x44\x65leteReport\x12\x45.github.com.metaprov.modelaapi.services.report.v1.DeleteReportRequest\x1a\x46.github.com.metaprov.modelaapi.services.report.v1.DeleteReportResponse\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/reports/{namespace}/{name}\x12\xb9\x01\n\x08\x44ownload\x12G.github.com.metaprov.modelaapi.services.report.v1.DownloadReportRequest\x1aH.github.com.metaprov.modelaapi.services.report.v1.DownloadReportResponse\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/v1/reports/{name}B2Z0github.com/metaprov/modelaapi/services/report/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _LISTREPORTSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=416,
-  serialized_end=461,
+  serialized_start=450,
+  serialized_end=495,
 )
 
 _LISTREPORTSREQUEST = _descriptor.Descriptor(
@@ -121,8 +122,8 @@ _LISTREPORTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=220,
-  serialized_end=461,
+  serialized_start=254,
+  serialized_end=495,
 )
 
 
@@ -153,8 +154,8 @@ _LISTREPORTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=463,
-  serialized_end=569,
+  serialized_start=497,
+  serialized_end=603,
 )
 
 
@@ -185,8 +186,8 @@ _CREATEREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=571,
-  serialized_end=672,
+  serialized_start=605,
+  serialized_end=706,
 )
 
 
@@ -210,8 +211,8 @@ _CREATEREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=674,
-  serialized_end=696,
+  serialized_start=708,
+  serialized_end=730,
 )
 
 
@@ -225,7 +226,14 @@ _UPDATEREPORTREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='item', full_name='github.com.metaprov.modelaapi.services.report.v1.UpdateReportRequest.item', index=0,
-      number=5, type=11, cpp_type=10, label=1,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_mask', full_name='github.com.metaprov.modelaapi.services.report.v1.UpdateReportRequest.field_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -242,8 +250,8 @@ _UPDATEREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=698,
-  serialized_end=799,
+  serialized_start=733,
+  serialized_end=882,
 )
 
 
@@ -267,8 +275,8 @@ _UPDATEREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=801,
-  serialized_end=823,
+  serialized_start=884,
+  serialized_end=906,
 )
 
 
@@ -306,8 +314,8 @@ _GETREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=825,
-  serialized_end=876,
+  serialized_start=908,
+  serialized_end=959,
 )
 
 
@@ -345,8 +353,8 @@ _GETREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=878,
-  serialized_end=991,
+  serialized_start=961,
+  serialized_end=1074,
 )
 
 
@@ -384,8 +392,8 @@ _DELETEREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=993,
-  serialized_end=1047,
+  serialized_start=1076,
+  serialized_end=1130,
 )
 
 
@@ -409,8 +417,8 @@ _DELETEREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1049,
-  serialized_end=1071,
+  serialized_start=1132,
+  serialized_end=1154,
 )
 
 
@@ -448,8 +456,8 @@ _DOWNLOADREPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1073,
-  serialized_end=1129,
+  serialized_start=1156,
+  serialized_end=1212,
 )
 
 
@@ -480,8 +488,8 @@ _DOWNLOADREPORTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1131,
-  serialized_end=1168,
+  serialized_start=1214,
+  serialized_end=1251,
 )
 
 _LISTREPORTSREQUEST_LABELSENTRY.containing_type = _LISTREPORTSREQUEST
@@ -489,6 +497,7 @@ _LISTREPORTSREQUEST.fields_by_name['labels'].message_type = _LISTREPORTSREQUEST_
 _LISTREPORTSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORTLIST
 _CREATEREPORTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT
 _UPDATEREPORTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT
+_UPDATEREPORTREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETREPORTRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._REPORT
 DESCRIPTOR.message_types_by_name['ListReportsRequest'] = _LISTREPORTSREQUEST
 DESCRIPTOR.message_types_by_name['ListReportsResponse'] = _LISTREPORTSRESPONSE
@@ -607,8 +616,8 @@ _REPORTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1171,
-  serialized_end=2370,
+  serialized_start=1254,
+  serialized_end=2453,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListReports',

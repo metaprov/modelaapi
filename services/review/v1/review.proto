@@ -2,6 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/review/v1";
 package github.com.metaprov.modelaapi.services.review.v1;
 
+import "google/protobuf/field_mask.proto";
 import "google/protobuf/empty.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
 import "google/api/annotations.proto";
@@ -26,6 +27,7 @@ message CreateReviewResponse {
 
 message UpdateReviewRequest {
     github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateReviewResponse {

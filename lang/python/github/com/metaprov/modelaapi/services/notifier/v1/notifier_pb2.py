@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2
 from github.com.metaprov.modelaapi.services.common.v1 import common_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z2github.com/metaprov/modelaapi/services/notifier/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/notifier/v1/notifier.proto\x12\x32github.com.metaprov.modelaapi.services.notifier.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xf7\x01\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x15ListNotifiersResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList\"\x12\n\x10NotifierResponse\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x18\n\x16\x43reateNotifierResponse\"f\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x18\n\x16UpdateNotifierResponse\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x13GetNotifierResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteNotifierResponse2\xb1\x08\n\x0fNotifierService\x12\xc7\x01\n\rListNotifiers\x12H.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/notifiers/{namespace}\x12\xc1\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/notifiers:\x01*\x12\xc8\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierRequest\x1aG.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/notifiers/{namespace}/{name}\x12\xf0\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a</v1/notifiers/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/notifiers/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/notifier/v1b\x06proto3'
+  serialized_pb=b'\nAgithub.com/metaprov/modelaapi/services/notifier/v1/notifier.proto\x12\x32github.com.metaprov.modelaapi.services.notifier.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xf7\x01\n\x14ListNotifiersRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x15ListNotifiersResponse\x12R\n\x05items\x18\x01 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList\"\x12\n\x10NotifierResponse\"f\n\x15\x43reateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x18\n\x16\x43reateNotifierResponse\"\x96\x01\n\x15UpdateNotifierRequest\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x18\n\x16UpdateNotifierResponse\"5\n\x12GetNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"r\n\x13GetNotifierResponse\x12M\n\x04item\x18\x01 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"8\n\x15\x44\x65leteNotifierRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x18\n\x16\x44\x65leteNotifierResponse2\xb1\x08\n\x0fNotifierService\x12\xc7\x01\n\rListNotifiers\x12H.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersRequest\x1aI.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/notifiers/{namespace}\x12\xc1\x01\n\x0e\x43reateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierResponse\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/v1/notifiers:\x01*\x12\xc8\x01\n\x0bGetNotifier\x12\x46.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierRequest\x1aG.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/notifiers/{namespace}/{name}\x12\xf0\x01\n\x0eUpdateNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierResponse\"G\x82\xd3\xe4\x93\x02\x41\x1a</v1/notifiers/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xd1\x01\n\x0e\x44\x65leteNotifier\x12I.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierRequest\x1aJ.github.com.metaprov.modelaapi.services.notifier.v1.DeleteNotifierResponse\"(\x82\xd3\xe4\x93\x02\"* /v1/notifiers/{namespace}/{name}B4Z2github.com/metaprov/modelaapi/services/notifier/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +64,8 @@ _LISTNOTIFIERSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=488,
-  serialized_end=533,
+  serialized_start=522,
+  serialized_end=567,
 )
 
 _LISTNOTIFIERSREQUEST = _descriptor.Descriptor(
@@ -122,8 +123,8 @@ _LISTNOTIFIERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=286,
-  serialized_end=533,
+  serialized_start=320,
+  serialized_end=567,
 )
 
 
@@ -154,8 +155,8 @@ _LISTNOTIFIERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=535,
-  serialized_end=642,
+  serialized_start=569,
+  serialized_end=676,
 )
 
 
@@ -179,8 +180,8 @@ _NOTIFIERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=644,
-  serialized_end=662,
+  serialized_start=678,
+  serialized_end=696,
 )
 
 
@@ -211,8 +212,8 @@ _CREATENOTIFIERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=664,
-  serialized_end=766,
+  serialized_start=698,
+  serialized_end=800,
 )
 
 
@@ -236,8 +237,8 @@ _CREATENOTIFIERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=792,
+  serialized_start=802,
+  serialized_end=826,
 )
 
 
@@ -256,6 +257,13 @@ _UPDATENOTIFIERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='field_mask', full_name='github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.field_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -268,8 +276,8 @@ _UPDATENOTIFIERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=794,
-  serialized_end=896,
+  serialized_start=829,
+  serialized_end=979,
 )
 
 
@@ -293,8 +301,8 @@ _UPDATENOTIFIERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=898,
-  serialized_end=922,
+  serialized_start=981,
+  serialized_end=1005,
 )
 
 
@@ -332,8 +340,8 @@ _GETNOTIFIERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=924,
-  serialized_end=977,
+  serialized_start=1007,
+  serialized_end=1060,
 )
 
 
@@ -371,8 +379,8 @@ _GETNOTIFIERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=979,
-  serialized_end=1093,
+  serialized_start=1062,
+  serialized_end=1176,
 )
 
 
@@ -410,8 +418,8 @@ _DELETENOTIFIERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1095,
-  serialized_end=1151,
+  serialized_start=1178,
+  serialized_end=1234,
 )
 
 
@@ -435,8 +443,8 @@ _DELETENOTIFIERRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1153,
-  serialized_end=1177,
+  serialized_start=1236,
+  serialized_end=1260,
 )
 
 _LISTNOTIFIERSREQUEST_LABELSENTRY.containing_type = _LISTNOTIFIERSREQUEST
@@ -444,6 +452,7 @@ _LISTNOTIFIERSREQUEST.fields_by_name['labels'].message_type = _LISTNOTIFIERSREQU
 _LISTNOTIFIERSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._NOTIFIERLIST
 _CREATENOTIFIERREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._NOTIFIER
 _UPDATENOTIFIERREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._NOTIFIER
+_UPDATENOTIFIERREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETNOTIFIERRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._NOTIFIER
 DESCRIPTOR.message_types_by_name['ListNotifiersRequest'] = _LISTNOTIFIERSREQUEST
 DESCRIPTOR.message_types_by_name['ListNotifiersResponse'] = _LISTNOTIFIERSRESPONSE
@@ -554,8 +563,8 @@ _NOTIFIERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1180,
-  serialized_end=2253,
+  serialized_start=1263,
+  serialized_end=2336,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListNotifiers',

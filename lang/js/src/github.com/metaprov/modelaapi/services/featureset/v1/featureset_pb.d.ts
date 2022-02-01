@@ -1,5 +1,6 @@
 import * as jspb from 'google-protobuf'
 
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 
@@ -98,6 +99,11 @@ export class UpdateFeaturesetRequest extends jspb.Message {
   hasItem(): boolean;
   clearItem(): UpdateFeaturesetRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateFeaturesetRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateFeaturesetRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateFeaturesetRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateFeaturesetRequest): UpdateFeaturesetRequest.AsObject;
@@ -109,6 +115,7 @@ export class UpdateFeaturesetRequest extends jspb.Message {
 export namespace UpdateFeaturesetRequest {
   export type AsObject = {
     item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

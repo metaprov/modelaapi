@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/dataapp/v1";
 package github.com.metaprov.modelaapi.services.dataapp.v1;
 
-
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
@@ -28,6 +28,7 @@ message CreateDataAppRequest {
 
 message UpdateDataAppRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateDataAppResponse {
@@ -37,11 +38,13 @@ message UpdateDataAppResponse {
 message GetDataAppRequest {
     string namespace = 1;
     string name      = 2;
+    
 }
 
 message GetDataAppResponse {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
     string yaml = 2;
+    
 
 }
 

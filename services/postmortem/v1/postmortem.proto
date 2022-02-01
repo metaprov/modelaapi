@@ -2,6 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/postmortem/v1";
 package github.com.metaprov.modelaapi.services.postmortem.v1;
 
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/team/v1alpha1/generated.proto";
 
@@ -26,7 +27,8 @@ message CreatePostMortemResponse {
 }
 
 message UpdatePostMortemRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 5;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdatePostMortemResponse {

@@ -5,6 +5,7 @@ package github.com.metaprov.modelaapi.services.attachment.v1;
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
+import "google/protobuf/field_mask.proto";
 
 message ListAttachmentsRequest {
     string             namespace  = 1;
@@ -30,6 +31,7 @@ message CreateAttachmentResponse {
 
 message UpdateAttachmentRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateAttachmentResponse {

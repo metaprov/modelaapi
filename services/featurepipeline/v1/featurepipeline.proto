@@ -2,6 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/featurepipeline/v1";
 package github.com.metaprov.modelaapi.services.featurepipeline.v1;
 
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 
@@ -27,6 +28,7 @@ message CreateFeaturePipelineResponse {
 
 message UpdateFeaturePipelineRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateFeaturePipelineResponse {
@@ -36,6 +38,7 @@ message UpdateFeaturePipelineResponse {
 message GetFeaturePipelineRequest {
     string namespace = 1;
     string name      = 2;
+    
 }
 
 

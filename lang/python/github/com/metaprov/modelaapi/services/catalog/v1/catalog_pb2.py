@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1 import generated_pb2 as github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_catalog_dot_v1alpha1_dot_generated__pb2
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/catalog/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto\x12\x31github.com.metaprov.modelaapi.services.catalog.v1\x1a\x1cgoogle/api/annotations.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\"\xbf\x01\n\x15ListAlgorithmsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x16ListAlgorithmsResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList\"6\n\x13GetAlgorithmRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x14GetAlgorithmResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"\xc3\x01\n\x17ListMLFrameworksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x06labels\x18\x02 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x18ListMLFrameworksResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkList\"8\n\x15GetMLFrameworkRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x16GetMLFrameworkResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework\"\xb7\x01\n\x11ListCloudsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x12ListCloudsResponse\x12Q\n\x05items\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudList\"2\n\x0fGetCloudRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"`\n\x10GetCloudResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud\"\xc7\x01\n\x19ListPublicDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1aListPublicDatasetsResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetList\":\n\x17GetPublicDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x18GetPublicDatasetResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset\"?\n\x1c\x44ownloadPublicDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\",\n\x1d\x44ownloadPublicDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\">\n\x1bPreviewPublicDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"+\n\x1cPreviewPublicDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"N\n\x1b\x41pplyPublicDatasetCRRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x63rname\x18\x03 \x01(\t\"+\n\x1c\x41pplyPublicDatasetCRResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"\xcb\x01\n\x1bListPretrainedModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x02 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"{\n\x1cListPretrainedModelsResponse\x12[\n\x05items\x18\x01 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelList\"<\n\x19GetPretrainedModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1aGetPretrainedModelResponse\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel\"\xc9\x01\n\x1aListWorkloadClassesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12i\n\x06labels\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"x\n\x1bListWorkloadClassesResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassList\":\n\x17GetWorkloadClassRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"p\n\x18GetWorkloadClassResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass\"\xc9\x01\n\x1aListUserRoleClassesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12i\n\x06labels\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"x\n\x1bListUserRoleClassesResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList\":\n\x17GetUserRoleClassRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"p\n\x18GetUserRoleClassResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass2\x9f\x18\n\x0e\x43\x61talogService\x12\xbc\x01\n\rListAlgorithm\x12H.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest\x1aI.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/algorithms\x12\xbe\x01\n\x0cGetAlgorithm\x12\x46.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmRequest\x1aG.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/algorithms/{name}\x12\xc5\x01\n\x10ListMLFrameworks\x12J.github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/mlframeworks\x12\xc6\x01\n\x0eGetMLFramework\x12H.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkRequest\x1aI.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/mlframeworks/{name}\x12\xad\x01\n\nListClouds\x12\x44.github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest\x1a\x45.github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/v1/clouds\x12\xae\x01\n\x08GetCloud\x12\x42.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudRequest\x1a\x43.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/clouds/{name}\x12\xd1\x01\n\x13ListWorkloadClasses\x12M.github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest\x1aN.github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/workloadclasses\x12\xcf\x01\n\x10GetWorkloadClass\x12J.github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/workloadclasses/{name}\x12\xd1\x01\n\x13ListUserRoleClasses\x12M.github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest\x1aN.github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/userroleclasses\x12\xcf\x01\n\x10GetUserRoleClass\x12J.github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/userroleclasses/{name}\x12\xcc\x01\n\x11ListPublicDataset\x12L.github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest\x1aM.github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/publicdatasets\x12\xce\x01\n\x10GetPublicDataset\x12J.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/publicdatasets/{name}\x12\xe6\x01\n\x15\x44ownloadPublicDataset\x12O.github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetRequest\x1aP.github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/publicdatasets/{name}:download\x12\xe2\x01\n\x14PreviewPublicDataset\x12N.github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetRequest\x1aO.github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/publicdatasets/{name}:preview\x12\xe0\x01\n\x14\x41pplyPublicDatasetCR\x12N.github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRRequest\x1aO.github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/publicdatasets/{name}:applyB3Z1github.com/metaprov/modelaapi/services/catalog/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/catalog/v1/catalog.proto\x12\x31github.com.metaprov.modelaapi.services.catalog.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\"\xbf\x01\n\x15ListAlgorithmsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x64\n\x06labels\x18\x02 \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x16ListAlgorithmsResponse\x12U\n\x05items\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList\"6\n\x13GetAlgorithmRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"h\n\x14GetAlgorithmResponse\x12P\n\x04item\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm\"\xc3\x01\n\x17ListMLFrameworksRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x66\n\x06labels\x18\x02 \x03(\x0b\x32V.github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"s\n\x18ListMLFrameworksResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkList\"8\n\x15GetMLFrameworkRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"l\n\x16GetMLFrameworkResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework\"\xb7\x01\n\x11ListCloudsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12`\n\x06labels\x18\x02 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"g\n\x12ListCloudsResponse\x12Q\n\x05items\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudList\"2\n\x0fGetCloudRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"`\n\x10GetCloudResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud\"\xc7\x01\n\x19ListPublicDatasetsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12h\n\x06labels\x18\x02 \x03(\x0b\x32X.github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1aListPublicDatasetsResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetList\":\n\x17GetPublicDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x18GetPublicDatasetResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset\"?\n\x1c\x44ownloadPublicDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\",\n\x1d\x44ownloadPublicDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\">\n\x1bPreviewPublicDatasetRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"+\n\x1cPreviewPublicDatasetResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"N\n\x1b\x41pplyPublicDatasetCRRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0e\n\x06\x63rname\x18\x03 \x01(\t\"+\n\x1c\x41pplyPublicDatasetCRResponse\x12\x0b\n\x03raw\x18\x01 \x01(\x0c\"\xcb\x01\n\x1bListPretrainedModelsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12j\n\x06labels\x18\x02 \x03(\x0b\x32Z.github.com.metaprov.modelaapi.services.catalog.v1.ListPretrainedModelsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"{\n\x1cListPretrainedModelsResponse\x12[\n\x05items\x18\x01 \x01(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModelList\"<\n\x19GetPretrainedModelRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"t\n\x1aGetPretrainedModelResponse\x12V\n\x04item\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PretrainedModel\"\xc9\x01\n\x1aListWorkloadClassesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12i\n\x06labels\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"x\n\x1bListWorkloadClassesResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassList\":\n\x17GetWorkloadClassRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"p\n\x18GetWorkloadClassResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClass\"\xc9\x01\n\x1aListUserRoleClassesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12i\n\x06labels\x18\x02 \x03(\x0b\x32Y.github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"x\n\x1bListUserRoleClassesResponse\x12Y\n\x05items\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClassList\":\n\x17GetUserRoleClassRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\"p\n\x18GetUserRoleClassResponse\x12T\n\x04item\x18\x01 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.UserRoleClass2\x9f\x18\n\x0e\x43\x61talogService\x12\xbc\x01\n\rListAlgorithm\x12H.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsRequest\x1aI.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/algorithms\x12\xbe\x01\n\x0cGetAlgorithm\x12\x46.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmRequest\x1aG.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/algorithms/{name}\x12\xc5\x01\n\x10ListMLFrameworks\x12J.github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.ListMLFrameworksResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/mlframeworks\x12\xc6\x01\n\x0eGetMLFramework\x12H.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkRequest\x1aI.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/v1/mlframeworks/{name}\x12\xad\x01\n\nListClouds\x12\x44.github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsRequest\x1a\x45.github.com.metaprov.modelaapi.services.catalog.v1.ListCloudsResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/v1/clouds\x12\xae\x01\n\x08GetCloud\x12\x42.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudRequest\x1a\x43.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/clouds/{name}\x12\xd1\x01\n\x13ListWorkloadClasses\x12M.github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesRequest\x1aN.github.com.metaprov.modelaapi.services.catalog.v1.ListWorkloadClassesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/workloadclasses\x12\xcf\x01\n\x10GetWorkloadClass\x12J.github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.GetWorkloadClassResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/workloadclasses/{name}\x12\xd1\x01\n\x13ListUserRoleClasses\x12M.github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesRequest\x1aN.github.com.metaprov.modelaapi.services.catalog.v1.ListUserRoleClassesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/userroleclasses\x12\xcf\x01\n\x10GetUserRoleClass\x12J.github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.GetUserRoleClassResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/userroleclasses/{name}\x12\xcc\x01\n\x11ListPublicDataset\x12L.github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsRequest\x1aM.github.com.metaprov.modelaapi.services.catalog.v1.ListPublicDatasetsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/publicdatasets\x12\xce\x01\n\x10GetPublicDataset\x12J.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetRequest\x1aK.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/publicdatasets/{name}\x12\xe6\x01\n\x15\x44ownloadPublicDataset\x12O.github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetRequest\x1aP.github.com.metaprov.modelaapi.services.catalog.v1.DownloadPublicDatasetResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/v1/publicdatasets/{name}:download\x12\xe2\x01\n\x14PreviewPublicDataset\x12N.github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetRequest\x1aO.github.com.metaprov.modelaapi.services.catalog.v1.PreviewPublicDatasetResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/publicdatasets/{name}:preview\x12\xe0\x01\n\x14\x41pplyPublicDatasetCR\x12N.github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRRequest\x1aO.github.com.metaprov.modelaapi.services.catalog.v1.ApplyPublicDatasetCRResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/publicdatasets/{name}:applyB3Z1github.com/metaprov/modelaapi/services/catalog/v1b\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_catalog_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_catalog_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
 
 
@@ -62,8 +63,8 @@ _LISTALGORITHMSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=413,
+  serialized_start=402,
+  serialized_end=447,
 )
 
 _LISTALGORITHMSREQUEST = _descriptor.Descriptor(
@@ -100,8 +101,8 @@ _LISTALGORITHMSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=413,
+  serialized_start=256,
+  serialized_end=447,
 )
 
 
@@ -132,8 +133,8 @@ _LISTALGORITHMSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=415,
-  serialized_end=526,
+  serialized_start=449,
+  serialized_end=560,
 )
 
 
@@ -171,8 +172,8 @@ _GETALGORITHMREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=528,
-  serialized_end=582,
+  serialized_start=562,
+  serialized_end=616,
 )
 
 
@@ -203,8 +204,8 @@ _GETALGORITHMRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=584,
-  serialized_end=688,
+  serialized_start=618,
+  serialized_end=722,
 )
 
 
@@ -242,8 +243,8 @@ _LISTMLFRAMEWORKSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=413,
+  serialized_start=402,
+  serialized_end=447,
 )
 
 _LISTMLFRAMEWORKSREQUEST = _descriptor.Descriptor(
@@ -280,8 +281,8 @@ _LISTMLFRAMEWORKSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=691,
-  serialized_end=886,
+  serialized_start=725,
+  serialized_end=920,
 )
 
 
@@ -312,8 +313,8 @@ _LISTMLFRAMEWORKSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=1003,
+  serialized_start=922,
+  serialized_end=1037,
 )
 
 
@@ -351,8 +352,8 @@ _GETMLFRAMEWORKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1005,
-  serialized_end=1061,
+  serialized_start=1039,
+  serialized_end=1095,
 )
 
 
@@ -383,8 +384,8 @@ _GETMLFRAMEWORKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1171,
+  serialized_start=1097,
+  serialized_end=1205,
 )
 
 
@@ -422,8 +423,8 @@ _LISTCLOUDSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=413,
+  serialized_start=402,
+  serialized_end=447,
 )
 
 _LISTCLOUDSREQUEST = _descriptor.Descriptor(
@@ -460,8 +461,8 @@ _LISTCLOUDSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1174,
-  serialized_end=1357,
+  serialized_start=1208,
+  serialized_end=1391,
 )
 
 
@@ -492,8 +493,8 @@ _LISTCLOUDSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1359,
-  serialized_end=1462,
+  serialized_start=1393,
+  serialized_end=1496,
 )
 
 
@@ -531,8 +532,8 @@ _GETCLOUDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1464,
-  serialized_end=1514,
+  serialized_start=1498,
+  serialized_end=1548,
 )
 
 
@@ -563,8 +564,8 @@ _GETCLOUDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1516,
-  serialized_end=1612,
+  serialized_start=1550,
+  serialized_end=1646,
 )
 
 
@@ -602,8 +603,8 @@ _LISTPUBLICDATASETSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=413,
+  serialized_start=402,
+  serialized_end=447,
 )
 
 _LISTPUBLICDATASETSREQUEST = _descriptor.Descriptor(
@@ -640,8 +641,8 @@ _LISTPUBLICDATASETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1615,
-  serialized_end=1814,
+  serialized_start=1649,
+  serialized_end=1848,
 )
 
 
@@ -672,8 +673,8 @@ _LISTPUBLICDATASETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1816,
-  serialized_end=1935,
+  serialized_start=1850,
+  serialized_end=1969,
 )
 
 
@@ -711,8 +712,8 @@ _GETPUBLICDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1937,
-  serialized_end=1995,
+  serialized_start=1971,
+  serialized_end=2029,
 )
 
 
@@ -743,8 +744,8 @@ _GETPUBLICDATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1997,
-  serialized_end=2109,
+  serialized_start=2031,
+  serialized_end=2143,
 )
 
 
@@ -782,8 +783,8 @@ _DOWNLOADPUBLICDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2111,
-  serialized_end=2174,
+  serialized_start=2145,
+  serialized_end=2208,
 )
 
 
@@ -814,8 +815,8 @@ _DOWNLOADPUBLICDATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2176,
-  serialized_end=2220,
+  serialized_start=2210,
+  serialized_end=2254,
 )
 
 
@@ -853,8 +854,8 @@ _PREVIEWPUBLICDATASETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2222,
-  serialized_end=2284,
+  serialized_start=2256,
+  serialized_end=2318,
 )
 
 
@@ -885,8 +886,8 @@ _PREVIEWPUBLICDATASETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2286,
-  serialized_end=2329,
+  serialized_start=2320,
+  serialized_end=2363,
 )
 
 
@@ -931,8 +932,8 @@ _APPLYPUBLICDATASETCRREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2331,
-  serialized_end=2409,
+  serialized_start=2365,
+  serialized_end=2443,
 )
 
 
@@ -963,8 +964,8 @@ _APPLYPUBLICDATASETCRRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2411,
-  serialized_end=2454,
+  serialized_start=2445,
+  serialized_end=2488,
 )
 
 
@@ -1002,8 +1003,8 @@ _LISTPRETRAINEDMODELSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=413,
+  serialized_start=402,
+  serialized_end=447,
 )
 
 _LISTPRETRAINEDMODELSREQUEST = _descriptor.Descriptor(
@@ -1040,8 +1041,8 @@ _LISTPRETRAINEDMODELSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2457,
-  serialized_end=2660,
+  serialized_start=2491,
+  serialized_end=2694,
 )
 
 
@@ -1072,8 +1073,8 @@ _LISTPRETRAINEDMODELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2662,
-  serialized_end=2785,
+  serialized_start=2696,
+  serialized_end=2819,
 )
 
 
@@ -1111,8 +1112,8 @@ _GETPRETRAINEDMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2787,
-  serialized_end=2847,
+  serialized_start=2821,
+  serialized_end=2881,
 )
 
 
@@ -1143,8 +1144,8 @@ _GETPRETRAINEDMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2849,
-  serialized_end=2965,
+  serialized_start=2883,
+  serialized_end=2999,
 )
 
 
@@ -1182,8 +1183,8 @@ _LISTWORKLOADCLASSESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=413,
+  serialized_start=402,
+  serialized_end=447,
 )
 
 _LISTWORKLOADCLASSESREQUEST = _descriptor.Descriptor(
@@ -1220,8 +1221,8 @@ _LISTWORKLOADCLASSESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2968,
-  serialized_end=3169,
+  serialized_start=3002,
+  serialized_end=3203,
 )
 
 
@@ -1252,8 +1253,8 @@ _LISTWORKLOADCLASSESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3171,
-  serialized_end=3291,
+  serialized_start=3205,
+  serialized_end=3325,
 )
 
 
@@ -1291,8 +1292,8 @@ _GETWORKLOADCLASSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3293,
-  serialized_end=3351,
+  serialized_start=3327,
+  serialized_end=3385,
 )
 
 
@@ -1323,8 +1324,8 @@ _GETWORKLOADCLASSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3353,
-  serialized_end=3465,
+  serialized_start=3387,
+  serialized_end=3499,
 )
 
 
@@ -1362,8 +1363,8 @@ _LISTUSERROLECLASSESREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=368,
-  serialized_end=413,
+  serialized_start=402,
+  serialized_end=447,
 )
 
 _LISTUSERROLECLASSESREQUEST = _descriptor.Descriptor(
@@ -1400,8 +1401,8 @@ _LISTUSERROLECLASSESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3468,
-  serialized_end=3669,
+  serialized_start=3502,
+  serialized_end=3703,
 )
 
 
@@ -1432,8 +1433,8 @@ _LISTUSERROLECLASSESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3671,
-  serialized_end=3791,
+  serialized_start=3705,
+  serialized_end=3825,
 )
 
 
@@ -1471,8 +1472,8 @@ _GETUSERROLECLASSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3793,
-  serialized_end=3851,
+  serialized_start=3827,
+  serialized_end=3885,
 )
 
 
@@ -1503,8 +1504,8 @@ _GETUSERROLECLASSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3853,
-  serialized_end=3965,
+  serialized_start=3887,
+  serialized_end=3999,
 )
 
 _LISTALGORITHMSREQUEST_LABELSENTRY.containing_type = _LISTALGORITHMSREQUEST
@@ -1882,8 +1883,8 @@ _CATALOGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3968,
-  serialized_end=7071,
+  serialized_start=4002,
+  serialized_end=7105,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAlgorithm',

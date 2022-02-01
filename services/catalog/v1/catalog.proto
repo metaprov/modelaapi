@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/catalog/v1";
 package github.com.metaprov.modelaapi.services.catalog.v1;
 
-
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 
@@ -18,7 +18,7 @@ message ListAlgorithmsResponse {
 
 message GetAlgorithmRequest {
     string namespace   = 1;
-    string name = 2;
+    string name = 2;    
 }
 
 message GetAlgorithmResponse {
@@ -38,7 +38,7 @@ message ListMLFrameworksResponse {
 
 message GetMLFrameworkRequest {
     string namespace   = 1;
-    string name        = 2;
+    string name        = 2;    
 }
 
 message GetMLFrameworkResponse {
@@ -59,7 +59,7 @@ message ListCloudsResponse {
 
 message GetCloudRequest {
     string namespace   = 1;
-    string name        = 2;
+    string name        = 2;    
 }
 
 message GetCloudResponse {
@@ -82,7 +82,7 @@ message ListPublicDatasetsResponse {
 
 message GetPublicDatasetRequest {
     string namespace   = 1;
-    string name = 2;
+    string name = 2;    
 }
 
 message GetPublicDatasetResponse {
@@ -141,6 +141,7 @@ message ListPretrainedModelsResponse {
 message GetPretrainedModelRequest {
     string namespace   = 1;
     string name        = 2;
+    
 }
 
 message GetPretrainedModelResponse {
@@ -162,6 +163,7 @@ message ListWorkloadClassesResponse {
 message GetWorkloadClassRequest {
     string name        = 1;
     string namespace   = 2;
+    
 }
 
 message GetWorkloadClassResponse {
@@ -182,6 +184,7 @@ message ListUserRoleClassesResponse {
 message GetUserRoleClassRequest {
     string name        = 1;
     string namespace   = 2;
+    
 }
 
 message GetUserRoleClassResponse {

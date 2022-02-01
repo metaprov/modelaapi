@@ -3,6 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/model/v1";
 package github.com.metaprov.modelaapi.services.model.v1;
 
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
@@ -147,6 +148,7 @@ message ListModelsResponse {
 message GetModelRequest {
     string namespace = 1;
     string name      = 2;
+    
 }
 
 message UpdateModelResult {

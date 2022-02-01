@@ -3,6 +3,7 @@ option go_package = "github.com/metaprov/modelaapi/services/dataset/v1";
 package github.com.metaprov.modelaapi.services.dataset.v1;
 
 
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
@@ -28,6 +29,7 @@ message GetDatasetRequest {
     string namespace = 1;
     string name      = 2;
     map<string,string> labels =3;
+    
 }
 
 message GetDatasetResponse {
@@ -47,6 +49,7 @@ message CreateDatasetResponse {
 // update dataset
 message UpdateDatasetRequest {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateDatasetResponse {

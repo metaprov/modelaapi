@@ -1,6 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as google_api_annotations_pb from '../../../../../../google/api/annotations_pb';
+import * as google_protobuf_field_mask_pb from 'google-protobuf/google/protobuf/field_mask_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated_pb';
 import * as github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb from '../../../../../../github.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated_pb';
@@ -101,6 +102,11 @@ export class UpdateDataProductRequest extends jspb.Message {
   hasItem(): boolean;
   clearItem(): UpdateDataProductRequest;
 
+  getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
+  setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateDataProductRequest;
+  hasFieldMask(): boolean;
+  clearFieldMask(): UpdateDataProductRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateDataProductRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UpdateDataProductRequest): UpdateDataProductRequest.AsObject;
@@ -112,6 +118,7 @@ export class UpdateDataProductRequest extends jspb.Message {
 export namespace UpdateDataProductRequest {
   export type AsObject = {
     item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
 

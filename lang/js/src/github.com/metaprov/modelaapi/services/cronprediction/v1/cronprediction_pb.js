@@ -21,6 +21,8 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
+var google_protobuf_field_mask_pb = require('google-protobuf/google/protobuf/field_mask_pb.js');
+goog.object.extend(proto, google_protobuf_field_mask_pb);
 var google_api_annotations_pb = require('../../../../../../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb = require('../../../../../../github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated_pb.js');
@@ -1065,7 +1067,8 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f)
+    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.toObject(includeInstance, f),
+    fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1107,6 +1110,11 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.deserializeBinaryFromReader);
       msg.setItem(value);
       break;
+    case 2:
+      var value = new google_protobuf_field_mask_pb.FieldMask;
+      reader.readMessage(value,google_protobuf_field_mask_pb.FieldMask.deserializeBinaryFromReader);
+      msg.setFieldMask(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1142,6 +1150,14 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPrediction.serializeBinaryToWriter
+    );
+  }
+  f = message.getFieldMask();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_field_mask_pb.FieldMask.serializeBinaryToWriter
     );
   }
 };
@@ -1181,6 +1197,43 @@ proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredict
  */
 proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.hasItem = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldMask field_mask = 2;
+ * @return {?proto.google.protobuf.FieldMask}
+ */
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.getFieldMask = function() {
+  return /** @type{?proto.google.protobuf.FieldMask} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_field_mask_pb.FieldMask, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.FieldMask|undefined} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.setFieldMask = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.clearFieldMask = function() {
+  return this.setFieldMask(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.cronprediction.v1.UpdateCronPredictionRequest.prototype.hasFieldMask = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

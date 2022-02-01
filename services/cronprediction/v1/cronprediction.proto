@@ -3,7 +3,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/cronprediction/v1";
 package github.com.metaprov.modelaapi.services.cronprediction.v1;
 
-
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/inference/v1alpha1/generated.proto";
 
@@ -28,6 +28,7 @@ message CreateCronPredictionRequest {
 
 message UpdateCronPredictionRequest {
     github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPrediction item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateCronPredictionResponse {
@@ -37,6 +38,7 @@ message UpdateCronPredictionResponse {
 message GetCronPredictionRequest {
     string namespace = 1;
     string name      = 2;
+    
 }
 
 message GetCronPredictionResponse {

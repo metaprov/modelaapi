@@ -2,6 +2,7 @@ syntax = "proto3";
 option go_package = "github.com/metaprov/modelaapi/services/virtualvolume/v1";
 package github.com.metaprov.modelaapi.services.virtualvolume.v1;
 
+import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto";
 import "github.com/metaprov/modelaapi/services/common/v1/common.proto";
@@ -27,6 +28,7 @@ message CreateVirtualVolumeResponse {
 
 message UpdateVirtualVolumeRequest {
     github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    google.protobuf.FieldMask field_mask = 2;
 }
 
 message UpdateVirtualVolumeResponse {
