@@ -11,7 +11,8 @@ message DatasetProfile {
     repeated Plot plots                = 5;
     repeated ColumnProfile   columns   = 6;
     TableView    table                 = 7;
-    string       hash                   = 8; // signature of the dataset profile.
+    string       hash                  = 8; // signature of the dataset profile.
+    map<string,float> corrWithTarget   = 9; // pearson corr with target
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -21,8 +22,17 @@ message ModelProfile {
     string name                            = 1;
     repeated Plot plots                    = 2;
     map<string,float> importance           = 3; // hold the feature importance
-    
+    AUCChart rocauc                        = 4;
+    AUCChart prauc                         = 5;
 }
+
+message AUCChart {
+    repeated double fpr         = 1;
+    repeated double tpr         = 2;
+    repeated double tresholds   = 3;    
+}
+
+
 
 /////////////////////////////////////////////////////////////////////////
 ///// Forecast profile
