@@ -1656,6 +1656,7 @@ spec:
                         - random
                         - split-column
                         - time
+                        - random-stratified
                         type: string
                       segments:
                         description: Apply the segments first

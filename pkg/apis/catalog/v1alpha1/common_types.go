@@ -1910,13 +1910,14 @@ type ResourceSpec struct {
 	Requirements *v1.ResourceRequirements `json:"requirements,omitempty" protobuf:"bytes,3,opt,name=requirements"`
 }
 
-// +kubebuilder:validation:Enum="random";"split-column";"time";
+// +kubebuilder:validation:Enum="random";"split-column";"time";"random-stratified";
 type DataSplitMethod string
 
 const (
-	DataSplitMethodRandom      = "random"
-	DataSplitMethodSplitColumn = "split-column"
-	DataSplitMethodTime        = "time"
+	DataSplitMethodRandomStratified = "random-stratified"
+	DataSplitMethodRandom           = "random"
+	DataSplitMethodSplitColumn      = "split-column"
+	DataSplitMethodTime             = "time"
 )
 
 // Define the histogram data
