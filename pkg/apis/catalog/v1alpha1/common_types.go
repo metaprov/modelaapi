@@ -1918,6 +1918,7 @@ const (
 	DataSplitMethodRandom           = "random"
 	DataSplitMethodSplitColumn      = "split-column"
 	DataSplitMethodTime             = "time"
+	DataSplitAuto                   = "auto"
 )
 
 // Define the histogram data

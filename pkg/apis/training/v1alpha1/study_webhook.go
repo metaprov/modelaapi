@@ -35,6 +35,22 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	return catalog.Accuracy
 }
 
+func DefaultSplit(task catalog.MLTask) catalog.Metric {
+	if task == catalog.BinaryClassification {
+		return catalog.DataSplitMethodRandomStratified
+	}
+	if task == catalog.MultiClassification {
+		return catalog.DataSplitMethodRandomStratified
+	}
+	if task == catalog.Regression {
+		return catalog.DataSplitMethodRandom
+	}
+	if task == catalog.Forecasting {
+		return catalog.DataSplitMethodTime
+	}
+	return catalog.DataSplitMethodRandom
+}
+
 func (study *Study) DefaultFESearchEstimator(task catalog.MLTask) catalog.ClassicEstimatorName {
 	if task == catalog.BinaryClassification {
 		return catalog.DecisionTreeClassifier
@@ -143,6 +159,10 @@ func (study *Study) Default() {
 		if study.Spec.DatasetName != nil {
 			study.ObjectMeta.Labels["dataset"] = *study.Spec.DatasetName
 		}
+	} 
+
+	if study.Spec.TrainingTemplate.Split.Method == "auto" {
+		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethod(DefaultSplit(*study.Spec.Task))
 	}
 
 }
