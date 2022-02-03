@@ -33,9 +33,6 @@ export class DatasetProfile extends jspb.Message {
   getHash(): string;
   setHash(value: string): DatasetProfile;
 
-  getCorrwithtargetMap(): jspb.Map<string, number>;
-  clearCorrwithtargetMap(): DatasetProfile;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DatasetProfile.AsObject;
   static toObject(includeInstance: boolean, msg: DatasetProfile): DatasetProfile.AsObject;
@@ -54,7 +51,6 @@ export namespace DatasetProfile {
     columnsList: Array<ColumnProfile.AsObject>,
     table?: TableView.AsObject,
     hash: string,
-    corrwithtargetMap: Array<[string, number]>,
   }
 }
 

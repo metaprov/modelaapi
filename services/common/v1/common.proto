@@ -11,8 +11,7 @@ message DatasetProfile {
     repeated Plot plots                = 5;
     repeated ColumnProfile   columns   = 6;
     TableView    table                 = 7;
-    string       hash                  = 8; // signature of the dataset profile.
-    map<string,float> corrWithTarget   = 9; // pearson corr with target
+    string       hash                  = 8; // signature of the dataset profile.    
 }
 
 /////////////////////////////////////////////////////////////////////////

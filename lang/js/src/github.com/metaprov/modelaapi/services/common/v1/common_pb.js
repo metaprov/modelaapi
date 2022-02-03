@@ -334,8 +334,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.toObject =
     columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
     proto.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile.toObject, includeInstance),
     table: (f = msg.getTable()) && proto.github.com.metaprov.modelaapi.services.common.v1.TableView.toObject(includeInstance, f),
-    hash: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    corrwithtargetMap: (f = msg.getCorrwithtargetMap()) ? f.toObject(includeInstance, undefined) : []
+    hash: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -406,12 +405,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.deserializ
     case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setHash(value);
-      break;
-    case 9:
-      var value = msg.getCorrwithtargetMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readFloat, null, "", 0.0);
-         });
       break;
     default:
       reader.skipField();
@@ -500,10 +493,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.serializeB
       8,
       f
     );
-  }
-  f = message.getCorrwithtargetMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeFloat);
   }
 };
 
@@ -709,28 +698,6 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
 proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.setHash = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
-
-
-/**
- * map<string, float> corrWithTarget = 9;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,number>}
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.getCorrwithtargetMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,number>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
-      null));
-};
-
-
-/**
- * Clears values from the map. The map will be non-null.
- * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile} returns this
- */
-proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.clearCorrwithtargetMap = function() {
-  this.getCorrwithtargetMap().clear();
-  return this;};
 
 
 

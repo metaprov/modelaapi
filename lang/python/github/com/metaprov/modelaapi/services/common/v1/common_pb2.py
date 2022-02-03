@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z0github.com/metaprov/modelaapi/services/common/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/common/v1/common.proto\x12\x30github.com.metaprov.modelaapi.services.common.v1\"\xe9\x03\n\x0e\x44\x61tasetProfile\x12\x0c\n\x04\x63ols\x18\x01 \x01(\x05\x12\x0c\n\x04rows\x18\x02 \x01(\x05\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\x05\x12\x11\n\timbalance\x18\x04 \x01(\x08\x12\x45\n\x05plots\x18\x05 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12P\n\x07\x63olumns\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\x12J\n\x05table\x18\x07 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\x12\x0c\n\x04hash\x18\x08 \x01(\t\x12l\n\x0e\x63orrWithTarget\x18\t \x03(\x0b\x32T.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.CorrWithTargetEntry\x1a\x35\n\x13\x43orrWithTargetEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"\x9a\x03\n\x0cModelProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12\x62\n\nimportance\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.ImportanceEntry\x12J\n\x06rocauc\x18\x04 \x01(\x0b\x32:.github.com.metaprov.modelaapi.services.common.v1.ROCCurve\x12R\n\x02pr\x18\x05 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve\x1a\x31\n\x0fImportanceEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"7\n\x08ROCCurve\x12\x0b\n\x03\x66pr\x18\x01 \x03(\x01\x12\x0b\n\x03tpr\x18\x02 \x03(\x01\x12\x11\n\ttresholds\x18\x03 \x03(\x01\"L\n\x14PrecisionRecallCurve\x12\x11\n\tprecision\x18\x01 \x03(\x01\x12\x0e\n\x06recall\x18\x02 \x03(\x01\x12\x11\n\ttresholds\x18\x03 \x03(\x01\"f\n\x0f\x46orecastProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\"\xe8\x01\n\x0cStudyProfile\x12\x45\n\x05plots\x18\x01 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12N\n\x06models\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\x12\x14\n\x0ctrainingHash\x18\x03 \x01(\t\x12\x13\n\x0btestingHash\x18\x04 \x01(\t\x12\x16\n\x0evalidationHash\x18\x05 \x01(\t\"L\n\x04Plot\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0b\n\x03img\x18\x03 \x01(\x0c\x12\r\n\x05\x66name\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\"\x8f\x07\n\rColumnProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x0f\n\x07missing\x18\x04 \x01(\x05\x12\x16\n\x0epercentMissing\x18\x05 \x01(\x02\x12\x10\n\x08\x64istinct\x18\x06 \x01(\x05\x12\x0c\n\x04mean\x18\x07 \x01(\x01\x12\x0c\n\x04mode\x18\x08 \x01(\t\x12\x0e\n\x06stddev\x18\t \x01(\x01\x12\x10\n\x08variance\x18\n \x01(\x01\x12\x0b\n\x03min\x18\x0b \x01(\x01\x12\x0b\n\x03max\x18\x0c \x01(\x01\x12\x10\n\x08kurtosis\x18\r \x01(\x01\x12\x10\n\x08skewness\x18\x0e \x01(\x01\x12\x0b\n\x03sum\x18\x0f \x01(\x01\x12\x0b\n\x03mad\x18\x10 \x01(\x01\x12\r\n\x05zeros\x18\x11 \x01(\x01\x12\x0b\n\x03p25\x18\x12 \x01(\x01\x12\x0b\n\x03p50\x18\x13 \x01(\x01\x12\x0b\n\x03p75\x18\x14 \x01(\x01\x12\x0c\n\x04p100\x18\x15 \x01(\x01\x12\x0b\n\x03iqr\x18\x16 \x01(\x01\x12\n\n\x02\x63v\x18\x17 \x01(\x01\x12\x0b\n\x03top\x18\x18 \x01(\x05\x12\x0c\n\x04\x66req\x18\x19 \x01(\x05\x12\x0e\n\x06ignore\x18\x1a \x01(\x08\x12\x0e\n\x06target\x18\x1b \x01(\x08\x12N\n\thistogram\x18\x1c \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.Histogram\x12\x0f\n\x07invalid\x18\x1d \x01(\x05\x12\x12\n\nimportance\x18\x1e \x01(\x01\x12\x10\n\x08nullable\x18\x1f \x01(\x08\x12\x17\n\x0fhighCardinality\x18  \x01(\x08\x12!\n\x19highCorrWithOtherFeatures\x18! \x01(\x08\x12\x19\n\x11lowCorrWithTarget\x18\" \x01(\x08\x12\x16\n\x0ehighMissingPct\x18# \x01(\x08\x12\x0e\n\x06skewed\x18$ \x01(\x08\x12\n\n\x02id\x18% \x01(\x08\x12\x10\n\x08\x63onstant\x18& \x01(\x08\x12\x11\n\tduplicate\x18\' \x01(\x08\x12\x10\n\x08reserved\x18( \x01(\x08\x12\x10\n\x08outliers\x18) \x01(\x05\x12\x14\n\x0c\x63ompleteness\x18* \x01(\x01\x12\x1a\n\x12\x64istinctValueCount\x18+ \x01(\x01\x12\x1b\n\x13mostFreqValuesRatio\x18, \x01(\x01\x12\x1a\n\x12indexOfPeculiarity\x18- \x01(\x01\x12\x0e\n\x06values\x18. \x03(\t\x12\x14\n\x0c\x63orrToTarget\x18/ \x01(\x01\"=\n\tHistogram\x12\x0e\n\x06values\x18\x01 \x03(\x01\x12\x0c\n\x04\x62ins\x18\x02 \x03(\x01\x12\x12\n\ncategories\x18\x03 \x03(\t\"\xf6\x02\n\rNamespaceInfo\x12[\n\x04type\x18\x01 \x01(\x0e\x32M.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo.NamespaceType\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x03 \x01(\x05\x12\x0f\n\x07\x62uckets\x18\x04 \x01(\x05\x12\x0c\n\x04labs\x18\x05 \x01(\x05\x12\x14\n\x0cservingsites\x18\x06 \x01(\x05\x12\x10\n\x08\x64\x61tasets\x18\x07 \x01(\x05\x12\x13\n\x0b\x64\x61tasources\x18\x08 \x01(\x05\x12\x0f\n\x07studies\x18\t \x01(\x05\x12\x0e\n\x06models\x18\n \x01(\x05\"k\n\rNamespaceType\x12\n\n\x06TENANT\x10\x00\x12\x0f\n\x0b\x44\x41TAPRODUCT\x10\x01\x12\x07\n\x03LAB\x10\x02\x12\x0f\n\x0bSERVINGSITE\x10\x03\x12\x10\n\x0cMODELASYSTEM\x10\x04\x12\x11\n\rMODELACATALOG\x10\x05\"\xba\x01\n\tTableView\x12\x0c\n\x04\x63ols\x18\x01 \x03(\t\x12L\n\x04rows\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.TableViewRow\x12Q\n\x08profiles\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\"\x1e\n\x0cTableViewRow\x12\x0e\n\x06values\x18\x01 \x03(\tB2Z0github.com/metaprov/modelaapi/services/common/v1b\x06proto3'
+  serialized_pb=b'\n=github.com/metaprov/modelaapi/services/common/v1/common.proto\x12\x30github.com.metaprov.modelaapi.services.common.v1\"\xc4\x02\n\x0e\x44\x61tasetProfile\x12\x0c\n\x04\x63ols\x18\x01 \x01(\x05\x12\x0c\n\x04rows\x18\x02 \x01(\x05\x12\x10\n\x08\x66ilesize\x18\x03 \x01(\x05\x12\x11\n\timbalance\x18\x04 \x01(\x08\x12\x45\n\x05plots\x18\x05 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12P\n\x07\x63olumns\x18\x06 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\x12J\n\x05table\x18\x07 \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.TableView\x12\x0c\n\x04hash\x18\x08 \x01(\t\"\x9a\x03\n\x0cModelProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12\x62\n\nimportance\x18\x03 \x03(\x0b\x32N.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.ImportanceEntry\x12J\n\x06rocauc\x18\x04 \x01(\x0b\x32:.github.com.metaprov.modelaapi.services.common.v1.ROCCurve\x12R\n\x02pr\x18\x05 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve\x1a\x31\n\x0fImportanceEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"7\n\x08ROCCurve\x12\x0b\n\x03\x66pr\x18\x01 \x03(\x01\x12\x0b\n\x03tpr\x18\x02 \x03(\x01\x12\x11\n\ttresholds\x18\x03 \x03(\x01\"L\n\x14PrecisionRecallCurve\x12\x11\n\tprecision\x18\x01 \x03(\x01\x12\x0e\n\x06recall\x18\x02 \x03(\x01\x12\x11\n\ttresholds\x18\x03 \x03(\x01\"f\n\x0f\x46orecastProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x45\n\x05plots\x18\x02 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\"\xe8\x01\n\x0cStudyProfile\x12\x45\n\x05plots\x18\x01 \x03(\x0b\x32\x36.github.com.metaprov.modelaapi.services.common.v1.Plot\x12N\n\x06models\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.ModelProfile\x12\x14\n\x0ctrainingHash\x18\x03 \x01(\t\x12\x13\n\x0btestingHash\x18\x04 \x01(\t\x12\x16\n\x0evalidationHash\x18\x05 \x01(\t\"L\n\x04Plot\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0b\n\x03img\x18\x03 \x01(\x0c\x12\r\n\x05\x66name\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\"\x8f\x07\n\rColumnProfile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x63ount\x18\x02 \x01(\x05\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x0f\n\x07missing\x18\x04 \x01(\x05\x12\x16\n\x0epercentMissing\x18\x05 \x01(\x02\x12\x10\n\x08\x64istinct\x18\x06 \x01(\x05\x12\x0c\n\x04mean\x18\x07 \x01(\x01\x12\x0c\n\x04mode\x18\x08 \x01(\t\x12\x0e\n\x06stddev\x18\t \x01(\x01\x12\x10\n\x08variance\x18\n \x01(\x01\x12\x0b\n\x03min\x18\x0b \x01(\x01\x12\x0b\n\x03max\x18\x0c \x01(\x01\x12\x10\n\x08kurtosis\x18\r \x01(\x01\x12\x10\n\x08skewness\x18\x0e \x01(\x01\x12\x0b\n\x03sum\x18\x0f \x01(\x01\x12\x0b\n\x03mad\x18\x10 \x01(\x01\x12\r\n\x05zeros\x18\x11 \x01(\x01\x12\x0b\n\x03p25\x18\x12 \x01(\x01\x12\x0b\n\x03p50\x18\x13 \x01(\x01\x12\x0b\n\x03p75\x18\x14 \x01(\x01\x12\x0c\n\x04p100\x18\x15 \x01(\x01\x12\x0b\n\x03iqr\x18\x16 \x01(\x01\x12\n\n\x02\x63v\x18\x17 \x01(\x01\x12\x0b\n\x03top\x18\x18 \x01(\x05\x12\x0c\n\x04\x66req\x18\x19 \x01(\x05\x12\x0e\n\x06ignore\x18\x1a \x01(\x08\x12\x0e\n\x06target\x18\x1b \x01(\x08\x12N\n\thistogram\x18\x1c \x01(\x0b\x32;.github.com.metaprov.modelaapi.services.common.v1.Histogram\x12\x0f\n\x07invalid\x18\x1d \x01(\x05\x12\x12\n\nimportance\x18\x1e \x01(\x01\x12\x10\n\x08nullable\x18\x1f \x01(\x08\x12\x17\n\x0fhighCardinality\x18  \x01(\x08\x12!\n\x19highCorrWithOtherFeatures\x18! \x01(\x08\x12\x19\n\x11lowCorrWithTarget\x18\" \x01(\x08\x12\x16\n\x0ehighMissingPct\x18# \x01(\x08\x12\x0e\n\x06skewed\x18$ \x01(\x08\x12\n\n\x02id\x18% \x01(\x08\x12\x10\n\x08\x63onstant\x18& \x01(\x08\x12\x11\n\tduplicate\x18\' \x01(\x08\x12\x10\n\x08reserved\x18( \x01(\x08\x12\x10\n\x08outliers\x18) \x01(\x05\x12\x14\n\x0c\x63ompleteness\x18* \x01(\x01\x12\x1a\n\x12\x64istinctValueCount\x18+ \x01(\x01\x12\x1b\n\x13mostFreqValuesRatio\x18, \x01(\x01\x12\x1a\n\x12indexOfPeculiarity\x18- \x01(\x01\x12\x0e\n\x06values\x18. \x03(\t\x12\x14\n\x0c\x63orrToTarget\x18/ \x01(\x01\"=\n\tHistogram\x12\x0e\n\x06values\x18\x01 \x03(\x01\x12\x0c\n\x04\x62ins\x18\x02 \x03(\x01\x12\x12\n\ncategories\x18\x03 \x03(\t\"\xf6\x02\n\rNamespaceInfo\x12[\n\x04type\x18\x01 \x01(\x0e\x32M.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo.NamespaceType\x12\x0c\n\x04Name\x18\x02 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x03 \x01(\x05\x12\x0f\n\x07\x62uckets\x18\x04 \x01(\x05\x12\x0c\n\x04labs\x18\x05 \x01(\x05\x12\x14\n\x0cservingsites\x18\x06 \x01(\x05\x12\x10\n\x08\x64\x61tasets\x18\x07 \x01(\x05\x12\x13\n\x0b\x64\x61tasources\x18\x08 \x01(\x05\x12\x0f\n\x07studies\x18\t \x01(\x05\x12\x0e\n\x06models\x18\n \x01(\x05\"k\n\rNamespaceType\x12\n\n\x06TENANT\x10\x00\x12\x0f\n\x0b\x44\x41TAPRODUCT\x10\x01\x12\x07\n\x03LAB\x10\x02\x12\x0f\n\x0bSERVINGSITE\x10\x03\x12\x10\n\x0cMODELASYSTEM\x10\x04\x12\x11\n\rMODELACATALOG\x10\x05\"\xba\x01\n\tTableView\x12\x0c\n\x04\x63ols\x18\x01 \x03(\t\x12L\n\x04rows\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.services.common.v1.TableViewRow\x12Q\n\x08profiles\x18\x03 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.ColumnProfile\"\x1e\n\x0cTableViewRow\x12\x0e\n\x06values\x18\x01 \x03(\tB2Z0github.com/metaprov/modelaapi/services/common/v1b\x06proto3'
 )
 
 
@@ -64,49 +64,11 @@ _NAMESPACEINFO_NAMESPACETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2817,
-  serialized_end=2924,
+  serialized_start=2652,
+  serialized_end=2759,
 )
 _sym_db.RegisterEnumDescriptor(_NAMESPACEINFO_NAMESPACETYPE)
 
-
-_DATASETPROFILE_CORRWITHTARGETENTRY = _descriptor.Descriptor(
-  name='CorrWithTargetEntry',
-  full_name='github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.CorrWithTargetEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.CorrWithTargetEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.CorrWithTargetEntry.value', index=1,
-      number=2, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=552,
-  serialized_end=605,
-)
 
 _DATASETPROFILE = _descriptor.Descriptor(
   name='DatasetProfile',
@@ -172,17 +134,10 @@ _DATASETPROFILE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='corrWithTarget', full_name='github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.corrWithTarget', index=8,
-      number=9, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_DATASETPROFILE_CORRWITHTARGETENTRY, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -192,7 +147,7 @@ _DATASETPROFILE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=116,
-  serialized_end=605,
+  serialized_end=440,
 )
 
 
@@ -230,8 +185,8 @@ _MODELPROFILE_IMPORTANCEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=969,
-  serialized_end=1018,
+  serialized_start=804,
+  serialized_end=853,
 )
 
 _MODELPROFILE = _descriptor.Descriptor(
@@ -289,8 +244,8 @@ _MODELPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=608,
-  serialized_end=1018,
+  serialized_start=443,
+  serialized_end=853,
 )
 
 
@@ -335,8 +290,8 @@ _ROCCURVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1020,
-  serialized_end=1075,
+  serialized_start=855,
+  serialized_end=910,
 )
 
 
@@ -381,8 +336,8 @@ _PRECISIONRECALLCURVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1077,
-  serialized_end=1153,
+  serialized_start=912,
+  serialized_end=988,
 )
 
 
@@ -420,8 +375,8 @@ _FORECASTPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1155,
-  serialized_end=1257,
+  serialized_start=990,
+  serialized_end=1092,
 )
 
 
@@ -480,8 +435,8 @@ _STUDYPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1260,
-  serialized_end=1492,
+  serialized_start=1095,
+  serialized_end=1327,
 )
 
 
@@ -540,8 +495,8 @@ _PLOT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1494,
-  serialized_end=1570,
+  serialized_start=1329,
+  serialized_end=1405,
 )
 
 
@@ -894,8 +849,8 @@ _COLUMNPROFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1573,
-  serialized_end=2484,
+  serialized_start=1408,
+  serialized_end=2319,
 )
 
 
@@ -940,8 +895,8 @@ _HISTOGRAM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2486,
-  serialized_end=2547,
+  serialized_start=2321,
+  serialized_end=2382,
 )
 
 
@@ -1036,8 +991,8 @@ _NAMESPACEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2550,
-  serialized_end=2924,
+  serialized_start=2385,
+  serialized_end=2759,
 )
 
 
@@ -1082,8 +1037,8 @@ _TABLEVIEW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2927,
-  serialized_end=3113,
+  serialized_start=2762,
+  serialized_end=2948,
 )
 
 
@@ -1114,15 +1069,13 @@ _TABLEVIEWROW = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3115,
-  serialized_end=3145,
+  serialized_start=2950,
+  serialized_end=2980,
 )
 
-_DATASETPROFILE_CORRWITHTARGETENTRY.containing_type = _DATASETPROFILE
 _DATASETPROFILE.fields_by_name['plots'].message_type = _PLOT
 _DATASETPROFILE.fields_by_name['columns'].message_type = _COLUMNPROFILE
 _DATASETPROFILE.fields_by_name['table'].message_type = _TABLEVIEW
-_DATASETPROFILE.fields_by_name['corrWithTarget'].message_type = _DATASETPROFILE_CORRWITHTARGETENTRY
 _MODELPROFILE_IMPORTANCEENTRY.containing_type = _MODELPROFILE
 _MODELPROFILE.fields_by_name['plots'].message_type = _PLOT
 _MODELPROFILE.fields_by_name['importance'].message_type = _MODELPROFILE_IMPORTANCEENTRY
@@ -1151,19 +1104,11 @@ DESCRIPTOR.message_types_by_name['TableViewRow'] = _TABLEVIEWROW
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 DatasetProfile = _reflection.GeneratedProtocolMessageType('DatasetProfile', (_message.Message,), {
-
-  'CorrWithTargetEntry' : _reflection.GeneratedProtocolMessageType('CorrWithTargetEntry', (_message.Message,), {
-    'DESCRIPTOR' : _DATASETPROFILE_CORRWITHTARGETENTRY,
-    '__module__' : 'github.com.metaprov.modelaapi.services.common.v1.common_pb2'
-    # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.CorrWithTargetEntry)
-    })
-  ,
   'DESCRIPTOR' : _DATASETPROFILE,
   '__module__' : 'github.com.metaprov.modelaapi.services.common.v1.common_pb2'
   # @@protoc_insertion_point(class_scope:github.com.metaprov.modelaapi.services.common.v1.DatasetProfile)
   })
 _sym_db.RegisterMessage(DatasetProfile)
-_sym_db.RegisterMessage(DatasetProfile.CorrWithTargetEntry)
 
 ModelProfile = _reflection.GeneratedProtocolMessageType('ModelProfile', (_message.Message,), {
 
@@ -1252,6 +1197,5 @@ _sym_db.RegisterMessage(TableViewRow)
 
 
 DESCRIPTOR._options = None
-_DATASETPROFILE_CORRWITHTARGETENTRY._options = None
 _MODELPROFILE_IMPORTANCEENTRY._options = None
 # @@protoc_insertion_point(module_scope)
