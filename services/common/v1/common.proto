@@ -22,15 +22,22 @@ message ModelProfile {
     string name                            = 1;
     repeated Plot plots                    = 2;
     map<string,float> importance           = 3; // hold the feature importance
-    AUCChart rocauc                        = 4;
-    AUCChart prauc                         = 5;
+    ROCCurve rocauc                        = 4; // roc auc curve
+    PrecisionRecallCurve pr                = 5; // precision recall cureve
 }
 
-message AUCChart {
+message ROCCurve {
     repeated double fpr         = 1;
     repeated double tpr         = 2;
     repeated double tresholds   = 3;    
 }
+
+message PrecisionRecallCurve {
+    repeated double precision   = 1;
+    repeated double recall      = 2;
+    repeated double tresholds   = 3;    
+}
+
 
 
 

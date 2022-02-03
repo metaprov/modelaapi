@@ -70,15 +70,15 @@ export class ModelProfile extends jspb.Message {
   getImportanceMap(): jspb.Map<string, number>;
   clearImportanceMap(): ModelProfile;
 
-  getRocauc(): AUCChart | undefined;
-  setRocauc(value?: AUCChart): ModelProfile;
+  getRocauc(): ROCCurve | undefined;
+  setRocauc(value?: ROCCurve): ModelProfile;
   hasRocauc(): boolean;
   clearRocauc(): ModelProfile;
 
-  getPrauc(): AUCChart | undefined;
-  setPrauc(value?: AUCChart): ModelProfile;
-  hasPrauc(): boolean;
-  clearPrauc(): ModelProfile;
+  getPr(): PrecisionRecallCurve | undefined;
+  setPr(value?: PrecisionRecallCurve): ModelProfile;
+  hasPr(): boolean;
+  clearPr(): ModelProfile;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
@@ -93,39 +93,71 @@ export namespace ModelProfile {
     name: string,
     plotsList: Array<Plot.AsObject>,
     importanceMap: Array<[string, number]>,
-    rocauc?: AUCChart.AsObject,
-    prauc?: AUCChart.AsObject,
+    rocauc?: ROCCurve.AsObject,
+    pr?: PrecisionRecallCurve.AsObject,
   }
 }
 
-export class AUCChart extends jspb.Message {
+export class ROCCurve extends jspb.Message {
   getFprList(): Array<number>;
-  setFprList(value: Array<number>): AUCChart;
-  clearFprList(): AUCChart;
-  addFpr(value: number, index?: number): AUCChart;
+  setFprList(value: Array<number>): ROCCurve;
+  clearFprList(): ROCCurve;
+  addFpr(value: number, index?: number): ROCCurve;
 
   getTprList(): Array<number>;
-  setTprList(value: Array<number>): AUCChart;
-  clearTprList(): AUCChart;
-  addTpr(value: number, index?: number): AUCChart;
+  setTprList(value: Array<number>): ROCCurve;
+  clearTprList(): ROCCurve;
+  addTpr(value: number, index?: number): ROCCurve;
 
   getTresholdsList(): Array<number>;
-  setTresholdsList(value: Array<number>): AUCChart;
-  clearTresholdsList(): AUCChart;
-  addTresholds(value: number, index?: number): AUCChart;
+  setTresholdsList(value: Array<number>): ROCCurve;
+  clearTresholdsList(): ROCCurve;
+  addTresholds(value: number, index?: number): ROCCurve;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): AUCChart.AsObject;
-  static toObject(includeInstance: boolean, msg: AUCChart): AUCChart.AsObject;
-  static serializeBinaryToWriter(message: AUCChart, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): AUCChart;
-  static deserializeBinaryFromReader(message: AUCChart, reader: jspb.BinaryReader): AUCChart;
+  toObject(includeInstance?: boolean): ROCCurve.AsObject;
+  static toObject(includeInstance: boolean, msg: ROCCurve): ROCCurve.AsObject;
+  static serializeBinaryToWriter(message: ROCCurve, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ROCCurve;
+  static deserializeBinaryFromReader(message: ROCCurve, reader: jspb.BinaryReader): ROCCurve;
 }
 
-export namespace AUCChart {
+export namespace ROCCurve {
   export type AsObject = {
     fprList: Array<number>,
     tprList: Array<number>,
+    tresholdsList: Array<number>,
+  }
+}
+
+export class PrecisionRecallCurve extends jspb.Message {
+  getPrecisionList(): Array<number>;
+  setPrecisionList(value: Array<number>): PrecisionRecallCurve;
+  clearPrecisionList(): PrecisionRecallCurve;
+  addPrecision(value: number, index?: number): PrecisionRecallCurve;
+
+  getRecallList(): Array<number>;
+  setRecallList(value: Array<number>): PrecisionRecallCurve;
+  clearRecallList(): PrecisionRecallCurve;
+  addRecall(value: number, index?: number): PrecisionRecallCurve;
+
+  getTresholdsList(): Array<number>;
+  setTresholdsList(value: Array<number>): PrecisionRecallCurve;
+  clearTresholdsList(): PrecisionRecallCurve;
+  addTresholds(value: number, index?: number): PrecisionRecallCurve;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PrecisionRecallCurve.AsObject;
+  static toObject(includeInstance: boolean, msg: PrecisionRecallCurve): PrecisionRecallCurve.AsObject;
+  static serializeBinaryToWriter(message: PrecisionRecallCurve, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PrecisionRecallCurve;
+  static deserializeBinaryFromReader(message: PrecisionRecallCurve, reader: jspb.BinaryReader): PrecisionRecallCurve;
+}
+
+export namespace PrecisionRecallCurve {
+  export type AsObject = {
+    precisionList: Array<number>,
+    recallList: Array<number>,
     tresholdsList: Array<number>,
   }
 }

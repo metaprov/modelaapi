@@ -159,7 +159,7 @@ func (study *Study) Default() {
 		if study.Spec.DatasetName != nil {
 			study.ObjectMeta.Labels["dataset"] = *study.Spec.DatasetName
 		}
-	} 
+	}
 
 	if study.Spec.TrainingTemplate.Split.Method == "auto" {
 		study.Spec.TrainingTemplate.Split.Method = catalog.DataSplitMethod(DefaultSplit(*study.Spec.Task))
