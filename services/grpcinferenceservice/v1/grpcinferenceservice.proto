@@ -86,19 +86,19 @@ service GRPCInferenceService
   // Extention to the api specific to modela
   rpc GetPredictor(GetPredictorRequest) returns (GetPredictorResponse) {
     option (google.api.http) = {
-      get: "/v1/predictors/{name}"
+      get: "/v1/predictors/{namespace}/{name}"
     };
   }
 
   rpc GetModel(GetModelRequest) returns (GetModelResponse) {
     option (google.api.http) = {
-      get: "/v1/predictors/{predictorName}/models/{name}"
+      get: "/v1/predictors/{predictorNamespace}/{predictorName}/models/{name}"
     };
   }
 
   rpc Predict(PredictRequest) returns (PredictResponse) {
     option (google.api.http) = {
-      post: "/v1/predictors/{name}"
+      post: "/v1/predictors/{namespace}/{name}"
       body: "*"
     };
   }
@@ -390,29 +390,31 @@ message InferTensorContents
 
 
 message PredictorInfo {
-    string             name   = 1; // the name of the predictor
-    string             task   = 2; // the machine learning task (binary classification / multi classification / regression)
-    repeated ModelInfo models = 3; // the models in the predictor
-    SchemaInfo         schema = 4; // the predictor schema.
+    string             namespace   = 1; // the namespace of the predictor
+    string             name        = 2; // the name of the predictor
+    string             task        = 3; // the machine learning task (binary classification / multi classification / regression)
+    repeated ModelInfo models      = 4; // the models in the predictor
+    SchemaInfo         schema      = 5; // the predictor schema.
 }
 
 message ModelInfo {
-    string name               = 1; // the model name
-    string version            = 2; // the model name space
-    string product            = 3; // the model name
-    string trainingMetric     = 4; // the model name space
-    float  trainingScore      = 5; // the model name space
-    string status             = 6; // model status
-    bool   canary             = 7; // true if this is a canary model
-    bool   shadow             = 8; // is this a shadow model
-    float  traffic            = 9; // how much traffic is allocated to this model (0 -100)
-    string filter             = 10; // the filter (a boolean expression involving the model)
-    int64  rank               = 11; // the model rank when making a prediction.
-    string logPath            = 12; // the location of the model prediction log file
-	  float  p95                = 13; // The 95 percent latency
-	  float  p99                = 14; // The 99 percent latency
-	  int64  lastPrediction     = 15; // The last prediction time
-	  int32  dailyPredictionAvg = 16;
+    string namespace          = 1;
+    string name               = 2; // the model name
+    string version            = 3; // the model name space
+    string product            = 4; // the model name
+    string trainingMetric     = 5; // the model name space
+    float  trainingScore      = 6; // the model name space
+    string status             = 7; // model status
+    bool   canary             = 8; // true if this is a canary model
+    bool   shadow             = 9; // is this a shadow model
+    float  traffic            = 10; // how much traffic is allocated to this model (0 -100)
+    string filter             = 11; // the filter (a boolean expression involving the model)
+    int64  rank               = 12; // the model rank when making a prediction.
+    string logPath            = 13; // the location of the model prediction log file
+	  float  p95                = 14; // The 95 percent latency
+	  float  p99                = 15; // The 99 percent latency
+	  int64  lastPrediction     = 16; // The last prediction time
+	  int32  dailyPredictionAvg = 17;
 }
 
 // Represent the predictor schema. Used for prediction validation
@@ -432,7 +434,8 @@ message ColumnInfo {
 
 /// request / response
 message GetPredictorRequest {
-    string name = 1;
+    string namespace = 1;
+    string name      = 2;
 }
 
 message GetPredictorResponse {
@@ -440,8 +443,9 @@ message GetPredictorResponse {
 }
 
 message GetModelRequest {
-    string predictorName = 1;
-    string name          = 2;
+    string predictorNamespace = 1;
+    string predictorName      = 2;
+    string name               = 3;
 }
 
 message GetModelResponse {
@@ -449,13 +453,14 @@ message GetModelResponse {
 }
 
 message PredictRequest {
-     string             name             = 1;  // model name
-     bool               validate         = 2;  // use the schema to validate the request
-     bool               explain          = 3;  // if true, explain the prediction using shap.
-     string             format           = 5;  // can be csv,json.
-     string             payload          = 6;  // json or csv array of rows.
-     bool               labeled          = 7;  // indicate that this is labeled prediction
-     repeated  string    metrics         = 8;  // one or more metrics to use when evaluating labeled prediction
+    string             namespace        = 1;
+    string             name             = 2;  // model name
+    bool               validate         = 3;  // use the schema to validate the request
+    bool               explain          = 4;  // if true, explain the prediction using shap.
+    string             format           = 5;  // can be csv,json.
+    string             payload          = 6;  // json or csv array of rows.
+    bool               labeled          = 7;  // indicate that this is labeled prediction
+    repeated  string    metrics         = 8;  // one or more metrics to use when evaluating labeled prediction
 }
 
 message PredictResponse {

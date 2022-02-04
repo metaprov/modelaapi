@@ -4825,7 +4825,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensor
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.repeatedFields_ = [3];
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.repeatedFields_ = [4];
 
 
 
@@ -4858,8 +4858,9 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    task: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    task: jspb.Message.getFieldWithDefault(msg, 3, ""),
     modelsList: jspb.Message.toObjectList(msg.getModelsList(),
     proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.toObject, includeInstance),
     schema: (f = msg.getSchema()) && proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo.toObject(includeInstance, f)
@@ -4901,18 +4902,22 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setNamespace(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTask(value);
+      msg.setName(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTask(value);
+      break;
+    case 4:
       var value = new proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.deserializeBinaryFromReader);
       msg.addModels(value);
       break;
-    case 4:
+    case 5:
       var value = new proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo.deserializeBinaryFromReader);
       msg.setSchema(value);
@@ -4946,24 +4951,31 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getTask();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getTask();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
   f = message.getModelsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      3,
+      4,
       f,
       proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.serializeBinaryToWriter
     );
@@ -4971,7 +4983,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
   f = message.getSchema();
   if (f != null) {
     writer.writeMessage(
-      4,
+      5,
       f,
       proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo.serializeBinaryToWriter
     );
@@ -4980,10 +4992,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
 
 
 /**
- * optional string name = 1;
+ * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -4992,16 +5004,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string task = 2;
+ * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.getTask = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -5010,18 +5022,36 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.setTask = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * repeated ModelInfo models = 3;
+ * optional string task = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.getTask = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.setTask = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * repeated ModelInfo models = 4;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo>}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.getModelsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo, 3));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo, 4));
 };
 
 
@@ -5030,7 +5060,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo} returns this
 */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.setModelsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -5040,7 +5070,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.addModels = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo, opt_index);
 };
 
 
@@ -5054,12 +5084,12 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
 
 
 /**
- * optional SchemaInfo schema = 4;
+ * optional SchemaInfo schema = 5;
  * @return {?proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.getSchema = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo, 4));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo, 5));
 };
 
 
@@ -5068,7 +5098,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo} returns this
 */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.setSchema = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -5086,7 +5116,7 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorIn
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.prototype.hasSchema = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -5122,22 +5152,23 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    product: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    trainingmetric: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    trainingscore: jspb.Message.getFloatingPointFieldWithDefault(msg, 5, 0.0),
-    status: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    canary: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    shadow: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    traffic: jspb.Message.getFloatingPointFieldWithDefault(msg, 9, 0.0),
-    filter: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    rank: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    logpath: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    p95: jspb.Message.getFloatingPointFieldWithDefault(msg, 13, 0.0),
-    p99: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
-    lastprediction: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    dailypredictionavg: jspb.Message.getFieldWithDefault(msg, 16, 0)
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    version: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    product: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    trainingmetric: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    trainingscore: jspb.Message.getFloatingPointFieldWithDefault(msg, 6, 0.0),
+    status: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    canary: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    shadow: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    traffic: jspb.Message.getFloatingPointFieldWithDefault(msg, 10, 0.0),
+    filter: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    rank: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    logpath: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    p95: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
+    p99: jspb.Message.getFloatingPointFieldWithDefault(msg, 15, 0.0),
+    lastprediction: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    dailypredictionavg: jspb.Message.getFieldWithDefault(msg, 17, 0)
   };
 
   if (includeInstance) {
@@ -5176,65 +5207,69 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.d
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setNamespace(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setVersion(value);
+      msg.setName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProduct(value);
+      msg.setVersion(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTrainingmetric(value);
+      msg.setProduct(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTrainingmetric(value);
+      break;
+    case 6:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTrainingscore(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setStatus(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCanary(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setShadow(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setTraffic(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setFilter(value);
       break;
-    case 11:
+    case 12:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setRank(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setLogpath(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setP95(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {number} */ (reader.readFloat());
       msg.setP99(value);
       break;
-    case 15:
+    case 16:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLastprediction(value);
       break;
-    case 16:
+    case 17:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setDailypredictionavg(value);
       break;
@@ -5267,115 +5302,122 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getVersion();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = message.getProduct();
+  f = message.getVersion();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getTrainingmetric();
+  f = message.getProduct();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
+  f = message.getTrainingmetric();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getTrainingscore();
   if (f !== 0.0) {
     writer.writeFloat(
-      5,
+      6,
       f
     );
   }
   f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      7,
       f
     );
   }
   f = message.getCanary();
   if (f) {
     writer.writeBool(
-      7,
+      8,
       f
     );
   }
   f = message.getShadow();
   if (f) {
     writer.writeBool(
-      8,
+      9,
       f
     );
   }
   f = message.getTraffic();
   if (f !== 0.0) {
     writer.writeFloat(
-      9,
+      10,
       f
     );
   }
   f = message.getFilter();
   if (f.length > 0) {
     writer.writeString(
-      10,
+      11,
       f
     );
   }
   f = message.getRank();
   if (f !== 0) {
     writer.writeInt64(
-      11,
+      12,
       f
     );
   }
   f = message.getLogpath();
   if (f.length > 0) {
     writer.writeString(
-      12,
+      13,
       f
     );
   }
   f = message.getP95();
   if (f !== 0.0) {
     writer.writeFloat(
-      13,
+      14,
       f
     );
   }
   f = message.getP99();
   if (f !== 0.0) {
     writer.writeFloat(
-      14,
+      15,
       f
     );
   }
   f = message.getLastprediction();
   if (f !== 0) {
     writer.writeInt64(
-      15,
+      16,
       f
     );
   }
   f = message.getDailypredictionavg();
   if (f !== 0) {
     writer.writeInt32(
-      16,
+      17,
       f
     );
   }
@@ -5383,10 +5425,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.s
 
 
 /**
- * optional string name = 1;
+ * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -5395,16 +5437,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string version = 2;
+ * optional string name = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getVersion = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -5413,16 +5455,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setVersion = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setName = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional string product = 3;
+ * optional string version = 3;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getProduct = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getVersion = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -5431,16 +5473,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setProduct = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setVersion = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * optional string trainingMetric = 4;
+ * optional string product = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getTrainingmetric = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getProduct = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -5449,17 +5491,35 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setTrainingmetric = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setProduct = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional float trainingScore = 5;
+ * optional string trainingMetric = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getTrainingmetric = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setTrainingmetric = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional float trainingScore = 6;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getTrainingscore = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 5, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 6, 0.0));
 };
 
 
@@ -5468,16 +5528,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setTrainingscore = function(value) {
-  return jspb.Message.setProto3FloatField(this, 5, value);
+  return jspb.Message.setProto3FloatField(this, 6, value);
 };
 
 
 /**
- * optional string status = 6;
+ * optional string status = 7;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -5486,33 +5546,15 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
 /**
- * optional bool canary = 7;
+ * optional bool canary = 8;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getCanary = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setCanary = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 7, value);
-};
-
-
-/**
- * optional bool shadow = 8;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getShadow = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -5521,17 +5563,35 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setShadow = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setCanary = function(value) {
   return jspb.Message.setProto3BooleanField(this, 8, value);
 };
 
 
 /**
- * optional float traffic = 9;
+ * optional bool shadow = 9;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getShadow = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setShadow = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 9, value);
+};
+
+
+/**
+ * optional float traffic = 10;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getTraffic = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 9, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
 };
 
 
@@ -5540,16 +5600,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setTraffic = function(value) {
-  return jspb.Message.setProto3FloatField(this, 9, value);
+  return jspb.Message.setProto3FloatField(this, 10, value);
 };
 
 
 /**
- * optional string filter = 10;
+ * optional string filter = 11;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getFilter = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -5558,16 +5618,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setFilter = function(value) {
-  return jspb.Message.setProto3StringField(this, 10, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional int64 rank = 11;
+ * optional int64 rank = 12;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getRank = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
 };
 
 
@@ -5576,16 +5636,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setRank = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
+  return jspb.Message.setProto3IntField(this, 12, value);
 };
 
 
 /**
- * optional string logPath = 12;
+ * optional string logPath = 13;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getLogpath = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
@@ -5594,33 +5654,15 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setLogpath = function(value) {
-  return jspb.Message.setProto3StringField(this, 12, value);
+  return jspb.Message.setProto3StringField(this, 13, value);
 };
 
 
 /**
- * optional float p95 = 13;
+ * optional float p95 = 14;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getP95 = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 13, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setP95 = function(value) {
-  return jspb.Message.setProto3FloatField(this, 13, value);
-};
-
-
-/**
- * optional float p99 = 14;
- * @return {number}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getP99 = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
 };
 
@@ -5629,17 +5671,17 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setP99 = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setP95 = function(value) {
   return jspb.Message.setProto3FloatField(this, 14, value);
 };
 
 
 /**
- * optional int64 lastPrediction = 15;
+ * optional float p99 = 15;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getLastprediction = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getP99 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 15, 0.0));
 };
 
 
@@ -5647,16 +5689,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setLastprediction = function(value) {
-  return jspb.Message.setProto3IntField(this, 15, value);
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setP99 = function(value) {
+  return jspb.Message.setProto3FloatField(this, 15, value);
 };
 
 
 /**
- * optional int32 dailyPredictionAvg = 16;
+ * optional int64 lastPrediction = 16;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getDailypredictionavg = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getLastprediction = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
 };
 
@@ -5665,8 +5707,26 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setDailypredictionavg = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setLastprediction = function(value) {
   return jspb.Message.setProto3IntField(this, 16, value);
+};
+
+
+/**
+ * optional int32 dailyPredictionAvg = 17;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.getDailypredictionavg = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.prototype.setDailypredictionavg = function(value) {
+  return jspb.Message.setProto3IntField(this, 17, value);
 };
 
 
@@ -6142,7 +6202,8 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -6181,6 +6242,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
+      msg.setNamespace(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
     default:
@@ -6212,10 +6277,17 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       1,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
       f
     );
   }
@@ -6223,10 +6295,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
 
 
 /**
- * optional string name = 1;
+ * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -6235,8 +6307,26 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredicto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -6423,8 +6513,9 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    predictorname: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+    predictornamespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    predictorname: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -6463,9 +6554,13 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPredictorname(value);
+      msg.setPredictornamespace(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPredictorname(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setName(value);
       break;
@@ -6498,17 +6593,24 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPredictorname();
+  f = message.getPredictornamespace();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getName();
+  f = message.getPredictorname();
   if (f.length > 0) {
     writer.writeString(
       2,
+      f
+    );
+  }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
       f
     );
   }
@@ -6516,10 +6618,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
 
 
 /**
- * optional string predictorName = 1;
+ * optional string predictorNamespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.getPredictorname = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.getPredictornamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -6528,16 +6630,16 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.setPredictorname = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.setPredictornamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string name = 2;
+ * optional string predictorName = 2;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.getPredictorname = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -6546,8 +6648,26 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelReq
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.setPredictorname = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string name = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -6741,9 +6861,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    validate: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    explain: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    namespace: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    validate: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    explain: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     format: jspb.Message.getFieldWithDefault(msg, 5, ""),
     payload: jspb.Message.getFieldWithDefault(msg, 6, ""),
     labeled: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
@@ -6786,13 +6907,17 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setName(value);
+      msg.setNamespace(value);
       break;
     case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setValidate(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setExplain(value);
       break;
@@ -6841,24 +6966,31 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getName();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getValidate();
   if (f) {
     writer.writeBool(
-      2,
+      3,
       f
     );
   }
   f = message.getExplain();
   if (f) {
     writer.writeBool(
-      3,
+      4,
       f
     );
   }
@@ -6894,10 +7026,10 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
 
 
 /**
- * optional string name = 1;
+ * optional string namespace = 1;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getName = function() {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getNamespace = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -6906,34 +7038,34 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setName = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional bool validate = 2;
+ * optional string name = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool validate = 3;
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getValidate = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest} returns this
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setValidate = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 2, value);
-};
-
-
-/**
- * optional bool explain = 3;
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getExplain = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -6942,8 +7074,26 @@ proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequ
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setExplain = function(value) {
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setValidate = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool explain = 4;
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.getExplain = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.prototype.setExplain = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 

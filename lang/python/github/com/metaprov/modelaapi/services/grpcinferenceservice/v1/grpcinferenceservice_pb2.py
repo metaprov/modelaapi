@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!io.modela.grpcinferenceservice.v1B\024GrpcInferenceServiceZ>github.com/metaprov/modelaapi/services/grpcinferenceservice/v1\252\002\035Modela.Client.Autogen.Grpc.v1\222A\201\002\022a\n\024GrpcInferenceService\"D\n\016modela authors\022\021https://modela.ai\032\037modela-discuss@googlegroups.com2\0031.0*\002\001\0022\020application/json:\020application/jsonR;\n\003404\0224\n*Returned when the resource does not exist.\022\006\n\004\232\002\001\007r7\n\027modela.ai documentation\022\034https://modela.ai/site/docs/',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nYgithub.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto\x12>github.com.metaprov.modelaapi.services.grpcinferenceservice.v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1cgoogle/protobuf/struct.proto\"\x13\n\x11ServerLiveRequest\"\"\n\x12ServerLiveResponse\x12\x0c\n\x04live\x18\x01 \x01(\x08\"\x14\n\x12ServerReadyRequest\"$\n\x13ServerReadyResponse\x12\r\n\x05ready\x18\x01 \x01(\x08\"2\n\x11ModelReadyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"#\n\x12ModelReadyResponse\x12\r\n\x05ready\x18\x01 \x01(\x08\"\x17\n\x15ServerMetadataRequest\"K\n\x16ServerMetadataResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x12\n\nextensions\x18\x03 \x03(\t\"5\n\x14ModelMetadataRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"\xf7\x02\n\x15ModelMetadataResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08versions\x18\x02 \x03(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12t\n\x06inputs\x18\x04 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata\x12u\n\x07outputs\x18\x05 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata\x1a?\n\x0eTensorMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tatype\x18\x02 \x01(\t\x12\r\n\x05shape\x18\x03 \x03(\x03\"\xd0\n\n\x11ModelInferRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12u\n\nparameters\x18\x04 \x03(\x0b\x32\x61.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry\x12r\n\x06inputs\x18\x05 \x03(\x0b\x32\x62.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor\x12}\n\x07outputs\x18\x06 \x03(\x0b\x32l.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor\x12\x1a\n\x12raw_input_contents\x18\x07 \x03(\x0c\x1a\xb5\x03\n\x10InferInputTensor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tatype\x18\x02 \x01(\t\x12\r\n\x05shape\x18\x03 \x03(\x03\x12\x86\x01\n\nparameters\x18\x04 \x03(\x0b\x32r.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry\x12\x65\n\x08\x63ontents\x18\x05 \x01(\x0b\x32S.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensorContents\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\x1a\xc1\x02\n\x1aInferRequestedOutputTensor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x90\x01\n\nparameters\x18\x02 \x03(\x0b\x32|.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\"\x96\x07\n\x12ModelInferResponse\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12v\n\nparameters\x18\x04 \x03(\x0b\x32\x62.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry\x12u\n\x07outputs\x18\x05 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor\x12\x1b\n\x13raw_output_contents\x18\x06 \x03(\x0c\x1a\xb8\x03\n\x11InferOutputTensor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tatype\x18\x02 \x01(\t\x12\r\n\x05shape\x18\x03 \x03(\x03\x12\x88\x01\n\nparameters\x18\x04 \x03(\x0b\x32t.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry\x12\x65\n\x08\x63ontents\x18\x05 \x01(\x0b\x32S.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensorContents\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\"i\n\x0eInferParameter\x12\x14\n\nbool_param\x18\x01 \x01(\x08H\x00\x12\x15\n\x0bint64_param\x18\x02 \x01(\x03H\x00\x12\x16\n\x0cstring_param\x18\x03 \x01(\tH\x00\x42\x12\n\x10parameter_choice\"\xd0\x01\n\x13InferTensorContents\x12\x15\n\rbool_contents\x18\x01 \x03(\x08\x12\x14\n\x0cint_contents\x18\x02 \x03(\x05\x12\x16\n\x0eint64_contents\x18\x03 \x03(\x03\x12\x15\n\ruint_contents\x18\x04 \x03(\r\x12\x17\n\x0fuint64_contents\x18\x05 \x03(\x04\x12\x15\n\rfp32_contents\x18\x06 \x03(\x02\x12\x15\n\rfp64_contents\x18\x07 \x03(\x01\x12\x16\n\x0e\x62ytes_contents\x18\x08 \x03(\x0c\"\xe2\x01\n\rPredictorInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04task\x18\x02 \x01(\t\x12Y\n\x06models\x18\x03 \x03(\x0b\x32I.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo\x12Z\n\x06schema\x18\x04 \x01(\x0b\x32J.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo\"\xa8\x02\n\tModelInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0f\n\x07product\x18\x03 \x01(\t\x12\x16\n\x0etrainingMetric\x18\x04 \x01(\t\x12\x15\n\rtrainingScore\x18\x05 \x01(\x02\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x0e\n\x06\x63\x61nary\x18\x07 \x01(\x08\x12\x0e\n\x06shadow\x18\x08 \x01(\x08\x12\x0f\n\x07traffic\x18\t \x01(\x02\x12\x0e\n\x06\x66ilter\x18\n \x01(\t\x12\x0c\n\x04rank\x18\x0b \x01(\x03\x12\x0f\n\x07logPath\x18\x0c \x01(\t\x12\x0b\n\x03p95\x18\r \x01(\x02\x12\x0b\n\x03p99\x18\x0e \x01(\x02\x12\x16\n\x0elastPrediction\x18\x0f \x01(\x03\x12\x1a\n\x12\x64\x61ilyPredictionAvg\x18\x10 \x01(\x05\"i\n\nSchemaInfo\x12[\n\x07\x63olumns\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo\"|\n\nColumnInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x12\n\ndatasetMin\x18\x03 \x01(\x02\x12\x13\n\x0b\x64\x61tasetMean\x18\x04 \x01(\x02\x12\x15\n\rdatasetStdDev\x18\x05 \x01(\x02\x12\x12\n\ndatasetMax\x18\x06 \x01(\x02\"#\n\x13GetPredictorRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"s\n\x14GetPredictorResponse\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo\"6\n\x0fGetModelRequest\x12\x15\n\rpredictorName\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"k\n\x10GetModelResponse\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo\"\x84\x01\n\x0ePredictRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08validate\x18\x02 \x01(\x08\x12\x0f\n\x07\x65xplain\x18\x03 \x01(\x08\x12\x0e\n\x06\x66ormat\x18\x05 \x01(\t\x12\x0f\n\x07payload\x18\x06 \x01(\t\x12\x0f\n\x07labeled\x18\x07 \x01(\x08\x12\x0f\n\x07metrics\x18\x08 \x03(\t\"\x93\x02\n\x0fPredictResponse\x12\x64\n\x05items\x18\x01 \x03(\x0b\x32U.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem\x12k\n\x06scores\x18\x02 \x03(\x0b\x32[.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse.ScoresEntry\x1a-\n\x0bScoresEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"\xd1\x02\n\x15PredictResultLineItem\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\r\n\x05score\x18\x02 \x01(\x02\x12\r\n\x05label\x18\x03 \x01(\t\x12g\n\rprobabilities\x18\x04 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ProbabilityValue\x12\x16\n\x0emissingColumns\x18\x05 \x03(\t\x12\x12\n\noutOfBound\x18\x06 \x03(\t\x12\x15\n\rbaseShapValue\x18\x07 \x01(\x02\x12]\n\nshapValues\x18\x08 \x03(\x0b\x32I.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue\"6\n\x10ProbabilityValue\x12\r\n\x05label\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x02\"+\n\tShapValue\x12\x0f\n\x07\x66\x65\x61ture\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02\x32\x8e\x0e\n\x14GRPCInferenceService\x12\xb5\x01\n\nServerLive\x12Q.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveRequest\x1aR.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveResponse\"\x00\x12\xb8\x01\n\x0bServerReady\x12R.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyRequest\x1aS.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyResponse\"\x00\x12\xb5\x01\n\nModelReady\x12Q.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyRequest\x1aR.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyResponse\"\x00\x12\xc1\x01\n\x0eServerMetadata\x12U.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataRequest\x1aV.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataResponse\"\x00\x12\xbe\x01\n\rModelMetadata\x12T.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataRequest\x1aU.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse\"\x00\x12\xb5\x01\n\nModelInfer\x12Q.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest\x1aR.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse\"\x00\x12\xd8\x01\n\x0cGetPredictor\x12S.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest\x1aT.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/predictors/{name}\x12\xe3\x01\n\x08GetModel\x12O.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest\x1aP.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelResponse\"4\x82\xd3\xe4\x93\x02.\x12,/v1/predictors/{predictorName}/models/{name}\x12\xcc\x01\n\x07Predict\x12N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest\x1aO.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/predictors/{name}:\x01*B\x9e\x03\n!io.modela.grpcinferenceservice.v1B\x14GrpcInferenceServiceZ>github.com/metaprov/modelaapi/services/grpcinferenceservice/v1\xaa\x02\x1dModela.Client.Autogen.Grpc.v1\x92\x41\x81\x02\x12\x61\n\x14GrpcInferenceService\"D\n\x0emodela authors\x12\x11https://modela.ai\x1a\x1fmodela-discuss@googlegroups.com2\x03\x31.0*\x02\x01\x02\x32\x10\x61pplication/json:\x10\x61pplication/jsonR;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07r7\n\x17modela.ai documentation\x12\x1chttps://modela.ai/site/docs/b\x06proto3'
+  serialized_pb=b'\nYgithub.com/metaprov/modelaapi/services/grpcinferenceservice/v1/grpcinferenceservice.proto\x12>github.com.metaprov.modelaapi.services.grpcinferenceservice.v1\x1a,protoc-gen-swagger/options/annotations.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1cgoogle/protobuf/struct.proto\"\x13\n\x11ServerLiveRequest\"\"\n\x12ServerLiveResponse\x12\x0c\n\x04live\x18\x01 \x01(\x08\"\x14\n\x12ServerReadyRequest\"$\n\x13ServerReadyResponse\x12\r\n\x05ready\x18\x01 \x01(\x08\"2\n\x11ModelReadyRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"#\n\x12ModelReadyResponse\x12\r\n\x05ready\x18\x01 \x01(\x08\"\x17\n\x15ServerMetadataRequest\"K\n\x16ServerMetadataResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x12\n\nextensions\x18\x03 \x03(\t\"5\n\x14ModelMetadataRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"\xf7\x02\n\x15ModelMetadataResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08versions\x18\x02 \x03(\t\x12\x10\n\x08platform\x18\x03 \x01(\t\x12t\n\x06inputs\x18\x04 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata\x12u\n\x07outputs\x18\x05 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse.TensorMetadata\x1a?\n\x0eTensorMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tatype\x18\x02 \x01(\t\x12\r\n\x05shape\x18\x03 \x03(\x03\"\xd0\n\n\x11ModelInferRequest\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12u\n\nparameters\x18\x04 \x03(\x0b\x32\x61.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.ParametersEntry\x12r\n\x06inputs\x18\x05 \x03(\x0b\x32\x62.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor\x12}\n\x07outputs\x18\x06 \x03(\x0b\x32l.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor\x12\x1a\n\x12raw_input_contents\x18\x07 \x03(\x0c\x1a\xb5\x03\n\x10InferInputTensor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tatype\x18\x02 \x01(\t\x12\r\n\x05shape\x18\x03 \x03(\x03\x12\x86\x01\n\nparameters\x18\x04 \x03(\x0b\x32r.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferInputTensor.ParametersEntry\x12\x65\n\x08\x63ontents\x18\x05 \x01(\x0b\x32S.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensorContents\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\x1a\xc1\x02\n\x1aInferRequestedOutputTensor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x90\x01\n\nparameters\x18\x02 \x03(\x0b\x32|.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest.InferRequestedOutputTensor.ParametersEntry\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\"\x96\x07\n\x12ModelInferResponse\x12\x12\n\nmodel_name\x18\x01 \x01(\t\x12\x15\n\rmodel_version\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12v\n\nparameters\x18\x04 \x03(\x0b\x32\x62.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.ParametersEntry\x12u\n\x07outputs\x18\x05 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor\x12\x1b\n\x13raw_output_contents\x18\x06 \x03(\x0c\x1a\xb8\x03\n\x11InferOutputTensor\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tatype\x18\x02 \x01(\t\x12\r\n\x05shape\x18\x03 \x03(\x03\x12\x88\x01\n\nparameters\x18\x04 \x03(\x0b\x32t.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse.InferOutputTensor.ParametersEntry\x12\x65\n\x08\x63ontents\x18\x05 \x01(\x0b\x32S.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferTensorContents\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\x1a\x81\x01\n\x0fParametersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12]\n\x05value\x18\x02 \x01(\x0b\x32N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.InferParameter:\x02\x38\x01\"i\n\x0eInferParameter\x12\x14\n\nbool_param\x18\x01 \x01(\x08H\x00\x12\x15\n\x0bint64_param\x18\x02 \x01(\x03H\x00\x12\x16\n\x0cstring_param\x18\x03 \x01(\tH\x00\x42\x12\n\x10parameter_choice\"\xd0\x01\n\x13InferTensorContents\x12\x15\n\rbool_contents\x18\x01 \x03(\x08\x12\x14\n\x0cint_contents\x18\x02 \x03(\x05\x12\x16\n\x0eint64_contents\x18\x03 \x03(\x03\x12\x15\n\ruint_contents\x18\x04 \x03(\r\x12\x17\n\x0fuint64_contents\x18\x05 \x03(\x04\x12\x15\n\rfp32_contents\x18\x06 \x03(\x02\x12\x15\n\rfp64_contents\x18\x07 \x03(\x01\x12\x16\n\x0e\x62ytes_contents\x18\x08 \x03(\x0c\"\xf5\x01\n\rPredictorInfo\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04task\x18\x03 \x01(\t\x12Y\n\x06models\x18\x04 \x03(\x0b\x32I.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo\x12Z\n\x06schema\x18\x05 \x01(\x0b\x32J.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.SchemaInfo\"\xbb\x02\n\tModelInfo\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07version\x18\x03 \x01(\t\x12\x0f\n\x07product\x18\x04 \x01(\t\x12\x16\n\x0etrainingMetric\x18\x05 \x01(\t\x12\x15\n\rtrainingScore\x18\x06 \x01(\x02\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x0e\n\x06\x63\x61nary\x18\x08 \x01(\x08\x12\x0e\n\x06shadow\x18\t \x01(\x08\x12\x0f\n\x07traffic\x18\n \x01(\x02\x12\x0e\n\x06\x66ilter\x18\x0b \x01(\t\x12\x0c\n\x04rank\x18\x0c \x01(\x03\x12\x0f\n\x07logPath\x18\r \x01(\t\x12\x0b\n\x03p95\x18\x0e \x01(\x02\x12\x0b\n\x03p99\x18\x0f \x01(\x02\x12\x16\n\x0elastPrediction\x18\x10 \x01(\x03\x12\x1a\n\x12\x64\x61ilyPredictionAvg\x18\x11 \x01(\x05\"i\n\nSchemaInfo\x12[\n\x07\x63olumns\x18\x01 \x03(\x0b\x32J.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ColumnInfo\"|\n\nColumnInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x12\n\ndatasetMin\x18\x03 \x01(\x02\x12\x13\n\x0b\x64\x61tasetMean\x18\x04 \x01(\x02\x12\x15\n\rdatasetStdDev\x18\x05 \x01(\x02\x12\x12\n\ndatasetMax\x18\x06 \x01(\x02\"6\n\x13GetPredictorRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x14GetPredictorResponse\x12[\n\x04item\x18\x01 \x01(\x0b\x32M.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo\"R\n\x0fGetModelRequest\x12\x1a\n\x12predictorNamespace\x18\x01 \x01(\t\x12\x15\n\rpredictorName\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"k\n\x10GetModelResponse\x12W\n\x04item\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo\"\x97\x01\n\x0ePredictRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08validate\x18\x03 \x01(\x08\x12\x0f\n\x07\x65xplain\x18\x04 \x01(\x08\x12\x0e\n\x06\x66ormat\x18\x05 \x01(\t\x12\x0f\n\x07payload\x18\x06 \x01(\t\x12\x0f\n\x07labeled\x18\x07 \x01(\x08\x12\x0f\n\x07metrics\x18\x08 \x03(\t\"\x93\x02\n\x0fPredictResponse\x12\x64\n\x05items\x18\x01 \x03(\x0b\x32U.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResultLineItem\x12k\n\x06scores\x18\x02 \x03(\x0b\x32[.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse.ScoresEntry\x1a-\n\x0bScoresEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\"\xd1\x02\n\x15PredictResultLineItem\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\r\n\x05score\x18\x02 \x01(\x02\x12\r\n\x05label\x18\x03 \x01(\t\x12g\n\rprobabilities\x18\x04 \x03(\x0b\x32P.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ProbabilityValue\x12\x16\n\x0emissingColumns\x18\x05 \x03(\t\x12\x12\n\noutOfBound\x18\x06 \x03(\t\x12\x15\n\rbaseShapValue\x18\x07 \x01(\x02\x12]\n\nshapValues\x18\x08 \x03(\x0b\x32I.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ShapValue\"6\n\x10ProbabilityValue\x12\r\n\x05label\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x02\"+\n\tShapValue\x12\x0f\n\x07\x66\x65\x61ture\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x02\x32\xbb\x0e\n\x14GRPCInferenceService\x12\xb5\x01\n\nServerLive\x12Q.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveRequest\x1aR.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerLiveResponse\"\x00\x12\xb8\x01\n\x0bServerReady\x12R.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyRequest\x1aS.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerReadyResponse\"\x00\x12\xb5\x01\n\nModelReady\x12Q.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyRequest\x1aR.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelReadyResponse\"\x00\x12\xc1\x01\n\x0eServerMetadata\x12U.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataRequest\x1aV.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ServerMetadataResponse\"\x00\x12\xbe\x01\n\rModelMetadata\x12T.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataRequest\x1aU.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelMetadataResponse\"\x00\x12\xb5\x01\n\nModelInfer\x12Q.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferRequest\x1aR.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInferResponse\"\x00\x12\xe4\x01\n\x0cGetPredictor\x12S.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest\x1aT.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/predictors/{namespace}/{name}\x12\xf8\x01\n\x08GetModel\x12O.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest\x1aP.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelResponse\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/v1/predictors/{predictorNamespace}/{predictorName}/models/{name}\x12\xd8\x01\n\x07Predict\x12N.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest\x1aO.github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictResponse\",\x82\xd3\xe4\x93\x02&\"!/v1/predictors/{namespace}/{name}:\x01*B\x9e\x03\n!io.modela.grpcinferenceservice.v1B\x14GrpcInferenceServiceZ>github.com/metaprov/modelaapi/services/grpcinferenceservice/v1\xaa\x02\x1dModela.Client.Autogen.Grpc.v1\x92\x41\x81\x02\x12\x61\n\x14GrpcInferenceService\"D\n\x0emodela authors\x12\x11https://modela.ai\x1a\x1fmodela-discuss@googlegroups.com2\x03\x31.0*\x02\x01\x02\x32\x10\x61pplication/json:\x10\x61pplication/jsonR;\n\x03\x34\x30\x34\x12\x34\n*Returned when the resource does not exist.\x12\x06\n\x04\x9a\x02\x01\x07r7\n\x17modela.ai documentation\x12\x1chttps://modela.ai/site/docs/b\x06proto3'
   ,
   dependencies=[protoc__gen__swagger_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
@@ -1057,29 +1057,36 @@ _PREDICTORINFO = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.name', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='task', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.task', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='models', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.models', index=2,
-      number=3, type=11, cpp_type=10, label=3,
+      name='task', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.task', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='models', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.models', index=3,
+      number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='schema', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.schema', index=3,
-      number=4, type=11, cpp_type=10, label=1,
+      name='schema', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictorInfo.schema', index=4,
+      number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1097,7 +1104,7 @@ _PREDICTORINFO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=3607,
-  serialized_end=3833,
+  serialized_end=3852,
 )
 
 
@@ -1110,113 +1117,120 @@ _MODELINFO = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.name', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='version', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.version', index=1,
+      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='product', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.product', index=2,
+      name='version', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.version', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trainingMetric', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.trainingMetric', index=3,
+      name='product', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.product', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trainingScore', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.trainingScore', index=4,
-      number=5, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.status', index=5,
-      number=6, type=9, cpp_type=9, label=1,
+      name='trainingMetric', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.trainingMetric', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='canary', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.canary', index=6,
-      number=7, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='trainingScore', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.trainingScore', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='shadow', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.shadow', index=7,
+      name='status', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.status', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='canary', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.canary', index=7,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='traffic', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.traffic', index=8,
-      number=9, type=2, cpp_type=6, label=1,
+      name='shadow', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.shadow', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='traffic', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.traffic', index=9,
+      number=10, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='filter', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.filter', index=9,
-      number=10, type=9, cpp_type=9, label=1,
+      name='filter', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.filter', index=10,
+      number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rank', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.rank', index=10,
-      number=11, type=3, cpp_type=2, label=1,
+      name='rank', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.rank', index=11,
+      number=12, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='logPath', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.logPath', index=11,
-      number=12, type=9, cpp_type=9, label=1,
+      name='logPath', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.logPath', index=12,
+      number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='p95', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p95', index=12,
-      number=13, type=2, cpp_type=6, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='p99', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p99', index=13,
+      name='p95', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p95', index=13,
       number=14, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastPrediction', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.lastPrediction', index=14,
-      number=15, type=3, cpp_type=2, label=1,
+      name='p99', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.p99', index=14,
+      number=15, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lastPrediction', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.lastPrediction', index=15,
+      number=16, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='dailyPredictionAvg', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.dailyPredictionAvg', index=15,
-      number=16, type=5, cpp_type=1, label=1,
+      name='dailyPredictionAvg', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.ModelInfo.dailyPredictionAvg', index=16,
+      number=17, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1233,8 +1247,8 @@ _MODELINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3836,
-  serialized_end=4132,
+  serialized_start=3855,
+  serialized_end=4170,
 )
 
 
@@ -1265,8 +1279,8 @@ _SCHEMAINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4134,
-  serialized_end=4239,
+  serialized_start=4172,
+  serialized_end=4277,
 )
 
 
@@ -1332,8 +1346,8 @@ _COLUMNINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4241,
-  serialized_end=4365,
+  serialized_start=4279,
+  serialized_end=4403,
 )
 
 
@@ -1346,8 +1360,15 @@ _GETPREDICTORREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.name', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetPredictorRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1364,8 +1385,8 @@ _GETPREDICTORREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4367,
-  serialized_end=4402,
+  serialized_start=4405,
+  serialized_end=4459,
 )
 
 
@@ -1396,8 +1417,8 @@ _GETPREDICTORRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4404,
-  serialized_end=4519,
+  serialized_start=4461,
+  serialized_end=4576,
 )
 
 
@@ -1410,15 +1431,22 @@ _GETMODELREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='predictorName', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.predictorName', index=0,
+      name='predictorNamespace', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.predictorNamespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.name', index=1,
+      name='predictorName', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.predictorName', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.GetModelRequest.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1435,8 +1463,8 @@ _GETMODELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4521,
-  serialized_end=4575,
+  serialized_start=4578,
+  serialized_end=4660,
 )
 
 
@@ -1467,8 +1495,8 @@ _GETMODELRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4577,
-  serialized_end=4684,
+  serialized_start=4662,
+  serialized_end=4769,
 )
 
 
@@ -1481,49 +1509,56 @@ _PREDICTREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.name', index=0,
+      name='namespace', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='validate', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.validate', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='name', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='explain', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.explain', index=2,
+      name='validate', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.validate', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='format', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.format', index=3,
+      name='explain', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.explain', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='format', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.format', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='payload', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.payload', index=4,
+      name='payload', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.payload', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labeled', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.labeled', index=5,
+      name='labeled', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.labeled', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='metrics', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.metrics', index=6,
+      name='metrics', full_name='github.com.metaprov.modelaapi.services.grpcinferenceservice.v1.PredictRequest.metrics', index=7,
       number=8, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1541,8 +1576,8 @@ _PREDICTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4687,
-  serialized_end=4819,
+  serialized_start=4772,
+  serialized_end=4923,
 )
 
 
@@ -1580,8 +1615,8 @@ _PREDICTRESPONSE_SCORESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5052,
-  serialized_end=5097,
+  serialized_start=5156,
+  serialized_end=5201,
 )
 
 _PREDICTRESPONSE = _descriptor.Descriptor(
@@ -1618,8 +1653,8 @@ _PREDICTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4822,
-  serialized_end=5097,
+  serialized_start=4926,
+  serialized_end=5201,
 )
 
 
@@ -1699,8 +1734,8 @@ _PREDICTRESULTLINEITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5100,
-  serialized_end=5437,
+  serialized_start=5204,
+  serialized_end=5541,
 )
 
 
@@ -1738,8 +1773,8 @@ _PROBABILITYVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5439,
-  serialized_end=5493,
+  serialized_start=5543,
+  serialized_end=5597,
 )
 
 
@@ -1777,8 +1812,8 @@ _SHAPVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5495,
-  serialized_end=5538,
+  serialized_start=5599,
+  serialized_end=5642,
 )
 
 _MODELMETADATARESPONSE_TENSORMETADATA.containing_type = _MODELMETADATARESPONSE
@@ -2140,8 +2175,8 @@ _GRPCINFERENCESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5541,
-  serialized_end=7347,
+  serialized_start=5645,
+  serialized_end=7496,
   methods=[
   _descriptor.MethodDescriptor(
     name='ServerLive',
@@ -2210,7 +2245,7 @@ _GRPCINFERENCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETPREDICTORREQUEST,
     output_type=_GETPREDICTORRESPONSE,
-    serialized_options=b'\202\323\344\223\002\027\022\025/v1/predictors/{name}',
+    serialized_options=b'\202\323\344\223\002#\022!/v1/predictors/{namespace}/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -2220,7 +2255,7 @@ _GRPCINFERENCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETMODELREQUEST,
     output_type=_GETMODELRESPONSE,
-    serialized_options=b'\202\323\344\223\002.\022,/v1/predictors/{predictorName}/models/{name}',
+    serialized_options=b'\202\323\344\223\002C\022A/v1/predictors/{predictorNamespace}/{predictorName}/models/{name}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -2230,7 +2265,7 @@ _GRPCINFERENCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_PREDICTREQUEST,
     output_type=_PREDICTRESPONSE,
-    serialized_options=b'\202\323\344\223\002\032\"\025/v1/predictors/{name}:\001*',
+    serialized_options=b'\202\323\344\223\002&\"!/v1/predictors/{namespace}/{name}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])

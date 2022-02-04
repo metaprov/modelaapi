@@ -531,6 +531,9 @@ export namespace InferTensorContents {
 }
 
 export class PredictorInfo extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PredictorInfo;
+
   getName(): string;
   setName(value: string): PredictorInfo;
 
@@ -557,6 +560,7 @@ export class PredictorInfo extends jspb.Message {
 
 export namespace PredictorInfo {
   export type AsObject = {
+    namespace: string,
     name: string,
     task: string,
     modelsList: Array<ModelInfo.AsObject>,
@@ -565,6 +569,9 @@ export namespace PredictorInfo {
 }
 
 export class ModelInfo extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ModelInfo;
+
   getName(): string;
   setName(value: string): ModelInfo;
 
@@ -623,6 +630,7 @@ export class ModelInfo extends jspb.Message {
 
 export namespace ModelInfo {
   export type AsObject = {
+    namespace: string,
     name: string,
     version: string,
     product: string,
@@ -701,6 +709,9 @@ export namespace ColumnInfo {
 }
 
 export class GetPredictorRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetPredictorRequest;
+
   getName(): string;
   setName(value: string): GetPredictorRequest;
 
@@ -714,6 +725,7 @@ export class GetPredictorRequest extends jspb.Message {
 
 export namespace GetPredictorRequest {
   export type AsObject = {
+    namespace: string,
     name: string,
   }
 }
@@ -739,6 +751,9 @@ export namespace GetPredictorResponse {
 }
 
 export class GetModelRequest extends jspb.Message {
+  getPredictornamespace(): string;
+  setPredictornamespace(value: string): GetModelRequest;
+
   getPredictorname(): string;
   setPredictorname(value: string): GetModelRequest;
 
@@ -755,6 +770,7 @@ export class GetModelRequest extends jspb.Message {
 
 export namespace GetModelRequest {
   export type AsObject = {
+    predictornamespace: string,
     predictorname: string,
     name: string,
   }
@@ -781,6 +797,9 @@ export namespace GetModelResponse {
 }
 
 export class PredictRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): PredictRequest;
+
   getName(): string;
   setName(value: string): PredictRequest;
 
@@ -814,6 +833,7 @@ export class PredictRequest extends jspb.Message {
 
 export namespace PredictRequest {
   export type AsObject = {
+    namespace: string,
     name: string,
     validate: boolean,
     explain: boolean,
