@@ -9,6 +9,7 @@ resources:
   - catalog.modela.ai_workloadclasses.yaml
   - catalog.modela.ai_userroleclasses.yaml
   - catalog.modela.ai_publicdatasets.yaml
+  - catalog.modela.ai_managedimages.yaml
   - data.modela.ai_datapipelines.yaml
   - data.modela.ai_datapipelineruns.yaml
   - data.modela.ai_dataproducts.yaml
