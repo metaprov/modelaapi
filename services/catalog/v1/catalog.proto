@@ -7,6 +7,8 @@ import "google/protobuf/field_mask.proto";
 import "google/api/annotations.proto";
 import "github.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto";
 
+///////////////////////////////// Algorithms
+
 message ListAlgorithmsRequest {
     string namespace   = 1;
     map<string,string> labels =2;
@@ -24,6 +26,30 @@ message GetAlgorithmRequest {
 message GetAlgorithmResponse {
     github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm item = 1;
 }
+
+
+///////////////////////////////// Managed images
+
+message ListManagedimagesRequest {
+    string namespace   = 1;
+    map<string,string> labels =2;
+}
+
+message ListManagedimagesResponse {
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageList items = 1;
+}
+
+message GetManagedimageRequest {
+    string namespace   = 1;
+    string name = 2;    
+}
+
+message GetManagedimageResponse {
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage item = 1;
+}
+
+
+
 
 //////////////////////////////////////////////////// ML Framework ///////////////////////////////////
 
@@ -201,6 +227,15 @@ service CatalogService {
     rpc GetAlgorithm(GetAlgorithmRequest) returns (GetAlgorithmResponse) {
         option (google.api.http).get = "/v1/algorithms/{name}";
     }
+
+    rpc ListManagedImages(ListManagedimagesRequest) returns (ListManagedimagesResponse) {
+        option (google.api.http).get = "/v1/managedimages";
+    }
+
+    rpc GetManagedImage(GetManagedimageRequest) returns (GetManagedimageResponse) {
+        option (google.api.http).get = "/v1/managedimages/{name}";
+    }
+
 
     rpc ListMLFrameworks(ListMLFrameworksRequest) returns (ListMLFrameworksResponse) {
         option (google.api.http).get = "/v1/mlframeworks";

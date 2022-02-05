@@ -89,6 +89,90 @@ export namespace GetAlgorithmResponse {
   }
 }
 
+export class ListManagedimagesRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): ListManagedimagesRequest;
+
+  getLabelsMap(): jspb.Map<string, string>;
+  clearLabelsMap(): ListManagedimagesRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListManagedimagesRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ListManagedimagesRequest): ListManagedimagesRequest.AsObject;
+  static serializeBinaryToWriter(message: ListManagedimagesRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListManagedimagesRequest;
+  static deserializeBinaryFromReader(message: ListManagedimagesRequest, reader: jspb.BinaryReader): ListManagedimagesRequest;
+}
+
+export namespace ListManagedimagesRequest {
+  export type AsObject = {
+    namespace: string,
+    labelsMap: Array<[string, string]>,
+  }
+}
+
+export class ListManagedimagesResponse extends jspb.Message {
+  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList | undefined;
+  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList): ListManagedimagesResponse;
+  hasItems(): boolean;
+  clearItems(): ListManagedimagesResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListManagedimagesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ListManagedimagesResponse): ListManagedimagesResponse.AsObject;
+  static serializeBinaryToWriter(message: ListManagedimagesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListManagedimagesResponse;
+  static deserializeBinaryFromReader(message: ListManagedimagesResponse, reader: jspb.BinaryReader): ListManagedimagesResponse;
+}
+
+export namespace ListManagedimagesResponse {
+  export type AsObject = {
+    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList.AsObject,
+  }
+}
+
+export class GetManagedimageRequest extends jspb.Message {
+  getNamespace(): string;
+  setNamespace(value: string): GetManagedimageRequest;
+
+  getName(): string;
+  setName(value: string): GetManagedimageRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetManagedimageRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetManagedimageRequest): GetManagedimageRequest.AsObject;
+  static serializeBinaryToWriter(message: GetManagedimageRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetManagedimageRequest;
+  static deserializeBinaryFromReader(message: GetManagedimageRequest, reader: jspb.BinaryReader): GetManagedimageRequest;
+}
+
+export namespace GetManagedimageRequest {
+  export type AsObject = {
+    namespace: string,
+    name: string,
+  }
+}
+
+export class GetManagedimageResponse extends jspb.Message {
+  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage | undefined;
+  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage): GetManagedimageResponse;
+  hasItem(): boolean;
+  clearItem(): GetManagedimageResponse;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetManagedimageResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetManagedimageResponse): GetManagedimageResponse.AsObject;
+  static serializeBinaryToWriter(message: GetManagedimageResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetManagedimageResponse;
+  static deserializeBinaryFromReader(message: GetManagedimageResponse, reader: jspb.BinaryReader): GetManagedimageResponse;
+}
+
+export namespace GetManagedimageResponse {
+  export type AsObject = {
+    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage.AsObject,
+  }
+}
+
 export class ListMLFrameworksRequest extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ListMLFrameworksRequest;

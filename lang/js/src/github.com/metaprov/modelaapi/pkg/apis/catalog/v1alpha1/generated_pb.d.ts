@@ -790,6 +790,76 @@ export namespace MachineClassCost {
   }
 }
 
+export class ManagedImage extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta): ManagedImage;
+  hasMetadata(): boolean;
+  clearMetadata(): ManagedImage;
+
+  getSpec(): ManagedImageSpec | undefined;
+  setSpec(value?: ManagedImageSpec): ManagedImage;
+  hasSpec(): boolean;
+  clearSpec(): ManagedImage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ManagedImage.AsObject;
+  static toObject(includeInstance: boolean, msg: ManagedImage): ManagedImage.AsObject;
+  static serializeBinaryToWriter(message: ManagedImage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ManagedImage;
+  static deserializeBinaryFromReader(message: ManagedImage, reader: jspb.BinaryReader): ManagedImage;
+}
+
+export namespace ManagedImage {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ObjectMeta.AsObject,
+    spec?: ManagedImageSpec.AsObject,
+  }
+}
+
+export class ManagedImageList extends jspb.Message {
+  getMetadata(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta | undefined;
+  setMetadata(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta): ManagedImageList;
+  hasMetadata(): boolean;
+  clearMetadata(): ManagedImageList;
+
+  getItemsList(): Array<ManagedImage>;
+  setItemsList(value: Array<ManagedImage>): ManagedImageList;
+  clearItemsList(): ManagedImageList;
+  addItems(value?: ManagedImage, index?: number): ManagedImage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ManagedImageList.AsObject;
+  static toObject(includeInstance: boolean, msg: ManagedImageList): ManagedImageList.AsObject;
+  static serializeBinaryToWriter(message: ManagedImageList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ManagedImageList;
+  static deserializeBinaryFromReader(message: ManagedImageList, reader: jspb.BinaryReader): ManagedImageList;
+}
+
+export namespace ManagedImageList {
+  export type AsObject = {
+    metadata?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.ListMeta.AsObject,
+    itemsList: Array<ManagedImage.AsObject>,
+  }
+}
+
+export class ManagedImageSpec extends jspb.Message {
+  getImage(): string;
+  setImage(value: string): ManagedImageSpec;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ManagedImageSpec.AsObject;
+  static toObject(includeInstance: boolean, msg: ManagedImageSpec): ManagedImageSpec.AsObject;
+  static serializeBinaryToWriter(message: ManagedImageSpec, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ManagedImageSpec;
+  static deserializeBinaryFromReader(message: ManagedImageSpec, reader: jspb.BinaryReader): ManagedImageSpec;
+}
+
+export namespace ManagedImageSpec {
+  export type AsObject = {
+    image: string,
+  }
+}
+
 export class Measurement extends jspb.Message {
   getMetric(): string;
   setMetric(value: string): Measurement;

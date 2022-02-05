@@ -44,6 +44,8 @@ func AddKnownTypes(scheme *k8sruntime.Scheme) error {
 		&CloudList{},
 		&PublicDataset{},
 		&PublicDatasetList{},
+		&ManagedImage{},
+		&ManagedImageList{},
 	)
 	metav1.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

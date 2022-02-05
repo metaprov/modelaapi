@@ -121,6 +121,92 @@ export class CatalogServiceClient {
     this.methodInfoGetAlgorithm);
   }
 
+  methodInfoListManagedImages = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesRequest,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesResponse,
+    (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesResponse.deserializeBinary
+  );
+
+  listManagedImages(
+    request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesResponse>;
+
+  listManagedImages(
+    request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesResponse>;
+
+  listManagedImages(
+    request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.ListManagedimagesResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages',
+        request,
+        metadata || {},
+        this.methodInfoListManagedImages,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages',
+    request,
+    metadata || {},
+    this.methodInfoListManagedImages);
+  }
+
+  methodInfoGetManagedImage = new grpcWeb.MethodDescriptor(
+    '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage',
+    grpcWeb.MethodType.UNARY,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageRequest,
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageResponse,
+    (request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageRequest) => {
+      return request.serializeBinary();
+    },
+    github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageResponse.deserializeBinary
+  );
+
+  getManagedImage(
+    request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageRequest,
+    metadata: grpcWeb.Metadata | null): Promise<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageResponse>;
+
+  getManagedImage(
+    request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageResponse) => void): grpcWeb.ClientReadableStream<github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageResponse>;
+
+  getManagedImage(
+    request: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: github_com_metaprov_modelaapi_services_catalog_v1_catalog_pb.GetManagedimageResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage',
+        request,
+        metadata || {},
+        this.methodInfoGetManagedImage,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage',
+    request,
+    metadata || {},
+    this.methodInfoGetManagedImage);
+  }
+
   methodInfoListMLFrameworks = new grpcWeb.MethodDescriptor(
     '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks',
     grpcWeb.MethodType.UNARY,

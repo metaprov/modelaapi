@@ -397,6 +397,32 @@ message MachineClassCost {
   optional k8s.io.apimachinery.pkg.api.resource.Quantity costSpot = 4;
 }
 
+// MLFramework define the metadata about a machine learning framework
+// +kubebuilder:object:root=true
+// +kubebuilder:printcolumn:name="URL",type="string",JSONPath=".spec.url"
+// +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.version"
+// +kubebuilder:printcolumn:name="Description",type="string",JSONPath=".spec.description"
+// +kubebuilder:resource:path=managedimages,singular=managedimage,categories={catalog,modela,all}
+message ManagedImage {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta metadata = 1;
+
+  optional ManagedImageSpec spec = 2;
+}
+
+// +kubebuilder:object:root=true
+// ManagedImageList is a list of pretrained models
+message ManagedImageList {
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta metadata = 1;
+
+  repeated ManagedImage items = 2;
+}
+
+// ManagedImageSpec is the desired state of the pretrained model
+message ManagedImageSpec {
+  // Image is the docker image of the pretrained model
+  optional string image = 1;
+}
+
 // Measurement is a value for a specific metric
 message Measurement {
   // The metric type name (e.g. F1 / Accuracy)

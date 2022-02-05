@@ -26,6 +26,16 @@ class CatalogServiceStub(object):
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmRequest.SerializeToString,
                 response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmResponse.FromString,
                 )
+        self.ListManagedImages = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListManagedimagesRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListManagedimagesResponse.FromString,
+                )
+        self.GetManagedImage = channel.unary_unary(
+                '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage',
+                request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetManagedimageRequest.SerializeToString,
+                response_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetManagedimageResponse.FromString,
+                )
         self.ListMLFrameworks = channel.unary_unary(
                 '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListMLFrameworks',
                 request_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListMLFrameworksRequest.SerializeToString,
@@ -105,6 +115,18 @@ class CatalogServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAlgorithm(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListManagedImages(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetManagedImage(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -200,6 +222,16 @@ def add_CatalogServiceServicer_to_server(servicer, server):
                     servicer.GetAlgorithm,
                     request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmRequest.FromString,
                     response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmResponse.SerializeToString,
+            ),
+            'ListManagedImages': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListManagedImages,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListManagedimagesRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListManagedimagesResponse.SerializeToString,
+            ),
+            'GetManagedImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetManagedImage,
+                    request_deserializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetManagedimageRequest.FromString,
+                    response_serializer=github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetManagedimageResponse.SerializeToString,
             ),
             'ListMLFrameworks': grpc.unary_unary_rpc_method_handler(
                     servicer.ListMLFrameworks,
@@ -309,6 +341,40 @@ class CatalogService(object):
         return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetAlgorithm',
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmRequest.SerializeToString,
             github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetAlgorithmResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListManagedImages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/ListManagedImages',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListManagedimagesRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.ListManagedimagesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetManagedImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/github.com.metaprov.modelaapi.services.catalog.v1.CatalogService/GetManagedImage',
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetManagedimageRequest.SerializeToString,
+            github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_catalog_dot_v1_dot_catalog__pb2.GetManagedimageResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
