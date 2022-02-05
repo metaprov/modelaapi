@@ -35,6 +35,9 @@ spec:
     - jsonPath: .status.activePredictors
       name: Predictors
       type: number
+    - jsonPath: .spec.clusterName
+      name: Cluster
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -61,10 +64,6 @@ spec:
                 default: ""
                 description: ClusterName is  the virtual cluster name in case that
                   the lab is not on the same cluster
-                type: string
-              color:
-                default: none
-                description: the color assigned to the product
                 type: string
               description:
                 default: ""

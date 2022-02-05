@@ -71,10 +71,6 @@ type LabSpec struct {
 	// Stake holders refer to a list of stackholders, which have interest in the product.
 	// +kubebuilder:validation:Optional
 	StakeHolders []catalog.StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,6,rep,name=stakeholders"`
-	// the color assigned to the product
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,7,opt,name=color"`
 }
 
 // +kubebuilder:object:root=true

@@ -25,7 +25,7 @@ spec:
     - jsonPath: .spec.owner
       name: Owner
       type: string
-    - jsonPath: .spec.secretName
+    - jsonPath: .spec.secretRef.Name
       name: Secret
       type: string
     - jsonPath: .spec.trialStart
@@ -43,7 +43,7 @@ spec:
     - jsonPath: .spec.maxUsers
       name: Max Users
       type: string
-    - jsonPath: .status.expireAt
+    - jsonPath: .spec.expireAt
       name: Expire At
       type: date
     - jsonPath: .metadata.creationTimestamp

@@ -29508,8 +29508,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.toObject = f
     clustername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     stakeholdersList: jspb.Message.toObjectList(msg.getStakeholdersList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.toObject, includeInstance),
-    color: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -29572,10 +29571,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.deserializeB
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.deserializeBinaryFromReader);
       msg.addStakeholders(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setColor(value);
       break;
     default:
       reader.skipField();
@@ -29649,13 +29644,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.serializeBin
       6,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeString(
-      7,
-      f
     );
   }
 };
@@ -29878,42 +29866,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.ad
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.clearStakeholdersList = function() {
   return this.setStakeholdersList([]);
-};
-
-
-/**
- * optional string color = 7;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.getColor = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.setColor = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.clearColor = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec.prototype.hasColor = function() {
-  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -43112,8 +43064,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.toOb
     clustername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
     owner: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     stakeholdersList: jspb.Message.toObjectList(msg.getStakeholdersList(),
-    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.toObject, includeInstance),
-    color: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f
+    github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -43184,10 +43135,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.dese
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.deserializeBinaryFromReader);
       msg.addStakeholders(value);
-      break;
-    case 9:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setColor(value);
       break;
     default:
       reader.skipField();
@@ -43275,13 +43222,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.seri
       8,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 9));
-  if (f != null) {
-    writer.writeString(
-      9,
-      f
     );
   }
 };
@@ -43576,42 +43516,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prot
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearStakeholdersList = function() {
   return this.setStakeholdersList([]);
-};
-
-
-/**
- * optional string color = 9;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.getColor = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.setColor = function(value) {
-  return jspb.Message.setField(this, 9, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.clearColor = function() {
-  return jspb.Message.setField(this, 9, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec.prototype.hasColor = function() {
-  return jspb.Message.getField(this, 9) != null;
 };
 
 

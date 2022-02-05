@@ -2859,9 +2859,6 @@ export class LabSpec extends jspb.Message {
   clearStakeholdersList(): LabSpec;
   addStakeholders(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
 
-  getColor(): string;
-  setColor(value: string): LabSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LabSpec.AsObject;
   static toObject(includeInstance: boolean, msg: LabSpec): LabSpec.AsObject;
@@ -2878,7 +2875,6 @@ export namespace LabSpec {
     clustername: string,
     owner: string,
     stakeholdersList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.AsObject>,
-    color: string,
   }
 }
 
@@ -4319,9 +4315,6 @@ export class ServingSiteSpec extends jspb.Message {
   clearStakeholdersList(): ServingSiteSpec;
   addStakeholders(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder, index?: number): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder;
 
-  getColor(): string;
-  setColor(value: string): ServingSiteSpec;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServingSiteSpec.AsObject;
   static toObject(includeInstance: boolean, msg: ServingSiteSpec): ServingSiteSpec.AsObject;
@@ -4340,7 +4333,6 @@ export namespace ServingSiteSpec {
     clustername: string,
     owner: string,
     stakeholdersList: Array<github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.StakeHolder.AsObject>,
-    color: string,
   }
 }
 

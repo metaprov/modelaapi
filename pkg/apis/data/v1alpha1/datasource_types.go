@@ -699,7 +699,7 @@ type DataSourceSpec struct {
 	Sample SampleSpec `json:"sample,omitempty" protobuf:"bytes,9,opt,name=sample"`
 	// The default task for datasets from this data source. If null this will be setup to the data product task
 	// +kubebuilder:validation:Optional
-	Task *catalog.TaskName `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
+	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,10,opt,name=task"`
 	// List of relationships to other data sources
 	Relationships []RelationshipSpec `json:"relationships,omitempty" protobuf:"bytes,11,rep,name=relationships"`
 }

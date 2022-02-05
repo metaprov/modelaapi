@@ -1528,7 +1528,7 @@ func (in *DataSourceSpec) DeepCopyInto(out *DataSourceSpec) {
 	in.Sample.DeepCopyInto(&out.Sample)
 	if in.Task != nil {
 		in, out := &in.Task, &out.Task
-		*out = new(catalogv1alpha1.TaskName)
+		*out = new(catalogv1alpha1.MLTask)
 		**out = **in
 	}
 	if in.Relationships != nil {

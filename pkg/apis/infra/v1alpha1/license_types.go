@@ -45,13 +45,13 @@ type LicenseCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
-// +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretName",description=""
+// +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretRef.Name",description=""
 // +kubebuilder:printcolumn:name="Trial Start",type="string",JSONPath=".spec.trialStart",description=""
 // +kubebuilder:printcolumn:name="Trial End",type="string",JSONPath=".spec.trialEnd",description=""
 // +kubebuilder:printcolumn:name="Max Trainers",type="string",JSONPath=".spec.maxTrainers",description=""
 // +kubebuilder:printcolumn:name="Max Nodes",type="string",JSONPath=".spec.maxServers",description=""
 // +kubebuilder:printcolumn:name="Max Users",type="string",JSONPath=".spec.maxUsers",description=""
-// +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".status.expireAt",description=""
+// +kubebuilder:printcolumn:name="Expire At",type="date",JSONPath=".spec.expireAt",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=licenses,singular=license,categories={infra,modela}
 // License is an abstraction that represent the cluster wide license

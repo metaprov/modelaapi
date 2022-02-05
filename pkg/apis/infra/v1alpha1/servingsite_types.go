@@ -41,6 +41,7 @@ type ServingSiteCondition struct {
 // +kubebuilder:printcolumn:name="FDQN",type="string",JSONPath=".spec.fdqn",description=""
 // +kubebuilder:printcolumn:name="Ingress",type="string",JSONPath=".spec.ingressName",description=""
 // +kubebuilder:printcolumn:name="Predictors",type="number",JSONPath=".status.activePredictors",description=""
+// +kubebuilder:printcolumn:name="Cluster",type="string",JSONPath=".spec.clusterName",description=""
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp",description=""
 // +kubebuilder:resource:path=servingsites,singular=servingsite,categories={infra,modela}
 type ServingSite struct {
@@ -91,10 +92,6 @@ type ServingSiteSpec struct {
 	// Stake holders refer to a list of stackholders, which have interest in this serving site.
 	// +kubebuilder:validation:Optional
 	StakeHolders []catalog.StakeHolder `json:"stakeholders,omitempty" protobuf:"bytes,8,rep,name=stakeholders"`
-	// the color assigned to the product
-	// +kubebuilder:default:="none"
-	// +kubebuilder:validation:Optional
-	Color *catalog.Color `json:"color,omitempty" protobuf:"bytes,9,opt,name=color"`
 }
 
 type ServingSiteStatus struct {

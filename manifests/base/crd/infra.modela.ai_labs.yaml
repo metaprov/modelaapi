@@ -58,10 +58,6 @@ spec:
                   to execute jobs for this lab If not empty, jobs assigned to this
                   lab should execute on remote cluster
                 type: string
-              color:
-                default: none
-                description: the color assigned to the product
-                type: string
               description:
                 default: ""
                 description: Description is a user provided description
