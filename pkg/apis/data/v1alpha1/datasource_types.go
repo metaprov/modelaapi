@@ -417,14 +417,14 @@ type ValidationSpec struct {
 type Schema struct {
 	// Time series schema. Set time series specific parameters.
 	// +kubebuilder:validation:Optional
-	TimeSeriesSchema *TimeSeriesSchema `json:"timeSeriesSchema,omitempty" protobuf:"bytes,1,opt,name=timeSeriesSchema"`
+	TimeSeriesSchema TimeSeriesSchema `json:"timeSeriesSchema,omitempty" protobuf:"bytes,1,opt,name=timeSeriesSchema"`
 	// Recommendation schema. Used for recommendation task
 	// +kubebuilder:validation:Optional
-	RecommendationSchema *RecommendationSchema `json:"recommendationSchema,omitempty" protobuf:"bytes,2,opt,name=recommendationSchema"`
+	RecommendationSchema RecommendationSchema `json:"recommendationSchema,omitempty" protobuf:"bytes,2,opt,name=recommendationSchema"`
 	// Columns
 	Columns []Column `json:"columns,omitempty" protobuf:"bytes,3,rep,name=columns"`
 	// Validation spec define the validation to perform on new datasets
-	Validation *ValidationSpec `json:"validation,omitempty" protobuf:"bytes,4,opt,name=validation"`
+	Validation ValidationSpec `json:"validation,omitempty" protobuf:"bytes,4,opt,name=validation"`
 }
 
 type TimeSeriesSchema struct {
@@ -679,7 +679,7 @@ type DataSourceSpec struct {
 	// +kubebuilder:validation:Optional
 	Description *string `json:"description,omitempty" protobuf:"bytes,3,opt,name=description"`
 	// The data source schema
-	Schema *Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
+	Schema Schema `json:"schema,omitempty" protobuf:"bytes,4,opt,name=schema"`
 	// The text file type
 	// Default: csv
 	// +kubebuilder:default:="csv"
@@ -687,10 +687,10 @@ type DataSourceSpec struct {
 	FileType *FlatFileType `json:"fileType,omitempty" protobuf:"bytes,5,opt,name=fileType"`
 	// FlatFile access specification
 	// +kubebuilder:validation:Optional
-	CsvFile *CsvFileSpec `json:"csvfile,omitempty" protobuf:"bytes,6,opt,name=csvfile"`
+	CsvFile CsvFileSpec `json:"csvfile,omitempty" protobuf:"bytes,6,opt,name=csvfile"`
 	// Excel Notebook is a notebook in excel
 	// +kubebuilder:validation:Optional
-	ExcelNotebook *ExcelNotebookSpec `json:"excelNotebook,omitempty" protobuf:"bytes,7,opt,name=excelNotebook"`
+	ExcelNotebook ExcelNotebookSpec `json:"excelNotebook,omitempty" protobuf:"bytes,7,opt,name=excelNotebook"`
 	// Type is the dataset type
 	// +kubebuilder:default:="tabular"
 	// +kubebuilder:validation:Optional
