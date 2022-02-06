@@ -85,7 +85,7 @@ type CommitStatus struct {
 	Phase CommitPhase `json:"phase" protobuf:"bytes,1,opt,name=phase"`
 	// The time when the commit was completed
 	// +kubebuilder:validation:Optional
-	At metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
+	At *metav1.Time `json:"at" protobuf:"bytes,2,opt,name=at"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
