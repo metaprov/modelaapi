@@ -114,3 +114,14 @@ func (alert *Attachment) MarkArchived() {
 		Status: v1.ConditionTrue,
 	})
 }
+
+func (attachment *Attachment) MarkFailed(err string) {
+	attachment.CreateOrUpdateCond(AttachmentCondition{
+		Type:    AttachmentSent,
+		Status:  v1.ConditionFalse,
+		Reason:  "Failed",
+		Message: err,
+	})
+	attachment.Status.Phase = AttachmentPhaseFailed
+
+}
