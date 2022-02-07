@@ -706,7 +706,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.DatasetProfile.prototype.
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.repeatedFields_ = [2];
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.repeatedFields_ = [2,6,7];
 
 
 
@@ -744,7 +744,11 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.toObject = f
     proto.github.com.metaprov.modelaapi.services.common.v1.Plot.toObject, includeInstance),
     importanceMap: (f = msg.getImportanceMap()) ? f.toObject(includeInstance, undefined) : [],
     rocauc: (f = msg.getRocauc()) && proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.toObject(includeInstance, f),
-    pr: (f = msg.getPr()) && proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject(includeInstance, f)
+    pr: (f = msg.getPr()) && proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject(includeInstance, f),
+    multiclassrocaucList: jspb.Message.toObjectList(msg.getMulticlassrocaucList(),
+    proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.toObject, includeInstance),
+    multiclassprList: jspb.Message.toObjectList(msg.getMulticlassprList(),
+    proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -806,6 +810,16 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.deserializeB
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.deserializeBinaryFromReader);
       msg.setPr(value);
       break;
+    case 6:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.deserializeBinaryFromReader);
+      msg.addMulticlassrocauc(value);
+      break;
+    case 7:
+      var value = new proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve;
+      reader.readMessage(value,proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.deserializeBinaryFromReader);
+      msg.addMulticlasspr(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -866,6 +880,22 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.serializeBin
   if (f != null) {
     writer.writeMessage(
       5,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.serializeBinaryToWriter
+    );
+  }
+  f = message.getMulticlassrocaucList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.serializeBinaryToWriter
+    );
+  }
+  f = message.getMulticlassprList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
       f,
       proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.serializeBinaryToWriter
     );
@@ -1022,6 +1052,82 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.cl
  */
 proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.hasPr = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated ROCCurve multiclassRocAuc = 6;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve>}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getMulticlassrocaucList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setMulticlassrocaucList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.addMulticlassrocauc = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearMulticlassrocaucList = function() {
+  return this.setMulticlassrocaucList([]);
+};
+
+
+/**
+ * repeated PrecisionRecallCurve multiclassPR = 7;
+ * @return {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve>}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.getMulticlassprList = function() {
+  return /** @type{!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve, 7));
+};
+
+
+/**
+ * @param {!Array<!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve>} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+*/
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.setMulticlassprList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve}
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.addMulticlasspr = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.common.v1.ModelProfile.prototype.clearMulticlassprList = function() {
+  return this.setMulticlassprList([]);
 };
 
 

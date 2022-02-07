@@ -23,6 +23,8 @@ message ModelProfile {
     map<string,float> importance           = 3; // hold the feature importance
     ROCCurve rocauc                        = 4; // roc auc curve
     PrecisionRecallCurve pr                = 5; // precision recall cureve
+    repeated ROCCurve multiclassRocAuc     = 6; // multi class roc curve
+    repeated PrecisionRecallCurve multiclassPR  = 7; // multi class pr curve
 }
 
 message ROCCurve {

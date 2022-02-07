@@ -76,6 +76,16 @@ export class ModelProfile extends jspb.Message {
   hasPr(): boolean;
   clearPr(): ModelProfile;
 
+  getMulticlassrocaucList(): Array<ROCCurve>;
+  setMulticlassrocaucList(value: Array<ROCCurve>): ModelProfile;
+  clearMulticlassrocaucList(): ModelProfile;
+  addMulticlassrocauc(value?: ROCCurve, index?: number): ROCCurve;
+
+  getMulticlassprList(): Array<PrecisionRecallCurve>;
+  setMulticlassprList(value: Array<PrecisionRecallCurve>): ModelProfile;
+  clearMulticlassprList(): ModelProfile;
+  addMulticlasspr(value?: PrecisionRecallCurve, index?: number): PrecisionRecallCurve;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ModelProfile.AsObject;
   static toObject(includeInstance: boolean, msg: ModelProfile): ModelProfile.AsObject;
@@ -91,6 +101,8 @@ export namespace ModelProfile {
     importanceMap: Array<[string, number]>,
     rocauc?: ROCCurve.AsObject,
     pr?: PrecisionRecallCurve.AsObject,
+    multiclassrocaucList: Array<ROCCurve.AsObject>,
+    multiclassprList: Array<PrecisionRecallCurve.AsObject>,
   }
 }
 
