@@ -728,6 +728,18 @@ func (study *Study) MarkReportFailed(err string) {
 	study.RefreshProgress()
 }
 
+func (study *Study) MarkPartitionedFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyPartitioned,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to partition." + err
+	study.RefreshProgress()
+}
+
 func (study *Study) ReachedMaxModels() bool {
 	return study.Status.SearchStatus.Failed+
 		study.Status.SearchStatus.Trained+

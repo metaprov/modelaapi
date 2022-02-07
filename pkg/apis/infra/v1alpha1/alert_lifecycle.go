@@ -114,3 +114,11 @@ func (alert *Alert) MarkArchived() {
 		Status: v1.ConditionTrue,
 	})
 }
+
+func (alert *Alert) MarkFailed(err string) {
+	alert.CreateOrUpdateCond(AlertCondition{
+		Type:    AlertSent,
+		Status:  v1.ConditionFalse,
+		Message: err,
+	})
+}

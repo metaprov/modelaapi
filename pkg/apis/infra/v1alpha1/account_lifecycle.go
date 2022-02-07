@@ -153,3 +153,12 @@ func (account *Account) MarkReady() {
 		Status: v1.ConditionTrue,
 	})
 }
+
+func (account *Account) MarkFailed(err string) {
+	account.CreateOrUpdateCond(AccountCondition{
+		Type:    AccountReady,
+		Status:  v1.ConditionFalse,
+		Reason:  "Failed",
+		Message: err,
+	})
+}

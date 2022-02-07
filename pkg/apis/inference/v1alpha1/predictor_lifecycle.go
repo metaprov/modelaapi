@@ -162,3 +162,12 @@ func (predictor *Predictor) MarkReady() {
 		Status: v1.ConditionTrue,
 	})
 }
+
+func (predictor *Predictor) MarkFailed(err string) {
+	predictor.CreateOrUpdateCond(PredictorCondition{
+		Type:    PredictorReady,
+		Status:  v1.ConditionFalse,
+		Reason:  "Failed",
+		Message: err,
+	})
+}

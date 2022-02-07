@@ -344,6 +344,7 @@ const (
 	ReasonReporting          = "Reporting"
 	ReasonProfiling          = "Profiling"
 	ReasonPublishing         = "Publishing"
+	ReasonReleasing          = "Releasing"
 	ReasonTraining           = "Training"
 	ReasonBaselining         = "Baselining"
 	ReasonFeatureEngineering = "FeatureEngineering"
@@ -387,7 +388,7 @@ func (model *Model) MarkReleasing() {
 	model.CreateOrUpdateCond(ModelCondition{
 		Type:   ModelReleased,
 		Status: v1.ConditionFalse,
-		Reason: ReasonFailed,
+		Reason: ReasonReleasing,
 	})
 }
 
@@ -756,6 +757,21 @@ func (model *Model) MarkPublishFailed(err string) {
 	})
 	model.Status.Phase = ModelPhaseFailed
 	model.Status.LastError = "Failed to publish." + err
+}
+
+func (model *Model) MarkReleaseFailed(err string) {
+	model.CreateOrUpdateCond(ModelCondition{
+		Type:    ModelConditionType(MPRModelReleased),
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	model.Status.Phase = ModelPhaseFailed
+	now := metav1.Now()
+	model.Status.TrainingEndTime = &now
+	model.Status.LastError = "Failed to release." + err
+	model.Status.Progress = 100
+
 }
 
 // -------------- Resume
