@@ -728,6 +728,30 @@ func (study *Study) MarkReportFailed(err string) {
 	study.RefreshProgress()
 }
 
+func (study *Study) MarkAbortFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyAborted,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to abort." + err
+	study.RefreshProgress()
+}
+
+func (study *Study) MarkPauseFailed(err string) {
+	study.CreateOrUpdateCond(StudyCondition{
+		Type:    StudyPaused,
+		Status:  v1.ConditionFalse,
+		Reason:  ReasonFailed,
+		Message: err,
+	})
+	study.Status.Phase = StudyPhaseFailed
+	study.Status.LastError = "Failed to paused." + err
+	study.RefreshProgress()
+}
+
 func (study *Study) MarkPartitionedFailed(err string) {
 	study.CreateOrUpdateCond(StudyCondition{
 		Type:    StudyPartitioned,
