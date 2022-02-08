@@ -380,7 +380,7 @@ type ExcelNotebookSpec struct {
 	ColumnNamesRow *int32 `json:"columnNameRow,omitempty" protobuf:"varint,4,opt,name=columnNameRow"`
 	// Data is the definition of excel data.
 	// +kubebuilder:validation:Optional
-	Data ExcelSheetArea `json:"data,omitempty" protobuf:"bytes,5,opt,name="`
+	Data ExcelSheetArea `json:"data,omitempty" protobuf:"bytes,5,opt,name=data"`
 }
 
 type ExcelSheetArea struct {
