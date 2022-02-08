@@ -64,8 +64,8 @@ spec:
       name: CompletionTime
       priority: 1
       type: date
-    - jsonPath: .status.lastError
-      name: Last Error
+    - jsonPath: .status.lastFailure
+      name: Last Failure
       type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
@@ -2476,6 +2476,13 @@ spec:
                     format: int32
                     type: integer
                 type: object
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
               featureEngineering:
                 description: Holds the result of the feature engineering process
                 properties:
@@ -2511,10 +2518,6 @@ spec:
                     format: int32
                     type: integer
                 type: object
-              lastError:
-                default: ""
-                description: Last error
-                type: string
               lastModelID:
                 description: the last model id generated for this study
                 format: int64

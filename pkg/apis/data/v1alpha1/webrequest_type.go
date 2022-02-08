@@ -92,8 +92,15 @@ type WebRequestStatus struct {
 	// Last Time the query run
 	// +kubebuilder:validation:Optional
 	LastRun *metav1.Time `json:"lastRun,omitempty" protobuf:"bytes,3,opt,name=lastRun"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,4,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,5,opt,name=failureMessage"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []WebRequestCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,4,rep,name=conditions"`
+	Conditions []WebRequestCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
 }

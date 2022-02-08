@@ -161,9 +161,16 @@ type SqlQueryRunStatus struct {
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,12,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
+	Conditions []SqlQueryRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,14,rep,name=conditions"`
 }

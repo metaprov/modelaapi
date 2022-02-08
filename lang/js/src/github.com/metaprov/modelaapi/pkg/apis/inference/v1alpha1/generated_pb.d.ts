@@ -199,6 +199,12 @@ export class CronPredictionStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): CronPredictionStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): CronPredictionStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): CronPredictionStatus;
+
   getConditionsList(): Array<CronPredictionCondition>;
   setConditionsList(value: Array<CronPredictionCondition>): CronPredictionStatus;
   clearConditionsList(): CronPredictionStatus;
@@ -217,6 +223,8 @@ export namespace CronPredictionStatus {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<CronPredictionCondition.AsObject>,
   }
 }
@@ -624,6 +632,12 @@ export class DataAppStatus extends jspb.Message {
   hasServicetstatus(): boolean;
   clearServicetstatus(): DataAppStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): DataAppStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): DataAppStatus;
+
   getConditionsList(): Array<DataAppCondition>;
   setConditionsList(value: Array<DataAppCondition>): DataAppStatus;
   clearConditionsList(): DataAppStatus;
@@ -643,6 +657,8 @@ export namespace DataAppStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     deploymentstatus?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     servicetstatus?: k8s_io_api_core_v1_generated_pb.ServiceStatus.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<DataAppCondition.AsObject>,
   }
 }
@@ -1045,6 +1061,12 @@ export class PredictionStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): PredictionStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): PredictionStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): PredictionStatus;
+
   getConditionsList(): Array<PredictionCondition>;
   setConditionsList(value: Array<PredictionCondition>): PredictionStatus;
   clearConditionsList(): PredictionStatus;
@@ -1069,6 +1091,8 @@ export namespace PredictionStatus {
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<PredictionCondition.AsObject>,
   }
 }
@@ -1447,6 +1471,12 @@ export class PredictorStatus extends jspb.Message {
   hasProxyserviceref(): boolean;
   clearProxyserviceref(): PredictorStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): PredictorStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): PredictorStatus;
+
   getConditionsList(): Array<PredictorCondition>;
   setConditionsList(value: Array<PredictorCondition>): PredictorStatus;
   clearConditionsList(): PredictorStatus;
@@ -1477,6 +1507,8 @@ export namespace PredictorStatus {
     endpoint: string,
     proxydeploymentref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
     proxyserviceref?: k8s_io_api_core_v1_generated_pb.ObjectReference.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<PredictorCondition.AsObject>,
   }
 }

@@ -437,7 +437,7 @@ func (model *Model) MarkFailedToTrain(err string) {
 	// set the scores to 0, since Nan is invalid value
 	model.Status.CVScore = 0 // we must put it at 0, since NaN is invalid value
 	model.Status.Train = make([]catalog.Measurement, 0)
-	model.Status.LastError = "Failed to train." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to train." + err)
 	model.Status.Progress = 100
 
 }
@@ -495,7 +495,7 @@ func (model *Model) MarkTestingFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.LastError = "Failed to test." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to test." + err)
 	model.Status.Progress = 100
 }
 
@@ -558,7 +558,7 @@ func (model *Model) MarkProfiledFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.LastError = "Failed to profile." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to profile." + err)
 	model.Status.Progress = 100
 }
 
@@ -597,7 +597,7 @@ func (model *Model) MarkReportFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.LastError = "Failed to report." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to report." + err)
 	model.Status.Progress = 100
 }
 
@@ -630,7 +630,7 @@ func (model *Model) MarkForecastFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.LastError = "Failed to forecast." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to forecast." + err)
 	model.Status.Progress = 100
 }
 
@@ -680,7 +680,7 @@ func (model *Model) MarkPackgedFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.LastError = "Failed to package." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to package." + err)
 }
 
 // =========================================
@@ -719,7 +719,7 @@ func (model *Model) MarkExplainedFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseExplained
-	model.Status.LastError = "Failed to explain." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to explain." + err)
 }
 
 // ---------------------- baking
@@ -756,7 +756,7 @@ func (model *Model) MarkPublishFailed(err string) {
 		Message: err,
 	})
 	model.Status.Phase = ModelPhaseFailed
-	model.Status.LastError = "Failed to publish." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to publish." + err)
 }
 
 func (model *Model) MarkReleaseFailed(err string) {
@@ -769,7 +769,7 @@ func (model *Model) MarkReleaseFailed(err string) {
 	model.Status.Phase = ModelPhaseFailed
 	now := metav1.Now()
 	model.Status.TrainingEndTime = &now
-	model.Status.LastError = "Failed to release." + err
+	model.Status.FailureMessage = util.StrPtr("Failed to release." + err)
 	model.Status.Progress = 100
 
 }

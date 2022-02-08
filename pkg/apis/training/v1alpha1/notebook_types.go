@@ -139,8 +139,16 @@ type NotebookStatus struct {
 	//+kubebuilder:validation:Optional
 	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,5,opt,name=lastUpdated"`
 
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,6,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMessage"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []NotebookCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []NotebookCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }

@@ -176,10 +176,19 @@ message AccountStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 3;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AccountCondition conditions = 3;
+  repeated AccountCondition conditions = 5;
 }
 
 // +kubebuilder:object:root=true
@@ -288,10 +297,19 @@ message AlertStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 5;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AlertCondition conditions = 5;
+  repeated AlertCondition conditions = 7;
 }
 
 message AliCloudSpec {
@@ -627,10 +645,19 @@ message AttachmentStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 5;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated AttachmentCondition conditions = 5;
+  repeated AttachmentCondition conditions = 7;
 }
 
 message AvatarSpec {
@@ -847,10 +874,19 @@ message CommitStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 5;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated CommitCondition conditions = 5;
+  repeated CommitCondition conditions = 7;
 }
 
 // Connection define a connection to an external system (e.g. database, public cloud)
@@ -1136,10 +1172,19 @@ message ConnectionStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 3;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ConnectionCondition conditions = 3;
+  repeated ConnectionCondition conditions = 5;
 }
 
 message CouchbaseSpec {
@@ -1750,10 +1795,19 @@ message LicenseStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 3;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated LicenseCondition conditions = 3;
+  repeated LicenseCondition conditions = 5;
 }
 
 message LinodeSpec {
@@ -1886,10 +1940,19 @@ message ModelaSystemStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 1;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 2;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 3;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelaSystemCondition conditions = 2;
+  repeated ModelaSystemCondition conditions = 4;
 }
 
 message MongoDbSpec {
@@ -2043,8 +2106,17 @@ message NotifierStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  repeated NotifierCondition conditions = 4;
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
+
+  // +kubebuilder:validation:Optional
+  repeated NotifierCondition conditions = 6;
 }
 
 message OdbcSpec {
@@ -2421,10 +2493,19 @@ message ServingSiteStatus {
   // Last 7 days predictions
   repeated int32 lastDailyPredictions = 8;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 9;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 10;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ServingSiteCondition conditions = 9;
+  repeated ServingSiteCondition conditions = 11;
 }
 
 message SingleStoreSpec {
@@ -2687,12 +2768,21 @@ message TenantStatus {
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
+
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 3;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 4;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated TenantCondition conditions = 2;
+  repeated TenantCondition conditions = 5;
 }
 
 message TeradataSpec {
@@ -2848,10 +2938,19 @@ message VirtualBucketStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualBucketCondition conditions = 4;
+  repeated VirtualBucketCondition conditions = 6;
 }
 
 // VirtualCluster defined a running kubernetes cluster with N nodes and GPU.
@@ -2983,10 +3082,19 @@ message VirtualClusterStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 4;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 5;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualClusterCondition conditions = 5;
+  repeated VirtualClusterCondition conditions = 7;
 }
 
 // +kubebuilder:object:root=true
@@ -3061,10 +3169,19 @@ message VirtualVolumeStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 3;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated VirtualVolumeCondition conditions = 3;
+  repeated VirtualVolumeCondition conditions = 5;
 }
 
 message WebhookSpec {

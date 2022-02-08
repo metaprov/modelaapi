@@ -206,30 +206,33 @@ type DatasetStatus struct {
 	// Notification sent
 	//+kubebuilder:validation:Optional
 	NotificationTime *metav1.Time `json:"lastNotificationTime,omitempty" protobuf:"bytes,11,opt,name=lastNotificationTime"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,12,opt,name=lastError"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,12,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,13,opt,name=failureMessage"`
 	// Processing progress
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	Progress int32 `json:"progress,omitempty" protobuf:"varint,13,opt,name=progress"`
+	Progress int32 `json:"progress,omitempty" protobuf:"varint,14,opt,name=progress"`
 	// Sha256 signature of the dataset file.
 	// +kubebuilder:default:=""
 	// +kubebuilder:validation:Optional
-	Hash string `json:"hash,omitempty" protobuf:"bytes,14,opt,name=hash"`
+	Hash string `json:"hash,omitempty" protobuf:"bytes,15,opt,name=hash"`
 	// Holds the location of log paths
-	Logs catalog.Logs `json:"logs" protobuf:"bytes,15,opt,name=logs"`
+	Logs catalog.Logs `json:"logs" protobuf:"bytes,16,opt,name=logs"`
 	// If this dataset is derived, the name of the dataset that this is derived from.
 	// +kubebuilder:validation:Optional
-	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,16,opt,name=derivedFromDataset"`
+	DerivedFromDataset *string `json:"derivedFromDataset,omitempty" protobuf:"bytes,17,opt,name=derivedFromDataset"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,17,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,18,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,18,rep,name=conditions"`
+	Conditions []DatasetCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,19,rep,name=conditions"`
 }
 
 // DatasetStatistics contains statistics about attributes and correltation between attributes

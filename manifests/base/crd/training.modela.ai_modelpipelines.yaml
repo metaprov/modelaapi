@@ -1225,9 +1225,12 @@ spec:
                   - type
                   type: object
                 type: array
-              lastError:
-                default: ""
-                description: Last error during reconciliation
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
                 type: string
               lastRun:
                 description: Last run is the last time a run was created

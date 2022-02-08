@@ -101,10 +101,6 @@ type MeetingStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,2,opt,name=observedGeneration"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,3,opt,name=lastError"`
 	// The meeting notes.
 	// +kubebuilder:validation:Optional
 	Notes string `json:"notes,omitempty" protobuf:"bytes,4,opt,name=notes"`

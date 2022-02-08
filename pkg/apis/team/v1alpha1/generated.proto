@@ -184,11 +184,6 @@ message MeetingStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 2;
 
-  // Last error
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string lastError = 3;
-
   // The meeting notes.
   // +kubebuilder:validation:Optional
   optional string notes = 4;

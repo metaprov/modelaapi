@@ -231,6 +231,12 @@ export class AccountStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): AccountStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): AccountStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): AccountStatus;
+
   getConditionsList(): Array<AccountCondition>;
   setConditionsList(value: Array<AccountCondition>): AccountStatus;
   clearConditionsList(): AccountStatus;
@@ -248,6 +254,8 @@ export namespace AccountStatus {
   export type AsObject = {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<AccountCondition.AsObject>,
   }
 }
@@ -417,6 +425,12 @@ export class AlertStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): AlertStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): AlertStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): AlertStatus;
+
   getConditionsList(): Array<AlertCondition>;
   setConditionsList(value: Array<AlertCondition>): AlertStatus;
   clearConditionsList(): AlertStatus;
@@ -436,6 +450,8 @@ export namespace AlertStatus {
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<AlertCondition.AsObject>,
   }
 }
@@ -1037,6 +1053,12 @@ export class AttachmentStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): AttachmentStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): AttachmentStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): AttachmentStatus;
+
   getConditionsList(): Array<AttachmentCondition>;
   setConditionsList(value: Array<AttachmentCondition>): AttachmentStatus;
   clearConditionsList(): AttachmentStatus;
@@ -1056,6 +1078,8 @@ export namespace AttachmentStatus {
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<AttachmentCondition.AsObject>,
   }
 }
@@ -1457,6 +1481,12 @@ export class CommitStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): CommitStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): CommitStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): CommitStatus;
+
   getConditionsList(): Array<CommitCondition>;
   setConditionsList(value: Array<CommitCondition>): CommitStatus;
   clearConditionsList(): CommitStatus;
@@ -1476,6 +1506,8 @@ export namespace CommitStatus {
     at?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<CommitCondition.AsObject>,
   }
 }
@@ -2023,6 +2055,12 @@ export class ConnectionStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ConnectionStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): ConnectionStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ConnectionStatus;
+
   getConditionsList(): Array<ConnectionCondition>;
   setConditionsList(value: Array<ConnectionCondition>): ConnectionStatus;
   clearConditionsList(): ConnectionStatus;
@@ -2040,6 +2078,8 @@ export namespace ConnectionStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<ConnectionCondition.AsObject>,
   }
 }
@@ -3111,6 +3151,12 @@ export class LicenseStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): LicenseStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): LicenseStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): LicenseStatus;
+
   getConditionsList(): Array<LicenseCondition>;
   setConditionsList(value: Array<LicenseCondition>): LicenseStatus;
   clearConditionsList(): LicenseStatus;
@@ -3128,6 +3174,8 @@ export namespace LicenseStatus {
   export type AsObject = {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<LicenseCondition.AsObject>,
   }
 }
@@ -3400,6 +3448,12 @@ export class ModelaSystemStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelaSystemStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelaSystemStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelaSystemStatus;
+
   getConditionsList(): Array<ModelaSystemCondition>;
   setConditionsList(value: Array<ModelaSystemCondition>): ModelaSystemStatus;
   clearConditionsList(): ModelaSystemStatus;
@@ -3416,6 +3470,8 @@ export class ModelaSystemStatus extends jspb.Message {
 export namespace ModelaSystemStatus {
   export type AsObject = {
     observedgeneration: number,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<ModelaSystemCondition.AsObject>,
   }
 }
@@ -3676,6 +3732,12 @@ export class NotifierStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): NotifierStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): NotifierStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): NotifierStatus;
+
   getConditionsList(): Array<NotifierCondition>;
   setConditionsList(value: Array<NotifierCondition>): NotifierStatus;
   clearConditionsList(): NotifierStatus;
@@ -3694,6 +3756,8 @@ export namespace NotifierStatus {
     provider: string,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<NotifierCondition.AsObject>,
   }
 }
@@ -4365,6 +4429,12 @@ export class ServingSiteStatus extends jspb.Message {
   clearLastdailypredictionsList(): ServingSiteStatus;
   addLastdailypredictions(value: number, index?: number): ServingSiteStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): ServingSiteStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ServingSiteStatus;
+
   getConditionsList(): Array<ServingSiteCondition>;
   setConditionsList(value: Array<ServingSiteCondition>): ServingSiteStatus;
   clearConditionsList(): ServingSiteStatus;
@@ -4388,6 +4458,8 @@ export namespace ServingSiteStatus {
     totalpredictordatadriftfailed: number,
     totalpredictoraccuracyfailed: number,
     lastdailypredictionsList: Array<number>,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<ServingSiteCondition.AsObject>,
   }
 }
@@ -4803,6 +4875,12 @@ export class TenantStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): TenantStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): TenantStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): TenantStatus;
+
   getConditionsList(): Array<TenantCondition>;
   setConditionsList(value: Array<TenantCondition>): TenantStatus;
   clearConditionsList(): TenantStatus;
@@ -4820,6 +4898,8 @@ export namespace TenantStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<TenantCondition.AsObject>,
   }
 }
@@ -5096,6 +5176,12 @@ export class VirtualBucketStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): VirtualBucketStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): VirtualBucketStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): VirtualBucketStatus;
+
   getConditionsList(): Array<VirtualBucketCondition>;
   setConditionsList(value: Array<VirtualBucketCondition>): VirtualBucketStatus;
   clearConditionsList(): VirtualBucketStatus;
@@ -5114,6 +5200,8 @@ export namespace VirtualBucketStatus {
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     provider: string,
     observedgeneration: number,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<VirtualBucketCondition.AsObject>,
   }
 }
@@ -5289,6 +5377,12 @@ export class VirtualClusterStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): VirtualClusterStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): VirtualClusterStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): VirtualClusterStatus;
+
   getConditionsList(): Array<VirtualClusterCondition>;
   setConditionsList(value: Array<VirtualClusterCondition>): VirtualClusterStatus;
   clearConditionsList(): VirtualClusterStatus;
@@ -5308,6 +5402,8 @@ export namespace VirtualClusterStatus {
     availablenodes: number,
     availablegpus: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<VirtualClusterCondition.AsObject>,
   }
 }
@@ -5447,6 +5543,12 @@ export class VirtualVolumeStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): VirtualVolumeStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): VirtualVolumeStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): VirtualVolumeStatus;
+
   getConditionsList(): Array<VirtualVolumeCondition>;
   setConditionsList(value: Array<VirtualVolumeCondition>): VirtualVolumeStatus;
   clearConditionsList(): VirtualVolumeStatus;
@@ -5464,6 +5566,8 @@ export namespace VirtualVolumeStatus {
   export type AsObject = {
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<VirtualVolumeCondition.AsObject>,
   }
 }

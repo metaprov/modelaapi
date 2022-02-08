@@ -52,7 +52,7 @@ type DataPipelineRunCondition struct {
 // +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".spec.datapipelineName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Last Error",type="date",JSONPath=".metadata.lastError"
+// +kubebuilder:printcolumn:name="Failure",type="string",JSONPath=".metadata.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
 // DataPipelineRun represent one execution of the data pipeline
@@ -124,23 +124,27 @@ type DataPipelineRunStatus struct {
 	//ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,7,opt,name=lastError"`
+
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
+
+	// Update in case of terminal failure message
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
+
 	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress" protobuf:"varint,8,opt,name=progress"`
+	Progress *int32 `json:"progress" protobuf:"varint,9,opt,name=progress"`
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,9,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,10,opt,name=logs"`
 
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,10,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,11,opt,name=lastUpdated"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
+	Conditions []DataPipelineRunCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,12,rep,name=conditions"`
 }

@@ -59,9 +59,9 @@ spec:
     - jsonPath: .status.testScore
       name: Test Score
       type: number
-    - jsonPath: .status.lastError
-      name: Last Error
-      type: number
+    - jsonPath: .status.failureMessage
+      name: Last Failure
+      type: string
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
@@ -1913,6 +1913,13 @@ spec:
               endpoint:
                 description: If the model is deployed, this points to the end point.
                 type: string
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
               forecastUri:
                 description: ForecastUri is the uri of the forecast
                 type: string
@@ -2017,10 +2024,6 @@ spec:
               labelEncoderUri:
                 description: LabelEncoderUri is the URI of the label encoder binary
                   file, if there is one.
-                type: string
-              lastError:
-                default: ""
-                description: Last error
                 type: string
               lastUpdated:
                 description: Last time the object was updated

@@ -201,7 +201,7 @@ func (dataset *Dataset) MarkSnapshotFailed(msg string) {
 		Message: "Failed to snapshot." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.LastError = msg
+	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 }
 
@@ -235,7 +235,7 @@ func (dataset *Dataset) MarkValidationFailed(msg string) {
 		Message: "Failed to validate." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.LastError = msg
+	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 }
 
@@ -290,7 +290,7 @@ func (dataset *Dataset) MarkIngestFailed(msg string) {
 		Message: "Failed to ingest." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.LastError = msg
+	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 }
 
@@ -325,7 +325,7 @@ func (dataset *Dataset) MarkGeneratedFailed(msg string) {
 		Message: "Failed to generate dataset." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.LastError = msg
+	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 }
 
@@ -358,7 +358,7 @@ func (dataset *Dataset) MarkReportFailed(msg string) {
 		Message: "Failed to report." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.LastError = msg
+	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 }
 
@@ -392,7 +392,7 @@ func (dataset *Dataset) MarkProfiledFailed(msg string) {
 		Message: "Failed to profiled." + msg,
 	})
 	dataset.Status.Phase = DatasetPhaseFailed
-	dataset.Status.LastError = msg
+	dataset.Status.FailureMessage = util.StrPtr(msg)
 	dataset.Status.Progress = 100
 }
 

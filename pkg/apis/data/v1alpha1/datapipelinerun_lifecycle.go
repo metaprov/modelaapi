@@ -156,7 +156,7 @@ func (in *DataPipelineRun) MarkFailed(err error) {
 		in.Status.EndTime = &now
 	}
 	in.Status.Progress = util.Int32Ptr(100)
-	in.Status.LastError = err.Error()
+	in.Status.FailureMessage = util.StrPtr(err.Error())
 
 }
 

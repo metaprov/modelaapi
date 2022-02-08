@@ -366,6 +366,12 @@ export class CronReportStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): CronReportStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): CronReportStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): CronReportStatus;
+
   getConditionsList(): Array<CronReportCondition>;
   setConditionsList(value: Array<CronReportCondition>): CronReportStatus;
   clearConditionsList(): CronReportStatus;
@@ -384,6 +390,8 @@ export namespace CronReportStatus {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<CronReportCondition.AsObject>,
   }
 }
@@ -1785,8 +1793,11 @@ export class ModelAutobuilderStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ModelAutobuilderStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): ModelAutobuilderStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelAutobuilderStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelAutobuilderStatus;
 
   getLastupdated(): k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time | undefined;
   setLastupdated(value?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time): ModelAutobuilderStatus;
@@ -1826,7 +1837,8 @@ export namespace ModelAutobuilderStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelAutobuilderCondition.AsObject>,
   }
@@ -1988,8 +2000,11 @@ export class ModelCompilerRunStatus extends jspb.Message {
   getEvalmetrics(): string;
   setEvalmetrics(value: string): ModelCompilerRunStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): ModelCompilerRunStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelCompilerRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelCompilerRunStatus;
 
   getProgress(): number;
   setProgress(value: number): ModelCompilerRunStatus;
@@ -2019,7 +2034,8 @@ export namespace ModelCompilerRunStatus {
     phase: string,
     observedgeneration: number,
     evalmetrics: string,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     progress: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ModelCompilerRunCondition.AsObject>,
@@ -2478,8 +2494,11 @@ export class ModelPipelineRunStatus extends jspb.Message {
   getEvalmetrics(): string;
   setEvalmetrics(value: string): ModelPipelineRunStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): ModelPipelineRunStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelPipelineRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelPipelineRunStatus;
 
   getProgress(): number;
   setProgress(value: number): ModelPipelineRunStatus;
@@ -2524,7 +2543,8 @@ export namespace ModelPipelineRunStatus {
     phase: string,
     observedgeneration: number,
     evalmetrics: string,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     progress: number,
     triggeredby: string,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -2646,8 +2666,11 @@ export class ModelPipelineStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): ModelPipelineStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): ModelPipelineStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelPipelineStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelPipelineStatus;
 
   getConditionsList(): Array<ModelPipelineCondition>;
   setConditionsList(value: Array<ModelPipelineCondition>): ModelPipelineStatus;
@@ -2667,7 +2690,8 @@ export namespace ModelPipelineStatus {
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<ModelPipelineCondition.AsObject>,
   }
 }
@@ -3040,8 +3064,11 @@ export class ModelStatus extends jspb.Message {
   getValidationrows(): number;
   setValidationrows(value: number): ModelStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): ModelStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): ModelStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ModelStatus;
 
   getProgress(): number;
   setProgress(value: number): ModelStatus;
@@ -3193,7 +3220,8 @@ export namespace ModelStatus {
     trainingrows: number,
     testingrows: number,
     validationrows: number,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     progress: number,
     sizeinbytes: number,
     latency: number,
@@ -3627,8 +3655,11 @@ export class NotebookRunStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): NotebookRunStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): NotebookRunStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): NotebookRunStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): NotebookRunStatus;
 
   getTriggeredby(): string;
   setTriggeredby(value: string): NotebookRunStatus;
@@ -3662,7 +3693,8 @@ export namespace NotebookRunStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     observedgeneration: number,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     triggeredby: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
@@ -3770,6 +3802,12 @@ export class NotebookStatus extends jspb.Message {
   hasLastupdated(): boolean;
   clearLastupdated(): NotebookStatus;
 
+  getFailurereason(): string;
+  setFailurereason(value: string): NotebookStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): NotebookStatus;
+
   getConditionsList(): Array<NotebookCondition>;
   setConditionsList(value: Array<NotebookCondition>): NotebookStatus;
   clearConditionsList(): NotebookStatus;
@@ -3790,6 +3828,8 @@ export namespace NotebookStatus {
     observedgeneration: number,
     lastrun?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
+    failurereason: string,
+    failuremessage: string,
     conditionsList: Array<NotebookCondition.AsObject>,
   }
 }
@@ -4170,8 +4210,11 @@ export class ReportStatus extends jspb.Message {
   getObservedgeneration(): number;
   setObservedgeneration(value: number): ReportStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): ReportStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): ReportStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): ReportStatus;
 
   getLogs(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs | undefined;
   setLogs(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs): ReportStatus;
@@ -4203,7 +4246,8 @@ export namespace ReportStatus {
     phase: string,
     uri: string,
     observedgeneration: number,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     logs?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.AsObject,
     lastupdated?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     conditionsList: Array<ReportCondition.AsObject>,
@@ -4782,8 +4826,11 @@ export class StudyStatus extends jspb.Message {
   getLastmodelid(): number;
   setLastmodelid(value: number): StudyStatus;
 
-  getLasterror(): string;
-  setLasterror(value: string): StudyStatus;
+  getFailurereason(): string;
+  setFailurereason(value: string): StudyStatus;
+
+  getFailuremessage(): string;
+  setFailuremessage(value: string): StudyStatus;
 
   getTrainingrows(): number;
   setTrainingrows(value: number): StudyStatus;
@@ -4886,7 +4933,8 @@ export namespace StudyStatus {
     testdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     validationdataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.AsObject,
     lastmodelid: number,
-    lasterror: string,
+    failurereason: string,
+    failuremessage: string,
     trainingrows: number,
     testingrows: number,
     validationrows: number,

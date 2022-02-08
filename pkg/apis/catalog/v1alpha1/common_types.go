@@ -1225,6 +1225,16 @@ const (
 	FileEncodingUtf16   FileEncoding = "utf-16"
 )
 
+type StatusError string
+
+const (
+	InvalidConfigurationError  StatusError = "InvalidConfiguration"
+	InsufficientResourcesError StatusError = "InsufficientResources"
+	CreateError                StatusError = "CreateError"
+	UpdateError                StatusError = "UpdateError"
+	DeleteError                StatusError = "DeleteError"
+)
+
 //==============================================================================
 // Connection Categoty Type
 //==============================================================================

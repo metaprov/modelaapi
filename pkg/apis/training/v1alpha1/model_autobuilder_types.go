@@ -231,15 +231,18 @@ type ModelAutobuilderStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,19,opt,name=observedGeneration"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,20,opt,name=lastError"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,20,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,21,opt,name=failureMessage"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,21,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,22,opt,name=lastUpdated"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,22,rep,name=conditions"`
+	Conditions []ModelAutobuilderCondition `json:"conditions,omitempty" protobuf:"bytes,23,rep,name=conditions"`
 }

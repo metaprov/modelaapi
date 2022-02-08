@@ -12,14 +12,14 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type FeautrePipelineRunPhase string
+type FeaturePipelineRunPhase string
 
 const (
-	FeaturePipelineRunPhasePending   FeautrePipelineRunPhase = "Pending"
-	FeaturePipelineRunPhaseRunning   FeautrePipelineRunPhase = "Running"
-	FeaturePipelineRunPhaseCompleted FeautrePipelineRunPhase = "Completed"
-	FeaturePipelineRunPhaseAborted   FeautrePipelineRunPhase = "Aborted"
-	FeaturePipelineRunPhaseFailed    FeautrePipelineRunPhase = "Failed"
+	FeaturePipelineRunPhasePending   FeaturePipelineRunPhase = "Pending"
+	FeaturePipelineRunPhaseRunning   FeaturePipelineRunPhase = "Running"
+	FeaturePipelineRunPhaseCompleted FeaturePipelineRunPhase = "Completed"
+	FeaturePipelineRunPhaseAborted   FeaturePipelineRunPhase = "Aborted"
+	FeaturePipelineRunPhaseFailed    FeaturePipelineRunPhase = "Failed"
 )
 
 // FeaturePipelineRunConditionType
@@ -107,7 +107,7 @@ type FeaturePipelineRunStatus struct {
 	// The phase of the dataset processing
 	// +kubebuilder:default:="Pending"
 	// +kubebuilder:validation:Optional
-	Phase FeautrePipelineRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
+	Phase FeaturePipelineRunPhase `json:"phase,omitempty" protobuf:"bytes,3,opt,name=phase"`
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,4,opt,name=observedGeneration"`

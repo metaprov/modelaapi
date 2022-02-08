@@ -468,6 +468,13 @@ spec:
                   - type
                   type: object
                 type: array
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
               lastDataset:
                 description: Last time the dataset was created
                 format: date-time

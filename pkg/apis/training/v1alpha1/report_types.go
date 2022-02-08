@@ -193,22 +193,26 @@ type ReportStatus struct {
 	// ObservedGeneration is the Last generation that was acted on
 	//+kubebuilder:validation:Optional
 	ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,6,opt,name=observedGeneration"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,7,opt,name=lastError"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,7,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
+
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,8,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,9,opt,name=logs"`
 
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,9,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,10,opt,name=lastUpdated"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,10,rep,name=conditions"`
+	Conditions []ReportCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,11,rep,name=conditions"`
 }
 
 type CustomReportSpec struct {

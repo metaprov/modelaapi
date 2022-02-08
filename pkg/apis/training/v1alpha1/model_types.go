@@ -177,7 +177,7 @@ type ModelCondition struct {
 // +kubebuilder:printcolumn:name="CV Score",type="number",JSONPath=".status.cvScore"
 // +kubebuilder:printcolumn:name="Train Score",type="number",JSONPath=".status.trainScore"
 // +kubebuilder:printcolumn:name="Test Score",type="number",JSONPath=".status.testScore"
-// +kubebuilder:printcolumn:name="Last Error",type="number",JSONPath=".status.lastError"
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=models,singular=model,shortName=md,categories={training,modela,all}
 // Model represent a machine learning model.
@@ -491,57 +491,60 @@ type ModelStatus struct {
 	//Validation row contain the number of validation rows for cases that we have validation.
 	// +kubebuilder:validation:Optional
 	ValidationRows int32 `json:"validationRows" protobuf:"varint,38,opt,name=validationRows"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,39,opt,name=lastError"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,39,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,40,opt,name=failureMessage"`
 	// Model Progress in precent, the progress takes into account the different stages of the model.
 	// +kubebuilder:validation:Optional
-	Progress int32 `json:"progress,omitempty" protobuf:"varint,40,opt,name=progress"`
+	Progress int32 `json:"progress,omitempty" protobuf:"varint,41,opt,name=progress"`
 	// Size of the model size
 	// +kubebuilder:validation:Optional
-	SizeInBytes int32 `json:"sizeInBytes,omitempty" protobuf:"varint,41,opt,name=sizeInBytes"`
+	SizeInBytes int32 `json:"sizeInBytes,omitempty" protobuf:"varint,42,opt,name=sizeInBytes"`
 	// Prediction Latency
 	// +kubebuilder:validation:Optional
-	Latency float64 `json:"latency,omitempty" protobuf:"bytes,42,opt,name=latency"`
+	Latency float64 `json:"latency,omitempty" protobuf:"bytes,43,opt,name=latency"`
 	// The URL to the released version
-	URL string `json:"url,omitempty" protobuf:"bytes,43,opt,name=url"`
+	URL string `json:"url,omitempty" protobuf:"bytes,44,opt,name=url"`
 	// If the model is released, this is the name of the predictor
 	// +kubebuilder:validation:Optional
-	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,44,opt,name=predictorName"`
+	PredictorName string `json:"predictorName,omitempty" protobuf:"bytes,45,opt,name=predictorName"`
 	// Released at the time when the model was released
 	// +kubebuilder:validation:Optional
-	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,45,opt,name=releasedAt"`
+	ReleasedAt *metav1.Time `json:"releasedAt,omitempty" protobuf:"bytes,46,opt,name=releasedAt"`
 	// Sha 256 of the model tar file
 	// +kubebuilder:validation:Optional
-	TarFileHash string `json:"tarfileHash,omitempty" protobuf:"bytes,46,opt,name=tarfileHash"`
+	TarFileHash string `json:"tarfileHash,omitempty" protobuf:"bytes,47,opt,name=tarfileHash"`
 	// Sha 256 of the model tar file
 	// +kubebuilder:validation:Optional
-	ImageHash string `json:"imageHash,omitempty" protobuf:"bytes,47,opt,name=imageHash"`
+	ImageHash string `json:"imageHash,omitempty" protobuf:"bytes,48,opt,name=imageHash"`
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
-	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,48,opt,name=trainingDataHash"`
+	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,49,opt,name=trainingDataHash"`
 	//ResourceConsumed during training
 	// +kubebuilder:validation:Optional
-	TrainingResources ResourceConsumption `json:"trainingResources,omitempty" protobuf:"bytes,49,opt,name=trainingResources"`
+	TrainingResources ResourceConsumption `json:"trainingResources,omitempty" protobuf:"bytes,50,opt,name=trainingResources"`
 	//ResourceConsumed during testing
 	// +kubebuilder:validation:Optional
-	TestingResources ResourceConsumption `json:"testingResources,omitempty" protobuf:"bytes,50,opt,name=testingResources"`
+	TestingResources ResourceConsumption `json:"testingResources,omitempty" protobuf:"bytes,51,opt,name=testingResources"`
 	// The account that trained the model
 	// +kubebuilder:validation:Optional
-	TrainedBy string `json:"trainedBy,omitempty" protobuf:"bytes,51,opt,name=trainedBy"`
+	TrainedBy string `json:"trainedBy,omitempty" protobuf:"bytes,52,opt,name=trainedBy"`
 	// The team that trained this model
 	// +kubebuilder:validation:Optional
-	Team string `json:"team,omitempty" protobuf:"bytes,52,opt,name=team"`
+	Team string `json:"team,omitempty" protobuf:"bytes,53,opt,name=team"`
 	// The image used during training
 	// +kubebuilder:validation:Optional
-	TrainerImage string `json:"trainerImage,omitempty" protobuf:"bytes,53,opt,name=trainerImage"`
+	TrainerImage string `json:"trainerImage,omitempty" protobuf:"bytes,54,opt,name=trainerImage"`
 	// If the model is deployed, this points to the end point.
 	// +kubebuilder:validation:Optional
-	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,54,opt,name=endpoint"`
+	EndPoint string `json:"endpoint,omitempty" protobuf:"bytes,55,opt,name=endpoint"`
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,55,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,omitempty" protobuf:"bytes,56,opt,name=logs"`
 	// Roc curve
 	// +kubebuilder:validation:Optional
 	RocAucCurve catalog.RocAucCurve `json:"rocauccurve,omitempty" protobuf:"varint,57,opt,name=rocauccurve"`

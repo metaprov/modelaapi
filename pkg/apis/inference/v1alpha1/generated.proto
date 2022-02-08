@@ -135,10 +135,19 @@ message CronPredictionStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated CronPredictionCondition conditions = 4;
+  repeated CronPredictionCondition conditions = 6;
 }
 
 // Curtain represent an object which can be placed before or after predictor
@@ -386,10 +395,19 @@ message DataAppStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ServiceStatus servicetStatus = 4;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 5;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataAppCondition conditions = 5;
+  repeated DataAppCondition conditions = 7;
 }
 
 // In case of forecast holds the forecast details
@@ -654,10 +672,19 @@ message PredictionStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 10;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 11;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictionCondition conditions = 10;
+  repeated PredictionCondition conditions = 12;
 }
 
 message PredictionTemplate {
@@ -920,10 +947,19 @@ message PredictorStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.api.core.v1.ObjectReference proxyServiceRef = 18;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 19;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 20;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated PredictorCondition conditions = 19;
+  repeated PredictorCondition conditions = 21;
 }
 
 message ProgressiveSpec {

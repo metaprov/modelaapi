@@ -1272,6 +1272,13 @@ spec:
                       type: object
                     type: array
                 type: object
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
               fileSize:
                 description: file size in bytes
                 format: int32
@@ -1281,10 +1288,6 @@ spec:
                 type: string
               imageRepoName:
                 description: the name of the image repository
-                type: string
-              lastError:
-                default: ""
-                description: Last error
                 type: string
               lastUpdated:
                 description: Last time the object was updated

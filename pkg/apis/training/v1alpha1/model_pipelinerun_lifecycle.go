@@ -173,7 +173,7 @@ func (this *ModelPipelineRun) MarkDataStageFailed(err error) {
 		Message: err.Error(),
 	})
 	this.Status.Progress = util.Int32Ptr(100)
-	this.Status.LastError = err.Error()
+	this.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (this *ModelPipelineRun) IsDataStageFailed() bool {
@@ -227,7 +227,7 @@ func (this *ModelPipelineRun) MarkTrainingStageFailed(err error) {
 		Message: err.Error(),
 	})
 	this.Status.Progress = util.Int32Ptr(100)
-	this.Status.LastError = err.Error()
+	this.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (this *ModelPipelineRun) IsTrainingStageFailed() bool {
@@ -281,7 +281,7 @@ func (this *ModelPipelineRun) MarkUatStageFailed(err error) {
 		Message: err.Error(),
 	})
 	this.Status.Progress = util.Int32Ptr(100)
-	this.Status.LastError = err.Error()
+	this.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (this *ModelPipelineRun) IsUATStageFailed() bool {
@@ -335,7 +335,7 @@ func (this *ModelPipelineRun) MarkCapacityStageFailed(err error) {
 		Message: err.Error(),
 	})
 	this.Status.Progress = util.Int32Ptr(100)
-	this.Status.LastError = err.Error()
+	this.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (this *ModelPipelineRun) IsCapacityStageFailed() bool {
@@ -390,7 +390,7 @@ func (this *ModelPipelineRun) MarkProdStageFailed(err error) {
 		Message: err.Error(),
 	})
 	this.Status.Progress = util.Int32Ptr(100)
-	this.Status.LastError = err.Error()
+	this.Status.FailureMessage = util.StrPtr(err.Error())
 }
 
 func (this *ModelPipelineRun) IsProdStageFailed() bool {

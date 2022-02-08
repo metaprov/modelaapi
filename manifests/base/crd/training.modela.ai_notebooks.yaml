@@ -290,6 +290,13 @@ spec:
                   - type
                   type: object
                 type: array
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
               image:
                 description: Image is the name of the image after publication
                 type: string

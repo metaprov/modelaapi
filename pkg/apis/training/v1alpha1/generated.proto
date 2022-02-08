@@ -218,10 +218,19 @@ message CronReportStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated CronReportCondition conditions = 4;
+  repeated CronReportCondition conditions = 6;
 }
 
 message CustomReportSpec {
@@ -949,7 +958,7 @@ message Level {
 // +kubebuilder:printcolumn:name="CV Score",type="number",JSONPath=".status.cvScore"
 // +kubebuilder:printcolumn:name="Train Score",type="number",JSONPath=".status.trainScore"
 // +kubebuilder:printcolumn:name="Test Score",type="number",JSONPath=".status.testScore"
-// +kubebuilder:printcolumn:name="Last Error",type="number",JSONPath=".status.lastError"
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=models,singular=model,shortName=md,categories={training,modela,all}
 // Model represent a machine learning model.
@@ -1191,19 +1200,23 @@ message ModelAutobuilderStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 19;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 20;
+  optional string failureReason = 20;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 21;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 21;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 22;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelAutobuilderCondition conditions = 22;
+  repeated ModelAutobuilderCondition conditions = 23;
 }
 
 // ModelCompilerRun represent a single compilation of a model into a target hardware.
@@ -1299,23 +1312,27 @@ message ModelCompilerRunStatus {
   // +kubebuilder:validation:Optional
   optional string evalMetrics = 5;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 6;
+  optional string failureReason = 6;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 7;
 
   // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
-  optional int32 progress = 7;
+  optional int32 progress = 8;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelCompilerRunCondition conditions = 9;
+  repeated ModelCompilerRunCondition conditions = 10;
 }
 
 // ModelCondition describes the state of a model at a certain point.
@@ -1413,7 +1430,7 @@ message ModelPipelineList {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.versionName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=modelpipelineruns,shortName=mpr,singular=modelpipelinerun,categories={train,modela,all}
 // ModelPipelineRun represent a execution of a pipeline
@@ -1607,27 +1624,31 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string evalMetrics = 17;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 18;
+  optional string failureReason = 18;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 19;
 
   // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
-  optional int32 progress = 19;
+  optional int32 progress = 20;
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 20;
+  optional string triggeredBy = 21;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 21;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 22;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineRunCondition conditions = 22;
+  repeated ModelPipelineRunCondition conditions = 23;
 }
 
 // ModelPipelineSpec define the desired state of the ModelPipeline resource.
@@ -1724,15 +1745,19 @@ message ModelPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
-  // Last error during reconciliation
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 4;
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ModelPipelineCondition conditions = 5;
+  repeated ModelPipelineCondition conditions = 6;
 }
 
 // model cv results
@@ -2103,73 +2128,77 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional int32 validationRows = 38;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 39;
+  optional string failureReason = 39;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 40;
 
   // Model Progress in precent, the progress takes into account the different stages of the model.
   // +kubebuilder:validation:Optional
-  optional int32 progress = 40;
+  optional int32 progress = 41;
 
   // Size of the model size
   // +kubebuilder:validation:Optional
-  optional int32 sizeInBytes = 41;
+  optional int32 sizeInBytes = 42;
 
   // Prediction Latency
   // +kubebuilder:validation:Optional
-  optional double latency = 42;
+  optional double latency = 43;
 
   // The URL to the released version
-  optional string url = 43;
+  optional string url = 44;
 
   // If the model is released, this is the name of the predictor
   // +kubebuilder:validation:Optional
-  optional string predictorName = 44;
+  optional string predictorName = 45;
 
   // Released at the time when the model was released
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 45;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 46;
 
   // Sha 256 of the model tar file
   // +kubebuilder:validation:Optional
-  optional string tarfileHash = 46;
+  optional string tarfileHash = 47;
 
   // Sha 256 of the model tar file
   // +kubebuilder:validation:Optional
-  optional string imageHash = 47;
+  optional string imageHash = 48;
 
   // Sha 256 of the data sig
   // +kubebuilder:validation:Optional
-  optional DataHashes trainingDataHash = 48;
+  optional DataHashes trainingDataHash = 49;
 
   // ResourceConsumed during training
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption trainingResources = 49;
+  optional ResourceConsumption trainingResources = 50;
 
   // ResourceConsumed during testing
   // +kubebuilder:validation:Optional
-  optional ResourceConsumption testingResources = 50;
+  optional ResourceConsumption testingResources = 51;
 
   // The account that trained the model
   // +kubebuilder:validation:Optional
-  optional string trainedBy = 51;
+  optional string trainedBy = 52;
 
   // The team that trained this model
   // +kubebuilder:validation:Optional
-  optional string team = 52;
+  optional string team = 53;
 
   // The image used during training
   // +kubebuilder:validation:Optional
-  optional string trainerImage = 53;
+  optional string trainerImage = 54;
 
   // If the model is deployed, this points to the end point.
   // +kubebuilder:validation:Optional
-  optional string endpoint = 54;
+  optional string endpoint = 55;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 55;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 56;
 
   // Roc curve
   // +kubebuilder:validation:Optional
@@ -2425,27 +2454,31 @@ message NotebookRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 5;
+  optional string failureReason = 5;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 6;
+  optional string triggeredBy = 7;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated NotebookRunCondition conditions = 9;
+  repeated NotebookRunCondition conditions = 10;
 }
 
 // NotebookSpec is the desired state of the notebook resource.
@@ -2538,10 +2571,19 @@ message NotebookStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 6;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 7;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated NotebookCondition conditions = 6;
+  repeated NotebookCondition conditions = 8;
 }
 
 // NotebookVarValue is an assignment of value to the notebook var
@@ -2804,23 +2846,27 @@ message ReportStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 6;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 7;
+  optional string failureReason = 7;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 8;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 10;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated ReportCondition conditions = 10;
+  repeated ReportCondition conditions = 11;
 }
 
 message ReportTemplate {
@@ -3243,86 +3289,90 @@ message StudyStatus {
   // the last model id generated for this study
   optional int64 lastModelID = 14;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 15;
+  optional string failureReason = 15;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 16;
 
   // TrainingRows is the amount of rows in training
   // +kubebuilder:validation:Optional
-  optional int32 trainingRows = 16;
+  optional int32 trainingRows = 17;
 
   // TestingRows is the amount of rows in testing
   // +kubebuilder:validation:Optional
-  optional int32 testingRows = 17;
+  optional int32 testingRows = 18;
 
   // Validation row contain the number of validation rows for cases that we have validation.
   // +kubebuilder:validation:Optional
-  optional int32 validationRows = 18;
+  optional int32 validationRows = 19;
 
   // Study Progress in precent, the progress takes into account the different stages of the study.
   // +kubebuilder:validation:Optional
-  optional int32 progress = 19;
+  optional int32 progress = 20;
 
   // define a baseline model that will be the baseline for the search. If not none, the base line is the first model
   // to be evaluated.
   // +kubebuilder:default:="none"
   // +kubebuilder:validation:Optional
-  optional string baselineModel = 20;
+  optional string baselineModel = 21;
 
   // Sha 256 of the data sig
   // +kubebuilder:validation:Optional
-  optional DataHashes trainingDataHash = 21;
+  optional DataHashes trainingDataHash = 22;
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 22;
+  optional string triggeredBy = 23;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 23;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 24;
 
   // Holds the result of the feature engineering process
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus featureEngineering = 24;
+  optional StudyPhaseStatus featureEngineering = 25;
 
   // Holds the result of the baseline phase training
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus baseline = 25;
+  optional StudyPhaseStatus baseline = 26;
 
   // Holds the result of the search phase training
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus search = 26;
+  optional StudyPhaseStatus search = 27;
 
   // Holds the result of the ensemble phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus ensemble = 27;
+  optional StudyPhaseStatus ensemble = 28;
 
   // Holds the result of the test phase
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus test = 28;
+  optional StudyPhaseStatus test = 29;
 
   // Hold the result of running model interpretability
   // +kubebuilder:validation:Optional
-  optional StudyPhaseStatus explain = 29;
+  optional StudyPhaseStatus explain = 30;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 30;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 31;
 
   // The best feature engineering
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec bestFE = 31;
+  optional FeatureEngineeringSpec bestFE = 32;
 
   // GC algorithm
-  optional GarbageCollectionStatus gc = 32;
+  optional GarbageCollectionStatus gc = 33;
 
   // This is the set of partition levels
   // Represents the latest available observations of a study state.
   // +optional
   // +patchMergeKey=type
   // +patchStrategy=merge
-  repeated StudyCondition conditions = 33;
+  repeated StudyCondition conditions = 34;
 }
 
 // SuccessiveHalvingOptions define the parameters for the successive halving algorithm

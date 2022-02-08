@@ -280,11 +280,17 @@ type PredictorStatus struct {
 	// The service name that serves this model
 	// +kubebuilder:validation:Optional
 	ProxyServiceRef v1.ObjectReference `json:"proxyServiceRef,omitempty" protobuf:"bytes,18,opt,name=proxyServiceRef"`
-
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,19,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,20,opt,name=failureMessage"`
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,19,rep,name=conditions"`
+	Conditions []PredictorCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,21,rep,name=conditions"`
 }
 
 type PredictorHealth struct {

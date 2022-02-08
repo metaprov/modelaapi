@@ -186,6 +186,16 @@ func (in *CronPredictionStatus) DeepCopyInto(out *CronPredictionStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]CronPredictionCondition, len(*in))
@@ -567,6 +577,16 @@ func (in *DataAppStatus) DeepCopyInto(out *DataAppStatus) {
 	}
 	out.DeploymentRef = in.DeploymentRef
 	in.ServiceStatus.DeepCopyInto(&out.ServiceStatus)
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DataAppCondition, len(*in))
@@ -931,6 +951,16 @@ func (in *PredictionStatus) DeepCopyInto(out *PredictionStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictionCondition, len(*in))
@@ -1231,6 +1261,16 @@ func (in *PredictorStatus) DeepCopyInto(out *PredictorStatus) {
 	}
 	out.ProxyDeploymentRef = in.ProxyDeploymentRef
 	out.ProxyServiceRef = in.ProxyServiceRef
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]PredictorCondition, len(*in))

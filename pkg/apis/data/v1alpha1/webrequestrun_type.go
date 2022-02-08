@@ -148,9 +148,13 @@ type WebRequestRunStatus struct {
 	// The name of the report object.
 	// +kubebuilder:validation:Optional
 	ReportName string `json:"reportName,omitempty" protobuf:"bytes,9,opt,name=reportName"`
-	// The last error that occur as a result of the execution
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,10,opt,name=lastError"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,10,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,11,opt,name=failureMessage"`
 
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional

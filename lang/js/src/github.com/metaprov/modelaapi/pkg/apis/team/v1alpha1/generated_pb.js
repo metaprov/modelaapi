@@ -2942,7 +2942,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.toObjec
   var f, obj = {
     phase: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     notes: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     actionitems: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
@@ -2991,10 +2990,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.deseria
     case 2:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setObservedgeneration(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -3054,13 +3049,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.seriali
   if (f != null) {
     writer.writeInt64(
       2,
-      f
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeString(
-      3,
       f
     );
   }
@@ -3166,42 +3154,6 @@ proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototy
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.hasObservedgeneration = function() {
   return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string lastError = 3;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.getLasterror = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.setLasterror = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.clearLasterror = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingStatus.prototype.hasLasterror = function() {
-  return jspb.Message.getField(this, 3) != null;
 };
 
 

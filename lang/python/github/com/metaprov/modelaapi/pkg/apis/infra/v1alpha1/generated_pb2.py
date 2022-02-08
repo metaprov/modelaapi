@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=b'Z5github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x12\x35github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xf5\x01\n\x07\x41\x63\x63ount\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus\"\x99\x01\n\x10\x41\x63\x63ountCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9e\x01\n\x0b\x41\x63\x63ountList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"2\n\x12\x41\x63\x63ountRoleBinding\x12\x0e\n\x06\x65ntity\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"\xaf\x05\n\x0b\x41\x63\x63ountSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x11\n\tfirstName\x18\x05 \x01(\t\x12\x10\n\x08lastName\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\r\n\x05phone\x18\x08 \x01(\t\x12\r\n\x05\x61\x64min\x18\t \x01(\x08\x12\x0c\n\x04team\x18\n \x01(\x08\x12\x10\n\x08memberOf\x18\x0b \x01(\t\x12\x15\n\remailPassword\x18\x0c \x01(\x08\x12\x15\n\rresetPassword\x18\r \x01(\x08\x12\x62\n\x0fproductBindings\x18\x0e \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountRoleBinding\x12^\n\x0blabBindings\x18\x0f \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountRoleBinding\x12_\n\x0csiteBindings\x18\x10 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountRoleBinding\x12\x16\n\x0e\x63learenceLevel\x18\x11 \x01(\t\x12Q\n\x06\x61vatar\x18\x12 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AvatarSpec\x12\x18\n\x10\x66\x61voriteProducts\x18\x13 \x03(\t\"\xc9\x01\n\rAccountStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12[\n\nconditions\x18\x03 \x03(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition\"\xef\x01\n\x05\x41lert\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12N\n\x04spec\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec\x12R\n\x06status\x18\x03 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus\"\x97\x01\n\x0e\x41lertCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9a\x01\n\tAlertList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12K\n\x05items\x18\x02 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\xeb\x02\n\tAlertSpec\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05level\x18\x03 \x01(\t\x12\x36\n\tentityRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x14\n\x0cnotifierName\x18\x05 \x01(\t\x12\r\n\x05owner\x18\x06 \x01(\t\x12\x0b\n\x03ttl\x18\x07 \x01(\x05\x12\\\n\x06\x66ields\x18\x08 \x03(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.FieldsEntry\x12\x36\n\ttenantRef\x18\t \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8c\x02\n\x0b\x41lertStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12Y\n\nconditions\x18\x05 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition\"R\n\x0c\x41liCloudSpec\x12\x11\n\taccessKey\x18\x01 \x01(\t\x12\x11\n\tsecretKey\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t\"e\n\x10\x41mazonAthenaSpec\x12\x10\n\x08hostName\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x0e\n\x06region\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\"s\n\x12\x41mazonRedShiftSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"t\n\x13\x41pacheCassandraSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"p\n\x0f\x41pacheDrillSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"p\n\x0f\x41pacheDruidSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"m\n\x0e\x41pacheHiveSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"n\n\x0f\x41pacheSparkSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xf8\x01\n\x08\x41piToken\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Q\n\x04spec\x18\x02 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenSpec\x12U\n\x06status\x18\x03 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenStatus\"\x9a\x01\n\x11\x41piTokenCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa0\x01\n\x0c\x41piTokenList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12N\n\x05items\x18\x02 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"\x80\x01\n\x0c\x41piTokenSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12L\n\x06scopes\x18\x02 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Scope\x12\r\n\x05owner\x18\x03 \x01(\t\"\xcb\x01\n\x0e\x41piTokenStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\\\n\nconditions\x18\x03 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenCondition\"\xfe\x01\n\nAttachment\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12S\n\x04spec\x18\x02 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec\x12W\n\x06status\x18\x03 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus\"\x9c\x01\n\x13\x41ttachmentCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa4\x01\n\x0e\x41ttachmentList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12P\n\x05items\x18\x02 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\xc6\x01\n\x0e\x41ttachmentSpec\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x36\n\tentityRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x12\n\nbucketName\x18\x04 \x01(\t\x12\x0c\n\x04path\x18\x05 \x01(\t\x12\x36\n\ttenantRef\x18\x06 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\x96\x02\n\x10\x41ttachmentStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12^\n\nconditions\x18\x05 \x03(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition\".\n\nAvatarSpec\x12\x12\n\nbucketName\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"H\n\tAwsS3Spec\x12\x15\n\rdefaultRegion\x18\x01 \x01(\t\x12\x11\n\taccessKey\x18\x02 \x01(\t\x12\x11\n\tsecretKey\x18\x03 \x01(\t\"u\n\x14\x41zureSQLDatabaseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"=\n\x10\x41zureStorageSpec\x12\x16\n\x0estorageAccount\x18\x01 \x01(\t\x12\x11\n\taccessKey\x18\x02 \x01(\t\"=\n\rBitbucketSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0b\n\x03ssh\x18\x03 \x01(\t\"\x18\n\x07\x42oxSpec\x12\r\n\x05token\x18\x01 \x01(\t\"j\n\x14\x42ucketResourceQuotas\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x41\n\thardLimit\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"o\n\x0e\x43lickHouseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"p\n\x0f\x43ockroachDBSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xf2\x01\n\x06\x43ommit\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12O\n\x04spec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec\x12S\n\x06status\x18\x03 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitStatus\"\x98\x01\n\x0f\x43ommitCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9c\x01\n\nCommitList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12L\n\x05items\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\"\x9c\x01\n\nCommitSpec\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x36\n\tentityRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x36\n\ttenantRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\x8e\x02\n\x0c\x43ommitStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12Z\n\nconditions\x18\x05 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitCondition\"\xfe\x01\n\nConnection\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12S\n\x04spec\x18\x02 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12W\n\x06status\x18\x03 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus\"\x9c\x01\n\x13\x43onnectionCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\xa4\x01\n\x0e\x43onnectionList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12P\n\x05items\x18\x02 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\xcd.\n\x0e\x43onnectionSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x10\n\x08provider\x18\x03 \x01(\t\x12\x36\n\tsecretRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12W\n\x06\x61thena\x18\x05 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonAthenaSpec\x12U\n\x05\x64rill\x18\x06 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec\x12U\n\x05\x64ruid\x18\x07 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec\x12S\n\x04hive\x18\x08 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec\x12[\n\x08redshift\x18\t \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec\x12Q\n\x06\x64\x65rmio\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DermioSpec\x12K\n\x03\x64\x62\x32\x18\x0b \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DB2Spec\x12X\n\x08\x62igquery\x18\x0c \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec\x12]\n\tcassandra\x18\r \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec\x12\x65\n\x10\x61zuresqldatabase\x18\x0e \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec\x12S\n\x07mongodb\x18\x0f \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MongoDbSpec\x12O\n\x05mysql\x18\x10 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MySqlSpec\x12M\n\x04odbc\x18\x11 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OdbcSpec\x12Q\n\x06oracle\x18\x12 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OracleSpec\x12X\n\x08postgres\x18\x13 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec\x12Q\n\x06presto\x18\x14 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PrestoSpec\x12W\n\tsnowflake\x18\x16 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec\x12Q\n\x06sybase\x18\x17 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SybaseSpec\x12S\n\x07vertica\x18\x18 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VerticaSpec\x12[\n\x0b\x63ockroachdb\x18\x19 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CockroachDBSpec\x12_\n\relasticsearch\x18\x1a \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec\x12U\n\x08informix\x18\x1b \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.InformixSpec\x12P\n\x04hana\x18\x1c \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SAPHanaSpec\x12U\n\x08teradata\x18\x1d \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TeradataSpec\x12V\n\x07spanner\x18\x1e \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec\x12U\n\x05spark\x18\x1f \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec\x12[\n\x0bmssqlserver\x18  \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec\x12Y\n\nclickhouse\x18! \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ClickHouseSpec\x12W\n\tgreenplum\x18\" \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GreenPlumSpec\x12W\n\tcouchbase\x18# \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CouchbaseSpec\x12Q\n\x06\x65xasol\x18$ \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ExasolSpec\x12Q\n\x06sqlite\x18% \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SqliteSpec\x12[\n\x0bsinglestore\x18& \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SingleStoreSpec\x12X\n\x07gsheets\x18\' \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec\x12]\n\x0c\x61zurestorage\x18( \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AzureStorageSpec\x12U\n\x08\x61licloud\x18) \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AliCloudSpec\x12]\n\x0c\x64igitalocean\x18* \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec\x12S\n\x07hetzner\x18+ \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.HetznerSpec\x12Y\n\ngcpstorage\x18- \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GcpStorageSpec\x12Q\n\x06linode\x18. \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LinodeSpec\x12O\n\x05minio\x18/ \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MinioSpec\x12W\n\topenstack\x18\x30 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OpenstackSpec\x12K\n\x03ovh\x18\x31 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OvhSpec\x12M\n\x03\x61ws\x18\x32 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AwsS3Spec\x12M\n\x04smtp\x18\x33 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SmtpSpec\x12K\n\x03\x66tp\x18\x34 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FtpSpec\x12M\n\x04sftp\x18\x35 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SFtpSpec\x12S\n\x07\x64ropbox\x18\x36 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DropboxSpec\x12K\n\x03\x62ox\x18\x37 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BoxSpec\x12_\n\rimageRegistry\x18\x38 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec\x12Q\n\x06github\x18\x39 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GithubSpec\x12Q\n\x06gitlab\x18: \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GitlabSpec\x12W\n\tbitbucket\x18; \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BitbucketSpec\x12O\n\x05slack\x18< \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec\x12Q\n\x06msteam\x18= \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MSTeamSpec\x12Y\n\nmatterMost\x18> \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MattermostSpec\x12S\n\x07hipchat\x18? \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.HipchatSpec\x12U\n\x08victorop\x18@ \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VictorOpSpec\x12W\n\tpagerduty\x18\x41 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PagerDutySpec\x12U\n\x08pushover\x18\x42 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PushoverSpec\x12U\n\x08opsgenie\x18\x43 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OpsgenieSpec\x12S\n\x07webhook\x18\x44 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec\x12U\n\x08\x66\x61\x63\x65\x62ook\x18\x45 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FacebookSpec\x12S\n\x07twitter\x18\x46 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TwitterSpec\x12U\n\x08rabbitmq\x18G \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RabbitMQSpec\x12O\n\x05kafka\x18H \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.KafkaSpec\x12O\n\x05neo4j\x18I \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Neo4JSpec\x12\r\n\x05owner\x18J \x01(\t\"\xcf\x01\n\x10\x43onnectionStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12^\n\nconditions\x18\x03 \x03(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition\"\x85\x01\n\rCouchbaseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x15\n\rdefaultBucket\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"h\n\x07\x44\x42\x32Spec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"k\n\nDermioSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"l\n\x10\x44igitalOceanSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x11\n\taccessKey\x18\x02 \x01(\t\x12\x11\n\tsecretKey\x18\x03 \x01(\t\x12\x15\n\rdefaultRegion\x18\x04 \x01(\t\x12\x0c\n\x04host\x18\x05 \x01(\t\"\x1c\n\x0b\x44ropboxSpec\x12\r\n\x05token\x18\x01 \x01(\t\"p\n\x11\x45lasticSearchSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0e\n\x06prefix\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"Y\n\nExasolSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"h\n\x07\x46TPSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\x1d\n\x0c\x46\x61\x63\x65\x62ookSpec\x12\r\n\x05token\x18\x01 \x01(\t\"I\n\x07\x46tpSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"\xa3\x01\n\x0fGcpBigQuerySpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x11\n\tprojectID\x18\x05 \x01(\t\x12\x11\n\toauthType\x18\x06 \x01(\t\x12\x1d\n\x15serviceAccountKeyPath\x18\x07 \x01(\t\x12\x0b\n\x03url\x18\x08 \x01(\t\"v\n\x0eGcpSpannerSpec\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x10\n\x08instance\x18\x02 \x01(\t\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"2\n\x0eGcpStorageSpec\x12\x0f\n\x07keyFile\x18\x01 \x01(\t\x12\x0f\n\x07project\x18\x02 \x01(\t\":\n\nGithubSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0b\n\x03ssh\x18\x03 \x01(\t\"(\n\nGitlabSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0b\n\x03ssh\x18\x02 \x01(\t\"B\n\x10GoogleSheetsSpec\x12\x0e\n\x06scopes\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x12\n\ndataToPull\x18\x03 \x01(\t\"n\n\rGreenPlumSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\")\n\x0bHetznerSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0b\n\x03ssh\x18\x02 \x01(\t\"7\n\x0bHipchatSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0c\n\x04room\x18\x03 \x01(\t\"E\n\x11ImageRegistrySpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"m\n\x0cInformixSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"i\n\tKafkaSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xe9\x01\n\x03Lab\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12L\n\x04spec\x18\x02 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec\x12P\n\x06status\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus\"\x95\x01\n\x0cLabCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x96\x01\n\x07LabList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12I\n\x05items\x18\x02 \x03(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\xb0\x02\n\x07LabSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x36\n\ttenantRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12X\n\x06limits\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec\x12\x13\n\x0b\x63lusterName\x18\x04 \x01(\t\x12\r\n\x05owner\x18\x05 \x01(\t\x12Z\n\x0cstakeholders\x18\x06 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder\"\xc1\x01\n\tLabStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12W\n\nconditions\x18\x03 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition\"\xf5\x01\n\x07License\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus\"\x99\x01\n\x10LicenseCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9e\x01\n\x0bLicenseList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\xbc\x04\n\x0bLicenseSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x36\n\tsecretRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\r\n\x05owner\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12>\n\ntrialStart\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12<\n\x08trialEnd\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x13\n\x0bmaxProducts\x18\x07 \x01(\x05\x12\x13\n\x0bmaxTrainers\x18\x08 \x01(\x05\x12\x12\n\nmaxServers\x18\t \x01(\x05\x12\x10\n\x08maxUsers\x18\n \x01(\x05\x12\x15\n\rmaxDataPlanes\x18\x0b \x01(\x05\x12\x10\n\x08\x66orecast\x18\x0c \x01(\x08\x12\x0b\n\x03nlp\x18\r \x01(\x08\x12\x0e\n\x06vision\x18\x0e \x01(\x08\x12\x0f\n\x07\x63hatbot\x18\x0f \x01(\x08\x12\x13\n\x0bproductName\x18\x10 \x01(\t\x12\x11\n\tpriceName\x18\x11 \x01(\t\x12<\n\x08\x65xpireAt\x18\x12 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x14\n\x0cnotifierName\x18\x13 \x01(\t\"\xc9\x01\n\rLicenseStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12[\n\nconditions\x18\x03 \x03(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition\"\x1b\n\nLinodeSpec\x12\r\n\x05token\x18\x01 \x01(\t\"\x82\x01\n\x0fMSSqlServerSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08instance\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"\x1d\n\nMSTeamSpec\x12\x0f\n\x07webhook\x18\x01 \x01(\t\"@\n\x0eMattermostSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\t\x12\x10\n\x08username\x18\x03 \x01(\t\"?\n\tMinioSpec\x12\x11\n\taccessKey\x18\x01 \x01(\t\x12\x11\n\tsecretKey\x18\x02 \x01(\t\x12\x0c\n\x04host\x18\x03 \x01(\t\"\x84\x02\n\x0cModelaSystem\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12U\n\x04spec\x18\x02 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec\x12Y\n\x06status\x18\x03 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus\"\x9e\x01\n\x15ModelaSystemCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa8\x01\n\x10ModelaSystemList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12R\n\x05items\x18\x02 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\"\x86\x02\n\x10ModelaSystemSpec\x12\x0f\n\x07release\x18\x01 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12W\n\x06images\x18\x03 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec\x12\x38\n\x0bpodTemplate\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\x12>\n\x11publisherTemplate\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\"\x92\x01\n\x12ModelaSystemStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12`\n\nconditions\x18\x02 \x03(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition\"l\n\x0bMongoDbSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"j\n\tMySqlSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"X\n\tNeo4JSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"\xf8\x01\n\x08Notifier\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Q\n\x04spec\x18\x02 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec\x12U\n\x06status\x18\x03 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus\"\x9a\x01\n\x11NotifierCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa0\x01\n\x0cNotifierList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12N\n\x05items\x18\x02 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x9c\x01\n\x0cNotifierSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\n\n\x02to\x18\x03 \x01(\t\x12\x0c\n\x04\x66rom\x18\x04 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x05 \x01(\t\x12\r\n\x05owner\x18\x06 \x01(\t\"\xdd\x01\n\x0eNotifierStatus\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12?\n\x0blastUpdated\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\\\n\nconditions\x18\x04 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition\"%\n\x08OdbcSpec\x12\x19\n\x11\x63onntectionString\x18\x01 \x01(\t\"h\n\rOpenstackSpec\x12\x10\n\x08userName\x18\x01 \x01(\t\x12\x12\n\ntenantName\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x0f\n\x07\x61uthUrl\x18\x04 \x01(\t\x12\x0e\n\x06region\x18\x05 \x01(\t\":\n\x0cOpsgenieSpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"v\n\nOracleSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0b\n\x03sid\x18\x03 \x01(\t\x12\x0e\n\x06\x64river\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"U\n\x07OvhSpec\x12\x10\n\x08\x65ndpoint\x18\x01 \x01(\t\x12\x13\n\x0b\x61pplication\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x03 \x01(\t\x12\x13\n\x0b\x63onsumerkey\x18\x04 \x01(\t\";\n\rPagerDutySpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"p\n\x0fPostgresSQLSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"z\n\nPrestoSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0f\n\x07\x63\x61talog\x18\x03 \x01(\t\x12\x0e\n\x06schema\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\":\n\x0cPushoverSpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"N\n\x0cRabbitMQSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"\xb3\x02\n\x11ResourceLimitSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12>\n\x06maxMem\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12>\n\x06maxCpu\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0f\n\x07maxPods\x18\x04 \x01(\x05\x12\x0e\n\x06maxPvc\x18\x05 \x01(\x05\x12\x34\n\x05quota\x18\x06 \x01(\x0b\x32%.k8s.io.api.core.v1.ResourceQuotaSpec\x12\x36\n\nlimitRange\x18\x07 \x01(\x0b\x32\".k8s.io.api.core.v1.LimitRangeSpec\"l\n\x0bSAPHanaSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"i\n\x08SFTPSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"J\n\x08SFtpSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"&\n\x05Scope\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x63tions\x18\x02 \x03(\t\"\x81\x02\n\x0bServingSite\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus\"\x9d\x01\n\x14ServingSiteCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa6\x01\n\x0fServingSiteList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\xdb\x02\n\x0fServingSiteSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x36\n\ttenantRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12X\n\x06limits\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec\x12\x13\n\x0bingressName\x18\x04 \x01(\t\x12\x0c\n\x04\x66\x64qn\x18\x05 \x01(\t\x12\x13\n\x0b\x63lusterName\x18\x06 \x01(\t\x12\r\n\x05owner\x18\x07 \x01(\t\x12Z\n\x0cstakeholders\x18\x08 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder\"\x97\x03\n\x11ServingSiteStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x18\n\x10\x61\x63tivePredictors\x18\x03 \x01(\x05\x12\x1a\n\x12inactivePredictors\x18\x04 \x01(\x05\x12#\n\x1btotalPredictorServiceFailed\x18\x05 \x01(\x05\x12%\n\x1dtotalPredictorDataDriftFailed\x18\x06 \x01(\x05\x12$\n\x1ctotalPredictorAccuracyFailed\x18\x07 \x01(\x05\x12\x1c\n\x14lastDailyPredictions\x18\x08 \x03(\x05\x12_\n\nconditions\x18\t \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition\"^\n\x0fSingleStoreSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"Q\n\tSlackSpec\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\t\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\r\n\x05token\x18\x04 \x01(\t\"J\n\x08SmtpSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"\x91\x01\n\rSnowflakeSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0e\n\x06schema\x18\x06 \x01(\t\x12\x11\n\twarehouse\x18\x07 \x01(\t\x12\x0b\n\x03url\x18\x08 \x01(\t\"\x1e\n\nSqliteSpec\x12\x10\n\x08\x66ileName\x18\x01 \x01(\t\"k\n\nSybaseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xf8\x02\n\x10SystemImagesSpec\x12\x12\n\napiGateway\x18\x01 \x01(\t\x12\x14\n\x0c\x63ontrolPlane\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61tadock\x18\x03 \x01(\t\x12\x10\n\x08\x66rontend\x18\x04 \x01(\t\x12\x11\n\tpublisher\x18\x05 \x01(\t\x12\x0f\n\x07trainer\x18\x06 \x01(\t\x12\x16\n\x0e\x62\x61tchPredictor\x18\x07 \x01(\t\x12\x10\n\x08\x61piproxy\x18\x08 \x01(\t\x12\x11\n\tdataplane\x18\t \x01(\t\x12\x12\n\ncloudproxy\x18\n \x01(\t\x12\x15\n\rdatabaseProxy\x18\x0b \x01(\t\x12\x18\n\x10predictionRouter\x18\x0c \x01(\t\x12\x14\n\x0cmodelaSystem\x18\r \x01(\t\x12\x1e\n\x16modelaPredictionServer\x18\x0e \x01(\t\x12\x1d\n\x15modelaDashboardServer\x18\x0f \x01(\t\x12\x1b\n\x13modelaWorkerControl\x18\x10 \x01(\t\"\xf2\x01\n\x06Tenant\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12O\n\x04spec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec\x12S\n\x06status\x18\x03 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus\"\x98\x01\n\x0fTenantCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9c\x01\n\nTenantList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12L\n\x05items\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\xad\x01\n\nTenantSpec\x12\x37\n\ndefaultLab\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x42\n\x15\x64\x65\x66\x61ultServingSiteRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05owner\x18\x04 \x01(\t\"\xc7\x01\n\x0cTenantStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12Z\n\nconditions\x18\x02 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition\"m\n\x0cTeradataSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\x1c\n\x0bTwitterSpec\x12\r\n\x05token\x18\x01 \x01(\t\"l\n\x0bVerticaSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\":\n\x0cVictorOpSpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"\x87\x02\n\rVirtualBucket\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus\"\x9f\x01\n\x16VirtualBucketCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xaa\x01\n\x11VirtualBucketList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x88\x02\n\x11VirtualBucketSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05owner\x18\x04 \x01(\t\x12\x0e\n\x06region\x18\x05 \x01(\t\x12\x12\n\nversioning\x18\x06 \x01(\x08\x12[\n\x06quotas\x18\x07 \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BucketResourceQuotas\"\xe7\x01\n\x13VirtualBucketStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x61\n\nconditions\x18\x04 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition\"\x8a\x02\n\x0eVirtualCluster\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12W\n\x04spec\x18\x02 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x12[\n\x06status\x18\x03 \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterStatus\"\xa0\x01\n\x17VirtualClusterCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xac\x01\n\x12VirtualClusterList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12T\n\x05items\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\xce\x02\n\x12VirtualClusterSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\r\n\x05nodes\x18\x03 \x01(\x05\x12\x15\n\rnodeClassName\x18\x04 \x01(\t\x12\x0c\n\x04gpus\x18\x05 \x01(\x05\x12\x14\n\x0cgpuClassName\x18\x06 \x01(\t\x12\x12\n\nvolumeSize\x18\x07 \x01(\x05\x12\x0c\n\x04spot\x18\x08 \x01(\x08\x12\x16\n\x0e\x63onnectionName\x18\t \x01(\t\x12\r\n\x05owner\x18\n \x01(\t\x12X\n\x06limits\x18\x0b \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec\"\x86\x02\n\x14VirtualClusterStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12\x16\n\x0e\x61vailableNodes\x18\x02 \x01(\x05\x12\x15\n\ravailableGpus\x18\x03 \x01(\x05\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x62\n\nconditions\x18\x05 \x03(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterCondition\"\x87\x02\n\rVirtualVolume\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeStatus\"\x9f\x01\n\x16VirtualVolumeCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\xaa\x01\n\x11VirtualVolumeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x87\x01\n\x11VirtualVolumeSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05owner\x18\x04 \x01(\t\"\xd5\x01\n\x13VirtualVolumeStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x61\n\nconditions\x18\x03 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeCondition\"\x1a\n\x0bWebhookSpec\x12\x0b\n\x03url\x18\x01 \x01(\tB7Z5github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1'
+  serialized_pb=b'\nEgithub.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x12\x35github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1\x1aGgithub.com/metaprov/modelaapi/pkg/apis/catalog/v1alpha1/generated.proto\x1a\"k8s.io/api/core/v1/generated.proto\x1a\x34k8s.io/apimachinery/pkg/api/resource/generated.proto\x1a\x34k8s.io/apimachinery/pkg/apis/meta/v1/generated.proto\x1a/k8s.io/apimachinery/pkg/runtime/generated.proto\x1a\x36k8s.io/apimachinery/pkg/runtime/schema/generated.proto\"\xf5\x01\n\x07\x41\x63\x63ount\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus\"\x99\x01\n\x10\x41\x63\x63ountCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9e\x01\n\x0b\x41\x63\x63ountList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\"2\n\x12\x41\x63\x63ountRoleBinding\x12\x0e\n\x06\x65ntity\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"\xaf\x05\n\x0b\x41\x63\x63ountSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x11\n\tfirstName\x18\x05 \x01(\t\x12\x10\n\x08lastName\x18\x06 \x01(\t\x12\r\n\x05\x65mail\x18\x07 \x01(\t\x12\r\n\x05phone\x18\x08 \x01(\t\x12\r\n\x05\x61\x64min\x18\t \x01(\x08\x12\x0c\n\x04team\x18\n \x01(\x08\x12\x10\n\x08memberOf\x18\x0b \x01(\t\x12\x15\n\remailPassword\x18\x0c \x01(\x08\x12\x15\n\rresetPassword\x18\r \x01(\x08\x12\x62\n\x0fproductBindings\x18\x0e \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountRoleBinding\x12^\n\x0blabBindings\x18\x0f \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountRoleBinding\x12_\n\x0csiteBindings\x18\x10 \x03(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountRoleBinding\x12\x16\n\x0e\x63learenceLevel\x18\x11 \x01(\t\x12Q\n\x06\x61vatar\x18\x12 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AvatarSpec\x12\x18\n\x10\x66\x61voriteProducts\x18\x13 \x03(\t\"\xf8\x01\n\rAccountStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12\x15\n\rfailureReason\x18\x03 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x04 \x01(\t\x12[\n\nconditions\x18\x05 \x03(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountCondition\"\xef\x01\n\x05\x41lert\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12N\n\x04spec\x18\x02 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec\x12R\n\x06status\x18\x03 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus\"\x97\x01\n\x0e\x41lertCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9a\x01\n\tAlertList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12K\n\x05items\x18\x02 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert\"\xeb\x02\n\tAlertSpec\x12\x0f\n\x07subject\x18\x01 \x01(\t\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\r\n\x05level\x18\x03 \x01(\t\x12\x36\n\tentityRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x14\n\x0cnotifierName\x18\x05 \x01(\t\x12\r\n\x05owner\x18\x06 \x01(\t\x12\x0b\n\x03ttl\x18\x07 \x01(\x05\x12\\\n\x06\x66ields\x18\x08 \x03(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertSpec.FieldsEntry\x12\x36\n\ttenantRef\x18\t \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x1a-\n\x0b\x46ieldsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbb\x02\n\x0b\x41lertStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x05 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x06 \x01(\t\x12Y\n\nconditions\x18\x07 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertCondition\"R\n\x0c\x41liCloudSpec\x12\x11\n\taccessKey\x18\x01 \x01(\t\x12\x11\n\tsecretKey\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t\"e\n\x10\x41mazonAthenaSpec\x12\x10\n\x08hostName\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x0e\n\x06region\x18\x04 \x01(\t\x12\x0b\n\x03url\x18\x05 \x01(\t\"s\n\x12\x41mazonRedShiftSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"t\n\x13\x41pacheCassandraSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"p\n\x0f\x41pacheDrillSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"p\n\x0f\x41pacheDruidSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"m\n\x0e\x41pacheHiveSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"n\n\x0f\x41pacheSparkSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0e\n\x06schema\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xf8\x01\n\x08\x41piToken\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Q\n\x04spec\x18\x02 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenSpec\x12U\n\x06status\x18\x03 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenStatus\"\x9a\x01\n\x11\x41piTokenCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa0\x01\n\x0c\x41piTokenList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12N\n\x05items\x18\x02 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiToken\"\x80\x01\n\x0c\x41piTokenSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12L\n\x06scopes\x18\x02 \x03(\x0b\x32<.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Scope\x12\r\n\x05owner\x18\x03 \x01(\t\"\xcb\x01\n\x0e\x41piTokenStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\\\n\nconditions\x18\x03 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenCondition\"\xfe\x01\n\nAttachment\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12S\n\x04spec\x18\x02 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentSpec\x12W\n\x06status\x18\x03 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus\"\x9c\x01\n\x13\x41ttachmentCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa4\x01\n\x0e\x41ttachmentList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12P\n\x05items\x18\x02 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Attachment\"\xc6\x01\n\x0e\x41ttachmentSpec\x12\r\n\x05owner\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x36\n\tentityRef\x18\x03 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x12\n\nbucketName\x18\x04 \x01(\t\x12\x0c\n\x04path\x18\x05 \x01(\t\x12\x36\n\ttenantRef\x18\x06 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\xc5\x02\n\x10\x41ttachmentStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x05 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x06 \x01(\t\x12^\n\nconditions\x18\x07 \x03(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentCondition\".\n\nAvatarSpec\x12\x12\n\nbucketName\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"H\n\tAwsS3Spec\x12\x15\n\rdefaultRegion\x18\x01 \x01(\t\x12\x11\n\taccessKey\x18\x02 \x01(\t\x12\x11\n\tsecretKey\x18\x03 \x01(\t\"u\n\x14\x41zureSQLDatabaseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"=\n\x10\x41zureStorageSpec\x12\x16\n\x0estorageAccount\x18\x01 \x01(\t\x12\x11\n\taccessKey\x18\x02 \x01(\t\"=\n\rBitbucketSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0b\n\x03ssh\x18\x03 \x01(\t\"\x18\n\x07\x42oxSpec\x12\r\n\x05token\x18\x01 \x01(\t\"j\n\x14\x42ucketResourceQuotas\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x41\n\thardLimit\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\"o\n\x0e\x43lickHouseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"p\n\x0f\x43ockroachDBSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xf2\x01\n\x06\x43ommit\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12O\n\x04spec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitSpec\x12S\n\x06status\x18\x03 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitStatus\"\x98\x01\n\x0f\x43ommitCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9c\x01\n\nCommitList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12L\n\x05items\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit\"\x9c\x01\n\nCommitSpec\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x36\n\tentityRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x36\n\ttenantRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\"\xbd\x02\n\x0c\x43ommitStatus\x12\r\n\x05phase\x18\x01 \x01(\t\x12\x36\n\x02\x61t\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x05 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x06 \x01(\t\x12Z\n\nconditions\x18\x07 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitCondition\"\xfe\x01\n\nConnection\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12S\n\x04spec\x18\x02 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionSpec\x12W\n\x06status\x18\x03 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus\"\x9c\x01\n\x13\x43onnectionCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\xa4\x01\n\x0e\x43onnectionList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12P\n\x05items\x18\x02 \x03(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\"\xcd.\n\x0e\x43onnectionSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x10\n\x08provider\x18\x03 \x01(\t\x12\x36\n\tsecretRef\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12W\n\x06\x61thena\x18\x05 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonAthenaSpec\x12U\n\x05\x64rill\x18\x06 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheDrillSpec\x12U\n\x05\x64ruid\x18\x07 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheDruidSpec\x12S\n\x04hive\x18\x08 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheHiveSpec\x12[\n\x08redshift\x18\t \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AmazonRedShiftSpec\x12Q\n\x06\x64\x65rmio\x18\n \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DermioSpec\x12K\n\x03\x64\x62\x32\x18\x0b \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DB2Spec\x12X\n\x08\x62igquery\x18\x0c \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GcpBigQuerySpec\x12]\n\tcassandra\x18\r \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheCassandraSpec\x12\x65\n\x10\x61zuresqldatabase\x18\x0e \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AzureSQLDatabaseSpec\x12S\n\x07mongodb\x18\x0f \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MongoDbSpec\x12O\n\x05mysql\x18\x10 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MySqlSpec\x12M\n\x04odbc\x18\x11 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OdbcSpec\x12Q\n\x06oracle\x18\x12 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OracleSpec\x12X\n\x08postgres\x18\x13 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PostgresSQLSpec\x12Q\n\x06presto\x18\x14 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PrestoSpec\x12W\n\tsnowflake\x18\x16 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SnowflakeSpec\x12Q\n\x06sybase\x18\x17 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SybaseSpec\x12S\n\x07vertica\x18\x18 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VerticaSpec\x12[\n\x0b\x63ockroachdb\x18\x19 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CockroachDBSpec\x12_\n\relasticsearch\x18\x1a \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ElasticSearchSpec\x12U\n\x08informix\x18\x1b \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.InformixSpec\x12P\n\x04hana\x18\x1c \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SAPHanaSpec\x12U\n\x08teradata\x18\x1d \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TeradataSpec\x12V\n\x07spanner\x18\x1e \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GcpSpannerSpec\x12U\n\x05spark\x18\x1f \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApacheSparkSpec\x12[\n\x0bmssqlserver\x18  \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MSSqlServerSpec\x12Y\n\nclickhouse\x18! \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ClickHouseSpec\x12W\n\tgreenplum\x18\" \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GreenPlumSpec\x12W\n\tcouchbase\x18# \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CouchbaseSpec\x12Q\n\x06\x65xasol\x18$ \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ExasolSpec\x12Q\n\x06sqlite\x18% \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SqliteSpec\x12[\n\x0bsinglestore\x18& \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SingleStoreSpec\x12X\n\x07gsheets\x18\' \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GoogleSheetsSpec\x12]\n\x0c\x61zurestorage\x18( \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AzureStorageSpec\x12U\n\x08\x61licloud\x18) \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AliCloudSpec\x12]\n\x0c\x64igitalocean\x18* \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DigitalOceanSpec\x12S\n\x07hetzner\x18+ \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.HetznerSpec\x12Y\n\ngcpstorage\x18- \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GcpStorageSpec\x12Q\n\x06linode\x18. \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LinodeSpec\x12O\n\x05minio\x18/ \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MinioSpec\x12W\n\topenstack\x18\x30 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OpenstackSpec\x12K\n\x03ovh\x18\x31 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OvhSpec\x12M\n\x03\x61ws\x18\x32 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AwsS3Spec\x12M\n\x04smtp\x18\x33 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SmtpSpec\x12K\n\x03\x66tp\x18\x34 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FtpSpec\x12M\n\x04sftp\x18\x35 \x01(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SFtpSpec\x12S\n\x07\x64ropbox\x18\x36 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.DropboxSpec\x12K\n\x03\x62ox\x18\x37 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BoxSpec\x12_\n\rimageRegistry\x18\x38 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ImageRegistrySpec\x12Q\n\x06github\x18\x39 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GithubSpec\x12Q\n\x06gitlab\x18: \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.GitlabSpec\x12W\n\tbitbucket\x18; \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BitbucketSpec\x12O\n\x05slack\x18< \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SlackSpec\x12Q\n\x06msteam\x18= \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MSTeamSpec\x12Y\n\nmatterMost\x18> \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.MattermostSpec\x12S\n\x07hipchat\x18? \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.HipchatSpec\x12U\n\x08victorop\x18@ \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VictorOpSpec\x12W\n\tpagerduty\x18\x41 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PagerDutySpec\x12U\n\x08pushover\x18\x42 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.PushoverSpec\x12U\n\x08opsgenie\x18\x43 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.OpsgenieSpec\x12S\n\x07webhook\x18\x44 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.WebhookSpec\x12U\n\x08\x66\x61\x63\x65\x62ook\x18\x45 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.FacebookSpec\x12S\n\x07twitter\x18\x46 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TwitterSpec\x12U\n\x08rabbitmq\x18G \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.RabbitMQSpec\x12O\n\x05kafka\x18H \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.KafkaSpec\x12O\n\x05neo4j\x18I \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Neo4JSpec\x12\r\n\x05owner\x18J \x01(\t\"\xfe\x01\n\x10\x43onnectionStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x03 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x04 \x01(\t\x12^\n\nconditions\x18\x05 \x03(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionCondition\"\x85\x01\n\rCouchbaseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x15\n\rdefaultBucket\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"h\n\x07\x44\x42\x32Spec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"k\n\nDermioSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"l\n\x10\x44igitalOceanSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x11\n\taccessKey\x18\x02 \x01(\t\x12\x11\n\tsecretKey\x18\x03 \x01(\t\x12\x15\n\rdefaultRegion\x18\x04 \x01(\t\x12\x0c\n\x04host\x18\x05 \x01(\t\"\x1c\n\x0b\x44ropboxSpec\x12\r\n\x05token\x18\x01 \x01(\t\"p\n\x11\x45lasticSearchSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0e\n\x06prefix\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"Y\n\nExasolSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"h\n\x07\x46TPSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\x1d\n\x0c\x46\x61\x63\x65\x62ookSpec\x12\r\n\x05token\x18\x01 \x01(\t\"I\n\x07\x46tpSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"\xa3\x01\n\x0fGcpBigQuerySpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x11\n\tprojectID\x18\x05 \x01(\t\x12\x11\n\toauthType\x18\x06 \x01(\t\x12\x1d\n\x15serviceAccountKeyPath\x18\x07 \x01(\t\x12\x0b\n\x03url\x18\x08 \x01(\t\"v\n\x0eGcpSpannerSpec\x12\x0f\n\x07project\x18\x01 \x01(\t\x12\x10\n\x08instance\x18\x02 \x01(\t\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"2\n\x0eGcpStorageSpec\x12\x0f\n\x07keyFile\x18\x01 \x01(\t\x12\x0f\n\x07project\x18\x02 \x01(\t\":\n\nGithubSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x10\n\x08userName\x18\x02 \x01(\t\x12\x0b\n\x03ssh\x18\x03 \x01(\t\"(\n\nGitlabSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0b\n\x03ssh\x18\x02 \x01(\t\"B\n\x10GoogleSheetsSpec\x12\x0e\n\x06scopes\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x12\n\ndataToPull\x18\x03 \x01(\t\"n\n\rGreenPlumSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\")\n\x0bHetznerSpec\x12\r\n\x05token\x18\x01 \x01(\t\x12\x0b\n\x03ssh\x18\x02 \x01(\t\"7\n\x0bHipchatSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x0c\n\x04room\x18\x03 \x01(\t\"E\n\x11ImageRegistrySpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x10\n\x08username\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"m\n\x0cInformixSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"i\n\tKafkaSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xe9\x01\n\x03Lab\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12L\n\x04spec\x18\x02 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabSpec\x12P\n\x06status\x18\x03 \x01(\x0b\x32@.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabStatus\"\x95\x01\n\x0cLabCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x96\x01\n\x07LabList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12I\n\x05items\x18\x02 \x03(\x0b\x32:.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab\"\xb0\x02\n\x07LabSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x36\n\ttenantRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12X\n\x06limits\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec\x12\x13\n\x0b\x63lusterName\x18\x04 \x01(\t\x12\r\n\x05owner\x18\x05 \x01(\t\x12Z\n\x0cstakeholders\x18\x06 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder\"\xc1\x01\n\tLabStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12W\n\nconditions\x18\x03 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabCondition\"\xf5\x01\n\x07License\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12P\n\x04spec\x18\x02 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseSpec\x12T\n\x06status\x18\x03 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus\"\x99\x01\n\x10LicenseCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9e\x01\n\x0bLicenseList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12M\n\x05items\x18\x02 \x03(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License\"\xbc\x04\n\x0bLicenseSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x36\n\tsecretRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.SecretReference\x12\r\n\x05owner\x18\x03 \x01(\t\x12\r\n\x05\x65mail\x18\x04 \x01(\t\x12>\n\ntrialStart\x18\x05 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12<\n\x08trialEnd\x18\x06 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x13\n\x0bmaxProducts\x18\x07 \x01(\x05\x12\x13\n\x0bmaxTrainers\x18\x08 \x01(\x05\x12\x12\n\nmaxServers\x18\t \x01(\x05\x12\x10\n\x08maxUsers\x18\n \x01(\x05\x12\x15\n\rmaxDataPlanes\x18\x0b \x01(\x05\x12\x10\n\x08\x66orecast\x18\x0c \x01(\x08\x12\x0b\n\x03nlp\x18\r \x01(\x08\x12\x0e\n\x06vision\x18\x0e \x01(\x08\x12\x0f\n\x07\x63hatbot\x18\x0f \x01(\x08\x12\x13\n\x0bproductName\x18\x10 \x01(\t\x12\x11\n\tpriceName\x18\x11 \x01(\t\x12<\n\x08\x65xpireAt\x18\x12 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x14\n\x0cnotifierName\x18\x13 \x01(\t\"\xf8\x01\n\rLicenseStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12\x15\n\rfailureReason\x18\x03 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x04 \x01(\t\x12[\n\nconditions\x18\x05 \x03(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseCondition\"\x1b\n\nLinodeSpec\x12\r\n\x05token\x18\x01 \x01(\t\"\x82\x01\n\x0fMSSqlServerSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08instance\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"\x1d\n\nMSTeamSpec\x12\x0f\n\x07webhook\x18\x01 \x01(\t\"@\n\x0eMattermostSpec\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\t\x12\x10\n\x08username\x18\x03 \x01(\t\"?\n\tMinioSpec\x12\x11\n\taccessKey\x18\x01 \x01(\t\x12\x11\n\tsecretKey\x18\x02 \x01(\t\x12\x0c\n\x04host\x18\x03 \x01(\t\"\x84\x02\n\x0cModelaSystem\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12U\n\x04spec\x18\x02 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemSpec\x12Y\n\x06status\x18\x03 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus\"\x9e\x01\n\x15ModelaSystemCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa8\x01\n\x10ModelaSystemList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12R\n\x05items\x18\x02 \x03(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystem\"\x86\x02\n\x10ModelaSystemSpec\x12\x0f\n\x07release\x18\x01 \x01(\t\x12\x0e\n\x06\x61\x63tive\x18\x02 \x01(\x08\x12W\n\x06images\x18\x03 \x01(\x0b\x32G.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.SystemImagesSpec\x12\x38\n\x0bpodTemplate\x18\x04 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\x12>\n\x11publisherTemplate\x18\x05 \x01(\x0b\x32#.k8s.io.api.core.v1.PodTemplateSpec\"\xc1\x01\n\x12ModelaSystemStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12\x15\n\rfailureReason\x18\x02 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x03 \x01(\t\x12`\n\nconditions\x18\x04 \x03(\x0b\x32L.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemCondition\"l\n\x0bMongoDbSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"j\n\tMySqlSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"X\n\tNeo4JSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"\xf8\x01\n\x08Notifier\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12Q\n\x04spec\x18\x02 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierSpec\x12U\n\x06status\x18\x03 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus\"\x9a\x01\n\x11NotifierCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa0\x01\n\x0cNotifierList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12N\n\x05items\x18\x02 \x03(\x0b\x32?.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier\"\x9c\x01\n\x0cNotifierSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\n\n\x02to\x18\x03 \x01(\t\x12\x0c\n\x04\x66rom\x18\x04 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x05 \x01(\t\x12\r\n\x05owner\x18\x06 \x01(\t\"\x8c\x02\n\x0eNotifierStatus\x12\x10\n\x08provider\x18\x01 \x01(\t\x12\x1a\n\x12observedGeneration\x18\x02 \x01(\x03\x12?\n\x0blastUpdated\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x04 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x05 \x01(\t\x12\\\n\nconditions\x18\x06 \x03(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierCondition\"%\n\x08OdbcSpec\x12\x19\n\x11\x63onntectionString\x18\x01 \x01(\t\"h\n\rOpenstackSpec\x12\x10\n\x08userName\x18\x01 \x01(\t\x12\x12\n\ntenantName\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\x12\x0f\n\x07\x61uthUrl\x18\x04 \x01(\t\x12\x0e\n\x06region\x18\x05 \x01(\t\":\n\x0cOpsgenieSpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"v\n\nOracleSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0b\n\x03sid\x18\x03 \x01(\t\x12\x0e\n\x06\x64river\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"U\n\x07OvhSpec\x12\x10\n\x08\x65ndpoint\x18\x01 \x01(\t\x12\x13\n\x0b\x61pplication\x18\x02 \x01(\t\x12\x0e\n\x06secret\x18\x03 \x01(\t\x12\x13\n\x0b\x63onsumerkey\x18\x04 \x01(\t\";\n\rPagerDutySpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"p\n\x0fPostgresSQLSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"z\n\nPrestoSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x0f\n\x07\x63\x61talog\x18\x03 \x01(\t\x12\x0e\n\x06schema\x18\x04 \x01(\t\x12\x10\n\x08username\x18\x05 \x01(\t\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\":\n\x0cPushoverSpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"N\n\x0cRabbitMQSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"\xb3\x02\n\x11ResourceLimitSpec\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12>\n\x06maxMem\x18\x02 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12>\n\x06maxCpu\x18\x03 \x01(\x0b\x32..k8s.io.apimachinery.pkg.api.resource.Quantity\x12\x0f\n\x07maxPods\x18\x04 \x01(\x05\x12\x0e\n\x06maxPvc\x18\x05 \x01(\x05\x12\x34\n\x05quota\x18\x06 \x01(\x0b\x32%.k8s.io.api.core.v1.ResourceQuotaSpec\x12\x36\n\nlimitRange\x18\x07 \x01(\x0b\x32\".k8s.io.api.core.v1.LimitRangeSpec\"l\n\x0bSAPHanaSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"i\n\x08SFTPSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08keyspace\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"J\n\x08SFtpSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"&\n\x05Scope\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x63tions\x18\x02 \x03(\t\"\x81\x02\n\x0bServingSite\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12T\n\x04spec\x18\x02 \x01(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteSpec\x12X\n\x06status\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus\"\x9d\x01\n\x14ServingSiteCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xa6\x01\n\x0fServingSiteList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12Q\n\x05items\x18\x02 \x03(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite\"\xdb\x02\n\x0fServingSiteSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x36\n\ttenantRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12X\n\x06limits\x18\x03 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec\x12\x13\n\x0bingressName\x18\x04 \x01(\t\x12\x0c\n\x04\x66\x64qn\x18\x05 \x01(\t\x12\x13\n\x0b\x63lusterName\x18\x06 \x01(\t\x12\r\n\x05owner\x18\x07 \x01(\t\x12Z\n\x0cstakeholders\x18\x08 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.StakeHolder\"\xc6\x03\n\x11ServingSiteStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x18\n\x10\x61\x63tivePredictors\x18\x03 \x01(\x05\x12\x1a\n\x12inactivePredictors\x18\x04 \x01(\x05\x12#\n\x1btotalPredictorServiceFailed\x18\x05 \x01(\x05\x12%\n\x1dtotalPredictorDataDriftFailed\x18\x06 \x01(\x05\x12$\n\x1ctotalPredictorAccuracyFailed\x18\x07 \x01(\x05\x12\x1c\n\x14lastDailyPredictions\x18\x08 \x03(\x05\x12\x15\n\rfailureReason\x18\t \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\n \x01(\t\x12_\n\nconditions\x18\x0b \x03(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteCondition\"^\n\x0fSingleStoreSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x07 \x01(\t\"Q\n\tSlackSpec\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x02 \x01(\t\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\r\n\x05token\x18\x04 \x01(\t\"J\n\x08SmtpSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08userName\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\"\x91\x01\n\rSnowflakeSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08username\x18\x03 \x01(\t\x12\x10\n\x08password\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0e\n\x06schema\x18\x06 \x01(\t\x12\x11\n\twarehouse\x18\x07 \x01(\t\x12\x0b\n\x03url\x18\x08 \x01(\t\"\x1e\n\nSqliteSpec\x12\x10\n\x08\x66ileName\x18\x01 \x01(\t\"k\n\nSybaseSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\xf8\x02\n\x10SystemImagesSpec\x12\x12\n\napiGateway\x18\x01 \x01(\t\x12\x14\n\x0c\x63ontrolPlane\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61tadock\x18\x03 \x01(\t\x12\x10\n\x08\x66rontend\x18\x04 \x01(\t\x12\x11\n\tpublisher\x18\x05 \x01(\t\x12\x0f\n\x07trainer\x18\x06 \x01(\t\x12\x16\n\x0e\x62\x61tchPredictor\x18\x07 \x01(\t\x12\x10\n\x08\x61piproxy\x18\x08 \x01(\t\x12\x11\n\tdataplane\x18\t \x01(\t\x12\x12\n\ncloudproxy\x18\n \x01(\t\x12\x15\n\rdatabaseProxy\x18\x0b \x01(\t\x12\x18\n\x10predictionRouter\x18\x0c \x01(\t\x12\x14\n\x0cmodelaSystem\x18\r \x01(\t\x12\x1e\n\x16modelaPredictionServer\x18\x0e \x01(\t\x12\x1d\n\x15modelaDashboardServer\x18\x0f \x01(\t\x12\x1b\n\x13modelaWorkerControl\x18\x10 \x01(\t\"\xf2\x01\n\x06Tenant\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12O\n\x04spec\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantSpec\x12S\n\x06status\x18\x03 \x01(\x0b\x32\x43.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus\"\x98\x01\n\x0fTenantCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\x9c\x01\n\nTenantList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12L\n\x05items\x18\x02 \x03(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant\"\xad\x01\n\nTenantSpec\x12\x37\n\ndefaultLab\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x42\n\x15\x64\x65\x66\x61ultServingSiteRef\x18\x02 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05owner\x18\x04 \x01(\t\"\xf6\x01\n\x0cTenantStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x03 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x04 \x01(\t\x12Z\n\nconditions\x18\x05 \x03(\x0b\x32\x46.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantCondition\"m\n\x0cTeradataSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\"\x1c\n\x0bTwitterSpec\x12\r\n\x05token\x18\x01 \x01(\t\"l\n\x0bVerticaSpec\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04port\x18\x02 \x01(\x05\x12\x10\n\x08\x64\x61tabase\x18\x03 \x01(\t\x12\x10\n\x08username\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x0b\n\x03url\x18\x06 \x01(\t\":\n\x0cVictorOpSpec\x12\r\n\x05\x61piID\x18\x01 \x01(\t\x12\x0e\n\x06\x61piKey\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\"\x87\x02\n\rVirtualBucket\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus\"\x9f\x01\n\x16VirtualBucketCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xaa\x01\n\x11VirtualBucketList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x88\x02\n\x11VirtualBucketSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05owner\x18\x04 \x01(\t\x12\x0e\n\x06region\x18\x05 \x01(\t\x12\x12\n\nversioning\x18\x06 \x01(\x08\x12[\n\x06quotas\x18\x07 \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.BucketResourceQuotas\"\x96\x02\n\x13VirtualBucketStatus\x12?\n\x0blastUpdated\x18\x01 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x10\n\x08provider\x18\x02 \x01(\t\x12\x1a\n\x12observedGeneration\x18\x03 \x01(\x03\x12\x15\n\rfailureReason\x18\x04 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x05 \x01(\t\x12\x61\n\nconditions\x18\x06 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketCondition\"\x8a\x02\n\x0eVirtualCluster\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12W\n\x04spec\x18\x02 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterSpec\x12[\n\x06status\x18\x03 \x01(\x0b\x32K.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterStatus\"\xa0\x01\n\x17VirtualClusterCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x03 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x04 \x01(\t\x12\x0f\n\x07message\x18\x05 \x01(\t\"\xac\x01\n\x12VirtualClusterList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12T\n\x05items\x18\x02 \x03(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster\"\xce\x02\n\x12VirtualClusterSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\r\n\x05nodes\x18\x03 \x01(\x05\x12\x15\n\rnodeClassName\x18\x04 \x01(\t\x12\x0c\n\x04gpus\x18\x05 \x01(\x05\x12\x14\n\x0cgpuClassName\x18\x06 \x01(\t\x12\x12\n\nvolumeSize\x18\x07 \x01(\x05\x12\x0c\n\x04spot\x18\x08 \x01(\x08\x12\x16\n\x0e\x63onnectionName\x18\t \x01(\t\x12\r\n\x05owner\x18\n \x01(\t\x12X\n\x06limits\x18\x0b \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ResourceLimitSpec\"\xb5\x02\n\x14VirtualClusterStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12\x16\n\x0e\x61vailableNodes\x18\x02 \x01(\x05\x12\x15\n\ravailableGpus\x18\x03 \x01(\x05\x12?\n\x0blastUpdated\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x05 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x06 \x01(\t\x12\x62\n\nconditions\x18\x07 \x03(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterCondition\"\x87\x02\n\rVirtualVolume\x12\x42\n\x08metadata\x18\x01 \x01(\x0b\x32\x30.k8s.io.apimachinery.pkg.apis.meta.v1.ObjectMeta\x12V\n\x04spec\x18\x02 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeSpec\x12Z\n\x06status\x18\x03 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeStatus\"\x9f\x01\n\x16VirtualVolumeCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x46\n\x12lastTransitionTime\x18\x04 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x0e\n\x06reason\x18\x05 \x01(\t\x12\x0f\n\x07message\x18\x06 \x01(\t\"\xaa\x01\n\x11VirtualVolumeList\x12@\n\x08metadata\x18\x01 \x01(\x0b\x32..k8s.io.apimachinery.pkg.apis.meta.v1.ListMeta\x12S\n\x05items\x18\x02 \x03(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume\"\x87\x01\n\x11VirtualVolumeSpec\x12\x36\n\ttenantRef\x18\x01 \x01(\x0b\x32#.k8s.io.api.core.v1.ObjectReference\x12\x16\n\x0e\x63onnectionName\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05owner\x18\x04 \x01(\t\"\x84\x02\n\x13VirtualVolumeStatus\x12\x1a\n\x12observedGeneration\x18\x01 \x01(\x03\x12?\n\x0blastUpdated\x18\x02 \x01(\x0b\x32*.k8s.io.apimachinery.pkg.apis.meta.v1.Time\x12\x15\n\rfailureReason\x18\x03 \x01(\t\x12\x16\n\x0e\x66\x61ilureMessage\x18\x04 \x01(\t\x12\x61\n\nconditions\x18\x05 \x03(\x0b\x32M.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeCondition\"\x1a\n\x0bWebhookSpec\x12\x0b\n\x03url\x18\x01 \x01(\tB7Z5github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_catalog_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_api_dot_core_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_api_dot_resource_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_generated__pb2.DESCRIPTOR,k8s_dot_io_dot_apimachinery_dot_pkg_dot_runtime_dot_schema_dot_generated__pb2.DESCRIPTOR,])
 
@@ -390,8 +390,22 @@ _ACCOUNTSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.conditions', index=2,
-      number=3, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.failureReason', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.failureMessage', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountStatus.conditions', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -409,7 +423,7 @@ _ACCOUNTSTATUS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1758,
-  serialized_end=1959,
+  serialized_end=2006,
 )
 
 
@@ -454,8 +468,8 @@ _ALERT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1962,
-  serialized_end=2201,
+  serialized_start=2009,
+  serialized_end=2248,
 )
 
 
@@ -514,8 +528,8 @@ _ALERTCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2204,
-  serialized_end=2355,
+  serialized_start=2251,
+  serialized_end=2402,
 )
 
 
@@ -553,8 +567,8 @@ _ALERTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2358,
-  serialized_end=2512,
+  serialized_start=2405,
+  serialized_end=2559,
 )
 
 
@@ -592,8 +606,8 @@ _ALERTSPEC_FIELDSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2833,
-  serialized_end=2878,
+  serialized_start=2880,
+  serialized_end=2925,
 )
 
 _ALERTSPEC = _descriptor.Descriptor(
@@ -679,8 +693,8 @@ _ALERTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2515,
-  serialized_end=2878,
+  serialized_start=2562,
+  serialized_end=2925,
 )
 
 
@@ -721,8 +735,22 @@ _ALERTSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.conditions', index=4,
-      number=5, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.failureReason', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.failureMessage', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertStatus.conditions', index=6,
+      number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -739,8 +767,8 @@ _ALERTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2881,
-  serialized_end=3149,
+  serialized_start=2928,
+  serialized_end=3243,
 )
 
 
@@ -792,8 +820,8 @@ _ALICLOUDSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3151,
-  serialized_end=3233,
+  serialized_start=3245,
+  serialized_end=3327,
 )
 
 
@@ -852,8 +880,8 @@ _AMAZONATHENASPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3235,
-  serialized_end=3336,
+  serialized_start=3329,
+  serialized_end=3430,
 )
 
 
@@ -919,8 +947,8 @@ _AMAZONREDSHIFTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3338,
-  serialized_end=3453,
+  serialized_start=3432,
+  serialized_end=3547,
 )
 
 
@@ -986,8 +1014,8 @@ _APACHECASSANDRASPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3455,
-  serialized_end=3571,
+  serialized_start=3549,
+  serialized_end=3665,
 )
 
 
@@ -1053,8 +1081,8 @@ _APACHEDRILLSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3573,
-  serialized_end=3685,
+  serialized_start=3667,
+  serialized_end=3779,
 )
 
 
@@ -1120,8 +1148,8 @@ _APACHEDRUIDSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3687,
-  serialized_end=3799,
+  serialized_start=3781,
+  serialized_end=3893,
 )
 
 
@@ -1187,8 +1215,8 @@ _APACHEHIVESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3801,
-  serialized_end=3910,
+  serialized_start=3895,
+  serialized_end=4004,
 )
 
 
@@ -1254,8 +1282,8 @@ _APACHESPARKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3912,
-  serialized_end=4022,
+  serialized_start=4006,
+  serialized_end=4116,
 )
 
 
@@ -1300,8 +1328,8 @@ _APITOKEN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4025,
-  serialized_end=4273,
+  serialized_start=4119,
+  serialized_end=4367,
 )
 
 
@@ -1360,8 +1388,8 @@ _APITOKENCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4276,
-  serialized_end=4430,
+  serialized_start=4370,
+  serialized_end=4524,
 )
 
 
@@ -1399,8 +1427,8 @@ _APITOKENLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4433,
-  serialized_end=4593,
+  serialized_start=4527,
+  serialized_end=4687,
 )
 
 
@@ -1445,8 +1473,8 @@ _APITOKENSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4596,
-  serialized_end=4724,
+  serialized_start=4690,
+  serialized_end=4818,
 )
 
 
@@ -1491,8 +1519,8 @@ _APITOKENSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4727,
-  serialized_end=4930,
+  serialized_start=4821,
+  serialized_end=5024,
 )
 
 
@@ -1537,8 +1565,8 @@ _ATTACHMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4933,
-  serialized_end=5187,
+  serialized_start=5027,
+  serialized_end=5281,
 )
 
 
@@ -1597,8 +1625,8 @@ _ATTACHMENTCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5190,
-  serialized_end=5346,
+  serialized_start=5284,
+  serialized_end=5440,
 )
 
 
@@ -1636,8 +1664,8 @@ _ATTACHMENTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5349,
-  serialized_end=5513,
+  serialized_start=5443,
+  serialized_end=5607,
 )
 
 
@@ -1703,8 +1731,8 @@ _ATTACHMENTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5516,
-  serialized_end=5714,
+  serialized_start=5610,
+  serialized_end=5808,
 )
 
 
@@ -1745,8 +1773,22 @@ _ATTACHMENTSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.conditions', index=4,
-      number=5, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.failureReason', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.failureMessage', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentStatus.conditions', index=6,
+      number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1763,8 +1805,8 @@ _ATTACHMENTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5717,
-  serialized_end=5995,
+  serialized_start=5811,
+  serialized_end=6136,
 )
 
 
@@ -1802,8 +1844,8 @@ _AVATARSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5997,
-  serialized_end=6043,
+  serialized_start=6138,
+  serialized_end=6184,
 )
 
 
@@ -1848,8 +1890,8 @@ _AWSS3SPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6045,
-  serialized_end=6117,
+  serialized_start=6186,
+  serialized_end=6258,
 )
 
 
@@ -1915,8 +1957,8 @@ _AZURESQLDATABASESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6119,
-  serialized_end=6236,
+  serialized_start=6260,
+  serialized_end=6377,
 )
 
 
@@ -1954,8 +1996,8 @@ _AZURESTORAGESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6238,
-  serialized_end=6299,
+  serialized_start=6379,
+  serialized_end=6440,
 )
 
 
@@ -2000,8 +2042,8 @@ _BITBUCKETSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6301,
-  serialized_end=6362,
+  serialized_start=6442,
+  serialized_end=6503,
 )
 
 
@@ -2032,8 +2074,8 @@ _BOXSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6364,
-  serialized_end=6388,
+  serialized_start=6505,
+  serialized_end=6529,
 )
 
 
@@ -2071,8 +2113,8 @@ _BUCKETRESOURCEQUOTAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6390,
-  serialized_end=6496,
+  serialized_start=6531,
+  serialized_end=6637,
 )
 
 
@@ -2138,8 +2180,8 @@ _CLICKHOUSESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6498,
-  serialized_end=6609,
+  serialized_start=6639,
+  serialized_end=6750,
 )
 
 
@@ -2205,8 +2247,8 @@ _COCKROACHDBSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6611,
-  serialized_end=6723,
+  serialized_start=6752,
+  serialized_end=6864,
 )
 
 
@@ -2251,8 +2293,8 @@ _COMMIT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6726,
-  serialized_end=6968,
+  serialized_start=6867,
+  serialized_end=7109,
 )
 
 
@@ -2311,8 +2353,8 @@ _COMMITCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6971,
-  serialized_end=7123,
+  serialized_start=7112,
+  serialized_end=7264,
 )
 
 
@@ -2350,8 +2392,8 @@ _COMMITLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7126,
-  serialized_end=7282,
+  serialized_start=7267,
+  serialized_end=7423,
 )
 
 
@@ -2403,8 +2445,8 @@ _COMMITSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7285,
-  serialized_end=7441,
+  serialized_start=7426,
+  serialized_end=7582,
 )
 
 
@@ -2445,8 +2487,22 @@ _COMMITSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitStatus.conditions', index=4,
-      number=5, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitStatus.failureReason', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitStatus.failureMessage', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitStatus.conditions', index=6,
+      number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2463,8 +2519,8 @@ _COMMITSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7444,
-  serialized_end=7714,
+  serialized_start=7585,
+  serialized_end=7902,
 )
 
 
@@ -2509,8 +2565,8 @@ _CONNECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7717,
-  serialized_end=7971,
+  serialized_start=7905,
+  serialized_end=8159,
 )
 
 
@@ -2569,8 +2625,8 @@ _CONNECTIONCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7974,
-  serialized_end=8130,
+  serialized_start=8162,
+  serialized_end=8318,
 )
 
 
@@ -2608,8 +2664,8 @@ _CONNECTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8133,
-  serialized_end=8297,
+  serialized_start=8321,
+  serialized_end=8485,
 )
 
 
@@ -3137,8 +3193,8 @@ _CONNECTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8300,
-  serialized_end=14265,
+  serialized_start=8488,
+  serialized_end=14453,
 )
 
 
@@ -3165,8 +3221,22 @@ _CONNECTIONSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.conditions', index=2,
-      number=3, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.failureReason', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.failureMessage', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionStatus.conditions', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -3183,8 +3253,8 @@ _CONNECTIONSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14268,
-  serialized_end=14475,
+  serialized_start=14456,
+  serialized_end=14710,
 )
 
 
@@ -3257,8 +3327,8 @@ _COUCHBASESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14478,
-  serialized_end=14611,
+  serialized_start=14713,
+  serialized_end=14846,
 )
 
 
@@ -3324,8 +3394,8 @@ _DB2SPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14613,
-  serialized_end=14717,
+  serialized_start=14848,
+  serialized_end=14952,
 )
 
 
@@ -3391,8 +3461,8 @@ _DERMIOSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14719,
-  serialized_end=14826,
+  serialized_start=14954,
+  serialized_end=15061,
 )
 
 
@@ -3451,8 +3521,8 @@ _DIGITALOCEANSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14828,
-  serialized_end=14936,
+  serialized_start=15063,
+  serialized_end=15171,
 )
 
 
@@ -3483,8 +3553,8 @@ _DROPBOXSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14938,
-  serialized_end=14966,
+  serialized_start=15173,
+  serialized_end=15201,
 )
 
 
@@ -3550,8 +3620,8 @@ _ELASTICSEARCHSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=14968,
-  serialized_end=15080,
+  serialized_start=15203,
+  serialized_end=15315,
 )
 
 
@@ -3610,8 +3680,8 @@ _EXASOLSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15082,
-  serialized_end=15171,
+  serialized_start=15317,
+  serialized_end=15406,
 )
 
 
@@ -3677,8 +3747,8 @@ _FTPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15173,
-  serialized_end=15277,
+  serialized_start=15408,
+  serialized_end=15512,
 )
 
 
@@ -3709,8 +3779,8 @@ _FACEBOOKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15279,
-  serialized_end=15308,
+  serialized_start=15514,
+  serialized_end=15543,
 )
 
 
@@ -3762,8 +3832,8 @@ _FTPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15310,
-  serialized_end=15383,
+  serialized_start=15545,
+  serialized_end=15618,
 )
 
 
@@ -3843,8 +3913,8 @@ _GCPBIGQUERYSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15386,
-  serialized_end=15549,
+  serialized_start=15621,
+  serialized_end=15784,
 )
 
 
@@ -3910,8 +3980,8 @@ _GCPSPANNERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15551,
-  serialized_end=15669,
+  serialized_start=15786,
+  serialized_end=15904,
 )
 
 
@@ -3949,8 +4019,8 @@ _GCPSTORAGESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15671,
-  serialized_end=15721,
+  serialized_start=15906,
+  serialized_end=15956,
 )
 
 
@@ -3995,8 +4065,8 @@ _GITHUBSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15723,
-  serialized_end=15781,
+  serialized_start=15958,
+  serialized_end=16016,
 )
 
 
@@ -4034,8 +4104,8 @@ _GITLABSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15783,
-  serialized_end=15823,
+  serialized_start=16018,
+  serialized_end=16058,
 )
 
 
@@ -4080,8 +4150,8 @@ _GOOGLESHEETSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15825,
-  serialized_end=15891,
+  serialized_start=16060,
+  serialized_end=16126,
 )
 
 
@@ -4147,8 +4217,8 @@ _GREENPLUMSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15893,
-  serialized_end=16003,
+  serialized_start=16128,
+  serialized_end=16238,
 )
 
 
@@ -4186,8 +4256,8 @@ _HETZNERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16005,
-  serialized_end=16046,
+  serialized_start=16240,
+  serialized_end=16281,
 )
 
 
@@ -4232,8 +4302,8 @@ _HIPCHATSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16048,
-  serialized_end=16103,
+  serialized_start=16283,
+  serialized_end=16338,
 )
 
 
@@ -4278,8 +4348,8 @@ _IMAGEREGISTRYSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16105,
-  serialized_end=16174,
+  serialized_start=16340,
+  serialized_end=16409,
 )
 
 
@@ -4345,8 +4415,8 @@ _INFORMIXSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16176,
-  serialized_end=16285,
+  serialized_start=16411,
+  serialized_end=16520,
 )
 
 
@@ -4412,8 +4482,8 @@ _KAFKASPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16287,
-  serialized_end=16392,
+  serialized_start=16522,
+  serialized_end=16627,
 )
 
 
@@ -4458,8 +4528,8 @@ _LAB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16395,
-  serialized_end=16628,
+  serialized_start=16630,
+  serialized_end=16863,
 )
 
 
@@ -4518,8 +4588,8 @@ _LABCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16631,
-  serialized_end=16780,
+  serialized_start=16866,
+  serialized_end=17015,
 )
 
 
@@ -4557,8 +4627,8 @@ _LABLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16783,
-  serialized_end=16933,
+  serialized_start=17018,
+  serialized_end=17168,
 )
 
 
@@ -4624,8 +4694,8 @@ _LABSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16936,
-  serialized_end=17240,
+  serialized_start=17171,
+  serialized_end=17475,
 )
 
 
@@ -4670,8 +4740,8 @@ _LABSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17243,
-  serialized_end=17436,
+  serialized_start=17478,
+  serialized_end=17671,
 )
 
 
@@ -4716,8 +4786,8 @@ _LICENSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17439,
-  serialized_end=17684,
+  serialized_start=17674,
+  serialized_end=17919,
 )
 
 
@@ -4776,8 +4846,8 @@ _LICENSECONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17687,
-  serialized_end=17840,
+  serialized_start=17922,
+  serialized_end=18075,
 )
 
 
@@ -4815,8 +4885,8 @@ _LICENSELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17843,
-  serialized_end=18001,
+  serialized_start=18078,
+  serialized_end=18236,
 )
 
 
@@ -4973,8 +5043,8 @@ _LICENSESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18004,
-  serialized_end=18576,
+  serialized_start=18239,
+  serialized_end=18811,
 )
 
 
@@ -5001,8 +5071,22 @@ _LICENSESTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.conditions', index=2,
-      number=3, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.failureReason', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.failureMessage', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseStatus.conditions', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -5019,8 +5103,8 @@ _LICENSESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18579,
-  serialized_end=18780,
+  serialized_start=18814,
+  serialized_end=19062,
 )
 
 
@@ -5051,8 +5135,8 @@ _LINODESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18782,
-  serialized_end=18809,
+  serialized_start=19064,
+  serialized_end=19091,
 )
 
 
@@ -5125,8 +5209,8 @@ _MSSQLSERVERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18812,
-  serialized_end=18942,
+  serialized_start=19094,
+  serialized_end=19224,
 )
 
 
@@ -5157,8 +5241,8 @@ _MSTEAMSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18944,
-  serialized_end=18973,
+  serialized_start=19226,
+  serialized_end=19255,
 )
 
 
@@ -5203,8 +5287,8 @@ _MATTERMOSTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=18975,
-  serialized_end=19039,
+  serialized_start=19257,
+  serialized_end=19321,
 )
 
 
@@ -5249,8 +5333,8 @@ _MINIOSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19041,
-  serialized_end=19104,
+  serialized_start=19323,
+  serialized_end=19386,
 )
 
 
@@ -5295,8 +5379,8 @@ _MODELASYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19107,
-  serialized_end=19367,
+  serialized_start=19389,
+  serialized_end=19649,
 )
 
 
@@ -5355,8 +5439,8 @@ _MODELASYSTEMCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19370,
-  serialized_end=19528,
+  serialized_start=19652,
+  serialized_end=19810,
 )
 
 
@@ -5394,8 +5478,8 @@ _MODELASYSTEMLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19531,
-  serialized_end=19699,
+  serialized_start=19813,
+  serialized_end=19981,
 )
 
 
@@ -5454,8 +5538,8 @@ _MODELASYSTEMSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19702,
-  serialized_end=19964,
+  serialized_start=19984,
+  serialized_end=20246,
 )
 
 
@@ -5475,8 +5559,22 @@ _MODELASYSTEMSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.conditions', index=1,
-      number=2, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.failureReason', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.failureMessage', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ModelaSystemStatus.conditions', index=3,
+      number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -5493,8 +5591,8 @@ _MODELASYSTEMSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=19967,
-  serialized_end=20113,
+  serialized_start=20249,
+  serialized_end=20442,
 )
 
 
@@ -5560,8 +5658,8 @@ _MONGODBSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20115,
-  serialized_end=20223,
+  serialized_start=20444,
+  serialized_end=20552,
 )
 
 
@@ -5627,8 +5725,8 @@ _MYSQLSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20225,
-  serialized_end=20331,
+  serialized_start=20554,
+  serialized_end=20660,
 )
 
 
@@ -5687,8 +5785,8 @@ _NEO4JSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20333,
-  serialized_end=20421,
+  serialized_start=20662,
+  serialized_end=20750,
 )
 
 
@@ -5733,8 +5831,8 @@ _NOTIFIER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20424,
-  serialized_end=20672,
+  serialized_start=20753,
+  serialized_end=21001,
 )
 
 
@@ -5793,8 +5891,8 @@ _NOTIFIERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20675,
-  serialized_end=20829,
+  serialized_start=21004,
+  serialized_end=21158,
 )
 
 
@@ -5832,8 +5930,8 @@ _NOTIFIERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20832,
-  serialized_end=20992,
+  serialized_start=21161,
+  serialized_end=21321,
 )
 
 
@@ -5899,8 +5997,8 @@ _NOTIFIERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=20995,
-  serialized_end=21151,
+  serialized_start=21324,
+  serialized_end=21480,
 )
 
 
@@ -5934,8 +6032,22 @@ _NOTIFIERSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.conditions', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.failureReason', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.failureMessage', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierStatus.conditions', index=5,
+      number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -5952,8 +6064,8 @@ _NOTIFIERSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21154,
-  serialized_end=21375,
+  serialized_start=21483,
+  serialized_end=21751,
 )
 
 
@@ -5984,8 +6096,8 @@ _ODBCSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21377,
-  serialized_end=21414,
+  serialized_start=21753,
+  serialized_end=21790,
 )
 
 
@@ -6044,8 +6156,8 @@ _OPENSTACKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21416,
-  serialized_end=21520,
+  serialized_start=21792,
+  serialized_end=21896,
 )
 
 
@@ -6090,8 +6202,8 @@ _OPSGENIESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21522,
-  serialized_end=21580,
+  serialized_start=21898,
+  serialized_end=21956,
 )
 
 
@@ -6164,8 +6276,8 @@ _ORACLESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21582,
-  serialized_end=21700,
+  serialized_start=21958,
+  serialized_end=22076,
 )
 
 
@@ -6217,8 +6329,8 @@ _OVHSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21702,
-  serialized_end=21787,
+  serialized_start=22078,
+  serialized_end=22163,
 )
 
 
@@ -6263,8 +6375,8 @@ _PAGERDUTYSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21789,
-  serialized_end=21848,
+  serialized_start=22165,
+  serialized_end=22224,
 )
 
 
@@ -6330,8 +6442,8 @@ _POSTGRESSQLSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21850,
-  serialized_end=21962,
+  serialized_start=22226,
+  serialized_end=22338,
 )
 
 
@@ -6404,8 +6516,8 @@ _PRESTOSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=21964,
-  serialized_end=22086,
+  serialized_start=22340,
+  serialized_end=22462,
 )
 
 
@@ -6450,8 +6562,8 @@ _PUSHOVERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22088,
-  serialized_end=22146,
+  serialized_start=22464,
+  serialized_end=22522,
 )
 
 
@@ -6503,8 +6615,8 @@ _RABBITMQSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22148,
-  serialized_end=22226,
+  serialized_start=22524,
+  serialized_end=22602,
 )
 
 
@@ -6577,8 +6689,8 @@ _RESOURCELIMITSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22229,
-  serialized_end=22536,
+  serialized_start=22605,
+  serialized_end=22912,
 )
 
 
@@ -6644,8 +6756,8 @@ _SAPHANASPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22538,
-  serialized_end=22646,
+  serialized_start=22914,
+  serialized_end=23022,
 )
 
 
@@ -6711,8 +6823,8 @@ _SFTPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22648,
-  serialized_end=22753,
+  serialized_start=23024,
+  serialized_end=23129,
 )
 
 
@@ -6764,8 +6876,8 @@ _SFTPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22755,
-  serialized_end=22829,
+  serialized_start=23131,
+  serialized_end=23205,
 )
 
 
@@ -6803,8 +6915,8 @@ _SCOPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22831,
-  serialized_end=22869,
+  serialized_start=23207,
+  serialized_end=23245,
 )
 
 
@@ -6849,8 +6961,8 @@ _SERVINGSITE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22872,
-  serialized_end=23129,
+  serialized_start=23248,
+  serialized_end=23505,
 )
 
 
@@ -6909,8 +7021,8 @@ _SERVINGSITECONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23132,
-  serialized_end=23289,
+  serialized_start=23508,
+  serialized_end=23665,
 )
 
 
@@ -6948,8 +7060,8 @@ _SERVINGSITELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23292,
-  serialized_end=23458,
+  serialized_start=23668,
+  serialized_end=23834,
 )
 
 
@@ -7029,8 +7141,8 @@ _SERVINGSITESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23461,
-  serialized_end=23808,
+  serialized_start=23837,
+  serialized_end=24184,
 )
 
 
@@ -7099,8 +7211,22 @@ _SERVINGSITESTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.conditions', index=8,
-      number=9, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.failureReason', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.failureMessage', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteStatus.conditions', index=10,
+      number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -7117,8 +7243,8 @@ _SERVINGSITESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=23811,
-  serialized_end=24218,
+  serialized_start=24187,
+  serialized_end=24641,
 )
 
 
@@ -7177,8 +7303,8 @@ _SINGLESTORESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24220,
-  serialized_end=24314,
+  serialized_start=24643,
+  serialized_end=24737,
 )
 
 
@@ -7230,8 +7356,8 @@ _SLACKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24316,
-  serialized_end=24397,
+  serialized_start=24739,
+  serialized_end=24820,
 )
 
 
@@ -7283,8 +7409,8 @@ _SMTPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24399,
-  serialized_end=24473,
+  serialized_start=24822,
+  serialized_end=24896,
 )
 
 
@@ -7364,8 +7490,8 @@ _SNOWFLAKESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24476,
-  serialized_end=24621,
+  serialized_start=24899,
+  serialized_end=25044,
 )
 
 
@@ -7396,8 +7522,8 @@ _SQLITESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24623,
-  serialized_end=24653,
+  serialized_start=25046,
+  serialized_end=25076,
 )
 
 
@@ -7463,8 +7589,8 @@ _SYBASESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24655,
-  serialized_end=24762,
+  serialized_start=25078,
+  serialized_end=25185,
 )
 
 
@@ -7600,8 +7726,8 @@ _SYSTEMIMAGESSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=24765,
-  serialized_end=25141,
+  serialized_start=25188,
+  serialized_end=25564,
 )
 
 
@@ -7646,8 +7772,8 @@ _TENANT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25144,
-  serialized_end=25386,
+  serialized_start=25567,
+  serialized_end=25809,
 )
 
 
@@ -7706,8 +7832,8 @@ _TENANTCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25389,
-  serialized_end=25541,
+  serialized_start=25812,
+  serialized_end=25964,
 )
 
 
@@ -7745,8 +7871,8 @@ _TENANTLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25544,
-  serialized_end=25700,
+  serialized_start=25967,
+  serialized_end=26123,
 )
 
 
@@ -7798,8 +7924,8 @@ _TENANTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25703,
-  serialized_end=25876,
+  serialized_start=26126,
+  serialized_end=26299,
 )
 
 
@@ -7820,14 +7946,28 @@ _TENANTSTATUS = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='lastUpdated', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.lastUpdated', index=1,
-      number=4, type=11, cpp_type=10, label=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.conditions', index=2,
-      number=2, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.failureReason', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.failureMessage', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantStatus.conditions', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -7844,8 +7984,8 @@ _TENANTSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=25879,
-  serialized_end=26078,
+  serialized_start=26302,
+  serialized_end=26548,
 )
 
 
@@ -7911,8 +8051,8 @@ _TERADATASPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26080,
-  serialized_end=26189,
+  serialized_start=26550,
+  serialized_end=26659,
 )
 
 
@@ -7943,8 +8083,8 @@ _TWITTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26191,
-  serialized_end=26219,
+  serialized_start=26661,
+  serialized_end=26689,
 )
 
 
@@ -8010,8 +8150,8 @@ _VERTICASPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26221,
-  serialized_end=26329,
+  serialized_start=26691,
+  serialized_end=26799,
 )
 
 
@@ -8056,8 +8196,8 @@ _VICTOROPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26331,
-  serialized_end=26389,
+  serialized_start=26801,
+  serialized_end=26859,
 )
 
 
@@ -8102,8 +8242,8 @@ _VIRTUALBUCKET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26392,
-  serialized_end=26655,
+  serialized_start=26862,
+  serialized_end=27125,
 )
 
 
@@ -8162,8 +8302,8 @@ _VIRTUALBUCKETCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26658,
-  serialized_end=26817,
+  serialized_start=27128,
+  serialized_end=27287,
 )
 
 
@@ -8201,8 +8341,8 @@ _VIRTUALBUCKETLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26820,
-  serialized_end=26990,
+  serialized_start=27290,
+  serialized_end=27460,
 )
 
 
@@ -8275,8 +8415,8 @@ _VIRTUALBUCKETSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=26993,
-  serialized_end=27257,
+  serialized_start=27463,
+  serialized_end=27727,
 )
 
 
@@ -8310,8 +8450,22 @@ _VIRTUALBUCKETSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.conditions', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.failureReason', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.failureMessage', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketStatus.conditions', index=5,
+      number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -8328,8 +8482,8 @@ _VIRTUALBUCKETSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27260,
-  serialized_end=27491,
+  serialized_start=27730,
+  serialized_end=28008,
 )
 
 
@@ -8374,8 +8528,8 @@ _VIRTUALCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27494,
-  serialized_end=27760,
+  serialized_start=28011,
+  serialized_end=28277,
 )
 
 
@@ -8434,8 +8588,8 @@ _VIRTUALCLUSTERCONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27763,
-  serialized_end=27923,
+  serialized_start=28280,
+  serialized_end=28440,
 )
 
 
@@ -8473,8 +8627,8 @@ _VIRTUALCLUSTERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=27926,
-  serialized_end=28098,
+  serialized_start=28443,
+  serialized_end=28615,
 )
 
 
@@ -8575,8 +8729,8 @@ _VIRTUALCLUSTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28101,
-  serialized_end=28435,
+  serialized_start=28618,
+  serialized_end=28952,
 )
 
 
@@ -8617,8 +8771,22 @@ _VIRTUALCLUSTERSTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterStatus.conditions', index=4,
-      number=5, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterStatus.failureReason', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterStatus.failureMessage', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterStatus.conditions', index=6,
+      number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -8635,8 +8803,8 @@ _VIRTUALCLUSTERSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28438,
-  serialized_end=28700,
+  serialized_start=28955,
+  serialized_end=29264,
 )
 
 
@@ -8681,8 +8849,8 @@ _VIRTUALVOLUME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28703,
-  serialized_end=28966,
+  serialized_start=29267,
+  serialized_end=29530,
 )
 
 
@@ -8741,8 +8909,8 @@ _VIRTUALVOLUMECONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=28969,
-  serialized_end=29128,
+  serialized_start=29533,
+  serialized_end=29692,
 )
 
 
@@ -8780,8 +8948,8 @@ _VIRTUALVOLUMELIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29131,
-  serialized_end=29301,
+  serialized_start=29695,
+  serialized_end=29865,
 )
 
 
@@ -8833,8 +9001,8 @@ _VIRTUALVOLUMESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29304,
-  serialized_end=29439,
+  serialized_start=29868,
+  serialized_end=30003,
 )
 
 
@@ -8861,8 +9029,22 @@ _VIRTUALVOLUMESTATUS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeStatus.conditions', index=2,
-      number=3, type=11, cpp_type=10, label=3,
+      name='failureReason', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeStatus.failureReason', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='failureMessage', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeStatus.failureMessage', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='conditions', full_name='github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeStatus.conditions', index=4,
+      number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -8879,8 +9061,8 @@ _VIRTUALVOLUMESTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29442,
-  serialized_end=29655,
+  serialized_start=30006,
+  serialized_end=30266,
 )
 
 
@@ -8911,8 +9093,8 @@ _WEBHOOKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=29657,
-  serialized_end=29683,
+  serialized_start=30268,
+  serialized_end=30294,
 )
 
 _ACCOUNT.fields_by_name['metadata'].message_type = k8s_dot_io_dot_apimachinery_dot_pkg_dot_apis_dot_meta_dot_v1_dot_generated__pb2._OBJECTMETA

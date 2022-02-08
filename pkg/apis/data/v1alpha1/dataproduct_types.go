@@ -180,10 +180,17 @@ type DataProductStatus struct {
 	// Last time prediction
 	//+kubebuilder:validation:Optional
 	LastPrediction *metav1.Time `json:"lastPrediction,omitempty" protobuf:"bytes,5,opt,name=lastPrediction"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,6,opt,name=failureReason"`
+
+	// Update in case of terminal failure message
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMessage"`
+
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,6,rep,name=conditions"`
+	Conditions []DataProductCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,8,rep,name=conditions"`
 }
 
 // +kubebuilder:object:root=true

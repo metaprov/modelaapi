@@ -936,6 +936,16 @@ func (in *DataPipelineRunStatus) DeepCopyInto(out *DataPipelineRunStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Progress != nil {
 		in, out := &in.Progress, &out.Progress
 		*out = new(int32)
@@ -1038,6 +1048,16 @@ func (in *DataPipelineStatus) DeepCopyInto(out *DataPipelineStatus) {
 	if in.LastRun != nil {
 		in, out := &in.LastRun, &out.LastRun
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -1245,6 +1265,16 @@ func (in *DataProductStatus) DeepCopyInto(out *DataProductStatus) {
 		in, out := &in.LastPrediction, &out.LastPrediction
 		*out = (*in).DeepCopy()
 	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]DataProductCondition, len(*in))
@@ -1384,6 +1414,16 @@ func (in *DataProductVersionStatus) DeepCopyInto(out *DataProductVersionStatus) 
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -1548,6 +1588,16 @@ func (in *DataSourceStatus) DeepCopyInto(out *DataSourceStatus) {
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -1800,6 +1850,16 @@ func (in *DatasetStatus) DeepCopyInto(out *DatasetStatus) {
 	if in.NotificationTime != nil {
 		in, out := &in.NotificationTime, &out.NotificationTime
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	in.Logs.DeepCopyInto(&out.Logs)
 	if in.DerivedFromDataset != nil {
@@ -4048,6 +4108,16 @@ func (in *RecipeRunStatus) DeepCopyInto(out *RecipeRunStatus) {
 		in, out := &in.EndTime, &out.EndTime
 		*out = (*in).DeepCopy()
 	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	in.Logs.DeepCopyInto(&out.Logs)
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
@@ -4133,6 +4203,16 @@ func (in *RecipeStatus) DeepCopyInto(out *RecipeStatus) {
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -4615,6 +4695,16 @@ func (in *SqlQueryRunStatus) DeepCopyInto(out *SqlQueryRunStatus) {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
 	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
 		*out = make([]SqlQueryRunCondition, len(*in))
@@ -4676,6 +4766,16 @@ func (in *SqlQueryStatus) DeepCopyInto(out *SqlQueryStatus) {
 	if in.LastRun != nil {
 		in, out := &in.LastRun, &out.LastRun
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions
@@ -5059,6 +5159,16 @@ func (in *WebRequestRunStatus) DeepCopyInto(out *WebRequestRunStatus) {
 		*out = (*in).DeepCopy()
 	}
 	in.Location.DeepCopyInto(&out.Location)
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
+	}
 	if in.LastUpdated != nil {
 		in, out := &in.LastUpdated, &out.LastUpdated
 		*out = (*in).DeepCopy()
@@ -5124,6 +5234,16 @@ func (in *WebRequestStatus) DeepCopyInto(out *WebRequestStatus) {
 	if in.LastRun != nil {
 		in, out := &in.LastRun, &out.LastRun
 		*out = (*in).DeepCopy()
+	}
+	if in.FailureReason != nil {
+		in, out := &in.FailureReason, &out.FailureReason
+		*out = new(catalogv1alpha1.StatusError)
+		**out = **in
+	}
+	if in.FailureMessage != nil {
+		in, out := &in.FailureMessage, &out.FailureMessage
+		*out = new(string)
+		**out = **in
 	}
 	if in.Conditions != nil {
 		in, out := &in.Conditions, &out.Conditions

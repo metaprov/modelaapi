@@ -5734,7 +5734,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportSpec.pr
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.repeatedFields_ = [4];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.repeatedFields_ = [6];
 
 
 
@@ -5770,6 +5770,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.
     lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition.toObject, includeInstance)
   };
@@ -5823,6 +5825,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.
       msg.setObservedgeneration(value);
       break;
     case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailurereason(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -5879,10 +5889,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      4,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition.serializeBinaryToWriter
     );
@@ -6001,12 +6025,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.
 
 
 /**
- * repeated CronReportCondition conditions = 4;
+ * optional string failureReason = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.getFailurereason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.setFailurereason = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.clearFailurereason = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.hasFailurereason = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string failureMessage = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated CronReportCondition conditions = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition, 4));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition, 6));
 };
 
 
@@ -6015,7 +6111,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -6025,7 +6121,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportCondition, opt_index);
 };
 
 
@@ -18597,7 +18693,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.repeatedFields_ = [22];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.repeatedFields_ = [23];
 
 
 
@@ -18648,7 +18744,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition.toObject, includeInstance)
@@ -18765,14 +18862,18 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       break;
     case 20:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 21:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 22:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 22:
+    case 23:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -18942,10 +19043,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeString(
+      21,
+      f
+    );
+  }
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      21,
+      22,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -18953,7 +19061,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      22,
+      23,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition.serializeBinaryToWriter
     );
@@ -19613,10 +19721,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
 
 
 /**
- * optional string lastError = 20;
+ * optional string failureReason = 20;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
@@ -19625,7 +19733,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 20, value);
 };
 
@@ -19634,7 +19742,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 20, undefined);
 };
 
@@ -19643,18 +19751,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 21;
+ * optional string failureMessage = 21;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 22;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 21));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 22));
 };
 
 
@@ -19663,7 +19807,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
+  return jspb.Message.setWrapperField(this, 22, value);
 };
 
 
@@ -19681,17 +19825,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * repeated ModelAutobuilderCondition conditions = 22;
+ * repeated ModelAutobuilderCondition conditions = 23;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition, 22));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition, 23));
 };
 
 
@@ -19700,7 +19844,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 22, value);
+  return jspb.Message.setRepeatedWrapperField(this, 23, value);
 };
 
 
@@ -19710,7 +19854,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 22, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderCondition, opt_index);
 };
 
 
@@ -20972,7 +21116,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.repeatedFields_ = [9];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.repeatedFields_ = [10];
 
 
 
@@ -21010,8 +21154,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
     phase: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     evalmetrics: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    progress: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    progress: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition.toObject, includeInstance)
@@ -21075,18 +21220,22 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 8:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setProgress(value);
       break;
-    case 8:
+    case 9:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 9:
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -21164,17 +21313,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 7));
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
   if (f != null) {
     writer.writeInt32(
-      7,
+      8,
       f
     );
   }
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -21182,7 +21338,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition.serializeBinaryToWriter
     );
@@ -21373,10 +21529,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
 
 
 /**
- * optional string lastError = 6;
+ * optional string failureReason = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -21385,7 +21541,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -21394,7 +21550,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -21403,25 +21559,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 progress = 7;
- * @return {number}
+ * optional string failureMessage = 7;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.getProgress = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.setProgress = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.setFailuremessage = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -21430,7 +21586,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.clearProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.clearFailuremessage = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -21439,18 +21595,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.hasProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+ * optional int32 progress = 8;
+ * @return {number}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.getProgress = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.setProgress = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.clearProgress = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.hasProgress = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 8));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 9));
 };
 
 
@@ -21459,7 +21651,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -21477,17 +21669,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * repeated ModelCompilerRunCondition conditions = 9;
+ * repeated ModelCompilerRunCondition conditions = 10;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition, 10));
 };
 
 
@@ -21496,7 +21688,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -21506,7 +21698,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunCondition, opt_index);
 };
 
 
@@ -24974,7 +25166,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.repeatedFields_ = [22];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.repeatedFields_ = [23];
 
 
 
@@ -25024,9 +25216,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
     phase: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
     evalmetrics: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    progress: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
-    triggeredby: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+    progress: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    triggeredby: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition.toObject, includeInstance)
@@ -25146,22 +25339,26 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       break;
     case 18:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 19:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 20:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setProgress(value);
       break;
-    case 20:
+    case 21:
       var value = /** @type {string} */ (reader.readString());
       msg.setTriggeredby(value);
       break;
-    case 21:
+    case 22:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 22:
+    case 23:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -25331,24 +25528,31 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 19));
+  f = /** @type {string} */ (jspb.Message.getField(message, 19));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       19,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 20));
+  f = /** @type {number} */ (jspb.Message.getField(message, 20));
+  if (f != null) {
+    writer.writeInt32(
+      20,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
   if (f != null) {
     writer.writeString(
-      20,
+      21,
       f
     );
   }
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      21,
+      22,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -25356,7 +25560,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      22,
+      23,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition.serializeBinaryToWriter
     );
@@ -25987,10 +26191,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
 
 
 /**
- * optional string lastError = 18;
+ * optional string failureReason = 18;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
 };
 
@@ -25999,7 +26203,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -26008,7 +26212,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -26017,25 +26221,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional int32 progress = 19;
- * @return {number}
+ * optional string failureMessage = 19;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getProgress = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setProgress = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setFailuremessage = function(value) {
   return jspb.Message.setField(this, 19, value);
 };
 
@@ -26044,7 +26248,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearFailuremessage = function() {
   return jspb.Message.setField(this, 19, undefined);
 };
 
@@ -26053,25 +26257,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional string triggeredBy = 20;
- * @return {string}
+ * optional int32 progress = 20;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getTriggeredby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getProgress = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setTriggeredby = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setProgress = function(value) {
   return jspb.Message.setField(this, 20, value);
 };
 
@@ -26080,7 +26284,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearTriggeredby = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearProgress = function() {
   return jspb.Message.setField(this, 20, undefined);
 };
 
@@ -26089,18 +26293,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasTriggeredby = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasProgress = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 21;
+ * optional string triggeredBy = 21;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getTriggeredby = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setTriggeredby = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.clearTriggeredby = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasTriggeredby = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 22;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 21));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 22));
 };
 
 
@@ -26109,7 +26349,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
+  return jspb.Message.setWrapperField(this, 22, value);
 };
 
 
@@ -26127,17 +26367,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * repeated ModelPipelineRunCondition conditions = 22;
+ * repeated ModelPipelineRunCondition conditions = 23;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition, 22));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition, 23));
 };
 
 
@@ -26146,7 +26386,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 22, value);
+  return jspb.Message.setRepeatedWrapperField(this, 23, value);
 };
 
 
@@ -26156,7 +26396,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunS
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 22, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunCondition, opt_index);
 };
 
 
@@ -27103,7 +27343,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineSpec
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.repeatedFields_ = [5];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.repeatedFields_ = [6];
 
 
 
@@ -27139,7 +27379,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
     lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    lasterror: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition.toObject, includeInstance)
   };
@@ -27194,9 +27435,13 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 6:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -27260,10 +27505,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      6,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition.serializeBinaryToWriter
     );
@@ -27382,10 +27634,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
 
 
 /**
- * optional string lastError = 4;
+ * optional string failureReason = 4;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -27394,7 +27646,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -27403,7 +27655,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -27412,18 +27664,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * repeated ModelPipelineCondition conditions = 5;
+ * optional string failureMessage = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * repeated ModelPipelineCondition conditions = 6;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition, 6));
 };
 
 
@@ -27432,7 +27720,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -27442,7 +27730,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStat
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineCondition, opt_index);
 };
 
 
@@ -29886,22 +30174,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.toObj
     trainingrows: (f = jspb.Message.getField(msg, 36)) == null ? undefined : f,
     testingrows: (f = jspb.Message.getField(msg, 37)) == null ? undefined : f,
     validationrows: (f = jspb.Message.getField(msg, 38)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 39)) == null ? undefined : f,
-    progress: (f = jspb.Message.getField(msg, 40)) == null ? undefined : f,
-    sizeinbytes: (f = jspb.Message.getField(msg, 41)) == null ? undefined : f,
-    latency: (f = jspb.Message.getOptionalFloatingPointField(msg, 42)) == null ? undefined : f,
-    url: (f = jspb.Message.getField(msg, 43)) == null ? undefined : f,
-    predictorname: (f = jspb.Message.getField(msg, 44)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 39)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 40)) == null ? undefined : f,
+    progress: (f = jspb.Message.getField(msg, 41)) == null ? undefined : f,
+    sizeinbytes: (f = jspb.Message.getField(msg, 42)) == null ? undefined : f,
+    latency: (f = jspb.Message.getOptionalFloatingPointField(msg, 43)) == null ? undefined : f,
+    url: (f = jspb.Message.getField(msg, 44)) == null ? undefined : f,
+    predictorname: (f = jspb.Message.getField(msg, 45)) == null ? undefined : f,
     releasedat: (f = msg.getReleasedat()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
-    tarfilehash: (f = jspb.Message.getField(msg, 46)) == null ? undefined : f,
-    imagehash: (f = jspb.Message.getField(msg, 47)) == null ? undefined : f,
+    tarfilehash: (f = jspb.Message.getField(msg, 47)) == null ? undefined : f,
+    imagehash: (f = jspb.Message.getField(msg, 48)) == null ? undefined : f,
     trainingdatahash: (f = msg.getTrainingdatahash()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject(includeInstance, f),
     trainingresources: (f = msg.getTrainingresources()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.toObject(includeInstance, f),
     testingresources: (f = msg.getTestingresources()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.toObject(includeInstance, f),
-    trainedby: (f = jspb.Message.getField(msg, 51)) == null ? undefined : f,
-    team: (f = jspb.Message.getField(msg, 52)) == null ? undefined : f,
-    trainerimage: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f,
-    endpoint: (f = jspb.Message.getField(msg, 54)) == null ? undefined : f,
+    trainedby: (f = jspb.Message.getField(msg, 52)) == null ? undefined : f,
+    team: (f = jspb.Message.getField(msg, 53)) == null ? undefined : f,
+    trainerimage: (f = jspb.Message.getField(msg, 54)) == null ? undefined : f,
+    endpoint: (f = jspb.Message.getField(msg, 55)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     rocauccurve: (f = msg.getRocauccurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RocAucCurve.toObject(includeInstance, f),
     prcurve: (f = msg.getPrcurve()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PRCurve.toObject(includeInstance, f),
@@ -30116,73 +30405,77 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.deser
       break;
     case 39:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 40:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setProgress(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
       break;
     case 41:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setSizeinbytes(value);
+      msg.setProgress(value);
       break;
     case 42:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSizeinbytes(value);
+      break;
+    case 43:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setLatency(value);
       break;
-    case 43:
+    case 44:
       var value = /** @type {string} */ (reader.readString());
       msg.setUrl(value);
       break;
-    case 44:
+    case 45:
       var value = /** @type {string} */ (reader.readString());
       msg.setPredictorname(value);
       break;
-    case 45:
+    case 46:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setReleasedat(value);
       break;
-    case 46:
+    case 47:
       var value = /** @type {string} */ (reader.readString());
       msg.setTarfilehash(value);
       break;
-    case 47:
+    case 48:
       var value = /** @type {string} */ (reader.readString());
       msg.setImagehash(value);
       break;
-    case 48:
+    case 49:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.deserializeBinaryFromReader);
       msg.setTrainingdatahash(value);
       break;
-    case 49:
+    case 50:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.deserializeBinaryFromReader);
       msg.setTrainingresources(value);
       break;
-    case 50:
+    case 51:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.deserializeBinaryFromReader);
       msg.setTestingresources(value);
       break;
-    case 51:
+    case 52:
       var value = /** @type {string} */ (reader.readString());
       msg.setTrainedby(value);
       break;
-    case 52:
+    case 53:
       var value = /** @type {string} */ (reader.readString());
       msg.setTeam(value);
       break;
-    case 53:
+    case 54:
       var value = /** @type {string} */ (reader.readString());
       msg.setTrainerimage(value);
       break;
-    case 54:
+    case 55:
       var value = /** @type {string} */ (reader.readString());
       msg.setEndpoint(value);
       break;
-    case 55:
+    case 56:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
@@ -30537,9 +30830,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 40));
+  f = /** @type {string} */ (jspb.Message.getField(message, 40));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       40,
       f
     );
@@ -30553,14 +30846,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 42));
   if (f != null) {
-    writer.writeDouble(
+    writer.writeInt32(
       42,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 43));
+  f = /** @type {number} */ (jspb.Message.getField(message, 43));
   if (f != null) {
-    writer.writeString(
+    writer.writeDouble(
       43,
       f
     );
@@ -30572,19 +30865,19 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 45));
+  if (f != null) {
+    writer.writeString(
+      45,
+      f
+    );
+  }
   f = message.getReleasedat();
   if (f != null) {
     writer.writeMessage(
-      45,
+      46,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 46));
-  if (f != null) {
-    writer.writeString(
-      46,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 47));
@@ -30594,10 +30887,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 48));
+  if (f != null) {
+    writer.writeString(
+      48,
+      f
+    );
+  }
   f = message.getTrainingdatahash();
   if (f != null) {
     writer.writeMessage(
-      48,
+      49,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.serializeBinaryToWriter
     );
@@ -30605,7 +30905,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
   f = message.getTrainingresources();
   if (f != null) {
     writer.writeMessage(
-      49,
+      50,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.serializeBinaryToWriter
     );
@@ -30613,16 +30913,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
   f = message.getTestingresources();
   if (f != null) {
     writer.writeMessage(
-      50,
+      51,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {string} */ (jspb.Message.getField(message, 51));
-  if (f != null) {
-    writer.writeString(
-      51,
-      f
     );
   }
   f = /** @type {string} */ (jspb.Message.getField(message, 52));
@@ -30646,10 +30939,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.seria
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 55));
+  if (f != null) {
+    writer.writeString(
+      55,
+      f
+    );
+  }
   f = message.getLogs();
   if (f != null) {
     writer.writeMessage(
-      55,
+      56,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
     );
@@ -32065,10 +32365,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional string lastError = 39;
+ * optional string failureReason = 39;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 39, ""));
 };
 
@@ -32077,7 +32377,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 39, value);
 };
 
@@ -32086,7 +32386,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 39, undefined);
 };
 
@@ -32095,25 +32395,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 39) != null;
 };
 
 
 /**
- * optional int32 progress = 40;
- * @return {number}
+ * optional string failureMessage = 40;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getProgress = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 40, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 40, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setProgress = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setFailuremessage = function(value) {
   return jspb.Message.setField(this, 40, value);
 };
 
@@ -32122,7 +32422,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearFailuremessage = function() {
   return jspb.Message.setField(this, 40, undefined);
 };
 
@@ -32131,16 +32431,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 40) != null;
 };
 
 
 /**
- * optional int32 sizeInBytes = 41;
+ * optional int32 progress = 41;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getSizeinbytes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getProgress = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 41, 0));
 };
 
@@ -32149,7 +32449,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setSizeinbytes = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setProgress = function(value) {
   return jspb.Message.setField(this, 41, value);
 };
 
@@ -32158,7 +32458,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearSizeinbytes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearProgress = function() {
   return jspb.Message.setField(this, 41, undefined);
 };
 
@@ -32167,17 +32467,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasSizeinbytes = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasProgress = function() {
   return jspb.Message.getField(this, 41) != null;
 };
 
 
 /**
- * optional double latency = 42;
+ * optional int32 sizeInBytes = 42;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLatency = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 42, 0.0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getSizeinbytes = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 42, 0));
 };
 
 
@@ -32185,7 +32485,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLatency = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setSizeinbytes = function(value) {
   return jspb.Message.setField(this, 42, value);
 };
 
@@ -32194,7 +32494,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLatency = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearSizeinbytes = function() {
   return jspb.Message.setField(this, 42, undefined);
 };
 
@@ -32203,25 +32503,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLatency = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasSizeinbytes = function() {
   return jspb.Message.getField(this, 42) != null;
 };
 
 
 /**
- * optional string url = 43;
- * @return {string}
+ * optional double latency = 43;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getUrl = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 43, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLatency = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 43, 0.0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setUrl = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLatency = function(value) {
   return jspb.Message.setField(this, 43, value);
 };
 
@@ -32230,7 +32530,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearLatency = function() {
   return jspb.Message.setField(this, 43, undefined);
 };
 
@@ -32239,16 +32539,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasUrl = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLatency = function() {
   return jspb.Message.getField(this, 43) != null;
 };
 
 
 /**
- * optional string predictorName = 44;
+ * optional string url = 44;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getPredictorname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 44, ""));
 };
 
@@ -32257,7 +32557,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setPredictorname = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setUrl = function(value) {
   return jspb.Message.setField(this, 44, value);
 };
 
@@ -32266,7 +32566,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearPredictorname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearUrl = function() {
   return jspb.Message.setField(this, 44, undefined);
 };
 
@@ -32275,18 +32575,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasPredictorname = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasUrl = function() {
   return jspb.Message.getField(this, 44) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 45;
+ * optional string predictorName = 45;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getPredictorname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 45, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setPredictorname = function(value) {
+  return jspb.Message.setField(this, 45, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearPredictorname = function() {
+  return jspb.Message.setField(this, 45, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasPredictorname = function() {
+  return jspb.Message.getField(this, 45) != null;
+};
+
+
+/**
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time releasedAt = 46;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getReleasedat = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 45));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 46));
 };
 
 
@@ -32295,7 +32631,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setReleasedat = function(value) {
-  return jspb.Message.setWrapperField(this, 45, value);
+  return jspb.Message.setWrapperField(this, 46, value);
 };
 
 
@@ -32313,51 +32649,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasReleasedat = function() {
-  return jspb.Message.getField(this, 45) != null;
-};
-
-
-/**
- * optional string tarfileHash = 46;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTarfilehash = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 46, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTarfilehash = function(value) {
-  return jspb.Message.setField(this, 46, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTarfilehash = function() {
-  return jspb.Message.setField(this, 46, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTarfilehash = function() {
   return jspb.Message.getField(this, 46) != null;
 };
 
 
 /**
- * optional string imageHash = 47;
+ * optional string tarfileHash = 47;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getImagehash = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTarfilehash = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 47, ""));
 };
 
@@ -32366,7 +32666,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setImagehash = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTarfilehash = function(value) {
   return jspb.Message.setField(this, 47, value);
 };
 
@@ -32375,7 +32675,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearImagehash = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTarfilehash = function() {
   return jspb.Message.setField(this, 47, undefined);
 };
 
@@ -32384,18 +32684,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasImagehash = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTarfilehash = function() {
   return jspb.Message.getField(this, 47) != null;
 };
 
 
 /**
- * optional DataHashes trainingDataHash = 48;
+ * optional string imageHash = 48;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getImagehash = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 48, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setImagehash = function(value) {
+  return jspb.Message.setField(this, 48, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearImagehash = function() {
+  return jspb.Message.setField(this, 48, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasImagehash = function() {
+  return jspb.Message.getField(this, 48) != null;
+};
+
+
+/**
+ * optional DataHashes trainingDataHash = 49;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainingdatahash = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes, 48));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes, 49));
 };
 
 
@@ -32404,7 +32740,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainingdatahash = function(value) {
-  return jspb.Message.setWrapperField(this, 48, value);
+  return jspb.Message.setWrapperField(this, 49, value);
 };
 
 
@@ -32422,17 +32758,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainingdatahash = function() {
-  return jspb.Message.getField(this, 48) != null;
+  return jspb.Message.getField(this, 49) != null;
 };
 
 
 /**
- * optional ResourceConsumption trainingResources = 49;
+ * optional ResourceConsumption trainingResources = 50;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainingresources = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption, 49));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption, 50));
 };
 
 
@@ -32441,7 +32777,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainingresources = function(value) {
-  return jspb.Message.setWrapperField(this, 49, value);
+  return jspb.Message.setWrapperField(this, 50, value);
 };
 
 
@@ -32459,17 +32795,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainingresources = function() {
-  return jspb.Message.getField(this, 49) != null;
+  return jspb.Message.getField(this, 50) != null;
 };
 
 
 /**
- * optional ResourceConsumption testingResources = 50;
+ * optional ResourceConsumption testingResources = 51;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTestingresources = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption, 50));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ResourceConsumption, 51));
 };
 
 
@@ -32478,7 +32814,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTestingresources = function(value) {
-  return jspb.Message.setWrapperField(this, 50, value);
+  return jspb.Message.setWrapperField(this, 51, value);
 };
 
 
@@ -32496,51 +32832,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTestingresources = function() {
-  return jspb.Message.getField(this, 50) != null;
-};
-
-
-/**
- * optional string trainedBy = 51;
- * @return {string}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainedby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 51, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainedby = function(value) {
-  return jspb.Message.setField(this, 51, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainedby = function() {
-  return jspb.Message.setField(this, 51, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainedby = function() {
   return jspb.Message.getField(this, 51) != null;
 };
 
 
 /**
- * optional string team = 52;
+ * optional string trainedBy = 52;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTeam = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainedby = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 52, ""));
 };
 
@@ -32549,7 +32849,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTeam = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainedby = function(value) {
   return jspb.Message.setField(this, 52, value);
 };
 
@@ -32558,7 +32858,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTeam = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainedby = function() {
   return jspb.Message.setField(this, 52, undefined);
 };
 
@@ -32567,16 +32867,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTeam = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainedby = function() {
   return jspb.Message.getField(this, 52) != null;
 };
 
 
 /**
- * optional string trainerImage = 53;
+ * optional string team = 53;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTeam = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 53, ""));
 };
 
@@ -32585,7 +32885,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainerimage = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTeam = function(value) {
   return jspb.Message.setField(this, 53, value);
 };
 
@@ -32594,7 +32894,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTeam = function() {
   return jspb.Message.setField(this, 53, undefined);
 };
 
@@ -32603,16 +32903,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainerimage = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTeam = function() {
   return jspb.Message.getField(this, 53) != null;
 };
 
 
 /**
- * optional string endpoint = 54;
+ * optional string trainerImage = 54;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getEndpoint = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getTrainerimage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 54, ""));
 };
 
@@ -32621,7 +32921,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setEndpoint = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setTrainerimage = function(value) {
   return jspb.Message.setField(this, 54, value);
 };
 
@@ -32630,7 +32930,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearEndpoint = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearTrainerimage = function() {
   return jspb.Message.setField(this, 54, undefined);
 };
 
@@ -32639,18 +32939,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasEndpoint = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasTrainerimage = function() {
   return jspb.Message.getField(this, 54) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 55;
+ * optional string endpoint = 55;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getEndpoint = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 55, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setEndpoint = function(value) {
+  return jspb.Message.setField(this, 55, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.clearEndpoint = function() {
+  return jspb.Message.setField(this, 55, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasEndpoint = function() {
+  return jspb.Message.getField(this, 55) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 56;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getLogs = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 55));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 56));
 };
 
 
@@ -32659,7 +32995,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 55, value);
+  return jspb.Message.setWrapperField(this, 56, value);
 };
 
 
@@ -32677,7 +33013,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 55) != null;
+  return jspb.Message.getField(this, 56) != null;
 };
 
 
@@ -36643,7 +36979,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunSpec.p
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.repeatedFields_ = [9];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.repeatedFields_ = [10];
 
 
 
@@ -36680,8 +37016,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     observedgeneration: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    triggeredby: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    triggeredby: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
@@ -36742,23 +37079,27 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTriggeredby(value);
+      msg.setFailuremessage(value);
       break;
     case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTriggeredby(value);
+      break;
+    case 8:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
       break;
-    case 8:
+    case 9:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 9:
+    case 10:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -36836,10 +37177,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
   f = message.getLogs();
   if (f != null) {
     writer.writeMessage(
-      7,
+      8,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
     );
@@ -36847,7 +37195,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -36855,7 +37203,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      9,
+      10,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition.serializeBinaryToWriter
     );
@@ -37010,10 +37358,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
 
 
 /**
- * optional string lastError = 5;
+ * optional string failureReason = 5;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -37022,7 +37370,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -37031,7 +37379,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -37040,16 +37388,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string triggeredBy = 6;
+ * optional string failureMessage = 6;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getTriggeredby = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getFailuremessage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -37058,7 +37406,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setTriggeredby = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setFailuremessage = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -37067,7 +37415,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearTriggeredby = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearFailuremessage = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -37076,18 +37424,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasTriggeredby = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+ * optional string triggeredBy = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getTriggeredby = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setTriggeredby = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.clearTriggeredby = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasTriggeredby = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getLogs = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 7));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 8));
 };
 
 
@@ -37096,7 +37480,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -37114,17 +37498,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 8));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 9));
 };
 
 
@@ -37133,7 +37517,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -37151,17 +37535,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * repeated NotebookRunCondition conditions = 9;
+ * repeated NotebookRunCondition conditions = 10;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, 9));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, 10));
 };
 
 
@@ -37170,7 +37554,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
 };
 
 
@@ -37180,7 +37564,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookRunCondition, opt_index);
 };
 
 
@@ -37991,7 +38375,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookSpec.prot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.repeatedFields_ = [6];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.repeatedFields_ = [8];
 
 
 
@@ -38029,6 +38413,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.to
     observedgeneration: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
     lastrun: (f = msg.getLastrun()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
+    failurereason: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition.toObject, includeInstance)
   };
@@ -38090,6 +38476,14 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.de
       msg.setLastupdated(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailurereason(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 8:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -38160,10 +38554,24 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.se
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      6,
+      8,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition.serializeBinaryToWriter
     );
@@ -38354,12 +38762,84 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.pr
 
 
 /**
- * repeated NotebookCondition conditions = 6;
+ * optional string failureReason = 6;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.getFailurereason = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.setFailurereason = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.clearFailurereason = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.hasFailurereason = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string failureMessage = 7;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * repeated NotebookCondition conditions = 8;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition, 6));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition, 8));
 };
 
 
@@ -38368,7 +38848,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
 };
 
 
@@ -38378,7 +38858,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.pr
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookCondition, opt_index);
 };
 
 
@@ -41713,7 +42193,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportSpec.protot
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.repeatedFields_ = [10];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.repeatedFields_ = [11];
 
 
 
@@ -41751,7 +42231,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.toOb
     phase: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     uri: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
     observedgeneration: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     lastupdated: (f = msg.getLastupdated()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     conditionsList: jspb.Message.toObjectList(msg.getConditionsList(),
@@ -41816,19 +42297,23 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.dese
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
+      break;
+    case 9:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
       break;
-    case 9:
+    case 10:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 10:
+    case 11:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -41906,10 +42391,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.seri
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
   f = message.getLogs();
   if (f != null) {
     writer.writeMessage(
-      8,
+      9,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
     );
@@ -41917,7 +42409,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.seri
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      9,
+      10,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -41925,7 +42417,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.seri
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      10,
+      11,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition.serializeBinaryToWriter
     );
@@ -42116,10 +42608,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
 
 
 /**
- * optional string lastError = 7;
+ * optional string failureReason = 7;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -42128,7 +42620,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -42137,7 +42629,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -42146,18 +42638,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
+ * optional string failureMessage = 8;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setFailuremessage = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.clearFailuremessage = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasFailuremessage = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getLogs = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 8));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 9));
 };
 
 
@@ -42166,7 +42694,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -42184,17 +42712,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 10;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 9));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 10));
 };
 
 
@@ -42203,7 +42731,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -42221,17 +42749,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * repeated ReportCondition conditions = 10;
+ * repeated ReportCondition conditions = 11;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, 10));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, 11));
 };
 
 
@@ -42240,7 +42768,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
 };
 
 
@@ -42250,7 +42778,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prot
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportCondition, opt_index);
 };
 
 
@@ -47117,7 +47645,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudySpec.prototy
  * @private {!Array<number>}
  * @const
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [33];
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.repeatedFields_ = [34];
 
 
 
@@ -47163,14 +47691,15 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.toObj
     testdataset: (f = msg.getTestdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     validationdataset: (f = msg.getValidationdataset()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataLocation.toObject(includeInstance, f),
     lastmodelid: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
-    lasterror: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
-    trainingrows: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
-    testingrows: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-    validationrows: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
-    progress: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
-    baselinemodel: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    failurereason: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+    failuremessage: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+    trainingrows: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+    testingrows: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+    validationrows: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+    progress: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    baselinemodel: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     trainingdatahash: (f = msg.getTrainingdatahash()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.toObject(includeInstance, f),
-    triggeredby: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+    triggeredby: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
     logs: (f = msg.getLogs()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.toObject(includeInstance, f),
     featureengineering: (f = msg.getFeatureengineering()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.toObject(includeInstance, f),
     baseline: (f = msg.getBaseline()) && proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.toObject(includeInstance, f),
@@ -47278,88 +47807,92 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.deser
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLasterror(value);
+      msg.setFailurereason(value);
       break;
     case 16:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setTrainingrows(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFailuremessage(value);
       break;
     case 17:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTestingrows(value);
+      msg.setTrainingrows(value);
       break;
     case 18:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setValidationrows(value);
+      msg.setTestingrows(value);
       break;
     case 19:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setProgress(value);
+      msg.setValidationrows(value);
       break;
     case 20:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setProgress(value);
+      break;
+    case 21:
       var value = /** @type {string} */ (reader.readString());
       msg.setBaselinemodel(value);
       break;
-    case 21:
+    case 22:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.deserializeBinaryFromReader);
       msg.setTrainingdatahash(value);
       break;
-    case 22:
+    case 23:
       var value = /** @type {string} */ (reader.readString());
       msg.setTriggeredby(value);
       break;
-    case 23:
+    case 24:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.deserializeBinaryFromReader);
       msg.setLogs(value);
       break;
-    case 24:
+    case 25:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.deserializeBinaryFromReader);
       msg.setFeatureengineering(value);
       break;
-    case 25:
+    case 26:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.deserializeBinaryFromReader);
       msg.setBaseline(value);
       break;
-    case 26:
+    case 27:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.deserializeBinaryFromReader);
       msg.setSearch(value);
       break;
-    case 27:
+    case 28:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.deserializeBinaryFromReader);
       msg.setEnsemble(value);
       break;
-    case 28:
+    case 29:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.deserializeBinaryFromReader);
       msg.setTest(value);
       break;
-    case 29:
+    case 30:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.deserializeBinaryFromReader);
       msg.setExplain(value);
       break;
-    case 30:
+    case 31:
       var value = new k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time;
       reader.readMessage(value,k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.deserializeBinaryFromReader);
       msg.setLastupdated(value);
       break;
-    case 31:
+    case 32:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.deserializeBinaryFromReader);
       msg.setBestfe(value);
       break;
-    case 32:
+    case 33:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.deserializeBinaryFromReader);
       msg.setGc(value);
       break;
-    case 33:
+    case 34:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition;
       reader.readMessage(value,proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition.deserializeBinaryFromReader);
       msg.addConditions(value);
@@ -47496,9 +48029,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 16));
+  f = /** @type {string} */ (jspb.Message.getField(message, 16));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       16,
       f
     );
@@ -47524,32 +48057,39 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 20));
+  f = /** @type {number} */ (jspb.Message.getField(message, 20));
+  if (f != null) {
+    writer.writeInt32(
+      20,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 21));
   if (f != null) {
     writer.writeString(
-      20,
+      21,
       f
     );
   }
   f = message.getTrainingdatahash();
   if (f != null) {
     writer.writeMessage(
-      21,
+      22,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes.serializeBinaryToWriter
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 22));
+  f = /** @type {string} */ (jspb.Message.getField(message, 23));
   if (f != null) {
     writer.writeString(
-      22,
+      23,
       f
     );
   }
   f = message.getLogs();
   if (f != null) {
     writer.writeMessage(
-      23,
+      24,
       f,
       github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs.serializeBinaryToWriter
     );
@@ -47557,7 +48097,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getFeatureengineering();
   if (f != null) {
     writer.writeMessage(
-      24,
+      25,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.serializeBinaryToWriter
     );
@@ -47565,7 +48105,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getBaseline();
   if (f != null) {
     writer.writeMessage(
-      25,
+      26,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.serializeBinaryToWriter
     );
@@ -47573,7 +48113,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getSearch();
   if (f != null) {
     writer.writeMessage(
-      26,
+      27,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.serializeBinaryToWriter
     );
@@ -47581,7 +48121,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getEnsemble();
   if (f != null) {
     writer.writeMessage(
-      27,
+      28,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.serializeBinaryToWriter
     );
@@ -47589,7 +48129,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getTest();
   if (f != null) {
     writer.writeMessage(
-      28,
+      29,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.serializeBinaryToWriter
     );
@@ -47597,7 +48137,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getExplain();
   if (f != null) {
     writer.writeMessage(
-      29,
+      30,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.serializeBinaryToWriter
     );
@@ -47605,7 +48145,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getLastupdated();
   if (f != null) {
     writer.writeMessage(
-      30,
+      31,
       f,
       k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.serializeBinaryToWriter
     );
@@ -47613,7 +48153,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getBestfe();
   if (f != null) {
     writer.writeMessage(
-      31,
+      32,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec.serializeBinaryToWriter
     );
@@ -47621,7 +48161,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getGc();
   if (f != null) {
     writer.writeMessage(
-      32,
+      33,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus.serializeBinaryToWriter
     );
@@ -47629,7 +48169,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.seria
   f = message.getConditionsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      33,
+      34,
       f,
       proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition.serializeBinaryToWriter
     );
@@ -48111,10 +48651,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
 
 
 /**
- * optional string lastError = 15;
+ * optional string failureReason = 15;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getFailurereason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -48123,7 +48663,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setLasterror = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setFailurereason = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -48132,7 +48672,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearFailurereason = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -48141,25 +48681,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasLasterror = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasFailurereason = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional int32 trainingRows = 16;
- * @return {number}
+ * optional string failureMessage = 16;
+ * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTrainingrows = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getFailuremessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTrainingrows = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setFailuremessage = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -48168,7 +48708,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTrainingrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearFailuremessage = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -48177,16 +48717,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTrainingrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasFailuremessage = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional int32 testingRows = 17;
+ * optional int32 trainingRows = 17;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTestingrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTrainingrows = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
 };
 
@@ -48195,7 +48735,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTestingrows = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTrainingrows = function(value) {
   return jspb.Message.setField(this, 17, value);
 };
 
@@ -48204,7 +48744,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTestingrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTrainingrows = function() {
   return jspb.Message.setField(this, 17, undefined);
 };
 
@@ -48213,16 +48753,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTestingrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTrainingrows = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional int32 validationRows = 18;
+ * optional int32 testingRows = 18;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getValidationrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTestingrows = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
 };
 
@@ -48231,7 +48771,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setValidationrows = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTestingrows = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -48240,7 +48780,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearValidationrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTestingrows = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -48249,16 +48789,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasValidationrows = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTestingrows = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional int32 progress = 19;
+ * optional int32 validationRows = 19;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getValidationrows = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
 
@@ -48267,7 +48807,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setProgress = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setValidationrows = function(value) {
   return jspb.Message.setField(this, 19, value);
 };
 
@@ -48276,7 +48816,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearValidationrows = function() {
   return jspb.Message.setField(this, 19, undefined);
 };
 
@@ -48285,25 +48825,25 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasProgress = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasValidationrows = function() {
   return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional string baselineModel = 20;
- * @return {string}
+ * optional int32 progress = 20;
+ * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getBaselinemodel = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getProgress = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setBaselinemodel = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setProgress = function(value) {
   return jspb.Message.setField(this, 20, value);
 };
 
@@ -48312,7 +48852,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearBaselinemodel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearProgress = function() {
   return jspb.Message.setField(this, 20, undefined);
 };
 
@@ -48321,18 +48861,54 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasBaselinemodel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasProgress = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional DataHashes trainingDataHash = 21;
+ * optional string baselineModel = 21;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getBaselinemodel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setBaselinemodel = function(value) {
+  return jspb.Message.setField(this, 21, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearBaselinemodel = function() {
+  return jspb.Message.setField(this, 21, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasBaselinemodel = function() {
+  return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional DataHashes trainingDataHash = 22;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTrainingdatahash = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes, 21));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.DataHashes, 22));
 };
 
 
@@ -48341,7 +48917,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTrainingdatahash = function(value) {
-  return jspb.Message.setWrapperField(this, 21, value);
+  return jspb.Message.setWrapperField(this, 22, value);
 };
 
 
@@ -48359,16 +48935,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTrainingdatahash = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * optional string triggeredBy = 22;
+ * optional string triggeredBy = 23;
  * @return {string}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTriggeredby = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
 };
 
 
@@ -48377,7 +48953,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTriggeredby = function(value) {
-  return jspb.Message.setField(this, 22, value);
+  return jspb.Message.setField(this, 23, value);
 };
 
 
@@ -48386,7 +48962,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.clearTriggeredby = function() {
-  return jspb.Message.setField(this, 22, undefined);
+  return jspb.Message.setField(this, 23, undefined);
 };
 
 
@@ -48395,17 +48971,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTriggeredby = function() {
-  return jspb.Message.getField(this, 22) != null;
+  return jspb.Message.getField(this, 23) != null;
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 23;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 24;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getLogs = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs} */ (
-    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 23));
+    jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Logs, 24));
 };
 
 
@@ -48414,7 +48990,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setLogs = function(value) {
-  return jspb.Message.setWrapperField(this, 23, value);
+  return jspb.Message.setWrapperField(this, 24, value);
 };
 
 
@@ -48432,17 +49008,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasLogs = function() {
-  return jspb.Message.getField(this, 23) != null;
+  return jspb.Message.getField(this, 24) != null;
 };
 
 
 /**
- * optional StudyPhaseStatus featureEngineering = 24;
+ * optional StudyPhaseStatus featureEngineering = 25;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getFeatureengineering = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 24));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 25));
 };
 
 
@@ -48451,7 +49027,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setFeatureengineering = function(value) {
-  return jspb.Message.setWrapperField(this, 24, value);
+  return jspb.Message.setWrapperField(this, 25, value);
 };
 
 
@@ -48469,17 +49045,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasFeatureengineering = function() {
-  return jspb.Message.getField(this, 24) != null;
+  return jspb.Message.getField(this, 25) != null;
 };
 
 
 /**
- * optional StudyPhaseStatus baseline = 25;
+ * optional StudyPhaseStatus baseline = 26;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getBaseline = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 25));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 26));
 };
 
 
@@ -48488,7 +49064,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setBaseline = function(value) {
-  return jspb.Message.setWrapperField(this, 25, value);
+  return jspb.Message.setWrapperField(this, 26, value);
 };
 
 
@@ -48506,17 +49082,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasBaseline = function() {
-  return jspb.Message.getField(this, 25) != null;
+  return jspb.Message.getField(this, 26) != null;
 };
 
 
 /**
- * optional StudyPhaseStatus search = 26;
+ * optional StudyPhaseStatus search = 27;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getSearch = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 26));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 27));
 };
 
 
@@ -48525,7 +49101,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setSearch = function(value) {
-  return jspb.Message.setWrapperField(this, 26, value);
+  return jspb.Message.setWrapperField(this, 27, value);
 };
 
 
@@ -48543,17 +49119,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasSearch = function() {
-  return jspb.Message.getField(this, 26) != null;
+  return jspb.Message.getField(this, 27) != null;
 };
 
 
 /**
- * optional StudyPhaseStatus ensemble = 27;
+ * optional StudyPhaseStatus ensemble = 28;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getEnsemble = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 27));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 28));
 };
 
 
@@ -48562,7 +49138,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setEnsemble = function(value) {
-  return jspb.Message.setWrapperField(this, 27, value);
+  return jspb.Message.setWrapperField(this, 28, value);
 };
 
 
@@ -48580,17 +49156,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasEnsemble = function() {
-  return jspb.Message.getField(this, 27) != null;
+  return jspb.Message.getField(this, 28) != null;
 };
 
 
 /**
- * optional StudyPhaseStatus test = 28;
+ * optional StudyPhaseStatus test = 29;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getTest = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 28));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 29));
 };
 
 
@@ -48599,7 +49175,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setTest = function(value) {
-  return jspb.Message.setWrapperField(this, 28, value);
+  return jspb.Message.setWrapperField(this, 29, value);
 };
 
 
@@ -48617,17 +49193,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasTest = function() {
-  return jspb.Message.getField(this, 28) != null;
+  return jspb.Message.getField(this, 29) != null;
 };
 
 
 /**
- * optional StudyPhaseStatus explain = 29;
+ * optional StudyPhaseStatus explain = 30;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getExplain = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 29));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus, 30));
 };
 
 
@@ -48636,7 +49212,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setExplain = function(value) {
-  return jspb.Message.setWrapperField(this, 29, value);
+  return jspb.Message.setWrapperField(this, 30, value);
 };
 
 
@@ -48654,17 +49230,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasExplain = function() {
-  return jspb.Message.getField(this, 29) != null;
+  return jspb.Message.getField(this, 30) != null;
 };
 
 
 /**
- * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 30;
+ * optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 31;
  * @return {?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getLastupdated = function() {
   return /** @type{?proto.k8s.io.apimachinery.pkg.apis.meta.v1.Time} */ (
-    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 30));
+    jspb.Message.getWrapperField(this, k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time, 31));
 };
 
 
@@ -48673,7 +49249,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setLastupdated = function(value) {
-  return jspb.Message.setWrapperField(this, 30, value);
+  return jspb.Message.setWrapperField(this, 31, value);
 };
 
 
@@ -48691,17 +49267,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasLastupdated = function() {
-  return jspb.Message.getField(this, 30) != null;
+  return jspb.Message.getField(this, 31) != null;
 };
 
 
 /**
- * optional FeatureEngineeringSpec bestFE = 31;
+ * optional FeatureEngineeringSpec bestFE = 32;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getBestfe = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec, 31));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringSpec, 32));
 };
 
 
@@ -48710,7 +49286,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setBestfe = function(value) {
-  return jspb.Message.setWrapperField(this, 31, value);
+  return jspb.Message.setWrapperField(this, 32, value);
 };
 
 
@@ -48728,17 +49304,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasBestfe = function() {
-  return jspb.Message.getField(this, 31) != null;
+  return jspb.Message.getField(this, 32) != null;
 };
 
 
 /**
- * optional GarbageCollectionStatus gc = 32;
+ * optional GarbageCollectionStatus gc = 33;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getGc = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus} */ (
-    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus, 32));
+    jspb.Message.getWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GarbageCollectionStatus, 33));
 };
 
 
@@ -48747,7 +49323,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setGc = function(value) {
-  return jspb.Message.setWrapperField(this, 32, value);
+  return jspb.Message.setWrapperField(this, 33, value);
 };
 
 
@@ -48765,17 +49341,17 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {boolean}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.hasGc = function() {
-  return jspb.Message.getField(this, 32) != null;
+  return jspb.Message.getField(this, 33) != null;
 };
 
 
 /**
- * repeated StudyCondition conditions = 33;
+ * repeated StudyCondition conditions = 34;
  * @return {!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition>}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.getConditionsList = function() {
   return /** @type{!Array<!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, 33));
+    jspb.Message.getRepeatedWrapperField(this, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, 34));
 };
 
 
@@ -48784,7 +49360,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus} returns this
 */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.setConditionsList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 33, value);
+  return jspb.Message.setRepeatedWrapperField(this, 34, value);
 };
 
 
@@ -48794,7 +49370,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.proto
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyStatus.prototype.addConditions = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 33, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 34, opt_value, proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyCondition, opt_index);
 };
 
 

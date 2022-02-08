@@ -47,7 +47,7 @@ type ModelCompilerRunCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".status.versionName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=modelcompilerruns,shortName=mcr,singular=modelcompilerrun,categories={train,modela,all}
 
@@ -115,19 +115,22 @@ type ModelCompilerRunStatus struct {
 	// The folder contains all the pipeline artifacts - metadata, logs
 	// +kubebuilder:validation:Optional
 	Folder string `json:"folder,omitempty" protobuf:"bytes,5,opt,name=evalMetrics"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,6,opt,name=lastError"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,6,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,7,opt,name=failureMessage"`
 	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
 	// +kubebuilder:validation:Optional
-	Progress *int32 `json:"progress" protobuf:"varint,7,opt,name=progress"`
+	Progress *int32 `json:"progress" protobuf:"varint,8,opt,name=progress"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,8,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,9,opt,name=lastUpdated"`
 
 	// +patchMergeKey=type
 	// +patchStrategy=merge
 	// +kubebuilder:validation:Optional
-	Conditions []ModelCompilerRunCondition `json:"conditions,omitempty" protobuf:"bytes,9,rep,name=conditions"`
+	Conditions []ModelCompilerRunCondition `json:"conditions,omitempty" protobuf:"bytes,10,rep,name=conditions"`
 }

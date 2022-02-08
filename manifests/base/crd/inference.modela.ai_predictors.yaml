@@ -8100,6 +8100,13 @@ spec:
               endPoint:
                 description: the end point url of the predictor
                 type: string
+              failureMessage:
+                description: Update in case of terminal failure message
+                type: string
+              failureReason:
+                description: Update in case of terminal failure Borrowed from cluster
+                  api controller
+                type: string
               health:
                 description: The Health of the predictor
                 properties:

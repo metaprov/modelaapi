@@ -785,7 +785,7 @@ message DataPipelineList {
 // +kubebuilder:printcolumn:name="Pipeline",type="string",JSONPath=".spec.datapipelineName"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Last Error",type="date",JSONPath=".metadata.lastError"
+// +kubebuilder:printcolumn:name="Failure",type="string",JSONPath=".metadata.failureMessage"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=datapipelineruns,singular=datapipelinerun,shortName="dpr",categories={data,modela,all}
 // DataPipelineRun represent one execution of the data pipeline
@@ -888,27 +888,29 @@ message DataPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 6;
 
-  // Last error
-  // +kubebuilder:default:=""
-  // +kubebuilder:validation:Optional
-  optional string lastError = 7;
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  optional string failureReason = 7;
+
+  // Update in case of terminal failure message
+  optional string failureMessage = 8;
 
   // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
-  optional int32 progress = 8;
+  optional int32 progress = 9;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 9;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 10;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 10;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineRunCondition conditions = 11;
+  repeated DataPipelineRunCondition conditions = 12;
 }
 
 // DataPipelineSpec defines the desired state of a DataPipeline
@@ -983,10 +985,17 @@ message DataPipelineStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  optional string failureMessage = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataPipelineCondition conditions = 4;
+  repeated DataPipelineCondition conditions = 6;
 }
 
 // DataProduct represent a single data product in the system
@@ -1154,10 +1163,17 @@ message DataProductStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastPrediction = 5;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  optional string failureReason = 6;
+
+  // Update in case of terminal failure message
+  optional string failureMessage = 7;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductCondition conditions = 6;
+  repeated DataProductCondition conditions = 8;
 }
 
 // +kubebuilder:object:root=true
@@ -1245,10 +1261,17 @@ message DataProductVersionStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 2;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  optional string failureReason = 3;
+
+  // Update in case of terminal failure message
+  optional string failureMessage = 4;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataProductVersionCondition conditions = 3;
+  repeated DataProductVersionCondition conditions = 5;
 }
 
 // DataSource represent source of the data in the system. The spec consist of schema
@@ -1371,10 +1394,19 @@ message DataSourceStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 5;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 6;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 7;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DataSourceCondition conditions = 6;
+  repeated DataSourceCondition conditions = 8;
 }
 
 message DataValidationResult {
@@ -1598,36 +1630,40 @@ message DatasetStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastNotificationTime = 11;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 12;
+  optional string failureReason = 12;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 13;
 
   // Processing progress
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 progress = 13;
+  optional int32 progress = 14;
 
   // Sha256 signature of the dataset file.
   // +kubebuilder:default:=""
   // +kubebuilder:validation:Optional
-  optional string hash = 14;
+  optional string hash = 15;
 
   // Holds the location of log paths
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 15;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 16;
 
   // If this dataset is derived, the name of the dataset that this is derived from.
   // +kubebuilder:validation:Optional
-  optional string derivedFromDataset = 16;
+  optional string derivedFromDataset = 17;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 17;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 18;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated DatasetCondition conditions = 18;
+  repeated DatasetCondition conditions = 19;
 }
 
 // DatasetTemplate is  used to generate new datasets
@@ -3083,27 +3119,31 @@ message RecipeRunStatus {
   // +kubebuilder:validation:Optional
   optional int64 observedGeneration = 4;
 
-  // Last error
-  // +kubebuilder:default:=""
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 5;
+  optional string failureReason = 5;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 6;
 
   // What triggered the run
   // +kubebuilder:validation:Optional
-  optional string triggeredBy = 6;
+  optional string triggeredBy = 7;
 
   // Holds the location of log paths
   // +kubebuilder:validation:Optional
-  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 7;
+  optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Logs logs = 8;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
-  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 8;
+  optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 9;
 
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 9;
+  repeated RecipeCondition conditions = 10;
 }
 
 // RecipeSpec defines the desired state of a dataset
@@ -3167,10 +3207,19 @@ message RecipeStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated RecipeCondition conditions = 4;
+  repeated RecipeCondition conditions = 6;
 }
 
 // RecipeStep defines one step in the recipe
@@ -3491,10 +3540,19 @@ message SqlQueryRunStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastUpdated = 11;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 12;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 13;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryRunCondition conditions = 12;
+  repeated SqlQueryRunCondition conditions = 14;
 }
 
 // SqlQuerySpec contain the desired state of a SqlQuery
@@ -3537,10 +3595,19 @@ message SqlQueryStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated SqlQueryCondition conditions = 4;
+  repeated SqlQueryCondition conditions = 6;
 }
 
 message TableSpec {
@@ -3790,9 +3857,14 @@ message WebRequestRunStatus {
   // +kubebuilder:validation:Optional
   optional string reportName = 9;
 
-  // The last error that occur as a result of the execution
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
   // +kubebuilder:validation:Optional
-  optional string lastError = 10;
+  optional string failureReason = 10;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 11;
 
   // Last time the object was updated
   // +kubebuilder:validation:Optional
@@ -3844,9 +3916,18 @@ message WebRequestStatus {
   // +kubebuilder:validation:Optional
   optional k8s.io.apimachinery.pkg.apis.meta.v1.Time lastRun = 3;
 
+  // Update in case of terminal failure
+  // Borrowed from cluster api controller
+  // +kubebuilder:validation:Optional
+  optional string failureReason = 4;
+
+  // Update in case of terminal failure message
+  // +kubebuilder:validation:Optional
+  optional string failureMessage = 5;
+
   // +patchMergeKey=type
   // +patchStrategy=merge
   // +kubebuilder:validation:Optional
-  repeated WebRequestCondition conditions = 4;
+  repeated WebRequestCondition conditions = 6;
 }
 

@@ -149,7 +149,7 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.testedModels"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
-// +kubebuilder:printcolumn:name="Last Error",type="string",JSONPath=".status.lastError"
+// +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
 // +kubebuilder:printcolumn:name="Age",type="date",JSONPath=".metadata.creationTimestamp"
 // +kubebuilder:resource:path=studies,singular=study,shortName=sd,categories={training,modela}
 
@@ -573,68 +573,71 @@ type StudyStatus struct {
 	ValidationDataset data.DataLocation `json:"validationDataset,omitempty" protobuf:"bytes,13,opt,name=validationDataset"`
 	// the last model id generated for this study
 	LastModelID *int64 `json:"lastModelID,omitempty" protobuf:"varint,14,opt,name=lastModelID"`
-	// Last error
-	// +kubebuilder:default:=""
-	// +kubebuilder:validation:Optional
-	LastError string `json:"lastError,omitempty" protobuf:"bytes,15,opt,name=lastError"`
+	// Update in case of terminal failure
+	// Borrowed from cluster api controller
+	//+kubebuilder:validation:Optional
+	FailureReason *catalog.StatusError `json:"failureReason,omitempty" protobuf:"bytes,15,opt,name=failureReason"`
+	// Update in case of terminal failure message
+	//+kubebuilder:validation:Optional
+	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,16,opt,name=failureMessage"`
 	//TrainingRows is the amount of rows in training
 	// +kubebuilder:validation:Optional
-	TrainingRows int32 `json:"trainingRows" protobuf:"varint,16,opt,name=trainingRows"`
+	TrainingRows int32 `json:"trainingRows" protobuf:"varint,17,opt,name=trainingRows"`
 	//TestingRows is the amount of rows in testing
 	// +kubebuilder:validation:Optional
-	TestingRows int32 `json:"testingRows" protobuf:"varint,17,opt,name=testingRows"`
+	TestingRows int32 `json:"testingRows" protobuf:"varint,18,opt,name=testingRows"`
 	//Validation row contain the number of validation rows for cases that we have validation.
 	// +kubebuilder:validation:Optional
-	ValidationRows int32 `json:"validationRows" protobuf:"varint,18,opt,name=validationRows"`
+	ValidationRows int32 `json:"validationRows" protobuf:"varint,19,opt,name=validationRows"`
 	// Study Progress in precent, the progress takes into account the different stages of the study.
 	// +kubebuilder:validation:Optional
-	Progress int32 `json:"progress" protobuf:"varint,19,opt,name=progress"`
+	Progress int32 `json:"progress" protobuf:"varint,20,opt,name=progress"`
 	// define a baseline model that will be the baseline for the search. If not none, the base line is the first model
 	// to be evaluated.
 	// +kubebuilder:default:="none"
 	// +kubebuilder:validation:Optional
-	BaselineModel catalog.ClassicEstimatorName `json:"baselineModel,omitempty" protobuf:"bytes,20,opt,name=baselineModel"`
+	BaselineModel catalog.ClassicEstimatorName `json:"baselineModel,omitempty" protobuf:"bytes,21,opt,name=baselineModel"`
 	// Sha 256 of the data sig
 	// +kubebuilder:validation:Optional
-	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,21,opt,name=trainingDataHash"`
+	TrainingDataHash DataHashes `json:"trainingDataHash,omitempty" protobuf:"bytes,22,opt,name=trainingDataHash"`
 	// What triggered the run
 	//+kubebuilder:validation:Optional
-	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,22,opt,name=triggeredBy"`
+	TriggeredBy catalog.TriggerType `json:"triggeredBy,omitempty" protobuf:"bytes,23,opt,name=triggeredBy"`
 	// Holds the location of log paths
 	//+kubebuilder:validation:Optional
-	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,23,opt,name=logs"`
+	Logs catalog.Logs `json:"logs,,omitempty" protobuf:"bytes,24,opt,name=logs"`
 	// Holds the result of the feature engineering process
 	//+kubebuilder:validation:Optional
-	FeatureEngineeringStatus StudyPhaseStatus `json:"featureEngineering,,omitempty" protobuf:"bytes,24,opt,name=featureEngineering"`
+	FeatureEngineeringStatus StudyPhaseStatus `json:"featureEngineering,,omitempty" protobuf:"bytes,25,opt,name=featureEngineering"`
 	// Holds the result of the baseline phase training
 	//+kubebuilder:validation:Optional
-	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,25,opt,name=baseline"`
+	BaselineStatus StudyPhaseStatus `json:"baseline,omitempty" protobuf:"bytes,26,opt,name=baseline"`
 	// Holds the result of the search phase training
 	//+kubebuilder:validation:Optional
-	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,26,opt,name=search"`
+	SearchStatus StudyPhaseStatus `json:"search,omitempty" protobuf:"bytes,27,opt,name=search"`
 	// Holds the result of the ensemble phase
 	//+kubebuilder:validation:Optional
-	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,27,opt,name=ensemble"`
+	EnsembleStatus StudyPhaseStatus `json:"ensemble,omitempty" protobuf:"bytes,28,opt,name=ensemble"`
 	// Holds the result of the test phase
 	//+kubebuilder:validation:Optional
-	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,28,opt,name=test"`
+	TestStatus StudyPhaseStatus `json:"test,omitempty" protobuf:"bytes,29,opt,name=test"`
 	// Hold the result of running model interpretability
 	//+kubebuilder:validation:Optional
-	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,29,opt,name=explain"`
+	ExplainStatus StudyPhaseStatus `json:"explain,omitempty" protobuf:"bytes,30,opt,name=explain"`
 	// Last time the object was updated
 	//+kubebuilder:validation:Optional
-	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,30,opt,name=lastUpdated"`
+	LastUpdated *metav1.Time `json:"lastUpdated,omitempty" protobuf:"bytes,31,opt,name=lastUpdated"`
 	// The best feature engineering
 	//+kubebuilder:validation:Optional
-	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,31,opt,name=bestFE"`
+	BestFE *FeatureEngineeringSpec `json:"bestFE,omitempty" protobuf:"bytes,32,opt,name=bestFE"`
 	// GC algorithm
-	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,32,opt,name=gc"`
+	GC GarbageCollectionStatus `json:"gc,omitempty" protobuf:"bytes,33,opt,name=gc"`
 	// This is the set of partition levels
 	// Represents the latest available observations of a study state.
 	// +optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge
-	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,33,rep,name=conditions"`
+	Conditions []StudyCondition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,34,rep,name=conditions"`
 }
 
 // model cv results
