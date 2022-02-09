@@ -343,7 +343,8 @@ spec:
                           maxLength: 63
                           type: string
                         driftThreshold:
-                          description: Drift treshold is the treshold for drift detection.
+                          description: Drift threshold is the threshold for drift
+                            detection.
                           type: number
                         enum:
                           description: Enum contain the unique values for categorical
@@ -564,7 +565,7 @@ spec:
                           description: Sigma is the standard deviation of the distribution
                           type: number
                         skewThreshold:
-                          description: Skew treshold is the treshold for skew detection.
+                          description: Skew threshold is the threshold for skew detection.
                           type: number
                         step:
                           default: 1

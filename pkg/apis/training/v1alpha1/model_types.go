@@ -683,10 +683,10 @@ type FeatureEngineeringPipeline struct {
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
 	Drop *bool `json:"drop,omitempty" protobuf:"varint,17,opt,name=drop"`
-	// If true, all the features in this pipeline will passtrough, without processing.
+	// If true, all the features in this pipeline will passthrough, without processing.
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional
-	Passtrough *bool `json:"passtrough,omitempty" protobuf:"varint,18,opt,name=passtrough"`
+	Passthrough *bool `json:"passthrough,omitempty" protobuf:"varint,18,opt,name=passthrough"`
 }
 
 type FeatureImportance struct {
@@ -966,11 +966,11 @@ type FeatureSelectionSpec struct {
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	VarianceTresholdPct *int32 `json:"varianceTresholdPct,omitempty" protobuf:"varint,7,opt,name=varianceTresholdPct"`
+	VariancethresholdPct *int32 `json:"variancethresholdPct,omitempty" protobuf:"varint,7,opt,name=variancethresholdPct"`
 	// Remove Features with high correlations
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	CorrTreshold *int32 `json:"corrTreshold,omitempty" protobuf:"varint,8,opt,name=corrTreshold"`
+	Corrthreshold *int32 `json:"corrthreshold,omitempty" protobuf:"varint,8,opt,name=corrthreshold"`
 	// Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

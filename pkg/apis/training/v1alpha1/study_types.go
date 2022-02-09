@@ -65,7 +65,7 @@ const (
 	AutoSearchMethod SamplerName = "auto"
 )
 
-// +kubebuilder:validation:Enum="none";"patient";"median";"precentile";"sh";"hyperband";"treshold";
+// +kubebuilder:validation:Enum="none";"patient";"median";"precentile";"sh";"hyperband";"threshold";
 type PrunerName string
 
 const (
@@ -75,7 +75,7 @@ const (
 	PrcentilePruner PrunerName = "precentile"
 	SHPruner        PrunerName = "sh"
 	HyperbandPruner PrunerName = "hyperband"
-	TresholdPruner  PrunerName = "treshold"
+	thresholdPruner PrunerName = "threshold"
 )
 
 // StudyConditionType is the condition on the study
@@ -344,11 +344,11 @@ type PrunerSpec struct {
 	// +kubebuilder:validation:Maximum=100
 	// +kubebuilder:validation:Optional
 	Percentile *int32 `json:"percentile,omitempty" protobuf:"varint,6,opt,name=percentile"`
-	// A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
+	// A minimum value which determines whether pruner prunes or not. Used only for threshold pruner
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Lower *int32 `json:"lower,omitempty" protobuf:"varint,7,opt,name=lower"`
-	// A maximum value which determines whether pruner prunes or not. Used only for treshold pruner
+	// A maximum value which determines whether pruner prunes or not. Used only for threshold pruner
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Upper *int32 `json:"upper,omitempty" protobuf:"varint,8,opt,name=upper"`

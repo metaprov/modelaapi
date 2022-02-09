@@ -230,11 +230,11 @@ message Column {
   // +kubebuilder:validation:Optional
   optional double sigma = 35;
 
-  // Skew treshold is the treshold for skew detection.
+  // Skew threshold is the threshold for skew detection.
   // +kubebuilder:validation:Optional
   optional double skewThreshold = 36;
 
-  // Drift treshold is the treshold for drift detection.
+  // Drift threshold is the threshold for drift detection.
   // +kubebuilder:validation:Optional
   optional double driftThreshold = 37;
 

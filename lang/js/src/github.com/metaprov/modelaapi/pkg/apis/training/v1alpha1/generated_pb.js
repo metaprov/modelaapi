@@ -9437,7 +9437,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
     customList: jspb.Message.toObjectList(msg.getCustomList(),
     proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.GeneratedColumnSpec.toObject, includeInstance),
     drop: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
-    passtrough: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f
+    passthrough: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9550,7 +9550,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
       break;
     case 18:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setPasstrough(value);
+      msg.setPassthrough(value);
       break;
     default:
       reader.skipField();
@@ -10338,10 +10338,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
 
 
 /**
- * optional bool passtrough = 18;
+ * optional bool passthrough = 18;
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getPasstrough = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.getPassthrough = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 18, false));
 };
 
@@ -10350,7 +10350,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * @param {boolean} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setPasstrough = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.setPassthrough = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -10359,7 +10359,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearPasstrough = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.clearPassthrough = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -10368,7 +10368,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineerin
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasPasstrough = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureEngineeringPipeline.prototype.hasPassthrough = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
@@ -12047,8 +12047,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
     filter: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
     wrapper: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
     pipelineList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    variancetresholdpct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
-    corrtreshold: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+    variancethresholdpct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+    corrthreshold: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     topn: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
     cumulativeimportanceprecent: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     reservedList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
@@ -12114,11 +12114,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setVariancetresholdpct(value);
+      msg.setVariancethresholdpct(value);
       break;
     case 8:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCorrtreshold(value);
+      msg.setCorrthreshold(value);
       break;
     case 9:
       var value = /** @type {number} */ (reader.readInt32());
@@ -12459,10 +12459,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * optional int32 varianceTresholdPct = 7;
+ * optional int32 variancethresholdPct = 7;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getVariancetresholdpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getVariancethresholdpct = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -12471,7 +12471,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setVariancetresholdpct = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setVariancethresholdpct = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -12480,7 +12480,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearVariancetresholdpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearVariancethresholdpct = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -12489,16 +12489,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasVariancetresholdpct = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasVariancethresholdpct = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional int32 corrTreshold = 8;
+ * optional int32 corrthreshold = 8;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getCorrtreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getCorrthreshold = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
 };
 
@@ -12507,7 +12507,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setCorrtreshold = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setCorrthreshold = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -12516,7 +12516,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearCorrtreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearCorrthreshold = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -12525,7 +12525,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasCorrtreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasCorrthreshold = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 

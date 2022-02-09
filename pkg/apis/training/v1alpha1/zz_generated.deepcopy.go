@@ -824,8 +824,8 @@ func (in *FeatureEngineeringPipeline) DeepCopyInto(out *FeatureEngineeringPipeli
 		*out = new(bool)
 		**out = **in
 	}
-	if in.Passtrough != nil {
-		in, out := &in.Passtrough, &out.Passtrough
+	if in.Passthrough != nil {
+		in, out := &in.Passthrough, &out.Passthrough
 		*out = new(bool)
 		**out = **in
 	}
@@ -1024,13 +1024,13 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = make([]catalogv1alpha1.FeatureSelection, len(*in))
 		copy(*out, *in)
 	}
-	if in.VarianceTresholdPct != nil {
-		in, out := &in.VarianceTresholdPct, &out.VarianceTresholdPct
+	if in.VariancethresholdPct != nil {
+		in, out := &in.VariancethresholdPct, &out.VariancethresholdPct
 		*out = new(int32)
 		**out = **in
 	}
-	if in.CorrTreshold != nil {
-		in, out := &in.CorrTreshold, &out.CorrTreshold
+	if in.Corrthreshold != nil {
+		in, out := &in.Corrthreshold, &out.Corrthreshold
 		*out = new(int32)
 		**out = **in
 	}

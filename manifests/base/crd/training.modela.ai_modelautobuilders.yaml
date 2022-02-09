@@ -391,7 +391,7 @@ spec:
                               maxLength: 63
                               type: string
                             driftThreshold:
-                              description: Drift treshold is the treshold for drift
+                              description: Drift threshold is the threshold for drift
                                 detection.
                               type: number
                             enum:
@@ -614,7 +614,7 @@ spec:
                                 distribution
                               type: number
                             skewThreshold:
-                              description: Skew treshold is the treshold for skew
+                              description: Skew threshold is the threshold for skew
                                 detection.
                               type: number
                             step:

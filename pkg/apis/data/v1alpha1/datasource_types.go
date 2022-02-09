@@ -599,12 +599,12 @@ type Column struct {
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
 	Sigma *float64 `json:"sigma,omitempty" protobuf:"bytes,35,opt,name=sigma"`
-	// Skew treshold is the treshold for skew detection.
+	// Skew threshold is the threshold for skew detection.
 	// +kubebuilder:validation:Optional
-	SkewTreshold *float64 `json:"skewThreshold,omitempty" protobuf:"bytes,36,opt,name=skewThreshold"`
-	// Drift treshold is the treshold for drift detection.
+	Skewthreshold *float64 `json:"skewThreshold,omitempty" protobuf:"bytes,36,opt,name=skewThreshold"`
+	// Drift threshold is the threshold for drift detection.
 	// +kubebuilder:validation:Optional
-	DriftTreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
+	Driftthreshold *float64 `json:"driftThreshold,omitempty" protobuf:"bytes,37,opt,name=driftThreshold"`
 	// If True than this is an index column
 	// +kubebuilder:default:=false
 	// +kubebuilder:validation:Optional

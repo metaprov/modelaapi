@@ -175,9 +175,9 @@ type PredictorSpec struct {
 	// +kubebuilder:default:="unknown"
 	// +kubebuilder:validation:Optional
 	Task *catalog.MLTask `json:"task,omitempty" protobuf:"bytes,21,opt,name=task"`
-	// The prediction treshold
+	// The prediction threshold
 	// +kubebuilder:validation:Optional
-	PredictionTreshold *float64 `json:"predictionTreshold,omitempty" protobuf:"bytes,22,opt,name=predictionTreshold"`
+	Predictionthreshold *float64 `json:"predictionthreshold,omitempty" protobuf:"bytes,22,opt,name=predictionthreshold"`
 	// Monitor spec specify the monitor for this predictor.
 	// +kubebuilder:validation:Optional
 	Monitor MonitorSpec `json:"monitor,omitempty" protobuf:"bytes,23,opt,name=monitor"`

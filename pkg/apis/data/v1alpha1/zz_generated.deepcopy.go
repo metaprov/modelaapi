@@ -247,13 +247,13 @@ func (in *Column) DeepCopyInto(out *Column) {
 		*out = new(float64)
 		**out = **in
 	}
-	if in.SkewTreshold != nil {
-		in, out := &in.SkewTreshold, &out.SkewTreshold
+	if in.Skewthreshold != nil {
+		in, out := &in.Skewthreshold, &out.Skewthreshold
 		*out = new(float64)
 		**out = **in
 	}
-	if in.DriftTreshold != nil {
-		in, out := &in.DriftTreshold, &out.DriftTreshold
+	if in.Driftthreshold != nil {
+		in, out := &in.Driftthreshold, &out.Driftthreshold
 		*out = new(float64)
 		**out = **in
 	}

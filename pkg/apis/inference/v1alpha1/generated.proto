@@ -876,9 +876,9 @@ message PredictorSpec {
   // +kubebuilder:validation:Optional
   optional string task = 21;
 
-  // The prediction treshold
+  // The prediction threshold
   // +kubebuilder:validation:Optional
-  optional double predictionTreshold = 22;
+  optional double predictionthreshold = 22;
 
   // Monitor spec specify the monitor for this predictor.
   // +kubebuilder:validation:Optional

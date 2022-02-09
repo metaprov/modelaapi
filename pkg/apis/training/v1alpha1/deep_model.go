@@ -164,7 +164,7 @@ const (
 	LayerNameLeakyReLU          NNLayerName = "leaky-relru"
 	LayerNamePReLU              NNLayerName = "prelu"
 	LayerNameELU                NNLayerName = "elu"
-	LayerNameThresholdedReLU    NNLayerName = "treshold-relu"
+	LayerNameThresholdedReLU    NNLayerName = "threshold-relu"
 	LayerNameSoftmax            NNLayerName = "softmax"
 	LayerNameReLU               NNLayerName = "relu"
 	LayerNameBatchNormalization NNLayerName = "batch-normalization"

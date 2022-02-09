@@ -544,10 +544,10 @@ message FeatureEngineeringPipeline {
   // +kubebuilder:validation:Optional
   optional bool drop = 17;
 
-  // If true, all the features in this pipeline will passtrough, without processing.
+  // If true, all the features in this pipeline will passthrough, without processing.
   // +kubebuilder:default:=false
   // +kubebuilder:validation:Optional
-  optional bool passtrough = 18;
+  optional bool passthrough = 18;
 }
 
 // Define the specification for the best feature engineering pipeline
@@ -688,12 +688,12 @@ message FeatureSelectionSpec {
   // Lowvar specify the filter to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 varianceTresholdPct = 7;
+  optional int32 variancethresholdPct = 7;
 
   // Remove Features with high correlations
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  optional int32 corrTreshold = 8;
+  optional int32 corrthreshold = 8;
 
   // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
   // +kubebuilder:default:=0
@@ -2659,12 +2659,12 @@ message PrunerSpec {
   // +kubebuilder:validation:Optional
   optional int32 percentile = 6;
 
-  // A minimum value which determines whether pruner prunes or not. Used only for treshold pruner
+  // A minimum value which determines whether pruner prunes or not. Used only for threshold pruner
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 lower = 7;
 
-  // A maximum value which determines whether pruner prunes or not. Used only for treshold pruner
+  // A maximum value which determines whether pruner prunes or not. Used only for threshold pruner
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
   optional int32 upper = 8;

@@ -808,8 +808,8 @@ export class FeatureEngineeringPipeline extends jspb.Message {
   getDrop(): boolean;
   setDrop(value: boolean): FeatureEngineeringPipeline;
 
-  getPasstrough(): boolean;
-  setPasstrough(value: boolean): FeatureEngineeringPipeline;
+  getPassthrough(): boolean;
+  setPassthrough(value: boolean): FeatureEngineeringPipeline;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeatureEngineeringPipeline.AsObject;
@@ -838,7 +838,7 @@ export namespace FeatureEngineeringPipeline {
     generatedList: Array<GeneratedColumnSpec.AsObject>,
     customList: Array<GeneratedColumnSpec.AsObject>,
     drop: boolean,
-    passtrough: boolean,
+    passthrough: boolean,
   }
 }
 
@@ -1039,11 +1039,11 @@ export class FeatureSelectionSpec extends jspb.Message {
   clearPipelineList(): FeatureSelectionSpec;
   addPipeline(value: string, index?: number): FeatureSelectionSpec;
 
-  getVariancetresholdpct(): number;
-  setVariancetresholdpct(value: number): FeatureSelectionSpec;
+  getVariancethresholdpct(): number;
+  setVariancethresholdpct(value: number): FeatureSelectionSpec;
 
-  getCorrtreshold(): number;
-  setCorrtreshold(value: number): FeatureSelectionSpec;
+  getCorrthreshold(): number;
+  setCorrthreshold(value: number): FeatureSelectionSpec;
 
   getTopn(): number;
   setTopn(value: number): FeatureSelectionSpec;
@@ -1072,8 +1072,8 @@ export namespace FeatureSelectionSpec {
     filter: boolean,
     wrapper: boolean,
     pipelineList: Array<string>,
-    variancetresholdpct: number,
-    corrtreshold: number,
+    variancethresholdpct: number,
+    corrthreshold: number,
     topn: number,
     cumulativeimportanceprecent: number,
     reservedList: Array<string>,

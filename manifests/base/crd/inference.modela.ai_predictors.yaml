@@ -436,8 +436,8 @@ spec:
                 maximum: 65535
                 minimum: 1
                 type: integer
-              predictionTreshold:
-                description: The prediction treshold
+              predictionthreshold:
+                description: The prediction threshold
                 type: number
               productRef:
                 description: The product that this predictor serve.

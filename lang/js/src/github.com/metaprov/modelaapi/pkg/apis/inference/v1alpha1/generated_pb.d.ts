@@ -1359,8 +1359,8 @@ export class PredictorSpec extends jspb.Message {
   getTask(): string;
   setTask(value: string): PredictorSpec;
 
-  getPredictiontreshold(): number;
-  setPredictiontreshold(value: number): PredictorSpec;
+  getPredictionthreshold(): number;
+  setPredictionthreshold(value: number): PredictorSpec;
 
   getMonitor(): MonitorSpec | undefined;
   setMonitor(value?: MonitorSpec): PredictorSpec;
@@ -1403,7 +1403,7 @@ export namespace PredictorSpec {
     backwardcurtain: string,
     type: string,
     task: string,
-    predictiontreshold: number,
+    predictionthreshold: number,
     monitor?: MonitorSpec.AsObject,
     auth?: PredictorAuthSpec.AsObject,
   }

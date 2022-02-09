@@ -12426,7 +12426,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.to
     backwardcurtain: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
     type: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     task: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
-    predictiontreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 22)) == null ? undefined : f,
+    predictionthreshold: (f = jspb.Message.getOptionalFloatingPointField(msg, 22)) == null ? undefined : f,
     monitor: (f = msg.getMonitor()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.toObject(includeInstance, f),
     auth: (f = msg.getAuth()) && proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorAuthSpec.toObject(includeInstance, f)
   };
@@ -12560,7 +12560,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.de
       break;
     case 22:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setPredictiontreshold(value);
+      msg.setPredictionthreshold(value);
       break;
     case 23:
       var value = new proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec;
@@ -13550,10 +13550,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
 
 
 /**
- * optional double predictionTreshold = 22;
+ * optional double predictionthreshold = 22;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getPredictiontreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getPredictionthreshold = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 22, 0.0));
 };
 
@@ -13562,7 +13562,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setPredictiontreshold = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.setPredictionthreshold = function(value) {
   return jspb.Message.setField(this, 22, value);
 };
 
@@ -13571,7 +13571,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearPredictiontreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.clearPredictionthreshold = function() {
   return jspb.Message.setField(this, 22, undefined);
 };
 
@@ -13580,7 +13580,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasPredictiontreshold = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.hasPredictionthreshold = function() {
   return jspb.Message.getField(this, 22) != null;
 };
 

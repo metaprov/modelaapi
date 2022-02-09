@@ -554,10 +554,10 @@ spec:
                           - none
                           - auto
                           type: string
-                        passtrough:
+                        passthrough:
                           default: false
                           description: If true, all the features in this pipeline
-                            will passtrough, without processing.
+                            will passthrough, without processing.
                           type: boolean
                         scaling:
                           default: none
@@ -644,7 +644,7 @@ spec:
                   selection:
                     description: Spec for feature selection
                     properties:
-                      corrTreshold:
+                      corrthreshold:
                         default: 95
                         description: Remove Features with high correlations
                         format: int32
@@ -716,7 +716,7 @@ spec:
                           select by importance. If 0, all the features are selected.
                         format: int32
                         type: integer
-                      varianceTresholdPct:
+                      variancethresholdPct:
                         default: 5
                         description: Lowvar specify the filter to remove low variance
                           features

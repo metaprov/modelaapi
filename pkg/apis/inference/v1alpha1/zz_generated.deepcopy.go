@@ -1216,8 +1216,8 @@ func (in *PredictorSpec) DeepCopyInto(out *PredictorSpec) {
 		*out = new(catalogv1alpha1.MLTask)
 		**out = **in
 	}
-	if in.PredictionTreshold != nil {
-		in, out := &in.PredictionTreshold, &out.PredictionTreshold
+	if in.Predictionthreshold != nil {
+		in, out := &in.Predictionthreshold, &out.Predictionthreshold
 		*out = new(float64)
 		**out = **in
 	}
