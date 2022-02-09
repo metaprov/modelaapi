@@ -782,7 +782,7 @@ func (in *FeatureEngineeringPipeline) DeepCopyInto(out *FeatureEngineeringPipeli
 	}
 	if in.DatetimeTransformation != nil {
 		in, out := &in.DatetimeTransformation, &out.DatetimeTransformation
-		*out = new(catalogv1alpha1.DatatimeTransformation)
+		*out = new(catalogv1alpha1.DatetimeTransformation)
 		**out = **in
 	}
 	if in.Text != nil {

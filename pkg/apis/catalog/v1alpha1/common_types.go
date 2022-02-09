@@ -753,12 +753,12 @@ const (
 // Datatime Transformation
 //==============================================================================
 // +kubebuilder:validation:Enum="extract-datetime-information";"none";"auto"
-type DatatimeTransformation string
+type DatetimeTransformation string
 
 const (
-	ExtractDateTimeInformation DatatimeTransformation = "extract-datetime-information"
-	NoneDatetime               DatatimeTransformation = "none"
-	AutoDatetime               DatatimeTransformation = "auto"
+	ExtractDateTimeInformation DatetimeTransformation = "extract-datetime-information"
+	NoneDatetime               DatetimeTransformation = "none"
+	AutoDatetime               DatetimeTransformation = "auto"
 )
 
 //==============================================================================
