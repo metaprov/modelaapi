@@ -11,8 +11,8 @@ type VirtualBucketConditionType string
 
 /// Bucket Condition
 const (
-	VirtualBucketReady    VirtualBucketConditionType = "Ready"
-	VirtualBucketArchived VirtualBucketConditionType = "Archived"
+	VirtualBucketReady VirtualBucketConditionType = "Ready"
+	VirtualBucketSaved VirtualBucketConditionType = "Saved"
 )
 
 // VitualBucketCondition describes the state of a virtual bucket at a certain point.

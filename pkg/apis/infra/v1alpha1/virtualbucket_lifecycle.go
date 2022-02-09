@@ -100,13 +100,13 @@ func (bucket *VirtualBucket) MarkReady() {
 
 func (bucket *VirtualBucket) MarkArchived() {
 	bucket.CreateOrUpdateCond(VirtualBucketCondition{
-		Type:   VirtualBucketArchived,
+		Type:   VirtualBucketSaved,
 		Status: v1.ConditionTrue,
 	})
 }
 
 func (bucket *VirtualBucket) Archived() bool {
-	return bucket.GetCond(VirtualBucketArchived).Status == v1.ConditionTrue
+	return bucket.GetCond(VirtualBucketSaved).Status == v1.ConditionTrue
 }
 
 func (bucket *VirtualBucket) MarkFailed(err string) {
