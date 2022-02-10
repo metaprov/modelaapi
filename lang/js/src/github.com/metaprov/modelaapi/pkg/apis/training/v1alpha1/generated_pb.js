@@ -12459,7 +12459,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * optional int32 variancethresholdPct = 7;
+ * optional int32 varianceThresholdPct = 7;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getVariancethresholdpct = function() {
@@ -12495,7 +12495,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * optional int32 corrthreshold = 8;
+ * optional int32 corrThreshold = 8;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getCorrthreshold = function() {

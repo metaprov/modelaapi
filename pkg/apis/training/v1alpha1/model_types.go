@@ -966,11 +966,11 @@ type FeatureSelectionSpec struct {
 	// Lowvar specify the filter to remove low variance features
 	// +kubebuilder:default:=5
 	// +kubebuilder:validation:Optional
-	VariancethresholdPct *int32 `json:"variancethresholdPct,omitempty" protobuf:"varint,7,opt,name=variancethresholdPct"`
+	VarianceThresholdPct *int32 `json:"varianceThresholdPct,omitempty" protobuf:"varint,7,opt,name=varianceThresholdPct"`
 	// Remove Features with high correlations
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	Corrthreshold *int32 `json:"corrthreshold,omitempty" protobuf:"varint,8,opt,name=corrthreshold"`
+	CorrThreshold *int32 `json:"corrThreshold,omitempty" protobuf:"varint,8,opt,name=corrThreshold"`
 	// Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional

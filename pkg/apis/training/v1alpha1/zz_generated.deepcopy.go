@@ -1024,13 +1024,13 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = make([]catalogv1alpha1.FeatureSelection, len(*in))
 		copy(*out, *in)
 	}
-	if in.VariancethresholdPct != nil {
-		in, out := &in.VariancethresholdPct, &out.VariancethresholdPct
+	if in.VarianceThresholdPct != nil {
+		in, out := &in.VarianceThresholdPct, &out.VarianceThresholdPct
 		*out = new(int32)
 		**out = **in
 	}
-	if in.Corrthreshold != nil {
-		in, out := &in.Corrthreshold, &out.Corrthreshold
+	if in.CorrThreshold != nil {
+		in, out := &in.CorrThreshold, &out.CorrThreshold
 		*out = new(int32)
 		**out = **in
 	}

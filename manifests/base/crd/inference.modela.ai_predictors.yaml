@@ -436,7 +436,7 @@ spec:
                 maximum: 65535
                 minimum: 1
                 type: integer
-              predictionthreshold:
+              predictionThreshold:
                 description: The prediction threshold
                 type: number
               productRef:

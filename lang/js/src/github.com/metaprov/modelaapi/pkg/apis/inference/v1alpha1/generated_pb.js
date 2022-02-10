@@ -13550,7 +13550,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.pr
 
 
 /**
- * optional double predictionthreshold = 22;
+ * optional double predictionThreshold = 22;
  * @return {number}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorSpec.prototype.getPredictionthreshold = function() {

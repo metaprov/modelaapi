@@ -688,12 +688,12 @@ message FeatureSelectionSpec {
   // Lowvar specify the filter to remove low variance features
   // +kubebuilder:default:=5
   // +kubebuilder:validation:Optional
-  optional int32 variancethresholdPct = 7;
+  optional int32 varianceThresholdPct = 7;
 
   // Remove Features with high correlations
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  optional int32 corrthreshold = 8;
+  optional int32 corrThreshold = 8;
 
   // Select the Top N is the number of feature to select by importance. If 0, all the features are selected.
   // +kubebuilder:default:=0
