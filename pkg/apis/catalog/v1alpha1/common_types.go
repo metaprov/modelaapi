@@ -129,7 +129,7 @@ const (
 	Clustering                    MLTask = "clustering"
 	Recommendation                MLTask = "recommendation"
 	OutlierDetection              MLTask = "outlier-detection"
-	NovelityDetection             MLTask = "novelty-detection"
+	NoveltyDetection              MLTask = "novelty-detection"
 	TopicModeling                 MLTask = "topic-modeling"
 	VideoActionRecognition        MLTask = "video-action-recognition"
 	VideoClassification           MLTask = "video-classification"
@@ -274,8 +274,8 @@ func MLTaskFromString(name string) (MLTask, error) {
 		return Recommendation, nil
 	case "outlier-detection":
 		return OutlierDetection, nil
-	case "novelity-detection":
-		return NovelityDetection, nil
+	case "novelty-detection":
+		return NoveltyDetection, nil
 	case "topic-modeling":
 		return TopicModeling, nil
 	case "unknown":
@@ -836,28 +836,29 @@ const (
 // Estimators
 //==============================================================================
 
-// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor"
+// +kubebuilder:validation:Enum="knn-regressor";"ridge-regressor";"lasso-regressor";"ada-boost-regressor";"decision-tree-regressor";"extra-tree-regressor";"linear-svr";"svr";"passive-agressive-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"sgd-regressor";"gradient-boosting-regressor";"random-forest-regressor";"xgb-regressor";"catboost-regressor";"lightgbm-regressor";"elasticnet-regressor";"dnn-regressor";"elliptic-envelope";"one-class-svm";"isolation-forest";"local-outlier-factor";"prophet";"knn-classifier";"ada-boost-classifier";"bernoulli-nb";"decision-tree-classifier";"extra-tree-classifier";"linear-svc";"svc";"passive-aggressive-classifier";"sgd-classifier";"logistic-regression";"gradient-boosting-classifier";"random-forest-classifier";"xgboost-classifier";"ridge-classifier";"quadratic-discriminant";"linear-discriminant";"lightgbm-classifier";"catboost-classifier";"stacking-ensemble";"none";"arima";"auto-arima";"vrima";"exponential-smoothing";"fast-fourier-transform";"nbeats";"theata-method";"als";"bayesian-personalized-ranking";"voting-classifier";"voting-regressor";"stacking-classifier";"stacking-regressor";"hist-gradient-boosting-classifier";"hist-gradient-boosting-regressor"
 type ClassicEstimatorName string
 
 const (
 	// Regression
-	KNeighborsRegressor       ClassicEstimatorName = "knn-regressor"
-	RidgeRegressor            ClassicEstimatorName = "ridge-regressor"
-	LassoRegressor            ClassicEstimatorName = "lasso-regressor"
-	AdaBoostRegressor         ClassicEstimatorName = "ada-boost-regressor"
-	DecisionTreeRegressor     ClassicEstimatorName = "decision-tree-regressor"
-	ExtraTreeRegressor        ClassicEstimatorName = "extra-tree-regressor"
-	LinearSvr                 ClassicEstimatorName = "linear-svr"
-	Svr                       ClassicEstimatorName = "svr"
-	PassiveArressiveRegressor ClassicEstimatorName = "passive-agressive-regressor"
-	SGDRegressor              ClassicEstimatorName = "sgd-regressor"
-	GradientBoostingRegressor ClassicEstimatorName = "gradient-boosting-regressor"
-	RandomForestRegressor     ClassicEstimatorName = "random-forest-regressor"
-	XGBRegressor              ClassicEstimatorName = "xgb-regressor"
-	CatBoostRegressor         ClassicEstimatorName = "catboost-regressor"
-	LightGbmRegressor         ClassicEstimatorName = "lightgbm-regressor"
-	ElasticNetRegressor       ClassicEstimatorName = "elasticnet-regressor"
-	DNNRegressor              ClassicEstimatorName = "dnn-regressor"
+	KNeighborsRegressor           ClassicEstimatorName = "knn-regressor"
+	RidgeRegressor                ClassicEstimatorName = "ridge-regressor"
+	LassoRegressor                ClassicEstimatorName = "lasso-regressor"
+	AdaBoostRegressor             ClassicEstimatorName = "ada-boost-regressor"
+	DecisionTreeRegressor         ClassicEstimatorName = "decision-tree-regressor"
+	ExtraTreeRegressor            ClassicEstimatorName = "extra-tree-regressor"
+	LinearSvr                     ClassicEstimatorName = "linear-svr"
+	Svr                           ClassicEstimatorName = "svr"
+	PassiveArressiveRegressor     ClassicEstimatorName = "passive-agressive-regressor"
+	SGDRegressor                  ClassicEstimatorName = "sgd-regressor"
+	GradientBoostingRegressor     ClassicEstimatorName = "gradient-boosting-regressor"
+	HistGradientBoostingRegressor ClassicEstimatorName = "hist-gradient-boosting-regressor"
+	RandomForestRegressor         ClassicEstimatorName = "random-forest-regressor"
+	XGBRegressor                  ClassicEstimatorName = "xgb-regressor"
+	CatBoostRegressor             ClassicEstimatorName = "catboost-regressor"
+	LightGbmRegressor             ClassicEstimatorName = "lightgbm-regressor"
+	ElasticNetRegressor           ClassicEstimatorName = "elasticnet-regressor"
+	DNNRegressor                  ClassicEstimatorName = "dnn-regressor"
 
 	// OutlierFilter
 	EllipticEnvelope   ClassicEstimatorName = "elliptic-envelope"
@@ -880,27 +881,28 @@ const (
 	BayesianPersonalizedRanking ClassicEstimatorName = "bayesian-personalized-ranking"
 
 	// Classifiers
-	KNeighborsClassifier        ClassicEstimatorName = "knn-classifier"
-	AdaBoostClassifier          ClassicEstimatorName = "ada-boost-classifier"
-	BernoulliNB                 ClassicEstimatorName = "bernoulli-nb"
-	DecisionTreeClassifier      ClassicEstimatorName = "decision-tree-classifier"
-	ExtraTreeClassifier         ClassicEstimatorName = "extra-tree-classifier"
-	LinearSVC                   ClassicEstimatorName = "linear-svc"
-	SVC                         ClassicEstimatorName = "svc"
-	PassiveAggressiveClassifier ClassicEstimatorName = "passive-aggressive-classifier"
-	SGDClassifier               ClassicEstimatorName = "sgd-classifier"
-	LogisticRegression          ClassicEstimatorName = "logistic-regression"
-	GradientBoostingClassifier  ClassicEstimatorName = "gradient-boosting-classifier"
-	RandomForestClassifier      ClassicEstimatorName = "random-forest-classifier"
-	XGBClassifier               ClassicEstimatorName = "xgboost-classifier"
-	RidgeClassifier             ClassicEstimatorName = "ridge-classifier"
-	QuadraticDiscriminant       ClassicEstimatorName = "quadratic-discriminant"
-	LinearDiscriminant          ClassicEstimatorName = "linear-discriminant"
-	LightGBMClassifier          ClassicEstimatorName = "lightgbm-classifier"
-	CatBoostClassifier          ClassicEstimatorName = "catboost-classifier"
-	StackingEnsemble            ClassicEstimatorName = "stacking-ensemble" // for stacking ensemble
-	UnknownEstimatorName        ClassicEstimatorName = "unknown"
-	NoneEstimatorName           ClassicEstimatorName = "none"
+	KNeighborsClassifier           ClassicEstimatorName = "knn-classifier"
+	AdaBoostClassifier             ClassicEstimatorName = "ada-boost-classifier"
+	BernoulliNB                    ClassicEstimatorName = "bernoulli-nb"
+	DecisionTreeClassifier         ClassicEstimatorName = "decision-tree-classifier"
+	ExtraTreeClassifier            ClassicEstimatorName = "extra-tree-classifier"
+	LinearSVC                      ClassicEstimatorName = "linear-svc"
+	SVC                            ClassicEstimatorName = "svc"
+	PassiveAggressiveClassifier    ClassicEstimatorName = "passive-aggressive-classifier"
+	SGDClassifier                  ClassicEstimatorName = "sgd-classifier"
+	LogisticRegression             ClassicEstimatorName = "logistic-regression"
+	GradientBoostingClassifier     ClassicEstimatorName = "gradient-boosting-classifier"
+	HistGradientBoostingClassifier ClassicEstimatorName = "hist-gradient-boosting-classifier"
+	RandomForestClassifier         ClassicEstimatorName = "random-forest-classifier"
+	XGBClassifier                  ClassicEstimatorName = "xgboost-classifier"
+	RidgeClassifier                ClassicEstimatorName = "ridge-classifier"
+	QuadraticDiscriminant          ClassicEstimatorName = "quadratic-discriminant"
+	LinearDiscriminant             ClassicEstimatorName = "linear-discriminant"
+	LightGBMClassifier             ClassicEstimatorName = "lightgbm-classifier"
+	CatBoostClassifier             ClassicEstimatorName = "catboost-classifier"
+	StackingEnsemble               ClassicEstimatorName = "stacking-ensemble" // for stacking ensemble
+	UnknownEstimatorName           ClassicEstimatorName = "unknown"
+	NoneEstimatorName              ClassicEstimatorName = "none"
 
 	// Clustering
 	SpectralClustering        ClassicEstimatorName = "spectral"
