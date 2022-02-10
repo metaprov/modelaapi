@@ -362,7 +362,7 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional double mad = 15;
 
-  // Pct25 is the 25 precent point
+  // Pct25 is the 25 percent point
   // +kubebuilder:validation:Optional
   optional double p25 = 16;
 
@@ -895,7 +895,7 @@ message DataPipelineRunStatus {
   // Update in case of terminal failure message
   optional string failureMessage = 8;
 
-  // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+  // Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
   optional int32 progress = 9;
 
@@ -2303,7 +2303,7 @@ message FeatureStatus {
   // Zeros is the numbers of zeros in the feature
   optional double zeros = 8;
 
-  // Pct25 is the 25 precent point
+  // Pct25 is the 25 percent point
   optional double p25 = 10;
 
   // Pct50 is the median

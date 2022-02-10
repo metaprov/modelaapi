@@ -276,7 +276,7 @@ type ModelPipelineRunStatus struct {
 	// Update in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,19,opt,name=failureMessage"`
-	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+	// Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress" protobuf:"varint,20,opt,name=progress"`
 	// What triggered the run

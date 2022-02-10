@@ -498,7 +498,7 @@ type ModelStatus struct {
 	// Update in case of terminal failure message
 	//+kubebuilder:validation:Optional
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,40,opt,name=failureMessage"`
-	// Model Progress in precent, the progress takes into account the different stages of the model.
+	// Model Progress in percent, the progress takes into account the different stages of the model.
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress,omitempty" protobuf:"varint,41,opt,name=progress"`
 	// Size of the model size
@@ -819,7 +819,7 @@ type TrainingSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	NodeCount *int32 `json:"nodeCount,omitempty" protobuf:"varint,14,opt,name=nodeCount"`
-	// Set the precent of dataset to use during training. This is usually assigned
+	// Set the percent of dataset to use during training. This is usually assigned
 	// by the optimizer.
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional

@@ -117,10 +117,10 @@ export class ROCCurve extends jspb.Message {
   clearTprList(): ROCCurve;
   addTpr(value: number, index?: number): ROCCurve;
 
-  getTresholdsList(): Array<number>;
-  setTresholdsList(value: Array<number>): ROCCurve;
-  clearTresholdsList(): ROCCurve;
-  addTresholds(value: number, index?: number): ROCCurve;
+  getThresholdsList(): Array<number>;
+  setThresholdsList(value: Array<number>): ROCCurve;
+  clearThresholdsList(): ROCCurve;
+  addThresholds(value: number, index?: number): ROCCurve;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ROCCurve.AsObject;
@@ -134,7 +134,7 @@ export namespace ROCCurve {
   export type AsObject = {
     fprList: Array<number>,
     tprList: Array<number>,
-    tresholdsList: Array<number>,
+    thresholdsList: Array<number>,
   }
 }
 
@@ -149,10 +149,10 @@ export class PrecisionRecallCurve extends jspb.Message {
   clearRecallList(): PrecisionRecallCurve;
   addRecall(value: number, index?: number): PrecisionRecallCurve;
 
-  getTresholdsList(): Array<number>;
-  setTresholdsList(value: Array<number>): PrecisionRecallCurve;
-  clearTresholdsList(): PrecisionRecallCurve;
-  addTresholds(value: number, index?: number): PrecisionRecallCurve;
+  getThresholdsList(): Array<number>;
+  setThresholdsList(value: Array<number>): PrecisionRecallCurve;
+  clearThresholdsList(): PrecisionRecallCurve;
+  addThresholds(value: number, index?: number): PrecisionRecallCurve;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PrecisionRecallCurve.AsObject;
@@ -166,7 +166,7 @@ export namespace PrecisionRecallCurve {
   export type AsObject = {
     precisionList: Array<number>,
     recallList: Array<number>,
-    tresholdsList: Array<number>,
+    thresholdsList: Array<number>,
   }
 }
 

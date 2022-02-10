@@ -1594,7 +1594,7 @@ spec:
                     type: object
                   samplePct:
                     default: 100
-                    description: Set the precent of dataset to use during training.
+                    description: Set the percent of dataset to use during training.
                       This is usually assigned by the optimizer.
                     format: int32
                     type: integer
@@ -2084,7 +2084,7 @@ spec:
                   were produce during processing
                 type: string
               progress:
-                description: Model Progress in precent, the progress takes into account
+                description: Model Progress in percent, the progress takes into account
                   the different stages of the model.
                 format: int32
                 type: integer

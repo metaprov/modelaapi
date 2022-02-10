@@ -132,7 +132,7 @@ type DataPipelineRunStatus struct {
 	// Update in case of terminal failure message
 	FailureMessage *string `json:"failureMessage,omitempty" protobuf:"bytes,8,opt,name=failureMessage"`
 
-	// Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+	// Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
 	// +kubebuilder:validation:Optional
 	Progress *int32 `json:"progress" protobuf:"varint,9,opt,name=progress"`
 	// Holds the location of log paths

@@ -237,7 +237,7 @@ spec:
                 description: the phase of the run
                 type: string
               progress:
-                description: Pipeline progress Progress in precent, the progress takes
+                description: Pipeline progress Progress in percent, the progress takes
                   into account the different stages of the pipeline
                 format: int32
                 type: integer

@@ -509,7 +509,7 @@ const (
 	// Forecast specific
 	MAPE  Metric = "mape"
 	MAZE  Metric = "maze"
-	MDAPE Metric = "mdape" // median absolute precentage error
+	MDAPE Metric = "mdape" // median absolute percentage error
 	SMAPE Metric = "smape"
 
 	//Clustering

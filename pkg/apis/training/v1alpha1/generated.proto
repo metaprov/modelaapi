@@ -1321,7 +1321,7 @@ message ModelCompilerRunStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 7;
 
-  // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+  // Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
   optional int32 progress = 8;
 
@@ -1633,7 +1633,7 @@ message ModelPipelineRunStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 19;
 
-  // Pipeline progress Progress in precent, the progress takes into account the different stages of the pipeline
+  // Pipeline progress Progress in percent, the progress takes into account the different stages of the pipeline
   // +kubebuilder:validation:Optional
   optional int32 progress = 20;
 
@@ -2137,7 +2137,7 @@ message ModelStatus {
   // +kubebuilder:validation:Optional
   optional string failureMessage = 40;
 
-  // Model Progress in precent, the progress takes into account the different stages of the model.
+  // Model Progress in percent, the progress takes into account the different stages of the model.
   // +kubebuilder:validation:Optional
   optional int32 progress = 41;
 
@@ -2652,7 +2652,7 @@ message PrunerSpec {
   // +kubebuilder:validation:Optional
   optional int32 intervalTrials = 5;
 
-  // Keep specific precent of trials. Used only with percentile pruner
+  // Keep specific percent of trials. Used only with percentile pruner
   // +kubebuilder:default:=25
   // +kubebuilder:validation:Minimum=0
   // +kubebuilder:validation:Maximum=100
@@ -3310,7 +3310,7 @@ message StudyStatus {
   // +kubebuilder:validation:Optional
   optional int32 validationRows = 19;
 
-  // Study Progress in precent, the progress takes into account the different stages of the study.
+  // Study Progress in percent, the progress takes into account the different stages of the study.
   // +kubebuilder:validation:Optional
   optional int32 progress = 20;
 
@@ -3625,7 +3625,7 @@ message TrainingSpec {
   // +kubebuilder:validation:Optional
   optional int32 nodeCount = 14;
 
-  // Set the precent of dataset to use during training. This is usually assigned
+  // Set the percent of dataset to use during training. This is usually assigned
   // by the optimizer.
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional

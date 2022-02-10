@@ -30,13 +30,13 @@ message ModelProfile {
 message ROCCurve {
     repeated double fpr         = 1;
     repeated double tpr         = 2;
-    repeated double tresholds   = 3;    
+    repeated double thresholds   = 3;    
 }
 
 message PrecisionRecallCurve {
     repeated double precision   = 1;
     repeated double recall      = 2;
-    repeated double tresholds   = 3;    
+    repeated double thresholds   = 3;    
 }
 
 

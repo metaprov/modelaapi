@@ -2585,7 +2585,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     private double p25_;
     /// <summary>
-    /// Pct25 is the 25 precent point
+    /// Pct25 is the 25 percent point
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double P25 {
@@ -20824,7 +20824,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Data.V1Alpha1 {
 
     private double p01_;
     /// <summary>
-    /// P01 is the numbers of values in the first precent
+    /// P01 is the numbers of values in the first percent
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

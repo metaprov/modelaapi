@@ -111,7 +111,7 @@ type FeatureStatus struct {
 	Kurtosis float64 `json:"kurtosis,omitempty" protobuf:"bytes,7,opt,name=kurtosis"`
 	// Zeros is the numbers of zeros in the feature
 	Zeros float64 `json:"zeros,omitempty" protobuf:"bytes,8,opt,name=zeros"`
-	// Pct25 is the 25 precent point
+	// Pct25 is the 25 percent point
 	P25 float64 `json:"p25,omitempty" protobuf:"bytes,10,opt,name=p25"`
 	// Pct50 is the median
 	P50 float64 `json:"p50,omitempty" protobuf:"bytes,11,opt,name=p50"`

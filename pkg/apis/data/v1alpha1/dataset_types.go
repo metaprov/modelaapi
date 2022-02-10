@@ -304,7 +304,7 @@ type ColumnStatistics struct {
 	// Skewness is the standard deviation value of the attribute
 	// +kubebuilder:validation:Optional
 	Mad float64 `json:"mad,omitempty" protobuf:"bytes,15,opt,name=mad"`
-	// Pct25 is the 25 precent point
+	// Pct25 is the 25 percent point
 	// +kubebuilder:validation:Optional
 	P25 float64 `json:"p25,omitempty" protobuf:"bytes,16,opt,name=p25"`
 	// Pct50 is the median

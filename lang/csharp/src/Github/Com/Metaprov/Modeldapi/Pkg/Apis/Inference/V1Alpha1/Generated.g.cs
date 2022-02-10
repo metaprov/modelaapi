@@ -199,7 +199,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.CurtainSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.CurtainSpec.Parser, new[]{ "Description", "VersionName", "ServingsiteName", "DatasetName", "Wizards", "Question", "Owner" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.CurtainStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.CurtainStatus.Parser, new[]{ "Conditions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.CurtainTemplateSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.CurtainTemplateSpec.Parser, new[]{ "Metadata", "Spec" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.DriftCheckSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.DriftCheckSpec.Parser, new[]{ "CronExpr", "Treshold", "NotifierName", "TestDataset" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.DriftCheckSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.DriftCheckSpec.Parser, new[]{ "CronExpr", "Threshold", "NotifierName", "TestDataset" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.ModelDeploymentSpec), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.ModelDeploymentSpec.Parser, new[]{ "ModelName", "Replicas", "Autoscale", "Weight", "Canary", "Shadow", "Filter", "CanaryMetrics" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.ModelDeploymentStatus), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.ModelDeploymentStatus.Parser, new[]{ "ImageName", "DeploymentName", "ServiceName", "HpaName", "Current95", "Current99", "LastPrediction", "DailyPredictionAvg" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.PredictionChannel), global::Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1.PredictionChannel.Parser, new[]{ "Table", "Bot", "Bucket", "Streaming" }, null, null, null, null),
@@ -2848,7 +2848,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
     public DriftCheckSpec(DriftCheckSpec other) : this() {
       _hasBits0 = other._hasBits0;
       cronExpr_ = other.cronExpr_;
-      treshold_ = other.treshold_;
+      threshold_ = other.threshold_;
       notifierName_ = other.notifierName_;
       testDataset_ = other.testDataset_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -2885,31 +2885,31 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
       cronExpr_ = null;
     }
 
-    /// <summary>Field number for the "treshold" field.</summary>
-    public const int TresholdFieldNumber = 2;
-    private readonly static double TresholdDefaultValue = 0D;
+    /// <summary>Field number for the "threshold" field.</summary>
+    public const int ThresholdFieldNumber = 2;
+    private readonly static double ThresholdDefaultValue = 0D;
 
-    private double treshold_;
+    private double threshold_;
     /// <summary>
     /// The drift threshold.
     /// +kubebuilder:validation:Optional
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Treshold {
-      get { if ((_hasBits0 & 1) != 0) { return treshold_; } else { return TresholdDefaultValue; } }
+    public double Threshold {
+      get { if ((_hasBits0 & 1) != 0) { return threshold_; } else { return ThresholdDefaultValue; } }
       set {
         _hasBits0 |= 1;
-        treshold_ = value;
+        threshold_ = value;
       }
     }
-    /// <summary>Gets whether the "treshold" field is set</summary>
+    /// <summary>Gets whether the "threshold" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool HasTreshold {
+    public bool HasThreshold {
       get { return (_hasBits0 & 1) != 0; }
     }
-    /// <summary>Clears the value of the "treshold" field</summary>
+    /// <summary>Clears the value of the "threshold" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearTreshold() {
+    public void ClearThreshold() {
       _hasBits0 &= ~1;
     }
 
@@ -2979,7 +2979,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
         return true;
       }
       if (CronExpr != other.CronExpr) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Treshold, other.Treshold)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Threshold, other.Threshold)) return false;
       if (NotifierName != other.NotifierName) return false;
       if (TestDataset != other.TestDataset) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -2989,7 +2989,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
     public override int GetHashCode() {
       int hash = 1;
       if (HasCronExpr) hash ^= CronExpr.GetHashCode();
-      if (HasTreshold) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Treshold);
+      if (HasThreshold) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Threshold);
       if (HasNotifierName) hash ^= NotifierName.GetHashCode();
       if (HasTestDataset) hash ^= TestDataset.GetHashCode();
       if (_unknownFields != null) {
@@ -3012,9 +3012,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
         output.WriteRawTag(10);
         output.WriteString(CronExpr);
       }
-      if (HasTreshold) {
+      if (HasThreshold) {
         output.WriteRawTag(17);
-        output.WriteDouble(Treshold);
+        output.WriteDouble(Threshold);
       }
       if (HasNotifierName) {
         output.WriteRawTag(26);
@@ -3037,9 +3037,9 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
         output.WriteRawTag(10);
         output.WriteString(CronExpr);
       }
-      if (HasTreshold) {
+      if (HasThreshold) {
         output.WriteRawTag(17);
-        output.WriteDouble(Treshold);
+        output.WriteDouble(Threshold);
       }
       if (HasNotifierName) {
         output.WriteRawTag(26);
@@ -3061,7 +3061,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
       if (HasCronExpr) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CronExpr);
       }
-      if (HasTreshold) {
+      if (HasThreshold) {
         size += 1 + 8;
       }
       if (HasNotifierName) {
@@ -3084,8 +3084,8 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
       if (other.HasCronExpr) {
         CronExpr = other.CronExpr;
       }
-      if (other.HasTreshold) {
-        Treshold = other.Treshold;
+      if (other.HasThreshold) {
+        Threshold = other.Threshold;
       }
       if (other.HasNotifierName) {
         NotifierName = other.NotifierName;
@@ -3112,7 +3112,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
             break;
           }
           case 17: {
-            Treshold = input.ReadDouble();
+            Threshold = input.ReadDouble();
             break;
           }
           case 26: {
@@ -3142,7 +3142,7 @@ namespace Github.Com.Metaprov.Modelaapi.Pkg.Apis.Inference.V1Alpha1 {
             break;
           }
           case 17: {
-            Treshold = input.ReadDouble();
+            Threshold = input.ReadDouble();
             break;
           }
           case 26: {

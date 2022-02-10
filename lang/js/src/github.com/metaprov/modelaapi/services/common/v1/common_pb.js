@@ -1172,7 +1172,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.toObject = funct
   var f, obj = {
     fprList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
     tprList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
-    tresholdsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f
+    thresholdsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1224,7 +1224,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.deserializeBinar
     case 3:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
       for (var i = 0; i < values.length; i++) {
-        msg.addTresholds(values[i]);
+        msg.addThresholds(values[i]);
       }
       break;
     default:
@@ -1270,7 +1270,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.serializeBinaryT
       f
     );
   }
-  f = message.getTresholdsList();
+  f = message.getThresholdsList();
   if (f.length > 0) {
     writer.writePackedDouble(
       3,
@@ -1355,10 +1355,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.clearT
 
 
 /**
- * repeated double tresholds = 3;
+ * repeated double thresholds = 3;
  * @return {!Array<number>}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.getTresholdsList = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.getThresholdsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 3));
 };
 
@@ -1367,7 +1367,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.getTre
  * @param {!Array<number>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.setTresholdsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.setThresholdsList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -1377,7 +1377,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.setTre
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.addTresholds = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.addThresholds = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
@@ -1386,8 +1386,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.addTre
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.clearTresholdsList = function() {
-  return this.setTresholdsList([]);
+proto.github.com.metaprov.modelaapi.services.common.v1.ROCCurve.prototype.clearThresholdsList = function() {
+  return this.setThresholdsList([]);
 };
 
 
@@ -1432,7 +1432,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.toOb
   var f, obj = {
     precisionList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 1)) == null ? undefined : f,
     recallList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 2)) == null ? undefined : f,
-    tresholdsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f
+    thresholdsList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1484,7 +1484,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.dese
     case 3:
       var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
       for (var i = 0; i < values.length; i++) {
-        msg.addTresholds(values[i]);
+        msg.addThresholds(values[i]);
       }
       break;
     default:
@@ -1530,7 +1530,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.seri
       f
     );
   }
-  f = message.getTresholdsList();
+  f = message.getThresholdsList();
   if (f.length > 0) {
     writer.writePackedDouble(
       3,
@@ -1615,10 +1615,10 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prot
 
 
 /**
- * repeated double tresholds = 3;
+ * repeated double thresholds = 3;
  * @return {!Array<number>}
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.getTresholdsList = function() {
+proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.getThresholdsList = function() {
   return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 3));
 };
 
@@ -1627,7 +1627,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prot
  * @param {!Array<number>} value
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.setTresholdsList = function(value) {
+proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.setThresholdsList = function(value) {
   return jspb.Message.setField(this, 3, value || []);
 };
 
@@ -1637,7 +1637,7 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prot
  * @param {number=} opt_index
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.addTresholds = function(value, opt_index) {
+proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.addThresholds = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
@@ -1646,8 +1646,8 @@ proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prot
  * Clears the list making it empty but non-null.
  * @return {!proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve} returns this
  */
-proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.clearTresholdsList = function() {
-  return this.setTresholdsList([]);
+proto.github.com.metaprov.modelaapi.services.common.v1.PrecisionRecallCurve.prototype.clearThresholdsList = function() {
+  return this.setThresholdsList([]);
 };
 
 

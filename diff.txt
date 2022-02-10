@@ -122,7 +122,7 @@ index 6d1958e3..70b1c979 100644
  
  // StudyStatus defines the observed state of the Study
 @@ -501,6 +510,9 @@ type StudyStatus struct {
- 	// Study Progress in precent, the progress takes into account the different stages of the study.
+ 	// Study Progress in percent, the progress takes into account the different stages of the study.
  	// +kubebuilder:validation:Optional
  	Progress *int32 `json:"progress" protobuf:"varint,35,opt,name=progress"`
 +	// Sha 256 of the data sig

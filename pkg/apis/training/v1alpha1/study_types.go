@@ -65,14 +65,14 @@ const (
 	AutoSearchMethod SamplerName = "auto"
 )
 
-// +kubebuilder:validation:Enum="none";"patient";"median";"precentile";"sh";"hyperband";"threshold";
+// +kubebuilder:validation:Enum="none";"patient";"median";"percentile";"sh";"hyperband";"threshold";
 type PrunerName string
 
 const (
 	NonePruner      PrunerName = "none"
 	PatientPruner   PrunerName = "patient"
 	MedianPruner    PrunerName = "median"
-	PrcentilePruner PrunerName = "precentile"
+	PrcentilePruner PrunerName = "percentile"
 	SHPruner        PrunerName = "sh"
 	HyperbandPruner PrunerName = "hyperband"
 	thresholdPruner PrunerName = "threshold"
@@ -338,7 +338,7 @@ type PrunerSpec struct {
 	// +kubebuilder:default:=1
 	// +kubebuilder:validation:Optional
 	IntervalSteps *int32 `json:"intervalTrials,omitempty" protobuf:"varint,5,opt,name=intervalTrials"`
-	// Keep specific precent of trials. Used only with percentile pruner
+	// Keep specific percent of trials. Used only with percentile pruner
 	// +kubebuilder:default:=25
 	// +kubebuilder:validation:Minimum=0
 	// +kubebuilder:validation:Maximum=100
@@ -589,7 +589,7 @@ type StudyStatus struct {
 	//Validation row contain the number of validation rows for cases that we have validation.
 	// +kubebuilder:validation:Optional
 	ValidationRows int32 `json:"validationRows" protobuf:"varint,19,opt,name=validationRows"`
-	// Study Progress in precent, the progress takes into account the different stages of the study.
+	// Study Progress in percent, the progress takes into account the different stages of the study.
 	// +kubebuilder:validation:Optional
 	Progress int32 `json:"progress" protobuf:"varint,20,opt,name=progress"`
 	// define a baseline model that will be the baseline for the search. If not none, the base line is the first model

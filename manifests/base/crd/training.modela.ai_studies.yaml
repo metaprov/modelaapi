@@ -1339,7 +1339,7 @@ spec:
                         type: integer
                       percentile:
                         default: 25
-                        description: Keep specific precent of trials. Used only with
+                        description: Keep specific percent of trials. Used only with
                           percentile pruner
                         format: int32
                         maximum: 100
@@ -1387,7 +1387,7 @@ spec:
                         - none
                         - patient
                         - median
-                        - precentile
+                        - percentile
                         - sh
                         - hyperband
                         - threshold
@@ -1769,7 +1769,7 @@ spec:
                     type: object
                   samplePct:
                     default: 100
-                    description: Set the precent of dataset to use during training.
+                    description: Set the percent of dataset to use during training.
                       This is usually assigned by the optimizer.
                     format: int32
                     type: integer
@@ -2555,7 +2555,7 @@ spec:
                   processing
                 type: string
               progress:
-                description: Study Progress in precent, the progress takes into account
+                description: Study Progress in percent, the progress takes into account
                   the different stages of the study.
                 format: int32
                 type: integer
