@@ -63,9 +63,9 @@ type ModelValidation struct {
 	// +kubebuilder:validation:Optional
 	Max *float64 `json:"max,omitempty" protobuf:"bytes,9,opt,name=max"`
 	// +kubebuilder:validation:Optional
-	MinPrecent *float64 `json:"minPrecent,omitempty" protobuf:"bytes,10,opt,name=minPrecent"`
+	MinPercent *float64 `json:"minPercent,omitempty" protobuf:"bytes,10,opt,name=minPercent"`
 	// +kubebuilder:validation:Optional
-	MaxPrecent *float64 `json:"maxPrecent,omitempty" protobuf:"bytes,11,opt,name=maxPrecent"`
+	MaxPercent *float64 `json:"maxPercent,omitempty" protobuf:"bytes,11,opt,name=maxPercent"`
 	// Agg is used when we measured aggregate performance, for example median or average
 	Agg *catalog.Aggregate `json:"agg,omitempty" protobuf:"bytes,12,opt,name=agg"`
 }
@@ -942,7 +942,7 @@ type FeatureSelectionSpec struct {
 	// +kubebuilder:default:=true
 	// +kubebuilder:validation:Optional
 	Enabled *bool `json:"enabled,omitempty" protobuf:"varint,1,rep,name=enabled"`
-	// Precent of data to sample while preforming the feature engineering search
+	// Percent of data to sample while preforming the feature engineering search
 	// +kubebuilder:default:=100
 	// +kubebuilder:validation:Optional
 	SamplePct *int32 `json:"samplePct,omitempty" protobuf:"varint,2,rep,name=samplePct"`
@@ -978,7 +978,7 @@ type FeatureSelectionSpec struct {
 	// The cummulative importance of all the importance feature to include
 	// +kubebuilder:default:=95
 	// +kubebuilder:validation:Optional
-	CumulativeImportancePrecent *int32 `json:"cumulativeImportancePrecent,omitempty" protobuf:"varint,10,opt,name=cumulativeImportancePrecent"`
+	CumulativeImportancePercent *int32 `json:"cumulativeImportancePercent,omitempty" protobuf:"varint,10,opt,name=cumulativeImportancePercent"`
 	// List of feature names to consider when training , even after filtering
 	// +kubebuilder:validation:Optional
 	Reserved []string `json:"reserved,omitempty" protobuf:"bytes,11,rep,name=reserved"`

@@ -1039,8 +1039,8 @@ func (in *FeatureSelectionSpec) DeepCopyInto(out *FeatureSelectionSpec) {
 		*out = new(int32)
 		**out = **in
 	}
-	if in.CumulativeImportancePrecent != nil {
-		in, out := &in.CumulativeImportancePrecent, &out.CumulativeImportancePrecent
+	if in.CumulativeImportancePercent != nil {
+		in, out := &in.CumulativeImportancePercent, &out.CumulativeImportancePercent
 		*out = new(int32)
 		**out = **in
 	}
@@ -2752,13 +2752,13 @@ func (in *ModelValidation) DeepCopyInto(out *ModelValidation) {
 		*out = new(float64)
 		**out = **in
 	}
-	if in.MinPrecent != nil {
-		in, out := &in.MinPrecent, &out.MinPrecent
+	if in.MinPercent != nil {
+		in, out := &in.MinPercent, &out.MinPercent
 		*out = new(float64)
 		**out = **in
 	}
-	if in.MaxPrecent != nil {
-		in, out := &in.MaxPrecent, &out.MaxPrecent
+	if in.MaxPercent != nil {
+		in, out := &in.MaxPercent, &out.MaxPercent
 		*out = new(float64)
 		**out = **in
 	}

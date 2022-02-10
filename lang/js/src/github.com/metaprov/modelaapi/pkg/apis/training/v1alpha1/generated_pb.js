@@ -12050,7 +12050,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
     variancethresholdpct: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     corrthreshold: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
     topn: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
-    cumulativeimportanceprecent: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+    cumulativeimportancepercent: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
     reservedList: (f = jspb.Message.getRepeatedField(msg, 11)) == null ? undefined : f
   };
 
@@ -12126,7 +12126,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
       break;
     case 10:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCumulativeimportanceprecent(value);
+      msg.setCumulativeimportancepercent(value);
       break;
     case 11:
       var value = /** @type {string} */ (reader.readString());
@@ -12567,10 +12567,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
 
 
 /**
- * optional int32 cumulativeImportancePrecent = 10;
+ * optional int32 cumulativeImportancePercent = 10;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getCumulativeimportanceprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.getCumulativeimportancepercent = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -12579,7 +12579,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setCumulativeimportanceprecent = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.setCumulativeimportancepercent = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -12588,7 +12588,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearCumulativeimportanceprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.clearCumulativeimportancepercent = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -12597,7 +12597,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionS
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasCumulativeimportanceprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.FeatureSelectionSpec.prototype.hasCumulativeimportancepercent = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -33394,8 +33394,8 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.t
     metric: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
     min: (f = jspb.Message.getOptionalFloatingPointField(msg, 8)) == null ? undefined : f,
     max: (f = jspb.Message.getOptionalFloatingPointField(msg, 9)) == null ? undefined : f,
-    minprecent: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
-    maxprecent: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
+    minpercent: (f = jspb.Message.getOptionalFloatingPointField(msg, 10)) == null ? undefined : f,
+    maxpercent: (f = jspb.Message.getOptionalFloatingPointField(msg, 11)) == null ? undefined : f,
     agg: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
   };
 
@@ -33471,11 +33471,11 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.d
       break;
     case 10:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMinprecent(value);
+      msg.setMinpercent(value);
       break;
     case 11:
       var value = /** @type {number} */ (reader.readDouble());
-      msg.setMaxprecent(value);
+      msg.setMaxpercent(value);
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
@@ -33922,10 +33922,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.p
 
 
 /**
- * optional double minPrecent = 10;
+ * optional double minPercent = 10;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMinprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMinpercent = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 10, 0.0));
 };
 
@@ -33934,7 +33934,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMinprecent = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMinpercent = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -33943,7 +33943,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMinprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMinpercent = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -33952,16 +33952,16 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMinprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMinpercent = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional double maxPrecent = 11;
+ * optional double maxPercent = 11;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMaxprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.getMaxpercent = function() {
   return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 11, 0.0));
 };
 
@@ -33970,7 +33970,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMaxprecent = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.setMaxpercent = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -33979,7 +33979,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMaxprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.clearMaxpercent = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -33988,7 +33988,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMaxprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelValidation.prototype.hasMaxpercent = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 

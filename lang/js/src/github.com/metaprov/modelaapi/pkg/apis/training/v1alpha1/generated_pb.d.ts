@@ -1048,8 +1048,8 @@ export class FeatureSelectionSpec extends jspb.Message {
   getTopn(): number;
   setTopn(value: number): FeatureSelectionSpec;
 
-  getCumulativeimportanceprecent(): number;
-  setCumulativeimportanceprecent(value: number): FeatureSelectionSpec;
+  getCumulativeimportancepercent(): number;
+  setCumulativeimportancepercent(value: number): FeatureSelectionSpec;
 
   getReservedList(): Array<string>;
   setReservedList(value: Array<string>): FeatureSelectionSpec;
@@ -1075,7 +1075,7 @@ export namespace FeatureSelectionSpec {
     variancethresholdpct: number,
     corrthreshold: number,
     topn: number,
-    cumulativeimportanceprecent: number,
+    cumulativeimportancepercent: number,
     reservedList: Array<string>,
   }
 }
@@ -3278,11 +3278,11 @@ export class ModelValidation extends jspb.Message {
   getMax(): number;
   setMax(value: number): ModelValidation;
 
-  getMinprecent(): number;
-  setMinprecent(value: number): ModelValidation;
+  getMinpercent(): number;
+  setMinpercent(value: number): ModelValidation;
 
-  getMaxprecent(): number;
-  setMaxprecent(value: number): ModelValidation;
+  getMaxpercent(): number;
+  setMaxpercent(value: number): ModelValidation;
 
   getAgg(): string;
   setAgg(value: string): ModelValidation;
@@ -3306,8 +3306,8 @@ export namespace ModelValidation {
     metric: string,
     min: number,
     max: number,
-    minprecent: number,
-    maxprecent: number,
+    minpercent: number,
+    maxpercent: number,
     agg: string,
   }
 }

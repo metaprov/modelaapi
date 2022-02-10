@@ -235,7 +235,7 @@ spec:
                     description: NotifierName is the name of notifier to alert in
                       case of
                     type: string
-                  samplePrecent:
+                  samplePercent:
                     default: 0
                     description: How many rows to sample from the live data for
                     format: int32
@@ -324,7 +324,7 @@ spec:
                           type: integer
                         max:
                           type: number
-                        maxPrecent:
+                        maxPercent:
                           type: number
                         metric:
                           enum:
@@ -406,7 +406,7 @@ spec:
                           type: string
                         min:
                           type: number
-                        minPrecent:
+                        minPercent:
                           type: number
                         prevModel:
                           description: PrevModel compare to model

@@ -322,7 +322,7 @@ message ColumnStatistics {
   // +kubebuilder:validation:Optional
   optional int32 missing = 5;
 
-  // Precent missing
+  // Percent missing
   // +kubebuilder:validation:Optional
   optional double percentMissing = 6;
 

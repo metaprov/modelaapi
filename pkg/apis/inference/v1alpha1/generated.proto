@@ -455,7 +455,7 @@ message MonitorSpec {
   // How many rows to sample from the live data for
   // +kubebuilder:default:=0
   // +kubebuilder:validation:Optional
-  optional int32 samplePrecent = 2;
+  optional int32 samplePercent = 2;
 
   // Schedule for running the monitor
   // +kubebuilder:validation:Optional

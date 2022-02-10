@@ -274,7 +274,7 @@ type ColumnStatistics struct {
 	// The number of missing values
 	// +kubebuilder:validation:Optional
 	Missing int32 `json:"missing,omitempty" protobuf:"varint,5,opt,name=missing"`
-	// Precent missing
+	// Percent missing
 	// +kubebuilder:validation:Optional
 	PercentMissing float64 `json:"percentMissing,omitempty" protobuf:"bytes,6,opt,name=percentMissing"`
 	// Mean is the mean value of the attribute

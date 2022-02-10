@@ -7399,7 +7399,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
 proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.toObject = function(includeInstance, msg) {
   var f, obj = {
     enabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-    sampleprecent: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+    samplepercent: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
     schedule: (f = msg.getSchedule()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.toObject(includeInstance, f),
     notifiername: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     validationsList: jspb.Message.toObjectList(msg.getValidationsList(),
@@ -7448,7 +7448,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.dese
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setSampleprecent(value);
+      msg.setSamplepercent(value);
       break;
     case 3:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule;
@@ -7592,10 +7592,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
 
 
 /**
- * optional int32 samplePrecent = 2;
+ * optional int32 samplePercent = 2;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getSampleprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.getSamplepercent = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -7604,7 +7604,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setSampleprecent = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.setSamplepercent = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -7613,7 +7613,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearSampleprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.clearSamplepercent = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -7622,7 +7622,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasSampleprecent = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.MonitorSpec.prototype.hasSamplepercent = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

@@ -644,7 +644,7 @@ spec:
                           description: Pct75 is the 75% point
                           type: number
                         percentMissing:
-                          description: Precent missing
+                          description: Percent missing
                           type: number
                         reserved:
                           description: The column is reserved and must be part of

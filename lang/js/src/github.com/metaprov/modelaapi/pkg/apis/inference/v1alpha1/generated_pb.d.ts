@@ -733,8 +733,8 @@ export class MonitorSpec extends jspb.Message {
   getEnabled(): boolean;
   setEnabled(value: boolean): MonitorSpec;
 
-  getSampleprecent(): number;
-  setSampleprecent(value: number): MonitorSpec;
+  getSamplepercent(): number;
+  setSamplepercent(value: number): MonitorSpec;
 
   getSchedule(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule | undefined;
   setSchedule(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule): MonitorSpec;
@@ -766,7 +766,7 @@ export class MonitorSpec extends jspb.Message {
 export namespace MonitorSpec {
   export type AsObject = {
     enabled: boolean,
-    sampleprecent: number,
+    samplepercent: number,
     schedule?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.RunSchedule.AsObject,
     notifiername: string,
     validationsList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelValidation.AsObject>,

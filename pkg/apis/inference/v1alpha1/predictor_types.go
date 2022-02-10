@@ -319,7 +319,7 @@ type MonitorSpec struct {
 	// How many rows to sample from the live data for
 	// +kubebuilder:default:=0
 	// +kubebuilder:validation:Optional
-	SamplePrecent *int32 `json:"samplePrecent,omitempty" protobuf:"varint,2,opt,name=samplePrecent"`
+	SamplePercent *int32 `json:"samplePercent,omitempty" protobuf:"varint,2,opt,name=samplePercent"`
 	// Schedule for running the monitor
 	// +kubebuilder:validation:Optional
 	Schedule catalog.RunSchedule `json:"schedule,omitempty" protobuf:"bytes,3,opt,name=schedule"`

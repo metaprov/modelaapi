@@ -333,7 +333,7 @@ spec:
                         description: Remove Features with high correlations
                         format: int32
                         type: integer
-                      cumulativeImportancePrecent:
+                      cumulativeImportancePercent:
                         default: 95
                         description: The cummulative importance of all the importance
                           feature to include
@@ -390,7 +390,7 @@ spec:
                         type: array
                       samplePct:
                         default: 100
-                        description: Precent of data to sample while preforming the
+                        description: Percent of data to sample while preforming the
                           feature engineering search
                         format: int32
                         type: integer
@@ -2305,7 +2305,7 @@ spec:
                         description: Remove Features with high correlations
                         format: int32
                         type: integer
-                      cumulativeImportancePrecent:
+                      cumulativeImportancePercent:
                         default: 95
                         description: The cummulative importance of all the importance
                           feature to include
@@ -2362,7 +2362,7 @@ spec:
                         type: array
                       samplePct:
                         default: 100
-                        description: Precent of data to sample while preforming the
+                        description: Percent of data to sample while preforming the
                           feature engineering search
                         format: int32
                         type: integer

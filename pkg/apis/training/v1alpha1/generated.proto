@@ -659,7 +659,7 @@ message FeatureSelectionSpec {
   // +kubebuilder:validation:Optional
   optional bool enabled = 1;
 
-  // Precent of data to sample while preforming the feature engineering search
+  // Percent of data to sample while preforming the feature engineering search
   // +kubebuilder:default:=100
   // +kubebuilder:validation:Optional
   optional int32 samplePct = 2;
@@ -703,7 +703,7 @@ message FeatureSelectionSpec {
   // The cummulative importance of all the importance feature to include
   // +kubebuilder:default:=95
   // +kubebuilder:validation:Optional
-  optional int32 cumulativeImportancePrecent = 10;
+  optional int32 cumulativeImportancePercent = 10;
 
   // List of feature names to consider when training , even after filtering
   // +kubebuilder:validation:Optional
@@ -2269,10 +2269,10 @@ message ModelValidation {
   optional double max = 9;
 
   // +kubebuilder:validation:Optional
-  optional double minPrecent = 10;
+  optional double minPercent = 10;
 
   // +kubebuilder:validation:Optional
-  optional double maxPrecent = 11;
+  optional double maxPercent = 11;
 
   // Agg is used when we measured aggregate performance, for example median or average
   optional string agg = 12;

@@ -660,8 +660,8 @@ func (in *MonitorSpec) DeepCopyInto(out *MonitorSpec) {
 		*out = new(bool)
 		**out = **in
 	}
-	if in.SamplePrecent != nil {
-		in, out := &in.SamplePrecent, &out.SamplePrecent
+	if in.SamplePercent != nil {
+		in, out := &in.SamplePercent, &out.SamplePercent
 		*out = new(int32)
 		**out = **in
 	}
