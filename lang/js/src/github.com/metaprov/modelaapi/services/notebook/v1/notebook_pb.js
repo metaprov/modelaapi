@@ -556,7 +556,8 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.toObject(includeInstance, f)
+    notebooks: (f = msg.getNotebooks()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -596,7 +597,11 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setNotebooks(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -627,7 +632,7 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getNotebooks();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -635,14 +640,21 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.s
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList notebooks = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList}
  */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.getNotebooks = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList, 1));
 };
@@ -652,7 +664,7 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.setNotebooks = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -661,8 +673,8 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.clearNotebooks = function() {
+  return this.setNotebooks(undefined);
 };
 
 
@@ -670,8 +682,26 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.hasNotebooks = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.notebook.v1.ListNotebooksResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -808,7 +838,7 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.toObject(includeInstance, f)
+    notebook: (f = msg.getNotebook()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -848,7 +878,7 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setNotebook(value);
       break;
     default:
       reader.skipField();
@@ -879,7 +909,7 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getNotebook();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -891,10 +921,10 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook notebook = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook}
  */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.getNotebook = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook, 1));
 };
@@ -904,7 +934,7 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.setNotebook = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -913,8 +943,8 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.clearNotebook = function() {
+  return this.setNotebook(undefined);
 };
 
 
@@ -922,7 +952,7 @@ proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.notebook.v1.CreateNotebookRequest.prototype.hasNotebook = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

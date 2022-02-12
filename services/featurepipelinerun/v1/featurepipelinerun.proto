@@ -15,11 +15,12 @@ message ListFeaturePipelineRunRequest {
 }
 
 message ListFeaturePipelineRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList featurepipelineruns = 1;
+    string next_page_token = 2;
 }
 
 message CreateFeaturePipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun featurepipelinerun = 1;
 }
 
 message CreateFeaturePipelineRunResponse {

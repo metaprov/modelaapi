@@ -14,19 +14,19 @@ message GetReviewRequest {
 }
 
 message GetReviewResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review reviews = 1;
     string yaml = 2;
 }
 
 message CreateReviewRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review review = 1;
 }
 
 message CreateReviewResponse {
 }
 
 message UpdateReviewRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review review = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

@@ -32,10 +32,13 @@ export namespace ListSqlQueryRunsRequest {
 }
 
 export class ListSqlQueryRunsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList): ListSqlQueryRunsResponse;
-  hasItems(): boolean;
-  clearItems(): ListSqlQueryRunsResponse;
+  getSqlqueryruns(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList | undefined;
+  setSqlqueryruns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList): ListSqlQueryRunsResponse;
+  hasSqlqueryruns(): boolean;
+  clearSqlqueryruns(): ListSqlQueryRunsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListSqlQueryRunsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSqlQueryRunsResponse.AsObject;
@@ -47,7 +50,8 @@ export class ListSqlQueryRunsResponse extends jspb.Message {
 
 export namespace ListSqlQueryRunsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList.AsObject,
+    sqlqueryruns?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRunList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -148,10 +152,10 @@ export namespace GetSqlQueryRunRequest {
 }
 
 export class GetSqlQueryRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): GetSqlQueryRunResponse;
-  hasItem(): boolean;
-  clearItem(): GetSqlQueryRunResponse;
+  getSqlqueryrun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
+  setSqlqueryrun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): GetSqlQueryRunResponse;
+  hasSqlqueryrun(): boolean;
+  clearSqlqueryrun(): GetSqlQueryRunResponse;
 
   getYaml(): string;
   setYaml(value: string): GetSqlQueryRunResponse;
@@ -166,7 +170,7 @@ export class GetSqlQueryRunResponse extends jspb.Message {
 
 export namespace GetSqlQueryRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
+    sqlqueryrun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
     yaml: string,
   }
 }

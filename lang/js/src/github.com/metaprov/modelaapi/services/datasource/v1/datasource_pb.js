@@ -624,7 +624,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRespons
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    list: (f = msg.getList()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.toObject(includeInstance, f)
+    datasources: (f = msg.getDatasources()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -664,7 +665,11 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRespons
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.deserializeBinaryFromReader);
-      msg.setList(value);
+      msg.setDatasources(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -695,7 +700,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRespons
  */
 proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getList();
+  f = message.getDatasources();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -703,14 +708,21 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRespons
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList list = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList datasources = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.getList = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.getDatasources = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList, 1));
 };
@@ -720,7 +732,7 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRespons
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.setList = function(value) {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.setDatasources = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -729,8 +741,8 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRespons
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.clearList = function() {
-  return this.setList(undefined);
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.clearDatasources = function() {
+  return this.setDatasources(undefined);
 };
 
 
@@ -738,8 +750,26 @@ proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceRespons
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.hasList = function() {
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.hasDatasources = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.datasource.v1.ListDataSourceResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

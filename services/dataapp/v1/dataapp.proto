@@ -17,13 +17,14 @@ message ListDataAppsRequest {
 }
 
 message ListDataAppsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataAppList dataapps = 1;
+    string next_page_token = 2;
 }
 
 message CreateDataAppResponse {}
 
 message CreateDataAppRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.DataApp dataapp = 1;
 }
 
 message UpdateDataAppRequest {

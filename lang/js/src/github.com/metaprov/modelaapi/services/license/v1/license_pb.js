@@ -622,7 +622,8 @@ proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.toObject(includeInstance, f)
+    licences: (f = msg.getLicences()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -662,7 +663,11 @@ proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setLicences(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -693,7 +698,7 @@ proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getLicences();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -701,14 +706,21 @@ proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.ser
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList licences = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList}
  */
-proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.getLicences = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList, 1));
 };
@@ -718,7 +730,7 @@ proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.setLicences = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -727,8 +739,8 @@ proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.clearLicences = function() {
+  return this.setLicences(undefined);
 };
 
 
@@ -736,8 +748,26 @@ proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.hasLicences = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.license.v1.ListLicensesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -874,7 +904,7 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.toObject(includeInstance, f)
+    license: (f = msg.getLicense()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -914,7 +944,7 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setLicense(value);
       break;
     default:
       reader.skipField();
@@ -945,7 +975,7 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getLicense();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -957,10 +987,10 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License license = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License}
  */
-proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.getLicense = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License, 1));
 };
@@ -970,7 +1000,7 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.setLicense = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -979,8 +1009,8 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.clearLicense = function() {
+  return this.setLicense(undefined);
 };
 
 
@@ -988,7 +1018,7 @@ proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.license.v1.CreateLicenseRequest.prototype.hasLicense = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

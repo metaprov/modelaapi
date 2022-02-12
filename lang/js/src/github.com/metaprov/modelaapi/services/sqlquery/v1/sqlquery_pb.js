@@ -516,7 +516,8 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList.toObject(includeInstance, f)
+    sqlquries: (f = msg.getSqlquries()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -556,7 +557,11 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setSqlquries(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -587,7 +592,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getSqlquries();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -595,14 +600,21 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.s
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList sqlquries = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.getSqlquries = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList, 1));
 };
@@ -612,7 +624,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.setSqlquries = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -621,8 +633,8 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.clearSqlquries = function() {
+  return this.setSqlquries(undefined);
 };
 
 
@@ -630,8 +642,26 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.hasSqlquries = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.ListSqlQuerysResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -768,7 +798,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f)
+    sqlquery: (f = msg.getSqlquery()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -808,7 +838,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setSqlquery(value);
       break;
     default:
       reader.skipField();
@@ -839,7 +869,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getSqlquery();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -851,10 +881,10 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.getSqlquery = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery, 1));
 };
@@ -864,7 +894,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.setSqlquery = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -873,8 +903,8 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.clearSqlquery = function() {
+  return this.setSqlquery(undefined);
 };
 
 
@@ -882,7 +912,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.CreateSqlQueryRequest.prototype.hasSqlquery = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1382,7 +1412,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f),
+    sqlquery: (f = msg.getSqlquery()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1423,7 +1453,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setSqlquery(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1458,7 +1488,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getSqlquery();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1477,10 +1507,10 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.getSqlquery = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery, 1));
 };
@@ -1490,7 +1520,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.setSqlquery = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1499,8 +1529,8 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.clearSqlquery = function() {
+  return this.setSqlquery(undefined);
 };
 
 
@@ -1508,7 +1538,7 @@ proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.sqlquery.v1.GetSqlQueryResponse.prototype.hasSqlquery = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

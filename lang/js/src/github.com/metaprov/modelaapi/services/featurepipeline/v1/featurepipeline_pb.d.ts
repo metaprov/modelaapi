@@ -40,10 +40,13 @@ export namespace ListFeaturePipelineRequest {
 }
 
 export class ListFeaturePipelineResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList): ListFeaturePipelineResponse;
-  hasItems(): boolean;
-  clearItems(): ListFeaturePipelineResponse;
+  getFeaturepipelines(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList | undefined;
+  setFeaturepipelines(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList): ListFeaturePipelineResponse;
+  hasFeaturepipelines(): boolean;
+  clearFeaturepipelines(): ListFeaturePipelineResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListFeaturePipelineResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeaturePipelineResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListFeaturePipelineResponse extends jspb.Message {
 
 export namespace ListFeaturePipelineResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList.AsObject,
+    featurepipelines?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateFeaturePipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): CreateFeaturePipelineRequest;
-  hasItem(): boolean;
-  clearItem(): CreateFeaturePipelineRequest;
+  getFeaturepipeline(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline | undefined;
+  setFeaturepipeline(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline): CreateFeaturePipelineRequest;
+  hasFeaturepipeline(): boolean;
+  clearFeaturepipeline(): CreateFeaturePipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeaturePipelineRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateFeaturePipelineRequest extends jspb.Message {
 
 export namespace CreateFeaturePipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
+    featurepipeline?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipeline.AsObject,
   }
 }
 

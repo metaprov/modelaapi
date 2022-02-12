@@ -16,7 +16,8 @@ message ListMeetingsRequest {
 }
 
 message ListMeetingsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList meetings = 1;   
+    string next_page_token = 2;
 }
 
 message MeetingResponse {}

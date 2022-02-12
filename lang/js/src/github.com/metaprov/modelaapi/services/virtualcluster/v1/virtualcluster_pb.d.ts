@@ -29,10 +29,10 @@ export namespace ListVirtualClustersRequest {
 }
 
 export class ListVirtualClustersResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList): ListVirtualClustersResponse;
-  hasItems(): boolean;
-  clearItems(): ListVirtualClustersResponse;
+  getVirtualclusters(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList | undefined;
+  setVirtualclusters(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList): ListVirtualClustersResponse;
+  hasVirtualclusters(): boolean;
+  clearVirtualclusters(): ListVirtualClustersResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListVirtualClustersResponse.AsObject;
@@ -44,7 +44,7 @@ export class ListVirtualClustersResponse extends jspb.Message {
 
 export namespace ListVirtualClustersResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList.AsObject,
+    virtualclusters?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualClusterList.AsObject,
   }
 }
 
@@ -63,10 +63,10 @@ export namespace VirtualClusterResponse {
 }
 
 export class CreateVirtualClusterRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): CreateVirtualClusterRequest;
-  hasItem(): boolean;
-  clearItem(): CreateVirtualClusterRequest;
+  getVirtualcluster(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setVirtualcluster(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): CreateVirtualClusterRequest;
+  hasVirtualcluster(): boolean;
+  clearVirtualcluster(): CreateVirtualClusterRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateVirtualClusterRequest.AsObject;
@@ -78,7 +78,7 @@ export class CreateVirtualClusterRequest extends jspb.Message {
 
 export namespace CreateVirtualClusterRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
+    virtualcluster?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
   }
 }
 
@@ -159,10 +159,10 @@ export namespace GetVirtualClusterRequest {
 }
 
 export class GetVirtualClusterResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): GetVirtualClusterResponse;
-  hasItem(): boolean;
-  clearItem(): GetVirtualClusterResponse;
+  getVirtualcluster(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster | undefined;
+  setVirtualcluster(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster): GetVirtualClusterResponse;
+  hasVirtualcluster(): boolean;
+  clearVirtualcluster(): GetVirtualClusterResponse;
 
   getYaml(): string;
   setYaml(value: string): GetVirtualClusterResponse;
@@ -177,7 +177,7 @@ export class GetVirtualClusterResponse extends jspb.Message {
 
 export namespace GetVirtualClusterResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
+    virtualcluster?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualCluster.AsObject,
     yaml: string,
   }
 }

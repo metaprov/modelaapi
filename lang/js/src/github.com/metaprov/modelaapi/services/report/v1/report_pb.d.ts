@@ -40,10 +40,13 @@ export namespace ListReportsRequest {
 }
 
 export class ListReportsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList): ListReportsResponse;
-  hasItems(): boolean;
-  clearItems(): ListReportsResponse;
+  getReports(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList | undefined;
+  setReports(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList): ListReportsResponse;
+  hasReports(): boolean;
+  clearReports(): ListReportsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListReportsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListReportsResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListReportsResponse extends jspb.Message {
 
 export namespace ListReportsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList.AsObject,
+    reports?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ReportList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateReportRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateReportRequest;
-  hasItem(): boolean;
-  clearItem(): CreateReportRequest;
+  getReport(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report | undefined;
+  setReport(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report): CreateReportRequest;
+  hasReport(): boolean;
+  clearReport(): CreateReportRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateReportRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateReportRequest extends jspb.Message {
 
 export namespace CreateReportRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
+    report?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Report.AsObject,
   }
 }
 

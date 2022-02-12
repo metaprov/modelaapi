@@ -40,10 +40,13 @@ export namespace ListPostMortemsRequest {
 }
 
 export class ListPostMortemsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList): ListPostMortemsResponse;
-  hasItems(): boolean;
-  clearItems(): ListPostMortemsResponse;
+  getPostmortems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList | undefined;
+  setPostmortems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList): ListPostMortemsResponse;
+  hasPostmortems(): boolean;
+  clearPostmortems(): ListPostMortemsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListPostMortemsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPostMortemsResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListPostMortemsResponse extends jspb.Message {
 
 export namespace ListPostMortemsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.AsObject,
+    postmortems?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreatePostMortemRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): CreatePostMortemRequest;
-  hasItem(): boolean;
-  clearItem(): CreatePostMortemRequest;
+  getPostmortem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
+  setPostmortem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): CreatePostMortemRequest;
+  hasPostmortem(): boolean;
+  clearPostmortem(): CreatePostMortemRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePostMortemRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreatePostMortemRequest extends jspb.Message {
 
 export namespace CreatePostMortemRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
+    postmortem?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
   }
 }
 
@@ -94,10 +98,10 @@ export namespace CreatePostMortemResponse {
 }
 
 export class UpdatePostMortemRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): UpdatePostMortemRequest;
-  hasItem(): boolean;
-  clearItem(): UpdatePostMortemRequest;
+  getPostmortem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem | undefined;
+  setPostmortem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem): UpdatePostMortemRequest;
+  hasPostmortem(): boolean;
+  clearPostmortem(): UpdatePostMortemRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdatePostMortemRequest;
@@ -114,7 +118,7 @@ export class UpdatePostMortemRequest extends jspb.Message {
 
 export namespace UpdatePostMortemRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
+    postmortem?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

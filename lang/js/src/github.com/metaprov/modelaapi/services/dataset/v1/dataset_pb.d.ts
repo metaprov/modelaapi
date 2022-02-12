@@ -46,6 +46,9 @@ export class ListDatasetsResponse extends jspb.Message {
   hasDatasets(): boolean;
   clearDatasets(): ListDatasetsResponse;
 
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListDatasetsResponse;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDatasetsResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ListDatasetsResponse): ListDatasetsResponse.AsObject;
@@ -57,6 +60,7 @@ export class ListDatasetsResponse extends jspb.Message {
 export namespace ListDatasetsResponse {
   export type AsObject = {
     datasets?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.AsObject,
+    nextPageToken: string,
   }
 }
 

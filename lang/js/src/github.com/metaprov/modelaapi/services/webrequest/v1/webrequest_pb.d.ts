@@ -32,10 +32,13 @@ export namespace ListWebRequestsRequest {
 }
 
 export class ListWebRequestsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestList): ListWebRequestsResponse;
-  hasItems(): boolean;
-  clearItems(): ListWebRequestsResponse;
+  getWebrequests(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestList | undefined;
+  setWebrequests(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestList): ListWebRequestsResponse;
+  hasWebrequests(): boolean;
+  clearWebrequests(): ListWebRequestsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListWebRequestsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWebRequestsResponse.AsObject;
@@ -47,7 +50,8 @@ export class ListWebRequestsResponse extends jspb.Message {
 
 export namespace ListWebRequestsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestList.AsObject,
+    webrequests?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -148,10 +152,10 @@ export namespace GetWebRequestRequest {
 }
 
 export class GetWebRequestResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): GetWebRequestResponse;
-  hasItem(): boolean;
-  clearItem(): GetWebRequestResponse;
+  getWebrequest(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
+  setWebrequest(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): GetWebRequestResponse;
+  hasWebrequest(): boolean;
+  clearWebrequest(): GetWebRequestResponse;
 
   getYaml(): string;
   setYaml(value: string): GetWebRequestResponse;
@@ -166,7 +170,7 @@ export class GetWebRequestResponse extends jspb.Message {
 
 export namespace GetWebRequestResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
+    webrequest?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
     yaml: string,
   }
 }

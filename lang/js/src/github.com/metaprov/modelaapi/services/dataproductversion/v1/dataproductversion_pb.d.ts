@@ -41,10 +41,13 @@ export namespace ListDataProductVersionsRequest {
 }
 
 export class ListDataProductVersionsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList): ListDataProductVersionsResponse;
-  hasItems(): boolean;
-  clearItems(): ListDataProductVersionsResponse;
+  getDataproductversions(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList | undefined;
+  setDataproductversions(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList): ListDataProductVersionsResponse;
+  hasDataproductversions(): boolean;
+  clearDataproductversions(): ListDataProductVersionsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListDataProductVersionsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataProductVersionsResponse.AsObject;
@@ -56,15 +59,16 @@ export class ListDataProductVersionsResponse extends jspb.Message {
 
 export namespace ListDataProductVersionsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList.AsObject,
+    dataproductversions?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateDataProductVersionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): CreateDataProductVersionRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDataProductVersionRequest;
+  getDataproductversion(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion | undefined;
+  setDataproductversion(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion): CreateDataProductVersionRequest;
+  hasDataproductversion(): boolean;
+  clearDataproductversion(): CreateDataProductVersionRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataProductVersionRequest.AsObject;
@@ -76,7 +80,7 @@ export class CreateDataProductVersionRequest extends jspb.Message {
 
 export namespace CreateDataProductVersionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
+    dataproductversion?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.AsObject,
   }
 }
 

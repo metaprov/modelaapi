@@ -444,7 +444,8 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.toObject(includeInstance, f)
+    todos: (f = msg.getTodos()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -484,7 +485,11 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.deseriali
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setTodos(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -515,7 +520,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getTodos();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -523,14 +528,21 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.serialize
       github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList todos = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.getTodos = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList, 1));
 };
@@ -540,7 +552,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.setTodos = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -549,8 +561,8 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.clearTodos = function() {
+  return this.setTodos(undefined);
 };
 
 
@@ -558,8 +570,26 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.hasTodos = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.todo.v1.ListTodosResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -595,7 +625,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f),
+    todo: (f = msg.getTodo()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f),
     password: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -636,7 +666,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.deseriali
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setTodo(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -671,7 +701,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getTodo();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -690,10 +720,10 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.serialize
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo todo = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.getTodo = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo, 1));
 };
@@ -703,7 +733,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.setTodo = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -712,8 +742,8 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.clearTodo = function() {
+  return this.setTodo(undefined);
 };
 
 
@@ -721,7 +751,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.CreateTodoRequest.prototype.hasTodo = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1340,7 +1370,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.t
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f),
+    todo: (f = msg.getTodo()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1381,7 +1411,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.deserialize
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setTodo(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1416,7 +1446,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.s
  */
 proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getTodo();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1435,10 +1465,10 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.serializeBi
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo todo = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.getTodo = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo, 1));
 };
@@ -1448,7 +1478,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.g
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.setTodo = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1457,8 +1487,8 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.s
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.clearTodo = function() {
+  return this.setTodo(undefined);
 };
 
 
@@ -1466,7 +1496,7 @@ proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.todo.v1.GetTodoResponse.prototype.hasTodo = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

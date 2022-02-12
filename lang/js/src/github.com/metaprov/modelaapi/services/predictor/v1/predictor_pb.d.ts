@@ -40,10 +40,13 @@ export namespace ListPredictorsRequest {
 }
 
 export class ListPredictorsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList): ListPredictorsResponse;
-  hasItems(): boolean;
-  clearItems(): ListPredictorsResponse;
+  getPredictors(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList | undefined;
+  setPredictors(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList): ListPredictorsResponse;
+  hasPredictors(): boolean;
+  clearPredictors(): ListPredictorsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListPredictorsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPredictorsResponse.AsObject;
@@ -55,7 +58,8 @@ export class ListPredictorsResponse extends jspb.Message {
 
 export namespace ListPredictorsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList.AsObject,
+    predictors?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.PredictorList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -74,10 +78,10 @@ export namespace CreatePredictorResponse {
 }
 
 export class CreatePredictorRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CreatePredictorRequest;
-  hasItem(): boolean;
-  clearItem(): CreatePredictorRequest;
+  getPredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): CreatePredictorRequest;
+  hasPredictor(): boolean;
+  clearPredictor(): CreatePredictorRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreatePredictorRequest.AsObject;
@@ -89,15 +93,15 @@ export class CreatePredictorRequest extends jspb.Message {
 
 export namespace CreatePredictorRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
   }
 }
 
 export class UpdatePredictorRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): UpdatePredictorRequest;
-  hasItem(): boolean;
-  clearItem(): UpdatePredictorRequest;
+  getPredictor(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor | undefined;
+  setPredictor(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor): UpdatePredictorRequest;
+  hasPredictor(): boolean;
+  clearPredictor(): UpdatePredictorRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdatePredictorRequest;
@@ -114,7 +118,7 @@ export class UpdatePredictorRequest extends jspb.Message {
 
 export namespace UpdatePredictorRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
+    predictor?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.Predictor.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

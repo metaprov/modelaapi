@@ -28,10 +28,13 @@ export namespace ListVirtualBucketsRequest {
 }
 
 export class ListVirtualBucketsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList): ListVirtualBucketsResponse;
-  hasItems(): boolean;
-  clearItems(): ListVirtualBucketsResponse;
+  getVirtualbuckets(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList | undefined;
+  setVirtualbuckets(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList): ListVirtualBucketsResponse;
+  hasVirtualbuckets(): boolean;
+  clearVirtualbuckets(): ListVirtualBucketsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListVirtualBucketsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListVirtualBucketsResponse.AsObject;
@@ -43,7 +46,8 @@ export class ListVirtualBucketsResponse extends jspb.Message {
 
 export namespace ListVirtualBucketsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList.AsObject,
+    virtualbuckets?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -144,10 +148,10 @@ export namespace GetVirtualBucketRequest {
 }
 
 export class GetVirtualBucketResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): GetVirtualBucketResponse;
-  hasItem(): boolean;
-  clearItem(): GetVirtualBucketResponse;
+  getVirtualbucket(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket | undefined;
+  setVirtualbucket(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket): GetVirtualBucketResponse;
+  hasVirtualbucket(): boolean;
+  clearVirtualbucket(): GetVirtualBucketResponse;
 
   getYaml(): string;
   setYaml(value: string): GetVirtualBucketResponse;
@@ -162,7 +166,7 @@ export class GetVirtualBucketResponse extends jspb.Message {
 
 export namespace GetVirtualBucketResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
+    virtualbucket?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.AsObject,
     yaml: string,
   }
 }

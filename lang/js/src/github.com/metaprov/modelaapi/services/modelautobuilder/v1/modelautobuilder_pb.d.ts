@@ -40,10 +40,13 @@ export namespace ListModelAutobuildersRequest {
 }
 
 export class ListModelAutobuildersResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList): ListModelAutobuildersResponse;
-  hasItems(): boolean;
-  clearItems(): ListModelAutobuildersResponse;
+  getModelautobuilders(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList | undefined;
+  setModelautobuilders(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList): ListModelAutobuildersResponse;
+  hasModelautobuilders(): boolean;
+  clearModelautobuilders(): ListModelAutobuildersResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListModelAutobuildersResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelAutobuildersResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListModelAutobuildersResponse extends jspb.Message {
 
 export namespace ListModelAutobuildersResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList.AsObject,
+    modelautobuilders?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateModelAutobuilderRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): CreateModelAutobuilderRequest;
-  hasItem(): boolean;
-  clearItem(): CreateModelAutobuilderRequest;
+  getModelautobuilder(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder | undefined;
+  setModelautobuilder(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder): CreateModelAutobuilderRequest;
+  hasModelautobuilder(): boolean;
+  clearModelautobuilder(): CreateModelAutobuilderRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateModelAutobuilderRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateModelAutobuilderRequest extends jspb.Message {
 
 export namespace CreateModelAutobuilderRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
+    modelautobuilder?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.AsObject,
   }
 }
 

@@ -556,7 +556,8 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList.toObject(includeInstance, f)
+    notifiers: (f = msg.getNotifiers()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -596,7 +597,11 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setNotifiers(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -627,7 +632,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getNotifiers();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -635,14 +640,21 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.s
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList notifiers = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.getNotifiers = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.NotifierList, 1));
 };
@@ -652,7 +664,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.setNotifiers = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -661,8 +673,8 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.clearNotifiers = function() {
+  return this.setNotifiers(undefined);
 };
 
 
@@ -670,8 +682,26 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.hasNotifiers = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.notifier.v1.ListNotifiersResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -808,7 +838,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.toObject(includeInstance, f)
+    notifier: (f = msg.getNotifier()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -848,7 +878,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setNotifier(value);
       break;
     default:
       reader.skipField();
@@ -879,7 +909,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getNotifier();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -891,10 +921,10 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier notifier = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.getNotifier = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier, 1));
 };
@@ -904,7 +934,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.setNotifier = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -913,8 +943,8 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.clearNotifier = function() {
+  return this.setNotifier(undefined);
 };
 
 
@@ -922,7 +952,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.CreateNotifierRequest.prototype.hasNotifier = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1060,7 +1090,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.toObject(includeInstance, f),
+    notifier: (f = msg.getNotifier()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -1101,7 +1131,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setNotifier(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1137,7 +1167,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.p
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getNotifier();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1157,10 +1187,10 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier notifier = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.getNotifier = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier, 1));
 };
@@ -1170,7 +1200,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.setNotifier = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1179,8 +1209,8 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.clearNotifier = function() {
+  return this.setNotifier(undefined);
 };
 
 
@@ -1188,7 +1218,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.UpdateNotifierRequest.prototype.hasNotifier = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1523,7 +1553,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.toObject(includeInstance, f),
+    notifier: (f = msg.getNotifier()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1564,7 +1594,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setNotifier(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1599,7 +1629,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getNotifier();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1618,10 +1648,10 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier notifier = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.getNotifier = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Notifier, 1));
 };
@@ -1631,7 +1661,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.setNotifier = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1640,8 +1670,8 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.clearNotifier = function() {
+  return this.setNotifier(undefined);
 };
 
 
@@ -1649,7 +1679,7 @@ proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.notifier.v1.GetNotifierResponse.prototype.hasNotifier = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

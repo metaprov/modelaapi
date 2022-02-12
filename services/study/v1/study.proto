@@ -13,7 +13,7 @@ message GetStudyRequest {
 }
 
 message GetStudyResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study study = 1;
     string yaml = 2;
 }
 
@@ -24,7 +24,8 @@ message ListStudyRequest {
 }
 
 message ListStudyResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyList studies = 1;
+    string next_page_token = 2;
 }
 
 

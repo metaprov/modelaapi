@@ -40,10 +40,13 @@ export namespace ListFeaturePipelineRunRequest {
 }
 
 export class ListFeaturePipelineRunResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList): ListFeaturePipelineRunResponse;
-  hasItems(): boolean;
-  clearItems(): ListFeaturePipelineRunResponse;
+  getFeaturepipelineruns(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList | undefined;
+  setFeaturepipelineruns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList): ListFeaturePipelineRunResponse;
+  hasFeaturepipelineruns(): boolean;
+  clearFeaturepipelineruns(): ListFeaturePipelineRunResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListFeaturePipelineRunResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeaturePipelineRunResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListFeaturePipelineRunResponse extends jspb.Message {
 
 export namespace ListFeaturePipelineRunResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList.AsObject,
+    featurepipelineruns?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateFeaturePipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): CreateFeaturePipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): CreateFeaturePipelineRunRequest;
+  getFeaturepipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun | undefined;
+  setFeaturepipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun): CreateFeaturePipelineRunRequest;
+  hasFeaturepipelinerun(): boolean;
+  clearFeaturepipelinerun(): CreateFeaturePipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeaturePipelineRunRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateFeaturePipelineRunRequest extends jspb.Message {
 
 export namespace CreateFeaturePipelineRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
+    featurepipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.AsObject,
   }
 }
 

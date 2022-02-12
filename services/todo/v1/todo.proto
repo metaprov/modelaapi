@@ -13,11 +13,12 @@ message ListTodosRequest {
 }
 
 message ListTodosResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.TodoList todos = 1;  
+    string next_page_token = 2; 
 }
 
 message CreateTodoRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo  todo = 1;
     string password = 2;    
 }
 
@@ -41,7 +42,7 @@ message GetTodoRequest {
 
 
 message GetTodoResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Todo todo = 1;
     string yaml = 2;
 }
 

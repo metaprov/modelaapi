@@ -40,10 +40,13 @@ export namespace ListDataPipelinesRequest {
 }
 
 export class ListDataPipelinesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList): ListDataPipelinesResponse;
-  hasItems(): boolean;
-  clearItems(): ListDataPipelinesResponse;
+  getPipelines(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList | undefined;
+  setPipelines(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList): ListDataPipelinesResponse;
+  hasPipelines(): boolean;
+  clearPipelines(): ListDataPipelinesResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListDataPipelinesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataPipelinesResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListDataPipelinesResponse extends jspb.Message {
 
 export namespace ListDataPipelinesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList.AsObject,
+    pipelines?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateDataPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): CreateDataPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDataPipelineRequest;
+  getPipeline(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline | undefined;
+  setPipeline(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline): CreateDataPipelineRequest;
+  hasPipeline(): boolean;
+  clearPipeline(): CreateDataPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataPipelineRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateDataPipelineRequest extends jspb.Message {
 
 export namespace CreateDataPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
+    pipeline?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipeline.AsObject,
   }
 }
 

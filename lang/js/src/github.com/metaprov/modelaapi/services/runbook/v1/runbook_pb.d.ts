@@ -40,10 +40,13 @@ export namespace ListRunBooksRequest {
 }
 
 export class ListRunBooksResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList): ListRunBooksResponse;
-  hasItems(): boolean;
-  clearItems(): ListRunBooksResponse;
+  getRunbooks(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList | undefined;
+  setRunbooks(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList): ListRunBooksResponse;
+  hasRunbooks(): boolean;
+  clearRunbooks(): ListRunBooksResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListRunBooksResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRunBooksResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListRunBooksResponse extends jspb.Message {
 
 export namespace ListRunBooksResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.AsObject,
+    runbooks?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateRunBookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): CreateRunBookRequest;
-  hasItem(): boolean;
-  clearItem(): CreateRunBookRequest;
+  getRunbook(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setRunbook(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): CreateRunBookRequest;
+  hasRunbook(): boolean;
+  clearRunbook(): CreateRunBookRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRunBookRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateRunBookRequest extends jspb.Message {
 
 export namespace CreateRunBookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
+    runbook?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
   }
 }
 
@@ -156,10 +160,10 @@ export namespace GetRunBookRequest {
 }
 
 export class GetRunBookResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): GetRunBookResponse;
-  hasItem(): boolean;
-  clearItem(): GetRunBookResponse;
+  getRunbook(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook | undefined;
+  setRunbook(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook): GetRunBookResponse;
+  hasRunbook(): boolean;
+  clearRunbook(): GetRunBookResponse;
 
   getYaml(): string;
   setYaml(value: string): GetRunBookResponse;
@@ -174,7 +178,7 @@ export class GetRunBookResponse extends jspb.Message {
 
 export namespace GetRunBookResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
+    runbook?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.AsObject,
     yaml: string,
   }
 }

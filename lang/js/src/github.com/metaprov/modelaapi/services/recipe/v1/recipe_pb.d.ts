@@ -41,10 +41,13 @@ export namespace ListRecipesRequest {
 }
 
 export class ListRecipesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList): ListRecipesResponse;
-  hasItems(): boolean;
-  clearItems(): ListRecipesResponse;
+  getRecipes(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList | undefined;
+  setRecipes(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList): ListRecipesResponse;
+  hasRecipes(): boolean;
+  clearRecipes(): ListRecipesResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListRecipesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecipesResponse.AsObject;
@@ -56,15 +59,16 @@ export class ListRecipesResponse extends jspb.Message {
 
 export namespace ListRecipesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList.AsObject,
+    recipes?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateRecipeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): CreateRecipeRequest;
-  hasItem(): boolean;
-  clearItem(): CreateRecipeRequest;
+  getRecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setRecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): CreateRecipeRequest;
+  hasRecipe(): boolean;
+  clearRecipe(): CreateRecipeRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateRecipeRequest.AsObject;
@@ -76,7 +80,7 @@ export class CreateRecipeRequest extends jspb.Message {
 
 export namespace CreateRecipeRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
   }
 }
 
@@ -95,10 +99,10 @@ export namespace CreateRecipeResponse {
 }
 
 export class UpdateRecipeRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): UpdateRecipeRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateRecipeRequest;
+  getRecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setRecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): UpdateRecipeRequest;
+  hasRecipe(): boolean;
+  clearRecipe(): UpdateRecipeRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateRecipeRequest;
@@ -115,7 +119,7 @@ export class UpdateRecipeRequest extends jspb.Message {
 
 export namespace UpdateRecipeRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

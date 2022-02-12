@@ -15,13 +15,14 @@ message ListModelPipelinesRequest {
 }
 
 message ListModelPipelinesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList modelPipelines = 1;
+    string next_page_token = 2;
 }
 
 message ModelPipelineResponse {}
 
 message CreateModelPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
 }
 
 message CreateModelPipelineResponse {

@@ -19,11 +19,12 @@ message ListDataProductsRequest {
 }
 
 message ListDataProductsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductList dataproducts = 1;
+    string next_page_token = 2;
 }
 
 message CreateDataProductRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct dataproduct = 1;
 }
 
 message CreateDataProductResponse {

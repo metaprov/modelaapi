@@ -532,7 +532,8 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRespon
  */
 proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.toObject(includeInstance, f)
+    postmortems: (f = msg.getPostmortems()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -572,7 +573,11 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRespon
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setPostmortems(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -603,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRespon
  */
 proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getPostmortems();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -611,14 +616,21 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRespon
       github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList postmortems = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList}
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.getPostmortems = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortemList, 1));
 };
@@ -628,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRespon
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.setPostmortems = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -637,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRespon
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.clearPostmortems = function() {
+  return this.setPostmortems(undefined);
 };
 
 
@@ -646,8 +658,26 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsRespon
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.hasPostmortems = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.ListPostMortemsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -683,7 +713,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemReque
  */
 proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.toObject(includeInstance, f)
+    postmortem: (f = msg.getPostmortem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -723,7 +753,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setPostmortem(value);
       break;
     default:
       reader.skipField();
@@ -754,7 +784,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemReque
  */
 proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getPostmortem();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -766,10 +796,10 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem}
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.getPostmortem = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem, 1));
 };
@@ -779,7 +809,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.setPostmortem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -788,8 +818,8 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.clearPostmortem = function() {
+  return this.setPostmortem(undefined);
 };
 
 
@@ -797,7 +827,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.CreatePostMortemRequest.prototype.hasPostmortem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -935,7 +965,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemReque
  */
 proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.toObject(includeInstance, f),
+    postmortem: (f = msg.getPostmortem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -976,7 +1006,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setPostmortem(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -1012,7 +1042,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemReque
  */
 proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getPostmortem();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1032,10 +1062,10 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem}
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.getPostmortem = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.PostMortem, 1));
 };
@@ -1045,7 +1075,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.setPostmortem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1054,8 +1084,8 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.clearPostmortem = function() {
+  return this.setPostmortem(undefined);
 };
 
 
@@ -1063,7 +1093,7 @@ proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.postmortem.v1.UpdatePostMortemRequest.prototype.hasPostmortem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

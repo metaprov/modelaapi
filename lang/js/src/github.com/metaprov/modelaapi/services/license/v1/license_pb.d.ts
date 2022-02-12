@@ -41,10 +41,13 @@ export namespace ListLicensesRequest {
 }
 
 export class ListLicensesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList): ListLicensesResponse;
-  hasItems(): boolean;
-  clearItems(): ListLicensesResponse;
+  getLicences(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList | undefined;
+  setLicences(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList): ListLicensesResponse;
+  hasLicences(): boolean;
+  clearLicences(): ListLicensesResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListLicensesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLicensesResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListLicensesResponse extends jspb.Message {
 
 export namespace ListLicensesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.AsObject,
+    licences?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LicenseList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -75,10 +79,10 @@ export namespace LicenseResponse {
 }
 
 export class CreateLicenseRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License): CreateLicenseRequest;
-  hasItem(): boolean;
-  clearItem(): CreateLicenseRequest;
+  getLicense(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License | undefined;
+  setLicense(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License): CreateLicenseRequest;
+  hasLicense(): boolean;
+  clearLicense(): CreateLicenseRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLicenseRequest.AsObject;
@@ -90,7 +94,7 @@ export class CreateLicenseRequest extends jspb.Message {
 
 export namespace CreateLicenseRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
+    license?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.License.AsObject,
   }
 }
 

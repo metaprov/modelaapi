@@ -16,11 +16,12 @@ message ListLabelingPipelineRequest {
 }
 
 message ListLabelingPipelineResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipelineList labelingpipelines = 1;
+    string next_page_token = 2;
 }
 
 message CreateLabelingPipelineRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.LabelingPipeline labelingpipeline = 1;
 }
 
 message CreateLabelingPipelineResponse {

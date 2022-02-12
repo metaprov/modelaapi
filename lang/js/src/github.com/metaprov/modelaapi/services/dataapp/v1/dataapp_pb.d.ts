@@ -40,10 +40,13 @@ export namespace ListDataAppsRequest {
 }
 
 export class ListDataAppsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataAppList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataAppList): ListDataAppsResponse;
-  hasItems(): boolean;
-  clearItems(): ListDataAppsResponse;
+  getDataapps(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataAppList | undefined;
+  setDataapps(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataAppList): ListDataAppsResponse;
+  hasDataapps(): boolean;
+  clearDataapps(): ListDataAppsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListDataAppsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataAppsResponse.AsObject;
@@ -55,7 +58,8 @@ export class ListDataAppsResponse extends jspb.Message {
 
 export namespace ListDataAppsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataAppList.AsObject,
+    dataapps?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataAppList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -74,10 +78,10 @@ export namespace CreateDataAppResponse {
 }
 
 export class CreateDataAppRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): CreateDataAppRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDataAppRequest;
+  getDataapp(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp | undefined;
+  setDataapp(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp): CreateDataAppRequest;
+  hasDataapp(): boolean;
+  clearDataapp(): CreateDataAppRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataAppRequest.AsObject;
@@ -89,7 +93,7 @@ export class CreateDataAppRequest extends jspb.Message {
 
 export namespace CreateDataAppRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
+    dataapp?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.DataApp.AsObject,
   }
 }
 

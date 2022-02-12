@@ -448,7 +448,8 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.toObject(includeInstance, f)
+    tenants: (f = msg.getTenants()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -488,7 +489,11 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setTenants(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -519,7 +524,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getTenants();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -527,14 +532,21 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.seria
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList tenants = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.getTenants = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList, 1));
 };
@@ -544,7 +556,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.setTenants = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -553,8 +565,8 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.clearTenants = function() {
+  return this.setTenants(undefined);
 };
 
 
@@ -562,8 +574,26 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.hasTenants = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.tenant.v1.ListTenantsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -599,7 +629,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f)
+    tenant: (f = msg.getTenant()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -639,7 +669,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.deser
     case 4:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setTenant(value);
       break;
     default:
       reader.skipField();
@@ -670,7 +700,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getTenant();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -682,10 +712,10 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 4;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant tenant = 4;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.getTenant = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant, 4));
 };
@@ -695,7 +725,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.setTenant = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -704,8 +734,8 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.clearTenant = function() {
+  return this.setTenant(undefined);
 };
 
 
@@ -713,7 +743,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.CreateTenantRequest.prototype.hasTenant = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -1321,7 +1351,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f),
+    tenant: (f = msg.getTenant()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.toObject(includeInstance, f),
     alertsList: jspb.Message.toObjectList(msg.getAlertsList(),
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject, includeInstance),
     datasetsList: jspb.Message.toObjectList(msg.getDatasetsList(),
@@ -1372,7 +1402,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setTenant(value);
       break;
     case 2:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert;
@@ -1432,7 +1462,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getTenant();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1491,10 +1521,10 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant tenant = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.getTenant = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant, 1));
 };
@@ -1504,7 +1534,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.setTenant = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1513,8 +1543,8 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.clearTenant = function() {
+  return this.setTenant(undefined);
 };
 
 
@@ -1522,7 +1552,7 @@ proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.tenant.v1.GetTenantResponse.prototype.hasTenant = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

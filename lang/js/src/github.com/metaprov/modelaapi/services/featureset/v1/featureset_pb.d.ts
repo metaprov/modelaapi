@@ -40,10 +40,13 @@ export namespace ListFeaturesetRequest {
 }
 
 export class ListFeaturesetResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList): ListFeaturesetResponse;
-  hasItems(): boolean;
-  clearItems(): ListFeaturesetResponse;
+  getFeaturesets(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList | undefined;
+  setFeaturesets(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList): ListFeaturesetResponse;
+  hasFeaturesets(): boolean;
+  clearFeaturesets(): ListFeaturesetResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListFeaturesetResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeaturesetResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListFeaturesetResponse extends jspb.Message {
 
 export namespace ListFeaturesetResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList.AsObject,
+    featuresets?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturesetList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateFeaturesetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): CreateFeaturesetRequest;
-  hasItem(): boolean;
-  clearItem(): CreateFeaturesetRequest;
+  getFeatureset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setFeatureset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): CreateFeaturesetRequest;
+  hasFeatureset(): boolean;
+  clearFeatureset(): CreateFeaturesetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeaturesetRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateFeaturesetRequest extends jspb.Message {
 
 export namespace CreateFeaturesetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    featureset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
   }
 }
 

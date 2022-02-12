@@ -41,10 +41,13 @@ export namespace ListLabsRequest {
 }
 
 export class ListLabsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList): ListLabsResponse;
-  hasItems(): boolean;
-  clearItems(): ListLabsResponse;
+  getLabs(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList | undefined;
+  setLabs(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList): ListLabsResponse;
+  hasLabs(): boolean;
+  clearLabs(): ListLabsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListLabsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLabsResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListLabsResponse extends jspb.Message {
 
 export namespace ListLabsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList.AsObject,
+    labs?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -75,10 +79,10 @@ export namespace LabResponse {
 }
 
 export class CreateLabRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): CreateLabRequest;
-  hasItem(): boolean;
-  clearItem(): CreateLabRequest;
+  getLab(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab | undefined;
+  setLab(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab): CreateLabRequest;
+  hasLab(): boolean;
+  clearLab(): CreateLabRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLabRequest.AsObject;
@@ -90,7 +94,7 @@ export class CreateLabRequest extends jspb.Message {
 
 export namespace CreateLabRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
+    lab?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.AsObject,
   }
 }
 

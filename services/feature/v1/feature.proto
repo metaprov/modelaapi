@@ -15,11 +15,12 @@ message ListFeaturesRequest {
 }
 
 message ListFeaturesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList features = 1;
+    string next_page_token = 2;
 }
 
 message CreateFeatureRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature feature = 1;
 }
 
 message CreateFeatureResponse {

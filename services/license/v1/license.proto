@@ -17,13 +17,14 @@ message ListLicensesRequest {
 }
 
 message ListLicensesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LicenseList licences = 1;
+    string next_page_token = 2;
 }
 
 message LicenseResponse {}
 
 message CreateLicenseRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.License license = 1;
 }
 
 

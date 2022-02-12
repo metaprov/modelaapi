@@ -21,6 +21,7 @@ message ListDatasetsRequest {
 
 message ListDatasetsResponse {
     github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DatasetList datasets = 1;
+    string next_page_token = 2;
 }
 
 

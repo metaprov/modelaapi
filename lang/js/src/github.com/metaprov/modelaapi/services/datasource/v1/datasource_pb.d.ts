@@ -42,10 +42,13 @@ export namespace ListDataSourceRequest {
 }
 
 export class ListDataSourceResponse extends jspb.Message {
-  getList(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList | undefined;
-  setList(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList): ListDataSourceResponse;
-  hasList(): boolean;
-  clearList(): ListDataSourceResponse;
+  getDatasources(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList | undefined;
+  setDatasources(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList): ListDataSourceResponse;
+  hasDatasources(): boolean;
+  clearDatasources(): ListDataSourceResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListDataSourceResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataSourceResponse.AsObject;
@@ -57,7 +60,8 @@ export class ListDataSourceResponse extends jspb.Message {
 
 export namespace ListDataSourceResponse {
   export type AsObject = {
-    list?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.AsObject,
+    datasources?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataSourceList.AsObject,
+    nextPageToken: string,
   }
 }
 

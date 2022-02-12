@@ -15,7 +15,8 @@ message ListRecipeRunsRequest {
 }
 
 message ListRecipeRunsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList recipeRuns = 1;
+    string next_page_token = 2;
 }
 
 message CreateRecipeRunRequest {

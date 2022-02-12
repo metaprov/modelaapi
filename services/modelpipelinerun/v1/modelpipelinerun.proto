@@ -17,13 +17,14 @@ message ListModelPipelineRunsRequest {
 }
 
 message ListModelPipelineRunsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList modelPipelineRuns = 1;
+    string next_page_token = 2;
 }
 
 message ModelPipelineRunResponse {}
 
 message CreateModelPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun modelPipelineRun = 1;
 }
 
 message CreateModelPipelineRunResponse {

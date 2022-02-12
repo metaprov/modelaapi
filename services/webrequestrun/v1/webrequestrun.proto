@@ -15,7 +15,8 @@ message ListWebRequestRunsRequest {
 }
 
 message ListWebRequestRunsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRunList webrequestruns = 1;
+    string next_page_token = 2;
 }
 
 message CreateWebRequestRunResponse {}
@@ -25,7 +26,7 @@ message CreateWebRequestRunRequest {
 }
 
 message UpdateWebRequestRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestRun webrequestrun = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

@@ -29,10 +29,10 @@ export namespace GetStudyRequest {
 }
 
 export class GetStudyResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): GetStudyResponse;
-  hasItem(): boolean;
-  clearItem(): GetStudyResponse;
+  getStudy(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study | undefined;
+  setStudy(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study): GetStudyResponse;
+  hasStudy(): boolean;
+  clearStudy(): GetStudyResponse;
 
   getYaml(): string;
   setYaml(value: string): GetStudyResponse;
@@ -47,7 +47,7 @@ export class GetStudyResponse extends jspb.Message {
 
 export namespace GetStudyResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
+    study?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject,
     yaml: string,
   }
 }
@@ -75,10 +75,13 @@ export namespace ListStudyRequest {
 }
 
 export class ListStudyResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList): ListStudyResponse;
-  hasItems(): boolean;
-  clearItems(): ListStudyResponse;
+  getStudies(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList | undefined;
+  setStudies(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList): ListStudyResponse;
+  hasStudies(): boolean;
+  clearStudies(): ListStudyResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListStudyResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListStudyResponse.AsObject;
@@ -90,7 +93,8 @@ export class ListStudyResponse extends jspb.Message {
 
 export namespace ListStudyResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList.AsObject,
+    studies?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.StudyList.AsObject,
+    nextPageToken: string,
   }
 }
 

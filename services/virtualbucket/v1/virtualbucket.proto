@@ -12,7 +12,8 @@ message ListVirtualBucketsRequest {
 }
 
 message ListVirtualBucketsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList virtualbuckets = 1;
+    string next_page_token = 2;
 }
 
 
@@ -35,7 +36,7 @@ message GetVirtualBucketRequest {
 }
 
 message GetVirtualBucketResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket virtualbucket = 1;
     string yaml = 2;
 }
 

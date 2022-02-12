@@ -16,11 +16,12 @@ message ListModelAutobuildersRequest {
 }
 
 message ListModelAutobuildersResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList modelautobuilders = 1;
+    string next_page_token = 2;
 }
 
 message CreateModelAutobuilderRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder modelautobuilder = 1;
 }
 
 message CreateModelAutobuilderResponse {

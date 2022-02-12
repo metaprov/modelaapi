@@ -17,11 +17,12 @@ message ListDataProductVersionsRequest {
 }
 
 message ListDataProductVersionsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList dataproductversions = 1;
+    string next_page_token = 2;
 }
 
 message CreateDataProductVersionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion dataproductversion = 1;
 }
 
 message CreateDataProductVersionResponse {

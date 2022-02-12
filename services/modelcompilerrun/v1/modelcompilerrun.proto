@@ -17,13 +17,14 @@ message ListModelCompilerRunsRequest {
 }
 
 message ListModelCompilerRunsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRunList modelCompilerRuns = 1;
+    string next_page_token = 2;
 }
 
 message ModelCompilerRunResponse {}
 
 message CreateModelCompilerRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelCompilerRun modelCompilerRun = 1;
 }
 
 message CreateModelCompilerRunResponse {

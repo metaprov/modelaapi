@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z7github.com/metaprov/modelaapi/services/virtualbucket/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto\x12\x37github.com.metaprov.modelaapi.services.virtualbucket.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xcd\x01\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12n\n\x06labels\x18\x02 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"u\n\x1aListVirtualBucketsResponse\x12W\n\x05items\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList\"p\n\x1a\x43reateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x1d\n\x1b\x43reateVirtualBucketResponse\"\xa0\x01\n\x1aUpdateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdateVirtualBucketResponse\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"|\n\x18GetVirtualBucketResponse\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteVirtualBucketResponse2\xcc\t\n\x14VirtualBucketService\x12\xe5\x01\n\x12ListVirtualBuckets\x12R.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest\x1aS.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/virtualbuckets/{namespace}\x12\xdf\x01\n\x13\x43reateVirtualBucket\x12S.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest\x1aT.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/virtualbuckets:\x01*\x12\xe6\x01\n\x10GetVirtualBucket\x12P.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRequest\x1aQ.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/virtualbuckets/{namespace}/{name}\x12\x8e\x02\n\x13UpdateVirtualBucket\x12S.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest\x1aT.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/virtualbuckets/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xef\x01\n\x13\x44\x65leteVirtualBucket\x12S.github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketRequest\x1aT.github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/virtualbuckets/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/virtualbucket/v1b\x06proto3'
+  serialized_pb=b'\nKgithub.com/metaprov/modelaapi/services/virtualbucket/v1/virtualbucket.proto\x12\x37github.com.metaprov.modelaapi.services.virtualbucket.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\"\xcd\x01\n\x19ListVirtualBucketsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12n\n\x06labels\x18\x02 \x03(\x0b\x32^.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x97\x01\n\x1aListVirtualBucketsResponse\x12`\n\x0evirtualbuckets\x18\x01 \x01(\x0b\x32H.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"p\n\x1a\x43reateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\"\x1d\n\x1b\x43reateVirtualBucketResponse\"\xa0\x01\n\x1aUpdateVirtualBucketRequest\x12R\n\x04item\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1d\n\x1bUpdateVirtualBucketResponse\":\n\x17GetVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x18GetVirtualBucketResponse\x12[\n\rvirtualbucket\x18\x01 \x01(\x0b\x32\x44.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteVirtualBucketRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1d\n\x1b\x44\x65leteVirtualBucketResponse2\xcc\t\n\x14VirtualBucketService\x12\xe5\x01\n\x12ListVirtualBuckets\x12R.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsRequest\x1aS.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/virtualbuckets/{namespace}\x12\xdf\x01\n\x13\x43reateVirtualBucket\x12S.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketRequest\x1aT.github.com.metaprov.modelaapi.services.virtualbucket.v1.CreateVirtualBucketResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/virtualbuckets:\x01*\x12\xe6\x01\n\x10GetVirtualBucket\x12P.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRequest\x1aQ.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/virtualbuckets/{namespace}/{name}\x12\x8e\x02\n\x13UpdateVirtualBucket\x12S.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketRequest\x1aT.github.com.metaprov.modelaapi.services.virtualbucket.v1.UpdateVirtualBucketResponse\"L\x82\xd3\xe4\x93\x02\x46\x1a\x41/v1/virtualbuckets/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xef\x01\n\x13\x44\x65leteVirtualBucket\x12S.github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketRequest\x1aT.github.com.metaprov.modelaapi.services.virtualbucket.v1.DeleteVirtualBucketResponse\"-\x82\xd3\xe4\x93\x02\'*%/v1/virtualbuckets/{namespace}/{name}B9Z7github.com/metaprov/modelaapi/services/virtualbucket/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -115,9 +115,16 @@ _LISTVIRTUALBUCKETSRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.items', index=0,
+      name='virtualbuckets', full_name='github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.virtualbuckets', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -133,8 +140,8 @@ _LISTVIRTUALBUCKETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=479,
-  serialized_end=596,
+  serialized_start=480,
+  serialized_end=631,
 )
 
 
@@ -165,8 +172,8 @@ _CREATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=598,
-  serialized_end=710,
+  serialized_start=633,
+  serialized_end=745,
 )
 
 
@@ -190,8 +197,8 @@ _CREATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=712,
-  serialized_end=741,
+  serialized_start=747,
+  serialized_end=776,
 )
 
 
@@ -229,8 +236,8 @@ _UPDATEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=744,
-  serialized_end=904,
+  serialized_start=779,
+  serialized_end=939,
 )
 
 
@@ -254,8 +261,8 @@ _UPDATEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=906,
-  serialized_end=935,
+  serialized_start=941,
+  serialized_end=970,
 )
 
 
@@ -293,8 +300,8 @@ _GETVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=937,
-  serialized_end=995,
+  serialized_start=972,
+  serialized_end=1030,
 )
 
 
@@ -307,7 +314,7 @@ _GETVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.item', index=0,
+      name='virtualbucket', full_name='github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.virtualbucket', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -332,8 +339,8 @@ _GETVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=997,
-  serialized_end=1121,
+  serialized_start=1033,
+  serialized_end=1166,
 )
 
 
@@ -371,8 +378,8 @@ _DELETEVIRTUALBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1123,
-  serialized_end=1184,
+  serialized_start=1168,
+  serialized_end=1229,
 )
 
 
@@ -396,17 +403,17 @@ _DELETEVIRTUALBUCKETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1186,
-  serialized_end=1215,
+  serialized_start=1231,
+  serialized_end=1260,
 )
 
 _LISTVIRTUALBUCKETSREQUEST_LABELSENTRY.containing_type = _LISTVIRTUALBUCKETSREQUEST
 _LISTVIRTUALBUCKETSREQUEST.fields_by_name['labels'].message_type = _LISTVIRTUALBUCKETSREQUEST_LABELSENTRY
-_LISTVIRTUALBUCKETSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKETLIST
+_LISTVIRTUALBUCKETSRESPONSE.fields_by_name['virtualbuckets'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKETLIST
 _CREATEVIRTUALBUCKETREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
 _UPDATEVIRTUALBUCKETREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
 _UPDATEVIRTUALBUCKETREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_GETVIRTUALBUCKETRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
+_GETVIRTUALBUCKETRESPONSE.fields_by_name['virtualbucket'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._VIRTUALBUCKET
 DESCRIPTOR.message_types_by_name['ListVirtualBucketsRequest'] = _LISTVIRTUALBUCKETSREQUEST
 DESCRIPTOR.message_types_by_name['ListVirtualBucketsResponse'] = _LISTVIRTUALBUCKETSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateVirtualBucketRequest'] = _CREATEVIRTUALBUCKETREQUEST
@@ -508,8 +515,8 @@ _VIRTUALBUCKETSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1218,
-  serialized_end=2446,
+  serialized_start=1263,
+  serialized_end=2491,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListVirtualBuckets',

@@ -15,11 +15,12 @@ message ListPostMortemsRequest {
 }
 
 message ListPostMortemsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortemList postmortems = 1;
+    string next_page_token = 2;
 }
 
 message CreatePostMortemRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
 }
 
 message CreatePostMortemResponse {
@@ -27,7 +28,7 @@ message CreatePostMortemResponse {
 }
 
 message UpdatePostMortemRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.PostMortem postmortem = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

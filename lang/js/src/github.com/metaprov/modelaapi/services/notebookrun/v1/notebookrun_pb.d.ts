@@ -41,10 +41,13 @@ export namespace ListNotebookRunsRequest {
 }
 
 export class ListNotebookRunsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunList): ListNotebookRunsResponse;
-  hasItems(): boolean;
-  clearItems(): ListNotebookRunsResponse;
+  getNotebookruns(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunList | undefined;
+  setNotebookruns(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunList): ListNotebookRunsResponse;
+  hasNotebookruns(): boolean;
+  clearNotebookruns(): ListNotebookRunsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListNotebookRunsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNotebookRunsResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListNotebookRunsResponse extends jspb.Message {
 
 export namespace ListNotebookRunsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunList.AsObject,
+    notebookruns?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRunList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -75,10 +79,10 @@ export namespace NotebookRunResponse {
 }
 
 export class CreateNotebookRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): CreateNotebookRunRequest;
-  hasItem(): boolean;
-  clearItem(): CreateNotebookRunRequest;
+  getNotebookrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
+  setNotebookrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): CreateNotebookRunRequest;
+  hasNotebookrun(): boolean;
+  clearNotebookrun(): CreateNotebookRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateNotebookRunRequest.AsObject;
@@ -90,7 +94,7 @@ export class CreateNotebookRunRequest extends jspb.Message {
 
 export namespace CreateNotebookRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
+    notebookrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
   }
 }
 
@@ -109,10 +113,10 @@ export namespace CreateNotebookRunResponse {
 }
 
 export class UpdateNotebookRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): UpdateNotebookRunRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateNotebookRunRequest;
+  getNotbookrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
+  setNotbookrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): UpdateNotebookRunRequest;
+  hasNotbookrun(): boolean;
+  clearNotbookrun(): UpdateNotebookRunRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateNotebookRunRequest;
@@ -129,7 +133,7 @@ export class UpdateNotebookRunRequest extends jspb.Message {
 
 export namespace UpdateNotebookRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
+    notbookrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }
@@ -171,10 +175,10 @@ export namespace GetNotebookRunRequest {
 }
 
 export class GetNotebookRunResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): GetNotebookRunResponse;
-  hasItem(): boolean;
-  clearItem(): GetNotebookRunResponse;
+  getNotbookrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun | undefined;
+  setNotbookrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun): GetNotebookRunResponse;
+  hasNotbookrun(): boolean;
+  clearNotbookrun(): GetNotebookRunResponse;
 
   getYaml(): string;
   setYaml(value: string): GetNotebookRunResponse;
@@ -189,7 +193,7 @@ export class GetNotebookRunResponse extends jspb.Message {
 
 export namespace GetNotebookRunResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
+    notbookrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookRun.AsObject,
     yaml: string,
   }
 }

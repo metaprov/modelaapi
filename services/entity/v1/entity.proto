@@ -15,11 +15,12 @@ message ListEntitiesRequest {
 }
 
 message ListEntitiesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList entities = 1;
+    string next_page_token = 2;
 }
 
 message CreateEntityRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entity = 1;
 }
 
 message CreateEntityResponse {

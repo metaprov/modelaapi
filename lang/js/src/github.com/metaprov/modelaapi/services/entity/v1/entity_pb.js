@@ -532,7 +532,8 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prot
  */
 proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.toObject(includeInstance, f)
+    entities: (f = msg.getEntities()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -572,7 +573,11 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.dese
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setEntities(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -603,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prot
  */
 proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getEntities();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -611,14 +616,21 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.seri
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList entities = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList}
  */
-proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.getEntities = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList, 1));
 };
@@ -628,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prot
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.EntityList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.setEntities = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -637,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prot
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.clearEntities = function() {
+  return this.setEntities(undefined);
 };
 
 
@@ -646,8 +658,26 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prot
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.hasEntities = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.entity.v1.ListEntitiesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -683,7 +713,7 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.toObject(includeInstance, f)
+    entity: (f = msg.getEntity()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -723,7 +753,7 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setEntity(value);
       break;
     default:
       reader.skipField();
@@ -754,7 +784,7 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getEntity();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -766,10 +796,10 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity entity = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity}
  */
-proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.getEntity = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity, 1));
 };
@@ -779,7 +809,7 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Entity|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.setEntity = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -788,8 +818,8 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.clearEntity = function() {
+  return this.setEntity(undefined);
 };
 
 
@@ -797,7 +827,7 @@ proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.entity.v1.CreateEntityRequest.prototype.hasEntity = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

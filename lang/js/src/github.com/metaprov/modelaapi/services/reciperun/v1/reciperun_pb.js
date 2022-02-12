@@ -532,7 +532,8 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
  */
 proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.toObject(includeInstance, f)
+    reciperuns: (f = msg.getReciperuns()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -572,7 +573,11 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setReciperuns(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -603,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
  */
 proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getReciperuns();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -611,14 +616,21 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList recipeRuns = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList}
  */
-proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.getReciperuns = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList, 1));
 };
@@ -628,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeRunList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.setReciperuns = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -637,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.clearReciperuns = function() {
+  return this.setReciperuns(undefined);
 };
 
 
@@ -646,8 +658,26 @@ proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.hasReciperuns = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.reciperun.v1.ListRecipeRunsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

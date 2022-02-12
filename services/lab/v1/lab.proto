@@ -17,13 +17,14 @@ message ListLabsRequest {
 }
 
 message ListLabsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList labs = 1;
+    string next_page_token = 2;
 }
 
 message LabResponse {}
 
 message CreateLabRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab lab = 1;
 }
 
 message CreateLabResponse {

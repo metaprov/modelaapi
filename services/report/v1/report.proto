@@ -18,11 +18,12 @@ message ListReportsRequest {
 }
 
 message ListReportsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ReportList reports = 1;
+    string next_page_token = 2;
 }
 
 message CreateReportRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Report report = 1;
 }
 
 message CreateReportResponse {}

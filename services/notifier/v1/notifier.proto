@@ -17,13 +17,14 @@ message ListNotifiersRequest {
 }
 
 message ListNotifiersResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.NotifierList notifiers = 1;
+    string next_page_token = 2;
 }
 
 message NotifierResponse {}
 
 message CreateNotifierRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier notifier = 1;
 }
 
 message CreateNotifierResponse {
@@ -31,7 +32,7 @@ message CreateNotifierResponse {
 }
 
 message UpdateNotifierRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier notifier = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -46,7 +47,7 @@ message GetNotifierRequest {
 
 
 message GetNotifierResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Notifier notifier = 1;
     string yaml = 2;
 }
 

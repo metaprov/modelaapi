@@ -31,10 +31,13 @@ export namespace ListTenantsRequest {
 }
 
 export class ListTenantsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList): ListTenantsResponse;
-  hasItems(): boolean;
-  clearItems(): ListTenantsResponse;
+  getTenants(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList | undefined;
+  setTenants(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList): ListTenantsResponse;
+  hasTenants(): boolean;
+  clearTenants(): ListTenantsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListTenantsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTenantsResponse.AsObject;
@@ -46,15 +49,16 @@ export class ListTenantsResponse extends jspb.Message {
 
 export namespace ListTenantsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.AsObject,
+    tenants?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.TenantList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateTenantRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): CreateTenantRequest;
-  hasItem(): boolean;
-  clearItem(): CreateTenantRequest;
+  getTenant(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setTenant(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): CreateTenantRequest;
+  hasTenant(): boolean;
+  clearTenant(): CreateTenantRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateTenantRequest.AsObject;
@@ -66,7 +70,7 @@ export class CreateTenantRequest extends jspb.Message {
 
 export namespace CreateTenantRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
+    tenant?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
   }
 }
 
@@ -147,10 +151,10 @@ export namespace GetTenantRequest {
 }
 
 export class GetTenantResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): GetTenantResponse;
-  hasItem(): boolean;
-  clearItem(): GetTenantResponse;
+  getTenant(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant | undefined;
+  setTenant(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant): GetTenantResponse;
+  hasTenant(): boolean;
+  clearTenant(): GetTenantResponse;
 
   getAlertsList(): Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert>;
   setAlertsList(value: Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert>): GetTenantResponse;
@@ -190,7 +194,7 @@ export class GetTenantResponse extends jspb.Message {
 
 export namespace GetTenantResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
+    tenant?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Tenant.AsObject,
     alertsList: Array<github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.AsObject>,
     datasetsList: Array<github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject>,
     studiesList: Array<github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Study.AsObject>,

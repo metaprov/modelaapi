@@ -1062,7 +1062,8 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    datasets: (f = msg.getDatasets()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.toObject(includeInstance, f)
+    datasets: (f = msg.getDatasets()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1104,6 +1105,10 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.des
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.deserializeBinaryFromReader);
       msg.setDatasets(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1139,6 +1144,13 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.ser
       1,
       f,
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DatasetList.serializeBinaryToWriter
+    );
+  }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
     );
   }
 };
@@ -1178,6 +1190,24 @@ proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.prototype.hasDatasets = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataset.v1.ListDatasetsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

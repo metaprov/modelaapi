@@ -532,7 +532,8 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResp
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.toObject(includeInstance, f)
+    servingsites: (f = msg.getServingsites()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -572,7 +573,11 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResp
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setServingsites(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -603,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResp
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getServingsites();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -611,14 +616,21 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResp
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList servingsites = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.getServingsites = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList, 1));
 };
@@ -628,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResp
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.setServingsites = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -637,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResp
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.clearServingsites = function() {
+  return this.setServingsites(undefined);
 };
 
 
@@ -646,8 +658,26 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResp
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.hasServingsites = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.ListServingSitesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -683,7 +713,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteReq
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f)
+    servingsite: (f = msg.getServingsite()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -723,7 +753,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteReq
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setServingsite(value);
       break;
     default:
       reader.skipField();
@@ -754,7 +784,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteReq
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getServingsite();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -766,10 +796,10 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteReq
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite servingsite = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.getServingsite = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite, 1));
 };
@@ -779,7 +809,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteReq
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.setServingsite = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -788,8 +818,8 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteReq
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.clearServingsite = function() {
+  return this.setServingsite(undefined);
 };
 
 
@@ -797,7 +827,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteReq
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.CreateServingSiteRequest.prototype.hasServingsite = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1398,7 +1428,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRespon
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f),
+    servingsite: (f = msg.getServingsite()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1439,7 +1469,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRespon
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setServingsite(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1474,7 +1504,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRespon
  */
 proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getServingsite();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1493,10 +1523,10 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRespon
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite servingsite = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.getServingsite = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite, 1));
 };
@@ -1506,7 +1536,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRespon
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.setServingsite = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1515,8 +1545,8 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRespon
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.clearServingsite = function() {
+  return this.setServingsite(undefined);
 };
 
 
@@ -1524,7 +1554,7 @@ proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteRespon
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.servingsite.v1.GetServingSiteResponse.prototype.hasServingsite = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

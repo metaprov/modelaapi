@@ -40,10 +40,13 @@ export namespace ListRecipeRunsRequest {
 }
 
 export class ListRecipeRunsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList): ListRecipeRunsResponse;
-  hasItems(): boolean;
-  clearItems(): ListRecipeRunsResponse;
+  getReciperuns(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList | undefined;
+  setReciperuns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList): ListRecipeRunsResponse;
+  hasReciperuns(): boolean;
+  clearReciperuns(): ListRecipeRunsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListRecipeRunsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListRecipeRunsResponse.AsObject;
@@ -55,7 +58,8 @@ export class ListRecipeRunsResponse extends jspb.Message {
 
 export namespace ListRecipeRunsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.AsObject,
+    reciperuns?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.RecipeRunList.AsObject,
+    nextPageToken: string,
   }
 }
 

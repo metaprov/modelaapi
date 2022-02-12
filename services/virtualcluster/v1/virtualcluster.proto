@@ -13,13 +13,13 @@ message ListVirtualClustersRequest {
 }
 
 message ListVirtualClustersResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualClusterList virtualclusters = 1;
 }
 
 message VirtualClusterResponse {}
 
 message CreateVirtualClusterRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster virtualcluster = 1;
 }
 
 message CreateVirtualClusterResponse {
@@ -42,7 +42,7 @@ message GetVirtualClusterRequest {
 
 
 message GetVirtualClusterResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualCluster virtualcluster = 1;
     string yaml = 2;
 }
 

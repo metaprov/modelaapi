@@ -15,11 +15,12 @@ message ListTenantsRequest {
 }
 
 message ListTenantsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.TenantList tenants = 1;
+    string next_page_token = 2;
 }
 
 message CreateTenantRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant item = 4;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant tenant = 4;
 }
 
 message CreateTenantResponse {
@@ -42,7 +43,7 @@ message GetTenantRequest {
 
 
 message GetTenantResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Tenant  tenant = 1;
     repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alerts = 2;
     repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset datasets = 3;
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study studies = 4;

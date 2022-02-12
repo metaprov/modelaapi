@@ -15,11 +15,13 @@ message ListFeatureHistogramsRequest {
 }
 
 message ListFeatureHistogramsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogramList histograms = 1;
+    string next_page_token = 2;
 }
 
 message CreateFeatureHistogramRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureHistogram histogram = 1;
+    string next_page_token = 2;
 }
 
 message CreateFeatureHistogramResponse {

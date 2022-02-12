@@ -15,11 +15,12 @@ message ListDataPipelineRunRequest {
 }
 
 message ListDataPipelineRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRunList dataPipelineRuns = 1;
+    string next_page_token = 2;
 }
 
 message CreateDataPipelineRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun item = 1;    
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataPipelineRun dataPipelineRun = 1;    
 }
 
 message CreateDataPipelineRunResponse {

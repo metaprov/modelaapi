@@ -15,11 +15,12 @@ message ListRunBooksRequest {
 }
 
 message ListRunBooksResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList runbooks = 1;
+    string next_page_token = 2;
 }
 
 message CreateRunBookRequest {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook runbook = 1;
 }
 
 message CreateRunBookResponse {
@@ -42,7 +43,7 @@ message GetRunBookRequest {
 
 
 message GetRunBookResponse {
-    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook runbook = 1;
     string yaml = 2;
 }
 

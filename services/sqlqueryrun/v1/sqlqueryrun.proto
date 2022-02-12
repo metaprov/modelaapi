@@ -15,7 +15,8 @@ message ListSqlQueryRunsRequest {
 }
 
 message ListSqlQueryRunsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRunList sqlqueryruns = 1;
+    string next_page_token = 2;
 }
 
 message CreateSqlQueryRunResponse {}
@@ -39,7 +40,7 @@ message GetSqlQueryRunRequest {
 }
 
 message GetSqlQueryRunResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun sqlqueryrun = 1;
     string yaml = 2;
 
 }

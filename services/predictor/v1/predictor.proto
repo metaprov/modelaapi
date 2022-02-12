@@ -17,17 +17,18 @@ message ListPredictorsRequest {
 }
 
 message ListPredictorsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictorList predictors = 1;
+    string next_page_token = 2;
 }
 
 message CreatePredictorResponse {}
 
 message CreatePredictorRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
 }
 
 message UpdatePredictorRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Predictor predictor = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

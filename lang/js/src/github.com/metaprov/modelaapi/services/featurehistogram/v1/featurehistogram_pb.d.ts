@@ -40,10 +40,13 @@ export namespace ListFeatureHistogramsRequest {
 }
 
 export class ListFeatureHistogramsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogramList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogramList): ListFeatureHistogramsResponse;
-  hasItems(): boolean;
-  clearItems(): ListFeatureHistogramsResponse;
+  getHistograms(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogramList | undefined;
+  setHistograms(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogramList): ListFeatureHistogramsResponse;
+  hasHistograms(): boolean;
+  clearHistograms(): ListFeatureHistogramsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListFeatureHistogramsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeatureHistogramsResponse.AsObject;
@@ -55,15 +58,19 @@ export class ListFeatureHistogramsResponse extends jspb.Message {
 
 export namespace ListFeatureHistogramsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogramList.AsObject,
+    histograms?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogramList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateFeatureHistogramRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): CreateFeatureHistogramRequest;
-  hasItem(): boolean;
-  clearItem(): CreateFeatureHistogramRequest;
+  getHistogram(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram | undefined;
+  setHistogram(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram): CreateFeatureHistogramRequest;
+  hasHistogram(): boolean;
+  clearHistogram(): CreateFeatureHistogramRequest;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): CreateFeatureHistogramRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeatureHistogramRequest.AsObject;
@@ -75,7 +82,8 @@ export class CreateFeatureHistogramRequest extends jspb.Message {
 
 export namespace CreateFeatureHistogramRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    histogram?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureHistogram.AsObject,
+    nextPageToken: string,
   }
 }
 

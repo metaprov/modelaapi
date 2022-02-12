@@ -17,18 +17,19 @@ message ListPredictionsRequest {
 }
 
 message ListPredictionsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.PredictionList predictions = 1;
+    string next_page_token = 2;
 }
 
 
 message CreatePredictionResponse {}
 
 message CreatePredictionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
 }
 
 message UpdatePredictionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 
@@ -42,7 +43,7 @@ message GetPredictionRequest {
 }
 
 message GetPredictionResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.Prediction prediction = 1;
     string yaml = 2;
 
 }

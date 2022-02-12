@@ -442,7 +442,8 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBuckets
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList.toObject(includeInstance, f)
+    virtualbuckets: (f = msg.getVirtualbuckets()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -482,7 +483,11 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBuckets
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setVirtualbuckets(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -513,7 +518,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBuckets
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getVirtualbuckets();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -521,14 +526,21 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBuckets
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList virtualbuckets = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.getVirtualbuckets = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucketList, 1));
 };
@@ -538,7 +550,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBuckets
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucketList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.setVirtualbuckets = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -547,8 +559,8 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBuckets
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.clearVirtualbuckets = function() {
+  return this.setVirtualbuckets(undefined);
 };
 
 
@@ -556,8 +568,26 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBuckets
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.hasVirtualbuckets = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.ListVirtualBucketsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1308,7 +1338,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRe
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
+    virtualbucket: (f = msg.getVirtualbucket()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1349,7 +1379,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRe
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setVirtualbucket(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1384,7 +1414,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRe
  */
 proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getVirtualbucket();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1403,10 +1433,10 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket virtualbucket = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.getVirtualbucket = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualBucket, 1));
 };
@@ -1416,7 +1446,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRe
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualBucket|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.setVirtualbucket = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1425,8 +1455,8 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.clearVirtualbucket = function() {
+  return this.setVirtualbucket(undefined);
 };
 
 
@@ -1434,7 +1464,7 @@ proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualbucket.v1.GetVirtualBucketResponse.prototype.hasVirtualbucket = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

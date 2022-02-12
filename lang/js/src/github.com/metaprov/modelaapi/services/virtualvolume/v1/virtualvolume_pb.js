@@ -466,7 +466,8 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumes
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList.toObject(includeInstance, f)
+    virtualvolumes: (f = msg.getVirtualvolumes()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -506,7 +507,11 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumes
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setVirtualvolumes(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -537,7 +542,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumes
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getVirtualvolumes();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -545,14 +550,21 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumes
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList virtualvolumes = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.getVirtualvolumes = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolumeList, 1));
 };
@@ -562,7 +574,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumes
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.setVirtualvolumes = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -571,8 +583,8 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumes
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.clearVirtualvolumes = function() {
+  return this.setVirtualvolumes(undefined);
 };
 
 
@@ -580,8 +592,26 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumes
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.hasVirtualvolumes = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.ListVirtualVolumesResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -718,7 +748,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolum
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.toObject(includeInstance, f)
+    virtualvolume: (f = msg.getVirtualvolume()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -758,7 +788,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolum
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setVirtualvolume(value);
       break;
     default:
       reader.skipField();
@@ -789,7 +819,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolum
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getVirtualvolume();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -801,10 +831,10 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolum
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume virtualvolume = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.getVirtualvolume = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume, 1));
 };
@@ -814,7 +844,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolum
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.setVirtualvolume = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -823,8 +853,8 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolum
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.clearVirtualvolume = function() {
+  return this.setVirtualvolume(undefined);
 };
 
 
@@ -832,7 +862,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolum
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.CreateVirtualVolumeRequest.prototype.hasVirtualvolume = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1433,7 +1463,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRe
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.toObject(includeInstance, f),
+    virtualvolume: (f = msg.getVirtualvolume()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1474,7 +1504,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRe
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setVirtualvolume(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1509,7 +1539,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRe
  */
 proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getVirtualvolume();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1528,10 +1558,10 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRe
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume virtualvolume = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.getVirtualvolume = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.VirtualVolume, 1));
 };
@@ -1541,7 +1571,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRe
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.setVirtualvolume = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1550,8 +1580,8 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRe
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.clearVirtualvolume = function() {
+  return this.setVirtualvolume(undefined);
 };
 
 
@@ -1559,7 +1589,7 @@ proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeRe
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.virtualvolume.v1.GetVirtualVolumeResponse.prototype.hasVirtualvolume = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

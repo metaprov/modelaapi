@@ -532,7 +532,8 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.toObject(includeInstance, f)
+    runbooks: (f = msg.getRunbooks()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -572,7 +573,11 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setRunbooks(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -603,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getRunbooks();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -611,14 +616,21 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.ser
       github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList runbooks = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList}
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.getRunbooks = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBookList, 1));
 };
@@ -628,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBookList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.setRunbooks = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -637,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.clearRunbooks = function() {
+  return this.setRunbooks(undefined);
 };
 
 
@@ -646,8 +658,26 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.hasRunbooks = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.runbook.v1.ListRunBooksResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -683,7 +713,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.toObject(includeInstance, f)
+    runbook: (f = msg.getRunbook()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -723,7 +753,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setRunbook(value);
       break;
     default:
       reader.skipField();
@@ -754,7 +784,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.pro
  */
 proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getRunbook();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -766,10 +796,10 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook runbook = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook}
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.getRunbook = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook, 1));
 };
@@ -779,7 +809,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.setRunbook = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -788,8 +818,8 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.clearRunbook = function() {
+  return this.setRunbook(undefined);
 };
 
 
@@ -797,7 +827,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.CreateRunBookRequest.prototype.hasRunbook = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1398,7 +1428,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.toObject(includeInstance, f),
+    runbook: (f = msg.getRunbook()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -1439,7 +1469,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setRunbook(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1474,7 +1504,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.proto
  */
 proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getRunbook();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1493,10 +1523,10 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook runbook = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook}
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.getRunbook = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.RunBook, 1));
 };
@@ -1506,7 +1536,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.RunBook|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.setRunbook = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1515,8 +1545,8 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.clearRunbook = function() {
+  return this.setRunbook(undefined);
 };
 
 
@@ -1524,7 +1554,7 @@ proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.runbook.v1.GetRunBookResponse.prototype.hasRunbook = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

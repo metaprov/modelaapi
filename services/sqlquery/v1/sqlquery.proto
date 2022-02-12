@@ -15,13 +15,14 @@ message ListSqlQuerysRequest {
 }
 
 message ListSqlQuerysResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryList sqlquries = 1;
+    string next_page_token = 2;
 }
 
 message CreateSqlQueryResponse {}
 
 message CreateSqlQueryRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
 }
 
 message UpdateSqlQueryRequest {
@@ -39,7 +40,7 @@ message GetSqlQueryRequest {
 }
 
 message GetSqlQueryResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQuery sqlquery = 1;
     string yaml = 2;
 
 }

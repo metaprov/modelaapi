@@ -15,11 +15,12 @@ message ListServingSitesRequest {
 }
 
 message ListServingSitesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSiteList servingsites = 1;
+    string next_page_token = 2;
 }
 
 message CreateServingSiteRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite servingsite = 1;
 }
 
 message CreateServingSiteResponse {
@@ -42,7 +43,7 @@ message GetServingSiteRequest {
 
 
 message GetServingSiteResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ServingSite servingsite = 1;
     string yaml = 2;
 }
 

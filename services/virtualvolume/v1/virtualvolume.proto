@@ -13,13 +13,14 @@ message ListVirtualVolumesRequest {
 }
 
 message ListVirtualVolumesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolumeList virtualvolumes = 1;
+    string next_page_token = 2;
 }
 
 message VirtualVolumeResponse {}
 
 message CreateVirtualVolumeRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume virtualvolume = 1;
 }
 
 message CreateVirtualVolumeResponse {
@@ -41,7 +42,7 @@ message GetVirtualVolumeRequest {
 }
 
 message GetVirtualVolumeResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.VirtualVolume virtualvolume = 1;
     string yaml = 2;
 }
 

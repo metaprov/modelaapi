@@ -18,7 +18,8 @@ message ListDataSourceRequest {
 }
 
 message ListDataSourceResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList list = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataSourceList datasources = 1;
+    string next_page_token = 2;
 
 }
 

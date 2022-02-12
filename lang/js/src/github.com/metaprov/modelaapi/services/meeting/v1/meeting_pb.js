@@ -556,7 +556,8 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList.toObject(includeInstance, f)
+    meetings: (f = msg.getMeetings()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -596,7 +597,11 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setMeetings(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -627,7 +632,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getMeetings();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -635,14 +640,21 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.ser
       github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList meetings = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.getMeetings = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList, 1));
 };
@@ -652,7 +664,7 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.MeetingList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.setMeetings = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -661,8 +673,8 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.clearMeetings = function() {
+  return this.setMeetings(undefined);
 };
 
 
@@ -670,8 +682,26 @@ proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.hasMeetings = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.meeting.v1.ListMeetingsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

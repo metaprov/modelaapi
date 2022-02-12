@@ -15,7 +15,8 @@ message ListWebRequestsRequest {
 }
 
 message ListWebRequestsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequestList webrequests = 1;
+    string next_page_token = 2;
 }
 
 message CreateWebRequestResponse {}
@@ -39,7 +40,7 @@ message GetWebRequestRequest {
 }
 
 message GetWebRequestResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest webrequest = 1;
     string yaml = 2;
 
 }

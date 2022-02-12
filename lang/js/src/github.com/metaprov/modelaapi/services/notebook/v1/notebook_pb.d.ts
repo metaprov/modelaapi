@@ -41,10 +41,13 @@ export namespace ListNotebooksRequest {
 }
 
 export class ListNotebooksResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList): ListNotebooksResponse;
-  hasItems(): boolean;
-  clearItems(): ListNotebooksResponse;
+  getNotebooks(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList | undefined;
+  setNotebooks(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList): ListNotebooksResponse;
+  hasNotebooks(): boolean;
+  clearNotebooks(): ListNotebooksResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListNotebooksResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListNotebooksResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListNotebooksResponse extends jspb.Message {
 
 export namespace ListNotebooksResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.AsObject,
+    notebooks?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.NotebookList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -75,10 +79,10 @@ export namespace NotebookResponse {
 }
 
 export class CreateNotebookRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): CreateNotebookRequest;
-  hasItem(): boolean;
-  clearItem(): CreateNotebookRequest;
+  getNotebook(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook | undefined;
+  setNotebook(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook): CreateNotebookRequest;
+  hasNotebook(): boolean;
+  clearNotebook(): CreateNotebookRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateNotebookRequest.AsObject;
@@ -90,7 +94,7 @@ export class CreateNotebookRequest extends jspb.Message {
 
 export namespace CreateNotebookRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
+    notebook?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.Notebook.AsObject,
   }
 }
 

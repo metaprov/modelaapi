@@ -33,10 +33,10 @@ export namespace GetReviewRequest {
 }
 
 export class GetReviewResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): GetReviewResponse;
-  hasItem(): boolean;
-  clearItem(): GetReviewResponse;
+  getReviews(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setReviews(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): GetReviewResponse;
+  hasReviews(): boolean;
+  clearReviews(): GetReviewResponse;
 
   getYaml(): string;
   setYaml(value: string): GetReviewResponse;
@@ -51,16 +51,16 @@ export class GetReviewResponse extends jspb.Message {
 
 export namespace GetReviewResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
+    reviews?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
     yaml: string,
   }
 }
 
 export class CreateReviewRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): CreateReviewRequest;
-  hasItem(): boolean;
-  clearItem(): CreateReviewRequest;
+  getReview(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setReview(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): CreateReviewRequest;
+  hasReview(): boolean;
+  clearReview(): CreateReviewRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateReviewRequest.AsObject;
@@ -72,7 +72,7 @@ export class CreateReviewRequest extends jspb.Message {
 
 export namespace CreateReviewRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
+    review?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
   }
 }
 
@@ -91,10 +91,10 @@ export namespace CreateReviewResponse {
 }
 
 export class UpdateReviewRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): UpdateReviewRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateReviewRequest;
+  getReview(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review | undefined;
+  setReview(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review): UpdateReviewRequest;
+  hasReview(): boolean;
+  clearReview(): UpdateReviewRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateReviewRequest;
@@ -111,7 +111,7 @@ export class UpdateReviewRequest extends jspb.Message {
 
 export namespace UpdateReviewRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
+    review?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

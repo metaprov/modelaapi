@@ -600,7 +600,8 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.t
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList.toObject(includeInstance, f)
+    labs: (f = msg.getLabs()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -640,7 +641,11 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.deserialize
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setLabs(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -671,7 +676,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.s
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getLabs();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -679,14 +684,21 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.serializeBi
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList labs = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.getLabs = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.LabList, 1));
 };
@@ -696,7 +708,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.g
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.LabList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.setLabs = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -705,8 +717,8 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.s
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.clearLabs = function() {
+  return this.setLabs(undefined);
 };
 
 
@@ -714,8 +726,26 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.hasLabs = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.lab.v1.ListLabsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -852,7 +882,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.t
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.toObject(includeInstance, f)
+    lab: (f = msg.getLab()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -892,7 +922,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.deserialize
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setLab(value);
       break;
     default:
       reader.skipField();
@@ -923,7 +953,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.s
  */
 proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getLab();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -935,10 +965,10 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.serializeBi
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab lab = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.getLab = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Lab, 1));
 };
@@ -948,7 +978,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.g
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Lab|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.setLab = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -957,8 +987,8 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.s
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.clearLab = function() {
+  return this.setLab(undefined);
 };
 
 
@@ -966,7 +996,7 @@ proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.c
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.lab.v1.CreateLabRequest.prototype.hasLab = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

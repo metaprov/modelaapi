@@ -40,10 +40,13 @@ export namespace ListLabelingPipelineRequest {
 }
 
 export class ListLabelingPipelineResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList): ListLabelingPipelineResponse;
-  hasItems(): boolean;
-  clearItems(): ListLabelingPipelineResponse;
+  getLabelingpipelines(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList | undefined;
+  setLabelingpipelines(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList): ListLabelingPipelineResponse;
+  hasLabelingpipelines(): boolean;
+  clearLabelingpipelines(): ListLabelingPipelineResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListLabelingPipelineResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListLabelingPipelineResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListLabelingPipelineResponse extends jspb.Message {
 
 export namespace ListLabelingPipelineResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList.AsObject,
+    labelingpipelines?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipelineList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateLabelingPipelineRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): CreateLabelingPipelineRequest;
-  hasItem(): boolean;
-  clearItem(): CreateLabelingPipelineRequest;
+  getLabelingpipeline(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline | undefined;
+  setLabelingpipeline(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline): CreateLabelingPipelineRequest;
+  hasLabelingpipeline(): boolean;
+  clearLabelingpipeline(): CreateLabelingPipelineRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateLabelingPipelineRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateLabelingPipelineRequest extends jspb.Message {
 
 export namespace CreateLabelingPipelineRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
+    labelingpipeline?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.LabelingPipeline.AsObject,
   }
 }
 

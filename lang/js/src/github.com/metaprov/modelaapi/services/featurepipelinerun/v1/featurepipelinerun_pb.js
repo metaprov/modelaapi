@@ -532,7 +532,8 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePi
  */
 proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList.toObject(includeInstance, f)
+    featurepipelineruns: (f = msg.getFeaturepipelineruns()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -572,7 +573,11 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePi
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setFeaturepipelineruns(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -603,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePi
  */
 proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getFeaturepipelineruns();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -611,14 +616,21 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePi
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList featurepipelineruns = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.getFeaturepipelineruns = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRunList, 1));
 };
@@ -628,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePi
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRunList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.setFeaturepipelineruns = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -637,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePi
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.clearFeaturepipelineruns = function() {
+  return this.setFeaturepipelineruns(undefined);
 };
 
 
@@ -646,8 +658,26 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.hasFeaturepipelineruns = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.ListFeaturePipelineRunResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -683,7 +713,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeature
  */
 proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.toObject(includeInstance, f)
+    featurepipelinerun: (f = msg.getFeaturepipelinerun()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -723,7 +753,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeature
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setFeaturepipelinerun(value);
       break;
     default:
       reader.skipField();
@@ -754,7 +784,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeature
  */
 proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getFeaturepipelinerun();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -766,10 +796,10 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeature
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun featurepipelinerun = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.getFeaturepipelinerun = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeaturePipelineRun, 1));
 };
@@ -779,7 +809,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeature
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineRun|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.setFeaturepipelinerun = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -788,8 +818,8 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeature
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.clearFeaturepipelinerun = function() {
+  return this.setFeaturepipelinerun(undefined);
 };
 
 
@@ -797,7 +827,7 @@ proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeature
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.featurepipelinerun.v1.CreateFeaturePipelineRunRequest.prototype.hasFeaturepipelinerun = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -43,10 +43,13 @@ export namespace ListDataProductsRequest {
 }
 
 export class ListDataProductsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductList): ListDataProductsResponse;
-  hasItems(): boolean;
-  clearItems(): ListDataProductsResponse;
+  getDataproducts(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductList | undefined;
+  setDataproducts(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductList): ListDataProductsResponse;
+  hasDataproducts(): boolean;
+  clearDataproducts(): ListDataProductsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListDataProductsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataProductsResponse.AsObject;
@@ -58,15 +61,16 @@ export class ListDataProductsResponse extends jspb.Message {
 
 export namespace ListDataProductsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductList.AsObject,
+    dataproducts?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateDataProductRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CreateDataProductRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDataProductRequest;
+  getDataproduct(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct | undefined;
+  setDataproduct(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct): CreateDataProductRequest;
+  hasDataproduct(): boolean;
+  clearDataproduct(): CreateDataProductRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataProductRequest.AsObject;
@@ -78,7 +82,7 @@ export class CreateDataProductRequest extends jspb.Message {
 
 export namespace CreateDataProductRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
+    dataproduct?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.AsObject,
   }
 }
 

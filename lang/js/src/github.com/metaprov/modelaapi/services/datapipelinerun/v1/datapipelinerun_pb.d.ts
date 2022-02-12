@@ -40,10 +40,13 @@ export namespace ListDataPipelineRunRequest {
 }
 
 export class ListDataPipelineRunResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunList): ListDataPipelineRunResponse;
-  hasItems(): boolean;
-  clearItems(): ListDataPipelineRunResponse;
+  getDatapipelineruns(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunList | undefined;
+  setDatapipelineruns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunList): ListDataPipelineRunResponse;
+  hasDatapipelineruns(): boolean;
+  clearDatapipelineruns(): ListDataPipelineRunResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListDataPipelineRunResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListDataPipelineRunResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListDataPipelineRunResponse extends jspb.Message {
 
 export namespace ListDataPipelineRunResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunList.AsObject,
+    datapipelineruns?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRunList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateDataPipelineRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun): CreateDataPipelineRunRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDataPipelineRunRequest;
+  getDatapipelinerun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun | undefined;
+  setDatapipelinerun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun): CreateDataPipelineRunRequest;
+  hasDatapipelinerun(): boolean;
+  clearDatapipelinerun(): CreateDataPipelineRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDataPipelineRunRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateDataPipelineRunRequest extends jspb.Message {
 
 export namespace CreateDataPipelineRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.AsObject,
+    datapipelinerun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataPipelineRun.AsObject,
   }
 }
 

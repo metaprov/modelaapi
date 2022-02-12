@@ -40,10 +40,13 @@ export namespace ListServingSitesRequest {
 }
 
 export class ListServingSitesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList): ListServingSitesResponse;
-  hasItems(): boolean;
-  clearItems(): ListServingSitesResponse;
+  getServingsites(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList | undefined;
+  setServingsites(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList): ListServingSitesResponse;
+  hasServingsites(): boolean;
+  clearServingsites(): ListServingSitesResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListServingSitesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListServingSitesResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListServingSitesResponse extends jspb.Message {
 
 export namespace ListServingSitesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.AsObject,
+    servingsites?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSiteList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateServingSiteRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): CreateServingSiteRequest;
-  hasItem(): boolean;
-  clearItem(): CreateServingSiteRequest;
+  getServingsite(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setServingsite(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): CreateServingSiteRequest;
+  hasServingsite(): boolean;
+  clearServingsite(): CreateServingSiteRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateServingSiteRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateServingSiteRequest extends jspb.Message {
 
 export namespace CreateServingSiteRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    servingsite?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
   }
 }
 
@@ -156,10 +160,10 @@ export namespace GetServingSiteRequest {
 }
 
 export class GetServingSiteResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): GetServingSiteResponse;
-  hasItem(): boolean;
-  clearItem(): GetServingSiteResponse;
+  getServingsite(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite | undefined;
+  setServingsite(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite): GetServingSiteResponse;
+  hasServingsite(): boolean;
+  clearServingsite(): GetServingSiteResponse;
 
   getYaml(): string;
   setYaml(value: string): GetServingSiteResponse;
@@ -174,7 +178,7 @@ export class GetServingSiteResponse extends jspb.Message {
 
 export namespace GetServingSiteResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
+    servingsite?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ServingSite.AsObject,
     yaml: string,
   }
 }

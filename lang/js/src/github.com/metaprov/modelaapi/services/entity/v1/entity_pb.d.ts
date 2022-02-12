@@ -40,10 +40,13 @@ export namespace ListEntitiesRequest {
 }
 
 export class ListEntitiesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList): ListEntitiesResponse;
-  hasItems(): boolean;
-  clearItems(): ListEntitiesResponse;
+  getEntities(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList | undefined;
+  setEntities(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList): ListEntitiesResponse;
+  hasEntities(): boolean;
+  clearEntities(): ListEntitiesResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListEntitiesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListEntitiesResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListEntitiesResponse extends jspb.Message {
 
 export namespace ListEntitiesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.AsObject,
+    entities?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.EntityList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateEntityRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): CreateEntityRequest;
-  hasItem(): boolean;
-  clearItem(): CreateEntityRequest;
+  getEntity(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity | undefined;
+  setEntity(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity): CreateEntityRequest;
+  hasEntity(): boolean;
+  clearEntity(): CreateEntityRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateEntityRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateEntityRequest extends jspb.Message {
 
 export namespace CreateEntityRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
+    entity?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Entity.AsObject,
   }
 }
 

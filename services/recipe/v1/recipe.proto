@@ -16,18 +16,19 @@ message ListRecipesRequest {
 }
 
 message ListRecipesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.RecipeList recipes = 1;
+    string next_page_token = 2;
 }
 
 message CreateRecipeRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe recipe = 1;
 }
 
 message CreateRecipeResponse {
 }
 
 message UpdateRecipeRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe recipe = 1;
     google.protobuf.FieldMask field_mask = 2;
 }
 

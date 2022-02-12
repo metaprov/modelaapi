@@ -532,7 +532,8 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobu
  */
 proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList.toObject(includeInstance, f)
+    modelautobuilders: (f = msg.getModelautobuilders()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -572,7 +573,11 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobu
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setModelautobuilders(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -603,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobu
  */
 proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getModelautobuilders();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -611,14 +616,21 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobu
       github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList modelautobuilders = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList}
  */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.getModelautobuilders = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilderList, 1));
 };
@@ -628,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobu
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilderList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.setModelautobuilders = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -637,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobu
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.clearModelautobuilders = function() {
+  return this.setModelautobuilders(undefined);
 };
 
 
@@ -646,8 +658,26 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.hasModelautobuilders = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.ListModelAutobuildersResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -683,7 +713,7 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAuto
  */
 proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.toObject(includeInstance, f)
+    modelautobuilder: (f = msg.getModelautobuilder()) && github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -723,7 +753,7 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAuto
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setModelautobuilder(value);
       break;
     default:
       reader.skipField();
@@ -754,7 +784,7 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAuto
  */
 proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getModelautobuilder();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -766,10 +796,10 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAuto
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder modelautobuilder = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder}
  */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.getModelautobuilder = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelAutobuilder, 1));
 };
@@ -779,7 +809,7 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAuto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelAutobuilder|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.setModelautobuilder = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -788,8 +818,8 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAuto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.clearModelautobuilder = function() {
+  return this.setModelautobuilder(undefined);
 };
 
 
@@ -797,7 +827,7 @@ proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAuto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.modelautobuilder.v1.CreateModelAutobuilderRequest.prototype.hasModelautobuilder = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

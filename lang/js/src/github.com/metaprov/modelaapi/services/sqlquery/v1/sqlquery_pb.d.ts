@@ -32,10 +32,13 @@ export namespace ListSqlQuerysRequest {
 }
 
 export class ListSqlQuerysResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList): ListSqlQuerysResponse;
-  hasItems(): boolean;
-  clearItems(): ListSqlQuerysResponse;
+  getSqlquries(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList | undefined;
+  setSqlquries(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList): ListSqlQuerysResponse;
+  hasSqlquries(): boolean;
+  clearSqlquries(): ListSqlQuerysResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListSqlQuerysResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListSqlQuerysResponse.AsObject;
@@ -47,7 +50,8 @@ export class ListSqlQuerysResponse extends jspb.Message {
 
 export namespace ListSqlQuerysResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList.AsObject,
+    sqlquries?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -66,10 +70,10 @@ export namespace CreateSqlQueryResponse {
 }
 
 export class CreateSqlQueryRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): CreateSqlQueryRequest;
-  hasItem(): boolean;
-  clearItem(): CreateSqlQueryRequest;
+  getSqlquery(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
+  setSqlquery(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): CreateSqlQueryRequest;
+  hasSqlquery(): boolean;
+  clearSqlquery(): CreateSqlQueryRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateSqlQueryRequest.AsObject;
@@ -81,7 +85,7 @@ export class CreateSqlQueryRequest extends jspb.Message {
 
 export namespace CreateSqlQueryRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
+    sqlquery?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
   }
 }
 
@@ -148,10 +152,10 @@ export namespace GetSqlQueryRequest {
 }
 
 export class GetSqlQueryResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): GetSqlQueryResponse;
-  hasItem(): boolean;
-  clearItem(): GetSqlQueryResponse;
+  getSqlquery(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery | undefined;
+  setSqlquery(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery): GetSqlQueryResponse;
+  hasSqlquery(): boolean;
+  clearSqlquery(): GetSqlQueryResponse;
 
   getYaml(): string;
   setYaml(value: string): GetSqlQueryResponse;
@@ -166,7 +170,7 @@ export class GetSqlQueryResponse extends jspb.Message {
 
 export namespace GetSqlQueryResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
+    sqlquery?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQuery.AsObject,
     yaml: string,
   }
 }

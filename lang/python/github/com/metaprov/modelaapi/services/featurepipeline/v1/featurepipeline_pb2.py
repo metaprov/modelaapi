@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z9github.com/metaprov/modelaapi/services/featurepipeline/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nOgithub.com/metaprov/modelaapi/services/featurepipeline/v1/featurepipeline.proto\x12\x39github.com.metaprov.modelaapi.services.featurepipeline.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\x8a\x02\n\x1aListFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12q\n\x06labels\x18\x02 \x03(\x0b\x32\x61.github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"w\n\x1bListFeaturePipelineResponse\x12X\n\x05items\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineList\"s\n\x1c\x43reateFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x1f\n\x1d\x43reateFeaturePipelineResponse\"\xa3\x01\n\x1cUpdateFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1f\n\x1dUpdateFeaturePipelineResponse\"<\n\x19GetFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x1aGetFeaturePipelineResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1c\x44\x65leteFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x44\x65leteFeaturePipelineResponse\"\x1e\n\x1cPauseFeaturePipelineResponse\">\n\x1bPauseFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1dResumeFeaturePipelineResponse\"?\n\x1cResumeFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\x8d\x0e\n\x16\x46\x65\x61turePipelineService\x12\xef\x01\n\x14ListFeaturePipelines\x12U.github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineRequest\x1aV.github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/featurepipelines/{namespace}\x12\xeb\x01\n\x15\x43reateFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.CreateFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.CreateFeaturePipelineResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v1/featurepipelines:\x01*\x12\xf2\x01\n\x12GetFeaturePipeline\x12T.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineRequest\x1aU.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/v1/featurepipelines/{namespace}/{name}\x12\x9a\x02\n\x15UpdateFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineResponse\"N\x82\xd3\xe4\x93\x02H\x1a\x43/v1/featurepipelines/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xfb\x01\n\x15\x44\x65leteFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.DeleteFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.DeleteFeaturePipelineResponse\"/\x82\xd3\xe4\x93\x02)*\'/v1/featurepipelines/{namespace}/{name}\x12\xfe\x01\n\x14PauseFeaturePipeline\x12V.github.com.metaprov.modelaapi.services.featurepipeline.v1.PauseFeaturePipelineRequest\x1aW.github.com.metaprov.modelaapi.services.featurepipeline.v1.PauseFeaturePipelineResponse\"5\x82\xd3\xe4\x93\x02/\"-/v1/featurepipelines/{namespace}/{name}:pause\x12\x81\x02\n\x15ResumeFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.ResumeFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.ResumeFeaturePipelineResponse\"5\x82\xd3\xe4\x93\x02/\"-/v1/featurepipelines/{namespace}/{name}:pauseB;Z9github.com/metaprov/modelaapi/services/featurepipeline/v1b\x06proto3'
+  serialized_pb=b'\nOgithub.com/metaprov/modelaapi/services/featurepipeline/v1/featurepipeline.proto\x12\x39github.com.metaprov.modelaapi.services.featurepipeline.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\x8a\x02\n\x1aListFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12q\n\x06labels\x18\x02 \x03(\x0b\x32\x61.github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9b\x01\n\x1bListFeaturePipelineResponse\x12\x63\n\x10\x66\x65\x61turepipelines\x18\x01 \x01(\x0b\x32I.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipelineList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1c\x43reateFeaturePipelineRequest\x12^\n\x0f\x66\x65\x61turepipeline\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline\"\x1f\n\x1d\x43reateFeaturePipelineResponse\"\xa3\x01\n\x1cUpdateFeaturePipelineRequest\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x1f\n\x1dUpdateFeaturePipelineResponse\"<\n\x19GetFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x7f\n\x1aGetFeaturePipelineResponse\x12S\n\x04item\x18\x01 \x01(\x0b\x32\x45.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeaturePipeline\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"?\n\x1c\x44\x65leteFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x44\x65leteFeaturePipelineResponse\"\x1e\n\x1cPauseFeaturePipelineResponse\">\n\x1bPauseFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1dResumeFeaturePipelineResponse\"?\n\x1cResumeFeaturePipelineRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\x8d\x0e\n\x16\x46\x65\x61turePipelineService\x12\xef\x01\n\x14ListFeaturePipelines\x12U.github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineRequest\x1aV.github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/featurepipelines/{namespace}\x12\xeb\x01\n\x15\x43reateFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.CreateFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.CreateFeaturePipelineResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v1/featurepipelines:\x01*\x12\xf2\x01\n\x12GetFeaturePipeline\x12T.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineRequest\x1aU.github.com.metaprov.modelaapi.services.featurepipeline.v1.GetFeaturePipelineResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/v1/featurepipelines/{namespace}/{name}\x12\x9a\x02\n\x15UpdateFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.UpdateFeaturePipelineResponse\"N\x82\xd3\xe4\x93\x02H\x1a\x43/v1/featurepipelines/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xfb\x01\n\x15\x44\x65leteFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.DeleteFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.DeleteFeaturePipelineResponse\"/\x82\xd3\xe4\x93\x02)*\'/v1/featurepipelines/{namespace}/{name}\x12\xfe\x01\n\x14PauseFeaturePipeline\x12V.github.com.metaprov.modelaapi.services.featurepipeline.v1.PauseFeaturePipelineRequest\x1aW.github.com.metaprov.modelaapi.services.featurepipeline.v1.PauseFeaturePipelineResponse\"5\x82\xd3\xe4\x93\x02/\"-/v1/featurepipelines/{namespace}/{name}:pause\x12\x81\x02\n\x15ResumeFeaturePipeline\x12W.github.com.metaprov.modelaapi.services.featurepipeline.v1.ResumeFeaturePipelineRequest\x1aX.github.com.metaprov.modelaapi.services.featurepipeline.v1.ResumeFeaturePipelineResponse\"5\x82\xd3\xe4\x93\x02/\"-/v1/featurepipelines/{namespace}/{name}:pauseB;Z9github.com/metaprov/modelaapi/services/featurepipeline/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -136,9 +136,16 @@ _LISTFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineResponse.items', index=0,
+      name='featurepipelines', full_name='github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineResponse.featurepipelines', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.featurepipeline.v1.ListFeaturePipelineResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -154,8 +161,8 @@ _LISTFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=545,
-  serialized_end=664,
+  serialized_start=546,
+  serialized_end=701,
 )
 
 
@@ -168,7 +175,7 @@ _CREATEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.item', index=0,
+      name='featurepipeline', full_name='github.com.metaprov.modelaapi.services.featurepipeline.v1.CreateFeaturePipelineRequest.featurepipeline', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -186,8 +193,8 @@ _CREATEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=666,
-  serialized_end=781,
+  serialized_start=703,
+  serialized_end=829,
 )
 
 
@@ -211,8 +218,8 @@ _CREATEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=783,
-  serialized_end=814,
+  serialized_start=831,
+  serialized_end=862,
 )
 
 
@@ -250,8 +257,8 @@ _UPDATEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=817,
-  serialized_end=980,
+  serialized_start=865,
+  serialized_end=1028,
 )
 
 
@@ -275,8 +282,8 @@ _UPDATEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=982,
-  serialized_end=1013,
+  serialized_start=1030,
+  serialized_end=1061,
 )
 
 
@@ -314,8 +321,8 @@ _GETFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1015,
-  serialized_end=1075,
+  serialized_start=1063,
+  serialized_end=1123,
 )
 
 
@@ -353,8 +360,8 @@ _GETFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1077,
-  serialized_end=1204,
+  serialized_start=1125,
+  serialized_end=1252,
 )
 
 
@@ -392,8 +399,8 @@ _DELETEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1206,
-  serialized_end=1269,
+  serialized_start=1254,
+  serialized_end=1317,
 )
 
 
@@ -417,8 +424,8 @@ _DELETEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1271,
-  serialized_end=1302,
+  serialized_start=1319,
+  serialized_end=1350,
 )
 
 
@@ -442,8 +449,8 @@ _PAUSEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1304,
-  serialized_end=1334,
+  serialized_start=1352,
+  serialized_end=1382,
 )
 
 
@@ -481,8 +488,8 @@ _PAUSEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1336,
-  serialized_end=1398,
+  serialized_start=1384,
+  serialized_end=1446,
 )
 
 
@@ -506,8 +513,8 @@ _RESUMEFEATUREPIPELINERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1400,
-  serialized_end=1431,
+  serialized_start=1448,
+  serialized_end=1479,
 )
 
 
@@ -545,14 +552,14 @@ _RESUMEFEATUREPIPELINEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1433,
-  serialized_end=1496,
+  serialized_start=1481,
+  serialized_end=1544,
 )
 
 _LISTFEATUREPIPELINEREQUEST_LABELSENTRY.containing_type = _LISTFEATUREPIPELINEREQUEST
 _LISTFEATUREPIPELINEREQUEST.fields_by_name['labels'].message_type = _LISTFEATUREPIPELINEREQUEST_LABELSENTRY
-_LISTFEATUREPIPELINERESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINELIST
-_CREATEFEATUREPIPELINEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINE
+_LISTFEATUREPIPELINERESPONSE.fields_by_name['featurepipelines'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINELIST
+_CREATEFEATUREPIPELINEREQUEST.fields_by_name['featurepipeline'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINE
 _UPDATEFEATUREPIPELINEREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINE
 _UPDATEFEATUREPIPELINEREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETFEATUREPIPELINERESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATUREPIPELINE
@@ -689,8 +696,8 @@ _FEATUREPIPELINESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1499,
-  serialized_end=3304,
+  serialized_start=1547,
+  serialized_end=3352,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListFeaturePipelines',

@@ -17,13 +17,14 @@ message ListNotebooksRequest {
 }
 
 message ListNotebooksResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.NotebookList notebooks = 1;
+    string next_page_token = 2;
 }
 
 message NotebookResponse {}
 
 message CreateNotebookRequest {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Notebook notebook = 1;
 }
 
 message CreateNotebookResponse {

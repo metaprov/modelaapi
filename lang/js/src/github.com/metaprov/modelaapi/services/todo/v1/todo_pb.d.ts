@@ -29,10 +29,13 @@ export namespace ListTodosRequest {
 }
 
 export class ListTodosResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList): ListTodosResponse;
-  hasItems(): boolean;
-  clearItems(): ListTodosResponse;
+  getTodos(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList | undefined;
+  setTodos(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList): ListTodosResponse;
+  hasTodos(): boolean;
+  clearTodos(): ListTodosResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListTodosResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListTodosResponse.AsObject;
@@ -44,15 +47,16 @@ export class ListTodosResponse extends jspb.Message {
 
 export namespace ListTodosResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.AsObject,
+    todos?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.TodoList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateTodoRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): CreateTodoRequest;
-  hasItem(): boolean;
-  clearItem(): CreateTodoRequest;
+  getTodo(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
+  setTodo(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): CreateTodoRequest;
+  hasTodo(): boolean;
+  clearTodo(): CreateTodoRequest;
 
   getPassword(): string;
   setPassword(value: string): CreateTodoRequest;
@@ -67,7 +71,7 @@ export class CreateTodoRequest extends jspb.Message {
 
 export namespace CreateTodoRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
+    todo?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
     password: string,
   }
 }
@@ -149,10 +153,10 @@ export namespace GetTodoRequest {
 }
 
 export class GetTodoResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): GetTodoResponse;
-  hasItem(): boolean;
-  clearItem(): GetTodoResponse;
+  getTodo(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo | undefined;
+  setTodo(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo): GetTodoResponse;
+  hasTodo(): boolean;
+  clearTodo(): GetTodoResponse;
 
   getYaml(): string;
   setYaml(value: string): GetTodoResponse;
@@ -167,7 +171,7 @@ export class GetTodoResponse extends jspb.Message {
 
 export namespace GetTodoResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
+    todo?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Todo.AsObject,
     yaml: string,
   }
 }

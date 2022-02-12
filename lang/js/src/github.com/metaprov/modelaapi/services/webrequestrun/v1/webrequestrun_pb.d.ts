@@ -32,10 +32,13 @@ export namespace ListWebRequestRunsRequest {
 }
 
 export class ListWebRequestRunsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRunList): ListWebRequestRunsResponse;
-  hasItems(): boolean;
-  clearItems(): ListWebRequestRunsResponse;
+  getWebrequestruns(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRunList | undefined;
+  setWebrequestruns(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRunList): ListWebRequestRunsResponse;
+  hasWebrequestruns(): boolean;
+  clearWebrequestruns(): ListWebRequestRunsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListWebRequestRunsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWebRequestRunsResponse.AsObject;
@@ -47,7 +50,8 @@ export class ListWebRequestRunsResponse extends jspb.Message {
 
 export namespace ListWebRequestRunsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRunList.AsObject,
+    webrequestruns?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRunList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -86,10 +90,10 @@ export namespace CreateWebRequestRunRequest {
 }
 
 export class UpdateWebRequestRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun): UpdateWebRequestRunRequest;
-  hasItem(): boolean;
-  clearItem(): UpdateWebRequestRunRequest;
+  getWebrequestrun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun | undefined;
+  setWebrequestrun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun): UpdateWebRequestRunRequest;
+  hasWebrequestrun(): boolean;
+  clearWebrequestrun(): UpdateWebRequestRunRequest;
 
   getFieldMask(): google_protobuf_field_mask_pb.FieldMask | undefined;
   setFieldMask(value?: google_protobuf_field_mask_pb.FieldMask): UpdateWebRequestRunRequest;
@@ -106,7 +110,7 @@ export class UpdateWebRequestRunRequest extends jspb.Message {
 
 export namespace UpdateWebRequestRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.AsObject,
+    webrequestrun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequestRun.AsObject,
     fieldMask?: google_protobuf_field_mask_pb.FieldMask.AsObject,
   }
 }

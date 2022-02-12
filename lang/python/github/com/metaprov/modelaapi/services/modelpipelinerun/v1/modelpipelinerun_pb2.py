@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z:github.com/metaprov/modelaapi/services/modelpipelinerun/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/modelpipelinerun/v1/modelpipelinerun.proto\x12:github.com.metaprov.modelaapi.services.modelpipelinerun.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\x8f\x02\n\x1cListModelPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x1dListModelPipelineRunsResponse\x12]\n\x05items\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList\"\x1a\n\x18ModelPipelineRunResponse\"y\n\x1d\x43reateModelPipelineRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun\" \n\x1e\x43reateModelPipelineRunResponse\"\xa9\x01\n\x1dUpdateModelPipelineRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\" \n\x1eUpdateModelPipelineRunResponse\"=\n\x1aGetModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelPipelineRunResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelPipelineRunResponse\"a\n\x1e\x41pproveModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05stage\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x63\x63ount\x18\x04 \x01(\t\"!\n\x1f\x41pproveModelPipelineRunResponse\"^\n\x1b\x44\x65nyModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05stage\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x63\x63ount\x18\x04 \x01(\t\"\x1e\n\x1c\x44\x65nyModelPipelineRunResponse\"\x1f\n\x1dPauseModelPipelineRunResponse\"?\n\x1cPauseModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1eResumeModelPipelineRunResponse\"@\n\x1dResumeModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x41\x62ortModelPipelineRunResponse\"?\n\x1c\x41\x62ortModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xd7\x14\n\x17ModelPipelineRunService\x12\xf7\x01\n\x15ListModelPipelineRuns\x12X.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest\x1aY.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/modelpipelineruns/{namespace}\x12\xf1\x01\n\x16\x43reateModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipelineRunResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/modelpipelineruns:\x01*\x12\xf8\x01\n\x13GetModelPipelineRun\x12V.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.GetModelPipelineRunRequest\x1aW.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.GetModelPipelineRunResponse\"0\x82\xd3\xe4\x93\x02*\x12(/v1/modelpipelineruns/{namespace}/{name}\x12\xa0\x02\n\x16UpdateModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.UpdateModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.UpdateModelPipelineRunResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/modelpipelineruns/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x81\x02\n\x16\x44\x65leteModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DeleteModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DeleteModelPipelineRunResponse\"0\x82\xd3\xe4\x93\x02**(/v1/modelpipelineruns/{namespace}/{name}\x12\x8c\x02\n\x17\x41pproveModelPipelineRun\x12Z.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ApproveModelPipelineRunRequest\x1a[.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ApproveModelPipelineRunResponse\"8\x82\xd3\xe4\x93\x02\x32*0/v1/modelpipelineruns/{namespace}/{name}:approve\x12\x83\x02\n\x14\x44\x65nyModelPipelineRun\x12W.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DenyModelPipelineRunRequest\x1aX.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DenyModelPipelineRunResponse\"8\x82\xd3\xe4\x93\x02\x32*0/v1/modelpipelineruns/{namespace}/{name}:approve\x12\x84\x02\n\x15\x41\x62ortModelPipelineRun\x12X.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.AbortModelPipelineRunRequest\x1aY.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.AbortModelPipelineRunResponse\"6\x82\xd3\xe4\x93\x02\x30\"./v1/modelpipelineruns/{namespace}/{name}:abort\x12\x84\x02\n\x15PauseModelPipelineRun\x12X.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.PauseModelPipelineRunRequest\x1aY.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.PauseModelPipelineRunResponse\"6\x82\xd3\xe4\x93\x02\x30\"./v1/modelpipelineruns/{namespace}/{name}:pause\x12\x88\x02\n\x16ResumeModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ResumeModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ResumeModelPipelineRunResponse\"7\x82\xd3\xe4\x93\x02\x31\"//v1/modelpipelineruns/{namespace}/{name}:resumeB<Z:github.com/metaprov/modelaapi/services/modelpipelinerun/v1b\x06proto3'
+  serialized_pb=b'\nQgithub.com/metaprov/modelaapi/services/modelpipelinerun/v1/modelpipelinerun.proto\x12:github.com.metaprov.modelaapi.services.modelpipelinerun.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1aHgithub.com/metaprov/modelaapi/pkg/apis/training/v1alpha1/generated.proto\"\x8f\x02\n\x1cListModelPipelineRunsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12t\n\x06labels\x18\x02 \x03(\x0b\x32\x64.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xa3\x01\n\x1dListModelPipelineRunsResponse\x12i\n\x11modelPipelineRuns\x18\x01 \x01(\x0b\x32N.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRunList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x1a\n\x18ModelPipelineRunResponse\"\x85\x01\n\x1d\x43reateModelPipelineRunRequest\x12\x64\n\x10modelPipelineRun\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun\" \n\x1e\x43reateModelPipelineRunResponse\"\xa9\x01\n\x1dUpdateModelPipelineRunRequest\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\" \n\x1eUpdateModelPipelineRunResponse\"=\n\x1aGetModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x85\x01\n\x1bGetModelPipelineRunResponse\x12X\n\x04item\x18\x01 \x01(\x0b\x32J.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineRun\x12\x0c\n\x04yaml\x18\x02 \x01(\t\"@\n\x1d\x44\x65leteModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1e\x44\x65leteModelPipelineRunResponse\"a\n\x1e\x41pproveModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05stage\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x63\x63ount\x18\x04 \x01(\t\"!\n\x1f\x41pproveModelPipelineRunResponse\"^\n\x1b\x44\x65nyModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05stage\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x63\x63ount\x18\x04 \x01(\t\"\x1e\n\x1c\x44\x65nyModelPipelineRunResponse\"\x1f\n\x1dPauseModelPipelineRunResponse\"?\n\x1cPauseModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\" \n\x1eResumeModelPipelineRunResponse\"@\n\x1dResumeModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x1f\n\x1d\x41\x62ortModelPipelineRunResponse\"?\n\x1c\x41\x62ortModelPipelineRunRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t2\xd7\x14\n\x17ModelPipelineRunService\x12\xf7\x01\n\x15ListModelPipelineRuns\x12X.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsRequest\x1aY.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/modelpipelineruns/{namespace}\x12\xf1\x01\n\x16\x43reateModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipelineRunResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/modelpipelineruns:\x01*\x12\xf8\x01\n\x13GetModelPipelineRun\x12V.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.GetModelPipelineRunRequest\x1aW.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.GetModelPipelineRunResponse\"0\x82\xd3\xe4\x93\x02*\x12(/v1/modelpipelineruns/{namespace}/{name}\x12\xa0\x02\n\x16UpdateModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.UpdateModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.UpdateModelPipelineRunResponse\"O\x82\xd3\xe4\x93\x02I\x1a\x44/v1/modelpipelineruns/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\x81\x02\n\x16\x44\x65leteModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DeleteModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DeleteModelPipelineRunResponse\"0\x82\xd3\xe4\x93\x02**(/v1/modelpipelineruns/{namespace}/{name}\x12\x8c\x02\n\x17\x41pproveModelPipelineRun\x12Z.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ApproveModelPipelineRunRequest\x1a[.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ApproveModelPipelineRunResponse\"8\x82\xd3\xe4\x93\x02\x32*0/v1/modelpipelineruns/{namespace}/{name}:approve\x12\x83\x02\n\x14\x44\x65nyModelPipelineRun\x12W.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DenyModelPipelineRunRequest\x1aX.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.DenyModelPipelineRunResponse\"8\x82\xd3\xe4\x93\x02\x32*0/v1/modelpipelineruns/{namespace}/{name}:approve\x12\x84\x02\n\x15\x41\x62ortModelPipelineRun\x12X.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.AbortModelPipelineRunRequest\x1aY.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.AbortModelPipelineRunResponse\"6\x82\xd3\xe4\x93\x02\x30\"./v1/modelpipelineruns/{namespace}/{name}:abort\x12\x84\x02\n\x15PauseModelPipelineRun\x12X.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.PauseModelPipelineRunRequest\x1aY.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.PauseModelPipelineRunResponse\"6\x82\xd3\xe4\x93\x02\x30\"./v1/modelpipelineruns/{namespace}/{name}:pause\x12\x88\x02\n\x16ResumeModelPipelineRun\x12Y.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ResumeModelPipelineRunRequest\x1aZ.github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ResumeModelPipelineRunResponse\"7\x82\xd3\xe4\x93\x02\x31\"//v1/modelpipelineruns/{namespace}/{name}:resumeB<Z:github.com/metaprov/modelaapi/services/modelpipelinerun/v1b\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -136,9 +136,16 @@ _LISTMODELPIPELINERUNSRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsResponse.items', index=0,
+      name='modelPipelineRuns', full_name='github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsResponse.modelPipelineRuns', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.modelpipelinerun.v1.ListModelPipelineRunsResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -154,8 +161,8 @@ _LISTMODELPIPELINERUNSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=557,
-  serialized_end=683,
+  serialized_start=558,
+  serialized_end=721,
 )
 
 
@@ -179,8 +186,8 @@ _MODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=685,
-  serialized_end=711,
+  serialized_start=723,
+  serialized_end=749,
 )
 
 
@@ -193,7 +200,7 @@ _CREATEMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipelineRunRequest.item', index=0,
+      name='modelPipelineRun', full_name='github.com.metaprov.modelaapi.services.modelpipelinerun.v1.CreateModelPipelineRunRequest.modelPipelineRun', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -211,8 +218,8 @@ _CREATEMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=713,
-  serialized_end=834,
+  serialized_start=752,
+  serialized_end=885,
 )
 
 
@@ -236,8 +243,8 @@ _CREATEMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=836,
-  serialized_end=868,
+  serialized_start=887,
+  serialized_end=919,
 )
 
 
@@ -275,8 +282,8 @@ _UPDATEMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=871,
-  serialized_end=1040,
+  serialized_start=922,
+  serialized_end=1091,
 )
 
 
@@ -300,8 +307,8 @@ _UPDATEMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1042,
-  serialized_end=1074,
+  serialized_start=1093,
+  serialized_end=1125,
 )
 
 
@@ -339,8 +346,8 @@ _GETMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1076,
-  serialized_end=1137,
+  serialized_start=1127,
+  serialized_end=1188,
 )
 
 
@@ -378,8 +385,8 @@ _GETMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1140,
-  serialized_end=1273,
+  serialized_start=1191,
+  serialized_end=1324,
 )
 
 
@@ -417,8 +424,8 @@ _DELETEMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1275,
-  serialized_end=1339,
+  serialized_start=1326,
+  serialized_end=1390,
 )
 
 
@@ -442,8 +449,8 @@ _DELETEMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1341,
-  serialized_end=1373,
+  serialized_start=1392,
+  serialized_end=1424,
 )
 
 
@@ -495,8 +502,8 @@ _APPROVEMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1375,
-  serialized_end=1472,
+  serialized_start=1426,
+  serialized_end=1523,
 )
 
 
@@ -520,8 +527,8 @@ _APPROVEMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1474,
-  serialized_end=1507,
+  serialized_start=1525,
+  serialized_end=1558,
 )
 
 
@@ -573,8 +580,8 @@ _DENYMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1509,
-  serialized_end=1603,
+  serialized_start=1560,
+  serialized_end=1654,
 )
 
 
@@ -598,8 +605,8 @@ _DENYMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1605,
-  serialized_end=1635,
+  serialized_start=1656,
+  serialized_end=1686,
 )
 
 
@@ -623,8 +630,8 @@ _PAUSEMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1637,
-  serialized_end=1668,
+  serialized_start=1688,
+  serialized_end=1719,
 )
 
 
@@ -662,8 +669,8 @@ _PAUSEMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1670,
-  serialized_end=1733,
+  serialized_start=1721,
+  serialized_end=1784,
 )
 
 
@@ -687,8 +694,8 @@ _RESUMEMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1735,
-  serialized_end=1767,
+  serialized_start=1786,
+  serialized_end=1818,
 )
 
 
@@ -726,8 +733,8 @@ _RESUMEMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1769,
-  serialized_end=1833,
+  serialized_start=1820,
+  serialized_end=1884,
 )
 
 
@@ -751,8 +758,8 @@ _ABORTMODELPIPELINERUNRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1835,
-  serialized_end=1866,
+  serialized_start=1886,
+  serialized_end=1917,
 )
 
 
@@ -790,14 +797,14 @@ _ABORTMODELPIPELINERUNREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1868,
-  serialized_end=1931,
+  serialized_start=1919,
+  serialized_end=1982,
 )
 
 _LISTMODELPIPELINERUNSREQUEST_LABELSENTRY.containing_type = _LISTMODELPIPELINERUNSREQUEST
 _LISTMODELPIPELINERUNSREQUEST.fields_by_name['labels'].message_type = _LISTMODELPIPELINERUNSREQUEST_LABELSENTRY
-_LISTMODELPIPELINERUNSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUNLIST
-_CREATEMODELPIPELINERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN
+_LISTMODELPIPELINERUNSRESPONSE.fields_by_name['modelPipelineRuns'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUNLIST
+_CREATEMODELPIPELINERUNREQUEST.fields_by_name['modelPipelineRun'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN
 _UPDATEMODELPIPELINERUNREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN
 _UPDATEMODELPIPELINERUNREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _GETMODELPIPELINERUNRESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_training_dot_v1alpha1_dot_generated__pb2._MODELPIPELINERUN
@@ -990,8 +997,8 @@ _MODELPIPELINERUNSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1934,
-  serialized_end=4581,
+  serialized_start=1985,
+  serialized_end=4632,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListModelPipelineRuns',

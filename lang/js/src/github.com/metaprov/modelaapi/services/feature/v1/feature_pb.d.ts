@@ -40,10 +40,13 @@ export namespace ListFeaturesRequest {
 }
 
 export class ListFeaturesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList): ListFeaturesResponse;
-  hasItems(): boolean;
-  clearItems(): ListFeaturesResponse;
+  getFeatures(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList | undefined;
+  setFeatures(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList): ListFeaturesResponse;
+  hasFeatures(): boolean;
+  clearFeatures(): ListFeaturesResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListFeaturesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListFeaturesResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListFeaturesResponse extends jspb.Message {
 
 export namespace ListFeaturesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList.AsObject,
+    features?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.FeatureList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateFeatureRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): CreateFeatureRequest;
-  hasItem(): boolean;
-  clearItem(): CreateFeatureRequest;
+  getFeature(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature | undefined;
+  setFeature(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature): CreateFeatureRequest;
+  hasFeature(): boolean;
+  clearFeature(): CreateFeatureRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateFeatureRequest.AsObject;
@@ -75,7 +79,7 @@ export class CreateFeatureRequest extends jspb.Message {
 
 export namespace CreateFeatureRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
+    feature?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Feature.AsObject,
   }
 }
 

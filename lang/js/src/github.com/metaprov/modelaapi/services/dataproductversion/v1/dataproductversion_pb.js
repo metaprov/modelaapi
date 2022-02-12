@@ -534,7 +534,8 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProdu
  */
 proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList.toObject(includeInstance, f)
+    dataproductversions: (f = msg.getDataproductversions()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -574,7 +575,11 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProdu
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setDataproductversions(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -605,7 +610,7 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProdu
  */
 proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getDataproductversions();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -613,14 +618,21 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProdu
       github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList dataproductversions = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList}
  */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.getDataproductversions = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersionList, 1));
 };
@@ -630,7 +642,7 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProdu
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersionList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.setDataproductversions = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -639,8 +651,8 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProdu
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.clearDataproductversions = function() {
+  return this.setDataproductversions(undefined);
 };
 
 
@@ -648,8 +660,26 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProdu
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.hasDataproductversions = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.ListDataProductVersionsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -685,7 +715,7 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataPro
  */
 proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f)
+    dataproductversion: (f = msg.getDataproductversion()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -725,7 +755,7 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataPro
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataproductversion(value);
       break;
     default:
       reader.skipField();
@@ -756,7 +786,7 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataPro
  */
 proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataproductversion();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -768,10 +798,10 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataPro
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion dataproductversion = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion}
  */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.getDataproductversion = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProductVersion, 1));
 };
@@ -781,7 +811,7 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataPro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductVersion|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.setDataproductversion = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -790,8 +820,8 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataPro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.clearDataproductversion = function() {
+  return this.setDataproductversion(undefined);
 };
 
 
@@ -799,7 +829,7 @@ proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataPro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataproductversion.v1.CreateDataProductVersionRequest.prototype.hasDataproductversion = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

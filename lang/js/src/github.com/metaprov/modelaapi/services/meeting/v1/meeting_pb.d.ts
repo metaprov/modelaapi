@@ -41,10 +41,13 @@ export namespace ListMeetingsRequest {
 }
 
 export class ListMeetingsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList): ListMeetingsResponse;
-  hasItems(): boolean;
-  clearItems(): ListMeetingsResponse;
+  getMeetings(): github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList | undefined;
+  setMeetings(value?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList): ListMeetingsResponse;
+  hasMeetings(): boolean;
+  clearMeetings(): ListMeetingsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListMeetingsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListMeetingsResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListMeetingsResponse extends jspb.Message {
 
 export namespace ListMeetingsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList.AsObject,
+    meetings?: github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.MeetingList.AsObject,
+    nextPageToken: string,
   }
 }
 

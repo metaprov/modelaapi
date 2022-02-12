@@ -474,7 +474,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f),
+    reviews: (f = msg.getReviews()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -515,7 +515,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setReviews(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -550,7 +550,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getReviews();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -569,10 +569,10 @@ proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review reviews = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review}
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.getReviews = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review, 1));
 };
@@ -582,7 +582,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.setReviews = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -591,8 +591,8 @@ proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.clearReviews = function() {
+  return this.setReviews(undefined);
 };
 
 
@@ -600,7 +600,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.review.v1.GetReviewResponse.prototype.hasReviews = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -655,7 +655,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f)
+    review: (f = msg.getReview()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -695,7 +695,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setReview(value);
       break;
     default:
       reader.skipField();
@@ -726,7 +726,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getReview();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -738,10 +738,10 @@ proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review review = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review}
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.getReview = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review, 1));
 };
@@ -751,7 +751,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.setReview = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -760,8 +760,8 @@ proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.clearReview = function() {
+  return this.setReview(undefined);
 };
 
 
@@ -769,7 +769,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.review.v1.CreateReviewRequest.prototype.hasReview = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -907,7 +907,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f),
+    review: (f = msg.getReview()) && github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.toObject(includeInstance, f),
     fieldMask: (f = msg.getFieldMask()) && google_protobuf_field_mask_pb.FieldMask.toObject(includeInstance, f)
   };
 
@@ -948,7 +948,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.deser
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setReview(value);
       break;
     case 2:
       var value = new google_protobuf_field_mask_pb.FieldMask;
@@ -984,7 +984,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.proto
  */
 proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getReview();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1004,10 +1004,10 @@ proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.seria
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review review = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review}
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.getReview = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_team_v1alpha1_generated_pb.Review, 1));
 };
@@ -1017,7 +1017,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.proto
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.team.v1alpha1.Review|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.setReview = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1026,8 +1026,8 @@ proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.proto
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.clearReview = function() {
+  return this.setReview(undefined);
 };
 
 
@@ -1035,7 +1035,7 @@ proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.review.v1.UpdateReviewRequest.prototype.hasReview = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -40,10 +40,13 @@ export namespace ListModelCompilerRunsRequest {
 }
 
 export class ListModelCompilerRunsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList): ListModelCompilerRunsResponse;
-  hasItems(): boolean;
-  clearItems(): ListModelCompilerRunsResponse;
+  getModelcompilerruns(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList | undefined;
+  setModelcompilerruns(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList): ListModelCompilerRunsResponse;
+  hasModelcompilerruns(): boolean;
+  clearModelcompilerruns(): ListModelCompilerRunsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListModelCompilerRunsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModelCompilerRunsResponse.AsObject;
@@ -55,7 +58,8 @@ export class ListModelCompilerRunsResponse extends jspb.Message {
 
 export namespace ListModelCompilerRunsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList.AsObject,
+    modelcompilerruns?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRunList.AsObject,
+    nextPageToken: string,
   }
 }
 
@@ -74,10 +78,10 @@ export namespace ModelCompilerRunResponse {
 }
 
 export class CreateModelCompilerRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): CreateModelCompilerRunRequest;
-  hasItem(): boolean;
-  clearItem(): CreateModelCompilerRunRequest;
+  getModelcompilerrun(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun | undefined;
+  setModelcompilerrun(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun): CreateModelCompilerRunRequest;
+  hasModelcompilerrun(): boolean;
+  clearModelcompilerrun(): CreateModelCompilerRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateModelCompilerRunRequest.AsObject;
@@ -89,7 +93,7 @@ export class CreateModelCompilerRunRequest extends jspb.Message {
 
 export namespace CreateModelCompilerRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
+    modelcompilerrun?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.ModelCompilerRun.AsObject,
   }
 }
 
