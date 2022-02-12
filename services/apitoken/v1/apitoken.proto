@@ -16,7 +16,8 @@ message ListApiTokensRequest {
 }
 
 message ListApiTokensResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ApiTokenList apitokens = 1;   
+    string next_page_token = 2;
 }
 
 message ApiTokenResponse {}

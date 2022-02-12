@@ -17,7 +17,8 @@ message ListCronReportsRequest {
 }
 
 message ListCronReportsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.CronReportList cronReports = 1;
+    string next_page_token = 2;
 }
 
 message CreateCronReportResponse {}

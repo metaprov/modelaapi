@@ -15,11 +15,12 @@ message ListConnectionsRequest {
 }
 
 message ListConnectionsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList connections = 1;
+    string next_page_token = 2;
 }
 
 message CreateConnectionRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
     map<string,string> secret = 5;
 }
 

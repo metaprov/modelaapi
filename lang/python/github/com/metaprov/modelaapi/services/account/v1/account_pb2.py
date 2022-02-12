@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z1github.com/metaprov/modelaapi/services/account/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/account/v1/account.proto\x12\x31github.com.metaprov.modelaapi.services.account.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xf4\x01\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"i\n\x14ListAccountsResponse\x12Q\n\x05items\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList\"\x11\n\x0f\x41\x63\x63ountResponse\"v\n\x14\x43reateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12\x10\n\x08password\x18\x02 \x01(\t\"\x17\n\x15\x43reateAccountResponse\"\x94\x01\n\x14UpdateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateAccountResponse\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x12GetAccountResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1bGetAccountNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1cGetAccountNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteAccountResponse\"\x17\n\x15\x41\x63\x63ountCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"H\n\x13\x41\x63\x63ountLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"%\n\x14\x41\x63\x63ountLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\":\n\x17\x41\x63\x63ountGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n\x14\x41\x63\x63ountLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse\"Z\n\x13UploadAvatarRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nbucketName\x18\x03 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\x0c\"\x15\n\x13UploadAvatarReponse\"8\n\x15\x44ownloadAvatarRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\'\n\x15\x44ownloadAvatarReponse\x12\x0e\n\x06\x61vatar\x18\x01 \x01(\x0c\x32\xd3\x11\n\x0e\x41\x63\x63ountService\x12\xc1\x01\n\x0cListAccounts\x12\x46.github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest\x1aG.github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/accounts/{namespace}\x12\xbb\x01\n\rCreateAccount\x12G.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.CreateAccountResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/accounts:\x01*\x12\xc2\x01\n\nGetAccount\x12\x44.github.com.metaprov.modelaapi.services.account.v1.GetAccountRequest\x1a\x45.github.com.metaprov.modelaapi.services.account.v1.GetAccountResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/accounts/{namespace}/{name}\x12\xea\x01\n\rUpdateAccount\x12G.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/accounts/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteAccount\x12G.github.com.metaprov.modelaapi.services.account.v1.DeleteAccountRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.DeleteAccountResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/accounts/{namespace}/{name}\x12\xeb\x01\n\x14GetAccountNamespaces\x12N.github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesRequest\x1aO.github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesResponse\"2\x82\xd3\xe4\x93\x02,\x12*/v1/accounts/{namespace}/{name}:namespaces\x12\x9a\x01\n\x05Login\x12\x46.github.com.metaprov.modelaapi.services.account.v1.AccountLoginRequest\x1aG.github.com.metaprov.modelaapi.services.account.v1.AccountLoginResponse\"\x00\x12\x96\x01\n\x06Logout\x12G.github.com.metaprov.modelaapi.services.account.v1.AccountLogoutRequest\x1a\x41.github.com.metaprov.modelaapi.services.account.v1.LogoutResponse\"\x00\x12\xa7\x01\n\x0e\x43hangePassword\x12H.github.com.metaprov.modelaapi.services.account.v1.ChangePasswordRequest\x1aI.github.com.metaprov.modelaapi.services.account.v1.ChangePasswordResponse\"\x00\x12\xa4\x01\n\rResetPassword\x12G.github.com.metaprov.modelaapi.services.account.v1.ResetPasswordRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.ResetPasswordResponse\"\x00\x12\xa0\x01\n\x0cUploadAvatar\x12\x46.github.com.metaprov.modelaapi.services.account.v1.UploadAvatarRequest\x1a\x46.github.com.metaprov.modelaapi.services.account.v1.UploadAvatarReponse\"\x00\x12\xa6\x01\n\x0e\x44ownloadAvatar\x12H.github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarReponse\"\x00\x42\x33Z1github.com/metaprov/modelaapi/services/account/v1b\x06proto3'
+  serialized_pb=b'\n?github.com/metaprov/modelaapi/services/account/v1/account.proto\x12\x31github.com.metaprov.modelaapi.services.account.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a=github.com/metaprov/modelaapi/services/common/v1/common.proto\"\xf4\x01\n\x13ListAccountsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x62\n\x06labels\x18\x02 \x03(\x0b\x32R.github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest.LabelsEntry\x12\x11\n\tpage_size\x18\x03 \x01(\x05\x12\x12\n\npage_token\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x85\x01\n\x14ListAccountsResponse\x12T\n\x08\x61\x63\x63ounts\x18\x01 \x01(\x0b\x32\x42.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x11\n\x0f\x41\x63\x63ountResponse\"v\n\x14\x43reateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12\x10\n\x08password\x18\x02 \x01(\t\"\x17\n\x15\x43reateAccountResponse\"\x94\x01\n\x14UpdateAccountRequest\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\x17\n\x15UpdateAccountResponse\"4\n\x11GetAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"p\n\x12GetAccountResponse\x12L\n\x04item\x18\x01 \x01(\x0b\x32>.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account\x12\x0c\n\x04yaml\x18\x02 \x01(\t\">\n\x1bGetAccountNamespacesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"s\n\x1cGetAccountNamespacesResponse\x12S\n\nnamespaces\x18\x01 \x03(\x0b\x32?.github.com.metaprov.modelaapi.services.common.v1.NamespaceInfo\"7\n\x14\x44\x65leteAccountRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteAccountResponse\"\x17\n\x15\x41\x63\x63ountCreateResponse\"\x10\n\x0eLogoutResponse\"\x17\n\x15ResetPasswordResponse\"H\n\x13\x41\x63\x63ountLoginRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x10\n\x08password\x18\x03 \x01(\t\"%\n\x14\x41\x63\x63ountLoginResponse\x12\r\n\x05token\x18\x01 \x01(\t\":\n\x17\x41\x63\x63ountGetByNameRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"%\n\x14\x41\x63\x63ountLogoutRequest\x12\r\n\x05token\x18\x01 \x01(\t\"h\n\x15\x43hangePasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03old\x18\x03 \x01(\t\x12\x0b\n\x03new\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x05 \x01(\t\"\x18\n\x16\x43hangePasswordResponse\"Z\n\x14ResetPasswordRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03new\x18\x03 \x01(\t\x12\x14\n\x0c\x63onfirmedNew\x18\x04 \x01(\t\"\x16\n\x14ResetPasswordReponse\"Z\n\x13UploadAvatarRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nbucketName\x18\x03 \x01(\t\x12\x0e\n\x06\x61vatar\x18\x04 \x01(\x0c\"\x15\n\x13UploadAvatarReponse\"8\n\x15\x44ownloadAvatarRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"\'\n\x15\x44ownloadAvatarReponse\x12\x0e\n\x06\x61vatar\x18\x01 \x01(\x0c\x32\xd3\x11\n\x0e\x41\x63\x63ountService\x12\xc1\x01\n\x0cListAccounts\x12\x46.github.com.metaprov.modelaapi.services.account.v1.ListAccountsRequest\x1aG.github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/accounts/{namespace}\x12\xbb\x01\n\rCreateAccount\x12G.github.com.metaprov.modelaapi.services.account.v1.CreateAccountRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.CreateAccountResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/accounts:\x01*\x12\xc2\x01\n\nGetAccount\x12\x44.github.com.metaprov.modelaapi.services.account.v1.GetAccountRequest\x1a\x45.github.com.metaprov.modelaapi.services.account.v1.GetAccountResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/v1/accounts/{namespace}/{name}\x12\xea\x01\n\rUpdateAccount\x12G.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.UpdateAccountResponse\"F\x82\xd3\xe4\x93\x02@\x1a;/v1/accounts/{item.metadata.namespace}/{item.metadata.name}:\x01*\x12\xcb\x01\n\rDeleteAccount\x12G.github.com.metaprov.modelaapi.services.account.v1.DeleteAccountRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.DeleteAccountResponse\"\'\x82\xd3\xe4\x93\x02!*\x1f/v1/accounts/{namespace}/{name}\x12\xeb\x01\n\x14GetAccountNamespaces\x12N.github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesRequest\x1aO.github.com.metaprov.modelaapi.services.account.v1.GetAccountNamespacesResponse\"2\x82\xd3\xe4\x93\x02,\x12*/v1/accounts/{namespace}/{name}:namespaces\x12\x9a\x01\n\x05Login\x12\x46.github.com.metaprov.modelaapi.services.account.v1.AccountLoginRequest\x1aG.github.com.metaprov.modelaapi.services.account.v1.AccountLoginResponse\"\x00\x12\x96\x01\n\x06Logout\x12G.github.com.metaprov.modelaapi.services.account.v1.AccountLogoutRequest\x1a\x41.github.com.metaprov.modelaapi.services.account.v1.LogoutResponse\"\x00\x12\xa7\x01\n\x0e\x43hangePassword\x12H.github.com.metaprov.modelaapi.services.account.v1.ChangePasswordRequest\x1aI.github.com.metaprov.modelaapi.services.account.v1.ChangePasswordResponse\"\x00\x12\xa4\x01\n\rResetPassword\x12G.github.com.metaprov.modelaapi.services.account.v1.ResetPasswordRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.ResetPasswordResponse\"\x00\x12\xa0\x01\n\x0cUploadAvatar\x12\x46.github.com.metaprov.modelaapi.services.account.v1.UploadAvatarRequest\x1a\x46.github.com.metaprov.modelaapi.services.account.v1.UploadAvatarReponse\"\x00\x12\xa6\x01\n\x0e\x44ownloadAvatar\x12H.github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarRequest\x1aH.github.com.metaprov.modelaapi.services.account.v1.DownloadAvatarReponse\"\x00\x42\x33Z1github.com/metaprov/modelaapi/services/account/v1b\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_services_dot_common_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -137,9 +137,16 @@ _LISTACCOUNTSRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse.items', index=0,
+      name='accounts', full_name='github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse.accounts', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='github.com.metaprov.modelaapi.services.account.v1.ListAccountsResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -155,8 +162,8 @@ _LISTACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=563,
-  serialized_end=668,
+  serialized_start=564,
+  serialized_end=697,
 )
 
 
@@ -180,8 +187,8 @@ _ACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=670,
-  serialized_end=687,
+  serialized_start=699,
+  serialized_end=716,
 )
 
 
@@ -219,8 +226,8 @@ _CREATEACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=689,
-  serialized_end=807,
+  serialized_start=718,
+  serialized_end=836,
 )
 
 
@@ -244,8 +251,8 @@ _CREATEACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=809,
-  serialized_end=832,
+  serialized_start=838,
+  serialized_end=861,
 )
 
 
@@ -283,8 +290,8 @@ _UPDATEACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=835,
-  serialized_end=983,
+  serialized_start=864,
+  serialized_end=1012,
 )
 
 
@@ -308,8 +315,8 @@ _UPDATEACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=985,
-  serialized_end=1008,
+  serialized_start=1014,
+  serialized_end=1037,
 )
 
 
@@ -347,8 +354,8 @@ _GETACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1062,
+  serialized_start=1039,
+  serialized_end=1091,
 )
 
 
@@ -386,8 +393,8 @@ _GETACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1064,
-  serialized_end=1176,
+  serialized_start=1093,
+  serialized_end=1205,
 )
 
 
@@ -425,8 +432,8 @@ _GETACCOUNTNAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1178,
-  serialized_end=1240,
+  serialized_start=1207,
+  serialized_end=1269,
 )
 
 
@@ -457,8 +464,8 @@ _GETACCOUNTNAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1242,
-  serialized_end=1357,
+  serialized_start=1271,
+  serialized_end=1386,
 )
 
 
@@ -496,8 +503,8 @@ _DELETEACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1359,
-  serialized_end=1414,
+  serialized_start=1388,
+  serialized_end=1443,
 )
 
 
@@ -521,8 +528,8 @@ _DELETEACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1416,
-  serialized_end=1439,
+  serialized_start=1445,
+  serialized_end=1468,
 )
 
 
@@ -546,8 +553,8 @@ _ACCOUNTCREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1441,
-  serialized_end=1464,
+  serialized_start=1470,
+  serialized_end=1493,
 )
 
 
@@ -571,8 +578,8 @@ _LOGOUTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1466,
-  serialized_end=1482,
+  serialized_start=1495,
+  serialized_end=1511,
 )
 
 
@@ -596,8 +603,8 @@ _RESETPASSWORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1484,
-  serialized_end=1507,
+  serialized_start=1513,
+  serialized_end=1536,
 )
 
 
@@ -642,8 +649,8 @@ _ACCOUNTLOGINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1509,
-  serialized_end=1581,
+  serialized_start=1538,
+  serialized_end=1610,
 )
 
 
@@ -674,8 +681,8 @@ _ACCOUNTLOGINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1583,
-  serialized_end=1620,
+  serialized_start=1612,
+  serialized_end=1649,
 )
 
 
@@ -713,8 +720,8 @@ _ACCOUNTGETBYNAMEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1622,
-  serialized_end=1680,
+  serialized_start=1651,
+  serialized_end=1709,
 )
 
 
@@ -745,8 +752,8 @@ _ACCOUNTLOGOUTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1682,
-  serialized_end=1719,
+  serialized_start=1711,
+  serialized_end=1748,
 )
 
 
@@ -805,8 +812,8 @@ _CHANGEPASSWORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1721,
-  serialized_end=1825,
+  serialized_start=1750,
+  serialized_end=1854,
 )
 
 
@@ -830,8 +837,8 @@ _CHANGEPASSWORDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1827,
-  serialized_end=1851,
+  serialized_start=1856,
+  serialized_end=1880,
 )
 
 
@@ -883,8 +890,8 @@ _RESETPASSWORDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1853,
-  serialized_end=1943,
+  serialized_start=1882,
+  serialized_end=1972,
 )
 
 
@@ -908,8 +915,8 @@ _RESETPASSWORDREPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1945,
-  serialized_end=1967,
+  serialized_start=1974,
+  serialized_end=1996,
 )
 
 
@@ -961,8 +968,8 @@ _UPLOADAVATARREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1969,
-  serialized_end=2059,
+  serialized_start=1998,
+  serialized_end=2088,
 )
 
 
@@ -986,8 +993,8 @@ _UPLOADAVATARREPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2061,
-  serialized_end=2082,
+  serialized_start=2090,
+  serialized_end=2111,
 )
 
 
@@ -1025,8 +1032,8 @@ _DOWNLOADAVATARREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2084,
-  serialized_end=2140,
+  serialized_start=2113,
+  serialized_end=2169,
 )
 
 
@@ -1057,13 +1064,13 @@ _DOWNLOADAVATARREPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2142,
-  serialized_end=2181,
+  serialized_start=2171,
+  serialized_end=2210,
 )
 
 _LISTACCOUNTSREQUEST_LABELSENTRY.containing_type = _LISTACCOUNTSREQUEST
 _LISTACCOUNTSREQUEST.fields_by_name['labels'].message_type = _LISTACCOUNTSREQUEST_LABELSENTRY
-_LISTACCOUNTSRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNTLIST
+_LISTACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNTLIST
 _CREATEACCOUNTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNT
 _UPDATEACCOUNTREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._ACCOUNT
 _UPDATEACCOUNTREQUEST.fields_by_name['field_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
@@ -1314,8 +1321,8 @@ _ACCOUNTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2184,
-  serialized_end=4443,
+  serialized_start=2213,
+  serialized_end=4472,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccounts',

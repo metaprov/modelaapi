@@ -40,10 +40,13 @@ export namespace ListCronReportsRequest {
 }
 
 export class ListCronReportsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReportList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReportList): ListCronReportsResponse;
-  hasItems(): boolean;
-  clearItems(): ListCronReportsResponse;
+  getCronreports(): github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReportList | undefined;
+  setCronreports(value?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReportList): ListCronReportsResponse;
+  hasCronreports(): boolean;
+  clearCronreports(): ListCronReportsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListCronReportsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCronReportsResponse.AsObject;
@@ -55,7 +58,8 @@ export class ListCronReportsResponse extends jspb.Message {
 
 export namespace ListCronReportsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReportList.AsObject,
+    cronreports?: github_com_metaprov_modelaapi_pkg_apis_training_v1alpha1_generated_pb.CronReportList.AsObject,
+    nextPageToken: string,
   }
 }
 

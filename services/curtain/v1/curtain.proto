@@ -18,7 +18,7 @@ message ListCurtainsRequest {
 }
 
 message ListCurtainsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList curtains = 1;
     string next_page_token = 2;
 }
 

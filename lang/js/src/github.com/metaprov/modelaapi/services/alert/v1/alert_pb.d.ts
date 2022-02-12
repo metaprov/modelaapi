@@ -41,10 +41,13 @@ export namespace ListAlertsRequest {
 }
 
 export class ListAlertsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList): ListAlertsResponse;
-  hasItems(): boolean;
-  clearItems(): ListAlertsResponse;
+  getAlerts(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList | undefined;
+  setAlerts(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList): ListAlertsResponse;
+  hasAlerts(): boolean;
+  clearAlerts(): ListAlertsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListAlertsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAlertsResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListAlertsResponse extends jspb.Message {
 
 export namespace ListAlertsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList.AsObject,
+    alerts?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AlertList.AsObject,
+    nextPageToken: string,
   }
 }
 

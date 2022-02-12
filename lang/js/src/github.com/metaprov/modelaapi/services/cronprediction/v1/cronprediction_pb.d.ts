@@ -40,10 +40,13 @@ export namespace ListCronPredictionsRequest {
 }
 
 export class ListCronPredictionsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList): ListCronPredictionsResponse;
-  hasItems(): boolean;
-  clearItems(): ListCronPredictionsResponse;
+  getCronpredictions(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList | undefined;
+  setCronpredictions(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList): ListCronPredictionsResponse;
+  hasCronpredictions(): boolean;
+  clearCronpredictions(): ListCronPredictionsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListCronPredictionsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCronPredictionsResponse.AsObject;
@@ -55,7 +58,8 @@ export class ListCronPredictionsResponse extends jspb.Message {
 
 export namespace ListCronPredictionsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList.AsObject,
+    cronpredictions?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CronPredictionList.AsObject,
+    nextPageToken: string,
   }
 }
 

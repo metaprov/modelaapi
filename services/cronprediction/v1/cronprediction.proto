@@ -17,7 +17,8 @@ message ListCronPredictionsRequest {
 }
 
 message ListCronPredictionsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CronPredictionList cronPredictions = 1;
+    string next_page_token = 2;
 }
 
 message CreateCronPredictionResponse {}

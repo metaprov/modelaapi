@@ -532,7 +532,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.toObject(includeInstance, f),
+    curtains: (f = msg.getCurtains()) && github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.toObject(includeInstance, f),
     nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -573,7 +573,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setCurtains(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -608,7 +608,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getCurtains();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -627,10 +627,10 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList curtains = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.getCurtains = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList, 1));
 };
@@ -640,7 +640,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.inference.v1alpha1.CurtainList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.setCurtains = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -649,8 +649,8 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.clearCurtains = function() {
+  return this.setCurtains(undefined);
 };
 
 
@@ -658,7 +658,7 @@ proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.curtain.v1.ListCurtainsResponse.prototype.hasCurtains = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -16,7 +16,8 @@ message ListAttachmentsRequest {
 }
 
 message ListAttachmentsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AttachmentList attachments = 1;   
+    string next_page_token = 2;
 }
 
 message AttachmentResponse {}

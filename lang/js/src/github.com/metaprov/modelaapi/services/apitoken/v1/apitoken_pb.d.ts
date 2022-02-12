@@ -41,10 +41,13 @@ export namespace ListApiTokensRequest {
 }
 
 export class ListApiTokensResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiTokenList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiTokenList): ListApiTokensResponse;
-  hasItems(): boolean;
-  clearItems(): ListApiTokensResponse;
+  getApitokens(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiTokenList | undefined;
+  setApitokens(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiTokenList): ListApiTokensResponse;
+  hasApitokens(): boolean;
+  clearApitokens(): ListApiTokensResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListApiTokensResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListApiTokensResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListApiTokensResponse extends jspb.Message {
 
 export namespace ListApiTokensResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiTokenList.AsObject,
+    apitokens?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ApiTokenList.AsObject,
+    nextPageToken: string,
   }
 }
 

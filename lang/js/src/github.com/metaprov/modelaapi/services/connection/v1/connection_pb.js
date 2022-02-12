@@ -576,7 +576,8 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRespon
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList.toObject(includeInstance, f)
+    connections: (f = msg.getConnections()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList.toObject(includeInstance, f),
+    nextPageToken: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -616,7 +617,11 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRespon
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setConnections(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setNextPageToken(value);
       break;
     default:
       reader.skipField();
@@ -647,7 +652,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRespon
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getConnections();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -655,14 +660,21 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRespon
       github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList.serializeBinaryToWriter
     );
   }
+  f = message.getNextPageToken();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
 };
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList connections = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.getConnections = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList, 1));
 };
@@ -672,7 +684,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRespon
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.ConnectionList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.setConnections = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -681,8 +693,8 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRespon
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.clearConnections = function() {
+  return this.setConnections(undefined);
 };
 
 
@@ -690,8 +702,26 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsRespon
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.hasConnections = function() {
   return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string next_page_token = 2;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.getNextPageToken = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.connection.v1.ListConnectionsResponse.prototype.setNextPageToken = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -727,7 +757,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionReque
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
+    connection: (f = msg.getConnection()) && github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.toObject(includeInstance, f),
     secretMap: (f = msg.getSecretMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
@@ -768,7 +798,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionReque
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setConnection(value);
       break;
     case 5:
       var value = msg.getSecretMap();
@@ -805,7 +835,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionReque
  */
 proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getConnection();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -821,10 +851,10 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionReque
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection connection = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.getConnection = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection, 1));
 };
@@ -834,7 +864,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionReque
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest} returns this
 */
-proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.setConnection = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -843,8 +873,8 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionReque
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest} returns this
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.clearConnection = function() {
+  return this.setConnection(undefined);
 };
 
 
@@ -852,7 +882,7 @@ proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionReque
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.connection.v1.CreateConnectionRequest.prototype.hasConnection = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

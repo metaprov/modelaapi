@@ -36,7 +36,7 @@ message ListManagedimagesRequest {
 }
 
 message ListManagedimagesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImageList managedImages = 1;
 }
 
 message GetManagedimageRequest {
@@ -59,7 +59,7 @@ message ListMLFrameworksRequest {
 }
 
 message ListMLFrameworksResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFrameworkList mlframeworks = 1;
 }
 
 message GetMLFrameworkRequest {
@@ -80,7 +80,7 @@ message ListCloudsRequest {
 }
 
 message ListCloudsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.CloudList clouds = 1;
 }
 
 message GetCloudRequest {
@@ -103,7 +103,7 @@ message ListPublicDatasetsRequest {
 }
 
 message ListPublicDatasetsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDatasetList publicDatasets = 1;
 }
 
 message GetPublicDatasetRequest {
@@ -183,7 +183,7 @@ message ListWorkloadClassesRequest {
 }
 
 message ListWorkloadClassesResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.WorkloadClassList workloads = 1;
 }
 
 message GetWorkloadClassRequest {

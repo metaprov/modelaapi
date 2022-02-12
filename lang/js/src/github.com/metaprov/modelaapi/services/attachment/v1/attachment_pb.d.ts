@@ -41,10 +41,13 @@ export namespace ListAttachmentsRequest {
 }
 
 export class ListAttachmentsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList): ListAttachmentsResponse;
-  hasItems(): boolean;
-  clearItems(): ListAttachmentsResponse;
+  getAttachments(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList | undefined;
+  setAttachments(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList): ListAttachmentsResponse;
+  hasAttachments(): boolean;
+  clearAttachments(): ListAttachmentsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListAttachmentsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAttachmentsResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListAttachmentsResponse extends jspb.Message {
 
 export namespace ListAttachmentsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList.AsObject,
+    attachments?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AttachmentList.AsObject,
+    nextPageToken: string,
   }
 }
 

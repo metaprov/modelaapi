@@ -40,10 +40,10 @@ export namespace ListCurtainsRequest {
 }
 
 export class ListCurtainsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList): ListCurtainsResponse;
-  hasItems(): boolean;
-  clearItems(): ListCurtainsResponse;
+  getCurtains(): github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList | undefined;
+  setCurtains(value?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList): ListCurtainsResponse;
+  hasCurtains(): boolean;
+  clearCurtains(): ListCurtainsResponse;
 
   getNextPageToken(): string;
   setNextPageToken(value: string): ListCurtainsResponse;
@@ -58,7 +58,7 @@ export class ListCurtainsResponse extends jspb.Message {
 
 export namespace ListCurtainsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.AsObject,
+    curtains?: github_com_metaprov_modelaapi_pkg_apis_inference_v1alpha1_generated_pb.CurtainList.AsObject,
     nextPageToken: string,
   }
 }

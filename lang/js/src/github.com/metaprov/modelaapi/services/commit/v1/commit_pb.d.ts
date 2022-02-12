@@ -41,10 +41,10 @@ export namespace ListCommitsRequest {
 }
 
 export class ListCommitsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.CommitList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.CommitList): ListCommitsResponse;
-  hasItems(): boolean;
-  clearItems(): ListCommitsResponse;
+  getCommits(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.CommitList | undefined;
+  setCommits(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.CommitList): ListCommitsResponse;
+  hasCommits(): boolean;
+  clearCommits(): ListCommitsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCommitsResponse.AsObject;
@@ -56,7 +56,7 @@ export class ListCommitsResponse extends jspb.Message {
 
 export namespace ListCommitsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.CommitList.AsObject,
+    commits?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.CommitList.AsObject,
   }
 }
 
@@ -75,10 +75,10 @@ export namespace CommitResponse {
 }
 
 export class CreateCommitRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): CreateCommitRequest;
-  hasItem(): boolean;
-  clearItem(): CreateCommitRequest;
+  getCommit(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit | undefined;
+  setCommit(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit): CreateCommitRequest;
+  hasCommit(): boolean;
+  clearCommit(): CreateCommitRequest;
 
   getPassword(): string;
   setPassword(value: string): CreateCommitRequest;
@@ -93,7 +93,7 @@ export class CreateCommitRequest extends jspb.Message {
 
 export namespace CreateCommitRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
+    commit?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Commit.AsObject,
     password: string,
   }
 }

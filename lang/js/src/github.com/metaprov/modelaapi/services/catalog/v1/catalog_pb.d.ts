@@ -112,10 +112,10 @@ export namespace ListManagedimagesRequest {
 }
 
 export class ListManagedimagesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList): ListManagedimagesResponse;
-  hasItems(): boolean;
-  clearItems(): ListManagedimagesResponse;
+  getManagedimages(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList | undefined;
+  setManagedimages(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList): ListManagedimagesResponse;
+  hasManagedimages(): boolean;
+  clearManagedimages(): ListManagedimagesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListManagedimagesResponse.AsObject;
@@ -127,7 +127,7 @@ export class ListManagedimagesResponse extends jspb.Message {
 
 export namespace ListManagedimagesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList.AsObject,
+    managedimages?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImageList.AsObject,
   }
 }
 
@@ -196,10 +196,10 @@ export namespace ListMLFrameworksRequest {
 }
 
 export class ListMLFrameworksResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList): ListMLFrameworksResponse;
-  hasItems(): boolean;
-  clearItems(): ListMLFrameworksResponse;
+  getMlframeworks(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList | undefined;
+  setMlframeworks(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList): ListMLFrameworksResponse;
+  hasMlframeworks(): boolean;
+  clearMlframeworks(): ListMLFrameworksResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListMLFrameworksResponse.AsObject;
@@ -211,7 +211,7 @@ export class ListMLFrameworksResponse extends jspb.Message {
 
 export namespace ListMLFrameworksResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList.AsObject,
+    mlframeworks?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFrameworkList.AsObject,
   }
 }
 
@@ -280,10 +280,10 @@ export namespace ListCloudsRequest {
 }
 
 export class ListCloudsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList): ListCloudsResponse;
-  hasItems(): boolean;
-  clearItems(): ListCloudsResponse;
+  getClouds(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList | undefined;
+  setClouds(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList): ListCloudsResponse;
+  hasClouds(): boolean;
+  clearClouds(): ListCloudsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListCloudsResponse.AsObject;
@@ -295,7 +295,7 @@ export class ListCloudsResponse extends jspb.Message {
 
 export namespace ListCloudsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList.AsObject,
+    clouds?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CloudList.AsObject,
   }
 }
 
@@ -364,10 +364,10 @@ export namespace ListPublicDatasetsRequest {
 }
 
 export class ListPublicDatasetsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList): ListPublicDatasetsResponse;
-  hasItems(): boolean;
-  clearItems(): ListPublicDatasetsResponse;
+  getPublicdatasets(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList | undefined;
+  setPublicdatasets(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList): ListPublicDatasetsResponse;
+  hasPublicdatasets(): boolean;
+  clearPublicdatasets(): ListPublicDatasetsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPublicDatasetsResponse.AsObject;
@@ -379,7 +379,7 @@ export class ListPublicDatasetsResponse extends jspb.Message {
 
 export namespace ListPublicDatasetsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList.AsObject,
+    publicdatasets?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDatasetList.AsObject,
   }
 }
 
@@ -662,10 +662,10 @@ export namespace ListWorkloadClassesRequest {
 }
 
 export class ListWorkloadClassesResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList): ListWorkloadClassesResponse;
-  hasItems(): boolean;
-  clearItems(): ListWorkloadClassesResponse;
+  getWorkloads(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList | undefined;
+  setWorkloads(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList): ListWorkloadClassesResponse;
+  hasWorkloads(): boolean;
+  clearWorkloads(): ListWorkloadClassesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListWorkloadClassesResponse.AsObject;
@@ -677,7 +677,7 @@ export class ListWorkloadClassesResponse extends jspb.Message {
 
 export namespace ListWorkloadClassesResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList.AsObject,
+    workloads?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.WorkloadClassList.AsObject,
   }
 }
 

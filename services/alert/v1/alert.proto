@@ -16,7 +16,8 @@ message ListAlertsRequest {
 }
 
 message ListAlertsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AlertList alerts = 1;   
+    string next_page_token = 2;
 }
 
 message AlertResponse {}

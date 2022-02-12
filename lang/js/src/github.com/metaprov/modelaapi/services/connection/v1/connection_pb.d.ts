@@ -40,10 +40,13 @@ export namespace ListConnectionsRequest {
 }
 
 export class ListConnectionsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList): ListConnectionsResponse;
-  hasItems(): boolean;
-  clearItems(): ListConnectionsResponse;
+  getConnections(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList | undefined;
+  setConnections(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList): ListConnectionsResponse;
+  hasConnections(): boolean;
+  clearConnections(): ListConnectionsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListConnectionsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListConnectionsResponse.AsObject;
@@ -55,15 +58,16 @@ export class ListConnectionsResponse extends jspb.Message {
 
 export namespace ListConnectionsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList.AsObject,
+    connections?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.ConnectionList.AsObject,
+    nextPageToken: string,
   }
 }
 
 export class CreateConnectionRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateConnectionRequest;
-  hasItem(): boolean;
-  clearItem(): CreateConnectionRequest;
+  getConnection(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection | undefined;
+  setConnection(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection): CreateConnectionRequest;
+  hasConnection(): boolean;
+  clearConnection(): CreateConnectionRequest;
 
   getSecretMap(): jspb.Map<string, string>;
   clearSecretMap(): CreateConnectionRequest;
@@ -78,7 +82,7 @@ export class CreateConnectionRequest extends jspb.Message {
 
 export namespace CreateConnectionRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
+    connection?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Connection.AsObject,
     secretMap: Array<[string, string]>,
   }
 }

@@ -16,7 +16,9 @@ message ListAccountsRequest {
 }
 
 message ListAccountsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.AccountList accounts = 1;   
+    string next_page_token = 2;
+
 }
 
 message AccountResponse {}

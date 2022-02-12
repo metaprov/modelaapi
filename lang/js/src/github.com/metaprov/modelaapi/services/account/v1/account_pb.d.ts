@@ -41,10 +41,13 @@ export namespace ListAccountsRequest {
 }
 
 export class ListAccountsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList): ListAccountsResponse;
-  hasItems(): boolean;
-  clearItems(): ListAccountsResponse;
+  getAccounts(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList | undefined;
+  setAccounts(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList): ListAccountsResponse;
+  hasAccounts(): boolean;
+  clearAccounts(): ListAccountsResponse;
+
+  getNextPageToken(): string;
+  setNextPageToken(value: string): ListAccountsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAccountsResponse.AsObject;
@@ -56,7 +59,8 @@ export class ListAccountsResponse extends jspb.Message {
 
 export namespace ListAccountsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList.AsObject,
+    accounts?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.AccountList.AsObject,
+    nextPageToken: string,
   }
 }
 

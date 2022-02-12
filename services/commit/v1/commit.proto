@@ -16,13 +16,13 @@ message ListCommitsRequest {
 }
 
 message ListCommitsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitList items = 1;   
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.CommitList commits = 1;   
 }
 
 message CommitResponse {}
 
 message CreateCommitRequest {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit  item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Commit  commit = 1;
     string password = 2;    
 }
 
