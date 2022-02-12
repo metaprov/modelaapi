@@ -70,7 +70,7 @@ func (study *Study) ReachedMaxFETime() bool {
 }
 
 func (study *Study) ReachedMaxFEModels() bool {
-	totalModels := study.Status.FeatureEngineeringStatus.Failed + study.Status.FeatureEngineeringStatus.Trained
+	totalModels := study.Status.FeatureEngineeringStatus.Failed + study.Status.FeatureEngineeringStatus.Completed
 	return *study.Spec.FeatureEngineeringSearch.MaxModels == totalModels
 }
 
@@ -710,7 +710,7 @@ func (study *Study) MaxTimeOrModelReached() bool {
 		timeOver := diff.Minutes() > float64(*study.Spec.Search.MaxTime)
 
 		// compare the model. We take the ensemble into consideration
-		modelOver := (study.Status.SearchStatus.Trained + study.Status.SearchStatus.Failed) >= *study.Spec.Search.MaxModels
+		modelOver := (study.Status.SearchStatus.Completed + study.Status.SearchStatus.Failed) >= *study.Spec.Search.MaxModels
 
 		return timeOver || modelOver
 	}
@@ -766,7 +766,7 @@ func (study *Study) MarkPartitionedFailed(err string) {
 
 func (study *Study) ReachedMaxModels() bool {
 	return study.Status.SearchStatus.Failed+
-		study.Status.SearchStatus.Trained+
+		study.Status.SearchStatus.Completed+
 		study.Status.SearchStatus.Waiting >= *study.Spec.Search.MaxModels
 }
 
