@@ -245,7 +245,7 @@ func (p *DataProduct) MarkFailed(err error) {
 }
 
 func (in *DataProduct) MarkReady() {
-	p.CreateOrUpdateCond(DataProductCondition{
+	in.CreateOrUpdateCond(DataProductCondition{
 		Type:   DataProductReady,
 		Status: v1.ConditionTrue,
 	})
