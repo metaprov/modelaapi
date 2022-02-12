@@ -35,7 +35,7 @@ func DefaultObjective(task catalog.MLTask) catalog.Metric {
 	return catalog.Accuracy
 }
 
-func DefaultSplit(task catalog.MLTask) catalog.Metric {
+func DefaultSplit(task catalog.MLTask) catalog.DataSplitMethod {
 	if task == catalog.BinaryClassification {
 		return catalog.DataSplitMethodRandomStratified
 	}
