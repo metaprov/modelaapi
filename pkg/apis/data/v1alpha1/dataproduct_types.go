@@ -149,7 +149,7 @@ type DataProductSpec struct {
 	// The clearance level of this data product
 	// +kubebuilder:default:=unclassified
 	// +kubebuilder:validation:Optional
-	ClearenceLevel *catalog.SecurityClearanceLevel `json:"clearenceLevel,omitempty" protobuf:"bytes,20,opt,name=clearenceLevel"`
+	ClearanceLevel *catalog.SecurityClearanceLevel `json:"clearanceLevel,omitempty" protobuf:"bytes,20,opt,name=clearanceLevel"`
 	// Default Priority level assigned to jobs for this data product (e.g. study, model pipeline,etc)
 	// +kubebuilder:validation:Optional
 	// +kubebuilder:default:="medium"

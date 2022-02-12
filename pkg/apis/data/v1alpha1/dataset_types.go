@@ -34,7 +34,7 @@ type DatasetConditionType string
 const (
 	DatasetReported    DatasetConditionType = "Reported"
 	DatasetValidated   DatasetConditionType = "Validated"
-	DatasetSnapshotted DatasetConditionType = "Snapshooted"
+	DatasetSnapshotted DatasetConditionType = "Snapshootted"
 	DatasetProfiled    DatasetConditionType = "Profiled"
 	DatasetIngested    DatasetConditionType = "Ingested"
 	DatasetGenerated   DatasetConditionType = "Generated"

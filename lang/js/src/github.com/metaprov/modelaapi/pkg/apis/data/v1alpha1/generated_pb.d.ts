@@ -1426,8 +1426,8 @@ export class DataProductSpec extends jspb.Message {
   hasCompilation(): boolean;
   clearCompilation(): DataProductSpec;
 
-  getClearencelevel(): string;
-  setClearencelevel(value: string): DataProductSpec;
+  getClearancelevel(): string;
+  setClearancelevel(value: string): DataProductSpec;
 
   getPriority(): string;
   setPriority(value: string): DataProductSpec;
@@ -1466,7 +1466,7 @@ export namespace DataProductSpec {
     kpisList: Array<KPI.AsObject>,
     oncallaccountname: string,
     compilation?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.AsObject,
-    clearencelevel: string,
+    clearancelevel: string,
     priority: string,
     color: string,
     governance?: GovernanceSpec.AsObject,

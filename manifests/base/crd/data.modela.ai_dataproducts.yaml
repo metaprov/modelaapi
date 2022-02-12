@@ -66,7 +66,7 @@ spec:
           spec:
             description: DataProductSpec defines the desired state of a data product
             properties:
-              clearenceLevel:
+              clearanceLevel:
                 default: unclassified
                 description: The clearance level of this data product
                 enum:

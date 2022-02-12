@@ -523,15 +523,15 @@ const (
 	VMeasureScore             Metric = "v-measure-score"
 
 	// Infra metrics
-	P50Latency               Metric = "p50-latency"
-	P95Latency               Metric = "p95-latency"
-	P99Latency               Metric = "p99-latency"
-	Cpu                      Metric = "cpu"
-	Gpu                      Metric = "gpu"
-	Mem                      Metric = "mem"
-	GpuMem                   Metric = "gpu-mem"
-	ReqSec                   Metric = "req-per-sec"
-	UncrainPredictionPercent Metric = "uncertain-prediction-percent"
+	P50Latency                 Metric = "p50-latency"
+	P95Latency                 Metric = "p95-latency"
+	P99Latency                 Metric = "p99-latency"
+	Cpu                        Metric = "cpu"
+	Gpu                        Metric = "gpu"
+	Mem                        Metric = "mem"
+	GpuMem                     Metric = "gpu-mem"
+	ReqSec                     Metric = "req-per-sec"
+	UncertainPredictionPercent Metric = "uncertain-prediction-percent"
 
 	NoneMetric Metric = "none"
 )
@@ -1339,16 +1339,16 @@ const (
 type ShapType string
 
 const (
-	ShapTypePermutation = "permutation"
-	ShapTypePaartition  = "partition"
-	ShapTypeTree        = "tree"
-	ShapTypeKernel      = "kernel"
-	ShapTypeSampling    = "sampling"
-	ShapTypeLinear      = "linear"
-	ShapTypeDeep        = "deep"
-	ShapTypeGradient    = "gradient"
-	ShapTypeAuto        = "auto"
-	ShapTypeNone        = "none"
+	ShapTypePermutation ShapType = "permutation"
+	ShapTypePaartition  ShapType = "partition"
+	ShapTypeTree        ShapType = "tree"
+	ShapTypeKernel      ShapType = "kernel"
+	ShapTypeSampling    ShapType = "sampling"
+	ShapTypeLinear      ShapType = "linear"
+	ShapTypeDeep        ShapType = "deep"
+	ShapTypeGradient    ShapType = "gradient"
+	ShapTypeAuto        ShapType = "auto"
+	ShapTypeNone        ShapType = "none"
 )
 
 //==============================================================================
@@ -1926,11 +1926,11 @@ type ResourceSpec struct {
 type DataSplitMethod string
 
 const (
-	DataSplitMethodRandomStratified = "random-stratified"
-	DataSplitMethodRandom           = "random"
-	DataSplitMethodSplitColumn      = "split-column"
-	DataSplitMethodTime             = "time"
-	DataSplitAuto                   = "auto"
+	DataSplitMethodRandomStratified DataSplitMethod = "random-stratified"
+	DataSplitMethodRandom           DataSplitMethod = "random"
+	DataSplitMethodSplitColumn      DataSplitMethod = "split-column"
+	DataSplitMethodTime             DataSplitMethod = "time"
+	DataSplitAuto                   DataSplitMethod = "auto"
 )
 
 // Define the histogram data

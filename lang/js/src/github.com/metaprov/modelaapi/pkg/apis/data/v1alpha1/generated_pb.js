@@ -16870,7 +16870,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.toObj
     proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.KPI.toObject, includeInstance),
     oncallaccountname: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
     compilation: (f = msg.getCompilation()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.CompilerSpec.toObject(includeInstance, f),
-    clearencelevel: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+    clearancelevel: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
     priority: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
     color: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
     governance: (f = msg.getGovernance()) && proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.GovernanceSpec.toObject(includeInstance, f)
@@ -16985,7 +16985,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.deser
       break;
     case 20:
       var value = /** @type {string} */ (reader.readString());
-      msg.setClearencelevel(value);
+      msg.setClearancelevel(value);
       break;
     case 21:
       var value = /** @type {string} */ (reader.readString());
@@ -17770,10 +17770,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
 
 
 /**
- * optional string clearenceLevel = 20;
+ * optional string clearanceLevel = 20;
  * @return {string}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getClearencelevel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.getClearancelevel = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
@@ -17782,7 +17782,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * @param {string} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setClearencelevel = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.setClearancelevel = function(value) {
   return jspb.Message.setField(this, 20, value);
 };
 
@@ -17791,7 +17791,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearClearencelevel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.clearClearancelevel = function() {
   return jspb.Message.setField(this, 20, undefined);
 };
 
@@ -17800,7 +17800,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.proto
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasClearencelevel = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProductSpec.prototype.hasClearancelevel = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 

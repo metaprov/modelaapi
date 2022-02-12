@@ -1218,8 +1218,8 @@ func (in *DataProductSpec) DeepCopyInto(out *DataProductSpec) {
 		}
 	}
 	in.Compilation.DeepCopyInto(&out.Compilation)
-	if in.ClearenceLevel != nil {
-		in, out := &in.ClearenceLevel, &out.ClearenceLevel
+	if in.ClearanceLevel != nil {
+		in, out := &in.ClearanceLevel, &out.ClearanceLevel
 		*out = new(catalogv1alpha1.SecurityClearanceLevel)
 		**out = **in
 	}
