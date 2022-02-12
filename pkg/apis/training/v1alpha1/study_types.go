@@ -142,11 +142,11 @@ type StudyCondition struct {
 // +kubebuilder:printcolumn:name="Version",type="string",JSONPath=".spec.versionName",priority=1
 // +kubebuilder:printcolumn:name="Dataset",type="string",JSONPath=".spec.datasetName"
 // +kubebuilder:printcolumn:name="Task",type="string",JSONPath=".spec.task"
-// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.objective"
+// +kubebuilder:printcolumn:name="Objective",type="string",JSONPath=".spec.search.objective"
 // +kubebuilder:printcolumn:name="Score",type="number",JSONPath=".status.bestModelScore"
 // +kubebuilder:printcolumn:name="Best model",type="string",JSONPath=".status.bestModel"
-// +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.trainedModels"
-// +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.testedModels"
+// +kubebuilder:printcolumn:name="Trained",type="number",JSONPath=".status.search.completed"
+// +kubebuilder:printcolumn:name="Tested",type="number",JSONPath=".status.test.completed"
 // +kubebuilder:printcolumn:name="StartTime",type="date",JSONPath=".status.startTime",priority=1
 // +kubebuilder:printcolumn:name="CompletionTime",type="date",JSONPath=".status.completionTime",priority=1
 // +kubebuilder:printcolumn:name="Last Failure",type="string",JSONPath=".status.lastFailure"
@@ -726,13 +726,13 @@ type StudyPhaseStatus struct {
 	Waiting int32 `json:"waiting,omitempty" protobuf:"varint,3,opt,name=waiting"`
 	// models in training
 	// +kubebuilder:validation:Optional
-	Training int32 `json:"training,omitempty" protobuf:"varint,4,opt,name=training"`
+	Running int32 `json:"running,omitempty" protobuf:"varint,4,opt,name=running"`
 	// models that failed
 	// +kubebuilder:validation:Optional
 	Failed int32 `json:"failed,omitempty" protobuf:"varint,5,opt,name=failed"`
 	// models trained
 	// +kubebuilder:validation:Optional
-	Trained int32 `json:"trained,omitempty" protobuf:"varint,6,opt,name=trained"`
+	Completed int32 `json:"completed,omitempty" protobuf:"varint,6,opt,name=completed"`
 }
 
 type SegmentSpec struct {

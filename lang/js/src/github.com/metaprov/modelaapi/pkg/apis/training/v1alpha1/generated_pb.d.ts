@@ -4558,14 +4558,14 @@ export class StudyPhaseStatus extends jspb.Message {
   getWaiting(): number;
   setWaiting(value: number): StudyPhaseStatus;
 
-  getTraining(): number;
-  setTraining(value: number): StudyPhaseStatus;
+  getRunning(): number;
+  setRunning(value: number): StudyPhaseStatus;
 
   getFailed(): number;
   setFailed(value: number): StudyPhaseStatus;
 
-  getTrained(): number;
-  setTrained(value: number): StudyPhaseStatus;
+  getCompleted(): number;
+  setCompleted(value: number): StudyPhaseStatus;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): StudyPhaseStatus.AsObject;
@@ -4580,9 +4580,9 @@ export namespace StudyPhaseStatus {
     starttime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     endtime?: k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.AsObject,
     waiting: number,
-    training: number,
+    running: number,
     failed: number,
-    trained: number,
+    completed: number,
   }
 }
 

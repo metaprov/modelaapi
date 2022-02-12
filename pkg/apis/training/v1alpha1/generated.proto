@@ -3062,7 +3062,7 @@ message StudyPhaseStatus {
 
   // models in training
   // +kubebuilder:validation:Optional
-  optional int32 training = 4;
+  optional int32 running = 4;
 
   // models that failed
   // +kubebuilder:validation:Optional
@@ -3070,7 +3070,7 @@ message StudyPhaseStatus {
 
   // models trained
   // +kubebuilder:validation:Optional
-  optional int32 trained = 6;
+  optional int32 completed = 6;
 }
 
 // Study Schedule is used for cases where the study is scheduled to start at future date time.

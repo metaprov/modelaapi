@@ -243,3 +243,10 @@ func (p *DataProduct) MarkFailed(err error) {
 		Message: err.Error(),
 	})
 }
+
+func (in *DataProduct) MarkReady() {
+	p.CreateOrUpdateCond(DataProductCondition{
+		Type:   DataProductReady,
+		Status: v1.ConditionTrue,
+	})
+}

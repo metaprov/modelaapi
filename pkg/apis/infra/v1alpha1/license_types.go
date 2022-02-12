@@ -46,7 +46,7 @@ type LicenseCondition struct {
 // +kubebuilder:subresource:status
 // +kubebuilder:printcolumn:name="Ready",type="string",JSONPath=".status.conditions[?(@.type==\"Valid\")].status",description=""
 // +kubebuilder:printcolumn:name="Owner",type="string",JSONPath=".spec.owner",description=""
-// +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretRef.Name",description=""
+// +kubebuilder:printcolumn:name="Secret",type="string",JSONPath=".spec.secretRef.name",description=""
 // +kubebuilder:printcolumn:name="Trial Start",type="string",JSONPath=".spec.trialStart",description=""
 // +kubebuilder:printcolumn:name="Trial End",type="string",JSONPath=".spec.trialEnd",description=""
 // +kubebuilder:printcolumn:name="Max Trainers",type="string",JSONPath=".spec.maxTrainers",description=""

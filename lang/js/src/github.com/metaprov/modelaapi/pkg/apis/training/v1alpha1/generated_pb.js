@@ -45451,9 +45451,9 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
     starttime: (f = msg.getStarttime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     endtime: (f = msg.getEndtime()) && k8s_io_apimachinery_pkg_apis_meta_v1_generated_pb.Time.toObject(includeInstance, f),
     waiting: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-    training: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+    running: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
     failed: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
-    trained: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
+    completed: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -45506,7 +45506,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTraining(value);
+      msg.setRunning(value);
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
@@ -45514,7 +45514,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
       break;
     case 6:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setTrained(value);
+      msg.setCompleted(value);
       break;
     default:
       reader.skipField();
@@ -45703,10 +45703,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
 
 
 /**
- * optional int32 training = 4;
+ * optional int32 running = 4;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.getTraining = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.getRunning = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -45715,7 +45715,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.setTraining = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.setRunning = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -45724,7 +45724,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.clearTraining = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.clearRunning = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -45733,7 +45733,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.hasTraining = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.hasRunning = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -45775,10 +45775,10 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
 
 
 /**
- * optional int32 trained = 6;
+ * optional int32 completed = 6;
  * @return {number}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.getTrained = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.getCompleted = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
@@ -45787,7 +45787,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
  * @param {number} value
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.setTrained = function(value) {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.setCompleted = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -45796,7 +45796,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
  * Clears the field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus} returns this
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.clearTrained = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.clearCompleted = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -45805,7 +45805,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.hasTrained = function() {
+proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.StudyPhaseStatus.prototype.hasCompleted = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
