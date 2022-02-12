@@ -4491,7 +4491,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.to
 proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    ip: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    port: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -4536,6 +4539,18 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.deserializeB
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPort(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4579,6 +4594,27 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.serializeBin
       f
     );
   }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getIp();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getPort();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
 };
 
 
@@ -4618,6 +4654,60 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.se
 };
 
 
+/**
+ * optional string status = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string ip = 4;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.getIp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.setIp = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string port = 5;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.getPort = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.ServiceInfo.prototype.setPort = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
 
 
 
@@ -4651,7 +4741,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype
 proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4696,6 +4787,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.deseriali
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4739,6 +4834,13 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.serialize
       f
     );
   }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -4778,6 +4880,24 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype
 };
 
 
+/**
+ * optional string status = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.DeploymentInfo.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
 
 
 
@@ -4811,7 +4931,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.toObje
 proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -4856,6 +4977,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.deserializeBinar
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -4899,6 +5024,13 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.serializeBinaryT
       f
     );
   }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -4938,6 +5070,24 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.setNam
 };
 
 
+/**
+ * optional string status = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.PodInfo.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
 
 
 
@@ -4971,7 +5121,8 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.toObje
 proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 2, "")
+    namespace: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5016,6 +5167,10 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.deserializeBinar
       var value = /** @type {string} */ (reader.readString());
       msg.setNamespace(value);
       break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -5059,6 +5214,13 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.serializeBinaryT
       f
     );
   }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
@@ -5095,6 +5257,24 @@ proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getNam
  */
 proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setNamespace = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string status = 3;
+ * @return {string}
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo} returns this
+ */
+proto.github.com.metaprov.modelaapi.services.k8score.v1.JobInfo.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

@@ -519,6 +519,15 @@ export class ServiceInfo extends jspb.Message {
   getNamespace(): string;
   setNamespace(value: string): ServiceInfo;
 
+  getStatus(): string;
+  setStatus(value: string): ServiceInfo;
+
+  getIp(): string;
+  setIp(value: string): ServiceInfo;
+
+  getPort(): string;
+  setPort(value: string): ServiceInfo;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServiceInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ServiceInfo): ServiceInfo.AsObject;
@@ -531,6 +540,9 @@ export namespace ServiceInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+    status: string,
+    ip: string,
+    port: string,
   }
 }
 
@@ -540,6 +552,9 @@ export class DeploymentInfo extends jspb.Message {
 
   getNamespace(): string;
   setNamespace(value: string): DeploymentInfo;
+
+  getStatus(): string;
+  setStatus(value: string): DeploymentInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DeploymentInfo.AsObject;
@@ -553,6 +568,7 @@ export namespace DeploymentInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+    status: string,
   }
 }
 
@@ -562,6 +578,9 @@ export class PodInfo extends jspb.Message {
 
   getNamespace(): string;
   setNamespace(value: string): PodInfo;
+
+  getStatus(): string;
+  setStatus(value: string): PodInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PodInfo.AsObject;
@@ -575,6 +594,7 @@ export namespace PodInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+    status: string,
   }
 }
 
@@ -584,6 +604,9 @@ export class JobInfo extends jspb.Message {
 
   getNamespace(): string;
   setNamespace(value: string): JobInfo;
+
+  getStatus(): string;
+  setStatus(value: string): JobInfo;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): JobInfo.AsObject;
@@ -597,6 +620,7 @@ export namespace JobInfo {
   export type AsObject = {
     name: string,
     namespace: string,
+    status: string,
   }
 }
 

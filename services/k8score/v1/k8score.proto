@@ -136,21 +136,27 @@ message SecretInfo {
 message ServiceInfo {
     string name      = 1;
     string namespace = 2;
+    string status    = 3;
+    string ip        = 4;
+    string port      = 5;
 }
 
 message DeploymentInfo {
     string name      = 1;
     string namespace = 2;
+    string status     = 3;
 }
 
 message PodInfo {
     string name      = 1;
     string namespace = 2;
+    string status    = 3;
 }
 
 message JobInfo {
     string name      = 1;
     string namespace = 2;
+    string status    = 3;
 }
 
 
