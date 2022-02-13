@@ -781,7 +781,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelines
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList modelPipelines = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList modelpipelines = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipelineList}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.ListModelPipelinesResponse.prototype.getModelpipelines = function() {
@@ -1051,7 +1051,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.CreateModelPipelin
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelpipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.CreateModelPipelineRequest.prototype.getModelpipeline = function() {
@@ -1317,7 +1317,7 @@ proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.UpdateModelPipelin
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelPipeline = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline modelpipeline = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelPipeline}
  */
 proto.github.com.metaprov.modelaapi.services.modelpipeline.v1.UpdateModelPipelineRequest.prototype.getModelpipeline = function() {
