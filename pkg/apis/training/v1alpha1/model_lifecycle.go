@@ -924,7 +924,7 @@ func (model Model) IsFE() bool {
 }
 
 func (model Model) IsBaseline() bool {
-	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeBaseine
+	return model.Spec.ModelClass == catalog.ModelStudyPhaseClassTypeBaseline
 }
 
 func (model Model) IsSearch() bool {
