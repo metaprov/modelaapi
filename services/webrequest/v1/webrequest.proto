@@ -55,7 +55,7 @@ message DeleteWebRequestResponse {
 }
 
 message RunWebRequestRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.WebRequest webrequest = 1;
 }
 
 
@@ -82,7 +82,7 @@ service WebRequestService {
 
     rpc UpdateWebRequest(UpdateWebRequestRequest) returns (UpdateWebRequestResponse) {
         option (google.api.http) = {
-			put: "/v1/webrequests/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/webrequests/{webrequest.metadata.namespace}/{webrequest.metadata.name}"
 			body: "*"
 		};
     }
@@ -92,7 +92,7 @@ service WebRequestService {
     }
 
     rpc RunWebRequest(RunWebRequestRequest) returns (RunWebRequestResponse) {
-        option (google.api.http).post = "/v1/webrequests/{item.metadata.namespace}/{item.metadata.name}:run";
+        option (google.api.http).post = "/v1/webrequests/{webrequest.metadata.namespace}/{webrequest.metadata.name}:run";
     }
 
     

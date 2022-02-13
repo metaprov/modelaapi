@@ -1441,7 +1441,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRespon
  */
 proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
+    dataproduct: (f = msg.getDataproduct()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.toObject(includeInstance, f),
     alertsList: jspb.Message.toObjectList(msg.getAlertsList(),
     github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert.toObject, includeInstance),
     datasetsList: jspb.Message.toObjectList(msg.getDatasetsList(),
@@ -1492,7 +1492,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRespon
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setDataproduct(value);
       break;
     case 2:
       var value = new github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Alert;
@@ -1552,7 +1552,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRespon
  */
 proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getDataproduct();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1611,10 +1611,10 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRespon
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct dataproduct = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct}
  */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.getDataproduct = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.DataProduct, 1));
 };
@@ -1624,7 +1624,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRespon
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.setDataproduct = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1633,8 +1633,8 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRespon
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.clearDataproduct = function() {
+  return this.setDataproduct(undefined);
 };
 
 
@@ -1642,7 +1642,7 @@ proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductRespon
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.dataproduct.v1.GetDataProductResponse.prototype.hasDataproduct = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -115,10 +115,10 @@ export namespace GetDatasetResponse {
 }
 
 export class CreateDatasetRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDatasetRequest;
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetRequest;
+  hasDataset(): boolean;
+  clearDataset(): CreateDatasetRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDatasetRequest.AsObject;
@@ -130,7 +130,7 @@ export class CreateDatasetRequest extends jspb.Message {
 
 export namespace CreateDatasetRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -285,10 +285,10 @@ export class CreateDatasetProfileRequest extends jspb.Message {
   getName(): string;
   setName(value: string): CreateDatasetProfileRequest;
 
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetProfileRequest;
-  hasItem(): boolean;
-  clearItem(): CreateDatasetProfileRequest;
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateDatasetProfileRequest;
+  hasDataset(): boolean;
+  clearDataset(): CreateDatasetProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateDatasetProfileRequest.AsObject;
@@ -302,7 +302,7 @@ export namespace CreateDatasetProfileRequest {
   export type AsObject = {
     namespace: string,
     name: string,
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 
@@ -340,10 +340,10 @@ export class CreateColumnProfileRequest extends jspb.Message {
   getCol(): string;
   setCol(value: string): CreateColumnProfileRequest;
 
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateColumnProfileRequest;
-  hasItem(): boolean;
-  clearItem(): CreateColumnProfileRequest;
+  getDataset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset | undefined;
+  setDataset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset): CreateColumnProfileRequest;
+  hasDataset(): boolean;
+  clearDataset(): CreateColumnProfileRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateColumnProfileRequest.AsObject;
@@ -358,7 +358,7 @@ export namespace CreateColumnProfileRequest {
     namespace: string,
     name: string,
     col: string,
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
+    dataset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Dataset.AsObject,
   }
 }
 

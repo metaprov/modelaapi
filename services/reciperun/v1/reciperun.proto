@@ -73,7 +73,7 @@ service RecipeRunService {
     }
     rpc UpdateRecipeRun(UpdateRecipeRunRequest) returns (UpdateRecipeRunResponse) {
         option (google.api.http) = {
-			put: "/v1/reciperuns/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/reciperuns/{reciperun.metadata.namespace}/{reciperun.metadata.name}"
 			body: "*"
 		};
     }

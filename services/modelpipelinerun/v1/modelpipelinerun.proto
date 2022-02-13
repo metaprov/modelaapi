@@ -127,7 +127,7 @@ service ModelPipelineRunService {
     }
     rpc UpdateModelPipelineRun(UpdateModelPipelineRunRequest) returns (UpdateModelPipelineRunResponse) {
         option (google.api.http) = {
-			put: "/v1/modelpipelineruns/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/modelpipelineruns/{modelpipelinerun.metadata.namespace}/{modelpipelinerun.metadata.name}"
 			body: "*"
 		};
     }

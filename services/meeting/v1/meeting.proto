@@ -75,7 +75,7 @@ service MeetingService {
     }
     rpc UpdateMeeting(UpdateMeetingRequest) returns (UpdateMeetingResponse) {
         option (google.api.http) = {
-			put: "/v1/meetings/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/meetings/{meeting.metadata.namespace}/{meeting.metadata.name}"
 			body: "*"
 		};
     }

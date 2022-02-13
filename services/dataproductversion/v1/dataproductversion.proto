@@ -77,7 +77,7 @@ service DataProductVersionService {
 
     rpc UpdateDataProductVersion(UpdateDataProductVersionRequest) returns (UpdateDataProductVersionResponse) {
         option (google.api.http) = {
-			put: "/v1/dataproductversions/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/dataproductversions/{dataproductversion.metadata.namespace}/{dataproductversion.metadata.name}"
 			body: "*"
 		};
     }

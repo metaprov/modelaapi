@@ -95,7 +95,7 @@ service FeaturePipelineService {
 
     rpc UpdateFeaturePipeline(UpdateFeaturePipelineRequest) returns (UpdateFeaturePipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/featurepipelines/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/featurepipelines/{featurepipeline.metadata.namespace}/{featurepipeline.metadata.name}"
 			body: "*"
 		};
     }

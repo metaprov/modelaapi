@@ -75,7 +75,7 @@ service ModelAutobuilderService {
     }
     rpc UpdateModelAutobuilder(UpdateModelAutobuilderRequest) returns (UpdateModelAutobuilderResponse) {
         option (google.api.http) = {
-			put: "/v1/modelautobuilders/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/modelautobuilders/{modelautobuilder.metadata.namespace}/{modelautobuilder.metadata.name}"
 			body: "*"
 		};
     }

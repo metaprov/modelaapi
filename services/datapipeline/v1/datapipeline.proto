@@ -84,7 +84,7 @@ service DataPipelineService {
 
     rpc UpdateDataPipeline(UpdateDataPipelineRequest) returns (UpdateDataPipelineResponse) {
         option (google.api.http) = {
-			put: "/v1/datapipelines/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/datapipelines/{datapipeline.metadata.namespace}/{datapipeline.metadata.name}"
 			body: "*"
 		};
     }

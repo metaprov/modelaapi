@@ -63,7 +63,7 @@ service VirtualBucketService {
     }
     rpc UpdateVirtualBucket(UpdateVirtualBucketRequest) returns (UpdateVirtualBucketResponse) {
         option (google.api.http) = {
-			put: "/v1/virtualbuckets/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/virtualbuckets/{virtualbucket.metadata.namespace}/{virtualbucket.metadata.name}"
 			body: "*"
 		};
     }

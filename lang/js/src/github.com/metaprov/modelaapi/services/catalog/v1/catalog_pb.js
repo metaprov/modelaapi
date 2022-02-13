@@ -1058,7 +1058,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    items: (f = msg.getItems()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList.toObject(includeInstance, f)
+    algorithms: (f = msg.getAlgorithms()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1098,7 +1098,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList.deserializeBinaryFromReader);
-      msg.setItems(value);
+      msg.setAlgorithms(value);
       break;
     default:
       reader.skipField();
@@ -1129,7 +1129,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItems();
+  f = message.getAlgorithms();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1141,10 +1141,10 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList items = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList algorithms = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.getItems = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.getAlgorithms = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList, 1));
 };
@@ -1154,7 +1154,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.setItems = function(value) {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.setAlgorithms = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1163,8 +1163,8 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.clearItems = function() {
-  return this.setItems(undefined);
+proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.clearAlgorithms = function() {
+  return this.setAlgorithms(undefined);
 };
 
 
@@ -1172,7 +1172,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.hasItems = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.ListAlgorithmsResponse.prototype.hasAlgorithms = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1369,7 +1369,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.toObject(includeInstance, f)
+    algorithm: (f = msg.getAlgorithm()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1409,7 +1409,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.des
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setAlgorithm(value);
       break;
     default:
       reader.skipField();
@@ -1440,7 +1440,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.pro
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getAlgorithm();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1452,10 +1452,10 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.ser
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm algorithm = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.getAlgorithm = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm, 1));
 };
@@ -1465,7 +1465,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.pro
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.setAlgorithm = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -1474,8 +1474,8 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.pro
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.clearAlgorithm = function() {
+  return this.setAlgorithm(undefined);
 };
 
 
@@ -1483,7 +1483,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.pro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetAlgorithmResponse.prototype.hasAlgorithm = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1994,7 +1994,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage.toObject(includeInstance, f)
+    manageditem: (f = msg.getManageditem()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2034,7 +2034,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setManageditem(value);
       break;
     default:
       reader.skipField();
@@ -2065,7 +2065,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getManageditem();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2077,10 +2077,10 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage managedItem = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.getManageditem = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage, 1));
 };
@@ -2090,7 +2090,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.setManageditem = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2099,8 +2099,8 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.clearManageditem = function() {
+  return this.setManageditem(undefined);
 };
 
 
@@ -2108,7 +2108,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetManagedimageResponse.prototype.hasManageditem = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -2619,7 +2619,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework.toObject(includeInstance, f)
+    mlframework: (f = msg.getMlframework()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2659,7 +2659,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.d
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setMlframework(value);
       break;
     default:
       reader.skipField();
@@ -2690,7 +2690,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.p
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getMlframework();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2702,10 +2702,10 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.s
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework mlframework = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.getMlframework = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework, 1));
 };
@@ -2715,7 +2715,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.p
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.setMlframework = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2724,8 +2724,8 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.p
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.clearMlframework = function() {
+  return this.setMlframework(undefined);
 };
 
 
@@ -2733,7 +2733,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.p
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetMLFrameworkResponse.prototype.hasMlframework = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -3244,7 +3244,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud.toObject(includeInstance, f)
+    cloud: (f = msg.getCloud()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3284,7 +3284,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setCloud(value);
       break;
     default:
       reader.skipField();
@@ -3315,7 +3315,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getCloud();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3327,10 +3327,10 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud cloud = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.getCloud = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud, 1));
 };
@@ -3340,7 +3340,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.setCloud = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -3349,8 +3349,8 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.clearCloud = function() {
+  return this.setCloud(undefined);
 };
 
 
@@ -3358,7 +3358,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetCloudResponse.prototype.hasCloud = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -3869,7 +3869,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset.toObject(includeInstance, f)
+    publicdataset: (f = msg.getPublicdataset()) && github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3909,7 +3909,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setPublicdataset(value);
       break;
     default:
       reader.skipField();
@@ -3940,7 +3940,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
  */
 proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getPublicdataset();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3952,10 +3952,10 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset publicDataset = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.getPublicdataset = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset, 1));
 };
@@ -3965,7 +3965,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.setPublicdataset = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -3974,8 +3974,8 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.clearPublicdataset = function() {
+  return this.setPublicdataset(undefined);
 };
 
 
@@ -3983,7 +3983,7 @@ proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.catalog.v1.GetPublicDatasetResponse.prototype.hasPublicdataset = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

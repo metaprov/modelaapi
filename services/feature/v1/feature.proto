@@ -77,7 +77,7 @@ service FeatureService {
 
     rpc UpdateFeature(UpdateFeatureRequest) returns (UpdateFeatureResponse) {
         option (google.api.http) = {
-			put: "/v1/features/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/features/{feature.metadata.namespace}/{feature.metadata.name}"
 			body: "*"
 		};
     }

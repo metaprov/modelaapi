@@ -93,7 +93,7 @@ service CommitService {
     }
     rpc UpdateCommit(UpdateCommitRequest) returns (UpdateCommitResponse) {
         option (google.api.http) = {
-			put: "/v1/commits/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/commits/{commit.metadata.namespace}/{commit.metadata.name}"
 			body: "*"
 		};
     }

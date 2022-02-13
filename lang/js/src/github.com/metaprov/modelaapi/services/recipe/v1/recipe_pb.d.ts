@@ -261,10 +261,10 @@ export namespace RunRecipeResponse {
 }
 
 export class GetRecipeResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): GetRecipeResponse;
-  hasItem(): boolean;
-  clearItem(): GetRecipeResponse;
+  getRecipe(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe | undefined;
+  setRecipe(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe): GetRecipeResponse;
+  hasRecipe(): boolean;
+  clearRecipe(): GetRecipeResponse;
 
   getYaml(): string;
   setYaml(value: string): GetRecipeResponse;
@@ -279,7 +279,7 @@ export class GetRecipeResponse extends jspb.Message {
 
 export namespace GetRecipeResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
+    recipe?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.AsObject,
     yaml: string,
   }
 }

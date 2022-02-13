@@ -48,7 +48,7 @@ message GetDataProductRequest {
 
 
 message GetDataProductResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.DataProduct dataproduct = 1;
     repeated github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Alert alerts = 2;
     repeated github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset datasets = 3;
     repeated github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.Study studies = 4;
@@ -82,7 +82,7 @@ service DataProductService {
     }
     rpc UpdateDataProduct(UpdateDataProductRequest) returns (UpdateDataProductResponse) {
         option (google.api.http) = {
-			put: "/v1/dataproducts/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/dataproducts/{dataproduct.metadata.namespace}/{dataproduct.metadata.name}"
 			body: "*"
 		};
     }

@@ -100,7 +100,7 @@ service ApiTokenService {
 
     rpc UpdateApiToken(UpdateApiTokenRequest) returns (UpdateApiTokenResponse) {
         option (google.api.http) = {
-			put: "/v1/apitokens/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/apitokens/{apitoken.metadata.namespace}/{apitoken.metadata.name}"
 			body: "*"
 		};
     }

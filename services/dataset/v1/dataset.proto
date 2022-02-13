@@ -40,7 +40,7 @@ message GetDatasetResponse {
 
 // Create Dataset
 message CreateDatasetRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 1;
 }
 
 message CreateDatasetResponse {
@@ -92,7 +92,7 @@ message UploadChunkResponse {
 message CreateDatasetProfileRequest {
     string namespace   = 1;
     string name        = 2;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 3;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 3;
 }
 
 message CreateDatasetProfileResponse {
@@ -105,7 +105,7 @@ message CreateColumnProfileRequest {
     string namespace   = 1;
     string name        = 2;
     string col         = 3;
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset item = 4;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Dataset dataset = 4;
 }
 
 message CreateColumnProfileResponse {
@@ -241,7 +241,7 @@ service DatasetService {
 
     rpc UpdateDataset(UpdateDatasetRequest) returns (UpdateDatasetResponse) {
         option (google.api.http) = {
-			put: "/v1/datasets/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/datasets/{dataset.metadata.namespace}/{dataset.metadata.name}"
 			body: "*"
 		};
     }

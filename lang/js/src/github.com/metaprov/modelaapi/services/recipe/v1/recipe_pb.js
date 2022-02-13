@@ -2272,7 +2272,7 @@ proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    item: (f = msg.getItem()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f),
+    recipe: (f = msg.getRecipe()) && github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.toObject(includeInstance, f),
     yaml: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
@@ -2313,7 +2313,7 @@ proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.deseria
     case 1:
       var value = new github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe;
       reader.readMessage(value,github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe.deserializeBinaryFromReader);
-      msg.setItem(value);
+      msg.setRecipe(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -2348,7 +2348,7 @@ proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototy
  */
 proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getItem();
+  f = message.getRecipe();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2367,10 +2367,10 @@ proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.seriali
 
 
 /**
- * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+ * optional github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe recipe = 1;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe}
  */
-proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.getItem = function() {
+proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.getRecipe = function() {
   return /** @type{?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe} */ (
     jspb.Message.getWrapperField(this, github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Recipe, 1));
 };
@@ -2380,7 +2380,7 @@ proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototy
  * @param {?proto.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe|undefined} value
  * @return {!proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse} returns this
 */
-proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.setItem = function(value) {
+proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.setRecipe = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -2389,8 +2389,8 @@ proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototy
  * Clears the message field making it undefined.
  * @return {!proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse} returns this
  */
-proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.clearItem = function() {
-  return this.setItem(undefined);
+proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.clearRecipe = function() {
+  return this.setRecipe(undefined);
 };
 
 
@@ -2398,7 +2398,7 @@ proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototy
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.hasItem = function() {
+proto.github.com.metaprov.modelaapi.services.recipe.v1.GetRecipeResponse.prototype.hasRecipe = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 

@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'Z=github.com/metaprov/modelaapi/services/onlinefeaturestored/v1',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nWgithub.com/metaprov/modelaapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto\x12=github.com.metaprov.modelaapi.services.onlinefeaturestored.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xb9\x02\n\x14\x43reateFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x03 \x01(\t\x12O\n\x04item\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x06secret\x18\x05 \x03(\x0b\x32_.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15\x43reateFeatureResponse\"0\n\x14\x44\x65leteFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse\"!\n\x13ListFeaturesRequest\x12\n\n\x02ns\x18\x01 \x01(\t\"h\n\x14ListFeaturesResponse\x12P\n\x05items\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList\"z\n\x11GetFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12K\n\x04item\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\"a\n\x12GetFeatureResponse\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\"+\n\rEnrichRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06record\x18\x02 \x01(\t\",\n\x0e\x45nrichResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06record\x18\x02 \x01(\t\"\xda\x02\n\x14UpdateFeatureRequest\x12K\n\x04item\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x06secret\x18\x07 \x03(\x0b\x32_.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15UpdateFeatureResponse2\xf4\x08\n\x19OnlineFeatureStoreService\x12\xbc\x01\n\rCreateFeature\x12S.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest\x1aT.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureResponse\"\x00\x12\xbc\x01\n\rDeleteFeature\x12S.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureRequest\x1aT.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureResponse\"\x00\x12\xb9\x01\n\x0cListFeatures\x12R.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesRequest\x1aS.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesResponse\"\x00\x12\xb3\x01\n\nGetFeature\x12P.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureRequest\x1aQ.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureResponse\"\x00\x12\xbc\x01\n\rUpdateFeature\x12S.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest\x1aT.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureResponse\"\x00\x12\xa7\x01\n\x06\x45nrich\x12L.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichRequest\x1aM.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichResponse\"\x00\x42?Z=github.com/metaprov/modelaapi/services/onlinefeaturestored/v1b\x06proto3'
+  serialized_pb=b'\nWgithub.com/metaprov/modelaapi/services/onlinefeaturestored/v1/onlinefeaturestored.proto\x12=github.com.metaprov.modelaapi.services.onlinefeaturestored.v1\x1a\x45github.com/metaprov/modelaapi/pkg/apis/infra/v1alpha1/generated.proto\x1a\x44github.com/metaprov/modelaapi/pkg/apis/data/v1alpha1/generated.proto\"\xbf\x02\n\x14\x43reateFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12\x16\n\x0e\x63onnectionName\x18\x03 \x01(\t\x12U\n\nconnection\x18\x04 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x06secret\x18\x05 \x03(\x0b\x32_.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15\x43reateFeatureResponse\"0\n\x14\x44\x65leteFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\"\x17\n\x15\x44\x65leteFeatureResponse\"!\n\x13ListFeaturesRequest\x12\n\n\x02ns\x18\x01 \x01(\t\"n\n\x14ListFeaturesResponse\x12V\n\x0b\x63onnections\x18\x01 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.FeatureList\"}\n\x11GetFeatureRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02ns\x18\x02 \x01(\t\x12N\n\x07\x66\x65\x61ture\x18\x03 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\"d\n\x12GetFeatureResponse\x12N\n\x07\x66\x65\x61ture\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\"+\n\rEnrichRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06record\x18\x02 \x01(\t\",\n\x0e\x45nrichResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06record\x18\x02 \x01(\t\"\xdd\x02\n\x14UpdateFeatureRequest\x12N\n\x07\x66\x65\x61ture\x18\x01 \x01(\x0b\x32=.github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Feature\x12U\n\nconnection\x18\x02 \x01(\x0b\x32\x41.github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Connection\x12o\n\x06secret\x18\x07 \x03(\x0b\x32_.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.SecretEntry\x1a-\n\x0bSecretEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\"\x17\n\x15UpdateFeatureResponse2\xf4\x08\n\x19OnlineFeatureStoreService\x12\xbc\x01\n\rCreateFeature\x12S.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest\x1aT.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureResponse\"\x00\x12\xbc\x01\n\rDeleteFeature\x12S.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureRequest\x1aT.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.DeleteFeatureResponse\"\x00\x12\xb9\x01\n\x0cListFeatures\x12R.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesRequest\x1aS.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesResponse\"\x00\x12\xb3\x01\n\nGetFeature\x12P.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureRequest\x1aQ.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureResponse\"\x00\x12\xbc\x01\n\rUpdateFeature\x12S.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest\x1aT.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureResponse\"\x00\x12\xa7\x01\n\x06\x45nrich\x12L.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichRequest\x1aM.github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.EnrichResponse\"\x00\x42?Z=github.com/metaprov/modelaapi/services/onlinefeaturestored/v1b\x06proto3'
   ,
   dependencies=[github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2.DESCRIPTOR,])
 
@@ -62,8 +62,8 @@ _CREATEFEATUREREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=564,
-  serialized_end=609,
+  serialized_start=570,
+  serialized_end=615,
 )
 
 _CREATEFEATUREREQUEST = _descriptor.Descriptor(
@@ -96,7 +96,7 @@ _CREATEFEATUREREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.item', index=3,
+      name='connection', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.CreateFeatureRequest.connection', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -122,7 +122,7 @@ _CREATEFEATUREREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=296,
-  serialized_end=609,
+  serialized_end=615,
 )
 
 
@@ -146,8 +146,8 @@ _CREATEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=611,
-  serialized_end=634,
+  serialized_start=617,
+  serialized_end=640,
 )
 
 
@@ -185,8 +185,8 @@ _DELETEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=636,
-  serialized_end=684,
+  serialized_start=642,
+  serialized_end=690,
 )
 
 
@@ -210,8 +210,8 @@ _DELETEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=686,
-  serialized_end=709,
+  serialized_start=692,
+  serialized_end=715,
 )
 
 
@@ -242,8 +242,8 @@ _LISTFEATURESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=711,
-  serialized_end=744,
+  serialized_start=717,
+  serialized_end=750,
 )
 
 
@@ -256,7 +256,7 @@ _LISTFEATURESRESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesResponse.items', index=0,
+      name='connections', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.ListFeaturesResponse.connections', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -274,8 +274,8 @@ _LISTFEATURESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=746,
-  serialized_end=850,
+  serialized_start=752,
+  serialized_end=862,
 )
 
 
@@ -302,7 +302,7 @@ _GETFEATUREREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureRequest.item', index=2,
+      name='feature', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureRequest.feature', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -320,8 +320,8 @@ _GETFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=852,
-  serialized_end=974,
+  serialized_start=864,
+  serialized_end=989,
 )
 
 
@@ -334,7 +334,7 @@ _GETFEATURERESPONSE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureResponse.item', index=0,
+      name='feature', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.GetFeatureResponse.feature', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -352,8 +352,8 @@ _GETFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=976,
-  serialized_end=1073,
+  serialized_start=991,
+  serialized_end=1091,
 )
 
 
@@ -391,8 +391,8 @@ _ENRICHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1075,
-  serialized_end=1118,
+  serialized_start=1093,
+  serialized_end=1136,
 )
 
 
@@ -430,8 +430,8 @@ _ENRICHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1120,
-  serialized_end=1164,
+  serialized_start=1138,
+  serialized_end=1182,
 )
 
 
@@ -469,8 +469,8 @@ _UPDATEFEATUREREQUEST_SECRETENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=564,
-  serialized_end=609,
+  serialized_start=570,
+  serialized_end=615,
 )
 
 _UPDATEFEATUREREQUEST = _descriptor.Descriptor(
@@ -482,7 +482,7 @@ _UPDATEFEATUREREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='item', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.item', index=0,
+      name='feature', full_name='github.com.metaprov.modelaapi.services.onlinefeaturestored.v1.UpdateFeatureRequest.feature', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -514,8 +514,8 @@ _UPDATEFEATUREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1167,
-  serialized_end=1513,
+  serialized_start=1185,
+  serialized_end=1534,
 )
 
 
@@ -539,18 +539,18 @@ _UPDATEFEATURERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1515,
-  serialized_end=1538,
+  serialized_start=1536,
+  serialized_end=1559,
 )
 
 _CREATEFEATUREREQUEST_SECRETENTRY.containing_type = _CREATEFEATUREREQUEST
-_CREATEFEATUREREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
+_CREATEFEATUREREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _CREATEFEATUREREQUEST.fields_by_name['secret'].message_type = _CREATEFEATUREREQUEST_SECRETENTRY
-_LISTFEATURESRESPONSE.fields_by_name['items'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURELIST
-_GETFEATUREREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
-_GETFEATURERESPONSE.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
+_LISTFEATURESRESPONSE.fields_by_name['connections'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURELIST
+_GETFEATUREREQUEST.fields_by_name['feature'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
+_GETFEATURERESPONSE.fields_by_name['feature'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
 _UPDATEFEATUREREQUEST_SECRETENTRY.containing_type = _UPDATEFEATUREREQUEST
-_UPDATEFEATUREREQUEST.fields_by_name['item'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
+_UPDATEFEATUREREQUEST.fields_by_name['feature'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_data_dot_v1alpha1_dot_generated__pb2._FEATURE
 _UPDATEFEATUREREQUEST.fields_by_name['connection'].message_type = github_dot_com_dot_metaprov_dot_modelaapi_dot_pkg_dot_apis_dot_infra_dot_v1alpha1_dot_generated__pb2._CONNECTION
 _UPDATEFEATUREREQUEST.fields_by_name['secret'].message_type = _UPDATEFEATUREREQUEST_SECRETENTRY
 DESCRIPTOR.message_types_by_name['CreateFeatureRequest'] = _CREATEFEATUREREQUEST
@@ -679,8 +679,8 @@ _ONLINEFEATURESTORESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1541,
-  serialized_end=2681,
+  serialized_start=1562,
+  serialized_end=2702,
   methods=[
   _descriptor.MethodDescriptor(
     name='CreateFeature',

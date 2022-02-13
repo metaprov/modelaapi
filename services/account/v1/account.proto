@@ -49,7 +49,7 @@ message GetAccountRequest {
 
 
 message GetAccountResponse {
-    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.infra.v1alpha1.Account account = 1;
     string yaml = 2;
 }
 
@@ -150,7 +150,7 @@ service AccountService {
     }
     rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse) {
         option (google.api.http) = {
-			put: "/v1/accounts/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/accounts/{account.metadata.namespace}/{account.metadata.name}"
 			body: "*"
 		};
     }

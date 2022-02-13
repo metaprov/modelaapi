@@ -68,7 +68,7 @@ message RunRecipeResponse {
 
 
 message GetRecipeResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Recipe recipe = 1;
     string yaml = 2;
 }
 
@@ -107,7 +107,7 @@ service RecipeService {
 
     rpc UpdateRecipe(UpdateRecipeRequest) returns (UpdateRecipeResponse) {
         option (google.api.http) = {
-			put: "/v1/recipes/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/recipes/{recipe.metadata.namespace}/{recipe.metadata.name}"
 			body: "*"
 		};
     }

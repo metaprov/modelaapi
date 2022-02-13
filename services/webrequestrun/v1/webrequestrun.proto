@@ -73,7 +73,7 @@ service WebRequestRunService {
 
     rpc UpdateWebRequestRun(UpdateWebRequestRunRequest) returns (UpdateWebRequestRunResponse) {
         option (google.api.http) = {
-			put: "/v1/webrequestruns/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/webrequestruns/{webrequestrun.metadata.namespace}/{webrequestrun.metadata.name}"
 			body: "*"
 		};
     }

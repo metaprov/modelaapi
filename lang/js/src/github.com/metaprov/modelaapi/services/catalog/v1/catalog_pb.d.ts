@@ -28,10 +28,10 @@ export namespace ListAlgorithmsRequest {
 }
 
 export class ListAlgorithmsResponse extends jspb.Message {
-  getItems(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList | undefined;
-  setItems(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList): ListAlgorithmsResponse;
-  hasItems(): boolean;
-  clearItems(): ListAlgorithmsResponse;
+  getAlgorithms(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList | undefined;
+  setAlgorithms(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList): ListAlgorithmsResponse;
+  hasAlgorithms(): boolean;
+  clearAlgorithms(): ListAlgorithmsResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAlgorithmsResponse.AsObject;
@@ -43,7 +43,7 @@ export class ListAlgorithmsResponse extends jspb.Message {
 
 export namespace ListAlgorithmsResponse {
   export type AsObject = {
-    items?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList.AsObject,
+    algorithms?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.AlgorithmList.AsObject,
   }
 }
 
@@ -70,10 +70,10 @@ export namespace GetAlgorithmRequest {
 }
 
 export class GetAlgorithmResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm): GetAlgorithmResponse;
-  hasItem(): boolean;
-  clearItem(): GetAlgorithmResponse;
+  getAlgorithm(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm | undefined;
+  setAlgorithm(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm): GetAlgorithmResponse;
+  hasAlgorithm(): boolean;
+  clearAlgorithm(): GetAlgorithmResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAlgorithmResponse.AsObject;
@@ -85,7 +85,7 @@ export class GetAlgorithmResponse extends jspb.Message {
 
 export namespace GetAlgorithmResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject,
+    algorithm?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Algorithm.AsObject,
   }
 }
 
@@ -154,10 +154,10 @@ export namespace GetManagedimageRequest {
 }
 
 export class GetManagedimageResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage): GetManagedimageResponse;
-  hasItem(): boolean;
-  clearItem(): GetManagedimageResponse;
+  getManageditem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage | undefined;
+  setManageditem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage): GetManagedimageResponse;
+  hasManageditem(): boolean;
+  clearManageditem(): GetManagedimageResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetManagedimageResponse.AsObject;
@@ -169,7 +169,7 @@ export class GetManagedimageResponse extends jspb.Message {
 
 export namespace GetManagedimageResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage.AsObject,
+    manageditem?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.ManagedImage.AsObject,
   }
 }
 
@@ -238,10 +238,10 @@ export namespace GetMLFrameworkRequest {
 }
 
 export class GetMLFrameworkResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework): GetMLFrameworkResponse;
-  hasItem(): boolean;
-  clearItem(): GetMLFrameworkResponse;
+  getMlframework(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework | undefined;
+  setMlframework(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework): GetMLFrameworkResponse;
+  hasMlframework(): boolean;
+  clearMlframework(): GetMLFrameworkResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetMLFrameworkResponse.AsObject;
@@ -253,7 +253,7 @@ export class GetMLFrameworkResponse extends jspb.Message {
 
 export namespace GetMLFrameworkResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework.AsObject,
+    mlframework?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.MLFramework.AsObject,
   }
 }
 
@@ -322,10 +322,10 @@ export namespace GetCloudRequest {
 }
 
 export class GetCloudResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud): GetCloudResponse;
-  hasItem(): boolean;
-  clearItem(): GetCloudResponse;
+  getCloud(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud | undefined;
+  setCloud(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud): GetCloudResponse;
+  hasCloud(): boolean;
+  clearCloud(): GetCloudResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetCloudResponse.AsObject;
@@ -337,7 +337,7 @@ export class GetCloudResponse extends jspb.Message {
 
 export namespace GetCloudResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud.AsObject,
+    cloud?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.Cloud.AsObject,
   }
 }
 
@@ -406,10 +406,10 @@ export namespace GetPublicDatasetRequest {
 }
 
 export class GetPublicDatasetResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset): GetPublicDatasetResponse;
-  hasItem(): boolean;
-  clearItem(): GetPublicDatasetResponse;
+  getPublicdataset(): github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset | undefined;
+  setPublicdataset(value?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset): GetPublicDatasetResponse;
+  hasPublicdataset(): boolean;
+  clearPublicdataset(): GetPublicDatasetResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPublicDatasetResponse.AsObject;
@@ -421,7 +421,7 @@ export class GetPublicDatasetResponse extends jspb.Message {
 
 export namespace GetPublicDatasetResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset.AsObject,
+    publicdataset?: github_com_metaprov_modelaapi_pkg_apis_catalog_v1alpha1_generated_pb.PublicDataset.AsObject,
   }
 }
 

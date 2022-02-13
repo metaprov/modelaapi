@@ -160,10 +160,10 @@ export namespace GetFeaturesetRequest {
 }
 
 export class GetFeaturesetResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): GetFeaturesetResponse;
-  hasItem(): boolean;
-  clearItem(): GetFeaturesetResponse;
+  getFeatureset(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset | undefined;
+  setFeatureset(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset): GetFeaturesetResponse;
+  hasFeatureset(): boolean;
+  clearFeatureset(): GetFeaturesetResponse;
 
   getYaml(): string;
   setYaml(value: string): GetFeaturesetResponse;
@@ -178,7 +178,7 @@ export class GetFeaturesetResponse extends jspb.Message {
 
 export namespace GetFeaturesetResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
+    featureset?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.Featureset.AsObject,
     yaml: string,
   }
 }

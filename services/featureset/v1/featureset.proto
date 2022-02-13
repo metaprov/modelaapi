@@ -44,7 +44,7 @@ message GetFeaturesetRequest {
 
 
 message GetFeaturesetResponse {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.Featureset featureset = 1;
     string yaml = 2;
 }
 
@@ -74,7 +74,7 @@ service FeaturesetService {
     }
     rpc UpdateFeatureset(UpdateFeaturesetRequest) returns (UpdateFeaturesetResponse) {
         option (google.api.http) = {
-			put: "/v1/featuresets/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/featuresets/{featureset.metadata.namespace}/{featureset.metadata.name}"
 			body: "*"
 		};
     }

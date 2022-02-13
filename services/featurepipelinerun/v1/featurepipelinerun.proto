@@ -74,7 +74,7 @@ service FeaturePipelineRunService {
     }
     rpc UpdateFeaturePipelineRun(UpdateFeaturePipelineRunRequest) returns (UpdateFeaturePipelineRunResponse) {
         option (google.api.http) = {
-			put: "/v1/featurepipelines/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/featurepipelines/{featurepipelinerun.metadata.namespace}/{featurepipelinerun.metadata.name}"
 			body: "*"
 		};
     }

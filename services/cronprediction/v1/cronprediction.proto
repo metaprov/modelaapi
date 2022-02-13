@@ -105,7 +105,7 @@ service CronPredictionService {
 
     rpc UpdateCronPrediction(UpdateCronPredictionRequest) returns (UpdateCronPredictionResponse) {
         option (google.api.http) = {
-			put: "/v1/cronpredictions/{item.metadata.name}"
+			put: "/v1/cronpredictions/{cronprediction.metadata.name}"
 			body: "*"
 		};
     }
@@ -123,6 +123,6 @@ service CronPredictionService {
     }
 
     rpc RunPrediction(RunCronPredictionRequest) returns (RunCronPredictionResponse) {
-        option (google.api.http).post = "/v1/cronpredictions/{item.metadata.name}:run";
+        option (google.api.http).post = "/v1/cronpredictions/{cronprediction.metadata.name}:run";
     }
 }

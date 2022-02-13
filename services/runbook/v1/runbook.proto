@@ -73,7 +73,7 @@ service RunBookService {
     }
     rpc UpdateRunBook(UpdateRunBookRequest) returns (UpdateRunBookResponse) {
         option (google.api.http) = {
-			put: "/v1/runbooks/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/runbooks/{runbook.metadata.namespace}/{runbook.metadata.name}"
 			body: "*"
 		};
     }

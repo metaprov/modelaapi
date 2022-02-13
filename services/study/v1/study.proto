@@ -127,7 +127,7 @@ service StudyService {
 
     rpc UpdateStudy(UpdateStudyRequest) returns (UpdateStudyResponse) {
         option (google.api.http) = {
-			put: "/v1/studies/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/studies/{study.metadata.namespace}/{study.metadata.name}"
 			body: "*"
 		};
     }

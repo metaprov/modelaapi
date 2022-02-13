@@ -212,10 +212,10 @@ export namespace DeleteSqlQueryRunResponse {
 }
 
 export class RunSqlQueryRunRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): RunSqlQueryRunRequest;
-  hasItem(): boolean;
-  clearItem(): RunSqlQueryRunRequest;
+  getSqlqueryrun(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun | undefined;
+  setSqlqueryrun(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun): RunSqlQueryRunRequest;
+  hasSqlqueryrun(): boolean;
+  clearSqlqueryrun(): RunSqlQueryRunRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunSqlQueryRunRequest.AsObject;
@@ -227,7 +227,7 @@ export class RunSqlQueryRunRequest extends jspb.Message {
 
 export namespace RunSqlQueryRunRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
+    sqlqueryrun?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.SqlQueryRun.AsObject,
   }
 }
 

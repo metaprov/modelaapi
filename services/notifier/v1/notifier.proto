@@ -75,7 +75,7 @@ service NotifierService {
     }
     rpc UpdateNotifier(UpdateNotifierRequest) returns (UpdateNotifierResponse) {
         option (google.api.http) = {
-			put: "/v1/notifiers/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/notifiers/{notifier.metadata.namespace}/{notifier.metadata.name}"
 			body: "*"
 		};
     }

@@ -127,7 +127,7 @@ service ModelaSystemService {
     }
     rpc UpdateModelaSystem(UpdateModelaSystemRequest) returns (UpdateModelaSystemResponse) {
         option (google.api.http) = {
-			put: "/v1/modelasystems/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/modelasystems/{modelasystem.metadata.namespace}/{modelasystem.metadata.name}"
 			body: "*"
 		};
     }

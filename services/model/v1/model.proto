@@ -230,7 +230,7 @@ service ModelService {
 
     rpc UpdateModel(UpdateModelRequest) returns (UpdateModelResponse) {
         option (google.api.http) = {
-			put: "/v1/models/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/models/{model.metadata.namespace}/{model.metadata.name}"
 			body: "*"
 		};
     }

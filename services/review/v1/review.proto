@@ -72,7 +72,7 @@ service ReviewService {
     }
     rpc UpdateReview(UpdateReviewRequest) returns (UpdateReviewResponse) {
         option (google.api.http) = {
-			put: "/v1/reviews/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/reviews/{review.metadata.namespace}/{review.metadata.name}"
 			body: "*"
 		};
     }

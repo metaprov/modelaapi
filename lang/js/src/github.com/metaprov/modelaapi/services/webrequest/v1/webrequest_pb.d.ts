@@ -212,10 +212,10 @@ export namespace DeleteWebRequestResponse {
 }
 
 export class RunWebRequestRequest extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): RunWebRequestRequest;
-  hasItem(): boolean;
-  clearItem(): RunWebRequestRequest;
+  getWebrequest(): github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest | undefined;
+  setWebrequest(value?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest): RunWebRequestRequest;
+  hasWebrequest(): boolean;
+  clearWebrequest(): RunWebRequestRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RunWebRequestRequest.AsObject;
@@ -227,7 +227,7 @@ export class RunWebRequestRequest extends jspb.Message {
 
 export namespace RunWebRequestRequest {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
+    webrequest?: github_com_metaprov_modelaapi_pkg_apis_data_v1alpha1_generated_pb.WebRequest.AsObject,
   }
 }
 

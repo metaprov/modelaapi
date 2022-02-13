@@ -69,7 +69,7 @@ service TodoService {
     }
     rpc UpdateTodo(UpdateTodoRequest) returns (UpdateTodoResponse) {
         option (google.api.http) = {
-			put: "/v1/todos/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/todos/{todo.metadata.namespace}/{todo.metadata.name}"
 			body: "*"
 		};
     }

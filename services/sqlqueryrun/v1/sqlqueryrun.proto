@@ -56,7 +56,7 @@ message DeleteSqlQueryRunResponse {
 
 
 message RunSqlQueryRunRequest {
-    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.data.v1alpha1.SqlQueryRun sqlqueryrun = 1;
 }
 
 
@@ -84,7 +84,7 @@ service SqlQueryRunService {
 
     rpc UpdateSqlQueryRun(UpdateSqlQueryRunRequest) returns (UpdateSqlQueryRunResponse) {
         option (google.api.http) = {
-			put: "/v1/sqlqueryruns/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}"
 			body: "*"
 		};
     }
@@ -95,7 +95,7 @@ service SqlQueryRunService {
 
 
     rpc RunSqlQueryRun(RunSqlQueryRunRequest) returns (RunSqlQueryRunResponse) {
-        option (google.api.http).post = "/v1/sqlqueryruns/{item.metadata.namespace}/{item.metadata.name}:run";
+        option (google.api.http).post = "/v1/sqlqueryruns/{sqlqueryrun.metadata.namespace}/{sqlqueryrun.metadata.name}:run";
     }
 
     

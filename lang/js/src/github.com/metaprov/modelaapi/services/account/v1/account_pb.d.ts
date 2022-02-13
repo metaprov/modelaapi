@@ -179,10 +179,10 @@ export namespace GetAccountRequest {
 }
 
 export class GetAccountResponse extends jspb.Message {
-  getItem(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
-  setItem(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account): GetAccountResponse;
-  hasItem(): boolean;
-  clearItem(): GetAccountResponse;
+  getAccount(): github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account | undefined;
+  setAccount(value?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account): GetAccountResponse;
+  hasAccount(): boolean;
+  clearAccount(): GetAccountResponse;
 
   getYaml(): string;
   setYaml(value: string): GetAccountResponse;
@@ -197,7 +197,7 @@ export class GetAccountResponse extends jspb.Message {
 
 export namespace GetAccountResponse {
   export type AsObject = {
-    item?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
+    account?: github_com_metaprov_modelaapi_pkg_apis_infra_v1alpha1_generated_pb.Account.AsObject,
     yaml: string,
   }
 }

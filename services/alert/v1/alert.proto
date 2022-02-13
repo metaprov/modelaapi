@@ -87,7 +87,7 @@ service AlertService {
 
     rpc UpdateAlert(UpdateAlertRequest) returns (UpdateAlertResponse) {
         option (google.api.http) = {
-			put: "/v1/alerts/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/alerts/{alert.metadata.namespace}/{alert.metadata.name}"
 			body: "*"
 		};
     }

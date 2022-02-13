@@ -89,7 +89,7 @@ service AttachmentService {
 
     rpc UpdateAttachment(UpdateAttachmentRequest) returns (UpdateAttachmentResponse) {
         option (google.api.http) = {
-			put: "/v1/attachments/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/attachments/{attachment.metadata.namespace}/{attachment.metadata.name}"
 			body: "*"
 		};
     }

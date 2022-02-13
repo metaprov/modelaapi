@@ -79,7 +79,7 @@ service CurtainService {
 
     rpc UpdateCurtain(UpdateCurtainRequest) returns (UpdateCurtainResponse) {
         option (google.api.http) = {
-			put: "/v1/curtains/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/curtains/{curtain.metadata.namespace}/{curtain.metadata.name}"
 			body: "*"
 		};
     }

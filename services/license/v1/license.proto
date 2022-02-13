@@ -106,7 +106,7 @@ service LicenseService {
 
     rpc UpdateLicense(UpdateLicenseRequest) returns (UpdateLicenseResponse) {
         option (google.api.http) = {
-			put: "/v1/licenses/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/licenses/{license.metadata.namespace}/{license.metadata.name}"
 			body: "*"
 		};
     }

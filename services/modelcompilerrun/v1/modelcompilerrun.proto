@@ -76,7 +76,7 @@ service ModelCompilerRunService {
     }
     rpc UpdateModelCompilerRun(UpdateModelCompilerRunRequest) returns (UpdateModelCompilerRunResponse) {
         option (google.api.http) = {
-			put: "/v1/modelcompilerruns/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/modelcompilerruns/{modelcompilerrun.metadata.namespace}/{modelcompilerrun.metadata.name}"
 			body: "*"
 		};
     }

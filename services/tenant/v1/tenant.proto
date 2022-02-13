@@ -78,7 +78,7 @@ service TenantService {
     }
     rpc UpdateTenant(UpdateTenantRequest) returns (UpdateTenantResponse) {
         option (google.api.http) = {
-			put: "/v1/tenants/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/tenants/{tenant.metadata.namespace}/{tenant.metadata.name}"
 			body: "*"
 		};
     }

@@ -74,7 +74,7 @@ service NotebookRunService {
     }
     rpc UpdateNotebookRun(UpdateNotebookRunRequest) returns (UpdateNotebookRunResponse) {
         option (google.api.http) = {
-			put: "/v1/notebookruns/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/notebookruns/{notebookrun.metadata.namespace}/{notebookrun.metadata.name}"
 			body: "*"
 		};
     }

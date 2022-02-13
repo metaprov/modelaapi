@@ -99,7 +99,7 @@ service DataSourceService {
 
     rpc UpdateDataSource(UpdateDataSourceRequest) returns (UpdateDataSourceResponse) {
         option (google.api.http) = {
-			put: "/v1/datasources/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/datasources/{datasource.metadata.namespace}/{datasource.metadata.name}"
 			body: "*"
 		};
     }

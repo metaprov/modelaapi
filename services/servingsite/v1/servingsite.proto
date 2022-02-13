@@ -73,7 +73,7 @@ service ServingSiteService {
     }
     rpc UpdateServingSite(UpdateServingSiteRequest) returns (UpdateServingSiteResponse) {
         option (google.api.http) = {
-			put: "/v1/servingsites/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/servingsites/{servingsite.metadata.namespace}/{servingsite.metadata.name}"
 			body: "*"
 		};
     }

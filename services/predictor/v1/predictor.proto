@@ -100,7 +100,7 @@ service PredictorService {
 
     rpc UpdatePredictor(UpdatePredictorRequest) returns (UpdatePredictorResponse) {
         option (google.api.http) = {
-			put: "/v1/predictors/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/predictors/{predictor.metadata.namespace}/{predictor.metadata.name}"
 			body: "*"
 		};
     }

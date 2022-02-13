@@ -15,7 +15,7 @@ message ListAlgorithmsRequest {
 }
 
 message ListAlgorithmsResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList items = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.AlgorithmList algorithms = 1;
 }
 
 message GetAlgorithmRequest {
@@ -24,7 +24,7 @@ message GetAlgorithmRequest {
 }
 
 message GetAlgorithmResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Algorithm algorithm = 1;
 }
 
 
@@ -45,7 +45,7 @@ message GetManagedimageRequest {
 }
 
 message GetManagedimageResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.ManagedImage managedItem = 1;
 }
 
 
@@ -68,7 +68,7 @@ message GetMLFrameworkRequest {
 }
 
 message GetMLFrameworkResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.MLFramework mlframework = 1;
 }
 
 //////////////////////////////////////////////////// Clouds ///////////////////////////////////
@@ -89,7 +89,7 @@ message GetCloudRequest {
 }
 
 message GetCloudResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.Cloud cloud = 1;
 }
 
 
@@ -112,7 +112,7 @@ message GetPublicDatasetRequest {
 }
 
 message GetPublicDatasetResponse {
-    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset item = 1;
+    github.com.metaprov.modelaapi.pkg.apis.catalog.v1alpha1.PublicDataset publicDataset = 1;
 }
 
 

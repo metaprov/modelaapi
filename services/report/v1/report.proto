@@ -89,7 +89,7 @@ service ReportService {
 
     rpc UpdateReport(UpdateReportRequest) returns (UpdateReportResponse) {
         option (google.api.http) = {
-			put: "/v1/reports/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/reports/{report.metadata.namespace}/{report.metadata.name}"
 			body: "*"
 		};
     }

@@ -106,7 +106,7 @@ service DataAppService {
 
     rpc UpdateDataApp(UpdateDataAppRequest) returns (UpdateDataAppResponse) {
         option (google.api.http) = {
-			put: "/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}"
 			body: "*"
 		};
     }
@@ -120,7 +120,7 @@ service DataAppService {
     }
 
     rpc RunDataApp(RunDataAppRequest) returns (RunDataAppResponse) {
-        option (google.api.http).post = "/v1/dataapps/{item.metadata.namespace}/{item.metadata.name}:run";
+        option (google.api.http).post = "/v1/dataapps/{dataapp.metadata.namespace}/{dataapp.metadata.name}:run";
     }
 
     rpc ResumeDataApp(ResumeDataAppRequest) returns (ResumeDataAppResponse) {

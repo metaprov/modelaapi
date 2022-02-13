@@ -78,7 +78,7 @@ service VirtualClusterService {
 
     rpc UpdateVirtualCluster(UpdateVirtualClusterRequest) returns (UpdateVirtualClusterResponse) {
         option (google.api.http) = {
-			put: "/v1/virtualclusters/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/virtualclusters/{virtualcluster.metadata.namespace}/{virtualcluster.metadata.name}"
 			body: "*"
 		};
     }

@@ -84,7 +84,7 @@ service ConnectionService {
     }
     rpc UpdateConnection(UpdateConnectionRequest) returns (UpdateConnectionResponse) {
         option (google.api.http) = {
-			put: "/v1/connections/{item.metadata.namespace}/{item.metadata.name}"
+			put: "/v1/connections/{connection.metadata.namespace}/{connection.metadata.name}"
 			body: "*"
 		};
     }
