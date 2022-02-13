@@ -1589,7 +1589,7 @@ type ModelClassType string
 
 const (
 	ModelStudyPhaseClassTypeFE       ModelClassType = "feature-engineering" // for feature engineering models
-	ModelStudyPhaseClassTypeBaseine  ModelClassType = "baseline"            // for baseline models
+	ModelStudyPhaseClassTypeBaseline ModelClassType = "baseline"            // for baseline models
 	ModelStudyPhaseClassTypeSearch   ModelClassType = "search"              // for search model
 	ModelStudyPhaseClassTypeEnsemble ModelClassType = "ensemble"            // for ensemble models
 	ModelStudyPhaseClassTypeTest     ModelClassType = "test"                // for model in the search phase

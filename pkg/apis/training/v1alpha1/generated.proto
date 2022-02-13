@@ -1821,7 +1821,7 @@ message ModelSpec {
   // Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
   // Default: All preprocessing will be created automatically
   // +kubebuilder:validation:Optional
-  optional FeatureEngineeringSpec fe = 9;
+  optional FeatureEngineeringSpec featureEngineering = 9;
 
   // Estimator is a specification of the ML algorithm and its hyper parameters.
   // +kubebuilder:validation:Optional

@@ -2748,10 +2748,10 @@ export class ModelSpec extends jspb.Message {
   getObjective(): string;
   setObjective(value: string): ModelSpec;
 
-  getFe(): FeatureEngineeringSpec | undefined;
-  setFe(value?: FeatureEngineeringSpec): ModelSpec;
-  hasFe(): boolean;
-  clearFe(): ModelSpec;
+  getFeatureengineering(): FeatureEngineeringSpec | undefined;
+  setFeatureengineering(value?: FeatureEngineeringSpec): ModelSpec;
+  hasFeatureengineering(): boolean;
+  clearFeatureengineering(): ModelSpec;
 
   getEstimator(): ClassicalEstimatorSpec | undefined;
   setEstimator(value?: ClassicalEstimatorSpec): ModelSpec;
@@ -2890,7 +2890,7 @@ export namespace ModelSpec {
     datasetname: string,
     task: string,
     objective: string,
-    fe?: FeatureEngineeringSpec.AsObject,
+    featureengineering?: FeatureEngineeringSpec.AsObject,
     estimator?: ClassicalEstimatorSpec.AsObject,
     dnn?: DeepEstimatorSpec.AsObject,
     chatbot?: ChatbotEstimatorSpec.AsObject,

@@ -238,7 +238,7 @@ type ModelSpec struct {
 	// Represent the preprocessing pipeline of the model. Provide a value if you want to customize the model.
 	// Default: All preprocessing will be created automatically
 	// +kubebuilder:validation:Optional
-	FeatureEngineering FeatureEngineeringSpec `json:"fe,omitempty" protobuf:"bytes,9,opt,name=fe"`
+	FeatureEngineering FeatureEngineeringSpec `json:"featureEngineering,omitempty" protobuf:"bytes,9,opt,name=featureEngineering"`
 	// Estimator is a specification of the ML algorithm and its hyper parameters.
 	// +kubebuilder:validation:Optional
 	Estimator *ClassicalEstimatorSpec `json:"estimator,omitempty" protobuf:"bytes,10,opt,name=estimator"`

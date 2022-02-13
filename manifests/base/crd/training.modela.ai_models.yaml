@@ -341,7 +341,7 @@ spec:
                 default: false
                 description: Explained indicate weather this model should be explained
                 type: boolean
-              fe:
+              featureEngineering:
                 description: 'Represent the preprocessing pipeline of the model. Provide
                   a value if you want to customize the model. Default: All preprocessing
                   will be created automatically'
