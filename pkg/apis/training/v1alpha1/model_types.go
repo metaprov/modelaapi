@@ -568,7 +568,7 @@ type ModelStatus struct {
 	Governance data.GovernanceStatus `json:"governance,omitempty" protobuf:"bytes,63,opt,name=governanceStatus"`
 	// The Interpretability status for this model
 	// +kubebuilder:validation:Optional
-	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,64,opt,name=Interpretability"`
+	Interpretability InterpretabilityStatus `json:"interpretability,omitempty" protobuf:"bytes,64,opt,name=interpretability"`
 	// +kubebuilder:validation:Optional
 	// +patchMergeKey=type
 	// +patchStrategy=merge

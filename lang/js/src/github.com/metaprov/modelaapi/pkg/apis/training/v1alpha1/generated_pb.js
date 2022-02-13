@@ -33279,7 +33279,7 @@ proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.proto
 
 
 /**
- * optional InterpretabilityStatus Interpretability = 64;
+ * optional InterpretabilityStatus interpretability = 64;
  * @return {?proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.InterpretabilityStatus}
  */
 proto.github.com.metaprov.modelaapi.pkg.apis.training.v1alpha1.ModelStatus.prototype.getInterpretability = function() {

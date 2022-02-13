@@ -2230,7 +2230,7 @@ message ModelStatus {
 
   // The Interpretability status for this model
   // +kubebuilder:validation:Optional
-  optional InterpretabilityStatus Interpretability = 64;
+  optional InterpretabilityStatus interpretability = 64;
 
   // +kubebuilder:validation:Optional
   // +patchMergeKey=type
